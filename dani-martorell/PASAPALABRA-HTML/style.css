@@ -253,7 +253,7 @@ p.info {
         color: #8b8a8a;
         font-size: 0.75rem;
         text-align: center;
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         line-height: 1.1rem;
 }
 
