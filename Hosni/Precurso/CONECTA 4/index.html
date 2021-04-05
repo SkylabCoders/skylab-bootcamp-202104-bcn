@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Conecta 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <div class="introduction" id="introduction">
+            <div class="presentacion">
+                <h1>BIENVENIDO AL CONECTA 4</h1>
+                <h3>REGLAS DEL JUEGO</h3>
+                <p>El conecta 4 se juega en una rejilla vertical de 6 filas y 7 columnas. El objetivo es alinear 4 fichas de su color, horizontalmente, verticalmente o en diagonal.</p>
+                <h3>DESAROLLO DEL JUEGO</h3>
+                <p>Cada jugador a su turno juega una ficha de su color en la columna de su elección.</p>
+                <p>Físicamente, la rejilla está dispuesta de forma vertical, de forma que las fichas son insertadas en una ranura desde arriba y caen hasta la fila más baja no ocupada aún. Así, se elige la columna donde se pone, pero no la fila; la ficha que se acaba de insertar cae hasta la fila más baja aún disponible. Desde luego, no puede jugarse en una columna llena conteniendo ya 6 fichas.</p>
+                <p>El primer jugador que consigue alinear 4 fichas de su color, horizontalmente, verticalmente o en diagonal gana la partida. Su fin es por lo tanto construir este alineamiento impidiendo hacerlo a sus adversarios.</p>    
+                <p>Si la rejilla se llena completamente sin que ningún jugador logre alinear 4 fichas de su color, la partida es declarada nula.</p>
+            </div>
+            <div class="game-selection">
+                <div class="player-selection-text">
+                    <h1>SI DESEA JUGAR SELECCIONE TIPO DE JUEGO</h1>
+                    <h3 class="userName-text" id="userName-text">INTRODUZCA USERNAME</h3>
+                    <p class="errorNameInput" id="errorNameInput"></p>
+                </div>
+                <div class="player-selection">
+                    <div class="button-player-selection">
+                        <button id="playerVsPlayer">PLAYER VS. PLAYER</button>
+                        <button id="playerVsIA">PLAYER VS. COMPUTER</button>
+                        
+                    </div>
+                    <div class="input-player-selection">
+                        <div class="flex-row font-size-input visibility-p1" id="visibility-p1">
+                            <label class="margin-left color-player1 text-player" for="userName_1" value="">PLAYER 1</label>
+                            <input class="margin-left" type="text" name="userName_1" id="userName_1">
+                        </div>
+                        <div class="flex-row font-size-input margin-top visibility-p2" id="visibility-p2">
+                            <label class="margin-left color-player2 text-player" for="userName_2" value="">PLAYER 2</label>
+                            <input class="margin-left" type="text" name="userName_2" id="userName_2">
+                        </div>                
+                    </div>
+                </div>
+                <button class="start-game visibility-p1" id="startGame">EMPEZAR A JUGAR</button>
+            </div>
+        </div>
+        <div class="game" id="game">
+            <div class="turn" id="turn">
+                <span class="text-turn" id="text-turn">TURNO PARA:</span>
+                <span class="player-turn" id="player-turn"></span>
+            </div>
+            <div class="table-foot">
+                
+                <table class="game-table" id="gameTable">
+                    <tr class="row-0 row-table" id="row-0">
+                        <td class="column-0 column" id="row-0-column-0"></td>
+                        <td class="column-1 column" id="row-0-column-1"></td>
+                        <td class="column-2 column" id="row-0-column-2"></td>
+                        <td class="column-3 column" id="row-0-column-3"></td>
+                        <td class="column-4 column" id="row-0-column-4"></td>
+                        <td class="column-5 column" id="row-0-column-5"></td>
+                        <td class="column-6 column" id="row-0-column-6"></td>
+                    </tr>
+                    <tr class="row-1 row-table" id="row-1">
+                        <td class="column-0 column" id="row-1-column-0"></td>
+                        <td class="column-1 column" id="row-1-column-1"></td>
+                        <td class="column-2 column" id="row-1-column-2"></td>
+                        <td class="column-3 column" id="row-1-column-3"></td>
+                        <td class="column-4 column" id="row-1-column-4"></td>
+                        <td class="column-5 column" id="row-1-column-5"></td>
+                        <td class="column-6 column" id="row-1-column-6"></td>
+                    </tr>
+                    <tr class="row-2 row-table" id="row-2">
+                        <td class="column-0 column" id="row-2-column-0"></td>
+                        <td class="column-1 column" id="row-2-column-1"></td>
+                        <td class="column-2 column" id="row-2-column-2"></td>
+                        <td class="column-3 column" id="row-2-column-3"></td>
+                        <td class="column-4 column" id="row-2-column-4"></td>
+                        <td class="column-5 column" id="row-2-column-5"></td>
+                        <td class="column-6 column" id="row-2-column-6"></td>
+                    </tr>
+                    <tr class="row-3 row-table" id="row-3">
+                        <td class="column-0 column" id="row-3-column-0"></td>
+                        <td class="column-1 column" id="row-3-column-1"></td>
+                        <td class="column-2 column" id="row-3-column-2"></td>
+                        <td class="column-3 column" id="row-3-column-3"></td>
+                        <td class="column-4 column" id="row-3-column-4"></td>
+                        <td class="column-5 column" id="row-3-column-5"></td>
+                        <td class="column-6 column" id="row-3-column-6"></td>
+                    </tr>
+                    <tr class="row-4 row-table" id="row-4">
+                        <td class="column-0 column" id="row-4-column-0"></td>
+                        <td class="column-1 column" id="row-4-column-1"></td>
+                        <td class="column-2 column" id="row-4-column-2"></td>
+                        <td class="column-3 column" id="row-4-column-3"></td>
+                        <td class="column-4 column" id="row-4-column-4"></td>
+                        <td class="column-5 column" id="row-4-column-5"></td>
+                        <td class="column-6 column" id="row-4-column-6"></td>
+                    </tr>
+                    <tr class="row-5 row-table" id="row-5">
+                        <td class="column-0 column" id="row-5-column-0"></td>
+                        <td class="column-1 column" id="row-5-column-1"></td>
+                        <td class="column-2 column" id="row-5-column-2"></td>
+                        <td class="column-3 column" id="row-5-column-3"></td>
+                        <td class="column-4 column" id="row-5-column-4"></td>
+                        <td class="column-5 column" id="row-5-column-5"></td>
+                        <td class="column-6 column" id="row-5-column-6"></td>
+                    </tr>
+                </table>
+                <div class="foot">
+                    <div class="half-circle"></div>
+                    <div class="half-circle"></div>
+                </div>
+            </div>
+                <div class="timer" id="timer">
+                <!-- <span>TIEMPO</span> -->
+                <span id="timerCount">TIEMPO: 30</span>
+                <div class="restart-exit-buttons" id="restart-exit-buttons">
+                    <button class="restartGame" id="restartGame">RESTART</button>
+                    <button class="exitGame" id="exitGame">EXIT</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="script.js" type="text/javascript"></script>
+</html>
