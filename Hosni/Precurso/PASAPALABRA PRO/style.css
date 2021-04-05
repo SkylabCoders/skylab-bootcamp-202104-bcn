@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: blue;
+    padding: 40%;
+    padding-bottom: 0%;
+    color: white;
+}
+h2 {
+    border-radius: 50%;
+    border-style:groove;
+    background-color: rgba(7, 7, 146, 0.733);
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    
+    font-size: 30px;
+}
+
+td {
+    text-align: center;
+}
+table {
+    padding-top: 30px;
+    width: 100%;
+}
+#userNameInput, #start, #game{
+    visibility: hidden;
+}
+#play-again, #div-ranking {
+    visibility: hidden;
+    text-align: center;
+}
+#div-ranking {
+    display: none;
+}
+.presentacion {
+    position: absolute;
+    left: 700px;
+    top: 50px;
+    color: white;
+    width: 50%;
+}
+
+#timer {
+    /* visibility: hidden; */
+    position: absolute;
+    left: 300px; 
+    top: 240px; 
+    font-size: 80px;
+}
+#timerOff {
+    position: absolute;
+    left: 200px; 
+    top: 160px; 
+    font-size: 80px;
+}
+
+#A {
+    position: absolute;
+    left: 327.5px;
+    top: 28px;
+}
+#B {
+    position: absolute;
+    left: 394px;
+    top: 36.5px;
+}
+#C {
+    position: absolute;
+    left: 455.5px;
+    top: 61px;
+}
+#D {
+    position: absolute;
+    left: 508px;
+    top: 100px;
+}
+#E {
+    position: absolute;
+    left: 552.5px;
+    top: 151px;
+}
+#F {
+    position: absolute;
+    left: 581.2px;
+    top: 210.5px;
+}
+#G {
+    position: absolute;
+    left: 590.5px;
+    top: 276px;
+}
+#H {
+    position: absolute;
+    left: 587px;
+    top: 341.5px;
+}
+#I {
+    position: absolute;
+    left: 571.5px;
+    top: 404.5px;
+}
+#J {
+    position: absolute;
+    left: 530px;
+    top: 461px;
+}
+#L {
+    position: absolute;
+    left: 485px;
+    top: 506px;
+}
+#M {
+    position: absolute;
+    left: 423px;
+    top: 538px;
+}
+#N {
+    position: absolute;
+    left: 360.5px;
+    top: 554px;
+}
+#Ñ {
+    position: absolute;
+    left: 294px;
+    top: 554px;
+}
+#O {
+    position: absolute;
+    left: 229.5px;
+    top: 538px;
+}
+#P {
+    position: absolute;
+    left: 173.5px;
+    top: 506px;
+}
+#Q {
+    position: absolute;
+    left: 123px;
+    top: 461px;
+}
+#R {
+    position: absolute;
+    left: 79px;
+    top: 404.5px;
+}
+#S {
+    position: absolute;
+    left: 68px;
+    top: 341.5px;
+}
+#T {
+    position: absolute;
+    left: 64px;
+    top: 276px;
+}
+#U {
+    position: absolute;
+    left: 76px;
+    top: 210.5px;
+}
+#V {
+    position: absolute;
+    left: 105px;
+    top: 151px;
+}
+#X {
+    position: absolute;
+    left: 147px;
+    top: 100px;
+}
+#Y {
+    position: absolute;
+    left: 200.5px;
+    top: 61px;
+}
+#Z {
+    position: absolute;
+    left: 263px;
+    top: 36.5px;
+}
