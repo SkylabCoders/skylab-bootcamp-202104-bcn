@@ -1,0 +1,150 @@
+.container {
+    padding-top: 5%;
+    background-color: rgb(145,124,105);
+    font-family: 'Poppins';
+}
+
+button{
+    outline: none;
+    border:0.1em solid #FFFFFF;
+    height: 100%;
+    min-height: 75px;
+    width: 100%;
+    font-size: 2rem;
+    transition: all 0.2s;
+    text-decoration:none;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+
+}
+
+.calculator {
+    border: solid black;
+    margin: auto;
+    min-width: 300px;
+    min-height: 500px;
+    max-width: 300px;
+    display: grid;
+    grid-template: minmax(80px, max-content) repeat(6, 1fr) / repeat(4, 1fr);    
+}
+
+.input{
+    word-wrap: break-word;
+    text-align: start;
+    padding-left: 5%;
+    padding-right: 4%;
+    padding-top: 2%;
+    font-size: 300%;
+    color: rgb(100,52,30);
+    grid-area: 1 / 1 / 1 / span 4;
+    background-color: rgb(196, 223, 242);
+}
+
+.results{
+    word-wrap: break-word;
+    font-size: 300%;
+    color: rgb(100,52,30);
+    grid-area: 2 / 1 / 2 / span 4;
+    background-color: rgb(196, 223, 242);
+    padding-right: 2.5%;
+    text-align: end;
+    
+}
+
+.ac{
+    grid-area: 3 / 1 / 4 / span 2;
+}
+
+.ret{
+    grid-area: 3 / 3 / span 1 / span 1;
+}
+
+.divide{
+    grid-area: 3 / 4 / span 1 / span 1;
+}
+
+.option7{
+    grid-area: 4 / 1 / span 1 / span 1;
+}
+
+.option8{
+    grid-area: 4 / 2 / span 1 / span 1;
+}
+
+.option9{
+    grid-area: 4 / 3 / span 1 / span 1;
+}
+
+.multiply{
+    grid-area: 4 / 4 / span 1 / span 1;
+}
+
+.option4 {
+    grid-area: 5 / 1 / span 1 / span 1;
+}
+
+.option5{
+    grid-area: 5 / 2 / span 1 / span 1;
+}
+
+.option6 {
+    grid-area: 5 / 3 / span 1 / span 1;
+}
+
+.substract{
+    grid-area: 5 / 4 / span 1 / span 1;
+}
+
+.option1{
+    grid-area: 6 / 1 / span 1 / span 1;
+}
+
+.option2{
+    grid-area: 6 / 2 / span 1 / span 1;
+}
+
+.option3 {
+    grid-area: 6 / 3 / span 1 / span 1;
+}
+
+.add{
+    grid-area: 6 / 4 / span 1 / span 1;
+}
+
+.option0{
+    grid-area: 7 / 1 / span 1 / span 2;
+}
+
+.comma {
+    grid-area: 7 / 3 / span 1 / span 1;
+}
+
+.equal{
+    grid-area: 7 / 4 / span 1 / span 1;
+}
+
+#ret, #ac, #option9, #option8, #option7, #option6, #option5, #option4, #option3, #option2, #option1, #option0, #comma {
+    background-color: rgb(199, 199, 199);
+}
+
+#ret:hover, #ac:hover, #option9:hover, #option8:hover, #option7:hover, #option6:hover, #option5:hover, #option4:hover,
+ #option3:hover, #option2:hover, #option1:hover, #option0:hover, #comma:hover{
+    background-color:#FFFFFF;
+}
+
+button:active{
+    box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+}
+
+#divide:hover, #multiply:hover, #substract:hover, #add:hover, #equal:hover {
+    background-color:#FFFFFF;
+    color: black;
+}
+
+#divide, #multiply, #substract, #add, #equal {
+    color: white;
+    background-color: rgb(226, 148, 45);
+}
+
+#ac{
+    font-size: 2rem;
+}
