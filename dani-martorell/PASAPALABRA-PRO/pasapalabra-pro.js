@@ -157,7 +157,7 @@ function startGame(){
                     markCardAsWrong(card);
                     console.log('%c ¡INCORRECTO !', 'background: #EC4141; color: #FDFDFD');
                 } else if(userResponse.toLowerCase() === card.answer){
-                    markCardAsRight(card, totalScore);
+                    markCardAsRight(card);
                     console.log('%c ¡CORRECTO! ', 'background: #38AB44; color: #FDFDFD');
                 }
             }
