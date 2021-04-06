@@ -242,8 +242,6 @@ function isMaxFlight() {
 }
 
 function getFlightFromAdmin() {
-  //TODO: validar la información introducida por el usuario
-
   let flight = {};
 
   flight.id = generateId();
@@ -284,13 +282,13 @@ function flightHasScale() {
     scale = prompt("El vuelo tiene escalas S/N");
   }
 
-  return scale === "S" ? true : false;
+  return scale === "S";
 }
 
 function deleteFlight() {
   showFlights(flights);
   let flightId = prompt("Introduzca el ID del vuelo que quiere eliminar");
-  for (i = 0; i < flights.length; i++) {
+  for (let i = 0; i < flights.length; i++) {
     if (flights[i].id == flightId) {
       showFlight(flights[i]);
       flights.splice(i, 1);
@@ -312,8 +310,7 @@ function getPriceFromUser() {
 
 function searchFlightsByPrice(price) {
   let searchOption = getSearchOptionFromUser();
-  let flights = searchFlights(price, searchOption);
-  return flights;
+  return searchFlights(price, searchOption);
 }
 
 function searchFlights(price, searchOption) {
@@ -335,6 +332,7 @@ function searchFlights(price, searchOption) {
 }
 
 function getSearchOptionFromUser() {
+  let searchOption = "";
   do {
     searchOption = prompt(`Que tipo de busqueda quieres realizar: 
                           Por precio mayor: [${SEARCH_OPTIONS.HIGH}]
