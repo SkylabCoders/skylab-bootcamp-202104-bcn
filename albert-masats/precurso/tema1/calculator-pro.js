@@ -127,6 +127,7 @@ function calculatorPro() {
         switch(newNumbers) {
             case "y":
                 calculatorPro();
+                break;
 
             case "n":
                 alert("Bye!");
@@ -135,6 +136,7 @@ function calculatorPro() {
             default:
                 alert("Just press 'y' or 'n'");
                 yesOrNo();
+                break;
         }
     }
     yesOrNo();
