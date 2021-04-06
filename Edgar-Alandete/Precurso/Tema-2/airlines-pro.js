@@ -57,8 +57,8 @@ function airlines() {
 
 function showFlights(flightsToShow) {
   console.log(`--- MOSTRANDO LOS VUELOS DISPONINBLES ---`);
-  for (i = 0; i < flightsToShow.length; i++) {
-    showFlight(flightsToShow[i]);
+  for (const flight of flightsToShow) {
+    showFlight(flight);
   }
 }
 
@@ -71,8 +71,8 @@ function showFlight(flight) {
 
 function calculateAveragePrice() {
   let price = 0;
-  for (i = 0; i < flights.length; i++) {
-    price += flights[i].cost;
+  for (const flight of flights) {
+    price += flight.cost;
   }
 
   return (price / flights.length).toFixed(2);
@@ -80,9 +80,10 @@ function calculateAveragePrice() {
 
 function countScaleFlights() {
   let scaleCount = 0;
-
-  for (i = 0; i < flights.length; i++) {
-    flights[i].scale ? scaleCount++ : "";
+  for (const flight of flights) {
+    if (flight.scale) {
+      scaleCount++;
+    }
   }
 
   return scaleCount;
@@ -94,10 +95,9 @@ function getLastFlights() {
 
 function showLastFlightsDestiny(lastFlights) {
   console.log("Los ultimos destinos del dia son: ");
-  for (i = 0; i < lastFlights.length; i++) {
-    console.log(
-      `El vuelo numero ${lastFlights[i].id} con destino ${lastFlights[i].to}`
-    );
+
+  for (const flight of lastFlights) {
+    console.log(`El vuelo numero ${flight.id} con destino ${flight.to}`);
   }
 }
 
