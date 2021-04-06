@@ -1,0 +1,73 @@
+.calculator {
+  width:250px;
+  height:350px;
+  background-color:lightgray;
+  border-style:outset;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items:center;
+}
+
+.screenContainer {
+  width:200px;
+  height:50px;
+  display:flex;
+  justify-content:center;
+}
+
+#screen {
+  width:200px;
+  height:50px;
+  display:flex;
+  background-color:white;
+  margin:5px;
+  font-family:monospace;
+  text-align:right;
+}
+
+.buttonsContainer {
+  width:200px;
+  height:250px;
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:center;
+  align-items:center;
+}
+
+button {
+  width:40px;
+  height:40px;
+  background-color:lightcyan;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  margin:5px;
+  font-family:monospace;
+}
+
+button:hover {
+  box-shadow: 1px 4px 3px rgba(0,0,0,0.24);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus:not(:focus-visible) { 
+  outline: 0; 
+}
+
+.operationButtons {
+  background-color:cyan;
+}
+
+.deleteButtons {
+  width:65px;
+  background-color: darkcyan;
+}
+
+#resultButton {
+  background-color:fuchsia;
+  color:white;
+}
