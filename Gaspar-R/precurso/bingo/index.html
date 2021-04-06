@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bingo SkyLab </title>
+
+  <link rel="stylesheet" href="style/styles.css" class="css">
+
+</head>
+
+<body>
+
+
+  <h1>Bingo SkyLab <span>by GX</span></h1>
+
+  <label for="user"> Player</label>
+  <input type="text" name="user" id="user" placeholder="Tu nombre">
+
+  <div class="top-btn"><button class="allBtns" id="startBtn"> Comenzar juego </button></div>
+
+  <div class="row">
+    <div class="column left">
+      <div class="middle-btns">
+        <button class="generateCardBtn allBtns" title="Si quieres generar otro carton haz click nuevamente">Generar carton</button>
+        <button class="nextNumber allBtns">Sacar numero</button>
+      </div>
+
+    </div>
+    <div class="column middle">
+      <div class="numbers-cont">
+        <div class="numeros" id="1">1</div>
+        <div class="numeros" id="2">2</div>
+        <div class="numeros" id="3">3</div>
+        <div class="numeros" id="4">4</div>
+        <div class="numeros" id="5">5</div>
+        <div class="numeros" id="6">6</div>
+        <div class="numeros" id="7">7</div>
+        <div class="numeros" id="8">8</div>
+        <div class="numeros" id="9">9</div>
+        <div class="numeros" id="10">10</div>
+        <div class="numeros" id="11">11</div>
+        <div class="numeros" id="12">12</div>
+        <div class="numeros" id="13">13</div>
+        <div class="numeros" id="14">14</div>
+        <div class="numeros" id="15">15</div>
+        <div class="numeros" id="16">16</div>
+        <div class="numeros" id="17">17</div>
+        <div class="numeros" id="18">18</div>
+        <div class="numeros" id="19">19</div>
+        <div class="numeros" id="20">20</div>
+        <div class="numeros" id="21">21</div>
+        <div class="numeros" id="22">22</div>
+        <div class="numeros" id="23">23</div>
+        <div class="numeros" id="24">24</div>
+        <div class="numeros" id="25">25</div>
+        <div class="numeros" id="26">26</div>
+        <div class="numeros" id="27">27</div>
+        <div class="numeros" id="28">28</div>
+        <div class="numeros" id="29">29</div>
+        <div class="numeros" id="30">30</div>
+        <div class="numeros" id="31">31</div>
+        <div class="numeros" id="32">32</div>
+        <div class="numeros" id="33">33</div>
+        <div class="numeros" id="34">34</div>
+        <div class="numeros" id="35">35</div>
+        <div class="numeros" id="36">36</div>
+        <div class="numeros" id="37">37</div>
+        <div class="numeros" id="38">38</div>
+        <div class="numeros" id="39">39</div>
+        <div class="numeros" id="40">40</div>
+        <div class="numeros" id="41">41</div>
+        <div class="numeros" id="42">42</div>
+        <div class="numeros" id="43">43</div>
+        <div class="numeros" id="44">44</div>
+        <div class="numeros" id="45">45</div>
+        <div class="numeros" id="46">46</div>
+        <div class="numeros" id="47">47</div>
+        <div class="numeros" id="48">48</div>
+        <div class="numeros" id="49">49</div>
+        <div class="numeros" id="50">50</div>
+        <div class="numeros" id="51">51</div>
+        <div class="numeros" id="52">52</div>
+        <div class="numeros" id="53">53</div>
+        <div class="numeros" id="54">54</div>
+        <div class="numeros" id="55">55</div>
+        <div class="numeros" id="56">56</div>
+        <div class="numeros" id="57">57</div>
+        <div class="numeros" id="58">58</div>
+        <div class="numeros" id="59">59</div>
+        <div class="numeros" id="60">60</div>
+        <div class="numeros" id="61">61</div>
+        <div class="numeros" id="62">62</div>
+        <div class="numeros" id="63">63</div>
+        <div class="numeros" id="64">64</div>
+        <div class="numeros" id="65">65</div>
+        <div class="numeros" id="66">66</div>
+        <div class="numeros" id="67">67</div>
+        <div class="numeros" id="68">68</div>
+        <div class="numeros" id="69">69</div>
+        <div class="numeros" id="70">70</div>
+        <div class="numeros" id="71">71</div>
+        <div class="numeros" id="72">72</div>
+        <div class="numeros" id="73">73</div>
+        <div class="numeros" id="74">74</div>
+        <div class="numeros" id="75">75</div>
+      </div>
+    </div>
+    <div class="column right">
+      <div class="lisa-container">
+        <img src="images/lisa.gif" alt="Lisa-bingo" width="250px" height="180px" class="lisa"> </img>
+      </div>
+    </div>
+  </div>
+
+<div class="turnoClass">Turno:  <span id="turnos">  </span> </div>
+
+
+  <div id="player-card-id" class="playerCard"></div>
+
+  <div class="gameBtns middle-btns">
+    <button class="bingoBtn win allBtns" disabled onclick="bingo()">Bingo</button>
+    <button class="lineaBtn win allBtns" disabled onclick="linea()">Linea</button>
+  </div>
+
+  <script src="script/main.js" type="text/javascript"></script>
+</body>
+
+</html>
