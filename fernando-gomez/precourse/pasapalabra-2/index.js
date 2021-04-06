@@ -216,7 +216,7 @@ const allDonutAnswered = () => {
 
     let result = true;
 
-    for(let index of donut) {
+    for(let index in donut) {
         if(!donutLetterAnswered(donut[index])){
             result = false;
         }
@@ -486,7 +486,7 @@ const totalHits = () => {
 
     let result = 0;
 
-    for(let index of donut) {
+    for(let index in donut) {
         if(donut[index].status === 1){
             result++;
         }
@@ -498,7 +498,7 @@ const totalFails = () => {
 
     let result = 0;
 
-    for(let index of donut) {
+    for(let index in donut) {
         if(donut[index].status === -1){
             result++;
         }
