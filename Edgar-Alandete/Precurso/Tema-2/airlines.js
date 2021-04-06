@@ -36,18 +36,18 @@ function airlines() {
 }
 
 function showFlights() {
-  for (let i = 0; i < flights.length; i++) {
-    console.log(`El vuelo con origen: ${flights[i].from}, y destino: ${
-      flights[i].to
-    } tiene un coste de ${flights[i].cost} y 
-    ${flights[i].scale ? "realiza escalas" : "no realiza ninguna escala"}.`);
+  for (const flight of flights) {
+    console.log(`El vuelo con origen: ${flight.from}, y destino: ${
+      flight.to
+    } tiene un coste de ${flight.cost} y 
+    ${flight.scale ? "realiza escalas" : "no realiza ninguna escala"}.`);
   }
 }
 
 function calculateAveragePrice() {
   let price = 0;
-  for (let i = 0; i < flights.length; i++) {
-    price += flights[i].cost;
+  for (const flight of flights) {
+    price += flight.cost;
   }
 
   return (price / flights.length).toFixed(2);
@@ -55,9 +55,8 @@ function calculateAveragePrice() {
 
 function countScaleFlights() {
   let scaleCount = 0;
-
-  for (let i = 0; i < flights.length; i++) {
-    if (flights[i].scale) {
+  for (const flight of flights) {
+    if (flight.scale) {
       scaleCount++;
     }
   }
@@ -71,9 +70,8 @@ function getLastFlights() {
 
 function showLastFlightsDestiny(lastFlights) {
   console.log("Los ultimos destinos del dia son: ");
-  for (let i = 0; i < lastFlights.length; i++) {
-    console.log(
-      `El vuelo numero ${lastFlights[i].id} con destino ${lastFlights[i].to}`
-    );
+
+  for (const flight of lastFlights) {
+    console.log(`El vuelo numero ${flight.id} con destino ${flight.to}`);
   }
 }
