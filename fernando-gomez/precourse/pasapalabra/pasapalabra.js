@@ -238,7 +238,7 @@ function pasapalabra() {
     
     //Shows the ranking
     console.log('Esta es la tabla clasificatoria\n\n');
-    showRanking(ranking);
+    showRanking();
     //Checks that user inputs a valid name
     while(!checkPlayer){
         if(player === null){
