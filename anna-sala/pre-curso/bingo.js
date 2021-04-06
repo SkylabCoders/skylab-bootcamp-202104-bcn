@@ -21,7 +21,6 @@ let numberCrossed;
 let line = false;
 let bingoFinished= false;
 let pointsByTurns = 100;
-let randomNumberForPoints;
 let newObject ={};
 
 let ranking =[
@@ -80,7 +79,6 @@ function askTurn(){
         line = false;
         bingoFinished= false;
         pointsByTurns = 100;
-        randomNumberForPoints;
         newObject ={};
 
     console.log("Tus 15 numeros para el juego del Bingo son: " + numbersForBingo);
