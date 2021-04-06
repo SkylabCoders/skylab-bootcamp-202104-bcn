@@ -1,0 +1,64 @@
+.header{
+    border: black solid 1px;
+    height: 100%;
+    width: 100%;
+    
+}
+.welcome{
+    text-align: center;
+    font-size: 25px;
+    
+}
+
+.questionName{
+    text-align: center;
+}
+form{
+    text-align: center;
+    margin-top: 20%;
+}
+ul{ /* cambiamos puntos por guiones */
+    list-style-type:none;
+}
+ul>li:before{
+    content: "-";
+    position: absolute;
+    margin-left: -1.1em;
+}
+.rules{
+    display: none;
+    border: solid 1px black;
+    text-align: center;
+    font-size: 25px;
+}
+.initGame{
+    font-size: 25px;
+    margin-right: 20px;
+}
+.rosco{
+    display: none;
+    position:relative;
+    border: solid 1px black;
+    margin: auto;
+    margin-top: calc(5vh - 50px);
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+
+}
+.circle-letter{
+    position:absolute;
+    margin:3px;
+    border-radius: 50%;
+    background-color: lightblue;
+    width: 7%;
+    height: 7%;
+    box-shadow: -1px 1px blue;
+}
+
+
+.letter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
