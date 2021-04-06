@@ -30,8 +30,8 @@ function calculator(num1 = undefined, num2 = undefined) { //La funcion de la cal
         //return results tenía este return aquí el cual quito para poder itinerar los resultados de las operaciones más adelante
       }
       //Se hace una iteración para que en consola no se imprima en forma de array, si no en cuatro líneas para que sea más amigable para el usuario 
-      for (let i = 0; i < results.length; i++) {
-        console.log(results[i]);
+      for (let result of results) {
+        console.log(result);
       }
     }
   }
