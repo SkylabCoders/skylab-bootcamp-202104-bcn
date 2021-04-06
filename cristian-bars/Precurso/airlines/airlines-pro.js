@@ -124,7 +124,7 @@ function operaciones(){
     count = 0;
     switch(valor){
         case 'SUPERIOR':
-            for (i=0;i<contador;i++){
+            for (let i=0;i<contador;i++){
                 if (precio < vuelos[i].cost){
                     console.log("El vuelo con origen " + vuelos[i].from + " y con destino a " + vuelos[i].to + " tiene un coste de " + vuelos[i].cost + "\n")
                     count ++;
@@ -133,7 +133,7 @@ function operaciones(){
             break;
             
         case 'INFERIOR':
-            for (i=0;i<contador;i++){
+            for (let i=0;i<contador;i++){
                 if (precio > vuelos[i].cost){
                     console.log("El vuelo con origen " + vuelos[i].from + " y con destino a " + vuelos[i].to + " tiene un coste de " + vuelos[i].cost + "\n")
                     count ++;
@@ -142,7 +142,7 @@ function operaciones(){
             break;
             
         case 'IGUAL':
-            for (i=0;i<contador;i++){
+            for (let i=0;i<contador;i++){
                 if (precio == vuelos[i].cost){
                     console.log("El vuelo con origen " + vuelos[i].from + " y con destino a " + vuelos[i].to + " tiene un coste de " + vuelos[i].cost + "\n")
                     count ++;
@@ -168,16 +168,16 @@ let vuelos = new Array;
 let count;
 
 vuelos = [
-    {id: 00, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false},
-    {id: 01, to: 'Barcelona', from: 'Madrid', cost: 1400, scale: false},
-    {id: 02, to: 'Lisboa', from: 'Reus', cost: 2000, scale: false},
-    {id: 03, to: 'Milan', from: 'Oslo', cost: 2500, scale: false},
-    {id: 04, to: 'New York', from: 'Viena', cost: 750, scale: true},
-    {id: 05, to: 'Tokyo', from: 'Sao Pablo', cost: 900, scale: true},
-    {id: 06, to: 'Las Palmas de Gran Canaria', from: 'Menorca', cost: 1200, scale: false},
-    {id: 07, to: 'Tanger', from: 'París', cost: 1100, scale: false},
-    {id: 08, to: 'Los Angeles', from: 'Cuba', cost: 300, scale: false},
-    {id: 09, to: 'Sevilla', from: 'Barcelona', cost: 400, scale: false}
+    {id: 0, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false},
+    {id: 1, to: 'Barcelona', from: 'Madrid', cost: 1400, scale: false},
+    {id: 2, to: 'Lisboa', from: 'Reus', cost: 2000, scale: false},
+    {id: 3, to: 'Milan', from: 'Oslo', cost: 2500, scale: false},
+    {id: 4, to: 'New York', from: 'Viena', cost: 750, scale: true},
+    {id: 5, to: 'Tokyo', from: 'Sao Pablo', cost: 900, scale: true},
+    {id: 6, to: 'Las Palmas de Gran Canaria', from: 'Menorca', cost: 1200, scale: false},
+    {id: 7, to: 'Tanger', from: 'París', cost: 1100, scale: false},
+    {id: 8, to: 'Los Angeles', from: 'Cuba', cost: 300, scale: false},
+    {id: 9, to: 'Sevilla', from: 'Barcelona', cost: 400, scale: false}
 ];
 
 consulta();

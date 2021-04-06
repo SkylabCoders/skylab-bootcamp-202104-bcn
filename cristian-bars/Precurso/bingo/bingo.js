@@ -55,7 +55,7 @@ function getNumsCard(){
     
     //A continuación crear una nueva array para distribuir los 15 numeros en tres filas y ordenados
     console.log(bingoNumbers);
-    i=0;
+    let i=0;
     for(let j=0;j<3;j++){
         for(let h=0;h<5;h++){
             bingoCard[j][h]=bingoNumbers[i];
@@ -90,8 +90,8 @@ function runGame(bingoCard){
     console.log("Juguamos con el numero " + alterNum);
     
     //Comprobar si el numero se encuentra dentro de la carta del jugador
-    for(j=0;j<3;j++){
-        for(k=0;k<5;k++){
+    for(let j=0;j<3;j++){
+        for(let k=0;k<5;k++){
             if(alterNum === bingoCard[j][k]){
                 bingoCard[j][k]="x";
                 count++;
@@ -147,7 +147,7 @@ function runGame(bingoCard){
 function playNumber(){
     numPlay=false;
     do {
-        alterNum = getRandomNumber();
+        let alterNum = getRandomNumber();
         if(!leftNumbers.includes(alterNum)) {
             leftNumbers.push(alterNum);
             numPlay = true;
