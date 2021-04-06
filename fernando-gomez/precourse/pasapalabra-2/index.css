@@ -72,17 +72,11 @@ tbody tr:hover {
     border-radius: 20%;
     margin-bottom: 12vmin;
 }
-/* 
-.questions{
-    outline: none;
-    font-size: 4vmin;
-    background: rgb(0, 102, 216);
-    color: white;
-    padding: 0.8vmin 0.8vmin 0.8vmin 0.8vmin;
-    border-radius: 20%;
-} */
 
 #instructions{
+    margin: auto;
+    text-align: center;
+    grid-area: 1 / 1 / span 3 / span 1;
     font-size: 3vmin;
 }
 
@@ -90,6 +84,9 @@ tbody tr:hover {
     margin: auto;
     font-size: 5vmin;
     display: none;
+    margin: auto;
+    text-align: center;
+    grid-area: 3 / 1 / span 1 / span 1;
 }
 
 #answers{
@@ -189,20 +186,6 @@ tbody tr:hover {
     padding: 0.4vmin 0.45vmin 0.6vmin 0.45vmin;
     background: radial-gradient(circle at 1vmin 1vmin, #1da8f8, #000);
 }
-
-#instructions {
-    margin: auto;
-    text-align: center;
-    grid-area: 1 / 1 / span 3 / span 1;
-    font-size: 3vmin;
-}
-
-#questions {
-    margin: auto;
-    text-align: center;
-    grid-area: 3 / 1 / span 1 / span 1;
-}
-
 
 .input {
     grid-area: 4 / 1 / span 1 / span 1;

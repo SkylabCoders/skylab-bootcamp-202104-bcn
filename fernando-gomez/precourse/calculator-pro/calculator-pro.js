@@ -1,6 +1,6 @@
 function calculator (){
 
-    let results=[0,0,0,0];
+    let results=[];
     let inputNumbers;
     let answer;
     let squareRootResult;
