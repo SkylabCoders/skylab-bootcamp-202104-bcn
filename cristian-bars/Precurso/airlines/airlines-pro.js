@@ -180,7 +180,7 @@ vuelos = [
     {id: 09, to: 'Sevilla', from: 'Barcelona', cost: 400, scale: false}
 ];
 
-consulta(vuelos);
+consulta();
 
 
 
