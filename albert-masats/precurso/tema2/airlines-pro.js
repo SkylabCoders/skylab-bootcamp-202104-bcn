@@ -2,6 +2,7 @@
 let userName = null;
 let easyView = [];
 let acc = 0;
+let scaleText = null;
 const scaleArr = [];
 const last5Arr = [];
 let addFlights = {};
@@ -18,30 +19,30 @@ let newFlightSchedule1;
 
 
 const flightSchedule = [
-    { id: 00, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
+    { id: 0, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
 
-    { id: 01, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
+    { id: 1, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
 
-    { id: 02, to: 'Los Angeles', from: 'Madrid', cost: 1100, scale: true },
+    { id: 2, to: 'Los Angeles', from: 'Madrid', cost: 1100, scale: true },
 
-    { id: 03, to: 'Paris', from: 'Barcelona', cost: 210, scale: false },
+    { id: 3, to: 'Paris', from: 'Barcelona', cost: 210, scale: false },
 
-    { id: 04, to: 'Roma', from: 'Barcelona', cost: 150, scale: false },
+    { id: 4, to: 'Roma', from: 'Barcelona', cost: 150, scale: false },
 
-    { id: 05, to: 'London', from: 'Madrid', cost: 200, scale: false },
+    { id: 5, to: 'London', from: 'Madrid', cost: 200, scale: false },
 
-    { id: 06, to: 'Madrid', from: 'Barcelona', cost: 90, scale: false },
+    { id: 6, to: 'Madrid', from: 'Barcelona', cost: 90, scale: false },
 
-    { id: 07, to: 'Tokyo', from: 'Madrid', cost: 1500, scale: true },
+    { id: 7, to: 'Tokyo', from: 'Madrid', cost: 1500, scale: true },
 
-    { id: 08, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
+    { id: 8, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
 
-    { id: 09, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
+    { id: 9, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
 ];
 
 
 do{
-    let userName = prompt("Introduce username");
+    userName = prompt("Introduce username");
     if (userName !== null) {
         alert(`Welcome to Skylab Airlines ${userName}! \uD83D\uDE00`);
     }else{
@@ -57,7 +58,7 @@ function viewFlights () {
         }else{
             scaleText = ' is a direct flight';
         }
-        newFlightSchedule =`
+        let newFlightSchedule =`
 Flight with ID: ${flightSchedule[i].id}, departure: ${flightSchedule[i].from}, and destination: ${flightSchedule[i].to} costs ${flightSchedule[i].cost}€ and${scaleText}`;
         easyView.push(newFlightSchedule);
     }
@@ -69,7 +70,7 @@ Flight with ID: ${flightSchedule[i].id}, departure: ${flightSchedule[i].from}, a
 viewFlights(); 
 
 function viewFlightsConsole () {
-    for (i=0; i < flightSchedule.length; i++) {
+    for (let i=0; i < flightSchedule.length; i++) {
         if(flightSchedule[i].scale === true) {
             scaleText = ' is a transit flight';
         }else{
@@ -147,7 +148,7 @@ function AdminUser() {
                     addFlights.from = from;
                 
                     do {
-                        let cost = prompt('Introduce cost');
+                        cost = prompt('Introduce cost');
 
                         if (cost === null) {  
                             return;
@@ -287,7 +288,7 @@ The flight with ID: ${flightSchedule[i].id} costs ${priceEq}€`);
         alert(priceArr);
             
         function buyId() {
-            let buy = prompt('Introduce ID to select purchase');
+            buy = prompt('Introduce ID to select purchase');
             if (buy === null) {
                 alert('Bye!');
                 return;
