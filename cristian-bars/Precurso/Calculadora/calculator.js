@@ -2,11 +2,11 @@ function operaciones(num1,num2){
     if (num1 != "" && num2 != ""){
         
         resultado = new Array()
-        let operaciones = [num1+num2,num1-num2,num1*num2,num1/num2];
+        let operations = [num1+num2,num1-num2,num1*num2,num1/num2];
         let signos = ["+", "-", "*", "/"]
         
-        for (let i=0;i<operaciones.length;i++){
-            opera = operaciones[i];
+        for (let i=0;i<operations.length;i++){
+            opera = operations[i];
             operacion = num1 + " " + signos[i] + " " + num2 + " = " + opera;
             console.log(operacion);
         }
