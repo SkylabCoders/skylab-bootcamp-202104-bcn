@@ -16,7 +16,6 @@ function obtainNumbers(){
           console.log('No has escrito nada');
           console.log('');
       }else if(nums.length === 1){
-         // console.log("La raiz cuadrada del número insertado es: " + Math.sqrt(nums[i]).toFixed(3));
          console.log("La raiz cuadrada del número insertado es: " + Math.round(Math.sqrt(nums[i])*1000)/1000);
          console.log('');
       }else{

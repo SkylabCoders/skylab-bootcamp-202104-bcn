@@ -46,8 +46,8 @@ function chosingBingoCard() {
 
     if (chosenBingoCard !== "yes") { // Si no queremos ese cartón que nos vuelva a preguntar que cartón queremos
 
-        chosenCard = chosingBingoCard();
-        return chosenCard;
+        return chosingBingoCard();
+
     }
 
     return generateCard;
@@ -89,7 +89,9 @@ function matchNumber(chosenCard) {
     console.clear()
     console.log(`Número de la nueva bola: ${randomNum}`);
 
-    let line1 = line2 = line3 = "";
+    let line1 = "";
+    let line2 = "";
+    let line3 = "";
 
     // Recorremos el array chosenCard, que es nuestro cartón
     for (let i = 0; i < chosenCard.length; i++) {
@@ -197,7 +199,7 @@ function nextTurn(chosenCard, nameOfUser) {
     let next = confirm('¿Desea continuar?'); // Confirm para continuar
 
     // Si continuamos, que ejecute otra vez matchNumbers para seguir poniendo las X y mientras allMatched sea true,
-    // que nos vaya preguntando si queremos continuar, sino en el método every() anterior en la función matchNumber 
+    // que nos vaya preguntando si queremos continuar, sino en el method every() anterior en la función matchNumber 
     // allMatched será true y significa, que ya hemos completado el cartón.
     // Si no queremos continuar, salimos y nos muestra un mensaje de despedida.
     if (next) {
@@ -223,7 +225,7 @@ function playAgain() {
     allMatched = false;
     score = 2000;
     numbers = [];
-    
+
 
     let anotherPlay = prompt("¿Quieres jugar de nuevo? Responde con yes o no");
 

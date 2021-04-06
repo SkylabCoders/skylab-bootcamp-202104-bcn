@@ -1,4 +1,4 @@
-// Función que enbarca todo el funcionamiento de la calculadora
+// Función que enbarca el funcionamiento de la calculadora
 function calculator() {
 
     // Variables que obtienen el div del HTML
@@ -21,12 +21,12 @@ function calculator() {
         currentNumbers.textContent = "";
     }
 
-    // Método que crea un onClick en el botón AC, que elimina todo lo de la pantalla de la calculadora
+    // Method que crea un onClick en el botón AC, que elimina lo que hay dentro de la pantalla de la calculadora
     allClear.addEventListener('click', () => {
         clearDisplay();
     })
 
-    // Método para eliminar el último número que hemos escrito, por si nos hemos equivocado
+    // Method para eliminar el último número que hemos escrito, por si nos hemos equivocado
     clear.addEventListener('click', () => {
         // Slice: le pasamos dos parametros, 0 es el starting point y el -1 se refiere a que empesamos desde el final
         currentNumbers.textContent = currentNumbers.textContent.toString().slice(0, -1);
@@ -40,35 +40,35 @@ function calculator() {
         })
     })
 
-    // Método para hacer la suma.
+    // Method para hacer la suma.
     additionOperation.addEventListener('click', () => {
         firstOperant = currentNumbers.textContent; // Guardamos el número introducido en la calculadora en firstOperant
         operationSign = "+"; // Guardamos el signo de la operación para utilizarlo en el switch
         clearDisplay();
     })
 
-    // Método para hacer la resta.
+    // Method para hacer la resta.
     substractOperation.addEventListener('click', () => {
         firstOperant = currentNumbers.textContent; // Guardamos el número introducido en la calculadora en firstOperant
         operationSign = "-"; // Guardamos el signo de la operación para utilizarlo en el switch
         clearDisplay();
     })
 
-    // Método para hacer la multiplicación.
+    // Method para hacer la multiplicación.
     multiplyOperation.addEventListener('click', () => {
         firstOperant = currentNumbers.textContent; // Guardamos el número introducido en la calculadora en firstOperant
         operationSign = "x"; // Guardamos el signo de la operación para utilizarlo en el switch
         clearDisplay();
     })
 
-    // Método para hacer la division.
+    // Method para hacer la division.
     divisionOperation.addEventListener('click', () => {
         firstOperant = currentNumbers.textContent; // Guardamos el número introducido en la calculadora en firstOperant
         operationSign = "÷"; // Guardamos el signo de la operación para utilizarlo en el switch
         clearDisplay();
     })
 
-    // Método el cual guarda el segundo número que añadimos a la calculadora y luego llama a la función showResult()
+    // Method el cual guarda el segundo número que añadimos a la calculadora y luego llama a la función showResult()
     equal.addEventListener('click', () => {
         secondOperant = currentNumbers.textContent;
         showResult();

@@ -481,7 +481,7 @@ let createRosco = () => {
     }
     return rosco;
 }
-let rosco = createRosco(); // Llamamos a la función
+let createdRosco = createRosco(); // Llamamos a la función
 
 // Función que nos permite mostrar los elementos de HTML que tenian display none en el css
 let displayElements = () => {
@@ -508,7 +508,7 @@ let showQuestions = () => {
     // {letter: "a", question: {…}}
     // dentro de question lo que tenemos son la pregunta en si y la respuesta:
     //question: {answer: "abducir", question: "CON LA A. Dicho de una supuesta criatura extraterrestre: Apoderarse de alguien"}
-    let question = rosco[answerNumber];
+    let question = createdRosco[answerNumber];
     pasapalabraQuestion.textContent = question.question.question;
     userAnswer = document.getElementById("written-answer").value = "";
     displayElements();
@@ -518,8 +518,8 @@ let showQuestions = () => {
 // Función para comprobar si la pregunta introducida por el usuario es correcta
 let checkUserAnswer = () => {
 
-    let question = rosco[answerNumber]; // Tiene la misma funcionalidad de la variable question anterior
-    let letter = rosco[answerNumber].letter.toUpperCase(); // Obtenemos la letra de cada pregunta y la pasamos a mayúscula
+    let question = createdRosco[answerNumber]; // Tiene la misma funcionalidad de la variable question anterior
+    let letter = createdRosco[answerNumber].letter.toUpperCase(); // Obtenemos la letra de cada pregunta y la pasamos a mayúscula
     userAnswer = document.getElementById("written-answer").value; // Obtenemos la respuesta que el usuario ha puesto en el input
 
     if (question.question.answer.toLowerCase() === userAnswer.toLowerCase()) {
@@ -567,7 +567,7 @@ let roscoIncompleted = () => {
 
 
 // rosco.push(rosco.splice(old_index,1)[0])
-// En el mismo array rosco hacemos push del array con el método splice().
+// En el mismo array rosco hacemos push del array con el method splice().
 // Ejemplo: Tenemos var arr = ["a","b","c","d","e"]; y queremos mover la letra A a la última posición
 // old_index es 0, ya que la posición del array es: 0,1,2,3,4
 // 1 es que queremos eliminar esa letra
@@ -580,7 +580,7 @@ let roscoIncompleted = () => {
 // En este caso al hacer pasapalabra, no estamos incrementando el valor de answerNumber, así que el número de la posición se mantendrá
 // y no se irá sumando hasta los 27
 let pasapalabra = old_index => {
-    rosco.push(rosco.splice(old_index, 1)[0]);
+    createdRosco.push(createdRosco.splice(old_index, 1)[0]);
 }
 
 
@@ -652,7 +652,7 @@ userAnswer.addEventListener("keyup", e => {
 
 // onclick que nos permite pulsar en el botón reponder
 responderButton.onclick = () => {
-    checkUserAnswer(answerNumber);
+    checkUserAnswer();
     keepPlaying();
 }
 
@@ -724,14 +724,15 @@ let usersRanking = () => {
 
 // Reseteamos todas las variables para que el jugador pueda empezar una nueva partida
 let gameReset = () => {
-    rosco = createRosco();
+    createdRosco = createRosco();
     answerNumber = 0;
     correctAnswers = 0;
     incorrectAnswers = 0;
     counter = 170;
     clearInterval(crono); // Paramos el cronómetro
 
-    for (let i = 0; i < singleLetter.length; i++) {
-        singleLetter[i].style.backgroundImage = "radial-gradient(#0074d9, #193b58)";
+
+    for(let letter of singleLetter){
+        letter.style.backgroundImage = "radial-gradient(#0074d9, #193b58)";
     }
 }

@@ -316,11 +316,10 @@ el botón de responder, el de pasapalabra y el de terminar juego */
     display: none;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 25px;
     background-image: radial-gradient(#0074d9, #004b8d);
     border: 2px solid white;
     border-radius: 50%;
-    font-size: 25px;
     width: 50px;
     height: 50px;
     margin-left: 100px;
