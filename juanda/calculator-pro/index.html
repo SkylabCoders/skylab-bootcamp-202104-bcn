@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="text/javascript"></script>
+    
+    <script src="display.js" type="text/javascript"></script>
+    
+    <title>Calcultadora con HTML,CSS y JS -byJD</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="display-line">
+                <div id="display-one"></div>
+                <div id="display-two"></div>
+            </div>
+            <div class="first-line">
+                <button class="fat element" onclick="display.deleteAll()">AC</button>
+                <button class="element" onclick="display.delete()">&#8592;</button>
+                <button class="operacion" value ="dividir">&#247;</button>
+            </div> 
+           <div class="second-line">
+               <button class="element number" id ="siete ">7</button>
+               <button class="element number" id ="ocho">8</button>
+               <button class="element number" id ="nueve">9</button>
+               <button class="operacion" value ="multiplicar">X</button>
+           </div>
+           <div class="third-line">
+                <button class="element number" id ="cuatro">4</button>
+                <button class="element number" id ="cinco">5</button>
+                <button class="element number" id ="seis">6</button>
+                <button class="operacion" value ="restar">-</button>
+            </div>
+            <div class="fourth-line">
+                <button class="element number" id ="uno">1</button>
+                <button class="element number" id ="dos">2</button>
+                <button class="element number" id ="tres">3</button>
+                <button class="operacion" value ="sumar">+</button>
+            </div>
+            <div class="fifth-line">
+                <button class="fat element number" id ="cero">0</button>
+                <button class="element number" id ="coma">,</button>
+                <button class="operacion" value ="igual">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="indice.js" type="text/javascript" defer></script> 
+    
+</body>
+</html>
