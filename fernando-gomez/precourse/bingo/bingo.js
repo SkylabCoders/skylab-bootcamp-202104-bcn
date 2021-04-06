@@ -333,7 +333,7 @@ function bingo(){
     let newGame = false;
     //Shows the ranking
     console.log('Esta es la tabla clasificatoria\n\n');
-    showRanking(ranking);
+    showRanking();
     showPointsSystem();
     //Checks that user inputs a valid name
     while(!checkOwner){
@@ -392,7 +392,7 @@ function bingo(){
             //Alerts the user he won
             alert(`¡¡¡ BINGO !!!\n¡Felicidades ${card.owner}, has completado el cartón en ${newNumbersArray.length} turnos!\nMira como has quedado en la tabla clasificatoria`);
             //Shows the actual ranking
-            showRanking(ranking);
+            showRanking();
             //Asks the user for a new game
             newGame = confirmNewGame();
 
