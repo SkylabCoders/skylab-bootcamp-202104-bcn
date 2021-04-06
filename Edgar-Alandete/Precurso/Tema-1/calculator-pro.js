@@ -1,23 +1,25 @@
 function calculator() {
-  let anotherOperation = "N"
+  let anotherOperation = "N";
   do {
     let numbers = introduceNumbers();
     let squareRoot = isSquareRoot(numbers);
 
-    if(numbers.length > 0) {
+    if (numbers.length > 0) {
       let results = calculate(numbers, squareRoot);
       printResults(results, squareRoot);
-    }else {
-      console.log("No hemos podido realizar los cálculos debido a que se han introducido datos incorrectos.");
+    } else {
+      console.log(
+        "No hemos podido realizar los cálculos debido a que se han introducido datos incorrectos."
+      );
     }
 
     anotherOperation = prompt("Do you want to introduce more numbers Y/N:");
-  }while(anotherOperation !== null && anotherOperation.toUpperCase() === "Y");
+  } while (anotherOperation !== null && anotherOperation.toUpperCase() === "Y");
   console.log("Bye");
 }
 
 function printResults(results, squareRoot) {
-  if(squareRoot) {
+  if (squareRoot) {
     console.log("Square Root = " + results[0]);
   } else {
     console.log("El resultado de la suma es: " + results[0]);
@@ -29,7 +31,7 @@ function printResults(results, squareRoot) {
 
 function calculate(numbers, squareRoot) {
   let results = [];
-  if(squareRoot) {
+  if (squareRoot) {
     results[0] = calculateSquareRoot(numbers[0]);
   } else {
     results[0] = sum(numbers);
@@ -55,7 +57,6 @@ function minus(numbers) {
     result -= numbers[i];
   }
   return result.toFixed(3);
-
 }
 
 function multiply(numbers) {
@@ -66,7 +67,8 @@ function multiply(numbers) {
   return result.toFixed(3);
 }
 
-function divide(numbers) { let result = numbers[0];
+function divide(numbers) {
+  let result = numbers[0];
   for (i = 1; i < numbers.length; i++) {
     result /= numbers[i];
   }
@@ -77,31 +79,30 @@ function calculateSquareRoot(number) {
   return Math.sqrt(number).toFixed(3);
 }
 
-function isSquareRoot (numbers) {
+function isSquareRoot(numbers) {
   return numbers.length === 1;
 }
 
-function isInvalidNumber(number) {
-  return isNaN(number);
+function isValidNumber(number) {
+  return !isNaN(number);
 }
 
 function introduceNumbers() {
-
-  let number = '';
+  let number = "";
   let numbers = [];
   do {
-    number = prompt("Introduce numbers or type END to finish the introduction: ");
-    
-    if (isInvalidNumber(number) && number.toUpperCase() !== "END") {
-      console.log("You have to introduce a valid number. This is not a number"); 
-    }else {
-      numbers.push(number);
-    }
+    number = prompt(
+      "Introduce numbers or type END to finish the introduction: "
+    );
 
-  }while(number !== null && number.toUpperCase() !== "END");
+    if (isValidNumber(number) && number.toUpperCase() !== "END") {
+      numbers.push(number);
+    } else {
+      console.log("You have to introduce a valid number. This is not a number");
+    }
+  } while (number !== null && number.toUpperCase() !== "END");
 
   numbers.pop();
 
   return numbers;
 }
-

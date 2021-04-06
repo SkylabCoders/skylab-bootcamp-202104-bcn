@@ -13,7 +13,7 @@ function calculator() {
   let secondNumber = introduceNumber();
   let squareRoot = isSquareRoot(firstNumber, secondNumber);
 
-  if (isInvalidNumber(firstNumber) || isInvalidNumber(secondNumber)) {
+  if (isValidNumber(firstNumber) || isValidNumber(secondNumber)) {
     console.log("No se han podido realizar los cálculos");
   } else {
     let results = calculate(firstNumber, secondNumber, squareRoot);
@@ -80,15 +80,15 @@ function isSquareRoot(firstNumber, secondNumber) {
   );
 }
 
-function isInvalidNumber(number) {
-  return isNaN(number);
+function isValidNumber(number) {
+  return !isNaN(number);
 }
 
 function introduceNumber() {
   let number = prompt("Number: ");
-  if (isInvalidNumber(number)) {
-    console.log("You have to introduce a valid number. This is not a number");
-  } else {
+  if (isValidNumber(number)) {
     return number;
+  } else {
+    console.log("You have to introduce a valid number. This is not a number");
   }
 }
