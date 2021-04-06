@@ -209,7 +209,7 @@ let turn = 1
 let actualQuestion = 0
 
 while (play === true) {
-	answer = null
+	let answer = null
 	if (actualQuestion > QUESTIONS.length - 1) {
 		actualQuestion = 0
 		console.log('Last one...')
@@ -227,7 +227,6 @@ while (play === true) {
 				console.log('Next word...')
 				turn++
 				actualQuestion++
-				answer = null
 				break
 			case 'end':
 				turn++
