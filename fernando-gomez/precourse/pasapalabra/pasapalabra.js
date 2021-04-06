@@ -132,13 +132,10 @@ function confirmNewGame(){
     switch (confirmation){
 
         case 'N':
-            end();
-            return false;
-        
         case null:
             end();
             return false;
-        
+
         default:
             return true;
     }
@@ -153,11 +150,16 @@ function allDonutAnswered(donut){
 
     let result = true;
 
-    for(let i=0; i< donut.length; i++) {
-        if(!donutLetterAnswered(donut[i])){
+    for (let index of donut) {
+        if(!donutLetterAnswered(donut[index])){
             result = false;
         }
     }
+    // for(let i=0; i< donut.length; i++) {
+    //     if(!donutLetterAnswered(donut[i])){
+    //         result = false;
+    //     }
+    // }
 
     return result;
 }
@@ -185,9 +187,13 @@ function sortRanking(rankingArray){
 //Shows the ranking
 function showRanking(){
 
-    for(let i=0; i < ranking.length; i++){
-        console.log(`${ranking[i].player} ---> ${ranking[i].points} puntos`);
+    for (let index of ranking) {
+        console.log(`${ranking[index].player} ---> ${ranking[index].points} puntos`);
     }
+
+    // for(let i=0; i < ranking.length; i++){
+    //     console.log(`${ranking[i].player} ---> ${ranking[i].points} puntos`);
+    // }
     console.log('\n\n');
 }
 
@@ -202,9 +208,7 @@ function end(){
 //Returns one of the possible questions of the letter given
 function chooseQuestionOfLetter(letter){
 
-    let randomQuestionNumber = Math.round(Math.random()*(questions[letter].length - 1));
-
-    return randomQuestionNumber;
+    return Math.round(Math.random()*(questions[letter].length - 1));
 }
 
 function generateDonut(){
@@ -242,7 +246,6 @@ function pasapalabra() {
     //Checks that user inputs a valid name
     while(!checkPlayer){
         if(player === null){
-            checkPlayer = true;
             end();
             return 0;
         } else if(player === ''){
@@ -256,23 +259,23 @@ function pasapalabra() {
 
     while(!allDonutAnswered(donut)){
 
-        for(let i=0; i< donut.length; i++) {
+        for(let index in donut) {
             //Executes if the letter doesn't have an answer yet
-            if(!donutLetterAnswered(donut[i])){
+            if(!donutLetterAnswered(donut[index])){
                 //Takes the correspondent question and answer
-                question = donut[i].question;
-                answer = donut[i].answer;
-                userAnswer = prompt(question);
+                let question = donut[index].question;
+                let answer = donut[index].answer;
+                let userAnswer = prompt(question);
 
                 if(userAnswer !== null) userAnswer = userAnswer.toLowerCase();
 
                 if(userAnswer === answer){
 
                     alert('¡ Has acertado !');
-                    donut[i].status = 1;
+                    donut[index].status = 1;
                     hits++;
                 //If the user wants to exit the game
-                } else if((userAnswer === 'end') || ((userAnswer === null))){
+                } else if(userAnswer === 'end' || userAnswer === null){
 
                     alert(`¡ Has acertado ${hits} preguntas !\n¡ Has fallado ${fails} preguntas !`);
                     end();
@@ -283,7 +286,7 @@ function pasapalabra() {
                 } else if((userAnswer !== 'pasapalabra') && (userAnswer !== '')){
 
                 alert('Has fallado...');
-                donut[i].status = -1;
+                donut[index].status = -1;
                 fails++;
                 }
             }
@@ -303,7 +306,7 @@ function pasapalabra() {
     showRanking();
 
     //Player can play another time
-    newGame = confirmNewGame();
+    let newGame = confirmNewGame();
 
         if(newGame){
             pasapalabra();
