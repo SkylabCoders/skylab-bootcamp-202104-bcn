@@ -63,7 +63,7 @@ let yourName = null;
 function initializePasapalabra () {
     questionTrue = 0;
     questionFalse = 0;
-    for (i=0; i<QUESTIONS.length;i++) {
+    for (let i=0; i<QUESTIONS.length;i++) {
         QUESTIONS[i].status = 0;
     }
     randomQuestion();
@@ -79,7 +79,7 @@ function initializePasapalabra () {
 }
 
 function questionLetter() {
-    for (i=0; i<QUESTIONS.length; i++) {
+    for (let i=0; i<QUESTIONS.length; i++) {
         if (QUESTIONS[i].status === 0) {
             let letterAnswer = prompt(QUESTIONS[i].question);
             if(letterAnswer === null) {
@@ -105,7 +105,7 @@ function questionLetter() {
 }
 
 function randomQuestion() {
-    for(j=0; j<QUESTIONS.length; j++) {
+    for(let j=0; j<QUESTIONS.length; j++) {
         let k = Math.floor(Math.random() * 2) +1;
         if (k === 2) {
             QUESTIONS[j].question = QUESTIONS[j].question2;
