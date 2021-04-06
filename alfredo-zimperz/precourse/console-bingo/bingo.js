@@ -98,10 +98,6 @@ const showCard = () => {
 const showMatchedNumbers = () => {
 	let numbers = ''
 
-	// for (let item of matchedNumbers.keys()) {
-	// 	numbers = numbers + item + ' '
-	// }
-
 	matchedNumbers.forEach((item) => {
 		numbers = numbers + item + ' '
 	})
@@ -123,7 +119,7 @@ const showFoundedNumbers = () => {
 
 const matchNumbers = (number) => {
 	let newCard = card.map((item) => {
-		if ((item.number === number) & (item.matched === false)) {
+		if (item.number === number && item.matched === false) {
 			matchedNumbers.push(number)
 			return { ...item, matched: true }
 		}
@@ -135,13 +131,13 @@ const matchNumbers = (number) => {
 //countNumbersLeft
 
 const countNumbersLeft = () => {
-	let foundedNumbers = 0
+	let countedNumbers = 0
 	card.forEach((item) => {
 		if (item.matched === true) {
-			foundedNumbers++
+			countedNumbers++
 		}
 	})
-	numbersLeft = CARD_LENGTH - foundedNumbers
+	countedNumbers = CARD_LENGTH - countedNumbers
 }
 
 //verifyLines
@@ -198,7 +194,6 @@ const askToContinue = () => {
 
 	if (newAction === false) {
 		playing = false
-		return
 	} else {
 		turn++
 		points--
@@ -234,7 +229,7 @@ const askToContinue = () => {
 
 //askToPlayAgain
 const askToPlayAgain = () => {
-	playAgain = confirm('¿Do you want to play again?')
+	let playAgain = confirm('¿Do you want to play again?')
 	if (playAgain) {
 		console.clear()
 		playing = true

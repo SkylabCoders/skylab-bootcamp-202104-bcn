@@ -21,8 +21,8 @@ const LAST_RESULT_BUTTON = getElementByName('LAST_RESULT_BUTTON')
 const DECIMAL_BUTTON = getElementByName('DECIMAL_BUTTON')
 const RESULT_BUTTON = getElementByName('RESULT_BUTTON')
 const CLEAN_ALL_BUTTON = getElementByName('CLEAN_ALL_BUTTON')
-OPERATOR_BUTTONS = []
-NUMBER_BUTTONS = []
+let OPERATOR_BUTTONS = []
+let NUMBER_BUTTONS = []
 
 const OPERATOR_BUTTON_NAMES = [
 	'DIVISION_BUTTON',
@@ -158,6 +158,8 @@ const calculateResult = () => {
 		hasDecimal = false
 
 		if (firstNumber != null && secondNumber !== null && operator != null) {
+			let result
+
 			switch (operator) {
 				case '/':
 					if (secondNumber === 0) {

@@ -1,14 +1,14 @@
 let flights = [
-	{ id: 00, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
-	{ id: 01, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
-	{ id: 02, to: 'Los Angeles', from: 'Madrid', cost: 1100, scale: true },
-	{ id: 03, to: 'Paris', from: 'Barcelona', cost: 210, scale: false },
-	{ id: 04, to: 'Roma', from: 'Barcelona', cost: 150, scale: false },
-	{ id: 05, to: 'London', from: 'Madrid', cost: 200, scale: false },
-	{ id: 06, to: 'Madrid', from: 'Barcelona', cost: 90, scale: false },
-	{ id: 07, to: 'Tokyo', from: 'Madrid', cost: 1500, scale: true },
-	{ id: 08, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
-	{ id: 09, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
+	{ id: 0, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
+	{ id: 1, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
+	{ id: 2, to: 'Los Angeles', from: 'Madrid', cost: 1100, scale: true },
+	{ id: 3, to: 'Paris', from: 'Barcelona', cost: 210, scale: false },
+	{ id: 4, to: 'Roma', from: 'Barcelona', cost: 150, scale: false },
+	{ id: 5, to: 'London', from: 'Madrid', cost: 200, scale: false },
+	{ id: 6, to: 'Madrid', from: 'Barcelona', cost: 90, scale: false },
+	{ id: 7, to: 'Tokyo', from: 'Madrid', cost: 1500, scale: true },
+	{ id: 8, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
+	{ id: 9, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
 	{ id: 10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, scale: false }
 ]
 
@@ -51,17 +51,15 @@ function askForuser() {
 	console.clear()
 	console.log(`¡Hola ${user}, bienvenido a Skylab Airlines!`)
 	insertSeparator(' - ', 20)
-	return
 }
 
 function askForRole() {
 	if (working === false) {
 		return
 	}
-	role = prompt('Presione "A" si es administrador o "U" si es usuario')
+	let role = prompt('Presione "A" si es administrador o "U" si es usuario')
 	if (role === null) {
 		working = false
-		return
 	} else {
 		insertSeparator(' * ', 20)
 		switch (role.toLowerCase()) {
@@ -78,7 +76,6 @@ function askForRole() {
 				break
 		}
 		insertSeparator(' * ', 20)
-		return
 	}
 }
 
@@ -88,7 +85,6 @@ function askForNewAction(role) {
 	)
 	if (newAction === false) {
 		working = false
-		return
 	} else {
 		if (role === 'admin') {
 			initAdminMode()
@@ -166,10 +162,9 @@ function initUserMode() {
 	}
 	console.clear()
 	console.log(`¡Bienvenido usuario ${user}!`)
-	targetPrice = prompt('Cual es su presupuesto?')
+	let targetPrice = prompt('Cual es su presupuesto?')
 	if (targetPrice === null) {
 		working = false
-		return
 	} else {
 		let exactPrice = flights.filter(
 			(flight) => flight.cost === Number(targetPrice)
@@ -201,7 +196,6 @@ function initUserMode() {
 			showFlights(higherPrice)
 		}
 		insertSeparator('-', 80)
-		return
 	}
 }
 
@@ -209,13 +203,12 @@ function askToBuy() {
 	if (working === false) {
 		return
 	}
-	flightNumber = prompt(
+	let flightNumber = prompt(
 		'Si desea comprar un vuelo, ingrese su numero, sino presione cancelar'
 	)
 
 	if (flightNumber === null) {
 		working = false
-		return
 	} else {
 		let selectedFlight = flights.find(
 			(flight) => flight.id === Number(flightNumber)
@@ -250,7 +243,6 @@ function adminActionSelect() {
 	)
 	if (action === null) {
 		working = false
-		return
 	} else {
 		switch (action.toLowerCase()) {
 			case 'e':
