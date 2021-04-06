@@ -5,7 +5,7 @@ function operaciones(num1,num2){
         let operaciones = [num1+num2,num1-num2,num1*num2,num1/num2];
         let signos = ["+", "-", "*", "/"]
         
-        for (i=0;i<operaciones.length;i++){
+        for (let i=0;i<operaciones.length;i++){
             opera = operaciones[i];
             operacion = num1 + " " + signos[i] + " " + num2 + " = " + opera;
             console.log(operacion);

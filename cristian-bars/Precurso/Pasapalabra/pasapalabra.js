@@ -42,7 +42,7 @@ function runGame(){
 
 //Función para introducir el nombre del participante
 function getName(){
-    yourName = prompt("Por favor, indicanos tu nombre");
+    let yourName = prompt("Por favor, indicanos tu nombre");
     if (yourName === "" || yourName === null){
         console.log("Tienes que poner un nombre!!");
         getName();
