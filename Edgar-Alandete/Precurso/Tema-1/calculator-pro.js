@@ -53,7 +53,7 @@ function sum(numbers) {
 
 function minus(numbers) {
   let result = numbers[0];
-  for (i = 1; i < numbers.length; i++) {
+  for (let i = 1; i < numbers.length; i++) {
     result -= numbers[i];
   }
   return result.toFixed(3);
@@ -61,7 +61,7 @@ function minus(numbers) {
 
 function multiply(numbers) {
   let result = numbers[0];
-  for (i = 1; i < numbers.length; i++) {
+  for (let i = 1; i < numbers.length; i++) {
     result *= numbers[i];
   }
   return result.toFixed(3);
@@ -69,7 +69,7 @@ function multiply(numbers) {
 
 function divide(numbers) {
   let result = numbers[0];
-  for (i = 1; i < numbers.length; i++) {
+  for (let i = 1; i < numbers.length; i++) {
     result /= numbers[i];
   }
   return result.toFixed(3);
