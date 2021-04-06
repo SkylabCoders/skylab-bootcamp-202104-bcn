@@ -84,7 +84,6 @@ tbody tr:hover {
     margin: auto;
     font-size: 5vmin;
     display: none;
-    margin: auto;
     text-align: center;
     grid-area: 3 / 1 / span 1 / span 1;
 }

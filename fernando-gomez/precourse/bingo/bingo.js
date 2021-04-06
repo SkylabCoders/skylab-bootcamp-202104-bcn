@@ -130,20 +130,17 @@ function confirm(card){
 
     let confirmation = prompt(`¿Quieres pasar al siguiente turno? \nPulsa Aceptar o escribe cualquier cosa para continuar. \nPulsa Cancelar o escribe N para salir`);
 
-    if(confimation === 'n'){
+    if(confirmation === 'n'){
         confirmation = 'N';
     }
     
     switch (confirmation){
 
         case 'N':
-            exit(card);
-            return true;
-        
         case null:
             exit(card);
             return true;
-        
+
         default:
             break;
     }
@@ -153,7 +150,7 @@ function confirmCard(card){
 
     let confirmation = prompt(`¿Quieres quedarte la carta? Escribe N o pulsa Cancelar para recibir una carta nueva. Escribe cualquier otra cosa o pulsa Aceptar para continuar con ella`);
 
-    if(confimation === 'n'){
+    if(confirmation === 'n'){
         confirmation = 'N';
     }
 
@@ -181,13 +178,10 @@ function confirmNewGame(){
     switch (confirmation){
 
         case 'N':
-            alert('¡Hasta la próxima!');
-            return false;
-        
         case null:
             alert('¡Hasta la próxima!');
             return false;
-        
+
         default:
             return true;
     }
@@ -239,7 +233,7 @@ function cardCompleted(card){
 
     let checkCard = true;
     //Runs all the card cheking if all elements are matched
-    for(let i=0; i<card.numbersArray.length; i++){
+    for(let i in card.numbersArray){
         if(card.numbersArray[i].matched === false){
             checkCard = false;
         }
@@ -253,7 +247,7 @@ function cardCompleted(card){
 //Updates a number of the card from not matched to matched
 function updateCard(card, number, turn){
 
-    for(let i=0; i < card.numbersArray.length; i++){
+    for(let i in card.numbersArray){
         if(card.numbersArray[i].number === number){
            card.numbersArray[i].matched = true;
            showCard(card);
@@ -264,9 +258,9 @@ function updateCard(card, number, turn){
 //Checks if all the elements of a line of a card with 15 elements are true.
 function lineReached(card, turn){
 
-    checkLine1 = true;
-    checkLine2 = true;
-    checkLine3 = true;
+    let checkLine1 = true;
+    let checkLine2 = true;
+    let checkLine3 = true;
     //Checks line 1 completely reached
     for(let i=0; i<4; i++){
 
@@ -338,7 +332,6 @@ function bingo(){
     //Checks that user inputs a valid name
     while(!checkOwner){
         if(owner === null){
-            checkOwner = true;
             alert('¡Hasta la próxima!');
             return 0;
         } else if(owner === ''){
@@ -352,7 +345,7 @@ function bingo(){
     let card = new Card(numbers, owner);
     let cardConfirmation = false;
     let newNumbersArray=[];
-    let exit = false;
+    let exitBool = false;
 
     console.log('¡ Este es tu cartón ! Confirma que quieres quedártelo\n');
 
@@ -369,9 +362,9 @@ function bingo(){
         cardConfirmation = confirmCard(card);
     }
     //Iterates until the card is completed or the user exits the game
-    while((!cardCompleted(card)) && (!exit)){
+    while((!cardCompleted(card)) && (!exitBool)){
 
-        newNumber = randomNumberGenerator(90);
+        let newNumber = randomNumberGenerator(90);
         //Creates a new number and checks if it doesn't already exist's
         while(newNumbersArray.includes(newNumber)){
             newNumber = randomNumberGenerator(90);
@@ -383,7 +376,7 @@ function bingo(){
 
         if(!cardCompleted(card)){
 
-            exit = confirm(card);
+            exitBool = confirm(card);
         } else {
             //When the card is completed, the points are calculated
             finalPoints = parseFloat(cardPoints(newNumbersArray.length)) + parseFloat(card.linePoints);
