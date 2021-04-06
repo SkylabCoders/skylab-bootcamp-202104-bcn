@@ -423,9 +423,7 @@ function deleteFlight(){
                 } else {
 
                     for(let i=0; i<flights.length;i++){
-                        if(flights[i].id === flightID){
                             includes = true;
-                        }
                     }
                 } if (includes){
 
