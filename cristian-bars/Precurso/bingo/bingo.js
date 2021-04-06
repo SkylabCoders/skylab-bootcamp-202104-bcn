@@ -32,7 +32,7 @@ function bingo (){
 //Funcion para recoger el nombre del participante
 function getName(){
     name = prompt("Indica tu nombre");
-    if (name === "" || name === null){
+    if (name == "" || name === null){
         console.log("Tienes que poner un nombre!!");
         getName();
     }
