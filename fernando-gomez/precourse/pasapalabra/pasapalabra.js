@@ -155,12 +155,6 @@ function allDonutAnswered(donut){
             result = false;
         }
     }
-    // for(let i=0; i< donut.length; i++) {
-    //     if(!donutLetterAnswered(donut[i])){
-    //         result = false;
-    //     }
-    // }
-
     return result;
 }
 //Returns true if a letter of a given donut is already answered
@@ -191,9 +185,6 @@ function showRanking(){
         console.log(`${ranking[index].player} ---> ${ranking[index].points} puntos`);
     }
 
-    // for(let i=0; i < ranking.length; i++){
-    //     console.log(`${ranking[i].player} ---> ${ranking[i].points} puntos`);
-    // }
     console.log('\n\n');
 }
 
@@ -264,8 +255,8 @@ function pasapalabra() {
             if(!donutLetterAnswered(donut[index])){
                 //Takes the correspondent question and answer
                 let question = donut[index].question;
-                let answer = donut[index].answer;
-                let userAnswer = prompt(question);
+                answer = donut[index].answer;
+                userAnswer = prompt(question);
 
                 if(userAnswer !== null) userAnswer = userAnswer.toLowerCase();
 

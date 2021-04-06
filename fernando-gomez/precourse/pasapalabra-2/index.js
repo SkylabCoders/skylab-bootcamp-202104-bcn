@@ -216,8 +216,8 @@ const allDonutAnswered = () => {
 
     let result = true;
 
-    for(let i=0; i< donut.length; i++) {
-        if(!donutLetterAnswered(donut[i])){
+    for(let index of donut) {
+        if(!donutLetterAnswered(donut[index])){
             result = false;
         }
     }
@@ -239,7 +239,7 @@ const chooseQuestionOfLetter = (letter) => {
 
 const generateDonut = () => {
 
-    let donut = [];
+    donut = [];
 
     let number;
     for(let letter in questions) {
@@ -486,8 +486,8 @@ const totalHits = () => {
 
     let result = 0;
 
-    for(let i=0; i< donut.length; i++) {
-        if(donut[i].status === 1){
+    for(let index of donut) {
+        if(donut[index].status === 1){
             result++;
         }
     }
@@ -498,8 +498,8 @@ const totalFails = () => {
 
     let result = 0;
 
-    for(let i=0; i< donut.length; i++) {
-        if(donut[i].status === -1){
+    for(let index of donut) {
+        if(donut[index].status === -1){
             result++;
         }
     }
@@ -589,7 +589,7 @@ const createRankingRankColumn = (rankingIndex) => {
 
 const createRankingPlayerColumn = (rankingIndex) => {
     const playerColumnElement = document.createElement('td');
-    const player = document.createTextNode(`${ranking[rankingIndex].player}`);
+    player = document.createTextNode(`${ranking[rankingIndex].player}`);
 
     playerColumnElement.appendChild(player);
 
