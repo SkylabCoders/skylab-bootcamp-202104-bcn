@@ -41,8 +41,8 @@ function calc(){
 }
 
 function limpiar(){
-    debugger
-    result.textContent = result.textContent;
+    //debugger
+    //result.textContent = result.textContent;
 }
 
 function resetear(){
