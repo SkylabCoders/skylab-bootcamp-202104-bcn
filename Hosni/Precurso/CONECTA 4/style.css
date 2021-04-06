@@ -1,0 +1,187 @@
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(0, 132, 255);
+}
+p, span {
+    color: white;
+}
+h3, h1 {
+    /* color: rgb(141, 0, 0); */
+    color: black;
+}
+button{
+    background-color: rgb(141, 0, 0);
+    border: 3px solid white;
+    border-radius: 80px;
+    color: white;
+    font-weight: bold;
+}
+span{
+    margin-top: 30px;
+}
+#player-turn {
+    color: black;
+    font-weight: bold;
+}
+.introduction{
+    display: flex;
+    flex-direction: row;
+}
+.presentacion{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.game-selection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    width: 550px;
+    margin-left: 50px;
+}
+.player-selection{
+    display: flex;
+    height: 30%;
+}
+.player-selection-text{
+    justify-content: center;
+}
+.userName-text{
+        background-color: rgb(141, 0, 0);
+        border: 3px solid white;
+        border-radius: 80px;
+        color: white;
+        visibility: hidden;
+        font-size: 29px;
+        width: 365px;
+        margin-left: 236px;
+        padding: 9px;
+}
+
+.errorNameInput{
+    color: black;
+    display: flex;
+    justify-content: center;
+    background-color: red;
+}
+
+.button-player-selection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30%;
+}
+.button-player-selection > button{
+    padding: 10px 50px;
+    margin-top: 10px;
+    width: 180px;
+}
+.input-player-selection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%
+}
+.text-player, .errorNameInput{
+    font-weight: bold;
+    font-family: cursive;
+}
+.color-player1{
+    color: red;
+}
+.color-player2{
+    color: yellow;
+}
+.font-size-input > input {
+    font-size: x-large;
+}
+.start-game{
+    margin: 30px;
+    padding: 30px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+.margin-left{
+    padding: 10px;
+    width: 224px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.margin-top{
+    margin-top: 15px;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.visibility-p1, .visibility-p2{
+    visibility: hidden;
+}
+.game{
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.turn, .timer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 3%;   
+    font-size: xx-large;
+    width: 30%;
+}
+.timer > span, .turn > span {
+    background-color: rgb(141, 0, 0);
+    border: 3px solid white;
+    border-radius: 80px;
+    /* width: 200px; */
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+#text-turn{
+    width: 300px;
+}
+.restart-exit-buttons{
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+#restart-exit-buttons > button {
+        padding: 20px;
+        font-size: x-large;
+        border: 8px double #3b79d0;    
+}
+.game-table{
+    width: 40%;
+    background-color: blue;
+    border-spacing: 20px;
+    border-radius: 60px;
+    border: 5px double black;
+}
+.row-table > td {
+    border-radius: 50%;
+    padding: 30px;
+    border: 2px solid black;
+    background-color: rgb(0 164 255);
+}
+.foot{
+    display: flex;
+    justify-content: space-around;
+}
+.table-foot {
+    display: flex;
+    flex-direction: column;
+}
+.half-circle {
+    width: 141px;
+    height: 6px;
+    background-color: blue;
+    border-top-left-radius: 110px;
+    border-top-right-radius: 110px;
+    border: 5px double black;
+}
