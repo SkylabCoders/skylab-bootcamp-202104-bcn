@@ -235,13 +235,13 @@ function userFunctions(){
         }while (price !== null)
 
 
-    let equalPriceFlights = flights.filter(flight => flight.cost === price)
+    let equalPriceFlights = flights.filter(flight => flight.cost == price)
         if (equalPriceFlights.length === 0) {
             console.log("No hay vuelos con un precio igual a su presupuesto.");
 
         } else {
             console.log("Los vuelos con un precio igual a su presupuesto son:")
-            seeAllFlights(equalPriceFlights);
+            seeAllFlights();
         }
     let overPriceFlights = flights.filter(flight => flight.cost > price)
             if (overPriceFlights.length === 0) {
