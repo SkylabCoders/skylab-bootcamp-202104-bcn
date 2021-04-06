@@ -6,6 +6,7 @@ const rankingArray = [];
 let numbersHat = [];
 let copiedArray = [];
 let bingoCounter = 900;
+let rankingPlayer;
 
 initBingo(); 
 
@@ -18,7 +19,6 @@ function initBingo() {
     console.log('Tu puntuación ha sido de '+totalPoints+' puntos!');
     ranking();
     playAgain();
-    return;
 }    
 
 function newName() {
@@ -45,7 +45,7 @@ function newCard() {
 }
 
 function NinetyNumbers() {     //Crea un array de 90 numeros ordenados del 1 al 90.
-    for (i=1; i<91; i++) { 
+    for (let i=1; i<91; i++) { 
         numbersHat.push(i);
     }
     return numbersHat;
@@ -111,7 +111,7 @@ function bingoCardConsole() {       //Vista consola
 }
 
 function questionCard() {
-    yourCard = prompt('¿Quieres este carton? Responde:yes (para aceptarlo), Responde: no (para rechazarlo)');
+    let yourCard = prompt('¿Quieres este carton? Responde:yes (para aceptarlo), Responde: no (para rechazarlo)');
     while (yourCard !== 'yes' && yourCard !== 'no' && yourCard !== null) {
         yourCard = prompt('¿Quieres este carton? Responde:yes (para aceptarlo), Responde: no (para rechazarlo)');
     }
@@ -147,17 +147,17 @@ function turns() {
             let firstLineCount = 0;
             let secondLineCount = 0;
             let thirdLineCount =0;
-            for(k=0; k<bingoCard.length -10; k++) {
+            for(let k=0; k<bingoCard.length -10; k++) {
                 if(bingoCard[k].matched === true) {
                     firstLineCount++;
                 }
             }
-            for(l=5; l<bingoCard.length -5; l++) {
+            for(let l=5; l<bingoCard.length -5; l++) {
                 if(bingoCard[l].matched === true) {
                     secondLineCount++;
                 }
             }
-            for (m=10; m<bingoCard.length; m++) {
+            for (let m=10; m<bingoCard.length; m++) {
                 if(bingoCard[m].matched === true) {
                     thirdLineCount++;
                 }
@@ -195,13 +195,13 @@ function ranking() {
         rankingArray[i].rank = rank;
     }
     console.log('RANKING');
-    for (i=0; i<rankingArray.length; i++) {
+    for (let i=0; i<rankingArray.length; i++) {
         console.log('#'+rankingArray[i].rank+'  '+rankingArray[i].player+'--->'+rankingArray[i].score+'puntos');
     }
 }
 
 function playAgain() {
-    let playAgain = confirm('Quieres jugar de nuevo?');
+    playAgain = confirm('Quieres jugar de nuevo?');
     if (playAgain === true) {
         initBingo();
     }else{
