@@ -150,7 +150,7 @@ function adminFunctions(){
                             if (newFlight.to == null || newFlight.from==null || newFlight.cost==null|| newFlight.scale==null){
                                 outOfAdmin();
                             }
-                            else if (isNaN(+newFlight.cost) === true || newFlight.cost == null || newFlight.cost === ""){
+                            else if (isNaN(+newFlight.cost) === true || newFlight.cost == null){
                                 alert('Por favor, introduce solo numeros');
                                 createNewFlightAdmin();
                             
