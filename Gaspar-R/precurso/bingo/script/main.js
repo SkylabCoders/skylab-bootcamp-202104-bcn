@@ -77,10 +77,14 @@ function startGame() {
 //Genera un array de numeros, sin repetir.
 function generateCard() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	card = [[], [], []]; 
 =======
 	let card = [[], [], []]; 
 >>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+	card = [[], [], []]; 
+>>>>>>> main
 
 	//Generar 15 numeros random
 	let randomNumbers = new Set();
@@ -152,16 +156,22 @@ function siguienteBola() {
 
 //Obtiene la posision matcheada del numero en el tablero o null si no matchea
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> main
 function getMatchingPosition(nuum, caard) {
 	for (let i = 0; i < 3; i++) {
 		for (let j = 0; j < 5; j++) {
 			if (caard[i][j] === nuum) {
+<<<<<<< HEAD
 =======
 function getMatchingPosition(num, card) {
 	for (let i = 0; i < 3; i++) {
 		for (let j = 0; j < 5; j++) {
 			if (card[i][j] === num) {
 >>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
 				return [i, j];
 			}
 		}
@@ -172,12 +182,16 @@ function getMatchingPosition(num, card) {
 
 //Marca en el carton la posicion indicada y lo devuelve
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> main
 function markCard(position, caard) {
 	let i = position[0];
 	let j = position[1];
 
 	caard[i][j] = "X";
 	return caard;
+<<<<<<< HEAD
 =======
 function markCard(position, card) {
 	let i = position[0];
@@ -186,6 +200,8 @@ function markCard(position, card) {
 	card[i][j] = "X";
 	return card;
 >>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
 }
 
 //Reordena el arreglo de manera random
@@ -255,6 +271,9 @@ function resetMatchedNumbers() {
 //Imprime el carton del jugador en la pagina//
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> main
 function printCard(caard) {
 	if (caard == undefined)
 		return;
@@ -266,6 +285,7 @@ function printCard(caard) {
 		html += "<tr>";
 		for (var j = 0; j < caard[i].length; j++) {
 			if (caard[i][j] == "X") {
+<<<<<<< HEAD
 =======
 function printCard(card) {
 	if (card == undefined)
@@ -279,15 +299,21 @@ function printCard(card) {
 		for (var j = 0; j < card[i].length; j++) {
 			if (card[i][j] == "X") {
 >>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
 				html += "<td class='match'>"
 			} else {
 				html += "<td>"
 			}
 <<<<<<< HEAD
+<<<<<<< HEAD
 			html += caard[i][j] + "</td>";
 =======
 			html += card[i][j] + "</td>";
 >>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+			html += caard[i][j] + "</td>";
+>>>>>>> main
 		}
 		html += "</tr>";
 	}

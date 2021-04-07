@@ -11,6 +11,9 @@
 
 let flights = [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> main
     { id: 0, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
     { id: 1, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
     { id: 2, to: 'Los Angeles', from: 'Madrid', cost: 1100, scale: true },
@@ -21,6 +24,7 @@ let flights = [
     { id: 7, to: 'Tokyo', from: 'Madrid', cost: 1500, scale: true },
     { id: 8, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
     { id: 9, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
+<<<<<<< HEAD
 =======
     { id: 00, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
     { id: 01, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
@@ -33,6 +37,8 @@ let flights = [
     { id: 08, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
     { id: 09, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
 >>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
     { id: 10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, scale: false } ];
 
 function init(){

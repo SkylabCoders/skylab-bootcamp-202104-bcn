@@ -148,9 +148,12 @@ h1 span{
     display: flex;
     border-collapse: collapse;    
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     display: flex;
 >>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
     width: 28em;
     align-items: center;
     justify-content: space-evenly;
@@ -166,10 +169,13 @@ h1 span{
 .turnoClass{
     visibility: hidden;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     width: 50px;
     height: 50px;
 >>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
     color: white;
     text-align: center;
     display: flex;
