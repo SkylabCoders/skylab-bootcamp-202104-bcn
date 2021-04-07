@@ -90,7 +90,7 @@ startApp();
 
 function displayInfo(){
   // List of flights 
-  for(flight of flights){
+  for(let flight of flights){
       const stopOverPrint = (flight.stopOver)? 'realiza escalas' : 'no realiza ninguna escala';  
       console.log(`\t· El vuelo con ID ${flight.id}, con origen ${flight.from} y destino ${flight.to} tiene un coste de ${flight.cost} € y ${stopOverPrint}.`);   
   } 
@@ -112,8 +112,7 @@ function displayInfo(){
   
   for(flight of lastDestinations) {
     console.log(`\t${flight.from} - ${flight.to}`);
-  }
-  return;
+  };
 }
 function userIsAdmin(){
   let roleInput;
