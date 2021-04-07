@@ -34,13 +34,13 @@ function showPointsSystem() {
                 se restaran el numero de turnos totales a los numeros del bombo para obtener tu punuacion final`);
 }
 
-let getBingoCardNumbers = (numbers) => {
+let getBingoCardNumbers = (possibleNumbers) => {
   var copy = [],
-    n = numbers.length,
+    n = possibleNumbers.length,
     i;
   while (n) {
     i = Math.floor(Math.random() * n--);
-    copy.push(numbers.splice(i, 1)[0]);
+    copy.push(possibleNumbers.splice(i, 1)[0]);
   }
 
   return copy;
