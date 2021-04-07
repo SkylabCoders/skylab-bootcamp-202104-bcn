@@ -59,7 +59,11 @@
 			if(reset==="Y"){
 				
 				calculadorapro()
+<<<<<<< HEAD
 			}else{return alert("Adios!")}
+=======
+			}else{return alert("Adios!")};
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
 	}
 	
 

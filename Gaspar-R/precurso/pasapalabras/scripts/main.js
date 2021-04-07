@@ -27,18 +27,30 @@ function startGame(){
     while (iterator<questions.length){
         for (let i=0;i<questions.length;i++){               
           if(questions[i].status===0 && iterator<questions.length){
+<<<<<<< HEAD
                 let answer = printQuestion(i);
+=======
+                answer = printQuestion(i);
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
                     if(answer === questions[i].answer){
                         console.log("Respuesta Correcta!");
                         questions[i].status=1;
                         iterator++;
                         success++;
 
+<<<<<<< HEAD
                     } else if  (answer === "pasapalabra" || answer ==="" ){
                     } else if (answer === "end"){
                         iterator=100;
                                          
                     } else{          
+=======
+                    }else if  (answer === "pasapalabra" || answer ==="" ){
+                    }else if (answer === "end"){
+                        iterator=100
+                                         
+                    }else{          
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
                         console.log("Respuesta Incorrecta");
                         console.log(`La respuesta correcta era: ${questions[i].answer}.`)
                         questions[i].status=1;
@@ -59,8 +71,13 @@ function startGame(){
 
 function printQuestion(i){          //imprime la pregunta siguiente
         console.log(questions[i].question);
+<<<<<<< HEAD
        return prompt(`Letra ${questions[i].letter}. Respuesta:`).toLowerCase();
         
+=======
+       let answer = prompt(`Letra ${questions[i].letter}. Respuesta:`).toLowerCase();
+        return answer;
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
 }
 
 
@@ -70,9 +87,14 @@ function printStats(){
 }
 
 function ranking(){
+<<<<<<< HEAD
     for(let i=0; i<players.length;i++){
     console.log(players);
     }
+=======
+    for(let i=0; i<players.length;i++)
+    console.log(players);
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
     
 }
 function reset(){
