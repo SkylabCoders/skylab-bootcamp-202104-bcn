@@ -1,15 +1,15 @@
 //Declaración de los 10 vuelos de manera global
 let flights = [
-    { id: 00, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
-    { id: 01, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
-    { id: 02, to: 'Los Angeles', from: 'Madrid', cost: 1100, scale: true },
-    { id: 03, to: 'Paris', from: 'Barcelona', cost: 210, scale: false },
-    { id: 04, to: 'Roma', from: 'Barcelona', cost: 150, scale: false },
-    { id: 05, to: 'London', from: 'Madrid', cost: 200, scale: false },
-    { id: 06, to: 'Madrid', from: 'Barcelona', cost: 90, scale: false },
-    { id: 07, to: 'Tokyo', from: 'Madrid', cost: 1500, scale: true },
-    { id: 08, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
-    { id: 09, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
+    { id: 0, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
+    { id: 1, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
+    { id: 2, to: 'Los Angeles', from: 'Madrid', cost: 1100, scale: true },
+    { id: 3, to: 'Paris', from: 'Barcelona', cost: 210, scale: false },
+    { id: 4, to: 'Roma', from: 'Barcelona', cost: 150, scale: false },
+    { id: 5, to: 'London', from: 'Madrid', cost: 200, scale: false },
+    { id: 6, to: 'Madrid', from: 'Barcelona', cost: 90, scale: false },
+    { id: 7, to: 'Tokyo', from: 'Madrid', cost: 1500, scale: true },
+    { id: 8, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
+    { id: 9, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
     { id: 10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, scale: false }];
 
 //Función general que engloba todas las demás (al llamar a askUserName)
@@ -37,7 +37,7 @@ function askUserName() {
 //Función que mostrará los diferentes vuelos y su información al usuario de forma amigable
 function showFlights() {
     //Se hace un bucle for que irá recorriendo el array flights y los irá imprimiento en pantalla de forma amigable para el usuario
-    for (i = 0; i < flights.length; i++) {
+    for (let i = 0; i < flights.length; i++) {
         console.log(`El vuelo con origen: ${flights[i].from}, y destino: ${flights[i].to} tiene un precio total de ${flights[i].cost}€. Además, ${(flights[i].scale) ? " sí realiza escalas" : "no realiza ninguna escala"}.`);
     }
 }
