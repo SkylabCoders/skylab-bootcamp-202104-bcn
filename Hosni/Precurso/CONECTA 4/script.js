@@ -156,7 +156,7 @@ function addToken(columna){
 
     for(i in tableArr[columna]) {
 
-        if(tableArr[columna][i] === 1) {            
+        if(tableArr[columna][i] == 1) {            
             tdPosition = i-1;
             tableArr[columna][tdPosition] = 1;
             printTd(columna, tdPosition);
