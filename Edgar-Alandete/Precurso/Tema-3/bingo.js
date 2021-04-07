@@ -189,7 +189,7 @@ function showRanking() {
   console.log(
     `--------------------- THIS IS THE RANKING MY DUDES --------------------- `
   );
-  for (player in ranking) {
+  for (const player in ranking) {
     console.log(
       `Nombre: ----------- ${ranking[player].name} ----------- Puntos: ----------- ${ranking[player].points} -----------`
     );
