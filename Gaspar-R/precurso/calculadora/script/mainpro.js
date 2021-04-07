@@ -59,7 +59,7 @@
 			if(reset==="Y"){
 				
 				calculadorapro()
-			}else{return alert("Adios!")};
+			}else{return alert("Adios!")}
 	}
 	
 

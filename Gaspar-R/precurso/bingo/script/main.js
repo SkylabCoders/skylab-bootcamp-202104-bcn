@@ -76,7 +76,7 @@ function startGame() {
 
 //Genera un array de numeros, sin repetir.
 function generateCard() {
-	let card = [[], [], []]; 
+	card = [[], [], []]; 
 
 	//Generar 15 numeros random
 	let randomNumbers = new Set();
@@ -147,10 +147,10 @@ function siguienteBola() {
 }
 
 //Obtiene la posision matcheada del numero en el tablero o null si no matchea
-function getMatchingPosition(num, card) {
+function getMatchingPosition(nuum, caard) {
 	for (let i = 0; i < 3; i++) {
 		for (let j = 0; j < 5; j++) {
-			if (card[i][j] === num) {
+			if (caard[i][j] === nuum) {
 				return [i, j];
 			}
 		}
@@ -160,12 +160,12 @@ function getMatchingPosition(num, card) {
 }
 
 //Marca en el carton la posicion indicada y lo devuelve
-function markCard(position, card) {
+function markCard(position, caard) {
 	let i = position[0];
 	let j = position[1];
 
-	card[i][j] = "X";
-	return card;
+	caard[i][j] = "X";
+	return caard;
 }
 
 //Reordena el arreglo de manera random
@@ -234,22 +234,22 @@ function resetMatchedNumbers() {
 
 //Imprime el carton del jugador en la pagina//
 
-function printCard(card) {
-	if (card == undefined)
+function printCard(caard) {
+	if (caard == undefined)
 		return;
 
-	console.log(card);
+	console.log(caard);
 	var html = '<table class="user-card"><tbody>';
 
-	for (var i = 0; i < card.length; i++) {
+	for (var i = 0; i < caard.length; i++) {
 		html += "<tr>";
-		for (var j = 0; j < card[i].length; j++) {
-			if (card[i][j] == "X") {
+		for (var j = 0; j < caard[i].length; j++) {
+			if (caard[i][j] == "X") {
 				html += "<td class='match'>"
 			} else {
 				html += "<td>"
 			}
-			html += card[i][j] + "</td>";
+			html += caard[i][j] + "</td>";
 		}
 		html += "</tr>";
 	}

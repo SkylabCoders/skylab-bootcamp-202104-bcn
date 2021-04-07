@@ -27,18 +27,18 @@ function startGame(){
     while (iterator<questions.length){
         for (let i=0;i<questions.length;i++){               
           if(questions[i].status===0 && iterator<questions.length){
-                answer = printQuestion(i);
+                let answer = printQuestion(i);
                     if(answer === questions[i].answer){
                         console.log("Respuesta Correcta!");
                         questions[i].status=1;
                         iterator++;
                         success++;
 
-                    }else if  (answer === "pasapalabra" || answer ==="" ){
-                    }else if (answer === "end"){
-                        iterator=100
+                    } else if  (answer === "pasapalabra" || answer ==="" ){
+                    } else if (answer === "end"){
+                        iterator=100;
                                          
-                    }else{          
+                    } else{          
                         console.log("Respuesta Incorrecta");
                         console.log(`La respuesta correcta era: ${questions[i].answer}.`)
                         questions[i].status=1;
@@ -59,8 +59,8 @@ function startGame(){
 
 function printQuestion(i){          //imprime la pregunta siguiente
         console.log(questions[i].question);
-       let answer = prompt(`Letra ${questions[i].letter}. Respuesta:`).toLowerCase();
-        return answer;
+       return prompt(`Letra ${questions[i].letter}. Respuesta:`).toLowerCase();
+        
 }
 
 
@@ -70,8 +70,9 @@ function printStats(){
 }
 
 function ranking(){
-    for(let i=0; i<players.length;i++)
+    for(let i=0; i<players.length;i++){
     console.log(players);
+    }
     
 }
 function reset(){
