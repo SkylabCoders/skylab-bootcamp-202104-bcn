@@ -21,23 +21,14 @@ function listaVuelos() {
     let flightsScale = [];      
     
     for (let value of flights) {
-        if(flights[i].scale) {
+        if(value.scale) {
             scale = 'Realiza escala.';      
-            return flightsScale.push(value.id);       
+            flightsScale.push(value.id);       
         }else{
             scale = 'No realiza escala.';
         }
     console.log('El vuelo con origen: ' + value.from + ', y destino: ' + value.to + ' tiene un coste de ' + value.cost + '€. ' + scale);  
     }
-    // for(let i = 0; i<flights.length; i++){
-    //     if(flights[i].scale) {
-    //         scale = 'Realiza escala.';      
-    //         return flightsScale.push(flights[i].id);       
-    //     }else{
-    //         scale = 'No realiza escala.';
-    //     }
-    // console.log('El vuelo con origen: ' + flights[i].from + ', y destino: ' + flights[i].to + ' tiene un coste de ' + flights[i].cost + '€. ' + scale);      
-    // }
 }
 
 function welcomeAirlines() {
