@@ -38,8 +38,8 @@ function allFlights() {
     console.log("");
     console.log('Esto son los vuelos disponibles:');
 
-    for (let i = 0; i < flights.length; i++) {
-        console.log(JSON.stringify(flights[i]));
+    for (let flight of flights) {
+        console.log(JSON.stringify(flight));
     }
 
 
@@ -59,10 +59,10 @@ function allFlights() {
     console.log("");
     console.log('Esto son los vuelos con escala:');
 
-    for (let i = 0; i < flights.length; i++) {
-        if (flights[i].scale === true) {
+    for (let flight of flights) {
+        if (flight.scale === true) {
 
-            console.log(JSON.stringify(flights[i]));
+            console.log(JSON.stringify(flight));
         }
     }
 
@@ -73,8 +73,8 @@ function allFlights() {
 
     const lastFiveFlights = flights.slice(6);
 
-    for (let i = 0; i < lastFiveFlights.length; i++) {
-        console.log(lastFiveFlights[i].to);
+    for (let lastFive of lastFiveFlights) {
+        console.log(lastFive.to);
     }
 }
 
@@ -135,9 +135,9 @@ function role() {
                         console.log("");
                         console.log("Los vuelos con los precios igual a " + searchPrices + " son: ");
 
-                        for (let i = 0; i < flights.length; i++) {
-                            if (searchPrices == flights[i].cost) {
-                                console.log(JSON.stringify(flights[i]));
+                        for (let flight of flights) {
+                            if (searchPrices == flight.cost) {
+                                console.log(JSON.stringify(flight));
                             }
                         }
                     } else if (priceRange === "menores") {
@@ -145,9 +145,9 @@ function role() {
                         console.log("");
                         console.log("Los vuelos con los precios más bajos a " + searchPrices + " son: ");
 
-                        for (let i = 0; i < flights.length; i++) {
-                            if (searchPrices > flights[i].cost) {
-                                console.log(JSON.stringify(flights[i]));
+                        for (let flight of flights) {
+                            if (searchPrices > flight.cost) {
+                                console.log(JSON.stringify(flight));
                             }
                         }
                     } else if (priceRange === "mayores") {
@@ -156,9 +156,9 @@ function role() {
                         console.log("");
                         console.log("Los vuelos con los precios más altos a " + searchPrices + " son: ");
 
-                        for (let i = 0; i < flights.length; i++) {
-                            if (searchPrices < flights[i].cost) {
-                                console.log(JSON.stringify(flights[i]));
+                        for (let flight of flights) {
+                            if (searchPrices < flight.cost) {
+                                console.log(JSON.stringify(flight));
                             }
                         }
                     } else {
@@ -168,8 +168,8 @@ function role() {
                         console.log("");
                         console.log("Te dejo con el listado de vuelos, de nuevo, por si quieres echar un vistazo:");
 
-                        for (let i = 0; i < flights.length; i++) {
-                            console.log(JSON.stringify(flights[i]));
+                        for (let flight of flights) {
+                            console.log(JSON.stringify(flight));
                         }
                     }
                 } else {
@@ -186,11 +186,11 @@ function role() {
 
             if (chosenFlight !== "" && chosenFlight !== null) {
                 if (!isNaN(chosenFlight)) {
-                    for (let i = 0; i < flights.length; i++) {
-                        if (chosenFlight == flights[i].id) {
+                    for (let flight of flights) {
+                        if (chosenFlight == flight.id) {
                             console.log("");
-                            console.log("¡Gracias por su compra, el id de su vuelo es " + JSON.stringify(flights[i].id) + " con origen en " +
-                                JSON.stringify(flights[i].from) + " destino " + JSON.stringify(flights[i].to) + ", vuelva pronto!");
+                            console.log("¡Gracias por su compra, el id de su vuelo es " + JSON.stringify(flight.id) + " con origen en " +
+                                JSON.stringify(flight.from) + " destino " + JSON.stringify(flight.to) + ", vuelva pronto!");
                         }
                     }
                 } else {
@@ -257,12 +257,12 @@ function deleteFlights() {
 
     if (deleteFlight !== "" && deleteFlight !== null) {
         // Recorremos el objecto flights y si el id introducido por prompt coincide con algun id que ya este en el objecto, lo eliminamos
-        for (let i = 0; i < flights.length; i++) {
-            if (deleteFlight == flights[i].id) {
+        for (let flight of flights) {
+            if (deleteFlight == flight.id) {
 
                 let index = flights.map(x => {
                     return x.id
-                }).indexOf(flights[i].id);
+                }).indexOf(flight.id);
 
                 flights.splice(index, 1);
 
