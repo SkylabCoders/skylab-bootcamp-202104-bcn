@@ -92,7 +92,7 @@ let randomNumb = 0;
 function init() {
     score = 0;
     failed = 0;
-    for(let i=0;i<questions.length;i++){
+    for(let i of questions){
         questions[i].status = 0;
     }
     randomNumb = Math.floor(Math.random()*3);
@@ -103,7 +103,7 @@ function startGame (){
     name = prompt("¡BIENVENIDO A PASAPALABRAS!\n\nPor favor, introduce tu nombre");
     if(name === null) {
         alert("¡Hasta la vista!");
-        return;
+
     } else if (isNaN(name)){
         let generatePlayer = {
             name: name,
@@ -123,7 +123,7 @@ function firstLetterUp (name) {
 }
 
 function question(){
-    for(let i=0;i<questions[randomNumb].length;i++){
+    for(let i of questions[randomNumb]){
         if (questions[randomNumb][i].status === 0) {
             let question = prompt(questions[randomNumb][i].question);
             if(question === null){
@@ -184,11 +184,10 @@ function scoreRanking() {
     let position = 0;
     console.log("%c%s","color:yellow","RANKING DE PUNTUACIÓN");
     players.sort(((a,b) => b.score - a.score));
-    for(let i=0;i<players.length;i++){
+    for(let i of players){
         position++;
         console.log(position + "º. " + firstLetterUp(players[i].name) + ": " + players[i].score + " aciertos")
     }
-    return;
 }
 
 startGame();
