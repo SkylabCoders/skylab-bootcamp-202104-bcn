@@ -280,9 +280,9 @@ function deleteFlights() {
 
 // Función para poder seguir eliminando vuelos
 function deleteMoreFlights() {
-    const deleteMoreFlights = confirm("¿Quieres eliminar más vuelos?");
+    const deleteMore = confirm("¿Quieres eliminar más vuelos?");
 
-    if (deleteMoreFlights) {
+    if (deleteMore) {
         deleteFlights(); // Llamamos a la función anterior para hacer el procesos de eliminar un vuelo
     } else {
         console.log('');
