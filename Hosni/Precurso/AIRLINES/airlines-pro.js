@@ -21,7 +21,7 @@ function listaVuelos() {
     let flightsScale = [];      
     
     for(let i = 0; i<flights.length; i++){
-        if(flights[i].scale === true) {
+        if(flights[i].scale) {
             scale = 'Realiza escala.';      
             return flightsScale.push(flights[i].id);       
         }else{
