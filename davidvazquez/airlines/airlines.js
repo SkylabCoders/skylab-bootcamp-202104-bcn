@@ -19,7 +19,6 @@ function enterFlight (departure,arrival,price,scale) {
     console.log(message);
 
     flightsList.push({Id,departure,arrival,price,scale});   
-    return;
 }
 
 //Función para insertar nombre y dar la bienvenida
@@ -44,31 +43,28 @@ function lastsFlights () {
     for (let i=flightsList.length-5;i<flightsList.length;i++){
         console.log(flightsList[i].arrival);
     }
-    return;
 }
 
 //Función coste medio de los vuelos
 function averagePrices() {
     let average = 0;
     let suma = 0;
-    for(let i=0;i<flightsList.length;i++){
+    for(let i of flightsList){
         suma = flightsList[i].price + suma;
     }
     average = suma/flightsList.length;
     console.log("El coste medio de los vuelos es de: " + average + "€.");
-    return;
 }
 
 //Función vuelos con escala
 function flightsWithScale() {
     let countWith = 0;
-    for(let i=0;i<flightsList.length;i++) {
+    for(let i of flightsList) {
         if(flightsList[i].scale === true) {
             countWith++;
         }
     }
     console.log("Hay " + countWith + " vuelos con escalas.");
-    return;
 }
 
 
