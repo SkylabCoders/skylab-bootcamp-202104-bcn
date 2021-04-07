@@ -1,8 +1,8 @@
 let resultArr = [];
 
 function message() {
-  let message = prompt("New numbers? y/n");
-  switch (message) {
+  let messageNewNumber = prompt("New numbers? y/n");
+  switch (messageNewNumber) {
     case "n":
       let stop = "Bye!";
       console.log(stop);
@@ -81,7 +81,7 @@ function rest(arrayArg) {
   const reducerRest = (accumulator, currentValue) =>
     +accumulator - +currentValue;
   let resultRest = arrayArg.reduce(reducerRest);
-  if (!(resultRest % 1 === 0)) {
+  if (resultRest % 1 !== 0) {
     resultRest = resultRest.toFixed(3);
     resultArr.push(`rest(${arrayArg}) = ${resultRest}`);
   } else {
@@ -93,7 +93,7 @@ function div(arrayArg) {
   const reducerDiv = (accumulator, currentValue) =>
     +accumulator / +currentValue;
   let resultDiv = arrayArg.reduce(reducerDiv);
-  if (!(resultDiv % 1 === 0)) {
+  if (resultDiv % 1 !== 0) {
     resultDiv = resultDiv.toFixed(3);
     resultArr.push(`division(${arrayArg}) = ${resultDiv}`);
   } else {
@@ -105,7 +105,7 @@ function mult(arrayArg) {
   const reducerMult = (accumulator, currentValue) =>
     +accumulator * +currentValue;
   let resultMult = arrayArg.reduce(reducerMult);
-  if (!(resultMult % 1 === 0)) {
+  if (resultMult % 1 !== 0) {
     resultMult = resultMult.toFixed(3);
     resultArr.push(`multiplication(${arrayArg}) = ${resultMult}`);
   } else {

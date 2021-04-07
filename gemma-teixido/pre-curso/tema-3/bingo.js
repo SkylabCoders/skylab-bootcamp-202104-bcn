@@ -259,7 +259,6 @@ function points() {
     alert(info);
     rankingInfo.push(info);
   }
-  e;
   players = [];
   displayRanking();
 }
