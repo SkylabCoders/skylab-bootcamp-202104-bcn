@@ -20,14 +20,14 @@ function init() {
     numTirada = 1;
     checkStatus = false;
     //Resetear tablero al valor inicial
-    for(let x=0;x<tablero.length;x++){
+    for(let x of tablero){
         for(let z=0;z<tablero[x].length;z++){
             tablero[x][z] = 'gray';
         }
     }
     //Quitar color a las fichas
     let points = document.getElementsByTagName('p');
-    for(let x=0;x<points.length;x++){
+    for(let x of points){
         points[x].style.backgroundColor = 'white';
     }
     winner.innerHTML = '';
@@ -52,8 +52,7 @@ const columns = document.getElementsByClassName("column");
         column.addEventListener('click', function () {
             if(checkStatus === false){    
                 var points = column.getElementsByTagName('p');  
-                    let i=points.length-1;
-                    for(i=points.length-1;i>=0;i--){
+                    for(let i=points.length-1;i>=0;i--){
                         if(tablero[j][5-i] === 'gray'){
                             if(numTirada%2 !== 0){
                                 points[i].style.backgroundColor = 'red';
@@ -107,7 +106,7 @@ function check(j,i){
         for(let l=0;l<=2;l++){
             //Diagonal hacia la derecha
             if(tablero[k][l]===tablero[k+1][l+1] && tablero[k][l]===tablero[k+2][l+2] && tablero[k][l]===tablero[k+3][l+3] && tablero[k][l]!=='gray'){
-                //console.log('has ganado ' + tablero[k][l]);
+            
                 winner.innerHTML = '¡Gana el jugador ' + tablero[k][l] + '!';
                 if(tablero[k][l]==='rojo'){
                     redScore++;
@@ -118,7 +117,7 @@ function check(j,i){
             }
             //Diagonal hacia la izquierda
             if(tablero[6-k][l]===tablero[5-k][l+1] && tablero[6-k][l]===tablero[4-k][l+2] && tablero[6-k][l]===tablero[3-k][l+3] && tablero[6-k][l]!=='gray'){
-                //console.log('has ganado ' + tablero[5-k][l]);
+        
                 winner.innerHTML = '¡Gana el jugador ' + tablero[6-k][l] + '!';
                 if(tablero[6-k][l]==='rojo'){
                     redScore++;
