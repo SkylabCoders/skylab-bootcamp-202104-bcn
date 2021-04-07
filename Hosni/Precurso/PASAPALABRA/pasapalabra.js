@@ -388,7 +388,7 @@ askUserName();
     }    
 
     let playAgain = confirm('Cliock aceptar si quieres volver a jugar.');
-    if(playAgain === true) {
+    if(playAgain) {
         objPlayer = {userName: "", correctAnswers: 0, failAnswers: 0};
         for(i in questions) {
             questions[i].status = 0;

@@ -368,7 +368,7 @@ function checkStatus() {
         }
         let status = questions[letra].status;
 
-        while (status !== 0 && status !== "pasapalabra"){//0= no respondido
+        while (status !== 0 && status != "pasapalabra"){//0= no respondido
             letra += 1;
 
             if(letra > (questions.length - 1)) {
@@ -568,7 +568,7 @@ function correct(value) {
 
 function theEnd(){
     for(i in questions) {
-        if(questions[i].status === 0 || questions[i].status === "pasapalabra") {
+        if(questions[i].status === 0 || questions[i].status == "pasapalabra") {
             questions[i].status = false;
             objPlayer.failAnswers += 1;
         }
