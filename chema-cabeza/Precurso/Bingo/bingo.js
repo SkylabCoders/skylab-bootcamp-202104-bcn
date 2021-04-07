@@ -47,7 +47,11 @@ let usedCardNumbers =[];
  let line1Flag;
  let line2Flag;
  let line3Flag;
+<<<<<<< HEAD
  let usedNumbers = [];
+=======
+
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
  let playerName = "";
  
 
@@ -87,7 +91,11 @@ function printScore(){
 
 function newCard () {
 
+<<<<<<< HEAD
     usedCardNumbers = []; // Stores numbers that have been included in the card.
+=======
+    let usedCardNumbers = []; // Stores numbers that have been included in the card.
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
 
     bingoCard.forEach (element => {
 
@@ -130,7 +138,11 @@ function pickCardQuestion (question = `Do you want to keep this card? (Y/N)`){
                 case "Y":
                     nextTurn();
                     return;
+<<<<<<< HEAD
 
+=======
+                break;
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
                 case "N":
                     console.log ("New Card:");
                     newCard();
@@ -177,7 +189,11 @@ function registerPlayer(){
 
     let playerScore = 101 - turns; // Point system here, higher score is 100 points (winning in the first turn)
 
+<<<<<<< HEAD
     if (playerScore < 0) {playerScore = 0} // Sets minimum value for the score (0 Points)
+=======
+    if (playerScore < 0) {playerScore = 0}; // Sets minimum value for the score (0 Points)
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
         
     playerRecords.push({name: playerName, score: playerScore});
 
@@ -210,7 +226,11 @@ function continueQuestion(question = `Do you want to continue? (Y/N)`){
             case "N":
                 console.log ('Bye');
                 return false;
+<<<<<<< HEAD
 
+=======
+            break;
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
             default:
                 continueQuestion(`Incorrect answer. Do you want to continue? (Y/N)`);
           }
@@ -232,19 +252,31 @@ let cardNumber = newNumber();
 
             element.forEach (values => {
 
+<<<<<<< HEAD
                 if (values.number ===  cardNumber) {
 
+=======
+                if (values.number ===  cardNumber) {values
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
                     values.matched = true;
                     values.number = "X";
                     matchingTimes++;
                     
+<<<<<<< HEAD
+=======
+        
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
                 }          
 
             });
 
         });
 
+<<<<<<< HEAD
     if (matchingTimes >= 1) {console.log(`The number ${cardNumber} matched.`);}
+=======
+    if (matchingTimes >= 1) {console.log(`The number ${cardNumber} matched.`);};
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
 
     turns++;
 
@@ -286,7 +318,11 @@ function playAgainQuestion (question = `Do you want to play again? (Y/N)`) {
                     printScore();
                     console.log ('Bye');
                     return false;
+<<<<<<< HEAD
 
+=======
+                break;
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
                 default:
                     playAgainQuestion(`Incorrect answer. Do you want to play again? (Y/N)`);
             }

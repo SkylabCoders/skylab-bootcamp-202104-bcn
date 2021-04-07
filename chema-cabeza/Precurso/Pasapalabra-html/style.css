@@ -46,15 +46,26 @@ canvas {
 	width: 2.5vw;
   height: 5vh;
 	color: black;
+<<<<<<< HEAD
+=======
+	margin: 30px 15px;
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
 	border: 1px solid black;
   box-shadow: 0 0 10px .5px black;
 	border-radius: 100%;
 	animation: forwards;
   padding: 0px;
+<<<<<<< HEAD
   cursor: pointer;
   outline: none;
   z-index:20;
   margin:0px;
+=======
+  margin: 0px;
+  cursor: pointer;
+  outline: none;
+  z-index:20;
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
 }
 
 .overlay {
@@ -89,8 +100,11 @@ canvas {
 .bottom{
 
   margin-bottom: 1vh;
+<<<<<<< HEAD
   display: flex;
   position: relative;
+=======
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
 
 }
 
@@ -118,6 +132,15 @@ canvas {
 
 }
 
+<<<<<<< HEAD
+=======
+.bottom {
+
+  display: flex;
+  position: relative;
+
+}
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
 
 #questionBox {
   width: 47vw;
@@ -227,6 +250,10 @@ canvas {
 
     
     border:2px solid #aaa;
+<<<<<<< HEAD
+=======
+    border-radius:4px;
+>>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
     font-size: 13px;
     margin:0px 10px;
     outline:none;

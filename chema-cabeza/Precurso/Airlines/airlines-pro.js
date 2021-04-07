@@ -194,7 +194,6 @@ function sameFare (fare) {
 
 
  function lastFlights(){
-
     let five = 0;
     
     for (let i = (flights.length-1); i >= 0 ; i--) {
