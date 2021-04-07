@@ -4,6 +4,11 @@ const EQUAL_BUTTON = document.querySelector(".equal");
 const CLEAR = document.querySelectorAll(".clear");
 const ALL_CLEAR = document.querySelectorAll(".all_clear");
 const CURRENT_NUMBER = document.querySelector(".currentnumber");
+let calculatorCurrentNumber;
+let calculatorPreviousNumber;
+let calculatorOperation;
+let operation;
+
 allClear();
 
 function concatNumbers(number) {
