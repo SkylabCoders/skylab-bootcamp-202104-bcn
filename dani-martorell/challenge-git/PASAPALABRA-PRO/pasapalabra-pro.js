@@ -167,8 +167,8 @@ function startGame(){
 
 }
 function askPlayerName(){
-    let playerName = prompt('PASAPALABRA\nIntroduce nombre del jugador:', 'John Doe');
-    return playerName;
+    return prompt('PASAPALABRA\nIntroduce nombre del jugador:', 'John Doe');
+    
 }
 
 function updateRanking (score, playerName){
