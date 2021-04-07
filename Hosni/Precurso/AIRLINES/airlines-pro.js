@@ -17,7 +17,7 @@ let userName = '';
 welcomeAirlines();
 
 function listaVuelos() {
-    let scale;                      
+    let scale = null;                      
     let flightsScale = [];      
     
     for(let i = 0; i<flights.length; i++){
