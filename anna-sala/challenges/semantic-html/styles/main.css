@@ -94,7 +94,7 @@ h1 {
 h2 {
   font-size: 2.777777778em;
   line-height: 1.12em;
-  margin-top: 1.12em;+
+  margin-top: 1.12em;
   margin-bottom: 0.56em;
 }
 h3 {
@@ -331,6 +331,10 @@ hr {
 } /* close min-width: 1280px */
 
 /* --------------- Form Styles ------------------ */
+
+.form-section.check-group {
+  border: none;
+}
 
 .form label {
     display: block;
