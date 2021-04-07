@@ -47,7 +47,7 @@ function calculator() {
     var rest = results[0] || 0;
     var multi = results[0] || 1;
     var div = results[0];
-    for (position in results) {
+    for (let position in results) {
         sum += results[position];
         //Se usan los ternarios para evaluar si estamos en la primera posición o no
         rest -= position === "0" ? 0 : results[position];
