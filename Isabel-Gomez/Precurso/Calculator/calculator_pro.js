@@ -5,7 +5,7 @@ const calculator = () => {
   numbers = prompt("Insert all numbers to calculate, separated by hyphen");
   while (numbers === " " || numbers === "-") {
     numbers = prompt("Please, insert valids numbers, separated by hyphen");
-  };
+  }
   if (numbers === null) {
     alert("See you soon!");
   } else {
@@ -17,9 +17,9 @@ const calculator = () => {
           alert("See you soon!");
         } else {
           numbers = numbers.split("-");
-        };
-      };
-    };
+        }
+      }
+    }
     if (numbers.length !== 1) {
       const sum = numbers.reduce((accumulator, currentValue) => Number(accumulator) + Number(currentValue));
       const rest = numbers.reduce((accumulator, currentValue) => Number(accumulator) - Number(currentValue));
@@ -31,7 +31,7 @@ const calculator = () => {
         (`Division result: ` + Math.round(div * 1000) / 1000));
       for (let i = 0; i < result.length; i++) {
         console.log(result[i]);
-      };
+      }
     } else {
       console.log(`Square root result: ${Math.round(Math.sqrt(numbers[0]) * 1000) / 1000}`);
     }
@@ -40,9 +40,9 @@ const calculator = () => {
       calculator();
     } else {
       alert("See you soon!");
-    };
-  };
-};
+    }
+  }
+}
 calculator();
 
 
