@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="index.js"></script>
+        <link rel = "stylesheet" type="text/css" href = "index.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <title>Calculator Pro</title>
+    </head>
+    <body class="container">
+        <div class="calculator">
+            <div class="box input" id="input"></div>
+            <div class="box results" id="results">0</div>
+            <div class="box ac"><button  id="ac" onclick="ac()">AC</button></div>
+            <div class="box ret"><button key-code="8" id="ret" onclick="back()">🔙</button></div>
+            <div class="box divide"><button id="divide" value="/" onclick="symbol(value)">/</button></div>
+            <div class="box multiply"><button id="multiply" value="*" onclick="symbol(value)">x</button></div>
+            <div class="box substract"><button id="substract" value="-" onclick="symbol(value)">-</button></div>
+            <div class="box add"><button id="add" value="+" onclick="symbol(value)">+</button></div>
+            <div class="box equal"><button id="equal" onclick="calculator()">=</button></div>
+            <div class="box option1"><button id="option1" value="1" onclick="number(value)">1</button></div>
+            <div class="box option2"><button id="option2" value="2" onclick="number(value)">2</button></div>
+            <div class="box option3"><button id="option3" value="3" onclick="number(value)">3</button></div>
+            <div class="box option4"><button id="option4" value="4" onclick="number(value)">4</button></div>
+            <div class="box option5"><button id="option5" value="5" onclick="number(value)">5</button></div>
+            <div class="box option6"><button id="option6" value="6" onclick="number(value)">6</button></div>
+            <div class="box option7"><button id="option7" value="7" onclick="number(value)">7</button></div>
+            <div class="box option8"><button id="option8" value="8" onclick="number(value)">8</button></div>
+            <div class="box option9"><button id="option9" value="9" onclick="number(value)">9</button></div>
+            <div class="box option0"><button id="option0" value="0" onclick="number(value)">0</button></div>
+            <div class="box comma"><button id="comma" value="." onclick="number(value)">,</button></div>
+        </div>
+    </body>   
+</html>
