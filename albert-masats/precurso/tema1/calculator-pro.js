@@ -1,7 +1,3 @@
-/*He hecho un poco de mezcla entre el enunciado que había antes y el que hay ahora. 
-* Se puede pasar cualquier cantidad de números por el prompt y realiza los cálculos mediante funciones raíz cuadrada, suma, resta, mult, div
-* y al final pregunta si queremos repetir la operación.*/
-
 function calculatorPro() { 
     let numberList = [];
     let newNumber = null;
