@@ -19,7 +19,9 @@ function bingo(name){
     let turnNumber = 0;
     let cardCompleted = false;
     let prevBalls = [];
-    let line1 = line2 = line3 = 0;
+    let line1 = 0;
+    let line2 = 0;
+    let line3 = 0;
     let alreadyLine = false;
     let puntos = 12000;
     let puntosPenalizacion = 100;
