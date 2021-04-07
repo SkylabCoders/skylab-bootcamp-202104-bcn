@@ -40,7 +40,7 @@ function inputsFromPrompt() {
     }
     inputs = inputs.join('').split(',').map(input => +input);
     for(num of inputs) {
-        if(!typeof(num) === 'number' || isNaN(num)) { 
+        if(typeof(num) !== 'number' || isNaN(num)) { 
             console.log('Invalid input. Please, type only numbers.');
             return inputsFromPrompt();
         }
