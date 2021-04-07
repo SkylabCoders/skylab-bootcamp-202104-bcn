@@ -251,6 +251,10 @@ hr {
     width: 250px;
 }
 
+.perfil img {
+  width: 250px;
+}
+
 .main-nav li {
     text-transform: uppercase;
     font-weight: 300;
