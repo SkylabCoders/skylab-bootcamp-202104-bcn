@@ -287,7 +287,15 @@ function startPlay(value) {
             }
         }, 1000);
     }
-
+    let statusValue = questions[value].status;
+    switch(statusValue) {
+        case 0:
+            preguntaSinRespuesta(value);
+            break;
+        case "pasapalabra":
+            preguntaGuardada(value);
+            break;
+    }
     if(questions[value].status === 0) {
         preguntaSinRespuesta(value);
         
