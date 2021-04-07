@@ -170,7 +170,6 @@ function endGame(isGameFinished) {
   if (isGameFinished) {
     alert(`JUEGO FINALIZADO EN ${totalTurns} TURNOS.`);
     ranking.push(createPlayerObj());
-    //TODO: SORT RANKING
     showRanking();
   } else {
     console.log(
