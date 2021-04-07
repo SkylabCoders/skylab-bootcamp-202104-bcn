@@ -295,15 +295,7 @@ function startPlay(value) {
         case "pasapalabra":
             preguntaGuardada(value);
             break;
-    }
-    if(questions[value].status === 0) {
-        preguntaSinRespuesta(value);
-        
-    }else if(questions[value].status === "pasapalabra") {
-        preguntaGuardada(value);
-    }            
-     
-    
+    }    
 }
 function zeroTimer(time) {
     if(time < 10) {
