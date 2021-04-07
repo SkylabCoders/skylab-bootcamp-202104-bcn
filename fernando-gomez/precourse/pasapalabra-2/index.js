@@ -312,9 +312,9 @@ const nextNotAnsweredDonutIndex = () => {
     for(i; i< donut.length; i++) {
 
         if(i===26 &&  donutLetterAnswered(donut[i])){
-            for(i=0; i< donut.length; i++) {
-                if(!donutLetterAnswered(donut[i])){
-                    return i;
+            for(let index in donut) {
+                if(!donutLetterAnswered(donut[index])){
+                    return index;
                 }
             }
         }

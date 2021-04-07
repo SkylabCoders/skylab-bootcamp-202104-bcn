@@ -2,16 +2,16 @@
 
 // Initialize needed arrays and variables
 let flights = [
-    { id: 00, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
-    { id: 01, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
-    { id: 02, to: 'Los Angeles', from: 'Madrid', cost: 1100, scale: true },
-    { id: 03, to: 'Paris', from: 'Barcelona', cost: 210, scale: false },
-    { id: 04, to: 'Roma', from: 'Barcelona', cost: 150, scale: false },
-    { id: 05, to: 'London', from: 'Madrid', cost: 200, scale: false },
-    { id: 06, to: 'Madrid', from: 'Barcelona', cost: 90, scale: false },
-    { id: 07, to: 'Tokyo', from: 'Madrid', cost: 1500, scale: true },
-    { id: 08, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
-    { id: 09, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
+    { id: 0, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
+    { id: 1, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
+    { id: 2, to: 'Los Angeles', from: 'Madrid', cost: 1100, scale: true },
+    { id: 3, to: 'Paris', from: 'Barcelona', cost: 210, scale: false },
+    { id: 4, to: 'Roma', from: 'Barcelona', cost: 150, scale: false },
+    { id: 5, to: 'London', from: 'Madrid', cost: 200, scale: false },
+    { id: 6, to: 'Madrid', from: 'Barcelona', cost: 90, scale: false },
+    { id: 7, to: 'Tokyo', from: 'Madrid', cost: 1500, scale: true },
+    { id: 8, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
+    { id: 9, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
     { id: 10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, scale: false } ];
 
 let lastFlights = [{ id: null, to: null, from: null, cost: null, scale: null}];
@@ -37,7 +37,7 @@ function lastFlightsArray(){
 //Pushes flights with scales into an array
 function scaleFlightsArray(){
 
-    for(let i=0; i < flights.length; i++){
+    for(let i in flights){
 
         if (flights[i].scale == true){
             scaleFlights.push(flights[i]);         
@@ -50,7 +50,7 @@ function scaleFlightsArray(){
 // Calculates average price of all flights
 function flightsAveragePrice(){
 
-    for (let i=0; i < flights.length; i++){
+    for (let i in flights){
         averagePrice += flights[i].cost;
     }
     averagePrice /= flights.length;
@@ -60,7 +60,7 @@ function greaterPrice(price){
 
     greaterPriceArray = [];
 
-    for(let i=0; i<flights.length; i++){
+    for(let i in flights){
        
         if (flights[i].cost > price){
         
@@ -75,7 +75,7 @@ function lowerPrice(price){
 
     lowerPriceArray = [];
 
-    for(let i=0; i<flights.length; i++){
+    for(let i in flights){
        
         if (flights[i].cost <= price){
         
@@ -91,7 +91,7 @@ function lowerPrice(price){
 //Shows all flights for today
 function showFlights(){
 
-    for(let i=0; i < flights.length; i++){
+    for(let i in flights){
         // Changes console log depending on scales number
         if (flights[i].scale == false){
             console.log(`${flights[i].id} - El vuelo con origen ${flights[i].from} y destino ${flights[i].to} tiene un coste de ${flights[i].cost}€ y no realiza ninguna escala.`);
@@ -102,7 +102,7 @@ function showFlights(){
 }
 //Shows flights with scales
 function showScaleFlights(){
-    for(let i=0; i < scaleFlights.length; i++){
+    for(let i in scaleFlights){
         
         if (scaleFlights[i].scale == false) {
             console.log(`${scaleFlights[i].id} - El vuelo con origen ${scaleFlights[i].from} y destino ${scaleFlights[i].to} tiene un coste de ${scaleFlights[i].price}€ y no realiza ninguna escala.`);
@@ -117,7 +117,7 @@ function showLastFlights(){
     lastFlights = [];
     lastFlightsArray();
 
-    for(let i=0; i<lastFlights.length; i++){
+    for(let i in lastFlights){
         // Changes console log depending on scales number
         if (lastFlights[i].scale == false){
             console.log(`${lastFlights[i].id} - El vuelo con origen ${lastFlights[i].from} y destino ${lastFlights[i].to} tiene un coste de ${lastFlights[i].price}€ y no realiza ninguna escala.`);
@@ -131,7 +131,7 @@ function showGreaterPriceFlights(){
 
     console.log(`\nLos vuelos con un precio superior al indicado son:\n`);
 
-    for(let i=0; i<greaterPriceArray.length; i++){
+    for(let i in greaterPriceArray){
         // Changes console log depending on scales number
         if (greaterPriceArray[i].scale == false){
             console.log(`${greaterPriceArray[i].id} - El vuelo con origen ${greaterPriceArray[i].from} y destino ${greaterPriceArray[i].to} tiene un coste de ${greaterPriceArray[i].cost}€ y no realiza ninguna escala.`);
@@ -145,7 +145,7 @@ function showLowerPriceFlights(){
 
     console.log(`\nLos vuelos con un precio inferior o igual al indicado son:\n`);
 
-    for(let i=0; i<lowerPriceArray.length; i++){
+    for(let i in lowerPriceArray){
         // Changes console log depending on scales number
         if (lowerPriceArray[i].scale == false){
             console.log(`${lowerPriceArray[i].id} - El vuelo con origen ${lowerPriceArray[i].from} y destino ${lowerPriceArray[i].to} tiene un coste de ${lowerPriceArray[i].cost}€ y no realiza ninguna escala.`);
@@ -422,10 +422,14 @@ function deleteFlight(){
                     flightID = prompt(`Introduce un valor numérico`);
                 } else {
 
-                    for(let i=0; i<flights.length;i++){
-                            includes = true;
+                    for(let i in flights){
+                        if(flights[i].id === flightID){
+                          includes = true;  
+                        }  
                     }
-                } if (includes){
+                } 
+                
+                if (includes){
 
                     let index=0;
 
