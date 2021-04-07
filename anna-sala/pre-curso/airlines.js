@@ -1,17 +1,11 @@
 /*
 
 Programa una interfaz de usuario para una aerolínea (por consola...). Esta aerolínea dispondrá de 10 vuelos para el día de hoy, para empezar, estos vuelos deben estar declarados de manera global, cuando se llame a la función:
-
 ● Se preguntará por el nombre de usuario y dará la bienvenida.
-
 ● El usuario visualizará todos los vuelos disponibles de una forma amigable : El vuelo con origen: Barcelona, y destino: Madrid tiene un coste de XXXX€ y no realiza ninguna escala.
-
 ● A continuación, el usuario verá el coste medio de los vuelos.
-
 ● También podrá ver cuántos vuelos efectúan escalas.
-
 ● Sabiendo que los últimos 5 vuelos (los últimos 5 ID's) son los últimos del día, muestra al usuario sus destinos.
-
 */
 
 
