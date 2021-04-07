@@ -330,7 +330,7 @@ function validar(value) {
     respuesta = respuesta.toUpperCase();
     let sameQuestion = questions[value].numberQuestion
     let isTrue = questions[value].chooseQuestion[sameQuestion].answer;
-    if(questions[value].status === "pasapalabra"){
+    if(questions[value].status == "pasapalabra"){
         let numberQuestion = questions[value].numberQuestion;
         isTrue = questions[value].chooseQuestion[numberQuestion].answer
     }
