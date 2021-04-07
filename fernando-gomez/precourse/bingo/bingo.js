@@ -40,7 +40,7 @@ function arrayOfNumbersGenerator(){
         //Generates a new random number to include
         nextNewNumber = randomNumberGenerator(90);
         //Checks if the new number to include already exists
-        for(let i=0; i < cardNumbers.length; i++){
+        for(let i in cardNumbers){
             if(cardNumbers[i].number === nextNewNumber){
                foundNumber++;
             }
@@ -90,7 +90,7 @@ function showCardByDimension(card, dimension){
     //there are no intention in cards different than 15 elements
     if(card.numbersArray.length % dimension !== 0){
 
-        tempString = ''
+        let tempString = ''
 
         for(let k=0; k< (card.numbersArray.length % dimension); k++){
             if(card.numbersArray[counter].matched === false){
@@ -108,7 +108,7 @@ function showCardByDimension(card, dimension){
 //Shows the ranking
 function showRanking(){
 
-    for(let i=0; i < ranking.length; i++){
+    for(let i in ranking){
         console.log(`${ranking[i].owner} ---> ${ranking[i].points} puntos`);
     }
     console.log('\n\n');

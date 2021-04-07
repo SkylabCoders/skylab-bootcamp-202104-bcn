@@ -126,15 +126,13 @@ function isFloat(n) {
 //Calculates width in px of a given text in a percentage font size
 function getTextWidth(inputText, textPercentage) { 
 
-    font = `${textPercentage}% Poppins`; 
+    let font = `${textPercentage}% Poppins`; 
 
-    canvas = document.createElement("canvas"); 
-    context = canvas.getContext("2d"); 
+    let canvas = document.createElement("canvas"); 
+    let context = canvas.getContext("2d"); 
     context.font = font; 
-    width = context.measureText(inputText).width; 
-    formattedWidth = Math.ceil(width); 
-    
-    return formattedWidth; 
+    let width = context.measureText(inputText).width; 
+    return Math.ceil(width);  
 }
 
 
