@@ -15,7 +15,7 @@ function inputValues() {
     calculadora(valores)
 }
 
-function calculadora() {
+function calculadora(valores) {
     let resultadoFinal = [];
     
         //------->OPERACIONS<----------//
