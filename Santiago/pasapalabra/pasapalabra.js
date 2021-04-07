@@ -176,24 +176,22 @@ ranking(askName());
 function showQuestions() {
 
     // Recorrecmos el obejeto questions
-    for (let i = 0; i < questions.length; i++) {
+    for (let question of questions) {
 
-        // let a = prompt(questions[i].question);
-
-        console.log(questions[i].question) // Mostramos la pregunta por console.log y nos sale el prompt para poder responderla
+        console.log(question.question) // Mostramos la pregunta por console.log y nos sale el prompt para poder responderla
         let a = prompt("Introduce tu respuesta");
 
         // Miramos si la palabra introducida por el prompt es igual a la respuesta en questions, si es así nos muestra correcto
         // y el estatus lo pone a 1 y se suma una respuesta correcta
-        if (questions[i].answer == a) {
+        if (question.answer == a) {
             console.log('¡Correcto!');
-            questions[i].status = 1;
+            question.status = 1;
             correct++;
         } else if (a === 'pasapalabra') { // Pasamos palabra
             console.log("Pasapalabra");
-        } else if (questions[i].answer !== a) { // si la palabra no es igual, sale incorrecto, el estatus se pone a 2 y se suma un error
+        } else if (question.answer !== a) { // si la palabra no es igual, sale incorrecto, el estatus se pone a 2 y se suma un error
             console.log('¡Incorrecto!');
-            questions[i].status = 2;
+            question.status = 2;
             errors++;
         }
     }
@@ -208,28 +206,27 @@ function showQuestions() {
     console.log("");
     console.log("Has acertado: " + correct)
     console.log("Has fallado: " + errors)
-    // ranking();
 }
 
 // Función que permite preguntar otra vez las preguntas que han sido respondidas con pasapalabra
 function askAgain() {
 
-    for (let i = 0; i < questions.length; i++) { // Recorremos questions de nuevo
+    for (let question of questions) { // Recorremos questions de nuevo
 
-        if (questions[i].status === 0) { // Si el status es 0, las volemos a preguntar
+        if (question.status === 0) { // Si el status es 0, las volemos a preguntar
 
-            console.log(questions[i].question)
+            console.log(question.question)
             let a = prompt("Introduce tu respuesta");
 
-            if (questions[i].answer == a) {
+            if (question.answer == a) {
                 console.log('¡Correcto!');
-                questions[i].status = 1;
+                question.status = 1;
                 correct++;
             } else if (a === 'pasapalabra') {
                 console.log("Pasapalabra");
-            } else if (questions[i].answer !== a) {
+            } else if (question.answer !== a) {
                 console.log('¡Incorrecto!');
-                questions[i].status = 2;
+                question.status = 2;
                 errors++;
             }
         }
