@@ -14,10 +14,10 @@ let flights = [
     { id: 9, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
     { id: 10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, scale: false } ];
 
-let lastFlights = [{ id: null, to: null, from: null, cost: null, scale: null}];
-let scaleFlights = [{ id: null, to: null, from: null, cost: null, scale: null}];
-let greaterPriceArray = [{ id: null, to: null, from: null, cost: null, scale: null}];
-let lowerPriceArray = [{ id: null, to: null, from: null, cost: null, scale: null}];
+let lastFlights = [];
+let scaleFlights = [];
+let greaterPriceArray = [];
+let lowerPriceArray = [];
 let averagePrice=0;
 
 airline();
@@ -26,17 +26,14 @@ airline();
 
 //Pushes last 5 flights into an array
 function lastFlightsArray(){
-
-        for(let i=flights.length; i > (flights.length - 6); i--){
-
-            lastFlights.push(flights[i]);
-        }
-        // Deletes first element (null) of lastFlights string
-        lastFlights.shift();
+    for(let i=flights.length; i > (flights.length - 6); i--){
+        lastFlights.push(flights[i]);
+    }
+    // Deletes first element (null) of lastFlights string
+    lastFlights.shift();
 }
 //Pushes flights with scales into an array
 function scaleFlightsArray(){
-
     for(let i in flights){
 
         if (flights[i].scale == true){
@@ -53,6 +50,7 @@ function flightsAveragePrice(){
     for (let i in flights){
         averagePrice += flights[i].cost;
     }
+
     averagePrice /= flights.length;
 }
 //Pushes into an array flights with price greater than the chosen one
@@ -61,9 +59,7 @@ function greaterPrice(price){
     greaterPriceArray = [];
 
     for(let i in flights){
-       
         if (flights[i].cost > price){
-        
             greaterPriceArray.push(flights[i]);
         }
     }
@@ -76,9 +72,7 @@ function lowerPrice(price){
     lowerPriceArray = [];
 
     for(let i in flights){
-       
         if (flights[i].cost <= price){
-        
             lowerPriceArray.push(flights[i]);
         }
     }
@@ -102,8 +96,8 @@ function showFlights(){
 }
 //Shows flights with scales
 function showScaleFlights(){
-    for(let i in scaleFlights){
-        
+
+    for(let i in scaleFlights){    
         if (scaleFlights[i].scale == false) {
             console.log(`${scaleFlights[i].id} - El vuelo con origen ${scaleFlights[i].from} y destino ${scaleFlights[i].to} tiene un coste de ${scaleFlights[i].price}€ y no realiza ninguna escala.`);
         } else {
@@ -155,9 +149,7 @@ function showLowerPriceFlights(){
     }
 }
 
-
 /************ Choices and actions ************/
-
 //To choose between admin functions
 function admin(){
 
@@ -172,9 +164,7 @@ function admin(){
         } else {
             checkChoice = true;
         }
-
     } while(!checkChoice);
-
 
     switch(adminChoice){
         case "ADD":
@@ -210,7 +200,6 @@ function user(){
 
     do{
         if(userChoice !== null){
-
             if(userChoice === ''){
                 userChoice = prompt(`Introduce un precio válido`);
             } else if(userChoice === 'exit'){
@@ -218,7 +207,7 @@ function user(){
                 checkValue = true;
             } else {
                 userChoice = parseInt(userChoice);
-    
+
                 if(Number.isNaN(userChoice)){
                     userChoice = prompt(`Introduce un valor numérico`);
                 } else {
@@ -329,10 +318,8 @@ function addFlight(){
         }
 
     } while(!checkOrigin);
-
     
     if(origin !== null){
-
         destination = prompt(`Destino:`);
 
         do{
@@ -343,7 +330,6 @@ function addFlight(){
             }
 
         } while(!checkDestination);
- 
     }
 
     if((destination !== null) && (destination !== '')){
@@ -355,7 +341,6 @@ function addFlight(){
                 price = prompt(`Introduce un precio válido`);
                 checkPrice = false;
             } else {
-
                 price = parseInt(price);
 
                 if(Number.isNaN(price)){
@@ -364,7 +349,6 @@ function addFlight(){
                     checkPrice = true;
                 }
             }
-
         } while(!checkPrice);
     }
     
@@ -384,15 +368,12 @@ function addFlight(){
                     checkScales = true;
                 }
             }
-
         } while(!checkScales);
-
     }
     
     if((scales !== null) && (scales !== '')){
 
         (scales > 0) ? (scales = true) : (scales = false)
-
         newFlight = {id: flights[flights.length-1].id + 1, to: destination, from: origin, cost: price, scale: scales};
         flights.push(newFlight);
         console.log("\nLa nueva lista de vuelos es:\n");
@@ -409,16 +390,13 @@ function deleteFlight(){
     let includes = false;
 
     if(flightID !== null){
-
         do{
             if(flightID === ''){
                 flightID = prompt(`Introduce un ID válido`);
             } else if(flightID !== null) {
-
                 flightID = parseInt(flightID);
 
                 if(Number.isNaN(flightID)){
-
                     flightID = prompt(`Introduce un valor numérico`);
                 } else {
 
@@ -428,7 +406,7 @@ function deleteFlight(){
                         }  
                     }
                 } 
-                
+
                 if (includes){
 
                     let index=0;
@@ -436,8 +414,8 @@ function deleteFlight(){
                     while(flights[index].id !== flightID){
                         index++;
                     }
-                    flights.splice(index, 1);
 
+                    flights.splice(index, 1);
                     console.log("\nLa nueva lista es:\n");
                     showFlights();
                     checkID = true;
@@ -468,7 +446,6 @@ function buy(){
             flightToBuy = prompt(`Introduce un precio válido`);
             checkValue = false;
         } else {
-
             flightToBuy = parseInt(flightToBuy);
 
             if(Number.isNaN(flightToBuy)){
@@ -533,15 +510,12 @@ function searchByPrice(price){
 }
 
 /************ Small functionalities ************/
-
 //Says goodbye to the user
 function exit(){
     alert("¡Hasta luego!");
 }
 
-
 /************ Main function ************/
-
 function airline(){
 
     let userName = prompt(`Bienvenido a Skylab Arlines. Introduzca su nombre de usuario:`);
@@ -562,20 +536,16 @@ function airline(){
     lastFlightsArray();
     flightsAveragePrice();
     scaleFlightsArray();
-    
     // Username input
     console.log(`Gracias por elegirnos ${userName}, estos son todos los vuelos del día:\n\n`);
     
     showFlights();
-    
     // Average price of flights
     console.log(`\nEl precio medio de nuestros vuelos es de ${averagePrice.toFixed(2)}€\n\n`);
-
     // Flights with scales
     console.log(`Los vuelos que realizarán escalas son:\n\n`);
 
     showScaleFlights();
-
     // Last 5 flights of the day
     console.log(`\nEstos son los 5 últimos vuelos del día:\n`);
 

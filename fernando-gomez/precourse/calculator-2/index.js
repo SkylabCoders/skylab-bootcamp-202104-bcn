@@ -1,5 +1,4 @@
 // Fernando Gómez Graciani. Skylab Coders Academy. 2021. Calculator Pro HTML
-
 let calculatorInput='';
 let calculatorResult='0';
 //To control every moment what is the last input added to calculator
@@ -11,9 +10,7 @@ const baseFontPercentage = 300;
 let inputFontPercentage = baseFontPercentage;
 let resultsFontPercentage = baseFontPercentage;
 
-
 /**************** Input by keyboard control ****************/
-
 //Runs when certain keys are pressed
 window.onkeydown = function(event) {
 
@@ -67,10 +64,7 @@ window.onkeydown = function(event) {
             break;        
     }
 };
-
-
 /********************** Input control **********************/
-
 //Runs when a number button is pressed and it's added to the calculatorInput
 function number (value){
     //Updats las added element
@@ -87,7 +81,6 @@ function symbol(value){
     if(value == '/' && lastAdded == '/') controlBool = false;
 
     lastAdded = value;
-
     calculatorInput = calculatorInput + value;
     document.getElementById("input").innerHTML = calculatorInput;
 
@@ -113,12 +106,8 @@ function ac(){
     resultsFontPercentage = baseFontPercentage;
     document.getElementById("input").style.fontSize = `${baseFontPercentage}%`;
     document.getElementById("results").style.fontSize = `${baseFontPercentage}%`;
-
 }
-
-
 /****************** Small functionalities ******************/
-
 //Checks if a number is a float
 function isFloat(n) {
     return n === +n && n !== (n|0);
@@ -127,17 +116,13 @@ function isFloat(n) {
 function getTextWidth(inputText, textPercentage) { 
 
     let font = `${textPercentage}% Poppins`; 
-
     let canvas = document.createElement("canvas"); 
     let context = canvas.getContext("2d"); 
     context.font = font; 
     let width = context.measureText(inputText).width; 
     return Math.ceil(width);  
 }
-
-
 /******************** Text size control ********************/
-
 //Decreases the font size by a given percentage until the text given fits in the given container with maxWidth
 function decreaseFontSize(inputText, maxWidth, resizeIndex, container, textPercentage){
 
@@ -172,7 +157,6 @@ function resizeInput (){
     let calculatorInputMaxWidth = 170;
     let inputDiv = document.getElementById("input");
     let calculatorInputWidth = getTextWidth(calculatorInput, inputFontPercentage);
-    
     //If the input text beats max input width,font size decreases
     if(calculatorInputWidth >= `${calculatorInputMaxWidth}`){
         if(inputFontPercentage > 100){
@@ -193,7 +177,6 @@ function resizeResults(results){
     const calculatorResultsMaxWidth = 170;
     let resultsDiv = document.getElementById("results");
     let calculatorResultsWidth = getTextWidth(results, resultsFontPercentage);
-    
     //If the input text beats max input width,font size decreases
     if(calculatorResultsWidth >= `${calculatorResultsMaxWidth}`){
         resultsFontPercentage = decreaseFontSize(results, calculatorResultsMaxWidth, resizeIndex, resultsDiv, resultsFontPercentage);
@@ -209,10 +192,7 @@ function resizeResults(results){
         document.getElementById("results").style.fontSize = `${baseFontPercentage}%`; 
     }
 }
-
-
 /********************** Main function **********************/
-
 //Evaluates claculator input operation
 function calculator(){
 
@@ -233,7 +213,3 @@ function calculator(){
     
     resizeResults(calculatorResult);
 }
-
-
-
-

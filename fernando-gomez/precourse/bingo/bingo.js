@@ -1,8 +1,5 @@
 //Fernando Gómez Graciani. Skylab Bingo. 2021.
-
-
 /************ Arrays constructions ************/
-
 //Ranking array with objets like {owner: 'name', points: xxx}
 let ranking = [
     {owner:'Fer', points: 400},
@@ -13,7 +10,6 @@ let ranking = [
 ]
 //Cards generator
 class Card { 
-
     constructor (numbersArray, owner) {
         this.numbersArray = numbersArray; //an element of the array is like {number: xx, matched: false}
         this.owner = owner;
@@ -32,10 +28,9 @@ function arrayOfNumbersGenerator(){
     let cardNumbers = [];
     let nextNewNumber;
     let foundNumber;
-
     //Iterates while card doesn't have the amount of numbers chosen   
     while(cardNumbers.length < 15){
-        
+
         foundNumber=0;
         //Generates a new random number to include
         nextNewNumber = randomNumberGenerator(90);
@@ -57,13 +52,10 @@ function arrayOfNumbersGenerator(){
 
     return cardNumbers;
 }
-
-
 /************ Showing functions ************/
-
 //Shows the card divided in files and columns
 function showCard(card){
-        showCardByDimension(card, 5);
+    showCardByDimension(card, 5);
 }
 //Shows the card divided in as many columns as elements chosen in one file, useful function for arrays of card numbers
 //with different than 15 elements
@@ -92,7 +84,7 @@ function showCardByDimension(card, dimension){
 
         let tempString = ''
 
-        for(let k=0; k< (card.numbersArray.length % dimension); k++){
+        for(let k=0; k<(card.numbersArray.length % dimension); k++){
             if(card.numbersArray[counter].matched === false){
                 tempString = tempString.concat(` | ${card.numbersArray[counter].number} | `); 
             } else {
@@ -107,7 +99,6 @@ function showCardByDimension(card, dimension){
 }
 //Shows the ranking
 function showRanking(){
-
     for(let i in ranking){
         console.log(`${ranking[i].owner} ---> ${ranking[i].points} puntos`);
     }
@@ -115,16 +106,12 @@ function showRanking(){
 }
 //Shows the user the points system
 function showPointsSystem(){
-
     console.log('Cuantos menos turnos tardes en completar una línea más puntos obtendrás, así mismo, a menos turnos en completar el cartón, más puntos se obtienen.');
     console.log('Los puntos al completar la primera línea se calculan según la siguiente fórmula: puntos = ln(1/ (88-turnos)) * (-10)');
     console.log('Los puntos al completar el cartón se calculan según la siguiente fórmula: puntos = ln(1/ (91-turnos)) * (-100)');
     console.log('Los puntos totales se obtienen de sumar los puntos de completar la primera línea más los de completar el cartón\n\n');
 }
-
-
 /************ Decisions functionalities ************/
-
 //Asks the owner for confirmation to continue the game
 function confirm(card){
 
@@ -186,17 +173,14 @@ function confirmNewGame(){
             return true;
     }
 }
-
-
 /************ Small functionalities ************/
-
 //Says goodbye to the owner
 function exit(card){
-
     alert(`Hasta la próxima ${card.owner}`);
 }
 //Calculates the points for completing a line
 function linePoints(turns){
+
     let result = 1;
 
     result /= (88-turns)
@@ -222,7 +206,6 @@ function sortRanking(rankingArray){
     rankingArray.sort(function(a, b){
         return (b.points - a.points);
     });
-
 }
 //Generates a random number between 1 and the input max quantity of numbers desired
 function randomNumberGenerator(maxQuantity){
@@ -263,21 +246,18 @@ function lineReached(card, turn){
     let checkLine3 = true;
     //Checks line 1 completely reached
     for(let i=0; i<4; i++){
-
         if(card.numbersArray[i].matched === false){
             checkLine1 = false;       
         }
     }
     //Checks line 1 completely reached
     for(let i=5; i<9; i++){
-
         if(card.numbersArray[i].matched === false){
             checkLine2 = false;       
         }
     }
     //Checks line 1 completely reached
     for(let i=10; i<14; i++){
-
         if(card.numbersArray[i].matched === false){
             checkLine3 = false;       
         }
@@ -314,10 +294,7 @@ function lineReached(card, turn){
     }
     return card;
 }
-
-
 /************ Main function ************/
-
 //Main function
 function bingo(){
 
@@ -354,7 +331,6 @@ function bingo(){
     cardConfirmation = confirmCard(card);
 
     while(!cardConfirmation){
-
         numbers = arrayOfNumbersGenerator();
         card = new Card(numbers, owner);
         console.log('\n¡ Este es tu cartón ! Confirma que quieres quedártelo\n');
@@ -363,7 +339,6 @@ function bingo(){
     }
     //Iterates until the card is completed or the user exits the game
     while((!cardCompleted(card)) && (!exitBool)){
-
         let newNumber = randomNumberGenerator(90);
         //Creates a new number and checks if it doesn't already exist's
         while(newNumbersArray.includes(newNumber)){

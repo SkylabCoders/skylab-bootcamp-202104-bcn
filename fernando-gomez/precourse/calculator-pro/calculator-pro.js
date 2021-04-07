@@ -14,7 +14,6 @@ function calculator (){
         alert('You should enter just numbers');
         calculator();
     } else {
-
         inputNumbers = inputNumbers.split(",");
         //User input just one number
         if(inputNumbers.length === 1){
@@ -24,7 +23,7 @@ function calculator (){
         } else {
             //Initialize results string with first user input number
             results = [parseFloat(inputNumbers[0]),parseFloat(inputNumbers[0]),parseFloat(inputNumbers[0]),parseFloat(inputNumbers[0])]
-            
+
             //Results calculation
             for (let i=0; i < inputNumbers.length -1; i++){
                 results[0] += parseFloat(inputNumbers[i+1]);
@@ -32,7 +31,6 @@ function calculator (){
                 results[2] *= parseFloat(inputNumbers[i+1]);
                 results[3] /= parseFloat(inputNumbers[i+1]);
             }
-
             //Results output
             alert(`Your results are:\n
             - Addition: ${results[0]}\n
@@ -40,7 +38,6 @@ function calculator (){
             - Multiplication: ${results[2]}\n
             - Division: ${results[3].toFixed(3)}\n`);
         }
-
         //Repeat until user inputs "n" or cancel
         answer = prompt("New numbers? y/n");
 
@@ -67,11 +64,11 @@ function areNumbers(inputsNumbersArray){
 
     inputsNumbersArray = inputsNumbersArray.split(",");
 
-        for(let i=0; i < inputsNumbersArray.length; i++){
-            inputsNumbersArray[i] = parseInt(inputsNumbersArray[i]);
-            if(Number.isNaN(inputsNumbersArray[i])){
-                result = false;
-            }
+    for(let i=0; i < inputsNumbersArray.length; i++){
+        inputsNumbersArray[i] = parseInt(inputsNumbersArray[i]);
+        if(Number.isNaN(inputsNumbersArray[i])){
+            result = false;
         }
+    }
     return result;
 }

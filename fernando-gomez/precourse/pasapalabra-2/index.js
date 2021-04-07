@@ -238,10 +238,11 @@ const chooseQuestionOfLetter = (letter) => {
 }
 
 const generateDonut = () => {
-
+    
+    let number;
+    
     donut = [];
 
-    let number;
     for(let letter in questions) {
         number = chooseQuestionOfLetter(letter);
         donut.push({
@@ -255,6 +256,7 @@ const generateDonut = () => {
 }
 
 const currentDonutIndex = () => {
+
     let index;
 
     for(index=0; index<donut.length; index++) {
@@ -294,6 +296,7 @@ const updateStatus = (donutIndex, answer, input) => {
 const nextQuestion = () => {
 
     let nextQuestionIndex;
+
     if (allDonutAnswered()){
         endGame();
     } else {
@@ -318,6 +321,7 @@ const nextNotAnsweredDonutIndex = () => {
                 }
             }
         }
+
         if(!donutLetterAnswered(donut[i])){
             return i;
         }
@@ -331,14 +335,17 @@ const allLetterColorsReset = () => {
 }
 
 const roundedDonut = () => {
-    donut = generateDonut();
-    playStartSound();
-    let rotationDegrees = 13.33;
+
     const percentageTransform = 800;
     const convertToDeg = Math.PI/180;
+    let rotationDegrees = 13.33;
+
+    donut = generateDonut();
+    playStartSound();
     rotationDegrees *= convertToDeg;
  
     for (let letter in donut){
+
         const letterBox = document.getElementById(`letter${donut[letter].letter.toUpperCase()}`);
 
         letterBox.animate([
@@ -356,6 +363,7 @@ const roundedDonut = () => {
 }
 
 const resetRoundedDonut = () => {
+
     donut = generateDonut();
 
     for (let letter in donut){
@@ -368,6 +376,7 @@ const resetRoundedDonut = () => {
             fill: "forwards",
           });
     }
+
     donut = [];
 }
 
@@ -395,8 +404,8 @@ const checkAnswer = () => {
 
     const letter = currentDonutElement();
     const currentAnswer = letter.answer;
-    let userAnswer = currentUserAnswer();
     const currentIndex = currentDonutIndex();
+    let userAnswer = currentUserAnswer();
 
     if(userAnswer !== null) userAnswer = userAnswer.toLowerCase();
 
@@ -491,6 +500,7 @@ const totalHits = () => {
             result++;
         }
     }
+
     return result;
 }
 
@@ -503,6 +513,7 @@ const totalFails = () => {
             result++;
         }
     }
+
     return result;
 }
 
@@ -579,6 +590,7 @@ const sortRanking = () => {
 }
 
 const createRankingRankColumn = (rankingIndex) => {
+
     const rankColumnElement = document.createElement('td');
     const rank = document.createTextNode(`${rankingIndex+1}`);
 
@@ -588,15 +600,17 @@ const createRankingRankColumn = (rankingIndex) => {
 }
 
 const createRankingPlayerColumn = (rankingIndex) => {
-    const playerColumnElement = document.createElement('td');
-    player = document.createTextNode(`${ranking[rankingIndex].player}`);
 
+    const playerColumnElement = document.createElement('td');
+    
+    player = document.createTextNode(`${ranking[rankingIndex].player}`);
     playerColumnElement.appendChild(player);
 
     return playerColumnElement;
 }
 
 const createRankingHitsColumn = (rankingIndex) => {
+
     const hitsColumnElement = document.createElement('td');
     const hits = document.createTextNode(`${ranking[rankingIndex].hits}`);
 
@@ -606,6 +620,7 @@ const createRankingHitsColumn = (rankingIndex) => {
 }
 
 const createRankingFailsColumn = (rankingIndex) => {
+
     const failsColumnElement = document.createElement('td');
     const fails = document.createTextNode(`${ranking[rankingIndex].fails}`);
 
@@ -615,6 +630,7 @@ const createRankingFailsColumn = (rankingIndex) => {
 }
 
 const createRankingRemainingTimeColumn = (rankingIndex) => {
+
     const remainingTimeColumn = document.createElement('td');
     const remainingTime = document.createTextNode(`${ranking[rankingIndex].remainingTime}`);
 
@@ -645,6 +661,7 @@ const generateRankingTable = () => {
 }
 
 const removeAllChildNodes = (parent) => {
+
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }

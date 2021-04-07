@@ -1,6 +1,6 @@
 //Fernando Gómez Graciani. Skylab Pasapalabra. 2021.
 //Questions array of objets (letters)
-var questions = {
+const questions = {
     a: [{ letter: "a", answer: "abducir", status: 0, question: "CON LA A. Dicho de una supuesta criatura extraterrestre: Apoderarse de alguien"},
         { letter: "a", answer: "alcachofa", status: 0, question: "CON LA A. Planta comestible con tallos blancos y hojas verdes. También está en la ducha."},
         { letter: "a", answer: "agorafobia", status: 0, question: "CON LA A. Fobia a los espacios abiertos."}
@@ -108,7 +108,7 @@ var questions = {
     z: [{ letter: "z", answer: "zen", status: 0, question: "CON LA Z. Escuela de budismo que busca la experiencia de la sabiduría más allá del discurso racional"},
         { letter: "z", answer: "zumbido", status: 0, question: "CON LA Z. Sonido que producen algunos insectos como la abeja o el mosquito."},
         { letter: "z", answer: "zoologico", status: 0, question: "CON LA Z. Lugar en que se conservan, cuidan y a veces se crían diversas especies animales para que sean contempladas por el público y para su estudio."}
-    ] 
+    ]
 }
 //Ranking array of players
 let ranking = [
@@ -119,7 +119,6 @@ let ranking = [
     {player: 'lab', points: 19}
     ];
 /************** Choices and actions **************/
-
 //Asks the user for a new game
 function confirmNewGame(){
     
@@ -141,10 +140,7 @@ function confirmNewGame(){
     }
 }
 
-/*************************************************/
-
 /***************** Array walking *****************/
-
 //Returns true if all donut letters had been answered
 function allDonutAnswered(donut){
 
@@ -174,10 +170,7 @@ function sortRanking(rankingArray){
     });
 }
 
-/*************************************************/
-
 /************ Showing functionalities ************/
-
 //Shows the ranking
 function showRanking(){
 
@@ -187,37 +180,28 @@ function showRanking(){
 
     console.log('\n\n');
 }
-
-/*************************************************/
 /************* Small functionalities *************/
-
 //Says goodbye to the user
 function end(){
     alert('¡ Hasta la próxima !');
 }
-
 //Returns one of the possible questions of the letter given
 function chooseQuestionOfLetter(letter){
-
     return Math.round(Math.random()*(questions[letter].length - 1));
 }
-
 function generateDonut(){
 
     let donut = [];
-
     let number;
+
     for(var letter in questions) {
         number = chooseQuestionOfLetter(letter);
         donut.push({letter: questions[letter][number].letter, answer: questions[letter][number].answer, status: questions[letter][number].status, question: questions[letter][number].question});
     }
+
     return donut;
 }
-
-/*************************************************/
-
 /***************** Main function *****************/
-
 //Main function
 function pasapalabra() {
 
@@ -230,7 +214,6 @@ function pasapalabra() {
     let donut = [];
     //Generates a new donut to play
     donut = generateDonut();
-    
     //Shows the ranking
     console.log('Esta es la tabla clasificatoria\n\n');
     showRanking();
@@ -249,7 +232,6 @@ function pasapalabra() {
     alert('-************************** REGLAS **************************-\n\nAparecerán preguntas asociadas a una letra del abecedario en orden alfabético.\n- Si pulsas Aceptar o escribes pasapalabra, el juego pasará a la siguiente letra.\n- Si escribes end o pulsas Cancelar el juego terminará mostrando tu puntuación.\nCuando todas las letras estén respondidas aparecerá la cantidad de preguntas acertadas y falladas y entrarás en el ranking.');
 
     while(!allDonutAnswered(donut)){
-
         for(let index in donut) {
             //Executes if the letter doesn't have an answer yet
             if(!donutLetterAnswered(donut[index])){
@@ -283,17 +265,13 @@ function pasapalabra() {
             }
         }
     }
-
     //From here executes just if the player has answered a question of every letter
-
     //Shows player score and enters to the ranking
     alert(`¡ Has acertado ${hits} preguntas !\n¡ Has fallado ${fails} preguntas !`);
 
     ranking.push({player: player, points: hits});
     sortRanking(ranking);
-
     console.log('Esta es la nueva tabla clasificatoria\n\n');
-
     showRanking();
 
     //Player can play another time
@@ -305,5 +283,4 @@ function pasapalabra() {
 
     return 1;
 }
-
 /*************************************************/
