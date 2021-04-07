@@ -1,0 +1,192 @@
+body {
+  background-color: rgb(127, 251, 255);
+}
+h1 {
+  text-align: right;
+  color: rgb(0, 140, 255);
+}
+p {
+  text-align: left;
+  color: rgb(0, 140, 255);
+}
+li {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  background-color: blue;
+  color: black;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+input[type="button"] {
+  background-color: rgb(88, 88, 235);
+  color: rgb(0, 225, 255);
+  display: block;
+  box-sizing: border-box;
+  width: 200px;
+  height: 45px;
+  margin: 5px;
+  text-transform: uppercase;
+  font-family: "Courier New", Courier, monospace;
+}
+input[type="text"] {
+  width: 200px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.juego {
+  display: flex;
+  margin-left: 15px;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+}
+.normas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#botonJugar,
+#respuesta,
+#aceptarRespuesta,
+#salirDelJuego {
+  display: none;
+}
+.circulo {
+  border: 0px solid;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  display: flex;
+  top: -100px;
+  left: 450px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+}
+#tiempo {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  align-items: center;
+  left: 400px;
+}
+.titulo {
+  display: relative;
+  text-align: left;
+  font-size: 50px;
+  color: blue;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+#name {
+  display: relative;
+  text-align: left;
+  margin-left: 5px;
+}
+.acertada {
+  background-color: green;
+}
+.fallada {
+  background-color: red;
+}
+.pasapalabra {
+  background-color: orange;
+}
+#correcto,
+#pregunta {
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-family: "Courier New", Courier, monospace;
+}
+.respuesta {
+  display: inline-block;
+}
+.a {
+  transform: translateY(-200px);
+}
+.b {
+  transform: rotate(13.33deg) translateY(-200px) rotate(-13.33deg);
+}
+.c {
+  transform: rotate(26.66deg) translateY(-200px) rotate(-26.66deg);
+}
+.d {
+  transform: rotate(39.99deg) translateY(-200px) rotate(-39.99deg);
+}
+.e {
+  transform: rotate(53.32deg) translateY(-200px) rotate(-53.32deg);
+}
+.f {
+  transform: rotate(66.65deg) translateY(-200px) rotate(-66.65deg);
+}
+.g {
+  transform: rotate(79.98deg) translateY(-200px) rotate(-79.98deg);
+}
+.h {
+  transform: rotate(93.31deg) translateY(-200px) rotate(-93.31deg);
+}
+.i {
+  transform: rotate(106.64deg) translateY(-200px) rotate(-106.64deg);
+}
+.j {
+  transform: rotate(119.97deg) translateY(-200px) rotate(-119.97deg);
+}
+.k {
+  transform: rotate(133.3deg) translateY(-200px) rotate(-133.3deg);
+}
+.l {
+  transform: rotate(146.63deg) translateY(-200px) rotate(-146.63deg);
+}
+.m {
+  transform: rotate(159.96deg) translateY(-200px) rotate(-159.96deg);
+}
+.n {
+  transform: rotate(173.29deg) translateY(-200px) rotate(-173.29deg);
+}
+
+.ñ {
+  transform: rotate(186.62deg) translateY(-200px) rotate(-186.62deg);
+}
+
+.o {
+  transform: rotate(199.95deg) translateY(-200px) rotate(-199.95deg);
+}
+
+.p {
+  transform: rotate(213.28deg) translateY(-200px) rotate(-213.28deg);
+}
+.q {
+  transform: rotate(226.61deg) translateY(-200px) rotate(-226.61deg);
+}
+.r {
+  transform: rotate(239.94deg) translateY(-200px) rotate(-239.94deg);
+}
+.s {
+  transform: rotate(253.27deg) translateY(-200px) rotate(-253.27deg);
+}
+.t {
+  transform: rotate(266.6deg) translateY(-200px) rotate(-266.6deg);
+}
+.u {
+  transform: rotate(279.93deg) translateY(-200px) rotate(-279.93deg);
+}
+.v {
+  transform: rotate(293.26deg) translateY(-200px) rotate(-293.26deg);
+}
+.w {
+  transform: rotate(306.59deg) translateY(-200px) rotate(-306.59deg);
+}
+.x {
+  transform: rotate(319.92deg) translateY(-200px) rotate(-319.92deg);
+}
+.y {
+  transform: rotate(333.25deg) translateY(-200px) rotate(-333.25deg);
+}
+.z {
+  transform: rotate(346.58deg) translateY(-200px) rotate(-346.58deg);
+}

@@ -1,0 +1,64 @@
+/*Hoja estilo Calculadora*/
+form {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+input[type="textfield"] {
+  height: 75px;
+  width: 530px;
+  margin-bottom: 25px;
+  font-size: 50px;
+  text-align: right;
+}
+h1 {
+  font-style: italic;
+  color: black;
+  border-color: black;
+  margin-bottom: 25px;
+  text-align: center;
+  margin: auto;
+}
+p {
+  font-style: italic;
+  font-size: 30px;
+  margin-bottom: 25px;
+  border-color: black;
+  color: black;
+  text-align: center;
+}
+input[type="button"] {
+  background-color: rgb(228, 192, 126);
+  color: white;
+  border-style: solid;
+  border-color: black;
+  height: 105px;
+  width: 105px;
+  text-align: center;
+  font-size: 75px;
+}
+input[type="reset"] {
+  background-color: rgb(216, 73, 73);
+  color: black;
+  border-style: solid;
+  border-color: black;
+  height: 105px;
+  width: 105px;
+  text-align: center;
+  font-size: 75px;
+}
+#division {
+  background-color: rgb(165, 165, 165);
+}
+#suma,
+#resta,
+#multiplicacion {
+  background-color: rgb(165, 165, 165);
+  color: white;
+  border-style: solid;
+  border-color: black;
+  height: 105px;
+  width: 215px;
+  text-align: center;
+  font-size: 75px;
+}
