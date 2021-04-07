@@ -19,7 +19,7 @@ function bingo () {
         check = false;
 
         //Almacenar en el array bingoCard cada objeto numero random (propiedades número y matched)
-        for(let i=0;i<bingoCard.length;i++){
+        for(let i of bingoCard){
             while (bingoCard[i].length<5){
                 let numberGenerator = {
                 number: randomNumbForCard(),
@@ -36,8 +36,7 @@ function bingo () {
         for(let i=0;i<3;i++){
             if(matchLines[i] === false) {
                 let lineMatched = true;
-                let condition = false;
-                for(let j=0;j<bingoCard[i].length;j++){
+                for(let j of bingoCard[i]){
                     if (bingoCard[i][j].matched === false){
                         lineMatched = false;
                     }
@@ -59,10 +58,9 @@ function bingo () {
     //Función para introducir nombre del jugador (propiedades nombre y puntuación)
    function writeYourName () {
         name = prompt("Bienvenido, introduce tu nombre");
-        name = capitalLetter(name);
+        name = capitalLetter();
         if(name === null){
             alert("¡Hasta la vista!")
-            return;
         } else if (isNaN(name)) {
             console.log("Hola " + name + "!\nAquí tienes tu cartón para jugar al bingo!");
             let generatePlayer = {
@@ -84,7 +82,6 @@ function bingo () {
        const changeC = prompt("¿Quieres este cartón y empezar a jugar? y/n");
        if(changeC === null) {
            alert("¡Hasta la vista!");
-           return;
        } else if(changeC.toUpperCase() === "Y"){
             if (confirm("SISTEMA DE PUNTUACIÓN: \n\nVas a empezar con 9900pts. pero por cada turno que necesites perderás 100pts. Así que cuantos más turnos necesites menos puntos tendrás. ¿Estás preparado? \n\n¡Adelante y mucha suerte!")) {
                 newTurn();
@@ -105,7 +102,7 @@ function bingo () {
     //Funciones para imprimir por consola los dos arrays: bingocard y players
 
     function printBingoCard () {
-        for(let i=0;i<bingoCard.length;i++){
+        for(let i of bingoCard){
             console.log(bingoCard[i][0].number + "|" + bingoCard[i][1].number + "|" + bingoCard[i][2].number + "|" + bingoCard[i][3].number + "|" + bingoCard[i][4].number);        
         }
     }
@@ -113,7 +110,7 @@ function bingo () {
         let position = 1;
         console.log("%c%s","color:cyan","RANKING DE JUGADORES:");
         players.sort(((a,b) => b.score - a.score));
-        for(let i=0;i<players.length;i++){
+        for(let i of players){
             console.log(position + "º. " + players[i].name + ": " + players[i].score + ".pts");
             position++;
         }
@@ -121,7 +118,7 @@ function bingo () {
 
     //Función primera letra en mayúscula
 
-    function capitalLetter(name){
+    function capitalLetter(){
         return name.charAt(0).toUpperCase() + name.slice(1);
     }
 
@@ -142,7 +139,7 @@ function bingo () {
     }
     function repeatNumberForCard(randomNumb) {
         let repeat = false;
-        for(let i=0;i<numbersUsedCard.length;i++){
+        for(let i of numbersUsedCard){
             if(randomNumb == numbersUsedCard[i]){
                 repeat = true;
             }
@@ -167,7 +164,7 @@ function bingo () {
     }
     function repeatNumberForTurn(randomNumb) {
         let repeat = false;
-        for(let i=0;i<numbersUsedTurn.length;i++){
+        for(let i of numbersUsedTurn){
             if(randomNumb == numbersUsedTurn[i]){
                 repeat = true;
             }
@@ -177,8 +174,8 @@ function bingo () {
     
     //Función para comprobar que todos los valores de matched sean false y sino acabar el juego.
     function askTurn() {
-        for(let i=0;i<bingoCard.length;i++){
-            for(let z=0;z<bingoCard[i].length;z++){
+        for(let i of bingoCard){
+            for(let z of bingoCard[i]){
                 if (bingoCard[i][z].matched !== true) {
                     return newTurn();           
                 }              
@@ -201,8 +198,8 @@ function bingo () {
     function newTurn() {
         const randomNumber = randomNumbForTurn();
         console.log("%c%s","color: green","Eeeel " + randomNumber + "!!");
-        for(let i=0;i<bingoCard.length;i++) {
-            for(let z=0;z<bingoCard[i].length;z++) {
+        for(let i of bingoCard) {
+            for(let z of bingoCard[i]) {
                 if(bingoCard[i][z].number === randomNumber){     
                     bingoCard[i][z].matched = true; 
                     if (bingoCard[i][z].matched){
@@ -225,7 +222,6 @@ function bingo () {
             askTurn();
         } else {
             alert("¡Hasta la vista!");
-            return;
         }
     }  
     
@@ -235,7 +231,6 @@ function bingo () {
             writeYourName();
         } else {
             alert("¡Hasta la vista!");
-            return;
         }
     }
     //Función para el sistema de puntuación
