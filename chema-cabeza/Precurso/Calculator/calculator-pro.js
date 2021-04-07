@@ -41,7 +41,7 @@ function checksValues (array) {
     for (let i = 0; i< array.length; i++) {  
 
         array[i] = array[i].replace(/ /g, ""); // I used here regex to find and remove empty spaces.
-        while(isNaN(array[i]) || array[i] === null) { array[i] = prompt (`The value #${(i+1)} is incorrect, please introduce it again:`) } ; // Checks if input values are not numbers or nulls.
+        while(isNaN(array[i]) || array[i] === null) { array[i] = prompt (`The value #${(i+1)} is incorrect, please introduce it again:`) } // Checks if input values are not numbers or nulls.
     
     }
 

@@ -121,7 +121,7 @@ let questions = []
 
             else if (questions[questionInd].status === 0) {  // Si la letra actual está NO está respondida
                     
-                    checkAnswer (answer, questionInd, randomAnswerInd = 0);
+                    checkAnswer (answer, questionInd, randomAnswerInd);
 
 
             } else {questionInd++; nextQuestion(questionInd);} 
@@ -274,7 +274,7 @@ let questions = []
                     case "N":
                         console.log ('Bye');
                         return false;
-                    break;
+                    
                     default:
                         playAgainQuestion(`Incorrect answer. Do you want to play again? (Y/N)`);
                 }

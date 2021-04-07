@@ -29,7 +29,7 @@ let fifteen = 15;
 
 let user = prompt (`Introduce user name, please:`);
 
-    if (user === null) {console.log ("Thanks, bye!"); return false;};
+    if (user === null) {console.log ("Thanks, bye!"); return false;}
 
 let media = 0;
 let numScales = 0;
@@ -194,7 +194,7 @@ function sameFare (fare) {
 
 
  function lastFlights(){
-    // debugger;
+
     let five = 0;
     
     for (let i = (flights.length-1); i >= 0 ; i--) {
@@ -252,7 +252,7 @@ function addFlight() {
         fifteen--;
         printFlights();
 
-    } else {console.error(`You have reached the maximum of flights (15)`)};
+    } else {console.error(`You have reached the maximum of flights (15)`)}
 
 admin();
 
@@ -280,7 +280,7 @@ function validateId(question =`Please, introduce ID of the flight you want to bu
     let validatedId = prompt (question);
 
     if (isNaN(validatedId) || validateId+1 > flights.length) {validateId (`Incorrect ID. Please, introduce ID of the flight you want to buy:`)} //Checks for NaN or incorrect ID numbers.
-    else {buyTicket (parseInt(validatedId))};
+    else {buyTicket (parseInt(validatedId))}
 
 }
 

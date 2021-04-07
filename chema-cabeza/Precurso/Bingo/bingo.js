@@ -47,7 +47,7 @@ let usedCardNumbers =[];
  let line1Flag;
  let line2Flag;
  let line3Flag;
-
+ let usedNumbers = [];
  let playerName = "";
  
 
@@ -87,7 +87,7 @@ function printScore(){
 
 function newCard () {
 
-    let usedCardNumbers = []; // Stores numbers that have been included in the card.
+    usedCardNumbers = []; // Stores numbers that have been included in the card.
 
     bingoCard.forEach (element => {
 
@@ -130,7 +130,7 @@ function pickCardQuestion (question = `Do you want to keep this card? (Y/N)`){
                 case "Y":
                     nextTurn();
                     return;
-                break;
+
                 case "N":
                     console.log ("New Card:");
                     newCard();
@@ -177,7 +177,7 @@ function registerPlayer(){
 
     let playerScore = 101 - turns; // Point system here, higher score is 100 points (winning in the first turn)
 
-    if (playerScore < 0) {playerScore = 0}; // Sets minimum value for the score (0 Points)
+    if (playerScore < 0) {playerScore = 0} // Sets minimum value for the score (0 Points)
         
     playerRecords.push({name: playerName, score: playerScore});
 
@@ -210,7 +210,7 @@ function continueQuestion(question = `Do you want to continue? (Y/N)`){
             case "N":
                 console.log ('Bye');
                 return false;
-            break;
+
             default:
                 continueQuestion(`Incorrect answer. Do you want to continue? (Y/N)`);
           }
@@ -232,19 +232,19 @@ let cardNumber = newNumber();
 
             element.forEach (values => {
 
-                if (values.number ===  cardNumber) {values
+                if (values.number ===  cardNumber) {
+
                     values.matched = true;
                     values.number = "X";
                     matchingTimes++;
                     
-        
                 }          
 
             });
 
         });
 
-    if (matchingTimes >= 1) {console.log(`The number ${cardNumber} matched.`);};
+    if (matchingTimes >= 1) {console.log(`The number ${cardNumber} matched.`);}
 
     turns++;
 
@@ -286,7 +286,7 @@ function playAgainQuestion (question = `Do you want to play again? (Y/N)`) {
                     printScore();
                     console.log ('Bye');
                     return false;
-                break;
+
                 default:
                     playAgainQuestion(`Incorrect answer. Do you want to play again? (Y/N)`);
             }
