@@ -148,9 +148,18 @@ h1 span{
     display: flex;
     border-collapse: collapse;    
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     display: flex;
 >>>>>>> 6279fec (Bingo)
+=======
+<<<<<<< HEAD
+=======
+    display: flex;
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
     width: 28em;
     align-items: center;
     justify-content: space-evenly;
@@ -166,10 +175,20 @@ h1 span{
 .turnoClass{
     visibility: hidden;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     width: 50px;
     height: 50px;
 >>>>>>> 6279fec (Bingo)
+=======
+<<<<<<< HEAD
+=======
+    width: 50px;
+    height: 50px;
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
     color: white;
     text-align: center;
     display: flex;

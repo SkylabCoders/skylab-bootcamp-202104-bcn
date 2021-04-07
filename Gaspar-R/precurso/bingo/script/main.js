@@ -77,10 +77,21 @@ function startGame() {
 //Genera un array de numeros, sin repetir.
 function generateCard() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	card = [[], [], []]; 
 =======
 	let card = [[], [], []]; 
 >>>>>>> 6279fec (Bingo)
+=======
+<<<<<<< HEAD
+	card = [[], [], []]; 
+=======
+	let card = [[], [], []]; 
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+	card = [[], [], []]; 
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 
 	//Generar 15 numeros random
 	let randomNumbers = new Set();
@@ -152,16 +163,32 @@ function siguienteBola() {
 
 //Obtiene la posision matcheada del numero en el tablero o null si no matchea
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 function getMatchingPosition(nuum, caard) {
 	for (let i = 0; i < 3; i++) {
 		for (let j = 0; j < 5; j++) {
 			if (caard[i][j] === nuum) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 =======
 function getMatchingPosition(num, card) {
 	for (let i = 0; i < 3; i++) {
 		for (let j = 0; j < 5; j++) {
 			if (card[i][j] === num) {
+<<<<<<< HEAD
 >>>>>>> 6279fec (Bingo)
+=======
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 				return [i, j];
 			}
 		}
@@ -172,12 +199,22 @@ function getMatchingPosition(num, card) {
 
 //Marca en el carton la posicion indicada y lo devuelve
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 function markCard(position, caard) {
 	let i = position[0];
 	let j = position[1];
 
 	caard[i][j] = "X";
 	return caard;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 =======
 function markCard(position, card) {
 	let i = position[0];
@@ -185,7 +222,13 @@ function markCard(position, card) {
 
 	card[i][j] = "X";
 	return card;
+<<<<<<< HEAD
 >>>>>>> 6279fec (Bingo)
+=======
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 }
 
 //Reordena el arreglo de manera random
@@ -255,6 +298,12 @@ function resetMatchedNumbers() {
 //Imprime el carton del jugador en la pagina//
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 function printCard(caard) {
 	if (caard == undefined)
 		return;
@@ -266,6 +315,10 @@ function printCard(caard) {
 		html += "<tr>";
 		for (var j = 0; j < caard[i].length; j++) {
 			if (caard[i][j] == "X") {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 =======
 function printCard(card) {
 	if (card == undefined)
@@ -278,16 +331,33 @@ function printCard(card) {
 		html += "<tr>";
 		for (var j = 0; j < card[i].length; j++) {
 			if (card[i][j] == "X") {
+<<<<<<< HEAD
 >>>>>>> 6279fec (Bingo)
+=======
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 				html += "<td class='match'>"
 			} else {
 				html += "<td>"
 			}
 <<<<<<< HEAD
+<<<<<<< HEAD
 			html += caard[i][j] + "</td>";
 =======
 			html += card[i][j] + "</td>";
 >>>>>>> 6279fec (Bingo)
+=======
+<<<<<<< HEAD
+			html += caard[i][j] + "</td>";
+=======
+			html += card[i][j] + "</td>";
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+			html += caard[i][j] + "</td>";
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 		}
 		html += "</tr>";
 	}

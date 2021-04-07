@@ -28,10 +28,21 @@ function startGame(){
         for (let i=0;i<questions.length;i++){               
           if(questions[i].status===0 && iterator<questions.length){
 <<<<<<< HEAD
+<<<<<<< HEAD
                 let answer = printQuestion(i);
 =======
                 answer = printQuestion(i);
 >>>>>>> 5aa73ef (Bingo)
+=======
+<<<<<<< HEAD
+                let answer = printQuestion(i);
+=======
+                answer = printQuestion(i);
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+                let answer = printQuestion(i);
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
                     if(answer === questions[i].answer){
                         console.log("Respuesta Correcta!");
                         questions[i].status=1;
@@ -39,18 +50,34 @@ function startGame(){
                         success++;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
                     } else if  (answer === "pasapalabra" || answer ==="" ){
                     } else if (answer === "end"){
                         iterator=100;
                                          
                     } else{          
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 =======
                     }else if  (answer === "pasapalabra" || answer ==="" ){
                     }else if (answer === "end"){
                         iterator=100
                                          
                     }else{          
+<<<<<<< HEAD
 >>>>>>> 5aa73ef (Bingo)
+=======
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
                         console.log("Respuesta Incorrecta");
                         console.log(`La respuesta correcta era: ${questions[i].answer}.`)
                         questions[i].status=1;
@@ -72,12 +99,26 @@ function startGame(){
 function printQuestion(i){          //imprime la pregunta siguiente
         console.log(questions[i].question);
 <<<<<<< HEAD
+<<<<<<< HEAD
        return prompt(`Letra ${questions[i].letter}. Respuesta:`).toLowerCase();
         
 =======
        let answer = prompt(`Letra ${questions[i].letter}. Respuesta:`).toLowerCase();
         return answer;
 >>>>>>> 5aa73ef (Bingo)
+=======
+<<<<<<< HEAD
+       return prompt(`Letra ${questions[i].letter}. Respuesta:`).toLowerCase();
+        
+=======
+       let answer = prompt(`Letra ${questions[i].letter}. Respuesta:`).toLowerCase();
+        return answer;
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+       return prompt(`Letra ${questions[i].letter}. Respuesta:`).toLowerCase();
+        
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
 }
 
 
@@ -88,6 +129,7 @@ function printStats(){
 
 function ranking(){
 <<<<<<< HEAD
+<<<<<<< HEAD
     for(let i=0; i<players.length;i++){
     console.log(players);
     }
@@ -95,6 +137,21 @@ function ranking(){
     for(let i=0; i<players.length;i++)
     console.log(players);
 >>>>>>> 5aa73ef (Bingo)
+=======
+<<<<<<< HEAD
+    for(let i=0; i<players.length;i++){
+    console.log(players);
+    }
+=======
+    for(let i=0; i<players.length;i++)
+    console.log(players);
+>>>>>>> d7d9b14e294306fd1df0f8bd43cba75418616a22
+=======
+    for(let i=0; i<players.length;i++){
+    console.log(players);
+    }
+>>>>>>> main
+>>>>>>> d53714eba644851e4c597a6e148159013f71f39e
     
 }
 function reset(){
