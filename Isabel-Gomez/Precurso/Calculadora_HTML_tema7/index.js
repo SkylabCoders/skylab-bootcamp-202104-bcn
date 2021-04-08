@@ -12,7 +12,6 @@ let saveOperatorTwo = null;
 let calculation;
 let classOperators;
 
-
 const typeOfResult = () => {
     if (finishResult === Infinity || isNaN(finishResult)) {
         screen.innerHTML = 'Error';
@@ -27,7 +26,6 @@ const resetSizeResult = () => {
     screen.classList.remove('screenThree');
     screen.classList.remove('screenFour');
 }
-
 
 const getReset = () => {
     screen.innerHTML = "0";
@@ -48,7 +46,6 @@ const removeClassesOperators = () => {
     classOperators = document.querySelectorAll(".operators");
     classOperators.forEach((elem) => elem.classList.remove("OperatorActive"));
 }
-
 
 const deleteElement = () => {
     removeClassesOperators();
@@ -85,7 +82,6 @@ const typeOfClick = (elem) => {
         isNumber = true;
     }
 }
-
 
 const decideWhereSaveNumber = () => {
     if (isFirstOperation && saveOperatorOne === null) {
@@ -125,7 +121,6 @@ const setResult = (elem) => {
     }
 }
 
-
 const sizeResult = (elem) => {
     value = elem.getAttribute("value");
     if (screen.innerHTML.length < 8) {
@@ -144,7 +139,6 @@ const sizeResult = (elem) => {
         screen.classList.add('screenFour');
         screen.innerHTML = "Demasiados digitos";
     };
-
 }
 
 const percentage = () => {
@@ -160,7 +154,6 @@ const decimal = () => {
         screen.innerHTML = calculation.toFixed(4);
     }
 }
-
 
 const getCalculation = () => {
     switch (saveOperatorOne) {
@@ -209,23 +202,3 @@ const getCalculationWithOperator = () => {
     saveNumberTwo = null;
     isFirstOperation = false;
 }
-
-/* REFACTORIZACION ONCLICKS DE HTML:
-
-- Para los botones de html que actualmente tienen el onclick="sizeResult(this)", elimino esta opci'on en html y a
-cada uno de ellos les anyado una classe llamada "button".
-- En JS hago lo siguiente:
-
-const buttons = document.querySelectorAll(".button");
-
-for (const button of buttons) {
-    button.addEventListener('click', function(event) {
-        value = event.target.button.value; --> si substituyo button.value por .innerHTML obtengo el innerHTML, pero no consigo obtener el value de ninguna de las maneras....
-        sizeResult(event);
-    });
-};
-
-- En la funcion sizeResult() elimino la linea:
-    value = elem.getAttribute("value");
-
-*/
