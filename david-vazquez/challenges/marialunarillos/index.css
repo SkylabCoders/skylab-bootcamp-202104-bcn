@@ -20,6 +20,7 @@ li {
   cursor: pointer;
   padding: 0;
   margin: 0;
+  display: inline-block;
 }
 
 a {
@@ -77,26 +78,62 @@ header {
 
 .login-link {
   float: right;
+  text-indent: 0;
+  width: auto;
+}
+
+.login {
+  display: block;
+  line-height: 50px;
+  font-weight: 400;
+  color: #2e2925;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.icon-login {
+  width: 27px;
+  height: 27px;
+  background: url(img/sprite.svg) 0 0 no-repeat;
+  margin: 10px;
+  float: left;
 }
 
 .social-medias {
   float: right;
   display: flex;
   flex-direction: row;
-  margin: 0 40px;
+  margin: 0 150px 0 40px;
+  width: auto;
 }
 
 .icon {
   width: 25px;
   height: 20px;
   margin: 15px 7px 0;
-  background: url(img/menu.svg) transparent 0 0 no-repeat;
+  background: url(img/sprite.svg) transparent 0 0 no-repeat;
   display: block;
   text-indent: -3000px;
 }
 
 .icon.facebook {
   background-position: -4px -540px;
+}
+
+.icon.twitter {
+  background-position: -40px -540px;
+}
+
+.icon.instagram {
+  background-position: -75px -540px;
+}
+
+.icon.pinterest {
+  background-position: -110px -540px;
+}
+
+.icon.youtube {
+  background-position: -180px -540px;
 }
 
 .header-logo-links {
