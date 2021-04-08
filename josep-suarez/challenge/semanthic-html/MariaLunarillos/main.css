@@ -83,6 +83,20 @@ ul {
   margin-right: 80px;
   margin-top: 25px;
 }
+.description1,
+.description2,
+.description3 {
+  font-weight: bold;
+  margin-left: 30px;
+}
+.description4 {
+  font-weight: bold;
+  margin-left: 60px;
+}
+.description5 {
+  font-weight: bold;
+  margin-left: 110px;
+}
 .icon5 {
   margin-left: 50px;
   background-color: rgb(214, 91, 91);
