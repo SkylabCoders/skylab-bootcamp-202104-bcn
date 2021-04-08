@@ -1,0 +1,28 @@
+.headerCV {
+  display: flex;
+}
+.section-datosCV {
+  display: flex;
+}
+.section-competenciasCV {
+  display: flex;
+}
+.section-experienciaCV {
+  display: flex;
+  list-style: none;
+}
+.section-formacionCV {
+  display: flex;
+  list-style: none;
+}
+.section-idiomasCV {
+  display: flex;
+  list-style: none;
+}
+.section-adicionalCV {
+  display: flex;
+  list-style: none;
+}
+.footerCV {
+  display: flex;
+}
