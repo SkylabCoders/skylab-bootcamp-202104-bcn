@@ -1,3 +1,9 @@
+let num1;
+let num2;
+let opera;
+let operacion;
+let resultado;
+
 function operaciones(num1,num2){
     if (num1 != "" && num2 != ""){
         
@@ -19,13 +25,6 @@ function operaciones(num1,num2){
         console.log("No introduciste ningún numero");
     }
 }
-
-let num1;
-let num2;
-let opera;
-let operacion;
-let resultado;
-
 
 num1 = prompt("Entra el primer numero");
     
