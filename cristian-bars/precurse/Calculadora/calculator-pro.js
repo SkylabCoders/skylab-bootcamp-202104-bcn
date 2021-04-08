@@ -14,7 +14,6 @@ function operaciones(opera){
             console.log(newNumber);
             numberList.push(Number(newNumber))
         }
-        
         console.log(numberList);
     } while(newNumber !== null)
     
