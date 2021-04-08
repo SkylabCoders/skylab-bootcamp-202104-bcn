@@ -54,7 +54,6 @@ function averageCost (){
     }
 average = total/flights.length;
 console.log("El precio medio de los vuelos es " + average.toFixed(2) + "€");
-
 }
 
 function seeScales (){
@@ -74,7 +73,6 @@ function afternoonFlights(){
 }
 
 chooseAdminUser();
-
 function chooseAdminUser(){
     let adminUser;
     adminUser = prompt(userName +", eres Admin o Usuario?, por favor escribe admin o usuario.");
@@ -180,24 +178,19 @@ function userFunctions(){
             if (price === null) {
             alert("Gracias por su visita, vuelva pronto!");
             return;
-
             } else if (price === "") {
             alert("Por favor, introduce solo numeros");
-
             } else if (isNaN(price)) {
             alert("Por favor, introduce solo numeros");
-
             } else {
                 price = Number(price);
             break;
             }
         }while (price !== null)
 
-
     let equalPriceFlights = flights.filter(flight => flight.cost == price)
         if (equalPriceFlights.length === 0) {
             console.log("No hay vuelos con un precio igual a su presupuesto.");
-
         } else {
             console.log("Los vuelos con un precio igual a su presupuesto son:")
             seeAllFlights();
