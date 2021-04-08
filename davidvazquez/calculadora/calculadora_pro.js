@@ -10,13 +10,13 @@ function calculadora (allNum) {
     outputResults.push('La raiz cuadrada de ' + allNum[0] + ' es igual a ' + Math.round(raiz*1000)/1000);
     writeArray();
     } else {
-    var suma = allNum[0];
-    var mult = allNum[0];
-    var resta = allNum[0];
-    var div = allNum[0];
+    let suma = allNum[0];
+    let mult = allNum[0];
+    let resta = allNum[0];
+    let div = allNum[0];
     
     for (i = 1; i < allNum.length; i++){
-        var n = allNum[i];
+        let n = allNum[i];
         suma = suma + n;
         mult = mult * n;
         resta = resta - n;

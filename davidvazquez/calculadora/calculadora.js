@@ -19,7 +19,7 @@ function calculadora (num1, num2) {
       outputResults.push('La raiz cuadrada de ' + num1 + ' es igual a ' + raiz);
     }
     
-    for (var i=0;i<outputResults.length;i++) {
+    for (let i=0;i<outputResults.length;i++) {
         console.log(outputResults[i]);
       }
   }
