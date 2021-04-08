@@ -9,6 +9,15 @@
 body {
   font-family: sans-serif;
   font-size: 12px;
+  background: #965f5f;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 header {
@@ -26,31 +35,18 @@ header {
   padding: 0px 50px 0px 50px;
 }
 
-ul {
-  list-style: none;
-}
-
-li {
-  display: block;
-  text-indent: -9999px;
-}
-
-a {
-  cursor: pointer;
-}
-
 .first-block {
   position: fixed;
   top: 0;
-  width: 80px;
-  height: 140px;
+  width: 70px;
+  height: 130px;
   background: url(img/maria-lunarillos.png) #ff5959 bottom center no-repeat;
 }
 
 .second-block {
   position: fixed;
   top: 0;
-  left: 100px;
+  left: 125px;
   width: 60px;
   height: 70px;
   background: url(img/cucute.png) #6199af bottom center no-repeat;
@@ -59,6 +55,7 @@ a {
 .third-block {
   position: fixed;
   top: 0;
+  left: 190px;
   width: 60px;
   height: 70px;
   background: url(img/mumuchu.png) #f6b436 bottom center no-repeat;
@@ -69,8 +66,9 @@ a {
   flex-direction: row;
   height: 300px;
   width: 100%;
-  background: #965f5f;
+  background: white;
   padding: 0px 50px 0px 50px;
+  margin-top: 50px;
 }
 
 .logo-container {
@@ -89,25 +87,64 @@ a {
 .quick-access {
   display: flex;
   flex-direction: row;
+  height: 150px;
 }
 
 .nav-bottom-container {
+  height: 150px;
+}
+
+.nav-buttons {
   display: flex;
   flex-direction: row;
 }
 
-.buttom {
+.button {
   width: 80px;
   height: 80px;
-  background-image: url(img/utensiliosML.png);
   background-size: 50%;
   background-color: #f2f2f2;
-  color: #2e2925;
-  position: relative;
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   padding: 0;
-  letter-spacing: 1px;
   background-repeat: no-repeat;
+  background-position: center;
+  margin: 3px;
+  text-align: center;
+}
+
+.button.utensilio {
+  background-image: url(img/utensiliosML.png);
+}
+
+.button.ingredientes {
+  background-image: url(img/magdalena.png);
+}
+
+.button.fiestas {
+  background-image: url(img/tarta-cumpleanos.png);
+}
+
+.button.marcas {
+  background-image: url(img/delantal.png);
+  background-size: 70%;
+}
+
+.button.blog {
+  background-image: url(img/menu.svg);
+  background-repeat: no-repeat;
+  background-color: #ff5959;
+  background-position: -320px 0;
+  background-size: 560px;
+}
+
+.text-button {
+  bottom: -90px;
+  padding-top: 7px;
+  position: relative;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  color: #2e2925;
 }
