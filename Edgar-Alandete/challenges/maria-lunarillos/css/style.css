@@ -36,9 +36,10 @@ ul {
 
 .malu-item {
   width: 80px;
-  height: 140px;
+  height: 70px;
 }
 .ma {
+  height: 140px;
   background: url(../images/icons/maria-lunarillos.png) #ff5959 bottom center
     no-repeat;
 }
