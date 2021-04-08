@@ -14,10 +14,8 @@ function enterFlight (departure,arrival,price,scale) {
     flightsList.forEach(element => {number++;});
     let Id = stringZeros + number;
     Id = Id.substring(Id.length - stringZeros.length);
-
     let message = "El vuelo con origen: " + departure + ", y con destino a: " + arrival + " tiene un coste de " + price + "€ y " + scaleCheck;
     console.log(message);
-
     flightsList.push({Id,departure,arrival,price,scale});   
 }
 
@@ -66,8 +64,6 @@ function flightsWithScale() {
     }
     console.log("Hay " + countWith + " vuelos con escalas.");
 }
-
-
 insertName();
 enterFlight ("Barcelona", "Madrid", 90, true);
 enterFlight ("Valencia", "Mallorca", 60, false);
