@@ -71,7 +71,7 @@ function calculator() {
 //Función final que pregunta al usuario si quiere realizar otra operación o no
 function askUser() {
     //Variable con prompt donde se le preguntará al usuario si desea realizar otra operación
-    let answer = prompt("¿Quiere realizar otra operación? Escriba S o N");
+    const answer = prompt("¿Quiere realizar otra operación? Escriba S o N");
     //A continuación las diferentes acciones del usuario con sus respuestas. Se usa .toLowerCase por si el usuario pone la respuesta en minúscula aunque se le diga que sea en mayúscula
     if (!answer) {
         return console.log("Le has dado a cancelar. ¡Hasta otra!");
