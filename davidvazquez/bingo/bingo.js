@@ -1,12 +1,10 @@
 function bingo () {
-
     let bingoCard = [[],[],[]];
     let numbersUsedCard = [];
     let numbersUsedTurn = [];
     let players = [];
     let count = 0;
-    let matchLines = [false,false,false];
-    
+    let matchLines = [false,false,false]; 
     let name = "";
 
     //Función para depurar y crear cartón nuevo cada vez que empezemos una partida nueva
@@ -106,6 +104,7 @@ function bingo () {
             console.log(bingoCard[i][0].number + "|" + bingoCard[i][1].number + "|" + bingoCard[i][2].number + "|" + bingoCard[i][3].number + "|" + bingoCard[i][4].number);        
         }
     }
+
     function printPlayer() {
         let position = 1;
         console.log("%c%s","color:cyan","RANKING DE JUGADORES:");
@@ -137,6 +136,7 @@ function bingo () {
             return null;
         }
     }
+
     function repeatNumberForCard(randomNumb) {
         let repeat = false;
         for(let i of numbersUsedCard){
@@ -207,8 +207,7 @@ function bingo () {
                     }
                     console.log("%c%s", "color: red","¡Número!");
                 }
-            }
-                       
+            }                
         } 
         count++;
         printBingoCard();
@@ -237,7 +236,6 @@ function bingo () {
     function score() {
         return (99 - count)*100;
     }
-
     writeYourName();
 }
 
