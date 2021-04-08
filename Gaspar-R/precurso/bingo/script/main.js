@@ -38,10 +38,7 @@ let user = document.querySelector('#user');
 let cardBtn = document.querySelector(".generateCardBtn");
 let nextNumBtn = document.querySelector(".nextNumber");
 
-
-
 //--------Funciones JS-----------------//
-
 
 function startGame() {
 	document.querySelector(".turnoClass").style.visibility = "visible";
