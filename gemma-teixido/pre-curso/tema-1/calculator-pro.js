@@ -35,11 +35,8 @@ function calculatorPro() {
 
     if (arrayArg.length > 1) {
       sum(arrayArg);
-
       rest(arrayArg);
-
       div(arrayArg);
-
       mult(arrayArg);
 
       for (let iResult = 0; iResult < resultArr.length; iResult++) {
