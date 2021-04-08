@@ -10,7 +10,7 @@ let flights = [
     { id: 8, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
     { id: 9, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
     { id: 10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, scale: false } ];
-
+const flightsLengthMax = 15;
 //Se preguntará por el nombre de usuario y dará la bienvenida. 
 
 let flightsScale = [];      
@@ -127,16 +127,13 @@ function adminManagerAdd() {
         flights.push(newFlight);
         listaVuelos();
         askPush = prompt('Desea AÑADIR otro vuelo?', 'si');   
-        if(askPush === null) {
-            break;
-        } 
     }
-    while(askPush.toUpperCase() == 'SI' && flights.length < 15);
+    while(askPush.toUpperCase() == 'SI' && flights.length < flightsLengthMax && askPush !== null);
 
     if(askPush === null) {
         console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
     }else {
-        if(flights.length >= 15) {
+        if(flights.length >= flightsLengthMax) {
             console.log('Ya no puedes añadir mas vuelos.');
         }else {
             console.log('Creacion de vuelo finalizado.');
@@ -158,11 +155,8 @@ function adminManagerDelete() {
         }
         alert(JSON.stringify(flights));
         askDelete = prompt('Desea ELIMINAR otro vuelo?', 'si');
-        if(askPush === null) {
-            break;
-        } 
     }
-    while(askDelete.toUpperCase() === 'SI' && flights.length > 0);
+    while(askDelete.toUpperCase() === 'SI' && flights.length > 0 && askPush !== null);
     
     if(askDelete === null){
         console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
@@ -313,7 +307,7 @@ function promptMessageEqualBuy(message) {
             printPrompt = prompt('Si desea comprar un vuelo, indique la ID del vuelo que quiere comprar.');
             break;
     }
-    
+
     if(printPrompt === null){
         console.log(printPromptNull);
     }else{
