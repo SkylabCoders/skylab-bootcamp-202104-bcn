@@ -1,5 +1,4 @@
 // ------ ***** Main ***** ------
-
 let working = true
 let numbers = []
 

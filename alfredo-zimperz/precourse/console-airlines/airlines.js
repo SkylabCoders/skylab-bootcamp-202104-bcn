@@ -13,14 +13,12 @@ let flights = [
 ]
 
 const MAX_FLIGHTS_NUMBER = 15
-
 let working = true
 let user = null
 let adminRole = false
 let userRole = true
 
 // ---------- Main ----------
-
 do {
 	askForuser()
 	user && console.log('*** Estos son los vuelos disponibles:')
@@ -41,7 +39,6 @@ insertSeparator('*', 40)
 console.log('¡Gracias por su visita!')
 
 // ---------- Navigation functions ----------
-
 function askForuser() {
 	user = prompt('Ingrese su usuario')
 	if (user === null) {
@@ -78,7 +75,6 @@ function askForRole() {
 		insertSeparator(' * ', 20)
 	}
 }
-
 function askForNewAction(role) {
 	let newAction = window.confirm(
 		'¿Desea realizar alguna otra accion? Presione ACEPTAR para hacerlo, o CANCELAR para salir'
@@ -96,7 +92,6 @@ function askForNewAction(role) {
 }
 
 // ---------- Show information functions ----------
-
 function showFlights(data) {
 	for (let i = 0; i < data.length; i++) {
 		console.log(
@@ -108,7 +103,6 @@ function showFlights(data) {
 		)
 	}
 }
-
 function showFlightsQuantity(data, target) {
 	console.log(
 		`Hay ${data.length} ${data.length !== 1 ? 'vuelos' : 'vuelo'}${
@@ -116,7 +110,6 @@ function showFlightsQuantity(data, target) {
 		}`
 	)
 }
-
 function showAverageCost() {
 	let acumulatedCost = 0
 	let count = 0
@@ -128,7 +121,6 @@ function showAverageCost() {
 	let averageCost = (acumulatedCost / count).toFixed(2)
 	console.log(`* El costo promedio de los vuelos es de ${averageCost}€`)
 }
-
 function showFlightsWithScale() {
 	let count = 0
 	flights.forEach((flight) => {
@@ -155,7 +147,6 @@ function showLastFlights() {
 }
 
 //--- User Role mode - functions ---------------
-
 function initUserMode() {
 	if (working === false) {
 		return
@@ -184,13 +175,11 @@ function initUserMode() {
 			showFlights(exactPrice)
 			insertSeparator(' - ', 10)
 		}
-
 		if (lowerPrice) {
 			showFlightsQuantity(lowerPrice, { case: 'menos de ', price: targetPrice })
 			showFlights(lowerPrice)
 			insertSeparator(' - ', 10)
 		}
-
 		if (higherPrice) {
 			showFlightsQuantity(higherPrice, { case: 'mas de ', price: targetPrice })
 			showFlights(higherPrice)
@@ -227,7 +216,6 @@ function askToBuy() {
 }
 
 //--- Admin Role mode - functions ---------------
-
 function initAdminMode() {
 	if (working === false) {
 		return

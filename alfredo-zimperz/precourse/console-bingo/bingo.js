@@ -1,6 +1,5 @@
 const CARD_LENGTH = 15
 const POINTS = 100
-
 let playing = true
 let username = undefined
 let turn = 0
