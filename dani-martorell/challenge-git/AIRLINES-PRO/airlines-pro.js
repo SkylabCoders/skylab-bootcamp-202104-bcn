@@ -126,7 +126,7 @@ function userIsAdmin(){
 }
 
 function getOperation(){
-  let operation;
+  let operation = '';
   do{
       operation = prompt('\nPara AÑADIR un vuelo pulsa [1]\nPara ELIMINAR un vuelo pulsa [2]\n');
       if(operation === null) return;
