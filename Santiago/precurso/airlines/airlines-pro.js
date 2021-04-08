@@ -1,17 +1,81 @@
 // Declaramos los vuelos de manera global
-let flights =
-[
-    { id: 0, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
-    { id: 1, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
-    { id: 2, to: 'Los Angeles', from: 'Madrid', cost: 1100, scale: true },
-    { id: 3, to: 'Paris', from: 'Barcelona', cost: 210, scale: false },
-    { id: 4, to: 'Roma', from: 'Barcelona', cost: 150, scale: false },
-    { id: 5, to: 'London', from: 'Madrid', cost: 200, scale: false },
-    { id: 6, to: 'Madrid', from: 'Barcelona', cost: 90, scale: false },
-    { id: 7, to: 'Tokyo', from: 'Madrid', cost: 1500, scale: true },
-    { id: 8, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
-    { id: 9, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
-    { id: 10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, scale: false }
+let flights = [{
+        id: 0,
+        to: 'Bilbao',
+        from: 'Barcelona',
+        cost: 1600,
+        scale: false
+    },
+    {
+        id: 1,
+        to: 'New York',
+        from: 'Barcelona',
+        cost: 700,
+        scale: false
+    },
+    {
+        id: 2,
+        to: 'Los Angeles',
+        from: 'Madrid',
+        cost: 1100,
+        scale: true
+    },
+    {
+        id: 3,
+        to: 'Paris',
+        from: 'Barcelona',
+        cost: 210,
+        scale: false
+    },
+    {
+        id: 4,
+        to: 'Roma',
+        from: 'Barcelona',
+        cost: 150,
+        scale: false
+    },
+    {
+        id: 5,
+        to: 'London',
+        from: 'Madrid',
+        cost: 200,
+        scale: false
+    },
+    {
+        id: 6,
+        to: 'Madrid',
+        from: 'Barcelona',
+        cost: 90,
+        scale: false
+    },
+    {
+        id: 7,
+        to: 'Tokyo',
+        from: 'Madrid',
+        cost: 1500,
+        scale: true
+    },
+    {
+        id: 8,
+        to: 'Shangai',
+        from: 'Barcelona',
+        cost: 800,
+        scale: true
+    },
+    {
+        id: 9,
+        to: 'Sydney',
+        from: 'Barcelona',
+        cost: 150,
+        scale: true
+    },
+    {
+        id: 10,
+        to: 'Tel-Aviv',
+        from: 'Madrid',
+        cost: 150,
+        scale: false
+    }
 ];
 
 let addedFlights = [];
@@ -23,7 +87,7 @@ function askUsername() {
 
     if (askName !== "" && askName !== null) { // Si el input no está vacio ni es null que ejecute la funcion allFlights();
         console.log('¡Bienvenido/da a Skylab Airlines ' + askName + "!");
-        allFlights();
+        startAirlines()
         role();
     } else if (askName === "") { // Si el input esta vacio que nos vuelva a preguntar el nombre
         askUsername();
@@ -33,8 +97,14 @@ function askUsername() {
 }
 askUsername();
 
-// Función que nos muestra los vuelos por pantalla y el resto de información
-function allFlights() {
+function startAirlines() {
+    showFlights();
+    averageCost();
+    flightWithScale();
+    showLastFiveFlights();
+}
+
+function showFlights() {
 
     // Mostramos todos los vuelos recorriendo cada elemento del array
     console.log("");
@@ -44,7 +114,9 @@ function allFlights() {
         console.log(JSON.stringify(flight));
     }
 
+}
 
+function averageCost() {
     // Obtenemos el coste medio de los vuelos con array.prototype.reduce()
     // Inicializamos a 0 la suma y luego dividimos por 11 que es el total de vuelos que tenemos
     const averageCost = flights.reduce((accumulator, currentValue) => {
@@ -56,7 +128,9 @@ function allFlights() {
     console.log("");
     console.log('El coste medio de los vuelos es: ' + averageCost.toFixed(3) + "€");
 
+}
 
+function flightWithScale() {
     // Recorremos los vuelos y si el boleano scale es true, que muestre la información del vuelo
     console.log("");
     console.log('Esto son los vuelos con escala:');
@@ -67,7 +141,9 @@ function allFlights() {
             console.log(JSON.stringify(flight));
         }
     }
+}
 
+function showLastFiveFlights() {
 
     // Mostramos los 5 últimos vuelos, empezamos desde la posición 6 hasta el final y finalmente mostramos su destino
     console.log("");
