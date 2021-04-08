@@ -24,16 +24,13 @@ let flights = [
 let userName;
 userName = prompt('¿Como te llamas?');
 alert('Bienvenido a Skylab Airlines, ' + userName);
-
 airlines();
-
 function airlines(){
     seeAllFlights();
     averageCost();
     seeScales();
     afternoonFlights();
 }
-
 function seeAllFlights(){
     for (let i=0; i<flights.length; i++){
             if ( flights[i].scale){
@@ -61,13 +58,13 @@ function seeScales (){
         if (flights[i].scale===true){
         console.log(" El vuelo con identificador: " + flights[i].id + " con origen " + flights[i].from + " y destino " + flights[i].to + "y tiene un coste de " + flights[i].cost);
         }
-}
+    }
 }
 
 function afternoonFlights(){
     console.log("Los destinos de los últimos velos del día son:  ")
     for (let i=6; i<flights.length; i++){
-            console.log(" El vuelo con identificador: " + flights[i].id + " y destino " + flights[i].to);
+        console.log(" El vuelo con identificador: " + flights[i].id + " y destino " + flights[i].to);
     }
 }
 
@@ -123,7 +120,6 @@ function adminFunctions(){
                             createNewFlightAdmin();
                         }
                         else {
-                           
                                 flights.push(newFlight);
                                 seeAllFlights();
                                 adminFunctions();
@@ -134,7 +130,6 @@ function adminFunctions(){
                         outOfAdmin();
                     }
             }
-
             function flightScales(){
                 let answerToScales=prompt('El nuevo vuelo tiene escalas? si/no?');
                 if (answerToScales ==="si" || answerToScales==="Si"){
@@ -144,8 +139,7 @@ function adminFunctions(){
                     return false;
                 }
             }
-
-
+            
             function outOfAdmin(){
                 if (flights.length===15){
                 alert ("Has alcanzado el máximo número de vuelos.")
@@ -200,7 +194,6 @@ function userFunctions(){
     let overPriceFlights = flights.filter(flight => flight.cost > price)
             if (overPriceFlights.length === 0) {
                 console.log("No hay vuelos con un precio superior a su presupuesto.");
-
             } else {
                 console.log("Los vuelos con un precio superior a su presupuesto son:")
                 seeAllFlight(overPriceFlights);
@@ -221,14 +214,10 @@ function userFunctions(){
         else if (action === null) {
             alert("Gracias por su visita, vuelva pronto!");
             return;
-
         } else {
             alert ("Por favor, escriba 'comprar' para hacer una compra o presione Cancelar para salir");
-
         } 
 }
-
-
 
 function buyFlightById(){
     let flightId = prompt("Introduzca el ID del vuelo que desea comprar.")
