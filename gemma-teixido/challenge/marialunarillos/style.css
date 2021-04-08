@@ -1,7 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+ul {
+  padding-left: 0;
+}
 .nav-bar {
-  display: flex;
+  /*Gemma ->
+   display: flex;
   height: 50px;
-  background-color: #f8f8f8;
+  background-color: red; */
+  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .links {
@@ -9,37 +24,68 @@
 }
 
 .login {
-  display: flex;
+  /*display: flex;
   margin-left: 100px;
-  list-style: none;
+  list-style: none;*/
+  margin: 0;
+  padding: 0;
+  max-width: 15%;
 }
 
 .shopping {
-  display: flex;
+  max-width: 15%;
+  padding-left: 0;
 }
 
 .slice-icons {
-  display: flex;
+  /*display: flex;
   flex-direction: row;
   height: 100%;
-  list-style: none;
+  list-style: none;*/
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0;
+  border: 1px solid blue;
+  overflow: hidden;
+  width: 17%;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  height: 140px;
 }
 
 .ma {
-  background-color: #ff5959;
+  /*background-color: #ff5959;
   max-width: 100%;
+  height: 100px;*/
+  margin: 0;
+  min-height: 100%;
 }
 
 .cu {
   background-color: #6199af;
   max-width: 100%;
+  margin: 0;
 }
 
 .mu {
   background-color: #f6b436;
   max-width: 100%;
+  margin: 0;
 }
 
 .socials {
-  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding-left: 0;
+  max-width: 70%;
 }
+
+
