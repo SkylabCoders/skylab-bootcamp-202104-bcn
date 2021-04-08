@@ -38,6 +38,15 @@ ul {
 .searching {
   display: flex;
 }
+.login,
+.social1,
+.social2,
+.social3,
+.social4,
+.social5 {
+  height: 30px;
+  width: 30px;
+}
 .firstIMG {
   background: #ff5959;
   width: 100%;
@@ -102,8 +111,8 @@ ul {
   display: flex;
   margin-left: 100px;
   margin-top: 20px;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 .cart-image:hover,
 .icon1:hover,
