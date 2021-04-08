@@ -19,8 +19,7 @@ let scale = null;
 welcomeAirlines();
 
 
-function listaVuelos() {
-    
+function listaVuelos() {    
     for (let flight of flights) {
         if(flight.scale) {
             scale = 'Realiza escala.';      
@@ -28,6 +27,7 @@ function listaVuelos() {
         }else{
             scale = 'No realiza escala.';
         }
+
     console.log(`El vuelo con origen: ${flight.from}, y destino: ${flight.to} tiene un coste de ${flight.cost}€. ${scale}`);  
     }
 }
@@ -46,31 +46,13 @@ function welcomeAirlines() {
     }
 }
 
-//El usuario visualizará todos los vuelos disponibles de una forma amigable : El vuelo con origen: Barcelona,
-//y destino: Madrid tiene un coste de XXXX€ y no realiza ninguna escala. 
-
 function presentationFlights() {
-    // let scale;              
-    // let valueSum = 0;       
-    // let valueAverage;       
-    // let flightsScale = [];  
-    debugger;
     listaVuelos();
-
-//A continuación, el usuario verá el coste medio de los vuelos. 
-//También podrá ver cuántos vuelos efectúan escalas. 
-    averageFlights() 
-   
-    
-
-    printFlightScale()
-           //4
-
-//Sabiendo que los últimos 5 vuelos (los últimos 5 ID's) son los últimos del día, muestra al usuario sus
-//destinos.     
-    lastFiveFlights()
-    
+    averageFlights();
+    printFlightScale();  
+    lastFiveFlights();    
 }
+
 function lastFiveFlights() {
     let lastFiveFlights = []; //5
     for(let i = flights.length - 5; i<flights.length; i++){
@@ -78,6 +60,7 @@ function lastFiveFlights() {
     }
     console.log('Los 5 ultimos destinos del dia son:' + lastFiveFlights);
 }
+
 function averageFlights() {
     let valueSum = flights.reduce(flightsSum);
     let valueAverage = Math.round(valueSum / flights.length * 100) / 100;
@@ -92,32 +75,16 @@ function printFlightScale(){
 }
 
 function flightsSum(total, flight) {
-
     if(typeof total === "number"){
         return total + flight.cost;
     }else{
         return total.cost + flight.cost;
     }
 }
-//Después de ver toda la información el programa pedirá al usuario si es ADMIN/USER
 
 function requestUserAdmin() {
-    let userOrAdmin = '';
-    userOrAdmin = prompt('Es usted Admininistrador o usuario?', 'Usuario');
+        let userOrAdmin = promptMessage('userAdmin');
 
-    if(userOrAdmin === null) {
-        console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
-    }else{
-        userOrAdmin = userOrAdmin.toUpperCase();
-        while(userOrAdmin !== 'ADMINISTRADOR' && userOrAdmin !== 'USUARIO') {            
-            userOrAdmin = prompt('No ha indicado correctamente si es usted Administrador o Usuario. \n Vuelva a intentarlo de nuevo.');
-            if(userOrAdmin === null) {
-                console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
-                break;
-            }
-            userOrAdmin = userOrAdmin.toUpperCase();
-        }
-        
         switch (userOrAdmin) {
             case 'ADMINISTRADOR': 
                 adminManager();
@@ -125,30 +92,11 @@ function requestUserAdmin() {
             case 'USUARIO':
                 userManager();
                 break;
-        }
-    }
+        }    
 }
 
-//ADMIN: Poder crear o eliminar vuelos.
-
 function adminManager() {
-
-    let askPushOrDelete = '';        
-    askPushOrDelete = prompt('Desea AÑADIR o ELIMINAR vuelos?', 'AÑADIR o ELIMINAR');
-    if(askPushOrDelete === null) {
-        console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
-    }else{
-        askPushOrDelete = askPushOrDelete.toUpperCase();
-
-        while(askPushOrDelete !== 'ELIMINAR' && askPushOrDelete !== 'AÑADIR') {
-            askPushOrDelete = prompt('No ha indicado correctamente si es usted Administrador o Usuario. \n Vuelva a intentarlo de nuevo.', 'AÑADIR o ELIMINAR');
-            if(askPushOrDelete === null) {
-                console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
-                break;
-            }
-            askPushOrDelete = askPushOrDelete.toUpperCase();
-        }
-    }
+    let askPushOrDelete = promptMessage("pushDelete");
 
     switch (askPushOrDelete) {
         case 'AÑADIR': 
@@ -159,9 +107,6 @@ function adminManager() {
             break;
     }
 }
-
-
-//ADMIN: añadir vuelos. no se pueden añadir mas de 15 vuelos.
 
 function adminManagerAdd() {
     let newId;
@@ -199,7 +144,6 @@ function adminManagerAdd() {
     }    
 }
 
-//ADMIN: eliminar vuelos.
 function adminManagerDelete() {
     let askId = '';
 
@@ -229,25 +173,8 @@ function adminManagerDelete() {
     }
 }
 
-//7● USER: Buscar por precio (más alto, más bajo o igual), el programa debería mostrar los datos de los vuelos
-//encontrados e, indicando al programa el ID, el programa responderá: "Gracias por su compra, vuelva pronto."
-
 function userManager() {
-    let askPriceSearch;
-    askPriceSearch = prompt('Indique si desea buscar por MAYOR, MENOR o IGUAL precio.', 'MAYOR, MENOR o IGUAL');
-    if(askPriceSearch === null){
-        console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
-    }else{
-        askPriceSearch = askPriceSearch.toUpperCase();    
-        while(askPriceSearch !== 'MAYOR' && askPriceSearch !== 'MENOR' && askPriceSearch !== 'IGUAL') {
-            askPriceSearch = prompt('No ha indicado correctamente si desea relizar la busqueda por MAYOR o MENOR precio. \n Vuelva a intentarlo.');
-            if(askPriceSearch === null) {
-                console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
-                break;
-            }
-            askPriceSearch = askPriceSearch.toUpperCase();
-        }
-    }
+    let askPriceSearch = promptMessage("precios");
     switch (askPriceSearch) {
         case 'MAYOR': 
             askHigherThan();
@@ -260,29 +187,59 @@ function userManager() {
             break;
     }    
 }
+
 function promptMessage(message) {
     let printPrompt;
+    let printPromptIncorrect;
     let printPromptNull;
+    let conditionCompare = [];
     switch(message) {
         case "precios":
-            printPromptNull = 'Gracias por utilizar nuestro servicio. Vuelva pronto!';//UNIFICAR FUNCION!!!!!!!!!!1
+            printPrompt = prompt('Indique si desea buscar por MAYOR, MENOR o IGUAL precio.', 'MAYOR, MENOR o IGUAL');
+            printPromptNull = 'Gracias por utilizar nuestro servicio. Vuelva pronto!';
+            printPromptIncorrect = 'No ha indicado correctamente si desea relizar la busqueda por MAYOR o MENOR precio. \n Vuelva a intentarlo.';
+            conditionCompare.push('MAYOR', 'MENOR', 'IGUAL');            
+            break;
+        case "userAdmin":
+            printPrompt = prompt('Es usted Admininistrador o usuario?', 'Usuario');
+            printPromptNull = 'Gracias por utilizar nuestro servicio. Vuelva pronto!';
+            printPromptIncorrect = 'No ha indicado correctamente si es usted Administrador o Usuario. \n Vuelva a intentarlo de nuevo.';
+            conditionCompare.push('ADMINISTRADOR', 'USUARIO');
+
+            break;
+        case "pushDelete":
+            printPrompt = prompt('Desea AÑADIR o ELIMINAR vuelos?', 'AÑADIR o ELIMINAR');
+            printPromptNull = 'Gracias por utilizar nuestro servicio. Vuelva pronto!';
+            printPromptIncorrect = 'No ha indicado correctamente si desea AÑADIR o ELIMINAR. \n Vuelva a intentarlo de nuevo.', 'AÑADIR o ELIMINAR';
+            conditionCompare.push('AÑADIR', 'ELIMINAR');
+            break;
     }
 
-    if(askPriceSearch === null){
-        console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
-    }else{
-        askPriceSearch = askPriceSearch.toUpperCase();    
-        while(askPriceSearch !== 'MAYOR' && askPriceSearch !== 'MENOR' && askPriceSearch !== 'IGUAL') {
-            askPriceSearch = prompt('No ha indicado correctamente si desea relizar la busqueda por MAYOR o MENOR precio. \n Vuelva a intentarlo.');
-            if(askPriceSearch === null) {
-                console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
-                break;
+    if(printPrompt === null){
+        console.log(printPromptNull);
+    }else if(conditionCompare.length === 3){
+            printPrompt = printPrompt.toUpperCase();    
+            while(printPrompt !== conditionCompare[0] && printPrompt !== conditionCompare[1] && printPrompt !== conditionCompare[2]) {
+                printPrompt = prompt(printPromptIncorrect);
+                if(printPrompt === null) {
+                    console.log(printPromptNull);
+                    break;
+                }
+                printPrompt = printPrompt.toUpperCase();
+            }     
+    }else{        
+            printPrompt = printPrompt.toUpperCase();    
+            while(printPrompt !== conditionCompare[0] && printPrompt !== conditionCompare[1]) {
+                printPrompt = prompt(printPromptIncorrect);
+                if(printPrompt === null) {
+                    console.log(printPromptNull);
+                    break;
+                }
+                printPrompt = printPrompt.toUpperCase();
             }
-            askPriceSearch = askPriceSearch.toUpperCase();
-        }
     }
+    return printPrompt;
 }
-//USER: compara mayor a menor.
 
 function askHigherThan() {
     let scale;
@@ -298,8 +255,6 @@ function askHigherThan() {
     }
     buyFlight();    
 }
-
-//USER: compara menor a mayor.
 
 function askLowerThan() {
     let scale;
@@ -317,57 +272,54 @@ function askLowerThan() {
     buyFlight();
 }
 
-//USER: compara igual que.
-
 function askEquialTo() {
-    let askId;
+    let askId = promptMessageEqualBuy("equalTo");
     let toCompare;
     let equalToArr = [];    
 
-    askId = prompt('Indique el numero de ID del vuelo que desea comprar.');
-    if(askId === null){
-        console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
-    }else{
-        while (flights[askId] == undefined || askId >= (flights.length)) {
-            askId = prompt('No ha especificado un numero de ID correcto. Vuelva a intentarlo.');
+    toCompare = (JSON.stringify(flights[askId]));
+
+    for (let i = 0; i<flights.length; i++) {
+        if (flights[askId] !== flights[i] && flights[askId].cost == flights[i].cost) {
+            equalToArr.push(flights[i]);
         }
-    
-        toCompare = (JSON.stringify(flights[askId]));
-    
-        for (let i = 0; i<flights.length; i++) {
-            if (flights[askId] !== flights[i] && flights[askId].cost == flights[i].cost) {
-                equalToArr.push(flights[i]);
-            }
-        }
-    
-        console.log('el vuelo seleccionado: ' + toCompare + '\n Tiene el mismo precio que:');
-        console.log(equalToArr);
-    
-        buyFlight();
-    }
+    }    
+    console.log('el vuelo seleccionado: ' + toCompare + '\n Tiene el mismo precio que:');
+    console.log(equalToArr);    
+    buyFlight();
 }
 
-//USER: compra.
-
 function buyFlight() {
-    let askId;
+    let askId = promptMessageEqualBuy("buy");
     let scale;
-    askId = prompt('Si desea comprar un vuelo, indique la ID del vuelo que quiere comprar.');
-    if(askId === null){
-        console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
+
+    if(flights[askId] === true){
+        scale = 'Realiza escala.';
     }else{
-        while (flights[askId] == undefined || askId >= (flights.length)) {
-            askId = prompt('No ha especificado un numero de ID correcto. Vuelva a intentarlo.');
-            if(askId === null){
-                console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
-                break;
-            }    
-        }
-        if(flights[askId] === true){
-            scale = 'Realiza escala.';
-        }else{
-            scale = 'No realiza escala.';
-        }
-        console.log('Gracias por su compra. Los datos de su compra son: \n' + 'Vuelo con origen: ' + flights[askId].from + ', y destino: ' + flights[askId].to + ' tiene un coste de ' + flights[askId].cost + '€. ' + scale);
+        scale = 'No realiza escala.';
     }
+    console.log('Gracias por su compra. Los datos de su compra son: \n' + 'Vuelo con origen: ' + flights[askId].from + ', y destino: ' + flights[askId].to + ' tiene un coste de ' + flights[askId].cost + '€. ' + scale);
+}
+
+function promptMessageEqualBuy(message) {
+    let printPrompt;
+    let printPromptNull = 'Gracias por utilizar nuestro servicio. Vuelva pronto!';
+    let printPromptIncorrect = 'No ha especificado un numero de ID correcto. Vuelva a intentarlo.';
+    switch(message) {
+         case "equalTo":
+            printPrompt = prompt('Indique el numero de ID del vuelo que desea comprar.');
+            break;
+        case "buy":
+            printPrompt = prompt('Si desea comprar un vuelo, indique la ID del vuelo que quiere comprar.');
+            break;
+    }
+    
+    if(printPrompt === null){
+        console.log(printPromptNull);
+    }else{
+        while (flights[printPrompt] == undefined || printPrompt >= (flights.length)) {
+            printPrompt = prompt(printPromptIncorrect);
+        }
+    }
+    return printPrompt;
 }
