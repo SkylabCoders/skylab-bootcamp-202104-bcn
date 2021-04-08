@@ -286,18 +286,19 @@ function buyTicket(){
         }
         if (check) {
             let count = 0;
-                while(flightsList[count].Id !== parseInt(buyFlight)){
-                    count++;}
-                console.log("Usted a comprado este vuelo: ");
-                console.log(flightsList[count].message);
-                alert("Gracias por su compra, vuelva pronto");
-                return;
-            } else {
-                alert("La ID que ha tecleado no existe, vuelva a intentarlo");
-                return buyTicket();
-            }
+            while(flightsList[count].Id !== parseInt(buyFlight)){
+                count++;}
+            console.log("Usted a comprado este vuelo: ");
+            console.log(flightsList[count].message);
+            alert("Gracias por su compra, vuelva pronto");
+            return;
+        } else {
+            alert("La ID que ha tecleado no existe, vuelva a intentarlo");
+            return buyTicket();
         }
     }
+}
+
 
 insertName();
 enterFlight ("Barcelona", "Madrid", 90, true);
