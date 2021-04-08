@@ -173,7 +173,6 @@ function createFlight(){
       } else break;
     }
     cost = +cost;
-
     while (hasStopOver !== 'y' && hasStopOver !== 'n' && hasStopOver !== null) {
         hasStopOver = prompt('¿Tiene escalas [y][n]?:')
     }
