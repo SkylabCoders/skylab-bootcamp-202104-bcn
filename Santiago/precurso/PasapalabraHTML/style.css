@@ -19,13 +19,13 @@ body {
 /* Estilo del título del juego */
 #title-text {
     font-size: 30px;
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier New', Helvetica, monospace;
 }
 
 /* Estilo del mensaje de bienvenida */
 #welcome-text {
     font-size: 30px;
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier New', Helvetica, monospace;
     margin-top: 1px;
 }
 
