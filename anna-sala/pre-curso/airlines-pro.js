@@ -1,49 +1,28 @@
 
 /*
-
 PRO
-
 Después de ver toda la información el programa pedirá al usuario si es ADMIN/USER, dependiendo de la elección, el programa se comportará de la siguiente manera:
-
 Si eres ADMIN, la función debería permitir:
-
 ● Poder crear, más vuelos, pidiendo la información por prompt(), sin poder pasar de 15 vuelos, si se intenta introducir uno más, saltará un alert().
-
 ● Poder eliminar vuelos mediante el ID.
-
 Si eres USER la función debería permitir:
-
 ● Buscar por precio (más alto, más bajo o igual), el programa debería mostrar los datos de los vuelos encontrados e, indicando al programa el ID, el programa responderá: "Gracias por su compra, vuelva pronto."
-
 */
 
 let flights = [
-
     { id: 00, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
-
     { id: 01, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
-
     { id: 02, to: 'Los Angeles', from: 'Madrid', cost: 1100, scale: true },
-
     { id: 03, to: 'Paris', from: 'Barcelona', cost: 210, scale: false },
-
     { id: 04, to: 'Roma', from: 'Barcelona', cost: 150, scale: false },
-
     { id: 05, to: 'London', from: 'Madrid', cost: 200, scale: false },
-
     { id: 06, to: 'Madrid', from: 'Barcelona', cost: 90, scale: false },
-
     { id: 07, to: 'Tokyo', from: 'Madrid', cost: 1500, scale: true },
-
     { id: 08, to: 'Shangai', from: 'Barcelona', cost: 800, scale: true },
-
     { id: 09, to: 'Sydney', from: 'Barcelona', cost: 150, scale: true },
-
     { id: 10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, scale: false } ];
-
-    let userName;
+let userName;
 userName = prompt('¿Como te llamas?');
-
 alert('Bienvenido a Skylab Airlines, ' + userName);
 
 airlines();
@@ -57,17 +36,13 @@ function airlines(){
 
 
 function seeAllFlights(){
-
     for (let i=0; i<flights.length; i++){
-
-            if ( flights[i].scale === true){
+            if ( flights[i].scale){
             console.log("ID: "+ flights[i].id + ". El vuelo con origen " + flights[i].from + " y destino " + flights[i].to + " tiene un coste de " + flights[i].cost + "€ y si realiza escalas")
             }
-
             else {
             console.log("ID: "+ flights[i].id + ". El vuelo con origen " + flights[i].from + " y destino " + flights[i].to + " tiene un coste de " + flights[i].cost + "€ y no realiza escalas")
             }
-
     }
 }
 
@@ -75,9 +50,7 @@ function averageCost (){
     let total=0;
     let average;
     for (let i=0; i<flights.length; i++){
-
         total +=flights[i].cost; 
-
     }
 average = total/flights.length;
 console.log("El precio medio de los vuelos es " + average.toFixed(2) + "€");
@@ -87,7 +60,6 @@ console.log("El precio medio de los vuelos es " + average.toFixed(2) + "€");
 function seeScales (){
     console.log("Los vuelos que tienen escalas son: ");
     for (let i=0; i<flights.length; i++){
-
         if (flights[i].scale===true){
         console.log(" El vuelo con identificador: " + flights[i].id + " con origen " + flights[i].from + " y destino " + flights[i].to + "y tiene un coste de " + flights[i].cost);
         }
@@ -116,8 +88,6 @@ function chooseAdminUser(){
         else {
             userFunctions();
         }
-
-
 }
 
 
@@ -137,8 +107,7 @@ function adminFunctions(){
             function createNewFlightAdmin(){
                 let createNewFlight = prompt ( "Bienvenido Administrador " + userName + ", quieres crear nuevos vuelos? Por favor escribe si o no.");
                 if (createNewFlight==="si" || createNewFlight==="Si"){
-                    if (flights.length<15 || createNewFlight!=null) {
-                        
+                    if (flights.length<15 || createNewFlight!=null) {          
                         let newFlight = {
                             id: flights.length,
                             to: prompt('Escribe el destino del vuelo :'),
@@ -146,21 +115,18 @@ function adminFunctions(){
                             cost: parseInt(prompt('Escribe el precio del vuelo :')),
                             scale: flightScales()
                         }
-
                             if (newFlight.to == null || newFlight.from==null || newFlight.cost==null|| newFlight.scale==null){
                                 outOfAdmin();
                             }
                             else if (isNaN(+newFlight.cost) === true || newFlight.cost == null){
                                 alert('Por favor, introduce solo numeros');
                                 createNewFlightAdmin();
-                            
                             }
                             else {
                                
                                     flights.push(newFlight);
                                     seeAllFlights();
                                     adminFunctions();
-                                
                             }
                     }
                 }
@@ -171,7 +137,6 @@ function adminFunctions(){
             }
             function flightScales(){
                 let answerToScales=prompt('El nuevo vuelo tiene escalas? si/no?');
-
                 if (answerToScales ==="si" || answerToScales==="Si"){
                     return true;
                 }
@@ -182,7 +147,6 @@ function adminFunctions(){
 
 
             function outOfAdmin(){
-
                 if (flights.length===15){
                 alert ("Has alcanzado el máximo número de vuelos.")
                 }
@@ -193,7 +157,6 @@ function adminFunctions(){
 
             function eliminateFlightsAdmin(){
                 let flightToEliminate = prompt ("Escribe el ID del vuelo que quieras eliminar.");
-
                 if (isNaN(+flightToEliminate) === true || flightToEliminate === null || flightToEliminate == ""){
                     alert("Por favor introduce solo números.");
                     eliminateFlightsAdmin();
@@ -208,11 +171,7 @@ function adminFunctions(){
                         }
                     }
                 }
-                
-
             }
-
-
 
 function userFunctions(){
     let price = "";

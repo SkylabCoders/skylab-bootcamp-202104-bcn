@@ -1,4 +1,6 @@
-
+const screenPrevious =document.querySelector('.previous-numbers');
+const screenCurrent = document.querySelector('.written-numbers');
+const buttons = document.getElementsByTagName('button');
 let firstNumber="";
 let showResults=false;
 let finalResult="";
@@ -8,9 +10,6 @@ let currentValue;
 let previousValue;
 let pressedEqual=false;
 let numbersForCalculations= [];
-const screenPrevious =document.querySelector('.previous-numbers');
-const screenCurrent = document.querySelector('.written-numbers');
-const buttons = document.getElementsByTagName('button');
 
 for (const button of buttons) {
     button.addEventListener('click', function(event) {
