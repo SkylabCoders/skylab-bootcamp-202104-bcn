@@ -33,12 +33,12 @@ function airlines(){
 
 function seeAllFlights(){
     for (i=0; i<flights.length; i++){
-            if ( flights[i].scale === true){
-            console.log("El vuelo con origen " + flights[i].from + " y destino " + flights[i].to + " tiene un coste de " + flights[i].cost + "€ y si realiza escalas")
-            }
-            else {
-            console.log("El vuelo con origen " + flights[i].from + " y destino " + flights[i].to + " tiene un coste de " + flights[i].cost + "€ y no realiza escalas")
-            }
+        if ( flights[i].scale === true){
+        console.log("El vuelo con origen " + flights[i].from + " y destino " + flights[i].to + " tiene un coste de " + flights[i].cost + "€ y si realiza escalas")
+        }
+        else {
+        console.log("El vuelo con origen " + flights[i].from + " y destino " + flights[i].to + " tiene un coste de " + flights[i].cost + "€ y no realiza escalas")
+        }
     }
 }
 
@@ -58,7 +58,7 @@ function seeScales (){
         if (flights[i].scale===true){
         console.log(" El vuelo con identificador: " + flights[i].id + " con origen " + flights[i].from + " y destino " + flights[i].to + "y tiene un coste de " + flights[i].cost);
         }
-}
+    }
 }
 
 function afternoonFlights(){

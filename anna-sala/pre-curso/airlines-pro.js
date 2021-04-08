@@ -84,7 +84,6 @@ function chooseAdminUser(){
         }
 }
 
-
 function adminFunctions(){
     let adminOptions = prompt ("Quieres crear un nuevo vuelo o elimar existentes? Escribe 'nuevo' o 'eliminar'. Presiona Cancelar para salir. ");
         if (adminOptions ==="nuevo" || adminOptions ==="Nuevo" ){
@@ -96,9 +95,7 @@ function adminFunctions(){
         }
         else {
             eliminateFlightsAdmin();
-        }
-
-            
+        }     
 }
 
         function createNewFlightAdmin(){
@@ -146,7 +143,7 @@ function adminFunctions(){
                 }
                 else {
                     alert ("Gracias por utilizar el espacio de administrador")
-                }
+                    }
                 }
 
             function eliminateFlightsAdmin(){

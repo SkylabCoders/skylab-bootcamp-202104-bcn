@@ -154,18 +154,17 @@ function seeRanking(){
         console.log("El ranking final es:")
             for(let h=0; h<ranking.length; h++){
                 console.log([h+1] + " - " + ranking[h].name + " con " + ranking[h].points + " puntos! ");
-            }  
-            function sortRanking() 
-               {
-                ranking.sort (function(a,b){
-                    if (a.points > b.points) {
-                        return -1;
-                    }
-                    if (a.points < b.points) {
-                        return 1;
-                    }
-                    // a must be equal to b
-                    return 0;
-                });
-                }
+            }          
 }
+function sortRanking() {
+    ranking.sort (function(a,b){
+        if (a.points > b.points) {
+            return -1;
+        }
+        if (a.points < b.points) {
+            return 1;
+        }
+        // a must be equal to b
+        return 0;
+    });
+    }
