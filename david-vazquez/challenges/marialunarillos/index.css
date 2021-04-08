@@ -99,6 +99,7 @@ header {
 
 .link {
   width: 130px;
+  height: 30px;
   text-transform: uppercase;
   color: #ffffff;
   font-size: 15px;
@@ -108,6 +109,19 @@ header {
   margin-right: 5px;
   padding: 5px 15px;
   display: block;
+}
+
+.submit {
+  display: block;
+  float: right;
+  width: 49px;
+  height: 29px;
+  background: url(img/menu.svg) -303px 2px no-repeat #bbb8b6;
+  border: none;
+}
+
+.submit span {
+  display: none;
 }
 
 .link.news {
@@ -127,6 +141,24 @@ header {
 .link.sales {
   background: #8e789d;
   padding-right: 15px;
+}
+
+.search-box {
+  display: block;
+  width: 175px;
+
+  height: 30px;
+  border: 1px solid #bbb8b6;
+}
+
+.search-input {
+  float: left;
+  border: none;
+  height: 28px;
+  font-size: 12px;
+  padding: 0 5px;
+  color: #bbb8b6;
+  text-transform: uppercase;
 }
 
 .nav-bottom-container {
@@ -176,7 +208,6 @@ header {
   background-color: #ff5959;
   background-position: -320px 0;
   background-size: 560px;
-  float: right;
 }
 
 .text-button {
