@@ -1,5 +1,4 @@
 // ----- *** config & initial settings *** ------
-
 const MAX_DECIMAL_NUMBERS = 2
 let auxNumber = ''
 let auxDecimalNumber = ''
@@ -12,7 +11,6 @@ let lastResultIsPressed = false
 let operatorIsPressed = false
 
 // ----- *** getting elements *** ------
-
 const getElementByName = (name) =>
 	document.querySelector('[name =' + name + ']')
 
@@ -34,7 +32,6 @@ const OPERATOR_BUTTON_NAMES = [
 OPERATOR_BUTTON_NAMES.forEach((buttonName) => {
 	OPERATOR_BUTTONS.push(getElementByName(buttonName))
 })
-
 for (let buttonNumber = 0; buttonNumber < 10; buttonNumber++) {
 	NUMBER_BUTTONS.push(getElementByName('BUTTON_' + buttonNumber))
 }
@@ -47,7 +44,6 @@ OPERATOR_BUTTONS.forEach((button) => {
 		setOperator(button.value)
 	})
 })
-
 NUMBER_BUTTONS.forEach((button) => {
 	button.addEventListener('click', (e) => {
 		setNumber(button.value)
