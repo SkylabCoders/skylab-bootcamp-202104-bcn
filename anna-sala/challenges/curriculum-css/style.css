@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+:root {
+    --primary-color: #F07167;
+    --secondary-color: #FED9B7;
+    --complimentary-color: #00AFB9;
+    --contrast-color: #0081A7;
+    --light-color: #FDFCDC;
+    }
+
+.container {
+  background: #191919;
+  min-height: 100vh;
+  font-family: Montserrat, sans-serif;
+  margin-left: 70px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+/* Styles applied on trigger */
+.container:target {
+    margin-left: 70px;
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.container:target h3, h4 {
+    margin-left: 70px;
+    opacity: 0;
+    animation: 2s fadeIn forwards .5s;
+}
+
+.container:target p, ul{
+    margin-left: 100px;
+}
+
+/* End of styles applied on trigger */
+
+.section-title{
+    margin-top: 4%;
+}
+
+.section-subtitles{
+    margin-top: 2%;
+}
+
+nav a {
+    font-size: 30px;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--secondary-color);
+}
+
+
+#intro {
+    background:var(--primary-color);
+    }
+
+#education {
+background:var(--primary-color);
+}
+
+#experience {
+    background: var(--complimentary-color);
+}
+  
+#honors {
+    background: var(--contrast-color);
+}
+  
+#leadership {
+    background: var(--light-color);
+}
+
+@keyframes fadeIn {
+    100% { opacity:1 }
+}
