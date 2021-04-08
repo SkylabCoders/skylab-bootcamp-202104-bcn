@@ -115,10 +115,24 @@ ul {
 .cart-image {
   display: flex;
   margin-left: 100px;
-  margin-right: 70px;
   margin-top: 20px;
   width: 30px;
   height: 30px;
+}
+.num-of-cart {
+  margin-right: 70px;
+  background-color: #ff5959;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
+.elements {
+  font-size: large;
+}
+.num-of-cart:hover {
+  background: white;
 }
 .cart-image:hover,
 .icon1:hover,
