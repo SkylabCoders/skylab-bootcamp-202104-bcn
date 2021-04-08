@@ -1,6 +1,12 @@
-body {
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
 }
+
 ul {
   list-style: none;
 }
@@ -8,7 +14,6 @@ ul {
   display: flex;
   background-color: #ccc;
   width: 100%;
-  /* justify-content: space-around; */
 }
 
 .login-register {
