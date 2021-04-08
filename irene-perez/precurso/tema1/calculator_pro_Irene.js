@@ -62,9 +62,9 @@ function calculator() {
         "El resultado de la división es: " + div.toFixed(3),
     ];
     //Se añade el bucle for para que los resultados aparezcan impresos uno debajo del otro para que sea más amigable para el usuario
-    for (let i = 0; i < finalResults.length; i++) {
-        console.log(finalResults[i]);
-    }
+    finalResults.forEach( finalResult => {
+        console.log(finalResult);
+        })
     //Una vez que se han hecho todas las operaciones, y se han imprimido los resultados de las mismas, invocamos la función askUser para preguntar al usuario si quiere continuar o no
     return askUser();
 }
