@@ -102,7 +102,6 @@ const questionsDeck = {
 const numOfSets = Object.keys(questionsDeck).length;
 const numOfQuestionsPerSet = Object.values(questionsDeck)[0].length;
 let totalScore = 0;
-
 let bestUsers = [
     {name: 'Jack Palance', points: 3},
     {name: 'Mike Tyson', points: 2},
