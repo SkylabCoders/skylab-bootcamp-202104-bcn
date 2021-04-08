@@ -5,6 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background: none;
+  font: 12px/1.55 "Source Sans Pro", sans-serif;
+  color: #67635f;
+}
 .header-container {
   display: flex;
   flex-direction: column;
@@ -15,7 +20,9 @@ ul {
 }
 .header-fix {
   display: flex;
-  background-color: grey;
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 50px;
   justify-content: space-between;
 }
 .letter-logo {
@@ -32,15 +39,15 @@ ul {
   display: flex;
 }
 .firstIMG {
-  background: red;
+  background: #ff5959;
   width: 100%;
 }
 .secondIMG {
-  background: blue;
+  background: #6199af;
   width: 100%;
 }
 .thirdIMG {
-  background: yellow;
+  background: #f6b436;
   width: 100%;
 }
 .secondIMG:hover {
