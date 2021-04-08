@@ -1,0 +1,47 @@
+ul {
+  list-style: none;
+}
+.navigator-container {
+  display: flex;
+  background-color: #ccc;
+  width: 100%;
+  /* justify-content: space-around; */
+}
+
+.login-register {
+  display: flex;
+  flex-grow: 2;
+  justify-content: flex-end;
+}
+
+.malu-pages {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+}
+
+.malu-item {
+  width: 80px;
+  height: 140px;
+}
+.ma {
+  background-color: red;
+}
+
+.cu {
+  background-color: blue;
+}
+
+.mu {
+  background-color: orange;
+}
+.social-networks {
+  display: flex;
+  flex-grow: 1;
+}
+
+.cart-container {
+  display: flex;
+  flex-grow: 1;
+}
