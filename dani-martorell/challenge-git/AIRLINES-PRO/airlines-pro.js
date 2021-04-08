@@ -102,7 +102,7 @@ function displayInfo(){
   let NumFlightsWithStopOver = 0;
 
   for(flight of flights){
-      if(flight.stopOver) NumFlightsWithStopOver += 1; 
+      if(flight.stopOver) { NumFlightsWithStopOver += 1 }; 
   } 
   console.log(`\tEn este momento, el número de vuelos con escalas es de ${NumFlightsWithStopOver}.`);
    
