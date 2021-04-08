@@ -1,4 +1,43 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+ul {
+  list-style: none;
+  display: flex;
+}
 .header-fix {
   display: flex;
-  position: absolute;
+  background-color: grey;
+  justify-content: space-between;
+}
+.social-navigator {
+  display: flex;
+}
+.nav-web {
+  display: flex;
+  flex-direction: column;
+}
+.searching {
+  display: flex;
+}
+.firstIMG {
+  background: red;
+}
+.secondIMG {
+  background: blue;
+}
+.thirdIMG {
+  background: yellow;
+}
+.header-webpage {
+  display: flex;
+  justify-content: space-between;
 }
