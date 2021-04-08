@@ -4,12 +4,12 @@
 //Variables interruptor que se usarán más adelante cuando se haga la función para validar si se ha hecho línea (lineValidate)
 //Definimos isBingo como false para usarlo más adelante como condición
 //variable balls que se definirá más adelante
-let confirmedBingoCard,
-  firstLineSwitcher = false,
-  secondLineSwitcher = false,
-  thirdLineSwitcher = false,
-  isBingo = false,
-  balls;
+let confirmedBingoCard;
+let firstLineSwitcher = false;
+let secondLineSwitcher = false;
+let thirdLineSwitcher = false;
+let isBingo = false;
+let balls;
 //Variable donde se guardará el ranking de los usuarios ordenado por puntos (lo suyo sería poner un array vacío, pero he metido 5 jugadores inventadis para que aparezca algo en pantalla)
 let ranking = [
   { name: "Luffy", points: 85 },
