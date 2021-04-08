@@ -1,0 +1,102 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+button{
+    border: none;
+    box-shadow: 5px 5px 10px -3px #00000033, -5px -5px 15px 3px #00000033;
+    margin: 5px;
+
+}
+.container{
+    margin: auto;
+    display: flex;
+    align-self: center;
+    padding: 5px;
+    
+    margin-top: 30px;
+    height: 450px;
+    width: 250px;
+    align-items: center;
+
+}
+
+.calculator{
+    position: relative;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    background-color: #00000055;
+    box-shadow: 7px 7px 0px 1px #00000033;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.display-line{
+    height: 25%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    flex-direction:column-reverse;
+    background-color: darkslateblue;
+    
+}
+#display-one{
+    
+    height: 50%;
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-right: 5px;
+    font-size: 40px;
+    color: white;
+}
+#display-two{
+    
+    height: 50%;
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-right: 5px;
+    font-size: 40px;
+    color: white;
+}
+
+.first-line,.second-line,.third-line,.fourth-line,.fifth-line{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height:15%;    
+}
+.fat{
+    display: flex;
+    flex-grow: 2;
+    align-items: center;
+    justify-content: center;
+    
+}
+.element{    
+    font-size: 25px;
+    width: 51px;
+    background-color: darkgrey;
+}
+.operacion{
+    background-color: orange;
+    font-size: 25px;
+    width: 58px;
+}
+#cero{
+    border-bottom-left-radius: 5px;
+}
+#igual{
+    border-bottom-right-radius: 5px;
+}
