@@ -67,6 +67,8 @@ nav>ul>li a {
 }
 
 .mainContent{
+    display: flex;
+    flex-wrap: wrap;
     width:1000px;
     margin-left: auto;
     margin-right: auto;
@@ -81,7 +83,7 @@ nav>ul>li a {
 /*Main Content*/
 
 .main {
-    float: right;
+    display: flex;
     width: 70%;
     margin-bottom: 20px;
 }
