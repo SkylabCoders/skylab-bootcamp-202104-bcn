@@ -13,17 +13,18 @@ let flights = [
 
 //Se preguntará por el nombre de usuario y dará la bienvenida. 
 
+let flightsScale = [];      
 let userName = '';
+let scale = null;                      
 welcomeAirlines();
 
+
 function listaVuelos() {
-    let scale = null;                      
-    let flightsScale = [];      
     
     for (let flight of flights) {
         if(flight.scale) {
             scale = 'Realiza escala.';      
-            flightsScale.push(flight.id);       
+            flightsScale.push(flight);       
         }else{
             scale = 'No realiza escala.';
         }
@@ -49,39 +50,55 @@ function welcomeAirlines() {
 //y destino: Madrid tiene un coste de XXXX€ y no realiza ninguna escala. 
 
 function presentationFlights() {
-    let scale;              
-    let valueSum = 0;       
-    let valueAverage;       
-    let flightsScale = [];  
-    
-    for(let i = 0; i<flights.length; i++){
-        if(flights[i].scale) {
-            scale = 'Realiza escala.';      
-            flightsScale.push(flights[i].id);       
-        }else{
-            scale = 'No realiza escala.';
-        }
-        console.log('El vuelo con origen: ' + flights[i].from + ', y destino: ' + flights[i].to + ' tiene un coste de ' + flights[i].cost + '€. ' + scale);
+    // let scale;              
+    // let valueSum = 0;       
+    // let valueAverage;       
+    // let flightsScale = [];  
+    debugger;
+    listaVuelos();
 
 //A continuación, el usuario verá el coste medio de los vuelos. 
-//También podrá ver cuántos vuelos efectúan escalas.
+//También podrá ver cuántos vuelos efectúan escalas. 
+    averageFlights() 
+   
+    
 
-        valueSum += flights[i].cost;        
-    }
-    valueAverage = valueSum / flights.length                                                           
-    console.log('El promedio de todos los vuelos es: ' + Math.round(valueAverage * 100) / 100 + '€.'); 
-    console.log(flightsScale.length + ' Vuelos efectuan escala.');          //4
+    printFlightScale()
+           //4
 
 //Sabiendo que los últimos 5 vuelos (los últimos 5 ID's) son los últimos del día, muestra al usuario sus
 //destinos.     
-
+    lastFiveFlights()
+    
+}
+function lastFiveFlights() {
     let lastFiveFlights = []; //5
     for(let i = flights.length - 5; i<flights.length; i++){
         lastFiveFlights.push(' ' + flights[i].to);
     }
     console.log('Los 5 ultimos destinos del dia son:' + lastFiveFlights);
 }
+function averageFlights() {
+    let valueSum = flights.reduce(flightsSum);
+    let valueAverage = Math.round(valueSum / flights.length * 100) / 100;
+    console.log(`El promedio de todos los vuelos es: ${valueAverage}€.`); 
+}
 
+function printFlightScale(){
+    console.log(`${flightsScale.length} Vuelos efectuan escala. Los vuelos son:`);  
+    for (let flight of flightsScale) {
+        console.log(`El vuelo con origen: ${flight.from}, y destino: ${flight.to} tiene un coste de ${flight.cost}€. ${scale}`);  
+    }
+}
+
+function flightsSum(total, flight) {
+
+    if(typeof total === "number"){
+        return total + flight.cost;
+    }else{
+        return total.cost + flight.cost;
+    }
+}
 //Después de ver toda la información el programa pedirá al usuario si es ADMIN/USER
 
 function requestUserAdmin() {
@@ -243,7 +260,28 @@ function userManager() {
             break;
     }    
 }
+function promptMessage(message) {
+    let printPrompt;
+    let printPromptNull;
+    switch(message) {
+        case "precios":
+            printPromptNull = 'Gracias por utilizar nuestro servicio. Vuelva pronto!';//UNIFICAR FUNCION!!!!!!!!!!1
+    }
 
+    if(askPriceSearch === null){
+        console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
+    }else{
+        askPriceSearch = askPriceSearch.toUpperCase();    
+        while(askPriceSearch !== 'MAYOR' && askPriceSearch !== 'MENOR' && askPriceSearch !== 'IGUAL') {
+            askPriceSearch = prompt('No ha indicado correctamente si desea relizar la busqueda por MAYOR o MENOR precio. \n Vuelva a intentarlo.');
+            if(askPriceSearch === null) {
+                console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
+                break;
+            }
+            askPriceSearch = askPriceSearch.toUpperCase();
+        }
+    }
+}
 //USER: compara mayor a menor.
 
 function askHigherThan() {
