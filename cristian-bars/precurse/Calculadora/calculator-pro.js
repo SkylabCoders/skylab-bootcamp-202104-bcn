@@ -1,3 +1,5 @@
+let opera;
+
 function operaciones(opera){
     let numberList = [];
     let newNumber;
@@ -26,7 +28,7 @@ function operaciones(opera){
         
     }
     
-    var repeat = prompt("New numbers? y/n");
+    let repeat = prompt("New numbers? y/n");
 
     switch (repeat) {
         case "n": 
@@ -70,8 +72,6 @@ function dividir (numberList){
     }
     console.log("El resultado de la division es " + Math.sqrt(opera).toFixed(3));
 }
-
-let opera;
 
 operaciones(opera);
 

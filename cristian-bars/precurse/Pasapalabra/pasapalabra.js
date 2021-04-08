@@ -1,6 +1,6 @@
 let answer;
 let players = [];
-let rigthWords;
+let rightWords;
 let wrongWords;
 let pendent;
 let questions = [
@@ -34,7 +34,7 @@ let questions = [
 ];
 
 function runGame(){
-    rigthWords = 0;
+    rightWords = 0;
     wrongWords = 0;
     pendent = 0;
     
@@ -43,12 +43,12 @@ function runGame(){
     getName();
     runQuestions();
     //Juego finalizado
-    console.log("Aquí finaliza el juego, el jugador " + yourName + " ha terminado la partida con un total de " + rigthWords + " palabras acertadas y un total de " + wrongWords + " palabras incorrectas!!");
+    console.log("Aquí finaliza el juego, el jugador " + yourName + " ha terminado la partida con un total de " + rightWords + " palabras acertadas y un total de " + wrongWords + " palabras incorrectas!!");
     
     //Añadir jugador con sus resultados al array de jugadores
     var obj = {};
     obj["name"] = yourName;
-    obj["rigth"] = rigthWords;
+    obj["rigth"] = rightWords;
     obj["wrong"] = wrongWords;
     
     players.push(obj);
@@ -68,8 +68,6 @@ function runGame(){
                 console.log((i+1) + " " + players[i].name + " con " + players[i].rigth + " palabras acertadas y " + players[i].wrong + " palabras incorrectas");
             }
         } 
-    
-    
 }
 
 //Función para introducir el nombre del participante
@@ -114,7 +112,7 @@ function runQuestions(){
             if (answer !== "pasapalabra"){
                 if(answer === questions[i].answer){
                     console.log("Correcto!!");
-                    rigthWords ++;
+                    rightWords ++;
                     if(pendent !== 0 && questions[i].status === 3){
                         pendent--;
                     }

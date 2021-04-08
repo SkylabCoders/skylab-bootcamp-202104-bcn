@@ -79,7 +79,6 @@ function getName(){
 function getRole(){
     user = prompt("Eres ADMIN o USER?");
     
-    debugger
     if(user == "" || user == null){
         alert("Tienes que introducir tu rol en este punto!");
         getRole();

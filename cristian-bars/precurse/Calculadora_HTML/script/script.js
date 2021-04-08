@@ -11,7 +11,7 @@ function add(key) {
     result.textContent = result.textContent + key;
 }
 
-function del(){
+function eliminar(){
     resetear();
 }
 function suma(){

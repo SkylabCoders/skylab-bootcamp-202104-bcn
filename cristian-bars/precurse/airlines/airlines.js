@@ -22,9 +22,6 @@ function consulta (){
     for (let j = vuelos.length-5; j<vuelos.length; j++){
         mensaje += vuelos[j].to + "\n";
     }
-    
-    
-    
     console.log(mensaje);
 }
 
