@@ -4,21 +4,111 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;900&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="style.css" />
 		<title>Maria Lunarillos</title>
 	</head>
 	<body>
 		<header class="header-container">
 			<nav class="header-fix">
-				<div class="header-fix-logo-container">logo</div>
-				<div class="header-fix-register-cointainer">regiester</div>
-				<div class="header-fix-socialMedia">Redes sociales</div>
-				<div class="header-fix-cart">cart</div>
+				<div class="header-fix-menu">
+					<div class="header-fix-logo-container">
+						<div class="logo">
+							<ul>
+								<li class="logo-ma fixed"><span>ma</span></li>
+								<li class="logo-cu"><span>cu</span></li>
+								<li class="logo-mu"><span>mu</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="header-fix-nav">
+						<div class="header-fix-register icon-container">
+							<img
+								class="icon"
+								src="./images/icons/register.svg"
+								alt="register icon"
+							/>
+							<span>entra | regístrate</span>
+						</div>
+						<div class="header-fix-socialMedia">
+							<ul>
+								<li>
+									<a href="#"
+										><img
+											class="icon small"
+											src="./images/icons/facebook.svg"
+											alt="facebook icon"
+									/></a>
+								</li>
+								<li>
+									<a href="#"
+										><img
+											class="icon small"
+											src="./images/icons/twitter.svg"
+											alt="twitter icon"
+									/></a>
+								</li>
+								<li>
+									<a href="#"
+										><img
+											class="icon small"
+											src="./images/icons/instagram.svg"
+											alt="instagram icon"
+									/></a>
+								</li>
+								<li>
+									<a href="#"
+										><img
+											class="icon small"
+											src="./images/icons/pinterest.svg"
+											alt="pinterest icon"
+									/></a>
+								</li>
+								<li>
+									<a href="#"
+										><img
+											class="icon small"
+											src="./images/icons/youtube.svg"
+											alt="youtube icon"
+									/></a>
+								</li>
+							</ul>
+						</div>
+						<div class="header-fix-cart">
+							<button class="bg-color-main icon-secondary">
+								<img
+									class="icon"
+									src="./images/icons/cart.svg"
+									alt="cart icon-secondary"
+								/>
+							</button>
+							<div class="header-cart-product-counter">0</div>
+						</div>
+					</div>
+				</div>
 			</nav>
 			<nav class="header-secondary-nav">
 				<ul>
-					<li><a href="#">novedades</a></li>
-					<li><a href="#">ofertas</a></li>
+					<li>
+                        <div class="button">
+                            <img src="./images/icons/cart.svg" alt="" class="icon">
+                            <a href="#">novedades</a></li>
+                        </div>
+                        
+                        <div class="button">
+                            <img src="./images/icons/cart.svg" alt="" class="icon">
+                            <a href="#">ofertas</a></li>
+                        </div>
+					<li>
+						<div class="search-bar">
+							<input type="text" />
+							<button>buscar</button>
+						</div>
+					</li>
 				</ul>
 			</nav>
 			<nav class="header-main-nav">
