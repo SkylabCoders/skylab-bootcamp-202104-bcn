@@ -11,9 +11,7 @@
 */
 
 let numbersArray = [];
-
 calculatorPro();
-
 function calculatorPro() {
 
     getNumbers();
@@ -21,10 +19,7 @@ function calculatorPro() {
     newOperations();
 }
 
-
-
 function getNumbers(){
-  
     let individualNumber;
     do {
         individualNumber = prompt('Please introduce a number to make the operations or press cancel to see the result');
@@ -40,29 +35,23 @@ function getNumbers(){
             numbersArray.push(parseInt(individualNumber));
         }
 
-        } while (individualNumber !== null)
-
-            
+        } while (individualNumber !== null)        
 }
 
 function numbersOperations(){
     if (numbersArray.length == 1){ // en caso que solo se introduzca un solo numero
         console.log("The square root of " + numbersArray + " equals " + Math.sqrt(numbersArray).toFixed(3));
         }
-
         else {
                 let sum = numbersArray.reduce((accumulator, currentValue) => accumulator + currentValue);
                 let sub = numbersArray.reduce((accumulator, currentValue) => accumulator - currentValue);
                 let mult= numbersArray.reduce((accumulator, currentValue) => accumulator * currentValue);
                 let div = numbersArray.reduce((accumulator, currentValue) => accumulator / currentValue).toFixed(3);
-
             console.log("The sum of the numbers introduced equals to " + sum );
             console.log("The subtraction of the numbers introduced equals to " + sub);
             console.log("The multiplication of the numbers introduced equals to " + mult);
             console.log("The division of the numbers introduced equals to " + div);
-        
         }
-
 }
 
 function newOperations(){
@@ -70,13 +59,10 @@ function newOperations(){
     if (newNumbers==="yes" || newNumbers==="Yes"){
         numbersArray = [];
         calculatorPro();
-    
     }
     else {
         alert('Thank you :)');
     }
-    
-
 }
 
 
