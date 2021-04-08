@@ -14,6 +14,8 @@ let flights =
     { id: 10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, scale: false }
 ];
 
+let addedFlights = [];
+
 // Función que pregunta el nombre y hace el saludo
 function askUsername() {
 
@@ -97,7 +99,7 @@ function role() {
                 if (newFlight) {
 
                     const values = newFlight.split(",");
-                    flights.push({
+                    addedFlights.push({
                         id: parseInt(values[0]),
                         to: values[1],
                         from: values[2],
@@ -106,7 +108,7 @@ function role() {
                     });
                     console.log("");
                     console.log("Has añadido:");
-                    console.log(flights);
+                    console.log(addedFlights);
                     addFlights(); // Llamamos a la función addFlights para que el admin tenga la opción de crear más vuelos
                 } else {
                     console.log("");
@@ -221,14 +223,14 @@ function addFlights() {
 
     if (addMore) { // Si addMore es true, podremos añadir más vuelos
 
-        if (flights.length <= 15) { // No podemos añadir más de 15 vuelos
+        if (addedFlights.length <= 5) { // No podemos añadir más de 15 vuelos
             const newFlight = prompt('Introduce datos del nuevo vuelo:');
 
             if (newFlight !== "" && newFlight !== null) {
 
                 const values = newFlight.split(",");
 
-                flights.push({
+                addedFlights.push({
                     id: parseInt(values[0]),
                     to: values[1],
                     from: values[2],
