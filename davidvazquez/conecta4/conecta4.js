@@ -51,7 +51,7 @@ const columns = document.getElementsByClassName("column");
         let column = columns[j];
         column.addEventListener('click', function () {
             if(checkStatus === false){    
-                var points = column.getElementsByTagName('p');  
+                let points = column.getElementsByTagName('p');  
                     for(let i=points.length-1;i>=0;i--){
                         if(tablero[j][5-i] === 'gray'){
                             if(numTirada%2 !== 0){
