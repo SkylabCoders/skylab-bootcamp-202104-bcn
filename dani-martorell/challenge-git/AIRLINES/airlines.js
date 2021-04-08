@@ -1,14 +1,14 @@
 let flights = [
-  { id: 00, to: 'Bilbao', from: 'Barcelona', cost: 1600, stopOver: false },
-  { id: 01, to: 'New York', from: 'Barcelona', cost: 700, stopOver: false },
-  { id: 02, to: 'Los Angeles', from: 'Madrid', cost: 1100, stopOver: true },
-  { id: 03, to: 'Paris', from: 'Barcelona', cost: 210, stopOver: false },
-  { id: 04, to: 'Roma', from: 'Barcelona', cost: 150, stopOver: false },
-  { id: 05, to: 'London', from: 'Madrid', cost: 200, stopOver: false },
-  { id: 06, to: 'Madrid', from: 'Barcelona', cost: 90, stopOver: false },
-  { id: 07, to: 'Tokyo', from: 'Madrid', cost: 1500, stopOver: true },
-  { id: 08, to: 'Shangai', from: 'Barcelona', cost: 800, stopOver: true },
-  { id: 09, to: 'Sydney', from: 'Barcelona', cost: 150, stopOver: true },
+  { id: 0, to: 'Bilbao', from: 'Barcelona', cost: 1600, stopOver: false },
+  { id: 1, to: 'New York', from: 'Barcelona', cost: 700, stopOver: false },
+  { id: 2, to: 'Los Angeles', from: 'Madrid', cost: 1100, stopOver: true },
+  { id: 3, to: 'Paris', from: 'Barcelona', cost: 210, stopOver: false },
+  { id: 4, to: 'Roma', from: 'Barcelona', cost: 150, stopOver: false },
+  { id: 5, to: 'London', from: 'Madrid', cost: 200, stopOver: false },
+  { id: 6, to: 'Madrid', from: 'Barcelona', cost: 90, stopOver: false },
+  { id: 7, to: 'Tokyo', from: 'Madrid', cost: 1500, stopOver: true },
+  { id: 8, to: 'Shangai', from: 'Barcelona', cost: 800, stopOver: true },
+  { id: 9, to: 'Sydney', from: 'Barcelona', cost: 150, stopOver: true },
   { id: 10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, stopOver: false } 
 ];
 
