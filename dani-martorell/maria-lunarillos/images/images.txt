@@ -41,3 +41,8 @@ purple #8E789D
 
 light grey  #F8F8F8
 
+FONT
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+font-family: 'Source Sans Pro', sans-serif;
