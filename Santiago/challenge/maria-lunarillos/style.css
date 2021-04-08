@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: #FF5959;
 }
 
 .navbar {
@@ -7,19 +8,16 @@ body {
     width: 100%;
     height: 50px;
     background: #F8F8F8;
-    z-index: 5000;
 }
 
 .big-header {
     margin: 0 auto;
+    top: 50px;
     height: 300px;
-    position: relative;
-    background: lightcoral;
+    position: fixed;
+    background: white;
     width: 100%;
-}
-
-.small-header .navbar ul {
-    display: flex;
+    z-index: -1;
 }
 
 .first-block {
@@ -27,6 +25,8 @@ body {
     top: 0;
     width: 80px;
     height: 140px;
+    left: 135px;
+    background: url(./images/maria-lunarillos.png) #FF5959 bottom center no-repeat;
 }
 
 .second-block,
@@ -37,22 +37,31 @@ body {
     height: 70px;
 }
 
-.first-block {
-    left: 135px;
-    background: url(../images/icons/maria-lunarillos.png) #FF5959 bottom center no-repeat;
-}
-
 .second-block {
-    left: 220px;
-    background: url(../images/icons/cucute.png) #6199AF bottom center no-repeat;
+    left: 219px;
+    background: url(./images/cucute.png) #6199AF bottom center no-repeat;
 }
 
 .third-block {
-    left: 295px;
-    background: url(../images/icons/mumuchu.png) #F6B436 bottom center no-repeat;
+    left: 293px;
+    background: url(./images/mumuchu.png) #F6B436 bottom center no-repeat;
 }
 
-.second-block:hover, .third-block:hover{
+.second-block:hover,
+.third-block:hover {
     width: 70px;
     height: 140px;
+}
+
+.logo{
+    padding-left: 95px;
+    padding-top: 105px;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: flex-end;
+    /* align-content: flex-end; */
+    color:black;
+    padding-top: 150px;
 }
