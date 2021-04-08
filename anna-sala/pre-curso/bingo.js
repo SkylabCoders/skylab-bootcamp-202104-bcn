@@ -46,7 +46,6 @@ let ranking =[
     },
 ]
 
-
     let userName;
     userName = prompt('¿Como te llamas?');
         if (userName==="" || userName==null){
@@ -56,10 +55,6 @@ let ranking =[
             alert('Bienvenido al juego del Bingo, ' + userName);
             askTurn();
         }
-
-    
-
-    
 
 function askTurn(){
     let numbersForBingo = [];
@@ -72,7 +67,6 @@ function askTurn(){
         else{
             i--;
         }
-
     }
         fullLine = [0,0,0];
         bingoCard = [[],[],[]];
@@ -128,12 +122,8 @@ function bingoGame(){
             break;
             }
         }
-        
-
         } while (bingoFinished===false)
-
         endOfGame();
-
 }
 
 function checkAllNumbers(){
@@ -165,7 +155,6 @@ function checkAllNumbers(){
         }
     }
 }
-
 
 function endOfGame(){
     if (fullLine[0]==5 && fullLine[1]==5 && fullLine[2]==5){
@@ -206,7 +195,6 @@ console.log("El ranking final es:")
     for(let h=0; h<ranking.length; h++){
         console.log([h+1] + " - " + ranking[h].name + " con " + ranking[h].points + " puntos! ");
     }
-
     function sortRanking() 
        {
         ranking.sort (function(a,b){
@@ -220,5 +208,4 @@ console.log("El ranking final es:")
             return 0;
         });
         }
-
 }
