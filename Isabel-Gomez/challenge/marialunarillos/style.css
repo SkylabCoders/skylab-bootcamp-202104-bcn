@@ -10,6 +10,11 @@ body {
     color: #67635F;
 }
 
+.fas, .fab {
+    font-size: 30px;
+    color: black;
+}
+
 .header-container {
     position: fixed;
     top: 0;
@@ -39,11 +44,25 @@ body {
 }
 
 .social-media {
-    margin: 0 40px;
+    margin: 0 100px;
 }
 
 .social-media > li {
-    margin: 0 6px;
+    margin: 0 15px;
+}
+
+.register {
+    text-decoration: none;
+    color: #67635F;
+}
+
+.money {
+    width: 50px;
+   /* height: 50px; */
+    background: #FF5959;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .letters-marialunarillo {
