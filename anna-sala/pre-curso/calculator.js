@@ -6,11 +6,7 @@
 - si 1 numero solo raíz cuadrada 
 - Resultados almacenados dentro de array
 */
-
-
 function calculator(a, b){
-    
-    
     if (isNaN(a) && isNaN(b)){
         console.log("El valor introducido es incorrecto. Por Favor introduzca solo números.")
     }
@@ -29,7 +25,6 @@ function calculator(a, b){
         console.log("El valor introducido " + b + " es incorrecto. Por Favor introduzca solo números.")
     }
 
-
     /* Esto es lo que he intentado antes de darme cuenta que me olvidaba de los arrays 
     else { 
     console.log("La suma de " + a + " + " + b + " es igual a " + (a+b).toFixed(3));
@@ -39,20 +34,14 @@ function calculator(a, b){
     }
     */
 
-
-    
    else { //Los resultados deberían almacenarse dentro de una array y mostrarlos de una forma amigable al usuario.
-
        let resultados ={suma:a+b,resta: a-b, mult: a*b, div:a/b}
-
        console.log("La suma de " + a + " + " + b + " es igual a " + resultados.suma);
        console.log("La resta de " + a + " - " + b + " es igual a " + resultados.resta);
        console.log("La multiplicación de " + a + " x " + b + " es igual a " + resultados.mult);
        console.log("La división de " + a + " / " + b + " es igual a " + resultados.div);
    }
-
 }
-
 calculator (5, 3);
 calculator (4);
 calculator (7,);
