@@ -30,9 +30,9 @@ function calculator(num1 = undefined, num2 = undefined) { //La funcion de la cal
         //return results tenía este return aquí el cual quito para poder itinerar los resultados de las operaciones más adelante
       }
       //Se hace una iteración para que en consola no se imprima en forma de array, si no en cuatro líneas para que sea más amigable para el usuario 
-      for (let result of results) {
+      results.forEach( result => {
         console.log(result);
-      }
+        })
     }
   }
   calculator(4, 'n') //Se invoca la funcion calculator donde se meteran los argumentos numericos para los parametros num1 y num2
