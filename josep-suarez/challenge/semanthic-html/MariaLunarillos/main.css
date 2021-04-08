@@ -110,6 +110,7 @@ ul {
 .cart-image {
   display: flex;
   margin-left: 100px;
+  margin-right: 70px;
   margin-top: 20px;
   width: 30px;
   height: 30px;
