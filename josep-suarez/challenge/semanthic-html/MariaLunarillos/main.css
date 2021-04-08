@@ -153,6 +153,19 @@ ul {
 .num-of-cart:hover {
   background: white;
 }
+.icon1,
+.icon2,
+.icon3,
+.icon4 {
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  background: #f8f8f8;
+}
+.icon5 {
+  width: 100px;
+  height: 100px;
+}
 .cart-image:hover,
 .icon1:hover,
 .icon2:hover,
