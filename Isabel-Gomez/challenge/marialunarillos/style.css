@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+body {
+    background: none;
+    font: 12px/1.55 'Source Sans Pro', sans-serif;
+    color: #67635F;
+}
+
 .header-container {
     position: fixed;
     top: 0;
@@ -13,8 +19,35 @@
     background: #F8F8F8;
 }
 
+.header-fix{
+    display: flex;
+    justify-content: space-between;
+    height: 50px; 
+    max-width: 1400px;
+    margin: auto;
+    align-items: center;
+}
+
+
+.social-media, .shopping-space {
+    display: flex;
+}
+
+.social-navigator {
+   display: flex;
+
+}
+
+.social-media {
+    margin: 0 40px;
+}
+
+.social-media > li {
+    margin: 0 6px;
+}
+
 .letters-marialunarillo {
-    background: url(../marialunarillos/images/maria-lunarillos.png) #FF5959;
+    background: #FF5959;
 }
 
 .letters-cucute{
@@ -25,8 +58,11 @@
     background: url(../marialunarillos/images/mumuchu.png) #F6B436; 
 }
 
-ul {
+
+.icons-letters {
     display: flex;
+    justify-content: space-between;
+    width: 185px;
 }
 
 li {
