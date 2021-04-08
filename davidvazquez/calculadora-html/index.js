@@ -1,13 +1,11 @@
 
 const screen = document.getElementById("textopantalla");
 screen.innerHTML = 0;
-
 let number = "";
 let acumulator = 0;
 let acumulatorArray = [];
 let p_operation=true;
 let coma=0;
-
 let checkSuma=false;
 let checkResta=false;
 let checkMult= false;
@@ -196,5 +194,4 @@ function retroceder(){
             number = 1;
         } 
     }
-
 }
