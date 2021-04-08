@@ -1,6 +1,7 @@
 /* User logic Game*/
-function initPlayer(){
-    const scoring = 100;
+const initialScore = 100;
+function initPlayer(initialScore){
+    const scoring = initialScore;
     const userName = prompt("What's your name?");
     if(userName === null) {
         initPlayer();
@@ -161,16 +162,16 @@ function play(user, numbers, table){
         user.scoring += 20;
         endGame(user, players);
     }
-
-    console.log( `Your score: ${user.scoring}, The ball is: ${user.numberBall}, and checked with your carton is: ${user.matched} `);
-
-
+    console.log( `Your score: ${user.scoring}, The ball is: ${user.numberBall}, 
+    and checked with your carton is: ${user.matched} `);
 }
+
 function endGame(user){
     console.log('%c Rankin players -> ', 'background: #222; color: #bada55')
     rankingPlayers(user.userName, user.scoring);
 
-    user.bingo ? console.log(`Congratulations ${user.userName}, you have BINGO with a score of ${user.scoring}`) : console.log(`Thanks for playing ${user.userName}, your score is:${user.scoring}`);
+    user.bingo ? console.log(`Congratulations ${user.userName}, you have BINGO with a score of ${user.scoring}`) :
+    console.log(`Thanks for playing ${user.userName}, your score is:${user.scoring}`);
     const restartGame = window.confirm('Do you like restart game?');
     restartGame ? initGame() : null;
 }
