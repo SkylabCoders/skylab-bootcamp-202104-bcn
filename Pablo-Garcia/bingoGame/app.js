@@ -9,7 +9,6 @@ function initPlayer(initialScore){
         console.log(`Hi ${userName}, your score is: ${scoring}`);
         return {userName, scoring, matched:false, numberBall:null, line:false, bingo:false};
     }
-
 }
 /* Ranking players*/
 /*Numbers logic Game*/
@@ -53,8 +52,6 @@ function printTable(table, rows, columns, printBingoCard){
     }
     tableHtml += '</table>';
     /*printBingoCard.innerHTML  = tableHtml;*/
-
-
 }
 function generateBingoCard(rows, columns){
     /* const printBingoCard = document.getElementById('app');*/
@@ -88,7 +85,6 @@ function showRules(){
    5. At the end of each game, the player ranking will be displayed.`);
 }
 function initPlay(user, numbers){
-
     const table = generateBingoCard(3,5);
     setTimeout(() => {
         const isAgree = window.confirm('Do you like this cardboard?');
@@ -106,9 +102,9 @@ function generateRandomBall(){
     const indexBall = generateRandomNumber(balls.length);
     const ball = balls[indexBall];
     balls.splice(indexBall, 1);
-
     return [ball, balls];
 }
+
 function isInTable(table,ball){
     let values = null;
     table.forEach((row, rowIndex) => {
@@ -124,7 +120,6 @@ const hasLine = rows => Object.values(rows).find(foundLine => foundLine === 5);
 const hasBingo = rows => Object.values(rows).reduce((a, b) => a + b);
 
 function play(user, numbers, table){
-
     const [ball]= generateRandomBall();
     user.numberBall = ball;
     const found = isInTable(table, user.numberBall);
@@ -162,8 +157,7 @@ function play(user, numbers, table){
         user.scoring += 20;
         endGame(user, players);
     }
-    console.log( `Your score: ${user.scoring}, The ball is: ${user.numberBall}, 
-    and checked with your carton is: ${user.matched} `);
+    console.log( `Your score: ${user.scoring}, The ball is: ${user.numberBall}, and checked with your carton is: ${user.matched} `);
 }
 
 function endGame(user){
