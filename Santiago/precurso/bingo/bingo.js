@@ -6,7 +6,6 @@ let numbers = [];
 
 // Función que se carga al abrir la página, con un onload(), en el tag body del  html
 function bingo() {
-
     let nameOfUser = askUsername(); // Llamamos  ala función para preguntar el nombre de usuario
     let chosenCard = chosingBingoCard(); // Llamamos a la función para poder escoger el cartón
     showPunctuationInfo(); // Mostramos la información de los puntos
@@ -37,7 +36,6 @@ function generateRandomNum() {
 
 // Función que nos da escoger el cartón del bingo
 function chosingBingoCard() {
-
     let generateCard = generateBingoCard(); // llamamos a la función que genera el cartón
     console.clear();
     showBingoCard(generateCard); // Mostramos el cartón
@@ -55,7 +53,6 @@ function chosingBingoCard() {
 
 // Función para generar el cartón aleatoriamente
 function generateBingoCard() {
-
     const card = [];
 
     // Creamos el cartón sin que se repitan números
@@ -83,7 +80,6 @@ function showPunctuationInfo() {
 
 // Función para comprovar si algún número del cartón coincide con el número random y si es así que lo convierta en X
 function matchNumber(chosenCard) {
-
     // LLamamos a la función para crear un número random y seguidamente los mostramos
     let randomNum = generateRandomNum();
     console.clear()
@@ -151,7 +147,6 @@ function matchNumber(chosenCard) {
 // Objecto con usuarios y puntuación inventada y luego a este objeto le hacemos un push del nombre de usuario
 // y de la puntuació obtenida
 function ranking(nameOfUser) {
-
     // Objeto array con los usuarios
     let previousUsers = [{
         name: "Edwin",
@@ -193,7 +188,6 @@ function ranking(nameOfUser) {
 
 // Función para pasar al siguiente turno, creamos un nuevo número random y hacemos el match de nuevo, entre el cartón y el numRandom
 function nextTurn(chosenCard, nameOfUser) {
-
     turns++; // Se van incrementando los turnos
     score -= 10; // Se decrementa la puntuación de 10 en 10
     let next = confirm('¿Desea continuar?'); // Confirm para continuar
@@ -219,7 +213,6 @@ function nextTurn(chosenCard, nameOfUser) {
 
 // Función para preguntarle al usuario si quiere jugar de nuevo
 function playAgain() {
-
     // Volvemos a asignar el valor original a las variables, para que el inicio del nuevo juego no empieze desde los puntos anteriores
     turns = 0;
     allMatched = false;
