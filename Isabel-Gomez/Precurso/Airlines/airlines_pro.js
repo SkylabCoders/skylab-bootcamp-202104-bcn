@@ -53,7 +53,7 @@ const profile = () => {
                 while (isNaN(deleteId)) {
                     deleteId = parseInt(prompt('Enter the flight ID you want to delete'));
                 };
-                const validsId = flights.map((flight) => flight.id);
+                const validsId = flights.map(flight => flight.id);
                 while (validsId.includes(deleteId) === false) {
                     deleteId = parseInt(prompt(`Please, insert a valid flight ID you want to delete, from ${validsId[0]} to ${validsId[(validsId.length - 1)]}.`));
                     while (isNaN(deleteId)) {
@@ -85,7 +85,7 @@ const profile = () => {
                 };
             };
         } else if (whatPrice.toLowerCase() === 'lower price') {
-            const priceBelow = flights.filter((value) => value.cost < searchFlight);
+            const priceBelow = flights.filter(value => value.cost < searchFlight);
             if (priceBelow.length === 0) {
                 console.log(`There aren't flights with prices below than ${searchFlight}.`)
             } else {
