@@ -36,13 +36,13 @@ function startApp(){
           display(newFlight);
           startApp();
       } else {
-        let deletedFlight = deleteFlight();
-        if(!deletedFlight) {
-          // user cancels delete operation 
-          return;
-        } else {
-        display(deletedFlight);
-        startApp();
+          let deletedFlight = deleteFlight();
+          if(!deletedFlight) {
+            // user cancels delete operation 
+            return;
+          } else {
+              display(deletedFlight);
+              startApp();
         }
       }
   } else {
