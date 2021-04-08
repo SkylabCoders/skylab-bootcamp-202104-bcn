@@ -34,7 +34,6 @@ function airlines(){
     afternoonFlights();
 }
 
-
 function seeAllFlights(){
     for (let i=0; i<flights.length; i++){
             if ( flights[i].scale){
@@ -102,37 +101,40 @@ function adminFunctions(){
             eliminateFlightsAdmin();
         }
 
-            function createNewFlightAdmin(){
-                let createNewFlight = prompt ( "Bienvenido Administrador " + userName + ", quieres crear nuevos vuelos? Por favor escribe si o no.");
-                if (createNewFlight==="si" || createNewFlight==="Si"){
-                    if (flights.length<15 || createNewFlight!=null) {          
-                        let newFlight = {
-                            id: flights.length,
-                            to: prompt('Escribe el destino del vuelo :'),
-                            from: prompt('Escribe el origen del vuelo :'),
-                            cost: parseInt(prompt('Escribe el precio del vuelo :')),
-                            scale: flightScales()
-                        }
-                            if (newFlight.to == null || newFlight.from==null || newFlight.cost==null|| newFlight.scale==null){
-                                outOfAdmin();
-                            }
-                            else if (isNaN(+newFlight.cost) === true || newFlight.cost == null){
-                                alert('Por favor, introduce solo numeros');
-                                createNewFlightAdmin();
-                            }
-                            else {
-                               
-                                    flights.push(newFlight);
-                                    seeAllFlights();
-                                    adminFunctions();
-                            }
+            
+}
+
+        function createNewFlightAdmin(){
+            let createNewFlight = prompt ( "Bienvenido Administrador " + userName + ", quieres crear nuevos vuelos? Por favor escribe si o no.");
+            if (createNewFlight==="si" || createNewFlight==="Si"){
+                if (flights.length<15 || createNewFlight!=null) {          
+                    let newFlight = {
+                        id: flights.length,
+                        to: prompt('Escribe el destino del vuelo :'),
+                        from: prompt('Escribe el origen del vuelo :'),
+                        cost: parseInt(prompt('Escribe el precio del vuelo :')),
+                        scale: flightScales()
                     }
-                }
-                    else{
+                        if (newFlight.to == null || newFlight.from==null || newFlight.cost==null|| newFlight.scale==null){
                             outOfAdmin();
+                        }
+                        else if (isNaN(+newFlight.cost) === true || newFlight.cost == null){
+                            alert('Por favor, introduce solo numeros');
+                            createNewFlightAdmin();
+                        }
+                        else {
+                           
+                                flights.push(newFlight);
+                                seeAllFlights();
+                                adminFunctions();
                         }
                 }
             }
+                else{
+                        outOfAdmin();
+                    }
+            }
+
             function flightScales(){
                 let answerToScales=prompt('El nuevo vuelo tiene escalas? si/no?');
                 if (answerToScales ==="si" || answerToScales==="Si"){
