@@ -1,0 +1,16 @@
+/* RESET GENERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    font-size: 26px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.topbar {
+    
+}
