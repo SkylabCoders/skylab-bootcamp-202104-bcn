@@ -18,6 +18,9 @@ ul {
   background-color: grey;
   justify-content: space-between;
 }
+.letter-logo {
+  margin-left: 50px;
+}
 .social-navigator {
   display: flex;
 }
@@ -59,6 +62,9 @@ ul {
 .icon5 {
   margin-left: 50px;
   background-color: rgb(214, 91, 91);
+}
+.logotipe {
+  margin-left: 30px;
 }
 .news {
   background-color: greenyellow;
