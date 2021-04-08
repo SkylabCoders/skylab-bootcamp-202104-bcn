@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background: #F8F8F8;
+    z-index: 5000;
+}
+
+.big-header {
+    margin: 0 auto;
+    height: 300px;
+    position: relative;
+    background: lightcoral;
+    width: 100%;
+}
+
+.small-header .navbar ul {
+    display: flex;
+}
+
+.first-block {
+    position: fixed;
+    top: 0;
+    width: 80px;
+    height: 140px;
+}
+
+.second-block,
+.third-block {
+    position: fixed;
+    top: 0;
+    width: 70px;
+    height: 70px;
+}
+
+.first-block {
+    left: 135px;
+    background: url(../images/icons/maria-lunarillos.png) #FF5959 bottom center no-repeat;
+}
+
+.second-block {
+    left: 220px;
+    background: url(../images/icons/cucute.png) #6199AF bottom center no-repeat;
+}
+
+.third-block {
+    left: 295px;
+    background: url(../images/icons/mumuchu.png) #F6B436 bottom center no-repeat;
+}
+
+.second-block:hover, .third-block:hover{
+    width: 70px;
+    height: 140px;
+}
