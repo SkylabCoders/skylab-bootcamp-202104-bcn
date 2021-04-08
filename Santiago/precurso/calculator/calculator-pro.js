@@ -1,6 +1,5 @@
 // Función que utilizamos para que el usuario introduzca los números y se hagan las validaciones
 function obtenerNumeros(){
-
     // Variable nums con split(), para que el array contenga más de un elemento y no un solo sin utlizar split()
     const nums = prompt("Escriba los números que desea introducir:").split(',');
 
@@ -31,7 +30,6 @@ calcular(obtenerNumeros());
 
 // Función que hace las operaciones, ya que le pasamos por paramentro el array que contiene los números introducidos
 function calcular(result){
-
     // Si dentro del array hay 2 o más de dos elementos que haga lo siguiente
     if(result.length >= 2){
 
@@ -57,7 +55,6 @@ function calcular(result){
 
 // Función que hace que se muestre el mensaje de querer continuar
 function continuar(){
-
     const c = confirm("¿Desea continuar?");
 
     // Si c es true que ejecute la primera funcion

@@ -1,6 +1,5 @@
 // Función que utilizamos para que el usuario introduzca los números y se hagan las validaciones
 function obtainNumbers(){
-
   // Variable nums con split(), para que el array contenga más de un elemento y no un solo sin utlizar split()
   const nums = prompt("Escriba los dos números con los que desea operar:").split(',');
 
@@ -31,7 +30,6 @@ calculate(obtainNumbers());
 
 // Función que hace las operaciones, ya que le pasamos por paramentro el array que contiene los números introducidos
 function calculate(result){
-
   // Si dentro del array hay dos elementos que haga lo siguiente
   if(result.length == 2){
 

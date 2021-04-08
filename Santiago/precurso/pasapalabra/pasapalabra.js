@@ -174,7 +174,6 @@ ranking(askName());
 
 // Función para mostrar las preguntas
 function showQuestions() {
-
     // Recorrecmos el obejeto questions
     for (let question of questions) {
 
@@ -210,7 +209,6 @@ function showQuestions() {
 
 // Función que permite preguntar otra vez las preguntas que han sido respondidas con pasapalabra
 function askAgain() {
-
     for (let question of questions) { // Recorremos questions de nuevo
 
         if (question.status === 0) { // Si el status es 0, las volemos a preguntar
@@ -234,7 +232,6 @@ function askAgain() {
 }
 
 function ranking(username){
-
     console.log("");
     console.log("------RANKING------");
     
