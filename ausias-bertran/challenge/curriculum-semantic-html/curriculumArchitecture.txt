@@ -1,0 +1,29 @@
+Nom
+experiencia laboral
+experiencia academica
+fusionar experiencia en un unic paragraf
+
+que soc? 
+no es el curriculum de qui soc i que he fet, 
+sino el de qui seré i que faré.
+
+developer
+
+FRONT-END HTML, CSS, SASS, Javascript ReactJS
+BACK-END NodeJS ExpressJS MongoDB
+
+
+skills
+ react Javascript HTML CSS .debugging data structures front-end jQuery or Underscore JEST REDUX SASS ReactJS Testing (Mocha and Chai Trello, Github, Slack
+full stack
+bla bla bla sobre mi i els meus forts
+formula xaxi per dir que no tinc experiencia
+plus estetica
+
+Childhood with floopy disc & spectrums.
+University branch of Fine Arts.
+Early jobs in illustration, gaining professional experience in design tools such as Indesign, Photoshop or Freehand and <strong>the first focus on the web</strong> and it's frameworks.
+Later, somehow, I work 3 years as a QA tester on RakutenTV, crashing the app against any platform, with direct feedback to developers. There <strong>I first heard about IT</strong>. 
+
+Managment Room Scape Stoker
+
