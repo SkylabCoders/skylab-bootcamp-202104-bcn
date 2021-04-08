@@ -1,16 +1,23 @@
 body {
     margin: 0;
+    font: 12px/1.55 'Source Sans Pro', sans-serif;
     background-color: #FF5959;
+}
+
+.header {
+    display: flex;
 }
 
 .navbar {
     position: fixed;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     height: 50px;
     background: #F8F8F8;
 }
 
-.big-header {
+.header-info {
     margin: 0 auto;
     top: 50px;
     height: 300px;
@@ -53,15 +60,33 @@ body {
     height: 140px;
 }
 
-.logo{
+.blocks {
+    display: flex;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 210px;
+    ;
+}
+
+.social-media img {
+    margin: 10px;
+}
+
+.social-media p {
+    margin-top: 18px;
+}
+
+.logo {
     padding-left: 95px;
     padding-top: 105px;
 }
 
-.btn-container{
+.btn-container {
     display: flex;
     justify-content: flex-end;
-    /* align-content: flex-end; */
-    color:black;
+    color: black;
     padding-top: 150px;
 }
