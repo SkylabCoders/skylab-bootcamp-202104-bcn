@@ -41,8 +41,7 @@ function calc(){
 }
 
 function limpiar(){
-    //debugger
-    //result.textContent = result.textContent;
+    result.textContent = result.textContent;
 }
 
 function resetear(){
