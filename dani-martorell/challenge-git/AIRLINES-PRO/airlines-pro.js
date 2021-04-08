@@ -263,7 +263,7 @@ function buyTicket(coincidences){
       const purchasedFlight = coincidences[flightIndex];
       return { data: purchasedFlight, operationType: 'purchase' };
     } else {
-    alert('Operación denegada: el ID introducido no es válido.')
+      alert('Operación denegada: el ID introducido no es válido.')
     }
   }
 }
