@@ -30,7 +30,7 @@ function calculadora(valores) {
                 console.log('Raiz de ' + valores + ' = ' + Math.round(resultadoRaiz * 1000) / 1000);
                 resultadoFinal.push('Raiz de ' + valores + ' = ' + Math.round(resultadoRaiz * 1000) / 1000);
             }else{
-                for (i in valores) { 
+                for (let i in valores) { 
                     if (resultadoSuma === ""){
                         resultadoSuma = valores[i];
                         resultadoResta = valores[i];
