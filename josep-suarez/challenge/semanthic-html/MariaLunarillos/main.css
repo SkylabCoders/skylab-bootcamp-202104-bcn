@@ -30,6 +30,11 @@ ul {
 }
 .social-navigator {
   display: flex;
+  align-items: center;
+}
+.text {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 .nav-web {
   display: flex;
