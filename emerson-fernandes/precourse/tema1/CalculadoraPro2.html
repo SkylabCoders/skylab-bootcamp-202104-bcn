@@ -1,46 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CalculadoraPro2</title>
 </head>
+
 <body>
-    
-    <script>
 
-
-        
-        function calculadora(valor1,valor2){
-
-            var vl1 = prompt('Ingrese un valor')
-            var vl2 = prompt('Novamente')
-
-            valor1 = Number(vl1) 
-            valor2 = Number(vl2)
-
-            var suma = (valor1 + valor2).toFixed(3)
-            var resta = (valor1 - valor2).toFixed(3)
-            var multiplicacion = (valor1 * valor2).toFixed(3)
-            var division = (valor1 / valor2).toFixed(3)
-        
-            var resultado=[suma,resta,multiplicacion,division]
-
-            alert(`La suma es ${suma},resta ${resta},multiplicacion ${multiplicacion} y division ${division}`)
-            
-            var conf = prompt('Nuevos numeros? y/n')
-
-            if(conf == 'y'){
-                calculadora()
-            }else{
-                alert('Adios!')
-            }
-        } 
-    
-        calculadora()
-
-
-    </script>
-
+    <script src="./CalculadoraPro2.js"></script>
 </body>
+
 </html>
