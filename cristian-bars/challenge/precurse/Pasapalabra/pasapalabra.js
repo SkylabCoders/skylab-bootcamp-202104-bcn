@@ -74,7 +74,7 @@ function runGame(){
 
 //Función para introducir el nombre del participante
 function getName(){
-    let yourName = prompt("Por favor, indicanos tu nombre");
+    yourName = prompt("Por favor, indicanos tu nombre");
     if (yourName === "" || yourName === null){
         console.log("Tienes que poner un nombre!!");
         getName();
@@ -105,7 +105,6 @@ function runQuestions(){
         
         if (questions[i].status === 0 || questions[i].status === 3){
             answer = prompt(questions[i].question);
-            
             if (answer === null) {
                 return; //break out of the function early
             }
