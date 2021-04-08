@@ -19,7 +19,6 @@ function operaciones(opera){
     if (numberList.length == 1){
         console.log("La raíz cuadrada del numero " + numberList[0] + " es " + Math.sqrt(numberList[0]).toFixed(3));
     }else{
-        
         sumar(numberList);
         restar(numberList);
         multiplicar(numberList);
@@ -37,8 +36,7 @@ function operaciones(opera){
         case "y": 
             console.log("Tornem-hi!!");
             operaciones();
-    }
-        
+    } 
 }
 
 function sumar (numberList){
