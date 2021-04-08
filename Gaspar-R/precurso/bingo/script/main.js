@@ -238,7 +238,7 @@ function printCard(caard) {
 	html += "</tbody></table>";
 	document.querySelector("#player-card-id").innerHTML = html;
 }
-Gaspar-R\precurso\bingo\script\main.js
+
 //Linea
 function linea() {
 	alert("Linea!");
