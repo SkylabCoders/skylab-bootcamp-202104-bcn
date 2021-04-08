@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles/styles.css">
+   <script type="text/javascript" src="script/pasapalabra.js"></script>
+   <title>Pasapalabra - Cristian Bars</title>
+</head>
+<body>
+   <div class="content">
+      
+      <div class="rosco">
+         <div id="letras">
+            <div class="letter" id="letraA"><span class="let">A</span></div>
+            <div class="letter" id="letraB"><span class="let">B</span></div>
+            <div class="letter" id="letraC"><span class="let">C</span></div>
+            <div class="letter" id="letraD"><span class="let">D</span></div>
+            <div class="letter" id="letraE"><span class="let">E</span></div>
+            <div class="letter" id="letraF"><span class="let">F</span></div>
+            <div class="letter" id="letraG"><span class="let">G</span></div>
+            <div class="letter" id="letraH"><span class="let">H</span></div>
+            <div class="letter" id="letraI"><span class="let">I</span></div>
+            <div class="letter" id="letraJ"><span class="let">J</span></div>
+            <div class="letter" id="letraK"><span class="let">K</span></div>
+            <div class="letter" id="letraL"><span class="let">L</span></div>
+            <div class="letter" id="letraM"><span class="let">M</span></div>
+            <div class="letter" id="letraN"><span class="let">N</span></div>
+            <div class="letter" id="letraÑ"><span class="let">Ñ</span></div>
+            <div class="letter" id="letraO"><span class="let">O</span></div>
+            <div class="letter" id="letraP"><span class="let">P</span></div>
+            <div class="letter" id="letraQ"><span class="let">Q</span></div>
+            <div class="letter" id="letraR"><span class="let">R</span></div>
+            <div class="letter" id="letraS"><span class="let">S</span></div>
+            <div class="letter" id="letraT"><span class="let">T</span></div>
+            <div class="letter" id="letraU"><span class="let">U</span></div>
+            <div class="letter" id="letraV"><span class="let">V</span></div>
+            <div class="letter" id="letraW"><span class="let">W</span></div>
+            <div class="letter" id="letraX"><span class="let">X</span></div>
+            <div class="letter" id="letraY"><span class="let">Y</span></div>
+            <div class="letter" id="letraZ"><span class="let">Z</span></div>
+            
+            <div id="respuesta" >
+               <p id="resp"></p>
+            </div>
+            
+            <div id="marcador" class="opacity">
+               <div id="aciertos"><span id="a">0</span></div>
+            </div>
+            
+         </div>
+      </div>
+      <div id="informacio">
+         
+         <div id="bottons"> 
+            <button id="start" type="button" class="play button">Empezar</button>
+            <button id="salir" type="button" class="stop button opacity" disabled>Finalizar juego</button>
+         </div> 
+         
+         <div id="crono" class="opacity">
+            <div id="temps">TIEMPO:</div>
+            <div id ="displayReloj"></div>
+         </div>
+         
+         <div id="description" class="opacity">
+               <label> <input  type="text" id="palabra" size="15" maxlength="30" placeholder="palabra..." name="palabra" value="" disabled></label>
+               <button  type="button" id="boton" class="button" disabled >Responder</button>
+            <p id="question"></p>
+         </div>
+         
+         <div id="instrucciones">
+               <p>¡Bienvenido al juego del pasapalabra!</p>
+               <p>Aquí podras demostrar lo bueno que eres.</p>
+               <p>Dispones de 120 segundos para responder a las preguntas.</p>
+               <p>Si en algun caso quieres pasar la palabra solo tienes que escribir "pasapalabra" en la casilla.</p>
+               
+               <p>¡Suerte!</p>
+         </div>
+         
+         <div id="puntuaciones"><span id="p"></span></div>
+      </div>
+   </div>
+    
+</body>
+</html>

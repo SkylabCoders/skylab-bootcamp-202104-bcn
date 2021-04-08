@@ -1,0 +1,333 @@
+/* Estilos para el fondo de la página */
+body {
+    background-color: #5391fa;
+}
+
+/* Estilos para el container que contiene todos nuestros elementos */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos de los container del título del juego y el mensaje de bienvenida */
+.title-container,
+.welcome-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo del título del juego */
+#title-text {
+    font-size: 30px;
+    font-family: 'Courier New', Helvetica, monospace;
+}
+
+/* Estilo del mensaje de bienvenida */
+#welcome-text {
+    font-size: 30px;
+    font-family: 'Courier New', Helvetica, monospace;
+    margin-top: 1px;
+}
+
+/* Estilos del container que contiene todas las letras */
+.letter-container {
+    display: none;
+    justify-content: space-around;
+    margin-top: 200px;
+    position: relative;
+}
+
+/* Estilos de cada letra en si */
+.letter {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border: 1px solid white;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 25px);
+    bottom: calc(50% - 100px);
+    font-size: 32px;
+    background-image: radial-gradient(#0074d9, #193b58);
+    color: white;
+}
+
+/* Estilos para poner el rosco en forma de circulo */
+.letter:nth-child(1) {
+    transform: rotate(270deg) translateX(250px) rotate(90deg);
+}
+
+.letter:nth-child(2) {
+    transform: rotate(284deg) translateX(250px) rotate(76deg);
+}
+
+.letter:nth-child(3) {
+    transform: rotate(297deg) translateX(250px) rotate(63deg);
+}
+
+.letter:nth-child(4) {
+    transform: rotate(310deg) translateX(250px) rotate(50deg);
+}
+
+.letter:nth-child(5) {
+    transform: rotate(323deg) translateX(250px) rotate(37deg);
+}
+
+.letter:nth-child(6) {
+    transform: rotate(336deg) translateX(250px) rotate(24deg);
+}
+
+.letter:nth-child(7) {
+    transform: rotate(349deg) translateX(250px) rotate(11deg);
+}
+
+.letter:nth-child(8) {
+    transform: rotate(2deg) translateX(250px) rotate(-2deg);
+}
+
+.letter:nth-child(9) {
+    transform: rotate(14deg) translateX(250px) rotate(-14deg);
+}
+
+.letter:nth-child(10) {
+    transform: rotate(26deg) translateX(250px) rotate(-26deg);
+}
+
+.letter:nth-child(11) {
+    transform: rotate(39deg) translateX(250px) rotate(-39deg);
+}
+
+.letter:nth-child(12) {
+    transform: rotate(52deg) translateX(250px) rotate(-52deg);
+}
+
+.letter:nth-child(13) {
+    transform: rotate(65deg) translateX(250px) rotate(-65deg);
+}
+
+.letter:nth-child(14) {
+    transform: rotate(77deg) translateX(250px) rotate(-77deg);
+}
+
+.letter:nth-child(15) {
+    transform: rotate(90deg) translateX(250px) rotate(-90deg);
+}
+
+.letter:nth-child(16) {
+    transform: rotate(103deg) translateX(250px) rotate(-103deg);
+}
+
+.letter:nth-child(17) {
+    transform: rotate(117deg) translateX(250px) rotate(-117deg);
+}
+
+.letter:nth-child(18) {
+    transform: rotate(132deg) translateX(250px) rotate(-132deg);
+}
+
+.letter:nth-child(19) {
+    transform: rotate(147deg) translateX(250px) rotate(-147deg);
+}
+
+.letter:nth-child(20) {
+    transform: rotate(162deg) translateX(250px) rotate(-162deg);
+}
+
+.letter:nth-child(21) {
+    transform: rotate(175deg) translateX(250px) rotate(-175deg);
+}
+
+.letter:nth-child(22) {
+    transform: rotate(189deg) translateX(250px) rotate(171deg);
+}
+
+.letter:nth-child(23) {
+    transform: rotate(203deg) translateX(250px) rotate(157deg);
+}
+
+.letter:nth-child(24) {
+    transform: rotate(217deg) translateX(250px) rotate(147deg);
+}
+
+.letter:nth-child(25) {
+    transform: rotate(231deg) translateX(250px) rotate(129deg);
+}
+
+.letter:nth-child(26) {
+    transform: rotate(244deg) translateX(250px) rotate(116deg);
+}
+
+.letter:nth-child(27) {
+    transform: rotate(257deg) translateX(250px) rotate(103deg);
+}
+
+
+/* Estilos de la definición que ve el usuario */
+#definition {
+    display: none;
+    justify-content: center;
+    margin-top: 370px;
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Estilos del input para poder el nombre y el botón de empezar */
+.start-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Estilos para el input para ponder el nombre de usuario */
+#username {
+    background-image: radial-gradient(#0074d9, #004b8d);
+    border: 2px solid white;
+    width: 350px;
+    height: 50px;
+    font-size: 30px;
+    font-family: 'Courier New', monospace;
+
+}
+
+/* Estilo para el div donde pone información */
+.info {
+    margin: 0 auto;
+    font-size: 30px;
+    background-image: radial-gradient(#0074d9, #004b8d);
+    border: 2px solid white;
+    font-family: 'Courier New', monospace;
+    color: white;
+    width: 200px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Estilo inicial para el texto que se tiene que mostrar al pasar el cursor por encima de info */
+.text-info {
+    display: none;
+    margin: 0 auto;
+}
+
+/*Estilo para el texto de información cuando es mostrado*/
+.info:hover+.text-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    background-image: radial-gradient(#0074d9, #004b8d);
+    border: 2px solid white;
+    font-family: 'Courier New', monospace;
+    color: white;
+    padding: 5px 5px 5px 5px;
+}
+
+
+/* Estilos para el bóton de empezar */
+#start-button {
+    font-size: 30px;
+    background-image: radial-gradient(#0074d9, #004b8d);
+    border: 2px solid white;
+    font-family: 'Courier New', monospace;
+    margin-top: 15px;
+    color: white;
+}
+
+/* Estilos para el botón SALIR */
+#exit-game {
+    display: none;
+    font-size: 30px;
+    background-image: radial-gradient(#0074d9, #004b8d);
+    border: 2px solid white;
+    font-family: 'Courier New', monospace;
+    margin-top: 15px;
+    color: white;
+}
+
+
+/* Estilos para el container que tiene el input para responder,
+el botón de responder, el de pasapalabra y el de terminar juego */
+.answer-container {
+    display: none;
+    justify-content: center;
+    bottom: 200px;
+}
+
+/* Estilos para el input donde el usuario escribe su respuesta */
+#written-answer {
+    background-image: radial-gradient(#0074d9, #004b8d);
+    width: 500px;
+    height: 50px;
+    font-size: 30px;
+    border: 2px solid white;
+    font-family: 'Courier New', monospace;
+}
+
+/* Estilos para los botones con los que el usuario puede interactuar al jugar */
+#responder-button,
+#pasapalabra-button,
+#end-button {
+    font-size: 30px;
+    background-image: radial-gradient(#0074d9, #004b8d);
+    border: 2px solid white;
+    font-family: 'Courier New', monospace;
+    margin-left: 3px;
+    color: white;
+}
+
+/* Estilo para el placeholder del input */
+::placeholder {
+    color: white;
+}
+
+/* Estilos para el resultado final y el ranking */
+#end-results {
+    display: none;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 30px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Estilo para el ranking */
+.ranking {
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', monospace;
+    font-size: 30px;
+}
+
+/* Estilo para el div de ranking el cual va a contener todos los usuarios*/
+#ranking {
+    display: none;
+}
+
+/* Estilos para el titulo RANKING */
+#ranking-title {
+    display: none;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 30px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Estilos del contador del juego */
+#timer {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    background-image: radial-gradient(#0074d9, #004b8d);
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 100px;
+    font-family: 'Courier New', monospace;
+    color: white;
+}
+
+/* Estilo para que al pasar el cursor por encima de un botón, el cursor cambie a la figura de la "manito" */
+button:hover {
+    cursor: pointer;
+}
