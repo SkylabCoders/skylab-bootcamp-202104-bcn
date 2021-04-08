@@ -47,9 +47,16 @@ ul {
 .social-networks {
   display: flex;
   flex-grow: 1;
+  justify-content: space-between;
+  margin-left: 3px;
+}
+
+.social-networks-item {
+  color: blue;
 }
 
 .cart-container {
   display: flex;
   flex-grow: 1;
+  justify-content: space-around;
 }
