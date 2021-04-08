@@ -39,15 +39,16 @@ ul {
   height: 140px;
 }
 .ma {
-  background-color: red;
+  background: url(../images/icons/maria-lunarillos.png) #ff5959 bottom center
+    no-repeat;
 }
 
 .cu {
-  background-color: blue;
+  background: url(../images/icons/cucute.png) #6199af bottom center no-repeat;
 }
 
 .mu {
-  background-color: orange;
+  background: url(../images/icons/mumuchu.png) #f6b436 bottom center no-repeat;
 }
 .social-networks {
   display: flex;
