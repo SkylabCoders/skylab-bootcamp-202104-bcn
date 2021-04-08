@@ -76,7 +76,7 @@ function startApp(){
     if(coincidences.length < 1){
         return console.log('\nLo sentimos. No hay coincidencias.\n')
     } else {
-    display(coincidences);
+      display(coincidences);
     }
     let purchasedFlight = buyTicket(coincidences);
     if(!purchasedFlight) {
