@@ -19,7 +19,6 @@ function enterFlight (departure,arrival,price,scale) {
 
 }
 
-
 //Función para insertar nombre y dar la bienvenida
 function insertName () {
     let name = prompt("Por favor, introduce tu nombre"); 
@@ -42,7 +41,6 @@ function lastsFlights () {
     for (let i=flightsList.length-5;i<flightsList.length;i++){
         console.log(flightsList[i].arrival);
     }
-
 }
 
 //Función coste medio de los vuelos
@@ -54,7 +52,6 @@ function averagePrices() {
     }
     average = suma/flightsList.length;
     console.log("El coste medio de los vuelos es de: " + average + "€.");
-
 }
 
 //Función vuelos con escala
@@ -66,18 +63,15 @@ function flightsWithScale() {
         }
     }
     console.log("Hay " + countWith + " vuelos con escalas.");
-
 }
 
 //------------------------------------------------------------------
 
 //Función ADMIN/USER 
 function whoAreYou () {
-    const typePerson = prompt("Escribe si eres ADMIN o USER");
-    
+    const typePerson = prompt("Escribe si eres ADMIN o USER");    
     if (typePerson === null) {
         alert("¡Hasta la vista!");
-
     } else if (isNaN(typePerson)) {
         if (typePerson.toUpperCase() === "ADMIN"){
             return admin ();
