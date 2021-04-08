@@ -18,7 +18,6 @@ let bingoCard = [
     { number: null, matched: false },
 ];
 
-
 const ranking = [];
 const bingo = (isSameUser) => {
     let userName = '';
@@ -63,7 +62,6 @@ const bingo = (isSameUser) => {
     };
     alert(`Ok, let's start!`);
 
-
     const getLine = () => {
         let isLine = false
         let firstLine = newBingoCard.slice(0, 5).every((num) => num.number === 'X');
@@ -79,7 +77,6 @@ const bingo = (isSameUser) => {
         if (validNumbers) isBingo = true // Error: habia puesto un strict equality cuando lo que queria era asignarle un nuevo valor a la variable, y por eso nunca cantaba Bingo... //
         return isBingo;
     };
-
 
     let anotherTurn;
     let anotherLine = false;
