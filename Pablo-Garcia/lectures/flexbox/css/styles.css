@@ -81,9 +81,9 @@ nav>ul>li a {
 /*Main Content*/
 
 .main {
-    float: right;
+    display: flex ;
     width: 70%;
-    margin-bottom: 20px;
+/*    margin-bottom: 20px;*/
 }
 
 .pageTitle{
