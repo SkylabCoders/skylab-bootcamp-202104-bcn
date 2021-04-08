@@ -67,7 +67,6 @@ setInterval(function(){  // Contador
     if (counter > 0) {
         
         counter--;
-<<<<<<< HEAD
         let id = document.getElementById("count");
         id.innerHTML = counter;
 
@@ -76,21 +75,11 @@ setInterval(function(){  // Contador
         gameOver(); 
         return false
     }
-=======
-        id = document.getElementById("count");
-        id.innerHTML = counter;
-
-    } else if (counter === 0 && modalchecked.checked === false) {counter = -1; gameOver(); return false};
->>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
 
 },1000);
 
 
-<<<<<<< HEAD
 const pasapalabra = function() {
-=======
-pasapalabra = function() {
->>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
     // Status: 0 = No respondida. 1 = Respuesta incorrecta. 2 = Respuesta correcta.
 questions = [ // Esposible introducir varias preguntas/respuestas por letra en forma de array (En este caso la letra D), deben mantener el orden respuesta->pregunta. 
     // El programa las preguntará indistintamente en cada iteración si optamos por "saltarlas" con el comando "pasapalabra".
@@ -224,11 +213,7 @@ function validateAnswer (questionInd, randomAnswerInd = 0) {
 
             if (keyCode == 'Enter'){
 
-<<<<<<< HEAD
                 let answer = answerBox.value;
-=======
-                answer = answerBox.value;
->>>>>>> e33a9606df08b34e843c6c954eaf0f285c4d86a9
               
                 if (answer === "END") {gameOver()} //Si la respuesta es "END" (en mayúscula) acaba el juego
       
