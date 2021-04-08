@@ -18,7 +18,7 @@ function init() {
 }
 //Función para preguntar al usuario su nombre y le saluda
 function askUserName() {
-    let userName = prompt('¡Hola!, ¿Cómo te llamas?');
+    const userName = prompt('¡Hola!, ¿Cómo te llamas?');
     if (!userName) {
         return console.log('Le ha dado a cancelar. ¡Hasta otra!');
     } else if (userName === null || userName === '' || isNaN(userName) === false) {
