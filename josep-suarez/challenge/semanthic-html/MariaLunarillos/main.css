@@ -30,9 +30,15 @@ ul {
 }
 .firstIMG {
   background: red;
+  width: 100%;
 }
 .secondIMG {
   background: blue;
+  width: 100%;
+}
+.thirdIMG {
+  background: yellow;
+  width: 100%;
 }
 .secondIMG:hover {
   height: 100px;
@@ -40,12 +46,10 @@ ul {
 .thirdIMG:hover {
   height: 100px;
 }
-.thirdIMG {
-  background: yellow;
-}
 .header-webpage {
   display: flex;
   justify-content: space-between;
+  margin-top: 50px;
 }
 .icons {
   display: flex;
@@ -54,6 +58,7 @@ ul {
 }
 .icon5 {
   margin-left: 50px;
+  background-color: rgb(214, 91, 91);
 }
 .news {
   background-color: greenyellow;
@@ -91,9 +96,11 @@ ul {
 .icon1:hover,
 .icon2:hover,
 .icon3:hover,
-.icon4:hover,
-.icon5:hover {
+.icon4:hover {
   background-color: rgb(219, 93, 93);
+}
+.icon5:hover {
+  background-color: white;
 }
 .social-media1:hover,
 .social-media2:hover,
