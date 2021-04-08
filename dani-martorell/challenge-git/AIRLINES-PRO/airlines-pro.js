@@ -124,6 +124,7 @@ function userIsAdmin(){
   
   return roleInput === '1';
 }
+
 function getOperation(){
   let operation;
   do{
@@ -132,6 +133,7 @@ function getOperation(){
   } while(operation !== '1' && operation !== '2');
   return operation;
 }
+
 function createFlight(){
   if (flights.length === 15) {
       alert('\nOperación denegada: has alcanzado el límite de vuelos (15).\n');
@@ -187,6 +189,7 @@ function createFlight(){
     return { data: flightData, operationType: 'create' }
   }
 }
+
 function deleteFlight(){
   while(true){
       let targetId = (prompt('\nIntroduce ID del vuelo:'));
@@ -200,6 +203,7 @@ function deleteFlight(){
       }
   }
 }    
+
 function display(element){
   // All printing operations HERE
   // First, check type of operation so we print 'ENTRADA CREADA', 'ENTRADA ELIMINADA', 'LIST OF COINCIDENCES' or 'PURCHASED TICKET'
@@ -230,6 +234,7 @@ function display(element){
       \tEscalas: ${element.data.stopOver}\n`);
   }
 }
+
 function pushNewFlight(to, from, cost, stopOver){
   let lastIndex = flights.length - 1;
   flights.push(
@@ -242,6 +247,7 @@ function pushNewFlight(to, from, cost, stopOver){
   });
   return flights.slice(-1);
 }
+
 function findFlightsInRange(range, price) {
   if (range === 1) return flights.filter(flight => flight.cost > price).sort((a, b) => a.cost - b.cost);
   if (range === 2) return flights.filter(flight => flight.cost < price).sort((a, b) => a.cost - b.cost);
