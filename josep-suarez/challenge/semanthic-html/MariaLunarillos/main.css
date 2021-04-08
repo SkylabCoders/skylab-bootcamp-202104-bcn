@@ -117,8 +117,8 @@ ul {
 }
 .lupa,
 .lupa2 {
-  height: 22px;
-  width: 22px;
+  height: 25px;
+  width: 50px;
   margin-right: 90px;
 }
 .person-search {
@@ -167,7 +167,7 @@ ul {
   background: #f8f8f8;
 }
 .icon5 {
-  width: 80px;
+  width: 100px;
   height: 100px;
 }
 .cart-image:hover,
