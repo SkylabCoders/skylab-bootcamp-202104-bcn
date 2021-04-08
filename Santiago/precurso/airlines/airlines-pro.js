@@ -86,11 +86,11 @@ function role() {
 
     if (typeOfRole !== "" && typeOfRole !== null) {
         // Si es administador se pueden añadir vuelos o eliminar algun vuelo
-        if (typeOfRole === "Admin" || typeOfRole === "admin") {
+        if (typeOfRole.toUpperCase() === "ADMIN") {
 
             let action = prompt("¿Deseas AÑADIR o ELIMINAR un vuelo?");
 
-            if (action === "añadir") {
+            if (action.toUpperCase() === "AÑADIR") {
                 const newFlight = prompt('Introduce la información del vuelo: -' + " Ejemplo: 11,Dubai,Australia,1350,true"); // 11,Dubai,Australia,1350,true
 
                 // Si newFlight es true entonces añadimos toda la información del vuelo en nuestro objecto flights
@@ -112,14 +112,14 @@ function role() {
                     console.log("");
                     console.log("No has añadido ningún vuelo");
                 }
-            } else if (action === "eliminar") {
+            } else if (action.toUpperCase() === "ELIMINAR") {
                 deleteFlights(); // LLamamos a la función para poder eliminar vuelos mediante su id
             } else {
                 console.log("");
                 console.log("No has elegido ninguna opción, hasta pronto");
             }
 
-        } else if (typeOfRole === "Usuario" || typeOfRole === "usuario") {
+        } else if (typeOfRole.toUpperCase() === "USUARIO") {
 
             // Si la persona no es admin, se ejecutará el siguente código:
             const searchPrices = prompt('Introduce el precio:')
@@ -130,7 +130,7 @@ function role() {
 
                     const priceRange = prompt("¿Desea vuelos IGUALES, MENORES o MAYORES, al precio introducido?");
 
-                    if (priceRange === "iguales") {
+                    if (priceRange.toUpperCase() === "IGUALES") {
                         // Mostramos los vuelos que son iguales al precio que el usuario ha introducido en el prompt
                         console.log("");
                         console.log("Los vuelos con los precios igual a " + searchPrices + " son: ");
@@ -140,7 +140,7 @@ function role() {
                                 console.log(JSON.stringify(flight));
                             }
                         }
-                    } else if (priceRange === "menores") {
+                    } else if (priceRange.toUpperCase() === "MENORES") {
                         // Mostramos los vuelos que son más bajos al precio que el usuario ha introducido en el prompt
                         console.log("");
                         console.log("Los vuelos con los precios más bajos a " + searchPrices + " son: ");
@@ -150,7 +150,7 @@ function role() {
                                 console.log(JSON.stringify(flight));
                             }
                         }
-                    } else if (priceRange === "mayores") {
+                    } else if (priceRange.toUpperCase() === "MAYORES") {
 
                         // Mostramos los vuelos que son más altos al precio que el usuario ha introducido en el prompt
                         console.log("");
