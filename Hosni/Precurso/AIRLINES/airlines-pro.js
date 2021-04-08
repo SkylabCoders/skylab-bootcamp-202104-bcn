@@ -20,21 +20,21 @@ function listaVuelos() {
     let scale = null;                      
     let flightsScale = [];      
     
-    for (let value of flights) {
-        if(value.scale) {
+    for (let flight of flights) {
+        if(flight.scale) {
             scale = 'Realiza escala.';      
-            flightsScale.push(value.id);       
+            flightsScale.push(flight.id);       
         }else{
             scale = 'No realiza escala.';
         }
-    console.log('El vuelo con origen: ' + value.from + ', y destino: ' + value.to + ' tiene un coste de ' + value.cost + '€. ' + scale);  
+    console.log(`El vuelo con origen: ${flight.from}, y destino: ${flight.to} tiene un coste de ${flight.cost}€. ${scale}`);  
     }
 }
 
 function welcomeAirlines() {
-    userName = prompt('Bienvenido/a a Skylab Airlines! \nIntroduzca un nombre de usuario', 'Hosni');
+    userName = prompt('Bienvenido/a a Skylab Airlines! \nIntroduzca un nombre de usuario. \n Pusle Cancelar para salir.', 'Hosni');
     while(userName === '') {
-        userName = prompt('Debe introducir un nombre.', 'Hosni');
+        userName = prompt('Debe introducir un nombre. \n Pusle Cancelar para salir.', 'Hosni');
     }
     if(userName === null) {
         console.log('Gracias por utilizar nuestro servicio. Vuelva pronto!');
@@ -55,7 +55,7 @@ function presentationFlights() {
     let flightsScale = [];  
     
     for(let i = 0; i<flights.length; i++){
-        if(flights[i].scale === true) {
+        if(flights[i].scale) {
             scale = 'Realiza escala.';      
             flightsScale.push(flights[i].id);       
         }else{
