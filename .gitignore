@@ -324,6 +324,13 @@ temp/
 *.3dm
 *.max
 
+#Excalidraw files
+*.excalidraw
+
+#Audio
+*.mp3
+*.flac
+
 # Videos
 *.mp4
 *.avi
