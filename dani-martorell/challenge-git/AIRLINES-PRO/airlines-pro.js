@@ -114,6 +114,7 @@ function displayInfo(){
     console.log(`\t${flight.from} - ${flight.to}`);
   };
 }
+
 function userIsAdmin(){
   let roleInput;
   do{
