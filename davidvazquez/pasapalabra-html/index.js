@@ -1,6 +1,6 @@
 
 
-var questions = [
+let questions = [
     [{ letter: "a", answer: "abducir", status: 0, question: "CON LA A. Dicho de una supuesta criatura extraterrestre: Apoderarse de alguien"},
     { letter: "b", answer: "bingo", status: 0, question: "CON LA B. Juego que ha sacado de quicio a todos los 'Skylabers' en las sesiones de precurso"},
     { letter: "c", answer: "churumbel", status: 0, question: "CON LA C. Niño, crío, bebé"},
@@ -155,12 +155,10 @@ startButton.addEventListener('click', function startGame(){
 function countdown(){
     if(totalTime < 0){
         finishGame("timeOver");
-
     } else {
         timer = setTimeout('countdown()', 1000);
         document.getElementById("countdown").innerHTML = totalTime--;
     }
-
 }
 
 //Botón SIGUIENTE
@@ -262,7 +260,6 @@ function showRanking(){ //Mostrar ranking jugadores
         playerScore[i].innerHTML = ranking;
     }
 }
-
 
 //Función para mostrar pregunta
 function showQuestion(){
