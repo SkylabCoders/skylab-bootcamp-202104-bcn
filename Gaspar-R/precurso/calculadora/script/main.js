@@ -6,8 +6,8 @@
 
 
 	function calculadora (num1,num2){  
-		
-		if(isNaN(num1) || num2 !== undefined && isNaN(num2)){		//comprueba si hay 1 o 2 parametros, y si son o no números.
+		//comprueba si hay 1 o 2 parametros, y si son o no números.
+		if(isNaN(num1) || num2 !== undefined && isNaN(num2)){	
 		   return alert("Escribir correctamente uno o dos digitos para realizar operaciones.");			 
 	  
   } else{
@@ -19,27 +19,22 @@
 			let sum = num1+num2;
 			let rest = num1-num2;
 			let mult = num1*num2;
-			let div = num1/num2; 
-					
+			let div = num1/num2; 					
 			let results = [];
 			results.push (+sum);
 			results.push (+rest);
 			results.push (+mult);
 			results.push (+div);
-
 			console.log(results)
 			document.write ( "La suma es: "+results[0].toFixed(3)+"."+ "</br>" 
 							+"La resta es: "+results[1].toFixed(3)+"."+ "</br>"
 							+"La multiplicación es: "+results[2].toFixed(3)+"."+ "</br>"
 							+"La división es: "+results[3].toFixed(3)+".");
-			break;
-			
+			break;			
 		default:
 			alert("Escribir uno o dos digitos para realizar operaciones."); 	 //si se escriben 3 o mas números devuelve un alerta.
 			break;
-
-	}}
-	
+	}}	
 }
 
 

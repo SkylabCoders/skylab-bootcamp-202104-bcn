@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 //1. Al ejecutar se solicitara el nombre del usuario/jugador
 //2. Debe mostrar un carton con 5/15 numeros excluyendo el cero.
@@ -9,11 +9,9 @@
 //7. Debera indicar en cuantos turnos se ha completado el carton.
 //8. Debera preguntarse si se desea iniciar un nuevo juego.
 
-
-
 //Variables globales
 
-let card;
+let card = [[], [], []];
 let nextBall = false;
 let matchedNumbersQty;
 let matchedNumbersQtyByLine;
@@ -24,17 +22,16 @@ let nextNumberToPlay;
 let turnsPlayed;
 let username;
 
-
 //------variables para uso en HTML---------------//
 
 let startGameBtn = document.querySelector("#startBtn");
 let num = document.querySelectorAll(".numeros");
-let allNums = document.querySelector(".numbers-cont")
+let allNums = document.querySelector(".numbers-cont");
 let lisa = document.querySelector(".lisa");
 let allBtns = document.querySelectorAll(".allBtns");
 let lineaBtn = document.querySelector(".lineaBtn");
 let bingoBtn = document.querySelector(".bingoBtn");
-let user = document.querySelector('#user');
+let user = document.querySelector("#user");
 let cardBtn = document.querySelector(".generateCardBtn");
 let nextNumBtn = document.querySelector(".nextNumber");
 
@@ -68,12 +65,11 @@ function startGame() {
 	console.log(nextNumberToPlay);
 
 	turnsPlayed = 0;
-
 }
 
 //Genera un array de numeros, sin repetir.
 function generateCard() {
-	card = [[], [], []]; 
+	card = [[], [], []];
 
 	//Generar 15 numeros random
 	let randomNumbers = new Set();
@@ -85,10 +81,9 @@ function generateCard() {
 	let randomNumbersIterator = randomNumbers.values();
 	for (let i = 0; i < 3; i++) {
 		for (let j = 0; j < 5; j++) {
-			card[i][j] = randomNumbersIterator.next().value
+			card[i][j] = randomNumbersIterator.next().value;
 		}
 	}
-
 	return card;
 }
 
@@ -97,14 +92,16 @@ function randomNumber() {
 	return Math.floor(Math.random() * (76 - 1)) + 1;
 }
 
-//Siguiente numero del bolillero 
+//Siguiente numero del bolillero
 function siguienteBola() {
 	nextBall = true;
 	while (!nextNumberToPlay.done && matchedNumbersQty < 15 && nextBall == true) {
 		nextBall = false;
 
 		turnsPlayed++;
-		console.log(`Turno ${turnsPlayed}: Ha salido el numero ${nextNumberToPlay.value}`);
+		console.log(
+			`Turno ${turnsPlayed}: Ha salido el numero ${nextNumberToPlay.value}`
+		);
 		document.querySelector("#turnos").innerHTML = turnsPlayed;
 
 		markGlobalNumbers(nextNumberToPlay.value);
@@ -123,16 +120,13 @@ function siguienteBola() {
 					line = true;
 					lineaBtn.disabled = false;
 					console.log("Linea!");
-
 				}
 			}
 
 			matchedNumbersQty++;
 			if (matchedNumbersQty == 15) {
-				
 				bingoBtn.disabled = false;
 				console.log("BINGO!");
-
 			}
 		} else {
 			console.table(card);
@@ -144,7 +138,7 @@ function siguienteBola() {
 }
 
 //Obtiene la posision matcheada del numero en el tablero o null si no matchea
-function getMatchingPosition(nuum, caard) {
+ function getMatchingPosition (nuum, caard) {
 	for (let i = 0; i < 3; i++) {
 		for (let j = 0; j < 5; j++) {
 			if (caard[i][j] === nuum) {
@@ -170,11 +164,10 @@ function shuffle(array) {
 	let counter = array.length;
 
 	while (counter > 0) {
-		
 		let index = Math.floor(Math.random() * counter);
 
 		counter--;
-		
+
 		let temp = array[counter];
 		array[counter] = array[index];
 		array[index] = temp;
@@ -185,34 +178,32 @@ function shuffle(array) {
 // -----------Eventos y funciones HTML ---------//
 
 //Player Name
-user.addEventListener('change', function (e) {
-	username = e.target.value
-	if (!username)
-		return
+user.addEventListener("change", function (e) {
+	username = e.target.value;
+	if (!username) {return}
 	alert(`Bienvenido ${username} al bingo`);
 });
 
 //Start Game
 startGameBtn.addEventListener("click", startGame);
 
-//Card generate 	
+//Card generate
 cardBtn.addEventListener("click", function () {
 	card = generateCard();
 	console.log("Tu carton para jugar es el siguiente:");
 	console.table(card);
-	printCard(card)
+	printCard(card);
 	console.log("Si quieres otro carton, presiona nuevamente el boton");
 });
 
 //Next Ball
 nextNumBtn.addEventListener("click", siguienteBola);
 
-
 //Marca los numeros que salieron del bolillero//
 function markGlobalNumbers(number) {
 	for (let i = 0; i < num.length; i++) {
 		if (num[i].id == number) {
-			num[i].classList.add("matched")
+			num[i].classList.add("matched");
 		}
 	}
 }
@@ -224,23 +215,21 @@ function resetMatchedNumbers() {
 	}
 }
 
-
 //Imprime el carton del jugador en la pagina//
 
 function printCard(caard) {
-	if (caard == undefined)
-		return;
-
+	if (caard == undefined) {return}
 	console.log(caard);
+	
 	var html = '<table class="user-card"><tbody>';
 
 	for (var i = 0; i < caard.length; i++) {
 		html += "<tr>";
 		for (var j = 0; j < caard[i].length; j++) {
 			if (caard[i][j] == "X") {
-				html += "<td class='match'>"
+				html += "<td class='match'>";
 			} else {
-				html += "<td>"
+				html += "<td>";
 			}
 			html += caard[i][j] + "</td>";
 		}
@@ -249,17 +238,17 @@ function printCard(caard) {
 	html += "</tbody></table>";
 	document.querySelector("#player-card-id").innerHTML = html;
 }
-
+Gaspar-R\precurso\bingo\script\main.js
 //Linea
 function linea() {
-	alert("Linea!")
+	alert("Linea!");
 	console.log("Linea!");
 	lineaBtn.disabled = true;
 }
 
 //Bingo
 function bingo() {
-	alert("BINGO!")
+	alert("BINGO!");
 	lisa.style.visibility = "hidden";
 	bingoBtn.disabled = true;
 }
