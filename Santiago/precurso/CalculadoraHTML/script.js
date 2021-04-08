@@ -1,6 +1,5 @@
 // Función que enbarca el funcionamiento de la calculadora
 function calculator() {
-
     // Variables que obtienen el div del HTML
     let currentNumbers = document.querySelector('.current-numbers');
     let allClear = document.querySelector('.all-clear');
