@@ -1,7 +1,5 @@
 function bingo (){
-    
     getName();
-    
     line = [0,0,0];
     turn = 0;
     firstLine = true;
@@ -24,9 +22,7 @@ function bingo (){
         for(let i=0;i<players.length;i++){
             console.log((i+1) + " " + players[i].nombre + " con " + players[i].turnos + " turnos y una puntuación de " + (players.length-i) + " puntos!");
         }
-    } 
-    
-    
+    }
 }
 
 //Funcion para recoger el nombre del participante
@@ -68,7 +64,6 @@ function getNumsCard(){
     console.log(bingoCard[0]);
     console.log(bingoCard[1]);
     console.log(bingoCard[2]);
-    
     let confirmCard = confirm("Te parece bien tu carta de numeros??");
     if (confirmCard===false){
         //En caso de no aceptarla la volvemos a generar volviendo a iniciar la función
@@ -86,7 +81,6 @@ function runGame(bingoCard){
     
     //Función para escoger un numero al azar para la partida
     playNumber();
-    
     console.log("Juguamos con el numero " + alterNum);
     
     //Comprobar si el numero se encuentra dentro de la carta del jugador
@@ -131,7 +125,6 @@ function runGame(bingoCard){
     console.log(bingoCard[1]);
     console.log(bingoCard[2]);
     
-    
     //Preguntamos antes de pasar al siguiente turno
     let nextNumber = confirm("Quieres otro numero??");
         if (nextNumber === true) {
@@ -139,8 +132,7 @@ function runGame(bingoCard){
             runGame(bingoCard);
         } else {
             console.log("final");
-        } 
-    
+        }
 }
 
 //Función para escoger un numero al azar i asegurar de que no haya salido antes
@@ -166,23 +158,7 @@ function sortParticipants(players){
         }
         return 0;
       });
-      
 }
-
-    
-let min = 1;
-let max = 91;
-let name;
-let bingoNumbers = [];
-let bingoCard = [[],[],[]];
-let line = [0,0,0];
-let num;
-let count;
-let turn = 0;
-let firstLine = true;
-let leftNumbers = [];
-let numPlay = false;
-let players = [];
 
 //Iniciamos la partida
 bingo();
