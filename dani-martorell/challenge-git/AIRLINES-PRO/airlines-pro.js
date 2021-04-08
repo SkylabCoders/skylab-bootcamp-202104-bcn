@@ -32,7 +32,7 @@ function startApp(){
       let operation = getOperation();
       if(operation === '1'){
           let newFlight = createFlight() || false;
-          if(!newFlight) return;
+          if(!newFlight) { return };
           display(newFlight);
           startApp();
       } else {
