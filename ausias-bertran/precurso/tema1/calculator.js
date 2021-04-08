@@ -1,5 +1,6 @@
 // PROYECTO TEMA 1 - Calculator!
 
+
 let result = []; // Array donde guardar el resultado de la función calculator
 calculator(); //  Introducir 2 números, por favor
  
