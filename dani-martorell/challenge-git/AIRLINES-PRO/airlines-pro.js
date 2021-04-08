@@ -13,7 +13,7 @@ let flights = [
 ];
 
 function startApp(){
-  let userName; 
+  let userName = ""; 
   // User name validation
   while(true){  
       userName = prompt('Username:');
