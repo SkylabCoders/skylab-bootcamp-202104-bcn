@@ -34,10 +34,42 @@ ul {
 .secondIMG {
   background: blue;
 }
+.secondIMG:hover {
+  height: 100px;
+}
+.thirdIMG:hover {
+  height: 100px;
+}
 .thirdIMG {
   background: yellow;
 }
 .header-webpage {
   display: flex;
   justify-content: space-between;
+}
+.icons {
+  display: flex;
+  justify-content: space-around;
+}
+.news {
+  background-color: greenyellow;
+  color: white;
+}
+.offer {
+  background-color: purple;
+  color: white;
+}
+.lupa,
+.lupa2 {
+  height: 22px;
+  width: 22px;
+  margin-right: 90px;
+}
+.person-search {
+  display: flex;
+}
+.star,
+.circle {
+  width: 20px;
+  height: 20px;
 }
