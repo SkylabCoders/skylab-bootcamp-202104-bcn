@@ -102,10 +102,7 @@ const bingo = (isSameUser) => {
                     line.matched = true;
                     found = true;
                     console.log(`Match! Your card is now:`);
-                    /* console.log(newBingoCard);   --> substituimos este console.log por el map, para poder ver en consola
-                    solo los numeros, no todo el carton (porque no se puede desplegar toda la array en la consola de Chrome) */
                     console.log(newBingoCard.map((num) => num.number));
-
                 }
             });
 
