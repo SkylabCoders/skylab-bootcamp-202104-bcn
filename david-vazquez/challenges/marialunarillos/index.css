@@ -16,6 +16,12 @@ ul {
   list-style: none;
 }
 
+li {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -52,6 +58,10 @@ header {
   background: url(img/cucute.png) #6199af bottom center no-repeat;
 }
 
+.second-block:hover {
+  height: 130px;
+}
+
 .third-block {
   position: fixed;
   top: 0;
@@ -61,10 +71,38 @@ header {
   background: url(img/mumuchu.png) #f6b436 bottom center no-repeat;
 }
 
+.third-block:hover {
+  height: 130px;
+}
+
+.login-link {
+  float: right;
+}
+
+.social-medias {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  margin: 0 40px;
+}
+
+.icon {
+  width: 25px;
+  height: 20px;
+  margin: 15px 7px 0;
+  background: url(img/menu.svg) transparent 0 0 no-repeat;
+  display: block;
+  text-indent: -3000px;
+}
+
+.icon.facebook {
+  background-position: -4px -540px;
+}
+
 .header-logo-links {
   display: flex;
   flex-direction: row;
-  height: 300px;
+
   width: 100%;
   background: white;
   padding: 0px 50px 0px 50px;
@@ -88,7 +126,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  height: 150px;
+  padding-top: 40px;
   padding-bottom: 40px;
 }
 
@@ -162,7 +200,10 @@ header {
 }
 
 .nav-bottom-container {
-  height: 150px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .nav-buttons {
@@ -183,6 +224,10 @@ header {
   background-position: center;
   margin: 3px;
   text-align: center;
+}
+
+.button:hover {
+  background-color: #ff5959;
 }
 
 .button.utensilio {
@@ -208,6 +253,10 @@ header {
   background-color: #ff5959;
   background-position: -320px 0;
   background-size: 560px;
+}
+
+.button.blog:hover {
+  background-color: #f2f2f2;
 }
 
 .text-button {
