@@ -24,16 +24,16 @@ let username;
 
 //------variables para uso en HTML---------------//
 
-let startGameBtn = document.querySelector("#startBtn");
-let num = document.querySelectorAll(".numeros");
-let allNums = document.querySelector(".numbers-cont");
-let lisa = document.querySelector(".lisa");
-let allBtns = document.querySelectorAll(".allBtns");
-let lineaBtn = document.querySelector(".lineaBtn");
-let bingoBtn = document.querySelector(".bingoBtn");
-let user = document.querySelector("#user");
-let cardBtn = document.querySelector(".generateCardBtn");
-let nextNumBtn = document.querySelector(".nextNumber");
+const num = document.querySelectorAll(".numeros");
+const startGameBtn = document.querySelector("#startBtn");
+const allNums = document.querySelector(".numbers-cont");
+const lisa = document.querySelector(".lisa");
+const allBtns = document.querySelectorAll(".allBtns");
+const lineaBtn = document.querySelector(".lineaBtn");
+const bingoBtn = document.querySelector(".bingoBtn");
+const user = document.querySelector("#user");
+const cardBtn = document.querySelector(".generateCardBtn");
+const nextNumBtn = document.querySelector(".nextNumber");
 
 //--------Funciones JS-----------------//
 
