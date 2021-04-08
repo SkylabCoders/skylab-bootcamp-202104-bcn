@@ -1,0 +1,15 @@
+.nav-bar {
+  display: flex;
+}
+
+.links {
+  display: flex;
+}
+
+.login {
+  display: flex;
+}
+
+.carrito {
+  display: flex;
+}
