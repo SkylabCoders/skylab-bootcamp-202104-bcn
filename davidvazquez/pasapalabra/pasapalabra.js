@@ -1,4 +1,4 @@
-var questions = [[
+let questions = [[
     { letter: "a", answer: "abducir", status: 0, question: "CON LA A. Dicho de una supuesta criatura extraterrestre: Apoderarse de alguien"},
     { letter: "b", answer: "bingo", status: 0, question: "CON LA B. Juego que ha sacado de quicio a todos los 'Skylabers' en las sesiones de precurso"},
     { letter: "c", answer: "churumbel", status: 0, question: "CON LA C. Niño, crío, bebé"},
@@ -99,7 +99,6 @@ function init() {
 }
 
 function startGame (){
-
     name = prompt("¡BIENVENIDO A PASAPALABRAS!\n\nPor favor, introduce tu nombre");
     if(name === null) {
         alert("¡Hasta la vista!");
