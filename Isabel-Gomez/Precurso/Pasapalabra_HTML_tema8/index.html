@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="images/favicon-16.png">
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="index.css" type="text/css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6f6c42e42d.js" crossorigin="anonymous"></script>
+    <title>Pasapalabra Skylab</title>
+</head>
+
+<body>
+    <header>
+        <h1 class=header>PASAPALABRA</h1>
+    </header>
+    <main>
+        <section class="menu">
+            <p class="instructions">Basado en el exitoso concurso de televisión Pasapalabra de Telecinco.
+                <br><br>
+                Cuando nos sentamos a ver el programa de la televisión y emulamos ser el concursante, siempre sabemos
+                palabras que se dejan por el camino, y nos sorprendemos cuando la definición es tan sencilla, que el
+                concursante, por no fallar, la pasa y nos hace llevarnos las manos a la cabeza.
+                <br><br>
+                Pues bien, es nuestro momento! El de demostrar los nervios de acero, ¿Cuántas palabras del rosco serás
+                capaz de acertar antes de que se acabe el tiempo?</p><br>
+            <form class="form-register">
+                <input class="username" type="text" name="username" required pattern="[aA-zZ]{3,15}"
+                    title="Únicamente se aceptan letras" placeholder="Escriba aquí su nombre">
+                <button class="button-user"><i class="fas fa-user-ninja"></i></button>
+            </form>
+        </section>
+        <section class="hidden circle">
+            <ol class="letters">
+                <li class="A">A</li>
+                <li class="B">B</li>
+                <li class="C">C</li>
+                <li class="D">D</li>
+                <li class="E">E</li>
+                <li class="F">F</li>
+                <li class="G">G</li>
+                <li class="H">H</li>
+                <li class="I">I</li>
+                <li class="J">J</li>
+                <li class="L">L</li>
+                <li class="M">M</li>
+                <li class="N">N</li>
+                <li class="NY">Ñ</li>
+                <li class="O">O</li>
+                <li class="P">P</li>
+                <li class="Q">Q</li>
+                <li class="R">R</li>
+                <li class="S">S</li>
+                <li class="T">T</li>
+                <li class="U">U</li>
+                <li class="V">V</li>
+                <li class="X">X</li>
+                <li class="Y">Y</li>
+                <li class="Z">Z</li>
+            </ol>
+        </section>
+        <section class="hidden container-right">
+            <div class="hidden start">
+                <h3>Al pulsar <em>Play</em> se activará la cuenta atrás y se mostrará la primera
+                    pregunta<br><br>Dispones de 150 segundos</h3>
+                <button class="button-play"><i class="fas fa-play-circle"></i>Play
+                </button>
+            </div>
+            <div class="hidden counter-and-points">
+                <div class="counter"><i class="fas fa-hourglass-half"></i></div>
+                <br>
+                <div class="points">0</div>
+                <audio class="point-sound" src="sounds/Acierto.mp3" type="audio/mp3"></audio>
+                <audio class="error-sound" src="sounds/fallo.mp3" type="audio/mp3"></audio>
+            </div>
+            <div class="hidden questions">
+                <div class="definition"></div>
+                <br>
+                <div class="user-answer">
+                    <input class="answer" type="text" name="answer" required pattern="[aA-zZ]{3,20}"
+                        title="Únicamente se aceptan letras" placeholder="Escriba aquí su respuesta">
+                    <button class="button-send"><i class="fas fa-check-circle"></i>Enviar respuesta</button>
+                </div><br>
+                <button class="hidden button-pasapalabra"><i class="fas fa-fast-forward"></i>Pasapalabra</button><br>
+                <button class="hidden button-reset"><i class="fas fa-sync-alt"></i>Iniciar otra partida</button><br>
+                <button class="hidden button-end"><i class="fas fa-times-circle"></i>Salir del juego</button><br>
+                <button class="hidden button-ranking"><i class="fas fa-medal"></i>Ver ranking</button>
+            </div>
+        </section>
+        <section class="hidden container-exit">
+            <h2>Oh, qué pena! Has detenido el juego antes de terminar el rosco, no entras en el ranking.
+                <br><br>¡Hasta la próxima!</h2><br><br>
+            <button class="button-menu"><i class="fas fa-undo-alt"></i>Volver a registrarme</button>
+        </section>
+    </main>
+    <article class="hidden container-ranking">
+        <audio class="ranking-sound" src="sounds/Aplausos.mp3" type="audio/mp3"></audio>
+        <table class="table-ranking">
+            <thead class="head-table">
+                <tr>
+                    <th>Nombre del jugador</th>
+                    <th>Puntuación</th>
+                </tr>
+            </thead>
+            <tbody class="body-table">
+            </tbody>
+        </table>
+        <div class="buttons-ranking">
+            <button class="button-reset-ranking"><i class="fas fa-sync-alt"></i>Iniciar otra partida</button><br>
+            <button class="button-menu-ranking"><i class="fas fa-undo-alt"></i>Volver a registrarme</button>
+        </div>
+    </article>
+</body>
+<footer>
+    <p class=footer>By Skylaber Isabel Gómez</p>
+</footer>
+<script src="index.js" type="text/javascript"></script>
+
+</html>
