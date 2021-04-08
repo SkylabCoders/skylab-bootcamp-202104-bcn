@@ -11,19 +11,35 @@
 .login {
   display: flex;
   margin-left: 100px;
+  list-style: none;
 }
 
-.carrito {
+.shopping {
   display: flex;
 }
 
 .slice-icons {
   display: flex;
   flex-direction: row;
-  width: 100%;
   height: 100%;
+  list-style: none;
 }
 
 .ma {
   background-color: #ff5959;
+  max-width: 100%;
+}
+
+.cu {
+  background-color: #6199af;
+  max-width: 100%;
+}
+
+.mu {
+  background-color: #f6b436;
+  max-width: 100%;
+}
+
+.socials {
+  list-style: none;
 }
