@@ -330,6 +330,7 @@ temp/
 
 #Audio
 *.mp3
+*.flac
 
 # Videos
 *.mp4
