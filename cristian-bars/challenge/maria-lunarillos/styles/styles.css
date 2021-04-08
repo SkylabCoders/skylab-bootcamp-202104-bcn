@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: #f8f8f8;
+    height: 50px;
+}
+
+#first_icons {
+    display: flex;
+}
+
+.color_icons {
+    padding-right: 5px;
+}
+
+#ma, #cu, #mu {
+    cursor: pointer;
+    height: 70px;
+}
+
+#ma {
+    background-color: #ff5959;
+    height: 150px;
+}
+
+#cu {
+    background-color: #6199af;
+}
+
+#mu {
+    background-color: #f6b436;
+}
+
+#icons {
+    display: flex;
+}
