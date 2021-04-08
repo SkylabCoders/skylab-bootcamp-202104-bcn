@@ -74,6 +74,7 @@ ul {
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  margin-right: 150px;
 }
 .icons {
   display: flex;
@@ -88,12 +89,24 @@ ul {
   margin-left: 30px;
 }
 .news {
-  background-color: greenyellow;
+  background-color: #9faa4d;
   color: white;
+  margin-right: 10px;
+  width: 130px;
+  border: none;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 .offer {
-  background-color: purple;
+  background-color: #8e789d;
   color: white;
+  margin-right: 10px;
+  width: 130px;
+  border: none;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 .lupa,
 .lupa2 {
