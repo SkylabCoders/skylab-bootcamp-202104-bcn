@@ -2,7 +2,6 @@ CalculatorPro(getNumbers())
 
 function CalculatorPro(operators){
     if(operators.length <= 1){
-
         console.log(`You only inserted a number, its square root is:${operators}`);
     }else{
         const sum = operators.reduce((value, setValue)=> value + setValue);
