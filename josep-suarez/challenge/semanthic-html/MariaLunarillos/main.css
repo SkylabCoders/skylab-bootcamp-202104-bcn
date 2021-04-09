@@ -30,7 +30,7 @@ ul {
   display: flex;
   height: 50px;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1400px;
   margin-left: 200px;
 }
 .letter-logo {
@@ -47,7 +47,7 @@ ul {
 .nav-web {
   display: flex;
   flex-direction: column;
-  margin-right: 150px;
+  margin-right: 100px;
 }
 .searching {
   display: flex;
