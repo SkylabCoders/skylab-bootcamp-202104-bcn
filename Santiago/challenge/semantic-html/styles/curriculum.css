@@ -1,0 +1,19 @@
+.header {
+    border: 2px solid black;
+}
+
+.main {
+    border: 2px solid red;
+}
+
+.first-sidebar, .second-sidebar {
+    border: 2px solid blue;
+}
+
+.section-container {
+    border: 2px solid purple;
+}
+
+.footer {
+    border: 2px solid orange;
+}
