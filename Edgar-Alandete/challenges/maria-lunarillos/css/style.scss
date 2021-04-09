@@ -74,7 +74,7 @@ ul {
   @include nav-items(1, center, center);
 }
 
-.cart {
+@mixin cart-container-items {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,16 +83,15 @@ ul {
   min-height: 50px;
 }
 
+.cart {
+  @include cart-container-items();
+}
+
 .item-counter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include cart-container-items();
   background-color: #ff5959;
-  color: white;
   font-weight: bold;
   font-size: 20px;
-  min-width: 50px;
-  min-height: 50px;
 }
 
 .cart a:hover,
