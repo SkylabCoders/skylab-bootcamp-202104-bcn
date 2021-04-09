@@ -168,11 +168,12 @@ ul {
 .num-of-cart {
   margin-right: 10px;
   background-color: #ff5959;
+  color: white;
   width: 50px;
   height: 50px;
   text-align: center;
   margin: auto;
-  padding: 10px;
+  padding: 19px;
 }
 .elements {
   font-size: large;
