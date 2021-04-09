@@ -1,5 +1,6 @@
 @import "./colors";
 @import "./values";
+@import "./mixins";
 
 *, 
 *::after, 
@@ -7,14 +8,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-@mixin common-tags($direction) {
-    display: flex;
-    flex-direction: $direction;
-    border: solid 1px $border-color;
-    padding: $padding;
-    margin: $margin;
 }
 
 html {
@@ -38,12 +31,9 @@ main {
 }
 
 .sidebar {
-    @include common-tags(column);
+    @include common-tags(column, $border-highlight);
 
     &-title {
         color: $text-important;
     }
 }
-
-
-

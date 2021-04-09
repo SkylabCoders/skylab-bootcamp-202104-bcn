@@ -27,7 +27,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  border: solid 1px #333;
+  border: borders(solid, 2px, #333);
   padding: 20px;
   margin: 20px;
 }
@@ -40,7 +40,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: solid 1px #333;
+  border: borders(solid, 2px, #333);
   padding: 20px;
   margin: 20px;
 }
@@ -53,7 +53,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: solid 1px #333;
+  border: borders(solid, 2px, #ff2200);
   padding: 20px;
   margin: 20px;
 }
