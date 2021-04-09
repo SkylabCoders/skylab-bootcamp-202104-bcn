@@ -1,0 +1,157 @@
+*{
+    margin: 0px;
+}
+
+body {font: 12px/1.55 'Source Sans Pro', sans-serif;}
+
+header {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: 3px solid red;
+    height: 300px;
+}
+
+div.grey-menu {
+    height: 50px;
+    background: #F8F8F8;
+}
+
+div.centered1{
+
+    display: flex;
+    flex-direction: row;
+    border: 3px solid blue;
+    height: 150px;
+    width: 70%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+div.centered1 a { //Entra registrate
+    
+    display: block;
+    border: 3px solid orange;
+    float: left;
+    height: input;
+    line-height: 50px;
+    font-weight: 400;
+    color: #2E2925;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-align: -webkit-match-parent;
+    text-decoration: none;
+
+}
+
+div.register-icon {
+    width: 27px;
+    height: 27px; 
+    background: url("./images/sprite.svg") 0 0 no-repeat; margin: 10px;
+}
+
+div.centered1 a:hover {color: #FF5959;}
+div.centered1 a div:hover {fill: #FF5959;}
+
+
+
+div.rojo {
+
+    background: url(./images/icons/maria-lunarillos.png) #FF5959 bottom center no-repeat; 
+    margin: 0px 3px 0px 0px;
+    width: 70px;
+    height: 150px;
+    cursor: pointer;
+}
+
+div.verde {
+
+    background: url(./images/icons/cucute.png) #6199AF bottom center no-repeat;
+    margin: 0px 3px 0px 0px;
+    width: 60px;
+    height: 80px;
+}
+
+div.verde:hover{ height: 150px; cursor: pointer;}
+
+div.amarillo {
+    background: url(./images/icons/mumuchu.png) #F6B436 bottom center no-repeat;
+    margin: 0px 3px 0px 0px;
+    width: 60px;
+    height: 80px;
+
+}
+
+div.amarillo:hover{ height: 150px; cursor: pointer;}
+
+
+div.icons {
+    border: 3px solid green;
+    align-self: flex-start;
+    margin: 9px 30px;
+
+}
+div.empty {
+    width: 200px;
+}
+
+
+a {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0px 20px;
+}
+
+i {
+
+    font-size: 20px;
+    margin: 5px;
+
+}
+
+i:hover {
+
+    color: #FF5959;
+    cursor: pointer;
+}
+
+div.centered2{
+
+    display: flex;
+    flex-direction: row;
+    border: 3px solid brown;
+    width: 70%;
+    justify-content: center;
+
+}
+
+div.cart-icon {
+
+    background: #fff url(./images/sprite.svg) -66px 10px no-repeat;
+    width: 50px;
+    height: 50px;
+}
+
+div.cart-icon:hover {
+
+    background:  #FF5959 url(./images/sprite.svg) -66px 10px no-repeat;
+    cursor: pointer;
+
+}
+
+
+div.cart-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FF5959;
+    width: 50px;
+    height: 50px;
+    align-self: flex-start;
+    font-size: 25px;
+    color: white;
+
+}
