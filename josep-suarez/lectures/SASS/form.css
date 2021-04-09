@@ -39,7 +39,10 @@ body {
   border: solid 1px #333;
   padding: 20px;
   margin: 20px;
-  flex-direction: column;
+}
+
+.sidebar-title {
+  color: #ff2200;
 }
 
 .form {
@@ -53,6 +56,5 @@ body {
   border: solid 1px #333;
   padding: 20px;
   margin: 20px;
-  flex-direction: column;
 }
 /*# sourceMappingURL=form.css.map */

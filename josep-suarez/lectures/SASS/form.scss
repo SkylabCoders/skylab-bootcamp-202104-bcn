@@ -1,4 +1,6 @@
+//importo archivo scss donde tengo los colores que usare en este archivo
 @import "./colors.scss";
+
 *,
 *::after,
 *::before {
@@ -7,10 +9,11 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+//declaro variables comunes que usare durante el css
 $padding: 20px;
 $margin: 20px;
 
+//declaro un mixin donde no tendre que repetir codigo en los selectores en que se me repita esto
 @mixin common-tags($direction) {
   display: flex;
   flex-direction: $direction;
@@ -26,14 +29,17 @@ body {
   width: 100%;
   margin: 20px;
 }
+//apunto a un selector y le incluyo las variables comunes que tengo declaradas en el @mixin
 .main {
   @include common-tags(row);
 }
 .sidebar {
   @include common-tags(column);
-  flex-direction: column;
+  &-title {
+    //apunto al hijo title de eso componente
+    color: $text-important;
+  }
 }
 .form {
   @include common-tags(column);
-  flex-direction: column;
 }
