@@ -3,7 +3,8 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -13,7 +14,10 @@ body {
 ul {
   list-style: none;
 }
+
 .navigator-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: #ccc;
   width: 100%;
@@ -21,10 +25,18 @@ ul {
 }
 
 .login-register {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-grow: 2;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login-register:hover,
@@ -34,61 +46,93 @@ ul {
 
 .malu-pages {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   top: 0;
   left: 0;
 }
 
-.malu-item {
-  width: 80px;
-  height: 70px;
-}
 .ma {
+  width: 80px;
   height: 140px;
-  background: url(../images/icons/maria-lunarillos.png) #ff5959 bottom center
-    no-repeat;
+  background: url("../images/icons/maria-lunarillos.png") #ff5959 bottom center no-repeat;
 }
 
 .cu {
-  background: url(../images/icons/cucute.png) #6199af bottom center no-repeat;
+  width: 80px;
+  height: 70px;
+  background: url("../images/icons/cucute.png") #6199af bottom center no-repeat;
 }
 
 .mu {
-  background: url(../images/icons/mumuchu.png) #f6b436 bottom center no-repeat;
+  width: 80px;
+  height: 70px;
+  background: url("../images/icons/mumuchu.png") #f6b436 bottom center no-repeat;
 }
 
 .cu:hover,
 .mu:hover {
   height: 140px;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
+
 .social-networks {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cart-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
   min-width: 50px;
   min-height: 50px;
 }
 
 .item-counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #ff5959;
   color: white;
   font-weight: bold;
@@ -102,3 +146,4 @@ ul {
   background-color: #ff5959;
   color: white;
 }
+/*# sourceMappingURL=style.css.map */
