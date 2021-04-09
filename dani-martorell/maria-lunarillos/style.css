@@ -67,6 +67,9 @@ div.login {
 div.login a {
     font-size: 13px;
 }
+div.login a:hover {
+    color: #ff5959;
+}
 div.login .icon {
     width: 34px;
     height: 34px;
@@ -101,19 +104,26 @@ div.shopping-cart-group {
     align-self: stretch;
 }
 div.cart-element {
-    background-color: white;
+    background-color: #FFFFFF;
+    padding: 10px;
 }
 div.cart-element.qty {
     background-color: #ff5959;
 }
 div.cart-element span {
-    padding: 15px;
-    color: white;
+    padding: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+div.cart-element:hover {
+    background-color: #ff5959;
+
 }
 
 
 main {
     padding: 50px 0px;
     height: 2000px;
-    background-color: white;
+    background-color: #FFFFFF;
 }
