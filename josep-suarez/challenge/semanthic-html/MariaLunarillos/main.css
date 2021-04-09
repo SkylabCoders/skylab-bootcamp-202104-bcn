@@ -288,6 +288,7 @@ button {
   justify-content: center;
   text-align: center;
   margin: auto;
+  margin-top: 20px;
   width: 150px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -300,7 +301,7 @@ button {
   margin-left: 120px;
   margin-right: 20px;
   height: 600px;
-  color: red;
+  color: black;
   background: url("image/body1.jpg") no-repeat;
 }
 .fotosSeccion-columna {
@@ -312,7 +313,7 @@ button {
   align-items: flex-end;
   flex-direction: row;
   height: 300px;
-  color: red;
+  color: black;
   margin-bottom: 20px;
 }
 .second-foto-columna {
@@ -321,7 +322,7 @@ button {
   flex-direction: row;
   height: 300px;
   width: 100%;
-  color: red;
+  color: black;
   align-items: flex-end;
 }
 .first-cube {
