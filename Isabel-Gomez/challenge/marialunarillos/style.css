@@ -45,33 +45,35 @@ li {
 
 .icons-letters {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position:absolute
+    position:absolute;
+    top: 0;
 }
-
 
 .letters-marialunarillo {
-    background: #FF5959;
-    width: 80px;  
+    background: url("images/maria-lunarillos.png") #FF5959;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+    width: 80px; 
+    height: 140px; 
+    margin-right: 4px;
 }
 
-.image-marialunarillo{
-    margin-top: 100%;
-}
-
-.letters-cucute{
-    background: #6199AF;  
+.letters-cucute {
+    background: url("images/cucute.png") #6199AF;  
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
     width: 70px;
     height: 70px;
-}
-
-.image-cucute, .image-mumuchu {
-    margin-top: 10px;
+    margin-right: 4px;
 }
 
 .letters-mumuchu {
-    background: #F6B436; 
+    background: url("images/mumuchu.png") #F6B436; 
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
     width: 70px;
     height: 70px;
 }
