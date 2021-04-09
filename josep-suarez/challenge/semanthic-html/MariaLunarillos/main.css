@@ -294,8 +294,9 @@ button {
 }
 .fotosSeccion {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-end;
+  align-items: flex-end;
   margin-left: 120px;
   margin-right: 20px;
   height: 600px;
@@ -327,7 +328,7 @@ button {
   font-size: smaller;
   background-color: rgba(241, 241, 241, 0.918);
   height: 100px;
-  width: 120px;
+  width: 220px;
 }
 .second-cube {
   font-size: smaller;
@@ -347,4 +348,10 @@ button {
   margin-left: 400px;
   border-bottom: 100px solid rgba(241, 241, 241, 0.918);
   border-left: 100px solid transparent;
+}
+.first-triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid rgba(241, 241, 241, 0.918);
+  border-right: 100px solid transparent;
 }
