@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./style.css" type="text/css" rel="stylesheet"> 
+        <title>Pasapalabra QA</title>
+    </head>
+
+    <body>
+
+        <div class="timer" id="timer">
+            <div class="minutes" id="minutes">15:</div>
+            <div class="seconds" id="seconds">01</div>
+        </div>
+
+        <div class="menu" id="menu"></div>
+
+        <div class="blackScreen" id="blackScreen"></div>
+        <div class="blackScreen" id="blackScreenOff"></div>
+        
+        <div id="fullScreen" class="fullScreen">
+        </div>
+        
+        <div class="mainScreen" id="mainScreen">
+            <div id="consoleBox" class="consoleBox">PASAPALABRAS HTML<br><br>Skylab Pre-Course Final Project<br>March 2021<br><br></div>
+            <input type="text" name="userNameBox" class="userNameBox" id="userNameBox" autocomplete="off" placeholder="Para empezar, escribe tu nombre y pulsa enter" >
+            <div class="buttonBox" id="buttonBox">
+                <div class="button" id="startButton" >➡  Responder  ⬅</div>            
+                <div class="button" id="endButton" ></div>            
+            </div>
+            <div class="backGroundShowRules" id="backGroundShowRules"></div>
+        </div>
+        
+
+        <div class="menuScreen" id="menuScreen">
+            <div class="innerMenuScreen" id="innerMenuScreen">
+                <div class="menuOptions" id="menuOptions">
+                    <div class="options" id="timerMenu"></div>
+                    <div class="options" id="playCathDivMenu"></div>
+                    <div class="options" id="resetMenu"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grandamaCircle" id="grandamaCircle">
+            <div id="motherCircle">
+                <div class="circle" id="0"></div>
+                <div class="circle" id="1"></div>
+                <div class="circle" id="2"></div>
+                <div class="circle" id="3"></div>
+                <div class="circle" id="4"></div>
+                <div class="circle" id="5"></div>
+                <div class="circle" id="6"></div>
+                <div class="circle" id="7"></div>
+                <div class="circle" id="8"></div>
+                <div class="circle" id="9"></div>
+                <div class="circle" id="10"></div>
+                <div class="circle" id="11"></div>
+                <div class="circle" id="12"></div>
+                <div class="circle" id="13"></div>
+                <div class="circle" id="14"></div>
+                <div class="circle" id="15"></div>
+                <div class="circle" id="16"></div>
+                <div class="circle" id="17"></div>
+                <div class="circle" id="18"></div>
+                <div class="circle" id="19"></div>
+                <div class="circle" id="20"></div>
+                <div class="circle" id="21"></div>
+                <div class="circle" id="22"></div>
+                <div class="circle" id="23"></div>
+                <div class="circle" id="24"></div>
+                <div class="circle" id="25"></div>
+                <div class="circle" id="26"></div>
+            </div>
+            
+            <div class="resultBox" id="resultBox">
+                <div class="innerResultBox" id="innerResultBox"></div>
+            </div>
+
+            <div class="textBox" id="textBox">     
+                <div class="textConsole" id="textConsole"></div>
+                <input type="text" name="answer" class="answer" id="answer" autocomplete="off" placeholder="Escribe tu respuesta" onkeypress="return ((event.charCode >= 48 && event.charCode <= 57) || (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" onfocus>     
+                <div class="button" id="button" ></div>
+                <div class="score" id="score">
+                    <div class="totalQuestionsScore" id="score1"></div>
+                    <div class="totalQuestionsScore" id="score2"></div>
+                    <div class="totalQuestionsScore" id="score3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rankingScreen" id="rankingScreen">
+            <div class="innerRankingScreen" id="innerRankingScreen">
+                <div class="rankingRow" id="rankingHeaders"></div>
+                <div class="rankingRow" id="rankingLinea"></div>
+                <div class="rankingRow" id="rank1"></div>
+                <div class="rankingRow" id="rank2"></div>
+                <div class="rankingRow" id="rank3"></div>
+                <div class="rankingRow" id="rank4"></div>
+                <div class="rankingRow" id="rank5"></div>
+            </div>
+        </div>
+
+        <div class="completeRoscoScreen" id="completeRoscoScreen"></div>
+
+        <div id="father" class="father">
+            <div id="son" class="son">
+                <div id="baby1" class="baby1"></div>            
+                <div id="baby2" class="baby2"></div>
+            </div>
+            <div class="patchBabyHole" id="patchBabyHole"></div>
+        </div>
+
+        <div class="firma" id="firma"></div>
+
+        <div class="playAgainScreen" id="playAgainScreen">
+            <div class="playAgainBox" id="playAgainBox">
+                <div class="playAgainText" id="playAgainText"></div>
+                <div class="playAgainButton" id="yesButton"></div>
+                <div class="playAgainButton" id="NoButton"></div>
+            </div>
+            <div class="playAgainBackGround" id="playAgainBackGround"></div>
+        </div>
+        <div class="floatTextScreen" id="floatTextScreen">
+            <div class="floatText" id="floatText"></div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

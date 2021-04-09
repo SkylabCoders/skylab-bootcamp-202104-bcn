@@ -1,0 +1,703 @@
+* {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-flow: column wrap;
+    /* justify-content: center; */
+    align-items : center;
+    align-content: center ;
+    margin: 0;
+    min-width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+#timer  {
+    
+    height : 30% ;
+    width : 30% ;
+    margin: 2vh ;
+    position : absolute ;
+    align-self: flex-start ;
+    display : none ;
+    z-index : 8 ;
+    
+}
+
+#timer > * {
+    color : darkorange ;
+    font-size: 2em;
+}
+
+#minutes {
+    height: 30% ;
+    width: 25% ;
+    text-align: right;
+    position : relative ;
+}
+
+#seconds {
+    height: 30% ;
+    width: 20% ;
+    position : relative ;
+}
+
+.menu {
+    height : 2em ;
+    width : 2em ;
+    background-color : red ;
+    border : 0.2em solid darkorange ;
+    border-radius: 50% ;
+    margin: 20px 40px ;
+    position : absolute ;
+    align-self: flex-end ;
+    display : none ;
+    z-index : 8 ;
+    cursor: pointer;
+
+    
+    /* display : flex; */
+    /* flex-wrap: wrap ; */
+    /* justify-content : flex-end; */
+}
+
+.menuScreen {
+    height : 100% ;
+    width : 100% ;
+    /* background-color : black ; */
+    border-radius: 10px; 
+    /* margin-top: -25px ; */
+    display : none ;
+    flex-direction: column ;
+    z-index : 7 ;
+    position : absolute ;
+}
+
+.innerMenuScreen {
+    width : 50% ;
+    height : 65% ;
+    border : 20px solid white ;
+
+    background-color: black;
+    position : absolute ;
+    top : 15vh ;
+    opacity : 1 ;
+    flex-direction: column ;
+    align-self : center ;
+}
+
+.menuOptions {
+    height : 100% ;
+    width : 100% ;
+    display : flex ;
+    flex-direction : column ;
+    align-items : center ;
+    justify-content: space-around ;
+}
+
+.options {
+    height: 15% ;
+    width : 80% ;
+    background-color: teal;
+    border : 0.5em solid black
+
+}
+
+#blackScreen {
+    height : 100% ;
+    width : 100% ;
+    position : absolute ;
+    background-color: black ;
+    opacity : 1 ;
+    z-index : 5 ;
+    
+    /* opacity : 0 ; */
+    
+    /* margin-top: -25px ; */
+    -moz-transition: opacity 2s;
+    -webkit-transition: opacity 2s;
+    -o-transition: opacity 2s;
+    transition: opacity 2s;
+}
+
+#blackScreen:hover {
+    opacity: 0 ;
+}
+
+#fullScreen {  
+    width : 100%  ;
+    height : 100% ;
+    background-color : black ;
+    position: absolute; 
+    z-index: 2 ;
+    flex-flow : column wrap ;
+    justify-content : center;
+    align-items : center ;
+}
+
+#mainScreen {
+
+    height: 100% ;
+    width: 100% ;
+    position : absolute ;
+    display : flex ;
+    flex-direction: column ;
+    justify-content : center ;
+    align-items : center ;
+}
+
+#consoleBox {
+
+    height: 50%;
+    width: 60% ;
+    /* width: 35% ; */
+    
+    /* font-size: 20px ; */
+    text-align: center ;
+    /* align-self : flex-start ; */
+    left : 20vw;
+    /* margin : 10px auto ; */
+
+    
+    
+    position : absolute ;
+    top: 7vh;
+    
+    color : darkorange;
+    letter-spacing: 0.3vh;
+    /* margin : 10px auto ; */
+    /* opacity : 0,5; */
+    visibility : visible;
+    /* font-style: initial;, ,j */
+    /* position: relative; */
+    justify-content : center;
+    align-items : center;
+    align-self : flex-start;
+    /* text-shadow: 0 0 0.8px black; */
+    /* text-shadow: 0 0 0.8em red; */
+    z-index : 5;
+
+
+    font-size: calc(0.5em + 1vw);
+    line-height: 1em;
+    padding: 1m;
+    margin: 1em auto ;
+}
+
+
+#userNameBox {
+    width : 50%;
+    height : 5%;
+    color: yellow;
+    background-color: black;
+    opacity : 0.7 ;
+    letter-spacing: 0.3vh;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 10vh;
+    position : absolute;
+    top : 47,5vh ;
+    z-index : 4;
+    cursor: pointer;
+
+    /* font-size: calc(1em + 1vw);
+line-height: 1em;
+padding: 1em;
+margin: 1em; */
+}
+
+.buttonBox {
+
+    height: 10%x;
+    width: 50% ;
+    top : 65% ;
+    position: absolute ;
+    display: none;
+    justify-content : center ;
+    flex-direction : row ;
+    z-index : 5 ;
+    
+    font-size: calc(0.5em + 1vw);
+    line-height: 1em;
+    padding: 1m;
+    margin: 1em auto ;
+}
+
+::placeholder {
+    color: darkorange;
+
+}
+
+.firma {
+    color : darkorange ;
+    font-size: 12px;
+    position: relative  ;
+    visibility : visible ;
+    top : 55vh ;
+    z-index : 4;
+
+    /* font-size: calc(1em + 1vw);
+line-height: 1em;
+padding: 1em;
+margin: 1em; */
+    
+}
+
+/* .skinNoir {
+    background-color : black ;
+    background-color: white ;
+    
+} */
+
+
+/* #userName {
+    margin : 10px auto ;
+    margin-top: 30px;
+    width : 80% ;
+    max-width : 780px ;
+    border-radius: 10px;
+    text-align: center ;
+    letter-spacing: 1pt ;
+    display : flex ;
+    flex-flow: column wrap ;
+    align-items : center ; 
+} */
+
+#grandamaCircle {
+    height: 100% ;
+    width: 51.3 ;
+    position: absolute ;
+    display: none ;
+
+    flex-direction : column ;
+    align-items: center ;
+    
+    Overflow: hidden;
+
+}
+
+#motherCircle {
+    /* height: 30vw; */
+    width : 63vw ;
+    margin-top: 1%;
+    /* max-width : 51.3% ; */
+    /* border : 1px solid black ; */
+    flex-flow : row wrap ;
+    justify-content : center ;
+    /* align-items : flex-end ; */
+    display : none ;
+    z-index : 4;
+    flex-shrink: 5;
+}
+
+.circle {
+    
+    height :6vw ;
+    width : 6vw ;
+    border : 1vh solid grey ;
+    border-radius : 50% ;
+    display : flex ;
+    /* flex-flow : row nowrap ; */
+    justify-content : center ;
+    /* justify-content : flex-start ; */
+    align-items : center ;
+    margin : 0.5vh 0.5vh ;
+    /* max-width: 13% ; */
+    /* flex-shrink: 8; */
+
+    
+
+    
+}
+
+.circle p {
+    /* height : 100% ; */
+    width : 100% ;
+    position: relative;
+    /* bottom: 13vh;         */
+    color : white;
+    justify-content : flex-start ;
+    /* display : flex ; */
+    /* align-items : flex-start ; */
+
+    /* margin-bottom: 200px; */
+    font-size: calc(2em + 1.7vw);
+    line-height: 1.50em;
+    padding: 1em;
+    margin: 1em auto;
+    /* flex-shrink: 3; */
+
+}
+
+.textBox {   
+    height : 45% ;    
+    width : 100% ;
+    display : flex ;
+    top : 62% ;
+    position: absolute ;
+    /* top : 30% ; */
+    flex-flow: column nowrap ;
+
+    justify-content: flex-start ;
+    /* align-items : flex-end ; */
+    /* align-content : flex-end ; */
+    z-index : 4
+}
+
+.textConsole {
+    height: 8%;
+    width: 120%;
+    color : darkorange;
+    letter-spacing: 0.3vh ;
+    text-align: center ;
+    display : flex ;
+    /* font-size: 20px ; */
+    /* align-self : flex-start ; */
+    /* align-self : flex-start ; */
+    /* margin : 0vh auto ; */
+    /* left : 35vw ; */
+    /* justify-content: center; */
+    /* position : absolute ; */
+    z-index : 4 ;
+    justify-content : center ;
+
+
+    font-size: calc(0.7em + 1vw);
+    line-height: 1em;
+    padding: 1em;
+    margin: 1em auto;
+}
+
+.answer {
+    height : 2% ;
+    width : 80% ;
+    /* max-width : 780px ; */
+    letter-spacing: 0.3vh ;
+    text-align: center ;
+    border-radius: 1vh;
+    /* margin : 0vh auto ; */
+    /* justify-content: flex-end ; */
+
+    outline: none;
+    border: none;
+    cursor: pointer;
+    z-index : 4 ;
+    /* margin-top: 30px; */
+    /* margin : 10px auto ;  */
+    /* position: absolute ; */
+
+
+    font-size: calc(0.5em + 1vw);
+    line-height: 1em;
+    padding: 1em;
+    margin: 1em auto;
+
+}
+
+.button {
+    height: 2%;
+    width : 40%;
+    color : red ;
+    background-Color : darkorange ;
+    text-align: center;
+    letter-spacing: 0.3vh ;
+    border-radius: 1vh;
+    cursor: pointer;
+    z-index : 4 ;
+    display: block ;
+    justify-content : center ;
+        
+    font-size: calc(0.5em + 1vw);
+    line-height: 0.5em;
+    padding: 1em;
+    /* margin: 1em auto ; */
+    margin : 0vh auto ;
+
+}
+
+.button:hover {
+    background-color: red;
+    color : darkorange ;
+}
+
+/* #button {
+    align-self: center ; 
+    z-index : 4 ;
+} */
+
+
+#resultBox {
+    height : 40% ;
+    width: 40% ;
+    font-size: 18vw ;
+
+    /* color: darkorange; */
+    position : absolute ;
+    top : 17vh ;
+    /* top : 1vh ; */
+    /* right : 33vw ; */
+    /* top : 50vh ; */
+    /* bottom : 30vh ; */
+    text-align: center;
+
+    /* letter-spacing: 0.3vh ; */
+    display : none ;
+    z-index : 4 ;
+    
+    /* background-color: red; */
+    /* left : 6vh ; */
+    /* bottom : 50vh ; */
+    
+    
+    /* font-size: calc(15em + 1vw);
+    line-height: 1em;
+    padding: 1em;
+    margin: 1em auto; */
+}
+
+#innerResultBox {
+    height : 100% ;
+    width: 100% ;
+    /* color: darkorange; */
+    /* border : 0.7em solid red ; */
+    border-radius: 2vh;
+    opacity : 0.5 ;
+    /* position : absolute ; */
+    z-index : 3 ;
+    overflow: hidden;
+}
+
+#score {
+    height : 2% ;
+    width : 65% ;
+    /* background-color: blanchedalmond; */
+    position : absolute ;
+    text-align: center;
+    letter-spacing: 0.3vh ;
+    bottom : 35vh ;
+    /* left : 36vh; */
+    display : flex ;
+    flex-direction : column ;
+    justify-content : center ;
+    /* align-items : center ; */
+    
+    /* align-self: center ; */
+
+}
+
+.totalQuestionsScore {
+    height: 4vh ;
+    width: 80% ;
+    color: darkorange;
+    background-color: blue;
+
+    /* margin : 0vh auto ; */
+    align-self: center ;
+
+    font-size: calc(0.5em + 1vw);
+    line-height: 1em;
+    padding: 0.5em; 
+    margin: 0.3em ;
+}
+
+
+
+
+#backGroundShowRules {
+    height : 70% ;
+    width : 70% ;
+    border-radius : 3vh ;
+    position : absolute;
+    opacity : 0.7 ;
+    background-color: black;
+    box-shadow: 0 0 50px black ;
+    z-index : 4 ;
+}
+
+
+#endButton {
+    display : none ;
+}
+
+#completeRoscoScreen {
+    height : 100% ;
+    width : 100% ;
+    margin-top: -25px ;
+    text-align: center;
+
+    opacity : 0.5 ;
+    position: absolute ;
+    background-color: darkorange;
+    z-index : 4 ;
+    display: none ;
+
+    font-size: 45px ;
+    flex-flow : column wrap; 
+    justify-content: center ;
+    align-items: center ;
+}
+
+#rankingScreen {
+    height: 100% ;
+    width: 100% ;
+    /* background-color: black ; */
+    position: absolute ;
+    z-index : 7 ;
+    /* margin-top: -25px ; */
+    display : none ;
+    justify-content: center ;
+    align-items : center ;
+    flex-flow: column wrap;
+    
+}
+
+#innerRankingScreen {
+    height: 30% ;
+    width: 80% ;
+    /* background-color: red ; */
+    /* z-index : 8 ; */
+
+    position : absolute ;
+    display : flex ;
+    flex-flow: row wrap ;
+    justify-content: center ;
+    align-items : center ;
+    align-content : space-around ;
+}
+
+.rankingRow {
+    height : 12% ;
+    width : 80% ;
+    color: darkorange ;
+    /* background-color : pink ; */
+    display : flex ;
+    flex-flow  : row wrap ;
+    justify-content: center ;
+    letter-spacing: 0.3vh;
+    text-align: center;
+
+    justify-content: space-around ;
+    align-items : center ;
+    text-align: center;
+    /* flex-grow : 1 ; */
+    font-size: calc(0.5em + 1vw);
+    line-height: 1em;
+    padding: 0em; 
+     margin: 1em auto;
+}
+
+#floatTextScreen {
+    height: 100%;
+    width: 100% ;
+    display : flex ;
+    z-index : 8 ;
+}
+
+#floatText {
+    color: darkorange;
+    position : absolute;
+
+    font-size: calc(1em + 1vw);
+    line-height: 1em;
+    padding: 1em; 
+     margin: 1em auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------- ANIMATED BACKGROUND ------------------- */
+
+#patchBabyHole   {
+
+    height: 100px ;
+    width: 100px ;
+    background-color: red ;
+    border-radius: 50% ;
+    z-index : 3 ;
+    position : absolute ;
+}
+
+#father {
+    height : 100% ;
+    width : 100% ;
+    position: absolute;
+    display : flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index : 3 ;
+    Overflow: hidden;
+}
+
+#son {
+    height : 70% ;
+    width : 70% ;
+    position: absolute;
+    display : flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index : 2 ;
+}
+
+#baby1 {
+    height : 400% ;
+    width : 300% ;
+    border : 2px solid red ;
+    position: absolute;
+    display : flex ; 
+    justify-content: center;
+    align-items: center;
+
+    -ms-transform: rotate(20deg);     /* IE 9 */
+    transform: rotate(20deg);
+}
+
+.baby1 > *{
+    border : 5px solid red ;
+    box-shadow: 0 0 50px red;
+}   
+
+#baby2 {
+    height : 400% ;
+    width : 300% ;
+    border : 2px solid red ;
+    position: absolute;
+    display : flex ; 
+    justify-content: center;
+    align-items: center;
+}
+
+.baby2 > *{
+    border : 5px solid red ;
+    box-shadow: 0 0 50px red;
+} 
+
+
+
+
+
+
+
+
+
