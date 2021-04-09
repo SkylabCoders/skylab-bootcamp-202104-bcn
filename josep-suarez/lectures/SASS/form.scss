@@ -6,10 +6,42 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+$gris-claro: #ccc;
+$gris-medio: #555;
+$gris-oscuro: #333;
+$naranja: #ff9900;
+
+$padding: 20px;
+$margin: 20px;
+
+$text-color: $gris-oscuro;
+$border-color: $gris-oscuro;
+$background-color: $gris-claro;
+
+@mixin common-tags {
+  display: flex;
+  flex-direction: row;
+  border: solid 1px $border-color;
+  padding: $padding;
+  margin: $margin;
+}
+
 body {
-  background: red;
+  background: #eaeaea;
   color: #555;
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
   margin: 20px;
+}
+.main {
+  @include common-tags();
+}
+.sidebar {
+  @include common-tags();
+  flex-direction: column;
+}
+.form {
+  @include common-tags();
+  flex-direction: column;
 }
