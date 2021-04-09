@@ -119,6 +119,11 @@ body {
     margin-right: -36px;
 }
 
+.carrito:hover {
+    background-color: #FF5959;
+    color:white;
+}
+
 .carrito {
     display: flex;
     justify-content: center;
@@ -159,7 +164,8 @@ body {
 
 .img-section {
     display: flex;
-    align-content: center;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .utensilios,
