@@ -121,7 +121,7 @@ body {
 
 .carrito:hover {
     background-color: #FF5959;
-    color:white;
+    color: white;
 }
 
 .carrito {
@@ -166,6 +166,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    margin-left: 166px;
+}
+
+.img-section div:hover {
+    background-color: #FF5959;
 }
 
 .utensilios,
@@ -188,6 +193,8 @@ body {
     text-align: center;
     font-weight: 600;
     background-repeat: no-repeat;
+    margin-bottom: 80px;
+    margin-left: 4px;
 }
 
 .utensilios {
@@ -207,5 +214,16 @@ body {
 }
 
 .blog {
+    /* background: url(https://img.icons8.com/ios/50/000000/speech-bubble-with-dots.png) no-repeat; */
     background-image: url(./images/menu.svg);
+}
+
+.img-section div:nth-child(5) {
+    background-color: #FF5959;
+    margin-left: 70px;
+}
+
+.img-section div:nth-child(5):hover {
+    background-color: #f2f2f2;
+    margin-left: 70px;
 }
