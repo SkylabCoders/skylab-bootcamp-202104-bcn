@@ -15,7 +15,8 @@ li {
 }
 
 main {
-    height: 1080px;;
+    height: 1080px;
+    background: #FF5959; 
 }
 
 .fixed-bar {
@@ -37,10 +38,12 @@ main {
 }
 
 .second-header {
-    margin-top: 180px;
+    margin-top: 88px;
     display: flex;
     /* justify-content: space-between; */
-    height: 200px;
+    height: 218px;
+    width: 1265px;
+    font-weight: bold;
 }
 
 .fas, .fab, .far {
@@ -52,6 +55,7 @@ main {
 .letters-logo {
     width: 232px;
     height: 140px; 
+    cursor: pointer;
 }
 
 .icons-letters {
@@ -89,7 +93,7 @@ main {
     height: 70px;
 }
 
-.social-media, .shopping-space {
+.social-media, .shopping-space, .shopping-nav {
     display: flex;
 }
 
@@ -100,11 +104,11 @@ main {
 }
 
 .social-media {
-    margin: 0 50px;
+    margin: 0 50px 0 30px;
 }
 
 .social-media > li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 .register {
@@ -137,32 +141,81 @@ margin-right:  11px;
 }
 
 .image-utensilios, .image-ingredientes, .image-fiestas, .image-marcas, .image-log {
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 62px;
+    margin: 20px 20px;
 }
 
+.image-delantal { ???????
+    margin-right: 54px;
+}
 
 .logo-marialunarillo {
- margin-left: 172px;
+    margin-left: 93px;
+     margin-top: 80px;
 }
 
 .section-right {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-left: 210px;
 }
 
 .container-search {
     display: flex;
 }
 
+.news, .sales {
+    color: white;
+    cursor: pointer;
+    width: 130px;
+    height: 30px;
+    text-align: center;
+    padding: 5px 0;
+}
+
 .news {
     background: #9faa4d;
-    color: white;
+    margin-right: 5px;
 }
 
 .sales {
     background: #8e789d;
-        color: white;
+    margin-right: 5px;
+}
+
+.shopping-nav-images {
+    cursor: pointer;
+}
+
+.images-nav {
+    background-color: #F8F8F8;
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+}
+
+.text {
 
 }
+
+.form-search {
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.input-text {
+    width: 245px;
+    height: 30px;
+    border: none;
+}
+
+.button-search {
+    width: 49px;
+    height: 30px;
+    border: none;
+}
+
