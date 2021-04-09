@@ -1,0 +1,102 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+.navigator-container {
+  display: flex;
+  background-color: #ccc;
+  width: 100%;
+  min-height: 50px;
+}
+
+@mixin nav-items($grow, $justify-content, $align-items) {
+  display: flex;
+  flex-grow: $grow;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+.login-register {
+  @include nav-items(2, flex-end, center);
+}
+
+.login-register:hover,
+.social-item a:hover {
+  color: #ff5959;
+}
+
+.malu-pages {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+}
+
+@mixin malu-logo($width, $height, $image, $background-color) {
+  width: $width;
+  height: $height;
+  background: url("../images/icons/" + $image) $background-color bottom center
+    no-repeat;
+}
+.ma {
+  @include malu-logo(80px, 140px, "maria-lunarillos.png", #ff5959);
+}
+
+.cu {
+  @include malu-logo(80px, 70px, "cucute.png", #6199af);
+}
+
+.mu {
+  @include malu-logo(80px, 70px, "mumuchu.png", #f6b436);
+}
+
+.cu:hover,
+.mu:hover {
+  height: 140px;
+  transition: 0.3s;
+}
+.social-networks {
+  @include nav-items(1, center, center);
+}
+
+.cart-container {
+  @include nav-items(1, center, center);
+}
+
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.item-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff5959;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.cart a:hover,
+.cart:hover {
+  background-color: #ff5959;
+  color: white;
+}
