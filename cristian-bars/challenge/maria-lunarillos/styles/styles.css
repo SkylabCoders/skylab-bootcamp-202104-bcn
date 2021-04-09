@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    font-family: sans-serif;
+    font-size: 12px;
 }
 
 header {
@@ -35,4 +37,38 @@ header {
 
 #icons {
     display: flex;
+    justify-content: space-evenly;
+}
+
+#login img {
+    width: 30px;
+    margin-top: 5px;
+}
+
+#rrss img {
+    width: 20px;
+}
+
+#rrss {
+    display: flex;
+    width: 250px;
+    justify-content: space-evenly;
+    margin-top: 13px;
+}
+
+#basket img {
+    width: 35px;
+}
+
+#basket {
+    margin-top: 5px;
+    display: flex;
+}
+
+#basket div {
+    margin: 0 5px;
+}
+
+#basket-items {
+    font-size: 20px;
 }
