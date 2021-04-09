@@ -14,7 +14,11 @@ li {
   list-style: none;
 }
 
-.header-container {
+main {
+    height: 1080px;;
+}
+
+.fixed-bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -29,7 +33,14 @@ li {
     height: 50px; 
     max-width: 1080px;
     margin: auto;
-    align-items: center;
+    /* align-items: center; */
+}
+
+.second-header {
+    margin-top: 180px;
+    display: flex;
+    /* justify-content: space-between; */
+    height: 200px;
 }
 
 .fas, .fab, .far {
@@ -130,12 +141,6 @@ margin-right:  11px;
     width: 80px;
 }
 
-.second-header {
-    margin-top: 100px;
-    display: flex;
-    justify-content: space-between;
-    height: 200px;
-}
 
 .logo-marialunarillo {
  margin-left: 172px;
