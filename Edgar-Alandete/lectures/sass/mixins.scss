@@ -4,7 +4,7 @@
 @mixin common-tags($direction, $specific-border-color) {
   display: flex;
   flex-direction: $direction;
-  border: solid 1px $specific-border-color;
+  border: solid, 2px, $specific-border-color;
   padding: $padding;
   margin: $margin;
   color: $negro;

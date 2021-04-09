@@ -30,5 +30,5 @@ body {
 }
 
 .form {
-  @include common-tags(column, $generic-border-color);
+  @include common-tags(column, $border-hihglight);
 }
