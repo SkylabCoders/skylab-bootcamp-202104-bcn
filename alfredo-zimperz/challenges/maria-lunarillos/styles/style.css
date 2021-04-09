@@ -166,17 +166,17 @@ main {
 .logo-ma {
 	background-size: 72px;
 	background: var(--color-ma);
-	background-image: url('./images/logo-ma.png');
+	background-image: url('../images/logo-ma.png');
 }
 
 .logo-cu {
 	background: var(--color-cu);
-	background-image: url('./images/logo-cu.png');
+	background-image: url('../images/logo-cu.png');
 }
 
 .logo-mu {
 	background: var(--color-mu);
-	background-image: url('./images/logo-mu.png');
+	background-image: url('../images/logo-mu.png');
 }
 
 .header-fix-register {
@@ -288,7 +288,7 @@ main {
 	width: 50px;
 	box-sizing: border-box;
 	outline: none;
-	background: url(./images/icons/search.svg);
+	background: url(../images/icons/search.svg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 20px;
