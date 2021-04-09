@@ -1,3 +1,9 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header{
     display: flex;
     flex-direction: column;
@@ -22,44 +28,42 @@ body {
 .ma{
     background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/maria-lunarillos.png) #FF5959 bottom center no-repeat;
     color: white;
-    margin-top: -10px;
     padding: 20px;
     list-style-type: none;
-    height:30px;
-    width: 50px;
+    height:100px;
+    width: 80px;
     cursor: pointer;
 }
 
 .cu{
     background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/cucute.png) #6199AF bottom center no-repeat;
     color: white;
-    margin-top: -10px;
     padding: 20px;
     list-style-type: none;
-    height:30px;
-    width: 50px;
+    height:100px;
+    width: 80px;
     cursor: pointer;
 }
 
 .mu{
     background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/mumuchu.png) #F6B436 bottom center no-repeat;
     color: white;
-    margin-top: -10px;
     padding: 20px;
     list-style-type: none;
-    height:30px;
-    width: 50px;
+    height:100px;
+    width: 80px;
     cursor: pointer;
 }
 .ma:hover, .cu:hover, .mu:hover{
-    padding-top: 90px;
+    padding-top: 120px;
 }
 
 .registrate{
     border: solid #FF5959;
     background-color: white;
     padding: 20px;
-    height:20px;
+    height:60px;
+    margin-top: 5px;
     cursor: pointer;
 }
 
@@ -67,7 +71,8 @@ body {
     border: solid #6199AF;
     background-color: white;
     padding: 20px;
-    height:20px;
+    height:60px;
+    margin-top: 5px;
     cursor: pointer;
 }
 
@@ -75,10 +80,11 @@ body {
     border: solid #F6B436;
     background-color: white;
     padding: 20px;
-    height:20px;
+    height:60px;
+    margin-top: 5px;
     cursor: pointer;
 }
-.registrate:hover, .social-media:hover, .search:hover{
+.registrate:hover, .social-media:hover, .carrito:hover{
     background-color: #FF5959;
 }
 
@@ -89,7 +95,6 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
     justify-content: space-between;
 }
 
@@ -121,6 +126,7 @@ body {
 .page-nav-icons:hover{
     background-color: #FF5959;
 }
+
 
 #search{
     flex-grow: 2;
