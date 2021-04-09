@@ -1,10 +1,11 @@
+html{}
+
 li {
     list-style: none;
 }
 body{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
 }
 
 header{
@@ -27,24 +28,28 @@ header{
     width: 100%;
     height: 50px;
     justify-content: space-between;
-    align-items: center;
     margin-left: 50px;
 }
 
 .dropping-elements-list{
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
-    justify-content: space-around;
-    align-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
-.dropping-nav-element {
 
-    
+
+.dropping-nav-element {
 }
 
 .not-dropping-nav{
     display: flex;
     background-color: burlywood;
+
 }
 
 .not-dropping-element{
@@ -121,13 +126,28 @@ input {
 }
 
 #maria-lunarillos-drop {
+    display: flex;
+    align-items: flex-end;
     background-color: rgb(236, 101, 95);
+    min-height: 140px;
 }
 
 #cucute {
     background-color: rgb(111, 152, 173);
 }
 
+#cucute:hover {
+    display: flex;
+    align-items: flex-end;
+    min-height: 140px;
+}
+
 #mumuchu {
     background-color: rgb(236, 183, 81);
+}
+
+#mumuchu:hover {
+    display: flex;
+    align-items: flex-end;
+    min-height: 140px;
 }
