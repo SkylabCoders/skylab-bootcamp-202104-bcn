@@ -28,7 +28,7 @@ nav a {
     width: 100%;
     margin: 0 auto;
     align-items: center; 
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 ul.main-icons {
@@ -57,10 +57,14 @@ ul.main-icons li.mu {
     background-color: #F6B436;
 }
 
-.login a {
+div.login {
+    margin-left: auto;
+}
+
+div.login a {
     font-size: 13px;
 }
-.icon-login {
+div.login .icon {
     width: 34px;
     height: 34px;
 }
