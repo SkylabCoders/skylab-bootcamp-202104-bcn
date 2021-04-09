@@ -69,6 +69,22 @@ div.login .icon {
     height: 34px;
 }
 
+ul.social-icons{
+    display:flex;
+    list-style: none;;
+}
+
+ul.social-icons a {
+    cursor: pointer;
+}
+ul.social-icons a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+ul.social-icons li {
+    margin-right: 15px;
+}
 main {
     padding: 50px 0px;
     height: 2000px;
