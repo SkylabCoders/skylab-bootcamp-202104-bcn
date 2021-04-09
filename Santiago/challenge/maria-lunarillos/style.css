@@ -47,7 +47,8 @@ body {
 }
 
 .login{
-    margin-left: 10px;
+    display: flex;
+    margin: 15px 7px 10px;
 }
 
 .login .icon {
@@ -55,11 +56,13 @@ body {
     background: url("./images/sprite.svg") 0 0 no-repeat;
     width: 27px;
     height: 27px;
-    margin: 10px;
+    margin: -3px;
+    padding-right: 10px;
 }
 
 .social-media {
     display: flex;
+    margin-right: -190px;
 }
 
 .social-media .facebook,
@@ -67,7 +70,7 @@ body {
 .social-media .instagram,
 .social-media .pinterest,
 .social-media .youtube {
-    width: 25.5px;
+    width: 25px;
     height: 25px;
     margin: 15px 7px 0;
     display: block;
@@ -99,6 +102,7 @@ body {
 
 .checkout {
     display: flex;
+    margin-right: -36px;
 }
 
 .carrito {
@@ -119,6 +123,8 @@ body {
     width: 46px;
     height: 50px;
     background-color: #FF5959;
+    color: white;
+    font-size: 15px;
 }
 
 .header-info {
