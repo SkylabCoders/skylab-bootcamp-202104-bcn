@@ -27,6 +27,11 @@ ul {
   align-items: center;
 }
 
+.login-register:hover,
+.social-item a:hover {
+  color: #ff5959;
+}
+
 .malu-pages {
   position: absolute;
   display: flex;
@@ -51,6 +56,12 @@ ul {
 .mu {
   background: url(../images/icons/mumuchu.png) #f6b436 bottom center no-repeat;
 }
+
+.cu:hover,
+.mu:hover {
+  height: 140px;
+  transition: 0.3s;
+}
 .social-networks {
   display: flex;
   flex-grow: 1;
@@ -65,6 +76,15 @@ ul {
   align-items: center;
 }
 
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  min-width: 50px;
+  min-height: 50px;
+}
+
 .item-counter {
   display: flex;
   justify-content: center;
@@ -75,4 +95,10 @@ ul {
   font-size: 20px;
   min-width: 50px;
   min-height: 50px;
+}
+
+.cart a:hover,
+.cart:hover {
+  background-color: #ff5959;
+  color: white;
 }
