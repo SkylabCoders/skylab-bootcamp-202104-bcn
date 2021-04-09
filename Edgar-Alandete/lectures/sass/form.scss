@@ -1,4 +1,5 @@
 @import "./colors";
+@import "./mixins";
 *,
 *::after,
 *::before {
@@ -10,15 +11,6 @@
 $padding: 20px;
 $margin: 20px;
 
-@mixin common-tags($direction) {
-  display: flex;
-  flex-direction: $direction;
-  border: solid 1px $border-color;
-  padding: $padding;
-  margin: $margin;
-  color: $negro;
-}
-
 body {
   background: #eaeeea;
   color: #555;
@@ -28,11 +20,11 @@ body {
 }
 
 .main {
-  @include common-tags(row);
+  @include common-tags(row, $border-color);
 }
 
 .sidebar {
-  @include common-tags(column);
+  @include common-tags(column, $border-color);
 
   &-title {
     color: $text-important;
@@ -40,5 +32,5 @@ body {
 }
 
 .form {
-  @include common-tags(column);
+  @include common-tags(column, $generic-border-color);
 }
