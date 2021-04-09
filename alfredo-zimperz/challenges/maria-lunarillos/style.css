@@ -239,12 +239,13 @@ main {
 	display: inline-block;
 	margin-left: 4px;
 	font-size: 15px;
-	font-weight: 800;
+	font-weight: 400;
 	color: var(--secondary-color);
 }
 
 .header-secondary-nav .search-bar {
-	width: 300px;
+	width: 302px;
+	height: 30px;
 }
 
 .header-secondary-nav .button.btn-novedades {
@@ -256,17 +257,33 @@ main {
 }
 
 .header-secondary-nav .search-bar {
-	background: #8e789d;
+	width: 300px;
+	height: 30px;
+	border: 1px solid#c2beba;
+	background: #c2beba;
 }
 
 .header-secondary-nav .search-bar input {
 	width: 248px;
 	height: 30px;
+
 	text-transform: uppercase;
 	color: rgba(226, 225, 224, 0.486);
 	font-size: 11px;
 	letter-spacing: 1px;
 	padding-left: 3px;
 	font-weight: 200;
-	border: 1px solid rgb(187, 184, 182, 0.9);
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+}
+
+.header-secondary-nav .search-bar button {
+	/* background: #c2beba; */
+
+	height: 100%;
+	margin-top: ;
+	box-sizing: border-box;
+	background: none;
+	outline: none;
 }
