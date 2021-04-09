@@ -1,3 +1,4 @@
+@import "./colors.scss";
 *,
 *::after,
 *::before {
@@ -7,18 +8,8 @@
   box-sizing: border-box;
 }
 
-$gris-claro: #ccc;
-$gris-medio: #555;
-$gris-oscuro: #333;
-$naranja: #ff9900;
-$negro: #010101;
-
 $padding: 20px;
 $margin: 20px;
-
-$text-color: $negro;
-$border-color: $gris-oscuro;
-$background-color: $gris-claro;
 
 @mixin common-tags($direction) {
   display: flex;
