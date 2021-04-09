@@ -43,6 +43,10 @@ body {
   color: #010101;
 }
 
+.sidebar-title {
+  color: #ff2200;
+}
+
 .form {
   display: -webkit-box;
   display: -ms-flexbox;

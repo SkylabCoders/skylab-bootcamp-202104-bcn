@@ -33,6 +33,10 @@ body {
 
 .sidebar {
   @include common-tags(column);
+
+  &-title {
+    color: $text-important;
+  }
 }
 
 .form {
