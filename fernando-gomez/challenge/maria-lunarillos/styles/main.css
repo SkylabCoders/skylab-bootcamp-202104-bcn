@@ -1,4 +1,6 @@
-html{}
+html{
+    font-family: 'Source Sans Pro';
+}
 
 li {
     list-style: none;
@@ -18,17 +20,12 @@ header{
 .nav-bars {
     display: flex;
     background-color: rgb(242, 242, 242);
-    margin-left: 50px;
-    justify-content: space-between;
 }
 
 .dropping-nav {
     display: flex;
     background-color: #F8F8F8;
-    width: 100%;
     height: 50px;
-    justify-content: space-between;
-    margin-left: 50px;
 }
 
 .dropping-elements-list{
@@ -41,27 +38,36 @@ header{
     align-items: flex-start;
 }
 
-
+figcaption {
+    text-align: center;
+}
 
 .dropping-nav-element {
 }
 
 .not-dropping-nav{
     display: flex;
-    background-color: burlywood;
-
+    flex-grow: 1;
 }
 
 .not-dropping-element{
     display: flex;
-    justify-content: flex-end;
-    background-color: cadetblue;
+    justify-content: space-evenly;
+    flex-grow: 1;
 }
+
+#register {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 3;
+}
+
 .login-register {
 
 }
 
-.network {
+.network:hover {
 
 }
 
@@ -76,6 +82,7 @@ header{
 .logo {
     display: flex;
     align-items: flex-end;
+    padding-top: 150px;
 }
 
 .search-items {
@@ -98,9 +105,17 @@ header{
     background-color: rgb(242, 242, 242);
 }
 
+.specific-search-img:hover {
+    background-color: rgb(236, 101, 95);
+}
+
 .blog-search {
     background-color: rgb(242, 242, 242);
     padding: 15px;
+}
+
+.blog-search:hover {
+    background-color: rgb(236, 101, 95);
 }
 
 .fa-search {
@@ -132,22 +147,28 @@ input {
     min-height: 140px;
 }
 
-#cucute {
+.cucute {
     background-color: rgb(111, 152, 173);
+    height: 70px;
 }
 
-#cucute:hover {
+.cucute:hover {
     display: flex;
     align-items: flex-end;
-    min-height: 140px;
+    height: 140px;
+    transition: 1s;
+    transform: rotate(1080deg);
 }
 
 #mumuchu {
     background-color: rgb(236, 183, 81);
+    height: 70px;
 }
 
 #mumuchu:hover {
     display: flex;
     align-items: flex-end;
-    min-height: 140px;
+    height: 140px;
+    transition: 1s;
+    transform: rotate(1080deg);
 }

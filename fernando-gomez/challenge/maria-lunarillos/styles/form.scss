@@ -1,0 +1,93 @@
+.network,
+.shopping-icons,
+#register {
+    &:hover {
+        color: rgb(236, 101, 95);
+    }
+}
+
+.cuisine-section {
+    display: flex;
+    height: 300px;
+    width:630px;
+    background-image:url("./../images/utensiliosbasicos.jpeg");
+    background-repeat: no-repeat;
+}
+
+.figure-content{
+
+}
+
+.cuisine-image {
+
+}
+
+.cuisine-text {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.cuisine-title {
+
+}
+
+.cuisine-description {
+
+}
+
+.flex-form {
+    display: flex;
+    width: 100%;
+}
+
+.fly-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.fly-form-title {
+    display: flex;
+}
+
+.fly-form-drop-downs {
+    display: flex;
+}
+
+.travel-drop-down {
+    display: flex;
+    flex-direction: column;
+}
+
+.travel {}
+.outbound {}
+.arrival {}
+
+
+.fly-specifications {
+    display: flex;
+}
+
+.fly-date {}
+
+.passengers-number {
+    display: flex;
+    flex-direction: column;
+}
+
+.fly-class-drop-down {
+    display: flex;
+    flex-direction: column;
+}
+
+.professional-travel-selector {
+    display: flex;
+}
+
+.fly-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
+.search-fly-button {}
