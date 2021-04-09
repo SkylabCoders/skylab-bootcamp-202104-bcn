@@ -72,3 +72,51 @@ header {
 #basket-items {
     font-size: 20px;
 }
+
+#content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#menu-buscador, #menu-items {
+    display: flex;
+}
+
+#menu-items {
+    justify-content: space-evenly;
+}
+
+.item-menu img {
+    width: 50px;
+}
+
+.content-div {
+    width: 50%;
+}
+
+#logo {
+    padding-left: 120px;
+}
+
+#novedades, #ofertas {
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    padding: 0 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0 2px;
+}
+
+#novedades img, #ofertas img {
+    width: 30px;
+}
+
+#novedades {
+    background-color: #9faa4d;
+}
+
+#ofertas {
+    background-color: #8e789d;
+}
