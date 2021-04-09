@@ -11,17 +11,18 @@ $gris-claro: #ccc;
 $gris-medio: #555;
 $gris-oscuro: #333;
 $naranja: #ff9900;
+$negro: #010101;
 
 $padding: 20px;
 $margin: 20px;
 
-$text-color: $gris-oscuro;
+$text-color: $negro;
 $border-color: $gris-oscuro;
 $background-color: $gris-claro;
 
-@mixin common-tags {
+@mixin common-tags($direction) {
   display: flex;
-  flex-direction: row;
+  flex-direction: $direction;
   border: solid 1px $border-color;
   padding: $padding;
   margin: $margin;
@@ -35,13 +36,13 @@ body {
   margin: 20px;
 }
 .main {
-  @include common-tags();
+  @include common-tags(row);
 }
 .sidebar {
-  @include common-tags();
+  @include common-tags(column);
   flex-direction: column;
 }
 .form {
-  @include common-tags();
+  @include common-tags(column);
   flex-direction: column;
 }
