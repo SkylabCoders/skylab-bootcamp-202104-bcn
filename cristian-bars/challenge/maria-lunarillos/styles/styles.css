@@ -20,19 +20,23 @@ header {
 #ma, #cu, #mu {
     cursor: pointer;
     height: 70px;
+    text-align: center;
 }
 
 #ma {
     background-color: #ff5959;
     height: 150px;
+    width: 80px;
 }
 
 #cu {
     background-color: #6199af;
+    width: 70px;
 }
 
 #mu {
     background-color: #f6b436;
+    width: 70px;
 }
 
 #icons {
@@ -80,22 +84,36 @@ header {
 
 #menu-buscador, #menu-items {
     display: flex;
+    margin: 20px 0;
+    position: relative;
+    top: -40px;
+    width: 75%;
 }
 
 #menu-items {
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+
+.item-menu {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: #f2f2f2;
 }
 
 .item-menu img {
     width: 50px;
-}
-
-.content-div {
-    width: 50%;
+    position: relative;
+    top: 15px;
 }
 
 #logo {
     padding-left: 120px;
+    width: 40%;
+}
+
+#menu {
+    width: 70%;
 }
 
 #novedades, #ofertas {
