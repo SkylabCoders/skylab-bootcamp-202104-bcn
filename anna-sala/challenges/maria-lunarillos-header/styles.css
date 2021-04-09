@@ -78,6 +78,9 @@ body {
     height:20px;
     cursor: pointer;
 }
+.registrate:hover, .social-media:hover, .search:hover{
+    background-color: #FF5959;
+}
 
 .image{
     margin-top: 60px;
