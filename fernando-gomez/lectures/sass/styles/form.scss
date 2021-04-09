@@ -1,0 +1,49 @@
+@import "./colors";
+@import "./values";
+
+*, 
+*::after, 
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin common-tags($direction) {
+    display: flex;
+    flex-direction: $direction;
+    border: solid 1px $border-color;
+    padding: $padding;
+    margin: $margin;
+}
+
+html {
+    background-color: $gris-medio;
+}
+
+body {
+    background: #eaeaea;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin: 20px;
+}
+
+main {
+    @include common-tags(row);
+}
+
+.form {
+    @include common-tags(column);
+}
+
+.sidebar {
+    @include common-tags(column);
+
+    &-title {
+        color: $text-important;
+    }
+}
+
+
+
