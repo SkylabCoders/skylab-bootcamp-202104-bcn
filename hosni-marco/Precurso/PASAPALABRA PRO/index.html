@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>pasapalabra-html</title>
+        <link href="./style.css" rel="stylesheet" type="text/css">
+        <script src="./script.js" type="text/javascript"></script>
+    
+    </head>
+    <body>
+
+        <div>
+            <h2 id="A">A</h2>
+            <h2 id="B">B</h2>
+            <h2 id="C">C</h2>
+            <h2 id="D">D</h2>
+            <h2 id="E">E</h2>
+            <h2 id="F">F</h2>
+            <h2 id="G">G</h2>
+            <h2 id="H">H</h2>
+            <h2 id="I">I</h2>
+            <h2 id="J">J</h2>
+            <h2 id="L">L</h2>
+            <h2 id="M">M</h2>
+            <h2 id="N">N</h2>
+            <h2 id="Ñ">Ñ</h2>
+            <h2 id="O">O</h2>
+            <h2 id="P">P</h2>
+            <h2 id="Q">Q</h2>
+            <h2 id="R">R</h2>
+            <h2 id="S">S</h2>
+            <h2 id="T">T</h2>
+            <h2 id="U">U</h2>
+            <h2 id="V">V</h2>
+            <h2 id="X">X</h2>
+            <h2 id="Y">Y</h2>
+            <h2 id="Z">Z</h2>
+            <h1 id="timerOff"></h1>
+            <h1 id="timer"></h1>
+        </div>
+        <div class="presentacion">
+
+            <div class="initial-message" id="initial-message">
+                <h1>BIENVENIDOS AL JUEGO DE PASAPALABRA DE SKYLAB CODERS ACADEMY</h1>
+                <p>Basado en el exitoso concurso de televisión Pasapalabra de Telecinco, las normas son muy sencillas:<br><br>
+                    Se mostraran unas definiciones por pantalla y el usuario deberá responder con la palabra correspondiente. El usuario tiene la opción de escribir "pasapalabra" y dejar esa definicion para mas adelante.<br><br>
+                    El programa es sensible a la acentuación, así que se debe introducir la palabra sin tilde. És posible utilizar la tecla ENTER para enviar la palabra, SPACE para hacer pasapalabra y ESC para abandonar la partida.
+                </p>
+                <button id="askNameButton" onclick="askUserName()">Empezar a jugar.</button><br><br>
+            </div>
+
+            <div id="userNameInput">
+                <label id="userNameLabel" for="userName" value="">Bienvenido/a! Introduzca un nombre de usuario para poder jugar.</label><br><br>
+                <input type="text" id="userName" name="userName"><br><br>
+                
+                <button onclick="checkUserName()">Aceptar</button>
+            </div>
+        
+            <div id="start">
+                <h3 id="bienvenido"></h3>
+                <button onclick="startPlay(letra)">START</button>
+            </div>
+
+            <div id="game">
+                <h3 id="question"></h3>
+                <input value="" type="text" id="answer">
+                <button onclick="validar(letra)">ACEPTAR</button>
+                <button onclick="salirJuego()">SALIR</button>
+            </div>
+
+            <div id="play-again">
+                <h3>Enhorabuena! Has finalizado el juego!</h3>
+                <p id="final-result-message"></p>
+                <button  onclick="playAgain()">VOLVER A JUGAR</button>
+                <button id="visible-ranking"onclick="ranking()">VER RANKING</button>
+            </div>
+
+            <div id="div-ranking">
+            </div>
+        </div>        
+    </body>
+</html>
