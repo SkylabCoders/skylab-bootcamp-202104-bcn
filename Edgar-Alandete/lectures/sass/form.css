@@ -26,19 +26,21 @@ body {
   border: solid 1px #333;
   padding: 20px;
   margin: 20px;
+  color: #010101;
 }
 
 .sidebar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border: solid 1px #333;
   padding: 20px;
   margin: 20px;
+  color: #010101;
 }
 
 .form {
@@ -52,5 +54,6 @@ body {
   border: solid 1px #333;
   padding: 20px;
   margin: 20px;
+  color: #010101;
 }
 /*# sourceMappingURL=form.css.map */

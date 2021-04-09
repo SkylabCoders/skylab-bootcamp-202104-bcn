@@ -1,3 +1,4 @@
+@import "./colors";
 *,
 *::after,
 *::before {
@@ -6,20 +7,16 @@
   box-sizing: border-box;
 }
 
-$gris-claro: #ccc;
-$gris-medio: #555;
-$gris-oscuro: #333;
-
-$naranja: #f90;
-
 $padding: 20px;
 $margin: 20px;
 
-$text-color: $gris-oscuro;
-$border-color: $gris-oscuro;
-$background-color: $gris-claro;
-
-@mixin common-tags {
+@mixin common-tags($direction) {
+  display: flex;
+  flex-direction: $direction;
+  border: solid 1px $border-color;
+  padding: $padding;
+  margin: $margin;
+  color: $negro;
 }
 
 body {
@@ -31,25 +28,13 @@ body {
 }
 
 .main {
-  display: flex;
-  flex-direction: row;
-  border: solid 1px #333;
-  padding: 20px;
-  margin: 20px;
+  @include common-tags(row);
 }
 
 .sidebar {
-  display: flex;
-  flex-direction: row;
-  border: solid 1px #333;
-  padding: 20px;
-  margin: 20px;
+  @include common-tags(column);
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  border: solid 1px #333;
-  padding: 20px;
-  margin: 20px;
+  @include common-tags(column);
 }
