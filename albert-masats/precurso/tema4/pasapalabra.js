@@ -55,9 +55,9 @@ const QUESTIONS = [
     { letter: "z", answer: "zen", answer2: "zumbido", status: 0, question: "CON LA Z. Escuela de budismo que busca la experiencia de la sabiduría más allá del discurso racional", question2: "CON LA Z. Sonido que producen algunos insectos como la abeja o el mosquito"}, 
 ];
 
+const RANKING_ARRAY = [];
 let questionTrue = 0;
 let questionFalse = 0;
-const RANKING_ARRAY = [];
 let yourName = null;
 
 function initializePasapalabra () {
