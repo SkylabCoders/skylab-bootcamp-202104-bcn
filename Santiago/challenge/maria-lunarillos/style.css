@@ -51,13 +51,23 @@ body {
     margin: 15px 7px 10px;
 }
 
-.login .icon {
+.login:hover{
+    color: #FF5959;
+}
+
+.icon {
     display: flex;
     background: url("./images/sprite.svg") 0 0 no-repeat;
     width: 27px;
     height: 27px;
     margin: -3px;
     padding-right: 10px;
+}
+
+.icon:hover,
+.icon-container:hover {
+    filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
+        brightness(97%) contrast(95%);
 }
 
 .social-media {
@@ -98,6 +108,10 @@ body {
 .social-media .youtube {
     background: url(https://img.icons8.com/material/24/000000/youtube--v1.png);
 
+}
+
+.social-media div:hover{
+    color: #FF5959;
 }
 
 .checkout {
