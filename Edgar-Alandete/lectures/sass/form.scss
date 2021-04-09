@@ -1,4 +1,5 @@
 @import "./colors";
+@import "./values";
 @import "./mixins";
 *,
 *::after,
@@ -7,9 +8,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-$padding: 20px;
-$margin: 20px;
 
 body {
   background: #eaeeea;
