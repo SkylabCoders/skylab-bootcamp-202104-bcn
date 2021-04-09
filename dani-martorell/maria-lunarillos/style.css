@@ -61,11 +61,17 @@ ul.main-icons li.mu {
 }
 
 div.login {
-    margin-left: auto;
+    /* margin-left: auto; */
+    display: flex;
+    align-items: center;
+    height: 50px;
 }
 
-div.login a {
+.login a {
     font-size: 13px;
+    display: flex;
+    align-items: center;
+
 }
 div.login a:hover {
     color: #ff5959;
