@@ -43,6 +43,7 @@ main {
   border: borders(solid, 2px, #333);
   padding: 20px;
   margin: 20px;
+  border: solid 2px #ff2200;
 }
 
 .sidebar {
@@ -56,9 +57,19 @@ main {
   border: borders(solid, 2px, #ff2200);
   padding: 20px;
   margin: 20px;
+  border: solid 2px #333;
 }
 
 .sidebar-title {
+  color: #ff2200;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.sidebar-title:hover {
+  font-size: 50px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   color: #ff2200;
 }
 /*# sourceMappingURL=form.css.map */

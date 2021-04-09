@@ -28,12 +28,20 @@ main {
 
 .form {
     @include common-tags(column);
+    @include borders($type, $width, $bcolor: $border-highlight);
 }
 
 .sidebar {
     @include common-tags(column, $border-highlight);
+    @include borders($type, $width, $bcolor: $border-color);
 
     &-title {
         color: $text-important;
+        transition: 0.2s;
+        &:hover{
+            font-size: 50px;
+            transition: 0.2s;
+            color: $naranrojo;
+        }
     }
 }
