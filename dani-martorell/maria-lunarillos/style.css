@@ -28,7 +28,6 @@ nav a {
     width: 100%;
     margin: 0 auto;
     align-items: center; 
-    /* border: 2px solid red; */
 }
 
 ul.main-icons {
@@ -42,6 +41,10 @@ ul.main-icons li {
     margin-right: 4px;
     width: 70px;
     height: 70px;
+}
+
+ul.main-icons li:hover {
+    height: 140px;
 }
 ul.main-icons li.ma {
     width: 80px;
@@ -71,7 +74,9 @@ div.login .icon {
 
 ul.social-icons{
     display:flex;
-    list-style: none;;
+    list-style: none;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 ul.social-icons a {
@@ -90,6 +95,23 @@ div.shopping-cart-group img{
     width: 35px;
     height: 35px;
 }
+
+div.shopping-cart-group {
+    display: flex;
+    align-self: stretch;
+}
+div.cart-element {
+    background-color: white;
+}
+div.cart-element.qty {
+    background-color: #ff5959;
+}
+div.cart-element span {
+    padding: 15px;
+    color: white;
+}
+
+
 main {
     padding: 50px 0px;
     height: 2000px;
