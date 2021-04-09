@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 1vh;
+}
+
+button {
+    color: white;
+    background-color: rgb(57, 57, 158);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+}
+
+#respuesta {
+    padding: 5px;
+    padding-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.stop-button {
+    background-color: red;
+}
+
+#input-container {
+    /*  margin-top: 50px; */
+    text-align: center;
+}
+
+#divPregunta {
+    color: white;
+    font-size: 40px;
+    background-color: rgb(57, 57, 158);
+    text-align: center;
+    padding: 50px;
+}
+
+#circle-answer-container {
+    justify-content: center;
+    display: flex;
+}
+
+.circle-answer {
+    background-color: orange;
+    padding: 12px;
+    margin: 2px;
+    border-radius: 30px;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.timer {
+    margin-bottom: 50px;
+    margin-left: 25px;
+}
+
+#rank {
+    margin-top: 30px;
+}
