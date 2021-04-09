@@ -162,11 +162,38 @@ body {
     padding-top: 108px;
 }
 
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 162px;
+    margin-top: 55px;
+}
+
+.search-container div:nth-child(1),
+.search-container div:nth-child(2){
+    height: 26px;
+    width: 130px;
+    text-align: center;
+    color: white;
+    padding-right: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+}
+
+.search-container div:nth-child(1){
+    background: #9faa4d;
+}
+.search-container div:nth-child(2){
+    background: #8e789d;
+}
+
 .img-section {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-left: 166px;
+    margin-left: -279px;
 }
 
 .img-section div:hover {
