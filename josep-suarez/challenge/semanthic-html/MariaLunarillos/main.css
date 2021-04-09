@@ -61,6 +61,16 @@ ul {
   height: 30px;
   width: 30px;
 }
+.login:hover,
+.text:hover,
+.social1:hover,
+.social2:hover,
+.social3:hover,
+.social4:hover,
+.social5:hover {
+  filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
+    brightness(97%) contrast(95%);
+}
 .firstIMG {
   background: #ff5959;
   position: fixed;
@@ -160,6 +170,9 @@ ul {
   margin-bottom: 10px;
   padding: 8px;
 }
+button {
+  border: none;
+}
 .star,
 .circle {
   justify-self: flex-start;
@@ -169,12 +182,19 @@ ul {
   width: 200px;
   height: 25px;
   margin-right: 5px;
+  font-family: "Source Sans Pro", sans-serif;
 }
-.lupa,
 .lupa2 {
+  background-color: #f8f8f8;
+  border: 1px solid black;
   height: 25px;
-  width: 50px;
-  margin-right: 90px;
+  width: 25px;
+}
+.lupa {
+  background-color: #f8f8f8;
+  border: none;
+  height: 15px;
+  width: 15px;
 }
 .person-search {
   display: flex;
