@@ -13,8 +13,41 @@ body {
     background: #F8F8F8;
 }
 
-.social-media {
-    display: flex;
+.first-block {
+    position: fixed;
+    top: 0;
+    width: 80px;
+    height: 140px;
+    left: 135px;
+    background: url(./images/maria-lunarillos.png) #FF5959 bottom center no-repeat;
+}
+
+.second-block,
+.third-block {
+    position: fixed;
+    top: 0;
+    width: 70px;
+    height: 70px;
+}
+
+.second-block {
+    left: 219px;
+    background: url(./images/cucute.png) #6199AF bottom center no-repeat;
+}
+
+.third-block {
+    left: 293px;
+    background: url(./images/mumuchu.png) #F6B436 bottom center no-repeat;
+}
+
+.second-block:hover,
+.third-block:hover {
+    width: 70px;
+    height: 140px;
+}
+
+.login{
+    margin-left: 10px;
 }
 
 .login .icon {
@@ -23,6 +56,10 @@ body {
     width: 27px;
     height: 27px;
     margin: 10px;
+}
+
+.social-media {
+    display: flex;
 }
 
 .social-media .facebook,
@@ -60,38 +97,28 @@ body {
 
 }
 
-
-.first-block {
-    position: fixed;
-    top: 0;
-    width: 80px;
-    height: 140px;
-    left: 135px;
-    background: url(./images/maria-lunarillos.png) #FF5959 bottom center no-repeat;
+.checkout {
+    display: flex;
 }
 
-.second-block,
-.third-block {
-    position: fixed;
-    top: 0;
-    width: 70px;
-    height: 70px;
+.carrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 50px;
+    display: block;
+    text-indent: -3000px;
+    background: url(https://img.icons8.com/material/48/000000/checkout--v1.png) white;
 }
 
-.second-block {
-    left: 219px;
-    background: url(./images/cucute.png) #6199AF bottom center no-repeat;
-}
-
-.third-block {
-    left: 293px;
-    background: url(./images/mumuchu.png) #F6B436 bottom center no-repeat;
-}
-
-.second-block:hover,
-.third-block:hover {
-    width: 70px;
-    height: 140px;
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 50px;
+    background-color: #FF5959;
 }
 
 .header-info {
