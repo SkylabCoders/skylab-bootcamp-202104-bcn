@@ -125,13 +125,20 @@ main {
     height: 2000px;
     background-color: grey;
 }
-
-.main-container {
-    max-width: 1080px;
-    margin: 0 auto;    
-}
 header {
-    display: flex;
     height: 260px;
     background-color: #FFFFFF;
 }
+.content-container {
+    max-width: 1080px;
+    display: flex;
+    align-items: flex-end;
+    margin: 0 auto; 
+    height: 260px;
+}
+header .logo img{
+    margin-bottom: 65px;
+}
+
+
+
