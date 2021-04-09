@@ -89,10 +89,12 @@ ul {
   background: url(./image/mumuchu.png) #f6b436 bottom center no-repeat;
 }
 .secondIMG:hover {
-  height: 100px;
+  width: 70px;
+  height: 140px;
 }
 .thirdIMG:hover {
-  height: 100px;
+  width: 70px;
+  height: 140px;
 }
 .header-webpage {
   display: flex;
