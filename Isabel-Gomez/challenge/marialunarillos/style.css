@@ -27,13 +27,13 @@ li {
     display: flex;
     justify-content: space-between;
     height: 50px; 
-    max-width: 1400px;
+    max-width: 1080px;
     margin: auto;
     align-items: center;
 }
 
 .fas, .fab, .far {
-    font-size: 30px;
+    font-size: 20px;
     color: black;
     cursor: pointer;
 }
@@ -47,6 +47,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position:absolute
 }
 
 
@@ -97,7 +98,7 @@ li {
     text-decoration: none;
     font-weight: 400;
     color: #2E2925;
-    font-size: 13px;
+    font-size: 10px;
 }
 
 .fa-user-plus {
@@ -108,7 +109,7 @@ margin-right:  11px;
     width: 50px;
     height: 50px;
     background: white;
-    padding: 8px 0;
+    padding: 13px 0;
     text-align: center;
 }
 
@@ -130,14 +131,18 @@ margin-right:  11px;
 .second-header {
     margin-top: 100px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     height: 200px;
+}
+
+.logo-marialunarillo {
+ margin-left: 172px;
 }
 
 .section-right {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .container-search {
