@@ -16,10 +16,10 @@ $padding: 20px;
 $margin: 20px;
 
 //declaro un mixin donde no tendre que repetir codigo en los selectores en que se me repita esto
-@mixin common-tags($direction) {
+@mixin common-tags($direction, $specific-border-color) {
   display: flex;
   flex-direction: $direction;
-  border: solid 1px $border-color;
+  border: solid 1px $specific-border-color;
   padding: $padding;
   margin: $margin;
 }
@@ -33,15 +33,15 @@ body {
 }
 //apunto a un selector y le incluyo las variables comunes que tengo declaradas en el @mixin
 .main {
-  @include common-tags(row);
+  @include common-tags(row, $border-color);
 }
 .sidebar {
-  @include common-tags(column);
+  @include common-tags(column, $border-color);
   &-title {
     //apunto al hijo title de eso componente
     color: $text-important;
   }
 }
 .form {
-  @include common-tags(column);
+  @include common-tags(column, $generic-border-color);
 }
