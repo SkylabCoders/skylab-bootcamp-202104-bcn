@@ -28,16 +28,6 @@ button {
 	outline: none;
 }
 
-.bg-color-ma {
-	background: var(--color-ma);
-}
-.bg-color-main {
-	background: var(--bg-color-main);
-}
-.secondary-color {
-	color: var(--secondary-color);
-}
-
 body {
 	background: var(--bg-color-main);
 	display: flex;
@@ -48,6 +38,16 @@ body {
 
 main {
 	height: 1000px;
+}
+
+.bg-color-ma {
+	background: var(--color-ma);
+}
+.bg-color-main {
+	background: var(--bg-color-main);
+}
+.secondary-color {
+	color: var(--secondary-color);
 }
 
 .header {
@@ -71,49 +71,6 @@ main {
 	margin: auto;
 	width: 100%;
 	max-width: 1080px;
-}
-
-.header-secondary-nav {
-	border: 1px solid blue;
-	/* margin-top: 100px;
-	margin-bottom: 30px; */
-	margin: 100px auto;
-	height: 30px;
-	display: flex;
-	width: 100%;
-	max-width: 1080px;
-}
-
-.header-secondary-nav ul {
-	display: flex;
-	width: 100%;
-	justify-content: flex-end;
-}
-
-.header-secondary-nav .button {
-	width: 136px;
-	height: 100%;
-	margin-right: 8px;
-	text-transform: uppercase;
-	line-height: 30px;
-	background: red;
-	display: flex;
-}
-
-.header-secondary-nav .button .icon {
-	height: 100%;
-}
-
-.header-secondary-nav a {
-	display: inline-block;
-	margin-left: 4px;
-	font-size: 15px;
-	font-weight: 800;
-	color: var(--secondary-color);
-}
-
-.header-secondary-nav .search-bar {
-	width: 300px;
 }
 
 .logo {
@@ -248,4 +205,68 @@ main {
 	font-size: 20px;
 	color: var(--secondary-color);
 	background: var(--color-ma);
+}
+
+.header-secondary-nav {
+	margin: 100px auto;
+	height: 30px;
+	display: flex;
+	width: 100%;
+	max-width: 1080px;
+}
+
+.header-secondary-nav ul {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+}
+
+.header-secondary-nav .button {
+	width: 136px;
+	height: 100%;
+	margin-right: 8px;
+	text-transform: uppercase;
+	line-height: 30px;
+
+	display: flex;
+}
+
+.header-secondary-nav .button .icon {
+	height: 100%;
+}
+
+.header-secondary-nav a {
+	display: inline-block;
+	margin-left: 4px;
+	font-size: 15px;
+	font-weight: 800;
+	color: var(--secondary-color);
+}
+
+.header-secondary-nav .search-bar {
+	width: 300px;
+}
+
+.header-secondary-nav .button.btn-novedades {
+	background: #9faa4d;
+}
+
+.header-secondary-nav .button.btn-ofertas {
+	background: #8e789d;
+}
+
+.header-secondary-nav .search-bar {
+	background: #8e789d;
+}
+
+.header-secondary-nav .search-bar input {
+	width: 248px;
+	height: 30px;
+	text-transform: uppercase;
+	color: rgba(226, 225, 224, 0.486);
+	font-size: 11px;
+	letter-spacing: 1px;
+	padding-left: 3px;
+	font-weight: 200;
+	border: 1px solid rgb(187, 184, 182, 0.9);
 }
