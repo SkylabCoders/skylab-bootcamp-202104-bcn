@@ -1,0 +1,8 @@
+//declaro un mixin donde no tendre que repetir codigo en los selectores en que se me repita esto
+@mixin common-tags($direction, $specific-border-color) {
+  display: flex;
+  flex-direction: $direction;
+  border: solid 1px $specific-border-color;
+  padding: $padding;
+  margin: $margin;
+}
