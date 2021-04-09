@@ -120,10 +120,18 @@ div.cart-element:hover {
     background-color: #ff5959;
 
 }
-
-
 main {
     padding: 50px 0px;
     height: 2000px;
+    background-color: grey;
+}
+
+.main-container {
+    max-width: 1080px;
+    margin: 0 auto;    
+}
+header {
+    display: flex;
+    height: 260px;
     background-color: #FFFFFF;
 }
