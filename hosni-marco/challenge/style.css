@@ -22,11 +22,13 @@ h1 {
     font-size: 50px;
     font-weight: bold;
 }
+
 h2, h3, h4 {
     font-size: 30px;
     font-weight: bold;
     padding-top: 5px;
 }
+
 h2 {
     padding-top: 20px;
 }
@@ -35,23 +37,28 @@ h2 {
     color: white;
     margin-right: 100px;
 }
+
 .principal-content {
     display: flex;
     flex-direction: row;
 }
+
 .image-presentation {
     max-width: 450px;
     max-height: 350px;
     margin: 50px;
 }
+
 .personal-data-content {
     display: flex;
     flex-direction: column;
     margin-left: 50px; 
 }
+
 .poersonal-data-list {
     margin-top: 10px;
 }
+
 .secundary-content {
  display: flex;   
  justify-content: space-around;
