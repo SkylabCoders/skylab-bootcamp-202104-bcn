@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pasapalabraFinal.css">
+    <script src="pasapalabraFinal.js"></script>
+    <title>test resposta</title>
+</head>
+
+<body>
+
+    <div id="first-screen" class="visible">
+        <h1>Pasapalabra</h1>
+        <input type="text" id="name-input" placeholder="Nombre jugador">
+        <button onclick="start()">start</button>
+
+        <div id='rank'></div>
+    </div>
+
+
+    <div id="second-screen" class="invisible">
+
+        <header class="timer" id="timer"></header>
+
+        <div id="circle-answer-container">
+            <div id="circle-answer-a" class="circle-answer">A</div>
+            <div id="circle-answer-b" class="circle-answer">B</div>
+            <div id="circle-answer-c" class="circle-answer">C</div>
+            <div id="circle-answer-d" class="circle-answer">D</div>
+            <div id="circle-answer-e" class="circle-answer">E</div>
+            <div id="circle-answer-f" class="circle-answer">F</div>
+            <div id="circle-answer-g" class="circle-answer">G</div>
+            <div id="circle-answer-h" class="circle-answer">H</div>
+            <div id="circle-answer-i" class="circle-answer">I</div>
+            <div id="circle-answer-j" class="circle-answer">J</div>
+            <div id="circle-answer-k" class="circle-answer">K</div>
+            <div id="circle-answer-l" class="circle-answer">L</div>
+            <div id="circle-answer-m" class="circle-answer">M</div>
+            <div id="circle-answer-n" class="circle-answer">N</div>
+            <div id="circle-answer-ñ" class="circle-answer">Ñ</div>
+            <div id="circle-answer-o" class="circle-answer">O</div>
+            <div id="circle-answer-p" class="circle-answer">P</div>
+            <div id="circle-answer-q" class="circle-answer">Q</div>
+            <div id="circle-answer-r" class="circle-answer">R</div>
+            <div id="circle-answer-s" class="circle-answer">S</div>
+            <div id="circle-answer-t" class="circle-answer">T</div>
+            <div id="circle-answer-u" class="circle-answer">U</div>
+            <div id="circle-answer-v" class="circle-answer">V</div>
+            <div id="circle-answer-w" class="circle-answer">W</div>
+            <div id="circle-answer-x" class="circle-answer">X</div>
+            <div id="circle-answer-y" class="circle-answer">Y</div>
+            <div id="circle-answer-z" class="circle-answer">Z</div>
+        </div>
+
+        <div id="divPregunta"></div>
+
+        <div id="input-container">
+
+
+            <input type="text" id="respuesta" placeholder="respuesta">
+            <button id="enter" onclick="onClickOk()">ok</button>
+            <button onclick="onClickPasapalabra()">pasapalabra</button>
+            <button onclick="onClickStop()" class="stop-button">stop</button>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
