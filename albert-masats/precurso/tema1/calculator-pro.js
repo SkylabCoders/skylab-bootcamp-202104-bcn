@@ -1,9 +1,9 @@
 function calculatorPro() { 
+    const outputResults = [];
     let numberList = [];
     let newNumber = null;
     let acc = 0;
-    const outputResults = [];
-
+    
     do{
         newNumber = prompt('Please enter number or press cancel to stop');
         numberList.push(Number(newNumber));    //Convierto los strings a valores numericos al mismo tiempo que los pusheo a numberList.
