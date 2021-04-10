@@ -1,0 +1,133 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+body {
+    font: 12px/1.55 'Source Sans Pro', sans-serif;
+    color: #67635F;
+}
+.header-top-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(230, 230, 230);
+    margin-top: -10px;
+    height:70px;
+}
+
+.links-others{
+    display: flex;
+}
+
+.ma{
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/maria-lunarillos.png) #FF5959 bottom center no-repeat;
+    color: white;
+    padding: 20px;
+    list-style-type: none;
+    height:100px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.cu{
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/cucute.png) #6199AF bottom center no-repeat;
+    color: white;
+    padding: 20px;
+    list-style-type: none;
+    height:100px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.mu{
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/mumuchu.png) #F6B436 bottom center no-repeat;
+    color: white;
+    padding: 20px;
+    list-style-type: none;
+    height:100px;
+    width: 80px;
+    cursor: pointer;
+}
+.ma:hover, .cu:hover, .mu:hover{
+    padding-top: 120px;
+}
+
+.registrate{
+    border: solid #FF5959;
+    background-color: white;
+    padding: 20px;
+    height:60px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.social-media{
+    border: solid #6199AF;
+    background-color: white;
+    padding: 20px;
+    height:60px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.carrito{
+    border: solid #F6B436;
+    background-color: white;
+    padding: 20px;
+    height:60px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.registrate:hover, .social-media:hover, .carrito:hover{
+    background-color: #FF5959;
+}
+
+.image{
+    margin-top: 60px;
+}
+.quick-links{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttons{
+    padding: 10px 20px;
+    border:solid 3px #9faa4d;
+    width: 100px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.main-header-section{
+    display: flex;
+    justify-content: space-around;
+    margin:10px;
+}
+
+.icons-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-nav-icons{
+    padding: 20px;
+    border:solid 3px #ffffff;
+    background-color: #ccc;
+}
+
+.page-nav-icons:hover{
+    background-color: #FF5959;
+}
+
+
+#search{
+    flex-grow: 2;
+}
