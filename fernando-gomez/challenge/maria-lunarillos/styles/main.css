@@ -97,6 +97,7 @@ figcaption {
 
 .specific-search {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .specific-search-img {

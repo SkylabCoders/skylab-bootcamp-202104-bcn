@@ -112,9 +112,9 @@
         <div class='flex-form'>
             <form class='fly-form' action="">
                             
-            <h3 class='fly-form-title'>
-                <p>Reservar un vuelo</p>
-            </h3>
+            <div class='fly-form-title'>
+                <p><i class="fas fa-fighter-jet"></i> Reservar un vuelo</p>
+            </div>
 
             <div class='fly-form-drop-downs'>
 
@@ -127,15 +127,15 @@
                     </select>
                 </div>
                 
-                <select class='outbound' name="outbound">
-                    <option value="null">Outbound</option>
+                <select class='outbound travel-drop-down' name="outbound">
+                    <option selected disabled>Outbound</option>
                     <option value="PMI">Palma de Mallorca</option>
                     <option value="BCN">Barcelona</option>
                     <option value="MAD">Madrid</option>
                 </select>
 
-                <select class='arrival' name="arrival" aria-placeholder="arrival">
-                    <option value="null">Arrival</option>
+                <select class='arrival travel-drop-down' name="arrival">
+                    <option style="background-image:url(./../form-images/plane-arrival-solid.svg);" disabled selected> Arrival</option>
                     <option value="PMI">Palma de Mallorca</option>
                     <option value="BCN">Barcelona</option>
                     <option value="MAD">Madrid</option>
@@ -149,12 +149,12 @@
 
                 <div class='passengers-number'>
                     <label for="travel">Pasajeros</label>
-                    <input type="text" placeholder="1 Pasajero">
+                    <input class='passengers-number-input' type="text" placeholder="1 Pasajero">
                 </div>
 
                 <div class='fly-class-drop-down'>
                     <label for="class">Clase</label>
-                    <select class='class' name="class">
+                    <select class='fly-class' name="class">
                         <option value="economy">Economy</option>
                         <option value="premium-economy">Premium economy</option>
                         <option value="business">Business</option>

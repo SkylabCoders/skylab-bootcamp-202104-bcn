@@ -6,6 +6,30 @@
     }
 }
 
+@mixin fly-form-inputs {
+    height: 20px;
+    width: 180px;
+    margin-right: 20px;   
+}
+
+input {
+    outline: 0 none;
+    
+    &:focus {
+        color: hotpink;
+        outline-color: hotpink;
+    }
+}
+
+.travel,
+.arrival,
+.outbound,
+.fly-date,
+.fly-class,
+.passengers-number-input {
+    @include fly-form-inputs();
+}
+
 .cuisine-section {
     display: flex;
     max-height: 67vmin;
@@ -46,8 +70,8 @@
     display: flex;
     flex-direction: column;
     flex: 3;
-    margin: 15vmin;
-    padding: 0 10vmin 10vmin 10vmin;
+    margin: 10vmin;
+    padding: 0 10vmin 5vmin 10vmin;
     border: 2px solid black;
 }
 
@@ -58,6 +82,9 @@
 .fly-form-drop-downs {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-right: 200px;
 }
 
 .travel-drop-down {
@@ -65,17 +92,29 @@
     flex-direction: column;
 }
 
-.travel {}
-.outbound {}
-.arrival {}
-
+.travel {
+    height: fit-content;
+    
+}
+.outbound {
+    max-height: fit-content;
+    height: fit-content;
+}
+.arrival {
+    height: fit-content;
+}
 
 .fly-specifications {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-right: 200px;
 }
 
-.fly-date {}
+.fly-date {
+    height: fit-content;
+}
 
 .passengers-number {
     display: flex;
@@ -92,10 +131,13 @@
 }
 
 .professional-travel {
+    width: 30px;
+    height: 7vmin;
 }
 
 .fly-button {
-
+    display: flex;
+    justify-content: flex-end;
 }
 .search-fly-button {
 

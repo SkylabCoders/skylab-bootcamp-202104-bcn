@@ -4,6 +4,26 @@
   color: #ec655f;
 }
 
+input {
+  outline: 0 none;
+}
+
+input:focus {
+  color: hotpink;
+  outline-color: hotpink;
+}
+
+.travel,
+.arrival,
+.outbound,
+.fly-date,
+.fly-class,
+.passengers-number-input {
+  height: 20px;
+  width: 180px;
+  margin-right: 20px;
+}
+
 .cuisine-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,8 +65,8 @@
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
-  margin: 15vmin;
-  padding: 0 10vmin 10vmin 10vmin;
+  margin: 10vmin;
+  padding: 0 10vmin 5vmin 10vmin;
   border: 2px solid black;
 }
 
@@ -62,6 +82,13 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 200px;
 }
 
 .travel-drop-down {
@@ -74,12 +101,46 @@
           flex-direction: column;
 }
 
+.travel {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.outbound {
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.arrival {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .fly-specifications {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 200px;
+}
+
+.fly-date {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .passengers-number {
@@ -106,5 +167,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.professional-travel {
+  width: 30px;
+  height: 7vmin;
+}
+
+.fly-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 /*# sourceMappingURL=form.css.map */
