@@ -57,6 +57,7 @@ main {
 	top: 0;
 	margin: auto;
 	background: $bg-secondary-color;
+	z-index: 1;
 }
 
 .header-fix-menu {
@@ -327,4 +328,46 @@ main {
 	padding-top: 5px;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+// MAIN
+
+.main {
+	@include flex-config(column, null, center);
+	padding-top: 60px;
+}
+
+.banner-container {
+	@include flex-config(null, center);
+	max-width: 1080px;
+}
+
+.banner {
+	@include flex-config(column);
+	position: relative;
+}
+
+.banner.vertical {
+	flex-grow: 1;
+	max-width: 360px;
+	margin-top: 14px;
+	margin-left: 14px;
+	margin-right: 14px;
+}
+
+.banner.horizontal {
+	flex-grow: 2;
+	max-width: 720px;
+	margin-top: 14px;
+}
+
+.banner img {
+	width: 100%;
+}
+
+.banner-text {
+	@include size-config(100%, 100px);
+	position: absolute;
+	bottom: 0;
+	background: rgba(255, 255, 255, 0.507);
 }
