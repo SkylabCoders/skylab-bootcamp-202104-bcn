@@ -18,7 +18,7 @@
 .navbar-items {
     display: flex;
     padding: 0 15px;
-    font-family: NotoSans-Bold,Arial,sans-serif;
+    font-family: NotoSans-Bold, Arial, sans-serif;
 }
 
 .rakuten-logo {
@@ -60,13 +60,19 @@
     text-align: left;
 }
 
-.search__box__input {
+.search-box-input {
     padding: 10px 10px 10px 5px;
     background-color: red;
     font-size: 17px;
     background-color: #333;
     border: none;
-    /* font-weight: 600; */
+}
+
+.search-box-input:focus {
+    background-color: #fff;
+    border: none;
+    width: 231px;
+    height: 38px;
 }
 
 .navbar-items-search::before {
