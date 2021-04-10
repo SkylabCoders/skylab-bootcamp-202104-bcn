@@ -108,3 +108,15 @@ body {
   background-position: center center;
   width: 100%;
 }
+.recomendaciones {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+}
+.recomendaciones img {
+  margin-left: 8px;
+  width: 290px;
+}
+.recomendaciones img:hover {
+  border: 3px solid yellow;
+}
