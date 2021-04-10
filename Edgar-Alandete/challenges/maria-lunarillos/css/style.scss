@@ -18,7 +18,6 @@ ul {
 .navigator-container {
   display: flex;
   background-color: $color-ma-secondary;
-  width: 100%;
   min-height: 50px;
 }
 
@@ -52,7 +51,7 @@ ul {
 
 .cu:hover,
 .mu:hover {
-  height: 140px;
+  @include size-configuration(null, 140px);
   transition: 0.3s;
 }
 .social-networks {
@@ -92,7 +91,7 @@ ul {
 }
 
 .search-products {
-  @include flex-configuration(column, null, null);
+  @include flex-configuration(column);
   flex-grow: 1;
   max-width: 540px;
   margin-right: 130px;
@@ -104,18 +103,15 @@ ul {
 
 .product-category {
   @include flex-configuration(null, center, center);
+  @include size-configuration(100px, 100px);
   background-color: $color-ma-secondary;
-  width: 100px;
-  height: 100px;
   margin-top: 40px;
   margin-right: 5px;
 }
 
 .product-category-name {
   @include flex-configuration(null, center, center);
-  background-color: white;
-  width: 100px;
-  height: 20px;
+  @include size-configuration(100px, 20px);
   margin-top: 5px;
   margin-right: 5px;
 }
@@ -126,7 +122,7 @@ ul {
 }
 
 .temporary-products {
-  height: 30px;
+  @include size-configuration(null, 30px);
   margin-right: 8px;
   background-color: $color-ma;
   font-weight: bold;
@@ -147,8 +143,7 @@ ul {
 }
 
 .product-category img {
-  width: 70px;
-  height: 70px;
+  @include size-configuration(70px, 70px);
 }
 .product-categories-name {
   display: flex;
