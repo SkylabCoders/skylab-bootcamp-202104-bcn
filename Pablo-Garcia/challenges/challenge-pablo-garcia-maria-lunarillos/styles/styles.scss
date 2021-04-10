@@ -1,0 +1,13 @@
+@import "_layouts";
+@import "_colors";
+@import "_fonts";
+
+*{
+margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  color:$primary;
+  font-family: $primary-font;
+}
