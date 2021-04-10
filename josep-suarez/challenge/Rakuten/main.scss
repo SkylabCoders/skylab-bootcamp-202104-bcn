@@ -1,6 +1,8 @@
 @mixin colors($colorfondo, $colorletra) {
   background-color: $colorfondo;
   color: $colorletra;
+  font-family: NotoSans-Bold, Arial, sans-serif;
+  font-size: 14px;
 }
 .navigation {
   display: flex;
