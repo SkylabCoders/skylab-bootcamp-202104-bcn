@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #212121;
 }
 
 .navbar {
@@ -131,7 +132,7 @@ a:link {
     opacity: 0.9;
 }
 
-.sliders img{
+.sliders img {
     position: absolute;
     width: 1349px;
     height: 538.25px;
@@ -150,7 +151,36 @@ a:link {
     padding: 10px 15px 25px;
 }
 
-.banners img:hover{
+.all-films {
+    display: flex;
+    flex-direction: column;
+    top: 598px;
+    background-color: #212121;
+    width: 1349px;
+    height: 200.77px;
+    z-index: 100;
+    position: relative;
+    padding: 10px 15px 25px;
+}
+
+.all-films-img-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.all-films img {
+    height: 279px;
+}
+
+.all-films h2 {
+    color:#fff;
+    margin-left: 17px;
+    margin-bottom: 15px;
+}
+
+.banners img:hover,
+.all-films img:hover {
     border: 4px solid #ffe300;
     border-radius: 2px;
     cursor: pointer;
