@@ -355,13 +355,13 @@ main {
     height: 100%;
 }
 
-.left-photo {
+.photo1 {
     width: 365px;
     height: 100%;
     padding: 7.5px;
 }
 
-.right-top-photo, .right-bottom-photo  {
+.photo2, .photo3  {
     width: 730px;
     height: 50%;
     padding: 7.5px;
@@ -395,7 +395,7 @@ main {
     font-weight: 700;
 }
 
-.triangle {
+.triangle1, .triangle2 {
     position: relative;
     bottom: 140px;
     left: 230px;
@@ -405,12 +405,20 @@ main {
     border-bottom: 150px solid rgba(255,255,255,0.8)
 }
 
-.right-top {
+.triangle1 {
+    bottom: 140px;
+    left: 230px;
+}
+
+.triangle2 {
+    bottom: 157px;
+}
+
+.top, .bottom2 {
     bottom: 134px;
 }
 
-.right-bottom {
+.bottom {
     bottom: 158px;
-
 }
 
