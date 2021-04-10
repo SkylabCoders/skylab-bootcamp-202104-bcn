@@ -107,7 +107,8 @@
 
 .anuncio,
 .slider {
-  width: 100%;
+  width: 800x;
+  height: 700px;
   margin: auto;
   overflow: hidden;
 }
@@ -124,13 +125,23 @@
           animation-direction: alternate;
 }
 
+.slide1 {
+  background: url("https://images-1.wuaki.tv/system/images/8105/original/raya-y-el-ultimo-dragon-pvod-slider-1617179834-width1920-quality80.jpeg") no-repeat;
+}
+
+.slide2 {
+  background: url("https://images-2.wuaki.tv/system/images/8138/original/explota-explota-slider-1617315866-width1920-quality80.jpeg") no-repeat;
+}
+
+.slide3 {
+  background: url("https://images-3.wuaki.tv/system/images/7838/original/cafe-society-slider-1617264656-width1920-quality80.png") no-repeat;
+}
+
 .slider li {
   width: 100%;
   list-style: none;
-}
-
-.slider img {
-  width: 100%;
+  max-width: 100%;
+  width: auto;
 }
 
 @-webkit-keyframes cambio {
