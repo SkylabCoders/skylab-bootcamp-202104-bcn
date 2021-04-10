@@ -517,6 +517,22 @@ main {
   height: 150px;
   position: absolute;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.7);
+  margin-right: 87px;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.banner-text.triangle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  margin-left: 250px;
+  margin-right: 0;
+  background: none;
+  border-style: solid;
+  border-width: 150px 0 0 87px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.8);
 }
 /*# sourceMappingURL=style.css.map */
