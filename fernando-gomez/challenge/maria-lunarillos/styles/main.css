@@ -88,11 +88,11 @@ figcaption {
 .search-items {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
 }
 
 .general-search {
     display: flex;
+    justify-content: flex-end;
 }
 
 .specific-search {
@@ -145,11 +145,13 @@ input {
     align-items: flex-end;
     background-color: rgb(236, 101, 95);
     min-height: 140px;
+    max-width: 49vmin;
 }
 
 .cucute {
     background-color: rgb(111, 152, 173);
     height: 70px;
+    max-width: 49vmin;
 }
 
 .cucute:hover {
@@ -163,6 +165,7 @@ input {
 #mumuchu {
     background-color: rgb(236, 183, 81);
     height: 70px;
+    max-width: 49vmin;
 }
 
 #mumuchu:hover {

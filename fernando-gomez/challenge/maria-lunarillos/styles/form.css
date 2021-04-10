@@ -8,8 +8,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 300px;
-  width: 630px;
+  max-height: 67vmin;
+  max-width: 159vmin;
   background-image: url("./../images/utensiliosbasicos.jpeg");
   background-repeat: no-repeat;
 }
@@ -28,7 +28,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .fly-form {
@@ -39,6 +41,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  margin: 15vmin;
+  padding: 0 10vmin 10vmin 10vmin;
+  border: 2px solid black;
 }
 
 .fly-form-title {
@@ -51,6 +59,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .travel-drop-down {
@@ -67,6 +77,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .passengers-number {
@@ -93,20 +105,5 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.fly-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
 }
 /*# sourceMappingURL=form.css.map */

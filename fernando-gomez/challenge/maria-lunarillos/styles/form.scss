@@ -8,8 +8,8 @@
 
 .cuisine-section {
     display: flex;
-    height: 300px;
-    width:630px;
+    max-height: 67vmin;
+    max-width: 159vmin;
     background-image:url("./../images/utensiliosbasicos.jpeg");
     background-repeat: no-repeat;
 }
@@ -38,12 +38,16 @@
 
 .flex-form {
     display: flex;
-    width: 100%;
+    justify-content: center;
 }
 
 .fly-form {
     display: flex;
     flex-direction: column;
+    flex: 3;
+    margin: 15vmin;
+    padding: 0 10vmin 10vmin 10vmin;
+    border: 2px solid black;
 }
 
 .fly-form-title {
@@ -52,6 +56,7 @@
 
 .fly-form-drop-downs {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .travel-drop-down {
@@ -66,6 +71,7 @@
 
 .fly-specifications {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .fly-date {}
@@ -84,10 +90,12 @@
     display: flex;
 }
 
-.fly-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-content: flex-end;
+.professional-travel {
 }
-.search-fly-button {}
+
+.fly-button {
+
+}
+.search-fly-button {
+
+}
