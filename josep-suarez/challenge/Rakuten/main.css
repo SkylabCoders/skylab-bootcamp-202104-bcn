@@ -30,6 +30,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   list-style: none;
+  margin-top: 20px;
 }
 
 .logo {
@@ -68,6 +69,7 @@ body {
      -moz-appearance: none;
           appearance: none;
   width: 80px;
+  margin-top: 8px;
 }
 
 .register {
@@ -114,6 +116,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   list-style: none;
+  margin-top: 20px;
 }
 
 .register-button {
