@@ -19,6 +19,11 @@ body {
   color: white;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+}
+
 li {
   list-style: none;
   text-decoration: none;
@@ -37,6 +42,8 @@ a:active {
 
 .logo {
   order: 1;
+  width: 122px;
+  padding-top: 8px;
 }
 
 .nav-bar {
@@ -49,6 +56,7 @@ a:active {
   height: 60px;
   width: 100%;
   padding: 0 20px;
+  z-index: 100;
 }
 
 .nav-bar-menu {
@@ -188,29 +196,24 @@ main {
 
 .slider {
   margin-top: 60px;
+  margin-bottom: 0;
   width: auto;
-  height: 410.28px;
-  display: flex;
+  display: block;
   justify-content: center;
-}
-
-.slider-item {
-  position: absolute;
 }
 
 .button {
   opacity: 0;
   position: absolute;
-  z-index: 1000;
-  width: 40px;
-  height: 40px;
-  background-repeat: no-repeat;
+  z-index: 100;
+  width: 3%;
+  height: 8%;
   background: transparent;
   outline: none;
   text-decoration: none;
   border: none;
-  margin-top: 200px;
-  filter: invert(100%) drop-shadow(1px 1px #000);
+  margin-top: 15%;
+  filter: drop-shadow(1px 1px #000);
 }
 
 .slider:hover > .button {
@@ -220,20 +223,22 @@ main {
 
 .button.left {
   background-image: url("img/scrollarrowtoleft_83879.svg");
+  background-repeat: no-repeat;
   float: left;
-  left: 20px;
+  left: 1%;
 }
 
 .button.right {
   background-image: url("img/scrollarrowtoright_83712.svg");
+  background-repeat: no-repeat;
   float: right;
-  right: 20px;
+  right: 1%;
 }
 
 .banners {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 25px 0 0;
   padding: 0 15px 30px;
   white-space: nowrap;
@@ -241,34 +246,82 @@ main {
 
 .banners-item {
   margin-left: 0;
-}
-/*
-.slider .slider-item {
-  padding-top: 60px;
-  position: absolute;
-  animation;
-  animation-iteration-count: infinite;
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
 }
 
-@keyframes slider {
-  from {
-    margin-left: 0;
-  }
-  to {
-    margin-left: 100px;
-  }
+.section {
+  padding: 0 15px 30px;
 }
 
-
-.slider {
-  height: 575px;
-  width: auto;
-  padding-top: 60px;
+.scroll-garden {
+  display: flex;
+  flex-wrap: nowrap;
   overflow: auto;
   white-space: nowrap;
+  margin: 0;
+  padding: 0;
 }
 
-.slider-item {
-  display: inline-block;
+.list-item {
+  flex: 0 0 auto;
+  padding: 5px 5px;
+  width: 15%;
 }
-*/
+
+.section-title {
+  margin: 0 5px 10px;
+}
+
+.title {
+  font-size: 22px;
+  display: inline;
+  padding: 0;
+}
+
+.more {
+  display: inline;
+  float: right;
+  margin: 0 0 -2px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 6px;
+  width: 83px;
+}
+
+.arrow-right {
+  background-image: url("img/scrollarrowtoright_83712.svg");
+  background-repeat: no-repeat;
+  background-position: right 5px;
+  background-size: 10px;
+}
+
+.scroll-button {
+  z-index: 100;
+  width: 3%;
+  height: 40%;
+  background: transparent;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  filter: drop-shadow(1px 1px #000);
+  position: absolute;
+  margin-top: 3.5%;
+  cursor: pointer;
+}
+
+.scroll-button.right {
+  background-image: url("img/scrollarrowtoright_83712.svg");
+  background-repeat: no-repeat;
+  float: right;
+  background-size: 80%;
+  right: 2%;
+  background-position: center;
+}
+
+.scroll-button:hover .scroll-garden::after {
+  transform: translateX(-1000px);
+  transition: 2s;
+}
