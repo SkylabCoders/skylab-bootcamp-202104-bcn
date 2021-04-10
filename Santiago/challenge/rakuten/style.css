@@ -31,7 +31,7 @@ img.rakuten-logo {
     display: flex;
     color: #fff;
     list-style-type: none;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 .navbar-items-menu-text {
@@ -44,3 +44,28 @@ img.rakuten-logo {
 .navbar-items-menu-text:hover {
     color: #ffe300;
 }
+
+.navbar-items-search {
+    padding-left: 40px;
+    height: 40px;
+    width: 300px;
+    background-color: #333;
+    border-radius: 2px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.search__box__input {
+    padding: 10px 10px 10px 5px;
+    background-color: red;
+    font-size: 17px;
+    background-color: #333;
+    border: none;
+    /* font-weight: 600; */
+}
+
+/* .navbar-items-search::before {
+    content: "aaaaaaaaaaaaaaaaaaaa -";
+    color: white;
+    background-color: yellow;
+} */
