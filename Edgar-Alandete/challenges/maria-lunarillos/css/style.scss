@@ -28,6 +28,7 @@ button {
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 1;
 }
 
 .login-register {
@@ -168,4 +169,41 @@ button {
 
 .product-category-name:nth-last-child(1) {
   margin-left: 50px;
+}
+
+.banner-container {
+  position: relative;
+  @include flex-configuration(null, center);
+  margin-top: 20px;
+}
+
+.side-figure {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-right: 10px;
+  max-width: 360px;
+}
+.side-caption {
+  position: absolute;
+  bottom: 0;
+  @include size-configuration(100%, 100px);
+  background-color: $color-ma-secondary;
+}
+
+.main-figure {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.main-caption {
+  position: absolute;
+  bottom: 0;
+  @include size-configuration(100%, 100px);
+  background-color: $color-ma-secondary;
+}
+
+.top-figure {
+  margin-bottom: 10px;
 }
