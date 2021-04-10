@@ -11,17 +11,38 @@ $noto: 'Noto Sans', sans-serif;
   box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+
+    &:visited {
+        color: white;
+    }
+}
+
 html {
     font-family: $noto;
+    font-size: 0.9em;
 }
 
 .nav-bar,
 .logo-figure,
 .extern-nav,
 .nav-search,
-.login-elements {
+.login-elements,
+.searching-navs,
+.login-register-navs {
     @include flex-direction(row);
     color: white;
+}
+
+.logo,
+.cinema-nav,
+.fre-anchor,
+.subs-nav,
+.help,
+.login,
+.register-button {
+   cursor: pointer; 
 }
 
 .nav-bar{
@@ -29,10 +50,18 @@ html {
     padding: 0 20px;
     height: 60px;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    text-transform: uppercase;
 }
 
 .register-button {
     background-color: $yellow;
+    text-transform: uppercase;
+    font-family: $noto;
+    padding: 10px;
+    border: 0;
+    border-radius: 5%;
 }
 
 .logo-figure {
@@ -40,12 +69,13 @@ html {
 }
 
 .logo{
-    height: 20px;
+    height: 19px;
     align-self: center;
 }
 
 .login-elements {
-    justify-content: flex-end;
+    width: 400px;
+    justify-content: space-around;
 }
 
 @media (max-width: 750px) {
@@ -55,4 +85,13 @@ html {
 }
 
 .cinema-nav {
+}
+
+.extern-nav {
+    width: 350px;
+    justify-content: space-around;
+}
+
+.nav-search {
+    padding-right: 300px;
 }

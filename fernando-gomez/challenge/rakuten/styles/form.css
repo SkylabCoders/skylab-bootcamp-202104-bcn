@@ -7,15 +7,26 @@
           box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
 html {
   font-family: "Noto Sans", sans-serif;
+  font-size: 0.9em;
 }
 
 .nav-bar,
 .logo-figure,
 .extern-nav,
 .nav-search,
-.login-elements {
+.login-elements,
+.searching-navs,
+.login-register-navs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,6 +37,16 @@ html {
   color: white;
 }
 
+.logo,
+.cinema-nav,
+.fre-anchor,
+.subs-nav,
+.help,
+.login,
+.register-button {
+  cursor: pointer;
+}
+
 .nav-bar {
   background-color: black;
   padding: 0 20px;
@@ -33,10 +54,20 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-transform: uppercase;
 }
 
 .register-button {
   background-color: #ffe300;
+  text-transform: uppercase;
+  font-family: "Noto Sans", sans-serif;
+  padding: 10px;
+  border: 0;
+  border-radius: 5%;
 }
 
 .logo-figure {
@@ -46,21 +77,31 @@ html {
 }
 
 .logo {
-  height: 20px;
+  height: 19px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
 .login-elements {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  width: 400px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 @media (max-width: 750px) {
   .nav-bar {
     display: none;
   }
+}
+
+.extern-nav {
+  width: 350px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.nav-search {
+  padding-right: 300px;
 }
 /*# sourceMappingURL=form.css.map */
