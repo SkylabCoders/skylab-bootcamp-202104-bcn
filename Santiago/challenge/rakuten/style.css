@@ -149,3 +149,8 @@ a:link {
     position: relative;
     padding: 10px 15px 25px;
 }
+
+.banners img:hover{
+    border:5px solid#ffe300;
+    cursor: pointer;
+}
