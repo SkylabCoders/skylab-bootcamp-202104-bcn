@@ -8,7 +8,7 @@
 
 .header-fix {
   background-color: black;
-  color: yellow;
+  color: white;
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,21 +25,32 @@
           justify-content: space-between;
 }
 
+.logo {
+  height: 40px;
+  width: 150px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 .cinema,
 .gratis,
 .suscripciones {
-  margin-left: 10px;
   margin-right: 10px;
+  margin-top: 10px;
 }
 
 .search-movie {
-  height: 20px;
+  height: 30px;
   width: 200px;
+  background-color: #333;
+  border-radius: 2px;
+  margin-bottom: 5px;
 }
 
 .register-buttons {
   background-color: black;
-  color: yellow;
+  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,5 +62,9 @@
   color: black;
   margin-left: 10px;
   margin-right: 5px;
+  padding-right: 8px;
+  padding-left: 8px;
+  min-height: 32px;
+  border-radius: 2px;
 }
 /*# sourceMappingURL=main.css.map */

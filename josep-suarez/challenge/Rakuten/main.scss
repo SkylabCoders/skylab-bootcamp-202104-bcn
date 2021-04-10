@@ -8,7 +8,7 @@
   height: 50px;
 }
 .header-fix {
-  @include colors(black, yellow);
+  @include colors(black, white);
   position: fixed;
   display: flex;
 }
@@ -17,18 +17,26 @@
   list-style: none;
   justify-content: space-between;
 }
+.logo {
+  height: 40px;
+  width: 150px;
+  align-self: center;
+}
 .cinema,
 .gratis,
 .suscripciones {
-  margin-left: 10px;
   margin-right: 10px;
+  margin-top: 10px;
 }
 .search-movie {
-  height: 20px;
+  height: 30px;
   width: 200px;
+  background-color: #333;
+  border-radius: 2px;
+  margin-bottom: 5px;
 }
 .register-buttons {
-  @include colors(black, yellow);
+  @include colors(black, white);
   display: flex;
   list-style: none;
 }
@@ -36,4 +44,8 @@
   @include colors(yellow, black);
   margin-left: 10px;
   margin-right: 5px;
+  padding-right: 8px;
+  padding-left: 8px;
+  min-height: 32px;
+  border-radius: 2px;
 }
