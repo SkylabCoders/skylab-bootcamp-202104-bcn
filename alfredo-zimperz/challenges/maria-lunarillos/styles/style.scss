@@ -345,8 +345,12 @@ main {
 .banner {
 	@include flex-config(column);
 	position: relative;
-}
 
+	&-right {
+		@include flex-config(null, flex-end);
+		position: relative;
+	}
+}
 .banner.vertical {
 	flex-grow: 1;
 	max-width: 360px;
@@ -366,8 +370,8 @@ main {
 }
 
 .banner-text {
-	@include size-config(100%, 100px);
+	@include size-config(250px, 150px);
 	position: absolute;
 	bottom: 0;
-	background: rgba(255, 255, 255, 0.507);
+	background: rgba(255, 255, 255, 0.7);
 }
