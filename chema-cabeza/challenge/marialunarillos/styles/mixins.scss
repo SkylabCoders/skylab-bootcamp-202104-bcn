@@ -1,0 +1,52 @@
+@mixin header-big-icons {
+    display: flex;
+    background-color: #f2f2f2;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    padding: 10px;
+    margin-right: 3px;
+}
+
+@mixin big-icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin novedades-ofertas-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-right: 10px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@mixin big-icon-img {
+    width: 50px;
+    height: 70px;
+    margin-top: 5px;
+}
+
+@mixin color-icons ($width, $height){
+    width: $width;
+    height: $height;
+    margin: 0px 3px 0px 0px;
+    cursor: pointer;
+    
+}
+
+@mixin buscar-button ($width, $height) {
+    width: $width;
+    height: $height;
+    display: block;
+    float: right;
+    border: none;
+}
