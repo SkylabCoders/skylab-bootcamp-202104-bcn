@@ -15,7 +15,7 @@ ul {
 }
 .navigator-container {
   display: flex;
-  background-color: #ccc;
+  background-color: #f8f8f8;
   width: 100%;
   min-height: 50px;
 }
@@ -40,7 +40,7 @@ ul {
   position: absolute;
   display: flex;
   top: 0;
-  left: 0;
+  left: 100px;
 }
 
 @mixin malu-logo($width, $height, $image, $background-color) {
@@ -98,4 +98,95 @@ ul {
 .cart:hover {
   background-color: #ff5959;
   color: white;
+}
+
+.quick-access {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-grow: 2;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.search-products {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 540px;
+  margin-right: 130px;
+}
+
+.product-categories-container {
+}
+
+.product-categories-images {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  width: 100px;
+  height: 100px;
+  margin-right: 5px;
+  margin-top: 40px;
+}
+
+.search-product {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.temporary-products {
+  height: 30px;
+  margin-right: 8px;
+  background-color: #ff5959;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.search-bar {
+  flex-grow: 2;
+}
+
+.search-button {
+  flex-grow: 1;
+}
+
+.product-category:nth-last-child(1) {
+  margin-left: 50px;
+  background-color: #ff5959;
+}
+
+.product-category img {
+  width: 70px;
+  height: 70px;
+}
+.product-categories-name {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-category-name:nth-last-child(1) {
+  margin-left: 50px;
+}
+
+.product-category-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100px;
+  height: 20px;
+  margin-top: 5px;
+  margin-right: 5px;
 }
