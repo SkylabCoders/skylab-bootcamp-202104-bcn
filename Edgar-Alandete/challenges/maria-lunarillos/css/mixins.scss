@@ -32,3 +32,11 @@
   background: url("../images/icons/" + $image) $background-color bottom center
     no-repeat;
 }
+
+@mixin temporary-products($background-color) {
+  @include size-configuration(null, 30px);
+  margin-right: 8px;
+  background-color: $background-color;
+  font-weight: bold;
+  flex-grow: 1;
+}
