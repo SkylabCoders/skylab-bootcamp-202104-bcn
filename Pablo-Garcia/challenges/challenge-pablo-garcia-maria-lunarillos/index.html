@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap"
+          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="./styles/styles.css" rel="stylesheet">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Maria Lunarillos</title>
 </head>
 <body>
@@ -15,9 +17,9 @@
     <div class="container">
         <div class="topbar_elements">
             <ul class="animated-brand">
-                <li class="item-ma"><a href="" class="animated-item red">Maria Lunarillos</a></li>
-                <li class="item-cu"><a href="" class="animated-item blue">Cucute</a></li>
-                <li class="item-mu"><a href="" class="animated-item yellow">Mumuchu</a></li>
+                <li class="item-ma"><a class="animated-item red" href="">Maria Lunarillos</a></li>
+                <li class="item-cu"><a class="animated-item blue" href="">Cucute</a></li>
+                <li class="item-mu"><a class="animated-item yellow" href="">Mumuchu</a></li>
             </ul>
             <div class="social-nav">
                 <div class="topbar_user-login"><a href="#">
@@ -44,7 +46,7 @@
 <header class="header">
     <div class="container">
         <div class="main-brand">
-            <img src="./assets/logo.svg" alt="María Lunarillos">
+            <img alt="María Lunarillos" src="./assets/logo.svg">
         </div>
         <div class="main-nav">
             <div class="main-nav-search">
@@ -58,8 +60,8 @@
                 </ul>
                 <div class="searcher-form">
                     <label for="search">Search:</label>
-                    <input type="text" placeholder="¿Qué buscas?" maxlength="150" name="quick-search">
-                    <button type="submit" class="btn search-btn">..</button>
+                    <input maxlength="150" name="quick-search" placeholder="¿Qué buscas?" type="text">
+                    <button class="btn search-btn" type="submit">..</button>
                 </div>
             </div>
             <div class="main-nav navigation">
@@ -86,75 +88,89 @@
         </div>
     </div>
 </header>
-<section class="carousel_header">
-    <ul class="carousel_viewport">
-        <li id="carousel_slide1" class="carousel_slide" tabindex="0">
-            <div class="carousel_snaper">
-                <a href="#carousel_slide1" class="carousel_prev"></a>
-                <a href="#carousel_slide2" class="carousel_next"></a>
-            </div>
-        </li>
-        <li id="carousel_slide2" class="carousel_slide" tabindex="0">
-            <div class="carousel_snaper">
-                <a href="" id="carousel_slide"></a>
-                <a href="" id="carousel_slide"></a>
-            </div>
-        </li>
-        <li id="carousel_slide3" class="carousel_slide" tabindex="0">
-            <div class="carousel_snaper">
-                <a href="" id="carousel_slide"></a>
-                <a href="" id="carousel_slide"></a>
-            </div>
-        </li>
-        <li id="carousel_slide4" class="carousel_slide" tabindex="0">
-            <div class="carousel_snaper">
-                <a href="" id="carousel_slide"></a>
-                <a href="" id="carousel_slide"></a>
-            </div>
-        </li>
-        <li id="carousel_slide5" class="carousel_slide" tabindex="0">
-            <div class="carousel_snaper">
-                <a href="" id="carousel_slide"></a>
-                <a href="" id="carousel_slide"></a>
-            </div>
-        </li>
-        <li id="carousel_slide6" class="carousel_slide" tabindex="0">
-            <div class="carousel_snaper">
-                <a href="" id="carousel_slide"></a>
-                <a href="" id="carousel_slide"></a>
-            </div>
-        </li>
-        <li id="carousel_slide7" class="carousel_slide" tabindex="0">
-            <div class="carousel_snaper">
-                <a href="" id="carousel_slide"></a>
-                <a href="" id="carousel_slide"></a>
-            </div>
-        </li>
-        <li id="carousel_slide8" class="carousel_slide" tabindex="0">
-            <div class="carousel_snaper">
-                <a href="" id="carousel_slide"></a>
-                <a href="" id="carousel_slide"></a>
-            </div>
-        </li>
-        <li id="carousel_slide9" class="carousel_slide" tabindex="0">
-            <div class="carousel_snaper">
-                <a href="" id="carousel_slide"></a>
-                <a href="" id="carousel_slide"></a>
-            </div>
-        </li>
-        <li id="carousel_slide10" class="carousel_slide" tabindex="0">
-            <div class="carousel_snaper">
-                <a href="" id="carousel_slide"></a>
-                <a href="" id="carousel_slide"></a>
-            </div>
-        </li>
-        <li id="carousel_slide11" class="carousel_slide" tabindex="0">
-            <div class="carousel_snaper">
-                <a href="" id="carousel_slide"></a>
-                <a href="" id="carousel_slide"></a>
-            </div>
-        </li>
-    </ul>
+<section class="carousel_wrapper">
+
+    <input id="item1" name="images" type="radio">
+    <input id="item2" name="images" type="radio">
+    <input id="item3" name="images" type="radio">
+    <input id="item4" name="images" type="radio">
+    <input id="item5" name="images" type="radio">
+    <input id="item6" name="images" type="radio">
+    <input id="item7" name="images" type="radio">
+    <input id="item8" name="images" type="radio">
+    <input id="item9" name="images" type="radio">
+    <input id="item10" name="images" type="radio">
+    <input id="item11" name="images" type="radio">
+
+    <a class="slide-item" href="" id="slide1">
+        <img alt="" src="./assets/media-slide/slide1.png">
+    </a>
+    <a class="slide-item" href="" id="slide2">
+        <img alt="" src="./assets/media-slide/slide2.png">
+    </a>
+    <a class="slide-item" href="" id="slide3">
+        <img alt="" src="./assets/media-slide/slide3.png">
+    </a>
+    <a class="slide-item" href="" id="slide4">
+        <img alt="" src="./assets/media-slide/slide4.png">
+    </a>
+    <a class="slide-item" href="" id="slide5">
+        <img alt="" src="./assets/media-slide/slide5.png">
+    </a>
+    <a class="slide-item" href="" id="slide6">
+        <img alt="" src="./assets/media-slide/slide6.png">
+    </a>
+    <a class="slide-item" href="" id="slide7">
+        <img alt="" src="./assets/media-slide/slide7.png">
+    </a>
+    <a class="slide-item" href="" id="slide8">
+        <img alt="" src="./assets/media-slide/slide8.png">
+    </a>
+    <a class="slide-item" href="" id="slide9">
+        <img alt="" src="./assets/media-slide/slide9.png">
+    </a>
+    <a class="slide-item" href="" id="slide10">
+        <img alt="" src="./assets/media-slide/slide10.png">
+    </a>
+    <a class="slide-item" href="" id="slide11">
+        <img alt="" src="./assets/media-slide/slide11.png">
+    </a>
+    <nav class="controls">
+        <label for="item1">
+            <i class="fa fa-cirlce"></i>
+        </label>
+        <label for="item2">
+            <i class="fa fa-cirlce"></i>
+        </label>
+        <label for="item3">
+            <i class="fa fa-cirlce"></i>
+        </label>
+        <label for="item4">
+            <i class="fa fa-cirlce"></i>
+        </label>
+        <label for="item5">
+            <i class="fa fa-cirlce"></i>
+        </label>
+        <label for="item6">
+            <i class="fa fa-cirlce"></i>
+        </label>
+        <label for="item7">
+            <i class="fa fa-cirlce"></i>
+        </label>
+        <label for="item8">
+            <i class="fa fa-cirlce"></i>
+        </label>
+        <label for="item9">
+            <i class="fa fa-cirlce"></i>
+        </label>
+        <label for="item10">
+            <i class="fa fa-cirlce"></i>
+        </label>
+        <label for="item11">
+            <i class="fa fa-cirlce"></i>
+        </label>
+
+    </nav>
 </section>
 </body>
 </html>
