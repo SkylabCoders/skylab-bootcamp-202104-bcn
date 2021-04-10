@@ -180,9 +180,16 @@ a:active {
   padding: 10px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .slider {
-  padding-top: 60px;
+  margin-top: 60px;
   width: auto;
+  height: 410.28px;
   display: flex;
   justify-content: center;
 }
@@ -223,6 +230,18 @@ a:active {
   right: 20px;
 }
 
+.banners {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 25px 0 0;
+  padding: 0 15px 30px;
+  white-space: nowrap;
+}
+
+.banners-item {
+  margin-left: 0;
+}
 /*
 .slider .slider-item {
   padding-top: 60px;
