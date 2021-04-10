@@ -140,6 +140,26 @@ body {
 .footerRakuten {
   display: flex;
   flex-direction: column;
-  margin-top: 10vh;
+  position: absolute;
+  color: white;
+  margin-top: 7vh;
+  text-align: center;
+  width: 50vw;
+  margin-left: 25vw;
   justify-content: center;
+}
+.explain {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+}
+.firstexplain img {
+  color: white;
+}
+.copy {
+  display: flex;
+  left: 0;
+  margin-top: 10px;
+  color: white;
+  margin-top: 60vh;
 }
