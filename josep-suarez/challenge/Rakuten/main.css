@@ -11,6 +11,7 @@
   color: white;
   font-family: NotoSans-Bold, Arial, sans-serif;
   font-size: 14px;
+  font-weight: bold;
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,6 +52,7 @@
   background-color: #333;
   border-radius: 2px;
   margin-bottom: 5px;
+  border: 0px solid;
 }
 
 .register-buttons {
@@ -58,6 +60,7 @@
   color: white;
   font-family: NotoSans-Bold, Arial, sans-serif;
   font-size: 14px;
+  font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69,11 +72,13 @@
   color: black;
   font-family: NotoSans-Bold, Arial, sans-serif;
   font-size: 14px;
+  font-weight: bold;
   margin-left: 10px;
   margin-right: 5px;
   padding-right: 8px;
   padding-left: 8px;
   min-height: 32px;
   border-radius: 2px;
+  border: none;
 }
 /*# sourceMappingURL=main.css.map */

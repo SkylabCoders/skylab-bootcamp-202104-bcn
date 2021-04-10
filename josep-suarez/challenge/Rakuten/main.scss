@@ -3,6 +3,7 @@
   color: $colorletra;
   font-family: NotoSans-Bold, Arial, sans-serif;
   font-size: 14px;
+  font-weight: bold;
 }
 .navigation {
   display: flex;
@@ -39,6 +40,7 @@
   background-color: #333;
   border-radius: 2px;
   margin-bottom: 5px;
+  border: 0px solid;
 }
 .register-buttons {
   @include colors(black, white);
@@ -53,4 +55,5 @@
   padding-left: 8px;
   min-height: 32px;
   border-radius: 2px;
+  border: none;
 }
