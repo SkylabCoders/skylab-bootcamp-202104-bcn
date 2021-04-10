@@ -22,21 +22,24 @@ button {
 }
 
 body {
+	// @include flex-config(column);
 	background: $bg-main-color;
-	display: flex;
-	flex-direction: column;
+	// display: flex;
+	// flex-direction: column;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 12px;
 }
 
 main {
+	// delete when main has content
 	height: 1000px;
 }
-.centerer-item-w100 {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-}
+
+// .centerer-item-w100 {
+// 	width: 100%;
+// 	display: flex;
+// 	justify-content: center;
+// }
 
 .centered-item {
 	display: flex;
@@ -53,11 +56,10 @@ main {
 	color: $secondary-color;
 }
 
-.header-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
+// .header-container {
+// 	@include flex-config(column);
+// }
+
 .header-fix {
 	position: fixed;
 	top: 0;
@@ -69,8 +71,7 @@ main {
 }
 
 .header-fix-menu {
-	display: flex;
-	justify-content: flex-end;
+	@include flex-config(null, flex-end);
 	margin: auto;
 	width: 100%;
 	max-width: 1080px;
@@ -108,8 +109,7 @@ main {
 }
 
 .header-fix-nav {
-	display: flex;
-	justify-content: flex-end;
+	@include flex-config(null, flex-end);
 	width: 100%;
 	height: 50px;
 	margin-left: 250px;
@@ -179,8 +179,7 @@ main {
 }
 
 .header-fix-socialMedia {
-	display: flex;
-	justify-content: center;
+	@include flex-config(null, center);
 	width: 275px;
 }
 
@@ -212,16 +211,12 @@ main {
 
 .header-secondary-nav {
 	margin-top: 100px;
-	/* height: 30px; */
-	display: flex;
 	max-width: 1080px;
-	justify-content: center;
 }
 
 .header-secondary-nav ul {
-	display: flex;
+	@include flex-config(null, flex-end);
 	width: 1080px;
-	justify-content: flex-end;
 }
 
 .header-secondary-nav .button {
@@ -291,13 +286,11 @@ main {
 /* Header main nav */
 
 .header-main-nav {
-	display: flex;
-	justify-content: center;
+	@include flex-config(null, center);
 }
 
 .header-main-nav-container {
-	display: flex;
-	justify-content: center;
+	@include flex-config(null, center);
 	width: 100%;
 	max-width: 1080px;
 }
@@ -313,8 +306,7 @@ main {
 }
 
 .header-main-menu {
-	display: flex;
-	justify-content: flex-end;
+	@include flex-config(null, flex-end);
 	width: 60%;
 }
 
@@ -326,7 +318,6 @@ main {
 .header-main-menu-item {
 	width: 100px;
 	height: 130px;
-
 	margin-right: 5px;
 }
 
@@ -334,9 +325,7 @@ main {
 	height: 100px;
 	width: 100px;
 	background: $bg-secondary-color;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex-config(null, center, center);
 }
 
 .header-main-menu-item a:hover {
