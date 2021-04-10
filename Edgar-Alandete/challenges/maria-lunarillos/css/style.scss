@@ -1,4 +1,5 @@
 @import "./colors";
+@import "./mixins";
 *,
 *::after,
 *::before {
@@ -21,13 +22,6 @@ ul {
   min-height: 50px;
 }
 
-@mixin nav-items($grow, $justify-content, $align-items) {
-  display: flex;
-  flex-grow: $grow;
-  justify-content: $justify-content;
-  align-items: $align-items;
-}
-
 .login-register {
   @include nav-items(2, flex-end, center);
 }
@@ -44,12 +38,6 @@ ul {
   left: 100px;
 }
 
-@mixin malu-logo($width, $height, $image, $background-color) {
-  width: $width;
-  height: $height;
-  background: url("../images/icons/" + $image) $background-color bottom center
-    no-repeat;
-}
 .ma {
   @include malu-logo(80px, 140px, "maria-lunarillos.png", $color-ma);
 }
@@ -73,15 +61,6 @@ ul {
 
 .cart-container {
   @include nav-items(1, center, center);
-}
-
-@mixin cart-container-items {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  min-width: 50px;
-  min-height: 50px;
 }
 
 .cart {

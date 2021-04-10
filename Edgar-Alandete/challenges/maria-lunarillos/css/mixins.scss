@@ -1,0 +1,24 @@
+@import "./colors";
+
+@mixin cart-container-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+@mixin nav-items($grow, $justify-content, $align-items) {
+  display: flex;
+  flex-grow: $grow;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin malu-logo($width, $height, $image, $background-color) {
+  width: $width;
+  height: $height;
+  background: url("../images/icons/" + $image) $background-color bottom center
+    no-repeat;
+}
