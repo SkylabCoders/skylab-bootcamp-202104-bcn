@@ -21,7 +21,6 @@ li {
 
 main {
     height: 1080px;
-    background: #FF5959; /* eliminar al finalizar */
 }
 
 .fas, .fab, .far {
@@ -256,14 +255,89 @@ main {
     color: #FF5959;
 }
 
-/* -------------------------- */
-/* ----- POTOS CAROUSEL ----- */
+/* -------------------- */
+/* ----- CAROUSEL ----- */
+
+.carousel {
+    width: 2545px;
+    height: 615px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(112, 93, 117) 0%, rgb(112, 93, 117) 50%, rgb(146, 127, 151) 50%, rgb(146, 127, 151) 100%); 
+}
 
 .photos-carousel {
     display: flex;
-    justify-content: center;
-    background: linear-gradient(to right, rgb(112, 93, 117) 0%, rgb(112, 93, 117) 50%, rgb(146, 127, 151) 50%, rgb(146, 127, 151) 100%);
-    width: 2545px;
-    height: 600px;
+    width: 1080px;
     cursor: pointer;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 }
+
+.image-promo  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: center;
+}
+
+/* --------------------------- */
+/* ----- WRAPPER SECTION ----- */
+
+.wrapper-container {
+    width: 2545px;
+    height: 2285px;
+    background: #F8F8F8;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-container {
+    width: 1080px;
+    height: 184px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-position {
+    position: relative;
+    width: 1080px;
+    height: 125px;
+}
+
+.logo-utensilios {
+    position: absolute;
+    width: 93px;
+    height: 125px;
+    top: -32px;
+    left: 270px;
+}
+
+.title {
+    position: absolute;
+    margin: 110px 0;
+    width: 264px;
+    height: 70px;
+    left: 459px;
+}
+
+.title-content {
+    border-top: 2px solid #2E2925;
+    border-bottom: 2px solid #2E2925;
+    padding: 20px 0;
+    line-height: 30px;
+    font-size: 30px;
+    letter-spacing: 9px;
+    text-align: center;
+    color: #2E2925;
+    font-weight: 900;
+}
+
+
+
+
+
+
