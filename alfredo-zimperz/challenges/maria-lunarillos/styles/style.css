@@ -228,7 +228,7 @@ main {
 
 .header-fix-cart button,
 .header-fix-cart.header-cart-product-counter {
-  width: 100%;
+  width: 50px;
   height: 50px;
   text-align: center;
 }
@@ -317,8 +317,8 @@ main {
 }
 
 .header-secondary-nav .search-bar button {
-  width: 30px;
-  height: 50px;
+  width: 50px;
+  height: 30px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;

@@ -180,7 +180,7 @@ main {
 
 .header-fix-cart button,
 .header-fix-cart.header-cart-product-counter {
-	@include size-config(100%, 50px);
+	@include size-config(50px, 50px);
 	text-align: center;
 }
 
@@ -252,7 +252,7 @@ main {
 }
 
 .header-secondary-nav .search-bar button {
-	@include size-config(30px, 50px);
+	@include size-config(50px, 30px);
 	box-sizing: border-box;
 	outline: none;
 	background: url(../images/icons/search.svg);
