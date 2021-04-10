@@ -1,5 +1,55 @@
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1300px;
+  height: 50px;
+}
+
 .header-fix {
-  position: fixed;
   background-color: black;
+  color: yellow;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cinema,
+.gratis,
+.suscripciones {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.search-movie {
+  height: 20px;
+  width: 200px;
+}
+
+.register-buttons {
+  background-color: black;
+  color: yellow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.register-button {
+  background-color: yellow;
+  color: black;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 /*# sourceMappingURL=main.css.map */

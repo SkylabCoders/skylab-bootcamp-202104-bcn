@@ -1,4 +1,39 @@
+@mixin colors($colorfondo, $colorletra) {
+  background-color: $colorfondo;
+  color: $colorletra;
+}
+.navigation {
+  display: flex;
+  width: 1300px;
+  height: 50px;
+}
 .header-fix {
+  @include colors(black, yellow);
   position: fixed;
-  background-color: black;
+  display: flex;
+}
+.nav-left {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+.cinema,
+.gratis,
+.suscripciones {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.search-movie {
+  height: 20px;
+  width: 200px;
+}
+.register-buttons {
+  @include colors(black, yellow);
+  display: flex;
+  list-style: none;
+}
+.register-button {
+  @include colors(yellow, black);
+  margin-left: 10px;
+  margin-right: 5px;
 }
