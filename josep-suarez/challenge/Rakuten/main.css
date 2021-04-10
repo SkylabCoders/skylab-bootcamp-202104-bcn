@@ -162,4 +162,42 @@ body {
 .recomendaciones img:hover {
   border: 3px solid yellow;
 }
+
+.free {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.free img {
+  margin-left: 8px;
+  margin-top: 60px;
+}
+
+.free img:hover {
+  border: 3px solid yellow;
+}
+
+.movies h2 {
+  position: absolute;
+  color: white;
+  margin-top: 20px;
+}
+
+.footerRakuten {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 /*# sourceMappingURL=main.css.map */

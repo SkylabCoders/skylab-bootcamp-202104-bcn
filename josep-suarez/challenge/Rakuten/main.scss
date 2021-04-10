@@ -120,3 +120,26 @@ body {
 .recomendaciones img:hover {
   border: 3px solid yellow;
 }
+.free {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.free img {
+  margin-left: 8px;
+  margin-top: 60px;
+}
+.free img:hover {
+  border: 3px solid yellow;
+}
+.movies h2 {
+  position: absolute;
+  color: white;
+  margin-top: 20px;
+}
+.footerRakuten {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+  justify-content: center;
+}
