@@ -64,6 +64,14 @@
 .help-disp {
   color: rgb(59, 59, 59);
 }
+.cinema:hover,
+.gratis:hover,
+.suscripciones:hover,
+.help-disp:hover,
+.sign-up:hover {
+  filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
+    brightness(97%) contrast(95%);
+}
 .register-buttons {
   @include colors(black, white);
   display: flex;

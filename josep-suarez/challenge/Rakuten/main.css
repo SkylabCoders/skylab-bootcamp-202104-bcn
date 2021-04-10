@@ -78,6 +78,15 @@
   color: #3b3b3b;
 }
 
+.cinema:hover,
+.gratis:hover,
+.suscripciones:hover,
+.help-disp:hover,
+.sign-up:hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+}
+
 .register-buttons {
   background-color: black;
   color: white;
