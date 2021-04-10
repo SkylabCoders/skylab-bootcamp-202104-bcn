@@ -1,8 +1,13 @@
+/* ----- RESET ----- */
+
 *, *::after, *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* ----------------- */
+/* ----- GLOBAL ----- */
 
 body {
     background: none;
@@ -16,8 +21,17 @@ li {
 
 main {
     height: 1080px;
-    background: #FF5959; 
+    background: #FF5959; /* eliminar al finalizar */
 }
+
+.fas, .fab, .far {
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+/* ------------------------ */
+/* ----- FIRST HEADER ----- */
 
 .fixed-bar {
     position: fixed;
@@ -34,22 +48,6 @@ main {
     height: 50px; 
     max-width: 1080px;
     margin: auto;
-    /* align-items: center; */
-}
-
-.second-header {
-    margin-top: 88px;
-    display: flex;
-    /* justify-content: space-between; */
-    height: 218px;
-    width: 1265px;
-    font-weight: bold;
-}
-
-.fas, .fab, .far {
-    font-size: 20px;
-    color: black;
-    cursor: pointer;
 }
 
 .letters-logo {
@@ -93,12 +91,16 @@ main {
     height: 70px;
 }
 
-.social-media, .shopping-space, .shopping-nav {
+.letters-cucute:hover, .letters-mumuchu:hover {
+    transition: height;
+    height: 140px;
+}
+
+.social-media, .shopping-space, .shopping-nav, .social-navigator  {
     display: flex;
 }
 
 .social-navigator {
-   display: flex;
    align-items: center;
    height: 100%;
 }
@@ -119,7 +121,7 @@ main {
 }
 
 .fa-user-plus {
-margin-right:  11px;
+    margin-right:  11px;
 }
 
 .shopping-cart {
@@ -140,30 +142,30 @@ margin-right:  11px;
     font-size: 20px;
 }
 
-.image-utensilios, .image-ingredientes, .image-fiestas, .image-marcas, .image-log {
-    height: 70px;
-    width: 62px;
-    margin: 20px 20px;
-}
+/* ------------------------- */
+/* ----- SECOND HEADER ----- */
 
-.image-delantal { ???????
-    margin-right: 54px;
+.second-header {
+    display: flex;
+    height: 218px;
+    max-width: 1080px;
+    margin: 88px auto 0 auto;
+    font-weight: 600;
 }
 
 .logo-marialunarillo {
-    margin-left: 93px;
      margin-top: 80px;
 }
 
 .section-right {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     margin-left: 210px;
 }
 
 .container-search {
     display: flex;
+    margin: 10px 0 41px 0;
 }
 
 .news, .sales {
@@ -173,31 +175,15 @@ margin-right:  11px;
     height: 30px;
     text-align: center;
     padding: 5px 0;
+    margin-right: 5px;
 }
 
 .news {
     background: #9faa4d;
-    margin-right: 5px;
 }
 
 .sales {
     background: #8e789d;
-    margin-right: 5px;
-}
-
-.shopping-nav-images {
-    cursor: pointer;
-}
-
-.images-nav {
-    background-color: #F8F8F8;
-    width: 100px;
-    height: 100px;
-    margin-right: 5px;
-}
-
-.text {
-
 }
 
 .form-search {
@@ -207,15 +193,77 @@ margin-right:  11px;
     overflow: hidden;
 }
 
-.input-text {
-    width: 245px;
+.input-text, .button-search {
     height: 30px;
     border: none;
+}
+
+.input-text {
+    width: 245px;
 }
 
 .button-search {
     width: 49px;
-    height: 30px;
-    border: none;
 }
 
+.images-nav {
+    background-color: #F2F2F2;
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+}
+
+.image-utensilios, .image-ingredientes, .image-fiestas, .image-marcas {
+    height: 65px;
+    margin: 20px 20px;
+}
+
+.image-blog {
+    height: 47px;
+    margin: 30px 24px;
+}
+
+.blog { 
+    margin-left: 50px;
+    background-color: #FF5959;
+}
+
+.names {
+    margin-top: 5px;
+    letter-spacing: 1px;
+    color: #2E2925;
+}
+
+.utensilios {
+    margin-left: 11px;
+    margin-top: 0;
+}
+
+.ingredientes {
+    margin-left: 11px;
+}
+
+.fiestas {
+    margin-left: 24px;
+}
+
+.marcas {
+    margin-left: 52px;
+}
+
+.blog-name {
+    margin-left: 104px;
+    color: #FF5959;
+}
+
+/* -------------------------- */
+/* ----- POTOS CAROUSEL ----- */
+
+.photos-carousel {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(112, 93, 117) 0%, rgb(112, 93, 117) 50%, rgb(146, 127, 151) 50%, rgb(146, 127, 151) 100%);
+    width: 2545px;
+    height: 600px;
+    cursor: pointer;
+}
