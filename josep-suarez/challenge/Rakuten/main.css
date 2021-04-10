@@ -41,17 +41,6 @@ body {
   margin-top: 10px;
 }
 
-.cinema {
-  text-align: end;
-  border: none;
-  outline: none;
-  background-color: black;
-  color: white;
-  font-family: NotoSans-Bold, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-}
-
 .gratis,
 .suscripciones {
   margin-right: 20px;
@@ -65,6 +54,20 @@ body {
   border-radius: 2px;
   margin-bottom: 5px;
   border: 0px solid;
+}
+
+.cinema {
+  border: none;
+  display: block;
+  background-color: black;
+  color: white;
+  font-family: NotoSans-Bold, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 80px;
 }
 
 .register {
