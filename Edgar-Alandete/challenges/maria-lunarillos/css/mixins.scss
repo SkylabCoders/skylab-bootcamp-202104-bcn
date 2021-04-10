@@ -1,9 +1,14 @@
 @import "./colors";
 
-@mixin cart-container-items {
+@mixin flex-configuration($direction: row, $justify: unset, $align: unset) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin cart-container-items {
+  @include flex-configuration(row, center, center);
   color: white;
   min-width: 50px;
   min-height: 50px;
