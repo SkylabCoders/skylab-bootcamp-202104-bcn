@@ -12,14 +12,14 @@
   height: 100%;
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 3vmin;
+  padding: 1.3vmin;
   max-height: 30px;
   font-family: "Noto Sans", sans-serif;
   align-items: center;
 }
 
 #beggining-header {
-  width: 30px;
+  width: 9px;
 }
 
 .first-header-part {
@@ -28,14 +28,15 @@
   width: 550px;
 }
 
+#logo img {
+  width: 110px;
+  margin-bottom: 18px;
+}
+
 #cinema:hover,
 #gratis:hover,
 #suscripciones:hover {
   color: $header-hover-color;
-}
-
-#logo img {
-  width: 40px;
 }
 
 .second-header-part {
@@ -85,7 +86,7 @@ input:active {
 }
 
 #end-header {
-  width: 30px;
+  padding-left: 20px;
 }
 
 ul {
