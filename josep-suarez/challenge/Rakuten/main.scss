@@ -11,6 +11,8 @@
   @include colors(black, white);
   position: fixed;
   display: flex;
+  top: 0;
+  left: 0;
 }
 .nav-left {
   display: flex;
@@ -21,6 +23,7 @@
   height: 40px;
   width: 150px;
   align-self: center;
+  margin-top: 10px;
 }
 .cinema,
 .gratis,
