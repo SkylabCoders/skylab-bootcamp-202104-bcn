@@ -1,4 +1,13 @@
-.header-container {
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
   font-family: "Noto Sans", sans-serif;
 }
 
@@ -19,9 +28,39 @@
 
 .nav-bar {
   background-color: black;
+  padding: 0 20px;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .register-button {
   background-color: #ffe300;
+}
+
+.logo-figure {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  height: 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.login-elements {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (max-width: 750px) {
+  .nav-bar {
+    display: none;
+  }
 }
 /*# sourceMappingURL=form.css.map */

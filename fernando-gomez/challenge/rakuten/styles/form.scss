@@ -1,8 +1,18 @@
 @import './mixins';
 @import './colors';
 
-.header-container {
-    font-family: "Noto Sans", sans-serif;
+$noto: 'Noto Sans', sans-serif;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    font-family: $noto;
 }
 
 .nav-bar,
@@ -16,8 +26,33 @@
 
 .nav-bar{
     background-color: black;
+    padding: 0 20px;
+    height: 60px;
+    align-items: center;
 }
 
 .register-button {
     background-color: $yellow;
+}
+
+.logo-figure {
+    align-items: center;
+}
+
+.logo{
+    height: 20px;
+    align-self: center;
+}
+
+.login-elements {
+    justify-content: flex-end;
+}
+
+@media (max-width: 750px) {
+    .nav-bar {
+      display: none;
+    }
+}
+
+.cinema-nav {
 }
