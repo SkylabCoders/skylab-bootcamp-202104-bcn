@@ -8,13 +8,14 @@
         <link rel="stylesheet" href="./css/styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="./css/form.css">
         <title>María Lunarillos</title>
     </head>
 <body>
     <div class="topbar">
         <div class="topbar_elements">
             <ul class="topbar_threeicon">
-                <li class="iconred"><img src="./css/asets/maria-lunarillos-icono-red.png" alt="icono rojo"></li>
+               <li class="iconred"><img src="./css/asets/maria-lunarillos-icono-red.png" alt="icono rojo"></li>
                 <li class="iconblue"><img src="./css/asets/maria-lunarillos-icono-blue.png" alt="icono azul"></li>
                 <li class="iconyellow"><img src="./css/asets/maria-lunarillos-icono-yellow.png" alt="icono amarillo"></li>
             </ul>
@@ -31,30 +32,44 @@
                     <ul class="topbar_cart">
                         <li class="cart item">
                             <spam class="cart item icon"><i class="fas fa-cart-arrow-down"></i></spam>
-                            <spam class="cart itemcounter"></spam>
+                            <spam class="cart itemcounter">0</spam>
                         </li>
                     </ul>
                 </div>
             </div>
-            
         </div>
     </div>
-    <div class="subbar">
-        <div class="subbar_logo"><img src="./css/asets/maria-lunarillos-logo.png" alt=""></div>
-        <div class="subbar_navigarion-elements">
-            <div class="subbar_searcher">
-                <div class="subbar_news"><a href=""></a>Novedades</div>
-                <div class="subbar_offerts"><a href=""></a>Ofertas</div>
-                <div><input class="subbar_input" type="text"><i class="fas fa-search"></i></div>
+    <main class="main">
+        <div class="subbar">
+            <div class="subbar_logo"><img src="./css/asets/maria-lunarillos-logo.png" alt=""></div>
+            <div class="subbar_navigarion-elements">
+                <div class="subbar_searcher">
+                    <div class="subbar_news"><i class="far fa-star"></i><a href=""></a>Novedades</div>
+                    <div class="subbar_offers"><i class="fas fa-certificate"></i><a href=""></a>Ofertas</div>
+                    <div><input class="subbar_input" type="text" placeholder="¿QUÉ BUSCAS?"><i class="fas fa-search"></i></div>
+                </div>
+                <ul class="subbar_navigationbar">
+                    <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-utensilios.png" alt="">
+                    <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-recetas.png" alt="">
+                    <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-marcas.png" alt="">
+                    <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-fiestas.png" alt="">
+                    <li class="blog_iconnavi"><img src="./css/asets/vectorpaint (1).svg" alt="">
+                </ul>
             </div>
-            <ul class="subbar_navigationbar">
-                <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-utensilios.png" alt="">
-                <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-recetas.png" alt="">
-                <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-marcas.png" alt="">
-                <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-fiestas.png" alt="">
-                <li class="blog_iconnavi"><img src="./css/asets/vectorpaint (1).svg" alt="">
-            </ul>
         </div>
-    </div>
+
+        <div>
+            <figure class="figure-content">
+                <!-- <img class="img-items" src="./css/asets/utensiliosbasicos.jpg" alt=""> -->
+                <div class="items-text">
+                    <section>
+                        <h3 class="items-tittle">Utensilios básicos</h3>
+                        <p class="items-description">Rodillos, liras, espátulas, tapetes, bandejas, rejillas, mangas y boquillas... ¡Los imprescindibles!</p>
+                    </section>
+                </div>
+            </figure>
+        </div>
+    </main>
+
 </body>
 </html>

@@ -7,20 +7,26 @@
 }
 
 body {
-    font-size: 26px;
+    font-size: 15px;
     font-family: 'Source Sans Pro', sans-serif;
+}
+
+.main {
+    width: 90%;
+    margin: 0 auto;
 }
 
 .topbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     min-height: 50px;
     background-color: #f8f8f8;
 }
 
 .topbar_elements {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -30,11 +36,14 @@ body {
 .topbar_threeicon {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 7%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: flex-start;
+}
+
+.topbar_threeicon > * {
+    margin: 0 2px;
 }
 
 .iconred {
@@ -67,6 +76,11 @@ body {
 .topbar_navigationbar {
     display: flex;
     flex-direction: row;
+    margin: 14px;
+}
+
+.fab {
+    color: black;
 }
 
 /* > * para que afecte a los hijos */
@@ -84,27 +98,44 @@ body {
     justify-content: space-around;
 }
 
+.topbar_rss-links > * {
+    margin: 0 20px;
+}
+
 .subbar {
     margin-top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 150px;
-    background-color: lightseagreen;
 }
 
 
 .subbar_navigarion-elements {
     display: flex;
     flex-direction: column;   
-    padding-left: 400px;
-    background-color: lightyellow
+    width: 45%;
 }
 
 .subbar_searcher {
     display: flex;
     flex-direction: row;
     align-content: flex-end;
+    justify-content: space-between; 
+}
+
+.subbar_news {
+ background-color: #9faa4d;
+ color: white;
+}
+
+.subbar_offers {
+background-color: #8e789d;
+color: white;
+}
+
+.subbar_input {
+
 }
 
 .subbar_navigationbar {
@@ -114,7 +145,7 @@ body {
 }
 
 .image {
-    width: 42px;
+    width: 55px;
 }
 .subbar_iconnavi {
     display: flex;
@@ -124,6 +155,9 @@ body {
 }
 
 .blog_iconnavi {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
     background-color: #FF5959;
 }
 
@@ -134,3 +168,10 @@ body {
 .blog_iconnavi:hover {
     background-color: #f2f2f2;
 }
+
+.itemcounter {
+    background-color: #FF5959;
+    padding: 15px;
+    color: white;
+}
+
