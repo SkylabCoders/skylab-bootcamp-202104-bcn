@@ -38,10 +38,16 @@ body {
   align-self: center;
   margin-top: 10px;
 }
-.cinema,
+.cinema {
+  text-align: end;
+  border: none;
+  outline: none;
+  @include colors(black, white);
+}
+
 .gratis,
 .suscripciones {
-  margin-right: 15px;
+  margin-right: 20px;
   margin-top: 10px;
 }
 .search-movie {

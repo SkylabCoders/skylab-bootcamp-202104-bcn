@@ -41,10 +41,20 @@ body {
   margin-top: 10px;
 }
 
-.cinema,
+.cinema {
+  text-align: end;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-family: NotoSans-Bold, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .gratis,
 .suscripciones {
-  margin-right: 15px;
+  margin-right: 20px;
   margin-top: 10px;
 }
 
