@@ -6,3 +6,8 @@
 	justify-content: $justify;
 	align-items: $align;
 }
+
+@mixin size-config($width, $height) {
+	width: $width;
+	height: $height;
+}
