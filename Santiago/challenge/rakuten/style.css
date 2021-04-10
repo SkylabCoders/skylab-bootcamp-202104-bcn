@@ -21,10 +21,14 @@
     font-family: NotoSans-Bold,Arial,sans-serif;
 }
 
-img.rakuten-logo {
+.rakuten-logo {
     width: 142px;
     height: 30px;
     margin: 10px;
+}
+
+.rakuten-logo:hover {
+    cursor: pointer;
 }
 
 .navbar-items-menu ul {
@@ -43,6 +47,7 @@ img.rakuten-logo {
 
 .navbar-items-menu-text:hover {
     color: #ffe300;
+    cursor: pointer;
 }
 
 .navbar-items-search {
@@ -64,8 +69,11 @@ img.rakuten-logo {
     /* font-weight: 600; */
 }
 
-/* .navbar-items-search::before {
-    content: "aaaaaaaaaaaaaaaaaaaa -";
-    color: white;
-    background-color: yellow;
-} */
+.navbar-items-search::before {
+    content: url("https://img.icons8.com/ios-glyphs/24/000000/detective.png");
+    color: #999;
+    font-size: 24px;
+    position: absolute;
+    margin-left: -26px;
+    margin-top: 7px;
+}
