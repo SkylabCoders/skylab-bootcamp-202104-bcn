@@ -5,6 +5,13 @@
   font-size: 14px;
   font-weight: bold;
 }
+@mixin image-slider() {
+  background-size: cover;
+  width: 100%;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 .navigation {
   display: flex;
   width: 100%;
@@ -83,26 +90,31 @@
   display: flex;
   padding: 0;
   width: 400%;
+  height: 580px;
   animation: cambio 20s infinite;
   animation-direction: alternate;
 }
 .slide1 {
-  background: url("https://images-1.wuaki.tv/system/images/8105/original/raya-y-el-ultimo-dragon-pvod-slider-1617179834-width1920-quality80.jpeg")
-    no-repeat;
+  background: url("https://images-1.wuaki.tv/system/images/8105/original/raya-y-el-ultimo-dragon-pvod-slider-1617179834-width1920-quality80.jpeg");
+  @include image-slider();
 }
 .slide2 {
-  background: url("https://images-2.wuaki.tv/system/images/8138/original/explota-explota-slider-1617315866-width1920-quality80.jpeg")
-    no-repeat;
+  background: url("https://images-2.wuaki.tv/system/images/8138/original/explota-explota-slider-1617315866-width1920-quality80.jpeg");
+  @include image-slider();
 }
 .slide3 {
-  background: url("https://images-3.wuaki.tv/system/images/7838/original/cafe-society-slider-1617264656-width1920-quality80.png")
-    no-repeat;
+  background: url("https://images-3.wuaki.tv/system/images/7838/original/cafe-society-slider-1617264656-width1920-quality80.png");
+  @include image-slider();
+}
+.slide4 {
+  background-image: url("https://images-2.wuaki.tv/system/images/7843/original/dreamworks-sale-slider-1617018177-width1920-quality80.png");
+  @include image-slider();
 }
 .slider li {
   width: 100%;
   list-style: none;
   max-width: 100%;
-  width: auto;
+  min-height: 300px;
 }
 @keyframes cambio {
   0% {
@@ -111,7 +123,6 @@
   20% {
     margin-left: 0;
   }
-
   25% {
     margin-left: -100%;
   }
@@ -125,9 +136,9 @@
     margin-left: -200%;
   }
   75% {
-    margin-left: -200%;
+    margin-left: -300%;
   }
   100% {
-    margin-left: -200%;
+    margin-left: -300%;
   }
 }
