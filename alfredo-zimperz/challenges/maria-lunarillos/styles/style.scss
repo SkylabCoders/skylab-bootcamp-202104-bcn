@@ -51,19 +51,19 @@ main {
 // }
 
 .header-fix {
-	position: fixed;
-	top: 0;
 	@include size-config(100%, 50px);
 	display: flex;
+	position: fixed;
+	top: 0;
 	margin: auto;
 	background: $bg-secondary-color;
 }
 
 .header-fix-menu {
 	@include flex-config(null, flex-end);
-	margin: auto;
 	width: 100%;
 	max-width: 1080px;
+	margin: auto;
 }
 
 .header-fix-logo {
@@ -71,15 +71,15 @@ main {
 }
 
 .icon {
-	margin: 5px;
 	@include size-config(30px, 40px);
 	align-self: center;
+	margin: 5px;
 	cursor: pointer;
 }
 
 .icon.small {
-	margin: 16px 4px;
 	height: 18px;
+	margin: 16px 4px;
 }
 
 .icon:hover,
@@ -106,9 +106,9 @@ main {
 }
 
 .header-fix-nav span {
+	margin-left: 4px;
 	font-size: 13px;
 	font-weight: 400;
-	margin-left: 4px;
 }
 
 .header-fix-nav span:hover {
@@ -139,8 +139,7 @@ main {
 }
 
 .logo .fixed {
-	width: 80px;
-	height: 140px;
+	@include size-config(80px, 140px);
 }
 
 .logo-ma {
@@ -160,8 +159,8 @@ main {
 }
 
 .header-fix-register {
-	width: 160px;
 	display: flex;
+	width: 160px;
 }
 
 .header-fix-socialMedia {
@@ -204,11 +203,10 @@ main {
 
 .header-secondary-nav .button {
 	@include size-config(136px, 100%);
+	display: flex;
 	margin-right: 8px;
 	text-transform: uppercase;
 	line-height: 30px;
-
-	display: flex;
 }
 
 .header-secondary-nav .button .icon {
@@ -223,19 +221,19 @@ main {
 	color: $secondary-color;
 }
 
-.header-secondary-nav .button.btn-novedades {
+.header-secondary-nav .button.btn-news {
 	background: #9faa4d;
 }
 
-.header-secondary-nav .button.btn-ofertas {
+.header-secondary-nav .button.btn-offers {
 	background: #8e789d;
 }
 
 .header-secondary-nav .search-bar {
 	@include size-config(302px, 30px);
+	display: flex;
 	border: 1px solid#c2beba;
 	background: #c2beba;
-	display: flex;
 }
 
 .header-secondary-nav .search-bar input {
@@ -260,8 +258,6 @@ main {
 	background-position: center;
 	background-size: 20px;
 }
-
-/* Header main nav */
 
 .header-main-nav {
 	@include flex-config(null, center);
@@ -299,9 +295,9 @@ main {
 }
 
 .header-main-menu-item a {
+	@include flex-config(null, center, center);
 	@include size-config(100px, 100px);
 	background: $bg-secondary-color;
-	@include flex-config(null, center, center);
 }
 
 .header-main-menu-item a:hover {
