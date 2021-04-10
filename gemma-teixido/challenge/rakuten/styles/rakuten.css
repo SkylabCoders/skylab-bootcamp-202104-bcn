@@ -77,6 +77,8 @@ input:active {
       justify-content: space-around;
   list-style: none;
   font-size: 10px;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
   color: white;
   width: 370px;
 }

@@ -57,6 +57,7 @@ input:active {
 
 .third-header-part {
   @include nav-style;
+  align-content: flex-end;
   color: $header-font-color;
   width: 370px;
 }
