@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #212121;
+    /* background-color: #212121; */
 }
 
 .navbar {
@@ -147,7 +147,7 @@ a:link {
     background-color: #212121;
     width: 1349px;
     height: 200.77px;
-    z-index: 100;
+    /* z-index: 100; */
     position: relative;
     padding: 10px 15px 25px;
 }
@@ -158,13 +158,13 @@ a:link {
     top: 598px;
     background-color: #212121;
     width: 1349px;
-    height: 200.77px;
-    z-index: 100;
+    height: 1050px;
+    /* z-index: 100; */
     position: relative;
     padding: 10px 15px 25px;
 }
 
-.all-films-img-container{
+.all-films-img-container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -175,7 +175,7 @@ a:link {
 }
 
 .all-films h2 {
-    color:#fff;
+    color: #fff;
     margin-left: 17px;
     margin-top: 10px;
     margin-bottom: 15px;
