@@ -1,0 +1,27 @@
+.header-container {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.nav-bar,
+.logo-figure,
+.extern-nav,
+.nav-search,
+.login-elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: white;
+}
+
+.nav-bar {
+  background-color: black;
+}
+
+.register-button {
+  background-color: #ffe300;
+}
+/*# sourceMappingURL=form.css.map */

@@ -1,0 +1,23 @@
+@import './mixins';
+@import './colors';
+
+.header-container {
+    font-family: "Noto Sans", sans-serif;
+}
+
+.nav-bar,
+.logo-figure,
+.extern-nav,
+.nav-search,
+.login-elements {
+    @include flex-direction(row);
+    color: white;
+}
+
+.nav-bar{
+    background-color: black;
+}
+
+.register-button {
+    background-color: $yellow;
+}
