@@ -185,11 +185,8 @@ button {
   max-width: 360px;
 }
 .caption {
-  position: absolute;
-  bottom: 0;
+  @include caption($color-ma-secondary);
   @include size-configuration(250px, 150px);
-  background-color: $color-ma-secondary;
-  opacity: 0.7;
 }
 
 .main-figure {
@@ -204,4 +201,19 @@ button {
 
 .bottom-figure {
   justify-content: flex-end;
+}
+
+.triangle {
+  @include caption(null);
+  @include size-configuration(0px, 0px);
+  margin-left: 250px;
+  margin-right: 0px;
+  background: none;
+  border-style: solid;
+  border-width: 150px 0 0 100px;
+  border-color: transparent transparent transparent rgb(248, 248, 248);
+}
+.bottom-triangle {
+  margin-right: 100px;
+  margin-left: 0px;
 }
