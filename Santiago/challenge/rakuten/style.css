@@ -83,3 +83,49 @@
     margin-left: -26px;
     margin-top: 7px;
 }
+
+.navbar-items-user{
+    position: relative;
+    width: 403px;
+    height: 36px;
+    margin-top: 15px;
+    margin-left: 223px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.navbar-items-user-1 {
+    margin-right: 15px;
+    color: #999;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.navbar-items-user-2 {
+    margin-right: 15px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.navbar-items-user-3 {
+    font-family: NotoSans-Bold,Arial,sans-serif;
+    width: 108px;
+    height: 32px;
+    color: #252525;
+    background-color: #ffe300;
+    border: none;
+    border-radius: 5%;
+    font-weight: 600;
+}
+
+.navbar-items-user-1:hover,
+.navbar-items-user-2:hover {
+    color: #ffe300;
+}
+
+.navbar-items-user-3:hover {
+    opacity: 0.9;
+}
