@@ -7,6 +7,11 @@
   align-items: $align;
 }
 
+@mixin size-configuration($width, $height) {
+  width: $width;
+  height: $height;
+}
+
 @mixin cart-container-items {
   @include flex-configuration(row, center, center);
   color: white;
