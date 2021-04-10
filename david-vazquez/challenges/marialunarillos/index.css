@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 12px;
   background: #965f5f;
 }
@@ -304,4 +304,37 @@ header {
   width: 100%;
   padding: 0;
   color: #2e2925;
+}
+
+.form-container {
+  width: 100%;
+  background: lightgray;
+}
+
+input {
+  padding-bottom: 3px;
+}
+
+.form-reserve-flight {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 140px 50px 30px;
+}
+
+.ticket-number {
+  border: 0;
+  background: transparent;
+  padding: 5px;
+  padding-left: 0;
+  outline: none;
+  border-bottom: 2px solid rgb(49, 49, 49);
+  margin-bottom: 60px;
+}
+
+.flight-origin {
+  border: 0;
+  background: transparent;
+  padding: 5px;
+  outline: none;
+  border-bottom: 2px solid rgb(49, 49, 49);
 }
