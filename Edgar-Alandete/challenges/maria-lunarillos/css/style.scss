@@ -25,6 +25,9 @@ button {
   display: flex;
   background-color: $color-ma-secondary;
   min-height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 .login-register {
@@ -139,7 +142,7 @@ button {
 
 .search-product {
   @include flex-configuration(null, space-between, null);
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .new-products {
