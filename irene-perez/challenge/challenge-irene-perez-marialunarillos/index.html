@@ -58,7 +58,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="information-page">
             <figure class="figure-content">
                 <!-- <img class="img-items" src="./css/asets/utensiliosbasicos.jpg" alt=""> -->
                 <div class="items-text">
@@ -68,8 +68,54 @@
                     </section>
                 </div>
             </figure>
+        <form class="formulary" action="formulary">
+            <div class="travel-booking">
+                <p class="travel-booking-text"><i class="fas fa-plane"></i>Reserva tu vuelo</p>
+            </div>
+            <div class="travel-information">
+                <div class="travel-text">
+                    <h3>Viaje</h3>
+                    <select class="travel" name="travel">
+                        <option value="goAndBack">Ida y vuelta</option>
+                        <option value="go">Sólo ida</option>
+                        <option value="destiny">Destinos múltiples</option>
+                    </select>
+                </div>
+                <select name="travel-from" class="travel-from">
+                    <option value="to" selected disabled>Salida de *</option>
+                    <option value="Barclona">Barcelona</option>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Sevilla">Sevilla</option>
+                </select>
+                <select name="travel-to" class="travel-to">
+                    <option value="to" selected disabled>Llegada a *</option>
+                    <option value="Barclona">Barcelona</option>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Sevilla">Sevilla</option>
+                </select>
+            </div>
+            <div class="passenger-information">
+                <input type="date" class="calendar">
+                <div class="passenger">
+                    <h3 class="passenger-tittle">Pasajeros*</h3>
+                    <input type="text" class="passenger-input" placeholder="1 Pasajero">
+                </div>
+                <div class="classe">
+                    <h3 class="classe-tittle">Clase</h3>
+                    <select class="travel" name="travel">
+                        <option value="premiun">Premiun Economy</option>
+                        <option value="business">Business</option>
+                        <option value="premiere">La Prèmiere</option>
+                    </select>
+                </div>
+            </div>
+            <div class="professional">
+                <input type="range" min="0" max="1" class="range">
+                <h3 class="professional-travel">Viaje profesional</h3>
+            </div>
+            <buttton class="search-button">Buscar vuelos</buttton>
+        </form>
         </div>
     </main>
-
 </body>
 </html>

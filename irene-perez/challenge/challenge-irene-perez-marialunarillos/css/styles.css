@@ -175,3 +175,69 @@ color: white;
     color: white;
 }
 
+.formulary {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+}
+
+.travel-booking {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: cornflowerblue;
+}
+
+.travel-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 450px;
+}
+
+.travel-from {
+   height: fit-content;
+   margin-top: 23px;
+}
+
+.travel-to {
+    height: fit-content;
+    margin-top: 23px;
+}
+
+.passenger-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 450px;
+    background-color: cornflowerblue;
+}
+
+.calendar {
+    height: fit-content;
+    align-items: flex-end;
+}
+
+.professional {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    margin-right: 1070px;
+}
+
+.range {
+    width: 30px;
+}
+
+.search-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 80px;
+    background-color: cornflowerblue;
+}
+
+
+
