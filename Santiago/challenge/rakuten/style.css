@@ -131,9 +131,17 @@ a:link {
     opacity: 0.9;
 }
 
-.sliders img {
+.sliders img{
     position: absolute;
     width: 1349px;
     height: 538.25px;
     margin-top: 60px;
+}
+
+.films {
+    top: 598px;
+    position: absolute;
+    background-color: #212121;
+    width: 100%;
+    height: 200px;
 }
