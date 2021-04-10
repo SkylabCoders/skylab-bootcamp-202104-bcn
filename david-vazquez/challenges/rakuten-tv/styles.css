@@ -179,3 +179,77 @@ a:active {
   border-radius: 2px;
   padding: 10px;
 }
+
+.slider {
+  padding-top: 60px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-item {
+  position: absolute;
+}
+
+.button {
+  opacity: 0;
+  position: absolute;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background: transparent;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  margin-top: 200px;
+  filter: invert(100%) drop-shadow(1px 1px #000);
+}
+
+.slider:hover > .button {
+  opacity: 1;
+  transition: 1s;
+}
+
+.button.left {
+  background-image: url("img/scrollarrowtoleft_83879.svg");
+  float: left;
+  left: 20px;
+}
+
+.button.right {
+  background-image: url("img/scrollarrowtoright_83712.svg");
+  float: right;
+  right: 20px;
+}
+
+/*
+.slider .slider-item {
+  padding-top: 60px;
+  position: absolute;
+  animation;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slider {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: 100px;
+  }
+}
+
+
+.slider {
+  height: 575px;
+  width: auto;
+  padding-top: 60px;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.slider-item {
+  display: inline-block;
+}
+*/
