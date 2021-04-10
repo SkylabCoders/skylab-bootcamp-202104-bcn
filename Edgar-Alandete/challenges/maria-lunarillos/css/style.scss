@@ -16,7 +16,7 @@ ul {
 }
 .navigator-container {
   display: flex;
-  background-color: #f8f8f8;
+  background-color: $color-ma-secondary;
   width: 100%;
   min-height: 50px;
 }
@@ -34,7 +34,7 @@ ul {
 
 .login-register:hover,
 .social-item a:hover {
-  color: #ff5959;
+  color: $color-ma;
 }
 
 .malu-pages {
@@ -51,15 +51,15 @@ ul {
     no-repeat;
 }
 .ma {
-  @include malu-logo(80px, 140px, "maria-lunarillos.png", #ff5959);
+  @include malu-logo(80px, 140px, "maria-lunarillos.png", $color-ma);
 }
 
 .cu {
-  @include malu-logo(80px, 70px, "cucute.png", #6199af);
+  @include malu-logo(80px, 70px, "cucute.png", $color-cu);
 }
 
 .mu {
-  @include malu-logo(80px, 70px, "mumuchu.png", #f6b436);
+  @include malu-logo(80px, 70px, "mumuchu.png", $color-mu);
 }
 
 .cu:hover,
@@ -90,14 +90,14 @@ ul {
 
 .item-counter {
   @include cart-container-items();
-  background-color: #ff5959;
+  background-color: $color-ma;
   font-weight: bold;
   font-size: 20px;
 }
 
 .cart a:hover,
 .cart:hover {
-  background-color: #ff5959;
+  background-color: $color-ma;
   color: white;
 }
 
@@ -134,7 +134,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f8f8f8;
+  background-color: $color-ma-secondary;
   width: 100px;
   height: 100px;
   margin-right: 5px;
@@ -150,7 +150,7 @@ ul {
 .temporary-products {
   height: 30px;
   margin-right: 8px;
-  background-color: #ff5959;
+  background-color: $color-ma;
   font-weight: bold;
   flex-grow: 1;
 }
@@ -165,7 +165,7 @@ ul {
 
 .product-category:nth-last-child(1) {
   margin-left: 50px;
-  background-color: #ff5959;
+  background-color: $color-ma;
 }
 
 .product-category img {
