@@ -184,11 +184,12 @@ button {
   margin-right: 10px;
   max-width: 360px;
 }
-.side-caption {
+.caption {
   position: absolute;
   bottom: 0;
-  @include size-configuration(100%, 100px);
+  @include size-configuration(250px, 150px);
   background-color: $color-ma-secondary;
+  opacity: 0.7;
 }
 
 .main-figure {
@@ -197,13 +198,10 @@ button {
   position: relative;
 }
 
-.main-caption {
-  position: absolute;
-  bottom: 0;
-  @include size-configuration(100%, 100px);
-  background-color: $color-ma-secondary;
-}
-
 .top-figure {
   margin-bottom: 10px;
+}
+
+.bottom-figure {
+  justify-content: flex-end;
 }
