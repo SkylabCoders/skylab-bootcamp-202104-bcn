@@ -1,178 +1,223 @@
 *, *::after, *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-header{
-    display: flex;
-    flex-direction: column;
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 body {
-    font: 12px/1.55 'Source Sans Pro', sans-serif;
-    color: #67635F;
+  font: 12px/1.55 'Source Sans Pro', sans-serif;
+  color: #67635F;
 }
 
-.header-top-links{
+.header-top-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #e6e6e6;
+  margin-top: -10px;
+  height: 70px;
+}
+
+.links-others {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ma {
+  background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/maria-lunarillos.png) #FF5959 bottom center no-repeat;
+  color: white;
+  padding: 20px;
+  list-style-type: none;
+  height: 90px;
+  width: 80px;
+  cursor: pointer;
+  padding-top: 130px;
+  margin-right: 5px;
+}
+
+.cu {
+  background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/cucute.png) #6199AF bottom center no-repeat;
+  color: white;
+  padding: 20px;
+  list-style-type: none;
+  height: 90px;
+  width: 80px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.mu {
+  background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/mumuchu.png) #F6B436 bottom center no-repeat;
+  color: white;
+  padding: 20px;
+  list-style-type: none;
+  height: 90px;
+  width: 80px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.ma:hover, .cu:hover, .mu:hover {
+  padding-top: 130px;
+}
+
+.registrate {
+  border: solid #FF5959;
+  background-color: white;
+  padding: 20px;
+  height: 60px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.social-media {
+  border: solid #6199AF;
+  background-color: white;
+  padding: 20px;
+  height: 60px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.carrito {
+  border: solid #F6B436;
+  background-color: white;
+  padding: 20px;
+  height: 60px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.registrate:hover, .social-media:hover, .carrito:hover {
+  background-color: #FF5959;
+}
+
+.image {
+  margin-top: 80px;
+}
+
+.quick-links {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.buttons {
+  padding: 10px 20px;
+  border: solid 3px #9faa4d;
+  width: 100px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.main-header-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 10px;
+}
+
+.icons-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page-nav-icons {
+  padding: 20px;
+  border: solid 3px #ffffff;
+  background-color: #ccc;
+}
+
+.page-nav-icons:hover {
+  background-color: #FF5959;
+}
+
+#search {
+  -webkit-box-flex: 1.5;
+      -ms-flex-positive: 1.5;
+          flex-grow: 1.5;
+}
+
+@media only screen and (max-width: 800px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: rgb(230, 230, 230);
-    margin-top: -10px;
-    height:70px;
-}
-
-.links-others{
-    display: flex;
-}
-
-.ma{
-    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/maria-lunarillos.png) #FF5959 bottom center no-repeat;
-    color: white;
-    padding: 20px;
-    list-style-type: none;
-    height:90px;
-    width: 80px;
-    cursor: pointer;
-    padding-top: 130px;
-    margin-right: 5px;
-}
-
-.cu{
-    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/cucute.png) #6199AF bottom center no-repeat;
-    color: white;
-    padding: 20px;
-    list-style-type: none;
-    height:90px;
-    width: 80px;
-    cursor: pointer;
-    margin-right: 5px;
-}
-
-.mu{
-    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/mumuchu.png) #F6B436 bottom center no-repeat;
-    color: white;
-    padding: 20px;
-    list-style-type: none;
-    height:90px;
-    width: 80px;
-    cursor: pointer;
-    margin-right: 5px;
-}
-.ma:hover, .cu:hover, .mu:hover{
-    padding-top: 130px;
-}
-
-.registrate{
-    border: solid #FF5959;
-    background-color: white;
-    padding: 20px;
-    height:60px;
-    margin-top: 5px;
-    cursor: pointer;
-}
-
-.social-media{
-    border: solid #6199AF;
-    background-color: white;
-    padding: 20px;
-    height:60px;
-    margin-top: 5px;
-    cursor: pointer;
-}
-
-.carrito{
-    border: solid #F6B436;
-    background-color: white;
-    padding: 20px;
-    height:60px;
-    margin-top: 5px;
-    cursor: pointer;
-}
-.registrate:hover, .social-media:hover, .carrito:hover{
-    background-color: #FF5959;
-}
-
-.image{
-    margin-top: 80px;
-}
-.quick-links{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.buttons{
-    padding: 10px 20px;
-    border:solid 3px #9faa4d;
-    width: 100px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    text-align: center;
-}
-
-.main-header-section{
-    display: flex;
-    justify-content: space-around;
-    margin:10px;
-}
-
-.icons-nav{
-    display: flex;
-    justify-content: space-between;
-}
-
-.page-nav-icons{
-    padding: 20px;
-    border:solid 3px #ffffff;
-    background-color: #ccc;
-}
-
-.page-nav-icons:hover{
-    background-color: #FF5959;
-}
-
-
-#search{
-    flex-grow: 1.5;
-}
-
-@media only screen and (max-width: 800px){
-    .header{
-        display: flex;
+    -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    }
-}
-.main-container{
-    margin-top: 100px;
+  }
 }
 
-.icon-and-title{
-    text-align: center;
-    margin-top: -80px;
+.main-container {
+  margin-top: 100px;
 }
 
-.sub-sections{
-    background-color: #f8f8f8;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
+.icon-and-title {
+  text-align: center;
+  margin-top: -80px;
 }
 
-.banner-sections{
-    align-content: center;
+.sub-sections {
+  background-color: #f8f8f8;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.banner-sections {
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .section-images {
-    margin:10px;
+  margin: 10px;
 }
 
-#image-moldes{
-    width: 100%;
-    max-height: none;
-    overflow: auto;
-    float: left;
+#image-moldes {
+  width: 100%;
+  max-height: none;
+  overflow: auto;
+  float: left;
 }
+/*# sourceMappingURL=styles.css.map */
