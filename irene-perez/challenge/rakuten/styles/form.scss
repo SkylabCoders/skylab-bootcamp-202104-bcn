@@ -1,0 +1,92 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import './mixins';
+@import './colors';
+
+$noto: 'Noto Sans', sans-serif;
+
+a {
+    text-decoration: none;
+    &:visited {
+        color: white;
+    }
+}
+
+html {
+    font-family: $noto;
+    font-size: 0.9em;
+}
+
+.header-container {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.nav-bar,
+.logo-figure,
+.extern-nav,
+.nav-search,
+.login-elements,
+.searching-navs,
+.login-register-navs {
+    @include flex-direction(row);
+    color: white;
+}
+
+.logo,
+.cinema-nav,
+.fre-anchor,
+.subs-nav,
+.help,
+.login,
+.register-button {
+   cursor: pointer; 
+}
+
+.nav-bar{
+    background-color: black;
+    padding: 0 20px;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+
+.register-button {
+    background-color: $yellow;
+    text-transform: uppercase;
+    font-family: $noto;
+    padding: 10px;
+    border: 0;
+    border-radius: 5%;
+}
+
+.logo {
+    align-self: center;
+    height: 19px;
+}
+
+.extern-nav {
+    width: 350px;
+    justify-content: space-around;
+}
+
+.login-elements {
+    width: 400px;
+    justify-content: space-around;
+}
+
+.nav-search{
+    padding-right: 300px;
+}
+
+@media (max-width: 750px) {
+    .nav-bar {
+      display: none;
+    }
+}
