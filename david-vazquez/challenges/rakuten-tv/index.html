@@ -5,25 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rakuten Tv</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="nav-bar">
       <div class="logo">
-        <img src="img/logo.png" alt="" height="50px" />
+        <img src="img/logo.png" alt="" height="28px" />
       </div>
       <div class="nav-bar-menu">
-        <ul>
-          <li class="nav-item-menu">Cinema</li>
-          <li class="nav-item-menu">Gratis</li>
-          <li class="nav-item-menu">Suscripciones</li>
+        <ul class="nav-bar-menu-ul">
+          <li class="nav-item-menu">
+            <a><span>Cinema</span><a class="arrow">▼</a></a>
+            <ul class="nav-menu-parent-child">
+              <li class="nav-menu-parent-child-item">
+                <a target="_self"><span>Family</span></a>
+              </li>
+              <li class="nav-menu-parent-child-item">
+                <a target="_self">Colecciones</a>
+              </li>
+              <li class="nav-menu-parent-child-item">
+                <a target="_self">Top Populares</a>
+              </li>
+              <li class="nav-menu-parent-child-item">
+                <a target="_self">Todos los géneros</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item-menu">
+            <a><span>Gratis</span></a>
+          </li>
+          <li class="nav-item-menu">
+            <a><span>Suscripciones</span><a class="arrow">▼</a></a>
+            <ul class="nav-menu-parent-child">
+              <li class="nav-menu-parent-child-item">
+                <a target="_self"><span>Starzplay</span></a>
+              </li>
+              <li class="nav-menu-parent-child-item">
+                <a target="_self"><span>RTV suscripción</span></a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
       <div class="nav-bar-search">
-        <input type="text" name="search" id="search" placeholder="Buscar" />
+        <input
+          class="search-box-input"
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Buscar"
+        />
       </div>
       <div class="nav-bar-login">
-        <a href="" class="nav-button login"></a>
-        <a href="" class="nav-button register"></a>
+        <a class="nav-button">Ayuda y dispositivos</a>
+        <a class="nav-button login">Entrar</a>
+        <a class="nav-button register">Registrarse</a>
       </div>
     </div>
   </body>
