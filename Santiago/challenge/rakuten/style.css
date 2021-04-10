@@ -13,6 +13,7 @@
     left: 0;
     height: auto;
     background: #000;
+    z-index: 1;
 }
 
 .navbar-items {
@@ -84,12 +85,12 @@
     margin-top: 7px;
 }
 
-.navbar-items-user{
+.navbar-items-user {
     position: relative;
     width: 403px;
     height: 36px;
     margin-top: 15px;
-    margin-left: 223px;
+    margin-left: 206px;
 }
 
 a:link {
@@ -111,7 +112,7 @@ a:link {
 }
 
 .navbar-items-user-3 {
-    font-family: NotoSans-Bold,Arial,sans-serif;
+    font-family: NotoSans-Bold, Arial, sans-serif;
     width: 108px;
     height: 32px;
     color: #252525;
@@ -128,4 +129,11 @@ a:link {
 
 .navbar-items-user-3:hover {
     opacity: 0.9;
+}
+
+.sliders img {
+    position: absolute;
+    width: 1349px;
+    height: 538.25px;
+    margin-top: 60px;
 }
