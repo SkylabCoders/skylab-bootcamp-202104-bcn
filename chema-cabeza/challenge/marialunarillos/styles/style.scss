@@ -3,7 +3,7 @@
 $red-color: #FF5959;
 $red-icon-url:  url(./../images/icons/maria-lunarillos.png) $red-color bottom center no-repeat; 
 $grey-color: #F8F8F8;
-
+$darkergrey-color: #e8e6e5;
 *{
     margin: 0px;
 }
@@ -29,7 +29,7 @@ header {
     position: absolute;
     // background: $grey-color;
     background-color: $grey-color;
-    overflow:auto;
+    overflow: auto;
 }
 
 .centered1{
@@ -139,7 +139,7 @@ header {
     text-align: center;
     font-size: medium;
     font-weight: 500;
-    cursor: pointer
+    cursor: pointer;
 }
 
 
@@ -160,18 +160,7 @@ header {
 }
 
 .input-text {
-    float: left;
-    width: calc(100% - 49px);
-    // border: 1px solid #BBB8B6;
-    height: 26px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-indent: 0px;
-    text-align: start;
-    appearance: auto;
-    -webkit-writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    font: 400 13.3333px Arial;
+@include input-text;
 
 }
 
@@ -235,6 +224,9 @@ padding: 5px;
     height: 27px; 
     background: url("./../images/sprite.svg") 0 0 no-repeat; 
     margin: 10px;
+}
+.register-icon:hover {
+    background: url("./../images/sprite.svg") -37px 0 no-repeat; 
 }
 
 div.centered1 a:hover {color: $red-color;}
@@ -302,18 +294,16 @@ div.empty {
 
 
 
-div.cart-icon {
+.cart-icon {
     
-    background: #fff url(./../images/sprite.svg) -64px 10px no-repeat;
+    background: #fff url(./../images/sprite.svg) -65px 15px no-repeat;
     width: 50px;
     height: 50px;
 }
 
-div.cart-icon:hover {
-    background:  $red-color url(./images/sprite.svg) -64px 10px no-repeat;
-    filter: invert(1);
+.cart-icon:hover {
+    background:  $red-color url(./../images/sprite.svg) -105px 14px no-repeat;
     cursor: pointer;
-    
 }
 
 
@@ -363,7 +353,7 @@ div.cart-number {
     flex-direction: row;
     // flex-wrap: wrap;
     justify-content: flex-start;
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 65%;
 }
 
@@ -374,13 +364,28 @@ div.cart-number {
     border: 1px solid blue;
     width: 70%;
 }
-.image1 {
+.image1 > img {
     margin: 5px;
     margin-left: 0px;
+    width: 100%;
+    height: auto;
 }
-.image2 {
+.image2 > img {
     margin: 5px;
     margin-left: 0px;
+    width: 100%;
+    height: auto;
+}
+.image3 {
+    display: none;
+    overflow: hidden;
+}
+.image3 > img {
+    margin: 5px;
+    margin-left: 0px;
+    width: 100%;
+    height: auto;
+    margin: 0px 0px -500px 0px;
 }
 
 .image1 > .caption-shape {
@@ -408,6 +413,15 @@ div.cart-number {
     margin: 5px;
     margin-right: 0px;
     box-sizing: border-box;
+    width: 40%;
+    
+    border: 1px solid salmon;
+}
+.long-image > img {
+    margin: 5px;
+    margin-left: 0px;
+    width: 100%;
+    height: auto;
 }
 
 .long-image > .caption-shape {
@@ -463,7 +477,7 @@ div.cart-number {
     max-height: 100%;
     justify-content: space-evenly;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+    // filter: grayscale(100%);
     cursor: pointer;
 }
 .marcas-block > img:hover {
@@ -487,5 +501,171 @@ div.cart-number {
     .centered2-right {display: none;}
     .long-image {display: none;}
     .marcas-section {display: none;}
+    .column-images {width: 100%;}
+    .image3 {display: inline-block;}
 
+}
+
+.envios-section {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    padding: 50px 0px;
+    justify-content: center;
+    align-items: center;
+    background-color: $darkergrey-color;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.envios-container {
+    display: flex;
+    margin: 10px 20px;
+    width: 183px;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-furgo {
+    background: url(./../images/sprite.svg) 0 -38px no-repeat transparent;
+    margin-bottom: 10px;
+    width: 90px;
+    height: 60px;
+    display: block;
+}
+.icon-time {
+    background: url(../images/sprite.svg) -90px -38px no-repeat transparent;
+    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+.icon-envelope {
+    background: url(../images/sprite.svg) -150px -36px no-repeat transparent;
+    margin-bottom: 10px;
+    width: 68px;
+    height: 60px; 
+}
+.icon-card {
+    background: url(../images/sprite.svg) -223px -38px no-repeat transparent;
+    margin-bottom: 10px;
+    width: 77px;
+    height: 60px;  
+}
+.envios-container > .subtext {
+    font-size: 12px;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+    // border: 1px solid blue;
+}
+
+.contact-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid red;
+    width: 65%;
+    flex-wrap: wrap;
+    padding: 50px 0px;
+    
+}
+
+.contact-left {
+    @include contact-divisions;
+}
+.contact-iconsblock {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.contact-iconsblock > .contact-facebook {
+    @include contact-icons (url(../images/sprite.svg) 0 -494px no-repeat transparent);
+}
+.contact-iconsblock > .contact-twitter {
+    @include contact-icons (url(../images/sprite.svg) -36px -494px no-repeat transparent);
+}
+.contact-iconsblock > .contact-instagram {
+    @include contact-icons (url(../images/sprite.svg) -71px -494px no-repeat transparent);
+}
+.contact-iconsblock > .contact-pinterest {
+    @include contact-icons (url(../images/sprite.svg) -106px -494px no-repeat transparent);
+}
+.contact-iconsblock > .contact-youtube {
+    @include contact-icons (url(../images/sprite.svg) -142px -494px no-repeat transparent);
+}
+
+.suscribete-line {
+    display: flex;
+    flex-direction: row;
+
+}
+.suscribete-input-text {
+    @include input-text;
+    width: 300px;
+    margin-right: 5px;
+    height: 32px;
+}
+.suscribete-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $red-color;
+    border: none;
+    font-size: 30px;
+    color: white;
+    text-align:center;
+}
+
+.contact-center {
+    @include contact-divisions;
+    padding: 0px 50px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    // width: 500px;
+    height: 100px;
+}
+
+.contact-right {
+    @include contact-divisions;
+    justify-content: flex-start;
+}
+.contact-first {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-icon {
+    @include contact-icons (url(../images/sprite.svg) 0px -207px no-repeat transparent);
+
+}
+
+.contact-text {
+    margin-left: 3px;
+    color: $red-color;
+}
+.contact-second {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $red-color;
+    color: white;
+    width: 100%;
+    margin-top: 100px;
+    height: 50px;
 }

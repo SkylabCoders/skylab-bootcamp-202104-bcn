@@ -86,3 +86,33 @@
     height: 60px;
 }
 
+@mixin contact-icons ($url){
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: $url;
+}
+
+@mixin contact-divisions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0px 30px;
+
+}
+
+@mixin input-text {
+    float: left;
+    width: calc(60% - 49px);
+    border: 1px solid #BBB8B6;
+    height: 26px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-indent: 0px;
+    text-align: start;
+    appearance: auto;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    font: 400 13.3333px Arial;
+}
