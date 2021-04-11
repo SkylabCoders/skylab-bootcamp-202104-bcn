@@ -660,12 +660,12 @@ body {
     body .carousel_wrapper #item10:checked ~ #slide10,
     body .carousel_wrapper #item11:checked ~ #slide11 {
       z-index: 9; }
-  body .wrapper-section {
+  body .wrapper-section.category {
     width: 100%;
     margin-top: 190px;
     padding-top: 65px;
     background-color: #f2f2f2; }
-    body .wrapper-section .wrapper-block {
+    body .wrapper-section.category .wrapper-block {
       display: flex;
       display: -webkit-box;
       display: -moz-box;
@@ -678,12 +678,12 @@ body {
       -moz-box-align: stretch;
       -ms-flex-align: stretch;
       -webkit-align-items: stretch; }
-      body .wrapper-section .wrapper-block .category-section {
+      body .wrapper-section.category .wrapper-block .category-section {
         width: 100%;
         position: relative;
         padding-top: 50px;
         margin-bottom: 75px; }
-        body .wrapper-section .wrapper-block .category-section::before {
+        body .wrapper-section.category .wrapper-block .category-section::before {
           position: absolute;
           top: -140px;
           left: calc(50% - 50px);
@@ -698,7 +698,7 @@ body {
           background-repeat: no-repeat;
           background-attachment: initial;
           background-position: center center; }
-        body .wrapper-section .wrapper-block .category-section .title-category {
+        body .wrapper-section.category .wrapper-block .category-section .title-category {
           position: relative;
           text-align: center;
           font-size: 2em;
@@ -707,7 +707,7 @@ body {
           letter-spacing: 10px;
           color: #2e2925;
           padding: 15px; }
-          body .wrapper-section .wrapper-block .category-section .title-category::after {
+          body .wrapper-section.category .wrapper-block .category-section .title-category::after {
             position: absolute;
             top: 0;
             left: calc(50% - 160px);
@@ -717,7 +717,7 @@ body {
             min-height: 2px;
             margin: 0 auto;
             background-color: #2e2925; }
-          body .wrapper-section .wrapper-block .category-section .title-category::before {
+          body .wrapper-section.category .wrapper-block .category-section .title-category::before {
             position: absolute;
             bottom: 0;
             left: calc(50% - 160px);
@@ -727,27 +727,27 @@ body {
             min-height: 2px;
             margin: 0 auto;
             background-color: #2e2925; }
-      body .wrapper-section .wrapper-block .category-section.ingredientes::before {
+      body .wrapper-section.category .wrapper-block .category-section.ingredientes::before {
         background-color: transparent;
         background-image: url("../assets/magdalena.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-attachment: initial;
         background-position: center center; }
-      body .wrapper-section .wrapper-block .category-section.fiestas::before {
+      body .wrapper-section.category .wrapper-block .category-section.fiestas::before {
         background-color: transparent;
         background-image: url("../assets/tarta-cumpleanos.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-attachment: initial;
         background-position: center center; }
-      body .wrapper-section .wrapper-block .col-right, body .wrapper-section .wrapper-block .col-left {
+      body .wrapper-section.category .wrapper-block .col-right, body .wrapper-section.category .wrapper-block .col-left {
         max-width: 33%;
         margin: 2px; }
-        body .wrapper-section .wrapper-block .col-right .item-wrapper, body .wrapper-section .wrapper-block .col-left .item-wrapper {
+        body .wrapper-section.category .wrapper-block .col-right .item-wrapper, body .wrapper-section.category .wrapper-block .col-left .item-wrapper {
           position: relative;
           z-index: 9; }
-          body .wrapper-section .wrapper-block .col-right .item-wrapper .inner-item-wrapper-content, body .wrapper-section .wrapper-block .col-left .item-wrapper .inner-item-wrapper-content {
+          body .wrapper-section.category .wrapper-block .col-right .item-wrapper .inner-item-wrapper-content, body .wrapper-section.category .wrapper-block .col-left .item-wrapper .inner-item-wrapper-content {
             position: absolute;
             bottom: 4px;
             left: 0;
@@ -756,9 +756,9 @@ body {
             padding: 20px 20px 20px 20px;
             background-color: rgba(255, 255, 255, 0.8);
             clip-path: polygon(0 0, 69% 0, 100% 100%, 0% 100%); }
-            body .wrapper-section .wrapper-block .col-right .item-wrapper .inner-item-wrapper-content .item-title, body .wrapper-section .wrapper-block .col-left .item-wrapper .inner-item-wrapper-content .item-title {
+            body .wrapper-section.category .wrapper-block .col-right .item-wrapper .inner-item-wrapper-content .item-title, body .wrapper-section.category .wrapper-block .col-left .item-wrapper .inner-item-wrapper-content .item-title {
               max-width: 75%; }
-              body .wrapper-section .wrapper-block .col-right .item-wrapper .inner-item-wrapper-content .item-title a, body .wrapper-section .wrapper-block .col-left .item-wrapper .inner-item-wrapper-content .item-title a {
+              body .wrapper-section.category .wrapper-block .col-right .item-wrapper .inner-item-wrapper-content .item-title a, body .wrapper-section.category .wrapper-block .col-left .item-wrapper .inner-item-wrapper-content .item-title a {
                 display: block;
                 color: #67635F;
                 font-size: 1.5em;
@@ -766,16 +766,16 @@ body {
                 font-weight: 900;
                 text-transform: uppercase;
                 margin-bottom: 5px; }
-                body .wrapper-section .wrapper-block .col-right .item-wrapper .inner-item-wrapper-content .item-title a:hover, body .wrapper-section .wrapper-block .col-left .item-wrapper .inner-item-wrapper-content .item-title a:hover {
+                body .wrapper-section.category .wrapper-block .col-right .item-wrapper .inner-item-wrapper-content .item-title a:hover, body .wrapper-section.category .wrapper-block .col-left .item-wrapper .inner-item-wrapper-content .item-title a:hover {
                   text-decoration: underline; }
-            body .wrapper-section .wrapper-block .col-right .item-wrapper .inner-item-wrapper-content .item-content, body .wrapper-section .wrapper-block .col-left .item-wrapper .inner-item-wrapper-content .item-content {
+            body .wrapper-section.category .wrapper-block .col-right .item-wrapper .inner-item-wrapper-content .item-content, body .wrapper-section.category .wrapper-block .col-left .item-wrapper .inner-item-wrapper-content .item-content {
               display: block;
               font-size: 0.94em;
               line-height: 1.1em;
               color: #67635F;
               padding: 14px 20px 20px 0px;
               max-width: 85%; }
-      body .wrapper-section .wrapper-block .col-left {
+      body .wrapper-section.category .wrapper-block .col-left {
         display: flex;
         display: -webkit-box;
         display: -moz-box;
@@ -790,15 +790,87 @@ body {
         -webkit-align-items: center;
         max-width: 66%;
         margin: 3px 6px; }
-        body .wrapper-section .wrapper-block .col-left .inner-item-wrapper-content {
+        body .wrapper-section.category .wrapper-block .col-left .inner-item-wrapper-content {
           position: absolute;
           bottom: 0;
           left: 0; }
-    body .wrapper-section .read-more {
+    body .wrapper-section.category .read-more {
       display: block;
       width: 100%;
       text-align: center; }
-      body .wrapper-section .read-more .more-link {
+      body .wrapper-section.category .read-more .more-link {
+        margin: 3% auto 0;
+        padding: 15px 30px;
+        display: inline-block;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        background-color: #ff5959;
+        color: #ffffff; }
+  body .wrapper-section.brands {
+    width: 100%;
+    margin-top: 50px;
+    padding-top: 65px; }
+    body .wrapper-section.brands .category-section {
+      width: 100%;
+      position: relative;
+      padding-top: 50px;
+      margin-bottom: 75px; }
+      body .wrapper-section.brands .category-section .title-category {
+        position: relative;
+        text-align: center;
+        font-size: 2em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        color: #2e2925;
+        padding: 15px; }
+        body .wrapper-section.brands .category-section .title-category::after {
+          position: absolute;
+          top: 0;
+          left: calc(50% - 285px);
+          display: block;
+          content: "";
+          width: 30%;
+          min-height: 2px;
+          margin: 0 auto;
+          background-color: #2e2925; }
+        body .wrapper-section.brands .category-section .title-category::before {
+          position: absolute;
+          bottom: 0;
+          left: calc(50% - 285px);
+          display: block;
+          content: "";
+          width: 30%;
+          min-height: 2px;
+          margin: 0 auto;
+          background-color: #2e2925; }
+    body .wrapper-section.brands .list-brands {
+      display: flex;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center; }
+      body .wrapper-section.brands .list-brands .item-brand {
+        max-width: 16.5%;
+        width: 17%;
+        margin: 10px auto; }
+        body .wrapper-section.brands .list-brands .item-brand img {
+          display: block;
+          max-width: 150px;
+          filter: grayscale(1) opacity(0.8);
+          margin: 0 auto; }
+    body .wrapper-section.brands .read-more {
+      display: block;
+      width: 100%;
+      text-align: center; }
+      body .wrapper-section.brands .read-more .more-link {
         margin: 3% auto 0;
         padding: 15px 30px;
         display: inline-block;

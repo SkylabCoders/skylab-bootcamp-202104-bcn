@@ -408,7 +408,7 @@ body {
       z-index: 9;
     }
   }
-  .wrapper-section{
+  .wrapper-section.category{
     width:100%;
     margin-top: 190px;
     padding-top: 65px;
@@ -545,7 +545,81 @@ body {
       }
     }
   }
+  .wrapper-section.brands{
+    width:100%;
+    margin-top: 50px;
+    padding-top: 65px;
+    .category-section{
+      width:100%;
+      position:relative;
+      padding-top:50px;
+      margin-bottom: 75px;
+
+      .title-category{
+        position:relative;
+        text-align: center;
+        font-size: 2em;
+        font-weight: $bold;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        color:$text;
+        padding:15px;
+        &::after{
+          position:absolute;
+          top:0;
+          left:calc(50% - 285px);
+          display:block;
+          content:"";
+          width:30%;
+          min-height: 2px;
+          margin: 0 auto;
+          background-color:$text;
+
+        }
+        &::before{
+          position:absolute;
+          bottom:0;
+          left:calc(50% - 285px);
+          display:block;
+          content:"";
+          width:30%;
+          min-height: 2px;
+          margin: 0 auto;
+          background-color:$text;
+
+        }
+      }
+    }
+    .list-brands{
+      @include flex(row wrap, space-between, center);
+      .item-brand{
+        max-width:16.5%;
+        width:17%;
+        margin:10px auto;
+        img{
+            display:block;
+            max-width: 150px;
+            filter: grayscale(1) opacity(0.8);
+            margin: 0 auto;
+        }
+      }
+    }
+    .read-more{
+      display:block;
+      width:100%;
+      text-align: center;
+      .more-link{
+        margin:3% auto 0;
+        padding: 15px 30px;
+        display: inline-block;
+        font-size:1.3em;
+        text-transform: uppercase;
+        background-color:$corporate1;
+        color:$primary;
+      }
   }
+  }
+}
 
 
 
