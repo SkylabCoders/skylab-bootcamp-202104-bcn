@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: "NotoSans-Bold",Arial,sans-serif;
+}
+
+nav {
+    background-color: black;
+}
+#nav-items {
+    background-color: black;
+    display: flex;
+    height: 61px;
+    padding: 0 20px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+#navs {
+    display: flex;
+}
+
+#menu-items, #navigation-button {
+    color: white;
+    display: flex;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#cinema::after, #suscripciones::after {
+    content: '▼';
+    font-size: 10px;
+    padding-left: 5px;
+}
+
+#cinema:hover, #suscripciones:hover, #gratis:hover {
+    color: #ffe300;
+}
+.item-menu {
+    padding: 20px 5px;
+}
+
+
+#nav-logo img {
+    width: 140px;
+    padding: 10px 0;
+}
+
+#input-menu-search {
+    background: #252525;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    width: 300px;
+    border-radius: 2px;
+}
+
+#input-menu-search:focus {
+    border: none;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.navigation-item {
+    padding: 20px;
+}
+
+#ayuda {
+    color: #999;
+}
+
+#registrarse {
+    background-color: #ffe300;
+    color: #252525;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    top: 10px;
+}
+#ayuda:hover, #entrar:hover {
+    color: #ffe300;
+}
