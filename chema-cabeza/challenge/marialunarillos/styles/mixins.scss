@@ -50,3 +50,24 @@
     float: right;
     border: none;
 }
+
+@mixin caption-shape ($top, $left) {
+    top: $top;
+    left: $left;
+    position: absolute;
+    background-color: white;
+    opacity: 70%;
+    width: 500px;
+    height: 400px;
+    clip-path: polygon(24% 100%, 24% 60%, 70% 60%, 100% 100%);
+    
+}
+
+@mixin image-span ($top, $left) {
+    position: absolute;
+    text-align: left;
+    top: $top;
+    left: $left;
+    color: black;
+    font-size: 20px;
+}

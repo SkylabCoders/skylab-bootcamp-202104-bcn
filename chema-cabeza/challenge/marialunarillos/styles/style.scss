@@ -144,7 +144,7 @@ header {
 }
 
 
-.centered2-righ-bottom, img {
+.centered2-righ-bottom > img {
     @include big-icon-img;
 }
 
@@ -231,8 +231,7 @@ padding: 5px;
 
 }
 
-
-div.register-icon {
+.register-icon {
     width: 27px;
     height: 27px; 
     background: url("./../images/sprite.svg") 0 0 no-repeat; 
@@ -351,7 +350,6 @@ div.cart-number {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 700px;
     margin-top: 150px;
     background-color: $grey-color;
     border: 1px solid indigo;
@@ -379,26 +377,66 @@ div.cart-number {
     height: 60px;
 }
 
-.images {
+.images-section {
     display: flex;
     flex-direction: row;
+    // flex-wrap: wrap;
+    justify-content: flex-start;
     border: 1px solid red;
     width: 65%;
-    height: 700px;
 }
 
-.h-img {
-    width: 715px;
-    height: 300px;
+.column-images {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid blue;
+}
+.image1 {
+    margin: 5px;
+    margin-left: 0px;
+}
+.image2 {
+    margin: 5px;
+    margin-left: 0px;
 }
 
-.caption-shape {
-    // background-color: rgba($color: white, $alpha: 0.7);
-    background-color: white;
-    opacity: 80%;
-    width: 500px;
-    height: 400px;
-    margin-left: -500px;
-    margin-top: -100px;
-    clip-path: polygon(24% 100%, 24% 60%, 70% 60%, 100% 100%);
+.image1 > .caption-shape {
+
+    @include caption-shape (-90px, 210px);
+
+}
+
+.image1 > span {
+    @include image-span (175px, 350px);
+
+}
+.image2 > .caption-shape {
+
+    @include caption-shape (225px, -120px);
+
+}
+
+.image2 > span {
+    @include image-span (500px, 20px);
+
+}
+
+.long-image {
+    margin: 5px;
+    margin-right: 0px;
+    box-sizing: border-box;
+}
+
+.long-image > .caption-shape {
+
+    @include caption-shape (986px, 910px);
+    width: 450px;
+    height: 350px;
+}
+
+.long-image > span {
+
+    @include image-span (1220px, 1030px);
+
 }
