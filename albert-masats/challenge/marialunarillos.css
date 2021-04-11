@@ -108,3 +108,13 @@
     width: 71px;
     background: url(./../challenge/images/mumuchu.png) rgb(246, 180, 54) bottom center no-repeat;
 }
+
+.maria-lunarillos {
+    align-self: flex-end;
+    justify-content: flex-start;
+    height:70px;
+    width: 300px;
+    background: url(./../challenge/images/logo.svg) bottom center no-repeat;
+    border: 1px solid pink;
+    margin-bottom: 30px;
+}
