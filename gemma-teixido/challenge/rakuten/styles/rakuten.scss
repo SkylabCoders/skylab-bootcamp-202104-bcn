@@ -83,12 +83,24 @@ input:active {
   background-color: rgb(194, 194, 5);
 }
 
+@media (max-width: 979px) {
+  .second-header-part,
+  .third-header-part,
+  #registrate,
+  .first-header-part {
+    display: none;
+  }
+  #logo img {
+    margin-top: 20px;
+  }
+}
+
 main {
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   background-color: black;
-  padding-left: 10px;
-  padding-right: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .row-movies {
