@@ -16,6 +16,8 @@ body {
   font-family: Noto Sans,Arial,sans-serif;
   font-size: 14px;
   font-weight: 600;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .logo {
@@ -24,6 +26,9 @@ body {
 }
 
 .header {
+  position: fixed;
+  z-index: 1;
+  background-color: #131313;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,7 +148,7 @@ body {
   width: 100%;
   height: auto;
   margin: 5px;
-  padding: 10px;
+  padding: 5px;
   border-radius: 3px;
 }
 
@@ -155,5 +160,43 @@ body {
 .movie-categories {
   color: white;
   padding: 10px;
+}
+
+.movies {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: hidden;
+  white-space: nowrap;
+  background: -webkit-gradient(linear, right top, left top, color-stop(0, rgba(23, 23, 23, 0.95)), to(transparent));
+  background: linear-gradient(to left, rgba(23, 23, 23, 0.95) 0, transparent 100%);
+}
+
+.movie {
+  margin: 5px;
+}
+
+.form {
+  display: block;
+  color: white;
+  padding: 10px;
+}
+
+.form .form-label {
+  text-transform: uppercase;
+}
+
+.form input, .form select {
+  background-color: rgba(255, 255, 255, 0);
+  color: #e2e2e2;
+  border: none;
+  padding: 10px;
+  border-bottom: 2px solid #fff;
+}
+
+.form-section {
+  position: relative;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=styles.css.map */
