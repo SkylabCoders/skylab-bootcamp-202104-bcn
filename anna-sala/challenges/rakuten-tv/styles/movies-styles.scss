@@ -1,0 +1,46 @@
+@import"./styles.scss";
+
+@mixin spacings ($width){
+    width:$width;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.movie-image{
+    width:100%;
+    min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body{
+    background-color: #f1f1f1;
+}
+.sharing-buttons{
+    position:absolute;
+    right: 0;
+    margin-right: 15%;
+    display: flex;
+    flex-direction: column;
+    line-height: 40px;
+}
+.movie-info{
+    @include spacings(70%);
+    margin-top: -10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.summary{
+    display: flex;
+    justify-content: space-between;
+    @include spacings(60%);
+}
+
+.sinopsis{
+    @include spacings(80%);
+    font-weight: 200;
+}
