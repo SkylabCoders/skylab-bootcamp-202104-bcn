@@ -11,8 +11,12 @@ header {
   width: 100%;
   height: 50px;
   background-color: lightgrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 ul {
@@ -22,26 +26,33 @@ ul {
 .header-container-fixed {
   width: 100%;
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .webs-container {
   width: 240px;
   height: 144px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   position: absolute;
   left: 68.5px;
- 
-  a {
-    display: block;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+}
+
+.webs-container a {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .ma {
@@ -82,21 +93,30 @@ ul {
 .login-link-container {
   width: 180px;
   height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-transform: uppercase;
   color: #2E2925;
   font-size: 13px;
-  
-  a {
-    display: flex;
-    align-items: center;
-  }
-  a:link,
-  a:visited {
-    text-decoration: none;
-    color: #2E2925;
-  }
+}
+
+.login-link-container a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-link-container a:link,
+.login-link-container a:visited {
+  text-decoration: none;
+  color: #2E2925;
 }
 
 .login-icon {
@@ -104,13 +124,14 @@ ul {
   width: 27px;
   height: 27px;
   background: url(../images/sprite.svg) 0 0 no-repeat;
-  
 }
 
 .socialmedia-links-container {
   width: 200px;
   height: 60px;
   border: solid 2px orange;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -118,5 +139,8 @@ ul {
   width: 120px;
   height: 60px;
   border: solid 2px orange;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+/*# sourceMappingURL=maria-lunarillos.css.map */
