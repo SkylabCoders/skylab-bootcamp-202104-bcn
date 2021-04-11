@@ -89,6 +89,10 @@ a:active {
   display: block;
 }
 
+.nav-item-menu:hover > .arrow {
+  transform: rotate(180deg);
+}
+
 .arrow {
   display: inline-block;
   content: "▼";
