@@ -1,6 +1,17 @@
 @import"./colors";
 
 $padding:10px;
+@mixin slideshow-images {
+    color:rgba(255, 255, 255, 0);
+    padding:50px;
+    font-size:3em;
+    height:40vw;
+    width:100%;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center top;
+    
+}
 
 *, *::after, *::before {
     margin: 0;
@@ -9,7 +20,7 @@ $padding:10px;
 }
 
 body{
-    background-color: $negro;
+    background-color: $black;
     font-family: Noto Sans,Arial,sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -18,12 +29,17 @@ body{
     width: 150px;
 }
 .header{
-    padding:10px;
     display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-content: center;
+    padding:10px 20px;
     text-transform: uppercase;
     color: #fff;
-    justify-content: space-between;
     width: 100%;
+    .main-navigation{
+        padding: $padding;
+    }
     a{
         padding: $padding;
         color: #fff;
@@ -46,5 +62,27 @@ body{
 .navigation-sections{
     display: flex;
     align-content: center;
+}
+#register{
+    background-color: $amarillo;
+    color: $black;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+/*--------------THIS IS THE SLIDESHOW---------------*/
+
+    .stackend .slide1 {
+    background-image: url("./../images/img-slice-1.png");
+    @include slideshow-images;
+    }
+    .stackend .slide2 {
+    background-image: url("./../images/img-slice-2.png");
+    @include slideshow-images;
+    }
+
+/*--------------END OF SLIDESHOW---------------*/
+
+.slideshow-images{
+    width: 100%;
 }
 

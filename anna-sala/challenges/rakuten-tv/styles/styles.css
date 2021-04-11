@@ -17,16 +17,25 @@ body {
 }
 
 .header {
-  padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-transform: uppercase;
-  color: #fff;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: #fff;
   width: 100%;
+}
+
+.header .main-navigation {
+  padding: 10px;
 }
 
 .header a {
@@ -63,5 +72,42 @@ body {
   display: flex;
   -ms-flex-line-pack: center;
       align-content: center;
+}
+
+#register {
+  background-color: #ffe300;
+  color: #131313;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/*--------------THIS IS THE SLIDESHOW---------------*/
+.stackend .slide1 {
+  background-image: url("./../images/img-slice-1.png");
+  color: rgba(255, 255, 255, 0);
+  padding: 50px;
+  font-size: 3em;
+  height: 40vw;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.stackend .slide2 {
+  background-image: url("./../images/img-slice-2.png");
+  color: rgba(255, 255, 255, 0);
+  padding: 50px;
+  font-size: 3em;
+  height: 40vw;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+/*--------------END OF SLIDESHOW---------------*/
+.slideshow-images {
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
