@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: #101010; */
+    background-color: #F1F1F1;
 }
 
 .main {
@@ -27,12 +27,14 @@
     display: flex;
     padding: 0 15px;
     font-family: NotoSans-Bold, Arial, sans-serif;
+    background-color: black;
 }
 
 .rakuten-logo {
     width: 142px;
     height: 30px;
     margin: 10px;
+    background-color: black;
 }
 
 .rakuten-logo:hover {
@@ -44,6 +46,11 @@
     color: #fff;
     list-style-type: none;
     margin-left: 15px;
+    background-color: black;
+}
+
+.navbar-items-menu {
+    background-color: black;
 }
 
 .navbar-items-menu-text {
@@ -51,11 +58,16 @@
     margin-right: 15px;
     padding: 22px 0;
     font-weight: 600;
+    background-color: black;
 }
 
 .navbar-items-menu-text:hover {
     color: #ffe300;
     cursor: pointer;
+}
+
+.navbar-items-logo {
+    background-color: black;
 }
 
 .navbar-items-search {
@@ -99,6 +111,7 @@
     height: 36px;
     margin-top: 15px;
     margin-left: 206px;
+    background-color: black;
 }
 
 a:link {
@@ -110,6 +123,7 @@ a:link {
     color: #999;
     font-size: 14px;
     font-weight: 600;
+    background-color: black;
 }
 
 .navbar-items-user-2 {
@@ -117,6 +131,7 @@ a:link {
     color: #fff;
     font-size: 14px;
     font-weight: 600;
+    background-color: black;
 }
 
 .navbar-items-user-3 {
@@ -139,7 +154,7 @@ a:link {
     opacity: 0.9;
 }
 
-.film-img img{
+.film-img img {
     width: 1349px;
     height: 620px;
     margin-top: 60px;
@@ -152,15 +167,35 @@ a:link {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 818px;
-    height: 956px;
+    height: 818px;
     border-top: none;
     border-right: 1px solid #d9d9d9;
     border-left: 1px solid #d9d9d9;
     border-radius: 0 0 2px 2px;
     color: #737373;
     background-color: #fff;
+    padding: 0 20px 20px;
     border: 1px solid #d9d9d9;
+}
+
+.card>*,
+.details span,
+.lenguage>*,
+.title-info span,
+.lang-info>*,
+.lang-info table tr th,
+.cast>*,
+.cast a,
+.cast a div,
+.film-review,
+.film-review div a,
+.film-review div,
+.film-review span {
+    background-color: white;
 }
 
 .details {
@@ -183,7 +218,8 @@ a:link {
     display: flex;
 }
 
-.rates, .genres{
+.rates,
+.genres {
     display: flex;
     flex-direction: column;
 }
