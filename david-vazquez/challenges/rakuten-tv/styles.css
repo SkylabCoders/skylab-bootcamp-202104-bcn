@@ -246,9 +246,18 @@ main {
 
 .banners-item {
   margin-left: 0;
+  margin-right: 5px;
   width: 100%;
   height: 100%;
   padding: 0 5px;
+}
+
+.banners-item img {
+  box-shadow: inset 0 0 0 3px transparent;
+}
+
+.banners-item img:hover {
+  box-shadow: inset 0 0 0 3px #ffe300;
 }
 
 .section {
