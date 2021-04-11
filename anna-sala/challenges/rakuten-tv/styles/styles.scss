@@ -1,0 +1,50 @@
+@import"./colors";
+
+$padding:10px;
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $negro;
+    font-family: Noto Sans,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+.logo{
+    width: 150px;
+}
+.header{
+    padding:10px;
+    display: flex;
+    text-transform: uppercase;
+    color: #fff;
+    justify-content: space-between;
+    width: 100%;
+    a{
+        padding: $padding;
+        color: #fff;
+        text-decoration: none;
+        align-self: center;
+    }
+    a:hover{
+        color: $amarillo;
+    }
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        li{
+            padding: $padding;
+        }
+    }
+}
+.navigation-sections{
+    display: flex;
+    align-content: center;
+}
+
