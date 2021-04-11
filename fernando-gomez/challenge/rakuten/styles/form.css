@@ -18,6 +18,7 @@ a:visited {
 html {
   font-family: "Noto Sans", sans-serif;
   font-size: 0.9em;
+  background-color: #0d0d0d;
 }
 
 .nav-bar,
@@ -62,6 +63,7 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .register-button {
@@ -70,7 +72,7 @@ html {
   font-family: "Noto Sans", sans-serif;
   padding: 10px;
   border: 0;
-  border-radius: 5%;
+  border-radius: 3px;
 }
 
 .logo-figure {
@@ -110,5 +112,91 @@ html {
 .header-nav-container {
   position: fixed;
   width: 100%;
+}
+
+.header-slider {
+  width: 60%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.header-slider ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  width: 900%;
+  -webkit-animation: slide 20s infinite alternate;
+          animation: slide 20s infinite alternate;
+}
+
+.header-slider ul:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  cursor: pointer;
+}
+
+.header-slider li {
+  width: 100%;
+  list-style: none;
+}
+
+.header-slider img {
+  width: 100%;
+  margin-top: 60px;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    margin-left: 0%;
+  }
+  20% {
+    margin-left: 0%;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: -300%;
+  }
+}
+
+@keyframes slide {
+  0% {
+    margin-left: 0%;
+  }
+  20% {
+    margin-left: 0%;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: -300%;
+  }
 }
 /*# sourceMappingURL=form.css.map */

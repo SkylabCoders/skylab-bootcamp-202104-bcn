@@ -22,6 +22,7 @@ a {
 html {
     font-family: $noto;
     font-size: 0.9em;
+    background-color: $dark;
 }
 
 .nav-bar,
@@ -54,6 +55,7 @@ html {
     width: 100%;
     justify-content: space-between;
     text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,.2);
 }
 
 .register-button {
@@ -62,7 +64,7 @@ html {
     font-family: $noto;
     padding: 10px;
     border: 0;
-    border-radius: 5%;
+    border-radius: 3px;
 }
 
 .logo-figure {
@@ -88,18 +90,55 @@ html {
     }
 }
 
-.cinema-nav {
-}
-
 .extern-nav {
     width: 350px;
     justify-content: space-around;
 }
 
-.nav-search {
-}
-
 .header-nav-container {
     position: fixed;
     width: 100%;
+}
+
+.header-slider {
+    width: 60%;
+    overflow: hidden;
+    margin: auto;
+}
+.header-slider ul {
+    display: flex;
+    padding: 0;
+    width: 900%;
+    animation: slide 20s infinite alternate;
+}
+.header-slider ul:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+.header-slider li {
+    width: 100%;
+    list-style: none;
+}
+.header-slider img {
+    width: 100%;
+    margin-top: 60px;
+}
+
+@keyframes slide {
+
+    0%{margin-left: 0%;}
+    20%{margin-left: 0%;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+
+.register-button {
+
 }
