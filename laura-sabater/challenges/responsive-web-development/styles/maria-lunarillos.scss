@@ -44,6 +44,12 @@ ul {
   }
 }
 
+@media screen and (max-width: 800px) {
+  .webs-container {
+    display: none;
+  }
+}
+
 .ma {
   width: 80px;
   height: 140px;
@@ -79,6 +85,16 @@ ul {
   margin: 2px;
 }
 
+.bars-menu-container  {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .bars-menu-container {
+    display: flex;
+  }
+}
+
 .login-link-container {
   width: 180px;
   height: 50px;
@@ -104,7 +120,12 @@ ul {
   width: 27px;
   height: 27px;
   background: url(../images/sprite.svg) 0 0 no-repeat;
-  
+}
+
+@media screen and (max-width: 800px) {
+  .login-text {
+    display: none;
+  }
 }
 
 .socialmedia-links-container {
@@ -112,6 +133,21 @@ ul {
   height: 60px;
   border: solid 2px orange;
   display: flex;
+}
+
+@media screen and (max-width: 800px) {
+  .socialmedia-links-container {
+    display: none;
+  }
+}
+
+.search-container {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .search-container {
+    display: flex;
+  }
 }
 
 .carrito-link-container {

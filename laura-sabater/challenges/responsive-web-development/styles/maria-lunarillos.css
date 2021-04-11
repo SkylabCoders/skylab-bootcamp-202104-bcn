@@ -55,6 +55,12 @@ ul {
   height: 100%;
 }
 
+@media screen and (max-width: 800px) {
+  .webs-container {
+    display: none;
+  }
+}
+
 .ma {
   width: 80px;
   height: 140px;
@@ -88,6 +94,18 @@ ul {
   background-position: bottom;
   background-color: #F6B436;
   margin: 2px;
+}
+
+.bars-menu-container {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .bars-menu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .login-link-container {
@@ -126,6 +144,12 @@ ul {
   background: url(../images/sprite.svg) 0 0 no-repeat;
 }
 
+@media screen and (max-width: 800px) {
+  .login-text {
+    display: none;
+  }
+}
+
 .socialmedia-links-container {
   width: 200px;
   height: 60px;
@@ -133,6 +157,24 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media screen and (max-width: 800px) {
+  .socialmedia-links-container {
+    display: none;
+  }
+}
+
+.search-container {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .search-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .carrito-link-container {
