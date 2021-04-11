@@ -4,6 +4,7 @@ $red-color: #FF5959;
 $red-icon-url:  url(./../images/icons/maria-lunarillos.png) $red-color bottom center no-repeat; 
 $grey-color: #F8F8F8;
 $darkergrey-color: #e8e6e5;
+
 *{
     margin: 0px;
 }
@@ -83,10 +84,9 @@ header {
     justify-content: flex-end;
     justify-self: flex-end;
     align-self: flex-end;
-    // border: 3px solid green;
+    border: 1px solid green;
     margin-left: 50px;
     width: 55%;
-    // padding: 0px 70px;
 
 }
 
@@ -225,14 +225,12 @@ padding: 5px;
     background: url("./../images/sprite.svg") 0 0 no-repeat; 
     margin: 10px;
 }
-.register-icon:hover {
-    background: url("./../images/sprite.svg") -37px 0 no-repeat; 
+
+.centered1 a:hover {
+    color: $red-color;
+    .register-icon{background: url("./../images/sprite.svg") -37px 0 no-repeat; }
 }
-
-div.centered1 a:hover {color: $red-color;}
-div.centered1 a div:hover {fill: $red-color;}
-
-
+.centered1 a div:hover {fill: $red-color;}
 
 .rojo {
     background: $red-icon-url; 
@@ -361,7 +359,7 @@ div.cart-number {
     display: flex;
     flex-direction: column;
     // position: relative;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     width: 70%;
 }
 .image1 > img {
@@ -400,12 +398,12 @@ div.cart-number {
 }
 .image2 > .caption-shape {
     
-    @include caption-shape (940px, 510px);
+    @include caption-shape (910px, 488px);
     
 }
 
 .image2 > span {
-    @include image-span (1220px, 650px);
+    @include image-span (1180px, 630px);
     
 }
 
@@ -415,7 +413,7 @@ div.cart-number {
     box-sizing: border-box;
     width: 40%;
     
-    border: 1px solid salmon;
+    // border: 1px solid salmon;
 }
 .long-image > img {
     margin: 5px;
@@ -426,14 +424,14 @@ div.cart-number {
 
 .long-image > .caption-shape {
     
-    @include caption-shape (986px, 910px);
+    @include caption-shape (1070px, 935px);
     width: 450px;
     height: 350px;
 }
 
 .long-image > span {
     
-    @include image-span (1220px, 1030px);
+    @include image-span (1310px, 1050px);
     
 }
 
@@ -471,6 +469,7 @@ div.cart-number {
 }
 
 .marcas-block > img {
+    align-content: space-between;
     margin: 10px;
     max-width: 100%;
     height: auto;
@@ -487,24 +486,6 @@ div.cart-number {
 }
 
 
-@media (max-width: 600px ) {
-    .rojo {display: none;}
-    .verde {display: none;}
-    .amarillo {display: none;}
-    .entra span {display: none;}
-    .icons {display: none;}
-    #three-bars {display: block;}
-    .rojo2 {display: block;}
-    .buscar-button2 {display: block;}
-    .register-icon {margin-right: 50px;}
-    .centered2-left {width: 100%;}
-    .centered2-right {display: none;}
-    .long-image {display: none;}
-    .marcas-section {display: none;}
-    .column-images {width: 100%;}
-    .image3 {display: inline-block;}
-
-}
 
 .envios-section {
     display: flex;
@@ -607,7 +588,7 @@ div.cart-number {
 .suscribete-line {
     display: flex;
     flex-direction: row;
-
+    
 }
 .suscribete-input-text {
     @include input-text;
@@ -628,10 +609,9 @@ div.cart-number {
 
 .contact-center {
     @include contact-divisions;
-    padding: 0px 50px;
+    padding: 10px 50px;
     border-left: 1px solid black;
     border-right: 1px solid black;
-    // width: 500px;
     height: 100px;
 }
 
@@ -646,9 +626,14 @@ div.cart-number {
 
 .contact-icon {
     @include contact-icons (url(../images/sprite.svg) 0px -207px no-repeat transparent);
-
+    
 }
-
+.contact-i {
+    @include contact-icons (url(../images/sprite.svg) 0px -245px no-repeat transparent);
+}
+.contact-cart {
+    @include contact-icons (url(../images/sprite.svg) 0px -285px no-repeat transparent);
+}
 .contact-text {
     margin-left: 3px;
     color: $red-color;
@@ -668,4 +653,24 @@ div.cart-number {
     width: 100%;
     margin-top: 100px;
     height: 50px;
+}
+@media (max-width: 600px ) {
+    .rojo {display: none;}
+    .verde {display: none;}
+    .amarillo {display: none;}
+    .entra span {display: none;}
+    .icons {display: none;}
+    #three-bars {display: block;}
+    .rojo2 {display: block;}
+    .buscar-button2 {display: block;}
+    .register-icon {margin-right: 50px;}
+    .centered2-left {width: 100%; margin-top: 50px;}
+    .centered2-right {display: none;}
+    .long-image {display: none;}
+    .marcas-section {display: none;}
+    .contact-left {align-items: center;}
+    .contact-center {align-items: center;}
+    .column-images {width: 100%;}
+    .image3 {display: inline-block;}
+
 }

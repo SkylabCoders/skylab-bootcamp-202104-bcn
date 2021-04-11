@@ -113,6 +113,7 @@ header {
   justify-self: flex-end;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  border: 1px solid green;
   margin-left: 50px;
   width: 55%;
 }
@@ -358,15 +359,15 @@ header {
   margin: 10px;
 }
 
-.register-icon:hover {
-  background: url("./../images/sprite.svg") -37px 0 no-repeat;
-}
-
-div.centered1 a:hover {
+.centered1 a:hover {
   color: #FF5959;
 }
 
-div.centered1 a div:hover {
+.centered1 a:hover .register-icon {
+  background: url("./../images/sprite.svg") -37px 0 no-repeat;
+}
+
+.centered1 a div:hover {
   fill: #FF5959;
 }
 
@@ -555,7 +556,6 @@ div.cart-number {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid blue;
   width: 70%;
 }
 
@@ -608,8 +608,8 @@ div.cart-number {
 }
 
 .image2 > .caption-shape {
-  top: 940px;
-  left: 510px;
+  top: 910px;
+  left: 488px;
   position: absolute;
   background-color: white;
   opacity: 70%;
@@ -622,8 +622,8 @@ div.cart-number {
 .image2 > span {
   position: absolute;
   text-align: left;
-  top: 1220px;
-  left: 650px;
+  top: 1180px;
+  left: 630px;
   color: black;
   font-size: 20px;
 }
@@ -634,7 +634,6 @@ div.cart-number {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 40%;
-  border: 1px solid salmon;
 }
 
 .long-image > img {
@@ -645,8 +644,8 @@ div.cart-number {
 }
 
 .long-image > .caption-shape {
-  top: 986px;
-  left: 910px;
+  top: 1070px;
+  left: 935px;
   position: absolute;
   background-color: white;
   opacity: 70%;
@@ -661,8 +660,8 @@ div.cart-number {
 .long-image > span {
   position: absolute;
   text-align: left;
-  top: 1220px;
-  left: 1030px;
+  top: 1310px;
+  left: 1050px;
   color: black;
   font-size: 20px;
 }
@@ -743,6 +742,8 @@ div.cart-number {
 }
 
 .marcas-block > img {
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
   margin: 10px;
   max-width: 100%;
   height: auto;
@@ -759,54 +760,6 @@ div.cart-number {
   -webkit-filter: grayscale(0%);
   /* Safari 6.0 - 9.0 */
   filter: grayscale(0%);
-}
-
-@media (max-width: 600px) {
-  .rojo {
-    display: none;
-  }
-  .verde {
-    display: none;
-  }
-  .amarillo {
-    display: none;
-  }
-  .entra span {
-    display: none;
-  }
-  .icons {
-    display: none;
-  }
-  #three-bars {
-    display: block;
-  }
-  .rojo2 {
-    display: block;
-  }
-  .buscar-button2 {
-    display: block;
-  }
-  .register-icon {
-    margin-right: 50px;
-  }
-  .centered2-left {
-    width: 100%;
-  }
-  .centered2-right {
-    display: none;
-  }
-  .long-image {
-    display: none;
-  }
-  .marcas-section {
-    display: none;
-  }
-  .column-images {
-    width: 100%;
-  }
-  .image3 {
-    display: inline-block;
-  }
 }
 
 .envios-section {
@@ -1045,7 +998,7 @@ div.cart-number {
       -ms-flex-align: start;
           align-items: flex-start;
   margin: 0px 30px;
-  padding: 0px 50px;
+  padding: 10px 50px;
   border-left: 1px solid black;
   border-right: 1px solid black;
   height: 100px;
@@ -1088,6 +1041,20 @@ div.cart-number {
   background: url(../images/sprite.svg) 0px -207px no-repeat transparent;
 }
 
+.contact-i {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(../images/sprite.svg) 0px -245px no-repeat transparent;
+}
+
+.contact-cart {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(../images/sprite.svg) 0px -285px no-repeat transparent;
+}
+
 .contact-text {
   margin-left: 3px;
   color: #FF5959;
@@ -1122,5 +1089,64 @@ div.cart-number {
   width: 100%;
   margin-top: 100px;
   height: 50px;
+}
+
+@media (max-width: 600px) {
+  .rojo {
+    display: none;
+  }
+  .verde {
+    display: none;
+  }
+  .amarillo {
+    display: none;
+  }
+  .entra span {
+    display: none;
+  }
+  .icons {
+    display: none;
+  }
+  #three-bars {
+    display: block;
+  }
+  .rojo2 {
+    display: block;
+  }
+  .buscar-button2 {
+    display: block;
+  }
+  .register-icon {
+    margin-right: 50px;
+  }
+  .centered2-left {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .centered2-right {
+    display: none;
+  }
+  .long-image {
+    display: none;
+  }
+  .marcas-section {
+    display: none;
+  }
+  .contact-left {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact-center {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .column-images {
+    width: 100%;
+  }
+  .image3 {
+    display: inline-block;
+  }
 }
 /*# sourceMappingURL=style.css.map */
