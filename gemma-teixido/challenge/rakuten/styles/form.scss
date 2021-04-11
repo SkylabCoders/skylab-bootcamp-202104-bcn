@@ -43,7 +43,7 @@
   }
 }
 
-@mixin slice-list-1 {
+@mixin slice-list-class {
   display: none;
   position: absolute;
   list-style: none;
@@ -54,7 +54,7 @@
   background-color: black;
 }
 
-@mixin slice-list-2 {
+@mixin slice-list-li {
   padding-top: 10px;
   cursor: pointer;
   color: white;

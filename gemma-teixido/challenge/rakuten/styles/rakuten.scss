@@ -17,12 +17,13 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 20px;
   align-items: center;
+  padding-right: 35px;
 }
 
 .first-header-part {
   @include nav-style;
   color: $header-font-color;
-  width: 440px;
+  width: 460px;
   .triangle-white {
     display: inline;
     width: 6px;
@@ -31,10 +32,10 @@
     display: none;
   }
   .cinema-list {
-    @include slice-list-1;
+    @include slice-list-class;
   }
   .cinema-list li {
-    @include slice-list-2;
+    @include slice-list-li;
   }
 }
 
@@ -93,7 +94,7 @@ input:active {
 
 #registrate {
   background: $header-hover-color;
-  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
   border-color: black;
   border-radius: 10%;
   padding-right: 8px;
@@ -106,6 +107,11 @@ input:active {
   background-color: rgb(194, 194, 5);
 }
 
+@media (max-width: 1100px) {
+  #ayuda {
+    display: none;
+  }
+}
 @media (max-width: 979px) {
   .second-header-part,
   .third-header-part,
