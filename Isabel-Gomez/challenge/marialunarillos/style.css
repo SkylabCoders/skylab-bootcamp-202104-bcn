@@ -451,7 +451,9 @@ li {
 }
 
 .img-footer1 {
-    margin: 1% 30%;
+    width: 70%;
+    height: 78%;
+    margin: 1% 16%;
 }
 
 .newsletter {
@@ -464,7 +466,7 @@ li {
 .img-footer2 {
     width: 200px;
     height: 100px;
-    margin: 75px 180px 75px 0;
+    margin: 75px 7% 75px 0;
 }
 
 .all-forms {
@@ -517,7 +519,7 @@ li {
 .img-footer3 {
     width: 200px;
     height: 128px;
-    margin: 62px 0 67px 180px;
+    margin: 62px 0 67px 6%;;
 }
 
 .copyright {
