@@ -2,6 +2,9 @@
 @import "./form";
 * {
   margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .header-container-fixed {
@@ -9,17 +12,11 @@
   position: fixed;
   justify-content: row;
   background-color: black;
-  height: 100%;
-  width: 100%;
+  width: 100vw;
+  height: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1.3vmin;
-  max-height: 30px;
-  font-family: "Noto Sans", sans-serif;
+  padding: 20px;
   align-items: center;
-}
-
-#beggining-header {
-  width: 9px;
 }
 
 .first-header-part {
@@ -40,7 +37,7 @@
 }
 
 .second-header-part {
-  width: 1296px;
+  width: 100%;
 }
 
 input {
@@ -86,15 +83,64 @@ input:active {
   background-color: rgb(194, 194, 5);
 }
 
-#end-header {
-  padding-left: 20px;
+main {
+  width: 100vw;
+  overflow: hidden;
+  background-color: black;
+  padding-left: 10px;
+  padding-right: 30px;
 }
 
-ul {
-  list-style: none;
+.row-movies {
+  @include movie-pictures;
+  margin-top: 350px;
 }
 
-#img-slice-1 {
-  width: 100px;
-  height: 100px;
+#img-row-1,
+#img-row-2,
+#img-row-3,
+#img-row-4,
+#img-row-5 {
+  @include transparent-border;
+}
+
+#img-row-1:hover,
+#img-row-2:hover,
+#img-row-3:hover,
+#img-row-4:hover,
+#img-row-5:hover {
+  @include yellow-border;
+}
+
+h2 {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  color: white;
+  font-size: 17px;
+}
+
+.scroll-movies {
+  @include movie-pictures;
+}
+
+#img-scroll-1,
+#img-scroll-2,
+#img-scroll-3,
+#img-scroll-4,
+#img-scroll-5,
+#img-scroll-6,
+#img-scroll-7,
+#img-scroll-8 {
+  @include transparent-border;
+}
+
+#img-scroll-1:hover,
+#img-scroll-2:hover,
+#img-scroll-3:hover,
+#img-scroll-4:hover,
+#img-scroll-5:hover,
+#img-scroll-6:hover,
+#img-scroll-7:hover,
+#img-scroll-8:hover {
+  @include yellow-border;
 }

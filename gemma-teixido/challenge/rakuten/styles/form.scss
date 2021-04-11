@@ -5,6 +5,25 @@
   font-size: 10px;
 }
 
-.slider {
+@mixin movie-pictures {
+  width: 100%;
+  display: flex;
   list-style: none;
+  li {
+    img {
+      height: 100%;
+      width: 100%;
+      margin: 0px;
+    }
+  }
+}
+
+@mixin yellow-border {
+  border: 4px solid #ffe300;
+  cursor: pointer;
+}
+
+@mixin transparent-border {
+  border: 4px solid transparent;
+  padding: 0px;
 }

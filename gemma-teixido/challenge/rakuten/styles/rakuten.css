@@ -1,9 +1,9 @@
-.slider {
-  list-style: none;
-}
-
 * {
   margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .header-container-fixed {
@@ -15,19 +15,13 @@
       -ms-flex-pack: row;
           justify-content: row;
   background-color: black;
-  height: 100%;
-  width: 100%;
+  width: 100vw;
+  height: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1.3vmin;
-  max-height: 30px;
-  font-family: "Noto Sans", sans-serif;
+  padding: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-#beggining-header {
-  width: 9px;
 }
 
 .first-header-part {
@@ -54,7 +48,7 @@
 }
 
 .second-header-part {
-  width: 1296px;
+  width: 100%;
 }
 
 input {
@@ -107,16 +101,89 @@ input:active {
   background-color: #c2c205;
 }
 
-#end-header {
-  padding-left: 20px;
+main {
+  width: 100vw;
+  overflow: hidden;
+  background-color: black;
+  padding-left: 10px;
+  padding-right: 30px;
 }
 
-ul {
+.row-movies {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin-top: 350px;
+}
+
+.row-movies li img {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+
+#img-row-1,
+#img-row-2,
+#img-row-3,
+#img-row-4,
+#img-row-5 {
+  border: 4px solid transparent;
+  padding: 0px;
+}
+
+#img-row-1:hover,
+#img-row-2:hover,
+#img-row-3:hover,
+#img-row-4:hover,
+#img-row-5:hover {
+  border: 4px solid #ffe300;
+  cursor: pointer;
+}
+
+h2 {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  color: white;
+  font-size: 17px;
+}
+
+.scroll-movies {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   list-style: none;
 }
 
-#img-slice-1 {
-  width: 100px;
-  height: 100px;
+.scroll-movies li img {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+
+#img-scroll-1,
+#img-scroll-2,
+#img-scroll-3,
+#img-scroll-4,
+#img-scroll-5,
+#img-scroll-6,
+#img-scroll-7,
+#img-scroll-8 {
+  border: 4px solid transparent;
+  padding: 0px;
+}
+
+#img-scroll-1:hover,
+#img-scroll-2:hover,
+#img-scroll-3:hover,
+#img-scroll-4:hover,
+#img-scroll-5:hover,
+#img-scroll-6:hover,
+#img-scroll-7:hover,
+#img-scroll-8:hover {
+  border: 4px solid #ffe300;
+  cursor: pointer;
 }
 /*# sourceMappingURL=rakuten.css.map */
