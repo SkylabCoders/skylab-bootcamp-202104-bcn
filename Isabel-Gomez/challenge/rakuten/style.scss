@@ -74,10 +74,32 @@ a {
     height: 100%;
     flex-grow: 2;
     display: flex;
+    // align-items: center;
     input {
+        position: absolute;
+        margin-left: 20px;
+        padding-left: 30px;
+        height: 40px;
+        margin-top:-20px;
+    }
+    i {
+        margin-top:-8px;
+        position: absolute;
+        // top: 30px;
+        margin-left: 25px;
+        z-index: 3;
+        color: black;
+    }
+    .search-bar {
+
+        width: 300px;
+
         margin: auto 0;
+        position: relative;
+
     }
 }
+
 
 .nav-bar-user-menu {
     width: 369px;
