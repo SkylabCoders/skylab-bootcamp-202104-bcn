@@ -15,20 +15,77 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 70%;
+  width: 71.5%;
   min-width: 100px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .list-container {
-  width: 140px;
+  width: 252px;
 }
 
 .ul-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: solid yellow;
   list-style: none;
+  height: 140px;
+}
+
+.ma-link-container {
+  width: 80px;
+  margin-right: 4px;
+  float: left;
+  height: 140px;
+  background: url("../img/maria-lunarillos.png") #FF5959 bottom center no-repeat;
+}
+
+.cu-link-container {
+  width: 70px;
+  margin-right: 4px;
+  float: left;
+  height: 70px;
+  -webkit-transition: height;
+  transition: height;
+  background: url("../img/cucute.png") #6199AF bottom center no-repeat;
+}
+
+.mu-link-container {
+  width: 70px;
+  margin-right: 4px;
+  float: left;
+  height: 70px;
+  -webkit-transition: height;
+  transition: height;
+  background: url("../img/mumuchu.png") #F6B436 bottom center no-repeat;
+}
+
+.mu-link-container:hover, .cu-link-container:hover {
+  height: 140px;
+  background: url(../img/);
+}
+
+.header-links-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.enter-register-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 *,
