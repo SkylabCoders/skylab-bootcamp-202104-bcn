@@ -258,11 +258,6 @@ body {
     top: 0; 
 }
 
-#images-vertical{
-    display: flex;
-    flex-direction: column;
-}
-
 .section-images {
     display: flex;
     justify-content: center;
@@ -277,6 +272,11 @@ body {
 
 
 @media only screen and (min-width: 1105px){
+    #images-vertical{
+        display: flex;
+        flex-direction: column;
+    }
+    
     #small-appliance{
         display: flex;
         justify-content: flex-end;

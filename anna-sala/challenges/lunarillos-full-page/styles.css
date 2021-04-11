@@ -330,16 +330,6 @@ body {
   top: 0;
 }
 
-#images-vertical {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 .section-images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -358,6 +348,15 @@ body {
 }
 
 @media only screen and (min-width: 1105px) {
+  #images-vertical {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   #small-appliance {
     display: -webkit-box;
     display: -ms-flexbox;
