@@ -93,6 +93,7 @@ body {
   background-size: 21%;
   padding-left: 40px;
   color: white;
+  margin-left: 10px;
 }
 
 .user-functions {
@@ -132,7 +133,7 @@ body {
 }
 
 /*--------------END OF SLIDESHOW---------------*/
-.movie-categories {
+.themed-categories {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -149,5 +150,10 @@ body {
 .images-categories:hover {
   padding: 0;
   border: 5px solid #ffe300;
+}
+
+.movie-categories {
+  color: white;
+  padding: 10px;
 }
 /*# sourceMappingURL=styles.css.map */
