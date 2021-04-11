@@ -1,0 +1,10 @@
+
+@import "_resetStyles.scss";
+@import "_fonts";
+@import "_colors";
+@import "_animations.scss";
+@import "_layouts";
+
+*{
+  html{@include reset}
+}suta
