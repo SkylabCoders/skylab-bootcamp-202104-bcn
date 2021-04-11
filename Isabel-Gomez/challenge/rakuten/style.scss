@@ -81,6 +81,13 @@ a {
         padding-left: 30px;
         height: 40px;
         margin-top:-20px;
+        background-color: #333333;
+        border: none;
+        outline: none;
+    }
+    input:focus {
+        background-color: $color-main;
+
     }
     i {
         margin-top:-8px;
@@ -91,19 +98,30 @@ a {
         color: black;
     }
     .search-bar {
-
         width: 300px;
-
+        // height: 40px;
         margin: auto 0;
         position: relative;
-
     }
 }
+
+
 
 
 .nav-bar-user-menu {
     width: 369px;
     justify-content: space-between;
+    li:nth-child(1) a {
+        color: #999999; 
+    }
+    li:nth-last-child(1) a {
+        background-color: #FFE300; 
+        border-radius: 2px;
+        width: 108px;
+        height: 32px;
+        color: #252525;
+        padding: 8px 4px;
+    }
 }
 
 .menu-item {
@@ -112,5 +130,7 @@ a {
         margin: auto;
     }
 }
+
+
 
 
