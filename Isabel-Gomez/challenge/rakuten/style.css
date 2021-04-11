@@ -116,6 +116,11 @@ a {
   padding: 8px 4px;
 }
 
+@media (max-width: 1250px) {
+  .nav-bar-user-menu li:first-child {
+    visibility: hidden;
+  }
+}
 .menu-item {
   display: flex;
 }
