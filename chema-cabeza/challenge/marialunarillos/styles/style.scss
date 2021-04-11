@@ -19,7 +19,6 @@ header {
     align-items: center;
     width: 100%;
     // border: 3px solid red;
-    height: 300px;
 }
 
 .grey-menu {
@@ -53,8 +52,8 @@ header {
 
     display: flex;
     flex-direction: row;
+    align-self: center;
     margin-top: 50px;
-    height: 240px;
     // border: 3px solid brown;
     width: 65%;
 
@@ -163,7 +162,7 @@ header {
 .input-text {
     float: left;
     width: calc(100% - 49px);
-    border: 1px solid #BBB8B6;
+    // border: 1px solid #BBB8B6;
     height: 26px;
     font-size: 12px;
     letter-spacing: 1px;
@@ -277,40 +276,26 @@ div.centered1 a div:hover {fill: $red-color;}
     font-size: 30px;
 }
 
-@media (max-width: 600px ) {
-    .rojo {display: none;}
-    .verde {display: none;}
-    .amarillo {display: none;}
-    .entra span {display: none;}
-    .icons {display: none;}
-    #three-bars {display: block;}
-    .rojo2 {display: block;}
-    .buscar-button2 {display: block;}
-    .register-icon {margin-right: 50px;}
-    .centered2-left {width: 100%;}
-    .centered2-right {display: none;}
-
-}
 
 div.icons {
     /* border: 3px solid green; */
     align-self: flex-start;
     margin: 9px 30px;
-
+    
 }
 div.empty {
     flex-grow: 5;
 }
 
 .fab {
-
+    
     font-size: 20px;
     margin: 5px;
-
+    
 }
 
 .fab:hover {
-
+    
     color: $red-color;
     cursor: pointer;
 }
@@ -318,7 +303,7 @@ div.empty {
 
 
 div.cart-icon {
-
+    
     background: #fff url(./../images/sprite.svg) -64px 10px no-repeat;
     width: 50px;
     height: 50px;
@@ -328,9 +313,9 @@ div.cart-icon:hover {
     background:  $red-color url(./images/sprite.svg) -64px 10px no-repeat;
     filter: invert(1);
     cursor: pointer;
-
+    
 }
- 
+
 
 div.cart-number {
     display: flex;
@@ -342,7 +327,13 @@ div.cart-number {
     align-self: flex-start;
     font-size: 25px;
     color: white;
-
+    
+}
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
 }
 
 .fiesta-section {
@@ -352,7 +343,7 @@ div.cart-number {
     width: 100%;
     margin-top: 150px;
     background-color: $grey-color;
-    border: 1px solid indigo;
+    // border: 1px solid indigo;
 }
 
 .tarta-fiesta-image {
@@ -360,21 +351,11 @@ div.cart-number {
     width: 100px;
     height: 110px;
     transform: translate(0px,-60px);
-
+    
 }
 
-.fiesta-tittle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0px 0px 100px;
-    font-weight: 800;
-    font-size: 30px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    width: 230px;
-    height: 60px;
+.fiesta-title {
+    @include section-title (230px);
 }
 
 .images-section {
@@ -389,8 +370,9 @@ div.cart-number {
 .column-images {
     display: flex;
     flex-direction: column;
-    position: relative;
+    // position: relative;
     border: 1px solid blue;
+    width: 70%;
 }
 .image1 {
     margin: 5px;
@@ -402,24 +384,24 @@ div.cart-number {
 }
 
 .image1 > .caption-shape {
-
-    @include caption-shape (-90px, 210px);
-
+    
+    @include caption-shape (622px, 507px);
+    
 }
 
 .image1 > span {
-    @include image-span (175px, 350px);
-
+    @include image-span (890px, 647px);
+    
 }
 .image2 > .caption-shape {
-
-    @include caption-shape (225px, -120px);
-
+    
+    @include caption-shape (940px, 510px);
+    
 }
 
 .image2 > span {
-    @include image-span (500px, 20px);
-
+    @include image-span (1220px, 650px);
+    
 }
 
 .long-image {
@@ -429,14 +411,81 @@ div.cart-number {
 }
 
 .long-image > .caption-shape {
-
+    
     @include caption-shape (986px, 910px);
     width: 450px;
     height: 350px;
 }
 
 .long-image > span {
-
+    
     @include image-span (1220px, 1030px);
+    
+}
+
+.vermas-button {
+    display: flex;
+    margin-top: 100px;
+    color: white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 100px;
+    height: 50px;
+    background-color: $red-color;
+}
+
+.marcas-section {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.marcas-title {
+    @include section-title (300px);
+}
+
+.marcas-block {
+    display: flex;
+    flex-direction: row;
+    // border: 1px solid red;
+    width: 65%;
+    flex-wrap: wrap;
+}
+
+.marcas-block > img {
+    margin: 10px;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    justify-content: space-evenly;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+.marcas-block > img:hover {
+    
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+
+
+@media (max-width: 600px ) {
+    .rojo {display: none;}
+    .verde {display: none;}
+    .amarillo {display: none;}
+    .entra span {display: none;}
+    .icons {display: none;}
+    #three-bars {display: block;}
+    .rojo2 {display: block;}
+    .buscar-button2 {display: block;}
+    .register-icon {margin-right: 50px;}
+    .centered2-left {width: 100%;}
+    .centered2-right {display: none;}
+    .long-image {display: none;}
+    .marcas-section {display: none;}
 
 }
