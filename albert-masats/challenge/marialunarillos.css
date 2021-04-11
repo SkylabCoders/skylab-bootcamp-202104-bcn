@@ -1,0 +1,110 @@
+* {
+    display: border-box;
+    margin: 0;
+}
+
+.box1 {
+    display: flex;
+    height: 50px;
+    background: #F8F8F8;
+    padding-left: 11%;
+    padding-right: 11%;
+}
+
+.box2 {
+    display: flex;
+    height: 217.6px;
+    padding-left: 11%;
+    padding-right: 11%;
+}
+
+.box3 {
+    display: flex;
+    height: 50px;
+    padding-left: 11%;
+    padding-right: 11%;
+}
+
+.box4 {
+    height: 600px;
+    background: linear-gradient(to right, rgb(180, 214, 168) 0%, rgb(131, 177, 116) 100%);
+}
+
+.upper-header {
+    display:flex;
+    margin: auto;
+    background: #F8F8F8;
+    height: 50px;
+    width: 1080px;
+    border: 1px solid #fffb03;
+}
+
+.header-center {
+    display:flex;
+    margin: auto;
+    width: 1080px;
+    height: 217.6px;
+    border: 1px solid #ff384f;
+}
+
+.bottom-header {
+    display: flex;
+    margin: auto;
+    width: 1080px;
+    height: 50px;
+    border: 1px solid #17f8d3;
+}
+
+.main-icons {
+    height: 140px;
+    width: 228px;
+    
+}
+
+.left-icon {
+    display: inline-block;
+    height: 140px;
+    width: 77px;
+    background-image: url(./../challenge/images/maria-lunarillos.png);
+    background-position-x: center;
+    background-position-y: bottom;
+    background-size: initial;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 89, 89);
+    cursor:pointer;
+}
+
+
+.center-icon {
+    display: inline-block;
+    height: 70px;
+    width: 71px;
+    background: url(./../challenge/images/cucute.png) #6199AF bottom center no-repeat;
+    cursor:pointer;
+}
+
+.right-icon {
+    display: inline-block;
+    height: 70px;
+    width: 71px;
+    background: url(./../challenge/images/mumuchu.png) rgb(246, 180, 54) bottom center no-repeat;
+    cursor:pointer;
+}   
+
+.center-icon:hover {
+    display: inline-block;
+    height: 140px;
+    width: 71px;
+    background: url(./../challenge/images/cucute.png) #6199AF bottom center no-repeat;
+}
+
+.right-icon:hover {
+    display: inline-block;
+    height: 140px;
+    width: 71px;
+    background: url(./../challenge/images/mumuchu.png) rgb(246, 180, 54) bottom center no-repeat;
+}
