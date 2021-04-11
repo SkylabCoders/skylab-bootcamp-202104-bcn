@@ -81,3 +81,12 @@ nav {
 #ayuda:hover, #entrar:hover {
     color: #ffe300;
 }
+
+#slide img {
+    width: 100%;
+}
+
+#items {
+    display: flex;
+    width: 100%;
+}
