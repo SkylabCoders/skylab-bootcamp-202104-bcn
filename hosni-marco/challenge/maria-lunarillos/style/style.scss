@@ -7,8 +7,39 @@
     box-sizing: border-box;
 }
 
-.header {
-    background-color: black;
-    width: 100%;
-    height: 40px;
+// body {
+//     font: 12px/1.55 'Source Sans Pro', sans-serif;
+//     // color: #67635F;
+//     display: flex;
+//     flex-direction: column;
+// }
+
+// .header-container {
+//     position: fixed;
+//     background: #F8F8F8;
+//     width: 100%;
+//     height: 50px;
+//     // color: #67635F;
+//     display: flex;
+//     justify-content: center;
+// }
+
+// .header-links {
+//     display: flex;
+//     width: 70%;
+//     min-width: 100px;
+// }
+
+// .list-container {
+//     width: 140px;
+// }
+// .ul-content {
+//     display: flex;
+//     border: solid yellow;
+//     list-style: none;
+// }
+
+
+@mixin  links-display{
+    border: solid red;
 }
