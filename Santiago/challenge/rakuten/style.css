@@ -275,7 +275,7 @@ a:link {
     color: #ccc;
 }
 
-.footer-links >*:hover {
+.footer-links>*:hover {
     color: #fff;
     cursor: pointer;
 }
