@@ -23,10 +23,24 @@ header {
     text-align: center;
 }
 
+#ma:hover, #cu:hover, #mu:hover {
+    height: 150px;
+}
+
+#cu:hover img, #mu:hover img {
+    position: relative;
+    top: 80px;
+}
+
 #ma {
     background-color: #ff5959;
     height: 150px;
     width: 80px;
+}
+
+#ma img {
+    position: relative;
+    top: 75px;
 }
 
 #cu {
@@ -41,23 +55,107 @@ header {
 
 #icons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 1080px;
+    margin: 0 auto;
 }
 
-#login img {
-    width: 30px;
-    margin-top: 5px;
+#header-menu {
+    display: flex;
+}
+
+#login {
+    cursor: pointer;
+    display: flex;
+    height: 35px;
+    position: relative;
+    top: 10px;
+}
+
+#login span {
+    margin: 5px 0 0 15px;
+}
+
+#login:hover span {
+    color: #FF5959;
+}
+
+#img-login {
+    width: 28px;
+    height: 28px;
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) 0 0;
+}
+
+#login:hover #img-login {
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -37px 0;
+}
+
+#facebook {
+    width: 20px;
+    height: 20px;
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -5px 175px;
+}
+
+#facebook:hover {
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -5px 215px;
+}
+
+#twitter {
+    width: 20px;
+    height: 20px;
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -42px 175px;
+}
+
+#twitter:hover {
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -42px 215px;
+}
+
+#instagram {
+    width: 20px;
+    height: 20px;
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -78px 175px;
+}
+
+#instagram:hover {
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -78px 215px;
+}
+
+#pinterest {
+    width: 20px;
+    height: 20px;
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -110px 175px;
+}
+
+#pinterest:hover {
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -110px 215px;
+}
+
+#youtube {
+    width: 20px;
+    height: 20px;
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -185px 175px;
+}
+
+#youtube:hover {
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -185px 215px;
 }
 
 #rrss img {
     width: 20px;
 }
 
+#rss-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 195px;
+}
+
 #rrss {
     display: flex;
-    width: 250px;
+    width: 275px;
     justify-content: space-evenly;
     margin-top: 13px;
+    cursor: pointer;
 }
 
 #basket img {
@@ -65,16 +163,47 @@ header {
 }
 
 #basket {
-    margin-top: 5px;
     display: flex;
+    cursor: pointer;
 }
 
+#basket-icon {
+    width: 30px;
+    height: 30px;
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -78px 0;
+    position: relative;
+    top: 10px;
+}
+
+#bsk:hover #basket-icon {
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -117px 0;
+}
+
+#bsk {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+}
+
+#bsk:hover {
+    background-color: #ff5959;
+}
 #basket div {
-    margin: 0 5px;
+    margin: 0 auto;
 }
 
 #basket-items {
     font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background-color: #ff5959;
+    color: white;
+}
+
+#basket-items span {
+    position: relative;
+    top: 13px;
 }
 
 #content {
@@ -88,6 +217,7 @@ header {
     position: relative;
     top: -40px;
     width: 75%;
+    justify-content: end;
 }
 
 #menu-items {
@@ -113,22 +243,39 @@ header {
 }
 
 #menu {
-    width: 70%;
+    width: 50%;
+}
+
+#input-buscador {
+    height: 30px;
+    width: 250px;
+}
+
+#buscador img {
+    width: 30px;
+    vertical-align: middle;
+    background-color: #BBB8B6;
+}
+
+#buscador {
+    display: flex;
 }
 
 #novedades, #ofertas {
     text-transform: uppercase;
     align-items: center;
     display: flex;
-    padding: 0 20px;
+    padding: 0 6px;
     color: white;
     font-weight: bold;
     font-size: 15px;
     margin: 0 2px;
 }
 
-#novedades img, #ofertas img {
+#nov-img {
     width: 30px;
+    height: 30px;
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) 110px 0;
 }
 
 #novedades {
