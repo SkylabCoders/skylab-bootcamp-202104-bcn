@@ -39,6 +39,7 @@ a:hover,
 a:active {
   text-decoration: none;
   outline: none;
+  cursor: pointer;
 }
 
 .logo {
@@ -318,13 +319,11 @@ main {
 }
 
 .banners-item img {
-  -webkit-box-shadow: inset 0 0 0 3px transparent;
-          box-shadow: inset 0 0 0 3px transparent;
+  border: 3px solid transparent;
 }
 
 .banners-item img:hover {
-  -webkit-box-shadow: inset 0 0 0 3px #ffe300;
-          box-shadow: inset 0 0 0 3px #ffe300;
+  border: 3px solid #ffe300;
 }
 
 .section {
@@ -349,6 +348,14 @@ main {
           flex: 0 0 auto;
   padding: 5px 5px;
   width: 15%;
+}
+
+.list-item img {
+  border: 3px solid transparent;
+}
+
+.list-item img:hover {
+  border: 3px solid #ffe300;
 }
 
 .section-title {
@@ -434,6 +441,10 @@ main {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 15px 10px 0;
+}
+
+.genre-item:hover {
+  opacity: 0.5;
 }
 
 .genre-name {
