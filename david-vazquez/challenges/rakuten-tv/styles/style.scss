@@ -269,12 +269,72 @@ main {
 }
 
 .list-item {
+  position: relative;
   flex: 0 0 auto;
   padding: 5px 5px;
   width: 15%;
   img {
     border: 3px solid transparent;
   }
+}
+
+.item-info {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 450px;
+  height: 250px;
+  background-color: rgba($color: #000000, $alpha: 0.9);
+  z-index: 100;
+  top: 0px;
+  left: 210px;
+  white-space: normal;
+  padding: 20px;
+  font-weight: 400;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+.list-item:hover > .item-info {
+  transition-delay: 2s;
+  display: flex;
+}
+.price {
+  color: $color-yellow;
+  font-weight: 700;
+}
+
+.title-movie {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.genre-movie,
+.info-movie {
+  color: $color-gray;
+  padding-top: 10px;
+  margin: 0;
+}
+
+.info-buttons {
+  padding-bottom: 10px;
+  button {
+    padding: 10px 15px;
+    border: 2px solid $color-white;
+    border-radius: 20px;
+    margin: 0 5px;
+    outline: none;
+    background-color: $color-black;
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: 12px;
+  }
+}
+
+.info-buttons {
+  @include flex-content(row, center, center);
 }
 
 .list-item img:hover {
