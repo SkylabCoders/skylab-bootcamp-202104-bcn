@@ -36,6 +36,7 @@ a {
   position: fixed;
   background-color: #101010;
   color: #FFFFFF;
+  z-index: 1;
 }
 
 .nav-bar {
@@ -135,5 +136,18 @@ a {
 
 .menu-item p, .menu-item a {
   margin: auto;
+}
+
+/* ---------------------- */
+/* ----- CAROUSEL ------- */
+#main-carousel {
+  margin-top: 61px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel-item {
+  transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
 }
 /*# sourceMappingURL=style.css.map */
