@@ -6,6 +6,7 @@
 @import "_layouts";
 
 body {
+  @include reset;
   color: $primary;
   font-family: $primary-font;
   font-size: 16px;
@@ -16,6 +17,9 @@ body {
     margin: 0 auto;
   }
   .topbar {
+    position: fixed;
+    top: 0;
+    z-index: 999;
     width:100%;
     min-height: 50px;
     @include flex(row wrap, center, center);
@@ -43,7 +47,7 @@ body {
               width:100%;
               min-height: 100%;
               color:transparent;
-              @include backgrounds(transparent, '../assets/maria-lunarillos.png', 100%, no-repeat, initial, 50% 100%);
+              @include backgrounds(transparent, '../assets/maria-lunarillos.png', auto, no-repeat, initial, 50% 100%);
 
             }
           }
@@ -64,7 +68,7 @@ body {
               width:100%;
               min-height: 100%;
               color:transparent;
-              @include backgrounds(transparent, '../assets/cucute.png', 100%, no-repeat, initial, 50% 100%);
+              @include backgrounds(transparent, '../assets/cucute.png', auto, no-repeat, initial, 50% 100%);
 
             }
           }
@@ -85,7 +89,7 @@ body {
               width:100%;
               min-height: 100%;
               color:transparent;
-              @include backgrounds(transparent, '../assets/mumuchu.png', 100%, no-repeat, initial, 50% 100%);
+              @include backgrounds(transparent, '../assets/mumuchu.png', auto, no-repeat, initial, 50% 100%);
 
             }
           }
@@ -138,7 +142,7 @@ body {
   }
   .wrapper-header {
     @include flex(row wrap, space-between, center);
-    margin: 3% auto;
+    margin: 5% auto 3%;
 
     .main-nav-search {
       @include flex(row wrap, space-between, center);
@@ -219,9 +223,9 @@ body {
         }
         button{
           display: block;
-          width: 30px;
+          width:42px;
           height: 32px;
-          @include backgrounds($searcherBg, '../assets/sprite.svg', 1000%, no-repeat, initial, 99% -1%);
+          @include backgrounds($searcherBg, '../assets/sprite.svg', 1000%, no-repeat, initial, 99% -0.2%);
           border: 0;
         }
       }
@@ -303,108 +307,246 @@ body {
         }
       }
     }
-  }
   .carousel_wrapper {
-      width: 100%;
-      min-height: 600px;
-      margin: 0 auto;
-      position: relative;
-      margin-bottom: 5% !important;
+    width: 100%;
+    min-height: 600px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 5% !important;
 
-      input {
-        display: none;
-      }
-      .slide-item {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-size: 3em;
-      }
-      .controls {
-        color: #fff;
-        position: absolute;
-        bottom: -1.5em;
-        z-index: 9;
-        width: 100%;
-        text-align: center;
-        label {
-          .fa-cirlce {
-            width: 15px;
-            height: 15px;
-            background-color: $searcherBg;
-            border-radius: 100%;
-            margin: 0px 5px;
-          }
+    input {
+      display: none;
+    }
+    .slide-item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 3em;
+    }
+    .controls {
+      color: #fff;
+      position: absolute;
+      bottom: -1.5em;
+      z-index: 9;
+      width: 100%;
+      text-align: center;
+      label {
+        .fa-cirlce {
+          width: 15px;
+          height: 15px;
+          background-color: $searcherBg;
+          border-radius: 100%;
+          margin: 0px 5px;
         }
       }
+    }
 
-      #slide1:checked,
-      #slide2:checked,
-      #slide3:checked,
-      #slide4:checked,
-      #slide5:checked,
-      #slide6:checked,
-      #slide7:checked,
-      #slide8:checked,
-      #slide9:checked,
-      #slide10:checked,
-      #slide11:checked {
-        color: #bdc3c7;
-      }
+    #slide1:checked,
+    #slide2:checked,
+    #slide3:checked,
+    #slide4:checked,
+    #slide5:checked,
+    #slide6:checked,
+    #slide7:checked,
+    #slide8:checked,
+    #slide9:checked,
+    #slide10:checked,
+    #slide11:checked {
+      color: #bdc3c7;
+    }
 
-      #slide1 {
-        background-color: $slider1;
-      }
-      #slide2 {
-        background-color: $slider2;
-      }
-      #slide3 {
-        background-color: $slider3;
-      }
-      #slide4 {
-        background-color: $slider4;
-      }
-      #slide5 {
-        background-color: $slider5;
-      }
-      #slide6 {
-        background-color: $slider6;
-      }
-      #slide7 {
-        background-color: $slider7;
-      }
-      #slide8 {
-        background-color: $slider8;
-      }
-      #slide9 {
-        background-color: $slider9;
-      }
-      #slide10 {
-        background-color: $slider10;
-      }
-      #slide11 {
-        background-color: $slider11;
-      }
+    #slide1 {
+      background-color: $slider1;
+    }
+    #slide2 {
+      background-color: $slider2;
+    }
+    #slide3 {
+      background-color: $slider3;
+    }
+    #slide4 {
+      background-color: $slider4;
+    }
+    #slide5 {
+      background-color: $slider5;
+    }
+    #slide6 {
+      background-color: $slider6;
+    }
+    #slide7 {
+      background-color: $slider7;
+    }
+    #slide8 {
+      background-color: $slider8;
+    }
+    #slide9 {
+      background-color: $slider9;
+    }
+    #slide10 {
+      background-color: $slider10;
+    }
+    #slide11 {
+      background-color: $slider11;
+    }
 
-      #item1:checked ~ #slide1,
-      #item2:checked ~ #slide2,
-      #item3:checked ~ #slide3,
-      #item4:checked ~ #slide4,
-      #item5:checked ~ #slide5,
-      #item6:checked ~ #slide6,
-      #item7:checked ~ #slide7,
-      #item8:checked ~ #slide8,
-      #item9:checked ~ #slide9,
-      #item10:checked ~ #slide10,
-      #item11:checked ~ #slide11 {
-        z-index: 9;
+    #item1:checked ~ #slide1,
+    #item2:checked ~ #slide2,
+    #item3:checked ~ #slide3,
+    #item4:checked ~ #slide4,
+    #item5:checked ~ #slide5,
+    #item6:checked ~ #slide6,
+    #item7:checked ~ #slide7,
+    #item8:checked ~ #slide8,
+    #item9:checked ~ #slide9,
+    #item10:checked ~ #slide10,
+    #item11:checked ~ #slide11 {
+      z-index: 9;
+    }
+  }
+  .wrapper-section{
+    width:100%;
+    margin-top: 190px;
+    padding-top: 65px;
+    background-color: $backgrounds-actions;
+   .wrapper-block{
+     @include flex(row wrap, center, stretch);
+     .category-section{
+        width:100%;
+        position:relative;
+       padding-top:50px;
+       margin-bottom: 75px;
+       &::before{
+         position:absolute;
+         top:-140px;
+         left:calc(50% - 50px);
+         display:block;
+         content:"";
+         width:100px;
+         min-height:145px;
+         margin: 0 auto;
+         @include backgrounds(transparent, '../assets/utensiliosML.png', contain, no-repeat, initial, center center);
+       }
+        .title-category{
+          position:relative;
+          text-align: center;
+          font-size: 2em;
+          font-weight: $bold;
+          text-transform: uppercase;
+          letter-spacing: 10px;
+          color:$text;
+          padding:15px;
+          &::after{
+            position:absolute;
+            top:0;
+            left:calc(50% - 160px);
+            display:block;
+            content:"";
+            width:30%;
+            min-height: 2px;
+            margin: 0 auto;
+            background-color:$text;
+
+          }
+          &::before{
+            position:absolute;
+            bottom:0;
+            left:calc(50% - 160px);
+            display:block;
+            content:"";
+            width:30%;
+            min-height: 2px;
+            margin: 0 auto;
+            background-color:$text;
+
+          }
+        }
+     }
+     .category-section.ingredientes{
+       &::before{
+         @include backgrounds(transparent, '../assets/magdalena.png', contain, no-repeat, initial, center center);
+       }
+     }
+     .category-section.fiestas{
+       &::before{
+         @include backgrounds(transparent, '../assets/tarta-cumpleanos.png', contain, no-repeat, initial, center center);
+       }
+     }
+     .col-right, .col-left{
+       max-width:33%;
+       margin:2px;
+       .item-wrapper{
+         position:relative;
+         z-index:9;
+         .inner-item-wrapper-content{
+           position: absolute;
+           bottom: 4px;
+           left: 0;
+           width: 350px;
+           min-height:150px;
+           padding: 20px 20px 20px 20px;
+           background-color: rgba(255,255,255,0.8);
+           clip-path: polygon(0 0, 69% 0, 100% 100%, 0% 100%);
+           .item-title{
+             max-width:75%;
+             a{
+               display:block;
+               color:$titles;
+               font-size:1.5em;
+               line-height: 1.3em;
+               font-weight: 900;
+               text-transform: uppercase;
+               margin-bottom:5px;
+               &:hover{
+                 text-decoration: underline;
+               }
+             }
+           }
+           .item-content{
+             display: block;
+             font-size: 0.94em;
+             line-height: 1.1em;
+             color:$titles;
+             padding: 14px 20px 20px 0px;
+             max-width: 85%;
+           }
+         }
+       }
+
+     }
+     .col-left{
+       @include flex(column, space-between, center);
+       max-width: 66%;
+       margin:3px 6px;
+       .inner-item-wrapper-content{
+         position: absolute;
+         bottom:0;
+         left:0;
+       }
+     }
+   }
+    .read-more{
+      display:block;
+      width:100%;
+      text-align: center;
+
+      .more-link{
+        margin:3% auto 0;
+        padding: 15px 30px;
+        display: inline-block;
+        font-size:1.3em;
+        text-transform: uppercase;
+        background-color:$corporate1;
+        color:$primary;
       }
     }
+  }
+  }
+
 
 
 
