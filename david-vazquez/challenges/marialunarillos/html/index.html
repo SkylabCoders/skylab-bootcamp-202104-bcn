@@ -101,49 +101,54 @@
         </div>
       </div>
     </header>
-
-    <section class="form-container">
-      <h2>Reservar un vuelo</h2>
-      <form action="" class="form-reserve-flight">
-        <label for="flight">Viaje:<br /></label>
-        <select name="flight" id="" class="ticket-number">
-          <option value="go-and-back">Ida y vuelta</option>
-          <option value="only-go">Sólo ida</option>
-          <option value="multiple-destinations">Destinos múltiples</option>
-        </select>
-        <label for="flight-origin"></label>
-        <input
-          class="flight-origin"
-          type="text"
-          name="origin"
-          id="flight-origin"
-          placeholder="Salida de *"
-          pattern="[a-z]{1,15}"
-          title="Por favor, indique la ciudad de salida"
-          required
-        />
-        <label for="flight-destination"></label>
-        <input
-          type="text"
-          name="destination"
-          id="flight-destination"
-          placeholder="Llegada a *"
-          pattern="[a-z]{1,15}"
-          title="Por favor, indique la ciudad de llegada"
-          required
-        />
-        <label for="date"></label>
-        <input type="date" class="date" placeholder="Fechas de viaje" />
-        <label for="passenger-number">Pasajeros *<br /></label>
-        <input type="number" class="pass-number" value="1 pasajero" />
-        <label for="type-flight">Clase<br /></label>
-        <select name="type-flight" id="">
-          <option value="economy">Economy</option>
-          <option value="premium-economy">Premium economy</option>
-          <option value="business">Business</option>
-          <option value="premiere">La première</option>
-        </select>
-      </form>
-    </section>
+    <main>
+      <section class="section-main">
+        <div class="icon-section"></div>
+        <div class="title-section"><h2>Utensilios</h2></div>
+      </section>
+      <section class="form-container">
+        <h2>Reservar un vuelo</h2>
+        <form action="" class="form-reserve-flight">
+          <label for="flight">Viaje:<br /></label>
+          <select name="flight" id="" class="ticket-number">
+            <option value="go-and-back">Ida y vuelta</option>
+            <option value="only-go">Sólo ida</option>
+            <option value="multiple-destinations">Destinos múltiples</option>
+          </select>
+          <label for="flight-origin"></label>
+          <input
+            class="flight-origin"
+            type="text"
+            name="origin"
+            id="flight-origin"
+            placeholder="Salida de *"
+            pattern="[a-z]{1,15}"
+            title="Por favor, indique la ciudad de salida"
+            required
+          />
+          <label for="flight-destination"></label>
+          <input
+            type="text"
+            name="destination"
+            id="flight-destination"
+            placeholder="Llegada a *"
+            pattern="[a-z]{1,15}"
+            title="Por favor, indique la ciudad de llegada"
+            required
+          />
+          <label for="date"></label>
+          <input type="date" class="date" placeholder="Fechas de viaje" />
+          <label for="passenger-number">Pasajeros *<br /></label>
+          <input type="number" class="pass-number" value="1 pasajero" />
+          <label for="type-flight">Clase<br /></label>
+          <select name="type-flight" id="">
+            <option value="economy">Economy</option>
+            <option value="premium-economy">Premium economy</option>
+            <option value="business">Business</option>
+            <option value="premiere">La première</option>
+          </select>
+        </form>
+      </section>
+    </main>
   </body>
 </html>
