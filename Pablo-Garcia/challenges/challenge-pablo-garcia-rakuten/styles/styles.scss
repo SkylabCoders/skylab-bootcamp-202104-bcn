@@ -5,19 +5,25 @@
 @import "_animations.scss";
 @import "_layouts";
 
-*{
+
   html{
     @include reset;
     font-family: $primary-font;
     font-size: 16px;
+    & body{
+      background-color: $background-primary;
+    }
   }
-}
-
-.main-header{
-  background-color:$background-primary;
-  a{color:$primary-color; font-size: 0.90em; line-height: 1em; font-weight: $bold; text-transform: uppercase;}
   .container-fluid{max-width:1680px;}
 
+.main-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  z-index: 9;
+  background-color:$background-primary;
+  a{color:$primary-color; font-size: 0.90em; line-height: 1em; font-weight: $bold; text-transform: uppercase;}
     .navbar{
       padding:5px 0px;
       .navbar-brand svg{
@@ -56,5 +62,120 @@
           border-radius:5px;
         }
     }
+}
+.carousel{
+  margin-top: 50px;
+  .carousel-indicators{
+    button{
+      width:10px;
+      height:10px;
+      border-radius: 50%;
+    }
+  }
+  .carousel-inner{
+    .carousel-item{
+      img{
+        max-width:100%;
+      }
+    }
+  }
+}
+.featured-movies{
+  .list-movies{
+    @include flex(row wrap, space-between, center);
+    margin:10px auto;
+    li{
+      width:20%;
+      padding:5px;
+
+
+      img{
+        width:100%;
+        border:4px solid transparent;
+        border-radius: 5px;
+        &:hover{
+          border:4px solid $action-color;
+        }
+      }
+    }
+  }
+}
+.slider-movies{
+  .title-category{
+    color:$primary-color;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 30px 10px;
+  }
+}
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  .slick-list
+  {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .slick-prev, .slick-next {
+    font-size: 20px;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    z-index: 9;
+  }
+  .slick-prev:before{
+    font-family: 'slick';
+    font-size: 2em;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    content: '<';
+  }
+  .slick-next:after{
+    font-family: 'slick';
+    font-size: 2em;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    content: '>';
+    right:0;
+  }
+  .slick-prev{
+    left:30px;
+  }
+  .slick-next{
+    right:30px;
+  }
+
+
 
 }
+
+

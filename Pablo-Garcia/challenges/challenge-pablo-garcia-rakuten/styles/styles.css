@@ -7,23 +7,23 @@
 /*Interactive Colors*/
 /*backgrounds colors*/
 /* display flex  generator*/
-* html {
+html {
   /* HTML5 display-role reset for older browsers */
   font-family: "Noto Sans", sans-serif;
   font-size: 16px; }
-  * html html, * html body, * html div, * html span, * html applet, * html object, * html iframe,
-  * html h1, * html h2, * html h3, * html h4, * html h5, * html h6, * html p, * html blockquote, * html pre,
-  * html a, * html abbr, * html acronym, * html address, * html big, * html cite, * html code,
-  * html del, * html dfn, * html em, * html img, * html ins, * html kbd, * html q, * html s, * html samp,
-  * html small, * html strike, * html strong, * html sub, * html sup, * html tt, * html var,
-  * html b, * html u, * html i, * html center,
-  * html dl, * html dt, * html dd, * html ol, * html ul, * html li,
-  * html fieldset, * html form, * html label, * html legend,
-  * html table, * html caption, * html tbody, * html tfoot, * html thead, * html tr, * html th, * html td,
-  * html article, * html aside, * html canvas, * html details, * html embed,
-  * html figure, * html figcaption, * html footer, * html header, * html hgroup,
-  * html menu, * html nav, * html output, * html ruby, * html section, * html summary,
-  * html time, * html mark, * html audio, * html video, * html a {
+  html html, html body, html div, html span, html applet, html object, html iframe,
+  html h1, html h2, html h3, html h4, html h5, html h6, html p, html blockquote, html pre,
+  html a, html abbr, html acronym, html address, html big, html cite, html code,
+  html del, html dfn, html em, html img, html ins, html kbd, html q, html s, html samp,
+  html small, html strike, html strong, html sub, html sup, html tt, html var,
+  html b, html u, html i, html center,
+  html dl, html dt, html dd, html ol, html ul, html li,
+  html fieldset, html form, html label, html legend,
+  html table, html caption, html tbody, html tfoot, html thead, html tr, html th, html td,
+  html article, html aside, html canvas, html details, html embed,
+  html figure, html figcaption, html footer, html header, html hgroup,
+  html menu, html nav, html output, html ruby, html section, html summary,
+  html time, html mark, html audio, html video, html a {
     margin: 0;
     padding: 0;
     border: 0;
@@ -32,27 +32,37 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     text-decoration: none; }
-  * html article, * html aside, * html details, * html figcaption, * html figure,
-  * html footer, * html header, * html hgroup, * html menu, * html nav, * html section {
+  html article, html aside, html details, html figcaption, html figure,
+  html footer, html header, html hgroup, html menu, html nav, html section {
     display: block; }
-  * html body {
+  html body {
     line-height: 1; }
-  * html ol, * html ul {
+  html ol, html ul {
     list-style: none;
     padding-left: 0 !important;
     padding-inline-start: 0 !important; }
-  * html blockquote, * html q {
+  html blockquote, html q {
     quotes: none; }
-  * html blockquote:before, * html blockquote:after,
-  * html q:before, * html q:after {
+  html blockquote:before, html blockquote:after,
+  html q:before, html q:after {
     content: ''; }
-  * html table {
+  html table {
     border-collapse: collapse;
     border-spacing: 0; }
-  * html a {
+  html a {
     text-decoration: none; }
+  html body {
+    background-color: #101010; }
+
+.container-fluid {
+  max-width: 1680px; }
 
 .main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
   background-color: #101010; }
   .main-header a {
     color: #fff;
@@ -60,8 +70,6 @@
     line-height: 1em;
     font-weight: 700;
     text-transform: uppercase; }
-  .main-header .container-fluid {
-    max-width: 1680px; }
   .main-header .navbar {
     padding: 5px 0px; }
     .main-header .navbar .navbar-brand svg {
@@ -91,5 +99,103 @@
       background-color: #f0d500;
       color: #101010;
       border-radius: 5px; }
+
+.carousel {
+  margin-top: 50px; }
+  .carousel .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; }
+  .carousel .carousel-inner .carousel-item img {
+    max-width: 100%; }
+
+.featured-movies .list-movies {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  margin: 10px auto; }
+  .featured-movies .list-movies li {
+    width: 20%;
+    padding: 5px; }
+    .featured-movies .list-movies li img {
+      width: 100%;
+      border: 4px solid transparent;
+      border-radius: 5px; }
+      .featured-movies .list-movies li img:hover {
+        border: 4px solid #f0d500; }
+
+.slider-movies .title-category {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 30px 10px; }
+
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+  .slick-slider .slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0; }
+  .slick-slider .slick-prev, .slick-slider .slick-next {
+    font-size: 20px;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    z-index: 9; }
+  .slick-slider .slick-prev:before {
+    font-family: 'slick';
+    font-size: 2em;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    content: '<'; }
+  .slick-slider .slick-next:after {
+    font-family: 'slick';
+    font-size: 2em;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    content: '>';
+    right: 0; }
+  .slick-slider .slick-prev {
+    left: 30px; }
+  .slick-slider .slick-next {
+    right: 30px; }
 
 /*# sourceMappingURL=styles.css.map */
