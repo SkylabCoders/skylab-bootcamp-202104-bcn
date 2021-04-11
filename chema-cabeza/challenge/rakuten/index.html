@@ -6,45 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="shortcut icon" href="https://prod1-kraken-cloudfront.rakuten.tv/images/favicons/favicon-503f333345.png">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Rakuten TV - Tu cine en casa</title>
 </head>
 <body>
 
-    <div class="container">
-        <div class="slider-container">
-            <div>
-                <div>
-                    <div class="slider">
-                        <div class="img">
-                            <img src="./img/img-slider/img-slice-1.png" alt="">
-                        </div>
-                        <div class="img">
-                            <img src="./img/img-slider/img-slice-2.png" alt="">
-                        </div>
-                        <div class="img">
-                            <img src="./img/img-slider/img-slice-3.png" alt="">
-                        </div>
-                        <div class="img">
-                            <img src="./img/img-slider/img-slice-4.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<footer class="rakuten-footer">
+    <img src="./img/rakuten-logo.png" alt="">
+    <span>CINEMA</span>
+    <span>GRATIS</span>
+    <span>SUSCRIPCIONES</span>
+</footer>
+
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="./img/img-slider/img-slice-1.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="./img/img-slider/img-slice-2.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="./img/img-slider/img-slice-3.png" style="width:100%">
     </div>
 
-    <div class="content">
-        <button class="btn" id="prev"><i class="fas fa-chevron-left"></i></button>
-        <button class="btn" id="next"><i class="fas fa-chevron-right"></i></button>
-
-        <ul>
-            <li class="option"></li>
-            <li class="option"></li>
-            <li class="option"></li>
-            <li class="option"></li>
-        </ul>
+    <div class="mySlides fade">
+        <img src="./img/img-slider/img-slice-4.png" style="width:100%">
+      </div>
+  
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    
     </div>
-    <script type="text/javascript" src="script.js"></script>
+</div>
+  <br>
+
+  <section class="first-row">
+    <img src="./img/first-row-img/image(1).png" alt="">
+    <img src="./img/first-row-img/image.png" alt="">
+    <img src="./img/first-row-img/image(2).png" alt="">
+    <img src="./img/first-row-img/starzplay.png" alt="">
+    <img src="./img/first-row-img/dreamworks.jpeg" alt="">
+
+  </section>
+  
+    <script src="./script.js">
+        
+    </script>
 </body>
 </html>
