@@ -1,12 +1,12 @@
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: "Source sans pro";
     font-size: 12px;
 }
 
 header {
-    background-color: #f8f8f8;
-    height: 50px;
+    /*background-color: #f8f8f8;*/
+    height: 310px;
 }
 
 #first_icons {
@@ -373,3 +373,40 @@ header {
     display: flex;
 }
 
+#slider {
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to right, rgb(166, 205, 154) 0%, rgb(166, 205, 154) 50%, rgb(139, 187, 125) 50%, rgb(139, 187, 125) 100%)
+}
+
+#titulo-seccion {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+    text-transform: uppercase;
+    color: #2E2925;
+}
+
+#title-icon {
+    background: url(../images/utensiliosML.png);
+    background-size: 140px;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 11%;
+    margin: 0 auto;
+}
+
+#title h1 {
+    letter-spacing: 6px;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 25px 0;
+    border-top: 2px solid #2E2925;
+    border-bottom: 2px solid #2E2925;
+    width: 15%;
+    margin: 0 auto;
+}
+
+#title {
+    padding-top: 40px;
+}
