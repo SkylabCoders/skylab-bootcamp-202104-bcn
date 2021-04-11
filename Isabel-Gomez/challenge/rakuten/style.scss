@@ -2,7 +2,6 @@
 
 @import "./colors";
 @import "./mixins";
-@import "./carousel";
 
 *, 
 *::after, 
@@ -41,7 +40,7 @@ a {
     position: fixed;
     background-color: $background-color-nav;
     color: $color-main;
-    z-index: 1;
+    z-index: 2;
 }
 
 .nav-bar {
@@ -136,11 +135,5 @@ a {
 #main-carousel {
     margin-top: 61px;
     display: flex;
+    z-index: 1;
 }
-
-.carousel-item {
-  transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out
-}
-
-
-
