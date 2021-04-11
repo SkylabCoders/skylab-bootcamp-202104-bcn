@@ -201,20 +201,12 @@ main {
   margin: 0px;
 }
 
-#img-row-1,
-#img-row-2,
-#img-row-3,
-#img-row-4,
-#img-row-5 {
+.img-row {
   border: 4px solid transparent;
   padding: 0px;
 }
 
-#img-row-1:hover,
-#img-row-2:hover,
-#img-row-3:hover,
-#img-row-4:hover,
-#img-row-5:hover {
+.img-row:hover {
   border: 4px solid #ffe300;
   cursor: pointer;
 }
@@ -240,26 +232,12 @@ h2 {
   margin: 0px;
 }
 
-#img-scroll-1,
-#img-scroll-2,
-#img-scroll-3,
-#img-scroll-4,
-#img-scroll-5,
-#img-scroll-6,
-#img-scroll-7,
-#img-scroll-8 {
+.img-scroll {
   border: 4px solid transparent;
   padding: 0px;
 }
 
-#img-scroll-1:hover,
-#img-scroll-2:hover,
-#img-scroll-3:hover,
-#img-scroll-4:hover,
-#img-scroll-5:hover,
-#img-scroll-6:hover,
-#img-scroll-7:hover,
-#img-scroll-8:hover {
+.img-scroll:hover {
   border: 4px solid #ffe300;
   cursor: pointer;
 }
