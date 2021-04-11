@@ -78,6 +78,24 @@ body {
   padding: 10px;
 }
 
+.header .arrow {
+  font-size: 10px;
+}
+
+.header .arrow:hover {
+  transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform-origin: center;
+  -moz-transform-origin: center;
+  -webkit-transform-origin: center;
+  transition: -webkit-transform 1.0s ease all;
+  transition: transform 1.0s ease all;
+  transition: transform 1.0s ease all, -webkit-transform 1.0s ease all;
+  -moz-transition: -moz-transform 1.0s ease all;
+  -webkit-transition: -webkit-transform 1.0s ease all;
+}
+
 .navigation-sections {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -179,24 +197,95 @@ body {
 
 .form {
   display: block;
-  color: white;
-  padding: 10px;
-}
-
-.form .form-label {
-  text-transform: uppercase;
+  color: #010055;
+  padding: 50px;
+  margin: 50px;
+  position: absolute;
+  background-color: white;
+  width: 80%;
+  display: inline-block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .form input, .form select {
-  background-color: rgba(255, 255, 255, 0);
-  color: #e2e2e2;
+  background-color: rgba(0, 14, 54, 0);
+  color: #9c9c9c;
   border: none;
   padding: 10px;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #1d1d1d;
 }
 
 .form-section {
   position: relative;
   margin-bottom: 20px;
+  padding-right: 50px;
+}
+
+.form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.submit-button {
+  color: #fff;
+  background-color: #d40504;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
+  position: absolute;
+  right: 30px;
+}
+
+.switch {
+  /* Rounded sliders */
+}
+
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #dd2323;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  z-index: 1;
+}
+
+.switch input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.switch input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2196F3;
+          box-shadow: 0 0 1px #2196F3;
+}
+
+.switch input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.switch .slider.round {
+  border-radius: 34px;
+}
+
+.switch .slider.round:before {
+  border-radius: 50%;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -14,9 +14,9 @@
         <div class="navigation-sections">
             <img src="./images/rakuten_logo.png" alt="rakuten_logo" class="logo">
             <nav class="main-navigation">
-                <a href="" class="navigation-items">Cinema</a>
+                <a href="" class="navigation-items">Cinema <span class="arrow">▼</span></a>
                 <a href="" class="navigation-items">Gratis</a>
-                <a href="" class="navigation-items">Suscripciones</a>
+                <a href="" class="navigation-items">Suscripciones <span class="arrow">▼</span></a>
                 <input type="text" placeholder="Buscar" class="search-bar">
             </nav>
         </div>
@@ -62,88 +62,61 @@
             </div>
         </div>
         <form class="form">
-            <div class="form-section">
-                <div class="form-checkbox">
-                    <label for="roundtrip">
-                        <input type="radio" id="roundtrip" name="flight-type">
-                        <span>Roundtrip</span>
-                    </label>
-                    <label for="one-way">
-                        <input type="radio" id="one-way" name="flight-type">
-                        <span>One way</span>
-                    </label>
-                <label for="multi-city">
-                    <input type="radio" id="multi-city" name="flight-type">
-                    <span>Multi-City</span>
-                </label>
+            <div class="form-row">
+                <div class="form-section">
+                    <span class="form-label">Viaje</span>
+                        <select class="form-control">
+                            <option>Ida y Vuelta</option>
+                            <option>Sólo ida</option>
+                            <option>Destinos múltiples</option>
+                        </select>
+                        <span class="selection-arrow"></span>
+                </div>
+                    <div class="form-section">
+                        <input class="form-control" type="text" placeholder="Salida de *">
+                    </div>
+                    <div class="form-section">
+                        <input class="form-control" type="text" placeholder="Llegada a *">
+                    </div> 
+            </div>
+            <div class="form-row">
+                <div class="form-section">
+                    <span class="form-label">Departing</span>
+                    <input class="form-control" type="date" required="" placeholder="Fecha de salida">
+                </div>
+                <div class="form-section">
+                    <span class="form-label">Returning</span>
+                    <input class="form-control" type="date" required="" placeholder="Fecha de vuelta">
+                </div>
+                <div class="form-section">
+                    <span class="form-label">Pasajeros</span>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    <span class="selection-arrow"></span>
+                </div>
+                <div class="form-section">
+                    <span class="form-label">Clase</span>
+                        <select class="form-control">
+                            <option>Economy</option>
+                            <option>Premium Economy</option>
+                            <option>Business</option>
+                            <option>Le Première</option>
+                        </select>
+                    <span class="selection-arrow"></span>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-section">
-                        <span class="form-label">Flying from</span>
-                        <input class="form-control" type="text" placeholder="City or airport">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-section">
-                        <span class="form-label">Flyning to</span>
-                        <input class="form-control" type="text" placeholder="City or airport">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-section">
-                        <span class="form-label">Departing</span>
-                        <input class="form-control" type="date" required="">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-section">
-                        <span class="form-label">Returning</span>
-                        <input class="form-control" type="date" required="">
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-section">
-                        <span class="form-label">Adults (18+)</span>
-                            <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                        <span class="select-arrow"></span>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <span class="form-label">Children (0-17)</span>
-                            <select class="form-control">
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                            </select>
-                        <span class="select-arrow"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <span class="form-label">Travel class</span>
-                            <select class="form-control">
-                                <option>Economy class</option>
-                                <option>Business class</option>
-                                <option>First class</option>
-                            </select>
-                        <span class="select-arrow"></span>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-btn">
-                        <button class="submit-btn">Show flights</button>
-                    </div>
+            <div class="form-row">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                <div class="form-btn">
+                    <button class="submit-button">Buscar Vuelos</button>
                 </div>
             </div>
         </form>
