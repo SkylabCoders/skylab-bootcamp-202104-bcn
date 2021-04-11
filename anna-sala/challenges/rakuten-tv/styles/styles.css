@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../Font/fontawesome-webfont.eot?v=3.2.1");
+  src: url("../Font/fontawesome-webfont.eot?#iefix&v=3.2.1") format("embedded-opentype"), url("../Font/fontawesome-webfont.woff?v=3.2.1") format("woff"), url("../Font/fontawesome-webfont.ttf?v=3.2.1") format("truetype"), url("../Font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1") format("svg");
+}
+
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -14,6 +20,7 @@ body {
 
 .logo {
   width: 150px;
+  height: auto;
 }
 
 .header {
@@ -74,6 +81,24 @@ body {
       align-content: center;
 }
 
+.search-bar {
+  padding: 10px;
+  background-color: #333;
+  color: #252525;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  background-image: url("./../images/search-icon.png");
+  background-repeat: no-repeat;
+  background-size: 21%;
+  padding-left: 40px;
+  color: white;
+}
+
+.user-functions {
+  padding: 10px;
+}
+
 #register {
   background-color: #ffe300;
   color: #131313;
@@ -107,7 +132,22 @@ body {
 }
 
 /*--------------END OF SLIDESHOW---------------*/
-.slideshow-images {
+.movie-categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.images-categories {
   width: 100%;
+  height: auto;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.images-categories:hover {
+  padding: 0;
+  border: 5px solid #ffe300;
 }
 /*# sourceMappingURL=styles.css.map */
