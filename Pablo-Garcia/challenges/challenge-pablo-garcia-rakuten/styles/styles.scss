@@ -6,5 +6,55 @@
 @import "_layouts";
 
 *{
-  html{@include reset}
-}suta
+  html{
+    @include reset;
+    font-family: $primary-font;
+    font-size: 16px;
+  }
+}
+
+.main-header{
+  background-color:$background-primary;
+  a{color:$primary-color; font-size: 0.90em; line-height: 1em; font-weight: $bold; text-transform: uppercase;}
+  .container-fluid{max-width:1680px;}
+
+    .navbar{
+      padding:5px 0px;
+      .navbar-brand svg{
+        max-width:125px;
+        height: 35px;}
+      .searcher-form{
+        position:relative;
+        width: 35%;
+        margin: 0px 10px;
+        input{
+          padding-left: 40px;
+          height: 40px;
+          padding-right:0px;
+          font-family:$primary-font;
+          background-color:$background-searcher;
+          border:0;
+        }
+        i{
+          position: absolute;
+          top: calc(50% - 8px);
+          left: 15px;
+          color:$color-icon;
+        }
+      }
+      .navbar-nav{
+        .nav-item{
+          margin:0px 5px;
+        }
+      }
+    }
+    #navbarTogglerDemo04{
+      justify-content: flex-end;
+        .user-acces{
+          background-color:$action-color;
+          color:$background-primary;
+          border-radius:5px;
+        }
+    }
+
+}

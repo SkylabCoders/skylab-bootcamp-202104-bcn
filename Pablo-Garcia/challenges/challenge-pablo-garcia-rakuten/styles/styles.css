@@ -1,36 +1,95 @@
-/*
-Error: Invalid CSS after "}suta": expected "{", was ""
-        on line 11 of styles.scss
+/*RESET FILES*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+::marker {
+  content: ""; }
 
-6: @import "_layouts";
-7: 
-8: *{
-9:   html{@include reset}
-10: }suta
+/* Color Text*/
+/*Interactive Colors*/
+/*backgrounds colors*/
+/* display flex  generator*/
+* html {
+  /* HTML5 display-role reset for older browsers */
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px; }
+  * html html, * html body, * html div, * html span, * html applet, * html object, * html iframe,
+  * html h1, * html h2, * html h3, * html h4, * html h5, * html h6, * html p, * html blockquote, * html pre,
+  * html a, * html abbr, * html acronym, * html address, * html big, * html cite, * html code,
+  * html del, * html dfn, * html em, * html img, * html ins, * html kbd, * html q, * html s, * html samp,
+  * html small, * html strike, * html strong, * html sub, * html sup, * html tt, * html var,
+  * html b, * html u, * html i, * html center,
+  * html dl, * html dt, * html dd, * html ol, * html ul, * html li,
+  * html fieldset, * html form, * html label, * html legend,
+  * html table, * html caption, * html tbody, * html tfoot, * html thead, * html tr, * html th, * html td,
+  * html article, * html aside, * html canvas, * html details, * html embed,
+  * html figure, * html figcaption, * html footer, * html header, * html hgroup,
+  * html menu, * html nav, * html output, * html ruby, * html section, * html summary,
+  * html time, * html mark, * html audio, * html video, * html a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none; }
+  * html article, * html aside, * html details, * html figcaption, * html figure,
+  * html footer, * html header, * html hgroup, * html menu, * html nav, * html section {
+    display: block; }
+  * html body {
+    line-height: 1; }
+  * html ol, * html ul {
+    list-style: none;
+    padding-left: 0 !important;
+    padding-inline-start: 0 !important; }
+  * html blockquote, * html q {
+    quotes: none; }
+  * html blockquote:before, * html blockquote:after,
+  * html q:before, * html q:after {
+    content: ''; }
+  * html table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+  * html a {
+    text-decoration: none; }
 
-Backtrace:
-styles.scss:11
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1238:in `expected'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1233:in `tok!'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:688:in `block'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:681:in `ruleset'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:707:in `block_child'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:700:in `block_contents'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:137:in `stylesheet'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:41:in `parse'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:414:in `_to_tree'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:387:in `run'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
-C:/Ruby30/lib/ruby/gems/3.0.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
-C:/Ruby30/bin/sass:23:in `load'
-C:/Ruby30/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"}suta\": expected \"{\", was \"\"\A         on line 11 of styles.scss\A \A 6: @import \"_layouts\";\A 7: \A 8: *{\A 9:   html{@include reset}\A 10: }suta"; }
+.main-header {
+  background-color: #101010; }
+  .main-header a {
+    color: #fff;
+    font-size: 0.90em;
+    line-height: 1em;
+    font-weight: 700;
+    text-transform: uppercase; }
+  .main-header .container-fluid {
+    max-width: 1680px; }
+  .main-header .navbar {
+    padding: 5px 0px; }
+    .main-header .navbar .navbar-brand svg {
+      max-width: 125px;
+      height: 35px; }
+    .main-header .navbar .searcher-form {
+      position: relative;
+      width: 35%;
+      margin: 0px 10px; }
+      .main-header .navbar .searcher-form input {
+        padding-left: 40px;
+        height: 40px;
+        padding-right: 0px;
+        font-family: "Noto Sans", sans-serif;
+        background-color: #333333;
+        border: 0; }
+      .main-header .navbar .searcher-form i {
+        position: absolute;
+        top: calc(50% - 8px);
+        left: 15px;
+        color: #999; }
+    .main-header .navbar .navbar-nav .nav-item {
+      margin: 0px 5px; }
+  .main-header #navbarTogglerDemo04 {
+    justify-content: flex-end; }
+    .main-header #navbarTogglerDemo04 .user-acces {
+      background-color: #f0d500;
+      color: #101010;
+      border-radius: 5px; }
+
+/*# sourceMappingURL=styles.css.map */
