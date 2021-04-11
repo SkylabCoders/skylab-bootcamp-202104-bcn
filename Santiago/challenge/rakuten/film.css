@@ -67,7 +67,8 @@
     cursor: pointer;
 }
 
-.navbar-items-logo {
+.navbar-items-logo,
+.navbar-items-logo a {
     background-color: black;
 }
 
