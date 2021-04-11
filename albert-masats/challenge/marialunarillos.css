@@ -36,15 +36,18 @@
     background: #F8F8F8;
     height: 50px;
     width: 1080px;
-    border: 1px solid #fffb03;
-}
+    /* border: 1px solid #fffb03;*/
+} 
 
 .header-center {
     display:flex;
+    flex-flow: row;
+    justify-content: space-between;
+    font-size: 0.8em;
     margin: auto;
     width: 1080px;
     height: 217.6px;
-    border: 1px solid #ff384f;
+    /* border: 1px solid #ff384f; */
 }
 
 .bottom-header {
@@ -52,13 +55,12 @@
     margin: auto;
     width: 1080px;
     height: 50px;
-    border: 1px solid #17f8d3;
+    /* border: 1px solid #17f8d3; */
 }
 
 .main-icons {
     height: 140px;
     width: 228px;
-    
 }
 
 .left-icon {
@@ -76,6 +78,7 @@
     background-clip: initial;
     background-color: rgb(255, 89, 89);
     cursor:pointer;
+    color: transparent;
 }
 
 
@@ -83,6 +86,7 @@
     display: inline-block;
     height: 70px;
     width: 71px;
+    color: transparent;
     background: url(./../challenge/images/cucute.png) #6199AF bottom center no-repeat;
     cursor:pointer;
 }
@@ -91,6 +95,7 @@
     display: inline-block;
     height: 70px;
     width: 71px;
+    color: transparent;
     background: url(./../challenge/images/mumuchu.png) rgb(246, 180, 54) bottom center no-repeat;
     cursor:pointer;
 }   
@@ -111,10 +116,137 @@
 
 .maria-lunarillos {
     align-self: flex-end;
-    justify-content: flex-start;
+    justify-self: space-between; 
     height:70px;
     width: 300px;
     background: url(./../challenge/images/logo.svg) bottom center no-repeat;
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     margin-bottom: 30px;
+   
+
+}
+
+.utensilios {
+    flex-direction: row;
+    align-self: flex-end;
+    height: 80px;
+    width: 80px;
+    background-image: url(./../challenge/images/utensiliosML.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f2f2f2;
+    background-size: 50%;
+    position: relative;
+    padding: 0;
+    cursor:pointer;
+    margin-top: 10px;
+    margin-left: 3px;
+}
+
+.text-utensilios {
+    display:flex;
+    justify-content: center;
+    margin-top: 90px;
+    text-align: center;
+    
+}
+
+.ingredientes {
+    flex-direction: row;
+    align-self: flex-end;
+    height: 80px;
+    width: 80px;
+    background-image: url(./../challenge/images/magdalena.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f2f2f2;
+    background-size: 50%;
+    position: relative;
+    padding: 0;
+    cursor:pointer;
+    margin-top: 10px;
+    margin-left: 3px;
+}
+
+.text-ingredientes {
+    display:flex;
+    justify-content: center;
+    margin-top: 90px;
+    text-align: center;
+    margin-left: 8px;
+}
+
+.tarta {
+    flex-direction: row;
+    align-self: flex-end;
+    height: 80px;
+    width: 80px;
+    background-image: url(./../challenge/images/tarta-cumpleanos.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f2f2f2;
+    background-size: 50%;
+    position: relative;
+    padding: 0;
+    cursor:pointer;
+    margin-top: 10px;
+    margin-left: 3px;
+}
+
+.text-tarta {
+    display:flex;
+    justify-content: center;
+    margin-top: 90px;
+    text-align: center;
+}
+
+.delantal {
+    flex-direction: row;
+    align-self: flex-end;
+    height: 80px;
+    width: 80px;
+    background-image: url(./../challenge/images/delantal.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f2f2f2;
+    background-size: 50%;
+    position: relative;
+    padding: 0;
+    cursor:pointer;
+    margin-top: 10px;
+    margin-left: 3px;
+}
+
+.text-delantal {
+    display:flex;
+    justify-content: center;
+    margin-top: 90px;
+    text-align: center;
+}
+
+.blog {
+
+    align-self: flex-end;
+    height: 80px;
+    width: 80px;
+    background-image: url(./../challenge/images/menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f2f2f2;
+    display: block;
+    background-position: -320px 0;
+    background-size: 560px;
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    cursor:pointer;
+    margin-top: 10px;
+    margin-left: 3px;
+}
+
+.text-blog {
+    display:flex;
+    justify-content: center;
+    margin-top: 90px;
+    text-align: center;
 }
