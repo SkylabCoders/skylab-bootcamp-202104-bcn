@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "values.scss"
-    ],
-    "names": [],
-    "file": "values.css"
-}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"values.css"}
