@@ -3,29 +3,65 @@
     background: #F8F8F8;
     width: 100%;
     height: 50px;
-    // color: #67635F;
     display: flex;
     justify-content: center;
 }
 
 .header-links {
     display: flex;
-    width: 70%;
+    width: 71.5%;
     min-width: 100px;
+    justify-content: space-between;
 }
 
 .list-container {
-    width: 140px;
-}
-.ul-content {
-    display: flex;
-  
-    list-style: none;
-    @include links-display;
+    width: 252px;
 }
 
-@mixin  links-display{
-    border: solid red;
-    width: 80px;
+.ul-content {
+    display: flex;
+    list-style: none;
     height: 140px;
 }
+@mixin link-size ($heigh, $width){
+    width: $width;
+    margin-right: 4px;
+    float: left;
+    height: $heigh;
+}
+
+.ma-link-container{
+    @include link-size(140px, 80px);
+    background: url('../img/maria-lunarillos.png') #FF5959 bottom center no-repeat;
+}
+
+.cu-link-container{
+    @include link-size(70px, 70px);
+    transition: height;
+    background: url('../img/cucute.png') #6199AF bottom center no-repeat;;
+}
+
+.mu-link-container{
+    @include link-size(70px, 70px);
+    transition: height;
+    background: url('../img/mumuchu.png') #F6B436 bottom center no-repeat;
+}
+
+.mu-link-container:hover,  .cu-link-container:hover{
+    height: 140px;
+    background: url(../img/);
+}
+
+.header-links-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.enter-register-container{
+    display: flex;
+    align-content: center;
+}
+//     border: black solid;
+//     justify-content: center;
+// }
