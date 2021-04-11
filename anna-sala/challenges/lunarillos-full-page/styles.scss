@@ -3,7 +3,18 @@ $red-main-color: #FF5959;
 $blue-color: #6199AF;
 $yellow-color: #F6B436;
 
-
+@mixin header-buttons {
+    width: 100px;
+    text-transform: uppercase;
+    color: #ffffff;
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 5px;
+}
 *, *::after, *::before {
     margin: 0;
     padding: 0;
@@ -105,27 +116,60 @@ body {
 .logo{
     margin-top: 80px;
 }
-.quick-links{
-    width: 100%;
+.patata{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
+}
+.quick-links{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:10px;
+    width: 100%;
 }
 
 .buttons{
-    padding: 10px 20px;
-    border:solid 3px #9faa4d;
-    width: 100px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    text-align: center;
+ @include header-buttons;
+}
+.button-input{
+    display:flex;
+    flex-grow: 1.5;
+}
+#novedades{
+    background-color: #9faa4d;
+    padding-right: 8px;
+    border: none;
+    flex-grow: 1;
+}
+
+#offers{
+    background-color: #8e789d;
+    border: none;
+    flex-grow: 1;
+}
+#search{
+    flex-grow: 2;
+}
+#input-field{
+    width:200px;
+}
+#submit{
+    width:40px;
+    flex-grow: 1;
+    background-color: #bdbcbb;
+    border: none;
+}
+
+.input-search{
+    @include header-buttons; 
+    height: 20px;
 }
 
 .main-header-section{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin:80px;
-
 }
 
 .icons-nav{
@@ -152,16 +196,11 @@ body {
     background-color: rgb(230, 230, 230);
 }
 
-#search{
-    flex-grow: 1.5;
-}
-
 @media only screen and (max-width: 600px){
     .header{
         display: flex;
         flex-wrap: wrap;
     }
-
     .banner-sections{
         width: 100%;
         display: flex;
@@ -177,7 +216,18 @@ body {
     }
 }
 @media only screen and (max-width: 1105px){
+    .main-header-section{
+        margin-top: 30px;
+    }
+    .cu, .mu{
+        display: none;
+    }
+    .patata{
+        margin-top: 40px;
+    }
+
     .banner-sections{
+        position: relative;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -193,7 +243,6 @@ body {
 }
 
 .main-container{
-    margin-top: 100px;
     width: 100%;
     align-content: center;
 }
@@ -220,7 +269,27 @@ body {
 }
 
 .banner-sections{
+    position: relative;
     align-content: center;
+}
+.banner-text{
+    margin:10px;
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 150px;
+    background-color:rgba(233, 233, 233, 0.7);
+    h3{
+        margin: 10px;
+        font-size: 20px;
+    }
+}
+.triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100px 0 0 100px;
+    background-color:rgba(233, 233, 233, 0.7);  
 }
 
 .section-images {
