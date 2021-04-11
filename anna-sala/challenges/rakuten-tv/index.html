@@ -48,7 +48,105 @@
         </div>
         <div>
             <h2 class="movie-categories">GRATIS - La mejor selección de películas</h2>
+            <div class="movies">
+                <figure><img class="movie" src="./movies/atrapado-en-un-pirado-1612521195-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/buffalo-66-1611476862-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/cafe-society-1611322421-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/communion-1611322695-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/date-movie-1613033005-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/el-ultimo-engano-1611323815-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/luchando-por-un-sueno-1611323220-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/misteriosa-obsesion-1611320835-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/pawn-shop-chronicles-1611476838-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/triple-amenaza-1611323146-width217-quality80.jpg" alt=""></figure>
+            </div>
         </div>
+        <form class="form">
+            <div class="form-section">
+                <div class="form-checkbox">
+                    <label for="roundtrip">
+                        <input type="radio" id="roundtrip" name="flight-type">
+                        <span>Roundtrip</span>
+                    </label>
+                    <label for="one-way">
+                        <input type="radio" id="one-way" name="flight-type">
+                        <span>One way</span>
+                    </label>
+                <label for="multi-city">
+                    <input type="radio" id="multi-city" name="flight-type">
+                    <span>Multi-City</span>
+                </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-section">
+                        <span class="form-label">Flying from</span>
+                        <input class="form-control" type="text" placeholder="City or airport">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-section">
+                        <span class="form-label">Flyning to</span>
+                        <input class="form-control" type="text" placeholder="City or airport">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-section">
+                        <span class="form-label">Departing</span>
+                        <input class="form-control" type="date" required="">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-section">
+                        <span class="form-label">Returning</span>
+                        <input class="form-control" type="date" required="">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-section">
+                        <span class="form-label">Adults (18+)</span>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        <span class="select-arrow"></span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <span class="form-label">Children (0-17)</span>
+                            <select class="form-control">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                        <span class="select-arrow"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <span class="form-label">Travel class</span>
+                            <select class="form-control">
+                                <option>Economy class</option>
+                                <option>Business class</option>
+                                <option>First class</option>
+                            </select>
+                        <span class="select-arrow"></span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-btn">
+                        <button class="submit-btn">Show flights</button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </main>
 </body>
 </html>
