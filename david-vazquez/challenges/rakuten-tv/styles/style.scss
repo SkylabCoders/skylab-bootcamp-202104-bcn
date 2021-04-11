@@ -195,9 +195,61 @@ main {
 .slider {
   margin-top: 60px;
   margin-bottom: 0;
-  width: auto;
-  display: block;
-  justify-content: center;
+  width: 900%;
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  animation: cambio 20s infinite alternate;
+}
+
+.slider:hover {
+  cursor: pointer;
+}
+
+.slider-item {
+  width: 100%;
+}
+
+@keyframes cambio {
+  0% {
+    margin-left: 0%;
+  }
+  10% {
+    margin-left: 0%;
+  }
+
+  15% {
+    margin-left: -100%;
+  }
+  25% {
+    margin-left: -100%;
+  }
+
+  30% {
+    margin-left: -200%;
+  }
+  45% {
+    margin-left: -200%;
+  }
+
+  50% {
+    margin-left: -300%;
+  }
+  65% {
+    margin-left: -300%;
+  }
+  70% {
+    margin-left: -400%;
+  }
+  85% {
+    margin-left: -400%;
+  }
+  90% {
+    margin-left: -500%;
+  }
+  100% {
+    margin-left: -500%;
+  }
 }
 
 .button {
