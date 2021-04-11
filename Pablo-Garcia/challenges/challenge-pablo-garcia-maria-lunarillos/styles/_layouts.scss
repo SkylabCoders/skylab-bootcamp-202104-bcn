@@ -16,10 +16,11 @@
   -webkit-align-items:$align;
 }
 
-@mixin backgrounds($bg-color, $bg-image,$bg-size, $bg-repeat, $bg-attachment ){
+@mixin backgrounds($bg-color, $bg-image,$bg-size, $bg-repeat, $bg-attachment, $bg-position:"" ){
   background-color: $bg-color;
   background-image: url($bg-image);
   background-size: $bg-size;
   background-repeat: $bg-repeat;
   background-attachment: $bg-attachment;
+  background-position: $bg-position;
 }
