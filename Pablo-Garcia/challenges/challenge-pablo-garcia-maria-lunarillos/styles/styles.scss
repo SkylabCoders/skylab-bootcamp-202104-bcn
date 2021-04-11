@@ -94,7 +94,6 @@ body {
             }
           }
         }
-
         .social-nav {
           @include flex(row wrap, space-between, center);
           min-width: 50%;
@@ -549,6 +548,7 @@ body {
     width:100%;
     margin-top: 50px;
     padding-top: 65px;
+    margin-bottom:100px;
     .category-section{
       width:100%;
       position:relative;
@@ -618,6 +618,207 @@ body {
         color:$primary;
       }
   }
+  }
+  .advantage{
+    width:100%;
+    background-color:$backgrounds-actions;
+    padding:48px 50px;
+    .list-adavantage ul{
+      @include flex(row wrap, space-around, center);
+      li{
+        .image-advantage{
+          display: block;
+          width: 57px;
+          min-height: 83px;
+          margin: 0 auto 20px;
+          span{display:block;}
+          .free-shipping{
+            width: 138%;
+            min-height: 62px;
+            display: block;
+            @include backgrounds(transparent, '../assets/sprite.svg', 418%, no-repeat, initial, 0% 5%);}
+          .send{
+            width: 138%;
+            min-height: 85px;
+            display: block;@include backgrounds(transparent, '../assets/sprite.svg', 546%, no-repeat, initial, 30% 6%);}
+          .returns{
+            width: 138%;
+            min-height: 72px;
+            display: block;@include backgrounds(transparent, '../assets/sprite.svg', 474%, no-repeat, initial, 52% 6%);}
+          .payment{
+            width: 138%;
+            min-height: 70px;
+            display: block;@include backgrounds(transparent, '../assets/sprite.svg', 458%, no-repeat, initial, 82% 6%);}
+        }
+
+        .subtitle-image{
+          display:block;
+          font-size:1em;
+          line-height:1.2em;
+          color:$text;
+          font-weight: 900;
+          text-align: center;
+        }
+        .content-image{
+          display: block;
+          font-size:0.80em;
+          line-height:1em;
+          color:$text;
+          font-weight: 400;
+          text-align: center;
+        }
+      }
+    }
+  }
+  #footer{
+    .wrapper-footer{
+
+      min-height:250px;
+      @include flex(row wrap, space-between, center);
+        .subtitle-content{font-size:1em; line-height:1.3em; margin-bottom:10px;color:$text; }
+        .subtitle-content{font-size:1em; line-height:1.3em; margin-bottom:10px;color:$text; }
+      .follow-us {
+        flex-basis: 22%;
+        @include flex(column wrap, flex-start, flex-start);
+        .list-elements{
+          @include flex(row wrap, center, center);
+          .item-element > span{display: block;width: 35px;height: 40px;}
+          .icon-facebook{
+            @include backgrounds(transparent, '../assets/sprite.svg', 1000%, no-repeat, initial, 0% 73%);
+          }
+          .icon-twitter{
+            @include backgrounds(transparent, '../assets/sprite.svg', 1000%, no-repeat, initial, 11% 73%);
+          }
+          .icon-instagram{
+            @include backgrounds(transparent, '../assets/sprite.svg', 1000%, no-repeat, initial, 22% 73%);
+          }
+          .icon-painterest{
+            @include backgrounds(transparent, '../assets/sprite.svg', 1000%, no-repeat, initial, 33% 73%);
+          }
+          .icon-youtube{
+            @include backgrounds(transparent, '../assets/sprite.svg', 1000%, no-repeat, initial, 56% 73%);
+          }
+        }
+      }
+      .newsletter-form{
+        position:relative;
+        flex-basis: 35%;
+        &::before{
+          position:absolute;
+          top:0;
+          left:-40px;
+          display:block;
+          width:1px;
+          min-height: 100%;
+          content:"";
+          margin: 0 auto;
+          background-color: $searcherBg;
+        }
+        &::after{
+          position:absolute;
+          top:0;
+          right:-40px;
+          display:block;
+          width:1px;
+          min-height: 100%;
+          content:"";
+          margin: 0 auto;
+          background-color: $searcherBg;
+        }
+        form.form-suscriber{
+          @include flex(row wrap, center, center);
+
+          input{
+            width: 60%;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 10px;
+            border:1px solid $searcherBg;
+            background: #fff;
+            font-family: $primary-font;
+            font-weight: 300;
+            font-size: 15px;
+            color: $text;
+            margin-left:2px;
+          }
+          button{
+            height: 40px;
+            line-height: 40px;
+            width: 25%;
+            color:$primary;
+            background-color:$corporate1;
+            border:0;
+          }
+          .policy{
+            @include flex(row wrap, flex-start, center);
+            width:100%;
+            color:$text;
+            margin:10px 0px;
+            font-size:0.8em;
+            input[type="checkbox"]{
+              width:15px;
+              height:15px;
+              margin-right:5px;
+            }
+            a{
+              color:$text;
+            }
+          }
+        }
+        .custom-links{
+          flex-basis: 25%;
+        }
+
+      }
+      .custom-links{
+        flex-basis: 19%;
+        margin-left: 5%;
+        .list-elements{
+          @include flex(column wrap,center, flex-start);
+          a{color:$corporate1; margin: 0px 5px;}
+          .item-element{
+            @include flex(row wrap, flex-start, center);
+            .icon-contact{
+              display:block;
+              width:34px;
+              height:34px;
+              border-radius: 50%;
+            }
+            .contacto{
+              display:block;
+              width:32px;
+              height:32px;
+              @include backgrounds(transparent, '../assets/sprite.svg', 1000%, no-repeat, initial, 0% 30%);}
+            .about-us{
+              display:block;
+              width:32px;
+              height:32px;
+              @include backgrounds(transparent, '../assets/sprite.svg', 1000%, no-repeat, initial, 0% 36%);
+            }
+            .conditions{
+              display:block;
+              width:32px;
+              height:32px;
+              @include backgrounds(transparent, '../assets/sprite.svg', 1000%, no-repeat, initial, 0% 42%);
+            }
+          }
+
+        }
+      }
+
+    }
+    .copyrights{
+      display:block;
+      width:100%;
+      min-height:40px;
+      @include flex(row wrap, center, center);
+      background-color: $corporate1;
+      color:#fff;
+      text-align: center;
+      font-size: 0.85em;
+      line-height: 1em;
+      font-weight: 400;
+    }
   }
 }
 
