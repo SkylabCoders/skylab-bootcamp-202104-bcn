@@ -211,13 +211,17 @@ header {
     justify-content: space-evenly;
 }
 
-#menu-buscador, #menu-items {
+#menu-buscador, #navigation {
     display: flex;
     margin: 20px 0;
     position: relative;
     top: -70px;
     width: 80%;
-    justify-content: end;
+    justify-content: space-between;
+}
+
+#navigation {
+    padding-top: 20px;
 }
 
 #menu-items {
@@ -229,12 +233,80 @@ header {
     height: 100px;
     text-align: center;
     background-color: #f2f2f2;
+    margin-right: 5px;
+    cursor: pointer;
 }
 
-.item-menu img {
-    width: 50px;
+.item-information {
+    text-transform: uppercase;
     position: relative;
-    top: 15px;
+    top: 40px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#blog .item-information  {
+    top: 8px;
+}
+
+.item-menu:hover {
+    background-color: #ff5959;
+}
+
+#utensilios, #ingredientes, #fiestas, #marcas {
+    background-size: 50px auto;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 67px;
+    margin: 0 auto;
+    position: relative;
+    top: 15%;
+}
+
+#utensilios {
+    background-image: url(../images/utensiliosML.png);
+}
+
+.item-menu:hover #utensilios {
+    background-image: url(../images/utensiliosML-hover.png);
+}
+
+#ingredientes {
+    background-image: url(../images/magdalena.png);
+}
+
+.item-menu:hover #ingredientes {
+    background-image: url(../images/magdalena-hover.png);
+}
+
+#fiestas {
+    background-image: url(../images/tarta-cumpleanos.png);
+}
+
+.item-menu:hover #fiestas {
+    background-image: url(../images/tarta-cumpleanos-hover.png);
+}
+
+#marcas {
+    background-image: url(../images/delantal.png);
+}
+
+.item-menu:hover #marcas {
+    background-image: url(../images/delantal-hover.png);
+}
+
+#blog {
+    background-color: #ff5959;
+    width: 100px;
+    height: 100px;
+}
+
+#blog-icon {
+    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/menu.svg) -400px 0;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    cursor: pointer;
 }
 
 #logo {
@@ -296,3 +368,8 @@ header {
 #ofertas {
     background-color: #8e789d;
 }
+
+#menu-items {
+    display: flex;
+}
+
