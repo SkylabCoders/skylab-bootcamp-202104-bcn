@@ -46,11 +46,11 @@ body {
       background-color: rgb(165, 225, 233);
     }
   }
-
-  .button {
-    width: 80px;
+  &__apply-button {
+    width: 70px;
   }
-  .button:hover {
-    background: rgb(157, 206, 226);
+
+  &__apply-button:hover {
+    background-color: rgb(157, 220, 228);
   }
 }

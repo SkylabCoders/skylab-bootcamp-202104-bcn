@@ -65,11 +65,11 @@ body {
   background-color: #a5e1e9;
 }
 
-.card .button {
-  width: 80px;
+.card__apply-button {
+  width: 70px;
 }
 
-.card .button:hover {
-  background: #9dcee2;
+.card__apply-button:hover {
+  background-color: #9ddce4;
 }
 /*# sourceMappingURL=style.css.map */
