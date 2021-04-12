@@ -83,6 +83,8 @@ body {
     width: 27px;
     height: 27px;
     background-color: white;
+    background-image: src="ausias-bertran/challenge/maria-lunarillos/media/sprite.svg";
+    
 }
 
 #register {
@@ -250,6 +252,20 @@ footer {
     height: 409px;
     display: flex;
     flex-direction: column;
+}
+
+.info-icons {
+    width: 100%;
+    height: 200px;
+    background-color: darkgray;
+}
+
+
+.contact-footer {
+    width: 100%;
+    height: 200px;
+    background-color: grey;
+    color: white;
 }
 
 
