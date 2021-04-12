@@ -1,3 +1,5 @@
+@import './mixin.scss';
+
 .header-container {
     position: fixed;
     background: #F8F8F8;
@@ -23,12 +25,6 @@
     list-style: none;
     height: 140px;
 }
-@mixin link-size ($heigh, $width){
-    width: $width;
-    margin-right: 4px;
-    float: left;
-    height: $heigh;
-}
 
 .ma-link-container{
     @include link-size(140px, 80px);
@@ -49,7 +45,7 @@
 
 .mu-link-container:hover,  .cu-link-container:hover{
     height: 140px;
-    background: url(../img/);
+
 }
 
 .header-links-container {
@@ -61,7 +57,73 @@
 .enter-register-container{
     display: flex;
     align-content: center;
+    margin-right: 76px;
 }
-//     border: black solid;
-//     justify-content: center;
-// }
+
+.register-container{
+    background: url(../img/sprite.svg) 0 0 no-repeat;
+    height: 27px;
+    width: 27px;
+    padding: 10px;
+}
+
+.register-container-text {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.link-social-media {
+    align-items: center;
+    display: flex;
+    height: 20px;
+    margin: 15px 7px;
+    width: 195px;
+}
+
+.fb-link {
+    @include link-social-media-content(-3px -540px);
+}
+
+.tw-link {
+    @include link-social-media-content(-38px -540px);
+}
+
+.ig-link {
+    @include link-social-media-content(-74px -540px);
+}
+
+.pi-link {
+    @include link-social-media-content(-111px -540px);
+}
+
+.yt-link {
+    @include link-social-media-content(-183px -540px);
+}
+
+.buy-container {
+    width: 100px;
+}
+
+.buy-display {
+    @include link-social-media-content(-72px -74px);
+    background-position: -74px 4px;
+    height: 8px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 30px;
+    width: 50px;
+}
+.buy-display:hover {
+    background-position: -154px 4px;
+}
+
+.counter-container {
+    width: 50px;
+    padding: 18px;
+    height: 50px;
+    font-family: "Myriad Pro", "Myriad Web", "Tahoma", "Helvetica", "Arial", sans-serif;
+    font-size: 20px;
+    color: #fff;
+    background: #FF5959;
+}
