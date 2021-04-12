@@ -195,55 +195,86 @@ button {
   position: relative;
   @include flex-configuration(null, center);
   margin-top: 20px;
-}
+  .banner-section {
+    .side-figure {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-right: 10px;
+      max-width: 360px;
+      &__caption {
+        @include caption($color-ma-secondary);
+        @include size-configuration(250px, 150px);
 
-.side-figure {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-right: 10px;
-  max-width: 360px;
-}
-.caption {
-  @include caption($color-ma-secondary);
-  @include size-configuration(250px, 150px);
-}
+        & p {
+          margin-left: 20px;
+        }
 
-.main-figure {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-}
+        & h2 {
+          margin: 20px;
+          text-transform: uppercase;
+          font-size: 24px;
+          line-height: 24px;
+        }
+      }
 
-.top-figure {
-  margin-bottom: 10px;
-}
+      &__triangle {
+        @include caption(null);
+        @include size-configuration(0px, 0px);
+        margin-left: 250px;
+        margin-right: 0px;
+        background: none;
+        border-style: solid;
+        border-width: 150px 0 0 100px;
+        border-color: transparent transparent transparent rgb(248, 248, 248);
+      }
+    }
 
-.bottom-figure {
-  justify-content: flex-end;
-}
+    &__main-figure {
+      &--top {
+        margin-bottom: 10px;
+      }
 
-.triangle {
-  @include caption(null);
-  @include size-configuration(0px, 0px);
-  margin-left: 250px;
-  margin-right: 0px;
-  background: none;
-  border-style: solid;
-  border-width: 150px 0 0 100px;
-  border-color: transparent transparent transparent rgb(248, 248, 248);
-}
-.bottom-triangle {
-  margin-right: 100px;
-  margin-left: 0px;
-}
+      &--bottom {
+        justify-content: flex-end;
+      }
+    }
+    .main-figure {
+      display: flex;
+      flex-direction: row;
+      position: relative;
 
-.caption h2 {
-  margin: 20px;
-  text-transform: uppercase;
-  font-size: 24px;
-  line-height: 24px;
-}
-.caption p {
-  margin-left: 20px;
+      &__caption {
+        @include caption($color-ma-secondary);
+        @include size-configuration(250px, 150px);
+
+        & p {
+          margin-left: 20px;
+        }
+
+        & h2 {
+          margin: 20px;
+          text-transform: uppercase;
+          font-size: 24px;
+          line-height: 24px;
+        }
+
+        &--bottom {
+          margin-right: 100px;
+          margin-left: 0px;
+        }
+      }
+
+      &__triangle {
+        @include caption(null);
+        @include size-configuration(0px, 0px);
+        margin-left: 250px;
+        margin-right: 0px;
+        background: none;
+        border-style: solid;
+        border-width: 150px 0 0 100px;
+        border-color: transparent transparent transparent rgb(248, 248, 248);
+      }
+    }
+  }
 }
