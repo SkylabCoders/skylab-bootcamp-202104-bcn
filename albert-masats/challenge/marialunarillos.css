@@ -8,9 +8,8 @@
     display: flex;
     height: 50px;
     background: #F8F8F8;
-    width: 100vw;
+    width: 100%;
     z-index:2;
-    
 }
 
 .box2 {
@@ -28,9 +27,11 @@
 }
 
 .box4 {
-    margin-top:120px;
+    width: 100%;
+    margin-top:40px;
     height: 600px;
-    background: linear-gradient(to right, rgb(180, 214, 168) 0%, rgb(131, 177, 116) 100%);
+    
+    background: linear-gradient(to right, rgb(193, 214, 231) 0%, rgb(193, 214, 231) 50%, rgb(155, 174, 186) 50%, rgb(155, 174, 186) 100%);
 }
 
 .upper-header {
@@ -39,24 +40,27 @@
     background: #F8F8F8;
     height: 50px;
     width: 1080px;
+    
     /* border: 1px solid #fffb03;*/
 } 
 
 .header-center {
     display:flex;
-    flex-flow: row;
-    justify-content: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+    /* justify-content: flex-end; */
     font-size: 0.8em;
-    margin: auto;
+    margin: 0 auto;
     width: 1080px;
     height: 217.6px;
-    margin-top: 100px;
+    margin-top: 52px;
     /* border: 1px solid #ff384f; */
+    
 }
 
 .bottom-header {
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     width: 1080px;
     height: 50px;
     /* border: 1px solid #17f8d3; */
@@ -120,8 +124,7 @@
 
 .maria-lunarillos {
     align-self: flex-end;
-    margin-left: 20px;
-    margin-right: auto; 
+    margin-right:auto;
     height:70px;
     width: 300px;
     background: url(./../challenge/images/logo.svg) bottom center no-repeat;
@@ -282,6 +285,7 @@
     justify-content: flex-end;
     width: 100%;
     height:100%;
+    padding-top:50px;
 }
 
 .novedades {
@@ -298,6 +302,7 @@
     letter-spacing: 1px;
     line-height: 30px;
     text-align: center;
+    cursor:pointer;
 }
 
 .ofertas {
@@ -315,8 +320,40 @@
     letter-spacing: 1px;
     line-height: 30px;
     text-align: center;
+    margin-left: 10px;
+    cursor:pointer;
 }
 
 .buscar {
-    height: 20px;
+    height: 22.7px;
+    margin-left: 10px;
 }
+
+.button-header {
+    display: block;
+    float: right;
+    width: 57px;
+    height: 28px;
+    background: url(./../challenge/images/sprite.svg) -303px 2px no-repeat #BBB8B6;
+    border: none;
+
+}
+
+.imgbanner {
+    background-image: url("./../challenge/images/foto-cocina.png");
+    width: 1080px;
+    height: 600px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    border:0;
+}
+
+.image-scroll {
+    display: absolute;
+    width:1080px;
+    height: 600px;
+    margin: 0 auto;
+    border: 0;
+}
+  
