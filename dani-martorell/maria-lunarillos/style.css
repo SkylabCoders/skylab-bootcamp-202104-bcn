@@ -38,6 +38,10 @@ nav a {
 }
 
 .main-icons li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     margin-right: 4px;
     width: 70px;
     height: 70px;
@@ -52,12 +56,18 @@ nav a {
     background-color: #ff5959;
 }
 .main-icons li.cu {
-    
     background-color: #6199AF;
 }
 .main-icons li.mu {
-    
     background-color: #F6B436;
+}
+
+ul.main-icons li img {
+    width: 60px;
+}
+
+ul.main-icons li img.big-icon {
+    width: 70px;
 }
 
 .login {
