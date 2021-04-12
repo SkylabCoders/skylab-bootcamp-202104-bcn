@@ -65,6 +65,7 @@ body {
       -ms-flex-align: baseline;
           align-items: baseline;
   color: white;
+  height: 100%;
 }
 
 .logo,
@@ -125,6 +126,10 @@ body {
   width: 280px;
 }
 
+.login-elements a {
+  padding-top: 30px;
+}
+
 @media (max-width: 1130px) {
   .nav-bar {
     display: none;
@@ -135,6 +140,7 @@ body {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 350px;
+  padding-top: 30px;
 }
 
 .header-nav-container {
@@ -381,6 +387,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
 }
 
 .cinema-nav:hover,
@@ -388,11 +395,20 @@ body {
   color: #ffe300;
 }
 
+.cinema-nav:hover .hover-nav {
+  display: block;
+}
+
 .cinema-nav:hover .arrow {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   padding-left: 0;
   padding-right: 5px;
+  padding-top: 30px;
+}
+
+.cinema-nav-element {
+  height: 100%;
 }
 
 .subs-nav:hover .arrow {
@@ -400,10 +416,61 @@ body {
           transform: rotate(180deg);
   padding-left: 0;
   padding-right: 5px;
+  padding-top: 30px;
+}
+
+.subs-nav-element {
+  height: 100%;
 }
 
 .arrow {
   font-size: 0.5em;
   padding-left: 5px;
+  height: 100%;
+}
+
+.hover-nav {
+  display: none;
+  position: fixed;
+  width: 100%;
+  margin-top: 60px;
+  z-index: 2;
+}
+
+.hover-nav:hover {
+  display: block;
+}
+
+.cinemaHover {
+  font-size: 0.9em;
+  font-family: "Noto Sans Regular", sans-serif;
+  color: white;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style-type: none;
+  background-color: black;
+  z-index: 0;
+  margin-top: -22px;
+  padding: 2em 1em 0 1em;
+  border-radius: 0.3em;
+}
+
+.cinemaHover:hover {
+  display: block;
+}
+
+.cinemaHover__item {
+  padding-bottom: 30px;
+}
+
+.cinemaHover__item:hover {
+  display: block;
+  color: #ffe300;
 }
 /*# sourceMappingURL=form.css.map */

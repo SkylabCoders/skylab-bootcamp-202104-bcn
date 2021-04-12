@@ -62,6 +62,7 @@ body {
     @include flex-direction(row);
     align-items: baseline;
     color: white;
+    height: 100%;
 }
 
 .logo,
@@ -111,9 +112,11 @@ body {
 .login-elements {
     justify-content: space-around;
     width: 280px;
+
+    & a {
+        padding-top: 30px;
+    }
 }
-
-
 
 @media (max-width: 1130px) {
     .nav-bar {
@@ -124,6 +127,7 @@ body {
 .extern-nav {
     justify-content: space-around;
     width: 350px;
+    padding-top: 30px;
 }
 
 .header-nav-container {
@@ -335,6 +339,7 @@ body {
 .subs-nav {
     display: flex;
     align-items: center;
+    height: 100%;
 
     &:hover {
         color: $yellow;
@@ -343,25 +348,85 @@ body {
 
 .cinema-nav {
     &:hover {
+
+        .hover-nav {
+            display: block;
+        }
+
         .arrow {
             transform: rotate(180deg);
             padding-left: 0;
             padding-right: 5px;
+            padding-top: 30px;
         }
+    }
+
+    &-element {
+        height: 100%;
     }
 }
 
 .subs-nav {
+
     &:hover {
+
         .arrow {
             transform: rotate(180deg);
             padding-left: 0;
             padding-right: 5px;
+            padding-top: 30px;
         } 
+    }
+    
+    &-element {
+        height: 100%;
     }
 }
 
 .arrow {
     font-size: 0.5em;
     padding-left: 5px;
+    height: 100%;
+}
+
+.hover-nav {
+    display: none;
+    position: fixed;
+    width: 100%;
+    
+    margin-top: 60px;
+    z-index: 2;
+
+    &:hover {
+        display: block;
+    }
+
+}
+
+.cinemaHover {
+    font-size: 0.9em;
+    font-family: $noto-regular;
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    background-color: black;
+    z-index: 0;
+    margin-top: -22px;
+    padding: 2em 1em 0 1em;
+    border-radius: 0.3em;
+
+    &:hover {
+        display: block;
+    }
+
+    &__item {
+        padding-bottom: 30px;
+
+        &:hover {
+            display: block;
+            color: $yellow;
+        }
+    }
 }
