@@ -28,9 +28,10 @@
 }
 
 .rakuten-logo {
-    width: 142px;
+    width: 111px;
     height: 30px;
-    margin: 10px;
+    margin-top: 17px;
+    margin-left: 20px;
 }
 
 .rakuten-logo:hover {
@@ -206,7 +207,7 @@ a:link {
     height: 200.77px;
     /* z-index: 100; */
     position: relative;
-    padding: 10px 15px 25px;
+    padding: 0px 15px 25px;
 }
 
 .all-films {
@@ -234,6 +235,9 @@ a:link {
 
 .banners img {
     border: 4px solid transparent;
+    width: 253.8px;
+    margin-top: -7px;
+    height: 170.77px;
 }
 
 .all-films h2 {
