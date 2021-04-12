@@ -1,9 +1,3 @@
-body {
-  margin: 0;
-  font: 12px/1.55 'Source Sans Pro', sans-serif;
-  background-color: #FF5959;
-}
-
 .navbar {
   position: fixed;
   display: -webkit-box;
@@ -17,7 +11,7 @@ body {
   background: #F8F8F8;
 }
 
-.first-block {
+.blocks__first {
   position: fixed;
   top: 0;
   width: 80px;
@@ -26,26 +20,30 @@ body {
   background: url(../images/maria-lunarillos.png) #FF5959 bottom center no-repeat;
 }
 
-.second-block,
-.third-block {
+.blocks__second,
+.blocks__third {
   position: fixed;
   top: 0;
   width: 70px;
   height: 70px;
 }
 
-.second-block {
+.blocks__second {
   left: 219px;
   background: url(../images/cucute.png) #6199AF bottom center no-repeat;
 }
 
-.third-block {
+.blocks__second:hover {
+  width: 70px;
+  height: 140px;
+}
+
+.blocks__third {
   left: 293px;
   background: url(../images/mumuchu.png) #F6B436 bottom center no-repeat;
 }
 
-.second-block:hover,
-.third-block:hover {
+.blocks__third:hover {
   width: 70px;
   height: 140px;
 }
@@ -57,7 +55,7 @@ body {
   margin: 15px 7px 10px;
 }
 
-.icon {
+.login__icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,58 +66,68 @@ body {
   padding-right: 10px;
 }
 
-.facebook:hover,
-.twitter:hover,
-.instagram:hover,
-.pinterest:hover,
-.youtube:hover,
-.login:hover,
-.icon:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-}
-
-.social-media {
+.media {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-right: -190px;
 }
 
-.facebook,
-.twitter,
-.instagram,
-.pinterest,
-.youtube {
+.media:hover {
+  color: #FF5959;
+}
+
+.media__facebook {
+  background: url(https://img.icons8.com/material/24/000000/facebook-f.png);
+}
+
+.media__facebook:hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+}
+
+.media__twitter {
+  background: url(https://img.icons8.com/material/24/000000/twitter-squared.png);
+}
+
+.media__twitter:hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+}
+
+.media__instagram {
+  background: url(https://img.icons8.com/metro/26/000000/instagram-new.png);
+}
+
+.media__instagram:hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+}
+
+.media__pinterest {
+  background: url(https://img.icons8.com/ios/24/000000/pinterest--v1.png);
+}
+
+.media__pinterest:hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+}
+
+.media__youtube {
+  background: url(https://img.icons8.com/material/24/000000/youtube--v1.png);
+}
+
+.media__youtube:hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+}
+
+.media__facebook, .media__twitter, .media__instagram, .media__pinterest, .media__youtube {
   width: 25px;
   height: 25px;
   margin: 15px 7px 0;
   display: block;
   text-indent: -3000px;
-}
-
-.social-media .facebook {
-  background: url(https://img.icons8.com/material/24/000000/facebook-f.png);
-}
-
-.social-media .twitter {
-  background: url(https://img.icons8.com/material/24/000000/twitter-squared.png);
-}
-
-.social-media .instagram {
-  background: url(https://img.icons8.com/metro/26/000000/instagram-new.png);
-}
-
-.social-media .pinterest {
-  background: url(https://img.icons8.com/ios/24/000000/pinterest--v1.png);
-}
-
-.social-media .youtube {
-  background: url(https://img.icons8.com/material/24/000000/youtube--v1.png);
-}
-
-.social-media div:hover {
-  color: #FF5959;
 }
 
 .checkout {
@@ -129,12 +137,12 @@ body {
   margin-right: -36px;
 }
 
-.carrito:hover {
+.checkout__carrito:hover {
   background-color: #FF5959;
   color: white;
 }
 
-.carrito {
+.checkout__carrito, .checkout__items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,26 +154,24 @@ body {
           align-items: center;
   width: 46px;
   height: 50px;
+}
+
+.checkout__carrito {
   display: block;
   text-indent: -3000px;
   background: url(https://img.icons8.com/material/48/000000/checkout--v1.png) white;
 }
 
-.items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 46px;
-  height: 50px;
+.checkout__items {
   background-color: #FF5959;
   color: white;
   font-size: 15px;
+}
+
+body {
+  margin: 0;
+  font: 12px/1.55 'Source Sans Pro', sans-serif;
+  background-color: #FF5959;
 }
 
 .header-info {
