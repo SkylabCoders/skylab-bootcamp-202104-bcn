@@ -1,0 +1,12 @@
+@mixin slider-hover {
+  height: 140px;
+  width: 70px;
+  padding-top: 60px;
+  padding-left: 0;
+}
+
+@mixin social-icons {
+  margin-top: 15px;
+  width: 18px;
+  height: 18px;
+}
