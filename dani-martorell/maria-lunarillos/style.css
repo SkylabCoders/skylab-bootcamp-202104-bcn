@@ -215,7 +215,7 @@ header {
     height: 260px;
 }
 header .logo img{
-    margin-bottom: 66px;
+    margin-bottom: 35px;
 }
 .header-right-side a {
     text-decoration: none;
@@ -223,9 +223,7 @@ header .logo img{
 
 .buscador {
     display: flex;
-
     margin-bottom: 10px;
-
 }
 .novedades {
     display: flex;
@@ -258,7 +256,8 @@ header .logo img{
     background: url('./images/sprite.svg') -277px 0px no-repeat; 
 }
 .search-field {
-    font-size: 13px;
+    position: absolute;
+    font-size: 12.5px;
     height: 30px;
     padding: 5px 5px;
     border: 1px solid #b4b4b4;
@@ -269,4 +268,20 @@ header .logo img{
 
 ::placeholder { 
     color: rgb(199, 199, 199);
+    letter-spacing: 1px;
+}
+.searcher-icon {
+    width: 25px; 
+    height: 25px; 
+    
+}
+.searcher {
+    position: relative;
+}
+.searcher-icon {
+    position: absolute;
+}
+
+.novedades, .ofertas, .searcher {
+    margin-right: 5px;
 }
