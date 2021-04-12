@@ -42,8 +42,16 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 10px 0;
   list-style-type: none;
   margin: 10px 0;
+}
+
+.card__list-item {
+  padding: 5px;
+  border: solid 1px #ccc;
+}
+
+.card__list-item--active {
+  background-color: yellow;
 }
 /*# sourceMappingURL=style.css.map */
