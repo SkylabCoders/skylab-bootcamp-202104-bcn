@@ -1,4 +1,3 @@
-@import url(./variables.scss);
 body {
   margin: 0;
   font-family: "Source sans pro";
@@ -88,7 +87,7 @@ header {
 }
 
 #login:hover span {
-  color: #FF5959;
+  color: #ff5959;
 }
 
 #img-login {
