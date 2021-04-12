@@ -176,19 +176,30 @@ color: white;
     color: white;
 }
 
+/* SEPARADOR UTENSILIOS */
+
+.separator {
+    display: flex;
+    justify-content: center;
+    margin: 5% 0 5%;
+    background-color: #f8f8f8;
+    width: 100%;
+    text-transform: uppercase;
+}
+
 /* BLOQUE IMAGENES */
 
 .information-page {
     display: flex;
-    justify-content: row;
+    justify-content: center;
 }
 
 .figure-content-1 {
     display: flex;
+    margin-right: -35px;
     background-image:url("asets/moldesdereposteria.jpg");
     background-repeat: no-repeat;
     padding-bottom: 42%;
-    background-color: #8e789d;
 }
 
 .figure-content-2-1 {
@@ -209,18 +220,18 @@ color: white;
 }
 
 .items-text-1 {
-    color: white;
-    background-color: teal;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .items-text-2 {
-    color: white;
-    background-color: teal;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5); 
 }
 
 .items-text-3 {
-    color: white;
-    background-color: teal;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5); 
 }
 
 /* FORMULARIO */
