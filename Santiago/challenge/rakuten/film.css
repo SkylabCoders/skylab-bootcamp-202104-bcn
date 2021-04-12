@@ -224,7 +224,7 @@ a:link {
 .card--rates,
 .card--genres {
     font-size: 16px;
-    font-family: 'Noto Sans' , sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     color: black;
     font-weight: 600;
     margin-bottom: 10px;
@@ -327,6 +327,66 @@ a:link {
     border: 4px solid #ffe300;
     border-radius: 2px;
     cursor: pointer;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 1349px;
+    height: 418px;
+    background-color: #212121;
+    color: white;
+}
+
+.about1 {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto 20px;
+    text-align: center;
+    width: 50%;
+    color: cccccc;
+    line-height: 160%;
+}
+
+.about1 p,
+.about2 p {
+    color: #ccc;
+    font-size: 15px;
+    font-family: 'Noto Sans Regular', sans-serif;
+    font-weight: 200;
+}
+
+.about1 h5,
+.about2 h6 {
+    font-size: 22px;
+    font-family: 'Noto Sans Regular', sans-serif;
+
+}
+
+.about2 {
+    display: flex;
+    text-align: center;
+}
+
+.about2 div {
+    width: 389px;
+    height: 191px;
+}
+
+.about div img {
+    height: 90px;
+    width: 200px;
+    background-color: #212121;
+}
+
+.about1 h5,
+.about1 p,
+.about2 div,
+.about2 div h6,
+.about2 div p {
+    background-color: #212121;
 }
 
 .footer {
