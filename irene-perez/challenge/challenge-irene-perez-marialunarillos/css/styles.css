@@ -16,6 +16,9 @@ body {
     margin: 0 auto;
 }
 
+/* MARIA LUNARILLOS */
+
+/* BARRA NAVEGACIÓN  */
 .topbar {
     position: fixed;
     top: 0;
@@ -102,6 +105,8 @@ body {
     margin: 0 20px;
 }
 
+/* CUERPO DE LA WEB */
+
 .subbar {
     margin-top: 50px;
     display: flex;
@@ -133,10 +138,6 @@ body {
 background-color: #8e789d;
 color: white;
 }
-
-/* .subbar_input {
-
-} */
 
 .subbar_navigationbar {
     display: flex;
@@ -174,6 +175,14 @@ color: white;
     padding: 15px;
     color: white;
 }
+
+.items-text {
+    display: flex;
+    background-image:url("asets/utensiliosbasicos.jpg");
+    background-repeat: no-repeat;
+}
+
+/* FORMULARIO */
 
 .formulary {
     margin-top: 50px;
