@@ -344,7 +344,7 @@ body {
           align-items: unset;
 }
 
-.header-main-nav-container {
+.header__main-nav .main-nav__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -358,17 +358,13 @@ body {
   max-width: 1080px;
 }
 
-.header-main-logo-container,
-.header-main-menu {
+.header__main-nav .main-nav__container--logo {
+  width: 40%;
   margin-top: 40px;
   padding-left: 3px;
 }
 
-.header-main-logo-container {
-  width: 40%;
-}
-
-.header-main-menu {
+.header__main-nav .main-nav__container--menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -379,20 +375,17 @@ body {
       -ms-flex-align: unset;
           align-items: unset;
   width: 60%;
+  margin-top: 40px;
+  padding-left: 3px;
 }
 
-.header-main-menu a,
-.header-main-menu span {
-  display: block;
-}
-
-.header-main-menu-item {
+.main-menu__item {
   width: 100px;
   height: 130px;
   margin-right: 5px;
 }
 
-.header-main-menu-item a {
+.main-menu__item a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,33 +400,34 @@ body {
   background: #f8f8f8;
 }
 
-.header-main-menu-item a:hover {
-  background: #f25658;
-}
-
-.header-main-menu-item a img {
+.main-menu__item a img {
   height: 50px;
 }
 
-.header-main-menu-item.last {
-  margin-left: 50px;
-  margin-right: 0;
+.main-menu__item a:hover {
+  background: #f25658;
 }
 
-.header-main-menu-item.last a {
-  background-color: #f25658;
-}
-
-.header-main-menu-item.last a:hover {
-  background-color: #f8f8f8;
-}
-
-.header-main-menu-item span {
+.main-menu__item span {
+  display: block;
   height: 25px;
   margin-top: 5px;
   padding-top: 5px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.main-menu__item--last {
+  margin-left: 50px;
+  margin-right: 0;
+}
+
+.main-menu__item--last a {
+  background-color: #f25658;
+}
+
+.main-menu__item--last a:hover {
+  background-color: #f8f8f8;
 }
 
 .main {

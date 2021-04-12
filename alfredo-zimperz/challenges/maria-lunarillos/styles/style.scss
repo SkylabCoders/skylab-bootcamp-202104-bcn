@@ -217,75 +217,58 @@ body {
 
 .header__main-nav {
 	@include flex-config(null, center);
+	.main-nav__container {
+		@include flex-config(null, center);
+		width: 100%;
+		max-width: 1080px;
+		&--logo {
+			width: 40%;
+			margin-top: 40px;
+			padding-left: 3px;
+		}
+		&--menu {
+			@include flex-config(null, flex-end);
+			width: 60%;
+			margin-top: 40px;
+			padding-left: 3px;
+		}
+	}
 }
 
-.header-main-nav-container {
-	@include flex-config(null, center);
-	width: 100%;
-	max-width: 1080px;
-}
-
-.header-main-logo-container,
-.header-main-menu {
-	margin-top: 40px;
-	padding-left: 3px;
-}
-
-.header-main-logo-container {
-	width: 40%;
-}
-
-.header-main-menu {
-	@include flex-config(null, flex-end);
-	width: 60%;
-}
-
-.header-main-menu a,
-.header-main-menu span {
-	display: block;
-}
-
-.header-main-menu-item {
+.main-menu__item {
 	@include size-config(100px, 130px);
 	margin-right: 5px;
-}
+	a {
+		@include flex-config(null, center, center);
+		@include size-config(100px, 100px);
+		background: $bg-secondary-color;
+		img {
+			height: 50px;
+		}
 
-.header-main-menu-item a {
-	@include flex-config(null, center, center);
-	@include size-config(100px, 100px);
-	background: $bg-secondary-color;
+		&:hover {
+			background: $color-ma;
+		}
+	}
+	span {
+		display: block;
+		height: 25px;
+		margin-top: 5px;
+		padding-top: 5px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	&--last {
+		margin-left: 50px;
+		margin-right: 0;
+		a {
+			background-color: $color-ma;
+			&:hover {
+				background-color: $bg-secondary-color;
+			}
+		}
+	}
 }
-
-.header-main-menu-item a:hover {
-	background: $color-ma;
-}
-
-.header-main-menu-item a img {
-	height: 50px;
-}
-
-.header-main-menu-item.last {
-	margin-left: 50px;
-	margin-right: 0;
-}
-
-.header-main-menu-item.last a {
-	background-color: $color-ma;
-}
-
-.header-main-menu-item.last a:hover {
-	background-color: $bg-secondary-color;
-}
-
-.header-main-menu-item span {
-	height: 25px;
-	margin-top: 5px;
-	padding-top: 5px;
-	text-align: center;
-	text-transform: uppercase;
-}
-
-// MAIN
 
 .main {
 	@include flex-config(column, null, center);
