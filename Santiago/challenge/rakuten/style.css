@@ -229,6 +229,11 @@ a:link {
 
 .all-films img {
     height: 279px;
+    border: 4px solid transparent;
+}
+
+.banners img {
+    border: 4px solid transparent;
 }
 
 .all-films h2 {
