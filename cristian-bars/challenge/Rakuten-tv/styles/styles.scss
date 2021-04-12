@@ -1,5 +1,9 @@
 @import url(./variables.scss);
 
+header {
+    width: 100%;
+    position: fixed;
+}
 body {
     margin: 0;
     font-family: "NotoSans-Bold",Arial,sans-serif;
@@ -41,6 +45,7 @@ nav {
 }
 .item-menu {
     padding: 20px 5px;
+    text-shadow: 0px 0px 2px #aaa;
 }
 
 
