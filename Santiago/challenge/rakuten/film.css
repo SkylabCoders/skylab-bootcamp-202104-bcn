@@ -162,104 +162,73 @@ a:link {
     margin-top: 60px;
 }
 
-.film-info-container {
+.card {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-left: -60px;
 }
 
-.card {
+.card__info {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 976.75px;
-    height: 818px;
-    border-top: none;
-    border-right: 1px solid #d9d9d9;
-    border-left: 1px solid #d9d9d9;
-    border-radius: 0 0 2px 2px;
-    color: #737373;
+    border: 1px solid red;
+    height: 956px;
+    width: 818px;
     background-color: #fff;
-    padding: 0 20px 20px;
-    border: 1px solid #d9d9d9;
+    margin-left: 20px;
+    padding-left: 15px;
 }
 
-.card>*,
-.details span,
-.lenguage>*,
-.title-info span,
-.lang-info>*,
-.lang-info table tr th,
-.cast>*,
-.cast a,
-.cast a div,
-.film-review,
-.film-review div a,
-.film-review div,
-.film-review span {
+.card__info-details,
+.card__info-details span,
+.card__info-summary p,
+.card__info-lenguage,
+.card__info-lenguage span,
+.card__info-cast,
+.card__info-cast span,
+.card--img,
+.card--img a,
+.card--img a div,
+.card__info-review,
+.card__info-review span,
+.card__info-review a,
+.card__info-review div {
     background-color: white;
 }
 
-.details {
+.card__info-details {
     display: flex;
     justify-content: flex-start;
     color: black;
     font-weight: 600;
 }
 
-.details span {
-    margin: 11px 16px 11px 18px;
+.card__info-lenguage {
+    display: flex;
+    flex-direction: column;
 }
 
-.resum {
-    color: black;
-    font-size: 18px;
-    margin-top: -39px;
-}
-
-.lenguage {
-    margin-top: -32px;
-}
-
-.cast {
-    margin-top: 25px;
-    margin-left: 3px;
-}
-
-.cast span,
-.title-info,
-.film-review span,
-.lang-titles {
+.card--tile {
+    font-size: 16px;
+    font-family: NotoSans-Bold, Arial, sans-serif;
     color: black;
     font-weight: 600;
 }
 
-.film-review {
-    margin-top: 19px;
-}
-
-.resum,
-.lenguage {
-    margin-left: 19px;
-}
-
-.cast-info {
+.card--img {
     display: flex;
     justify-content: space-evenly;
 }
 
-.cast-info a img {
+.card--img a img{
     width: 80px;
     height: 120px;
 }
 
-.film-review {
+.card__info-review {
     display: flex;
 }
 
-.rates,
-.genres {
+.card--rates, .card--genres {
     display: flex;
     flex-direction: column;
 }
