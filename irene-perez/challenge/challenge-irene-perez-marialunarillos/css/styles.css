@@ -176,7 +176,11 @@ color: white;
     color: white;
 }
 
-.items-text {
+/* BLOQUE IMAGENES */
+
+
+
+.items-text-3 {
     display: flex;
     background-image:url("asets/utensiliosbasicos.jpg");
     background-repeat: no-repeat;
