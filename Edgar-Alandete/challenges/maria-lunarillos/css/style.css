@@ -81,7 +81,7 @@ button {
   transition: 0.3s;
 }
 
-.login-register {
+.nav-content__login-register {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,19 +96,11 @@ button {
           align-items: center;
 }
 
-.login-register:hover,
-.social-item a:hover {
+.nav-content__login-register:hover {
   color: #ff5959;
 }
 
-.cu:hover,
-.mu:hover {
-  height: 140px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.social-networks {
+.nav-content__social-networks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,7 +115,11 @@ button {
           align-items: center;
 }
 
-.cart-container {
+.nav-content__social-networks .social-networks__social-item a:hover {
+  color: #ff5959;
+}
+
+.nav-content__cart-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,7 +131,7 @@ button {
           align-items: center;
 }
 
-.cart {
+.nav-content__cart-container .cart-container__cart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,7 +150,17 @@ button {
   min-height: 50px;
 }
 
-.item-counter {
+.nav-content__cart-container .cart-container__cart:hover {
+  background-color: #ff5959;
+  color: white;
+}
+
+.nav-content__cart-container .cart-container__cart .cart-container__cart a:hover {
+  background-color: #ff5959;
+  color: white;
+}
+
+.nav-content__cart-container .cart-container__item-counter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,12 +180,6 @@ button {
   background-color: #ff5959;
   font-weight: bold;
   font-size: 20px;
-}
-
-.cart a:hover,
-.cart:hover {
-  background-color: #ff5959;
-  color: white;
 }
 
 .quick-access {

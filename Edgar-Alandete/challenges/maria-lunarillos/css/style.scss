@@ -63,45 +63,48 @@ button {
       }
     }
   }
-}
 
-.login-register {
-  @include nav-items(2, flex-end, center);
-}
+  &__login-register {
+    @include nav-items(2, flex-end, center);
+    &:hover {
+      color: $color-ma;
+    }
+  }
 
-.login-register:hover,
-.social-item a:hover {
-  color: $color-ma;
-}
+  &__social-networks {
+    @include nav-items(1, center, center);
 
-.cu:hover,
-.mu:hover {
-  @include size-configuration(null, 140px);
-  transition: 0.3s;
-}
-.social-networks {
-  @include nav-items(1, center, center);
-}
+    .social-networks__social-item a {
+      &:hover {
+        color: $color-ma;
+      }
+    }
+  }
 
-.cart-container {
-  @include nav-items(null, center, center);
-}
+  &__cart-container {
+    @include nav-items(null, center, center);
+    .cart-container__cart {
+      @include cart-container-items();
+      &:hover {
+        background-color: $color-ma;
+        color: white;
+      }
 
-.cart {
-  @include cart-container-items();
-}
+      .cart-container__cart a {
+        &:hover {
+          background-color: $color-ma;
+          color: white;
+        }
+      }
+    }
 
-.item-counter {
-  @include cart-container-items();
-  background-color: $color-ma;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.cart a:hover,
-.cart:hover {
-  background-color: $color-ma;
-  color: white;
+    .cart-container__item-counter {
+      @include cart-container-items();
+      background-color: $color-ma;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
 }
 
 .quick-access {
