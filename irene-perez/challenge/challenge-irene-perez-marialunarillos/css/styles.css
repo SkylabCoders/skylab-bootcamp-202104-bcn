@@ -21,24 +21,21 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    min-height: 50px;
+    height: 50px;
     background-color: #f8f8f8;
     z-index: 2;
 }
 
 .topbar_elements {
-    width: 90%;
+    max-width: 1080px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: center;
 }
 
 .topbar_threeicon {
-    position: absolute;
     top: 0;
-    left: 7%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -77,21 +74,14 @@ body {
 
 .topbar_navigationbar {
     display: flex;
-    flex-direction: row;
-    margin: 14px;
 }
 
 .fab {
     color: black;
 }
 
-/* > * para que afecte a los hijos */
-.topbar_navigationbar > * {
-    margin: auto 10px;
-}
-
 .topbar_userloging {
-    margin-left: 500px;
+    margin-left: 424px;
 }
 
 .topbar_rss-links {
@@ -130,14 +120,14 @@ body {
 }
 
 .subbar_news {
- background-color: #9faa4d;
- color: white;
- width: 120px;
+    background-color: #9faa4d;
+    color: white;
+    width: 120px;
 }
 
 .subbar_offers {
-background-color: #8e789d;
-color: white;
+    background-color: #8e789d;
+        color: white;
 width: 120px;
 }
 
@@ -182,10 +172,16 @@ width: 120px;
 
 .separator-items {
     display: flex;
-    justify-content: center;
+    padding: 2% 0 2%;
+    flex-direction: column;
+    align-items: center;
     margin: 5% 0 5%;
     background-color: #f8f8f8;
     width: 100%;
+}
+
+.separator-image {
+    width: 55px;
 }
 
 .separator-tittle {
@@ -197,47 +193,109 @@ width: 120px;
 
 .information-page {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width:1080px;
+    margin:0 auto;
 }
 
 .figure-content-1 {
     display: flex;
-    margin-right: -35px;
     background-image:url("asets/moldesdereposteria.jpg");
     background-repeat: no-repeat;
-    padding-bottom: 42%;
+    position: relative;
+    height: 615px;
+    width: 40%;
+}
+
+.figure-content-2 {
+    height: 611px;
+    width: 786px;
 }
 
 .figure-content-2-1 {
     display: flex;
     background-image:url("asets/utensiliosbasicos.jpg");
-    background-repeat: no-repeat;
     height: 48%;
     margin-bottom: 4%;
-    background-color: #F6B436;
+    position: relative;
 }
 
 .figure-content-2-2 {
     display: flex;
     background-image:url("asets/pequenoelectrodomestico2.jpg");
-    background-repeat: no-repeat;
     height: 48%;
-    background-color: aquamarine;
+    position: relative;
 }
 
 .items-text-1 {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    height: 140px;
+    width: 250px;
+    margin-top: auto;
+    color: #67625f;
+    background-color: rgba(255,255,255,0.8);
+    font-size: 15px;
+    line-height: 24px;
 }
 
 .items-text-2 {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 20px;
+    height: 140px;
+    width: 275px;
+    margin-top: auto;
+    color: #67625f;
+    background-color: rgba(255,255,255,0.8); 
+    font-size: 15px;
+    line-height: 24px;
 }
 
 .items-text-3 {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 20px;
+    height: 140px;
+    width: 270px;
+    margin-top: auto;
+    color: #67625f;
+    background-color: rgba(255,255,255,0.8); 
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.triangle-1 {
+    margin-top: auto;
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-top: 124px solid transparent;
+    border-left: 91px solid rgba(255,255,255,0.8);
+    border-bottom: 15px solid rgba(255,255,255,0.8);
+}
+
+.triangle-2 {
+    margin-top: auto;
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-top: 124px solid transparent;
+    border-left: 91px solid rgba(255,255,255,0.8);
+    border-bottom: 15px solid rgba(255,255,255,0.8);
+}
+
+.triangle-3 {
+    margin-top: auto;
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-top: 124px solid transparent;
+    border-left: 91px solid rgba(255,255,255,0.8);
+    border-bottom: 15px solid rgba(255,255,255,0.8);
+}
+
+.items-tittle {
+    text-transform: uppercase;
+}
+
+.items-description {
+    margin-top: 15px;
 }
 
 /* SEPARADOR MARCAS */
@@ -257,14 +315,37 @@ width: 120px;
 
 /* MARCAS */
 
-.bar-brands {
+.brands {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.brand-img {
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.brand {
-    display: flex;
-    flex-direction: row;
+.brand-img > img {
+    width: 100%;
+}
+
+.brands-1 {
+    width: 25%;
+}
+
+.brands-2 {
+    width: 25%;
+}
+
+.brands-3 {
+    width: 25%;
+}
+
+.brands-4 {
+    width: 25%;
 }
 
 /* BOTÓN */
