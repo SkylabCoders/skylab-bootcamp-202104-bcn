@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::after,
 *::before {
@@ -20,6 +21,7 @@ a:hover {
   color: yellow;
 }
 
+∫
 html {
   font-family: "Noto Sans", sans-serif;
   font-size: 0.9em;
@@ -71,7 +73,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 15vmin;
+  padding: 0 10vmin;
   text-transform: uppercase;
   width: 100%;
 }
@@ -150,5 +152,23 @@ body {
   font-size: 24px;
   margin-left: -26px;
   position: absolute;
+  z-index: 2;
+}
+
+.outstanding {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2px;
+  width: 100%;
+}
+
+.outstanding__figure {
+  background-color: yellowgreen;
+}
+
+.outstanding__figure-image {
+  margin: 4px;
+  background-color: #ffe300;
 }
 /*# sourceMappingURL=form.css.map */

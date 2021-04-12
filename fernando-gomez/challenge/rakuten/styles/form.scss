@@ -23,7 +23,7 @@ a {
         color:yellow;
     }
 }
-
+∫
 html {
     font-family: $noto;
     font-size: 0.9em;
@@ -63,7 +63,7 @@ body {
     border-bottom: 1px solid rgba(255,255,255,.2);
     height: 60px;
     justify-content: space-between;
-    padding: 0 15vmin;
+    padding: 0 10vmin;
     text-transform: uppercase;
     width: 100%;
 }
@@ -139,4 +139,21 @@ body {
     font-size: 24px;
     margin-left: -26px;
     position: absolute;
+    z-index: 2;
+}
+
+.outstanding {
+    display: flex;
+    margin: 2px;
+    width: 100%;
+
+    &__figure {
+        
+        background-color: yellowgreen;
+
+        &-image {
+            margin: 4px;
+            background-color: $yellow;
+        }
+    }
 }
