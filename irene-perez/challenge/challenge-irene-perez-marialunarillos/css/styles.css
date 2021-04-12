@@ -105,7 +105,7 @@ body {
     margin: 0 20px;
 }
 
-/* CUERPO DE LA WEB */
+/* SUBBAR */
 
 .subbar {
     margin-top: 50px;
@@ -178,12 +178,49 @@ color: white;
 
 /* BLOQUE IMAGENES */
 
+.information-page {
+    display: flex;
+    justify-content: row;
+}
 
+.figure-content-1 {
+    display: flex;
+    background-image:url("asets/moldesdereposteria.jpg");
+    background-repeat: no-repeat;
+    padding-bottom: 42%;
+    background-color: #8e789d;
+}
 
-.items-text-3 {
+.figure-content-2-1 {
     display: flex;
     background-image:url("asets/utensiliosbasicos.jpg");
     background-repeat: no-repeat;
+    height: 48%;
+    margin-bottom: 4%;
+    background-color: #F6B436;
+}
+
+.figure-content-2-2 {
+    display: flex;
+    background-image:url("asets/pequenoelectrodomestico2.jpg");
+    background-repeat: no-repeat;
+    height: 48%;
+    background-color: aquamarine;
+}
+
+.items-text-1 {
+    color: white;
+    background-color: teal;
+}
+
+.items-text-2 {
+    color: white;
+    background-color: teal;
+}
+
+.items-text-3 {
+    color: white;
+    background-color: teal;
 }
 
 /* FORMULARIO */
