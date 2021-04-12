@@ -172,7 +172,7 @@ a:link {
     justify-content: space-evenly;
     border: 1px solid #d9d9d9;
     height: 956px;
-    width: 818px;
+    width: 960px;
     background-color: #fff;
     margin-left: 20px;
     padding-left: 15px;
@@ -201,6 +201,17 @@ a:link {
     justify-content: flex-start;
     color: black;
     font-weight: 600;
+}
+
+.card__info-details span {
+    margin-right: 25px;
+}
+
+.card__info-summary p {
+    color: black;
+    font-weight: 600; 
+    line-height: 180%;
+
 }
 
 .card__info-lenguage {
