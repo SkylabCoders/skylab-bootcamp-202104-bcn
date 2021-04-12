@@ -1,14 +1,16 @@
 * {
     display: border-box;
-    margin: 0;
+    margin:0;
 }
 
 .box1 {
+    position:fixed;
     display: flex;
     height: 50px;
     background: #F8F8F8;
-    padding-left: 11%;
-    padding-right: 11%;
+    width: 100vw;
+    z-index:2;
+    
 }
 
 .box2 {
@@ -26,13 +28,14 @@
 }
 
 .box4 {
+    margin-top:120px;
     height: 600px;
     background: linear-gradient(to right, rgb(180, 214, 168) 0%, rgb(131, 177, 116) 100%);
 }
 
 .upper-header {
     display:flex;
-    margin: auto;
+    margin: 0 auto;
     background: #F8F8F8;
     height: 50px;
     width: 1080px;
@@ -42,11 +45,12 @@
 .header-center {
     display:flex;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     font-size: 0.8em;
     margin: auto;
     width: 1080px;
     height: 217.6px;
+    margin-top: 100px;
     /* border: 1px solid #ff384f; */
 }
 
@@ -60,13 +64,13 @@
 
 .main-icons {
     height: 140px;
-    width: 228px;
+    width: 230px;
 }
 
 .left-icon {
     display: inline-block;
     height: 140px;
-    width: 77px;
+    width: 80px;
     background-image: url(./../challenge/images/maria-lunarillos.png);
     background-position-x: center;
     background-position-y: bottom;
@@ -85,7 +89,7 @@
 .center-icon {
     display: inline-block;
     height: 70px;
-    width: 71px;
+    width: 69px;
     color: transparent;
     background: url(./../challenge/images/cucute.png) #6199AF bottom center no-repeat;
     cursor:pointer;
@@ -116,12 +120,13 @@
 
 .maria-lunarillos {
     align-self: flex-end;
-    justify-self: space-between; 
+    margin-left: 20px;
+    margin-right: auto; 
     height:70px;
     width: 300px;
     background: url(./../challenge/images/logo.svg) bottom center no-repeat;
     /* border: 1px solid pink; */
-    margin-bottom: 30px;
+    margin-bottom: 28px;
    
 
 }
@@ -129,8 +134,8 @@
 .utensilios {
     flex-direction: row;
     align-self: flex-end;
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
     background-image: url(./../challenge/images/utensiliosML.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -140,22 +145,22 @@
     padding: 0;
     cursor:pointer;
     margin-top: 10px;
-    margin-left: 3px;
 }
 
 .text-utensilios {
     display:flex;
     justify-content: center;
-    margin-top: 90px;
+    margin-top: 105px;
     text-align: center;
+    font-weight: bold;
     
 }
 
 .ingredientes {
     flex-direction: row;
     align-self: flex-end;
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
     background-image: url(./../challenge/images/magdalena.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -165,22 +170,23 @@
     padding: 0;
     cursor:pointer;
     margin-top: 10px;
-    margin-left: 3px;
+    margin-left: 5px;
 }
 
 .text-ingredientes {
     display:flex;
     justify-content: center;
-    margin-top: 90px;
+    margin-top: 105px;
     text-align: center;
     margin-left: 8px;
+    font-weight: bold;
 }
 
 .tarta {
     flex-direction: row;
     align-self: flex-end;
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
     background-image: url(./../challenge/images/tarta-cumpleanos.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -190,63 +196,127 @@
     padding: 0;
     cursor:pointer;
     margin-top: 10px;
-    margin-left: 3px;
+    margin-left: 5px;
 }
 
 .text-tarta {
     display:flex;
     justify-content: center;
-    margin-top: 90px;
+    margin-top: 105px;
     text-align: center;
+    font-weight: bold;
 }
 
 .delantal {
     flex-direction: row;
     align-self: flex-end;
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
     background-image: url(./../challenge/images/delantal.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: #f2f2f2;
-    background-size: 50%;
+    background-size: 70%;
     position: relative;
     padding: 0;
     cursor:pointer;
     margin-top: 10px;
-    margin-left: 3px;
+    margin-left: 5px;
 }
 
 .text-delantal {
     display:flex;
     justify-content: center;
-    margin-top: 90px;
+    margin-top: 105px;
     text-align: center;
+    font-weight: bold;
 }
 
 .blog {
 
     align-self: flex-end;
-    height: 80px;
-    width: 80px;
+    margin-left: auto;
+    height: 100px;
+    width: 100px;
     background-image: url(./../challenge/images/menu.svg);
-    background-repeat: no-repeat;
     background-position: center;
     background-color: #f2f2f2;
     display: block;
-    background-position: -320px 0;
-    background-size: 560px;
-    width: 80px;
-    height: 80px;
-    padding: 0;
+    background-position: -400px 0;
+    background-size: 700px;
+    padding:0;
     cursor:pointer;
-    margin-top: 10px;
-    margin-left: 3px;
+    margin-top:0px;
+    background-color: #FF5959;
 }
 
 .text-blog {
     display:flex;
     justify-content: center;
-    margin-top: 90px;
+    margin-top: 105px;
     text-align: center;
+    color: #FF5959;
+}
+
+.navigation-varietes {
+    display: flex;
+    margin-left: 1em;
+    width: 570px;
+    height: 100px;
+    align-self: flex-end;
+    font-size: 1.1em;
+}
+
+
+
+.buttons-icons-container {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content:flex-end;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    height:100%;
+}
+
+.novedades {
+    height: 30px;
+    width: 130px;
+    background: #9faa4d;
+    padding-right: 8px;
+    text-transform: uppercase;
+    color: #ffffff;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.ofertas {
+    height: 30px;
+    width: 130px;
+    background: #8e789d;
+    padding-right: 15px;
+    width: 130px;
+    text-transform: uppercase;
+    color: #ffffff;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.buscar {
+    height: 20px;
 }
