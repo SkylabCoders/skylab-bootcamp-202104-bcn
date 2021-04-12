@@ -77,9 +77,14 @@ nav a {
     color: #ff5959;
 }
 .login .icon {
-    width: 34px;
-    height: 34px;
+    width: 35px;
+    height: 35px;  
+    background: url('./images/sprite.svg') 0 0 no-repeat; 
 }
+.login .icon:hover {  
+    background: url('./images/sprite.svg') -37px 0 no-repeat; 
+}
+
 .social-icons{
     display:flex;
     list-style: none;
