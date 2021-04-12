@@ -84,7 +84,7 @@ header {
     justify-content: flex-end;
     justify-self: flex-end;
     align-self: flex-end;
-    border: 1px solid green;
+    // border: 1px solid green;
     margin-left: 50px;
     width: 55%;
 
@@ -109,7 +109,6 @@ header {
 .header-big-icon {
     @include header-big-icons;
 }
-
 
 .big-icon-container {
     @include big-icon-container;
@@ -150,7 +149,7 @@ header {
 
 .delantal-icon {
 
-    width: 70px;
+    width: 85px;
 }
 
 .blog-icon {
@@ -331,7 +330,6 @@ div.cart-number {
     width: 100%;
     margin-top: 150px;
     background-color: $grey-color;
-    // border: 1px solid indigo;
 }
 
 .tarta-fiesta-image {
@@ -349,9 +347,8 @@ div.cart-number {
 .images-section {
     display: flex;
     flex-direction: row;
-    // flex-wrap: wrap;
     justify-content: flex-start;
-    // border: 1px solid red;
+    border: 1px solid red;
     width: 65%;
 }
 
@@ -408,30 +405,32 @@ div.cart-number {
 }
 
 .long-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     margin: 5px;
     margin-right: 0px;
     box-sizing: border-box;
     width: 40%;
-    
-    // border: 1px solid salmon;
+    border: 1px solid red;
 }
 .long-image > img {
     margin: 5px;
     margin-left: 0px;
-    width: 100%;
+    // width: 100%;
     height: auto;
 }
 
 .long-image > .caption-shape {
     
-    @include caption-shape (1070px, 935px);
+    @include caption-shape (1000px, 935px);
     width: 450px;
     height: 350px;
 }
 
 .long-image > span {
     
-    @include image-span (1310px, 1050px);
+    @include image-span (1230px, 1050px);
     
 }
 

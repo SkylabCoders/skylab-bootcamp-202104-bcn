@@ -113,7 +113,6 @@ header {
   justify-self: flex-end;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  border: 1px solid green;
   margin-left: 50px;
   width: 55%;
 }
@@ -225,7 +224,7 @@ header {
 }
 
 .delantal-icon {
-  width: 70px;
+  width: 85px;
 }
 
 .blog-icon {
@@ -545,6 +544,7 @@ div.cart-number {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  border: 1px solid red;
   width: 65%;
 }
 
@@ -629,22 +629,32 @@ div.cart-number {
 }
 
 .long-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 5px;
   margin-right: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 40%;
+  border: 1px solid red;
 }
 
 .long-image > img {
   margin: 5px;
   margin-left: 0px;
-  width: 100%;
   height: auto;
 }
 
 .long-image > .caption-shape {
-  top: 1070px;
+  top: 1000px;
   left: 935px;
   position: absolute;
   background-color: white;
@@ -660,7 +670,7 @@ div.cart-number {
 .long-image > span {
   position: absolute;
   text-align: left;
-  top: 1310px;
+  top: 1230px;
   left: 1050px;
   color: black;
   font-size: 20px;
