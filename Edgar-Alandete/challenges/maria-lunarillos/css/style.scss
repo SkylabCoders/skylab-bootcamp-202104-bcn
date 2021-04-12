@@ -23,13 +23,8 @@ button {
   outline: none;
   color: $color-ma-secondary;
 }
-.nav-content {
-  width: 1080px;
-  margin: 0 auto;
-  display: flex;
-}
 
-.navigator-container {
+.nav-container {
   display: flex;
   background-color: $color-ma-secondary;
   min-height: 50px;
@@ -37,6 +32,37 @@ button {
   position: fixed;
   top: 0;
   z-index: 1;
+}
+.nav-content {
+  width: 1080px;
+  margin: 0 auto;
+  display: flex;
+
+  &__malu-pages {
+    position: absolute;
+    display: flex;
+    top: 0;
+
+    &--red {
+      @include malu-logo(80px, 140px, "maria-lunarillos.png", $color-ma);
+    }
+
+    &--blue {
+      @include malu-logo(80px, 70px, "cucute.png", $color-cu);
+      &:hover {
+        @include size-configuration(null, 140px);
+        transition: 0.3s;
+      }
+    }
+
+    &--yellow {
+      @include malu-logo(80px, 70px, "mumuchu.png", $color-mu);
+      &:hover {
+        @include size-configuration(null, 140px);
+        transition: 0.3s;
+      }
+    }
+  }
 }
 
 .login-register {
@@ -46,24 +72,6 @@ button {
 .login-register:hover,
 .social-item a:hover {
   color: $color-ma;
-}
-
-.malu-pages {
-  position: absolute;
-  display: flex;
-  top: 0;
-}
-
-.ma {
-  @include malu-logo(80px, 140px, "maria-lunarillos.png", $color-ma);
-}
-
-.cu {
-  @include malu-logo(80px, 70px, "cucute.png", $color-cu);
-}
-
-.mu {
-  @include malu-logo(80px, 70px, "mumuchu.png", $color-mu);
 }
 
 .cu:hover,

@@ -23,15 +23,7 @@ button {
   color: #f8f8f8;
 }
 
-.nav-content {
-  width: 1080px;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.navigator-container {
+.nav-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,6 +33,52 @@ button {
   position: fixed;
   top: 0;
   z-index: 1;
+}
+
+.nav-content {
+  width: 1080px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-content__malu-pages {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+}
+
+.nav-content__malu-pages--red {
+  width: 80px;
+  height: 140px;
+  background: url("../images/icons/maria-lunarillos.png") #ff5959 bottom center no-repeat;
+}
+
+.nav-content__malu-pages--blue {
+  width: 80px;
+  height: 70px;
+  background: url("../images/icons/cucute.png") #6199af bottom center no-repeat;
+}
+
+.nav-content__malu-pages--blue:hover {
+  height: 140px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.nav-content__malu-pages--yellow {
+  width: 80px;
+  height: 70px;
+  background: url("../images/icons/mumuchu.png") #f6b436 bottom center no-repeat;
+}
+
+.nav-content__malu-pages--yellow:hover {
+  height: 140px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .login-register {
@@ -61,32 +99,6 @@ button {
 .login-register:hover,
 .social-item a:hover {
   color: #ff5959;
-}
-
-.malu-pages {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  top: 0;
-}
-
-.ma {
-  width: 80px;
-  height: 140px;
-  background: url("../images/icons/maria-lunarillos.png") #ff5959 bottom center no-repeat;
-}
-
-.cu {
-  width: 80px;
-  height: 70px;
-  background: url("../images/icons/cucute.png") #6199af bottom center no-repeat;
-}
-
-.mu {
-  width: 80px;
-  height: 70px;
-  background: url("../images/icons/mumuchu.png") #f6b436 bottom center no-repeat;
 }
 
 .cu:hover,
