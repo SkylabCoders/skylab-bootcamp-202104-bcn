@@ -44,12 +44,6 @@ ul {
   }
 }
 
-@media screen and (max-width: 800px) {
-  .webs-container {
-    display: none;
-  }
-}
-
 .ma {
   width: 80px;
   height: 140px;
@@ -89,12 +83,6 @@ ul {
   display: none;
 }
 
-@media screen and (max-width: 800px) {
-  .bars-menu-container {
-    display: flex;
-  }
-}
-
 .login-link-container {
   width: 180px;
   height: 50px;
@@ -122,37 +110,94 @@ ul {
   background: url(../images/sprite.svg) 0 0 no-repeat;
 }
 
-@media screen and (max-width: 800px) {
-  .login-text {
-    display: none;
-  }
-}
-
 .socialmedia-links-container {
   width: 200px;
-  height: 60px;
-  border: solid 2px orange;
+  height: 50px;
   display: flex;
-}
+  justify-content: center;
+  align-items: center; 
 
-@media screen and (max-width: 800px) {
-  .socialmedia-links-container {
-    display: none;
+  i {
+    width: 35px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
   }
 }
+
 
 .search-container {
   display: none;
 }
-@media screen and (max-width: 800px) {
-  .search-container {
-    display: flex;
-  }
+
+.cart-link-container {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.carrito-link-container {
-  width: 120px;
-  height: 60px;
-  border: solid 2px orange;
+.cart {
+  width: 50px;
+  height: 50px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-number {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF5959;
+  color: white;
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .webs-container {
+    display: none;
+  }
+  .bars-menu-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 20px;
+  }
+  .login-link-container {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .login-text {
+    display: none;
+  }
+  .socialmedia-links-container {
+    display: none;
+  }
+  .search-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+
+    i {
+      color: white;
+    }
+  }
+
 }
