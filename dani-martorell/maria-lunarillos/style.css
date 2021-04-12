@@ -90,17 +90,14 @@ nav a {
 .social-icons{
     display:flex;
     list-style: none;
-    padding-left: 50px;
+    padding: 0 50px;
     padding-right: 50px;
 }
 .social-icons a {
     cursor: pointer;
-}.social-icons a img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-}.social-icons li {
-    margin-right: 15px;
+}
+.social-icons li {
+    margin-right: 18px;
 }
 .facebook-icon {
     width: 22px;
@@ -111,6 +108,46 @@ nav a {
     width: 22px;
     height: 22px;  
     background: url('./images/sprite.svg') -2px -497px no-repeat; 
+}
+.twitter-icon {
+    width: 22px;
+    height: 22px;  
+    background: url('./images/sprite.svg') -40px -537px no-repeat; 
+}
+.twitter-icon:hover {
+    width: 22px;
+    height: 22px;  
+    background: url('./images/sprite.svg') -40px -497px no-repeat; 
+}
+.instagram-icon {
+    width: 22px;
+    height: 22px;  
+    background: url('./images/sprite.svg') -78px -537px no-repeat; 
+}
+.instagram-icon:hover {
+    width: 22px;
+    height: 22px;  
+    background: url('./images/sprite.svg') -78px -497px no-repeat; 
+}
+.pinterest-icon {
+    width: 22px;
+    height: 22px;  
+    background: url('./images/sprite.svg') -114px -537px no-repeat; 
+}
+.pinterest-icon:hover {
+    width: 22px;
+    height: 22px;  
+    background: url('./images/sprite.svg') -114px -497px no-repeat; 
+}
+.youtube-icon {
+    width: 22px;
+    height: 22px;  
+    background: url('./images/sprite.svg') -181px -537px no-repeat; 
+}
+.youtube-icon:hover {
+    width: 22px;
+    height: 22px;  
+    background: url('./images/sprite.svg') -181px -497px no-repeat; 
 }
 
 .shopping-cart-group img{
