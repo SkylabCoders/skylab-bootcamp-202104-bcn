@@ -70,7 +70,8 @@ body {
 .subs-nav,
 .help,
 .login,
-.register-button {
+.register-button,
+.footer-logo {
    cursor: pointer; 
 }
 
@@ -273,3 +274,59 @@ body {
     width: 60%;
 
 }
+
+.footer {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2em 3em;
+
+    &__mini {
+        display: flex;
+        font-family: $noto-regular;
+        color: $dark-grey;
+    }
+
+    &__info {
+        font-family: $noto-regular;
+        color: $dark-grey;
+        display: flex;
+    }
+
+}
+
+.footer-logo {
+
+    align-self: center;
+    background-repeat: no-repeat;
+    height: 32px;
+    width: 135px;
+}
+
+.company-info {
+    color: $dark-grey;
+    margin-top: 1em;
+}
+
+.mini-footer {
+
+    display: flex;
+
+    &__anchors {
+
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+
+        a {
+            color: $dark-grey;
+        }
+
+        a:hover {
+            color: white;
+        }
+    }
+}
+    

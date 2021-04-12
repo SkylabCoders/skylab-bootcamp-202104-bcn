@@ -73,7 +73,8 @@ body {
 .subs-nav,
 .help,
 .login,
-.register-button {
+.register-button,
+.footer-logo {
   cursor: pointer;
 }
 
@@ -245,7 +246,7 @@ body {
 
 .about__resume p {
   font-family: "Noto Sans Regular", sans-serif;
-  color: #cfcfcf;
+  color: #9a9a9a;
 }
 
 .about__resume-title,
@@ -288,7 +289,7 @@ body {
 
 .about__extern-howitworks small, .about__extern-payments small, .about__extern-help small {
   font-family: "Noto Sans Regular", sans-serif;
-  color: #cfcfcf;
+  color: #9a9a9a;
 }
 
 .about__extern a h6 {
@@ -301,5 +302,73 @@ body {
 
 #payments-image {
   width: 60%;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding: 2em 3em;
+}
+
+.footer__mini {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Noto Sans Regular", sans-serif;
+  color: #9a9a9a;
+}
+
+.footer__info {
+  font-family: "Noto Sans Regular", sans-serif;
+  color: #9a9a9a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-logo {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-repeat: no-repeat;
+  height: 32px;
+  width: 135px;
+}
+
+.company-info {
+  color: #9a9a9a;
+  margin-top: 1em;
+}
+
+.mini-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mini-footer__anchors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.mini-footer__anchors a {
+  color: #9a9a9a;
+}
+
+.mini-footer__anchors a:hover {
+  color: white;
 }
 /*# sourceMappingURL=form.css.map */
