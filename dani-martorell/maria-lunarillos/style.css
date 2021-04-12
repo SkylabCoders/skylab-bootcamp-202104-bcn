@@ -75,13 +75,15 @@ nav a {
 }
 .login a:hover {
     color: #ff5959;
+
 }
-.login .icon {
+.login-icon {
+    
     width: 35px;
     height: 35px;  
     background: url('./images/sprite.svg') 0 0 no-repeat; 
 }
-.login .icon:hover {  
+.login-icon:hover {  
     background: url('./images/sprite.svg') -37px 0 no-repeat; 
 }
 
@@ -126,6 +128,16 @@ nav a {
 .cart-element:hover {
     background-color: #ff5959;
 
+}
+.cart-icon {
+    width: 35px;
+    height: 35px;  
+    background: url('./images/sprite.svg') -74px 0 no-repeat; 
+}
+.cart-icon:hover {
+    width: 35px;
+    height: 35px;  
+    background: url('./images/sprite.svg') -114px 0 no-repeat; 
 }
 main {
     padding: 50px 0px;
