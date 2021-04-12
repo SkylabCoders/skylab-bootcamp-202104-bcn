@@ -295,7 +295,7 @@ body {
   width: 1080px;
 }
 
-.header__secondary-nav .search-bar {
+.search-bar {
   width: 302px;
   height: 30px;
   display: -webkit-box;
@@ -305,7 +305,7 @@ body {
   background: #c2beba;
 }
 
-.header__secondary-nav .search-bar input {
+.search-bar .search-bar__input {
   width: 248px;
   height: 28px;
   text-transform: uppercase;
@@ -320,7 +320,7 @@ body {
   outline: none;
 }
 
-.header__secondary-nav .search-bar button {
+.search-bar .search-bar__button {
   width: 50px;
   height: 30px;
   -webkit-box-sizing: border-box;

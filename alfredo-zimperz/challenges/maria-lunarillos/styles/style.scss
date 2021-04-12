@@ -187,34 +187,32 @@ body {
 	}
 }
 
-.header__secondary-nav .search-bar {
+.search-bar {
 	@include size-config(302px, 30px);
 	display: flex;
 	border: 1px solid#c2beba;
 	background: #c2beba;
-}
-
-.header__secondary-nav .search-bar input {
-	@include size-config(248px, 28px);
-	text-transform: uppercase;
-	color: rgba(226, 225, 224, 0.486);
-	font-size: 11px;
-	letter-spacing: 1px;
-	padding-left: 3px;
-	font-weight: 200;
-	box-sizing: border-box;
-	border: none;
-	outline: none;
-}
-
-.header__secondary-nav .search-bar button {
-	@include size-config(50px, 30px);
-	box-sizing: border-box;
-	outline: none;
-	background: url(../images/icons/search.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 20px;
+	.search-bar__input {
+		@include size-config(248px, 28px);
+		text-transform: uppercase;
+		color: rgba(226, 225, 224, 0.486);
+		font-size: 11px;
+		letter-spacing: 1px;
+		padding-left: 3px;
+		font-weight: 200;
+		box-sizing: border-box;
+		border: none;
+		outline: none;
+	}
+	.search-bar__button {
+		@include size-config(50px, 30px);
+		box-sizing: border-box;
+		outline: none;
+		background: url(../images/icons/search.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 20px;
+	}
 }
 
 .header__main-nav {
