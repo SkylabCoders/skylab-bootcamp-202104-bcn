@@ -10,7 +10,7 @@
 body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 12px;
-  background: #965f5f;
+  background: white;
 }
 
 ul {
@@ -34,16 +34,27 @@ header {
 
 .header-toplink {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 50px;
   background: #f8f8f8;
-  padding: 0px 50px 0px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 100;
+  padding: 0 10%;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
+    li {
+      margin-right: 5px;
+    }
+  }
 }
 
 .first-block {
-  position: fixed;
   top: 0;
   width: 70px;
   height: 130px;
@@ -51,9 +62,7 @@ header {
 }
 
 .second-block {
-  position: fixed;
   top: 0;
-  left: 125px;
   width: 60px;
   height: 70px;
   background: url(./../img/cucute.png) #6199af bottom center no-repeat;
@@ -64,9 +73,7 @@ header {
 }
 
 .third-block {
-  position: fixed;
   top: 0;
-  left: 190px;
   width: 60px;
   height: 70px;
   background: url(./../img/mumuchu.png) #f6b436 bottom center no-repeat;
@@ -74,12 +81,6 @@ header {
 
 .third-block:hover {
   height: 130px;
-}
-
-.login-link {
-  float: right;
-  text-indent: 0;
-  width: auto;
 }
 
 .login {
@@ -91,6 +92,11 @@ header {
   text-transform: uppercase;
 }
 
+.login-link {
+  margin-left: auto;
+  margin-right: 4%;
+}
+
 .icon-login {
   width: 27px;
   height: 27px;
@@ -100,11 +106,8 @@ header {
 }
 
 .social-medias {
-  float: right;
   display: flex;
-  flex-direction: row;
-  margin: 0 150px 0 40px;
-  width: auto;
+  padding: 0 20px;
 }
 
 .icon {
@@ -136,27 +139,60 @@ header {
   background-position: -180px -540px;
 }
 
+.shop-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.shop-icon {
+  background: #fff url(./../img/sprite.svg) -66px 10px no-repeat;
+  margin: 0;
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.shop-icon:hover {
+  background: #ff5959 url(./../img/sprite.svg) -110px 10px no-repeat;
+}
+
+.shop-number {
+  background: #ff5959;
+  color: white;
+  margin: 0;
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 22px;
+  padding-top: 10px;
+}
+
 .header-logo-links {
   display: flex;
   flex-direction: row;
-
-  width: 100%;
   background: white;
-  padding: 0px 50px 0px 50px;
-  margin-top: 50px;
+  margin: 50px 10%;
+  justify-content: space-between;
+  width: auto;
 }
 
 .logo-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 50%;
   padding-bottom: 50px;
+  img {
+    width: 300px;
+  }
 }
 
 .nav-container {
   display: flex;
   flex-direction: column;
+  width: 55%;
 }
 
 .quick-access {
@@ -165,6 +201,7 @@ header {
   align-items: flex-end;
   padding-top: 40px;
   padding-bottom: 40px;
+  width: auto;
 }
 
 .links-quick-access {
@@ -191,7 +228,7 @@ header {
   float: right;
   width: 49px;
   height: 29px;
-  background: url(./../img/menu.svg) -303px 2px no-repeat #bbb8b6;
+  background: url(./../img/sprite.svg) -303px 2px no-repeat #bbb8b6;
   border: none;
 }
 
@@ -219,38 +256,35 @@ header {
 }
 
 .search-box {
-  display: block;
-  width: 175px;
-
+  display: flex;
+  flex-direction: row;
   height: 30px;
   border: 1px solid #bbb8b6;
+  margin-left: 0;
+  width: 100%;
 }
 
 .search-input {
-  float: left;
+  width: 200px;
   border: none;
   height: 28px;
   font-size: 12px;
   padding: 0 5px;
   color: #bbb8b6;
   text-transform: uppercase;
-}
-
-.nav-bottom-container {
-  padding-bottom: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  width: 100%;
 }
 
 .nav-buttons {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  padding-bottom: 50px;
 }
 
 .button {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   background-size: 50%;
   background-color: #f2f2f2;
   font-size: 13px;
@@ -288,8 +322,9 @@ header {
   background-image: url(./../img/menu.svg);
   background-repeat: no-repeat;
   background-color: #ff5959;
-  background-position: -320px 0;
-  background-size: 560px;
+  background-position: -400px 0;
+  background-size: 700px;
+  margin-left: auto;
 }
 
 .button.blog:hover {
@@ -297,7 +332,7 @@ header {
 }
 
 .text-button {
-  bottom: -90px;
+  bottom: -110px;
   padding-top: 7px;
   position: relative;
   left: 0;
