@@ -1,13 +1,15 @@
+@import url(./variables.scss);
+
 body {
     margin: 0;
     font-family: "NotoSans-Bold",Arial,sans-serif;
 }
 
 nav {
-    background-color: black;
+    background-color: $black-corporation;
 }
 #nav-items {
-    background-color: black;
+    background-color: $black-corporation;
     display: flex;
     height: 61px;
     padding: 0 20px;
@@ -20,7 +22,7 @@ nav {
 }
 
 #menu-items, #navigation-button {
-    color: white;
+    color: $white-corporation;
     display: flex;
     text-transform: uppercase;
     font-weight: bold;
@@ -35,7 +37,7 @@ nav {
 }
 
 #cinema:hover, #suscripciones:hover, #gratis:hover {
-    color: #ffe300;
+    color: $yelow-corporation;
 }
 .item-menu {
     padding: 20px 5px;
@@ -48,7 +50,7 @@ nav {
 }
 
 #input-menu-search {
-    background: #252525;
+    background: $dark-gray-corporation;
     padding: 10px;
     margin: 10px;
     border: none;
@@ -58,7 +60,7 @@ nav {
 
 #input-menu-search:focus {
     border: none;
-    background-color: white;
+    background-color: $white-corporation;
     border-radius: 2px;
 }
 
@@ -67,19 +69,19 @@ nav {
 }
 
 #ayuda {
-    color: #999;
+    color: $light-gray-corporation;
 }
 
 #registrarse {
-    background-color: #ffe300;
-    color: #252525;
+    background-color: $yelow-corporation;
+    color: $dark-gray-corporation;
     border-radius: 5px;
     padding: 10px;
     position: relative;
     top: 10px;
 }
 #ayuda:hover, #entrar:hover {
-    color: #ffe300;
+    color: $yelow-corporation;
 }
 
 #slide img {
@@ -92,5 +94,5 @@ nav {
 }
 
 #content {
-    background-color: #252525;
+    background-color: $dark-gray-corporation;
 }
