@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: #212121; */
 }
 
 .main {
@@ -19,6 +18,12 @@
     height: auto;
     background: #000;
     z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        background-color: red;
+    }
 }
 
 .navbar-items {
@@ -271,7 +276,7 @@ a:link {
     height: 95px;
 }
 
-.genre__list{
+.genre__list {
     display: flex;
     margin-top: 12px;
 }
