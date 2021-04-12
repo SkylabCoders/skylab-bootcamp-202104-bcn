@@ -235,6 +235,8 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  text-align: center;
+  padding: 3em 26em 0em 26em;
 }
 
 .about__resume-title {
@@ -243,11 +245,11 @@ body {
 
 .about__resume p {
   font-family: "Noto Sans Regular", sans-serif;
+  color: #cfcfcf;
 }
 
 .about__resume-title,
 .about__resume p {
-  color: white;
   width: 100%;
 }
 
@@ -256,6 +258,13 @@ body {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 3em;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 .about__extern-howitworks, .about__extern-payments, .about__extern-help {
@@ -266,21 +275,31 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 10%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20em;
+  text-align: center;
+  margin: 0 2em;
 }
 
 .about__extern-howitworks small, .about__extern-payments small, .about__extern-help small {
   font-family: "Noto Sans Regular", sans-serif;
-}
-
-.about__extern-payments {
-  width: 20%;
+  color: #cfcfcf;
 }
 
 .about__extern a h6 {
   font-size: 1.5em;
+}
+
+.extern__image {
+  width: 30%;
+}
+
+#payments-image {
+  width: 60%;
 }
 /*# sourceMappingURL=form.css.map */

@@ -210,6 +210,8 @@ body {
         display: flex;
         flex-direction: column;
         width: 100%;
+        text-align: center;
+        padding: 3em 26em 0em 26em;
 
         &-title {
             font-size: 1.5em;
@@ -217,11 +219,11 @@ body {
 
         p {
             font-family: $noto-regular;
+            color: $dark-grey;
         }
 
         &-title,
         p {
-            color: white; //quitar luego
             width: 100%;
         }
     }
@@ -229,29 +231,45 @@ body {
     &__extern {
         display: flex;
         width: 100%;
+        justify-content: center;
+        padding-bottom: 3em;
+        align-items: baseline;
 
         &-howitworks,
         &-payments,
         &-help {
             display: flex;
             flex-direction: column;
-            width: 10%;
             justify-content: center;
+            align-items: center;
+            width: 20em;
+            text-align: center;
+            margin: 0 2em;
 
             small {
                 font-family: $noto-regular;
+                color: $dark-grey;
             }
-        }
-        
-        &-payments {
-            width: 20%;
         }
 
         a {
+
             h6 {
                 font-size: 1.5em;
             }
         }
-
     }
+}
+
+.extern {
+
+    &__image {
+        width: 30%;
+    }
+}
+
+#payments-image {
+
+    width: 60%;
+
 }
