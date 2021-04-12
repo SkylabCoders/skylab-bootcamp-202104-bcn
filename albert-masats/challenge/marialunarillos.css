@@ -1,6 +1,7 @@
 * {
     display: border-box;
     margin:0;
+    font: 12px/1.55 'Source Sans Pro', sans-serif;
 }
 
 .box1 {
@@ -339,21 +340,58 @@
 
 }
 
-.imgbanner {
+#imgbanner0 {
     background-image: url("./../challenge/images/foto-cocina.png");
     width: 1080px;
     height: 600px;
     position: relative;
     display: block;
     margin: 0 auto;
-    border:0;
-}
-
-.image-scroll {
-    display: absolute;
-    width:1080px;
-    height: 600px;
-    margin: 0 auto;
     border: 0;
 }
+
+.box5 {
+    height: 250px;
+    width: 100%;
+    background:rgb(152, 248, 255);
+}
+
+.box6 {
+    height: 2286px;
+    width: 100%;
+    background:rgb(246, 180, 54);
+}
   
+.container-photo-mix {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    z-index:1;
+}
+
+/* .photo-moldes {
+    display:block;
+    width: 350;
+    height: 615;
+} */
+
+#imgbanner1 {
+    z-index:1;
+    width: 350;
+    max-height: none;
+    overflow: auto;
+    position: relative;
+    display: block;
+    /* margin: 0 auto; */
+    border: 0;
+    background-image: url("./../challenge/images/moldesdereposteria.jpg");
+}
+
+#imgbanner2 {
+    background-image: url("./../challenge/images/utensiliosbasicos.jpg");
+}
+
+#imgbanner3 {
+    background-image: url("./../challenge/images/pequenoelectrodomestico2.jpg");
+} 
+
