@@ -226,7 +226,6 @@ padding: 5px;
 }
 
 .centered1 a:hover {
-    color: $red-color;
     .register-icon{background: url("./../images/sprite.svg") -37px 0 no-repeat; }
 }
 .centered1 a div:hover {fill: $red-color;}
@@ -474,13 +473,13 @@ div.cart-number {
     height: auto;
     max-height: 100%;
     justify-content: space-evenly;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    // filter: grayscale(100%);
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
     cursor: pointer;
 }
 .marcas-block > img:hover {
     
-    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
 }
 

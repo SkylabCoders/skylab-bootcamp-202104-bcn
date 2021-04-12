@@ -358,10 +358,6 @@ header {
   margin: 10px;
 }
 
-.centered1 a:hover {
-  color: #FF5959;
-}
-
 .centered1 a:hover .register-icon {
   background: url("./../images/sprite.svg") -37px 0 no-repeat;
 }
@@ -762,13 +758,12 @@ div.cart-number {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   -webkit-filter: grayscale(100%);
-  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
   cursor: pointer;
 }
 
 .marcas-block > img:hover {
   -webkit-filter: grayscale(0%);
-  /* Safari 6.0 - 9.0 */
   filter: grayscale(0%);
 }
 
