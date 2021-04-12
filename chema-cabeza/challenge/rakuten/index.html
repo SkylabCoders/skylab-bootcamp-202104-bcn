@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="shortcut icon" href="https://prod1-kraken-cloudfront.rakuten.tv/images/favicons/favicon-503f333345.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -56,9 +57,46 @@
     <img src="./img/first-row-img/dreamworks.jpeg" alt="">
 
   </section>
-  
-    <script src="./script.js">
-        
+  <div class="carousel-1">
+    <img src="./img/second-row-img/image.png" alt="">    
+    <img src="./img/second-row-img/image (1).png" alt="">
+    <img src="./img/second-row-img/image (2).png" alt="">    
+    <img src="./img/second-row-img/image (3).png" alt="">    
+    <img src="./img/second-row-img/image (4).png" alt="">    
+    <img src="./img/second-row-img/image (5).png" alt="">    
+    <img src="./img/second-row-img/image (6).png" alt="">    
+    <img src="./img/second-row-img/image (7).png" alt="">    
+
+  </div>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+    <script src="./scripts/script.js"> </script>
+    <script>
+      $(document).ready(function(){
+    $('.carousel-1').slick({
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        arrows: true,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
     </script>
+
 </body>
 </html>
