@@ -23,7 +23,16 @@
   width: 100%;
   z-index: 9;
   background-color:$background-primary;
-  a{color:$primary-color; font-size: 0.90em; line-height: 1em; font-weight: $bold; text-transform: uppercase;}
+  a{
+    color:$primary-color;
+    font-size: 0.90em;
+    line-height: 1em;
+    font-weight: $bold;
+    text-transform: uppercase;
+    &:hover{
+      color:$action-color;
+    }
+  }
     .navbar{
       padding:5px 0px;
       .navbar-brand svg{

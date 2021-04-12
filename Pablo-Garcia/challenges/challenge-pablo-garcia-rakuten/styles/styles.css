@@ -70,6 +70,8 @@ html {
     line-height: 1em;
     font-weight: 700;
     text-transform: uppercase; }
+    .main-header a:hover {
+      color: #f0d500; }
   .main-header .navbar {
     padding: 5px 0px; }
     .main-header .navbar .navbar-brand svg {
