@@ -75,6 +75,7 @@ ul.main-icons li img.big-icon {
     display: flex;
     align-items: center;
     height: 50px;
+    cursor: pointer;
 }
 
 .login a {
@@ -209,12 +210,30 @@ header {
     max-width: 1080px;
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
     margin: 0 auto; 
     height: 260px;
 }
 header .logo img{
-    margin-bottom: 65px;
+    margin-bottom: 66px;
 }
-
+.header-right-side a {
+    text-decoration: none;
+}
+.novedades {
+    display: flex;
+    width: 130px;
+    height: 30px;
+    background-color: #9FAA4D;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px;
+}
+.novedades-icono {
+    width: 22px;
+    height: 22px;  
+    background: url('./images/sprite.svg') -114px -537px no-repeat; 
+}
 
 
