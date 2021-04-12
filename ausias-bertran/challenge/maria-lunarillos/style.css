@@ -246,7 +246,10 @@ header {
 
 
 footer {
-    
+    width: 85%;
+    height: 409px;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -254,6 +257,14 @@ footer {
 
 
 
+
+.content {
+    width: 100%;
+    height: 50px;
+    background-color: #FF5959;
+    color: #FFFFFF;
+    text-align: center;
+}
 
 
 
