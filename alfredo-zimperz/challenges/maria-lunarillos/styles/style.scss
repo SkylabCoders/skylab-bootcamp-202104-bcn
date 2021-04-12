@@ -22,6 +22,7 @@ button {
 }
 
 body {
+	@include flex-config(column, center, center);
 	background: $bg-main-color;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 12px;
@@ -42,6 +43,8 @@ body {
 }
 
 .header {
+	width: 100vw;
+
 	.header__top-nav {
 		@include size-config(100%, 50px);
 		position: fixed;
@@ -151,52 +154,47 @@ body {
 	}
 }
 
-.header-secondary-nav {
+.header__secondary-nav {
+	@include flex-config(null, center);
 	margin-top: 100px;
-	max-width: 1080px;
+	width: 100%;
+	.button {
+		@include size-config(136px, 100%);
+		display: flex;
+		margin-right: 8px;
+		text-transform: uppercase;
+		line-height: 30px;
+		&--news {
+			background: #9faa4d;
+		}
+		&--offers {
+			background: #8e789d;
+		}
+		.icon {
+			height: 20px;
+		}
+	}
+	a {
+		display: inline-block;
+		margin-left: 4px;
+		font-size: 15px;
+		font-weight: 400;
+		color: $secondary-color;
+	}
+	.secondary-nav__menu {
+		@include flex-config(null, flex-end);
+		width: 1080px;
+	}
 }
 
-.header-secondary-nav ul {
-	@include flex-config(null, flex-end);
-	width: 1080px;
-}
-
-.header-secondary-nav .button {
-	@include size-config(136px, 100%);
-	display: flex;
-	margin-right: 8px;
-	text-transform: uppercase;
-	line-height: 30px;
-}
-
-.header-secondary-nav .button .icon {
-	height: 20px;
-}
-
-.header-secondary-nav a {
-	display: inline-block;
-	margin-left: 4px;
-	font-size: 15px;
-	font-weight: 400;
-	color: $secondary-color;
-}
-
-.header-secondary-nav .button.btn-news {
-	background: #9faa4d;
-}
-
-.header-secondary-nav .button.btn-offers {
-	background: #8e789d;
-}
-
-.header-secondary-nav .search-bar {
+.header__secondary-nav .search-bar {
 	@include size-config(302px, 30px);
 	display: flex;
 	border: 1px solid#c2beba;
 	background: #c2beba;
 }
 
-.header-secondary-nav .search-bar input {
+.header__secondary-nav .search-bar input {
 	@include size-config(248px, 28px);
 	text-transform: uppercase;
 	color: rgba(226, 225, 224, 0.486);
@@ -209,7 +207,7 @@ body {
 	outline: none;
 }
 
-.header-secondary-nav .search-bar button {
+.header__secondary-nav .search-bar button {
 	@include size-config(50px, 30px);
 	box-sizing: border-box;
 	outline: none;
