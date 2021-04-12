@@ -27,11 +27,6 @@ body {
 	font-size: 12px;
 }
 
-main {
-	// delete when main has content
-	height: 1000px;
-}
-
 .centered-item {
 	@include flex-config(null, center);
 }
@@ -50,25 +45,55 @@ main {
 // 	@include flex-config(column);
 // }
 
-.header-fix {
-	@include size-config(100%, 50px);
+.header {
+	.header__top-nav {
+		@include size-config(100%, 50px);
+		position: fixed;
+		display: flex;
+		justify-content: center;
+		top: 0;
+		margin: auto;
+		background: $bg-secondary-color;
+		z-index: 1;
+		.top-nav__menu {
+			@include flex-config(null, flex-end);
+			width: 100%;
+			max-width: 1080px;
+		}
+	}
+}
+
+.logo-container {
 	display: flex;
-	position: fixed;
-	top: 0;
-	margin: auto;
-	background: $bg-secondary-color;
-	z-index: 1;
-}
-
-.header-fix-menu {
-	@include flex-config(null, flex-end);
-	width: 100%;
-	max-width: 1080px;
-	margin: auto;
-}
-
-.header-fix-logo {
-	position: absolute;
+	list-style: none;
+	.logo {
+		@include size-config(70px, 70px);
+		margin-left: 4px;
+		text-align: center;
+		background-repeat: no-repeat;
+		background-position-y: bottom;
+		background-position-x: center;
+		&:hover {
+			height: 140px;
+			cursor: pointer;
+		}
+		&--fixed {
+			@include size-config(80px, 140px);
+		}
+		&--ma {
+			background-size: 72px;
+			background-color: $color-ma;
+			background-image: url('../images/logo-ma.png');
+		}
+		&--cu {
+			background-color: $color-cu;
+			background-image: url('../images/logo-cu.png');
+		}
+		&--mu {
+			background-color: $color-mu;
+			background-image: url('../images/logo-mu.png');
+		}
+	}
 }
 
 .icon {
@@ -114,49 +139,6 @@ main {
 
 .header-fix-nav span:hover {
 	color: $color-ma;
-}
-
-.logo ul {
-	display: flex;
-	list-style: none;
-}
-
-.logo ul li {
-	@include size-config(70px, 70px);
-	margin-left: 4px;
-	text-align: center;
-	background-repeat: no-repeat;
-	background-position-y: bottom;
-	background-position-x: center;
-}
-
-.logo ul li:hover {
-	height: 140px;
-	cursor: pointer;
-}
-
-.logo ul li span {
-	visibility: hidden;
-}
-
-.logo .fixed {
-	@include size-config(80px, 140px);
-}
-
-.logo-ma {
-	background-size: 72px;
-	background: $color-ma;
-	background-image: url('../images/logo-ma.png');
-}
-
-.logo-cu {
-	background: $color-cu;
-	background-image: url('../images/logo-cu.png');
-}
-
-.logo-mu {
-	background: $color-mu;
-	background-image: url('../images/logo-mu.png');
 }
 
 .header-fix-register {

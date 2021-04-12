@@ -27,10 +27,6 @@ body {
   font-size: 12px;
 }
 
-main {
-  height: 1000px;
-}
-
 .centered-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,20 +51,23 @@ main {
   color: #ffffff;
 }
 
-.header-fix {
+.header .header__top-nav {
   width: 100%;
   height: 50px;
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: fixed;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   top: 0;
   margin: auto;
   background: #f8f8f8;
   z-index: 1;
 }
 
-.header-fix-menu {
+.header .header__top-nav .top-nav__menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,11 +79,49 @@ main {
           align-items: unset;
   width: 100%;
   max-width: 1080px;
-  margin: auto;
 }
 
-.header-fix-logo {
-  position: absolute;
+.logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.logo-container .logo {
+  width: 70px;
+  height: 70px;
+  margin-left: 4px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: center;
+}
+
+.logo-container .logo:hover {
+  height: 140px;
+  cursor: pointer;
+}
+
+.logo-container .logo--fixed {
+  width: 80px;
+  height: 140px;
+}
+
+.logo-container .logo--ma {
+  background-size: 72px;
+  background-color: #f25658;
+  background-image: url("../images/logo-ma.png");
+}
+
+.logo-container .logo--cu {
+  background-color: #6199af;
+  background-image: url("../images/logo-cu.png");
+}
+
+.logo-container .logo--mu {
+  background-color: #f6b436;
+  background-image: url("../images/logo-mu.png");
 }
 
 .icon {
@@ -144,53 +181,6 @@ main {
 
 .header-fix-nav span:hover {
   color: #f25658;
-}
-
-.logo ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-}
-
-.logo ul li {
-  width: 70px;
-  height: 70px;
-  margin-left: 4px;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-position-y: bottom;
-  background-position-x: center;
-}
-
-.logo ul li:hover {
-  height: 140px;
-  cursor: pointer;
-}
-
-.logo ul li span {
-  visibility: hidden;
-}
-
-.logo .fixed {
-  width: 80px;
-  height: 140px;
-}
-
-.logo-ma {
-  background-size: 72px;
-  background: #f25658;
-  background-image: url("../images/logo-ma.png");
-}
-
-.logo-cu {
-  background: #6199af;
-  background-image: url("../images/logo-cu.png");
-}
-
-.logo-mu {
-  background: #f6b436;
-  background-image: url("../images/logo-mu.png");
 }
 
 .header-fix-register {
