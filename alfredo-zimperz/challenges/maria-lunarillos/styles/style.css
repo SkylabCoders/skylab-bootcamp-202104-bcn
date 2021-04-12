@@ -71,9 +71,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: unset;
       -ms-flex-align: unset;
           align-items: unset;
@@ -85,6 +85,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 250px;
   list-style: none;
 }
 
@@ -124,37 +125,7 @@ body {
   background-image: url("../images/logo-mu.png");
 }
 
-.icon {
-  width: 30px;
-  height: 40px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  margin: 5px;
-  cursor: pointer;
-}
-
-.icon.small {
-  height: 18px;
-  margin: 16px 4px;
-}
-
-.icon:hover,
-.icon-container:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-}
-
-.icon-secondary img:hover {
-  -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(180%);
-          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(180%);
-}
-
-.icon-secondary:hover {
-  background-color: #f25658;
-}
-
-.header-fix-nav {
+.top-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,31 +137,25 @@ body {
           align-items: unset;
   width: 100%;
   height: 50px;
-  margin-left: 250px;
   line-height: 50px;
   text-transform: uppercase;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.header-fix-nav span {
-  margin-left: 4px;
-  font-size: 13px;
-  font-weight: 400;
-}
-
-.header-fix-nav span:hover {
-  color: #f25658;
-}
-
-.header-fix-register {
+.top-links .top-links__register {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 160px;
 }
 
-.header-fix-socialMedia {
+.top-links .top-links__register :hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+}
+
+.top-links .top-links__social-media {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -203,13 +168,7 @@ body {
   width: 275px;
 }
 
-.header-fix-socialMedia ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.header-fix-cart {
+.top-links .top-links__cart {
   width: 100px;
   height: 50px;
   display: -webkit-box;
@@ -217,20 +176,48 @@ body {
   display: flex;
 }
 
-.header-fix-cart button,
-.header-fix-cart.header-cart-product-counter {
+.top-links .top-links__cart .cart-button {
   width: 50px;
   height: 50px;
   text-align: center;
 }
 
-.header-cart-product-counter {
+.top-links .top-links__cart .cart-button:hover {
+  background-color: #f25658;
+}
+
+.top-links .top-links__cart .product-counter {
   width: 50px;
   height: 50px;
   text-align: center;
   font-size: 20px;
   color: #ffffff;
   background: #f25658;
+}
+
+.icon {
+  width: 30px;
+  height: 40px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+}
+
+.icon--small {
+  height: 18px;
+  margin: 16px 4px;
+}
+
+.icon--secondary:hover {
+  -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(180%);
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(180%);
 }
 
 .header-secondary-nav {
@@ -319,7 +306,7 @@ body {
   background-size: 20px;
 }
 
-.header-main-nav {
+.header__main-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

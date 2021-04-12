@@ -41,10 +41,6 @@ body {
 	color: $secondary-color;
 }
 
-// .header-container {
-// 	@include flex-config(column);
-// }
-
 .header {
 	.header__top-nav {
 		@include size-config(100%, 50px);
@@ -56,7 +52,7 @@ body {
 		background: $bg-secondary-color;
 		z-index: 1;
 		.top-nav__menu {
-			@include flex-config(null, flex-end);
+			@include flex-config(null, space-between);
 			width: 100%;
 			max-width: 1080px;
 		}
@@ -65,6 +61,7 @@ body {
 
 .logo-container {
 	display: flex;
+	width: 250px;
 	list-style: none;
 	.logo {
 		@include size-config(70px, 70px);
@@ -96,82 +93,62 @@ body {
 	}
 }
 
+.top-links {
+	@include flex-config(null, flex-end);
+	@include size-config(100%, 50px);
+	line-height: 50px;
+	text-transform: uppercase;
+	box-sizing: border-box;
+	.top-links__register {
+		display: flex;
+		width: 160px;
+		:hover {
+			filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
+				brightness(97%) contrast(95%);
+		}
+	}
+	.top-links__social-media {
+		@include flex-config(null, center);
+		width: 275px;
+	}
+	.top-links__cart {
+		@include size-config(100px, 50px);
+		display: flex;
+
+		.cart-button {
+			@include size-config(50px, 50px);
+			text-align: center;
+			&:hover {
+				background-color: $color-ma;
+			}
+		}
+		.product-counter {
+			@include size-config(50px, 50px);
+			text-align: center;
+			font-size: 20px;
+			color: $secondary-color;
+			background: $color-ma;
+		}
+	}
+}
+
 .icon {
 	@include size-config(30px, 40px);
 	align-self: center;
 	margin: 5px;
 	cursor: pointer;
-}
-
-.icon.small {
-	height: 18px;
-	margin: 16px 4px;
-}
-
-.icon:hover,
-.icon-container:hover {
-	filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
-		brightness(97%) contrast(95%);
-}
-
-.icon-secondary img:hover {
-	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
-		contrast(180%);
-}
-.icon-secondary:hover {
-	background-color: $color-ma;
-}
-
-.header-fix-nav {
-	@include flex-config(null, flex-end);
-	@include size-config(100%, 50px);
-	margin-left: 250px;
-	line-height: 50px;
-	text-transform: uppercase;
-	box-sizing: border-box;
-}
-
-.header-fix-nav span {
-	margin-left: 4px;
-	font-size: 13px;
-	font-weight: 400;
-}
-
-.header-fix-nav span:hover {
-	color: $color-ma;
-}
-
-.header-fix-register {
-	display: flex;
-	width: 160px;
-}
-
-.header-fix-socialMedia {
-	@include flex-config(null, center);
-	width: 275px;
-}
-
-.header-fix-socialMedia ul {
-	display: flex;
-}
-
-.header-fix-cart {
-	@include size-config(100px, 50px);
-	display: flex;
-}
-
-.header-fix-cart button,
-.header-fix-cart.header-cart-product-counter {
-	@include size-config(50px, 50px);
-	text-align: center;
-}
-
-.header-cart-product-counter {
-	@include size-config(50px, 50px);
-	text-align: center;
-	font-size: 20px;
-	color: $secondary-color;
-	background: $color-ma;
+	&:hover {
+		filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
+			brightness(97%) contrast(95%);
+	}
+	&--small {
+		height: 18px;
+		margin: 16px 4px;
+	}
+	&--secondary:hover {
+		filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
+			brightness(103%) contrast(180%);
+	}
 }
 
 .header-secondary-nav {
@@ -242,7 +219,7 @@ body {
 	background-size: 20px;
 }
 
-.header-main-nav {
+.header__main-nav {
 	@include flex-config(null, center);
 }
 
