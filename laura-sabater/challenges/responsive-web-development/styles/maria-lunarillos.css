@@ -13,24 +13,10 @@ ul {
   list-style: none;
 }
 
-.headers-container {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .header-fixed {
   width: 100%;
   height: 50px;
-  background-color: lightgrey;
+  background-color: #f8f8f8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,11 +73,6 @@ ul {
   margin: 0 2px;
 }
 
-.cucute-link:hover,
-.mumuchu-link:hover {
-  height: 140px;
-}
-
 .mumuchu-link {
   width: 70px;
   height: 70px;
@@ -102,11 +83,16 @@ ul {
   margin: 0 2px;
 }
 
+.cucute-link:hover,
+.mumuchu-link:hover {
+  height: 140px;
+}
+
 .bars-menu-container {
   display: none;
 }
 
-.login-link-container {
+.login-container {
   width: 180px;
   height: 50px;
   display: -webkit-box;
@@ -121,7 +107,7 @@ ul {
   font-size: 13px;
 }
 
-.login-link-container a {
+.login-container a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,8 +116,8 @@ ul {
           align-items: center;
 }
 
-.login-link-container a:link,
-.login-link-container a:visited {
+.login-container a:link,
+.login-container a:visited {
   text-decoration: none;
   color: #2E2925;
 }
@@ -143,7 +129,7 @@ ul {
   background: url(../images/sprite.svg) 0 0 no-repeat;
 }
 
-.socialmedia-links-container {
+.socialmedia-container {
   width: 200px;
   height: 50px;
   display: -webkit-box;
@@ -157,7 +143,7 @@ ul {
           align-items: center;
 }
 
-.socialmedia-links-container i {
+.socialmedia-container i {
   width: 35px;
   height: 50px;
   display: -webkit-box;
@@ -171,7 +157,7 @@ ul {
           align-items: center;
 }
 
-.cart-link-container {
+.cart-container {
   width: 100px;
   height: 50px;
   display: -webkit-box;
@@ -215,7 +201,21 @@ ul {
   color: white;
 }
 
-.menus-container {
+.menu-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu {
   width: 1080px;
   height: 200px;
   margin: 50px auto;
@@ -227,7 +227,7 @@ ul {
           justify-content: space-between;
 }
 
-.menus-container .logo-container {
+.logo-container {
   width: 250px;
   height: 170px;
   display: -webkit-box;
@@ -238,7 +238,7 @@ ul {
           align-items: flex-end;
 }
 
-.menus-container .logo-container .logo {
+.logo {
   width: 250px;
   height: 58px;
   background-image: url(../images/logo.svg);
@@ -247,12 +247,12 @@ ul {
   background-size: 95%;
 }
 
-.menus-container .products-menu {
+.products-menu {
   height: 160px;
   margin-top: auto;
 }
 
-.menus-container .products-menu a {
+.products-menu a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,13 +261,13 @@ ul {
           align-items: center;
 }
 
-.menus-container .products-menu a:link,
-.menus-container .products-menu a:visited {
+.products-menu a:link,
+.products-menu a:visited {
   text-decoration: none;
   color: #2E2925;
 }
 
-.menus-container .products-menu .top-menu {
+.top-menu {
   width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -280,7 +280,7 @@ ul {
           align-items: center;
 }
 
-.menus-container .products-menu .top-menu .novedades {
+.novedades {
   width: 24%;
   height: 30px;
   background-color: olive;
@@ -289,12 +289,12 @@ ul {
   display: flex;
 }
 
-.menus-container .products-menu .top-menu .novedades a {
+.novedades a {
   margin: auto;
   color: white;
 }
 
-.menus-container .products-menu .top-menu .ofertas {
+.ofertas {
   width: 24%;
   height: 30px;
   background-color: #7c6092;
@@ -303,23 +303,23 @@ ul {
   display: flex;
 }
 
-.menus-container .products-menu .top-menu .ofertas a {
+.ofertas a {
   margin: auto;
   color: white;
 }
 
-.menus-container .products-menu .top-menu .search-container {
+.search-container {
   width: 50%;
   height: 30px;
   border: solid 1px lightgrey;
 }
 
-.menus-container .products-menu .top-menu .search-container input {
+.search-container input {
   width: 100%;
   height: 100%;
 }
 
-.menus-container .products-menu .bottom-menu {
+.bottom-menu {
   width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -333,7 +333,7 @@ ul {
   margin-top: 30px;
 }
 
-.menus-container .products-menu .bottom-menu li {
+.bottom-menu li {
   width: 80px;
   height: 100px;
   margin-right: 4px;
@@ -346,14 +346,14 @@ ul {
           flex-direction: column;
 }
 
-.menus-container .products-menu .bottom-menu li a {
+.bottom-menu li a {
   width: 80px;
   height: 80px;
   margin: auto;
   background-color: lightgrey;
 }
 
-.menus-container .products-menu .bottom-menu li span {
+.bottom-menu li span {
   width: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -363,12 +363,12 @@ ul {
           justify-content: center;
 }
 
-.menus-container .products-menu .bottom-menu .blog {
+.bottom-menu .blog {
   margin-left: auto;
   margin-right: 0;
 }
 
-.menus-container .products-menu .bottom-menu .blog-link {
+.bottom-menu .blog-link {
   background-color: #FF5959;
 }
 
@@ -380,7 +380,6 @@ ul {
 .section-utensilios {
   width: 1080px;
   margin: 0 auto;
-  background-color: lightblue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -395,13 +394,23 @@ ul {
 
 h2 {
   width: 250px;
-  height: 100px;
-  border: solid 2px black;
+  height: 80px;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  margin: 80px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .articles-container {
   width: 1080px;
-  border: solid 2px blue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -414,14 +423,39 @@ h2 {
   width: 36%;
   height: 600px;
   position: relative;
+  background-image: url(https://static3.marialunarillos.com/media/wysiwyg/moldesdereposteria.jpg);
+  background-repeat: no-repeat;
 }
 
 .article-text {
-  width: 300px;
-  height: 200px;
-  border: solid 2px red;
+  width: 250px;
+  height: 150px;
   position: absolute;
   bottom: 0;
+  background-color: white;
+  opacity: 0.6;
+  color: dimgrey;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.article-text h3 {
+  margin: 10px 20px;
+}
+
+.article-text p {
+  margin: 10px 20px;
 }
 
 .right-articles {
@@ -444,6 +478,16 @@ h2 {
   height: 49%;
   margin: 0.5px 0;
   position: relative;
+}
+
+.article-right-top {
+  background-image: url(https://static3.marialunarillos.com/media/wysiwyg/utensiliosbasicos.jpg);
+  background-repeat: no-repeat;
+}
+
+.article-right-bottom {
+  background-image: url(https://static3.marialunarillos.com/media/wysiwyg/pequenoelectrodomestico2.jpg);
+  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 800px) {
@@ -473,7 +517,7 @@ h2 {
     position: absolute;
     left: 20px;
   }
-  .login-link-container {
+  .login-container {
     width: 100px;
     height: 50px;
     display: -webkit-box;
@@ -489,25 +533,8 @@ h2 {
   .login-text {
     display: none;
   }
-  .socialmedia-links-container {
+  .socialmedia-container {
     display: none;
-  }
-  .search-container {
-    width: 50px;
-    height: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: grey;
-  }
-  .search-container i {
-    color: white;
   }
 }
 /*# sourceMappingURL=maria-lunarillos.css.map */
