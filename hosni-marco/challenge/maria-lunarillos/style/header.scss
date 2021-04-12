@@ -1,12 +1,12 @@
 @import './mixin.scss';
 
-.header-container {
-    position: fixed;
+.header{
     background: #F8F8F8;
-    width: 100%;
-    height: 50px;
     display: flex;
-    justify-content: center;
+    height: 50px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
 }
 
 .header-links {
@@ -18,6 +18,7 @@
 
 .list-container {
     width: 252px;
+    color: #2E2925;
 }
 
 .ul-content {
@@ -50,26 +51,41 @@
 
 .header-links-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    align-content: center;
+    margin-right: 76px;
+    text-decoration: none;
+    height: 49px;
 }
 
 .enter-register-container{
-    display: flex;
-    align-content: center;
-    margin-right: 76px;
+        display: flex;
+        margin-right: 76px;
+        align-items: center;
 }
 
-.register-container{
-    background: url(../img/sprite.svg) 0 0 no-repeat;
-    height: 27px;
-    width: 27px;
-    padding: 10px;
+.register-container{  
+     display: flex;
+     align-items: center;
+     text-decoration: none;
+     color: black;
+}
+
+.register-container:hover{
+    $register-background-position-init: $register-background-position-hover;
+    color: #FF5959;    
+}
+
+.image-enter-register {
+    @include image-register-display($register-background-position-init);
+}
+
+.image-enter-register:hover {
+    @include image-register-display($register-background-position-hover);
 }
 
 .register-container-text {
-    padding-left: 10px;
-    padding-right: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .link-social-media {
@@ -98,32 +114,80 @@
 
 .yt-link {
     @include link-social-media-content(-183px -540px);
+
+}
+
+.fb-link:hover {
+    @include link-social-media-content(-3px -500px);
+}
+
+.tw-link:hover {
+    @include link-social-media-content(-38px -500px);
+}
+
+.ig-link:hover {
+    @include link-social-media-content(-74px -500px);
+}
+
+.pi-link:hover {
+    @include link-social-media-content(-111px -500px);
+}
+
+.yt-link:hover {
+    @include link-social-media-content(-183px -500px);
 }
 
 .buy-container {
     width: 100px;
+    display: flex;
 }
 
 .buy-display {
-    @include link-social-media-content(-72px -74px);
-    background-position: -74px 4px;
-    height: 8px;
-    padding-right: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 30px;
-    width: 50px;
+    background: url(../img/sprite.svg) transparent 0 0 no-repeat;
+    background-position: -64px 12px;
+    padding: 20px;
+    padding-left: 30px;
 }
+
 .buy-display:hover {
-    background-position: -154px 4px;
+    background: #FF5959 url(../img/sprite.svg)no-repeat;
+    background-position: -103px 11px;
+    padding: 20px;
+    padding-left: 30px;
 }
 
 .counter-container {
     width: 50px;
-    padding: 18px;
-    height: 50px;
+    display: flex;
     font-family: "Myriad Pro", "Myriad Web", "Tahoma", "Helvetica", "Arial", sans-serif;
     font-size: 20px;
     color: #fff;
     background: #FF5959;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    width: 71.5%;
+    margin-top: -41px;
+    justify-content: space-between;
+}
+
+.quick-acces {
+    display: flex;
+    border: red solid;
+    width: 570px;
+    height: fit-content;
+    justify-content: space-around;
+}
+
+.logo-container {
+    margin-top: 74px;
+}
+
+.link-quick-acces {
+    border: black solid;
+    display: flex;
+    height: fit-content;
 }
