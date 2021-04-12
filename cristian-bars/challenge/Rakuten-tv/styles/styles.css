@@ -90,3 +90,7 @@ nav {
     display: flex;
     width: 100%;
 }
+
+#content {
+    background-color: #252525;
+}
