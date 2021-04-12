@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* ------- GENERIC ------- */
 *,
 *::after,
@@ -151,8 +150,8 @@ a {
   margin: auto;
 }
 
-/* ---------------------- */
-/* ----- CAROUSEL ------- */
+/* ---------------------------- */
+/* ----- FIRST CAROUSEL ------- */
 #main-carousel {
   margin-top: 61px;
   display: -webkit-box;
@@ -163,16 +162,14 @@ a {
 
 .image {
   width: 100%;
-  height: 100%;
 }
 
 /* ------------------------ */
 /* ----- NAV MOVIES ------- */
 .top-movies {
-  width: 100vw;
   height: 189px;
   margin: 25px 0 0;
-  padding: 0 15px 30px;
+  padding: 0 5px 0 5px;
 }
 
 .movies {
@@ -182,14 +179,13 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 10px;
+  margin: 0 10px;
 }
 
 .movie {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  margin-right: 10px;
   border-radius: 2px;
   border: 4px solid transparent;
 }
@@ -202,9 +198,84 @@ a {
 
 .movie img {
   width: 100%;
-  height: 215px;
-  height: auto;
   border-radius: 2px;
+}
+
+/* ----------------------------- */
+/* ----- SECOND CAROUSEL ------- */
+.slide img {
+  width: 100%;
+  border: 4px solid transparent;
+}
+
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-slider .slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-slider .slick-prev, .slick-slider .slick-next {
+  font-size: 20px;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+  z-index: 9;
+}
+
+.slick-slider .slick-prev:before {
+  font-family: 'slick';
+  font-size: 3em;
+  line-height: 1;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  content: '<';
+}
+
+.slick-slider .slick-next:after {
+  font-family: 'slick';
+  font-size: 3em;
+  line-height: 1;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  content: '>';
+  right: 0;
+}
+
+.slick-slider .slick-prev {
+  left: 10px;
+}
+
+.slick-slider .slick-next {
+  right: 50px;
 }
 
 /* -------------------- */
@@ -272,76 +343,4 @@ footer {
 }
 
 /* -------------------- */
-.slick-slider {
-  position: relative;
-  display: block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -khtml-user-select: none;
-  -ms-touch-action: pan-y;
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.slick-list  {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-
- 
-.slick-prev, .slick-next {
-  font-size: 20px;
-  line-height: 0;
-  position: absolute;
-  top: 50%;
-  display: block;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  cursor: pointer;
-  color: transparent;
-  border: none;
-  outline: none;
-  background: transparent;
-  z-index: 9;
-}
-
-.slick-prev:before {
-  font-family: 'slick';
-  font-size: 2em;
-  line-height: 1;
-  opacity: .75;
-  color: white;
-  -webkit-font-smoothing: antialiased;
-  content: '<';
-}
-
-.slick-next:after {
-  font-family: 'slick';
-  font-size: 2em;
-  line-height: 1;
-  opacity: .75;
-  color: white;
-  -webkit-font-smoothing: antialiased;
-  content: '>';
-  right: 0;
-}
-
-.slick-prev {
-  left: 30px;
-}
-
-.slick-next {
-  right: 30px;
-}
 /*# sourceMappingURL=style.css.map */
