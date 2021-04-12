@@ -450,4 +450,40 @@ header {
 #title {
   padding-top: 40px;
 }
+
+.carousel-item img {
+  width: 80% !important;
+  margin: 0 auto;
+}
+
+.horitzontals .col-2 {
+  padding: 0 !important;
+}
+
+#items-section .col-2 {
+  max-width: unset !important;
+  width: 50% !important;
+  padding: 10px;
+}
+
+.description-item {
+  position: absolute;
+  top: 50%;
+  width: 250px;
+  background: #fff;
+  opacity: 0.8;
+  height: 150px;
+}
+
+.description-item::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-bottom: 150px solid #fff;
+  border-right: 100px solid transparent;
+  position: absolute;
+  right: -100px;
+  top: 0;
+}
 /*# sourceMappingURL=styles.css.map */
