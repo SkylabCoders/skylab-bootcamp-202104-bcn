@@ -152,7 +152,7 @@ body{
 .movies{
     padding: $padding;
     display: flex;
-    overflow-x: hidden;
+    overflow-x: scroll;
     white-space: nowrap;
     background: linear-gradient(to left,rgba(23,23,23,.95) 0,transparent 100%);
 }

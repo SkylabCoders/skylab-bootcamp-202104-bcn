@@ -185,7 +185,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow-x: hidden;
+  overflow-x: scroll;
   white-space: nowrap;
   background: -webkit-gradient(linear, right top, left top, color-stop(0, rgba(23, 23, 23, 0.95)), to(transparent));
   background: linear-gradient(to left, rgba(23, 23, 23, 0.95) 0, transparent 100%);

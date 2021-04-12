@@ -185,7 +185,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow-x: hidden;
+  overflow-x: scroll;
   white-space: nowrap;
   background: -webkit-gradient(linear, right top, left top, color-stop(0, rgba(23, 23, 23, 0.95)), to(transparent));
   background: linear-gradient(to left, rgba(23, 23, 23, 0.95) 0, transparent 100%);
@@ -349,5 +349,74 @@ body {
   margin-left: 20px;
   margin-top: 30px;
   font-weight: 200;
+}
+
+.languages {
+  width: 70%;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.languages-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.languages td, .languages th {
+  text-align: left;
+  padding: 8px;
+}
+
+.languages td {
+  font-weight: 200;
+}
+
+.cast {
+  width: 100%;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.cast-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  width: 98%;
+  padding: 10px;
+}
+
+.cast img {
+  height: 110px;
+}
+
+.cast .actor-image {
+  padding: 10px;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.score {
+  width: 40%;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.generes {
+  width: 40%;
+  margin-left: 20px;
+  margin-top: 30px;
 }
 /*# sourceMappingURL=movies-styles.css.map */
