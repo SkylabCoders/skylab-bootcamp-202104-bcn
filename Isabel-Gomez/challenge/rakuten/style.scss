@@ -17,7 +17,7 @@
 
 main {
     width: 100%;
-    height: 2000px;
+    height: 1000px;
     background-color: $background-color-main;
 }
 
@@ -184,6 +184,32 @@ a {
 /* ----------------------------- */
 /* ----- SECOND CAROUSEL ------- */
 
+.container-carousel {
+    height: 327.5px;
+    padding: 0 30px 15px;
+}
+
+.title {
+    max-width: 1680px;
+    display: flex;
+    justify-content: space-between;
+    .text-free {
+        color: $color-main;
+        font-size: 22px;
+           text-decoration: none;
+        span {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.view-all {
+        color: $color-main;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 14px;
+}
+
 .slide {
     img {
         width: 100%;
@@ -228,13 +254,13 @@ a {
     border: none;
     outline: none;
     background: transparent;
-    z-index: 9;
+    z-index: 1;
   }
   .slick-prev:before {
     font-family: 'slick';
     font-size: 3em;
     line-height: 1;
-    color: white;
+    color: $color-main;
     -webkit-font-smoothing: antialiased;
     content: '<';
   }
@@ -242,7 +268,7 @@ a {
     font-family: 'slick';
     font-size: 3em;
     line-height: 1;
-    color: white;
+    color: $color-main;
     -webkit-font-smoothing: antialiased;
     content: '>';
     right:0;
@@ -258,50 +284,19 @@ a {
 /* -------------------- */
 /* ----- FOOTER ------- */
 
-.container-carousel {
-    height: 327.5px;
-    padding: 0 30px 15px;
-}
-
-.title {
-    max-width: 1680px;
-    display: flex;
-    justify-content: space-between;
-    .text-free {
-        color: $color-main;
-        font-size: 22px;
-           text-decoration: none;
-        span {
-            text-transform: uppercase;
-        }
-    }
-}
-
-.view-all {
-        color: $color-main;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-size: 14px;
-}
-
-.second-carousel {
-    height: 260.5px;
-}
-
-/* -------------------- */
-/* ----- FOOTER ------- */
-
 footer {
     width: 100%;
-    height: 390px;
+    height: 536px;
     padding: 25px;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
 }
-.main-info {
+
+.main-info-footer {
     display: flex;
     flex-direction: column;
+    height: 440px;
+    background-color: $background-color-footer;
 }
 
 /* -------------------- */

@@ -14,7 +14,7 @@
 
 main {
   width: 100%;
-  height: 2000px;
+  height: 1000px;
   background-color: #171717;
 }
 
@@ -203,6 +203,38 @@ a {
 
 /* ----------------------------- */
 /* ----- SECOND CAROUSEL ------- */
+.container-carousel {
+  height: 327.5px;
+  padding: 0 30px 15px;
+}
+
+.title {
+  max-width: 1680px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.title .text-free {
+  color: #FFFFFF;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.title .text-free span {
+  text-transform: uppercase;
+}
+
+.view-all {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+}
+
 .slide img {
   width: 100%;
   border: 4px solid transparent;
@@ -248,14 +280,14 @@ a {
   border: none;
   outline: none;
   background: transparent;
-  z-index: 9;
+  z-index: 1;
 }
 
 .slick-slider .slick-prev:before {
   font-family: 'slick';
   font-size: 3em;
   line-height: 1;
-  color: white;
+  color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   content: '<';
 }
@@ -264,7 +296,7 @@ a {
   font-family: 'slick';
   font-size: 3em;
   line-height: 1;
-  color: white;
+  color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   content: '>';
   right: 0;
@@ -280,49 +312,10 @@ a {
 
 /* -------------------- */
 /* ----- FOOTER ------- */
-.container-carousel {
-  height: 327.5px;
-  padding: 0 30px 15px;
-}
-
-.title {
-  max-width: 1680px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.title .text-free {
-  color: #FFFFFF;
-  font-size: 22px;
-  text-decoration: none;
-}
-
-.title .text-free span {
-  text-transform: uppercase;
-}
-
-.view-all {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.second-carousel {
-  height: 260.5px;
-}
-
-/* -------------------- */
-/* ----- FOOTER ------- */
 footer {
   width: 100%;
-  height: 390px;
+  height: 536px;
   padding: 25px;
-  border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -332,7 +325,7 @@ footer {
           flex-direction: column;
 }
 
-.main-info {
+.main-info-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -340,6 +333,8 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 440px;
+  background-color: #212121;
 }
 
 /* -------------------- */
