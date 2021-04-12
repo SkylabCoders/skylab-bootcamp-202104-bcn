@@ -202,10 +202,9 @@ a:link {
     display: flex;
     justify-content: space-evenly;
     top: 0;
-    background-color: #212121;
+    background-color: #171717;
     width: 1349px;
     height: 200.77px;
-    /* z-index: 100; */
     position: relative;
     padding: 0px 15px 25px;
 }
@@ -228,7 +227,7 @@ a:link {
     display: flex;
     flex-direction: column;
     top: 0;
-    background-color: #212121;
+    background-color: #171717;
     width: 1349px;
     height: 1050px;
     /* z-index: 100; */
@@ -253,6 +252,38 @@ a:link {
     margin-left: 17px;
     margin-top: 10px;
     margin-bottom: 15px;
+}
+
+.films__genre {
+    display: flex;
+    flex-direction: column;
+    width: 1349px;
+    height: 219px;
+    background-color: #171717;
+    color: #ffffff;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 0 34px 25px;
+    font-size: 25px;
+}
+
+.films__genre img {
+    width: 95px;
+    height: 95px;
+}
+
+.genre__list{
+    display: flex;
+    margin-top: 12px;
+}
+
+.genre__list div {
+    margin-left: 5px;
+    text-align: center;
+}
+
+.genre__list span {
+    text-align: center;
+    font-size: 15px;
 }
 
 .about {
