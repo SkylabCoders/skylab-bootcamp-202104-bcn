@@ -86,12 +86,18 @@
                 <a class="view-all" href="#">ver todo</a>
             </div>
             <div class="second-carousel">
-                <div><img src="./images/image-1.png" alt=“image”></div>
-                <div><img src="./images/image-2.png" alt=“image”></div>
-                <div><img src="./images/image-3.png" alt=“image”></div>
-                <div><img src="./images/image-4.png" alt=“image”></div>
-                <div><img src="./images/image-5.png" alt=“image”></div>
-                <div><img src="./images/image-6.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-1.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-2.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-3.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-4.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-5.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-6.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-1.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-2.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-3.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-4.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-5.png" alt=“image”></div>
+                <div class="movie"><img src="./images/image-6.png" alt=“image”></div>
             </div>
         </div>
     </main>
@@ -100,14 +106,11 @@
         <div class=“main-info”>
             <h1 class=“footer-info-title”>rakuten tv - tu cine en casa</h1>
             <p class=“footer-info-text”>Rakuten TV proporciona una serie de servicios que ofrecen todo un universo de
-                contenidos en solo unos clics. Disfruta de
-                una verdadera experiencia cinematográfica con los últimos estrenos, servicios de suscripción premium y
-                una
-                serie de
-                canales temáticos gratis, como Movies, Euronews, Kids TV, Viki, Documentaries y Rakuten Stories, un
-                canal
-                que incorpora
-                el contenido original y exclusivo de Rakuten TV.</p>
+                contenidos en solo unos clics. Disfruta de una verdadera experiencia cinematográfica con los últimos
+                estrenos, servicios de suscripción premium y una
+                serie de canales temáticos gratis, como Movies, Euronews, Kids TV, Viki, Documentaries y Rakuten
+                Stories, un
+                canal que incorpora el contenido original y exclusivo de Rakuten TV.</p>
             <ul class=“footer-faqs”>
                 <li class=“how-it-works”>
                     <img src=“” alt=“” class=“how-it-works-icon”>
@@ -147,8 +150,8 @@
         $(document).ready(function () {
             $('.second-carousel').slick({
                 slidesToShow: 6,
-                slidesToScroll: 1,
-                autoplay: true,
+                slidesToScroll: 6,
+                autoplay: false,
                 autoplaySpeed: 1500,
                 arrows: true,
                 dots: true,
