@@ -16,6 +16,14 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
 .nav-bar a {
   text-decoration: none;
 }
@@ -204,5 +212,75 @@ body {
 
 .outstanding-container img {
   width: 100%;
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #212121;
+  width: 100%;
+}
+
+.about__resume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.about__resume-title {
+  font-size: 1.5em;
+}
+
+.about__resume p {
+  font-family: "Noto Sans Regular", sans-serif;
+}
+
+.about__resume-title,
+.about__resume p {
+  color: white;
+  width: 100%;
+}
+
+.about__extern {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.about__extern-howitworks, .about__extern-payments, .about__extern-help {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 10%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about__extern-howitworks small, .about__extern-payments small, .about__extern-help small {
+  font-family: "Noto Sans Regular", sans-serif;
+}
+
+.about__extern-payments {
+  width: 20%;
+}
+
+.about__extern a h6 {
+  font-size: 1.5em;
 }
 /*# sourceMappingURL=form.css.map */

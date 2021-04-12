@@ -2,6 +2,7 @@
 @import './colors';
 
 $noto: 'Noto Sans', sans-serif;
+$noto-regular: 'Noto Sans Regular', sans-serif;
 
 *,
 *::after,
@@ -20,6 +21,13 @@ li {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+
+    &:visited {
+        color: white;
+    }
+}
 
 .nav-bar a {
     text-decoration: none;
@@ -189,5 +197,61 @@ body {
 
     & img {
         width: 100%;
+    }
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    background-color: $grey;
+    width: 100%;
+
+    &__resume {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &-title {
+            font-size: 1.5em;
+        }
+
+        p {
+            font-family: $noto-regular;
+        }
+
+        &-title,
+        p {
+            color: white; //quitar luego
+            width: 100%;
+        }
+    }
+
+    &__extern {
+        display: flex;
+        width: 100%;
+
+        &-howitworks,
+        &-payments,
+        &-help {
+            display: flex;
+            flex-direction: column;
+            width: 10%;
+            justify-content: center;
+
+            small {
+                font-family: $noto-regular;
+            }
+        }
+        
+        &-payments {
+            width: 20%;
+        }
+
+        a {
+            h6 {
+                font-size: 1.5em;
+            }
+        }
+
     }
 }
