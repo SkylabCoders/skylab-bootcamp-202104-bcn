@@ -220,6 +220,13 @@ header .logo img{
 .header-right-side a {
     text-decoration: none;
 }
+
+.buscador {
+    display: flex;
+
+    margin-bottom: 10px;
+
+}
 .novedades {
     display: flex;
     width: 130px;
@@ -231,9 +238,35 @@ header .logo img{
     padding: 5px;
 }
 .novedades-icono {
-    width: 22px;
-    height: 22px;  
-    background: url('./images/sprite.svg') -114px -537px no-repeat; 
+    width: 30px;  
+    height: 35px;
+    background: url('./images/sprite.svg') -247px 0px no-repeat; 
+}
+.ofertas {
+    display: flex;
+    width: 130px;
+    height: 30px;
+    background-color: #8E789D;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px;
+}
+.ofertas-icono {
+    width: 30px; 
+    height: 35px; 
+    background: url('./images/sprite.svg') -277px 0px no-repeat; 
+}
+.search-field {
+    font-size: 13px;
+    height: 30px;
+    padding: 5px 5px;
+    border: 1px solid #b4b4b4;
+}
+.search-field:focus {
+    outline: none;
 }
 
-
+::placeholder { 
+    color: rgb(199, 199, 199);
+}
