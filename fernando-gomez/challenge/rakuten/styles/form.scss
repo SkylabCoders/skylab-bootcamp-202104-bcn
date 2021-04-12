@@ -12,7 +12,16 @@ $noto: 'Noto Sans', sans-serif;
     padding: 0;
 }
 
-a {
+ol, ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+
+.nav-bar a {
     text-decoration: none;
 
     &:visited {
@@ -23,7 +32,7 @@ a {
         color:yellow;
     }
 }
-∫
+
 html {
     font-family: $noto;
     font-size: 0.9em;
@@ -130,30 +139,55 @@ body {
     padding-left: 40px;
     text-align: left;
     width: 300px;
+    border:none;
+
+    &:focus {
+        background-color: white;
+        border:none
+    }
 }
 
-.search-input::before {
-    background-color: #333;
+.nav-search::before {
     color: #999;
     content: url("https://img.icons8.com/ios-glyphs/24/000000/detective.png");
     font-size: 24px;
-    margin-left: -26px;
+    margin-left: 8px;
+    margin-top: 4px;
     position: absolute;
     z-index: 2;
 }
 
+.outstanding__container {
+    width: 100%;
+}
+
 .outstanding {
+    padding: 0 10vmin;
     display: flex;
-    margin: 2px;
     width: 100%;
 
     &__figure {
-        
-        background-color: yellowgreen;
+        width: 100%;
+        border-radius: 3px;
 
         &-image {
-            margin: 4px;
-            background-color: $yellow;
+            //background-color: $yellow;
+            border: 4px transparent solid;
+            border-radius: 6px;
         }
+
+        &-image:hover {
+            border: 4px $yellow solid;
+        }
+    }
+}
+
+
+.outstanding-container {
+    display: flex;
+    justify-content: space-evenly;
+
+    & img {
+        width: 100%;
     }
 }
