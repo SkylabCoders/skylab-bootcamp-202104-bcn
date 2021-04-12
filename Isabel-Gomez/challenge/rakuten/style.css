@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ------- GENERIC ------- */
 *,
 *::after,
@@ -169,8 +170,9 @@ a {
 /* ----- NAV MOVIES ------- */
 .top-movies {
   width: 100vw;
-  height: 245px;
+  height: 189px;
   margin: 25px 0 0;
+  padding: 0 15px 30px;
 }
 
 .movies {
@@ -207,6 +209,44 @@ a {
 
 /* -------------------- */
 /* ----- FOOTER ------- */
+.container-carousel {
+  height: 327.5px;
+  padding: 0 30px 15px;
+}
+
+.title {
+  max-width: 1680px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.title .text-free {
+  color: #FFFFFF;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.title .text-free span {
+  text-transform: uppercase;
+}
+
+.view-all {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.second-carousel {
+  height: 260.5px;
+}
+
+/* -------------------- */
+/* ----- FOOTER ------- */
 footer {
   width: 100%;
   height: 390px;
@@ -232,4 +272,76 @@ footer {
 }
 
 /* -------------------- */
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list  {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+ 
+.slick-prev, .slick-next {
+  font-size: 20px;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+  z-index: 9;
+}
+
+.slick-prev:before {
+  font-family: 'slick';
+  font-size: 2em;
+  line-height: 1;
+  opacity: .75;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  content: '<';
+}
+
+.slick-next:after {
+  font-family: 'slick';
+  font-size: 2em;
+  line-height: 1;
+  opacity: .75;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  content: '>';
+  right: 0;
+}
+
+.slick-prev {
+  left: 30px;
+}
+
+.slick-next {
+  right: 30px;
+}
 /*# sourceMappingURL=style.css.map */

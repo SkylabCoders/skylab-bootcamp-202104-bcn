@@ -2,17 +2,15 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" type="image/png" href="images/favicon rakuten.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/6f6c42e42d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <title>Rakuten TV - Tu cine en casa</title>
 </head>
 
@@ -80,6 +78,22 @@
                 <li class="movie"><img src="./images/top-movie5.png" alt="topmovie5"></li>
             </ul>
         </div>
+        <div class="container-carousel">
+            <div class=title>
+                <h2>
+                    <a class="text-free" href="#"><span>gratis - l</span>a mejor selección de películas</a>
+                </h2>
+                <a class="view-all" href="#">ver todo</a>
+            </div>
+            <div class="second-carousel">
+                <div><img src="./images/image-1.png" alt=“image”></div>
+                <div><img src="./images/image-2.png" alt=“image”></div>
+                <div><img src="./images/image-3.png" alt=“image”></div>
+                <div><img src="./images/image-4.png" alt=“image”></div>
+                <div><img src="./images/image-5.png" alt=“image”></div>
+                <div><img src="./images/image-6.png" alt=“image”></div>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -125,6 +139,34 @@
             <span class=“copirigth”>2009 - 2021 &copy; Rakuten TV Europe, S.L.U. - v1.865.0</span>
         </div>
     </footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.second-carousel').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: true,
+                dots: true,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                }, {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }]
+            });
+        });
+    </script>
 
 </body>
 
