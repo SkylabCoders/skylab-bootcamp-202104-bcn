@@ -68,4 +68,8 @@ body {
 .card .button {
   width: 80px;
 }
+
+.card .button:hover {
+  background: #9dcee2;
+}
 /*# sourceMappingURL=style.css.map */
