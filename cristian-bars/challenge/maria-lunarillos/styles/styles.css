@@ -34,15 +34,6 @@ header {
   top: 80px;
 }
 
-#ma:hover, #cu:hover, #mu:hover {
-    height: 150px;
-}
-
-#cu:hover img, #mu:hover img {
-    position: relative;
-    top: 80px;
-}
-
 #ma {
   background-color: #ff5959;
   height: 150px;
@@ -52,11 +43,6 @@ header {
 #ma img {
   position: relative;
   top: 75px;
-}
-
-#ma img {
-    position: relative;
-    top: 75px;
 }
 
 #cu {
@@ -178,12 +164,6 @@ header {
   width: 195px;
 }
 
-#rss-icons {
-    display: flex;
-    justify-content: space-between;
-    width: 195px;
-}
-
 #rrss {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -229,27 +209,6 @@ header {
   background-color: #ff5959;
 }
 
-#basket-icon {
-    width: 30px;
-    height: 30px;
-    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -78px 0;
-    position: relative;
-    top: 10px;
-}
-
-#bsk:hover #basket-icon {
-    background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg) -117px 0;
-}
-
-#bsk {
-    width: 50px;
-    height: 50px;
-    background-color: white;
-}
-
-#bsk:hover {
-    background-color: #ff5959;
-}
 #basket div {
   margin: 0 auto;
 }
