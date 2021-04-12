@@ -1,0 +1,172 @@
+@import "./forms.scss";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  list-style: none;
+  font-size: 13px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  height: 44px;
+  width: 100%;
+  background-color: #f5f5f5;
+
+  &__slider {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 200px;
+    width: 420px;
+
+    &-ma {
+      background-color: #ff5959;
+      @include slider-hover;
+      cursor: pointer;
+    }
+
+    &-cu {
+      background-color: #6199af;
+      height: 70px;
+      width: 70px;
+      padding-top: 5px;
+    }
+
+    &-cu:hover {
+      background-color: #6199af;
+      @include slider-hover;
+      cursor: pointer;
+    }
+
+    &-mu {
+      background-color: #f6b436;
+      height: 70px;
+      width: 70px;
+      padding-top: 5px;
+    }
+
+    &-mu:hover {
+      background-color: #f6b436;
+      @include slider-hover;
+      cursor: pointer;
+    }
+  }
+
+  &__login {
+    display: flex;
+    justify-content: column;
+    flex-direction: row;
+    padding-left: 200px;
+
+    padding-top: 0px;
+
+    &-img {
+      width: 30px;
+      height: 30px;
+      margin-top: 9px;
+      background-image: url("https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/sprite.svg");
+    }
+
+    &-text {
+      margin-left: 5px;
+      margin-top: 16px;
+    }
+
+    li:hover {
+      filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
+        brightness(97%) contrast(95%);
+      cursor: pointer;
+      color: rgb(255, 136, 0);
+      cursor: pointer;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    padding-left: 22px;
+    justify-content: space-around;
+
+    &-fb {
+      @include social-icons;
+    }
+
+    &-tw {
+      @include social-icons;
+    }
+
+    &-in {
+      @include social-icons;
+    }
+
+    &-pi {
+      @include social-icons;
+    }
+
+    &-yo {
+      @include social-icons;
+    }
+
+    li:hover {
+      filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
+        brightness(97%) contrast(95%);
+      cursor: pointer;
+    }
+  }
+
+  &__shopping {
+    display: flex;
+    flex-direction: row;
+    padding-left: 19px;
+    justify-content: space-around;
+
+    &-container {
+      width: 60px;
+      &-img {
+        width: 100%;
+        padding-left: 15px;
+        margin-top: 10px;
+        width: 38px;
+      }
+    }
+    &-container:hover {
+      background-color: #ff5959;
+      cursor: pointer;
+    }
+    &-number {
+      width: 48px;
+      justify-content: center;
+      background-color: #ff5959;
+      &-container {
+        justify-self: center;
+        font-weight: bolder;
+        color: white;
+        padding-left: 19px;
+        padding-top: 8px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.section-header {
+  &__logo {
+    display: flex;
+    width: 100%;
+    padding-left: 200px;
+    padding-top: 180px;
+  }
+}
