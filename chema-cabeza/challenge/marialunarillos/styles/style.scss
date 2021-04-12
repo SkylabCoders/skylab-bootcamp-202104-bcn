@@ -36,6 +36,7 @@ header {
 .centered1{
     display: flex;
     position: fixed;
+    z-index: 1;
     flex-direction: row;
     height: 50px;
     width: 100%;
@@ -328,6 +329,7 @@ div.cart-number {
     align-items: center;
     width: 100%;
     margin-top: 150px;
+    // border: 1px solid green;
     background-color: $grey-color;
 }
 
@@ -349,88 +351,144 @@ div.cart-number {
     justify-content: flex-start;
     border: 1px solid red;
     width: 65%;
+    height: auto;
 }
 
 .column-images {
     display: flex;
     flex-direction: column;
-    // position: relative;
-    // border: 1px solid blue;
+    border: 1px solid orange;
     width: 70%;
 }
-.image1 > img {
-    margin: 5px;
-    margin-left: 0px;
-    width: 100%;
-    height: auto;
+.image1 {
+    border: 1px solid blue;
+    overflow: hidden;
+    position: relative;
+
+    .caption-shape {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        bottom: 0px;
+        right:  0px;
+    }
+    .caption-shape1 {      
+        @include caption-shape1;
+    }
+    .caption-shape2 {
+        @include caption-shape2;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .caption-text {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        position: absolute;
+        bottom: 15px;
+        right: 125px;
+    }
+    p {
+        font-size: 25px;
+        font-weight: 700;
+    }
+    span {
+        
+        text-align: initial;
+    }
+
 }
-.image2 > img {
-    margin: 5px;
-    margin-left: 0px;
-    width: 100%;
-    height: auto;
+
+
+.image2 {
+    border: 1px solid blue;
+    overflow: hidden;
+    position: relative;
+
+    .caption-shape {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        bottom: 0px;
+        right:  0px;
+    }
+    .caption-shape1 {      
+        @include caption-shape1;
+    }
+    .caption-shape2 {
+        @include caption-shape2;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .caption-text {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 30px;
+        right: 100px;
+    }
+    p {
+        font-size: 25px;
+        font-weight: 700;
+    }
+    span {
+        
+        text-align: initial;
+    }
 }
 .image3 {
     display: none;
     overflow: hidden;
 }
 .image3 > img {
-    margin: 5px;
+    // margin: 5px;
     margin-left: 0px;
     width: 100%;
     height: auto;
-    margin: 0px 0px -500px 0px;
-}
-
-.image1 > .caption-shape {
-    
-    @include caption-shape (622px, 507px);
-    
-}
-
-.image1 > span {
-    @include image-span (890px, 647px);
-    
-}
-.image2 > .caption-shape {
-    
-    @include caption-shape (910px, 488px);
-    
-}
-
-.image2 > span {
-    @include image-span (1180px, 630px);
-    
 }
 
 .long-image {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 5px;
-    margin-right: 0px;
-    box-sizing: border-box;
-    width: 40%;
-    border: 1px solid red;
-}
-.long-image > img {
-    margin: 5px;
-    margin-left: 0px;
-    // width: 100%;
-    height: auto;
-}
+    border: 1px solid blue;
+    overflow: hidden;
+    position: relative;
 
-.long-image > .caption-shape {
-    
-    @include caption-shape (1000px, 935px);
-    width: 450px;
-    height: 350px;
-}
+    .caption-shape {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        bottom: 0px;
+        right:  0px;
+    }
+    .caption-shape1 {      
+        @include caption-shape1;
+    }
+    .caption-shape2 {
+        @include caption-shape2;
+    }
+    img {
+        height: 100%;
+    }
+    .caption-text {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin-left: 20px;
+        bottom: 15px;
+        right: 40px;
+    }
+    p {
+        font-size: 25px;
+        font-weight: 700;
+    }
+    span {
+        
+        text-align: initial;
+    }
 
-.long-image > span {
-    
-    @include image-span (1230px, 1050px);
-    
 }
 
 .vermas-button {
@@ -452,6 +510,7 @@ div.cart-number {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 .marcas-title {
@@ -461,7 +520,7 @@ div.cart-number {
 .marcas-block {
     display: flex;
     flex-direction: row;
-    // border: 1px solid red;
+    justify-content: space-between;
     width: 65%;
     flex-wrap: wrap;
 }
@@ -469,10 +528,7 @@ div.cart-number {
 .marcas-block > img {
     align-content: space-between;
     margin: 10px;
-    max-width: 100%;
     height: auto;
-    max-height: 100%;
-    justify-content: space-evenly;
     -webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
     cursor: pointer;
@@ -670,5 +726,15 @@ div.cart-number {
     .contact-center {align-items: center;}
     .column-images {width: 100%;}
     .image3 {display: inline-block;}
-
+    .image1 {
+        .caption-shape2 {
+            display: none;
+        }
+        .caption-shape {
+            right: unset;
+            left: 0px;
+        }
+        span {display: none;}
+        
+    }
 }

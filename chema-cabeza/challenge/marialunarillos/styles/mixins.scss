@@ -51,23 +51,33 @@
     border: none;
 }
 
-@mixin caption-shape ($top, $left) {
-    top: $top;
-    left: $left;
-    position: absolute;
+@mixin caption-shape1 {
+    // bottom: $bottom;
+    // right: $right;
     background-color: white;
     opacity: 70%;
-    width: 500px;
-    height: 400px;
-    clip-path: polygon(24% 100%, 24% 60%, 70% 60%, 100% 100%);
+    width: 260px;
+    height: 160px;
+    
+}
+@mixin caption-shape2 {
+    // bottom: $bottom;
+    // right: $right;
+    opacity: 70%;
+    width: 0;
+    height: 0;
+    border-right: 50px solid transparent;
+    border-top: 80px solid transparent;
+    border-left: 50px solid white;
+    border-bottom: 80px solid white;
     
 }
 
-@mixin image-span ($top, $left) {
+@mixin image-span {
     position: absolute;
+    bottom: 15px;
+    right: 70px;
     text-align: left;
-    top: $top;
-    left: $left;
     color: black;
     font-size: 20px;
 }
