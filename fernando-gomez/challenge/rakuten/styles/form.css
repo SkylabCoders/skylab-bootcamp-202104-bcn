@@ -24,6 +24,10 @@ a:visited {
   color: white;
 }
 
+body {
+  line-height: 0;
+}
+
 .nav-bar a {
   text-decoration: none;
 }
@@ -98,7 +102,7 @@ body {
   border: 0;
   border-radius: 3px;
   font-family: "Noto Sans", sans-serif;
-  padding: 10px;
+  padding: 18px 10px;
   text-transform: uppercase;
 }
 
@@ -171,7 +175,7 @@ body {
   content: url("https://img.icons8.com/ios-glyphs/24/000000/detective.png");
   font-size: 24px;
   margin-left: 8px;
-  margin-top: 4px;
+  margin-top: 8px;
   position: absolute;
   z-index: 2;
 }
@@ -370,5 +374,39 @@ body {
 
 .mini-footer__anchors a:hover {
   color: white;
+}
+
+.cinema-nav,
+.subs-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cinema-nav:hover,
+.subs-nav:hover {
+  color: #ffe300;
+}
+
+.cinema-nav:hover .arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  padding-left: 0;
+  padding-right: 5px;
+}
+
+.subs-nav:hover .arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  padding-left: 0;
+  padding-right: 5px;
+}
+
+.arrow {
+  font-size: 0.5em;
+  padding-left: 5px;
 }
 /*# sourceMappingURL=form.css.map */

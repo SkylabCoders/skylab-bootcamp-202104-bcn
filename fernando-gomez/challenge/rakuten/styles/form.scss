@@ -29,6 +29,10 @@ a {
     }
 }
 
+body {
+    line-height: 0;
+}
+
 .nav-bar a {
     text-decoration: none;
 
@@ -91,7 +95,7 @@ body {
     border: 0;
     border-radius: 3px;
     font-family: $noto;
-    padding: 10px;
+    padding: 18px 10px;
     text-transform: uppercase;
 }
 
@@ -161,7 +165,7 @@ body {
     content: url("https://img.icons8.com/ios-glyphs/24/000000/detective.png");
     font-size: 24px;
     margin-left: 8px;
-    margin-top: 4px;
+    margin-top: 8px;
     position: absolute;
     z-index: 2;
 }
@@ -330,3 +334,37 @@ body {
     }
 }
     
+.cinema-nav,
+.subs-nav {
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        color: $yellow;
+    }
+}
+
+.cinema-nav {
+    &:hover {
+        .arrow {
+            transform: rotate(180deg);
+            padding-left: 0;
+            padding-right: 5px;
+        }
+    }
+}
+
+.subs-nav {
+    &:hover {
+        .arrow {
+            transform: rotate(180deg);
+            padding-left: 0;
+            padding-right: 5px;
+        } 
+    }
+}
+
+.arrow {
+    font-size: 0.5em;
+    padding-left: 5px;
+}
