@@ -258,6 +258,34 @@ a:link {
     content: url(https://img.icons8.com/ios-filled/24/000000/visible--v1.png);
 } */
 
+
+.all-films {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    width: 1349px;
+    position: relative;
+    padding: 10px 15px 25px;
+}
+
+.all-films-img-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.all-films img {
+    height: 279px;
+    border: 4px solid transparent;
+}
+
+.all-films img:hover {
+    border: 4px solid #ffe300;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+
 .footer {
     display: flex;
     flex-direction: column;
