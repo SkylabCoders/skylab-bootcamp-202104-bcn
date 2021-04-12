@@ -9,8 +9,8 @@ body {
 }
 
  .header-container-fixed  {
-    width: 85%;
-    height: 5%;
+    width: 86%;
+    height: 37px;
     display : flex;
     flex-flow: row wrap;
     position: fixed; 
@@ -23,7 +23,7 @@ body {
 .background-large {
     width: 140%;
     height: 5%;
-    margin-left: -20vw;
+    /* margin-left: -20vw; */
     position: absolute;
 }
 
@@ -41,8 +41,8 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    align-self: flex-start;
-    margin-right: 325px;    
+    justify-self: flex-start;
+    /* margin-right: 325px;     */
 }
 
 #marialink {
@@ -64,7 +64,7 @@ body {
 #cucutelink:hover {
     height: 140px;
     transition: 0.2s;
-transform: rotate(1440deg);}
+}
 
 #mumuchulink {
     width: 70px;
@@ -82,8 +82,23 @@ transform: rotate(1440deg);}
 .icon {
     width: 27px;
     height: 27px;
-    margin: 10px;
-    font-size: 1.5em;
+    background-color: white;
+}
+
+#register {
+    width: 158.85px;
+    height: 49.6px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.qty{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    color: white;
+    background-color: rgb(255, 89, 89);
 }
 
 .links {
@@ -104,18 +119,7 @@ a.links * {
     height: 100px;
 }
 
-#register {
-    width: 158.85px;
-    height: 49.6px;
-}
 
-.qty{
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    color: white;
-    background-color: rgb(255, 89, 89);
-}
 
 main {
     width:  85%;
@@ -123,7 +127,7 @@ main {
 }
 
 header {
-    width: 100%;
+    width: 85%;
     height: 218px;
     display: flex;
     flex-direction: row;
@@ -161,26 +165,27 @@ header {
 }
 
 .news {
-    width: 30%;
-    height: 30px;
+    width: 25%;
+    height: 26px;
     color: white;
     background-color: #9FAA4D;
     text-align: right;
-
 }
 
 .offers {
-    width: 30%;
-    height: 30px;
+    width: 25%;
+    height: 26px;
     color: white;
     background-color: #8E789D;
     text-align: right;
+    margin-bottom: 1px;
 }
 
 .myInput {
-    width: 30%;
+    width: 42%;
     height: 28px;
     border: 1px solid #BBB8B6;
+    margin-bottom: 1px;
 }
 
 .button {
@@ -193,6 +198,9 @@ header {
 .nav-container {
     width: 100%;
     height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #nav {
@@ -201,24 +209,29 @@ header {
     display: flex;
     flex-flow: row wrap;  
     justify-content: flex-start; 
+    list-style: none;
 }
 
 .level-top {
     width: 100px;
     height: 100px;
     border: 1px solid red;
-    
+    margin-left: 2px;
+}
+
+.level-top :nth-child(1) {
+    background-color: red;
 }
 
 #blog-link {
-    align-self: flex-end;
+    justify-self: flex-end;
+    margin-left: 0px;
 }
 
 .gallery {
     width: 600px;
     height: 140%;
     margin-left: -20vw;
-    
 }
 
 
@@ -232,7 +245,9 @@ header {
 
 
 
-
+footer {
+    
+}
 
 
 
