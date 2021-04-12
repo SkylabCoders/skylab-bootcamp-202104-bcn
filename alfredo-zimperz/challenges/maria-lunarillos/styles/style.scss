@@ -283,60 +283,53 @@ body {
 .banner {
 	@include flex-config(column);
 	position: relative;
+	img {
+		width: 100%;
+	}
+	.banner__text {
+		@include size-config(250px, 150px);
+		position: absolute;
+		bottom: 0;
+		margin-right: 87px;
+		background: rgba(255, 255, 255, 0.8);
 
+		box-sizing: border-box;
+		h2 {
+			margin: 20px;
+			text-transform: uppercase;
+			font-size: 24px;
+			line-height: 24px;
+			color: $main-color;
+		}
+		p {
+			margin-left: 20px;
+		}
+		&.triangle {
+			@include size-config(0, 0);
+			position: absolute;
+			bottom: 0;
+			margin-left: 250px;
+			margin-right: 0;
+			background: none;
+			border-style: solid;
+			border-width: 150px 0 0 87px;
+			border-color: transparent transparent transparent rgba(255, 255, 255, 0.8);
+		}
+	}
+	&--vertical {
+		flex-grow: 1;
+		max-width: 360px;
+		margin-top: 14px;
+		margin-left: 14px;
+		margin-right: 14px;
+	}
+	&--horizontal {
+		flex-grow: 2;
+		max-width: 720px;
+		margin-top: 14px;
+	}
 	&-right {
 		@include flex-config(null, flex-end);
 		position: relative;
 	}
-}
-.banner.vertical {
-	flex-grow: 1;
-	max-width: 360px;
-	margin-top: 14px;
-	margin-left: 14px;
-	margin-right: 14px;
-}
-
-.banner.horizontal {
-	flex-grow: 2;
-	max-width: 720px;
-	margin-top: 14px;
-}
-
-.banner img {
-	width: 100%;
-}
-
-.banner-text {
-	@include size-config(250px, 150px);
-	position: absolute;
-	bottom: 0;
-	margin-right: 87px;
-	background: rgba(255, 255, 255, 0.8);
-
-	box-sizing: border-box;
-}
-
-.banner-text.triangle {
-	@include size-config(0, 0);
-	position: absolute;
-	bottom: 0;
-	margin-left: 250px;
-	margin-right: 0;
-	background: none;
-	border-style: solid;
-	border-width: 150px 0 0 87px;
-	border-color: transparent transparent transparent rgba(255, 255, 255, 0.8);
-}
-
-.banner-text h2 {
-	margin: 20px;
-	text-transform: uppercase;
-	font-size: 24px;
-	line-height: 24px;
-	color: $main-color;
-}
-
-.banner-text p {
-	margin-left: 20px;
 }

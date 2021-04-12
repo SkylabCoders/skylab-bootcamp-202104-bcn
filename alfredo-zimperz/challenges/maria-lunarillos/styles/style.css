@@ -474,42 +474,11 @@ body {
   position: relative;
 }
 
-.banner-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: unset;
-      -ms-flex-align: unset;
-          align-items: unset;
-  position: relative;
-}
-
-.banner.vertical {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  max-width: 360px;
-  margin-top: 14px;
-  margin-left: 14px;
-  margin-right: 14px;
-}
-
-.banner.horizontal {
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
-  max-width: 720px;
-  margin-top: 14px;
-}
-
 .banner img {
   width: 100%;
 }
 
-.banner-text {
+.banner .banner__text {
   width: 250px;
   height: 150px;
   position: absolute;
@@ -520,7 +489,19 @@ body {
           box-sizing: border-box;
 }
 
-.banner-text.triangle {
+.banner .banner__text h2 {
+  margin: 20px;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 24px;
+  color: #2e2925;
+}
+
+.banner .banner__text p {
+  margin-left: 20px;
+}
+
+.banner .banner__text.triangle {
   width: 0;
   height: 0;
   position: absolute;
@@ -533,15 +514,34 @@ body {
   border-color: transparent transparent transparent rgba(255, 255, 255, 0.8);
 }
 
-.banner-text h2 {
-  margin: 20px;
-  text-transform: uppercase;
-  font-size: 24px;
-  line-height: 24px;
-  color: #2e2925;
+.banner--vertical {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 360px;
+  margin-top: 14px;
+  margin-left: 14px;
+  margin-right: 14px;
 }
 
-.banner-text p {
-  margin-left: 20px;
+.banner--horizontal {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  max-width: 720px;
+  margin-top: 14px;
+}
+
+.banner-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */
