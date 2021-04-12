@@ -256,6 +256,18 @@ footer {
 
 
 
+about-terms {
+    list-style: none;
+}
+
+.terms-list {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
 
 
 .content {
