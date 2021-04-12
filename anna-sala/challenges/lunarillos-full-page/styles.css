@@ -16,11 +16,12 @@ header {
 }
 
 body {
-  font: 12px/1.55 'Source Sans Pro', sans-serif;
+  font: 12px/1.55;
+  font-family: SourceSans-Pro, Arial, sans-serif;
   color: #67635F;
 }
 
-.header-top-links {
+.header__links {
   position: fixed;
   width: 100%;
   display: -webkit-box;
@@ -38,7 +39,7 @@ body {
   z-index: 1;
 }
 
-.links-others {
+.links__others {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -304,13 +305,14 @@ body {
   position: absolute;
   bottom: 0;
   width: 200px;
+  font-size: 14px;
   height: 150px;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
 .banner-text h3 {
   margin: 10px;
-  font-size: 20px;
+  margin-top: 20px;
   font-weight: 600;
 }
 
@@ -381,7 +383,6 @@ body {
         flex-wrap: wrap;
   }
   .banner-sections {
-    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -389,11 +390,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    max-height: 200px;
   }
   .banner-sections img {
     width: 300px;
@@ -404,6 +401,26 @@ body {
        object-fit: cover;
     -o-object-position: 10% 10%;
        object-position: 10% 10%;
+  }
+  .banner-container {
+    max-height: 250px;
+  }
+  .section-images {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    position: relative;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    max-height: 240px;
   }
 }
 
@@ -425,13 +442,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    position: relative;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    width: 100%;
+    max-height: 240px;
   }
   .banner-sections img {
     width: 400px;
@@ -443,11 +454,92 @@ body {
     -o-object-position: 10% 10%;
        object-position: 10% 10%;
   }
+  .banner-container {
+    max-height: 250px;
+  }
+  .section-images {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    position: relative;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    max-height: 250px;
+  }
   .banner-paragraph {
     display: none;
   }
   .triangle {
     display: none;
   }
+  .banner-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: relative;
+    padding-bottom: 90px;
+    margin: 20px;
+    bottom: 140px;
+    width: 200px;
+    height: 130px;
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: #FF5959;
+  text-align: center;
+}
+
+.footer__links {
+  background: #f8f8f8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.footer__text {
+  color: #fff;
+  height: 50px;
+  font-size: 14px;
+  line-height: 50px;
+}
+
+.footer__help {
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  width: 200px;
+  padding: 10px;
+  padding-bottom: 15px;
+  background-color: #2e2925;
+  color: white;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.footer-nav__item div {
+  background: url(../images/sprite.svg) 0 0 no-repeat transparent;
 }
 /*# sourceMappingURL=styles.css.map */

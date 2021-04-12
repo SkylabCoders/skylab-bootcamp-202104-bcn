@@ -26,11 +26,12 @@ header{
     flex-direction: column;
 }
 body {
-    font: 12px/1.55 'Source Sans Pro', sans-serif;
+    font: 12px/1.55;
+    font-family: SourceSans-Pro, Arial, sans-serif;
     color: #67635F;
 }
 
-.header-top-links{
+.header__links{
     position: fixed;
     width: 100%;
     display: flex;
@@ -42,7 +43,7 @@ body {
     z-index: 1;
 }
 
-.links-others{
+.links__others{
     display: flex;
 }
 
@@ -225,7 +226,6 @@ body {
 .banner-sections{
     position: relative;
     align-content: center;
-
 }
 .banner-text{
     display: flex;
@@ -234,11 +234,12 @@ body {
     position: absolute;
     bottom: 0;
     width: 200px;
+    font-size: 14px;
     height: 150px;
     background-color:rgba(255,255,255,0.8);
     h3{
         margin: 10px;
-        font-size: 20px;
+        margin-top: 20px;
         font-weight: 600;
     }
     .banner-paragraph{
@@ -295,17 +296,27 @@ body {
         flex-wrap: wrap;
     }
     .banner-sections{
-        width: 100%;
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap; 
-        justify-content: center; 
+        max-height: 200px;
         img{
             width: 300px; /* width of container */
             height: 150px; /* height of container */
             object-fit: cover;
             object-position: 10% 10%;
         }  
+    }
+    .banner-container{
+        max-height: 250px;
+    }
+    .section-images{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        position: relative;
+        flex-wrap: wrap;
+        width: 100%;
+        max-height: 240px;
     }
 }
 @media only screen and (max-width: 1105px){
@@ -321,10 +332,7 @@ body {
     .banner-sections{
         display: flex;
         flex-direction: column;
-        justify-content: center; 
-        position: relative;
-        flex-wrap: wrap;
-        width: 100%;
+        max-height: 240px;
         img{
             width: 400px; /* width of container */
             height: 200px; /* height of container */
@@ -332,10 +340,70 @@ body {
             object-position: 10% 10%;
         }  
     }
+    .banner-container{
+        max-height: 250px;
+    }
+    .section-images{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        position: relative;
+        flex-wrap: wrap;
+        width: 100%;
+        max-height: 250px;
+    }
     .banner-paragraph{
         display:none;
     }
     .triangle{
         display:none;
+    }
+    .banner-text{
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        position: relative;
+        padding-bottom: 90px;
+        margin: 20px;
+        bottom: 140px;
+        width: 200px;
+        height: 130px;
+    }
+}
+
+.footer{
+    width: 100%;
+    background-color: #FF5959;
+    text-align: center;
+    &__links{
+        background: #f8f8f8;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    &__text{
+        color: #fff;
+        height: 50px;
+        font-size: 14px;
+        line-height: 50px;
+    }
+    &__help{
+        position: fixed;
+        bottom: 0;
+        right:30px;
+        width: 200px;
+        padding: 10px;
+        padding-bottom: 15px;
+        background-color: rgb(46, 41, 37);
+        color: rgb(255, 255, 255);
+        z-index: 1;
+        border-radius: 5px;
+    }
+}
+.footer-nav{
+    &__item{
+        div{
+            background: url(../images/sprite.svg) 0 0 no-repeat transparent;
+        }
     }
 }
