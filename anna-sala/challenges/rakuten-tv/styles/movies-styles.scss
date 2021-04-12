@@ -44,3 +44,45 @@ body{
     @include spacings(80%);
     font-weight: 200;
 }
+.languages{
+    @include spacings(70%);
+    &-table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      td, th {
+        text-align: left;
+        padding: 8px;
+      }
+      td{
+        font-weight: 200;
+      }
+}
+
+.cast{
+    @include spacings(100%);
+    &-images{
+        display: flex;
+        overflow-x: scroll;
+        width: 98%;
+        padding: $padding;
+    }
+    img{
+        height: 110px;
+    }
+    .actor-image{
+        padding: $padding;
+    }
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    @include spacings(100%);
+}
+.score{
+    @include spacings(40%);
+}
+.generes{
+    @include spacings(40%);
+}
