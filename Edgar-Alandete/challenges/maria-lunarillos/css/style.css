@@ -307,7 +307,13 @@ button {
   height: 70px;
 }
 
-.product-category-name {
+.quick-access__search-products .product-categories__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.quick-access__search-products .product-categories__name .product-category-name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,13 +329,7 @@ button {
   margin-right: 5px;
 }
 
-.product-categories-name {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.product-category-name:nth-last-child(1) {
+.quick-access__search-products .product-categories__name .product-category-name--margin {
   margin-left: 50px;
 }
 

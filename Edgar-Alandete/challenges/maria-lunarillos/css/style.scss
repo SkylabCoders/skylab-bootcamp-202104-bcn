@@ -173,23 +173,22 @@ button {
           }
         }
       }
+      &__name {
+        display: flex;
+
+        .product-category-name {
+          @include flex-configuration(null, center, center);
+          @include size-configuration(100px, 20px);
+          margin-top: 5px;
+          margin-right: 5px;
+
+          &--margin {
+            margin-left: 50px;
+          }
+        }
+      }
     }
   }
-}
-
-.product-category-name {
-  @include flex-configuration(null, center, center);
-  @include size-configuration(100px, 20px);
-  margin-top: 5px;
-  margin-right: 5px;
-}
-
-.product-categories-name {
-  display: flex;
-}
-
-.product-category-name:nth-last-child(1) {
-  margin-left: 50px;
 }
 
 .banner-container {
