@@ -418,14 +418,9 @@ header {
     margin: 0 auto;
 }
 
-.horitzontals .col-2 {
-    padding: 0 !important;
-}
-
 #items-section .col-2 {
     max-width: unset !important;
     width: 50% !important;
-    padding: 10px;
 }
 
 .description-item {
@@ -460,6 +455,14 @@ header {
 .description-item p {
     font-size: 15px;
     line-height: 18px;
+}
+
+.row {
+    padding: 30px 10px;
+}
+
+.row #superior {
+    padding-bottom: 15px;
 }
 
 .vertical {
