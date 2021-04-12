@@ -24,7 +24,7 @@
 .navbar-items {
     display: flex;
     padding: 0 15px;
-    font-family: NotoSans-Bold, Arial, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .rakuten-logo {
@@ -119,7 +119,7 @@ a:link {
 }
 
 .navbar-items-user-3 {
-    font-family: NotoSans-Bold, Arial, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     width: 108px;
     height: 32px;
     color: #252525;
@@ -192,7 +192,7 @@ a:link {
     75% {
         margin-left: -300%;
     }
-    
+
     100% {
         margin-left: -300%;
     }
@@ -255,7 +255,56 @@ a:link {
     margin-bottom: 15px;
 }
 
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 1349px;
+    height: 418px;
+    background-color: #212121;
+    color: white;
+}
 
+.about1 {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto 20px;
+    text-align: center;
+    width: 50%;
+    color: cccccc;
+    line-height: 160%;
+}
+
+.about1 p,
+.about2 p {
+    color: #ccc;
+    font-size: 15px;
+    font-family: 'Noto Sans Regular', sans-serif;
+    font-weight: 200;
+}
+
+.about1 h5,
+.about2 h6 {
+    font-size: 22px;
+    font-family: 'Noto Sans Regular', sans-serif;
+
+}
+
+.about2 {
+    display: flex;
+    text-align: center;
+}
+
+.about2 div {
+    width: 389px;
+    height: 191px;
+}
+
+.about div img {
+    height: 90px;
+    width: 200px;
+}
 
 .footer {
     display: flex;
