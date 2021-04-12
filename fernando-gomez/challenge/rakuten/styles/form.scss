@@ -29,10 +29,6 @@ a {
     }
 }
 
-body {
-    line-height: 0;
-}
-
 .nav-bar a {
     text-decoration: none;
 
@@ -80,6 +76,7 @@ body {
 }
 
 .nav-bar{
+    line-height: 0;
     align-items: center;
     background-color: black;
     border-bottom: 1px solid rgba(255,255,255,.2);

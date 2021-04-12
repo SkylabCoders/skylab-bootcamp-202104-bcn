@@ -24,10 +24,6 @@ a:visited {
   color: white;
 }
 
-body {
-  line-height: 0;
-}
-
 .nav-bar a {
   text-decoration: none;
 }
@@ -83,6 +79,7 @@ body {
 }
 
 .nav-bar {
+  line-height: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
