@@ -235,7 +235,7 @@ button {
   margin-top: 100px;
 }
 
-.quick-access__search-products .search-product__new-products {
+.quick-access__search-products .search-product--new {
   height: 30px;
   margin-right: 8px;
   background-color: #9faa4d;
@@ -244,7 +244,7 @@ button {
           flex-grow: 1;
 }
 
-.quick-access__search-products .search-product__offer-products {
+.quick-access__search-products .search-product--offer {
   height: 30px;
   margin-right: 8px;
   background-color: #8e789d;
