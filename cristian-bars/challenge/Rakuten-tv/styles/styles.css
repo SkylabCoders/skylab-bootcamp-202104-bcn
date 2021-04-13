@@ -1,15 +1,20 @@
 @charset "UTF-8";
+header {
+  width: 100%;
+  position: fixed;
+}
+
 body {
   margin: 0;
   font-family: "NotoSans-Bold",Arial,sans-serif;
 }
 
 nav {
-  background-color: black;
+  background-color: #000;
 }
 
 #nav-items {
-  background-color: black;
+  background-color: #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,7 +33,7 @@ nav {
 }
 
 #menu-items, #navigation-button {
-  color: white;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,6 +55,7 @@ nav {
 
 .item-menu {
   padding: 20px 5px;
+  text-shadow: 0px 0px 2px #aaa;
 }
 
 #nav-logo img {
@@ -68,7 +74,7 @@ nav {
 
 #input-menu-search:focus {
   border: none;
-  background-color: white;
+  background-color: #fff;
   border-radius: 2px;
 }
 
@@ -106,5 +112,34 @@ nav {
 
 #content {
   background-color: #252525;
+}
+
+#upper {
+  text-transform: uppercase;
+}
+
+.section-title h2 {
+  color: white;
+}
+
+#films-items ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#films-items ul li {
+  list-style: none;
+  border: 3px solid transparent;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+#films-items ul li:hover {
+  border: 3px solid #ffe300;
+}
+
+#slide-information img {
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */

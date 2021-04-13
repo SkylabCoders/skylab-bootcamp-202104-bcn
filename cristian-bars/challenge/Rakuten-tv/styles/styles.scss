@@ -1,4 +1,4 @@
-@import url(./variables.scss);
+@import './variables';
 
 header {
     width: 100%;
@@ -100,4 +100,34 @@ nav {
 
 #content {
     background-color: $dark-gray-corporation;
+}
+
+#upper {
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    color: white;
+}
+
+#films-items ul {
+    display:flex;
+
+}
+
+#films-items ul li{
+    list-style: none;
+    border: 3px solid transparent;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+
+#films-items ul li:hover{
+    border: 3px solid $yelow-corporation;
+    
+}
+
+#slide-information img {
+    width: 100%;
 }
