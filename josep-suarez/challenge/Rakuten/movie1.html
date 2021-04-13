@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/png" href="image/favIcon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="movie1.css">
+    <title>Misteriosa obsesion</title>
+</head>
+<body>
+    <header class="header-fix">
+        <nav class="navigation">
+            <a href="index.html"><img src="image/rakutenLogo.png" alt="RakutenTV" class="logo"></a>
+            <ul class="nav-left">
+                <select class="cinema" name="cinema-options">
+                    <option value="" class="options-cine">CINEMA</option>
+                    <option value="family" class="options-cine">FAMILY</option>
+                    <option value="colleciones" class="options-cine">COLECCIONES</option>
+                    <option value="top-populares" class="options-cine">TOP POPULARES</option>
+                    <option value="generos" class="options-cine">TODOS LOS GENEROS</option>
+                </select>
+                <li class="gratis">GRATIS</li>
+                <li class="suscripciones">SUSCRIPCIONES</li>
+                <input type="text" placeholder="Buscar" class="search-movie">
+            </ul>
+        </nav>
+        <section class="register">
+            <ul class="register-buttons">
+                <li class="help-disp">AYUDA Y DISPOSITIVOS</li>
+                <li class="sign-up">ENTRAR</li>
+                <li><button class="register-button">REGISTRARSE</button></li>
+            </ul>
+        </section>
+    </header>
+    <div class="movie__picture">
+        <div class="movie__picture--title">
+            <ul class="movie__picture--actions">
+            <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADsklEQVRoge2aTahVVRTHf8ukm0WSli+oBkKvsiCQypE+HSSZ1CgaZFINIyOMRjWraQVRUNH0UQ0aa6E4eWjQh9AXqfmeDUwhyyKywK/8Ndj3vs4775777j0f977A3+jcffZZZ/3PPmevtde+cJnFRdRlSF0BbALWA3cBtwJjwDXtLn8Dp4AfgUPAAWAqIv6oy4fSqC11u7pHvejgXFQ/UR9XW6MQsEx9QT1ZwvkiTqjPq1cNS8RWdaZGAXmm1S1NCmipbzYoIM+kuqxuETeqB4coosMX6lhdIlabhntUHFVXL+Rnz+lXXQXsB+6o5amU5xiwISJ+LupQKMQ0exwA7m3AsTJ8CUxExLluJ5f0uPANFo8IgHXA60Unu46IuhX4uCmPKrIlIvbmG+cJMUXYb4Hbh+FVCWaAuyPibLax26v1LItXBMA48HTPHqagd6LCVLlZ/b7yhLswP5nLzfIj8ihwc9lHFRH7gHuAl4C/ytrpg1uARwrPmrLY0uRs3WRKMy7VMALd2F0kYoXlUvFZCuxOqF/V4XmOC+ryzn2yr9Ym4IoBhrcvImI/KR49Bfxao+mlwMbOj6yQDTXeZA4RcSkiJoE1wLvAPzWZ7irkzpqMFxIRv0fEDuA+Ug5XlTWdg6yQ22ow3BcR8TXpVd4OnKxgajbeZYVcX8HgwESEEfFh25lXgLMLXNKNlfNa1HNVp5EqwtRx9aMBbzkrvlf2OwpKL22zQpqMxIWoV6svA98BDw94+Z+dg6WZxtN0e+caQg1gG/Aq5dOi3zoH2RGZqeDXQKhrgSngAyrkdsB05yAr5FAFg32hrlTfAQ4CEzWYPNw5yAr5tAbDXVGXqE8CR4BnqC8Vmh9U1ev8fyWN5+2WNLar4vtqelKzaTzpW1hbl90MeyNidtbKx5HJqtZNq8wXgR+AJ6hx6yLH+ws5UWWp+5CpMtg0x9Urs77PGZF28auwdtQHuxhO8vlaRJzPNhSVg75h9GXSIqZJ5aA5Fcd5uVa7w85heTUgAju6lU27Jo0RsQd4u2mvSvBWu1Izj15F7BYp4KxryqsB+RzYmP82Oiy0rXADqSI/6u/lGLA+Ik4Vdei5HomI08CDZJKzEXAUuL+XiL5Rx0zbYMPmM9NmU33432ZoU5XDPO/Z5N67+oDNRu8j6ubGBOTEtNSdpqp4XRxXn3NE/4BoqdvU3aZa7KBcUHepj5nLnQalzj/VLCcV3SZIVctxYBVwbbvLGeAX0pL6MClGTUXEmbp8uMxi4l/eOdjFAihyJAAAAABJRU5ErkJggg==" class="pin"><br>Ver trailer</li>
+            <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/AP+gvaeTAAABrElEQVRIibXVO2gUURQG4F3XNYY0ohBUCFgIAStFFHtFq4CIIIgW2gmCjSBoYaGFjY9O7IMP4rsQImptp+KiJIWkEBsbQXxks/pZzAmO685MZjN7quHec/9v5s4dplaroLAOt3GoirwspI7HkurgyKCgk/6tDg5XjWzB9wCe4FlcL+BgVcgQXkXwB6zFMKZjrI0DVUCXI/AHtsfYBrxObWMb+5eD7MGvCDsWY+OY83/NY6IocAzn8RTv0MJ9fIqQG9G3E597IIt1NwsYxvU4QXl1BxP4mtPzAuuzoIs9FrRxC8dxpeAGSE7jKdTztmwVHqUWfcO21PxefMlBXmK86F2nsYepxZNo4Ax+ZwDzOIeVS0K6sAepoFbOU8xgaymgC2tKTlpRTfWNBDSyRKy1HGQNZnE0sHs50Nt+kXoquBNYQ3LEe9V0v9DprqA3WJ3zZGf7QXZJPtDFmsRIar6Bm6n5BWwsi4ziYwT8xImMviamou9qWaTh789rDjsK+puSD3SoLHQhkOcYLbW4BLI79voSVgwKGcN77BsIEEgT17BpYEhAm9EcKFKr1f4AIBXMLXWIQhkAAAAASUVORK5CYII=" class="pin"><br>Añadir a Favoritos</li>
+            </ul>
+        <h3>Misteriosa Obsesion</h3>
+        </div>
+        <button class="movie__picture--button">VER GRATIS CON ANUNCIOS</button>
+    </div>
+    <main class="body-web">
+        <div class="movie-description">
+    <ul class="movie-description--time">
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAACVklEQVR4nO3avWoVQRiH8d9RkSiIVolaiE1QsZGgF2BjK5YiiqAgViKGXIGWam4iih+9jeglxEJQYpmcoEFBExvzYSz2bCIxiSd7ZmazOg/8mwP7nnlml5ndd5dMJpPJZDKZTCaTyWQymcz/Raum/xzCcfR3fpvBO4xjuYYxJeEgRtFWSK6XNh5ioKYxRqGFEXy3sfjazGFYPVdoUPrwWPfia/OoU6ORtDCmunyZZxp6JYzoXb7MncRj75l+zAo3AXOKRbQxjAonX+ZBUoMe2IFp4SegrSFrwWnh5csMhR7sjtAFcSxCzWi1Y0zAoQg1Sw6HLhhjApYj1IxWO8YETEeoWdIOXTDGBExEqJmidjBamBR+B5gSYRuMtQY8j1D3ibjrS1Bi3Ao3rkcwLNwE3E489iCEehx+qiG3wOvRp2hqVJUf0+CGSElL8Tw/p3vxWcVl39gzvx4DikfaKRuLT+K+1W5xdOpqi59StMXLJsdHvMcbDdrqMpl/gNRrQB9OYhAHsL/z+zd8xQe8xY/E44pGC2dwT7HALfj7FrigeEd4V9Fea+RWuBtXFGez1zvBCdzCnqQGFWnhks1fgFbNFC6mU9k6R/FaePG1eYUjiZy65iw+iS9f5jPOJTHrghtYlE6+zCKuJ/DblGtYkl6+zE/cjG65ARc6A6hLvswSzkd2/YNBxY1L3fJlZnEiqvFv7LT6MdN2yjh2RfRe4XINct3makTvFV7UJNdNXkb0XmGmJrlu8mWrMlVejOyrcEwq9m71gCoTMIr5CsfFZl6DPqPJZLYJvwDw7redBvDtywAAAABJRU5ErkJggg==" class="icon__time">13</li>
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABoUlEQVRIid2VvUoDQRSFv2x0G5PSPqXRV4i9EVTiL7EMiTYx+Ai2oo0vIAQ1vkwwCorGKGisbAQJKNisxdxhh7izO0nphYHlnjPnzN69czeFWwSWfCppo+do8H8iwF6usarhA+tAC7g3DG6BU2BNhKeBNrA8ingJeDNEbevRMG+7vEkKODEEroA6kAemZOUl1zF4H/ImiaHFv4EK8a3oAVXhBsBBkvimEL+AJWDC5URAwTBZtJF84EVIFRE/BHKOJjXZ2xWtP7FNWHP9oXLAK1B2MPCAa9FYiSJcClgfypcl3wSyCSYN4Z5FgU8CzkRgTcF+UK1btBjMCu8uChwImInAsiKuW7JvMcgK/qkT5qWwjQBt/h6DD0dka3fFJG/ZVESVpw8sWDi6RA9RYEvAvRFOOhz7xHzkLQE7jDcZPeBGNDaiCD7wLITqGAY7sreH5aKBGr96DhVGEJ8nHBWlJPKxYVIjvlwesGuIH7mcJm2YBKjr3wDmUKM6I88Nwppr8bSLgY5Vwtsdt3o4lMUWPqojLlB/rYGse+Ac9TudjBP4BThWg2YuuVwEAAAAAElFTkSuQmCC" class="icon__time">91 minutos</li>
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAADG0lEQVR4nO3aT2tcVRgG8N+EUk01aqGUasWAjoL4BbpwI6XYRf2zqNCug6jdhII7VwY0CtGApKVpAkK76cKNuhBt/QR+A5sgtmIbu0lrERM14+Jk9GSSyZ2Ze2fOJHMfOAz33vc+5z3PnD/vOe+lRGF4FG/jKm5iBb/iW7yJB3LyP4a3cK1L/LlwErdQ26Ys4EiH/G9gqYv8uTCe4Vhc7uPFNvnf7TJ/LryMtciBGziDp7B3/XccdyKbS23wv97A/5MwDIriz42zUcXfY6SJ3Sh+wF0cb4P/44j/OzxcMH9ujGBGcHRfF/gP42tcxENd4C8x8KhkPH8Or2Go4f5v+Dy6fgePFOjXMmaj6zEcKIh7DV/ix1aMF2293PyD4cjudhO7PCVu8PWCuRfqxI3/bCOebnJ/CM9H199k8HSCF7rI/0yrhtup+EFkV8UfGfbtls8i/ieFJa5I/twCLAnxeR0nhEisKAeXcTDiP1qwCLkFqGGuwb6KeSEiXGvh/axyxcaJehTn8bMwDyUXoIb3mrw7jKkCRJi09Wr1IN7vBwFquGzrZeqJAgSo4Qsc2oJ/pF8EqOEepvESHhdC48mCBKgJ88sMjq3zDwu9L5cAWYFQy0rtQFTIjgN2PQZegD1t2GYNl52ATUN64HtAKUBqB1KjFCC1A6lRCpDagdTohQATQhw/ZQfGEitC8LCSg+N3/29ALkgrQtu7wY/wl5D46BSfNlScUoS2BSgCFWEbG1c+L838k0QA+keEZALQHyIkFYD0ImwSoL4druJVfCXKmmieGsuDX4RMUv2Mbwx/C+m1ZP/MwnrljfmyZqmxbpTT3WpchE09YCh6MJCor8dVvCIMgcXo+bM4pdiPEyrCV137o3uzejMEYv4ksUgF52zsinMSToK9ROrGk1CAfmg8iQTol8bTgQAfYlXYFHWKTxoq3lGboT8N+Ha4iDEzIYjQDwciuZKjqZ0vApvaU54JpnYgNUoBUjuQGqUAqR1IjVKA1A6kRilAagdSo52PpHbluWFWD1jtiRe9x3/tyhJg2u4TYVVI2JYoUYJ/AS6HPjg1wUaOAAAAAElFTkSuQmCC" class="icon__time"> 2004</li>
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAjElEQVRIie3UoQ1CQRRE0QNB4dB4KqAELC3QAi3QAi3QAi38CmgAj8QhyMfwEkCRsJMg/iTX7s3uvje8p3/SYY2Rxuk/OGGDSUpQnLHFNCUoLthhlhIUV+wxTwmKGw5YpATFHUcsU4JXOqzqwPG3V2uVv3ui2CfHxjS2aLGqiJVdvK6bJb5og2AQ/J4HaCGYTtXDndYAAAAASUVORK5CYII=" class="icon__time">Estados Unidos</li>
+        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAA/UlEQVRoge2ZSw6CQBAFSw/i5zB6RD8X8QKGgxA3utSVutEFsBJMK226ia+SDgkZmFeB9IQBxH8wA7bAAbjXx019fjAsgQvwaKkLsIiLZmdOt0RTZ2AaFdDKlvcSTa2jAlo5YBMpowJauWETuXpPPHa+38k47ug8r7vIznlcGDNsXWsSFfATFlRhuyQGsY40TKlabEnVAEpgxUCehBBOFNgWv7bae4cZ9bj2ETj3C94LYhgSyYZEstFHpHBL4YBrC6yxtmW13zYkkg2JZEMi2ZBINiSSDYlkQyLZ6Pth1bZnZcV1vytyX6uLrzLp1cqGRLIhEX6zr+X+u0FE8QTfkmzpYlQL+QAAAABJRU5ErkJggg==" class="icon__time">Titulo original: The Forgotten</li>
+    </ul>
+    <div class="movie-description--paragraph">
+    <p>Original, valiente e intrigante film que reserva un giro sorprendente hacia la mitad del metraje. Sam Parett, un niño de nueve años, muere en un accidente de avión. Han pasado catorce meses desde el accidente, pero su madre, Telly (Julianne Moore), no se resigna a creer en la muerte de su hijo. De repente, su marido jura que nunca tuvieron un hijo, y su psiquiatra insiste en que se engaña a sí misma. Lo peor de todo es que no hay ninguna prueba de la existencia de Sam. Perseguida por el recuerdo de su hijo, la obsesión de Telly por encontrar la verdad la lleva a una conspiración que la acerca a un círculo de terror del que parece imposible escapar.</p>
+    </div>
+        <div class="movie__language">
+            
+            <ul class="movie__language--list">
+                <h5><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABFklEQVRIie3UO0pDQRTG8V9UFFFEXIKWFj7SWekm3ICI2FhqZSFYuQILsdImlaVlLGwsJC5AV5BCYiGCEIt7rgzJzaPIRZB8MMx5zJz/Zc7hMtYAVRK7XUbtiREX7dL/BnxgAfNo9TjTkL11o1eRqT6Am4DALQ6T3G7s77EfYzHsWlqk3xRt4ivsGTwXAFK94BXfBbV/Afl6ith5LBHL86eod9zZwVridyk9vB9f8BarErE8v4XtxH+IMxfDAFqyxnYqb3YbdxE7wz2WsIHPYQCX4R/JGlYLW+TauMZycncWVx2v0BNQxTSaSawZsWr4c1jFAfawgvUiwPhf9PeAUerEgCkaNaQ05RAwWQLgUTai9RJqd+sHKapVq/cTDPQAAAAASUVORK5CYII="/></n>Idiomas y subtítulos</h5>
+                <li class="movie__language--title">Audio</li>
+                <li>Alemán</li>
+                <li>Ingles</li>
+                <li>Español</li>
+                <li>Polaco</li>
+            </ul>
+            <ul class="movie__language--list2"> 
+                <li class="movie__language--title">Subtítulos</li>
+                <li>Sueco,Danés,Holandés / Flamenco,Alemán,Finés,Noruego,Español,Polaco,Sin subtítulos</li>
+                <li>Sueco,Danés,Holandés / Flamenco,Alemán,Finés,Noruego,Español,Polaco,Sin subtítulos</li>
+                <li>Sueco,Danés,Holandés / Flamenco,Alemán,Finés,Noruego,Español,Polaco,Sin subtítulos</li>
+                <li>Sueco,Danés,Holandés / Flamenco,Alemán,Finés,Noruego,Español,Polaco,Sin subtítulos</li>
+            </ul>
+        </div>
+        <div class="actors">
+            <h5><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEs0lEQVR4nO2bzW8VVRjGf9O4AGkBTa6UKJ9VsQoEureCiBpiAnWhEELc+MFOJZgAQmJitPpPKBAVAQWNyIIFmMLCaLqS8uGCEI3GkkgJvYYgbcfFO1Mm7T3fZ6YY7pO8SXtu7/s873TOmXOecwaaaKKJJu5iJBXzzQEeAxYDM7IA+CeLS8AFYLBiXaVhLrAVOARcAVLLGAQOAm8A7ZWrDkQL0AMcB0awL1oVt4DvgQ1Z7jsWCbAZGCC8aFWcBTZRfdc1YjlwhvIKnxh9wLJKKjMgAd4EblJd8cWu8R5T2C3agO80AquKb4DWkmudhBrwc6DwFBjOIjTPT5mmSlADzgeI/Rt4B3iwkHMesBMYCsh7jgouQhth//kBYL4m/yJkIhRyJ5TWHRLC+vx1YKEFz8OEdYujlPSY3B4gKgXed+DqDeR627tKBZYB/waKWu7AtzKQ6ybwhGetk5AApwMFpcC9DpwzIvD9QKSusDmCmBSY5cA5OxLny14VF9BCvLl9twPvM5E4fyHwLuiJJCQFPnHgPRCRd71H3eM4HlHICHZ3wTpgLCLvMd/i5yILjlhCUmQW+LSGcz0yX4jJeQtxopyxNbKQPEYRh2gDsAToBF5CTI8y+FLgNZ8LcKhEQVXHAZ8LYOPhDQMfAiuA6cBM4CngU+LYYXmMIINod8YxHZks9QJ1i+//5Vp8u0XS80CHJscqwlZ3eVxFLqoKHdgtoB6wrj4jNImyWdg8S9iIPgasseBZBFwz5HrSIs84XjEk2+GQ64ghly4OO/DsMuTa0uhLKj9tpoHscwdhnyna68BuYA+yKVIWT46GU/F7FH+sMxWuA7/bKMowoGj/CPig8Huj5fI5B57fkEG5TfF5w3YfRzWW2WCTJ6axMdqoUXUH1DWJ2hAPz/YuWKpo36H4uYjHgYuWPPNR//dBBm5rmAbBXQ65jhpy6eJrB56dhlwvOuSi25BsCHn0mPA84Y/BtRY8CzHPOVyW48yxEHcRMTBVWGMhyiaGgNUang7MNv0YcL919RkGLcTVkdG8C7G8Zmdi9yODTmjxeYwCe5HZ5ayMqwv7qfCvrsWD7M/HKmCqY7+qSN1j8KTpCnkiBb5C3KbOLHq4PWMsA30+X2onviFyFf3cfi1xxo1i3EC6phdimhQj6Fd1OVYTdyl90Ld4ENcmlhAXU3RvRN51HnWPowU5lhJDiMty1LQct41+IkynN0USMxUbI895VTwBCTKKhoqpemvslF+5jbGU8HNAKxz4ugK56ojjHBXbAkX1OnB9HMj1qneVGiTIgSRfUcPoTdQcjyAOkS+Pi43mjFbkGIqvuAvoV5EdyCLLN38fbmONF2qIVeUr8hriJxTPCi0A3sXs7OqiH7cnTRBqhN0JedSxW82Z4kcqPCaXo5UwtydW7AOmlVyrEglyIGkqjsreAN4qv0Q7PAqcoLriTyEvXgQjpu2cINvcu1E7wTHQj/5R9yeyoTI2ob0T2Ijseqv2KqIgQQ46HCO+n2AbE7fBWoA/ss+uUDCCyjhqngLfAi8ADwGvA19S7XtAqaatXvy86jcvatx+aao1i/sic5wFvmByF1iM+BtHgMuROZtoookm/p/4D3xgQKx0SKZMAAAAAElFTkSuQmCC"/ class="iconDirection">Dirección y reparto</h5>
+            <ul class="actor--list">
+                <li><img src="https://images-1.wuaki.tv/system/photos/1963/original/julianne-moore-1525277072-width170-quality50.jpeg" alt=""></li>
+                <li><img src="https://images-0.wuaki.tv/system/photos/7612/original/dominic-west-1525283643-width170-quality50.jpeg" alt=""></li>
+                <li><img src="https://images-3.wuaki.tv/system/photos/9471/original/joseph-ruben-1543634129-width170-quality50.jpeg" alt=""></li>
+                <li><img src="https://images-3.wuaki.tv/system/photos/27053/original/scott-nicholson-1534828912-width170-quality50.jpeg" alt=""></li>
+            </ul>
+            <ul class="actors--list--name">
+                <li>Julianne Moore</li>
+                <li>Dominic West</li>
+                <li>Joseph Ruben</li>
+                <li>Scott Nicholson</li>
+            </ul>
+        </div>
+    </div>
+    <div class="social__media">
+        <ul class="social__media--list">
+            <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABrklEQVRIie3WP2sVQRSG8d8GEhG9UTt7g41FTLCxt7AQrcTCVizF3mijyBUECX4DLRSDYCFoYWewSVRS2NmukNgoIsQma7Fz5TLO7B+8dveFU+zue54zM2d2dplqqv+koof3FC7gNE7gcLj/DZ/wDi/wYVKDO4/3qDrGBs79S8HjeNWjYBwvsdC36CX8TMC2cQMncSDEElbCs9j/Axe7FCxwF3sJyDMMGnIHWEvk7eGOhv1U4GEicVS0y0YsMsUrrOYY9zMJ25pnGmseOxnWvdh8NWOs1D0d11wAfEGJYbg3rpsNvCsj0yJ2G4yLEXSY8Awjz1IDb3fE3GwwVf5e5jLhKSPPoIW5OYNZk1fbRpydwfUwipyORdePE55HLTnjqnBtdLEqvywrUeKcuqel/Oa61cB7EMPWM8a+r9MhfM2w3kq09gi2Mglruh8gzzOMrVAjqaPqr0uu+HzLTHNFNwK7UfvxNAPYUR8OyzgYYlnd09zyPgnMTipwWfqd7RplYPT52fijgfrLkptNblVua9mQXUezD2dwVn0cLqh7Ct/xGR/xGm/wqyN3qqkmr98Yh/1ZwqXF1gAAAABJRU5ErkJggg==" class="icon__social">  Marcar como ya visto</li>
+            <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABi0lEQVRIia3VP0+UQRAG8B8vqAkdDRo5DwFttLAwlsYeomD8AkpCCfp11GhsbIwWJnY2FpaYWAoVgon/TTwNIoFgce8l63vse3Pik0yy2Zl5npndzc6AejQxixmcRKPcf4c1PMNTbPTg6cIYbmMHez1sF4/KAkKYw48AcdVauNKL/GZZUb/kaTdLdZX3Q/4dvzIiXZ00gsfyCTcwkuQewctKXAvHU4F7AfJNnM10/2Kf+LsdZ1PstdypkB7COZzHq33id9AY0n7ng5nKUjxP1sN4jdM18YOYLTAdIIf3yfpSD/IOpgtMBgV+J+vRYM5UoXLbQQwE48bgp/zFXgwSrWbyWwU+RsvO4DAmMr4PBVYOKHAKQxnfKtySP6I3WC7tTJJ4OdlfqclfhHFs1wR17EIicD0Qv40TBd7iYT9nEsQDySBq4tt/7OCrcvoVZcI6FkrnQbGHee2x2oUF+ZkQ6WC35KjFNXz5B4HPuBppEY7hPrYCAlva8+RolLwqtIQn/h42c3isPcNrP74/RDzoKLgC1hYAAAAASUVORK5CYII=" class="icon__social">   Facebook</li>
+            <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABWklEQVRIid3UPUtcQRTG8Z/KNtFGCyUoimBlK4IoNhF8AYsglmKr38BCIrERUqRJE8HGNPkCKay0sLfQwi2sjArbKCwiUbK+FHcHlstedtbdRh+Y4s6c83/OHO4c3ota64zvwFec4QGX+Im+iphhfAwf3/EpEt6FYzxXWdfYxD4O0RKSLnCL2QiD3xnwypXHHD6HpH/lgxI2kMuAd+MxwuA/rtAfEvOpgFMsoi1lMBUBD/kDlYnrGYGX+IEFDGEm0uBL+urtOIpMjlmrARx+z+Nyzx7Tzq9UIb1x0MTqn6X6DxN4ahI8n3WttSaZfMsyyGEeJw3A79GbZdCJYoPVb2fBg1YaaNN5uciaWpLMpnrgJUzGwINyWMZdBPxBMlaiNYJdycCqBS9iuhZwHDvYk7zA2Lb8UeVBZWkQW/hbA3qDXxiLBbdU2RvEKHrwQdKqguSFnmjevHojegFjNQfqgkRRTwAAAABJRU5ErkJggg==" class="icon__social">  Twitter</li>
+            <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/AP+gvaeTAAACW0lEQVRIiZ3WO2zPURQH8E//qMdA0RANHSQWUgOGJkiIIiJMqDCYLEKaaCKRGCSopiQGo9liJ2HwiIHNIxIxWEibNKX1SqpFGe79+1+/3v+jTnJyb37ne16/e849t0l9asY27MZKtMXvQ3iPu3iIHw3YylIL+vEJv+vwGPqwaKZOjuBjAw6K/AHdjTgo4fJ/OEh5CpfQVMtRNSfDuIb96MAabMEZvKyic7Gak6MxmhQ8jrOYWyO4JhzGaCazw0Vwi+ln8gVbE8wqnMZ13EAvViTydRgp2BhRKJD+TOoHomyW8Et/ZjBfcTCxsy+D6SsLm00v4ftVghjCRAE7iU0J/nFBPoo5sCsTxbGotDbJ5Hj8tjgGkuJvJ45OZux1wdWMYH1UGlDpj7RcDxTw48Ivhu0ZewMltJtOw3HdENfBqFCmos48LI/7Dxl77SX/Vk6Z5sd1QVwXJrLNQsmnVD4LWJKx11ZSSTmllXF9G9e0j86jtYB/ju9x35GxpyT0T5F2xPUUPuNXJoiU7iT7vRn5UAmvM4IedAoVNhvfEtlwAftRaGJCNrsz9t6Rb7Ii30yUNuCZUGlPsDF+n42nVfS7CAdfbyT0RGO530Zo+ltVdMfEhiXfSyl3RtwDnBPKmVBIe/Cihu7fKwiWCvWfA05Ew8tUrp9JvBEu3loBTrtUCWMiB34V5efqGC3ylBrT9kpG4ZbQR4MZWS2uOvgI91lxZFzAiRlmclGdUV6mbpUz6xWeVY04GcGhRhyk1Co8Mu404GBUnedWI+k1CyN9J1arXMKDQsffwyN1HpB/AESDR0+2TmmqAAAAAElFTkSuQmCC" class="icon__social">  Pinterest</li>
+        </ul>
+    </div>
+    </main>
+    <footer class="footerRakuten">
+        <h4>Rakuten TV - Tu cine en casa</h4>
+        <p class="help-text">Rakuten TV proporciona una serie de servicios que ofrecen todo un universo de contenidos en solo unos clics. Disfruta de una verdadera experiencia cinematográfica con los últimos estrenos, servicios de suscripción premium y una serie de canales temáticos gratis, como Movies, Euronews, Kids TV, Viki, Documentaries y Rakuten Stories, un canal que incorpora el contenido original y exclusivo de Rakuten TV.</p>
+        <div class="explain">
+            <div class="firstexplain">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAEoklEQVR4nO2dv3PURhTH3yZMKMBmwEARZkKV/BuQAVJgCmaA9ElN3GbidMTQhC7/SAYmRQg1v8Ep4dIkZEKRiQuwmQkUfFLsKifLd+eTtKt9unufxrZk7fuuvnq7q9vTSsQwDMMwDMMwDMMwDMMwDMPoPy5FocBREVkRkWUR+VhE9qWIE4nXIjIQkZ9E5Afn3N+Z9cQFuAS8op+8Ai7mPofRwJvxLlTuR+AEoDk7BNgHnARuBN3vZsIU4CjDzPg6t54mAKtB/0vgSG49rQDWiszIraUNwM1Qjyu5tbQC+DVU5ETkcp/t0u4PIsf7NJT7JGa5nQNshorsz62lDcBC0cHn1tKK4nLNrSMGOevyXo6gxniSGgJs7NL+52JQ0TmyHwLeAFdTnqNkFDWtbsulpw6jdAeWgH9z6WrFLBoyal9qrA9Rhhni+S23gOj0ucmqYk1WZiaMspZE5E2XWsyQybwQkeu5RTRiVpusrrEMUYYZogwzRBkzbQiwF1gB7gFb037QVTp+GrZC+V8Be3PWdxvaOnXgGMNJs65YB47lqvM2NBmCz4zCjOfABWAhUawF4DzwtGRK/kxRZshKyYxDHcU8GOIBXO4i5m6CNBlyP8i5UPO4QaUJelbz+EvhuLv1FCdAmSHF/H6SZmpC3MUQN/98vDJDdmjpS+yZHvYWEH8qeaop4KxozpDUOqqxLEMUQu4vSFiGbI9Nwy9IzF2GANfC1Uv1Km66T0ZMATvnNkQk3w1iXzIknMxD4fdtV3HTfeNi56r/DiHlbRq0TGq+Iu0blLe3MWTumiwReYufKx81Z950XzT2pChUOddF5AXwgYi8FZHv2+5zzn1SDZLStKnoS5PVVezQ56zVPX4eM6QTnHONRlhz14c0HdpO2qeSvjRZk4avLfaNHGVlpUeGpBj29uazLC1fYi7rUD3sjYaaVJXJWoCrlb5gLcK+aBkSDTVCpHstfWqyjJqYIcowQ5SR+rFofXPN84Lm+5Au4sWKPRf3IXOZqZqHval19SZD5vLK1ILmPsQyxGiMGaIMM0QZZogyUs+pb2gZCveFpIY45w6nLH8cfb4IrMlSRm8MAc4BD/DPhT8AlnNrUk3Kj06CGb8Dp/BrtZ8Of480pc83htFIbMhD4FRl2xng/jRa+mRItPeHFCKcc9HfSYJ/qvVD59xWaduCiPzlnFvcTQvwj4gsxdZVYqMYwKQ8D7Vg+GaE6EuNhww5Xdk2dYZ0iaYmaz1oOZmg7KIPOQPsBz4D/gDOjvl/MwT4Lmi5kaj8ZfwKDZvh50gzwv82OinAceA2fiT3C/BRgzLUGFJ+octqZi1NDbkNfIMfya0Ct7qKnQTgIsNXHt3Ev4uj89dXtDBks9CLX+Wn9hIZqgwR+d+Ul+ig1lon+GZqFd9PfUvNDAEOhLj51zopAxwBrgCPGS4Ek4PzNXUfB24FzT9Tsw8BPg9x868GpAngy3BingIHO4q5BPwZ4uZfL0sTwPvAo3BynuPXsdpxAxkp1mLIjMKMdfyDoUaZcMU+TNIQjkfPmosaAfYAX+DvW14nMmETuANcxjLDMAzDMAzDMAzDMGaM/wDEJf6bB5TueAAAAABJRU5ErkJggg==">
+            <h4>Cómo funciona</h4>
+            <p>RakutenTV es compatible con casi todos los dispositivos</p>
+            </div>
+            <div class="secondexplain">
+                <img src="data:image/png;base64,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">
+                <h4>Mas formas de pago</h4>
+                <p>Rakuten es compatible con VISA, Paypal y MasterCard</p>
+            </div>
+            <div class="thirdexplain">
+                <img src="data:image/png;base64,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">
+                <h4>Ayuda y soporte</h4>
+                <p>¿Tienes problemas con el servicio? ponte en contacto con nosotros</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
