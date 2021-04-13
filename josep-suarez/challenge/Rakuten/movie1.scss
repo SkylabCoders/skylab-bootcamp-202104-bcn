@@ -10,8 +10,8 @@
   height: 20px;
 }
 @mixin hover-style {
-  filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
-    brightness(97%) contrast(95%);
+  filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(25deg)
+    brightness(160%) contrast(95%);
   cursor: pointer;
 }
 $letra-web: NotoSans-Bold, Arial, sans-serif;
@@ -278,6 +278,7 @@ $letra-web: NotoSans-Bold, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   font-family: $letra-web;
+  font-size: 14px;
   position: absolute;
   background-color: black;
   color: white;

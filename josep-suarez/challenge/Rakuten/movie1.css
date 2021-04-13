@@ -209,8 +209,8 @@
 }
 
 .movie__picture--actions .pin:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(25deg) brightness(160%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(25deg) brightness(160%) contrast(95%);
   cursor: pointer;
 }
 
@@ -351,8 +351,8 @@
 }
 
 .social__media--list li:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(25deg) brightness(160%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(25deg) brightness(160%) contrast(95%);
   cursor: pointer;
 }
 
@@ -362,8 +362,8 @@
 }
 
 .icon__social:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(25deg) brightness(160%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(25deg) brightness(160%) contrast(95%);
   cursor: pointer;
 }
 
@@ -376,6 +376,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: NotoSans-Bold, Arial, sans-serif;
+  font-size: 14px;
   position: absolute;
   background-color: black;
   color: white;
