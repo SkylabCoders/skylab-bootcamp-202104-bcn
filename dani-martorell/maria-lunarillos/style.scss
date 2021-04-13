@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;900&display=swap');
 
 *, *::after, *::before {
     margin: 0;
@@ -77,26 +77,27 @@ ul.main-icons li img.big-icon {
     align-items: center;
     height: 50px;
     cursor: pointer;
+
+    p {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+    }
 }
 
-.login a {
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-
-}
-.login a:hover {
-    color: #ff5959;
-
-}
 .login-icon {
-    
     width: 35px;
     height: 35px;  
     background: url('./images/sprite.svg') 0 0 no-repeat; 
 }
-.login-icon:hover {  
-    background: url('./images/sprite.svg') -37px 0 no-repeat; 
+.login:hover {
+    
+    .login-icon {
+        background: url('./images/sprite.svg') -37px 0 no-repeat; 
+    }
+    p {
+        color: #ff5959;
+    }
 }
 
 .social-icons{
@@ -234,6 +235,10 @@ header .logo img{
 .buscador {
     display: flex;
     margin-bottom: 10px;
+
+    a {
+        text-decoration: none;
+    }
 }
 .novedades {
     display: flex;
@@ -241,14 +246,22 @@ header .logo img{
     height: 30px;
     background-color: #9FAA4D;
     color: white;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1px;
-    padding: 5px;
+    padding: 5px; 
+        
+        &:hover {
+            text-decoration: none;
+            color: white;
+        }
 }
+
+
 .novedades-icono {
     width: 30px;  
     height: 35px;
     background: url('./images/sprite.svg') -247px 0px no-repeat; 
+
 }
 .ofertas {
     display: flex;
@@ -256,9 +269,14 @@ header .logo img{
     height: 30px;
     background-color: #8E789D;
     color: white;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1px;
     padding: 5px;
+
+        &:hover {
+            text-decoration: none;
+            color: white;
+        }
 }
 .ofertas-icono {
     width: 30px; 
@@ -316,7 +334,7 @@ header .logo img{
     color: black;
     margin-top: 20px;
     font-size:15px;
-    font-weight: 800;
+    font-weight: 400;
 }
 .utensilios img {
     width: 100px;
@@ -395,7 +413,7 @@ header .logo img{
         font-size: 30px;
         font-weight: 900;
         display: inline-block;
-        line-height: 80px;
+        line-height: 70px;
         text-transform: uppercase;
     }
     h1:before {
@@ -469,6 +487,18 @@ header .logo img{
     width: 320px;
     background-color: #ffffffcc;
     opacity: 0.8;
+    padding: 20px;
+    text-align: left;
+        h2 {
+            font-size: 23px;
+            font-weight: 600;
+            color: #43403d;
+            margin-bottom:14px;
+        }
+        span {
+            line-height: 19px;
+            display:inline-block;
+        }
     
 }
 
