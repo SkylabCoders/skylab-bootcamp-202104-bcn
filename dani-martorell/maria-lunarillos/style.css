@@ -302,7 +302,7 @@ header .logo img{
 }
 .secciones li {
     list-style: none;
-    margin-right: 6px;
+    margin-right: 4px;
 }
 
 .utensilios {
@@ -331,6 +331,13 @@ header .logo img{
     background-color: #ff5959;
 }
 
+.secciones li:last-child img:hover{
+    background-color: #F8F8F8;
+}
 .secciones li:last-child a{
     color: #ff5959;
 }
+.secciones li:last-child a:hover{
+    color: black;
+}
+
