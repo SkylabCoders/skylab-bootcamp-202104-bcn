@@ -74,6 +74,7 @@ body {
 
 .topbar_navigationbar {
     display: flex;
+    margin-top: 1.5%;
 }
 
 .fab {
@@ -97,6 +98,7 @@ body {
 /* SUBBAR */
 
 .subbar {
+    padding: 0% 10% 0% 8%;
     margin-top: 50px;
     display: flex;
     flex-direction: row;
