@@ -539,4 +539,39 @@ body {
   font-size: 1.5em;
   padding: 1vw 0px 1vw 2vw;
 }
+
+.genre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  width: 0px;
+  font-size: 1em;
+}
+
+.genre img {
+  border: none;
+  outline: none;
+  padding-left: 3.6em;
+}
+
+.genre img:hover {
+  border: none;
+  outline: none;
+}
+
+.genre img:focus {
+  border: none;
+  outline: none;
+}
+
+.genre h3 {
+  font-size: 1em;
+  text-align: center;
+  padding-top: 1em;
+}
+
+.genre__all {
+  width: 10.5em;
+}
 /*# sourceMappingURL=form.css.map */
