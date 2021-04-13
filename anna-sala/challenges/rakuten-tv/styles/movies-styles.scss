@@ -5,7 +5,7 @@
     margin-left: 20px;
     margin-top: 30px;
 }
-.movie-header{}
+.movie-header{
 
 &__image{
     background: linear-gradient(to bottom, transparent 75%, black),
@@ -79,7 +79,7 @@
             }
         }
     }
-
+}
 body{
     background-color: #f1f1f1;
 }
