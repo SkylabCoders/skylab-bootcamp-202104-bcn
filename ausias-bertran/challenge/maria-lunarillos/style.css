@@ -50,6 +50,7 @@ body {
     height: 140px;
     background-color: rgb(255, 89, 89);
     display: flex;
+    justify-content: center;
     align-items: flex-end;
 }
 
@@ -58,6 +59,7 @@ body {
     height: 70px;
     background-color: rgb(97, 153, 175);
     display: flex;
+    justify-content: center;
     align-items: flex-end;
 }
 
@@ -71,6 +73,7 @@ body {
     height: 70px;
     background-color: rgb(246, 180, 54);
     display: flex;
+    justify-content: center;
     align-items: flex-end;
 }
 
@@ -83,8 +86,14 @@ body {
     width: 27px;
     height: 27px;
     background-color: white;
-    background-image: src="ausias-bertran/challenge/maria-lunarillos/media/sprite.svg";
-    
+    background: url("./media/sprite.svg") 0 0;
+}
+
+.icon:hover {
+    width: 27px;
+    height: 27px;
+    background-color: white;
+    background: url("./media/sprite.svg") 313px 0;
 }
 
 #register {
@@ -93,6 +102,29 @@ body {
     display: flex;
     flex-direction: row;
     margin: auto;
+}
+
+#register :hover {
+    width: 158.85px;
+    height: 49.6px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    color: rgb(255, 89, 89);
+}
+
+.icon-charriot {
+    width: 35px;
+    height: 35px;
+        background: url("./media/sprite.svg") 277px 0px;
+
+}
+
+.icon-charriot:hover {
+    width: 35px;
+    height: 35px;
+        background: url("./media/sprite.svg") 236px 0px;
+        background-color: rgb(255, 89, 89);
 }
 
 .qty{
@@ -121,6 +153,34 @@ a.links * {
     height: 100px;
 }
 
+.twitter {
+    width: 35px;
+    height: 35px;
+    background: url("./media/sprite.svg") 0 0;
+    
+}
+
+.instagram {
+    width: 35px;
+    height: 35px;
+    background: url("./media/sprite.svg") 0 0;
+    
+}
+
+.pinterest {
+    width: 35px;
+    height: 35px;
+    background: url("./media/sprite.svg") 0 0;
+    
+}
+
+.youtube {
+    width: 35px;
+    height: 35px;
+    background: url("./media/sprite.svg") 165px 540px;
+
+}
+
 main {
     width:  85%;
     justify-content: center;
@@ -144,7 +204,8 @@ header {
 }
 
 .large-image {
-    padding-bottom: 5%;
+    padding-bottom: 10%;
+    margin-left: -7px;
 }
 
 .quick-access {
@@ -226,6 +287,18 @@ header {
 #blog-link {
     justify-self: flex-end;
     margin-left: 0px;
+}    
+
+.unfinished-next-section {
+    width: 140%;
+    height: 600px;
+    text-align: center;
+    font-size: larger;
+    color: limegreen;
+    background-color: #c1d6e7;
+    margin-left: -20vw;
+    display: flex;
+    justify-content: center;
 }
 
 .gallery {
@@ -239,81 +312,136 @@ header {
 
 
 
-.triangulo-equilatero-bottom-left {
-     width: 0;
-     height: 0;
-     border-right: 50px solid transparent;
-     border-top: 50px solid transparent;
-     border-left: 50px solid #FFFFFF;
-     border-bottom: 50px solid #FFFFFF;
-     opacity: 0.5;
-}
-
 section {
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: #f8f8f8;
-}
+}    
 
 .section-head {
     width: 100%;
     height: 259px;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+    border: 1px solid red;
+}    
 
 .section-icon {
     width: 100%;
     height: 125px;
     border: 1px solid red;
-}
+}    
 
 .section-title{
     width: 100%;
     height: 70px;
     color: #2E2925;
+    text-align: center;
+    text-transform: uppercase;
+
     border: 1px solid red;
-}
+}    
 
 .section-gallery {
     width: 100%;
     height: 615px;
     display: flex;
-    
-    border: 1px solid red;
+    /* background-color: pink;
+    border: 1px solid red; */
 }
 
 .column-canvas {
-    width: 100%;
+    background-image: url("./media/moldesdereposteria.jpeg");
+    background-repeat: no-repeat;
+    width: 31%;
     height: 600px;
     padding: 7.5px;
-    border: 1px solid red;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 1px solid red; */
 }
 
 .row-canvas {
-    width: 100%;
+    width: 65%;
     height: 630px;
-
-    border: 1px solid red;
+    padding: 7.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    /* border: 1px solid red; */
 }
 
 .row-top-canvas {
+    background-image: url("./media/utensiliosbasicos.jpeg");
+    background-repeat: no-repeat;
     width: 100%;
     height: 300px;
     padding: 7.5px;
-    border: 1px solid red;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 1px solid red; */
 }
 
 .row-bottom-canvas {
+    background-image: url("./media/pequenoelectrodomestico2.jpeg");
+    background-repeat: no-repeat;
     width: 100%;
     height: 300px;
     padding: 7.5px;
-    border: 1px solid red;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 1px solid red; */
 }
+
+.section-text-box {
+    width: 100%;
+    height: 150px;
+    color: #67635F;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.section-text-backgound {
+    width: 250px;
+    height: 150px;
+    background-color: #FFFFFF;
+    opacity: 0.5;
+    position: absolute;
+
+}
+
+.section-text {
+    width: 70%;
+    height: 150px;
+    text-transform: capitalize;
+    z-index: 1;
+}
+
+.section-text-triangle {
+    width: 0;
+    height: 0;
+    border-right: 50px solid transparent;
+    border-top: 50px solid transparent;
+    border-left: 150px solid #FFFFFF;
+    border-bottom: 50px solid #FFFFFF;
+    opacity: 0.5;
+}
+
 
 
 
@@ -326,6 +454,7 @@ section {
 footer {
     width: 100%;
     height: 409px;
+    background-color: #F8F8F8;
     display: flex;
     flex-direction: column;
 }
@@ -405,14 +534,3 @@ footer {
 
 
 
-.unfinished-next-section {
-    width: 140%;
-    height: 600px;
-    text-align: center;
-    font-size: larger;
-    color: limegreen;
-    background-color: #c1d6e7;
-    margin-left: -20vw;
-    display: flex;
-    justify-content: center;
-}
