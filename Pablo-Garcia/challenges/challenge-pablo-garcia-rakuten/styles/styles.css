@@ -102,7 +102,8 @@ html {
       border-radius: 5px; }
 
 .carousel {
-  margin-top: 50px; }
+  margin-top: 50px;
+  padding: 0; }
   .carousel .carousel-indicators button {
     width: 10px;
     height: 10px;
@@ -178,13 +179,13 @@ html {
     background: transparent;
     z-index: 9; }
   .slick-slider .slick-prev:before {
-    font-family: 'slick';
     font-size: 2em;
     line-height: 1;
     opacity: .75;
     color: white;
     -webkit-font-smoothing: antialiased;
-    content: '<'; }
+    font-family: "Font Awesome 5 Brands";
+    content: "\f104"; }
   .slick-slider .slick-next:after {
     font-family: 'slick';
     font-size: 2em;

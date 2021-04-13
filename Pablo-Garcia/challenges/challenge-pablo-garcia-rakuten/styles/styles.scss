@@ -74,6 +74,7 @@
 }
 .carousel{
   margin-top: 50px;
+  padding:0;
   .carousel-indicators{
     button{
       width:10px;
@@ -158,13 +159,14 @@
     z-index: 9;
   }
   .slick-prev:before{
-    font-family: 'slick';
+    
     font-size: 2em;
     line-height: 1;
     opacity: .75;
     color: white;
     -webkit-font-smoothing: antialiased;
-    content: '<';
+    font-family: "Font Awesome 5 Brands"; content: "\f104";
+    
   }
   .slick-next:after{
     font-family: 'slick';
