@@ -148,6 +148,7 @@
     background: #fff url(./images/sprite.svg) -66px 10px no-repeat;
     margin: 0;
     position: relative;
+    cursor:pointer;
 }
 
 .icons-upperbar2 {
@@ -160,6 +161,7 @@
     font-size: 20px;
     justify-content: center;
     align-items:center;
+    cursor:pointer;
 }
 
 .header-center {
@@ -271,6 +273,7 @@
     margin-top: 105px;
     text-align: center;
     font-weight: bold;
+    letter-spacing: 0.8px;
     
 }
 
@@ -298,6 +301,7 @@
     text-align: center;
     margin-left: 8px;
     font-weight: bold;
+    letter-spacing: 0.8px;
 }
 
 .tarta {
@@ -323,6 +327,7 @@
     margin-top: 105px;
     text-align: center;
     font-weight: bold;
+    letter-spacing: 0.8px;
 }
 
 .delantal {
@@ -348,6 +353,7 @@
     margin-top: 105px;
     text-align: center;
     font-weight: bold;
+    letter-spacing: 0.8px;
 }
 
 .blog {
@@ -373,6 +379,7 @@
     margin-top: 105px;
     text-align: center;
     color: #FF5959;
+    letter-spacing: 0.8px;
 }
 
 .navigation-varietes {
@@ -397,23 +404,23 @@
     justify-content: flex-end;
     width: 100%;
     height:100%;
-    padding-top:46px;
+    padding-top:48px;
 }
 
 .novedades {
     display:flex;
     align-content: center;
     height: 30px;
-    width: 120px;
+    width: 99px;
     background-color: #9faa4d;
-    font-size: 15px;
-    font-weight: 550;
-    text-decoration: none;
-    letter-spacing: 1px;
+    font-size: 13px;
+    font-weight: 570;
+    letter-spacing: 0.8px;
     color:white;
     align-items: center;
-    margin-right:10px;
+    margin-right:6px;
     cursor:pointer;
+    padding-left: 2px;
 }
 
 .icono-novedades {
@@ -428,7 +435,7 @@
 
 .icono-ofertas {
     height: 30px;
-    width: 30px;
+    width: 35px;
     display: block;
     cursor:pointer;
     display: inline-block;
@@ -436,17 +443,13 @@
     content: '';
 }
 
-input {
-    color: #BBB8B6;
-}
-
 .ofertas {
     height: 30px;
-    width: 100px;
+    width: 80px;
     padding-right: 15px;
     text-transform: uppercase;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 570;
     text-decoration: none;
     letter-spacing: 1px;
     line-height: 30px;
@@ -454,19 +457,21 @@ input {
     cursor:pointer;
     color:white;
     background: #8e789d;
+    letter-spacing: 0.8px;
 }
 
 .buscar {
-    height: 22.7px;
-    margin-left: 10px;
+    height: 25px;
+    margin-left: 5px;
     width:240px;
+    color: #BBB8B6;
 }
 
-.button-header {
+.button-input {
     display: block;
     float: right;
-    width: 50px;
-    height: 28px;
+    width: 52px;
+    height: 30px;
     background: url(./../challenge/images/sprite.svg) -303px 2px no-repeat #BBB8B6;
     border: none;
 }
@@ -490,7 +495,7 @@ input {
 .box6 {
     height: 2286px;
     width: 100%;
-    background:rgb(246, 180, 54);
+    background:rgb(255, 255, 255);
 }
   
 .container-photo-mix {
@@ -533,7 +538,7 @@ input {
     bottom:0;
     left:0;
     background-color: rgb(255, 255, 255,0.8);
-    padding: 10px;  
+    padding: 20px;  
 }
 
 .triangulo1 {
@@ -550,7 +555,7 @@ input {
 
 .texto-triangulo {
     font-size: 20px;
-    padding-left:10px;
+    
 }
 
 
