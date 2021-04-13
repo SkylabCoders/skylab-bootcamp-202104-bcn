@@ -1,0 +1,361 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  background: none;
+  font: 12px/1.55 "Source Sans Pro", sans-serif;
+  color: #67635f;
+}
+.letter-logo {
+  width: 232px;
+  height: 140px;
+}
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+ul {
+  list-style: none;
+  display: flex;
+}
+.header-fix {
+  display: flex;
+  height: 50px;
+  background-color: #f8f8f8;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin-left: 200px;
+}
+.letter-logo {
+  display: flex;
+}
+.social-navigator {
+  display: flex;
+  align-items: flex-end;
+}
+.text {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.nav-web {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+.searching {
+  display: flex;
+}
+.login,
+.social1,
+.social2,
+.social3,
+.social4,
+.social5 {
+  height: 30px;
+  width: 30px;
+}
+.login:hover,
+.text:hover,
+.social1:hover,
+.social2:hover,
+.social3:hover,
+.social4:hover,
+.social5:hover {
+  filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
+    brightness(97%) contrast(95%);
+}
+.firstIMG {
+  background: #ff5959;
+  position: fixed;
+  top: 0;
+  width: 80px;
+  height: 140px;
+  left: 135px;
+  background: url(./image/ma.png) #ff5959 bottom center no-repeat;
+}
+.secondIMG {
+  background: #6199af;
+  position: fixed;
+  top: 0;
+  width: 70px;
+  height: 70px;
+  left: 220px;
+  background: url(./image/cucute.png) #6199af bottom center no-repeat;
+}
+.thirdIMG {
+  background: #f6b436;
+  position: fixed;
+  top: 0;
+  width: 70px;
+  height: 70px;
+  left: 295px;
+  background: url(./image/mumuchu.png) #f6b436 bottom center no-repeat;
+}
+.secondIMG:hover {
+  width: 70px;
+  height: 140px;
+}
+.thirdIMG:hover {
+  width: 70px;
+  height: 140px;
+}
+.header-webpage {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-right: 150px;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 80px;
+  margin-top: 25px;
+}
+.description-icons {
+  margin-top: 10px;
+}
+.description1,
+.description2,
+.description3 {
+  font-weight: bold;
+  margin-left: 30px;
+}
+.description4 {
+  font-weight: bold;
+  margin-left: 60px;
+}
+.description5 {
+  font-weight: bold;
+  margin-left: 110px;
+}
+.icon5 {
+  margin-left: 50px;
+  background-color: #ff5959;
+}
+.logotipe {
+  margin-top: 30px;
+  margin-left: 200px;
+  height: 110px;
+}
+.news {
+  display: flex;
+  background-color: #9faa4d;
+  color: white;
+  margin-right: 10px;
+  width: 130px;
+  height: 30px;
+  border: none;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+.offer {
+  display: flex;
+  background-color: #8e789d;
+  color: white;
+  margin-right: 10px;
+  width: 130px;
+  height: 30px;
+  border: none;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+button {
+  border: none;
+}
+
+.textfield {
+  width: 200px;
+  height: 25px;
+  margin-right: 5px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.lupa2 {
+  background-color: #f8f8f8;
+  border: 1px solid black;
+  height: 25px;
+  width: 25px;
+}
+.lupa {
+  background-color: #f8f8f8;
+  border: none;
+  height: 15px;
+  width: 15px;
+}
+.person-search {
+  display: flex;
+}
+.star,
+.circle {
+  width: 20px;
+  height: 20px;
+  justify-self: flex-start;
+  margin-right: 5px;
+}
+.register {
+  margin-right: 125px;
+}
+.cart {
+  display: flex;
+  margin-left: 50px;
+}
+.cart-image {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+}
+.social-navigator {
+  margin-right: 250px;
+}
+.elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff5959;
+  color: white;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin: auto;
+  font-weight: bolder;
+  font-size: large;
+}
+.elements:hover {
+  background: white;
+  color: black;
+}
+.icon1,
+.icon2,
+.icon3,
+.icon4 {
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  background: #f8f8f8;
+}
+.icon5 {
+  width: 100px;
+  height: 100px;
+}
+.cart-image:hover,
+.icon1:hover,
+.icon2:hover,
+.icon3:hover,
+.icon4:hover {
+  background-color: #ff5959;
+}
+.icon5:hover {
+  background-color: white;
+}
+.social-media1:hover,
+.social-media2:hover,
+.social-media3:hover,
+.social-media4:hover,
+.social-media5:hover {
+  color: #ff5959;
+}
+.change-to-page {
+  margin-top: 30px;
+}
+.bodyPage {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 100px;
+  width: 100%;
+  height: 700px;
+  background: #f8f8f8;
+}
+.imagenSeccion {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin: 0 auto;
+  height: 80px;
+  width: 80px;
+}
+.titleSection {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  width: 150px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.fotosSeccion {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-left: 120px;
+  margin-right: 20px;
+  margin-top: 30px;
+  height: 600px;
+  color: black;
+  background: url("image/body1.jpg") no-repeat;
+}
+.fotosSeccion-columna {
+  display: flex;
+}
+.first-foto-columna {
+  background: url("image/body2.jpg") no-repeat;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  margin-top: 30px;
+  height: 300px;
+  color: black;
+  margin-bottom: 20px;
+}
+.second-foto-columna {
+  background: url("image/body3.jpg") no-repeat;
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  width: 100%;
+  color: black;
+  align-items: flex-end;
+}
+.first-cube {
+  font-size: smaller;
+  background-color: rgba(241, 241, 241, 0.918);
+  height: 100px;
+  width: 220px;
+}
+.second-cube {
+  font-size: smaller;
+  background-color: rgba(241, 241, 241, 0.918);
+  width: 115px;
+  height: 100px;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid rgba(241, 241, 241, 0.918);
+  border-right: 100px solid transparent;
+}
+.triangle-second {
+  width: 0;
+  height: 0px;
+  margin-left: 400px;
+  border-bottom: 100px solid rgba(241, 241, 241, 0.918);
+  border-left: 100px solid transparent;
+}
+.first-triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid rgba(241, 241, 241, 0.918);
+  border-right: 100px solid transparent;
+}
