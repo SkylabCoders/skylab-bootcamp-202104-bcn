@@ -463,12 +463,10 @@ header {
 
 .description-item {
   position: absolute;
-  top: 50%;
   width: 250px;
   background: #fff;
   opacity: 0.8;
   height: 150px;
-  padding: 10px;
 }
 
 .description-item::after {
@@ -488,6 +486,7 @@ header {
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
+  padding: 0 10px;
 }
 
 .description-item p {
