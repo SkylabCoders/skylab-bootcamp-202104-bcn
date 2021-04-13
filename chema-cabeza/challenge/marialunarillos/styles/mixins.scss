@@ -52,8 +52,6 @@
 }
 
 @mixin caption-shape1 {
-    // bottom: $bottom;
-    // right: $right;
     background-color: white;
     opacity: 70%;
     width: 260px;
@@ -61,8 +59,6 @@
     
 }
 @mixin caption-shape2 {
-    // bottom: $bottom;
-    // right: $right;
     opacity: 70%;
     width: 0;
     height: 0;
