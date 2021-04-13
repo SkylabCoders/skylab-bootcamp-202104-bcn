@@ -363,14 +363,4 @@ body {
   width: 80px;
   height: 80px;
 }
-
-.copy {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  left: 0;
-  margin-top: 10px;
-  color: white;
-  margin-top: 60vh;
-}
 /*# sourceMappingURL=main.css.map */
