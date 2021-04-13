@@ -9,3 +9,33 @@
         margin-left: 135px;
     }
 }
+
+.images{
+    display: flex;
+    justify-content: space-evenly;
+    width: 1095px;
+    height: 630px;
+    border: 1px solid red;
+    background-color: lightpink;
+    margin: 0 auto;
+
+    &__left {
+        margin-top: 10px;
+        width: 350px;
+        height: 615px;
+        border: 2px solid black;
+    }
+
+    &__right{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        &-first,
+        &-second  {
+            width: 715px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    }
+}
