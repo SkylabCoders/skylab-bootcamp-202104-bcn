@@ -706,3 +706,21 @@ header {
 .contacto-items {
     display: flex;
 }
+
+#copyright {
+    width: 100%;
+    margin: 0 auto;
+    background-color: $red-color-corp;
+}
+
+#copy-content {
+    max-width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#copy-content span{
+    color: white;
+    font-size: 14px;
+    line-height: 50px;
+}

@@ -788,4 +788,22 @@ header {
   display: -ms-flexbox;
   display: flex;
 }
+
+#copyright {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #ff5959;
+}
+
+#copy-content {
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#copy-content span {
+  color: white;
+  font-size: 14px;
+  line-height: 50px;
+}
 /*# sourceMappingURL=styles.css.map */
