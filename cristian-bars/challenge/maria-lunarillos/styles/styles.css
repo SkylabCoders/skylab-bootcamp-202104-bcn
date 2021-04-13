@@ -456,9 +456,20 @@ header {
   margin: 0 auto;
 }
 
+<<<<<<< HEAD
 #items-section .col-2 {
   max-width: unset !important;
   width: 50% !important;
+=======
+.horitzontals .col-2 {
+  padding: 0 !important;
+}
+
+#items-section .col-2 {
+  max-width: unset !important;
+  width: 50% !important;
+  padding: 10px;
+>>>>>>> 1532351bd8cb1548fe6567ec37a08611daadb5bc
 }
 
 .description-item {
@@ -495,6 +506,7 @@ header {
   line-height: 18px;
 }
 
+<<<<<<< HEAD
 .row {
   padding: 30px 10px;
 }
@@ -503,6 +515,8 @@ header {
   padding-bottom: 15px;
 }
 
+=======
+>>>>>>> 1532351bd8cb1548fe6567ec37a08611daadb5bc
 .vertical {
   top: 80%;
 }
