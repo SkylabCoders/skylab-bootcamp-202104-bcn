@@ -83,24 +83,87 @@ body {
   margin-top: 20px;
 }
 
-.header-fix__nav--left select {
-  border: none;
-  display: block;
-  background-color: black;
-  color: white;
-  font-family: NotoSans-Bold, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
+.header-fix__nav--left p {
+  margin-top: 8px;
+  margin-left: 5px;
+}
+
+.header-fix__nav--left ul {
+  list-style: none;
+  display: none;
+  position: fixed;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  width: 80px;
-  margin-top: 9px;
+  width: 200px;
+  height: 90px;
+  background-color: black;
+  margin-top: 40px;
 }
 
-.gratis,
+.drop-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.header-fix__nav--left:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+.header-fix__nav--left:hover .drop-list {
+  color: white;
+  display: block;
+}
+
+.header-fix__nav--left:hover .drop-list li:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+.drop__list--right {
+  list-style: none;
+  display: none;
+  position: fixed;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  margin-top: 40px;
+}
+
+.header-fix__nav--right:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+.header-fix__nav--right:hover .drop__list--right {
+  color: white;
+  display: block;
+}
+
+.header-fix__nav--right:hover .drop__list--right li:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+.gratis {
+  margin-right: 10px;
+  margin-left: 20px;
+  margin-top: 28px;
+}
+
 .suscripciones {
-  margin-right: 20px;
+  margin-top: 9px;
+  margin-left: -20px;
+}
+
+.header-fix__nav--arrow {
   margin-top: 9px;
 }
 
@@ -109,6 +172,7 @@ body {
   width: 200px;
   background-color: #333;
   border-radius: 2px;
+  margin-left: 10px;
   margin-bottom: 5px;
   border: 0px solid;
 }
