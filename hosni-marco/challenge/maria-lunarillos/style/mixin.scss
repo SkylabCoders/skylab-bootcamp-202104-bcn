@@ -1,3 +1,8 @@
+$register-background-position-init: 4px 5px;
+$register-background-position-hover: -33px 5px;
+$register-color-text-init: black;
+$register-color-text-hover: red;
+
 @mixin link-size ($heigh, $width){
     float: left;
     height: $heigh;
@@ -26,8 +31,3 @@
     list-style: none;
     margin-right: $margin-right;
 }
-
-$register-background-position-init: 4px 5px;
-$register-background-position-hover: -33px 5px;
-$register-color-text-init: black;
-$register-color-text-hover: red;
