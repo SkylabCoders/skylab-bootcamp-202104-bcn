@@ -31,3 +31,18 @@ $register-color-text-hover: red;
     list-style: none;
     margin-right: $margin-right;
 }
+
+@mixin common-quick-acces-icon {
+    background: yellow;        
+        height: 100px;
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 40px;
+}
+
+@mixin common-quick-acces-text {
+    display: flex;
+        justify-content: center;
+        list-style: none;
+        border: solid blueviolet;
+}
