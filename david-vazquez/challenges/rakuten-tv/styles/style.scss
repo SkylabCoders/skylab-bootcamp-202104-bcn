@@ -56,6 +56,7 @@ a:active {
   position: fixed;
   height: 60px;
   width: 100%;
+  margin: auto;
   padding: 0 20px;
   z-index: 2;
 }
@@ -193,13 +194,10 @@ main {
 }
 
 .slider {
+  //width: 900%;
+  width: 100%;
   margin-top: 60px;
-  margin-bottom: 0;
-  width: 900%;
-  display: flex;
-  overflow: hidden;
-  flex-direction: row;
-  animation: cambio 20s infinite alternate;
+  //animation: cambio 20s infinite alternate;
 }
 
 .slider:hover {
@@ -574,20 +572,61 @@ main {
   width: 100%;
   padding: 0;
   margin: 0;
+  .header-icon:hover {
+    color: $color-yellow;
+  }
 }
 
 .search-media {
+  z-index: 5;
+  display: none;
   width: 100%;
-  outline: none;
-  background-color: white;
-  height: 50px;
-  margin-top: 100px;
+  overflow: hidden;
+  position: relative;
+  display: none;
+  .bar {
+    visibility: hidden;
+    margin: auto;
+    width: 100%;
+    outline: none;
+    background-color: white;
+    height: 60px;
+    outline: none;
+    border: none;
+    font-size: 22px;
+  }
+  .icon-lupa {
+    filter: brightness(10);
+    display: block;
+    width: 30px;
+    background-image: url("./../img/Vector_search_icon.svg");
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: 20px;
+    position: absolute;
+    z-index: 10;
+    height: 60px;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+}
+
+.footer-link-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-media:hover {
+  .bar {
+    visibility: visible;
+  }
 }
 
 @media (max-width: 1024px) {
   .nav-bar {
     background-color: transparent;
-    position: absolute;
   }
   .nav-bar-menu {
     display: none;
@@ -607,6 +646,29 @@ main {
   }
   .nav-bar-search {
     display: none;
+  }
+  .search-media {
+    display: block;
+  }
+  .slider {
+    margin-top: -60px;
+  }
+  .footer-info {
+    display: none;
+  }
+  .footer-list-link {
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  .footer-link-box {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 30px;
+    justify-content: center;
+  }
+  .copy {
+    margin-bottom: 50px;
   }
 }
 
