@@ -1,11 +1,11 @@
 @import "../style/navbar";
 @import "../style/variables";
 
-body {
+*, *::after, *::before {
     margin: 0;
-    font: 12px/1.55 'Source Sans Pro', sans-serif;
-    background-color: $mainRed;
-}
+    padding: 0;
+    box-sizing: border-box;
+  }
 
 .header-info {
     display: flex;

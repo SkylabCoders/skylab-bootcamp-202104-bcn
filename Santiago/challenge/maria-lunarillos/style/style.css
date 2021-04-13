@@ -1,177 +1,78 @@
-.navbar {
-  position: fixed;
+header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  width: 100%;
-  height: 50px;
-  background: #F8F8F8;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.blocks__first {
+.header__navbar {
   position: fixed;
   top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #f8f8f8;
+}
+
+.header__navbar-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 135.50px;
+  margin-right: 135.50px;
+  height: 50px;
+  position: absolute;
+}
+
+.header__navbar-wrapper-links {
+  width: 232px;
+  height: 140px;
+}
+
+.header__navbar-wrapper-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style: none;
+}
+
+.list__ma {
   width: 80px;
   height: 140px;
-  left: 135px;
   background: url(../images/maria-lunarillos.png) #FF5959 bottom center no-repeat;
 }
 
-.blocks__second,
-.blocks__third {
-  position: fixed;
-  top: 0;
+.list__cu, .list__mu {
   width: 70px;
   height: 70px;
 }
 
-.blocks__second {
-  left: 219px;
+.list__cu:hover, .list__mu:hover {
+  height: 140px;
+}
+
+.list__cu {
   background: url(../images/cucute.png) #6199AF bottom center no-repeat;
 }
 
-.blocks__second:hover {
-  width: 70px;
-  height: 140px;
-}
-
-.blocks__third {
-  left: 293px;
+.list__mu {
   background: url(../images/mumuchu.png) #F6B436 bottom center no-repeat;
 }
 
-.blocks__third:hover {
-  width: 70px;
-  height: 140px;
+.header__section {
+  height: 310px;
+  background-color: lightgrey;
 }
 
-.login {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 15px 7px 10px;
-}
-
-.login__icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background: url("../images/sprite.svg") 0 0 no-repeat;
-  width: 27px;
-  height: 27px;
-  margin: -3px;
-  padding-right: 10px;
-}
-
-.media {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: -190px;
-}
-
-.media:hover {
-  color: #FF5959;
-}
-
-.media__facebook {
-  background: url(https://img.icons8.com/material/24/000000/facebook-f.png);
-}
-
-.media__facebook:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-}
-
-.media__twitter {
-  background: url(https://img.icons8.com/material/24/000000/twitter-squared.png);
-}
-
-.media__twitter:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-}
-
-.media__instagram {
-  background: url(https://img.icons8.com/metro/26/000000/instagram-new.png);
-}
-
-.media__instagram:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-}
-
-.media__pinterest {
-  background: url(https://img.icons8.com/ios/24/000000/pinterest--v1.png);
-}
-
-.media__pinterest:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-}
-
-.media__youtube {
-  background: url(https://img.icons8.com/material/24/000000/youtube--v1.png);
-}
-
-.media__youtube:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-}
-
-.media__facebook, .media__twitter, .media__instagram, .media__pinterest, .media__youtube {
-  width: 25px;
-  height: 25px;
-  margin: 15px 7px 0;
-  display: block;
-  text-indent: -3000px;
-}
-
-.checkout {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: -36px;
-}
-
-.checkout__carrito:hover {
-  background-color: #FF5959;
-  color: white;
-}
-
-.checkout__carrito, .checkout__items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 46px;
-  height: 50px;
-}
-
-.checkout__carrito {
-  display: block;
-  text-indent: -3000px;
-  background: url(https://img.icons8.com/material/48/000000/checkout--v1.png) white;
-}
-
-.checkout__items {
-  background-color: #FF5959;
-  color: white;
-  font-size: 15px;
-}
-
-body {
+*, *::after, *::before {
   margin: 0;
-  font: 12px/1.55 'Source Sans Pro', sans-serif;
-  background-color: #FF5959;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .header-info {
