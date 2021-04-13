@@ -698,14 +698,14 @@ header .logo img {
 }
 
 .info-icons ul li:nth-of-type(3):hover .element3__icon {
-  background: url("./images/sprite.svg") -150px -116px no-repeat;
+  background: url("./images/sprite.svg") -143px -106px no-repeat;
 }
 
 .info-icons ul .element3__icon {
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 65px;
   margin-bottom: -35px;
-  background: url("./images/sprite.svg") -150px -45px no-repeat;
+  background: url("./images/sprite.svg") -143px -35px no-repeat;
 }
 
 .info-icons ul li:nth-of-type(4):hover .element4__icon {
