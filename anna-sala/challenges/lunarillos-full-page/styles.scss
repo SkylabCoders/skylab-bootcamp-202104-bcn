@@ -15,20 +15,43 @@ $yellow-color: #F6B436;
     text-align: center;
     margin-right: 5px;
 }
+@mixin internal-links ($color) {
+    border: solid $color;
+    background-color: white;
+    padding: 20px;
+    height:60px;
+    margin-top: 5px;
+    cursor: pointer;
+    &:hover{
+        background-color: $color;
+    }
+}
+
+@mixin external-links (){
+    color: white;
+    padding: 20px;
+    list-style-type: none;
+    height:90px;
+    width: 80px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+//-------------end of mixings-------------
 *, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-header{
-    display: flex;
-    flex-direction: column;
-}
 body {
     font: 12px/1.55;
     font-family: SourceSans-Pro, Arial, sans-serif;
     color: #67635F;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
 }
 
 .links{
@@ -46,70 +69,37 @@ body {
         display: flex;
         &--red{
             background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/maria-lunarillos.png) #FF5959 bottom center no-repeat;
-        color: white;
-        padding: 20px;
-        list-style-type: none;
-        height:90px;
-        width: 80px;
-        cursor: pointer;
-        padding-top: 130px;
-        margin-right: 5px;
+            @include external-links;
+            padding-top: 130px;
         }
         &--blue{
             background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/cucute.png) #6199AF bottom center no-repeat;
-        color: white;
-        padding: 20px;
-        list-style-type: none;
-        height:90px;
-        width: 80px;
-        cursor: pointer;
-        margin-right: 5px;
+            @include external-links;
             &:hover{
                 padding-top: 130px;
             }
         }
         &--yellow{
             background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/mumuchu.png) #F6B436 bottom center no-repeat;
-        color: white;
-        padding: 20px;
-        list-style-type: none;
-        height:90px;
-        width: 80px;
-        cursor: pointer;
-        margin-right: 5px;
+            @include external-links;
             &:hover{
                 padding-top: 130px;
             }
         }
         &--user{
-            border: solid #FF5959;
-            background-color: white;
-            padding: 20px;
-            height:60px;
-            margin-top: 5px;
-            cursor: pointer;
+            @include internal-links (#FF5959);
             &:hover{
                 background-color: #FF5959;
             }
         }
         &--ssmm{
-            border: solid #6199AF;
-            background-color: white;
-            padding: 20px;
-            height:60px;
-            margin-top: 5px;
-            cursor: pointer;
+            @include internal-links (#6199AF);
             &:hover{
                 background-color: #6199AF;
             }
         }
         &--cart{
-            border: solid #F6B436;
-            background-color: white;
-            padding: 20px;
-            height:60px;
-            margin-top: 5px;
-            cursor: pointer;
+            @include internal-links (#F6B436);
             &:hover{
                 background-color: #F6B436;
             }
@@ -200,96 +190,90 @@ body {
 #img-blog:hover{
     background-color: rgb(230, 230, 230);
 }
+//---------------END OF HEADER SECTION--------------
 
-.main-container{
+.main__container{
     width: 100%;
     align-content: center;
+    .widget{
+        display: flex;
+        justify-content: center;
+    }
 }
-
-.icon-and-title{    
+.title{    
     text-align: center;
     margin-bottom: -130px;
-
-}
-
-.section-title{
-    padding: 20px 5px;
-    border-top: 1px #67635F;
-}
-
-.sub-sections{
-    background-color: #f8f8f8;
-    padding-top: 150px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
+    &__icon{
+        width:100px;
+        height: 120px;
+        background-color: #f8f8f8;
+        padding-top: 150px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    &__header{
+        padding: 20px 5px;
+        border-top: 1px #67635F;
+    }
 }
 
 .banner-sections{
     position: relative;
     align-content: center;
-}
-.banner-text{
-    display: flex;
-    flex-direction: column;
-    margin:10px;
-    position: absolute;
-    bottom: 0;
-    width: 200px;
-    font-size: 14px;
-    height: 150px;
-    background-color:rgba(255,255,255,0.8);
-    h3{
-        margin: 10px;
-        margin-top: 20px;
-        font-weight: 600;
+    &__images{
+        display: flex;
+        justify-content: center;
+        margin:10px;
+        align-content: center;
     }
-    .banner-paragraph{
-        margin: 10px;
+    &__text{
+        display: flex;
+        flex-direction: column;
+        margin:10px;
+        position: absolute;
+        bottom: 0;
+        width: 200px;
+        font-size: 14px;
+        height: 150px;
+        background-color:rgba(255,255,255,0.8);
+        h3{
+            margin: 10px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+    }
+    .inside-info{
+        &__paragraph{
+            margin: 10px;
+        }
+        &__triangle{
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-bottom: 150px solid rgba(255,255,255,0.8);
+            border-right: 100px solid transparent;
+            position: absolute;
+            right: -100px;
+            top: 0; 
+        }
     }
 }
-
-.triangle{
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-bottom: 150px solid rgba(255,255,255,0.8);
-    border-right: 100px solid transparent;
-    position: absolute;
-    right: -100px;
-    top: 0; 
-}
-
-.section-images {
-    display: flex;
-    justify-content: center;
-    margin:10px;
-    align-content: center;
-}
-
-.icon-header{
-    width:100px;
-    height: 120px;
-}
-
 
 @media only screen and (min-width: 1105px){
     #images-vertical{
         display: flex;
         flex-direction: column;
     }
-    
     #small-appliance{
         display: flex;
-        justify-content: flex-end;
         right: 100px;
     }
     
     #basic-utensils{
-        position: absolute;
         bottom: 320px;
     }
 }
@@ -309,25 +293,25 @@ body {
             object-fit: cover;
             object-position: 10% 10%;
         }  
+        &__images{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            position: relative;
+            flex-wrap: wrap;
+            width: 100%;
+            max-height: 240px;
+        }
     }
     .banner-container{
         max-height: 250px;
-    }
-    .section-images{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; 
-        position: relative;
-        flex-wrap: wrap;
-        width: 100%;
-        max-height: 240px;
     }
 }
 @media only screen and (max-width: 1105px){
     .main-header-section{
         margin-top: 30px;
     }
-    .cu, .mu{
+    .links__others--blue, .links__others--yellow{
         display: none;
     }
     .main-navigation{
@@ -343,35 +327,37 @@ body {
             object-fit: cover;
             object-position: 10% 10%;
         }  
+        &__images{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            position: relative;
+            flex-wrap: wrap;
+            width: 100%;
+            max-height: 250px;
+        }
+        &__text{
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            position: relative;
+            padding-bottom: 90px;
+            margin: 20px;
+            bottom: 140px;
+            width: 200px;
+            height: 130px;
+        }
     }
     .banner-container{
         max-height: 250px;
     }
-    .section-images{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; 
-        position: relative;
-        flex-wrap: wrap;
-        width: 100%;
-        max-height: 250px;
-    }
-    .banner-paragraph{
-        display:none;
-    }
-    .triangle{
-        display:none;
-    }
-    .banner-text{
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        position: relative;
-        padding-bottom: 90px;
-        margin: 20px;
-        bottom: 140px;
-        width: 200px;
-        height: 130px;
+    .inside-info{
+        &__paragraph{
+            display:none;
+        }
+        &__triangle{
+            display:none;
+        }
     }
 }
 
