@@ -1,131 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" type="text/css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/6f6c42e42d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/6f6c42e42d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Rakuten TV - Tu cine en casa</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="container-header">
-        <nav class="nav-bar">
-            <div class="logo"><a href="#"></a></div>
-            <ul class="nav-bar-menu">
-                <li class="nav-bar menu-item">
-                    <p>cinema</p>
-                </li>
-                <li class="nav-bar menu-item">
-                    <p>gratis</p>
-                </li>
-                <li class="nav-bar menu-item">
-                    <p>suscripciones</p>
-                </li>
-            </ul>
-            <div class="search-container">
-                <div class="search-bar">
-                    <i class="fas fa-search"></i>
-                    <input class="search" placeholder="buscar">
-                </div>
-            </div>
-            <ul class="nav-bar-user-menu">
-                <li class="user menu-item"><a href="#">ayuda y dispositivos</a></li>
-                <li class="user menu-item"><a href="#">entrar</a></li>
-                <li class="user menu-item"><a href="#">registrarse</a></li>
-            </ul>
-        </nav>
+      <nav class="nav-bar">
+        <div class="logo"><a href="#"></a></div>
+        <ul class="nav-bar-menu">
+          <li class="nav-bar menu-item">
+            <p>cinema</p>
+          </li>
+          <li class="nav-bar menu-item">
+            <p>gratis</p>
+          </li>
+          <li class="nav-bar menu-item">
+            <p>suscripciones</p>
+          </li>
+        </ul>
+        <div class="search-container">
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input class="search" placeholder="buscar" />
+          </div>
+        </div>
+        <ul class="nav-bar-user-menu">
+          <li class="user menu-item"><a href="#">ayuda y dispositivos</a></li>
+          <li class="user menu-item"><a href="#">entrar</a></li>
+          <li class="user menu-item"><a href="#">registrarse</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <div class="carousel slide" id="main-carousel" data-ride="carousel">
-            <div class="carousel-item active">
-                <img class="image" src="./images/img-slice-1.png" alt="cartel de star play">
-            </div>
-            <div class="carousel-item">
-                <img class="image" src="./images/img-slice-2.png" alt="cartel de la liga de la justicia">
-            </div>
-            <div class="carousel-item">
-                <img class="image" src="./images/img-slice-3.png" alt="cartel de para toda la vida">
-            </div>
-            <div class="carousel-item">
-                <img class="image" src="./images/img-slice-4.png" alt="cartel de raya el ultimo dragon">
-            </div>
-            <ul class="carousel-indicators">
-                <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#main-carousel" data-slide-to="1"></li>
-                <li data-target="#main-carousel" data-slide-to="2"></li>
-                <li data-target="#main-carousel" data-slide-to="3"></li>
-            </ul>
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#main-carousel" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
+      <div class="carousel slide" id="main-carousel" data-ride="carousel">
+        <div class="carousel-item active">
+          <img
+            class="image"
+            src="./images/img-slice-1.png"
+            alt="cartel de star play"
+          />
         </div>
-        <div class="top-movies">
-            <ul class="movies">
-                <li class="movie"><img src="./images/top-movie1.png" alt="topmovie1"></li>
-                <li class="movie"><img src="./images/top-movie2.png" alt="topmovie2"></li>
-                <li class="movie"><img src="./images/top-movie3.png" alt="topmovie3"></li>
-                <li class="movie"><img src="./images/top-movie4.png" alt="topmovie4"></li>
-                <li class="movie"><img src="./images/top-movie5.png" alt="topmovie5"></li>
-            </ul>
+        <div class="carousel-item">
+          <img
+            class="image"
+            src="./images/img-slice-2.png"
+            alt="cartel de la liga de la justicia"
+          />
         </div>
+        <div class="carousel-item">
+          <img
+            class="image"
+            src="./images/img-slice-3.png"
+            alt="cartel de para toda la vida"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            class="image"
+            src="./images/img-slice-4.png"
+            alt="cartel de raya el ultimo dragon"
+          />
+        </div>
+        <ul class="carousel-indicators">
+          <li
+            data-target="#main-carousel"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#main-carousel" data-slide-to="1"></li>
+          <li data-target="#main-carousel" data-slide-to="2"></li>
+          <li data-target="#main-carousel" data-slide-to="3"></li>
+        </ul>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#main-carousel"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      <div class="top-movies">
+        <ul class="movies">
+          <li class="movie">
+            <img src="./images/top-movie1.png" alt="topmovie1" />
+          </li>
+          <li class="movie">
+            <img src="./images/top-movie2.png" alt="topmovie2" />
+          </li>
+          <li class="movie">
+            <img src="./images/top-movie3.png" alt="topmovie3" />
+          </li>
+          <li class="movie">
+            <img src="./images/top-movie4.png" alt="topmovie4" />
+          </li>
+          <li class="movie">
+            <img src="./images/top-movie5.png" alt="topmovie5" />
+          </li>
+        </ul>
+      </div>
     </main>
 
     <footer>
-        <div class=“main-info”>
-            <h1 class=“footer-info-title”>rakuten tv - tu cine en casa</h1>
-            <p class=“footer-info-text”>Rakuten TV proporciona una serie de servicios que ofrecen todo un universo de
-                contenidos en solo unos clics. Disfruta de
-                una verdadera experiencia cinematográfica con los últimos estrenos, servicios de suscripción premium y
-                una
-                serie de
-                canales temáticos gratis, como Movies, Euronews, Kids TV, Viki, Documentaries y Rakuten Stories, un
-                canal
-                que incorpora
-                el contenido original y exclusivo de Rakuten TV.</p>
-            <ul class=“footer-faqs”>
-                <li class=“how-it-works”>
-                    <img src=“” alt=“” class=“how-it-works-icon”>
-                    <span class=“how-it-works-title”></span>
-                    <span class=“how-it-works-text”></span>
-                </li>
-                <li class=“payments”>
-                    <img src=“” alt=“” class=“payments-icon”>
-                    <span class=“payments-title”></span>
-                    <span class=“payments-text”></span>
-                </li>
-                <li class=“support”>
-                    <img src=“” alt=“” class=“support-icon”>
-                    <span class=“support-title”></span>
-                    <span class=“support-text”></span>
-                </li>
-            </ul>
-        </div>
-        <div class=“rakuten-info”>
-            <ul class=“rakuten-info-link”>
-                <li class=“mini-link”><a href=“#”></a></li>
-                <li class=“mini-link”><a href=“#”>acerca de Rakuten</a></li>
-                <li class=“mini-link”><a href=“#”>quiénes somos</a></li>
-                <li class=“mini-link”><a href=“#”>condiciones de uso</a></li>
-                <li class=“mini-link”><a href=“#”>política de privacidad y cookies</a></li>
-                <li class=“mini-link”><a href=“#”>proceso de autoregulación por edad</a></li>
-                <li class=“mini-link”><a href=“#”>trabaja con nosotros</a></li>
-            </ul>
-            <span class=“copirigth”>2009 - 2021 &copy; Rakuten TV Europe, S.L.U. - v1.865.0</span>
-        </div>
+      <div class="nav-footer">
+        <h2 class="footer-info-title">rakuten tv - tu cine en casa</h2>
+        <p class="footer-info-text">
+          Rakuten TV proporciona una serie de servicios que ofrecen todo un
+          universo de contenidos en solo unos clics. Disfruta de una verdadera
+          experiencia cinematográfica con los últimos estrenos, servicios de
+          suscripción premium y una serie de canales temáticos gratis, como
+          Movies, Euronews, Kids TV, Viki, Documentaries y Rakuten Stories, un
+          canal que incorpora el contenido original y exclusivo de Rakuten TV.
+        </p>
+        <ul class="footer-faqs">
+          <li class="how-it-works">
+            <img src="" alt="" class="how-it-works-icon" />
+            <span class="how-it-works-title"></span>
+            <span class="how-it-works-text"></span>
+          </li>
+          <li class="payments">
+            <img src="" alt="" class="payments-icon" />
+            <span class="payments-title"></span>
+            <span class="payments-text"></span>
+          </li>
+          <li class="support">
+            <img src="" alt="" class="support-icon" />
+            <span class="support-title"></span>
+            <span class="support-text"></span>
+          </li>
+        </ul>
+      </div>
+      <div class="rakuten-info">
+        <ul class="rakuten-info-link">
+          <li class="mini-link"><a href="#"></a></li>
+          <li class="mini-link"><a href="#">acerca de Rakuten</a></li>
+          <li class="mini-link"><a href="#">quiénes somos</a></li>
+          <li class="mini-link"><a href="#">condiciones de uso</a></li>
+          <li class="mini-link">
+            <a href="#">política de privacidad y cookies</a>
+          </li>
+          <li class="mini-link">
+            <a href="#">proceso de autoregulación por edad</a>
+          </li>
+          <li class="mini-link"><a href="#">trabaja con nosotros</a></li>
+        </ul>
+        <span class="copirigth"
+          >2009 - 2021 &copy; Rakuten TV Europe, S.L.U. - v1.865.0</span
+        >
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>
