@@ -193,34 +193,34 @@ body {
 //---------------END OF HEADER SECTION--------------
 
 .main__container{
+    margin: 0;
     width: 100%;
     align-content: center;
     .widget{
+        padding-top: 150px;
+        width: 100%;
         display: flex;
         justify-content: center;
+        margin-bottom: 100px;
     }
 }
 .title{    
     text-align: center;
     margin-bottom: -130px;
     &__icon{
-        width:100px;
-        height: 120px;
-        background-color: #f8f8f8;
-        padding-top: 150px;
-        width: 100%;
+        height: 130px;
+        width: 100px;
         display: flex;
-        justify-content: center;
-        align-content: center;
-        flex-wrap: wrap;
+        display: inline-block;
     }
+
     &__header{
         padding: 20px 5px;
-        border-top: 1px #67635F;
     }
 }
 
 .banner-sections{
+    background-color: #f8f8f8;
     position: relative;
     align-content: center;
     &__images{
@@ -278,35 +278,6 @@ body {
     }
 }
 
-@media only screen and (max-width: 600px){
-    .header{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .banner-sections{
-        display: flex;
-        flex-direction: column;
-        max-height: 200px;
-        img{
-            width: 300px; /* width of container */
-            height: 150px; /* height of container */
-            object-fit: cover;
-            object-position: 10% 10%;
-        }  
-        &__images{
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; 
-            position: relative;
-            flex-wrap: wrap;
-            width: 100%;
-            max-height: 240px;
-        }
-    }
-    .banner-container{
-        max-height: 250px;
-    }
-}
 @media only screen and (max-width: 1105px){
     .main-header-section{
         margin-top: 30px;
@@ -324,6 +295,11 @@ body {
     }
     .main-navigation{
         margin-top: 40px;
+    }
+    .widget{
+        padding-top: 300px;
+        display: flex;
+        flex-direction: column;
     }
     .banner-sections{
         display: flex;
@@ -360,6 +336,7 @@ body {
         max-height: 250px;
     }
     .inside-info{
+        position: relative;
         &__paragraph{
             display:none;
         }
