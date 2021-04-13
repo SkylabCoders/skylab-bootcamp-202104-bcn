@@ -191,3 +191,17 @@
     display: flex;
     height: fit-content;
 }
+
+.quick-acces-container  {
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-acces-menu {
+    border: black solid;
+    display: flex;
+}
+
+.quick-acces-utensil {
+    background: url(../img/utensiliosML.png);
+}
