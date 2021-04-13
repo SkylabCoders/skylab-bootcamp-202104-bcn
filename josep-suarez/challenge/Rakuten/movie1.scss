@@ -103,15 +103,15 @@
     &--help--disp {
       color: rgb(59, 59, 59);
     }
-    &--help--disp,
-    &--sign--up {
+    &--help-disp,
+    &--sign-up {
       display: flex;
       justify-content: space-around;
       margin-right: 10px;
       margin-top: 5px;
     }
-    &--help--disp:hover,
-    &--sign--up:hover {
+    &--help-disp:hover,
+    &--sign-up:hover {
       color: yellow;
       cursor: pointer;
     }
@@ -127,32 +127,7 @@
     }
   }
 }
-.footerRakuten {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  background-color: black;
-  color: white;
-  margin-top: 7vh;
-  text-align: center;
-  justify-content: center;
-  width: 100%;
-  .help-text {
-    width: 80vw;
-    align-self: center;
-  }
-}
-.explain {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.firstexplain,
-.secondexplain,
-.thirdexplain {
-  width: 10vw;
-  color: white;
-}
+
 .copy {
   display: flex;
   left: 0;
@@ -160,13 +135,14 @@
   color: white;
   margin-top: 60vh;
 }
+
 .movie__picture {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 80vh;
   margin-top: 65px;
-  background-image: linear-gradient(to bottom, transparent 75%, black),
+  background-image: linear-gradient(to bottom, transparent 65%, black),
     url("https://images-1.wuaki.tv/system/shots/195245/original/the-forgotten-1597662391-width1920-quality80.jpeg");
   &--actions {
     display: flex;
@@ -208,6 +184,7 @@
     height: 7vh;
   }
 }
+
 .movie {
   display: flex;
   &__description {
@@ -217,29 +194,29 @@
     border: 1px solid #333;
     font-size: 16px;
     line-height: 180%;
-    ul {
+    & ul {
       display: flex;
     }
     &--time {
-      li {
+      & li {
         list-style: none;
         margin-left: 15px;
       }
     }
-    li {
+    & li {
       list-style: none;
       margin-left: 15px;
     }
     &--paragraph {
       justify-self: flex-start;
-      margin-left: 2vw;
+      margin-left: 3vw;
       width: 70vw;
     }
   }
   .icon__time {
     @include icon-size();
   }
-  .movie__language {
+  &__language {
     display: flex;
     &--list {
       display: flex;
@@ -248,31 +225,11 @@
     &--list2 {
       display: flex;
       flex-direction: column;
-      margin-top: 12vh;
+      margin-top: 14vh;
     }
     &--title {
       font-weight: bold;
     }
-  }
-  .social__media {
-    height: 30vh;
-    width: 30vw;
-    background-color: #ccc;
-    &--list {
-      li {
-        list-style: none;
-        margin-top: 3vh;
-      }
-      li:hover {
-        @include hover-style();
-      }
-    }
-  }
-  .icon__social {
-    @include icon-size();
-  }
-  .icon__social:hover {
-    @include hover-style();
   }
   .actors {
     &__list ul li {
@@ -281,11 +238,61 @@
     &__list--name li {
       margin-left: 5vw;
     }
-    h5 {
+    & h5 {
       margin-left: 2vw;
       img {
         @include icon-size();
       }
     }
+  }
+}
+
+.social__media {
+  height: 30vh;
+  width: 30vw;
+  background-color: #ccc;
+  &--list {
+    li {
+      list-style: none;
+      margin-top: 3vh;
+    }
+    li:hover {
+      @include hover-style();
+    }
+  }
+}
+
+.icon__social {
+  @include icon-size();
+
+  &:hover {
+    @include hover-style();
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: black;
+  color: white;
+  margin-top: 7vh;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  &--text {
+    width: 80vw;
+    align-self: center;
+  }
+  &--explain {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  &__firstexplain,
+  &__secondexplain,
+  &__thirdexplain {
+    width: 10vw;
+    color: white;
   }
 }

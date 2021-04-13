@@ -129,7 +129,7 @@
   color: #3b3b3b;
 }
 
-.register__buttons--help--disp, .register__buttons--sign--up {
+.register__buttons--help-disp, .register__buttons--sign-up {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,7 +139,7 @@
   margin-top: 5px;
 }
 
-.register__buttons--help--disp:hover, .register__buttons--sign--up:hover {
+.register__buttons--help-disp:hover, .register__buttons--sign-up:hover {
   color: yellow;
   cursor: pointer;
 }
@@ -157,49 +157,6 @@
   min-height: 32px;
   border-radius: 2px;
   border: none;
-}
-
-.footerRakuten {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: absolute;
-  background-color: black;
-  color: white;
-  margin-top: 7vh;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-}
-
-.footerRakuten .help-text {
-  width: 80vw;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-.explain {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-}
-
-.firstexplain,
-.secondexplain,
-.thirdexplain {
-  width: 10vw;
-  color: white;
 }
 
 .copy {
@@ -223,8 +180,8 @@
   width: 100%;
   height: 80vh;
   margin-top: 65px;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(75%, transparent), to(black)), url("https://images-1.wuaki.tv/system/shots/195245/original/the-forgotten-1597662391-width1920-quality80.jpeg");
-  background-image: linear-gradient(to bottom, transparent 75%, black), url("https://images-1.wuaki.tv/system/shots/195245/original/the-forgotten-1597662391-width1920-quality80.jpeg");
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), to(black)), url("https://images-1.wuaki.tv/system/shots/195245/original/the-forgotten-1597662391-width1920-quality80.jpeg");
+  background-image: linear-gradient(to bottom, transparent 65%, black), url("https://images-1.wuaki.tv/system/shots/195245/original/the-forgotten-1597662391-width1920-quality80.jpeg");
 }
 
 .movie__picture--actions {
@@ -322,7 +279,7 @@
 
 .movie__description--paragraph {
   justify-self: flex-start;
-  margin-left: 2vw;
+  margin-left: 3vw;
   width: 70vw;
 }
 
@@ -331,23 +288,13 @@
   height: 20px;
 }
 
-.movie .movie__language {
+.movie__language {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.movie .movie__language--list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.movie .movie__language--list2 {
+.movie__language--list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -355,39 +302,21 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 12vh;
 }
 
-.movie .movie__language--title {
+.movie__language--list2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 14vh;
+}
+
+.movie__language--title {
   font-weight: bold;
-}
-
-.movie .social__media {
-  height: 30vh;
-  width: 30vw;
-  background-color: #ccc;
-}
-
-.movie .social__media--list li {
-  list-style: none;
-  margin-top: 3vh;
-}
-
-.movie .social__media--list li:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-  cursor: pointer;
-}
-
-.movie .icon__social {
-  width: 20px;
-  height: 20px;
-}
-
-.movie .icon__social:hover {
-  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
-  cursor: pointer;
 }
 
 .movie .actors__list ul li {
@@ -405,5 +334,74 @@
 .movie .actors h5 img {
   width: 20px;
   height: 20px;
+}
+
+.social__media {
+  height: 30vh;
+  width: 30vw;
+  background-color: #ccc;
+}
+
+.social__media--list li {
+  list-style: none;
+  margin-top: 3vh;
+}
+
+.social__media--list li:hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+  cursor: pointer;
+}
+
+.icon__social {
+  width: 20px;
+  height: 20px;
+}
+
+.icon__social:hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
+  cursor: pointer;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  background-color: black;
+  color: white;
+  margin-top: 7vh;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.footer--text {
+  width: 80vw;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.footer--explain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.footer__firstexplain, .footer__secondexplain, .footer__thirdexplain {
+  width: 10vw;
+  color: white;
 }
 /*# sourceMappingURL=movie1.css.map */
