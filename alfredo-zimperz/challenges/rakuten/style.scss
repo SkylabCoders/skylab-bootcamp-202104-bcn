@@ -197,6 +197,13 @@ a {
 		background-repeat: no-repeat;
 		background-position: center;
 	}
+	.nav-bar__button {
+		margin: 30px 40px;
+		font-size: 30px;
+		color: $color-secondary;
+		text-shadow: 1px 1px 4px $color-main;
+		cursor: pointer;
+	}
 }
 
 #main-carousel {

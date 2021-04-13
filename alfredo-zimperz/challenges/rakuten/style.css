@@ -264,6 +264,14 @@ a {
   background-position: center;
 }
 
+.nab-bar--mobile .nav-bar__button {
+  margin: 30px 40px;
+  font-size: 30px;
+  color: #171717;
+  text-shadow: 1px 1px 4px #ffffff;
+  cursor: pointer;
+}
+
 #main-carousel {
   margin-top: 61px;
   display: -webkit-box;
