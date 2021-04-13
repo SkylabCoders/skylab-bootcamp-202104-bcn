@@ -475,11 +475,6 @@ body {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     position: relative;
-    padding-bottom: 90px;
-    margin: 20px;
-    bottom: 140px;
-    width: 200px;
-    height: 130px;
   }
   .banner-container {
     max-height: 250px;
