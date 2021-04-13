@@ -459,12 +459,9 @@ header .logo img{
             }
             .horizontal1 {
                 background-image: url("./images/utensiliosbasicos.jpeg");
-
-
             }
         }
     }
-    
 }
 
 .product-card__wrapper,
@@ -474,6 +471,59 @@ header .logo img{
     opacity: 0.8;
     
 }
+
+.info-icons {
+    height: 215px;
+    background-color: #E8E6E5;
+    .container {
+        max-width: 1080px;
+        height: 100%;
+        border: 1px solid red;
+        padding: 0;
+    }
+    ul {
+        display: flex;
+        height: 100%;
+        
+        li{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 270px;
+            height: 100%;
+            text-align: center;
+            padding: 20px 30px;
+
+            .info-icon {
+                width:87px;
+                height: 65px;
+                margin-bottom: -35px;
+                background: url('./images/sprite.svg') 0px -40px no-repeat; 
+            }
+            .info-text {
+                display: flex;
+                flex-direction: column;
+                p {
+                    margin: 0;
+                    font-weight: bolder;
+                    color: #67625F;
+                }
+                span {
+                    font-size: 12px;
+                    color: #67625F;
+
+                }
+            }
+
+        }
+
+    }
+}
+
+
+// background: url('./images/sprite.svg') -114px -497px no-repeat; 
+
 
 
 
