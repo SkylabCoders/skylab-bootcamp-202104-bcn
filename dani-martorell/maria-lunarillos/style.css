@@ -215,14 +215,14 @@ header {
     height: 260px;
 }
 header .logo img{
-    margin-bottom: 35px;
+    margin-bottom: 65px;
 }
 
 .header-right-side {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-bottom: 50px;
+    margin-bottom: 65px;
     margin-left: auto;
 }
 
@@ -322,4 +322,15 @@ header .logo img{
     background-color: #F8F8F8;
     padding: 20px;
     margin-bottom: 4px;
+}
+.utensilios img:hover {
+    background-color: #ff5959;
+}
+
+.secciones li:last-child img{
+    background-color: #ff5959;
+}
+
+.secciones li:last-child a{
+    color: #ff5959;
 }
