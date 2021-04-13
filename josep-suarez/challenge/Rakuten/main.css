@@ -110,6 +110,10 @@ body {
   margin-top: 5px;
 }
 
+.register__buttons--help-disp {
+  color: #3b3b3b;
+}
+
 .register__buttons--register-button {
   background-color: yellow;
   color: black;
@@ -125,15 +129,11 @@ body {
   border: none;
 }
 
-.help-disp {
-  color: #3b3b3b;
-}
-
 .nav--left--select:hover,
 .gratis:hover,
 .suscripciones:hover,
-.help-disp:hover,
-.sign-up:hover {
+.register__buttons--help-disp:hover,
+.register__buttons--sign-up:hover {
   color: yellow;
   cursor: pointer;
 }

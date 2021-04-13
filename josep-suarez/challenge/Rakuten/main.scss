@@ -82,6 +82,9 @@ body {
     &--sign-up {
       margin-top: 5px;
     }
+    &--help-disp {
+      color: rgb(59, 59, 59);
+    }
     &--register-button {
       @include colors(yellow, black);
       margin-left: 10px;
@@ -95,14 +98,11 @@ body {
   }
 }
 
-.help-disp {
-  color: rgb(59, 59, 59);
-}
 .nav--left--select:hover,
 .gratis:hover,
 .suscripciones:hover,
-.help-disp:hover,
-.sign-up:hover {
+.register__buttons--help-disp:hover,
+.register__buttons--sign-up:hover {
   // filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
   //   brightness(97%) contrast(95%);
   color: yellow;
