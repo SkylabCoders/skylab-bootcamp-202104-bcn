@@ -97,8 +97,7 @@
     li{
       width:20%;
       padding:5px;
-
-
+      
       img{
         width:100%;
         border:4px solid transparent;
@@ -111,12 +110,14 @@
   }
 }
 .slider-movies{
+  
   .title-category{
     color:$primary-color;
     font-size: 1.5em;
     font-weight: 700;
     margin: 30px 10px;
   }
+
 }
 .slick-slider {
   position: relative;
@@ -131,13 +132,23 @@
   -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
-  .slick-list
-  {
+/*  border:3px solid red;*/
+  
+  .slick-list {
     position: relative;
     display: block;
     overflow: hidden;
     margin: 0;
     padding: 0;
+   .slick-track{
+     overflow: hidden;
+     .slide{
+       img{
+         padding: 0px 5px;
+         max-width: 100%;
+       }
+   }
+   }
   }
   .slick-prev, .slick-next {
     font-size: 20px;
@@ -159,13 +170,12 @@
     z-index: 9;
   }
   .slick-prev:before{
-    
     font-size: 2em;
     line-height: 1;
     opacity: .75;
     color: white;
     -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Brands"; content: "\f104";
+    content: "<"
     
   }
   .slick-next:after{
@@ -175,7 +185,7 @@
     opacity: .75;
     color: white;
     -webkit-font-smoothing: antialiased;
-    content: '>';
+    content: ">";
     right:0;
   }
   .slick-prev{
@@ -185,6 +195,7 @@
     right:30px;
   }
 }
+
 
 
 

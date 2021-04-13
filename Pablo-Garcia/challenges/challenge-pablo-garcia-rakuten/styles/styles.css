@@ -153,13 +153,19 @@ html {
   -html-user-select: none;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+  /*  border:3px solid red;*/ }
   .slick-slider .slick-list {
     position: relative;
     display: block;
     overflow: hidden;
     margin: 0;
     padding: 0; }
+    .slick-slider .slick-list .slick-track {
+      overflow: hidden; }
+      .slick-slider .slick-list .slick-track .slide img {
+        padding: 0px 5px;
+        max-width: 100%; }
   .slick-slider .slick-prev, .slick-slider .slick-next {
     font-size: 20px;
     line-height: 0;
@@ -184,8 +190,7 @@ html {
     opacity: .75;
     color: white;
     -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Brands";
-    content: "\f104"; }
+    content: "<"; }
   .slick-slider .slick-next:after {
     font-family: 'slick';
     font-size: 2em;
@@ -193,7 +198,7 @@ html {
     opacity: .75;
     color: white;
     -webkit-font-smoothing: antialiased;
-    content: '>';
+    content: ">";
     right: 0; }
   .slick-slider .slick-prev {
     left: 30px; }
