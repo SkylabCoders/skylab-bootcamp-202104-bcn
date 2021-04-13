@@ -90,9 +90,6 @@ body {
 }
 
 .icon:hover {
-    width: 27px;
-    height: 27px;
-    background-color: white;
     background: url("./media/sprite.svg") 313px 0;
 }
 
@@ -104,7 +101,7 @@ body {
     margin: auto;
 }
 
-#register :hover {
+#register:hover {
     width: 158.85px;
     height: 49.6px;
     display: flex;
@@ -117,7 +114,6 @@ body {
     width: 35px;
     height: 35px;
         background: url("./media/sprite.svg") 277px 0px;
-
 }
 
 .icon-charriot:hover {
@@ -157,28 +153,24 @@ a.links * {
     width: 35px;
     height: 35px;
     background: url("./media/sprite.svg") 0 0;
-    
 }
 
 .instagram {
     width: 35px;
     height: 35px;
     background: url("./media/sprite.svg") 0 0;
-    
 }
 
 .pinterest {
     width: 35px;
     height: 35px;
     background: url("./media/sprite.svg") 0 0;
-    
 }
 
 .youtube {
     width: 35px;
     height: 35px;
     background: url("./media/sprite.svg") 165px 540px;
-
 }
 
 main {
@@ -477,6 +469,12 @@ footer {
     margin: 0 30px;
 }
 
+.icons-free-shipping-img {
+    width: 85px;
+    height: 60px;
+    background: url("./media/sprite.svg") -350px -41px;
+}
+
 .contact-footer {
     width: 100%;
     height: 257px;
@@ -518,6 +516,43 @@ footer {
     width: 50px;
     height: 20 px;
     border: 1px solid red;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.contact-icons {
+    width: 30px;
+    height: 31px;
+    background: url("./media/sprite.svg") -350px 207px;
+}
+
+.about-us-icons {
+    width: 30px;
+    height: 31px;
+    background: url("./media/sprite.svg") 0 0;
+}
+
+.sale-conditions-span {
+    
+    color: rgb(255, 89, 89);
+}
+
+.contact-span {
+    width: 30px;
+    height: 31px;
+    color:rgb(255, 89, 89);
+}
+
+.sale-conditions-icons {
+    width: 30px;
+    height: 31px;
+    background: url("./media/sprite.svg") 0 0;
+}
+
+.sale-conditions-span {
+    
+    color: rgb(255, 89, 89);
 }
 
 .content {
