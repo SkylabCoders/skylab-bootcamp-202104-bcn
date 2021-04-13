@@ -37,13 +37,29 @@
 
 .upper-header {
     display:flex;
+    flex-direction: row;
     margin: 0 auto;
     background: #F8F8F8;
     height: 50px;
     width: 1080px;
-    
     /* border: 1px solid #fffb03;*/
-} 
+}
+
+.icons-upperbar {
+    margin-left: auto;
+    width: 50px;
+    height: 100%;
+    background: rgb(89, 255, 158);
+    z-index: index 2;
+}
+
+.icons-upperbar2 {
+    margin-left: auto;
+    width: 50px;
+    height: 100%;
+    background: rgb(89, 255, 158);
+    z-index: index 2;
+}
 
 .header-center {
     display:flex;
@@ -272,6 +288,7 @@
 .buttons-icons-container {
     display:flex;
     flex-direction: column;
+
     align-items: flex-end;
     justify-content:flex-end;
 }
@@ -363,31 +380,32 @@
     margin: auto;
     z-index:1;
     height: 615px;
+    width: 1080px;
 }
 
 .photo-moldes {
     display:block;
     width: 350px;
     height: 615px;
+    margin-right: auto;
 }
+
+.photo-doble {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+/* photo-doble {
+
+} 0.*/
 
 #imgbanner1 {
-    z-index:1;
     width: 350px;
     max-height: none;
-    overflow: auto;
-    position: relative;
-    display: block;
-    /* margin: 0 auto; */
+    margin: 0 auto;
     border: 0;
-    background-image: url("./../challenge/images/moldesdereposteria.jpg");
 }
 
-#imgbanner2 {
-    background-image: url("./../challenge/images/utensiliosbasicos.jpg");
-}
-
-#imgbanner3 {
-    background-image: url("./../challenge/images/pequenoelectrodomestico2.jpg");
-} 
 
