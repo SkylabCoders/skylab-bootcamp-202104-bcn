@@ -1,1 +1,81 @@
 @import './mixin.scss';
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border: red solid;
+    height: 300px;
+    width: 100%;
+}
+
+.info-icons-container {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    background:#e8e6e5;
+    height: 80px;
+}
+
+.content-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-decoration: none;
+    color: black;
+    border: chartreuse solid;
+    margin: 0 20px;
+}
+
+.icon-footer {
+    border: orange solid;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    display: flex;
+    border: solid blue;
+    // width: 100%;
+    // height: 300px;
+    justify-content: space-around;
+}
+
+.social-media-contact {
+
+    text-align: center;
+}
+
+.common-contact-text {
+    text-align: center;
+}
+.info-icon-container {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.icon-footer--media {      
+    border: orangered solid;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.email-contact{
+    display: flex;
+    flex-direction: column;
+}
+.email-content {
+    display: flex;
+    margin: 0 auto;
+}
+
+
+.terms-container {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0 auto;
+}
