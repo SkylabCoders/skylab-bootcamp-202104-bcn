@@ -1,0 +1,193 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: NotoSans-Bold,Arial,sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: white;
+  font-weight: 500;
+  
+}
+
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+.header-container {
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo-container {
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 135px;
+  height: 30px;
+  background-image: url(./images/rakuten-logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.left-menu {
+  width: 250px;
+  display: flex;
+  justify-content: space-around;
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14px;
+  } 
+}
+
+.search-container {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  
+  a {
+    width: 250px;
+    height: 30px;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.right-menu {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14px;
+  } 
+}
+
+.registrarse {
+  a {
+    width: 120px;
+    height: 40px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border-radius: 3%;
+  }
+}
+  
+footer {
+  width: 100%;
+  background-color: rgb(37, 36, 36);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 30px;
+
+  p {
+    margin: 10px 300px;
+    text-align: center;
+    color: rgb(197, 188, 188);
+  }
+}
+
+.footer-blocks {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin: 50px;
+  }
+
+  span {
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(197, 188, 188);
+  }
+}
+
+.bottom-footer {
+  display: flex;
+  flex-direction: column; 
+  background-color: black;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 20px;
+}
+
+.footer-logo-container {
+  background-color: blue;
+}
+
+.footer-logo {
+  background-image: url(./images/rktv-grey-eae681a197.svg);
+  background-repeat: no-repeat;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: space-around;
+
+  li {
+    margin: 20px;
+  }
+
+  a {
+    color: rgb(197, 188, 188);
+    font-size: 14px;
+  }
+}
+
+.info-company {
+  color: rgb(197, 188, 188);
+  font-size: 14px;
+  margin: 20px;
+}
