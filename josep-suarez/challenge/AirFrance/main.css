@@ -1,0 +1,162 @@
+.header-web {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: ExcellenceInMotion, Helvetica Neue, sans-serif;
+  text-transform: none;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo {
+  width: 16vw;
+  height: 8vh;
+  margin-left: 4vw;
+}
+
+.regist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin-left: 51vw;
+}
+
+ul li {
+  margin-left: 2vw;
+}
+
+.fly {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.select-fly {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80vw;
+}
+
+.title-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3vh;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  margin-left: 30vw;
+  width: 20vw;
+  height: 4vh;
+}
+
+.choise-fly,
+.choise-millas {
+  margin-left: 1vw;
+  background-color: aqua;
+}
+
+.flying {
+  margin-left: 21vw;
+}
+
+.tickets,
+.from-airport,
+.to-airport {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: ExcellenceInMotion, Helvetica Neue, sans-serif;
+  text-transform: none;
+  font-weight: 400;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin-left: 5vw;
+}
+
+.continue {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: ExcellenceInMotion, Helvetica Neue, sans-serif;
+  text-transform: none;
+  font-weight: 400;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  color: #5b5bca;
+  background-color: white;
+  border: none;
+  margin-left: 5vw;
+}
+
+.condition {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5vh;
+  margin-left: 16vw;
+}
+
+.date,
+.person,
+.luxury {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: ExcellenceInMotion, Helvetica Neue, sans-serif;
+  text-transform: none;
+  font-weight: 400;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin-left: 5vw;
+}
+
+.profesional {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 20vw;
+  margin-top: 5vh;
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.search-fly {
+  border: none;
+  border-radius: 5%;
+  background-color: #ff5858;
+  color: white;
+  margin-right: 34vw;
+}
+
+.persons,
+.class-fly,
+.date-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pasajeros,
+.type-class,
+.date-type {
+  margin-left: 5vw;
+}
+/*# sourceMappingURL=main.css.map */
