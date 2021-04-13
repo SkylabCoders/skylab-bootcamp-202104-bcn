@@ -290,6 +290,8 @@ body {
 }
 
 .movie-image {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), to(black));
+  background-image: linear-gradient(to bottom, transparent 65%, black);
   width: 100%;
   min-height: 500px;
   /* Create the parallax scrolling effect */
