@@ -80,21 +80,7 @@
   width: 80px;
   margin-top: 9px;
 }
-.register {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-}
-.help-disp,
-.sign-up {
-  display: flex;
-  justify-content: space-around;
-  margin-right: 10px;
-  margin-top: 5px;
-}
-.help-disp {
-  color: rgb(59, 59, 59);
-}
+
 .cinema:hover,
 .gratis:hover,
 .suscripciones:hover,
@@ -105,23 +91,42 @@
   color: yellow;
   cursor: pointer;
 }
-.register-buttons {
-  @include colors(black, white);
+.register {
   display: flex;
-  list-style: none;
-  margin-top: 20px;
+  width: 100%;
+  justify-content: flex-end;
+  &__buttons {
+    @include colors(black, white);
+    display: flex;
+    list-style: none;
+    margin-top: 20px;
+    &--help--disp {
+      color: rgb(59, 59, 59);
+    }
+    &--help--disp,
+    &--sign--up {
+      display: flex;
+      justify-content: space-around;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    &--help--disp:hover,
+    &--sign--up:hover {
+      color: yellow;
+      cursor: pointer;
+    }
+    &--register-button {
+      @include colors(yellow, black);
+      margin-left: 10px;
+      margin-right: 5px;
+      padding-right: 8px;
+      padding-left: 8px;
+      min-height: 32px;
+      border-radius: 2px;
+      border: none;
+    }
+  }
 }
-.register-button {
-  @include colors(yellow, black);
-  margin-left: 10px;
-  margin-right: 5px;
-  padding-right: 8px;
-  padding-left: 8px;
-  min-height: 32px;
-  border-radius: 2px;
-  border: none;
-}
-
 .footerRakuten {
   display: flex;
   flex-direction: column;

@@ -93,6 +93,15 @@
   margin-top: 9px;
 }
 
+.cinema:hover,
+.gratis:hover,
+.suscripciones:hover,
+.help-disp:hover,
+.sign-up:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
 .register {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,31 +112,7 @@
           justify-content: flex-end;
 }
 
-.help-disp,
-.sign-up {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-right: 10px;
-  margin-top: 5px;
-}
-
-.help-disp {
-  color: #3b3b3b;
-}
-
-.cinema:hover,
-.gratis:hover,
-.suscripciones:hover,
-.help-disp:hover,
-.sign-up:hover {
-  color: yellow;
-  cursor: pointer;
-}
-
-.register-buttons {
+.register__buttons {
   background-color: black;
   color: white;
   font-family: NotoSans-Bold, Arial, sans-serif;
@@ -140,7 +125,26 @@
   margin-top: 20px;
 }
 
-.register-button {
+.register__buttons--help--disp {
+  color: #3b3b3b;
+}
+
+.register__buttons--help--disp, .register__buttons--sign--up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.register__buttons--help--disp:hover, .register__buttons--sign--up:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+.register__buttons--register-button {
   background-color: yellow;
   color: black;
   font-family: NotoSans-Bold, Arial, sans-serif;
