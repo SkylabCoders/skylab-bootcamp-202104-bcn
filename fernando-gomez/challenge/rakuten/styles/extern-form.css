@@ -486,4 +486,34 @@ body {
   display: block;
   color: #ffe300;
 }
+
+.listing {
+  padding-top: 28vw;
+  background-image: url(https://images-3.wuaki.tv/system/shots/198322/original/snapshot-1590666632-width1920-quality80.jpeg);
+  background-position-y: 60px;
+  background-size: cover;
+  position: center center;
+  margin: 0 auto;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.listing__imdb {
+  width: 5%;
+}
+
+.listing-details h1 {
+  color: white;
+  font-size: 4em;
+}
+
+.roundedAction img {
+  width: 10%;
+}
+
+.listing-background {
+  background: -webkit-gradient(linear, left bottom, left top, from(black), to(transparent));
+  background: linear-gradient(0deg, black, transparent);
+  height: 100%;
+}
 /*# sourceMappingURL=extern-form.css.map */
