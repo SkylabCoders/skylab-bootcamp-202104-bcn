@@ -314,6 +314,7 @@ footer {
   }
   .container-header {
     background-color: transparent;
+    position: absolute;
   }
   .nav-bar-menu,
   .search-container,
