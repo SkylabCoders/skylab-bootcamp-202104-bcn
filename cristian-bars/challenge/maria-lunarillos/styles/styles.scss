@@ -398,7 +398,7 @@ header {
     margin: 0 auto;
 }
 
-#title h1 {
+.title h1 {
     letter-spacing: 6px;
     font-weight: bold;
     font-size: 22px;
@@ -409,7 +409,7 @@ header {
     margin: 0 auto;
 }
 
-#title {
+.title {
     padding-top: 40px;
 }
 
@@ -429,6 +429,10 @@ header {
     max-width: 1080px;
     margin: 0 auto;
     padding: 20px 0;
+}
+
+.wrap-section {
+    background: #f8f8f8;
 }
 
 .description-item {
@@ -544,4 +548,59 @@ header {
     text-transform: uppercase;
     color: $gray-text-footer;
     font-size: 12px;
+}
+
+#button {
+    width: 88%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#mas {
+    background: #FF5959;
+    padding: 15px 30px;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+#marcas-section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+#marcas-title h1 {
+    text-transform: uppercase;
+    line-height: 30px;
+    font-size: 30px;
+    letter-spacing: 10px;
+    width: 70%;
+    text-align: center;
+}
+
+#marcas-content {
+    padding: 50px 0;
+}
+
+#marcas-content ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.brand{
+    filter: grayscale(100%);
+    padding: 10px;
+}
+
+.brand:hover {
+    filter: unset;
+}
+
+.brand img {
+    height: 75px;
 }
