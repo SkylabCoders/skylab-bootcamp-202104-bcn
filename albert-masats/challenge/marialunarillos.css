@@ -503,7 +503,8 @@ input {
 }
 
 .photo-moldes {
-    display:relative;
+    display:flex;
+    position:relative;
     width: 350px;
     height: 615px;
     margin-right: auto;
@@ -515,6 +516,7 @@ input {
     flex-direction:column;
     justify-content: space-between;
     margin: 0 auto;
+    
 }
 
 #imgbanner1 {
@@ -524,12 +526,32 @@ input {
     border: 0;
 }
 
-.triangulo1 {
-    display: absolute;
-    height:80px;
-    width: 70px;
-    background:chartreuse;
-    right:0;
+.cuadrado1 {
+    position: absolute;
+    height: 120px;
+    width: 190px;
     bottom:0;
+    left:0;
+    background-color: rgb(255, 255, 255,0.8);
+    padding: 10px;  
 }
+
+.triangulo1 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 70px solid transparent;
+    border-top: 70px solid transparent;
+    border-left: 70px solid rgb(255, 255, 255,0.8);
+    border-bottom: 70px solid rgb(255, 255, 255,0.8);
+    bottom:0;
+    right:0;
+}
+
+.texto-triangulo {
+    font-size: 20px;
+    padding-left:10px;
+}
+
+
 
