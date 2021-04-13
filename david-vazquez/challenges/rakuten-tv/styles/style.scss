@@ -32,21 +32,10 @@ li {
   color: $color-white;
 }
 
-a,
-a:link,
-a:visited,
-a:focus,
-a:hover,
-a:active {
+a {
   text-decoration: none;
   outline: none;
   cursor: pointer;
-}
-
-.logo {
-  order: 1;
-  width: 122px;
-  padding-top: 8px;
 }
 
 .nav-bar {
@@ -59,134 +48,135 @@ a:active {
   margin: auto;
   padding: 0 20px;
   z-index: 2;
+  &__logo {
+    order: 1;
+    width: 122px;
+    padding-top: 8px;
+  }
+  &__menu {
+    order: 2;
+    @include flex-content(row, initial, center);
+    list-style: none;
+    padding: 10px;
+  }
+  &__search {
+    order: 3;
+    flex-grow: 1;
+    justify-content: flex-end;
+    text-align: left;
+    &--input {
+      width: 250px;
+      height: 40px;
+      padding-left: 40px;
+      border-radius: 2px;
+      background-color: $color-gray-dark;
+      border: none;
+      font-size: 16px;
+      background-image: url("./../img/Vector_search_icon.svg");
+      background-repeat: no-repeat;
+      background-position: 10px center;
+      background-size: 20px;
+      outline: none;
+      &:focus {
+        background-color: $color-white;
+        transition: 0.3s;
+      }
+    }
+  }
+  &__login {
+    @include flex-content(null, flex-end, baseline);
+    order: 4;
+    position: relative;
+    flex-grow: 0;
+    margin-right: 20px;
+  }
 }
 
-.nav-bar-menu {
-  order: 2;
+.menu {
+  &__item {
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    padding: 22px 10px 22px 10px;
+    cursor: pointer;
+    &--arrow {
+      display: inline-block;
+      content: "▼";
+      position: relative;
+      margin-left: 4px;
+      bottom: 1px;
+      font-size: 10px;
+    }
+    &:hover {
+      color: $color-yellow;
+      transition: 0.2s;
+    }
+
+    &:hover > .item__list {
+      display: block;
+    }
+
+    &:hover > .menu__item--arrow {
+      transform: rotate(180deg);
+    }
+  }
 }
 
-.nav-bar-menu-ul {
-  @include flex-content(row, initial, center);
-  list-style: none;
-  padding: 10px;
+.item {
+  &__list {
+    display: none;
+    position: absolute;
+    margin-left: -15px;
+    padding: 10px 15px;
+    background-color: $color-black;
+    border-radius: 2px;
+    text-align: left;
+    &--sub-item {
+      white-space: nowrap;
+      padding-top: 15px;
+      font-size: 14px;
+      font-weight: 400;
+      cursor: pointer;
+      &:hover {
+        color: $color-yellow;
+        transition: 0.2s;
+      }
+    }
+  }
 }
 
-.nav-item-menu {
-  display: inline-block;
-  position: relative;
-  text-transform: uppercase;
-  padding: 22px 10px 22px 10px;
-  cursor: pointer;
-}
+.login {
+  &__button {
+    display: inline-block;
+    margin-right: 20px;
+    color: $color-gray;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
 
-.nav-item-menu:hover {
-  color: $color-yellow;
-  transition: 0.2s;
-}
+    &--help {
+      &:hover {
+        color: $color-yellow;
+        transition: 0.2s;
+      }
+    }
 
-.nav-item-menu:hover > .nav-menu-parent-child {
-  display: block;
-}
+    &--login {
+      color: $color-white;
+      &:hover {
+        color: $color-yellow;
+        transition: 0.2s;
+      }
+    }
 
-.nav-item-menu:hover > .arrow {
-  transform: rotate(180deg);
-}
-
-.arrow {
-  display: inline-block;
-  content: "▼";
-  position: relative;
-  margin-left: 4px;
-  bottom: 1px;
-  font-size: 10px;
-}
-
-.nav-menu-parent-child {
-  display: none;
-  position: absolute;
-  margin-left: -15px;
-  padding: 10px 15px;
-  background-color: $color-black;
-  border-radius: 2px;
-}
-
-.nav-menu-parent-child-item {
-  white-space: nowrap;
-  padding-top: 15px;
-  font-size: 14px;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-.nav-menu-parent-child-item:hover {
-  color: $color-yellow;
-  transition: 0.2s;
-}
-
-.nav-bar-search {
-  order: 3;
-  flex-grow: 1;
-  justify-content: flex-end;
-  text-align: left;
-}
-
-.search-box-input {
-  width: 250px;
-  height: 40px;
-  padding-left: 40px;
-  border-radius: 2px;
-  background-color: $color-gray-dark;
-  border: none;
-  font-size: 16px;
-  background-image: url("./../img/Vector_search_icon.svg");
-  background-repeat: no-repeat;
-  background-position: 10px center;
-  background-size: 20px;
-  outline: none;
-}
-
-.search-box-input:focus {
-  background-color: $color-white;
-  transition: 0.3s;
-}
-
-.nav-bar-login {
-  @include flex-content(null, flex-end, baseline);
-  order: 4;
-  position: relative;
-  flex-grow: 0;
-  margin-right: 20px;
-}
-
-.nav-button {
-  display: inline-block;
-  margin-right: 20px;
-  color: $color-gray;
-  font-size: 14px;
-  text-transform: uppercase;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.nav-button:hover {
-  color: $color-yellow;
-  transition: 0.2s;
-}
-
-.nav-button.login {
-  color: $color-white;
-}
-
-.nav-button.login:hover {
-  color: $color-yellow;
-  transition: 0.2s;
-}
-
-.nav-button.register {
-  color: $color-less-dark;
-  background: $color-yellow;
-  border-radius: 2px;
-  padding: 10px;
+    &--register {
+      color: $color-less-dark;
+      background: $color-yellow;
+      border-radius: 2px;
+      padding: 10px;
+    }
+  }
 }
 
 main {
@@ -627,25 +617,25 @@ main {
 @media (max-width: 1024px) {
   .nav-bar {
     background-color: transparent;
-  }
-  .nav-bar-menu {
-    display: none;
-  }
-  .nav-bar-login {
-    display: none;
+    &__logo {
+      visibility: visible;
+    }
+    &__menu {
+      display: none;
+    }
+    &__search {
+      display: none;
+    }
+    &__login {
+      display: none;
+    }
   }
 
   .slider {
     margin-top: 0;
   }
-  .logo {
-    visibility: visible;
-  }
   .header-media {
     display: flex;
-  }
-  .nav-bar-search {
-    display: none;
   }
   .search-media {
     display: block;
@@ -673,13 +663,13 @@ main {
 }
 
 @media (max-width: 1160px) {
-  .search-box-input {
+  .nav-bar__search--input {
     width: 120px;
   }
 }
 
 @media (max-width: 1250px) {
-  .nav-button.help {
+  .login__button--help {
     visibility: hidden;
   }
 }

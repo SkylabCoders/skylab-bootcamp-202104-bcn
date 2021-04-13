@@ -15,57 +15,55 @@
   </head>
   <body>
     <header class="nav-bar">
-      <div class="logo">
+      <div class="nav-bar__logo">
         <img src="./../img/rakuten-logo.png" alt="" height="28px" />
       </div>
-      <div class="nav-bar-menu">
-        <ul class="nav-bar-menu-ul">
-          <li class="nav-item-menu">
-            <a><span>Cinema</span><a class="arrow">▼</a></a>
-            <ul class="nav-menu-parent-child">
-              <li class="nav-menu-parent-child-item">
+      <ul class="nav-bar__menu menu">
+          <li class="menu__item item">
+            <a><span>Cinema</span><a class="menu__item--arrow">▼</a></a>
+            <ul class="item__list">
+              <li class="item__list--sub-item">
                 <a target="_self"><span>Family</span></a>
               </li>
-              <li class="nav-menu-parent-child-item">
+              <li class="item__list--sub-item">
                 <a target="_self">Colecciones</a>
               </li>
-              <li class="nav-menu-parent-child-item">
+              <li class="item__list--sub-item">
                 <a target="_self">Top Populares</a>
               </li>
-              <li class="nav-menu-parent-child-item">
+              <li class="item__list--sub-item">
                 <a target="_self">Todos los géneros</a>
               </li>
             </ul>
           </li>
-          <li class="nav-item-menu">
+          <li class="menu__item">
             <a><span>Gratis</span></a>
           </li>
-          <li class="nav-item-menu">
-            <a><span>Suscripciones</span><a class="arrow">▼</a></a>
-            <ul class="nav-menu-parent-child">
-              <li class="nav-menu-parent-child-item">
+          <li class="menu__item item">
+            <a><span>Suscripciones</span><a class="menu__item--arrow">▼</a></a>
+            <ul class="item__list">
+              <li class="item__list--sub-item">
                 <a target="_self"><span>Starzplay</span></a>
               </li>
-              <li class="nav-menu-parent-child-item">
+              <li class="item__list--sub-item">
                 <a target="_self"><span>RTV suscripción</span></a>
               </li>
             </ul>
           </li>
-        </ul>
-      </div>
-      <div class="nav-bar-search">
+
+      </ul>
+      <div class="nav-bar__search">
         <input
-          class="search-box-input"
+          class="nav-bar__search--input"
           type="text"
           name="search"
-          id="search"
           placeholder="Buscar"
         />
       </div>
-      <div class="nav-bar-login">
-        <a class="nav-button help">Ayuda y dispositivos</a>
-        <a class="nav-button login">Entrar</a>
-        <a class="nav-button register">Registrarse</a>
+      <div class="nav-bar__login login">
+        <a class="login__button login__button--help">Ayuda y dispositivos</a>
+        <a class="login__button login__button--login">Entrar</a>
+        <a class="login__button login__button--register">Registrarse</a>
       </div>
     </header>
     <main>
