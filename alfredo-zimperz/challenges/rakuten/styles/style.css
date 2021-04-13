@@ -40,7 +40,7 @@ a {
   z-index: 2;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1000px) {
   .container-header {
     background-color: transparent;
     position: absolute;
@@ -418,9 +418,9 @@ footer .footer__points {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: unset;
-        -ms-flex-align: unset;
-            align-items: unset;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
