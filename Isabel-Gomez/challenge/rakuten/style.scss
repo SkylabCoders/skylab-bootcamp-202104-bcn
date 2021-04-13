@@ -87,7 +87,6 @@ a {
     }
     input:focus {
         background-color: $color-main;
-
     }
     i {
         margin-top:-8px;
@@ -298,7 +297,6 @@ a {
 
 footer {
     height: 576px;
-    padding: 25px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -312,36 +310,92 @@ footer {
 }
 
 .main-footer {
+    padding: 25px;
     height: 440px;
     text-align: center;
 }
 
 .footer-info-title {
+    margin-top: 15px;
+    color: $color-main;
+    font-size: 22px;
+    text-align: center;
   span {
         text-transform: uppercase;
     }
 }
 
+.footer-info-text {
+    margin: 10px auto 40px;
+    width: 50%;
+    color: $color-secundary;
+    font-size: 14px;
+    text-align: center;
+    line-height: 160%;
+}
+
 .footer-faqs {
     display: flex;
+    justify-content: center;
     height: 191px;
     li {
         display: flex;
         flex-direction: column;
         width: 364px;
+        padding: 0 35px;
+        i {
+           font-size: 50px;
+        }
     }
+}
+
+
+.faqs-title, .faqs-text {
+    margin-top: 15px;
+    span {
+        text-transform: uppercase;
+    }
+}
+
+.faqs-title {
+    font-size: 24px;
 
 }
 
+.faqs-text {
+    margin-top: 10px;
+    color: $color-secundary;
+    font-family: NotoSans-Regular,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 160%;
+    padding: 0 25px;
+}
 
 .rakuten-info {
     background-color: $background-color-mini-footer;
     height: 136px;
     width: 100%;
+    padding: 35px 45px;
+    color: $color-secundary;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color .1s ease;
 }
 
 .rakuten-info-link {
     display: flex;
+    justify-content: space-between;
+    a {
+        color: $color-secundary;
+        span {
+        text-transform: uppercase;
+    }
+    }
+}
+
+.copirigth {
+    color: #737373;
+    margin: 20px 0 0 30px;
 }
 
 
