@@ -250,8 +250,8 @@ ul.main-icons li img.big-icon {
 
 main {
   padding: 50px 0px;
-  height: 2000px;
   background-color: #F8F8F8;
+  width: 100vw;
 }
 
 header {
@@ -470,7 +470,15 @@ header .logo img {
 }
 
 .carousel__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0;
+  margin: 0 auto;
   background-color: #ed8569;
 }
 
@@ -479,7 +487,8 @@ header .logo img {
 }
 
 .carousel {
-  border: 2px solid red;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .separator {
@@ -534,44 +543,29 @@ header .logo img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
+  margin-top: 30px;
 }
 
 .main-content .content-wrapper .product-card-vertical {
-  width: 100%;
+  width: 410px;
   height: 615px;
   background-color: #F8F8F8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 40px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-}
-
-.main-content .content-wrapper .product-card-vertical .product-card__img {
   background-image: url("./images/moldesdereposteria.jpeg");
-  width: 30%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-
-.main-content .content-wrapper .product-card-vertical .product-card__img .product-card__wrapper {
-  width: 180px;
-  background-color: #ffffffcc;
-  opacity: 0.8;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .main-content .content-wrapper .horizontal-wrapper {
@@ -582,16 +576,19 @@ header .logo img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 60%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .main-content .content-wrapper .horizontal-wrapper .product-card-horizontal {
-  width: 100%;
+  width: 648px;
   height: 300px;
   background-color: #F8F8F8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 40px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -600,23 +597,17 @@ header .logo img {
           align-items: flex-end;
 }
 
-.main-content .content-wrapper .horizontal-wrapper .product-card-horizontal .product-card-horizontal__img {
+.main-content .content-wrapper .horizontal-wrapper .horizontal2 {
+  background-image: url("./images/pequenoelectrodomestico2.jpeg");
+}
+
+.main-content .content-wrapper .horizontal-wrapper .horizontal1 {
   background-image: url("./images/utensiliosbasicos.jpeg");
-  width: 40%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
 }
 
-.main-content .content-wrapper .horizontal-wrapper .product-card-horizontal .product-card-horizontal__img .product-card-horizontal__wrapper {
-  width: 180px;
+.product-card__wrapper,
+.product-card-horizontal__wrapper {
+  width: 320px;
   background-color: #ffffffcc;
   opacity: 0.8;
 }

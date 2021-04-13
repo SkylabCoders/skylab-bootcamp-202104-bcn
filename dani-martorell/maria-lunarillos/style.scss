@@ -200,8 +200,8 @@ ul.main-icons li img.big-icon {
 }
 main {
     padding: 50px 0px;
-    height: 2000px;
     background-color: #F8F8F8;
+    width: 100vw;
 }
 header {
     height: 260px;
@@ -355,7 +355,12 @@ header .logo img{
 }
 
 .carousel__container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
     padding: 0;
+    margin: 0 auto;
+
     background-color: #ed8569;
         img {
             width: 1080px;
@@ -363,7 +368,9 @@ header .logo img{
 }
 
 .carousel {
-    border: 2px solid red;
+    width: 100%;
+    margin: 0 auto;
+
 }
 
 .separator {
@@ -410,64 +417,63 @@ header .logo img{
     }
     .content-wrapper {
         display: flex;
+        justify-content: space-between;
         width: 100%;
+        margin-top: 30px;
 
         .product-card-vertical {
-            width: 100%;
+            width: 410px;
             height: 615px;
             background-color: #F8F8F8;  
             display:flex;
-            margin-top: 40px;  
             justify-content:flex-start;
             align-items: flex-end;
+            background-image: url("./images/moldesdereposteria.jpeg");
+            background-repeat: no-repeat;
+            background-size: 100%;
 
-            .product-card__img {
-                background-image: url("./images/moldesdereposteria.jpeg");
-                width: 30%;
-                height: 100%;
-                display: flex;
-                justify-content: flex-start;
-                align-items: flex-end;
-
-                .product-card__wrapper {
-                    width: 180px;
-                    background-color: #ffffffcc;
-                    opacity: 0.8;
-                    
-                }
-            }
+                
+            
         }
         .horizontal-wrapper {
             display: flex;
             flex-direction: column;
+            width: 60%;
+            justify-content: space-between;
 
             .product-card-horizontal {
-                width: 100%;
+                width: 648px;
                 height: 300px;
                 background-color: #F8F8F8;  
                 display:flex;
-                margin-top: 40px;  
                 justify-content:flex-start;
                 align-items: flex-end;
 
-                .product-card-horizontal__img {
-                    background-image: url("./images/utensiliosbasicos.jpeg");
-                    width: 40%;
-                    height: 100%;
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: flex-end;
+                    
+                
+            }
+            .horizontal2 {
+                background-image: url("./images/pequenoelectrodomestico2.jpeg");
 
-                    .product-card-horizontal__wrapper {
-                        width: 180px;
-                        background-color: #ffffffcc;
-                        opacity: 0.8;
-                        
-                    }
-                }
+
+            }
+            .horizontal1 {
+                background-image: url("./images/utensiliosbasicos.jpeg");
+
+
             }
         }
     }
     
 }
+
+.product-card__wrapper,
+.product-card-horizontal__wrapper {
+    width: 320px;
+    background-color: #ffffffcc;
+    opacity: 0.8;
+    
+}
+
+
 
