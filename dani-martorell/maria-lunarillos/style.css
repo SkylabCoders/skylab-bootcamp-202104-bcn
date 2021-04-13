@@ -471,6 +471,7 @@ header .logo img {
 
 .carousel__container {
   padding: 0;
+  background-color: #ed8569;
 }
 
 .carousel__container img {
