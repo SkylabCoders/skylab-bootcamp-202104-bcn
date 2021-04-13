@@ -118,10 +118,18 @@ a {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  width: 369px;
+  width: 380px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media (max-width: 1250px) {
+  .nav-bar .nav-bar__user-menu {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
 }
 
 .nav-bar .nav-bar__user-menu li:nth-child(1) a {
@@ -135,10 +143,17 @@ a {
 .nav-bar .nav-bar__user-menu li:nth-last-child(1) a {
   background-color: #ffe300;
   border-radius: 2px;
-  width: 108px;
+  width: 120px;
   height: 32px;
   color: #252525;
-  padding: 8px 4px;
+  padding: 8px 8px;
+  text-align: center;
+}
+
+@media (max-width: 1250px) {
+  .nav-bar .nav-bar__user-menu li:nth-last-child(1) a {
+    margin-left: 20px;
+  }
 }
 
 .nav-bar .nav-bar__user-menu .user-menu__item {
@@ -153,6 +168,12 @@ a {
   margin: auto;
 }
 
+@media (max-width: 1250px) {
+  .nav-bar .nav-bar__user-menu .user-menu__item--mobile {
+    display: none;
+  }
+}
+
 .nav-bar .nav-bar__search-container {
   height: 100%;
   -webkit-box-flex: 2;
@@ -165,6 +186,9 @@ a {
 
 .nav-bar .nav-bar__search-container input {
   position: absolute;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   margin-left: 20px;
   padding-left: 30px;
   width: 300px;
@@ -173,6 +197,12 @@ a {
   background-color: #333333;
   border: none;
   outline: none;
+}
+
+@media (max-width: 1250px) {
+  .nav-bar .nav-bar__search-container input {
+    width: 200px;
+  }
 }
 
 .nav-bar .nav-bar__search-container input:focus {
@@ -191,12 +221,6 @@ a {
   width: 300px;
   margin: auto 0;
   position: relative;
-}
-
-@media (max-width: 1250px) {
-  .nav-bar__user-menu li:first-child {
-    visibility: hidden;
-  }
 }
 
 #main-carousel {
@@ -226,6 +250,13 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
   margin-left: 10px;
+}
+
+@media (max-width: 1250px) {
+  .movies__container .movies :nth-child(4),
+  .movies__container .movies :nth-child(5) {
+    display: none;
+  }
 }
 
 .movies__container .movies .movies__item {

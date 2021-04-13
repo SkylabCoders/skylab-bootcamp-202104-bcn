@@ -100,8 +100,13 @@ a {
 	.nav-bar__user-menu {
 		display: flex;
 		height: 100%;
-		width: 369px;
+		width: 380px;
 		justify-content: space-between;
+
+		@media (max-width: 1250px) {
+			justify-content: flex-end;
+		}
+
 		li:nth-child(1) a {
 			color: #999999;
 		}
@@ -109,12 +114,16 @@ a {
 			color: $color-main;
 		}
 		li:nth-last-child(1) a {
-			background-color: #ffe300;
+			background-color: $color-highlite;
 			border-radius: 2px;
-			width: 108px;
+			width: 120px;
 			height: 32px;
 			color: #252525;
-			padding: 8px 4px;
+			padding: 8px 8px;
+			text-align: center;
+			@media (max-width: 1250px) {
+				margin-left: 20px;
+			}
 		}
 		.user-menu__item {
 			display: flex;
@@ -122,6 +131,11 @@ a {
 			p,
 			a {
 				margin: auto;
+			}
+			&--mobile {
+				@media (max-width: 1250px) {
+					display: none;
+				}
 			}
 		}
 	}
@@ -131,6 +145,7 @@ a {
 		display: flex;
 		input {
 			position: absolute;
+			flex-grow: 1;
 			margin-left: 20px;
 			padding-left: 30px;
 			width: 300px;
@@ -139,6 +154,9 @@ a {
 			background-color: $background-color-input;
 			border: none;
 			outline: none;
+			@media (max-width: 1250px) {
+				width: 200px;
+			}
 		}
 		input:focus {
 			background-color: $color-main;
@@ -155,12 +173,6 @@ a {
 			margin: auto 0;
 			position: relative;
 		}
-	}
-}
-
-@media (max-width: 1250px) {
-	.nav-bar__user-menu li:first-child {
-		visibility: hidden;
 	}
 }
 
@@ -182,6 +194,13 @@ a {
 		display: flex;
 		justify-content: center;
 		margin-left: 10px;
+		@media (max-width: 1250px) {
+			:nth-child(4),
+			:nth-child(5) {
+				display: none;
+			}
+		}
+
 		.movies__item {
 			flex-grow: 1;
 			margin-right: 10px;
