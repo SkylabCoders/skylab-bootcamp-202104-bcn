@@ -11,17 +11,6 @@ $darkergrey-color: #e8e6e5;
 
 body {font: 12px/1.55 'Source Sans Pro', sans-serif;}
 
-.centered1 {
-    display: flex;
-    position: fixed;
-    z-index: 1;
-    flex-direction: row;
-    height: 50px;
-    width: 100%;
-    justify-content: center;
-    align-items: flex-start;
-}
-
 header {
     position: absolute;
     top:-5px;
@@ -30,26 +19,130 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    // border: 3px solid red;
+
+    .centered1 {
+        display: flex;
+        position: fixed;
+        z-index: 1;
+        flex-direction: row;
+        height: 50px;
+        width: 100%;
+        justify-content: center;
+        align-items: flex-start;
+        
+        .centered1__grey-menu {
+            
+            height: 50px;
+            width: 100%;
+            z-index: -1;
+            position: absolute;
+            // background: $grey-color;
+            background-color: $grey-color;
+            overflow: auto;
+        }
+        
+        .centered1__topbar-container {
+            display: flex;
+            flex-direction: row;
+            height: 50px;
+            width: 65%;
+        }
+        .topbar-container__rojo {
+            background: $red-icon-url; 
+            @include color-icons (80px, 150px);
+        }
+        .topbar-container__verde {
+            
+            background: url(./../images/icons/cucute.png) #6199AF bottom center no-repeat;
+            @include color-icons (70px, 70px);
+        }
+        .topbar-container__verde:hover{ height: 150px;}
+        .topbar-container__amarillo {
+            background: url(./../images/icons/mumuchu.png) #F6B436 bottom center no-repeat;
+            @include color-icons (70px, 70px);
+        }
+        
+        .topbar-container__amarillo:hover{ height: 150px;}
+        #three-bars {
+            display: none;
+            color: $red-color;
+            margin-top: 10px;
+            font-size: 30px;
+        }
+        .topbar-container__empty {flex-grow: 5;}
+        .topbar-container__entra { 
+    
+            display: flex;
+            flex-direction: row;
+            float: left;
+            height: input;
+            line-height: 50px;
+            font-weight: 400;
+            color: #2E2925;
+            font-size: 13px;
+            text-transform: uppercase;
+            text-decoration: none;
+        
+        }
+        .topbar-container__entra:hover {
+            .entra__register-icon{background: url("./../images/sprite.svg") -37px 0 no-repeat; }
+            span {color: $red-color;}
+        }
+        .entra__register-icon {
+            width: 27px;
+            height: 27px; 
+            background: url("./../images/sprite.svg") 0 0 no-repeat; 
+            margin: 10px;
+        }
+        .topbar-container__icons {
+            align-self: flex-start;
+            margin: 9px 30px;
+        }
+        .fab {
+            font-size: 20px;
+            margin: 5px; 
+        }
+        
+        .fab:hover { 
+            color: $red-color;
+            cursor: pointer;
+        }
+        .topbar-container__loupe {
+            @include buscar-button (50px, 50px);
+            background: url(./../images/sprite.svg) -303px 10px no-repeat #BBB8B6;
+            cursor: pointer;
+            display: none;
+        }
+        .topbar-container__cart-icon {
+            background: #fff url(./../images/sprite.svg) -65px 15px no-repeat;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .topbar-container__cart-icon:hover {
+            background:  $red-color url(./../images/sprite.svg) -105px 14px no-repeat;
+            cursor: pointer;
+        }
+        .topbar-container__cart-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $red-color;
+            width: 50px;
+            height: 50px;
+            align-self: flex-start;
+            font-size: 25px;
+            color: white;
+            
+        }
+    }
 }
 
-.grey-menu {
-
-    height: 50px;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    // background: $grey-color;
-    background-color: $grey-color;
-    overflow: auto;
-}
-
-
-.topbar-container {
+.header-section {
     display: flex;
-    flex-direction: row;
-    height: 50px;
-    width: 65%;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
 }
 
 .centered2{
@@ -171,13 +264,6 @@ header {
     background: url(./../images/sprite.svg) -303px 2px no-repeat #BBB8B6;
 
 }
-.buscar-button2 {
-    @include buscar-button (50px, 50px);
-    background: url(./../images/sprite.svg) -303px 10px no-repeat #BBB8B6;
-    cursor: pointer;
-    display: none
-}
-
 
 .novedades-icon {
     @include novedades-ofertas-icons;
@@ -206,123 +292,12 @@ font-size: 20px;
 padding: 5px;
 }
 
-.entra { //Entra registrate
-    
-    display: flex;
-    flex-direction: row;
-    float: left;
-    height: input;
-    line-height: 50px;
-    font-weight: 400;
-    color: #2E2925;
-    font-size: 13px;
-    text-transform: uppercase;
-    text-decoration: none;
-
-}
-
-.register-icon {
-    width: 27px;
-    height: 27px; 
-    background: url("./../images/sprite.svg") 0 0 no-repeat; 
-    margin: 10px;
-}
-
-.centered1 a:hover {
-    .register-icon{background: url("./../images/sprite.svg") -37px 0 no-repeat; }
-}
-.centered1 a div:hover {fill: $red-color;}
-
-.rojo {
-    background: $red-icon-url; 
-    @include color-icons (80px, 150px);
-}
 .rojo2 {
     background: $red-icon-url; 
     display: none;
     @include color-icons (70px, 70px);
     margin-bottom: 50px;
     margin-right: 10px;
-}
-
-.verde {
-    
-    background: url(./../images/icons/cucute.png) #6199AF bottom center no-repeat;
-    @include color-icons (70px, 70px);
-}
-
-.verde:hover{ height: 150px;}
-
-.amarillo {
-    background: url(./../images/icons/mumuchu.png) #F6B436 bottom center no-repeat;
-    @include color-icons (70px, 70px);
-}
-
-.amarillo:hover{ height: 150px;}
-
-#three-bars {
-    display: none;
-    color: $red-color;
-    margin-top: 10px;
-    font-size: 30px;
-}
-
-
-div.icons {
-    /* border: 3px solid green; */
-    align-self: flex-start;
-    margin: 9px 30px;
-    
-}
-div.empty {
-    flex-grow: 5;
-}
-
-.fab {
-    
-    font-size: 20px;
-    margin: 5px;
-    
-}
-
-.fab:hover {
-    
-    color: $red-color;
-    cursor: pointer;
-}
-
-
-
-.cart-icon {
-    
-    background: #fff url(./../images/sprite.svg) -65px 15px no-repeat;
-    width: 50px;
-    height: 50px;
-}
-
-.cart-icon:hover {
-    background:  $red-color url(./../images/sprite.svg) -105px 14px no-repeat;
-    cursor: pointer;
-}
-
-
-div.cart-number {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $red-color;
-    width: 50px;
-    height: 50px;
-    align-self: flex-start;
-    font-size: 25px;
-    color: white;
-    
-}
-.header-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; 
 }
 
 .fiesta-section {
@@ -466,6 +441,9 @@ div.cart-number {
         position: absolute;
         bottom: 30px;
         right: 100px;
+        width: 100px;
+        bottom: 0px;
+        left: 0px;
     }
     p {
         font-size: 25px;
@@ -732,15 +710,23 @@ div.cart-number {
     height: 50px;
 }
 @media (max-width: 600px ) {
-    .rojo {display: none;}
-    .verde {display: none;}
-    .amarillo {display: none;}
-    .entra span {display: none;}
-    .icons {display: none;}
-    #three-bars {display: block;}
+    .topbar-container__rojo {display: none;}
+    .topbar-container__verde {display: none;}
+    .topbar-container__amarillo {display: none;}
+    .topbar-container__entra span {display: none;}
+    .topbar-container__icons {display: none;}
+    header {
+        .centered1{
+            #three-bars {display: block;}
+        }
+    }
     .rojo2 {display: block;}
-    .buscar-button2 {display: block;}
-    .register-icon {margin-right: 50px;}
+    header {
+        .centered1 {
+            .topbar-container__loupe {display: inline-block;}
+        }
+    }
+    .entra__register-icon {margin-right: 50px;}
     .centered2-left {width: 100%; margin-top: 50px;}
     .centered2-right {display: none;}
     .long-image {display: none;}
