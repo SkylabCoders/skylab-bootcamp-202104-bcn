@@ -423,6 +423,14 @@ header {
     width: 50% !important;
 }
 
+.wrap-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
 .description-item {
     position: absolute;
     width: 250px;
@@ -464,17 +472,20 @@ header {
     padding-bottom: 15px;
 }
 
-.vertical {
-    top: 80%;
-}
-
-#item_horitzontal_inferior {
-    left: 135%;
+.item {
+    display: flex;
+    align-items: end;
 }
 
 .container {
     display: flex;
     align-items: end;
+}
+
+#horitzontal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #content-footer {
