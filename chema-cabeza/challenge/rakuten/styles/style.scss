@@ -9,6 +9,7 @@
 }
 body {
     background-color: black;
+    font-family: NotoSans-Bold,Arial,sans-serif;
 }
 
 .rakuten-footer {
@@ -20,17 +21,82 @@ body {
     overflow: visible;
     top: 0px;
     width: 100%;
-    height: 50px;
-}
-.rakuten-footer > img {
-    width: 200px;
-    height: auto;
+    height: 60px;
+    z-index: 1;
+    img {
+      width: 200px;
+      height: auto;
+    }
+    span {
+        color: white;
+        margin: 5px;
+        text-decoration: none;
+    }
+    .rakuten-footer__empty {
+      flex-grow: 5;
+    }
+    .rakuten-footer__search-input {
+      font-size: 16px;
+      color: #ccc;
+      padding-left: 40px;
+      height: 40px;
+      background-color: #333;
+      border-radius: 2px;
+      border: none;
+    }
+    .rakuten-footer__yellow-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffe300;
+        width: 120px;
+        height: 35px;
+        border-radius: 3px;
+        text-decoration: none;
+        margin: 0px 15px;
+        span {
+          color: #252525;
+        }
+  
+    }
 }
 
-.rakuten-footer > span {
+.row1-section {
+  margin: 10px;
+  z-index: 2;
+  span {
     color: white;
-    margin: 5px;
+    padding: 10px;
+    font-size: 25px;
+  }
 }
+.row1-section__row-1{
+  margin: 20px;
+  div{
+    color:#fff;
+    margin: 0px 2px;
+  }
+
+}
+
+.row2-section {
+  margin: 10px;
+  span {
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+  }
+}
+.row2-section__row-2{
+  margin: 20px;
+  div{
+    color:#fff;
+    margin: 0px 2px;
+  }
+
+}
+
 .slideshow-container {
   width: 100%;
   // position: relative;
@@ -115,14 +181,7 @@ body {
   from {opacity: .4}
   to {opacity: 1}
 }
-.carousel-1{
-  margin: 20px;
-  div{
-    color:#fff;
-    margin: 0px 2px;
-  }
 
-}
 
 //////////// Slick Slider section ////////////
 .slick-slider {
@@ -186,9 +245,9 @@ body {
     right:0;
 }
 .slick-prev {
-    left:30px;
+    left:20px;
 }
 .slick-next {
-    right:30px;
+    right:50px;
 }
 /////////////////////////////////////

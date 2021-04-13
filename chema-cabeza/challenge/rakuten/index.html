@@ -13,10 +13,27 @@
 <body>
 
 <footer class="rakuten-footer">
-    <img src="./img/rakuten-logo.png" alt="">
+  <img src="./img/rakuten-logo.png" alt="">
+  <a href="https://rakuten.tv/es/gardens/tienda-pan">
     <span>CINEMA</span>
+  </a>
+  <a href="https://rakuten.tv/es/gardens/avod">
     <span>GRATIS</span>
+  </a>
+  <a href="https://rakuten.tv/es/gardens/subscription">
     <span>SUSCRIPCIONES</span>
+  </a>
+  <input type="text" class="rakuten-footer__search-input" name="search" placeholder="Buscar" maxlength="64" value="" autocomplete="off">
+  <div class="rakuten-footer__empty"></div>
+  <a href="https://ayuda.rakuten.tv">
+    <span>AYUDA Y DISPOSITIVOS</span>
+  </a>
+  <a href="https://ayuda.rakuten.tv">
+    <span>ENTRAR</span>
+  </a>
+  <a href="https://rakuten.tv/es/registrations/new" class="rakuten-footer__yellow-button">
+    <span button="button-registrarse">REGISTRARSE</span>
+  </a>
 </footer>
 
 <div class="slideshow-container">
@@ -57,17 +74,34 @@
     <img src="./img/first-row-img/dreamworks.jpeg" alt="">
 
   </section>
-  <div class="carousel-1">
-    <img src="./img/second-row-img/image.png" alt="">    
-    <img src="./img/second-row-img/image (1).png" alt="">
-    <img src="./img/second-row-img/image (2).png" alt="">    
-    <img src="./img/second-row-img/image (3).png" alt="">    
-    <img src="./img/second-row-img/image (4).png" alt="">    
-    <img src="./img/second-row-img/image (5).png" alt="">    
-    <img src="./img/second-row-img/image (6).png" alt="">    
-    <img src="./img/second-row-img/image (7).png" alt="">    
+  <section class="row1-section">
+    <span>GRATIS - La mejor selección de películas</span>
+    <div class="row1-section__row-1">
+      <img src="./img/second-row-img/image.png" alt="">    
+      <img src="./img/second-row-img/image (1).png" alt="">
+      <img src="./img/second-row-img/image (2).png" alt="">    
+      <img src="./img/second-row-img/image (3).png" alt="">    
+      <img src="./img/second-row-img/image (4).png" alt="">    
+      <img src="./img/second-row-img/image (5).png" alt="">    
+      <img src="./img/second-row-img/image (6).png" alt="">    
+      <img src="./img/second-row-img/image (7).png" alt="">    
+    </div>
+  </section>
 
-  </div>
+  <section class="row2-section">
+    <span>CINEMA - Las películas del momento</span>
+    <div class="row2-section__row-2">
+      <img src="./img/second-row-img/image (5).png" alt="">    
+      <img src="./img/second-row-img/image (1).png" alt="">
+      <img src="./img/second-row-img/image (4).png" alt="">    
+      <img src="./img/second-row-img/image (2).png" alt="">    
+      <img src="./img/second-row-img/image.png" alt="">    
+      <img src="./img/second-row-img/image (7).png" alt="">    
+      <img src="./img/second-row-img/image (6).png" alt="">    
+      <img src="./img/second-row-img/image (3).png" alt="">    
+    </div>
+  </section>
+
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -75,7 +109,29 @@
     <script src="./scripts/script.js"> </script>
     <script>
       $(document).ready(function(){
-        $('.carousel-1').slick({
+        $('.row1-section__row-1').slick({
+            slidesToShow: 6,
+            slidesToScroll: 6,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            arrows: true,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 3
+                }
+            }]
+        });
+      });
+      $(document).ready(function(){
+        $('.row2-section__row-2').slick({
             slidesToShow: 6,
             slidesToScroll: 6,
             autoplay: false,
