@@ -11,8 +11,8 @@
 <body>
     <header class="header-fix">
         <nav class="navigation">
-            <a href="index.html"><img src="image/rakutenLogo.png" alt="RakutenTV" class="logo"></a>
-            <ul class="nav-left">
+            <a href="index.html"><img src="image/rakutenLogo.png" alt="RakutenTV" class="header-fix__logo"></a>
+            <ul class="navigation__left">
                 <select class="cinema" name="cinema-options">
                     <option value="" class="options-cine">CINEMA</option>
                     <option value="family" class="options-cine">FAMILY</option>
@@ -43,9 +43,9 @@
         </div>
         <button class="movie__picture--button">VER GRATIS CON ANUNCIOS</button>
     </div>
-    <main class="body-web">
-        <div class="movie-description">
-    <ul class="movie-description--time">
+    <main class="movie">
+        <div class="movie__description">
+    <ul class="movie__description--time">
         <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAACVklEQVR4nO3avWoVQRiH8d9RkSiIVolaiE1QsZGgF2BjK5YiiqAgViKGXIGWam4iih+9jeglxEJQYpmcoEFBExvzYSz2bCIxiSd7ZmazOg/8mwP7nnlml5ndd5dMJpPJZDKZTCaTyWQymcz/Raum/xzCcfR3fpvBO4xjuYYxJeEgRtFWSK6XNh5ioKYxRqGFEXy3sfjazGFYPVdoUPrwWPfia/OoU6ORtDCmunyZZxp6JYzoXb7MncRj75l+zAo3AXOKRbQxjAonX+ZBUoMe2IFp4SegrSFrwWnh5csMhR7sjtAFcSxCzWi1Y0zAoQg1Sw6HLhhjApYj1IxWO8YETEeoWdIOXTDGBExEqJmidjBamBR+B5gSYRuMtQY8j1D3ibjrS1Bi3Ao3rkcwLNwE3E489iCEehx+qiG3wOvRp2hqVJUf0+CGSElL8Tw/p3vxWcVl39gzvx4DikfaKRuLT+K+1W5xdOpqi59StMXLJsdHvMcbDdrqMpl/gNRrQB9OYhAHsL/z+zd8xQe8xY/E44pGC2dwT7HALfj7FrigeEd4V9Fea+RWuBtXFGez1zvBCdzCnqQGFWnhks1fgFbNFC6mU9k6R/FaePG1eYUjiZy65iw+iS9f5jPOJTHrghtYlE6+zCKuJ/DblGtYkl6+zE/cjG65ARc6A6hLvswSzkd2/YNBxY1L3fJlZnEiqvFv7LT6MdN2yjh2RfRe4XINct3makTvFV7UJNdNXkb0XmGmJrlu8mWrMlVejOyrcEwq9m71gCoTMIr5CsfFZl6DPqPJZLYJvwDw7redBvDtywAAAABJRU5ErkJggg==" class="icon__time">13</li>
         <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABoUlEQVRIid2VvUoDQRSFv2x0G5PSPqXRV4i9EVTiL7EMiTYx+Ai2oo0vIAQ1vkwwCorGKGisbAQJKNisxdxhh7izO0nphYHlnjPnzN69czeFWwSWfCppo+do8H8iwF6usarhA+tAC7g3DG6BU2BNhKeBNrA8ingJeDNEbevRMG+7vEkKODEEroA6kAemZOUl1zF4H/ImiaHFv4EK8a3oAVXhBsBBkvimEL+AJWDC5URAwTBZtJF84EVIFRE/BHKOJjXZ2xWtP7FNWHP9oXLAK1B2MPCAa9FYiSJcClgfypcl3wSyCSYN4Z5FgU8CzkRgTcF+UK1btBjMCu8uChwImInAsiKuW7JvMcgK/qkT5qWwjQBt/h6DD0dka3fFJG/ZVESVpw8sWDi6RA9RYEvAvRFOOhz7xHzkLQE7jDcZPeBGNDaiCD7wLITqGAY7sreH5aKBGr96DhVGEJ8nHBWlJPKxYVIjvlwesGuIH7mcJm2YBKjr3wDmUKM6I88Nwppr8bSLgY5Vwtsdt3o4lMUWPqojLlB/rYGse+Ac9TudjBP4BThWg2YuuVwEAAAAAElFTkSuQmCC" class="icon__time">91 minutos</li>
         <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAADG0lEQVR4nO3aT2tcVRgG8N+EUk01aqGUasWAjoL4BbpwI6XYRf2zqNCug6jdhII7VwY0CtGApKVpAkK76cKNuhBt/QR+A5sgtmIbu0lrERM14+Jk9GSSyZ2Ze2fOJHMfOAz33vc+5z3PnD/vOe+lRGF4FG/jKm5iBb/iW7yJB3LyP4a3cK1L/LlwErdQ26Ys4EiH/G9gqYv8uTCe4Vhc7uPFNvnf7TJ/LryMtciBGziDp7B3/XccdyKbS23wv97A/5MwDIriz42zUcXfY6SJ3Sh+wF0cb4P/44j/OzxcMH9ujGBGcHRfF/gP42tcxENd4C8x8KhkPH8Or2Go4f5v+Dy6fgePFOjXMmaj6zEcKIh7DV/ix1aMF2293PyD4cjudhO7PCVu8PWCuRfqxI3/bCOebnJ/CM9H199k8HSCF7rI/0yrhtup+EFkV8UfGfbtls8i/ieFJa5I/twCLAnxeR0nhEisKAeXcTDiP1qwCLkFqGGuwb6KeSEiXGvh/axyxcaJehTn8bMwDyUXoIb3mrw7jKkCRJi09Wr1IN7vBwFquGzrZeqJAgSo4Qsc2oJ/pF8EqOEepvESHhdC48mCBKgJ88sMjq3zDwu9L5cAWYFQy0rtQFTIjgN2PQZegD1t2GYNl52ATUN64HtAKUBqB1KjFCC1A6lRCpDagdTohQATQhw/ZQfGEitC8LCSg+N3/29ALkgrQtu7wY/wl5D46BSfNlScUoS2BSgCFWEbG1c+L838k0QA+keEZALQHyIkFYD0ImwSoL4druJVfCXKmmieGsuDX4RMUv2Mbwx/C+m1ZP/MwnrljfmyZqmxbpTT3WpchE09YCh6MJCor8dVvCIMgcXo+bM4pdiPEyrCV137o3uzejMEYv4ksUgF52zsinMSToK9ROrGk1CAfmg8iQTol8bTgQAfYlXYFHWKTxoq3lGboT8N+Ha4iDEzIYjQDwciuZKjqZ0vApvaU54JpnYgNUoBUjuQGqUAqR1IjVKA1A6kRilAagdSo52PpHbluWFWD1jtiRe9x3/tyhJg2u4TYVVI2JYoUYJ/AS6HPjg1wUaOAAAAAElFTkSuQmCC" class="icon__time"> 2004</li>
@@ -75,13 +75,13 @@
         </div>
         <div class="actors">
             <h5><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEs0lEQVR4nO2bzW8VVRjGf9O4AGkBTa6UKJ9VsQoEureCiBpiAnWhEELc+MFOJZgAQmJitPpPKBAVAQWNyIIFmMLCaLqS8uGCEI3GkkgJvYYgbcfFO1Mm7T3fZ6YY7pO8SXtu7/s873TOmXOecwaaaKKJJu5iJBXzzQEeAxYDM7IA+CeLS8AFYLBiXaVhLrAVOARcAVLLGAQOAm8A7ZWrDkQL0AMcB0awL1oVt4DvgQ1Z7jsWCbAZGCC8aFWcBTZRfdc1YjlwhvIKnxh9wLJKKjMgAd4EblJd8cWu8R5T2C3agO80AquKb4DWkmudhBrwc6DwFBjOIjTPT5mmSlADzgeI/Rt4B3iwkHMesBMYCsh7jgouQhth//kBYL4m/yJkIhRyJ5TWHRLC+vx1YKEFz8OEdYujlPSY3B4gKgXed+DqDeR627tKBZYB/waKWu7AtzKQ6ybwhGetk5AApwMFpcC9DpwzIvD9QKSusDmCmBSY5cA5OxLny14VF9BCvLl9twPvM5E4fyHwLuiJJCQFPnHgPRCRd71H3eM4HlHICHZ3wTpgLCLvMd/i5yILjlhCUmQW+LSGcz0yX4jJeQtxopyxNbKQPEYRh2gDsAToBF5CTI8y+FLgNZ8LcKhEQVXHAZ8LYOPhDQMfAiuA6cBM4CngU+LYYXmMIINod8YxHZks9QJ1i+//5Vp8u0XS80CHJscqwlZ3eVxFLqoKHdgtoB6wrj4jNImyWdg8S9iIPgasseBZBFwz5HrSIs84XjEk2+GQ64ghly4OO/DsMuTa0uhLKj9tpoHscwdhnyna68BuYA+yKVIWT46GU/F7FH+sMxWuA7/bKMowoGj/CPig8Huj5fI5B57fkEG5TfF5w3YfRzWW2WCTJ6axMdqoUXUH1DWJ2hAPz/YuWKpo36H4uYjHgYuWPPNR//dBBm5rmAbBXQ65jhpy6eJrB56dhlwvOuSi25BsCHn0mPA84Y/BtRY8CzHPOVyW48yxEHcRMTBVWGMhyiaGgNUang7MNv0YcL919RkGLcTVkdG8C7G8Zmdi9yODTmjxeYwCe5HZ5ayMqwv7qfCvrsWD7M/HKmCqY7+qSN1j8KTpCnkiBb5C3KbOLHq4PWMsA30+X2onviFyFf3cfi1xxo1i3EC6phdimhQj6Fd1OVYTdyl90Ld4ENcmlhAXU3RvRN51HnWPowU5lhJDiMty1LQct41+IkynN0USMxUbI895VTwBCTKKhoqpemvslF+5jbGU8HNAKxz4ugK56ojjHBXbAkX1OnB9HMj1qneVGiTIgSRfUcPoTdQcjyAOkS+Pi43mjFbkGIqvuAvoV5EdyCLLN38fbmONF2qIVeUr8hriJxTPCi0A3sXs7OqiH7cnTRBqhN0JedSxW82Z4kcqPCaXo5UwtydW7AOmlVyrEglyIGkqjsreAN4qv0Q7PAqcoLriTyEvXgQjpu2cINvcu1E7wTHQj/5R9yeyoTI2ob0T2Ijseqv2KqIgQQ46HCO+n2AbE7fBWoA/ss+uUDCCyjhqngLfAi8ADwGvA19S7XtAqaatXvy86jcvatx+aao1i/sic5wFvmByF1iM+BtHgMuROZtoookm/p/4D3xgQKx0SKZMAAAAAElFTkSuQmCC"/ class="iconDirection">Dirección y reparto</h5>
-            <ul class="actor--list">
+            <ul class="actor__list">
                 <li><img src="https://images-1.wuaki.tv/system/photos/1963/original/julianne-moore-1525277072-width170-quality50.jpeg" alt=""></li>
                 <li><img src="https://images-0.wuaki.tv/system/photos/7612/original/dominic-west-1525283643-width170-quality50.jpeg" alt=""></li>
                 <li><img src="https://images-3.wuaki.tv/system/photos/9471/original/joseph-ruben-1543634129-width170-quality50.jpeg" alt=""></li>
                 <li><img src="https://images-3.wuaki.tv/system/photos/27053/original/scott-nicholson-1534828912-width170-quality50.jpeg" alt=""></li>
             </ul>
-            <ul class="actors--list--name">
+            <ul class="actors__list--name">
                 <li>Julianne Moore</li>
                 <li>Dominic West</li>
                 <li>Joseph Ruben</li>

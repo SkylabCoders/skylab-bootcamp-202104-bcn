@@ -30,6 +30,14 @@
   height: 60px;
 }
 
+.navigation__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin-top: 20px;
+}
+
 .header-fix {
   background-color: black;
   color: white;
@@ -46,15 +54,7 @@
   left: 0;
 }
 
-.nav-left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  margin-top: 20px;
-}
-
-.logo {
+.header-fix__logo {
   height: 40px;
   width: 150px;
   -ms-flex-item-align: center;
@@ -279,13 +279,13 @@
   height: 7vh;
 }
 
-.body-web {
+.movie {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.body-web .movie-description {
+.movie__description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,40 +299,40 @@
   line-height: 180%;
 }
 
-.body-web .movie-description ul {
+.movie__description ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.body-web .movie-description--time li {
+.movie__description--time li {
   list-style: none;
   margin-left: 15px;
 }
 
-.body-web .movie-description li {
+.movie__description li {
   list-style: none;
   margin-left: 15px;
 }
 
-.body-web .movie-description--paragraph {
+.movie__description--paragraph {
   justify-self: flex-start;
   margin-left: 2vw;
   width: 70vw;
 }
 
-.body-web .icon__time {
+.movie .icon__time {
   width: 20px;
   height: 20px;
 }
 
-.body-web .movie__language {
+.movie .movie__language {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.body-web .movie__language--list {
+.movie .movie__language--list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -342,7 +342,7 @@
           flex-direction: column;
 }
 
-.body-web .movie__language--list2 {
+.movie .movie__language--list2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -353,51 +353,51 @@
   margin-top: 12vh;
 }
 
-.body-web .movie__language--title {
+.movie .movie__language--title {
   font-weight: bold;
 }
 
-.body-web .social__media {
+.movie .social__media {
   height: 30vh;
   width: 30vw;
   background-color: #ccc;
 }
 
-.body-web .social__media--list li {
+.movie .social__media--list li {
   list-style: none;
   margin-top: 3vh;
 }
 
-.body-web .social__media--list li:hover {
+.movie .social__media--list li:hover {
   -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
           filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
   cursor: pointer;
 }
 
-.body-web .icon__social {
+.movie .icon__social {
   width: 20px;
   height: 20px;
 }
 
-.body-web .icon__social:hover {
+.movie .icon__social:hover {
   -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
           filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg) brightness(97%) contrast(95%);
   cursor: pointer;
 }
 
-.body-web .actors--list ul li {
+.movie .actors__list ul li {
   margin-top: 10vh;
 }
 
-.body-web .actors--list--name li {
+.movie .actors__list--name li {
   margin-left: 5vw;
 }
 
-.body-web .actors h5 {
+.movie .actors h5 {
   margin-left: 2vw;
 }
 
-.body-web .actors h5 img {
+.movie .actors h5 img {
   width: 20px;
   height: 20px;
 }
