@@ -5,18 +5,81 @@
     margin-left: 20px;
     margin-top: 30px;
 }
+.movie-header{}
 
-.movie-image{
-    background-image: linear-gradient(to bottom, transparent 65%, black);
+&__image{
+    background: linear-gradient(to bottom, transparent 75%, black),
+    url("https://images-3.wuaki.tv/system/shots/196727/original/snapshot-1590665489-width1920-quality80.jpeg");
     width:100%;
-    min-height: 500px; 
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    max-height: 500px; 
+    min-height: 900px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
 }
+    &__info{
+        position: relative;
+        display: flex;
+        &--buttons{
+            display: flex;
+            position: absolute;
+            top: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            .buttons{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+            .button-section{
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                padding: 50px;
+                text-align: center;
+                color: white;
+            }
+            button{
+                border: none;
+                height: 100px;
+                width: 100px;
+                background-color: rgba(0, 0, 0, 0.555);
+                color: white;
+                border-radius: 50%;
+            }
+        }
+        &--title{
+            color: white;
+            font-size: 24px;
+            position: absolute;
+            bottom: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        &--watch{
+            color: $black;
+            margin-top: 10px;
+            justify-content: center;
+            border-radius: 5px;
+            position: absolute;
+            width: 100%;
+            bottom: 4%;
+            a{
+                background-color: $amarillo;
+                text-align: center;
+                padding: 20px;
+
+            }
+        }
+    }
+
 body{
     background-color: #f1f1f1;
 }
