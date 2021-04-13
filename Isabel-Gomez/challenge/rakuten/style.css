@@ -103,7 +103,7 @@ a {
   color: #FFE300;
 }
 
-.cinema .non-visible-wrap {
+.cinema:hover .non-visible-wrap {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
