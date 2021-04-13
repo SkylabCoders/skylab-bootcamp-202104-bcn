@@ -98,6 +98,9 @@ body {
 .header-fix__nav--left:hover {
   color: yellow;
   cursor: pointer;
+  .header-fix__nav--arrow {
+    transform: rotate(180deg);
+  }
   .drop-list {
     color: white;
     display: block;
@@ -120,6 +123,9 @@ body {
 .header-fix__nav--right:hover {
   color: yellow;
   cursor: pointer;
+  .header-fix__nav--arrow {
+    transform: rotate(180deg);
+  }
   .drop__list--right {
     color: white;
     display: block;

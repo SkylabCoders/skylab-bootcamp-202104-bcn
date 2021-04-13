@@ -114,6 +114,11 @@ body {
   cursor: pointer;
 }
 
+.header-fix__nav--left:hover .header-fix__nav--arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .header-fix__nav--left:hover .drop-list {
   color: white;
   display: block;
@@ -140,6 +145,11 @@ body {
 .header-fix__nav--right:hover {
   color: yellow;
   cursor: pointer;
+}
+
+.header-fix__nav--right:hover .header-fix__nav--arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .header-fix__nav--right:hover .drop__list--right {
