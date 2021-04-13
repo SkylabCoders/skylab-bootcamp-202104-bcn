@@ -223,7 +223,7 @@ header .logo img{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-bottom: 65px;
+    margin-bottom: 0px;
     margin-left: auto;
 }
 
@@ -233,7 +233,7 @@ header .logo img{
 
 .buscador {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .novedades {
     display: flex;
@@ -297,15 +297,14 @@ header .logo img{
 }
 
 .secciones {
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    align-self: flex-end;
-    border: 2px solid green;
+    align-self: center;
 }
 .secciones li {
     list-style: none;
     margin-right: 6px;
-    background-color: red;;
 }
 
 .utensilios {
@@ -315,7 +314,7 @@ header .logo img{
     align-items: center;
     width: 100%;
     color: black;
-    margin-top: 60px;
+    margin-top: 20px;
     font-size:15px;
     font-weight: 800;
 }
@@ -336,6 +335,13 @@ header .logo img{
 }
 .secciones li:last-child {
     margin-right: 0;
+    margin-left: auto;
+}
+.secciones li a {
+    text-decoration: none;
+}
+.secciones li a:hover {
+    color: inherit;
 }
 
 .secciones li:last-child img:hover{
@@ -351,9 +357,9 @@ header .logo img{
     max-width: 1080px;
     height: 100%;
     margin: 0 auto;
+
 }
 .carousel__container {
-    max-width: 1080px;
     padding: 0;
 
         img {
@@ -361,4 +367,7 @@ header .logo img{
         }
 }
 
+.carousel {
+    border: 2px solid red;
+}
 
