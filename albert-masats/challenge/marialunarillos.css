@@ -47,24 +47,52 @@
 }
 
 .facebook {
-    height : 80%;
-    width: 40px;
+    width: 25px;
+    height: 20px;
+    margin: 15px 7px 0;
+    background: url(./images/sprite.svg) transparent 0 0 no-repeat;
+    text-indent: -3000px;
+    display: block;
+    text-indent: -3000px;
+    background-position: -4px -540px;
+    cursor:pointer;
 }
 
 .twitter {
-    height : 80%;
-    width: 40px;
-
+    width: 25px;
+    height: 20px;
+    margin: 15px 7px 0;
+    background: url(./images/sprite.svg) transparent 0 0 no-repeat;
+    text-indent: -3000px;
+    display: block;
+    text-indent: -3000px;
+    background-position: -40px -540px;
+    cursor:pointer;
 }
 
 .instagram {
-    height : 80%;
-    width: 40px;
+    width: 25px;
+    height: 20px;
+    margin: 15px 7px 0;
+    background: url(./images/sprite.svg) transparent 0 0 no-repeat;
+    text-indent: -3000px;
+    display: block;
+    text-indent: -3000px;
+    background-position: -75px -540px;
+    cursor:pointer;
 }
 
+
 .pinterest {
-    height : 80%;
-    width: 40px;
+    width: 25px;
+    height: 21px;
+    margin: 15px 7px 0;
+    background: url(./images/sprite.svg) transparent 0 0 no-repeat;
+    text-indent: -3000px;
+    display: block;
+    text-indent: -3000px;
+    background-position: -110px -540px;
+    cursor:pointer;
 }
 
 .youtube {
@@ -74,12 +102,16 @@
     background: url(./images/sprite.svg) transparent 0 0 no-repeat;
     text-indent: -3000px;
     background-position: -174px -530px;
-    margin-right:auto;
+    cursor:pointer;
 }
 
 .entrar-container {
-    width:200px;
-
+    display:flex;
+    flex-direction: flex-end;
+    width: 180px;
+    text-align: center;
+    margin-right:30px;
+    cursor:pointer;
 }
 
 .social-container {
@@ -87,6 +119,8 @@
     flex-direction: row;
     justify-content: flex-start;
     width: 200px;
+    margin-right:32px;
+    cursor:pointer;
 }
 
 .entrar {
@@ -94,6 +128,15 @@
     width: 30px;
     background: url(./images/sprite.svg) 0 0 no-repeat;
     margin: 10px;
+    text-align: end;
+    cursor:pointer;
+}
+
+.entrar-texto {
+    display:flex;
+    text-align:center;
+    align-items: center ;
+
 }
 
 .icons-upperbar {
@@ -121,9 +164,8 @@
 
 .header-center {
     display:flex;
-    justify-content: space-between;
     flex-direction: row;
-    /* justify-content: flex-end; */
+    justify-content: space-between;
     font-size: 0.8em;
     margin: 0 auto;
     width: 1080px;
@@ -342,12 +384,9 @@
     font-size: 1.1em;
 }
 
-
-
 .buttons-icons-container {
     display:flex;
     flex-direction: column;
-
     align-items: flex-end;
     justify-content:flex-end;
 }
@@ -362,39 +401,59 @@
 }
 
 .novedades {
+    display:flex;
+    align-content: center;
     height: 30px;
-    width: 130px;
-    background: #9faa4d;
-    padding-right: 8px;
-    text-transform: uppercase;
-    color: #ffffff;
-    display: block;
+    width: 120px;
+    background-color: #9faa4d;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 550;
     text-decoration: none;
     letter-spacing: 1px;
-    line-height: 30px;
-    text-align: center;
+    color:white;
+    align-items: center;
+    margin-right:10px;
     cursor:pointer;
+}
+
+.icono-novedades {
+    height: 30px;
+    width: 30px;
+    display: block;
+    cursor:pointer;
+    display: inline-block;
+    background: url(./images/sprite.svg) -244px 4px no-repeat #9faa4d;
+    content: '';
+}
+
+.icono-ofertas {
+    height: 30px;
+    width: 30px;
+    display: block;
+    cursor:pointer;
+    display: inline-block;
+    background: url(./images/sprite.svg) -274px 4px no-repeat  #8e789d ;
+    content: '';
+}
+
+input {
+    color: #BBB8B6;
 }
 
 .ofertas {
     height: 30px;
-    width: 130px;
-    background: #8e789d;
+    width: 100px;
     padding-right: 15px;
-    width: 130px;
     text-transform: uppercase;
-    color: #ffffff;
-    display: block;
     font-size: 15px;
     font-weight: 600;
     text-decoration: none;
     letter-spacing: 1px;
     line-height: 30px;
     text-align: center;
-    margin-left: 10px;
     cursor:pointer;
+    color:white;
+    background: #8e789d;
 }
 
 .buscar {
@@ -406,7 +465,7 @@
 .button-header {
     display: block;
     float: right;
-    width: 57px;
+    width: 50px;
     height: 28px;
     background: url(./../challenge/images/sprite.svg) -303px 2px no-repeat #BBB8B6;
     border: none;
@@ -444,10 +503,11 @@
 }
 
 .photo-moldes {
-    display:block;
+    display:relative;
     width: 350px;
     height: 615px;
     margin-right: auto;
+    background-image: url(images/moldesdereposteria.jpg);
 }
 
 .photo-doble {
@@ -457,10 +517,6 @@
     margin: 0 auto;
 }
 
-/* photo-doble {
-
-} 0.*/
-
 #imgbanner1 {
     width: 350px;
     max-height: none;
@@ -468,4 +524,12 @@
     border: 0;
 }
 
+.triangulo1 {
+    display: absolute;
+    height:80px;
+    width: 70px;
+    background:chartreuse;
+    right:0;
+    bottom:0;
+}
 
