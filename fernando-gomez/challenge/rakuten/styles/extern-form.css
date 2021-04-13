@@ -143,6 +143,7 @@ body {
       justify-content: space-around;
   padding-top: 30px;
   width: 350px;
+  margin: -5px 0 0 0;
 }
 
 .header-nav-container {
@@ -343,8 +344,7 @@ body {
   color: white;
 }
 
-.cinema-nav,
-.subs-nav {
+.hover-nav-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -354,47 +354,30 @@ body {
   height: 100%;
 }
 
-.cinema-nav:hover,
-.subs-nav:hover {
+.hover-nav-container:hover {
   color: #ffe300;
 }
 
-.cinema-nav:hover .hover-nav {
+.hover-nav-container:hover div {
   display: block;
 }
 
-.cinema-nav:hover .arrow {
-  padding-left: 0;
-  padding-right: 5px;
-  padding-top: 30px;
+.hover-nav-container:hover .arrow {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-}
-
-.cinema-nav-element {
-  height: 100%;
-}
-
-.subs-nav:hover .subs-hover-nav {
-  display: block;
-}
-
-.subs-nav:hover .arrow {
   padding-left: 0;
   padding-right: 5px;
-  padding-top: 30px;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  padding-top: 16px;
 }
 
-.subs-nav-element {
+.hover-nav-container-element {
   height: 100%;
 }
 
 .arrow {
   font-size: 0.5em;
   height: 100%;
-  padding-left: 5px;
+  padding: 14px 0px 0px 5px;
 }
 
 .hover-nav {
