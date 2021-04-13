@@ -177,6 +177,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-family: NotoSans-Bold, Arial, sans-serif;
   width: 100%;
   height: 80vh;
   margin-top: 65px;
@@ -218,12 +219,13 @@
       -ms-grid-row-align: center;
       align-self: center;
   justify-self: flex-end;
-  margin-top: 50vh;
-  width: 15vw;
+  margin-top: 45vh;
+  margin-left: 5vw;
+  width: 20vw;
   height: 7vh;
 }
 
-.movie__picture--title h3 {
+.movie__picture--title h2 {
   color: white;
 }
 
@@ -236,7 +238,7 @@
   font-weight: bold;
   border-radius: 5%;
   border: none;
-  margin-top: 1vh;
+  margin-top: 5vh;
   width: 15vw;
   height: 7vh;
 }
@@ -245,6 +247,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-family: NotoSans-Bold, Arial, sans-serif;
 }
 
 .movie__description {
@@ -372,6 +375,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-family: NotoSans-Bold, Arial, sans-serif;
   position: absolute;
   background-color: black;
   color: white;
