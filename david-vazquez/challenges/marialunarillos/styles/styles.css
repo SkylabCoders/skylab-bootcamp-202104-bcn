@@ -704,18 +704,24 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.sell-info .icon-camion {
-  width: 85px;
-  height: 100px;
-  background-color: red;
-  background: url(./../img/sprite.svg) 0 -38px no-repeat transparent;
+  text-align: center;
 }
 
 .sell-info .icon-entrega {
+  margin: auto;
+  display: block;
   width: 55px;
+  height: 75px;
   background: url(./../img/sprite.svg) -90px -38px no-repeat transparent;
+}
+
+.icon-camion {
+  margin: auto;
+  display: block;
+  width: 85px;
+  height: 75px;
+  background-color: red;
+  background: url(./../img/sprite.svg) 0 -38px no-repeat transparent;
 }
 
 .icon-devoluciones {

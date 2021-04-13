@@ -575,16 +575,24 @@ a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  .icon-camion {
-    width: 85px;
-    height: 100px;
-    background-color: red;
-    background: url(./../img/sprite.svg) 0 -38px no-repeat transparent;
-  }
+  text-align: center;
+
   .icon-entrega {
+    margin: auto;
+    display: block;
     width: 55px;
+    height: 75px;
     background: url(./../img/sprite.svg) -90px -38px no-repeat transparent;
   }
+}
+
+.icon-camion {
+  margin: auto;
+  display: block;
+  width: 85px;
+  height: 75px;
+  background-color: red;
+  background: url(./../img/sprite.svg) 0 -38px no-repeat transparent;
 }
 
 .icon-devoluciones {
