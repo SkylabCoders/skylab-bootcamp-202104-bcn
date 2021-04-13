@@ -110,12 +110,20 @@
   }
 }
 .slider-movies{
-  
+  @include flex(row wrap, space-between, center);
+  .view-more__element{
+    color:$primary-color;
+    text-transform: uppercase;
+    font-weight: $bold;
+  }
   .title-category{
     color:$primary-color;
     font-size: 1.5em;
     font-weight: 700;
     margin: 30px 10px;
+  }
+  .category-free{
+    width:100%;
   }
 
 }

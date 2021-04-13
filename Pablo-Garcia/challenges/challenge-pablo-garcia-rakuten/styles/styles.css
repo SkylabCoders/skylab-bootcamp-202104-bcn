@@ -135,11 +135,30 @@ html {
       .featured-movies .list-movies li img:hover {
         border: 4px solid #f0d500; }
 
-.slider-movies .title-category {
-  color: #fff;
-  font-size: 1.5em;
-  font-weight: 700;
-  margin: 30px 10px; }
+.slider-movies {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center; }
+  .slider-movies .view-more__element {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700; }
+  .slider-movies .title-category {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 30px 10px; }
+  .slider-movies .category-free {
+    width: 100%; }
 
 .slick-slider {
   position: relative;
