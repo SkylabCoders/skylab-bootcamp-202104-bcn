@@ -510,4 +510,10 @@ header {
 #item_horitzontal_inferior {
   left: 135%;
 }
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=styles.css.map */
