@@ -454,7 +454,19 @@ body {
   .main-header-section {
     margin-top: 30px;
   }
-  .links__others--blue, .links__others--yellow {
+  .main__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 90%;
+  }
+  .links__others--blue, .links__others--yellow, .links__others--ssmm {
     display: none;
   }
   .main-navigation {
@@ -529,6 +541,7 @@ body {
   width: 100%;
   background-color: #FF5959;
   text-align: center;
+  bottom: 0;
 }
 
 .footer__links {
