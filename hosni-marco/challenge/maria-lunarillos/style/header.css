@@ -280,6 +280,23 @@
           justify-content: space-between;
 }
 
+.logo-container {
+  margin-top: 74px;
+}
+
+.quick-acces-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .quick-acces {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -293,38 +310,42 @@
       justify-content: space-around;
 }
 
-.logo-container {
-  margin-top: 74px;
-}
-
-.link-quick-acces {
-  border: black solid;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.quick-acces-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 .quick-acces-menu {
   border: black solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100%;
 }
 
-.quick-acces-utensil {
-  background: url(../img/utensiliosML.png);
+.quick-acces-menu__list {
+  width: 100px;
+  list-style: none;
+}
+
+.quick-acces-menu__list__icon {
+  background: yellow;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin-top: 40px;
+}
+
+.quick-acces-menu__list__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  border: solid blueviolet;
 }
 /*# sourceMappingURL=header.css.map */

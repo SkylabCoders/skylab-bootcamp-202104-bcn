@@ -174,6 +174,16 @@
     justify-content: space-between;
 }
 
+.logo-container {
+    margin-top: 74px;
+}
+
+.quick-acces-container  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .quick-acces {
     display: flex;
     border: red solid;
@@ -182,26 +192,28 @@
     justify-content: space-around;
 }
 
-.logo-container {
-    margin-top: 74px;
-}
-
-.link-quick-acces {
-    border: black solid;
-    display: flex;
-    height: fit-content;
-}
-
-.quick-acces-container  {
-    display: flex;
-    flex-direction: column;
-}
-
 .quick-acces-menu {
     border: black solid;
     display: flex;
+    justify-content: space-around;
+    height: 100%;
 }
 
-.quick-acces-utensil {
-    background: url(../img/utensiliosML.png);
+.quick-acces-menu__list {
+    width: 100px;
+    list-style: none;
+    &__icon {
+        background: yellow;        
+        height: 100px;
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 40px;
+    };
+    
+    &__text {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        border: solid blueviolet;
+        };
 }
