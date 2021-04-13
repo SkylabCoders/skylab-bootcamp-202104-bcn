@@ -217,13 +217,22 @@ header {
 header .logo img{
     margin-bottom: 35px;
 }
+
+.header-right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    margin-left: auto;
+}
+
 .header-right-side a {
     text-decoration: none;
 }
 
 .buscador {
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .novedades {
     display: flex;
@@ -256,7 +265,6 @@ header .logo img{
     background: url('./images/sprite.svg') -277px 0px no-repeat; 
 }
 .search-field {
-    position: absolute;
     font-size: 12.5px;
     height: 30px;
     padding: 5px 5px;
@@ -270,18 +278,48 @@ header .logo img{
     color: rgb(199, 199, 199);
     letter-spacing: 1px;
 }
-.searcher-icon {
-    width: 25px; 
-    height: 25px; 
-    
-}
+
 .searcher {
     position: relative;
 }
 .searcher-icon {
     position: absolute;
+    width: 30px; 
+    height: 30px; 
+    right: 0;
+    top: 0;
+    background-color: #BBB8B6;
+    padding: 5px;
 }
-
 .novedades, .ofertas, .searcher {
     margin-right: 5px;
+}
+
+.secciones {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+}
+.secciones li {
+    list-style: none;
+    margin-right: 6px;
+}
+
+.utensilios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;   
+    color: black;
+    margin-top: 60px;
+    font-size:15px;
+    font-weight: 800;
+}
+.utensilios img {
+    width: 100px;;
+    background-color: #F8F8F8;
+    padding: 20px;
+    margin-bottom: 4px;
 }
