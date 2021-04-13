@@ -51,13 +51,13 @@ a:active {
 
 .nav-bar {
   @include flex-content(row, null, center);
-  background: $color-black;
+  background-color: $color-black;
   color: $color-white;
   position: fixed;
   height: 60px;
   width: 100%;
   padding: 0 20px;
-  z-index: 1000;
+  z-index: 2;
 }
 
 .nav-bar-menu {
@@ -255,7 +255,7 @@ main {
 .button {
   opacity: 0;
   position: absolute;
-  z-index: 100;
+  z-index: 1;
   width: 3%;
   height: 8%;
   background: transparent;
@@ -339,7 +339,7 @@ main {
   width: 450px;
   height: 250px;
   background-color: rgba($color: #000000, $alpha: 0.9);
-  z-index: 100;
+  z-index: 1;
   top: 0px;
   left: 210px;
   white-space: normal;
@@ -423,7 +423,7 @@ main {
 }
 
 .scroll-button {
-  z-index: 100;
+  z-index: 1;
   width: 3%;
   height: 40%;
   background: transparent;
@@ -557,5 +557,67 @@ main {
     width: 122px;
     opacity: 0.5;
     padding-top: 5px;
+  }
+}
+
+.header-media {
+  position: fixed;
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  background-color: black;
+  color: gray;
+  z-index: 3;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.search-media {
+  width: 100%;
+  outline: none;
+  background-color: white;
+  height: 50px;
+  margin-top: 100px;
+}
+
+@media (max-width: 1024px) {
+  .nav-bar {
+    background-color: transparent;
+    position: absolute;
+  }
+  .nav-bar-menu {
+    display: none;
+  }
+  .nav-bar-login {
+    display: none;
+  }
+
+  .slider {
+    margin-top: 0;
+  }
+  .logo {
+    visibility: visible;
+  }
+  .header-media {
+    display: flex;
+  }
+  .nav-bar-search {
+    display: none;
+  }
+}
+
+@media (max-width: 1160px) {
+  .search-box-input {
+    width: 120px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .nav-button.help {
+    visibility: hidden;
   }
 }
