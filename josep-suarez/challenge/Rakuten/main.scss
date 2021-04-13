@@ -190,23 +190,30 @@ body {
   display: flex;
   flex-direction: column;
   position: absolute;
+  background-color: black;
   color: white;
   margin-top: 7vh;
   text-align: center;
-  width: 50vw;
-  margin-left: 25vw;
   justify-content: center;
-  &__explain {
+  width: 100%;
+  &--text {
+    width: 80vw;
+    align-self: center;
+  }
+  &--explain {
     display: flex;
-    justify-content: space-between;
-    width: 50vw;
-    &--firstexplain img {
-      color: white;
-    }
-    &--firstexplain,
-    &--secondexplain,
-    &--thirdexplain {
-      align-self: baseline;
+    justify-content: center;
+    width: 100%;
+  }
+  &__firstexplain,
+  &__secondexplain,
+  &__thirdexplain {
+    width: 10vw;
+    color: white;
+    align-self: baseline;
+    & img {
+      width: 80px;
+      height: 80px;
     }
   }
 }

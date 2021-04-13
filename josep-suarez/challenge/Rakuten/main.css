@@ -244,33 +244,43 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
+  background-color: black;
   color: white;
   margin-top: 7vh;
   text-align: center;
-  width: 50vw;
-  margin-left: 25vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
 }
 
-.footer__explain {
+.footer--text {
+  width: 80vw;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.footer--explain {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 50vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
 }
 
-.footer__explain--firstexplain img {
+.footer__firstexplain, .footer__secondexplain, .footer__thirdexplain {
+  width: 10vw;
   color: white;
-}
-
-.footer__explain--firstexplain, .footer__explain--secondexplain, .footer__explain--thirdexplain {
   -ms-flex-item-align: baseline;
       align-self: baseline;
+}
+
+.footer__firstexplain img, .footer__secondexplain img, .footer__thirdexplain img {
+  width: 80px;
+  height: 80px;
 }
 
 .copy {

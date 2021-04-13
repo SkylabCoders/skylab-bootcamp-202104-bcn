@@ -294,5 +294,10 @@
   &__thirdexplain {
     width: 10vw;
     color: white;
+    align-self: baseline;
+    & img {
+      width: 80px;
+      height: 80px;
+    }
   }
 }

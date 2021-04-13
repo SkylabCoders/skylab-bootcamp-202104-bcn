@@ -403,5 +403,12 @@
 .footer__firstexplain, .footer__secondexplain, .footer__thirdexplain {
   width: 10vw;
   color: white;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+}
+
+.footer__firstexplain img, .footer__secondexplain img, .footer__thirdexplain img {
+  width: 80px;
+  height: 80px;
 }
 /*# sourceMappingURL=movie1.css.map */
