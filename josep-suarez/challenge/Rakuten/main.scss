@@ -203,6 +203,11 @@ body {
     &--firstexplain img {
       color: white;
     }
+    &--firstexplain,
+    &--secondexplain,
+    &--thirdexplain {
+      align-self: baseline;
+    }
   }
 }
 
