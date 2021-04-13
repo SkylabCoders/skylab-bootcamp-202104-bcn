@@ -29,7 +29,7 @@
                     <li class="item"><a href=""><i class="fab fa-pinterest-p"></i></a></li>
                     <li class="item"><a href=""><i class="fab fa-youtube"></i></a></li>
                 </ul>
-                <div>
+                <div class="cart-bar"> 
                     <ul class="topbar_cart">
                         <li class="cart item">
                             <span class="cart item icon"><i class="fas fa-cart-arrow-down"></i></span>
@@ -41,81 +41,90 @@
         </div>
     </div>
     <!-- SUBBAR -->
-    <main class="main">
-        <div class="subbar">
+        <div class="container-fluid subbar">
             <div class="subbar_logo"><img src="./css/asets/maria-lunarillos-logo.png" alt=""></div>
-            <div class="subbar_navigarion-elements">
+            <div class="subbar_navigation-elements">
                 <div class="subbar_searcher">
                     <div class="subbar_news"><i class="far fa-star"></i><a href=""></a>Novedades</div>
                     <div class="subbar_offers"><i class="fas fa-certificate"></i><a href=""></a>Ofertas</div>
                     <div><input class="subbar_input" type="text" placeholder="¿QUÉ BUSCAS?"><i class="fas fa-search"></i></div>
                 </div>
                 <ul class="subbar_navigationbar">
-                    <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-utensilios.png" alt="">
-                    <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-recetas.png" alt="">
-                    <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-marcas.png" alt="">
-                    <li class="subbar_iconnavi"><img class="image" src="./css/asets/icono-fiestas.png" alt="">
-                    <li class="blog_iconnavi"><img src="./css/asets/vectorpaint (1).svg" alt="">
+                    <li class="subbar_iconnavi">
+                        <img class="image" src="./css/asets/icono-utensilios.png" alt="">
+                        <span class="image-text">UTENSILIOS</span>
+                    <li class="subbar_iconnavi">
+                        <img class="image" src="./css/asets/icono-recetas.png" alt="">
+                        <span class="image-text">INGREDIENTES</span>
+                    <li class="subbar_iconnavi">
+                        <img class="image" id="delantal" src="./css/asets/icono-marcas.png" alt="">
+                        <span class="image-text">FIESTAS</span>
+                    <li class="subbar_iconnavi">
+                        <img class="image" src="./css/asets/icono-fiestas.png" alt="">
+                        <span class="image-text">MARCAS</span>
+                    <li class="blog_iconnavi">
+                        <img class="image" src="./css/asets/vectorpaint (1).svg" alt="">
+                        <span class="image-text">BLOG</span>
                 </ul>
             </div>
         </div>
-        <!-- SEPARADOR UTENSILIOS -->
-        <div class="separator-items">
-            <img class="separator-image" src="./css/asets/icono-utensilios.png" alt="">
-            <h1 class="separator-tittle">Utensilios</h1>
-        </div>
-        <!-- BLOQUE IMAGENES -->
-        <div class="information-page">
-            <div class="figure-content-1">
-                <div class="items-text-1">
-                    <h3 class="items-tittle">Moldes De Repostería</h3>
-                    <p class="items-description">Moldes metálicos, de silicona o cerámica, de las mejores marcas.</p>
-                </div>
-                <div class="triangle-1"></div>
+        <main class="main">
+        <!-- BLOQUE IMAGENES UTENSILIOS-->
+        <section class="section">
+            <div class="container-fluid">
+            <!-- SEPARADOR UTENSILIOS -->
+            <div class="separator-items">
+                <img class="separator-image" src="./css/asets/icono-utensilios.png" alt="">
+                <h1 class="separator-tittle">Utensilios</h1>
             </div>
-            <div class="figure-content-2">
-                <div class="figure-content-2-1">
-                    <div class="items-text-2">
-                        <h3 class="items-tittle">Utensilios básicos</h3>
-                        <p class="items-description">Rodillos, liras, espátulas, tapetes, bandejas, rejillas, mangas y boquillas... ¡Los imprescindibles!</p>
+            <!-- BLOQUE IMAGENES -->
+            <div class="information-page">
+                <div class="figure-content-1">
+                    <div class="items-text-1">
+                        <h3 class="items-tittle">Moldes De Repostería</h3>
+                        <p class="items-description">Moldes metálicos, de silicona o cerámica, de las mejores marcas.</p>
                     </div>
-                    <div class="triangle-2"></div>
+                    <div class="triangle-1"></div>
                 </div>
-                <div class="figure-content-2-2">
-                    <div class="items-text-3">
-                        <h3 class="items-tittle">Pequeño electrodoméstico</h3>
-                         <p class="items-description">Robots KitchenAid, batidoras de varillas, panificadoras, aerógrafos...</p>
-                     </div>
-                     <div class="triangle-3"></div>
+                <div class="figure-content-2">
+                    <div class="figure-content-2-1">
+                        <div class="items-text-2">
+                            <h3 class="items-tittle">Utensilios básicos</h3>
+                            <p class="items-description">Rodillos, liras, espátulas, tapetes, bandejas, rejillas, mangas y boquillas... ¡Los imprescindibles!</p>
+                        </div>
+                        <div class="triangle-2"></div>
+                    </div>
+                    <div class="figure-content-2-2">
+                        <div class="items-text-3">
+                            <h3 class="items-tittle">Pequeño electrodoméstico</h3>
+                             <p class="items-description">Robots KitchenAid, batidoras de varillas, panificadoras, aerógrafos...</p>
+                         </div>
+                         <div class="triangle-3"></div>
+                    </div>
                 </div>
             </div>
-        </div>
+            </div>
+        </section>
         <!-- SEPARADOR MARCAS -->
         <div class="separator-brands">
             <h1 class="brands-tittle">Nuestras marcas</h1>
         </div>
         <!-- MARCAS -->
             <div class="brands">
-                <ul class="brands-1">
-                    <li classs="brand-img"><img src="./css/asets/brand-1.png" alt=""></li>
-                    <li classs="brand-img"><img src="./css/asets/brand-2.png" alt=""></li>
-                    <li classs="brand-img"><img src="./css/asets/brand-3.png" alt=""></li>
-                    <li classs="brand-img"><img src="./css/asets/brand-4.png" alt=""></li>
-                    <li classs="brand-img"><img src="./css/asets/brand-5.png" alt=""></li>
-                </ul>
-                <ul class="brands-2">
+                <ul class="brands-ul">
+                    <li class="brand-img"><img src="./css/asets/brand-1.png" alt=""></li>
+                    <li class="brand-img"><img src="./css/asets/brand-2.png" alt=""></li>
+                    <li class="brand-img"><img src="./css/asets/brand-3.png" alt=""></li>
+                    <li class="brand-img"><img src="./css/asets/brand-4.png" alt=""></li>
+                    <li class="brand-img"><img src="./css/asets/brand-5.png" alt=""></li>
                     <li class="brand-img"><img src="./css/asets/brand-6.png" alt=""></li>
                     <li class="brand-img"><img src="./css/asets/brand-7.png" alt=""></li>
                     <li class="brand-img"><img src="./css/asets/brand-8.png" alt=""></li>
                     <li class="brand-img"><img src="./css/asets/brand-9.png" alt=""></li>
-                </ul>
-                <ul class="brands-3">
                     <li class="brand-img"><img src="./css/asets/brand-10.png" alt=""></li>
                     <li class="brand-img"><img src="./css/asets/brand-11.png" alt=""></li>
                     <li class="brand-img"><img src="./css/asets/brand-12.png" alt=""></li>
                     <li class="brand-img"><img src="./css/asets/brand-13.png" alt=""></li>
-                </ul>
-                <ul class="brands-4">
                     <li class="brand-img"><img src="./css/asets/brand-14.png" alt=""></li>
                     <li class="brand-img"><img src="./css/asets/brand-15.png" alt=""></li>
                     <li class="brand-img"><img src="./css/asets/brand-16.png" alt=""></li>
@@ -199,6 +208,6 @@
             <buttton class="search-button">Buscar vuelos</buttton>
         </form>
     </main>
+    <footer class="footer">Copyright ©2021 Irene Pérez Alonso</footer>
 </body>
-<footer class="footer">Copyright ©2021 Irene Pérez Alonso</footer>
 </html>
