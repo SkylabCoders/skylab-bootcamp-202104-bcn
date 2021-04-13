@@ -302,7 +302,6 @@
   display: -ms-flexbox;
   display: flex;
   border: red solid;
-  width: 570px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -323,9 +322,10 @@
 .quick-acces-menu__list {
   width: 100px;
   list-style: none;
+  margin-right: 10px;
 }
 
-.quick-acces-menu__list__icon {
+.quick-acces-menu__list--icon {
   background: yellow;
   height: 100px;
   display: -webkit-box;
@@ -338,7 +338,7 @@
   margin-top: 40px;
 }
 
-.quick-acces-menu__list__text {
+.quick-acces-menu__list--text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -347,6 +347,10 @@
           justify-content: center;
   list-style: none;
   border: solid blueviolet;
+}
+
+.quick-acces-menu-blog {
+  margin-left: 60px;
 }
 
 *,

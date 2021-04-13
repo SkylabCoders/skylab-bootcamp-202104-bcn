@@ -187,7 +187,6 @@
 .quick-acces {
     display: flex;
     border: red solid;
-    width: 570px;
     height: fit-content;
     justify-content: space-around;
 }
@@ -200,9 +199,8 @@
 }
 
 .quick-acces-menu__list {
-    width: 100px;
-    list-style: none;
-    &__icon {
+    @include common-quick-acces(10px);
+    &--icon{
         background: yellow;        
         height: 100px;
         display: flex;
@@ -210,10 +208,13 @@
         margin-top: 40px;
     };
     
-    &__text {
+    &--text{
         display: flex;
         justify-content: center;
         list-style: none;
         border: solid blueviolet;
         };
+}
+.quick-acces-menu-blog {
+    margin-left: 60px;
 }

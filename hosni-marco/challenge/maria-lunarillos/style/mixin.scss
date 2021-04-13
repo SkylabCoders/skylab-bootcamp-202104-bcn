@@ -21,6 +21,12 @@
     color: $register-color-text-init;
 }
 
+@mixin common-quick-acces ($margin-right) {
+    width: 100px;
+    list-style: none;
+    margin-right: $margin-right;
+}
+
 $register-background-position-init: 4px 5px;
 $register-background-position-hover: -33px 5px;
 $register-color-text-init: black;
