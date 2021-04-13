@@ -22,7 +22,9 @@ li {
 }
 
 a {
+    padding: 0;
     text-decoration: none;
+    display: inherit;
 
     &:visited {
         color: white;
