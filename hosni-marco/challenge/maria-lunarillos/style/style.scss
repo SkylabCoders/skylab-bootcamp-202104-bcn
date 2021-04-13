@@ -13,9 +13,8 @@
 }
 
 body {
+    @include column-container;
     font: 13px/1.55 'Source Sans Pro', sans-serif;
-    display: flex;
-    flex-direction: column;
     color: #67635F;
 }
 

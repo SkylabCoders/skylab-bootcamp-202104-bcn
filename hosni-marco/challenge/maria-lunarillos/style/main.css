@@ -31,7 +31,6 @@
 }
 
 .articles-container {
-  border: springgreen solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,40 +38,41 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 71.5%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: springgreen solid;
+  width: 71.5%;
 }
 
 .icon {
+  border: red solid;
   height: 50px;
   width: 50px;
-  border: red solid;
 }
 
 .common-tittle-article {
-  text-align: center;
   border-top: 1px black solid;
   border-bottom: 1px black solid;
   margin: 10px;
+  text-align: center;
 }
 
 .link-display {
+  border: teal solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: teal solid;
   width: 100%;
 }
 
 .row-link {
+  border: tomato solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: tomato solid;
-  width: 30%;
   height: 400px;
+  width: 30%;
 }
 
 .column-link {
@@ -98,12 +98,12 @@
 }
 
 .common-button {
-  margin: 20px;
-  padding: 15px;
   background: red;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  margin: 20px;
+  padding: 15px;
 }
 
 .firm-container {

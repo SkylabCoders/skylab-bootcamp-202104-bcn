@@ -1,18 +1,13 @@
 @import './mixin.scss';
 
 .header{
+    @include column-container;
     background: #F8F8F8;
-    display: flex;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    
 }
 
 .header-links {
     display: flex;
-    width: 71.5%;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .list-container {
@@ -23,7 +18,6 @@
 .ul-content {
     display: flex;
     list-style: none;
-    height: 140px;
 }
 
 .ma-link-container{
@@ -33,40 +27,36 @@
 
 .cu-link-container{
     @include link-size(70px, 70px);
-    transition: height;
     background: url('../img/cucute.png') #6199AF bottom center no-repeat;;
+    transition: height;
 }
 
 .mu-link-container{
     @include link-size(70px, 70px);
-    transition: height;
     background: url('../img/mumuchu.png') #F6B436 bottom center no-repeat;
+    transition: height;
 }
 
 .mu-link-container:hover,  .cu-link-container:hover{
     height: 140px;
-
 }
 
 .header-links-container {
     display: flex;
-    align-content: center;
-    margin-right: 76px;
-    text-decoration: none;
     height: 49px;
+    text-decoration: none;
 }
 
 .enter-register-container{
-        display: flex;
-        margin-right: 76px;
-        align-items: center;
+    display: flex;
+    margin-right: 76px;
 }
 
 .register-container{  
-     display: flex;
-     align-items: center;
-     text-decoration: none;
-     color: black;
+    align-items: center;
+    color: black;
+    display: flex;
+    text-decoration: none;
 }
 
 .register-container:hover{
@@ -85,59 +75,55 @@
 .register-container-text {
     display: flex;
     justify-content: center;
-}
+}    
 
 .link-social-media {
     align-items: center;
     display: flex;
-    height: 20px;
-    margin: 15px 7px;
     width: 195px;
-}
+}    
 
 .fb-link {
     @include link-social-media-content(-3px -540px);
-}
-
-.tw-link {
-    @include link-social-media-content(-38px -540px);
-}
-
-.ig-link {
-    @include link-social-media-content(-74px -540px);
-}
-
-.pi-link {
-    @include link-social-media-content(-111px -540px);
-}
-
-.yt-link {
-    @include link-social-media-content(-183px -540px);
-
-}
+}    
 
 .fb-link:hover {
     @include link-social-media-content(-3px -500px);
-}
+}        
+
+.tw-link {
+    @include link-social-media-content(-38px -540px);
+}        
 
 .tw-link:hover {
     @include link-social-media-content(-38px -500px);
-}
+}    
+
+.ig-link {
+    @include link-social-media-content(-74px -540px);
+}            
 
 .ig-link:hover {
     @include link-social-media-content(-74px -500px);
-}
+}    
+
+.pi-link {
+    @include link-social-media-content(-111px -540px);
+}            
 
 .pi-link:hover {
     @include link-social-media-content(-111px -500px);
 }
+
+.yt-link {
+    @include link-social-media-content(-183px -540px);
+}            
 
 .yt-link:hover {
     @include link-social-media-content(-183px -500px);
 }
 
 .buy-container {
-    width: 100px;
     display: flex;
 }
 
@@ -156,21 +142,20 @@
 }
 
 .counter-container {
-    width: 50px;
+    align-items: center;
+    background: #FF5959;
+    color: #fff;
     display: flex;
     font-family: "Myriad Pro", "Myriad Web", "Tahoma", "Helvetica", "Arial", sans-serif;
     font-size: 20px;
-    color: #fff;
-    background: #FF5959;
     justify-content: center;
-    align-items: center;
+    width: 50px;
 }
 
-.header-container {
+.main-header-container {
     display: flex;
-    width: 71.5%;
+    justify-content: space-around;
     margin-top: -41px;
-    justify-content: space-between;
 }
 
 .logo-container {
@@ -178,14 +163,13 @@
 }
 
 .quick-acces-container  {
-    display: flex;
-    flex-direction: column;
+    @include column-container;
     justify-content: space-between;
 }
 
 .quick-acces {
-    display: flex;
     border: red solid;
+    display: flex;
     height: fit-content;
     justify-content: space-around;
 }
@@ -193,22 +177,20 @@
 .quick-acces-menu {
     border: black solid;
     display: flex;
-    justify-content: space-around;
     height: 100%;
+    justify-content: space-around;
 }
 
 .quick-acces-menu__list {
     @include common-quick-acces(10px);
-
     &--icon{
         @include common-quick-acces-icon;
     };
-    
     &--text{
         @include common-quick-acces-text
         };
 }
+
 .quick-acces-menu-blog {
     margin-left: 60px;
 }
-

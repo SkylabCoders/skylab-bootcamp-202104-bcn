@@ -3,8 +3,12 @@ $register-background-position-hover: -33px 5px;
 $register-color-text-init: black;
 $register-color-text-hover: red;
 
+@mixin column-container {
+    display: flex;
+    flex-direction: column;
+}
+
 @mixin link-size ($heigh, $width){
-    float: left;
     height: $heigh;
     margin-right: 4px;
     width: $width;
@@ -22,27 +26,27 @@ $register-color-text-hover: red;
 @mixin image-register-display($background-position) {
     background: url(../img/sprite.svg) 0 0 no-repeat;
     background-position: $background-position;
-    padding: 20px;
     color: $register-color-text-init;
+    padding: 20px;
 }
 
 @mixin common-quick-acces ($margin-right) {
-    width: 100px;
     list-style: none;
     margin-right: $margin-right;
+    width: 100px;
 }
 
 @mixin common-quick-acces-icon {
     background: yellow;        
-        height: 100px;
-        display: flex;
-        flex-direction: column-reverse;
-        margin-top: 40px;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100px;
+    margin-top: 40px;
 }
 
 @mixin common-quick-acces-text {
+    border: solid blueviolet;
     display: flex;
     justify-content: center;
     list-style: none;
-    border: solid blueviolet;
 }

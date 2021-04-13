@@ -1,14 +1,12 @@
 @import './mixin.scss';
 
 .main-container {
-    display: flex;
-    flex-direction: column;
+    @include column-container;
     align-items: center;
 }
 
 .footer-container {
-    display: flex;
-    flex-direction: column;
+    @include column-container;
 }
 
 .carousel-container {
@@ -19,42 +17,40 @@
 }
 
 .articles-container {
-    border: springgreen solid;    
-    display: flex;
-    flex-direction: column;
-    width: 71.5%;
+    @include column-container;
     align-items: center;
+    border: springgreen solid;    
+    width: 71.5%;
 }
 
 .icon {
+    border: red solid;
     height: 50px;
     width: 50px;
-    border: red solid;
 }
 
 .common-tittle-article {
-    text-align: center;
     border-top: 1px black solid;
     border-bottom: 1px black solid;
     margin: 10px;
+    text-align: center;
 }
 
 .link-display {
-    display: flex;
     border: teal solid;
+    display: flex;
     width: 100%;
 }
 
 .row-link {
-    display: flex;
     border: tomato solid;
-    width: 30%;
+    display: flex;
     height: 400px;
+    width: 30%;
 }
 
 .column-link{
-    display: flex;
-    flex-direction: column;
+    @include column-container;
     height: 400px;
     width: 70%;
     &__top{
@@ -68,15 +64,14 @@
 }
 
 .common-button {
-    margin: 20px;
-    padding: 15px;
     background: red;
     height: fit-content;
+    margin: 20px;
+    padding: 15px;
 }
 
 .firm-container {
-    display: flex;
-    flex-direction: column;
+    @include column-container;
 }
 
 .firm-display {
