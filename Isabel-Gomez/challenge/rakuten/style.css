@@ -6,16 +6,22 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  text-decoration: none;
 }
 
 * {
   font-family: NotoSans-Bold,Arial,sans-serif;
 }
 
-main {
+html main {
   width: 100%;
   height: 1000px;
   background-color: #171717;
+}
+
+html a:hover {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 li {
@@ -64,6 +70,57 @@ a {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
+}
+
+.non-visible-wrap {
+  display: none;
+  color: #FFFFFF;
+  width: 200px;
+  height: 150px;
+  background-color: #101010;
+}
+
+.non-visible-wrap li {
+  text-transform: uppercase;
+}
+
+.cinema {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.cinema a {
+  padding-left: 20px;
+}
+
+.cinema a:hover {
+  color: #FFE300;
+}
+
+.cinema .non-visible-wrap {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  top: 50px;
+  padding: 20px 0 20px 5px;
+}
+
+.non-visible-wrap li a:hover {
+  color: #FFE300;
 }
 
 .nav-bar-menu {
@@ -224,7 +281,6 @@ a {
 .title .text-free {
   color: #FFFFFF;
   font-size: 22px;
-  text-decoration: none;
 }
 
 .title .text-free span {
@@ -234,7 +290,6 @@ a {
 .view-all {
   color: #FFFFFF;
   text-transform: uppercase;
-  text-decoration: none;
   font-size: 14px;
 }
 
@@ -331,7 +386,6 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-decoration: none;
   color: #FFFFFF;
   background-color: #212121;
 }
@@ -426,7 +480,6 @@ footer {
   padding: 35px 45px;
   color: #CCC;
   font-size: 14px;
-  text-decoration: none;
   -webkit-transition: color .1s ease;
   transition: color .1s ease;
 }

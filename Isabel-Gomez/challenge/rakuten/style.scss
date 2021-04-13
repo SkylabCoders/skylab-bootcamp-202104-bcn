@@ -9,16 +9,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 * {
     font-family: NotoSans-Bold,Arial,sans-serif;
+
 }
 
-main {
-    width: 100%;
-    height: 1000px;
-    background-color: $background-color-main;
+html{
+    main {
+        width: 100%;
+        height: 1000px;
+        background-color: $background-color-main;
+    }
+    a:hover{
+        text-decoration: none;
+        color: $color-main;
+    }
 }
 
 li {
@@ -64,6 +72,46 @@ a {
 .nav-bar-menu, .nav-bar-user-menu {
     display: flex;
     height: 100%;
+}
+
+.non-visible-wrap {
+    display: none;
+    color: $color-main;
+    width: 200px;
+    height: 150px;
+    background-color: $background-color-nav;
+    li {
+        text-transform: uppercase;
+    }
+}
+
+.cinema {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    a {
+    padding-left: 20px;
+    }
+}
+
+.cinema {
+    a:hover  {
+    color: #FFE300;
+    }
+    .non-visible-wrap {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        top: 50px;
+        padding: 20px 0 20px 5px;
+    }
+}
+
+.non-visible-wrap {
+    li a:hover {
+    color: #FFE300;
+    }
 }
 
 .nav-bar-menu {
@@ -144,7 +192,6 @@ a {
     display: flex;
     z-index: 1;
     cursor: pointer;
-
 }
 
 .image {
@@ -200,7 +247,6 @@ a {
     .text-free {
         color: $color-main;
         font-size: 22px;
-           text-decoration: none;
         span {
             text-transform: uppercase;
         }
@@ -210,7 +256,6 @@ a {
 .view-all {
         color: $color-main;
         text-transform: uppercase;
-        text-decoration: none;
         font-size: 14px;
 }
 
@@ -229,18 +274,18 @@ a {
 }
 
 .slick-slider {
-  position: relative;
-  display: block;
-  box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -khtml-user-select: none;
-  -ms-touch-action: pan-y;
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
   .slick-list {
     position: relative;
     display: block;
@@ -299,7 +344,6 @@ footer {
     height: 576px;
     display: flex;
     flex-direction: column;
-    text-decoration: none;
     color: $color-main;
     background-color: $background-color-footer;
 }
@@ -378,7 +422,6 @@ footer {
     padding: 35px 45px;
     color: $color-secundary;
     font-size: 14px;
-    text-decoration: none;
     transition: color .1s ease;
 }
 
