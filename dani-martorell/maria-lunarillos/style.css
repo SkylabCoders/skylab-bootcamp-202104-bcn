@@ -488,6 +488,8 @@ header .logo img {
 }
 
 .main-content {
+  margin: 0 auto;
+  max-width: 1080px;
   text-align: center;
 }
 
@@ -528,10 +530,94 @@ header .logo img {
   border-top: 2px solid #2E2925;
 }
 
-.card {
+.main-content .content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
-  height: 500px;
-  background-color: red;
-  border: 2px solid red;
+}
+
+.main-content .content-wrapper .product-card-vertical {
+  width: 100%;
+  height: 615px;
+  background-color: #F8F8F8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.main-content .content-wrapper .product-card-vertical .product-card__img {
+  background-image: url("./images/moldesdereposteria.jpeg");
+  width: 30%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.main-content .content-wrapper .product-card-vertical .product-card__img .product-card__wrapper {
+  width: 180px;
+  background-color: #ffffffcc;
+  opacity: 0.8;
+}
+
+.main-content .content-wrapper .horizontal-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-content .content-wrapper .horizontal-wrapper .product-card-horizontal {
+  width: 100%;
+  height: 300px;
+  background-color: #F8F8F8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.main-content .content-wrapper .horizontal-wrapper .product-card-horizontal .product-card-horizontal__img {
+  background-image: url("./images/utensiliosbasicos.jpeg");
+  width: 40%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.main-content .content-wrapper .horizontal-wrapper .product-card-horizontal .product-card-horizontal__img .product-card-horizontal__wrapper {
+  width: 180px;
+  background-color: #ffffffcc;
+  opacity: 0.8;
 }
 /*# sourceMappingURL=style.css.map */
