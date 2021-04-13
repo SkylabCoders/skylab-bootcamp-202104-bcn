@@ -141,6 +141,7 @@ a {
 }
 
 .menu-item {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -158,6 +159,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   z-index: 1;
+  cursor: pointer;
 }
 
 .image {
@@ -188,6 +190,7 @@ a {
           flex-grow: 1;
   border-radius: 2px;
   border: 4px solid transparent;
+  cursor: pointer;
 }
 
 .movie:hover {
@@ -233,6 +236,13 @@ a {
   text-transform: uppercase;
   text-decoration: none;
   font-size: 14px;
+}
+
+.second-carousel .slide:hover {
+  cursor: pointer;
+  border: 4px solid #FFE300;
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
 }
 
 .slide img {
