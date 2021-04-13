@@ -259,6 +259,33 @@ header {
   margin-left: 135px;
 }
 
+.middle {
+  height: 250px;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.middle__image {
+  height: 125px;
+  width: 92px;
+}
+
+.middle__title {
+  margin-left: -74px;
+  margin-top: 10px;
+  width: 268px;
+  padding: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.middle__title span {
+  line-height: 30px;
+  font-size: 30px;
+  letter-spacing: 10px;
+}
+
 .images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,19 +295,52 @@ header {
           justify-content: space-evenly;
   width: 1095px;
   height: 630px;
-  border: 1px solid red;
-  background-color: lightpink;
   margin: 0 auto;
 }
 
 .images__left {
+  position: relative;
   margin-top: 10px;
   width: 350px;
   height: 615px;
-  border: 2px solid black;
+  background: url(../images/moldesdereposteria.jpg);
+}
+
+.images__left-text {
+  font-size: 24px;
+  color: #67635F;
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  width: 250px;
+  height: 150px;
+  text-align: center;
+  font-weight: 600;
+  padding-top: 20px;
+}
+
+.images__left-text p {
+  color: #67635F;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: normal;
+}
+
+.images__left-text::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: transparent;
+  border-bottom: 151px solid rgba(255, 255, 255, 0.8);
+  border-right: 99px solid transparent;
+  position: absolute;
+  right: -99px;
+  top: -1px;
 }
 
 .images__right {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -296,7 +356,57 @@ header {
 .images__right-first, .images__right-second {
   width: 715px;
   height: 300px;
-  border: 1px solid black;
+}
+
+.images__right-first {
+  background: url(../images/utensiliosbasicos.jpg);
+}
+
+.images__right-second {
+  background: url(../images/pequenoelectrodomestico2.jpg);
+}
+
+.images__right-text2, .images__right-text1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #67635F;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  width: 250px;
+  height: 150px;
+  padding-top: 20px;
+}
+
+.images__right-text2 p, .images__right-text1 p {
+  color: #67635F;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: normal;
+}
+
+.images__right-text2::after, .images__right-text1::after {
+  position: relative;
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: transparent;
+  border-bottom: 151px solid rgba(255, 255, 255, 0.8);
+  border-right: 99px solid transparent;
+  position: absolute;
+  right: -99px;
+  top: -1px;
+}
+
+.images__right-text1 {
+  bottom: 320px;
+}
+
+.images__right-text2 {
+  margin-left: 371px;
 }
 
 *,
