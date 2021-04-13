@@ -418,7 +418,7 @@
     letter-spacing: 0.8px;
     color:white;
     align-items: center;
-    margin-right:6px;
+    margin-right:5px;
     cursor:pointer;
     padding-left: 2px;
 }
@@ -533,30 +533,69 @@
 
 .cuadrado1 {
     position: absolute;
-    height: 120px;
-    width: 190px;
+    height: 110px;
+    width: 230px;
     bottom:0;
     left:0;
     background-color: rgb(255, 255, 255,0.8);
-    padding: 20px;  
+    padding: 20px 0 20px 20px  
 }
 
 .triangulo1 {
-    position: absolute;
+    content: '';
+    display: inline-block;
     width: 0;
     height: 0;
-    border-right: 70px solid transparent;
-    border-top: 70px solid transparent;
-    border-left: 70px solid rgb(255, 255, 255,0.8);
-    border-bottom: 70px solid rgb(255, 255, 255,0.8);
-    bottom:0;
+    border-bottom: 150px solid rgba(255,255,255,0.8);
+    border-right: 100px solid transparent;
+    position: absolute;
+    right: -100px;
+    bottom: 0;
     right:0;
 }
 
-.texto-triangulo {
+.titulo-triangulo1 {
     font-size: 20px;
-    
+}
+
+.triangulo2 {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-bottom: 150px solid rgba(255,255,255,0.8);
+    border-right: 100px solid transparent;
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+    right:0;
+}
+
+.cuadrado2 {
+    position: absolute;
+    height: 110px;
+    width: 230px;
+    bottom:0;
+    right:100px;
+    background-color: rgb(255, 255, 255,0.8);
+    padding: 20px 0 20px 20px  
 }
 
 
+.photo-utensilios {
+    display:flex;
+    position:relative;
+    width: 715px;
+    height: 300px;
+    margin-right: auto;
+    background-image: url(./images/utensiliosbasicos.jpg);
+}
 
+.photo-electro {
+    display:flex;
+    position:relative;
+    width: 715px;
+    height: 300px;
+    margin-right: auto;
+    background-image: url(./images/pequenoelectrodomestico2.jpg);
+}
