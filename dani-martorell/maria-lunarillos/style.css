@@ -650,22 +650,11 @@ header .logo img {
   padding: 20px 30px;
 }
 
-.info-icons ul .element-1:hover p, .info-icons ul .element-1:hover span {
+.info-icons ul li:hover p, .info-icons ul li:hover span {
   color: red;
 }
 
-.info-icons ul .element-1:hover .shipping__info-icon {
-  background: url("./images/sprite.svg") 0px -111px no-repeat;
-}
-
-.info-icons ul .shipping__info-icon {
-  width: 87px;
-  height: 65px;
-  margin-bottom: -35px;
-  background: url("./images/sprite.svg") 0px -40px no-repeat;
-}
-
-.info-icons ul .shipping__info-text {
+.info-icons ul .element__text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -675,14 +664,58 @@ header .logo img {
           flex-direction: column;
 }
 
-.info-icons ul .shipping__info-text p {
+.info-icons ul .element__text p {
   margin: 0;
   font-weight: bolder;
   color: #67625F;
 }
 
-.info-icons ul .shipping__info-text span {
+.info-icons ul .element__text span {
   font-size: 12px;
   color: #67625F;
+}
+
+.info-icons ul li:nth-of-type(1):hover .element1__icon {
+  background: url("./images/sprite.svg") 0px -111px no-repeat;
+}
+
+.info-icons ul .element1__icon {
+  width: 87px;
+  height: 65px;
+  margin-bottom: -35px;
+  background: url("./images/sprite.svg") 0px -40px no-repeat;
+}
+
+.info-icons ul li:nth-of-type(2):hover .element2__icon {
+  background: url("./images/sprite.svg") -88px -114px no-repeat;
+}
+
+.info-icons ul .element2__icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: -35px;
+  background: url("./images/sprite.svg") -88px -43px no-repeat;
+}
+
+.info-icons ul li:nth-of-type(3):hover .element3__icon {
+  background: url("./images/sprite.svg") -150px -116px no-repeat;
+}
+
+.info-icons ul .element3__icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: -35px;
+  background: url("./images/sprite.svg") -150px -45px no-repeat;
+}
+
+.info-icons ul li:nth-of-type(4):hover .element4__icon {
+  background: url("./images/sprite.svg") -219px -111px no-repeat;
+}
+
+.info-icons ul .element4__icon {
+  width: 87px;
+  height: 65px;
+  margin-bottom: -35px;
+  background: url("./images/sprite.svg") -219px -40px no-repeat;
 }
 /*# sourceMappingURL=style.css.map */

@@ -496,46 +496,72 @@ header .logo img{
             padding: 20px 30px;
         }
 
-        .element-1:hover {
+        li:hover {
             p, span {
                 color: red;
             }
-            .shipping__info-icon {
-            background: url('./images/sprite.svg') 0px -111px no-repeat; 
-            }
-
-
         }
-
-            .shipping__info-icon {
-                width:87px;
-                height: 65px;
-                margin-bottom: -35px;
-                background: url('./images/sprite.svg') 0px -40px no-repeat; 
+        .element__text {
+            display: flex;
+            flex-direction: column;
+            p {
+                margin: 0;
+                font-weight: bolder;
+                color: #67625F;
             }
-            .shipping__info-text {
-                display: flex;
-                flex-direction: column;
-                p {
-                    margin: 0;
-                    font-weight: bolder;
-                    color: #67625F;
-                }
-                span {
-                    font-size: 12px;
-                    color: #67625F;
-
-                }
+            span {
+                font-size: 12px;
+                color: #67625F;
             }
-
-
-        
-
+        }
+        li:nth-of-type(1):hover {
+            .element1__icon {
+                background: url('./images/sprite.svg') 0px -111px no-repeat; 
+            }
+        }
+        .element1__icon {
+            width:87px;
+            height: 65px;
+            margin-bottom: -35px;
+            background: url('./images/sprite.svg') 0px -40px no-repeat; 
+        }
+        li:nth-of-type(2):hover {
+            .element2__icon {
+                background: url('./images/sprite.svg') -88px -114px no-repeat; 
+            }
+        }
+        .element2__icon {
+            width:60px;
+            height: 60px;
+            margin-bottom: -35px;
+            background: url('./images/sprite.svg') -88px -43px no-repeat; 
+        }
+        li:nth-of-type(3):hover {
+            .element3__icon {
+                background: url('./images/sprite.svg') -150px -116px no-repeat; 
+            }
+        }
+        .element3__icon {
+            width:60px;
+            height: 60px;
+            margin-bottom: -35px;
+            background: url('./images/sprite.svg') -150px -45px no-repeat; 
+        }
+        li:nth-of-type(4):hover {
+            .element4__icon {
+                background: url('./images/sprite.svg') -219px -111px no-repeat; 
+            }
+        }
+        .element4__icon {
+            width:87px;
+            height: 65px;
+            margin-bottom: -35px;
+            background: url('./images/sprite.svg') -219px -40px no-repeat; 
+        }
     }
 }
 
 
-// background: url('./images/sprite.svg') -114px -497px no-repeat; 
 
 
 
