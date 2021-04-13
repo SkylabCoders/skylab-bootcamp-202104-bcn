@@ -613,14 +613,13 @@ header .logo img {
 }
 
 .info-icons {
-  height: 215px;
+  height: 213px;
   background-color: #E8E6E5;
 }
 
 .info-icons .container {
   max-width: 1080px;
   height: 100%;
-  border: 1px solid red;
   padding: 0;
 }
 
@@ -647,17 +646,26 @@ header .logo img {
   width: 270px;
   height: 100%;
   text-align: center;
+  cursor: pointer;
   padding: 20px 30px;
 }
 
-.info-icons ul li .info-icon {
+.info-icons ul .element-1:hover p, .info-icons ul .element-1:hover span {
+  color: red;
+}
+
+.info-icons ul .element-1:hover .shipping__info-icon {
+  background: url("./images/sprite.svg") 0px -111px no-repeat;
+}
+
+.info-icons ul .shipping__info-icon {
   width: 87px;
   height: 65px;
   margin-bottom: -35px;
   background: url("./images/sprite.svg") 0px -40px no-repeat;
 }
 
-.info-icons ul li .info-text {
+.info-icons ul .shipping__info-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -667,13 +675,13 @@ header .logo img {
           flex-direction: column;
 }
 
-.info-icons ul li .info-text p {
+.info-icons ul .shipping__info-text p {
   margin: 0;
   font-weight: bolder;
   color: #67625F;
 }
 
-.info-icons ul li .info-text span {
+.info-icons ul .shipping__info-text span {
   font-size: 12px;
   color: #67625F;
 }

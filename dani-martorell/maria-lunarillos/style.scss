@@ -473,12 +473,11 @@ header .logo img{
 }
 
 .info-icons {
-    height: 215px;
+    height: 213px;
     background-color: #E8E6E5;
     .container {
         max-width: 1080px;
         height: 100%;
-        border: 1px solid red;
         padding: 0;
     }
     ul {
@@ -493,15 +492,28 @@ header .logo img{
             width: 270px;
             height: 100%;
             text-align: center;
+            cursor: pointer;
             padding: 20px 30px;
+        }
 
-            .info-icon {
+        .element-1:hover {
+            p, span {
+                color: red;
+            }
+            .shipping__info-icon {
+            background: url('./images/sprite.svg') 0px -111px no-repeat; 
+            }
+
+
+        }
+
+            .shipping__info-icon {
                 width:87px;
                 height: 65px;
                 margin-bottom: -35px;
                 background: url('./images/sprite.svg') 0px -40px no-repeat; 
             }
-            .info-text {
+            .shipping__info-text {
                 display: flex;
                 flex-direction: column;
                 p {
@@ -516,7 +528,8 @@ header .logo img{
                 }
             }
 
-        }
+
+        
 
     }
 }
