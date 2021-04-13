@@ -142,4 +142,22 @@ nav {
 #slide-information img {
   width: 100%;
 }
+
+#slide-information {
+  background-color: #f1f1f1;
+}
+
+#card {
+  width: 70%;
+}
+
+aside {
+  width: 30%;
+}
+
+#text-description {
+  background-color: white;
+  font-size: 16px;
+  line-height: 180%;
+}
 /*# sourceMappingURL=styles.css.map */
