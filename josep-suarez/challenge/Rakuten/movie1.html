@@ -11,21 +11,31 @@
 </head>
 <body>
     <header class="header-fix">
-        <nav class="navigation">
-            <a href="index.html"><img src="image/rakutenLogo.png" alt="RakutenTV" class="header-fix__logo"></a>
-            <ul class="navigation__left">
-                <select class="cinema" name="cinema-options">
-                    <option value="" class="options-cine">CINEMA</option>
-                    <option value="family" class="options-cine">FAMILY</option>
-                    <option value="colleciones" class="options-cine">COLECCIONES</option>
-                    <option value="top-populares" class="options-cine">TOP POPULARES</option>
-                    <option value="generos" class="options-cine">TODOS LOS GENEROS</option>
-                </select>
-                <li class="gratis">GRATIS</li>
-                <li class="suscripciones">SUSCRIPCIONES</li>
-                <input type="text" placeholder="Buscar" class="search-movie">
-            </ul>
-        </nav>
+        <nav class="header-fix__nav">
+            <img src="image/rakutenLogo.png" alt="RakutenTV" class="header-fix__nav--logo">
+            <div class="header-fix__nav--left">
+                <p class="nav--left--options-cine">CINEMA</p>
+                <ul class="drop-list">
+                    <li class="nav--left--options-cine">FAMILY</li>
+                    <li class="nav--left--options-cine">COLECCIONES</li>
+                    <li class="nav--left--options-cine">TOP POPULARES</li>
+                    <li class="nav--left--options-cine">TODOS LOS GENEROS</li>
+                </ul>
+                <p class="header-fix__nav--arrow">▼</p>
+            </div>
+            <p class="gratis">GRATIS</p>
+            <div class="header-fix__nav--right">
+                <ul class="drop-list"> 
+                    <p class="suscripciones">SUSCRIPCIONES</p>
+                        <ul class="drop__list--right">
+                            <li class="drop__list--options-subs">STARZPLAY</li>
+                            <li class="drop__list--options-subs">RTV SUBSCRIPCION</li>
+                        </ul>
+                    <p class="header-fix__nav--arrow">▼</p>
+                    <input type="text" placeholder="Buscar" class="search-movie">
+                </ul>
+            </div>
+            </nav>
         <section class="register">
             <ul class="register__buttons">
                 <li class="register__buttons--help-disp">AYUDA Y DISPOSITIVOS</li>

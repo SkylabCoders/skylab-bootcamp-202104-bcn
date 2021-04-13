@@ -22,22 +22,6 @@
   }
 }
 
-.navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 60px;
-}
-
-.navigation__left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  margin-top: 20px;
-}
-
 .header-fix {
   background-color: black;
   color: white;
@@ -54,7 +38,15 @@
   left: 0;
 }
 
-.header-fix__logo {
+.header-fix__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 60px;
+}
+
+.header-fix__nav--logo {
   height: 40px;
   width: 150px;
   -ms-flex-item-align: center;
@@ -63,9 +55,95 @@
   margin-top: 10px;
 }
 
-.gratis,
+.header-fix__nav--left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.header-fix__nav--left p {
+  margin-top: 8px;
+  margin-left: 5px;
+}
+
+.header-fix__nav--left ul {
+  list-style: none;
+  display: none;
+  position: fixed;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 200px;
+  height: 90px;
+  background-color: black;
+  margin-top: 40px;
+}
+
+.drop-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.header-fix__nav--left:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+.header-fix__nav--left:hover .drop-list {
+  color: white;
+  display: block;
+}
+
+.header-fix__nav--left:hover .drop-list li:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+.drop__list--right {
+  list-style: none;
+  display: none;
+  position: fixed;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  margin-top: 40px;
+}
+
+.header-fix__nav--right:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+.header-fix__nav--right:hover .drop__list--right {
+  color: white;
+  display: block;
+}
+
+.header-fix__nav--right:hover .drop__list--right li:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+.gratis {
+  margin-right: 10px;
+  margin-left: 20px;
+  margin-top: 28px;
+}
+
 .suscripciones {
-  margin-right: 20px;
+  margin-top: 9px;
+  margin-left: -20px;
+}
+
+.header-fix__nav--arrow {
   margin-top: 9px;
 }
 
@@ -74,32 +152,9 @@
   width: 200px;
   background-color: #333;
   border-radius: 2px;
+  margin-left: 10px;
   margin-bottom: 5px;
   border: 0px solid;
-}
-
-.cinema {
-  border: none;
-  display: block;
-  background-color: black;
-  color: white;
-  font-family: NotoSans-Bold, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 80px;
-  margin-top: 9px;
-}
-
-.cinema:hover,
-.gratis:hover,
-.suscripciones:hover,
-.help-disp:hover,
-.sign-up:hover {
-  color: yellow;
-  cursor: pointer;
 }
 
 .register {
@@ -125,11 +180,7 @@
   margin-top: 20px;
 }
 
-.register__buttons--help--disp {
-  color: #3b3b3b;
-}
-
-.register__buttons--help-disp, .register__buttons--sign-up {
+.register__buttons--help-disp, .register__buttons_--sign-up {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,9 +190,12 @@
   margin-top: 5px;
 }
 
-.register__buttons--help-disp:hover, .register__buttons--sign-up:hover {
-  color: yellow;
-  cursor: pointer;
+.register__buttons--sign-up {
+  margin-top: 5px;
+}
+
+.register__buttons--help-disp {
+  color: #3b3b3b;
 }
 
 .register__buttons--register-button {
@@ -157,6 +211,15 @@
   min-height: 32px;
   border-radius: 2px;
   border: none;
+}
+
+.nav--left--select:hover,
+.gratis:hover,
+.suscripciones:hover,
+.register__buttons--help-disp:hover,
+.register__buttons--sign-up:hover {
+  color: yellow;
+  cursor: pointer;
 }
 
 .copy {

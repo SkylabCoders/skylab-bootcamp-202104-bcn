@@ -34,16 +34,7 @@ $letra-web: NotoSans-Bold, Arial, sans-serif;
     margin-left: 150px;
   }
 }
-.navigation {
-  display: flex;
-  width: 100%;
-  height: 60px;
-  &__left {
-    display: flex;
-    list-style: none;
-    margin-top: 20px;
-  }
-}
+
 .header-fix {
   @include colors(black, white);
   position: fixed;
@@ -52,17 +43,86 @@ $letra-web: NotoSans-Bold, Arial, sans-serif;
   width: 100%;
   top: 0;
   left: 0;
-  &__logo {
-    height: 40px;
-    width: 150px;
-    align-self: center;
-    margin-top: 10px;
+  &__nav {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    &--logo {
+      height: 40px;
+      width: 150px;
+      align-self: center;
+      margin-top: 10px;
+    }
+    &--left {
+      display: flex;
+      list-style: none;
+      margin-top: 20px;
+      & p {
+        margin-top: 8px;
+        margin-left: 5px;
+      }
+      & ul {
+        list-style: none;
+        display: none;
+        position: fixed;
+        appearance: none;
+        width: 200px;
+        height: 90px;
+        background-color: black;
+        margin-top: 40px;
+      }
+    }
   }
 }
-
-.gratis,
+.drop-list {
+  display: flex;
+  list-style: none;
+  margin-top: 20px;
+}
+.header-fix__nav--left:hover {
+  color: yellow;
+  cursor: pointer;
+  .drop-list {
+    color: white;
+    display: block;
+    li:hover {
+      color: yellow;
+      cursor: pointer;
+    }
+  }
+}
+.drop__list--right {
+  list-style: none;
+  display: none;
+  position: fixed;
+  appearance: none;
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  margin-top: 40px;
+}
+.header-fix__nav--right:hover {
+  color: yellow;
+  cursor: pointer;
+  .drop__list--right {
+    color: white;
+    display: block;
+    li:hover {
+      color: yellow;
+      cursor: pointer;
+    }
+  }
+}
+.gratis {
+  margin-right: 10px;
+  margin-left: 20px;
+  margin-top: 28px;
+}
 .suscripciones {
-  margin-right: 20px;
+  margin-top: 9px;
+  margin-left: -20px;
+}
+.header-fix__nav--arrow {
   margin-top: 9px;
 }
 .search-movie {
@@ -70,28 +130,11 @@ $letra-web: NotoSans-Bold, Arial, sans-serif;
   width: 200px;
   background-color: #333;
   border-radius: 2px;
+  margin-left: 10px;
   margin-bottom: 5px;
   border: 0px solid;
 }
-.cinema {
-  border: none;
-  display: block;
-  @include colors(black, white);
-  appearance: none;
-  width: 80px;
-  margin-top: 9px;
-}
 
-.cinema:hover,
-.gratis:hover,
-.suscripciones:hover,
-.help-disp:hover,
-.sign-up:hover {
-  // filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
-  //   brightness(97%) contrast(95%);
-  color: yellow;
-  cursor: pointer;
-}
 .register {
   display: flex;
   width: 100%;
@@ -101,20 +144,18 @@ $letra-web: NotoSans-Bold, Arial, sans-serif;
     display: flex;
     list-style: none;
     margin-top: 20px;
-    &--help--disp {
-      color: rgb(59, 59, 59);
-    }
     &--help-disp,
-    &--sign-up {
+    &_--sign-up {
       display: flex;
       justify-content: space-around;
       margin-right: 10px;
       margin-top: 5px;
     }
-    &--help-disp:hover,
-    &--sign-up:hover {
-      color: yellow;
-      cursor: pointer;
+    &--sign-up {
+      margin-top: 5px;
+    }
+    &--help-disp {
+      color: rgb(59, 59, 59);
     }
     &--register-button {
       @include colors(yellow, black);
@@ -129,6 +170,16 @@ $letra-web: NotoSans-Bold, Arial, sans-serif;
   }
 }
 
+.nav--left--select:hover,
+.gratis:hover,
+.suscripciones:hover,
+.register__buttons--help-disp:hover,
+.register__buttons--sign-up:hover {
+  // filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
+  //   brightness(97%) contrast(95%);
+  color: yellow;
+  cursor: pointer;
+}
 .copy {
   display: flex;
   left: 0;
