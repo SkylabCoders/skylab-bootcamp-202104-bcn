@@ -168,8 +168,8 @@
     margin-top: 50vh;
     width: 15vw;
     height: 7vh;
-    h3 {
-      margin-top: 10vh;
+    & h3 {
+      color: white;
     }
   }
   &--button {
@@ -225,7 +225,7 @@
     &--list2 {
       display: flex;
       flex-direction: column;
-      margin-top: 14vh;
+      margin-top: 12.5vh;
     }
     &--title {
       font-weight: bold;

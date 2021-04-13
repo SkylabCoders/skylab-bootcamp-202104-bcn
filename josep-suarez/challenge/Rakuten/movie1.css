@@ -224,7 +224,7 @@
 }
 
 .movie__picture--title h3 {
-  margin-top: 10vh;
+  color: white;
 }
 
 .movie__picture--button {
@@ -312,7 +312,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 14vh;
+  margin-top: 12.5vh;
 }
 
 .movie__language--title {
