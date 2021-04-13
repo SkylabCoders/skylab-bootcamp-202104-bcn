@@ -49,6 +49,7 @@ a {
   text-transform: uppercase;
   font-size: 14px;
   padding: 0 20px;
+  z-index: 1;
 }
 
 .nav-bar .nav-bar__logo {
@@ -71,15 +72,45 @@ a {
 }
 
 .nav-bar .nav-bar__main-menu .main-menu__item {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   padding-left: 20px;
 }
 
 .nav-bar .nav-bar__main-menu .main-menu__item p,
 .nav-bar .nav-bar__main-menu .main-menu__item a {
   margin: auto;
+}
+
+.nav-bar .nav-bar__main-menu .main-menu__item:hover .main-menu__links {
+  display: block;
+}
+
+.nav-bar .nav-bar__main-menu .main-menu__item .main-menu__links {
+  position: absolute;
+  display: none;
+  top: 0;
+  margin-left: -20px;
+  padding-top: 61px;
+  width: 100px;
+  height: 200px;
+  z-index: 2;
+}
+
+.nav-bar .nav-bar__main-menu .main-menu__item .main-menu__links:hover {
+  display: block;
+}
+
+.nav-bar .nav-bar__main-menu .main-menu__item .main-menu__links .links__item {
+  text-transform: uppercase;
+  height: 50px;
+  width: 100px;
+  background-color: #171717;
+  padding: 20px;
+  border-bottom: 1px solid #171717;
 }
 
 .nav-bar .nav-bar__user-menu {
@@ -114,6 +145,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 .nav-bar .nav-bar__user-menu .user-menu__item p,
