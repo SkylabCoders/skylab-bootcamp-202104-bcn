@@ -488,6 +488,13 @@ body {
 }
 
 .listing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: center;
+          flex-direction: center;
   padding-top: 28vw;
   background-image: url(https://images-3.wuaki.tv/system/shots/198322/original/snapshot-1590666632-width1920-quality80.jpeg);
   background-position-y: 60px;
@@ -499,21 +506,97 @@ body {
 }
 
 .listing__imdb {
-  width: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.listing__imdb img {
+  margin: 1vw 0vw;
+  width: 3%;
+}
+
+.listing__imdb p {
+  color: #ffe300;
+  font-size: 1.5em;
+  padding: 0 0.5em;
+}
+
+.listing__title {
+  padding: 1vw 0vw;
+}
+
+.listing__button {
+  margin: 1vw 0vw;
+  padding: 1vw 1vw;
+  background-color: #ffe300;
+  border-style: none;
+  border-radius: 3px;
+}
+
+.listing-details {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .listing-details h1 {
+  width: 100%;
   color: white;
   font-size: 4em;
 }
 
+.roundedAction {
+  padding: 0 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
 .roundedAction img {
-  width: 10%;
+  width: 75%;
 }
 
 .listing-background {
   background: -webkit-gradient(linear, left bottom, left top, from(black), to(transparent));
   background: linear-gradient(0deg, black, transparent);
-  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.play-round:hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(30deg) brightness(160%) contrast(85%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(30deg) brightness(160%) contrast(85%);
+  cursor: pointer;
+}
+
+.pin-round:hover {
+  -webkit-filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(30deg) brightness(160%) contrast(85%);
+          filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(30deg) brightness(160%) contrast(85%);
+  cursor: pointer;
 }
 /*# sourceMappingURL=extern-form.css.map */

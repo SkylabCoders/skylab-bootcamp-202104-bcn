@@ -525,4 +525,18 @@ body {
   display: block;
   color: #ffe300;
 }
+
+.film-slider img {
+  border: 6px solid transparent;
+  outline: none;
+}
+
+.film-slider img:hover {
+  border: 6px solid #ffe300;
+}
+
+.film-slider-title {
+  font-size: 1.5em;
+  padding-left: 2vw;
+}
 /*# sourceMappingURL=form.css.map */

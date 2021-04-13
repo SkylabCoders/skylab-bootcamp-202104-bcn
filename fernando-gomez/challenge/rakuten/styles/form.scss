@@ -475,3 +475,21 @@ body {
         }
     }
 }
+
+.film-slider {
+
+    img {
+        border: 6px solid transparent;
+        outline: none;
+
+        &:hover {
+            border: 6px solid $yellow;
+        }
+    }
+    
+}
+
+.film-slider-title {
+    font-size: 1.5em;
+    padding-left: 2vw;
+}
