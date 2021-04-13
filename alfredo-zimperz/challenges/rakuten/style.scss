@@ -16,11 +16,13 @@
 	font-family: NotoSans-Bold, Arial, sans-serif;
 }
 
-main {
-	width: 100%;
-	height: 2000px;
+.body {
 	background-color: $background-color-main;
 	color: $color-main;
+}
+
+main {
+	width: 100%;
 }
 
 li {
@@ -41,7 +43,6 @@ a {
 	top: 0;
 	position: fixed;
 	background-color: $background-color-nav;
-	color: $color-main;
 	z-index: 2;
 }
 
@@ -84,7 +85,7 @@ a {
 		width: 300px;
 		height: 40px;
 		margin-top: -20px;
-		background-color: #333333;
+		background-color: $background-color-input;
 		border: none;
 		outline: none;
 	}
@@ -96,7 +97,7 @@ a {
 		position: absolute;
 		margin-left: 25px;
 		z-index: 3;
-		color: black;
+		color: $color-secondary;
 	}
 	.search-bar {
 		width: 300px;
@@ -191,14 +192,43 @@ a {
 
 footer {
 	@include flex-config(column, center, center);
+	background-color: $background-color-footer;
 	width: 100%;
-	padding: 25px;
-	border: 1px solid red;
+	margin-top: 100px;
 	text-align: center;
-}
-.main-info {
-	display: flex;
-	flex-direction: column;
+	h1 {
+		font-size: 22px;
+	}
+	.footer__resume {
+		width: 800px;
+		padding: 25px;
+	}
+	.footer__points {
+		@include flex-config(null, space-around);
+		width: 100%;
+		padding: 0 40px;
+		.card {
+			@include flex-config(column, space-around, space-around);
+			min-width: 300px;
+			min-height: 200px;
+			border: 1px solid yellow;
+		}
+	}
+	.footer__links {
+		@include flex-config(column, null, space-between);
+		width: 100%;
+		background-color: $background-color-nav;
+
+		.footer-links__list {
+			padding: 10px;
+			@include flex-config(null, space-around);
+			.link-container {
+			}
+		}
+		.footer-links__copyright {
+			padding-bottom: 10px;
+		}
+	}
 }
 
 /* -------------------- */
