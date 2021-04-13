@@ -22,9 +22,9 @@ li {
 }
 
 a {
+    display: inherit;
     padding: 0;
     text-decoration: none;
-    display: inherit;
 
     &:visited {
         color: white;
@@ -79,12 +79,12 @@ body {
 }
 
 .nav-bar{
-    line-height: 0;
     align-items: center;
     background-color: black;
     border-bottom: 1px solid rgba(255,255,255,.2);
     height: 60px;
     justify-content: space-between;
+    line-height: 0;
     padding: 0 10vmin;
     text-transform: uppercase;
     width: 100%;
@@ -109,16 +109,15 @@ body {
 }
 
 .outstanding {
-    padding: 0 10vmin;
     display: flex;
+    padding: 0 10vmin;
     width: 100%;
 
     &__figure {
-        width: 100%;
         border-radius: 3px;
+        width: 100%;
 
         &-image {
-            //background-color: $yellow;
             border: 4px transparent solid;
             border-radius: 6px;
         }
@@ -163,8 +162,8 @@ body {
 
 .extern-nav {
     justify-content: space-around;
-    width: 350px;
     padding-top: 30px;
+    width: 350px;
 }
 
 .header-nav-container {
@@ -185,12 +184,13 @@ body {
 
 .search-input {
     background-color: #333;
+    border:none;
     border-radius: 2px;
+    font-family: $noto-regular;
     height: 40px;
     padding-left: 40px;
     text-align: left;
     width: 300px;
-    border:none;
 
     &:focus {
         background-color: white;
@@ -217,17 +217,17 @@ body {
     &__resume {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        text-align: center;
         padding: 3em 26em 0em 26em;
+        text-align: center;
+        width: 100%;
 
         &-title {
             font-size: 1.5em;
         }
 
         p {
-            font-family: $noto-regular;
             color: $dark-grey;
+            font-family: $noto-regular;
         }
 
         &-title,
@@ -237,26 +237,26 @@ body {
     }
 
     &__extern {
+        align-items: baseline;
         display: flex;
-        width: 100%;
         justify-content: center;
         padding-bottom: 3em;
-        align-items: baseline;
+        width: 100%;
 
         &-howitworks,
         &-payments,
         &-help {
+            align-items: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            width: 20em;
-            text-align: center;
             margin: 0 2em;
+            text-align: center;
+            width: 20em;
 
             small {
-                font-family: $noto-regular;
                 color: $dark-grey;
+                font-family: $noto-regular;
             }
         }
 
@@ -281,28 +281,25 @@ body {
 }
 
 .footer {
-
     display: flex;
     flex-direction: column;
-    width: 100%;
     padding: 2em 3em;
+    width: 100%;
 
     &__mini {
+        color: $dark-grey;
         display: flex;
         font-family: $noto-regular;
-        color: $dark-grey;
     }
 
     &__info {
-        font-family: $noto-regular;
         color: $dark-grey;
         display: flex;
+        font-family: $noto-regular;
     }
-
 }
 
 .footer-logo {
-
     align-self: center;
     background-repeat: no-repeat;
     height: 32px;
@@ -315,15 +312,13 @@ body {
 }
 
 .mini-footer {
-
     display: flex;
 
     &__anchors {
-
-        display: flex;
         align-items: center;
-        width: 100%;
+        display: flex;
         justify-content: space-around;
+        width: 100%;
 
         a {
             color: $dark-grey;
@@ -337,8 +332,8 @@ body {
     
 .cinema-nav,
 .subs-nav {
-    display: flex;
     align-items: center;
+    display: flex;
     height: 100%;
 
     &:hover {
@@ -368,8 +363,7 @@ body {
 
 .subs-nav {
 
-    &:hover {
-        
+    &:hover {    
         .subs-hover-nav {
             display: block;
         }
@@ -389,16 +383,15 @@ body {
 
 .arrow {
     font-size: 0.5em;
-    padding-left: 5px;
     height: 100%;
+    padding-left: 5px;
 }
 
 .hover-nav {
     display: none;
+    margin-top: 60px;
     position: fixed;
     width: 100%;
-    
-    margin-top: 60px;
     z-index: 2;
 
     &:hover {
@@ -407,19 +400,19 @@ body {
 }
 
 .cinemaHover {
-    font-size: 0.9em;
-    font-family: $noto-regular;
+    background-color: black;
+    border-radius: 0.3em;
     color: white;
-    position: absolute;
     display: flex;
     flex-direction: column;
+    font-size: 0.9em;
+    font-family: $noto-regular;
     list-style-type: none;
-    background-color: black;
-    z-index: 0;
     margin-top: -22px;
     padding: 2em 1em 0 1em;
-    border-radius: 0.3em;
-
+    position: absolute;
+    z-index: 0;
+    
     &:hover {
         display: block;
     }
@@ -428,18 +421,17 @@ body {
         padding-bottom: 30px;
 
         &:hover {
-            display: block;
             color: $yellow;
+            display: block;
         }
     }
 }
 
 .subs-hover-nav {
     display: none;
+    margin-top: 60px;
     position: fixed;
     width: 100%;
-    
-    margin-top: 60px;
     z-index: 2;
 
     &:hover {
@@ -448,19 +440,18 @@ body {
 }
 
 .subsHover {
-    display: block;
-    font-size: 0.9em;
-    font-family: $noto-regular;
+    background-color: black;
+    border-radius: 0.3em;
     color: white;
-    position: absolute;
     display: flex;
     flex-direction: column;
+    font-size: 0.9em;
+    font-family: $noto-regular;
     list-style-type: none;
-    background-color: black;
-    z-index: 0;
     margin-top: -22px;
     padding: 2em 1em 0 1em;
-    border-radius: 0.3em;
+    position: absolute;
+    z-index: 0;
 
     &:hover {
         display: block;
@@ -470,8 +461,8 @@ body {
         padding-bottom: 30px;
 
         &:hover {
-            display: block;
             color: $yellow;
+            display: block;
         }
     }
 }
@@ -481,6 +472,7 @@ body {
     img {
         border: 6px solid transparent;
         outline: none;
+        cursor: pointer;
 
         &:hover {
             border: 6px solid $yellow;
@@ -495,17 +487,16 @@ body {
 }
 
 .genre {
-
     display: flex;
+    font-size: 1em;
     justify-items: center;
     width: 0px;
-    font-size: 1em;
 
     img {
-
         border: none;
-        outline: none;
+        cursor: pointer;
         padding-left: 3.6em;
+        outline: none;
 
         &:hover {
             border: none;
@@ -520,12 +511,11 @@ body {
 
     h3 {
         font-size: 1em;
-        text-align: center;
         padding-top: 1em;
+        text-align: center;
     }
 
     &__all {
         width: 10.5em;
     }
 }
-

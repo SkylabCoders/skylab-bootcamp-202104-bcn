@@ -17,9 +17,9 @@ li {
 }
 
 a {
+  display: inherit;
   padding: 0;
   text-decoration: none;
-  display: inherit;
 }
 
 a:visited {
@@ -82,7 +82,6 @@ body {
 }
 
 .nav-bar {
-  line-height: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -92,6 +91,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  line-height: 0;
   padding: 0 10vmin;
   text-transform: uppercase;
   width: 100%;
@@ -141,8 +141,8 @@ body {
 .extern-nav {
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 350px;
   padding-top: 30px;
+  width: 350px;
 }
 
 .header-nav-container {
@@ -162,12 +162,13 @@ body {
 
 .search-input {
   background-color: #333;
+  border: none;
   border-radius: 2px;
+  font-family: "Noto Sans Regular", sans-serif;
   height: 40px;
   padding-left: 40px;
   text-align: left;
   width: 300px;
-  border: none;
 }
 
 .search-input:focus {
@@ -205,9 +206,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
-  text-align: center;
   padding: 3em 26em 0em 26em;
+  text-align: center;
+  width: 100%;
 }
 
 .about__resume-title {
@@ -215,8 +216,8 @@ body {
 }
 
 .about__resume p {
-  font-family: "Noto Sans Regular", sans-serif;
   color: #9a9a9a;
+  font-family: "Noto Sans Regular", sans-serif;
 }
 
 .about__resume-title,
@@ -225,20 +226,23 @@ body {
 }
 
 .about__extern {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   padding-bottom: 3em;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  width: 100%;
 }
 
 .about__extern-howitworks, .about__extern-payments, .about__extern-help {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -249,17 +253,14 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 20em;
-  text-align: center;
   margin: 0 2em;
+  text-align: center;
+  width: 20em;
 }
 
 .about__extern-howitworks small, .about__extern-payments small, .about__extern-help small {
-  font-family: "Noto Sans Regular", sans-serif;
   color: #9a9a9a;
+  font-family: "Noto Sans Regular", sans-serif;
 }
 
 .about__extern a h6 {
@@ -282,8 +283,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
   padding: 2em 3em;
+  width: 100%;
 }
 
 .footer__mini {
@@ -295,11 +296,11 @@ body {
 }
 
 .footer__info {
-  font-family: "Noto Sans Regular", sans-serif;
   color: #9a9a9a;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-family: "Noto Sans Regular", sans-serif;
 }
 
 .footer-logo {
@@ -323,15 +324,15 @@ body {
 }
 
 .mini-footer__anchors {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  width: 100%;
 }
 
 .mini-footer__anchors a {
@@ -344,12 +345,12 @@ body {
 
 .cinema-nav,
 .subs-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 100%;
 }
 
@@ -363,11 +364,11 @@ body {
 }
 
 .cinema-nav:hover .arrow {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
   padding-left: 0;
   padding-right: 5px;
   padding-top: 30px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .cinema-nav-element {
@@ -379,11 +380,11 @@ body {
 }
 
 .subs-nav:hover .arrow {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
   padding-left: 0;
   padding-right: 5px;
   padding-top: 30px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .subs-nav-element {
@@ -392,15 +393,15 @@ body {
 
 .arrow {
   font-size: 0.5em;
-  padding-left: 5px;
   height: 100%;
+  padding-left: 5px;
 }
 
 .hover-nav {
   display: none;
+  margin-top: 60px;
   position: fixed;
   width: 100%;
-  margin-top: 60px;
   z-index: 2;
 }
 
@@ -409,10 +410,9 @@ body {
 }
 
 .cinemaHover {
-  font-size: 0.9em;
-  font-family: "Noto Sans Regular", sans-serif;
+  background-color: black;
+  border-radius: 0.3em;
   color: white;
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -420,12 +420,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-size: 0.9em;
+  font-family: "Noto Sans Regular", sans-serif;
   list-style-type: none;
-  background-color: black;
-  z-index: 0;
   margin-top: -22px;
   padding: 2em 1em 0 1em;
-  border-radius: 0.3em;
+  position: absolute;
+  z-index: 0;
 }
 
 .cinemaHover:hover {
@@ -437,15 +438,15 @@ body {
 }
 
 .cinemaHover__item:hover {
-  display: block;
   color: #ffe300;
+  display: block;
 }
 
 .subs-hover-nav {
   display: none;
+  margin-top: 60px;
   position: fixed;
   width: 100%;
-  margin-top: 60px;
   z-index: 2;
 }
 
@@ -454,11 +455,9 @@ body {
 }
 
 .subsHover {
-  display: block;
-  font-size: 0.9em;
-  font-family: "Noto Sans Regular", sans-serif;
+  background-color: black;
+  border-radius: 0.3em;
   color: white;
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -466,12 +465,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-size: 0.9em;
+  font-family: "Noto Sans Regular", sans-serif;
   list-style-type: none;
-  background-color: black;
-  z-index: 0;
   margin-top: -22px;
   padding: 2em 1em 0 1em;
-  border-radius: 0.3em;
+  position: absolute;
+  z-index: 0;
 }
 
 .subsHover:hover {
@@ -483,11 +483,15 @@ body {
 }
 
 .subsHover__item:hover {
-  display: block;
   color: #ffe300;
+  display: block;
 }
 
 .listing {
+  background-image: url(https://images-3.wuaki.tv/system/shots/198322/original/snapshot-1590666632-width1920-quality80.jpeg);
+  background-position-y: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -495,26 +499,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: center;
           flex-direction: center;
-  padding-top: 28vw;
-  background-image: url(https://images-3.wuaki.tv/system/shots/198322/original/snapshot-1590666632-width1920-quality80.jpeg);
-  background-position-y: 60px;
-  background-size: cover;
-  position: center center;
   margin: 0 auto;
+  padding-top: 28vw;
+  position: center center;
   width: 100%;
-  background-repeat: no-repeat;
 }
 
 .listing__imdb {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
 }
 
 .listing__imdb img {
@@ -533,39 +533,39 @@ body {
 }
 
 .listing__button {
+  background-color: #ffe300;
+  border-radius: 3px;
+  border-style: none;
   margin: 1vw 0vw;
   padding: 1vw 1vw;
-  background-color: #ffe300;
-  border-style: none;
-  border-radius: 3px;
 }
 
 .listing-details {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
 }
 
 .listing-details h1 {
-  width: 100%;
   color: white;
   font-size: 4em;
+  width: 100%;
 }
 
 .roundedAction {
-  padding: 0 3vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 3vw;
+  justify-items: center;
 }
 
 .roundedAction img {
@@ -573,9 +573,11 @@ body {
 }
 
 .listing-background {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: -webkit-gradient(linear, left bottom, left top, from(black), to(transparent));
   background: linear-gradient(0deg, black, transparent);
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -583,9 +585,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100%;
 }
 
 .play-round:hover {
