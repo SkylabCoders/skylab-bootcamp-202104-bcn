@@ -1,0 +1,377 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    height: 100%
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: auto;
+    background: #000;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        background-color: red;
+    }
+}
+
+.navbar-items {
+    display: flex;
+    padding: 0 15px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.rakuten-logo {
+    width: 111px;
+    height: 30px;
+    margin-top: 17px;
+    margin-left: 20px;
+}
+
+.rakuten-logo:hover {
+    cursor: pointer;
+}
+
+.navbar-items-menu ul {
+    display: flex;
+    color: #fff;
+    list-style-type: none;
+    margin-left: 15px;
+}
+
+.navbar-items-menu-text {
+    font-size: 14px;
+    margin-right: 15px;
+    padding: 22px 0;
+    font-weight: 600;
+}
+
+.navbar-items-menu-text:hover {
+    color: #ffe300;
+    cursor: pointer;
+}
+
+.navbar-items-search {
+    padding-left: 40px;
+    height: 40px;
+    width: 300px;
+    background-color: #333;
+    border-radius: 2px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.search-box-input {
+    padding: 10px 10px 10px 5px;
+    background-color: red;
+    font-size: 17px;
+    background-color: #333;
+    border: none;
+}
+
+.search-box-input:focus {
+    background-color: #fff;
+    border: none;
+    width: 231px;
+    height: 38px;
+}
+
+.navbar-items-search::before {
+    content: url("https://img.icons8.com/ios-glyphs/24/000000/detective.png");
+    color: #999;
+    background-color: #333;
+    font-size: 24px;
+    position: absolute;
+    margin-left: -26px;
+    margin-top: 7px;
+}
+
+.navbar-items-user {
+    position: relative;
+    width: 403px;
+    height: 36px;
+    margin-top: 15px;
+    margin-left: 206px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.navbar-items-user-1 {
+    margin-right: 15px;
+    color: #999;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.navbar-items-user-2 {
+    margin-right: 15px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.navbar-items-user-3 {
+    font-family: 'Noto Sans', sans-serif;
+    width: 108px;
+    height: 32px;
+    color: #252525;
+    background-color: #ffe300;
+    border: none;
+    border-radius: 5%;
+    font-weight: 600;
+}
+
+.navbar-items-user-1:hover,
+.navbar-items-user-2:hover {
+    color: #ffe300;
+}
+
+.navbar-items-user-3:hover {
+    opacity: 0.9;
+}
+
+.slider {
+    width: 1349px;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 60px;
+    background-color: #212121;
+}
+
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: cambio 20s infinite alternate;
+}
+
+.slider li {
+    width: 100%;
+    list-style: none;
+
+}
+
+.slider img {
+    width: 1349px;
+    height: 432.25px;
+}
+
+@keyframes cambio {
+    0% {
+        margin-left: 0%;
+    }
+
+    20% {
+        margin-left: 0%;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+}
+
+.banners {
+    display: flex;
+    justify-content: space-evenly;
+    top: 0;
+    background-color: #171717;
+    width: 1349px;
+    height: 200.77px;
+    position: relative;
+    padding: 0px 15px 25px;
+}
+
+.banners img {
+    border: 4px solid transparent;
+    width: 253.8px;
+    margin-top: -7px;
+    height: 170.77px;
+}
+
+.banners img:hover,
+.all-films img:hover {
+    border: 4px solid #ffe300;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.all-films {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    background-color: #171717;
+    width: 1349px;
+    height: 1050px;
+    /* z-index: 100; */
+    position: relative;
+    padding: 10px 15px 25px;
+}
+
+.all-films-img-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.all-films img {
+    height: 279px;
+    border: 4px solid transparent;
+}
+
+
+.all-films h2 {
+    color: #fff;
+    margin-left: 17px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.films__genre {
+    display: flex;
+    flex-direction: column;
+    width: 1349px;
+    height: 219px;
+    background-color: #171717;
+    color: #ffffff;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 0 34px 25px;
+    font-size: 25px;
+}
+
+.films__genre img {
+    width: 95px;
+    height: 95px;
+}
+
+.genre__list {
+    display: flex;
+    margin-top: 12px;
+}
+
+.genre__list div {
+    margin-left: 5px;
+    text-align: center;
+}
+
+.genre__list span {
+    text-align: center;
+    font-size: 15px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 1349px;
+    height: 418px;
+    background-color: #212121;
+    color: white;
+}
+
+.about1 {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto 20px;
+    text-align: center;
+    width: 50%;
+    color: cccccc;
+    line-height: 160%;
+}
+
+.about1 p,
+.about2 p {
+    color: #ccc;
+    font-size: 15px;
+    font-family: 'Noto Sans Regular', sans-serif;
+    font-weight: 200;
+}
+
+.about1 h5,
+.about2 h6 {
+    font-size: 22px;
+    font-family: 'Noto Sans Regular', sans-serif;
+
+}
+
+.about2 {
+    display: flex;
+    text-align: center;
+}
+
+.about2 div {
+    width: 389px;
+    height: 191px;
+}
+
+.about div img {
+    height: 90px;
+    width: 200px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    clear: both;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 135px;
+    background-color: #0d0d0d;
+    z-index: 1;
+    padding: 5px 0;
+    color: #ccc;
+    font-size: 17px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+.footer-links>*:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer-p {
+    margin-top: 5px;
+    margin-left: 35px;
+    color: #737373;
+}
