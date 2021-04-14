@@ -249,7 +249,7 @@ ul.main-icons li img.big-icon {
 }
 
 main {
-  padding: 50px 0px;
+  padding: 50px 0px 0px 0px;
   background-color: #F8F8F8;
   width: 100vw;
 }
@@ -651,6 +651,7 @@ header .logo img {
   max-width: 1080px;
   height: 100%;
   padding: 0;
+  margin: 0 auto;
 }
 
 .info-icons ul {
@@ -747,6 +748,124 @@ header .logo img {
   height: 65px;
   margin-bottom: -35px;
   background: url("./images/sprite.svg") -219px -40px no-repeat;
+}
+
+.multi-contact .container {
+  max-width: 1080px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.multi-contact .container .siguenos, .multi-contact .container .newsletter, .multi-contact .container .more-info {
+  padding: 30px;
+}
+
+.multi-contact ul {
+  list-style-type: none;
+}
+
+.multi-contact p {
+  font-size: 14px;
+  color: #2E2925;
+}
+
+.multi-contact .siguenos {
+  margin-right: auto;
+}
+
+.multi-contact .siguenos .social-icons {
+  width: 175px;
+  height: 35px;
+  background: url("./images/sprite.svg") 0px -493px no-repeat;
+  cursor: pointer;
+}
+
+.multi-contact .newsletter {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+.multi-contact .newsletter .subscribe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.multi-contact .newsletter .subscribe input {
+  height: 38px;
+  border: 1px solid #2E2925;
+}
+
+.multi-contact .newsletter .subscribe button {
+  background-color: #ff5959;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  padding: 5px 18px;
+  border: none;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.multi-contact .newsletter .accept {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+.multi-contact .newsletter .accept a {
+  text-decoration: none;
+  color: #2E2925;
+  margin-left: 10px;
+}
+
+.multi-contact .more-info {
+  margin-right: auto;
+}
+
+.multi-contact .more-info li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  cursor: pointer;
+}
+
+.multi-contact .more-info li:hover {
+  text-decoration: underline;
+  color: #ff5959;
+}
+
+.multi-contact .more-info li p {
+  color: #ff5959;
+}
+
+.multi-contact .more-info .icono {
+  width: 35px;
+  height: 35px;
+  margin-right: 15px;
+}
+
+.multi-contact .more-info .icono-contacto {
+  background: url("./images/sprite.svg") 0px -208px no-repeat;
+}
+
+.multi-contact .more-info .icono-about {
+  background: url("./images/sprite.svg") 0px -247px no-repeat;
+}
+
+.multi-contact .more-info .icono-condition {
+  background: url("./images/sprite.svg") 0px -285px no-repeat;
 }
 
 .copyright {
