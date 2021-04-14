@@ -1,0 +1,13 @@
+@import './colors.scss';
+
+@mixin common-tags($direction, $specific-border-color: $border-color) {
+	display: flex;
+	flex-direction: $direction;
+	border: border(solid 2px $specific-border-color);
+	padding: $padding;
+	margin: $margin;
+}
+
+@mixin border($type, $width, $bcolor: $border-color) {
+	border: $type $width $bcolor;
+}
