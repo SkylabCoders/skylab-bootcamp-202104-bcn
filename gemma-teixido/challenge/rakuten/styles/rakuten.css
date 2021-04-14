@@ -1,0 +1,298 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  list-style: none;
+}
+
+.header-container-fixed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  z-index: 2;
+  -webkit-box-pack: row;
+      -ms-flex-pack: row;
+          justify-content: row;
+  background-color: black;
+  width: 100vw;
+  height: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 22px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 35px;
+}
+
+.first-header-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style: none;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  font-size: 10px;
+  color: white;
+  width: 460px;
+  margin-top: 45px;
+  height: 40px;
+  margin-left: -30px;
+}
+
+.first-header-part .triangle-white {
+  display: inline;
+  width: 6px;
+}
+
+.first-header-part .triangle-yellow {
+  display: none;
+}
+
+.first-header-part .cinema-list {
+  display: none;
+  position: absolute;
+  list-style: none;
+  color: white;
+  font-size: 10px;
+  font-weight: lighter;
+  padding-top: 15px;
+  background-color: black;
+}
+
+.first-header-part .cinema-list li {
+  padding-top: 10px;
+  cursor: pointer;
+  color: white;
+  margin-left: -25px;
+  margin-bottom: 5px;
+  z-index: 2;
+  width: 140px;
+}
+
+#cinema:hover .triangle-white {
+  display: none;
+}
+
+#cinema:hover .triangle-yellow {
+  display: inline;
+  width: 6px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  cursor: pointer;
+}
+
+#cinema:hover .cinema-list {
+  display: block;
+}
+
+#cinema:hover .cinema-list li:hover {
+  color: #ffe300;
+}
+
+#logo img {
+  width: 110px;
+  margin-left: -10px;
+}
+
+#cinema:hover,
+#gratis:hover,
+#suscripciones:hover {
+  color: #ffe300;
+}
+
+.second-header-part {
+  width: 100%;
+}
+
+input {
+  background: #333333;
+  border-color: black;
+  height: 25px;
+  width: 200px;
+  border-style: groove;
+}
+
+input:active {
+  background-color: white;
+}
+
+.third-header-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style: none;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  font-size: 10px;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  color: white;
+  width: 370px;
+}
+
+#ayuda {
+  color: grey;
+}
+
+#ayuda:hover,
+#entrar:hover {
+  color: #ffe300;
+}
+
+#registrate {
+  background: #ffe300;
+  font-weight: bold;
+  border-color: black;
+  border-radius: 10%;
+  padding-right: 8px;
+  padding-left: 8px;
+  min-height: 30px;
+  font-size: 11px;
+}
+
+#registrate:hover {
+  background-color: #c2c205;
+}
+
+@media (max-width: 1100px) {
+  #ayuda {
+    display: none;
+  }
+}
+
+@media (max-width: 979px) {
+  .second-header-part,
+  .third-header-part,
+  #registrate,
+  .first-header-part {
+    display: none;
+  }
+}
+
+#carouselExampleFade {
+  margin-top: 30px;
+  width: 100%;
+}
+
+body {
+  background-color: #141414;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  background-color: #141414;
+}
+
+main .row-movies {
+  margin-top: 20px;
+  margin-left: -19px;
+}
+
+main .scroll-movies {
+  margin: 0;
+  margin-left: -19px;
+}
+
+main h2 {
+  margin-left: 15px;
+}
+
+.row-movies {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin-top: 15px;
+  margin-left: 80px;
+}
+
+.row-movies li img {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+
+.img-row {
+  border: 4px solid transparent;
+  padding: 0px;
+}
+
+.img-row:hover {
+  border: 4px solid #ffe300;
+  cursor: pointer;
+}
+
+h2 {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.scroll-movies {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.scroll-movies li img {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+
+.img-scroll {
+  border: 4px solid transparent;
+  padding: 0px;
+}
+
+.img-scroll:hover {
+  border: 4px solid #ffe300;
+  cursor: pointer;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-style: italic;
+  color: white;
+  padding-top: 40px;
+  width: 100%;
+  height: 100px;
+}
+/*# sourceMappingURL=rakuten.css.map */

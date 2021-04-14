@@ -1,0 +1,61 @@
+@mixin nav-style {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+@mixin movie-pictures {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  li {
+    img {
+      height: 100%;
+      width: 100%;
+      margin: 0px;
+    }
+  }
+}
+
+@mixin yellow-border {
+  border: 4px solid #ffe300;
+  cursor: pointer;
+}
+
+@mixin transparent-border {
+  border: 4px solid transparent;
+  padding: 0px;
+}
+
+@mixin slice-list-hover {
+  .triangle-white {
+    display: none;
+  }
+  .triangle-yellow {
+    display: inline;
+    width: 6px;
+    transform: rotate(180deg);
+    cursor: pointer;
+  }
+}
+
+@mixin slice-list-class {
+  display: none;
+  position: absolute;
+  list-style: none;
+  color: white;
+  font-size: 10px;
+  font-weight: lighter;
+  padding-top: 15px;
+  background-color: black;
+}
+
+@mixin slice-list-li {
+  padding-top: 10px;
+  cursor: pointer;
+  color: white;
+}
