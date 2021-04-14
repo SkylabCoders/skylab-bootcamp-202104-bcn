@@ -98,7 +98,7 @@ body{
 }
 .movie-info{
     @include spacings(70%);
-    margin-top: -10px;
+    margin-top: 0px;
     background-color: white;
     display: flex;
     flex-direction: column;

@@ -151,9 +151,8 @@ body{
     color: rgb(1, 0, 85);
     padding: 50px;
     margin:50px;
-    position: absolute;
     background-color: white;
-    width: 80%;
+    width: 90%;
     display: inline-block;
     align-self: center;
     justify-content: center;
@@ -173,6 +172,7 @@ body{
 }
 .form-row{
     display: flex;
+    position: relative;
 }
 
 .submit-button{
@@ -236,6 +236,57 @@ body{
     border-radius: 50%;
   }
 }
+
+.footer{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    &__info{
+        display: block;
+        padding: 25px;
+        margin: auto;
+        background-color: #212121;
+        &--text{
+            font-weight: 300;
+            padding: 10px 30vw;
+        }
+    }
+    .additional-info{
+        display: flex;
+        justify-content: space-evenly;
+        &__how-works, &__payments, &__info{
+            img{
+                height: 80px;
+            }
+            width: 20%;
+        }
+        p{
+            font-weight: 300;
+            padding-top: 20px;
+        }
+    }
+    &__nav{
+        display: flex;
+        .logo{
+            opacity: 0.4;
+            margin-top: -15px;
+        }
+        ul{
+            padding-top: 30px;
+            opacity: 0.4;
+            display: flex;
+            list-style: none;
+            justify-content: space-evenly;
+            li{
+                padding: 10px 20px;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
 
 @media (max-width: 1000px) {
     .header{
