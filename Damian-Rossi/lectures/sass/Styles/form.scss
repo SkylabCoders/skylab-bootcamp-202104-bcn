@@ -1,0 +1,39 @@
+@import './colors';
+@import './mixins';
+@import './values';
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #eaeaea;
+	color: #555;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 100%;
+	margin: 20px;
+}
+
+.main {
+	@include common-tags(row, $border-color);
+}
+
+.sidebar,
+.form {
+	@include common-tags(column, $border-highlight);
+
+	&-title {
+		color: $text-important;
+	}
+}
+
+.sidebar {
+	@include common-tags(column);
+}
+
+/*# sourceMappingURL=form.css.map */

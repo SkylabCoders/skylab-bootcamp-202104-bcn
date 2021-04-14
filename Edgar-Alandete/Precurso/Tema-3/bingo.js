@@ -34,13 +34,13 @@ function showPointsSystem() {
                 se restaran el numero de turnos totales a los numeros del bombo para obtener tu punuacion final`);
 }
 
-let getBingoCardNumbers = (numbers) => {
+let getBingoCardNumbers = (possibleNumbers) => {
   var copy = [],
-    n = numbers.length,
+    n = possibleNumbers.length,
     i;
   while (n) {
     i = Math.floor(Math.random() * n--);
-    copy.push(numbers.splice(i, 1)[0]);
+    copy.push(possibleNumbers.splice(i, 1)[0]);
   }
 
   return copy;
@@ -170,7 +170,6 @@ function endGame(isGameFinished) {
   if (isGameFinished) {
     alert(`JUEGO FINALIZADO EN ${totalTurns} TURNOS.`);
     ranking.push(createPlayerObj());
-    //TODO: SORT RANKING
     showRanking();
   } else {
     console.log(
@@ -190,7 +189,7 @@ function showRanking() {
   console.log(
     `--------------------- THIS IS THE RANKING MY DUDES --------------------- `
   );
-  for (player in ranking) {
+  for (const player in ranking) {
     console.log(
       `Nombre: ----------- ${ranking[player].name} ----------- Puntos: ----------- ${ranking[player].points} -----------`
     );

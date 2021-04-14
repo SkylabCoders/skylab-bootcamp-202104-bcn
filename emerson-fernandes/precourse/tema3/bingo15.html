@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bingo</title>
+    </head>
+    <body>
+        <h2>Bingo</h2>
+        
+        <script>
+            
+            
+            bingo()
+            
+            function bingo(){
+            
+                var cartonUser =[
+                    
+                    
+                
+                    { number: randomNumber(), matched: false },
+                
+                    { number: randomNumber(), matched: false },
+
+                    { number: randomNumber(), matched: false },
+
+                    { number: randomNumber(), matched: false },
+
+                    { number: randomNumber(), matched: false },
+                    
+
+                    { number: randomNumber(), matched: false },
+                
+                    { number: randomNumber(), matched: false },
+
+                    { number: randomNumber(), matched: false },
+
+                    { number: randomNumber(), matched: false },
+             
+                    { number: randomNumber(), matched: false },
+
+                   
+
+                    { number: randomNumber(), matched: false },
+
+                    { number: randomNumber(), matched: false },
+              
+                    { number: randomNumber(), matched: false },
+
+                    { number: randomNumber(), matched: false },
+
+                    { number: randomNumber(), matched: false },
+
+                    
+               
+                ]
+
+                
+            
+                var nombre = prompt('Nombre')
+
+                confirm('Iniciando Bingo')
+
+                var running = true
+
+                var turno = 0
+
+                while(running){
+                    
+                    enseñarCarton()
+
+                    function enseñarCarton(){
+                    
+                        var enseñarCarton = ''
+                        for(let i = 0; i < cartonUser.length ; i++){
+                            enseñarCarton += `${cartonUser[i].number} `
+                            if(i == 4 || i == 9 || i == 14){
+                                enseñarCarton += '\n'
+                            }
+
+                                
+                            
+                        }
+                        alert(enseñarCarton)
+                        
+                    }
+            
+
+
+                    var numeroMaquina = randomNumber()
+
+                    alert(`Numero: ${numeroMaquina}`)
+
+                    matchCard()
+
+                    verificarLinea1()
+
+                    cartonLleno()
+
+                    proximotround()
+
+                   
+                    
+                    function proximotround(){
+                        
+                        continuar = prompt('Deseas continuar? s/n')
+                        
+                        if(continuar == 's'){
+                            contadorTurno()
+                            enseñarCarton()
+                        
+                        }else if(continuar == 'n'){
+                            running = false
+                            alert('logout')
+                        }else{
+                            alert('No existe esta accion')
+                            proximotround()
+                        }
+                        return continuar
+                    }   
+                }
+                
+                function cartonLleno(){
+                    
+                    var win = cartonUser.every(finpartido)
+                    
+                    if(win == true){
+                        alert('B I N G O !')
+                        alert(`Turnos: ${turno}`)
+                        var newgame = prompt('Deseas jugar nuevamente? s/n')
+                        
+                        if(newgame == 's'){
+                            bingo()
+                        
+                        }else if(newgame == 'n'){
+                            alert('logout')
+                        }
+                    }
+                }
+                
+                
+                function finpartido(verificador){
+                    return verificador.matched == true
+                }
+            
+                function matchCard(){
+                    for(let i = 0 ; i < cartonUser.length ; i++){
+                        if(numeroMaquina == cartonUser[i].number){
+                            cartonUser[i].matched = true
+                            cartonUser[i].number = 'x'
+                            
+                        }
+                    }
+                    
+                    console.log(cartonUser)
+                }
+            
+                function randomNumber(){
+                    var numerorandom = Math.floor(Math.random() * 15) + 1
+                    return numerorandom 
+               
+                }
+
+                function contadorTurno(){
+                    turno++
+                    return turno
+                }
+
+               
+                var jugadorCompletoLinea = false
+
+                function verificarLinea1() {
+                    
+                    
+                    
+                    if (jugadorCompletoLinea) return
+
+                    let linaVerificada = 1;
+                    let indexDe, indexAte = null;
+
+                    while (linaVerificada <= 3) {
+
+                        if (linaVerificada == 1) {
+                            indexDe = 0;
+                            indexAte = 4;
+                        } else if (linaVerificada == 2) {
+                            indexDe = 5;
+                            indexAte = 9;
+                        } else if (linaVerificada == 3) {
+                            indexDe = 10;
+                            indexAte = 14;
+                        }
+
+                        let totalNumerosMarcados = 0;
+
+                        for (let x = indexDe; x <= indexAte; x++) {
+                            if (cartonUser[x].matched) totalNumerosMarcados++;
+                        }
+
+                        if (totalNumerosMarcados == 5) {
+                            alert('L I N E A !')
+                            jugadorCompletoLinea = true;
+                            break;
+                        }
+
+                        linaVerificada++;
+
+                    }
+
+                }
+               
+                
+
+                
+
+                
+
+               
+            }    
+
+            
+        
+
+    </script>
+</body>
+</html>

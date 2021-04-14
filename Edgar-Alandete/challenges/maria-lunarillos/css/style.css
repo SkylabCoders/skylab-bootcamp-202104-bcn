@@ -1,0 +1,78 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+.navigator-container {
+  display: flex;
+  background-color: #ccc;
+  width: 100%;
+  min-height: 50px;
+}
+
+.login-register {
+  display: flex;
+  flex-grow: 2;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.malu-pages {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+}
+
+.malu-item {
+  width: 80px;
+  height: 70px;
+}
+.ma {
+  height: 140px;
+  background: url(../images/icons/maria-lunarillos.png) #ff5959 bottom center
+    no-repeat;
+}
+
+.cu {
+  background: url(../images/icons/cucute.png) #6199af bottom center no-repeat;
+}
+
+.mu {
+  background: url(../images/icons/mumuchu.png) #f6b436 bottom center no-repeat;
+}
+.social-networks {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff5959;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  min-width: 50px;
+  min-height: 50px;
+}

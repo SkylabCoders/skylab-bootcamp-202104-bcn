@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirlinesPro</title>
+</head>
+
+<body>
+
+    <h2>AirlinesPro</h2>
+
+    <script>
+        var flights = [
+
+            {
+                id: 00,
+                to: 'Bilbao',
+                from: 'Barcelona',
+                cost: 1600,
+                scale: false
+            },
+
+            {
+                id: 01,
+                to: 'New York',
+                from: 'Barcelona',
+                cost: 700,
+                scale: false
+            },
+
+            {
+                id: 02,
+                to: 'Los Angeles',
+                from: 'Madrid',
+                cost: 1100,
+                scale: true
+            },
+
+            {
+                id: 03,
+                to: 'Paris',
+                from: 'Barcelona',
+                cost: 210,
+                scale: false
+            },
+
+            {
+                id: 04,
+                to: 'Roma',
+                from: 'Barcelona',
+                cost: 150,
+                scale: false
+            },
+
+            {
+                id: 05,
+                to: 'London',
+                from: 'Madrid',
+                cost: 200,
+                scale: false
+            },
+
+            {
+                id: 06,
+                to: 'Madrid',
+                from: 'Barcelona',
+                cost: 90,
+                scale: false
+            },
+
+            {
+                id: 07,
+                to: 'Tokyo',
+                from: 'Madrid',
+                cost: 1500,
+                scale: true
+            },
+
+            {
+                id: 08,
+                to: 'Shangai',
+                from: 'Barcelona',
+                cost: 800,
+                scale: true
+            },
+
+            {
+                id: 09,
+                to: 'Sydney',
+                from: 'Barcelona',
+                cost: 150,
+                scale: true
+            },
+
+            {
+                id: 10,
+                to: 'Tel-Aviv',
+                from: 'Madrid',
+                cost: 150,
+                scale: false
+            }
+        ]
+
+        let running = true
+
+        let admin = prompt('Admin or User? a/u')
+
+        if (admin == 'a') {
+
+            while (running) {
+
+                showVuelosDisponibles(flights)
+
+                let adminAction = prompt('Desea crear vuelos(c),excluir vuelos(e),salir del sistema(s)?')
+
+                if (adminAction.toUpperCase() == 'C') {
+
+                    crearVuelo()
+
+                } else if (adminAction.toUpperCase() == 'E') {
+
+                    excluirVuelo()
+
+                } else if (adminAction.toUpperCase() == 'S') {
+                    alert('Logout')
+                    running = false
+                } else {
+                    alert('Accion no existe')
+                }
+            }
+
+        } else if (admin == 'u') {
+
+            try {
+
+                let filtroPrecio = prompt('Informe el precio de la pasaje')
+
+                if (!filtroPrecio) {
+                    throw new Error('Accion no existe')
+
+                } else if (isNaN(filtroPrecio)) {
+                    throw new Error('Solo numeros')
+                }
+
+                let filtroAction = prompt('Desear buscar por precio mas alto (A), mais bajo (B) o igual (I)?')
+
+                if (!filtroAction) {
+                    throw new Error('Accion no existe')
+
+                } else if (filtroAction.toUpperCase() != 'A' && filtroAction.toUpperCase() != 'B' && filtroAction.toUpperCase() != 'I') {
+                    throw new Error('Por favor escoger una opcion ')
+                } else {
+
+                    let flightsFiltrado = filtrarVuelosPorPrecio(filtroPrecio, filtroAction)
+
+                    showVuelosDisponibles(flightsFiltrado)
+
+
+                    let indexCompra = prompt('Informe el ID')
+
+                    if (!indexCompra) {
+                        throw new Error('No acepta ID vacio')
+
+                    } else if (isNaN(indexCompra)) {
+                        throw new Error('Solo numeros')
+                    }
+
+                    compra()
+                }
+
+
+            } catch (error) {
+                alert(error)
+            }
+
+
+
+        } else {
+            alert('Accion no existe')
+        }
+
+        function showVuelosDisponibles(flightsDisponibles) {
+
+            let vuelosDisponibles = ' Vuelos disponibles:\n'
+            for (let i = 0; i < flightsDisponibles.length; i++) {
+                vuelosDisponibles += `ID: ${flightsDisponibles[i].id} - Origen: ${flightsDisponibles[i].to}, Destino: ${flightsDisponibles[i].from}, Precio: ${flightsDisponibles[i].cost}, Escala: ${flightsDisponibles[i].scale} \n`
+            }
+
+            alert(vuelosDisponibles)
+        }
+
+        function crearVuelo() {
+
+            if (flights.length == 15) {
+                alert('Número máximo de vuelos alcanzado!')
+            } else {
+                let nuevoID = crearIdVuelo()
+
+                try {
+                    let origenVuelos = prompt('Origen del vuelo')
+
+                    if (!origenVuelos) {
+                        throw new Error('No acepta origen vacio')
+
+                    } else if (isNaN(origenVuelos) == false) {
+                        throw new Error('Origen no acepta numeros')
+                    }
+                    let destinoVuelos = prompt('Destino del vuelo')
+
+                    if (!destinoVuelos) {
+                        throw new Error('No acepta destino vacio')
+                    } else if (isNaN(destinoVuelos) == false) {
+                        throw new Error('Destino no acepta numeros')
+                    }
+
+                    let precioVuelos = prompt('Precio del vuelo')
+
+                    if (!precioVuelos) {
+                        throw new Error('No acepta precio vacio')
+                    } else if (isNaN(precioVuelos) == true) {
+                        throw new Error('Precio no acepta letras')
+                    }
+
+                    let scale = prompt("Habrá escala en el vuelo? (S/N)")
+
+                    if (!scale) {
+                        throw new Error('No acepta escala vacia')
+                    } else if (isNaN(scale) == false) {
+                        throw new Error('Escala no acepta numeros')
+                    } else if (scale.toUpperCase() == 'S') {
+                        scale = true
+                    } else if (scale.toUpperCase() == 'N') {
+                        scale = false
+                    }
+
+
+                    flights.push({
+                        id: nuevoID,
+                        to: origenVuelos,
+                        from: destinoVuelos,
+                        cost: precioVuelos,
+                        scale: scale
+                    })
+
+                    alert(`Vuelo ${nuevoID} creado`);
+
+
+                } catch (error) {
+                    alert(error)
+                }
+            }
+        }
+
+        function crearIdVuelo() {
+            let nuevoID = 0
+            for (let i = 0; i < flights.length; i++) {
+                nuevoID = flights[i].id > nuevoID ? flights[i].id : nuevoID
+            }
+
+            return ++nuevoID
+        }
+
+        function excluirVuelo() {
+            let remoId = prompt('Ponga el ID del vuelo')
+
+            if (!remoId) {
+                alert('No acepta ID vacia')
+            } else if (isNaN(remoId) == true) {
+                alert('ID no acepta letras')
+            }
+
+            flights.splice(remoId, 1)
+        }
+
+        function filtrarVuelosPorPrecio(filtroPrecio, filtroAction) {
+
+            let flightsFiltrado = []
+
+            for (let i = 0; i < flights.length; i++) {
+                if (filtroAction.toUpperCase() == 'A') {
+                    if (flights[i].cost > filtroPrecio) {
+                        flightsFiltrado.push(flights[i])
+                    }
+                } else if (filtroAction.toUpperCase() == 'B') {
+                    if (flights[i].cost < filtroPrecio) {
+                        flightsFiltrado.push(flights[i])
+                    }
+                } else if (filtroAction.toUpperCase() == 'I') {
+                    if (flights[i].cost == filtroPrecio) {
+                        flightsFiltrado.push(flights[i])
+                    }
+                }
+            }
+
+            return flightsFiltrado
+        }
+
+        function compra() {
+            for (let i = 0; i < flights.length; i++) {
+                if (indexCompra == flights[i].id) {
+                    alert(`Gracias por su compra: \n Vuelo ID: ${flights[i].id} - Origen: ${flights[i].to}, Destino: ${flights[i].from}, Precio: ${flights[i].cost}, Escala: ${flights[i].scale} Vuelva pronto`)
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

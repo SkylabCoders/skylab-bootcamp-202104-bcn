@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo</title>
+</head>
+
+<body>
+    <h2>Bingo</h2>
+
+    <script>
+
+        let cartonUser = []
+        let rankingUsuarios = []
+
+        let jugadorCompletoLinea = false
+
+        let turno = 0
+        let nombre = ''
+
+        let running = true
+
+        const tamanoCarton = 15;
+
+        
+
+        function bingo() {
+
+            running = true
+
+            nombre = prompt('Nombre')
+
+            if (nombre) {
+
+                alert('Iniciando Bingo')
+
+                turno = 0
+
+                nuevoCarton()
+
+                while (running) {
+
+                    let numeroSorteado = generarNumero();
+                    alert(`Numero sorteado: ${numeroSorteado}`)
+
+                    matchCard(numeroSorteado)
+
+                    enseñarCarton()
+
+                    verificarLinea()
+                    
+                    if (cartonLleno() == true){
+                        running = false;
+                        nuevoJuego()
+                        return
+                    } 
+                    
+                    if (proximoRound() == false) running = false;
+
+                }
+
+            }
+
+           
+
+        }
+
+        function nuevoJuego(){
+            
+            if (confirm('Deseas jugar nuevamente?') == true) {
+                eraseCarton()
+                bingo()
+            }
+        }
+
+        function nuevoCarton() {
+
+            let generarCarton = true;
+
+            while (generarCarton) {
+
+                while (cartonUser.length < tamanoCarton) {
+                    let random = generarNumero()
+                    if (isNumeroYaAgregado(random) == false) {
+                        cartonUser.push({ number: random, matched: false })
+                    }
+                }
+
+                enseñarCarton()
+
+                if (confirm('Nuevo Carton?') == true) {
+                    eraseCarton()
+                } else {
+                    generarCarton = false;
+                }
+
+            }
+
+        }
+
+        function isNumeroYaAgregado(numeroGerado) {
+            for (let i = 0; i < cartonUser.length; i++) {
+                if (numeroGerado == cartonUser[i].number) return true
+            }
+            return false
+        }
+
+        function enseñarCarton() {
+            let enseñarCarton = ''
+            for (let i = 0; i < cartonUser.length; i++) {
+                enseñarCarton += `${cartonUser[i].number} `
+                if (i == 4 || i == 9 || i == 14) {
+                    enseñarCarton += '\n'
+                }
+            }
+            alert(enseñarCarton)
+        }
+
+        function eraseCarton() {
+            cartonUser = [];
+        }
+
+        function matchCard(numeroSorteado) {
+            for (let i = 0; i < cartonUser.length; i++) {
+                if (numeroSorteado == cartonUser[i].number) {
+                    alert('Acierto')
+                    cartonUser[i].matched = true
+                    cartonUser[i].number = 'x'
+                }
+            }
+        }
+
+        function verificarLinea() {
+
+            if (jugadorCompletoLinea) return
+
+            let linaVerificada = 1;
+            let indexDe, indexAte = null;
+
+            while (linaVerificada <= 3) {
+
+                if (linaVerificada == 1) {
+                    indexDe = 0;
+                    indexAte = 4;
+                } else if (linaVerificada == 2) {
+                    indexDe = 5;
+                    indexAte = 9;
+                } else if (linaVerificada == 3) {
+                    indexDe = 10;
+                    indexAte = 14;
+                }
+
+                let totalNumerosMarcados = 0;
+
+                for (let x = indexDe; x <= indexAte; x++) {
+                    if (cartonUser[x].matched) totalNumerosMarcados++;
+                }
+
+                if (totalNumerosMarcados == 5) {
+                    alert('L I N E A !')
+                    jugadorCompletoLinea = true;
+                    break;
+                }
+
+                linaVerificada++;
+
+            }
+
+        }
+
+        function cartonLleno() {
+            if (cartonUser.every(finpartido) == true) {
+                alert('B I N G O !')
+                puntosTurnos()
+                ranking()
+                return true
+            }
+
+        }
+
+        function finpartido(verificador) {
+            return verificador.number == 'x'
+        }
+
+        function puntosTurnos() {
+            let puntos = 200 - turno
+            rankingUsuarios.push({ name: nombre, points: puntos })
+            console.log(rankingUsuarios)
+            alert(`Puntos:${puntos}`)
+        }
+
+        function ranking() {
+            rankingUsuarios.sort(comparacion)
+            let rankingObject = ' Ranking:\n'
+            for (let i = 0; i < rankingUsuarios.length; i++) {
+                rankingObject += `Nombre:${rankingUsuarios[i].name} puntos:${rankingUsuarios[i].points}\n`
+            }
+            alert(rankingObject)
+        }
+
+        function comparacion(a, b) {
+            return b.points - a.points
+        }
+
+        function proximoRound() {
+            if (confirm('Deseas continuar?') == true) {
+                turno++
+                enseñarCarton()
+                return true ; 
+            }
+            return false;
+        }
+
+        function generarNumero() {
+            return Math.floor(Math.random() * 15) + 1
+        }
+
+        bingo()
+
+    </script>
+
+</body>
+
+</html>
