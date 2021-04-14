@@ -8,8 +8,9 @@
     box-sizing: border-box;
 }
 body {
-    background-color: black;
-    font-family: NotoSans-Bold,Arial,sans-serif;
+  background-color: #101010;
+  font-family: NotoSans-Bold,Arial,sans-serif;
+  color: rgb(255, 255, 255);
 }
 
 .rakuten-footer {
@@ -177,8 +178,35 @@ body {
   }
 }
 
+.footer-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 200px;
+  border: 1px solid red;
 
-
+  .footer-section__tittle {
+    padding: 10px 10px;
+  }
+  .footer-section__icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    border: 1px border blue;
+    .footer-section--film-icon {
+      height: 80px;
+      width: 80px;
+      background-position-x: 50%;
+      background-position-y: 50%;
+      background-size: 158%;
+      background-image: url(./../img/genero-icons/film.png);
+      
+    }
+  }
+}
 
 //////////// Slick Slider section ////////////
 .slick-slider {

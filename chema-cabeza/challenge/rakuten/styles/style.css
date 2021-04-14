@@ -9,8 +9,9 @@
 }
 
 body {
-  background-color: black;
+  background-color: #101010;
   font-family: NotoSans-Bold,Arial,sans-serif;
+  color: white;
 }
 
 .rakuten-footer {
@@ -221,6 +222,53 @@ body {
 .row2-section .row2-section__row-2 div {
   color: #fff;
   margin: 5px 2px;
+}
+
+.footer-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  height: 200px;
+  border: 1px solid red;
+}
+
+.footer-section .footer-section__tittle {
+  padding: 10px 10px;
+}
+
+.footer-section .footer-section__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 10px;
+  border: 1px border blue;
+}
+
+.footer-section .footer-section__icon .footer-section--film-icon {
+  height: 80px;
+  width: 80px;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-size: 158%;
+  background-image: url(./../img/genero-icons/film.png);
 }
 
 .slick-slider {
