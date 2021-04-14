@@ -9,16 +9,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 * {
   font-family: NotoSans-Bold, Arial, sans-serif;
 }
 
-main {
-  width: 100%;
-  height: 2000px;
-  background-color: $background-color-main;
+html {
+  main {
+    width: 100%;
+    height: 1000px;
+    background-color: $background-color-main;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $color-main;
+  }
 }
 
 li {
@@ -65,6 +72,49 @@ a {
 .nav-bar-user-menu {
   display: flex;
   height: 100%;
+}
+
+.non-visible-wrap {
+  display: none;
+  color: $color-main;
+  width: 200px;
+  height: 150px;
+  background-color: $background-color-nav;
+  li {
+    text-transform: uppercase;
+  }
+}
+
+.cinema {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  a {
+    padding-left: 20px;
+  }
+}
+
+.cinema {
+  a:hover {
+    color: #ffe300;
+  }
+}
+
+.cinema:hover {
+  .non-visible-wrap {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 50px;
+    padding: 20px 0 20px 5px;
+  }
+}
+
+.non-visible-wrap {
+  li a:hover {
+    color: #ffe300;
+  }
 }
 
 .nav-bar-menu {
@@ -127,6 +177,7 @@ a {
 }
 
 .menu-item {
+  cursor: pointer;
   display: flex;
   p,
   a {
@@ -134,40 +185,40 @@ a {
   }
 }
 
-/* ---------------------- */
-/* ----- CAROUSEL ------- */
+/* ---------------------------- */
+/* ----- FIRST CAROUSEL ------- */
 
 #main-carousel {
   margin-top: 61px;
   display: flex;
   z-index: 1;
+  cursor: pointer;
 }
 
 .image {
   width: 100%;
-  height: 100%;
 }
 
 /* ------------------------ */
 /* ----- NAV MOVIES ------- */
 
 .top-movies {
-  width: 100vw;
-  height: 245px;
+  height: 189px;
   margin: 25px 0 0;
+  padding: 0 5px 0 5px;
 }
 
 .movies {
   display: flex;
   justify-content: center;
-  margin-left: 10px;
+  margin: 0 10px;
 }
 
 .movie {
   flex-grow: 1;
-  margin-right: 10px;
   border-radius: 2px;
   border: 4px solid transparent;
+  cursor: pointer;
 }
 
 .movie:hover {
@@ -177,9 +228,48 @@ a {
 
 .movie img {
   width: 100%;
-  height: 215px;
-  height: auto;
   border-radius: 2px;
+}
+
+/* ----------------------------- */
+/* ----- SECOND CAROUSEL ------- */
+
+.container-carousel {
+  height: 327.5px;
+  padding: 0 30px 15px;
+}
+
+.title {
+  max-width: 1680px;
+  display: flex;
+  justify-content: space-between;
+  .text-free {
+    color: $color-main;
+    font-size: 22px;
+    span {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.view-all {
+  color: $color-main;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.second-carousel {
+  .slide {
+    img {
+      cursor: pointer;
+      width: 100%;
+      transition: opacity 0.2s ease;
+      border: 4px solid transparent;
+    }
+    &:hover img {
+      border: 4px solid #ffe300;
+    }
+  }
 }
 
 .slick-slider {
@@ -207,7 +297,7 @@ a {
     font-size: 20px;
     line-height: 0;
     position: absolute;
-    top: 50%;
+    top: 40%;
     display: block;
     width: 30px;
     height: 30px;
@@ -251,31 +341,119 @@ a {
 /* ----- FOOTER ------- */
 
 footer {
-  width: 100%;
-  height: 390px;
-  padding: 25px;
-  border: 1px solid red;
+  height: 576px;
   display: flex;
   flex-direction: column;
+  color: $color-main;
+  background-color: $background-color-footer;
 }
-.main-info {
+
+.nav-footer {
   display: flex;
   flex-direction: column;
 }
 
-.footer-mobile {
+.container-footer-mobile {
   display: none;
 }
 
-/* -------------------- */
-/* --- MEDIA QUERIES ---*/
+.main-footer {
+  padding: 25px;
+  height: 440px;
+  text-align: center;
+}
+
+.footer-info-title {
+  margin-top: 15px;
+  color: $color-main;
+  font-size: 22px;
+  text-align: center;
+  span {
+    text-transform: uppercase;
+  }
+}
+
+.footer-info-text {
+  margin: 10px auto 40px;
+  width: 50%;
+  color: $color-secundary;
+  font-size: 14px;
+  text-align: center;
+  line-height: 160%;
+}
+
+.footer-faqs {
+  display: flex;
+  justify-content: center;
+  height: 191px;
+  li {
+    display: flex;
+    flex-direction: column;
+    width: 364px;
+    padding: 0 35px;
+    i {
+      font-size: 50px;
+    }
+  }
+}
+
+.faqs-title,
+.faqs-text {
+  margin-top: 15px;
+  span {
+    text-transform: uppercase;
+  }
+}
+
+.faqs-title {
+  font-size: 24px;
+}
+
+.faqs-text {
+  margin-top: 10px;
+  color: $color-secundary;
+  font-family: NotoSans-Regular, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 160%;
+  padding: 0 25px;
+}
+
+.rakuten-info {
+  background-color: $background-color-mini-footer;
+  height: 136px;
+  width: 100%;
+  padding: 35px 45px;
+  color: $color-secundary;
+  font-size: 14px;
+  transition: color 0.1s ease;
+}
+
+.rakuten-info-link {
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: $color-secundary;
+    span {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.copirigth {
+  color: #737373;
+  margin: 20px 0 0 30px;
+}
+
+/* ------------------------- */
+/* ----- MOBILE ------------ */
+
 @media (max-width: 1250px) {
   .nav-bar-user-menu li:first-child {
     visibility: hidden;
   }
   .container-header {
-    background-color: transparent;
     position: absolute;
+    background-color: transparent;
   }
   .nav-bar-menu,
   .search-container,
@@ -292,7 +470,25 @@ footer {
     display: flex;
     margin: auto 0;
   }
-  .footer-mobile {
+  footer {
+    height: 632px;
+  }
+  .container-footer-mobile {
     display: flex;
+
+    height: 56px;
+    position: fixed;
+    bottom: 0;
+    z-index: 9;
+    width: 100%;
+    background-color: #000;
+  }
+  .footer-mobile {
+    margin: auto;
+    justify-content: space-between;
+    a {
+      text-transform: uppercase;
+      color: $color-secundary;
+    }
   }
 }
