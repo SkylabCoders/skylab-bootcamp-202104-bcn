@@ -7,6 +7,7 @@
     <title>Rakuten TV - Tu cine en casa</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 </head>
 <body>
     <header>
@@ -38,7 +39,7 @@
                 
         </nav>
     </header>
-    <div id="slider">
+    <div id="slider" class="slider-carousel">
         <div id="slide">
             <img src="./images/slider.jpeg" alt="slider">
         </div>
@@ -100,5 +101,29 @@
             </ul>
         </section>
     </div>
+    <script>
+        $(document).ready(function () {
+            $('.slider-carousel',).slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: true,
+                dots: true,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                }, {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }]
+            });
+        });
+    </script>
 </body>
 </html>
