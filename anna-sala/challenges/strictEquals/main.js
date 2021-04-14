@@ -1,17 +1,11 @@
 function strictEquals(a,b){
-    a.toString();
-    b.toString();
-
-    console.log(Object.is(a,b));
+    if (isNaN(a) || isNaN(b)){
+        let temp= Object.is(a,b);
+        console.log(!temp);
+    }
+    else{
+    console.log(Object.is(a.toString(),b.toString()));
+    }
 }
 
-
-if (NaN){
-    let temp = Object.is(a,b);
-    console.log(!temp);
-}
-else{
-    
-    
-    
     
