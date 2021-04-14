@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAA;EACX,MAAM,EAAE,aAAa;EACrB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;CAChB",
+    "sources": [
+        "main-syles.scss"
+    ],
+    "names": [],
+    "file": "main-syles.css"
+}
