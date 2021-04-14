@@ -469,9 +469,10 @@ footer {
     footer {
         height: 632px;
     }
-    .container-footer-mobile {
-        display: flex;
-        
+    .footer-info-text {
+        display: none;
+    }
+    .container-footer-mobile {        
         height: 56px;
         position: fixed;
         bottom: 0;
@@ -480,7 +481,7 @@ footer {
         background-color: #000;
     }
     .footer-mobile {
-        margin: auto;        
+        margin: auto 0;        
         justify-content: space-between;
         a {
             text-transform: uppercase;
