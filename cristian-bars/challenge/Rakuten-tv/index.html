@@ -39,8 +39,14 @@
                 
         </nav>
     </header>
-    <div id="slider" class="slider-carousel">
-        <div id="slide">
+    <div id="slider" class="carousel">
+        <div class="slide">
+            <img src="./images/slider.jpeg" alt="slider">
+        </div>
+        <div class="slide">
+            <img src="./images/slider.jpeg" alt="slider">
+        </div>
+        <div class="slide">
             <img src="./images/slider.jpeg" alt="slider">
         </div>
     </div>
@@ -103,7 +109,7 @@
     </div>
     <script>
         $(document).ready(function () {
-            $('.slider-carousel',).slick({
+            $('.carousel',).slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 autoplay: true,
