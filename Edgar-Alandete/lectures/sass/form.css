@@ -23,7 +23,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  border: borders(solid, 2px, #333);
+  border: solid, 2px, #333;
   padding: 20px;
   margin: 20px;
   color: #010101;
@@ -37,7 +37,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: borders(solid, 2px, #333);
+  border: solid, 2px, #333;
   padding: 20px;
   margin: 20px;
   color: #010101;
@@ -55,7 +55,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: borders(solid, 2px, #ff2200);
+  border: solid, 2px, #ff2200;
   padding: 20px;
   margin: 20px;
   color: #010101;
