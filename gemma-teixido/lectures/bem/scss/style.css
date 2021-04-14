@@ -1,0 +1,75 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eaeaea;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin: 20px;
+}
+
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  border: solid 1px #555;
+  padding: 10px;
+}
+
+.card__image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.card__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+.card__list-item {
+  padding: 5px;
+  border: solid 1px #ccc;
+}
+
+.card__list-item--active {
+  background-color: #a5e1e9;
+}
+
+.card__apply-button {
+  width: 70px;
+}
+
+.card__apply-button:hover {
+  background-color: #9ddce4;
+}
+/*# sourceMappingURL=style.css.map */
