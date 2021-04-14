@@ -23,7 +23,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  border: 1px solid #333;
+  border: border(solid 2px #333);
   padding: 20px;
   margin: 20px;
 }
@@ -36,7 +36,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid #ff9900;
+  border: border(solid 2px #ff9900);
   padding: 20px;
   margin: 20px;
 }
@@ -53,7 +53,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid #555;
+  border: border(solid 2px #555);
   padding: 20px;
   margin: 20px;
 }

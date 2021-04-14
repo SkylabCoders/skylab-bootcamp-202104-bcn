@@ -1,0 +1,8 @@
+@import "./colors";
+
+@mixin flex-config($direction: row, $justify: unset, $align: unset) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
