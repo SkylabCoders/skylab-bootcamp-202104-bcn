@@ -21,7 +21,7 @@ body {
 }
 
 .logo {
-  width: 150px;
+  width: 20vh;
   height: auto;
 }
 
@@ -289,17 +289,20 @@ body {
   border-radius: 50%;
 }
 
-.movie-header__image {
+.movie-header {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(75%, transparent), to(black)), url("https://images-3.wuaki.tv/system/shots/196727/original/snapshot-1590665489-width1920-quality80.jpeg");
   background: linear-gradient(to bottom, transparent 75%, black), url("https://images-3.wuaki.tv/system/shots/196727/original/snapshot-1590665489-width1920-quality80.jpeg");
-  width: 100%;
-  max-height: 500px;
-  min-height: 900px;
-  /* Create the parallax scrolling effect */
+  background-size: contain;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  width: 100%;
+  height: auto;
+}
+
+.movie-header__image {
+  min-height: 800px;
+  /* Create the parallax scrolling effect */
 }
 
 .movie-header__info {
@@ -314,7 +317,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  top: 50%;
+  top: 30%;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -353,6 +356,11 @@ body {
   color: white;
 }
 
+.movie-header__info--buttons .button-section span {
+  padding: 10px;
+  text-align: center;
+}
+
 .movie-header__info--buttons button {
   border: none;
   height: 100px;
@@ -366,7 +374,7 @@ body {
   color: white;
   font-size: 24px;
   position: absolute;
-  bottom: 10%;
+  bottom: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -382,16 +390,22 @@ body {
 .movie-header__info--watch {
   color: #131313;
   margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-radius: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   width: 100%;
-  bottom: 4%;
+  bottom: 15%;
 }
 
 .movie-header__info--watch a {
+  border-radius: 5px;
   background-color: #ffe300;
   text-align: center;
   padding: 20px;

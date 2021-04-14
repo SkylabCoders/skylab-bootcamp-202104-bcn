@@ -70,19 +70,6 @@ body{
     }
     .arrow{
         font-size: 10px;
-
-    }
-    .arrow:hover{
-        transform               : rotate(360deg);
-        -moz-transform          : rotate(360deg);
-        -webkit-transform       : rotate(360deg);
-        transform-origin        : center;
-        -moz-transform-origin   : center;
-        -webkit-transform-origin: center;
-    
-        transition              : transform 1.0s ease all;
-        -moz-transition         : -moz-transform 1.0s ease all;
-        -webkit-transition      : -webkit-transform 1.0s ease all;
     }
 }
 .navigation-sections{
@@ -200,12 +187,18 @@ body{
 
 
 .switch{
+    input{
+        display: none;
+    }
 .slider {
     position: absolute;
     cursor: pointer;
-    background-color: rgb(221, 35, 35);
+    background-color: rgb(187, 187, 187);
     -webkit-transition: .4s;
     transition: .4s;
+    height: 30px;
+    width: 60px;
+    margin:2px;
   }
   
   .slider:before {
@@ -242,4 +235,13 @@ body{
   .slider.round:before {
     border-radius: 50%;
   }
+}
+
+@media (max-width: 1000px) {
+    .header{
+        background-color:rgba(0, 0, 0, 0);
+        .main-navigation, .navigation-sections{
+            display: none;
+        }
+    }
 }
