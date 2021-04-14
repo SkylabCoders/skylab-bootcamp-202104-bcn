@@ -137,6 +137,7 @@ Temporary Items
 
 ### Node ###
 # Logs
+.scannerwork/
 logs
 *.log
 npm-debug.log*
