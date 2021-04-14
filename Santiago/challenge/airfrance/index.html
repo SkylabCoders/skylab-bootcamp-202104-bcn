@@ -16,15 +16,19 @@
             <div class="form__top top">
                 <div class="top__viaje">
                     <div>Viaje</div>
-                    <input type="text" name="viaje">
+                    <select id="flights" name="options">
+                        <option value="si">Ida y vuelta</option>
+                        <option value="iv">Sólo dia</option>
+                        <option value="dm">Destinos múltiples</option>
+                    </select>
                 </div>
                 <div class="top__origen">
                     <div>Salida de *</div>
-                    <input type="text" name="origen" placeholder="Barcelona, Barcelona">
+                    <input type="text" name="origen" placeholder="Barcelona, Barcelona" required="required">
                 </div>
                 <div class="top__destino">
                     <div>Llegada a *</div>
-                    <input type="text" name="destino" placeholder="Dubái, International Airport">
+                    <input type="text" name="destino" placeholder="Dubái, International Airport" required="required">
                 </div>
             </div>
 
@@ -35,11 +39,16 @@
                 </div>
                 <div class="bottom__origen">
                     <div>Pasajeros*</div>
-                    <input type="text" name="origen" placeholder="1 Pasajero">
+                    <input type="text" name="origen" placeholder="1 Pasajero" required="required">
                 </div>
                 <div class="bottom__destino">
                     <div>Clase</div>
-                    <input type="text" name="destino" placeholder="ECONOMY">
+                    <select id="flights" name="options">
+                        <option value="si">Economy</option>
+                        <option value="iv">Premium economy</option>
+                        <option value="dm">Business</option>
+                        <option value="dm">La première</option>
+                    </select>
                 </div>
             </div>
         </form>

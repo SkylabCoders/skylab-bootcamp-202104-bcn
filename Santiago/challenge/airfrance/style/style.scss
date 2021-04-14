@@ -50,10 +50,24 @@ body {
     input {
         @include input-style;
     }
+
+    &__viaje {
+        select {
+            @include input-style;
+            width: 196px;
+        }
+    }
 }
 
 .bottom {
     input {
         @include input-style;
+    }
+
+    &__destino {
+        select {
+            @include input-style;
+            width: 196px;
+        }
     }
 }
