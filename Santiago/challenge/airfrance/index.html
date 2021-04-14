@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,43 @@
     <link rel="stylesheet" href="./style/style.css">
     <title>Airfrance</title>
 </head>
+
 <body>
 
     <div class="container">
         <form action="" class="container__form form">
-            <div class="form__viaje">
-                <label for="viaje">Viaje</label>
-                <input type="text" name="viaje">
+            <div class="form__top top">
+                <div class="top__viaje">
+                    <div>Viaje</div>
+                    <input type="text" name="viaje">
+                </div>
+                <div class="top__origen">
+                    <div>Salida de *</div>
+                    <input type="text" name="origen" placeholder="Barcelona, Barcelona">
+                </div>
+                <div class="top__destino">
+                    <div>Llegada a *</div>
+                    <input type="text" name="destino" placeholder="Dubái, International Airport">
+                </div>
             </div>
-            <div class="form__origen">
-                <label for="origen">Salida de *</label>
-                <input type="text" name="origen">
-            </div>
-            <div class="form__destino">
-                <label for="destino">llegada a *</label>
-                <input type="text" name="destino">
+
+            <div class="form__bottom bottom">
+                <div class="bottom__viaje">
+                    <div>Fecha de salida</div>
+                    <input type="text" name="viaje">
+                </div>
+                <div class="bottom__origen">
+                    <div>Pasajeros*</div>
+                    <input type="text" name="origen" placeholder="1 Pasajero">
+                </div>
+                <div class="bottom__destino">
+                    <div>Clase</div>
+                    <input type="text" name="destino" placeholder="ECONOMY">
+                </div>
             </div>
         </form>
     </div>
-    
+
 </body>
+
 </html>
