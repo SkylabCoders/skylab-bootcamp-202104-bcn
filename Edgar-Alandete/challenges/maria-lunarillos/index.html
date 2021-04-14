@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;900&display=swap"
     />
     <link
       rel="stylesheet"
@@ -18,42 +17,137 @@
     <title>Utensilios de reposteria. Tienda de María Lunarillos</title>
   </head>
   <body>
-    <header>
-      <nav class="navigator-container">
-        <ul class="malu-pages">
-          <li class="ma malu-item"><a href=""></a></li>
-          <li class="cu malu-item"><a href=""></a></li>
-          <li class="mu malu-item"><a href=""></a></li>
-        </ul>
-        <div class="login-register">
-          <i class="far fa-user fa-2x"></i><span>ENTRA | REGISTRATE </span>
+    <header class="header">
+      <nav class="header__nav-container nav-container">
+        <div class="nav-container__nav-content nav-content">
+          <ul class="nav-content__malu-pages malu-pages">
+            <li class="nav-content__malu-pages--red"><a href=""></a></li>
+            <li class="nav-content__malu-pages--blue"><a href=""></a></li>
+            <li class="nav-content__malu-pages--yellow"><a href=""></a></li>
+          </ul>
+          <div class="nav-content__login-register">
+            <i class="far fa-user fa-2x"></i><span>ENTRA | REGISTRATE </span>
+          </div>
+          <ul class="nav-content__social-networks social-networks">
+            <li class="social-networks__social-item">
+              <a href=""><i class="fab fa-facebook-f fa-2x"></i></a>
+            </li>
+            <li class="social-networks__social-item">
+              <a href=""><i class="fab fa-twitter fa-2x"></i></a>
+            </li>
+            <li class="social-networks__social-item">
+              <a href=""><i class="fab fa-instagram fa-2x"></i></a>
+            </li>
+            <li class="social-networks__social-item">
+              <a href=""><i class="fab fa-pinterest-p fa-2x"></i></a>
+            </li>
+            <li class="social-networks__social-item">
+              <a href=""><i class="fab fa-youtube fa-2x"></i></a>
+            </li>
+          </ul>
+          <ul class="nav-content__cart-container cart-container">
+            <li class="cart-container__cart">
+              <a href=""><i class="fas fa-shopping-cart fa-2x"></i></a>
+            </li>
+            <li class="cart-container__item-counter">0</li>
+          </ul>
         </div>
-        <ul class="social-networks">
-          <li class="social-item">
-            <a href=""><i class="fab fa-facebook-f fa-2x"></i></a>
-          </li>
-          <li class="social-item">
-            <a href=""><i class="fab fa-twitter fa-2x"></i></a>
-          </li>
-          <li class="social-item">
-            <a href=""><i class="fab fa-instagram fa-2x"></i></a>
-          </li>
-          <li class="social-item">
-            <a href=""><i class="fab fa-pinterest-p fa-2x"></i></a>
-          </li>
-          <li class="social-item">
-            <a href=""><i class="fab fa-youtube fa-2x"></i></a>
-          </li>
-        </ul>
-        <ul class="cart-container">
-          <li class="cart">
-            <a href=""><i class="fas fa-shopping-cart fa-2x"></i></a>
-          </li>
-          <li class="item-counter">0</li>
-        </ul>
+      </nav>
+      <nav class="header__quick-access quick-access">
+        <figure class="quick-access__logo">
+          <img src="images/icons/logo.svg" alt="logo" />
+        </figure>
+        <div class="quick-access__search-products search-products">
+          <div class="search-products__search-product search-product">
+            <button class="search-product--new">NOVEDADES</button>
+            <button class="search-product--offer">OFERTAS</button>
+            <input class="search-product__search-bar" type="text" placeholder="¿QUÉ BUSCAS?" />
+            <button class="search-product__search-button">B</button>
+          </div>
+          <div class="search-products__product-categories product-categories">
+            <ul class="product-categories__images images">
+              <li class="images__product-category">
+                <a href="">
+                  <img
+                    src="images/products/utensiliosML.png"
+                    alt="utensilios"
+                  />
+                </a>
+              </li>
+              <li class="images__product-category">
+                <a href="">
+                  <img src="images/products/magdalena.png" alt="magdalena" />
+                </a>
+              </li>
+              <li class="images__product-category">
+                <a href="">
+                  <img src="images/products/tarta-cumpleanos.png" alt="tarta" />
+                </a>
+              </li>
+              <li class="images__product-category">
+                <a href="">
+                  <img src="images/products/delantal.png" alt="delantal" />
+                </a>
+              </li>
+              <li class="images__product-category images__product-category--red">
+                <a href="">
+                  <img src="images/icons/blog.svg" alt="blog" />
+                </a>
+              </li>
+            </ul>
+            <ul class="product-categories__name">
+              <li class="product-category-name">UTENSILIOS</li>
+              <li class="product-category-name">INGREDIENTES</li>
+              <li class="product-category-name">FIESTAS</li>
+              <li class="product-category-name">MARCAS</li>
+              <li class="product-category-name product-category-name--margin">BLOG</li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <div class="banner-container">
+        <div class="banner-container__banner-section banner-section">
+          <figure class="banner-section__side-figure side-figure">
+            <img
+              src="https://static3.marialunarillos.com/media/wysiwyg/moldesdereposteria.jpg"
+              alt="Moldes de Reposteria"
+            />
+            <div class="side-figure__caption">
+              <h2>MOLDES DE REPOSTERÍA</h2>
+              <p>Moldes metálicos, de silicona o cerámica, de las mejores marcas.</p>
+            </div>
+            <div class="side-figure__triangle"></div>
+          </figure>
+        </div>
+        <div class="banner-container__banner-section banner-section">
+          <figure class="banner-section__main-figure banner-section__main-figure--top main-figure">
+            <img
+              src="https://static3.marialunarillos.com/media/wysiwyg/utensiliosbasicos.jpg"
+              alt="Utensilios basicos"
+            />
+            <div class="main-figure__caption">
+              <h2>UTENSILIOS BÁSICOS</h2>
+              <p>Rodillos, liras, espátulas, tapetes, bandejas, rejillas, mangas y boquillas... ¡Los imprescindibles!</p>
+            </div>
+            <div class="main-figure__triangle"></div>
+          </figure>
+          </figure>
+          <figure class="banner-section__main-figure banner-section__main-figure--bottom main-figure">
+            <img
+              src="https://static3.marialunarillos.com/media/wysiwyg/pequenoelectrodomestico2.jpg"
+              alt="Pequenos Electrodomesticos"
+            />
+            <div class="main-figure__caption main-figure__caption--bottom">
+              <h2>PEQUEÑO ELECTRODOMÉSTICO</h2>
+              <p>Robots KitchenAid, batidoras de varillas, panificadoras, aerógrafos...</p>
+            </div>
+            <div class="main-figure__triangle"></div>
+          </figure>          
+        </div>
+      </div>
+    </main>
     <footer></footer>
   </body>
 </html>
