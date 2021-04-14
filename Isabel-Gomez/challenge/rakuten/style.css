@@ -539,9 +539,6 @@ footer {
     height: 632px;
   }
   .container-footer-mobile {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     height: 56px;
     position: fixed;
     bottom: 0;
@@ -550,7 +547,7 @@ footer {
     background-color: #000;
   }
   .footer-mobile {
-    margin: auto;
+    margin: auto 0;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
