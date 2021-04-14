@@ -8,7 +8,7 @@
 }
 
 body {
-  background: #eaeaea;
+  background: #eaeeea;
   color: #555;
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
@@ -23,9 +23,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  border: border(solid 2px #333);
+  border: borders(solid, 2px, #333);
   padding: 20px;
   margin: 20px;
+  color: #010101;
 }
 
 .sidebar {
@@ -36,13 +37,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: border(solid 2px #ff9900);
+  border: borders(solid, 2px, #333);
   padding: 20px;
   margin: 20px;
+  color: #010101;
 }
 
 .sidebar-title {
-  color: #ff9900;
+  color: #ff2200;
 }
 
 .form {
@@ -53,8 +55,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: border(solid 2px #555);
+  border: borders(solid, 2px, #ff2200);
   padding: 20px;
   margin: 20px;
+  color: #010101;
 }
 /*# sourceMappingURL=form.css.map */
