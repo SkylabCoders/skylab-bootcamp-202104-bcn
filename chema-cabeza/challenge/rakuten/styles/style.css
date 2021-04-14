@@ -237,7 +237,6 @@ body {
           justify-content: flex-start;
   width: 100%;
   height: 200px;
-  border: 1px solid red;
 }
 
 .footer-section .footer-section__tittle {
@@ -259,7 +258,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 0px 10px;
-  border: 1px border blue;
 }
 
 .footer-section .footer-section__icon .footer-section--film-icon {
