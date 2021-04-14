@@ -2,6 +2,7 @@
 header {
   width: 100%;
   position: fixed;
+  z-index: 1;
 }
 
 body {
@@ -183,6 +184,7 @@ aside {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  top: 61px;
 }
 
 .slick-slider .slick-prev, .slick-slider .slick-next {
@@ -231,5 +233,14 @@ aside {
 
 .slick-slider .slick-next {
   right: 50px;
+}
+
+.slick-slider .slick-dots {
+  position: relative;
+  bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -3,6 +3,7 @@
 header {
     width: 100%;
     position: fixed;
+    z-index: 1;
 }
 body {
     margin: 0;
@@ -168,6 +169,7 @@ aside {
       overflow: hidden;
       margin: 0;
       padding: 0;
+      top: 61px;
     }
     .slick-prev, .slick-next {
       font-size: 20px;
@@ -212,5 +214,11 @@ aside {
     }
     .slick-next {
       right:50px;
+    }
+    .slick-dots {
+        position: relative;
+        bottom: 50px;
+        display: flex;
+        list-style: none;
     }
   }
