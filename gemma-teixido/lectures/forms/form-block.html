@@ -1,0 +1,155 @@
+<script type="text/javascript">
+	showPassword = (e) => {
+		e.preventDefault();
+		var passTag = document.getElementById('password');
+		passTag.type = 'text';
+		setTimeout(() => {
+			passTag.type = 'password';
+		}, 500);
+	};
+</script>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="./../Styles/main.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<main>
+			<h1>Register and get access t...!</h1>
+			<section>
+				<form action="">
+					<h2>Fill out the form</h2>
+					<label for="email">
+						<p>email</p>
+						<input type="email" name="email" required placeholder="Email" />
+					</label>
+					<hr />
+					<label for="username">
+						<p>username</p>
+						<input
+							required
+							class="username-input"
+							name="username"
+							placeholder="Username"
+							pattern="[A-Za-z\d\.]{6,12}"
+							title="must be between 6 and 12 chars and must have a ., letter (capital or lower) or a number"
+						/>
+					</label>
+					<hr />
+
+					<label for="url">
+						<p>Url</p>
+						<input required type="text" name="url" placeholder="url" pattern="https?://.+" />
+					</label>
+					<hr />
+
+					<label for="birthday">
+						<p>birthday</p>
+						<input type="date" id="birthday" name="birthday" />
+					</label>
+					<hr />
+
+					<label for="hour">
+						<p>birthday</p>
+						<input type="time" id="time" name="time" />
+					</label>
+					<hr />
+
+					<label for="howfoundus">
+						<p>How did you find us?</p>
+						<select name="howfoundus">
+							<option>Select an option</option>
+							<option value="1">A friend told me</option>
+							<option value="2">Facebook Add</option>
+							<option value="3">News</option>
+							<option value="4">Things of life!</option>
+							<option value="5">Other</option>
+						</select>
+					</label>
+					<hr />
+					<label for="number">
+						<input id="number" type="number" min="10" />
+					</label>
+
+					<label for="file">
+						<p>file</p>
+						<input type="file" name="file" placeholder="file" />
+					</label>
+
+					<hr />
+					<label for="experienceRange">
+						<p>Cuanto te gusta git?!</p>
+						<input
+							id="range"
+							type="range"
+							name="experienceRange"
+							placeholder="experienceRange"
+							min="0"
+							max="1505"
+						/>
+					</label>
+					<hr />
+					<label for="password">
+						<p>Password</p>
+						<input id="password" type="password" name="password" />
+						<button onclick="showPassword(event)"><ö></button>
+					</label>
+					<hr />
+					<div class="radiogroup">
+						<p>Posición a que apuntas?</p>
+						<div class="inputcontainers">
+							<label for="position">
+								<p>Front</p>
+								<input type="radio" id="position" value="front" name="position" />
+							</label>
+							<label for="back">
+								<p>Back</p>
+
+								<input type="radio" id="back" value="back" name="position" />
+							</label>
+							<label for="fs">
+								<p>FS</p>
+								<input type="radio" id="fs" value="fs" name="position" />
+							</label>
+						</div>
+					</div>
+					<div class="inputcontainers">
+						<p>Techs favoritas?</p>
+						<label for="planeJs">
+							Plain Hardcore Javascript
+							<input type="checkbox" id="planeJs" name="planeJs" value="planeJs" />
+						</label>
+
+						<label for="react">
+							ReactJs
+							<input type="checkbox" id="react" name="react" value="react" /> </label
+						><br /><br />
+
+						<label for="angular">
+							Angular
+							<input type="checkbox" id="angular" name="angular" value="angular" /> </label
+						><br /><br />
+
+						<label for="vue">
+							VueJS
+							<input type="checkbox" id="vue" name="vue" value="vue" /> </label
+						><br /><br />
+						<label for="other">
+							Im fearless! Give me what ever there is!
+							<input type="checkbox" id="other" name="other" value="other" /> </label
+						><br /><br />
+					</div>
+
+					<label for="submit">
+						<input type="submit" value="enviar" />
+					</label>
+				</form>
+			</section>
+		</main>
+	</body>
+</html>
