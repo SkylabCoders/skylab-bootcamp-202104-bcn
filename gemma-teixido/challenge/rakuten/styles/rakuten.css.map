@@ -4,7 +4,7 @@
     "sources": [
         "rakuten.scss",
         "colors.scss",
-        "form.scss"
+        "mixins.scss"
     ],
     "names": [],
     "file": "rakuten.css"

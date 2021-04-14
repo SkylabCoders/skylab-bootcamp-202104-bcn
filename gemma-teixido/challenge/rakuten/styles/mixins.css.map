@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "form.scss"
+        "mixins.scss"
     ],
     "names": [],
-    "file": "form.css"
+    "file": "mixins.css"
 }
