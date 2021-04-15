@@ -5,5 +5,5 @@ function myFindIndex(array, callback){
             return index;
         }
     }
-    return false;
+    return -1;
 }
