@@ -1,0 +1,59 @@
+@import "./colors";
+
+@mixin flex-configuration($direction: row, $justify: unset, $align: unset) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin size-configuration($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin cart-container-items {
+  @include flex-configuration(row, center, center);
+  color: white;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+@mixin nav-items($grow, $justify-content, $align-items) {
+  display: flex;
+  flex-grow: $grow;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin malu-logo($width, $height, $image, $background-color) {
+  width: $width;
+  height: $height;
+  background: url("../images/icons/" + $image) $background-color bottom center
+    no-repeat;
+}
+
+@mixin temporary-products($background-color) {
+  @include size-configuration(null, 30px);
+  margin-right: 8px;
+  background-color: $background-color;
+  flex-grow: 1;
+}
+
+@mixin caption($background-color) {
+  position: absolute;
+  bottom: 0;
+  background-color: $background-color;
+  opacity: 0.7;
+}
+
+@mixin triangle() {
+  @include caption(null);
+  @include size-configuration(0px, 0px);
+  margin-left: 250px;
+  margin-right: 0px;
+  background: none;
+  border-style: solid;
+  border-width: 150px 0 0 100px;
+  border-color: transparent transparent transparent rgb(248, 248, 248);
+}
