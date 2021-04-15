@@ -17,7 +17,7 @@ describe('Given a find function', ()=>{
         { a: [NaN,'lol',10,19,7], b: (x => x > 30), result: false},
         { a: ['the best', 'limitless', 'skylabers', 'exuberant', 'destruction', 'present'], b: x => x.length > 6, result: true},
     ];
-    scenarios.forEach((scenario)=>{
+    for (scenario in scenarios){
         describe(`When invoked with array ${scenario.a} and value ${scenario.b}`, ()=>{
             test(`then the result will ${scenario.result}`, ()=>{
                 // Arrange
@@ -31,5 +31,5 @@ describe('Given a find function', ()=>{
                 expect(result).toEqual(scenario.result);
             })
         })
-    })
+    }
 })
