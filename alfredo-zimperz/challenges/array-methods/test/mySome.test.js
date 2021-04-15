@@ -8,7 +8,7 @@ function mySome(array, callback) {
 	return false
 }
 
-describe('Given a map function', () => {
+describe('Given a some function', () => {
 	const scenarios = [
 		{ array: [0, 0, 1], callback: (item) => item === 1, result: true },
 		{
