@@ -23,6 +23,11 @@ describe("Given a findIndex function", () => {
       r: 4,
     },
     {
+      a: [10, 11, 12, 13, 14],
+      b: 12,
+      r: 2,
+    },
+    {
       a: [1, 2, 3, 4],
       b: 5,
       r: false,
