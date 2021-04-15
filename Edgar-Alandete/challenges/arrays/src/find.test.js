@@ -11,7 +11,7 @@ function myFind(array, value) {
   return result;
 }
 
-describe("Given a myFilter function", () => {
+describe("Given a myFind function", () => {
   const scenarios = [
     {
       origin: ["true", "true", "true"],
