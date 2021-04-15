@@ -48,20 +48,4 @@ describe("Given a myFilter function", () => {
       result: [10],
     },
   ];
-
-  scenarios.forEach((scenario) => {
-    describe(`When invoked with values ${scenario.origin} with the callback ${scenario.callback}`, () => {
-      test(`Then return ${scenario.result}`, () => {
-        //Arrange
-        const origin = scenario.origin;
-        const result = scenario.result;
-        const value = scenario.value;
-        const callback = scenario.callback;
-        //Act
-        const filterResult = myFilter(origin, callback);
-        //Assert
-        expect(filterResult).toEqual(result);
-      });
-    });
-  });
 });
