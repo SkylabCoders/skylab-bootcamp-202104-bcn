@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+:root {
+    --primary-color: #FF8870;
+    --secondary-color: #FCD5CE;
+    --complimentary-color: #F9DCC4;
+    --contrast-color: #FEC89A;
+    --light-color: #F8EDEB;
+    }
+
+.container {
+  background: #191919;
+  min-height: 100vh;
+  font-family: Montserrat, sans-serif;
+  margin-left: 70px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+/* Styles applied on trigger */
+
+.container:target {
+    margin-left: 70px;
+    opacity: 0;
+    animation: 2s fadeIn forwards .3s;
+}
+
+/* End of styles applied on trigger */
+
+.section-title{
+    margin-top: 4%;
+}
+
+.section-subtitles{
+    margin-top: 2%;
+}
+
+nav a {
+    font-size: 30px;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+}
+.footer{
+    background: var(--secondary-color);
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+nav {
+    position: fixed;
+    left: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 90vh;
+    background: var(--secondary-color);
+}
+
+
+#intro {
+    background:var(--contrast-color);
+    }
+
+#education {
+background:var(--primary-color);
+}
+
+#experience {
+    background: var(--complimentary-color);
+}
+  
+#honors {
+    background: var(--contrast-color);
+}
+  
+#leadership {
+    background: var(--light-color);
+}
+
+#personal-info{
+    background:var(--contrast-color);
+}
+
+@keyframes fadeIn {
+    100% { opacity:1 }
+}
