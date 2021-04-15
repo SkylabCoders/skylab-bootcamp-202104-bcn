@@ -1,25 +1,34 @@
-function myFilter(array, callback) {
-  array.forEach();
-  return callback;
+let newArray = [];
+// psar un element coger la array y cortar la array iterarla y buscar si el elemento que he pasado esta en la array
+
+function myFilter(array, x) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === x) {
+      newArray.push(array[i]);
+    }
+  }
 }
 
-describe("Given a map function", () => {
+describe("Given a filter function", () => {
   const scenarios = [
-    { a: [1, 1, 3], r: [2, 4, 6], callback : ()=>},
-    { a: [10, 2, 6], r: [5, 1, 3], callback: (element) => element / 2 },
+    {
+      a: [1, 1, 3],
+      b: 1,
+      r: [1, 1],
+    },
   ];
   scenarios.forEach((scenarios) => {
     describe(`When invoked with values ${scenarios.a}`, () => {
       test(`Then return ${scenarios.r}`, () => {
         //arrange
         const a = scenarios.a;
-        const callback = scenarios.callback;
+        const b = scenarios.b;
         const result = scenarios.r;
         //act
-        myMap(a, callback);
+        myFilter(a, b);
 
         //assert
-        expect(result).toEqual(scenarios.r);
+        expect(newArray).toEqual(result);
       });
     });
   });
