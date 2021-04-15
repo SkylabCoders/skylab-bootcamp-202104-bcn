@@ -1,0 +1,94 @@
+* {
+  margin: 0px;
+}
+
+.header-container-fixed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: row;
+  -ms-flex-pack: row;
+  justify-content: row;
+  background-color: black;
+  height: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1vmin;
+  max-height: 90px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 8px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.first-header-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  color: white;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  width: 700px;
+  height: 10px;
+}
+
+#cinema:hover {
+  color: yellow;
+}
+
+#gratis:hover {
+  color: yellow;
+}
+
+#suscripciones:hover {
+  color: yellow;
+}
+
+#logo img {
+  width: 40px;
+}
+
+.second-header-part {
+  width: 1600px;
+}
+
+input {
+  background-color: #c4bebe;
+}
+
+input:active {
+  background-color: white;
+}
+
+.third-header-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  list-style: none;
+  color: white;
+  width: 500px;
+  height: 10px;
+}
+
+#ayuda {
+  color: grey;
+}
+
+#ayuda:hover,
+#entrar:hover {
+  color: yellow;
+}
+
+#registrate {
+  background: yellow;
+  font-family: "Noto Sans", sans-serif;
+  color: black;
+  font-size: 8px;
+}
+/*# sourceMappingURL=rakuten.css.map */

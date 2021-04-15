@@ -1,0 +1,266 @@
+@import "./colors";
+@import "./mixins";
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  color: $color-ma-secondary;
+}
+
+.nav-container {
+  display: flex;
+  background-color: $color-ma-secondary;
+  min-height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.nav-content {
+  width: 1080px;
+  margin: 0 auto;
+  display: flex;
+
+  &__malu-pages {
+    position: absolute;
+    display: flex;
+    top: 0;
+
+    &--red {
+      @include malu-logo(80px, 140px, "maria-lunarillos.png", $color-ma);
+    }
+
+    &--blue {
+      @include malu-logo(80px, 70px, "cucute.png", $color-cu);
+      &:hover {
+        @include size-configuration(null, 140px);
+        transition: 0.3s;
+      }
+    }
+
+    &--yellow {
+      @include malu-logo(80px, 70px, "mumuchu.png", $color-mu);
+      &:hover {
+        @include size-configuration(null, 140px);
+        transition: 0.3s;
+      }
+    }
+  }
+
+  &__login-register {
+    @include nav-items(2, flex-end, center);
+    &:hover {
+      color: $color-ma;
+    }
+  }
+
+  &__social-networks {
+    @include nav-items(1, center, center);
+
+    .social-networks__social-item a {
+      &:hover {
+        color: $color-ma;
+      }
+    }
+  }
+
+  &__cart-container {
+    @include nav-items(null, center, center);
+    .cart-container__cart {
+      @include cart-container-items();
+      &:hover {
+        background-color: $color-ma;
+        color: white;
+      }
+
+      .cart-container__cart a {
+        &:hover {
+          background-color: $color-ma;
+          color: white;
+        }
+      }
+    }
+
+    .cart-container__item-counter {
+      @include cart-container-items();
+      background-color: $color-ma;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+}
+
+.quick-access {
+  @include flex-configuration(null, space-around, center);
+  width: 1080px;
+  margin: 0 auto;
+
+  &__logo {
+    display: flex;
+    flex-grow: 2;
+    margin-top: 100px;
+  }
+
+  &__search-products {
+    @include flex-configuration(column);
+    flex-grow: 1;
+    max-width: 540px;
+
+    .search-product {
+      @include flex-configuration(null, space-between, null);
+      margin-top: 100px;
+
+      &--new {
+        @include temporary-products(#9faa4d);
+      }
+
+      &--offer {
+        @include temporary-products(#8e789d);
+      }
+
+      &__search-bar {
+        flex-grow: 2;
+      }
+
+      &__search-button {
+        background-color: #c2beba;
+        flex-grow: 1;
+      }
+    }
+
+    .product-categories {
+      .images {
+        display: flex;
+        &__product-category {
+          @include flex-configuration(null, center, center);
+          @include size-configuration(100px, 100px);
+          background-color: $color-ma-secondary;
+          margin-top: 40px;
+          margin-right: 5px;
+
+          &:hover {
+            background-color: $color-ma;
+          }
+
+          &--red {
+            margin-left: 50px;
+            background-color: $color-ma;
+
+            &:hover {
+              background-color: $color-ma-secondary;
+            }
+          }
+
+          img {
+            @include size-configuration(70px, 70px);
+          }
+        }
+      }
+      &__name {
+        display: flex;
+
+        .product-category-name {
+          @include flex-configuration(null, center, center);
+          @include size-configuration(100px, 20px);
+          margin-top: 5px;
+          margin-right: 5px;
+
+          &--margin {
+            margin-left: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.banner-container {
+  position: relative;
+  @include flex-configuration(null, center);
+  margin-top: 20px;
+  .banner-section {
+    .side-figure {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-right: 10px;
+      max-width: 360px;
+      &__caption {
+        @include caption($color-ma-secondary);
+        @include size-configuration(250px, 150px);
+
+        & p {
+          margin-left: 20px;
+        }
+
+        & h2 {
+          margin: 20px;
+          text-transform: uppercase;
+          font-size: 24px;
+          line-height: 24px;
+        }
+      }
+
+      &__triangle {
+        @include triangle;
+      }
+    }
+
+    &__main-figure {
+      &--top {
+        margin-bottom: 10px;
+      }
+
+      &--bottom {
+        justify-content: flex-end;
+      }
+    }
+    .main-figure {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+
+      &__caption {
+        @include caption($color-ma-secondary);
+        @include size-configuration(250px, 150px);
+
+        & p {
+          margin-left: 20px;
+        }
+
+        & h2 {
+          margin: 20px;
+          text-transform: uppercase;
+          font-size: 24px;
+          line-height: 24px;
+        }
+
+        &--bottom {
+          margin-right: 100px;
+          margin-left: 0px;
+        }
+      }
+
+      &__triangle {
+        @include triangle;
+      }
+    }
+  }
+}

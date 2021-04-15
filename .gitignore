@@ -137,6 +137,7 @@ Temporary Items
 
 ### Node ###
 # Logs
+.scannerwork/
 logs
 *.log
 npm-debug.log*
@@ -355,3 +356,4 @@ auth-data.js
 
 /.expo
 .expo/
+.DS_Store
