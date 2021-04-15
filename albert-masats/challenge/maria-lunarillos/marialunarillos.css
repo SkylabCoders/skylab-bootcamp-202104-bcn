@@ -31,7 +31,6 @@
     width: 100%;
     margin-top:40px;
     height: 600px;
-    
     background: linear-gradient(to right, rgb(193, 214, 231) 0%, rgb(193, 214, 231) 50%, rgb(155, 174, 186) 50%, rgb(155, 174, 186) 100%);
 }
 
@@ -43,7 +42,6 @@
     background: #F8F8F8;
     height: 50px;
     width: 1080px;
-    /* border: 1px solid #fffb03;*/
 }
 
 .facebook {
@@ -136,7 +134,6 @@
     display:flex;
     text-align:center;
     align-items: center ;
-
 }
 
 .icons-upperbar {
@@ -173,8 +170,6 @@
     width: 1080px;
     height: 217.6px;
     margin-top: 52px;
-    /* border: 1px solid #ff384f; */
-    
 }
 
 .bottom-header {
@@ -182,7 +177,6 @@
     margin: 0 auto;
     width: 1080px;
     height: 50px;
-    /* border: 1px solid #17f8d3; */
 }
 
 .main-icons {
@@ -503,7 +497,6 @@
     width: 100%;
     padding-top: 250px;
     background:#f8f8f8;
-
 }
   
 .container-photo-mix {
