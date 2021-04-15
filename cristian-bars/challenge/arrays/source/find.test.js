@@ -1,18 +1,19 @@
-function map(array, callback) {
+function find(array, callback) {
     
     for(let i = 0; i<array.length;i++){
         let res = callback(array[i]);
         
-        array[i]= res;
+        if(res == true){
+            let value = array[i];
+            return value;
+        }
     }
     
-    return array;
 }
 
-describe('Given a map function', () => {
+describe('Given a find function', () => {
     const scenarios = [
-        { array: [1,2,3], callback: number => number*2, result: [2,4,6]},
-        { array: [30,20,70], callback: number => number/2, result: [15,10,35]},
+        { array: [10,13,16,20], callback: number => number>15, result: 16},
     ];
 
     scenarios.forEach((scenario) => {
@@ -23,7 +24,7 @@ describe('Given a map function', () => {
                 const b = scenario.callback;
     
                 // Act 
-                const result = map(a, b);
+                const result = find(a, b);
     
                 // Assert
                 expect(result).toStrictEqual(scenario.result);
