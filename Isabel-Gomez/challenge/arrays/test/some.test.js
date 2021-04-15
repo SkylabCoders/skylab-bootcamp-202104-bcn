@@ -17,7 +17,7 @@ describe('Given a getSome function', () => {
 
     scenarios.forEach((scenario) => {
         describe(`When invoked with value ${scenario.originArray} and callback function ${scenario.operation}`, () => {
-            test(`Then return a first value index ${scenario.result}`, () => {
+            test(`Then return a true or false if the array passes the test implemented by the provided function`, () => {
                 // Arrange
                 // Act 
                 const result = getSome(scenario.originArray, scenario.operation);
