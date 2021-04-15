@@ -8,7 +8,7 @@ const scenario = [
 
 function myMapFunction(array, callback) {
     for (let i = 0; i < array.length; i++) {
-        newArray.push(callback(array[i]));
+        newArray[i] = callback(array[i]);
     }
     return newArray;
 }
