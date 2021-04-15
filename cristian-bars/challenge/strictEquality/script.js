@@ -1,5 +1,4 @@
 function strictEquals (a,b){
-  
 	if ((typeof a == typeof b) && (!(isNaN(a) || isNaN(b)))){
 		if (typeof a == typeof b && a == b){
 			console.log(true)
@@ -9,7 +8,6 @@ function strictEquals (a,b){
 	}else{
 		console.log(false)
 	}
-  
 }
 
 strictEquals(1,1);
