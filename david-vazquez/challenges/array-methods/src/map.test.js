@@ -2,7 +2,7 @@ function myMap (array, callback) {
     const arrayResults = []; 
     for (let index=0; index<array.length; index++) {
         const element = callback (array[index]);
-        arrayResults.push(element);
+        arrayResults[index] = element;
     }
     return arrayResults;
 }
