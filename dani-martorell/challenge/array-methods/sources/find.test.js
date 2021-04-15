@@ -27,9 +27,7 @@ describe(`Guiven a myFind function`, () => {
             test(`Then returns ${scenario.result}`, () => {
                 const result = myFind(scenario.array, scenario.callback);
                 expect(result).toEqual(scenario.result);
-
             })
         })
-    
     })
 })
