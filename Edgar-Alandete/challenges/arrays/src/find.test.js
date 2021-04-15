@@ -1,11 +1,14 @@
 function myFind(array, value) {
   let result;
-
-  array.forEach((element) => {
-    if (element === value) {
+  let isFound = false;
+  for (let i = 0; i < array.length && !isFound; i++) {
+    if (array[0] === value) {
+      debugger;
       result = value;
+      isFound = true;
     }
-  });
+  }
+
   return result;
 }
 
@@ -34,7 +37,7 @@ describe("Given a myFilter function", () => {
         //Act
         const filterResult = myFind(origin, value);
         //Assert
-        expect(filterResult).toEqual(result);
+        expect(filterResult).toBe(result);
       });
     });
   });

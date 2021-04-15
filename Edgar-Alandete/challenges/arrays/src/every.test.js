@@ -1,9 +1,9 @@
 function myEvery(array, callback) {
   let result = false;
-
-  array.forEach((element) => {
+  for (const element of array) {
     result = callback(element, array[0]);
-  });
+  }
+
   return result;
 }
 
