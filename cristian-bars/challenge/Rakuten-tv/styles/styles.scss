@@ -97,6 +97,7 @@ nav {
 #items {
     display: flex;
     width: 100%;
+    overflow: scroll;
 }
 
 #content {
@@ -109,6 +110,10 @@ nav {
 
 .section-title h2 {
     color: white;
+}
+
+#films-items {
+    overflow: scroll;
 }
 
 #films-items ul {
