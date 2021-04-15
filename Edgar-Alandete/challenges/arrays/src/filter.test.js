@@ -3,7 +3,7 @@ function myFilter(array, callback) {
 
   for (const element of array) {
     if (callback(element)) {
-      result.push(element);
+      result[result.length] = element;
     }
   }
   return result;
