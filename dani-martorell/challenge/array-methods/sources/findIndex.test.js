@@ -15,4 +15,3 @@ function myLength(array){
     }
     return counter;
 }
-
