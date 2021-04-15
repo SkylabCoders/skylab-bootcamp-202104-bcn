@@ -1,16 +1,19 @@
 function myFilter(array, callback) {
 
+    const array1 = [];
+
     for (let i = 0; i < array.length; i++) {
-        const element = callback(array[i]); 
-        
+     if (callback(array[i]) === true) {
+        array1[array1.length] = array[i];
+        }
     }
 
-    return array;
+    return array1;
 }
 
-describe("Given a funcion myMap", () =>{
+describe("Given a funcion myFilter", () =>{
     const scenarios = [
-        { array: [1, 5, 10, 15], callback: (number) => number*2, result: [2, 10, 20, 30] }
+        { array: [2, 40, 10, 2], callback: number => {if (number < 10) return true}, result: [2, 2] }
     ];
 
     scenarios.forEach((scenarios) => {
@@ -19,7 +22,7 @@ describe("Given a funcion myMap", () =>{
                 // Arrange
                 const array = scenarios.array; 
                 // Act 
-                const result = myMap(array, scenarios.callback);
+                const result = myFilter(array, scenarios.callback);
 
                 // Assert
                 expect(result).toEqual(scenarios.result);
