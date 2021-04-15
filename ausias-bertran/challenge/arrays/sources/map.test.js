@@ -1,14 +1,19 @@
 function sum(a, b) {
     return a + b;
 }
-
-function multiply(a, b) {
-    return a * b;
+function fakeMap(a, array) {
+    for (let i = 0; i = array.length; i++) {
+        array[i] = 🟢;
+    }
 }
 
-describe('Given a sum function', () => {
+
+describe('Given a map function', () => {
     const scenarios = [
-        [1,2,3,4,5]
+        { a: 🟢, array: [🟥, 🟥, 🟥, 🟥]},
+        { a: 5, b: 6, result: 11},
+        { a: 100, b: 200, result: 300},
+        { a: null, b: undefined, result: NaN},]
     ];
     
     scenarios.forEach((scenario) => {
@@ -17,16 +22,20 @@ describe('Given a sum function', () => {
                 // Arrange
                 const a = scenario.a;
                 const b = scenario.b;
-    
+                
                 // Act 
                 const result = sum(a, b);
-    
+                
                 // Assert
                 expect(result).toBe(scenario.result);
             })
         })
     })
 })
+
+function multiply(a, b) {
+    return a * b;
+}
 
 describe('Given a multiply function', () => {
     const scenarios = [
