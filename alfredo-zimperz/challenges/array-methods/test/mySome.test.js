@@ -1,4 +1,4 @@
-function myFind(array, callback) {
+function mySome(array, callback) {
 	for (let i = 0; i < array.length; i++) {
 		if (callback(array[i])) {
 			return true
@@ -31,7 +31,7 @@ describe('Given a map function', () => {
 				const callback = scenario.callback
 
 				// Act
-				const result = myFind(array, callback)
+				const result = mySome(array, callback)
 
 				// Assert
 				expect(result).toStrictEqual(scenario.result)
