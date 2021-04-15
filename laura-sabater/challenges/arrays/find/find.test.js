@@ -7,7 +7,7 @@ function find(array, callback) {
   }
 };
 
-describe('Given a filter function', () => {
+describe('Given a find function', () => {
     const scenarios = [
         { a: [1, 2, 3], fun: (x) => x===2, result: 2},
         { a: ["pa", "ma", "mapa"], fun: (x) => x.length<3, result: "pa"},
