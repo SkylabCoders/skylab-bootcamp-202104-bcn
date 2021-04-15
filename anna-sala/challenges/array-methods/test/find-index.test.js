@@ -1,4 +1,4 @@
-function annaFind (array, finder){
+function annaFindIndex (array, finder){
     for (let i=0; i<array.length; i++){
         if (finder(array[i])){
             return i;
@@ -22,7 +22,7 @@ describe('Given a find function', ()=>{
                 const b = scenario.b;
     
                 // Act 
-                const result = annaFind(a, b);
+                const result = annaFindIndex(a, b);
     
                 // Assert
                 expect(result).toEqual(scenario.result);
