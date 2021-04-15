@@ -11,7 +11,7 @@ function myFilter(array, callback) {
 	return result
 }
 
-describe('Given a map function', () => {
+describe('Given a filter function', () => {
 	const scenarios = [
 		{ array: [0, 0, 1], callback: (item) => item > 0, result: [1] },
 		{
