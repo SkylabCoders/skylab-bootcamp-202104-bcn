@@ -22,11 +22,11 @@ function myReduce(array, callback, initialValue = null) {
 describe('Given a reduce function', () => {
 	const scenarios = [
 		{
-			array: ['asientos', 'volante', 'puertas', 'ruedas', 'pintura metalizada'],
+			array: ['manzana', 'banana', 'kiwi', 'durazno', 'frutillas'],
 			callback: (lastValue, nextValue) => `${lastValue} ${nextValue},`,
-			initialValue: 'Mi coche tiene:',
+			initialValue: 'Quiero mi ensalada con:',
 			result:
-				'Mi coche tiene: asientos, volante, puertas, ruedas, pintura metalizada,'
+				'Quiero mi ensalada con: manzana, banana, kiwi, durazno, frutillas,'
 		},
 		{
 			array: [1, 2, 3, 4],

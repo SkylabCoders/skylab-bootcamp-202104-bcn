@@ -10,7 +10,7 @@ function myEvery(array, callback) {
 	return everyResult
 }
 
-describe('Given a map function', () => {
+describe('Given an every function', () => {
 	const scenarios = [
 		{ array: [0, 0, 0], callback: (item) => item === 0, result: true },
 		{
