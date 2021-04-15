@@ -17,8 +17,11 @@ function myLength(array){
 describe('Given a Fill function', () => {
     const scenarios = [
         { array: [1,2,3,4], value: 0, start: 2, end: 4, result: [1, 2, 0, 0] },
+        { array: [1,2,3,4], value: 5, start: 1, end: undefined, result: [1, 5, 5, 5] },
+        { array: [1,2,3,4], value: 'x', start: undefined, end: undefined, result: ['x', 'x', 'x', 'x'] },
+
+
     ];
-    
     scenarios.forEach((scenario) => {
         describe(`When invoked with values ${scenario.array} and ${scenario.value} and ${scenario.start} and ${scenario.end}`, () => {
             test(`Then returns ${scenario.result}`,() => {
