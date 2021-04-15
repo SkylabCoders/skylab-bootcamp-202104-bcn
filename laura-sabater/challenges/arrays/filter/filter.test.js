@@ -1,7 +1,7 @@
-function filter(array, duplicate) {
+function filter(array, callback) {
   let result = [];
   for (let i = 0; i < array.length; i++) {
-    const value = duplicate(array[i]);
+    const value = callback(array[i]);
     if (value) {
       result.push(array[i]);
     }
