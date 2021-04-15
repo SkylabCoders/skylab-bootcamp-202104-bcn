@@ -6,21 +6,26 @@ const pushMethod = (array, toAdd) => {
 
 }
 
-const findIndexMethod = (array, toApply) => {
+const someMethod = (array, toApply) => {
+
+    let result = false;
 
     for (let element in array) {
         if(toApply(array[element])) {
-            return parseFloat(element);
+            result = true;
         }
     }
+
+    return result;
+
 }
 
-describe('Given a findIndexMethod function', () => {
+describe('Given a someMethod function', () => {
     const scenarios = [
-        { a: [14,15,16,19,30], b: (x => x < 20), result: 0},
-        { a: [14,15,16,19,30], b: (x => x > 15), result: 2},
-        { a: [14,15,16,19,30], b: (x => x < 14), result: undefined},
-        { a: [14,15,16,19,30], b: (x => x > 19), result: 4}
+        { a: [14,15,16,19,30], b: (x => x < 20), result: true},
+        { a: [14,15,16,19,30], b: (x => x > 15), result: true},
+        { a: [14,15,16,19,30], b: (x => x < 14), result: false},
+        { a: [14,15,16,19,30], b: (x => x > 19), result: true}
     ];
     
     for(scenario in scenarios){
@@ -31,7 +36,7 @@ describe('Given a findIndexMethod function', () => {
                 const b = scenarios[scenario].b;
     
                 // Act 
-                const result = findIndexMethod(a, b);
+                const result = someMethod(a, b);
     
                 // Assert
                 expect(result).toBe(scenarios[scenario].result);
