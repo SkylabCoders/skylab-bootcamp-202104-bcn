@@ -1,9 +1,11 @@
 function getFilter(array, callback) {
     let newArray = [];
+    let counter = 0;
     for (let index = 0; index < array.length; index++) {
         const element = callback(array[index]);
         if (element) {
-            newArray.push(array[index]);
+            newArray[counter] = array[index];
+            counter++;
         }
     }
     return newArray;
