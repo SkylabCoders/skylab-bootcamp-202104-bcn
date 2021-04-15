@@ -6,21 +6,21 @@ const pushMethod = (array, toAdd) => {
 
 }
 
-const findMethod = (array, toFind) => {
+const findIndexMethod = (array, toApply) => {
 
     for (let element in array) {
-        if(toFind(array[element])) {
-            return array[element];
+        if(toApply(array[element])) {
+            return parseFloat(element);
         }
     }
 }
 
-describe('Given a findMethod function', () => {
+describe('Given a findIndexMethod function', () => {
     const scenarios = [
-        { a: [14,15,16,19,30], b: (x => x < 20), result: 14},
-        { a: [14,15,16,19,30], b: (x => x > 15), result: 16},
+        { a: [14,15,16,19,30], b: (x => x < 20), result: 0},
+        { a: [14,15,16,19,30], b: (x => x > 15), result: 2},
         { a: [14,15,16,19,30], b: (x => x < 14), result: undefined},
-        { a: [14,15,16,19,30], b: (x => x > 19), result: 30}
+        { a: [14,15,16,19,30], b: (x => x > 19), result: 4}
     ];
     
     scenarios.forEach((scenario) => {
@@ -31,7 +31,7 @@ describe('Given a findMethod function', () => {
                 const b = scenario.b;
     
                 // Act 
-                const result = findMethod(a, b);
+                const result = findIndexMethod(a, b);
     
                 // Assert
                 expect(result).toBe(scenario.result);
