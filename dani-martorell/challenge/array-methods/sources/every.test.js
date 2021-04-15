@@ -15,4 +15,17 @@ function myLength(array){
     return counter;
 }
 
-
+describe('Given an Every function', () => {
+    const scenarios = [
+        { array: [3,2], callback: function (element){ return element > 1 }, result: true }
+    ];
+    
+    scenarios.forEach((scenario) => {
+        describe(`When invoked with values ${scenario.array} and ${scenario.callback}`, () => {
+            test(`Then return ${scenario.result}`,() => {
+                const result = myEvery(scenario.array, scenario.callback);
+                expect(result).toBe(scenario.result);
+            })
+        })
+    })
+})
