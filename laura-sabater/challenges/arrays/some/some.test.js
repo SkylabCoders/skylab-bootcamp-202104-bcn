@@ -8,7 +8,7 @@ function some(array, callback) {
   return false;
 };
 
-describe('Given a filter function', () => {
+describe('Given a some function', () => {
     const scenarios = [
         { a: [1, 2, 3], fun: (x) => x===2, result: true},
         { a: ["pa", "ma", "mapa"], fun: (x) => x.length<3, result: true},
