@@ -1,11 +1,10 @@
 let solution;
-function mySome(array, x) {
+function myEvery(array, x) {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] === x) {
-      solution = true;
-      return solution;
-    } else if (i === array.length - 1) {
+    if (array[i] !== x) {
       solution = false;
+    } else {
+      solution = true;
     }
   }
 }
@@ -15,16 +14,21 @@ describe("Given a findIndex function", () => {
     {
       a: [2, 3, 9, 4, 5],
       b: 4,
-      r: true,
+      r: false,
     },
     {
-      a: [5, 6, 7, 8, 9],
+      a: [9, 9, 9, 9, 9],
       b: 9,
       r: true,
     },
     {
       a: [1, 2, 3, 4],
       b: 5,
+      r: false,
+    },
+    {
+      a: [8, 7, 3, 4],
+      b: 0,
       r: false,
     },
   ];
@@ -36,7 +40,7 @@ describe("Given a findIndex function", () => {
         const b = scenarios.b;
         const result = scenarios.r;
         //act
-        mySome(a, b);
+        myEvery(a, b);
 
         //assert
         expect(solution).toEqual(result);
