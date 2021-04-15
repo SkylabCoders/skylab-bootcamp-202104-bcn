@@ -1,8 +1,7 @@
 function mapMethod(array, callbackFun) {
     let result = [];
     for (let i = 0; i < array.length; i++) {
-        const value = callbackFun(array[i])
-        result.push(value);
+        result[i] = callbackFun(array[i])
     }
     return result;
 }
