@@ -15,7 +15,7 @@ describe('Given a getMap function', () => {
     ];
 
     scenarios.forEach((scenario) => {
-        describe(`When invoked with values ${scenario.originArray} and ${scenario.operation}`, () => {
+        describe(`When invoked with value ${scenario.originArray} and callback function ${scenario.operation}`, () => {
             test(`Then return a new array ${scenario.result}`, () => {
                 // Arrange
                 // Act 
