@@ -1,18 +1,17 @@
 const mapMethod = (array, toApply) => {
 
     for (let element in array) {
-        array[element] = toApply;
+        array[element] = toApply(array[element]);
     }
 
     return array;
-
 }
 
 describe('Given a mapMethod function', () => {
     const scenarios = [
-        { a: ['one', 'two', 'three', 'four'], b: 'five', result: ['five', 'five', 'five', 'five']},
-        { a: [1, 2, 3, 4, 5], b: 6, result: [6, 6, 6, 6, 6]},
-        { a: ['a', 'b', 'c'], b: {}, result: [{}, {}, {}]}
+        { a: ['one', 'two', 'three'], b: (x => typeof(x) === 'string'), result: [true, true, true]},
+        { a: [2, 3, 4], b: (x => x > 2), result: [false, true, true]},
+        { a: [2, 3, 4], b: (x => x*2), result: [4, 6, 8]}
     ];
     
     scenarios.forEach((scenario) => {
