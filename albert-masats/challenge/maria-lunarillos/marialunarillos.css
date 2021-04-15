@@ -1,0 +1,635 @@
+* {
+    display: border-box;
+    margin:0;
+    font: 12px/1.55 'Source Sans Pro', sans-serif;
+}
+
+.box1 {
+    position:fixed;
+    display: flex;
+    height: 50px;
+    background: #F8F8F8;
+    width: 100%;
+    z-index:2;
+}
+
+.box2 {
+    display: flex;
+    height: 217.6px;
+    padding-left: 11%;
+    padding-right: 11%;
+}
+
+.box3 {
+    display: flex;
+    height: 50px;
+    padding-left: 11%;
+    padding-right: 11%;
+}
+
+.box4 {
+    width: 100%;
+    margin-top:40px;
+    height: 600px;
+    
+    background: linear-gradient(to right, rgb(193, 214, 231) 0%, rgb(193, 214, 231) 50%, rgb(155, 174, 186) 50%, rgb(155, 174, 186) 100%);
+}
+
+.upper-header {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0 auto;
+    background: #F8F8F8;
+    height: 50px;
+    width: 1080px;
+    /* border: 1px solid #fffb03;*/
+}
+
+.facebook {
+    width: 25px;
+    height: 20px;
+    margin: 15px 7px 0;
+    background: url(./images/sprite.svg) transparent 0 0 no-repeat;
+    text-indent: -3000px;
+    display: block;
+    text-indent: -3000px;
+    background-position: -4px -540px;
+    cursor:pointer;
+}
+
+.twitter {
+    width: 25px;
+    height: 20px;
+    margin: 15px 7px 0;
+    background: url(./images/sprite.svg) transparent 0 0 no-repeat;
+    text-indent: -3000px;
+    display: block;
+    text-indent: -3000px;
+    background-position: -40px -540px;
+    cursor:pointer;
+}
+
+.instagram {
+    width: 25px;
+    height: 20px;
+    margin: 15px 7px 0;
+    background: url(./images/sprite.svg) transparent 0 0 no-repeat;
+    text-indent: -3000px;
+    display: block;
+    text-indent: -3000px;
+    background-position: -75px -540px;
+    cursor:pointer;
+}
+
+
+.pinterest {
+    width: 25px;
+    height: 21px;
+    margin: 15px 7px 0;
+    background: url(./images/sprite.svg) transparent 0 0 no-repeat;
+    text-indent: -3000px;
+    display: block;
+    text-indent: -3000px;
+    background-position: -110px -540px;
+    cursor:pointer;
+}
+
+.youtube {
+    height : 80%;
+    width: 40px;
+    margin-top: 5px;
+    background: url(./images/sprite.svg) transparent 0 0 no-repeat;
+    text-indent: -3000px;
+    background-position: -174px -530px;
+    cursor:pointer;
+}
+
+.entrar-container {
+    display:flex;
+    flex-direction: flex-end;
+    width: 180px;
+    text-align: center;
+    margin-right:30px;
+    cursor:pointer;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 200px;
+    margin-right:32px;
+    cursor:pointer;
+}
+
+.entrar {
+    height: 27px;
+    width: 30px;
+    background: url(./images/sprite.svg) 0 0 no-repeat;
+    margin: 10px;
+    text-align: end;
+    cursor:pointer;
+}
+
+.entrar-texto {
+    display:flex;
+    text-align:center;
+    align-items: center ;
+
+}
+
+.icons-upperbar {
+    margin-left: 10px;
+    margin-left:auto;
+    width: 50px;
+    height: 100%;
+    z-index: index 2;
+    background: #fff url(./images/sprite.svg) -66px 10px no-repeat;
+    margin: 0;
+    position: relative;
+    cursor:pointer;
+}
+
+.icons-upperbar2 {
+    display:flex;
+    width: 50px;
+    height: 100%;
+    background: #FF5959;
+    z-index: index 2;
+    color: #fff;
+    font-size: 20px;
+    justify-content: center;
+    align-items:center;
+    cursor:pointer;
+}
+
+.header-center {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.8em;
+    margin: 0 auto;
+    width: 1080px;
+    height: 217.6px;
+    margin-top: 52px;
+    /* border: 1px solid #ff384f; */
+    
+}
+
+.bottom-header {
+    display: flex;
+    margin: 0 auto;
+    width: 1080px;
+    height: 50px;
+    /* border: 1px solid #17f8d3; */
+}
+
+.main-icons {
+    height: 140px;
+    width: 230px;
+    margin-right:auto;
+}
+
+.left-icon {
+    display: inline-block;
+    height: 140px;
+    width: 80px;
+    background-image: url(./../challenge/images/maria-lunarillos.png);
+    background-position-x: center;
+    background-position-y: bottom;
+    background-size: initial;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 89, 89);
+    cursor:pointer;
+    color: transparent;
+}
+
+.center-icon {
+    display: inline-block;
+    height: 70px;
+    width: 69px;
+    color: transparent;
+    background: url(./../challenge/images/cucute.png) #6199AF bottom center no-repeat;
+    cursor:pointer;
+}
+
+.right-icon {
+    display: inline-block;
+    height: 70px;
+    width: 71px;
+    color: transparent;
+    background: url(./../challenge/images/mumuchu.png) rgb(246, 180, 54) bottom center no-repeat;
+    cursor:pointer;
+}   
+
+.center-icon:hover {
+    display: inline-block;
+    height: 140px;
+    width: 71px;
+    background: url(./../challenge/images/cucute.png) #6199AF bottom center no-repeat;
+}
+
+.right-icon:hover {
+    display: inline-block;
+    height: 140px;
+    width: 71px;
+    background: url(./../challenge/images/mumuchu.png) rgb(246, 180, 54) bottom center no-repeat;
+}
+
+.maria-lunarillos {
+    align-self: flex-end;
+    margin-right:auto;
+    height:70px;
+    width: 300px;
+    background: url(./../challenge/images/logo.svg) bottom center no-repeat;
+    /* border: 1px solid pink; */
+    margin-bottom: 28px;
+}
+
+.utensilios {
+    flex-direction: row;
+    align-self: flex-end;
+    height: 100px;
+    width: 100px;
+    background-image: url(./../challenge/images/utensiliosML.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f2f2f2;
+    background-size: 50%;
+    position: relative;
+    padding: 0;
+    cursor:pointer;
+    margin-top: 10px;
+}
+
+.text-utensilios {
+    display:flex;
+    justify-content: center;
+    margin-top: 105px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    
+}
+
+.ingredientes {
+    flex-direction: row;
+    align-self: flex-end;
+    height: 100px;
+    width: 100px;
+    background-image: url(./../challenge/images/magdalena.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f2f2f2;
+    background-size: 50%;
+    position: relative;
+    padding: 0;
+    cursor:pointer;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.text-ingredientes {
+    display:flex;
+    justify-content: center;
+    margin-top: 105px;
+    text-align: center;
+    margin-left: 8px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+
+.tarta {
+    flex-direction: row;
+    align-self: flex-end;
+    height: 100px;
+    width: 100px;
+    background-image: url(./../challenge/images/tarta-cumpleanos.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f2f2f2;
+    background-size: 50%;
+    position: relative;
+    padding: 0;
+    cursor:pointer;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.text-tarta {
+    display:flex;
+    justify-content: center;
+    margin-top: 105px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+
+.delantal {
+    flex-direction: row;
+    align-self: flex-end;
+    height: 100px;
+    width: 100px;
+    background-image: url(./../challenge/images/delantal.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f2f2f2;
+    background-size: 70%;
+    position: relative;
+    padding: 0;
+    cursor:pointer;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.text-delantal {
+    display:flex;
+    justify-content: center;
+    margin-top: 105px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+
+.blog {
+    align-self: flex-end;
+    margin-left: auto;
+    height: 100px;
+    width: 100px;
+    background-image: url(./../challenge/images/menu.svg);
+    background-position: center;
+    background-color: #f2f2f2;
+    display: block;
+    background-position: -400px 0;
+    background-size: 700px;
+    padding:0;
+    cursor:pointer;
+    margin-top:0px;
+    background-color: #FF5959;
+}
+
+.text-blog {
+    display:flex;
+    justify-content: center;
+    margin-top: 105px;
+    text-align: center;
+    color: #FF5959;
+    letter-spacing: 0.8px;
+}
+
+.navigation-varietes {
+    display: flex;
+    margin-left: 1em;
+    width: 570px;
+    height: 100px;
+    align-self: flex-end;
+    font-size: 1.1em;
+}
+
+.buttons-icons-container {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content:flex-end;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    height:100%;
+    padding-top:48px;
+}
+
+.novedades {
+    display:flex;
+    align-content: center;
+    height: 30px;
+    width: 99px;
+    background-color: #9faa4d;
+    font-size: 13px;
+    font-weight: 570;
+    letter-spacing: 0.8px;
+    color:white;
+    align-items: center;
+    margin-right:5px;
+    cursor:pointer;
+    padding-left: 2px;
+}
+
+.icono-novedades {
+    height: 30px;
+    width: 30px;
+    display: block;
+    cursor:pointer;
+    display: inline-block;
+    background: url(./images/sprite.svg) -244px 4px no-repeat #9faa4d;
+    content: '';
+}
+
+.icono-ofertas {
+    height: 30px;
+    width: 35px;
+    display: block;
+    cursor:pointer;
+    display: inline-block;
+    background: url(./images/sprite.svg) -274px 4px no-repeat  #8e789d ;
+    content: '';
+}
+
+.ofertas {
+    height: 30px;
+    width: 80px;
+    padding-right: 15px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 570;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 30px;
+    text-align: center;
+    cursor:pointer;
+    color:white;
+    background: #8e789d;
+    letter-spacing: 0.8px;
+}
+
+.buscar {
+    height: 25px;
+    margin-left: 5px;
+    width:240px;
+    color: #BBB8B6;
+}
+
+.button-input {
+    display: block;
+    float: right;
+    width: 52px;
+    height: 30px;
+    background: url(./../challenge/images/sprite.svg) -303px 2px no-repeat #BBB8B6;
+    border: none;
+}
+
+#imgbanner0 {
+    background-image: url("./../challenge/images/foto-cocina.png");
+    width: 1080px;
+    height: 600px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    border: 0;
+}
+
+.box5 {
+    height: 250px;
+    width: 100%; 
+    
+}
+
+.image-icon {
+    width: 123px;
+    height: 169px;
+    margin: auto;
+    margin-top:160px;
+}
+
+.box6 {
+    height: 2286px;
+    width: 100%;
+    padding-top: 250px;
+    background:#f8f8f8;
+
+}
+  
+.container-photo-mix {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    z-index:1;
+    height: 615px;
+    width: 1080px;
+}
+
+.photo-moldes {
+    display:flex;
+    position:relative;
+    width: 350px;
+    height: 615px;
+    margin-right: auto;
+    background-image: url(images/moldesdereposteria.jpg);
+}
+
+.photo-doble {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+#imgbanner1 {
+    width: 350px;
+    max-height: none;
+    margin: 0 auto;
+    border: 0;
+}
+
+.cuadrado1 {
+    position: absolute;
+    height: 110px;
+    width: 230px;
+    bottom:0;
+    left:0;
+    background-color: rgb(255, 255, 255,0.8);
+    padding: 20px 0 20px 20px  
+}
+
+.triangulo1 {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-bottom: 150px solid rgba(255,255,255,0.8);
+    border-right: 100px solid transparent;
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+    right:0;
+}
+
+.titulo-triangulo1 {
+    font-size: 20px;
+}
+
+.triangulo2 {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-bottom: 150px solid rgba(255,255,255,0.8);
+    border-right: 100px solid transparent;
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+    left:250px;
+}
+
+.cuadrado2 {
+    position: absolute;
+    height: 110px;
+    width: 230px;
+    bottom:0;
+    left:0;
+    background-color: rgb(255, 255, 255,0.8);
+    padding: 20px 0 20px 20px  
+}
+
+.titulo-triangulo2 {
+    font-size: 20px;
+}
+
+.photo-utensilios {
+    display:flex;
+    position:relative;
+    width: 715px;
+    height: 300px;
+    margin-right: auto;
+    background-image: url(./images/utensiliosbasicos.jpg);
+}
+
+.photo-electro {
+    display:flex;
+    position:relative;
+    width: 715px;
+    height: 300px;
+    margin-right: auto;
+    background-image: url(./images/pequenoelectrodomestico2.jpg);
+}
+
+.triangulo3 {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-bottom: 150px solid rgba(255,255,255,0.8);
+    border-right: 100px solid transparent;
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+    right:0;
+}
+
+.cuadrado3 {
+    position: absolute;
+    height: 110px;
+    width: 230px;
+    bottom:0;
+    right:100px;
+    background-color: rgb(255, 255, 255,0.8);
+    padding: 20px 0 20px 20px  
+}
+
