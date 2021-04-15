@@ -1,10 +1,14 @@
 
 function myMap(array, callback){
-    const result = [];
+    let result = [];
     for (let index = 0; index < array.length; index++) {
         const element = array[index];
-        result.push(callback(element, index, array));
+        result = myPush(result, callback(element, index, array));
     }
     return(result);
 }
 
+
+function myPush(array, element){
+    return [...array, element];
+}
