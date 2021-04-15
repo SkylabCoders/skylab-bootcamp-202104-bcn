@@ -10,7 +10,7 @@ function myFindIndex(array, callback) {
 	return result
 }
 
-describe('Given a map function', () => {
+describe('Given a findIndex function', () => {
 	const scenarios = [
 		{ array: [0, 0, 1], callback: (item) => item === 1, result: 2 },
 		{
