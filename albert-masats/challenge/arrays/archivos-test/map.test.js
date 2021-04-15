@@ -1,17 +1,17 @@
-let entrada = [a,b,c];
-function mapMethod() {
-    let salida = []
-    for (let i = 0; i < entrada.length; i++) {
-        salida.push(entrada[i]+10);
+function mapMethod(array, callbackFun) {
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+        const value = callbackFun(array[i])
+        result.push(value);
     }
-    return salida;
+    return result;
 }
 
 describe('Given a map method function', () => {
     const scenarios = [
-        { a: 1, b: 2, c: 3, result: [11,12,13]},
-        { a: 5, b: 6, c: 11, result: [15, 16, 21]},
-        { a: 100, b: 200, c:300, result: [110, 210, 310]},
+        { a: [1,2,3], fun: (x) => x+10, result: [11,12,13]},
+        { a: [10,20,30], fun: (x) => x*2, result: [20, 40, 60]},
+        { a: ["skylab", "barcelona", "Messi"], fun: (x) => x +" rocks", result: ["skylab rocks", "barcelona rocks", "Messi rocks"]},
     ];
     
     scenarios.forEach((scenario) => {
@@ -19,14 +19,13 @@ describe('Given a map method function', () => {
             test(`Then return ${scenario.result}`, () => {
                 // Arrange
                 const a = scenario.a;
-                const b = scenario.b;
-                const c = scenario.c;
+                const fun = scenario.fun;
     
-                // Act q
-                const result = mapMethod(a,b,c);
+                // Act
+                const result = mapMethod(a, fun);
     
                 // Assert
-                expect(result).toBe(scenario.result);
+                expect(result).toEqual(scenario.result);
             })
         })
     })
