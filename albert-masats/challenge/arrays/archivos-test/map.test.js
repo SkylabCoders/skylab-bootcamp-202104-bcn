@@ -1,10 +1,10 @@
-let entrada = [a,b,c]
+let entrada = [a,b,c];
 function mapMethod() {
     let salida = []
     for (let i = 0; i < entrada.length; i++) {
-        salida.push(entrada[i]+10)
+        salida.push(entrada[i]+10);
     }
-    return salida
+    return salida;
 }
 
 describe('Given a map method function', () => {
@@ -22,8 +22,8 @@ describe('Given a map method function', () => {
                 const b = scenario.b;
                 const c = scenario.c;
     
-                // Act 
-                const result = mapMethod(a,b,c);q
+                // Act q
+                const result = mapMethod(a,b,c);
     
                 // Assert
                 expect(result).toBe(scenario.result);
