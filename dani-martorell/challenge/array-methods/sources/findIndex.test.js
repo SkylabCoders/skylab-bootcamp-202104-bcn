@@ -1,5 +1,5 @@
 function myFindIndex(array, callback){
-    for (let index = 0; index < array.length; index++) {
+    for (let index = 0; index < myLength(array); index++) {
         const element = array[index];
         if(callback(element, index, array)){
             return index;
@@ -7,3 +7,12 @@ function myFindIndex(array, callback){
     }
     return -1;
 }
+
+function myLength(array){
+    let counter = 0;
+    for (let element of array){
+        counter++;
+    }
+    return counter;
+}
+
