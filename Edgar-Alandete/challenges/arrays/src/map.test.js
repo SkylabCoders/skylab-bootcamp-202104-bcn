@@ -1,8 +1,10 @@
 function myMap(array, callback) {
   const result = [];
-  array.forEach((element) => {
+
+  for (const element of array) {
     result.push(callback(element));
-  });
+  }
+
   return result;
 }
 
