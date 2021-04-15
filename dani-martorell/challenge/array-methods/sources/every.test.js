@@ -1,0 +1,3 @@
+function myEvery(array, callback){
+    
+}
