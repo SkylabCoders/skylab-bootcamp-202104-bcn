@@ -1,5 +1,3 @@
-
-
 function annaFilter(array, filter) {
     let newArray=[];
     for (let i=0; i<array.length; i++){
@@ -17,7 +15,8 @@ function annaPush(a, newValue) {
 
 describe('Given a filter function', () => {
     const scenarios = [
-        { a: ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'], b: x => x.length > 6, result: ["exuberant", "destruction", "present"]}
+        { a: ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'], b: x => x.length > 6, result: ["exuberant", "destruction", "present"]},
+        { a: [32, 33, 16, 40], b: (x => x >= 18), result: [32,33,40]}
     ];
     scenarios.forEach((scenario) => {
         describe(`When invoked with array ${scenario.a} and value to filter ${scenario.b}`, () => {
