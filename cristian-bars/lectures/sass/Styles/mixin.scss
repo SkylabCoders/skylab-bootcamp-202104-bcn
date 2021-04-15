@@ -1,0 +1,8 @@
+@mixin common-tags {
+    display: flex;
+    flex-direction: row;
+    border: solid 1px $border-color;
+    padding: $padding;
+    margin: $margin;
+}
+

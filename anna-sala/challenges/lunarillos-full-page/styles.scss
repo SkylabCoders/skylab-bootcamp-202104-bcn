@@ -1,0 +1,400 @@
+
+$red-main-color: #FF5959;
+$blue-color: #6199AF;
+$yellow-color: #F6B436;
+
+@mixin header-buttons {
+    width: 100px;
+    text-transform: uppercase;
+    color: #ffffff;
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 5px;
+}
+@mixin internal-links ($color) {
+    border: solid $color;
+    background-color: white;
+    padding: 20px;
+    height:60px;
+    margin-top: 5px;
+    cursor: pointer;
+    &:hover{
+        background-color: $color;
+    }
+}
+
+@mixin external-links (){
+    color: white;
+    padding: 20px;
+    list-style-type: none;
+    height:90px;
+    width: 80px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+//-------------end of mixings-------------
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font: 12px/1.55;
+    font-family: SourceSans-Pro, Arial, sans-serif;
+    color: #67635F;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+}
+
+.links{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(230, 230, 230);
+    margin-top: -10px;
+    height:70px;
+    z-index: 1;
+
+    &__others{
+        display: flex;
+        &--red{
+            background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/maria-lunarillos.png) #FF5959 bottom center no-repeat;
+            @include external-links;
+            padding-top: 130px;
+        }
+        &--blue{
+            background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/cucute.png) #6199AF bottom center no-repeat;
+            @include external-links;
+            &:hover{
+                padding-top: 130px;
+            }
+        }
+        &--yellow{
+            background: url(https://www.marialunarillos.com/skin/frontend/default/newdesign2017/images/icons/mumuchu.png) #F6B436 bottom center no-repeat;
+            @include external-links;
+            &:hover{
+                padding-top: 130px;
+            }
+        }
+        &--user{
+            @include internal-links (#FF5959);
+            &:hover{
+                background-color: #FF5959;
+            }
+        }
+        &--ssmm{
+            @include internal-links (#6199AF);
+            &:hover{
+                background-color: #6199AF;
+            }
+        }
+        &--cart{
+            @include internal-links (#F6B436);
+            &:hover{
+                background-color: #F6B436;
+            }
+        }
+    }
+}
+
+
+.logo{
+    margin-top: 80px;
+}
+.patata{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.quick-links{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:10px;
+    width: 100%;
+}
+
+.buttons{
+ @include header-buttons;
+}
+.button-input{
+    display:flex;
+    flex-grow: 1.5;
+}
+#novedades{
+    background-color: #9faa4d;
+    padding-right: 8px;
+    border: none;
+    flex-grow: 1;
+}
+
+#offers{
+    background-color: #8e789d;
+    border: none;
+    flex-grow: 1;
+}
+#search{
+    flex-grow: 2;
+}
+#input-field{
+    width:200px;
+}
+#submit{
+    width:40px;
+    flex-grow: 1;
+    background-color: #bdbcbb;
+    border: none;
+}
+
+.input-search{
+    @include header-buttons; 
+    height: 20px;
+}
+
+.main-header-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin:80px;
+}
+
+.icons-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-nav-icons{
+    background-color: rgb(230, 230, 230);
+    width:100px;
+    height: 100px;
+    padding: 10px;
+    margin-right:5px;
+}
+
+.page-nav-icons:hover{
+    background-color: $red-main-color;
+}
+#img-blog{
+    background-color:$red-main-color;
+    margin-left: 30px;
+}
+#img-blog:hover{
+    background-color: rgb(230, 230, 230);
+}
+//---------------END OF HEADER SECTION--------------
+
+.main__container{
+    margin: 0;
+    width: 100%;
+    align-content: center;
+    .widget{
+        background-color: #f8f8f8;
+        padding-top: 150px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 100px;
+        position: relative;
+    }
+}
+.title{    
+    text-align: center;
+    margin-top: -130px;
+
+    &__icon{
+        height: 130px;
+        width: 100px;
+        display: flex;
+        position: absolute;
+    }
+
+    &__header{
+        padding: 20px 5px;
+    }
+}
+
+.banner-sections{
+
+    position: relative;
+    align-content: center;
+    &__images{
+        display: flex;
+        justify-content: center;
+        margin:10px;
+        align-content: center;
+    }
+    &__text{
+        display: flex;
+        flex-direction: column;
+        margin:10px;
+        position: absolute;
+        bottom: 0;
+        width: 200px;
+        font-size: 14px;
+        height: 150px;
+        background-color:rgba(255,255,255,0.8);
+        h3{
+            margin: 10px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+    }
+    .inside-info{
+        &__paragraph{
+            margin: 10px;
+        }
+        &__triangle{
+
+            width: 0;
+            height: 0;
+            border-bottom: 150px solid rgba(255,255,255,0.8);
+            border-right: 100px solid transparent;
+            position: absolute;
+            right: -100px;
+            top: 0; 
+        }
+    }
+}
+
+@media only screen and (min-width: 1105px){
+    #images-vertical{
+        display: flex;
+        flex-direction: column;
+    }
+    #small-appliance{
+        display: flex;
+        right: 100px;
+    }
+    
+    #basic-utensils{
+        bottom: 320px;
+    }
+}
+
+@media only screen and (max-width: 1105px){
+    .title{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        margin: 0 auto;
+        height: 200px;
+        &__icon{
+            margin: 0 auto;
+        }
+    }
+    .main-header-section{
+        margin-top: 30px;
+        margin-bottom: 300px;
+    }
+    .main__container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .links__others{
+        &--blue, &--yellow, &--ssmm{
+        display: none;
+        }
+    }
+    .main-navigation{
+        margin-top: 40px;
+    }
+    .widget{
+        padding-top: 300px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .banner-sections{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 240px;
+        img{
+            width: 100%; /* width of container */
+            height: 200px; /* height of container */
+            object-fit: cover;
+            object-position: 10% 10%;
+        }  
+        &__images{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            position: relative;
+            flex-wrap: wrap;
+            width: 100%;
+            max-height: 250px;
+        }
+        &__text{
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            position: relative;
+            padding-bottom: 90px;
+            bottom: 140px;
+            width: 200px;
+            height: 130px;
+        }
+    }
+    .banner-container{
+        position: relative;
+        max-height: 250px;
+        width: 400px;
+    }
+    .inside-info{
+        position: absolute;
+        bottom: 0;
+        &__paragraph, &__triangle{
+            display:none;
+        }
+       
+    }
+}
+
+.footer{
+    width: 100%;
+    background-color: #FF5959;
+    text-align: center;
+    bottom:0;
+    &__links{
+        background: #f8f8f8;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    &__text{
+        color: #fff;
+        height: 50px;
+        font-size: 14px;
+        line-height: 50px;
+    }
+    &__help{
+        position: fixed;
+        bottom: 0;
+        right:30px;
+        width: 200px;
+        padding: 10px;
+        padding-bottom: 15px;
+        background-color: rgb(46, 41, 37);
+        color: rgb(255, 255, 255);
+        z-index: 1;
+        border-radius: 5px;
+    }
+}
+.footer-nav{
+    &__item{
+        div{
+            background: url(../images/sprite.svg) 0 0 no-repeat transparent;
+        }
+    }
+}
