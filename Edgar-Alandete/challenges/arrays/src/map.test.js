@@ -13,6 +13,12 @@ describe("Given a myMap function", () => {
       destiny: [0, 0, 0],
       callback: () => 0,
     },
+
+    {
+      origin: [10, 7, 11],
+      destiny: [20, 14, 22],
+      callback: (element) => element * 2,
+    },
   ];
 
   scenarios.forEach((scenario) => {
