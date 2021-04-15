@@ -4,7 +4,7 @@ let newArray = [];
 function myFilter(array, x) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] === x) {
-      newArray.push(array[i]);
+      newArray[i] = array[i];
     }
   }
 }
