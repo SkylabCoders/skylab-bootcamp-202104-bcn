@@ -1,6 +1,4 @@
 function myFind(array, callback) {
-	const result = false
-
 	for (let i = 0; i < array.length; i++) {
 		if (callback(array[i])) {
 			return true
