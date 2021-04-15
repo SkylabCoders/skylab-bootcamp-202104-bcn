@@ -10,7 +10,7 @@ function myFind(array, callback) {
 	return result
 }
 
-describe('Given a map function', () => {
+describe('Given a find function', () => {
 	const scenarios = [
 		{ array: [0, 0, 1], callback: (item) => item === 1, result: 1 },
 		{
