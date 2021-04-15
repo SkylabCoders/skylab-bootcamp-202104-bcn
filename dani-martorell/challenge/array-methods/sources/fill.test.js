@@ -6,8 +6,6 @@ function myFill(array, value, start = 0, end){
     return array;
 } 
 
-console.log(myFill([1,2,3,4,5], 'x', 0, 1));
-
 function myLength(array){
     let counter = 0;
     for (let element of array){
@@ -15,3 +13,18 @@ function myLength(array){
     }
     return counter;
 }
+
+describe('Given a Fill function', () => {
+    const scenarios = [
+        { array: [1,2,3,4], value: 0, start: 2, end: 4, result: [1, 2, 0, 0] },
+    ];
+    
+    scenarios.forEach((scenario) => {
+        describe(`When invoked with values ${scenario.array} and ${scenario.value} and ${scenario.start} and ${scenario.end}`, () => {
+            test(`Then returns ${scenario.result}`,() => {
+                const result = myFill(scenario.array, scenario.value, scenario.start, scenario.end);
+                expect(result).toEqual(scenario.result);
+            })
+        })
+    })
+})
