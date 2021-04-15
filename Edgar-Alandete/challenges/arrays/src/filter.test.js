@@ -1,11 +1,11 @@
 function myFilter(array, callback) {
   let result = [];
 
-  array.forEach((element) => {
+  for (const element of array) {
     if (callback(element)) {
       result.push(element);
     }
-  });
+  }
   return result;
 }
 
@@ -38,14 +38,4 @@ describe("Given a myFilter function", () => {
       });
     });
   });
-});
-
-describe("Given a myFilter function", () => {
-  const scenarios = [
-    {
-      origin: [10, 7, 11],
-      callback: (element) => element % 2 === 0,
-      result: [10],
-    },
-  ];
 });
