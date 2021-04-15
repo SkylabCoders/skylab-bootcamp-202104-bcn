@@ -2,7 +2,7 @@ function map(array, callback) {
   let result = [];
   for (let i = 0; i < array.length; i++) {
     const value = callback(array[i]);
-    result.push(value);
+    result[i] = value;
   }
   return result;
 };
