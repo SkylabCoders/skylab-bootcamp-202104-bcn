@@ -3,7 +3,6 @@ function myFind(array, value) {
   let isFound = false;
   for (let i = 0; i < array.length && !isFound; i++) {
     if (array[0] === value) {
-      debugger;
       result = value;
       isFound = true;
     }
