@@ -1,4 +1,4 @@
-function mySome(array, value, callback) {
+function myFindIndex(array, value, callback) {
   let result = false;
 
   for (const element of array) {
@@ -7,7 +7,7 @@ function mySome(array, value, callback) {
   return result;
 }
 
-describe("Given a myEvery function", () => {
+describe("Given a mySome function", () => {
   const scenarios = [
     {
       origin: [true, true, true],
@@ -33,7 +33,7 @@ describe("Given a myEvery function", () => {
         const value = scenario.value;
         const callback = scenario.callback;
         //Act
-        const everyResult = mySome(origin, value, callback);
+        const everyResult = myFindIndex(origin, value, callback);
         //Assert
         expect(everyResult).toBe(result);
       });
