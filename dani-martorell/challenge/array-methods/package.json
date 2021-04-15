@@ -1,0 +1,12 @@
+{
+  "name": "array-methods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "est --watchAll --collect-coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
