@@ -3,7 +3,8 @@ function filter(array, callback) {
   for (let i = 0; i < array.length; i++) {
     const value = callback(array[i]);
     if (value) {
-      result.push(array[i]);
+      position = result.length;
+      result[position] = array[i];
     }
   }
   return result;
