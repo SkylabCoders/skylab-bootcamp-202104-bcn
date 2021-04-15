@@ -11,6 +11,10 @@ body {
   background-color: lightskyblue;
 }
 
+.logo__svg {
+  margin: 10px;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,7 +49,6 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  padding-bottom: 120px;
 }
 
 .form__top {
@@ -108,5 +111,29 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 196px;
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.button__btn {
+  background-color: #d40504;
+  border: none;
+  color: white;
+  width: 165px;
+  height: 40px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 /*# sourceMappingURL=style.css.map */
