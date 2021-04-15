@@ -7,7 +7,7 @@ function findIndex(array, callback) {
   }
 };
 
-describe('Given a filter function', () => {
+describe('Given a findIndex function', () => {
     const scenarios = [
         { a: [1, 2, 3], fun: (x) => x===2, result: 1},
         { a: ["pa", "ma", "mapa"], fun: (x) => x.length<3, result: 0},
