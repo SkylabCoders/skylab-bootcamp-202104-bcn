@@ -8,7 +8,7 @@ function every(array, callback) {
   return true;
 };
 
-describe('Given a filter function', () => {
+describe('Given a every function', () => {
     const scenarios = [
         { a: [1, 2, 3], fun: (x) => x===2, result: false},
         { a: ["pa", "ma", "ta"], fun: (x) => x.length<3, result: true},
