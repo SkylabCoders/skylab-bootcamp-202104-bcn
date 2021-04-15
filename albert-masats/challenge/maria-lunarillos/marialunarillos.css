@@ -195,7 +195,7 @@
     display: inline-block;
     height: 140px;
     width: 80px;
-    background-image: url(./../challenge/images/maria-lunarillos.png);
+    background-image: url(./images/maria-lunarillos.png);
     background-position-x: center;
     background-position-y: bottom;
     background-size: initial;
@@ -214,7 +214,7 @@
     height: 70px;
     width: 69px;
     color: transparent;
-    background: url(./../challenge/images/cucute.png) #6199AF bottom center no-repeat;
+    background: url(./images/cucute.png) #6199AF bottom center no-repeat;
     cursor:pointer;
 }
 
@@ -223,7 +223,7 @@
     height: 70px;
     width: 71px;
     color: transparent;
-    background: url(./../challenge/images/mumuchu.png) rgb(246, 180, 54) bottom center no-repeat;
+    background: url(./images/mumuchu.png) rgb(246, 180, 54) bottom center no-repeat;
     cursor:pointer;
 }   
 
@@ -231,14 +231,14 @@
     display: inline-block;
     height: 140px;
     width: 71px;
-    background: url(./../challenge/images/cucute.png) #6199AF bottom center no-repeat;
+    background: url(./images/cucute.png) #6199AF bottom center no-repeat;
 }
 
 .right-icon:hover {
     display: inline-block;
     height: 140px;
     width: 71px;
-    background: url(./../challenge/images/mumuchu.png) rgb(246, 180, 54) bottom center no-repeat;
+    background: url(./images/mumuchu.png) rgb(246, 180, 54) bottom center no-repeat;
 }
 
 .maria-lunarillos {
@@ -246,8 +246,7 @@
     margin-right:auto;
     height:70px;
     width: 300px;
-    background: url(./../challenge/images/logo.svg) bottom center no-repeat;
-    /* border: 1px solid pink; */
+    background: url(./images/logo.svg) bottom center no-repeat;
     margin-bottom: 28px;
 }
 
@@ -256,7 +255,7 @@
     align-self: flex-end;
     height: 100px;
     width: 100px;
-    background-image: url(./../challenge/images/utensiliosML.png);
+    background-image: url(./images/utensiliosML.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: #f2f2f2;
@@ -282,7 +281,7 @@
     align-self: flex-end;
     height: 100px;
     width: 100px;
-    background-image: url(./../challenge/images/magdalena.png);
+    background-image: url(./images/magdalena.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: #f2f2f2;
@@ -309,7 +308,7 @@
     align-self: flex-end;
     height: 100px;
     width: 100px;
-    background-image: url(./../challenge/images/tarta-cumpleanos.png);
+    background-image: url(./images/tarta-cumpleanos.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: #f2f2f2;
@@ -335,7 +334,7 @@
     align-self: flex-end;
     height: 100px;
     width: 100px;
-    background-image: url(./../challenge/images/delantal.png);
+    background-image: url(./images/delantal.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: #f2f2f2;
@@ -361,7 +360,7 @@
     margin-left: auto;
     height: 100px;
     width: 100px;
-    background-image: url(./../challenge/images/menu.svg);
+    background-image: url(./images/menu.svg);
     background-position: center;
     background-color: #f2f2f2;
     display: block;
@@ -472,12 +471,12 @@
     float: right;
     width: 52px;
     height: 30px;
-    background: url(./../challenge/images/sprite.svg) -303px 2px no-repeat #BBB8B6;
+    background: url(./images/sprite.svg) -303px 2px no-repeat #BBB8B6;
     border: none;
 }
 
 #imgbanner0 {
-    background-image: url("./../challenge/images/foto-cocina.png");
+    background-image: url(./images/foto-cocina.png);
     width: 1080px;
     height: 600px;
     position: relative;
