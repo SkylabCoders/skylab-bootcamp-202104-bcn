@@ -1,9 +1,9 @@
 let newArray = [];
 // psar un element coger la array y cortar la array iterarla y buscar si el elemento que he pasado esta en la array
 
-function myFilter(array, x) {
+function myFilter(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] === x) {
+    if (callback(array[i])) {
       newArray[i] = array[i];
     }
   }
@@ -13,7 +13,7 @@ describe("Given a filter function", () => {
   const scenarios = [
     {
       a: [1, 1, 3],
-      b: 1,
+      b: (element) => element < 3,
       r: [1, 1],
     },
   ];
