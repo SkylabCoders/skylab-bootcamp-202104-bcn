@@ -6,7 +6,7 @@ function myReduce (array, callback) {
     return accumulator;
 }
 
-describe('Given a myMap function', () => {
+describe('Given a myReduce function', () => {
     const scenarios = [
         { array: [3, 4], operation: (acc, x) => acc - x, result: -1},
         { array: [1, 2], operation: (acc, x) => acc + x, result: 3},
