@@ -7,7 +7,7 @@ function annaSome (array, finder){
     return false;
 }
 
-describe('Given a find function', ()=>{
+describe('Given a some function', ()=>{
     const scenarios = [
         { a:[5, 12, 8, 130, 44], b: x => x > 10, result: true},
         { a: [14,15,16,19,30], b: (x => x < 20), result: true},
