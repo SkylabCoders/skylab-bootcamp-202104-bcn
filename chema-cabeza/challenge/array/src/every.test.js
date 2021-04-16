@@ -1,4 +1,4 @@
-function arraySome(arr, cbFunc) {  
+function arrayEvery(arr, cbFunc) {  
     let counter = 0;  
     
     for(let i=0;i<arr.length;i++) {  
@@ -9,7 +9,7 @@ function arraySome(arr, cbFunc) {
     else {return false}
 }
     
-    describe('Given an arraySome function', () => {
+    describe('Given an arrayEvery function', () => {
     const scenarios = [
         {   arr: [2,2,2], 
             cbFunc: (num) => num === 2,
@@ -30,7 +30,7 @@ function arraySome(arr, cbFunc) {
             describe(`Why a callback: ${scenarios.cbFunc}`, () => {
                 test(`Then return ${scenarios.result}`,() => {
                     // Act 
-                    const result = arraySome(scenarios.arr, scenarios.cbFunc);
+                    const result = arrayEvery(scenarios.arr, scenarios.cbFunc);
         
                     // Assert
                     expect(result).toBe(scenarios.result);

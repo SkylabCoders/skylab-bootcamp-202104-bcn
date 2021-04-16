@@ -7,10 +7,6 @@ function arrayMap(arr, cbFunc) {
     return arr;
 }
 
-// const squareArr2 = arrayMap(arr, num => num * 2);
-
-
-
 describe('Given an arrayMap function', () => {
     const scenarios = [
         { arr: [1,2,3], cbFunc: (num) => num * 5, result: [5,10,15]},
