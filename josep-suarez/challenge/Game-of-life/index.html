@@ -9,8 +9,31 @@
   </head>
   <header>
     <h1>Game of life</h1>
+    <ul class="rules">
+      <p>
+        Bienvenidos al Game of Life de Josep, un juego donde podrás expandirte,
+        según las siguientes instrucciones:
+      </p>
+      <li>Cada zelda tiene dos estados</li>
+      <li>
+        Interactua con sus 8 celdas de alrededor (horizontal, vertical y
+        diagonal)
+      </li>
+      <li>Si tu celda tiene menos de 2 vecinos muere</li>
+      <li>
+        Si tu celda tiene 2 o 3 vecinos, sobrevive y pasa a la siguiente
+        generación
+      </li>
+      <li>Si tiene mas de 3 vecinos, se muere por sobrepoblación</li>
+      <li>Cualquier celda muerta con 3 vecinos, sobrevive</li>
+    </ul>
   </header>
   <main></main>
-  <footer></footer>
+  <footer class="game-footer">
+    <div class="game-footer__buttons">
+      <button>Jugar</button>
+      <button>Salir del juego</button>
+    </div>
+  </footer>
   <body></body>
 </html>

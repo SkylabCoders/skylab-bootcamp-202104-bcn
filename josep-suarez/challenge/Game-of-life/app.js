@@ -61,8 +61,6 @@ const searchAlives = (cellsArray) => {
       }
     }
   }
-  console.log(newArray);
-  console.log("new", searchedArray);
   return searchedArray;
 };
 
@@ -83,3 +81,23 @@ const countNeighbours = (row, column, array) => {
 
 const newArray = createHorizontalBlinker(2, 2, initialArray);
 searchAlives(newArray);
+
+//Funcion que comprueba de los que estan muertos, si reviven con 3 vecinos alrededor!
+const reviveCell = (cellsArray) => {
+  let reviveArray = [[], [], [], [], []];
+
+  for (let column = 0; column < reviveArray.length; column++) {
+    for (let row = 0; row < reviveArray[column].length; row++) {
+      if (cellsArray[column][row] === 0) {
+        let neighbours = countNeighbours(row, column, [...cellsArray]);
+        if (neighbours === 3) {
+          reviveArray[column][row] = 1;
+        }
+      }
+    }
+  }
+  console.log(newArray);
+  console.log("revive", reviveArray);
+  return reviveArray;
+};
+reviveCell(newArray);
