@@ -1,4 +1,4 @@
-let arrayFilter = (array, callback) => {
+let arrayFind = (array, callback) => {
 
     for (let i = 0; i < array.length; i++) {
 
@@ -8,7 +8,7 @@ let arrayFilter = (array, callback) => {
     }
 }
 
-describe("Given a arrayFilter function", () => {
+describe("Given an arrayFind function", () => {
     const scenarios = [{
             origin: [5, 12, 8, 130, 44],
             expectResult: 12,
@@ -22,7 +22,7 @@ describe("Given a arrayFilter function", () => {
     ];
 
     scenarios.forEach((scenario) => {
-        describe(`When invoked with values ${scenario.origin} with the greaterThan ${scenario.callback}`, () => {
+        describe(`When invoked with values ${scenario.origin} with the callback function ${scenario.callback}`, () => {
             test(`Then return ${scenario.result}`, () => {
 
                 //Arrange
@@ -31,7 +31,7 @@ describe("Given a arrayFilter function", () => {
                 const callbackFunction = scenario.callback;
 
                 //Act
-                const result = arrayFilter(origin, callbackFunction);
+                const result = arrayFind(origin, callbackFunction);
 
                 //Assert
                 expect(result).toEqual(expectResult);
