@@ -1,10 +1,12 @@
 const mapMethod = (array, toApply) => {
 
+    let resultArray = [];
+
     for (let element in array) {
-        array[element] = toApply(array[element]);
+        resultArray[element] = toApply(array[element]);
     }
 
-    return array;
+    return resultArray;
 }
 
 describe('Given a mapMethod function', () => {
