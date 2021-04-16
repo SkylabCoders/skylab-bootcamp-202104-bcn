@@ -1,38 +1,44 @@
-function mapArray(a,b,c,d) {
-    let array = [a,b,c,d];
-    let result = [];
+let arrayMap = (array, callback) => {
 
-    for(let arr of array) {
+    for(let i = 0; i < array.length; i++){
 
-        let add = arr + 1;
-        result.push(add);
+        let value = array[i];
+        
+        array[i] = callback(value);
+
     }
-    
-    return result;
+    return array;
 }
 
-describe('Given a map array function', () => {
-    const scenarios = [
-        { a: 1, b: 2, c: 3, d: 4, result: [2,3,4,5]},
-        { a: 2, b: 3, c: 4, d: 5, result: [3,4,5,6]},
-        { a: 3, b: 4, c: 5, d: 6, result: [4,5,6,7]},
+describe("Given an function", () => {
+    const scenarios = [{
+            origin: [1, 2, 3],
+            expectResult: [2, 3, 4],
+            callback: (element) => element + 1,
+        },
+
+        {
+            origin: [1, 2, 3],
+            expectResult: [3, 4, 5],
+            callback: (element) => element + 2,
+        },
     ];
-    
+
     scenarios.forEach((scenario) => {
-        describe(`When invoked with values ${scenario.a} and ${scenario.b} and ${scenario.c} and ${scenario.d}`, () => {
-            test(`Then return ${scenario.result}`,() => {
-                // Arrange
-                const a = scenario.a;
-                const b = scenario.b;
-                const c = scenario.c;
-                const d = scenario.d;
-                
-                // Actd
-                const result = mapArray(a,b,c,d);
-    
-                // Assert
-                expect(result).toEqual(scenario.result);
-            })
-        })
-    })
-})
+        describe(`When invoked with values ${scenario.origin} with the callback ${scenario.callback}`, () => {
+            test(`Then return ${scenario.result}`, () => {
+
+                //Arrange
+                const origin = scenario.origin;
+                const expectResult = scenario.expectResult;
+                const callbackFunction = scenario.callback;
+
+                //Act
+                const result = arrayMap(origin, callbackFunction);
+
+                //Assert
+                expect(result).toEqual(expectResult);
+            });
+        });
+    });
+});
