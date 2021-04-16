@@ -1,5 +1,7 @@
 let arrayWidth = 5;
 let arrayHeight = 5;
+let dieArray = [];
+let aliveArray = [];
 
 const initialArray = [[], [], [], [], []];
 
@@ -40,18 +42,33 @@ const isCellEmpty = (row, column, array) => {
   return array[row][column] !== undefined && array[row][column] === 0;
 };
 
-const searchLife = (array) => {
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array[i].length; j++) {
-      if (array[i][j] === 1) {
-        countNeighbours(j, i, newArray);
+const searchAlives = (cellsArray) => {
+  let searchedArray = [[], [], [], [], []];
+
+  for (let column = 0; column < cellsArray.length; column++) {
+    for (let row = 0; row < cellsArray[column].length; row++) {
+      if (cellsArray[column][row] === 0) {
+        searchedArray[column][row] = 0;
+      }
+      if (cellsArray[column][row] === 1) {
+        let neighbours = countNeighbours(row, column, [...cellsArray]);
+
+        if (neighbours < 2) {
+          searchedArray[column][row] = 0;
+        } else {
+          searchedArray[column][row] = 1;
+        }
       }
     }
   }
+  console.log(newArray);
+  console.log("new", searchedArray);
+  return searchedArray;
 };
 
 const countNeighbours = (row, column, array) => {
   let neighbours = 0;
+
   array[column - 1][row - 1] === 1 && neighbours++;
   array[column - 1][row] === 1 && neighbours++;
   array[column - 1][row + 1] === 1 && neighbours++;
@@ -60,8 +77,9 @@ const countNeighbours = (row, column, array) => {
   array[column + 1][row - 1] === 1 && neighbours++;
   array[column + 1][row] === 1 && neighbours++;
   array[column + 1][row + 1] === 1 && neighbours++;
-  console.log(neighbours);
+
+  return neighbours;
 };
 
 const newArray = createHorizontalBlinker(2, 2, initialArray);
-searchLife(newArray);
+searchAlives(newArray);
