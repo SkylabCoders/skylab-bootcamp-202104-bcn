@@ -1,8 +1,8 @@
-function myFindIndex(array, value) {
+function myFindIndex(array, callback) {
   let result = -1;
 
   for (let i = 0; i < array.length; i++) {
-    if (array[i] === value) {
+    if (callback(array[i])) {
       return i;
     }
   }
@@ -13,29 +13,28 @@ describe("Given a myFindIndex function", () => {
   const scenarios = [
     {
       origin: [true, true, true],
-      value: true,
+      callback: (element) => element === true,
       result: 0,
     },
 
     {
       origin: [10, 7, 11],
-      value: 25,
       result: -1,
-      callback: (element, value) => element === value,
+      callback: (element) => element === 25,
     },
   ];
 
   scenarios.forEach((scenario) => {
-    describe(`When invoked with values ${scenario.origin} with the value ${scenario.value}`, () => {
+    describe(`When invoked with values ${scenario.origin} with the callback ${scenario.callback}`, () => {
       test(`Then return ${scenario.result}`, () => {
         //Arrange
         const origin = scenario.origin;
         const result = scenario.result;
-        const value = scenario.value;
+        const callback = scenario.callback;
         //Act
-        const everyResult = myFindIndex(origin, value);
+        const findIndex = myFindIndex(origin, callback);
         //Assert
-        expect(everyResult).toBe(result);
+        expect(findIndex).toBe(result);
       });
     });
   });
