@@ -73,7 +73,6 @@ function gof () {
                 count ++
             }
             
-            
             if ([i,j] === 1 && count ===3) {
                 cell = true;
             }else if ([i,j] === 0 && count > 2){
