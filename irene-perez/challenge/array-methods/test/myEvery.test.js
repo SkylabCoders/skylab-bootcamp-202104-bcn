@@ -1,4 +1,5 @@
 function myEvery(array, callback) {
+    let counter = 0;
 
     for (let i = 0; i < array.length; i++) {
         const value = callback(array[i]); 
@@ -13,15 +14,17 @@ function myEvery(array, callback) {
             return false
         }
     }
-    
 
 }
 
 describe("Given a funcion myEvery", () => {
     const scenarios = [
-        { array: [2, 2, 2, 2], 
-            callback: (x) => x === 2, 
-            result: true }
+        { array: [2, 12, 20, 30], 
+            callback: (x) => x < 40, 
+            result: true },
+        { array: [2, 12, 20, 30], 
+            callback: (x) => x > 40 , 
+            result: false }
     ];
 
     scenarios.forEach((scenarios) => {
@@ -34,7 +37,7 @@ describe("Given a funcion myEvery", () => {
                 const result = myEvery(array, callback);
 
                 // Assert
-                expect(result).toBe(scenarios.result);
+                expect(result).toEqual(scenarios.result);
             
             });
         });
