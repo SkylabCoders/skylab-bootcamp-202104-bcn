@@ -11,7 +11,7 @@ describe('Given a push function', () => {
         { a:[1,6,"like"], b: "jike", result: [1,6,"like","jike"]}
     ];
     scenarios.forEach((scenario) => {
-        describe(`When invoked with array ${scenario.a} and value to change ${scenario.b}`, () => {
+        describe(`When invoked with array ${scenario.a} and value to push ${scenario.b}`, () => {
             test(`Then return new array ${scenario.result}`,() => {
                 // Arrange
                 const a = scenario.a;

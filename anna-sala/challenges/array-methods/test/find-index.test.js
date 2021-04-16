@@ -15,7 +15,7 @@ describe('Given a find function', ()=>{
         { a: [14,15,16,19,30], b: (x => x > 19), result: 4}
     ];
     scenarios.forEach((scenario)=>{
-        describe(`When invoked with array ${scenario.a} and value ${scenario.b}`, ()=>{
+        describe(`When invoked with array ${scenario.a} and callback ${scenario.b}`, ()=>{
             test(`then the result will be: ${scenario.result}`, ()=>{
                 // Arrange
                 const a = scenario.a;

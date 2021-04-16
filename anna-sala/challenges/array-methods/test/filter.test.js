@@ -19,7 +19,7 @@ describe('Given a filter function', () => {
         { a: [32, 33, 16, 40], b: (x => x >= 18), result: [32,33,40]}
     ];
     scenarios.forEach((scenario) => {
-        describe(`When invoked with array ${scenario.a} and value to filter ${scenario.b}`, () => {
+        describe(`When invoked with array ${scenario.a} and callback to filter ${scenario.b}`, () => {
             test(`Then return new array ${scenario.result}`,() => {
                 // Arrange
                 const a = scenario.a;

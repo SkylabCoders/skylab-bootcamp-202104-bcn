@@ -13,7 +13,7 @@ describe('Given a map function', () => {
         { a: [2, 3, 4], b: (x => x*2), result: [4, 6, 8]}
     ];
     scenarios.forEach((scenario) => {
-        describe(`When invoked with array ${scenario.a} and value to change ${scenario.b}`, () => {
+        describe(`When invoked with array ${scenario.a} and callback to map ${scenario.b}`, () => {
             test(`Then return new array ${scenario.result}`,() => {
                 // Arrange
                 const a = scenario.a;
