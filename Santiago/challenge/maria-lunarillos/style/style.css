@@ -8,6 +8,7 @@ header {
           flex-direction: column;
 }
 
+
 .header__navbar {
   position: fixed;
   top: 0;
