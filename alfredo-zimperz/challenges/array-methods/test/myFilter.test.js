@@ -4,7 +4,7 @@ function myFilter(array, callback) {
 	for (let i = 0; i < array.length; i++) {
 		if (callback(array[i])) {
 			result[resultPosition] = array[i]
-			resultPosition = resultPosition + 1
+			resultPosition++
 		}
 	}
 
