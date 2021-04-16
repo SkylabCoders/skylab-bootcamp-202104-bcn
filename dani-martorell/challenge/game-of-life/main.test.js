@@ -25,9 +25,36 @@ const populateMatrix = (matrix, file, row) => {
     }
 }
 
-const matrix = createMatrix(5, 5);
+const countNumberOfNeighbors = (array, [file, row]) => {
+    let counter = 0;
+    if(array[file - 1][row]) counter ++;
+    if(array[file - 1][row + 1]) counter ++;
+    if(array[file][row + 1]) counter ++;
+    if(array[file + 1][row + 1]) counter ++;
+    if(array[file + 1][row]) counter ++;
+    if(array[file + 1][row - 1]) counter ++;
+    if(array[file][row - 1]) counter ++;
+    if(array[file - 1][row - 1]) counter ++;
+    
+    return counter;
+}
 
-;
+
+
+
+
+// const applyRulesofLife = (array) => {
+//     for (let file = 0; file < array.length; file++) {
+//         for (let row = 0; row < array.length; row++) {
+//             const currentCell = array[file][row];
+//             if(currentCell)
+
+            
+//         }
+        
+//     }
+    
+// }
 
 
 
