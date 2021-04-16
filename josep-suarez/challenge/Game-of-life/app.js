@@ -11,9 +11,10 @@ for (let i = 0; i < arrayWidth; i++) {
 
 function gameOfLifeBlinker(array) {
   const returnArray = [];
-
+  searchLife(newArray);
   return returnArray;
 }
+
 function createHorizontalBlinker(row, column, array) {
   const newArray = [...array];
   let isSuccesInit = true;
@@ -39,10 +40,6 @@ const isCellEmpty = (row, column, array) => {
   return array[row][column] !== undefined && array[row][column] === 0;
 };
 
-console.log(initialArray);
-const newArray = createHorizontalBlinker(2, 2, initialArray);
-console.log(newArray);
-
 const searchLife = (array) => {
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < array[i].length; j++) {
@@ -54,7 +51,7 @@ const searchLife = (array) => {
 };
 
 const countNeighbours = (row, column, array) => {
-  let neighbours;
+  let neighbours = 0;
   array[column - 1][row - 1] === 1 && neighbours++;
   array[column - 1][row] === 1 && neighbours++;
   array[column - 1][row + 1] === 1 && neighbours++;
@@ -63,4 +60,8 @@ const countNeighbours = (row, column, array) => {
   array[column + 1][row - 1] === 1 && neighbours++;
   array[column + 1][row] === 1 && neighbours++;
   array[column + 1][row + 1] === 1 && neighbours++;
+  console.log(neighbours);
 };
+
+const newArray = createHorizontalBlinker(2, 2, initialArray);
+searchLife(newArray);
