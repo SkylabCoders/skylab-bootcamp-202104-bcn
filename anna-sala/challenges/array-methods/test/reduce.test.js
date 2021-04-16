@@ -1,16 +1,14 @@
-function annaFind (array, reduce){
+//Does not pass the test!
+
+function annaReduce (array, reduce){
     let accumulator=0;
     for (let i=0; i<array.length; i++){
         accumulator += reduce(accumulator, array[i]);
-
-
-        // if (!finder(array[i])){
-        //     return false ;
-        // }    
+   
     }
     return true;
 }
-
+// reduce has map and Filter =>
 
 function annaMap(array, changer) {
     for (let i=0; i<array.length; i++){
@@ -34,26 +32,20 @@ function annaPush(a, newValue) {
     return a;
 }
 
-describe('Given a find function', ()=>{
+describe('Given a reduce function', ()=>{
     const scenarios = [
-        //{ a:[30, 12, 28, 130, 44], b: x => x > 10, result: true},
-        { a: [175, 50, 25], b: (x=> x+=y), result: true},
-        // { a: [14,15,16,19,30], b: (x => x > 15), result: false},
-        // { a: [14,15,16,19,30], b: (x => x < 14), result: false},
-        // { a: [14,15,16,19,30], b: (x => x > 30), result: false},
-        // { a: [NaN,'lol',10,19,7], b: (x => x > 30), result: false},
-        // { a: ['the best', 'limitless', 'skylabers', 'exuberant', 'destruction', 'present'], b: x => x.length > 6, result: true},
-    ];
+        { a: [175, 50, 25], b: (x=> x+=y), result: true},  
+      ];
 
     for (scenario in scenarios){
-        describe(`When invoked with array ${scenario.a} and value ${scenario.b}`, ()=>{
+        describe(`When invoked with array ${scenario.a} and callback ${scenario.b}`, ()=>{
             test(`then the result will ${scenario.result}`, ()=>{
                 // Arrange
                 const a = scenario.a;
                 const b = scenario.b;
     
                 // Act 
-                const result = annaFind(a, b);
+                const result = annaReduce(a, b);
     
                 // Assert
                 expect(result).toEqual(scenario.result);
