@@ -1,21 +1,18 @@
-function myFilter(array, callback) {
-
-    const array1 = [];
+function myFind(array, callback) {
 
     for (let i = 0; i < array.length; i++) {
-     if (callback(array[i]) === true) {
-        array1[array1.length] = array[i];
-        }
+        const value = callback(array[i]);
+        array[i] = value;
     }
 
-    return array1;
+    return result;
 }
 
-describe("Given a funcion myFilter", () => {
+describe("Given a funcion myFind", () => {
     const scenarios = [
-        { array: [2, 40, 10, 2], 
-            callback: x => {if (x < 10) return true}, 
-            result: [2, 2] }
+        { array: [2, 40, 10, 10], 
+            callback: (x) => (x === 10), 
+            result: 10 }
     ];
 
     scenarios.forEach((scenarios) => {
@@ -24,7 +21,7 @@ describe("Given a funcion myFilter", () => {
                 // Arrange
                 const array = scenarios.array; 
                 // Act 
-                const result = myFilter(array, scenarios.callback);
+                const result = myFind(array, scenarios.callback);
 
                 // Assert
                 expect(result).toEqual(scenarios.result);

@@ -1,16 +1,18 @@
 function myMap(array, callback) {
 
     for (let i = 0; i < array.length; i++) {
-        const element = callback(array[i]); 
-        array[i] = element;
+        const value = callback(array[i]); 
+        array[i] = value;
     }
 
     return array;
 }
 
-describe("Given a funcion myMap", () =>{
+describe("Given a funcion myMap", () => {
     const scenarios = [
-        { array: [1, 5, 10, 15], callback: (number) => number*2, result: [2, 10, 20, 30] }
+        { array: [1, 5, 10, 15], 
+            callback: (x) => x*2, 
+            result: [2, 10, 20, 30] }
     ];
 
     scenarios.forEach((scenarios) => {
@@ -18,9 +20,9 @@ describe("Given a funcion myMap", () =>{
 
                 // Arrange
                 const array = scenarios.array; 
+                const callback = scenarios.callback;
                 // Act 
-                const result = myMap(array, scenarios.callback);
-
+                const result = myMap(array, callback);
                 // Assert
                 expect(result).toEqual(scenarios.result);
             
