@@ -19,7 +19,7 @@ describe('Given a findIndex function', function(){
         {arrayTest: [1, 7, 5, 21, 50], callback: (x) => x > 20, result: 3},
         {arrayTest: [1, 7, 5, 21, 50], callback: (x) => x > 2, result: 1},
         {arrayTest: [1, 7, 5, 21, 50], callback: (x) => x >21, result: 4},
-        {arrayTest: [], b: 600, result: 'error'},
+        {arrayTest: [], callback: (x) => x >201, result: 'error'},
     ].forEach(operation => {
         describe(`When invoke with values ${operation.arrayTest}, and ${operation.b}`, function(){
             test(`Then return ${operation.result}`, function (){

@@ -20,7 +20,7 @@ describe('Given a map function', function(){
         {arrayTest: [1, 2, 3, 4, 5], callback: (x) => x *10, result: [10, 20, 30, 40, 50]},
         {arrayTest: [11, 21, 31, 41, 51], callback: (x) => x *10, result: [110, 210, 310, 410, 510]},
         {arrayTest: [13, 23, 33, 43, 53], callback: (x) => x *10, result: [130, 230, 330, 430, 530]},
-        {arrayTest: [], b: 600, result: 'error'},
+        {arrayTest: [], callback: (x) => x *10, result: 'error'},
     ].forEach(operation => {
         describe(`When invoke with values ${operation.arrayTest}, and ${operation.b}`, function(){
             test(`Then return ${operation.result}`, function (){

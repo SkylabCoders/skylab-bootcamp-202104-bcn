@@ -21,7 +21,7 @@ describe('Given a filter function', function(){
     [
         {arrayTest: [1, true, "skylab", "skylab", NaN, "7", false, 20, null, "skylab"], callback: (x) => x === "skylab", result: ["skylab", "skylab", "skylab"]},
         {arrayTest: [1, true, "skylab", "skylab2", NaN, "7", false, 20, null, "skylab"], callback: (x) => x === "skylab", result: ["skylab", "skylab"]},
-        {arrayTest: [], b: 600, result: 'error'},
+        {arrayTest: [], callback: (x) => x === "skylab", result: 'error'},
     ].forEach(operation => {
         describe(`When invoke with values ${operation.a}, and ${operation.b}`, function(){
             test(`Then return ${operation.result}`, function (){
