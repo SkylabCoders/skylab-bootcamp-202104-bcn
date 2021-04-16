@@ -2,19 +2,22 @@
 
 const newArray = [];
 const scenario = [
-    {
-        array:[4, 5, 8, 15],  
-        callback: (x)=> {if (x%2==0) return true}, 
-        result:[4,8]}   //scenario 1
-       ]       
+        {
+        array:[4, 5, 8, 15, 18, 21, 22],  
+        callback: (x)=> {if (x%2==0) return true},   //scenario 1///como es un solo parametro, puede pasarse solo x (sin parentesis)
+        result:[4,8,18,22]
+        }   
+       ];       
 
 
 
 function myFilterFunction(array, callback) {        //
+    let j=0
+    const newArray = [];                            //como debe devolver un nuevo array. creo un nuevo array dentro de mi funcion, para que sea una funcion pura
     for (let i = 0; i < array.length; i++) { 
-       
          if (callback(array[i])){
-         newArray.push(array[i])
+         newArray[j]= array[i];
+         j++;
 
         }
         
