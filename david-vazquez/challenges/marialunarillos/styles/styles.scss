@@ -37,16 +37,13 @@ header {
   width: 100%;
   height: 50px;
   background: #f8f8f8;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include flex-configuration(row, space-between, null);
   z-index: 100;
   padding: 0 10%;
 
   ul {
     list-style: none;
     display: flex;
-    flex-direction: row;
     padding: 0;
     li {
       margin-right: 5px;
@@ -148,7 +145,6 @@ header {
 
 .shop-container {
   display: flex;
-  flex-direction: row;
 }
 
 .shop-icon {
@@ -178,18 +174,14 @@ header {
 }
 
 .header-logo-links {
-  display: flex;
-  flex-direction: row;
+  @include flex-configuration(row, space-between, null);
   background: white;
   margin: 50px 10% 0;
-  justify-content: space-between;
   width: auto;
 }
 
 .logo-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  @include flex-configuration(column, flex-end, null);
   padding-bottom: 50px;
   img {
     width: 300px;
@@ -197,8 +189,7 @@ header {
 }
 
 .nav-container {
-  display: flex;
-  flex-direction: column;
+  @include flex-configuration(column, null, null);
   width: 55%;
 }
 
@@ -225,9 +216,7 @@ header {
   text-decoration: none;
   text-align: center;
   margin-right: 5px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  @include flex-configuration(row, null, center);
   position: relative;
 }
 
