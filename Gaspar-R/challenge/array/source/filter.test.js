@@ -1,14 +1,15 @@
-
-
-const newArray = [];
 const scenario = [
         {
         array:[4, 5, 8, 15, 18, 21, 22],  
         callback: (x)=> {if (x%2==0) return true},   //scenario 1///como es un solo parametro, puede pasarse solo x (sin parentesis)
         result:[4,8,18,22]
+        },
+        {
+        array:[4, 5, 8, 15, 18, 21, 22],  
+        callback: (x)=> {if (x%2!==0) return true},   
+        result:[5,15,21]
         }   
        ];       
-
 
 
 function myFilterFunction(array, callback) {        //
