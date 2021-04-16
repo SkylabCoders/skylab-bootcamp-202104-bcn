@@ -5,8 +5,7 @@ function arrayFilter(arrayPositionValue, callback) {
             return result = arrayPositionValue[i];
         }
     }
-    // return result;
-}//TODOOOOOOOOOOOO
+}
 
 function checkArray(arrayValue, callback){
     if(arrayValue.length === 0) {
@@ -19,14 +18,14 @@ function checkArray(arrayValue, callback){
 describe('Given a find function', function(){
     const filter = "skylab";
     [
-        {a: [1, 7, 5, 21, 50], callback: (x) => x > 20, result: 21},
-        {a: [1, 7, 5, 21, 50], callback: (x) => x > 2, result: 7},
-        {a: [1, 7, 5, 21, 50], callback: (x) => x > 21, result: 50},
-        {a: [], b: 600, result: 'error'},
+        {arrayTest: [1, 7, 5, 21, 50], callback: (x) => x > 20, result: 21},
+        {arrayTest: [1, 7, 5, 21, 50], callback: (x) => x > 2, result: 7},
+        {arrayTest: [1, 7, 5, 21, 50], callback: (x) => x > 21, result: 50},
+        {arrayTest: [], b: 600, result: 'error'},
     ].forEach(operation => {
-        describe(`When invoke with values ${operation.a}, and ${operation.callback}`, function(){
+        describe(`When invoke with values ${operation.arrayTest}, and ${operation.callback}`, function(){
             test(`Then return ${operation.result}`, function (){
-                let answer = checkArray(operation.a, operation.callback)
+                let answer = checkArray(operation.arrayTest, operation.callback)
                 expect(answer).toStrictEqual(operation.result)
             })
         })

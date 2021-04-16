@@ -19,13 +19,13 @@ function checkArray(arrayValue, callback){
 describe('Given a filter function', function(){
     const filter = "skylab";
     [
-        {a: [1, true, "skylab", "skylab", NaN, "7", false, 20, null, "skylab"], callback: (x) => x === "skylab", result: ["skylab", "skylab", "skylab"]},
-        {a: [1, true, "skylab", "skylab2", NaN, "7", false, 20, null, "skylab"], callback: (x) => x === "skylab", result: ["skylab", "skylab"]},
-        {a: [], b: 600, result: 'error'},
+        {arrayTest: [1, true, "skylab", "skylab", NaN, "7", false, 20, null, "skylab"], callback: (x) => x === "skylab", result: ["skylab", "skylab", "skylab"]},
+        {arrayTest: [1, true, "skylab", "skylab2", NaN, "7", false, 20, null, "skylab"], callback: (x) => x === "skylab", result: ["skylab", "skylab"]},
+        {arrayTest: [], b: 600, result: 'error'},
     ].forEach(operation => {
         describe(`When invoke with values ${operation.a}, and ${operation.b}`, function(){
             test(`Then return ${operation.result}`, function (){
-                let answer = checkArray(operation.a, operation.callback);
+                let answer = checkArray(operation.arrayTest, operation.callback);
                 expect(answer).toStrictEqual(operation.result);
             })
         })

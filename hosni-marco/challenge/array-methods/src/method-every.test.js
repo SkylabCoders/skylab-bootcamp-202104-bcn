@@ -18,14 +18,14 @@ function checkArray(arrayValue, toCompare){
 
 describe('Given a map function', function(){
     [
-        {a: [1, 7, 5, 21, 50], callback: (x) => x >= 20, result: true},
-        {a: [1, 7, 5, 21, 50], callback: (x) => x >= 2, result: true},
-        {a: [1, 7, 5, 21, 50], callback: (x) => x >= 600, result: false},
-        {a: [], b: 600, result: 'error'},
+        {arrayTest: [1, 7, 5, 21, 50], callback: (x) => x >= 20, result: true},
+        {arrayTest: [1, 7, 5, 21, 50], callback: (x) => x >= 2, result: true},
+        {arrayTest: [1, 7, 5, 21, 50], callback: (x) => x >= 600, result: false},
+        {arrayTest: [], b: 600, result: 'error'},
     ].forEach(operation => {
-        describe(`When invoke with values ${operation.a}, and ${operation.b}`, function(){
+        describe(`When invoke with values ${operation.arrayTest}, and ${operation.b}`, function(){
             test(`Then return ${operation.result}`, function (){
-                let answer = checkArray(operation.a, operation.callback)
+                let answer = checkArray(operation.arrayTest, operation.callback)
                 expect(answer).toStrictEqual(operation.result)
             })
         })
