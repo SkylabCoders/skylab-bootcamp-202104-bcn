@@ -5,7 +5,6 @@ let arrayMap = (array, callback) => {
         let value = array[i];
         
         array[i] = callback(value);
-
     }
     return array;
 }
