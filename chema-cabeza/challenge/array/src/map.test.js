@@ -1,10 +1,10 @@
 function arrayMap(arr, cbFunc) {       
-
+const newArray = [];
         for(let i=0;i<arr.length;i++) {         
             const result = cbFunc(arr[i]);       
-            arr[i] = result;  
+            newArray[newArray.length] = result;  
         }    
-    return arr;
+    return newArray;
 }
 
 describe('Given an arrayMap function', () => {
