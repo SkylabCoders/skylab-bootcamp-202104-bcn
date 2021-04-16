@@ -2,10 +2,10 @@ function myFind(array, callback) {
 
     for (let i = 0; i < array.length; i++) {
         const value = callback(array[i]);
-        array[i] = value;
+        if (value === true){
+            return array[i];
+        }
     }
-
-    return result;
 }
 
 describe("Given a funcion myFind", () => {
@@ -20,8 +20,9 @@ describe("Given a funcion myFind", () => {
 
                 // Arrange
                 const array = scenarios.array; 
+                const callback = scenarios.callback;
                 // Act 
-                const result = myFind(array, scenarios.callback);
+                const result = myFind(array, callback);
 
                 // Assert
                 expect(result).toEqual(scenarios.result);
