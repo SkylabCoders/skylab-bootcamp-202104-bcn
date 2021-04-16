@@ -1,6 +1,5 @@
 function myReduce (array, callback) {  
     let accumulator = array [0];
-    const arrayResults = []; 
     for (let index=1; index<array.length; index++) {
         accumulator = callback(accumulator, array[index]);
     }
