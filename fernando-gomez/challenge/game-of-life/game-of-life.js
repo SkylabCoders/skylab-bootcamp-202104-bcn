@@ -91,4 +91,3 @@ const killCell = (positionXInMatrix, positionYInMatrix) => {
 const reviveCell = (positionXInMatrix, positionYInMatrix) => {
     matrix[positionXInMatrix][positionYInMatrix].status = true;
 }
-
