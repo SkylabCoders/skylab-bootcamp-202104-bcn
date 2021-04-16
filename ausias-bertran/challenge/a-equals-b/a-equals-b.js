@@ -20,10 +20,3 @@ console.log("1 === '1' is " + strictEquals(1, "1"));
 console.log("true === false is " + strictEquals(true, false));
 console.log("false === false is " + strictEquals(false, false));
 console.log("'water' === 'oil' is " + strictEquals("water", "oil"));
-
-
-
-
-
-
-
