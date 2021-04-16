@@ -49,6 +49,7 @@ $RECYCLE.BIN/
 
 ### macOS ###
 # General
+.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -187,6 +188,7 @@ node_modules/
 /build
 
 # misc
+.DS_Store
 .env.local
 .env.development.local
 .env.test.local
@@ -353,3 +355,4 @@ auth-data.js
 
 /.expo
 .expo/
+.DS_Store
