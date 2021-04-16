@@ -7,7 +7,15 @@ const createNewMatrix = (row, column) => {
 };
 let matrix = createNewMatrix(5, 5);
 
+const createOriginalBlinker = (index1, index2) => {
+    console.log(matrix[index1][index2]);
+    matrix[index1][index2].fill(1)
+    // matrix.splice(matrix[index1][index2], 1, 1)
 
+
+    console.log(matrix)
+}
+createOriginalBlinker(1, 2);
 
 
 const originBlinker = [
