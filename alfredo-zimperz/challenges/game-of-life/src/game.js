@@ -1,6 +1,15 @@
 const MATRIX_COLUMNS = 5
 const MATRIX_ROWS = 5
 
+const vBlinker_positions_factory = (row, column) => {
+	let positions = [
+		[row - 1, column],
+		[row, column],
+		[row + 1, column]
+	]
+	return positions
+}
+
 const createMatrix = (columns, rows, charToFillWith) => {
 	let matrix = []
 
@@ -24,18 +33,21 @@ const isCellEmpty = (row, column, array) => {
 	}
 }
 
-const createVerticalBlinker = (column, row, array) => {
-	const createdVerticalArray = [...array]
+const createVerticalBlinker = (column, row, array, positionFunction) => {
 	let allOK = true
-	isCellEmpty(row - 1, column, array) ? (allOK = true) : (allOK = false)
-	isCellEmpty(row, column, array) ? (allOK = true) : (allOK = false)
-	isCellEmpty(row + 1, column, array) ? (allOK = true) : (allOK = false)
+	const createdVerticalArray = [...array]
+	const positions = positionFunction(row, column)
+
+	positions.forEach((cellPosition) => {
+		isCellEmpty(cellPosition[0], cellPosition[1], array)
+			? (allOK = true)
+			: (allOK = false)
+	})
 
 	if (allOK) {
-		createdVerticalArray[row - 1][column] = 1
-		createdVerticalArray[row][column] = 1
-		createdVerticalArray[row + 1][column] = 1
-
+		positions.forEach((cellPosition) => {
+			createdVerticalArray[cellPosition[0]][cellPosition[1]] = 1
+		})
 		return createdVerticalArray
 	} else {
 		console.log('No hay espacios disponibles')
@@ -81,7 +93,12 @@ const searchAlives = (cellsArray) => {
 }
 
 const matrix = createMatrix(MATRIX_COLUMNS, MATRIX_ROWS, 0)
-const matrixWithVerticalBlinker = createVerticalBlinker(2, 2, matrix)
+const matrixWithVerticalBlinker = createVerticalBlinker(
+	2,
+	2,
+	matrix,
+	vBlinker_positions_factory
+)
 console.log(matrixWithVerticalBlinker)
 let newArreay = searchAlives(matrixWithVerticalBlinker)
 console.log(newArreay)
