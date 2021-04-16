@@ -1,4 +1,21 @@
 let arr = [];
+setGrid(5, 5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function setGrid(a, b) {
   const arr2 = [];
@@ -10,4 +27,3 @@ function setGrid(a, b) {
   }
 }
 
-setGrid(5, 5);
