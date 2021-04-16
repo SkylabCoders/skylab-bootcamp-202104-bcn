@@ -2,17 +2,25 @@ function myEvery(array, callback) {
 
     for (let i = 0; i < array.length; i++) {
         const value = callback(array[i]); 
-        if (value) {
-            return true;
+
+        if (value){
+            counter++
         }
-    } 
-    return false
+
+        if (counter === array.length) {
+            return true;
+        } else {
+            return false
+        }
+    }
+    
+
 }
 
 describe("Given a funcion myEvery", () => {
     const scenarios = [
-        { array: [2, 40, 10, 5], 
-            callback: (x) => x > 10, 
+        { array: [2, 2, 2, 2], 
+            callback: (x) => x === 2, 
             result: true }
     ];
 
