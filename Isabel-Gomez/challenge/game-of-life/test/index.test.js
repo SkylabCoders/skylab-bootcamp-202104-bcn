@@ -1,64 +1,33 @@
-const originBlinker = [
-    [0, 0, 0, 0, 0],
-    [0, 0, 1, 0, 0],
-    [0, 0, 1, 0, 0],
-    [0, 0, 1, 0, 0],
-    [0, 0, 0, 0, 0]
-]
-const newBlinker = [
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 1, 1, 1, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]
-]
-
-
-
-function playBlinker(originBlinker) {
-    originBlinker.forEach((position) => {
-        position.map((subPosition) => {
-            numOfNeighbours();
-            stateOfNeighbours();
-            return newBlinker;
-        })
-    })
+const createNewMatrix = (row, column) => {
+    let newArray = new Array(row);
+    for (let i = 0; i < row; i++) {
+        newArray[i] = new Array(column).fill(0);
+    }
+    return newArray;
 };
 
 
-
-
-
-
-describe('Given a playBlinker function', () => {
+describe('Given a createNewMatrix function', () => {
     const scenarios = [
         {
-            originArray: [
-                [0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0],
-                [0, 1, 1, 1, 0],
-                [0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0]
-            ],
-            operation: (x) => x > 2,
-            newBlinker: [
-                [0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0],
-                [0, 1, 1, 1, 0],
-                [0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0]
-            ]
-        },
+            row: 5,
+            column: 5,
+            newArray: [[0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0]]
+        }
     ];
 
     scenarios.forEach((scenario) => {
-        describe(`When invoked with value ${scenario.originArray}`, () => {
-            test(`Then return a new array ${scenario.newBlinker}`, () => {
+        describe(`When invoked with value ${scenario.row} and ${scenario.column}`, () => {
+            test(`Then return a new array ${scenario.newArray}`, () => {
                 // Arrange
                 // Act 
-                const result = playBlinker(scenario.originArray, scenario.operation);
+                const matrix = createNewMatrix(scenario.row, scenario.column);
                 // Assert
-                expect(newBlinker).toStrictEqual(scenario.newBlinker);
+                expect(matrix).toStrictEqual(scenario.newArray);
             })
         })
     })
