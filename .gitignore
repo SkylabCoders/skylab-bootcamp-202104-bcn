@@ -52,7 +52,7 @@ $RECYCLE.BIN/
 
 ### macOS ###
 # General
-*.DS_Store
+**/.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -359,4 +359,3 @@ auth-data.js
 
 /.expo
 .expo/
-**/.DS_Store
