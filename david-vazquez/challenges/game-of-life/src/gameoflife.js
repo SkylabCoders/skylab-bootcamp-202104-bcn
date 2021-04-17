@@ -30,7 +30,7 @@ function drawBoard (){
             cells[z].addEventListener('click',function () {
                 boardArray[i][z]=1;
                 if(boardArray[i][z]===1){
-                    cells[z].style.backgroundColor = 'yellow';
+                    cells[z].style.backgroundColor = 'white';
                 }         
             });        
         }
@@ -74,20 +74,20 @@ function drawCheckBoard(){
         const cells = cellRows[i].getElementsByClassName('cell');
         for(let z=0;z<cells.length;z++){
             if(newBoard[i][z]===1){
-                cells[z].style.backgroundColor = 'yellow';
+                cells[z].style.backgroundColor = 'white';
             } else if (newBoard[i][z]===0){
-                cells[z].style.backgroundColor = 'gray';
+                cells[z].style.backgroundColor = 'black';
             }                                
         }
     }
 }
 
 function time (){
-    const play = document.querySelector('.button__play');
+    const play = document.querySelector('.play');
     play.addEventListener('click', function(){
         nIntervId = setInterval((checkBoard),600);
     });
-    const stop = document.querySelector('.button__stop');
+    const stop = document.querySelector('.stop');
     stop.addEventListener('click', function(){
         clearInterval(nIntervId);
     });

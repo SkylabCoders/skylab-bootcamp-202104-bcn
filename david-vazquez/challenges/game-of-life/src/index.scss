@@ -15,7 +15,6 @@
 .board {
   height: auto;
   width: auto;
-  background-color: gray;
   display: inline-flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -32,15 +31,22 @@
   width: 15px;
   height: 15px;
   display: flex;
-  border: 0.1px solid rgb(87, 87, 87);
-  background-color: gray;
+  border: none;
+  border: 0.1px solid rgb(29, 29, 29);
+  background-color: black;
 }
 
-.button {
+button {
   padding: 10px 20px;
   font-size: 18px;
   text-transform: uppercase;
   outline: none;
   border: none;
   color: white;
+}
+.play {
+  background-color: red;
+}
+.stop {
+  background-color: blue;
 }

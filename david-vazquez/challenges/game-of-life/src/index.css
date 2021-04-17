@@ -16,7 +16,6 @@
 .board {
   height: auto;
   width: auto;
-  background-color: gray;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -50,16 +49,25 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 0.1px solid #575757;
-  background-color: gray;
+  border: none;
+  border: 0.1px solid #1d1d1d;
+  background-color: black;
 }
 
-.button {
+button {
   padding: 10px 20px;
   font-size: 18px;
   text-transform: uppercase;
   outline: none;
   border: none;
   color: white;
+}
+
+.play {
+  background-color: red;
+}
+
+.stop {
+  background-color: blue;
 }
 /*# sourceMappingURL=index.css.map */
