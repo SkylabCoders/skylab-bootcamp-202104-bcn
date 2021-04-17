@@ -1,0 +1,10 @@
+#gridLife {
+    padding: 10px;
+    background-color: whitesmoke;
+}
+
+.cell {
+    border: 1px solid darkgray;
+    width: 10px;
+    height: 10px;
+}
