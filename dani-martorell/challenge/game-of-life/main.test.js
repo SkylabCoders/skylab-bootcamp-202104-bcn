@@ -5,7 +5,6 @@ const createMatrix = (numberRows, numberColumns) => {
     }
     return newMatrix;
 }
-
 const populateMatrix = (matrix, row, column) => {
     if(!matrix[row]) { return };
     if(matrix[row] && matrix[column]) {
@@ -58,7 +57,6 @@ const runApp = (shape) => {
         shape = runCycle(shape);
     }, 1000);
 }
-
 const blinker = () => {
     let matrix = createMatrix(5,5);
     populateMatrix(matrix, 2, 1);
@@ -66,7 +64,6 @@ const blinker = () => {
     populateMatrix(matrix, 2, 3);
     return matrix;
 }
-
 const toad = () => {
     let matrix = createMatrix(6,6);
     populateMatrix(matrix, 2, 2);
@@ -77,7 +74,6 @@ const toad = () => {
     populateMatrix(matrix, 3, 3);
     return matrix;
 }
-
 const beacon = () => {
     let matrix = createMatrix(6,6);
     populateMatrix(matrix, 1, 1);
@@ -90,7 +86,8 @@ const beacon = () => {
     populateMatrix(matrix, 4, 4);
     return matrix;
 }
-runApp(beacon());
+
+//runApp(beacon());
 
 
 
