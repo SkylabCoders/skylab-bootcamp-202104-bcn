@@ -1,8 +1,5 @@
 let arrayWidth = 5;
 let arrayHeight = 5;
-let dieArray = [];
-let aliveArray = [];
-
 const initialArray = [[], [], [], [], []];
 
 for (let i = 0; i < arrayWidth; i++) {
@@ -44,15 +41,13 @@ const isCellEmpty = (row, column, array) => {
 
 const searchAlives = (cellsArray) => {
   let searchedArray = [[], [], [], [], []];
-
+  valueOfCell = 1;
   for (let column = 0; column < cellsArray.length; column++) {
     for (let row = 0; row < cellsArray[column].length; row++) {
-      if (cellsArray[column][row] === 0) {
+      let neighbours = countNeighbours(row, column, [...cellsArray]);
+      if (!isAlive(column, row, cellsArray)) {
         searchedArray[column][row] = 0;
-      }
-      if (cellsArray[column][row] === 1) {
-        let neighbours = countNeighbours(row, column, [...cellsArray]);
-
+      } else {
         if (neighbours < 2) {
           searchedArray[column][row] = 0;
         } else {
@@ -61,26 +56,52 @@ const searchAlives = (cellsArray) => {
       }
     }
   }
+  console.log(searchedArray);
   return searchedArray;
+};
+
+const isAlive = (column, row, array) => {
+  const isAlive = (array[column][row] = 0 ? false : true);
+  return isAlive;
+};
+
+const cellExist = (row, rowDisplacement, column, columnDisplacement, array) => {
+  const newColumn = column + columnDisplacement;
+  const newRow = row + rowDisplacement;
+  return array[newColumn] && array[newColumn][newRow];
 };
 
 const countNeighbours = (row, column, array) => {
   let neighbours = 0;
-
-  array[column - 1][row - 1] === 1 && neighbours++;
-  array[column - 1][row] === 1 && neighbours++;
-  array[column - 1][row + 1] === 1 && neighbours++;
-  array[column][row - 1] === 1 && neighbours++;
-  array[column][row + 1] === 1 && neighbours++;
-  array[column + 1][row - 1] === 1 && neighbours++;
-  array[column + 1][row] === 1 && neighbours++;
-  array[column + 1][row + 1] === 1 && neighbours++;
-
+  if (cellExist(row, -1, column, -1, array)) {
+    array[column - 1][row - 1] === 1 && neighbours++;
+  }
+  if (cellExist(row, 0, column, -1, array)) {
+    array[column - 1][row] === 1 && neighbours++;
+  }
+  if (cellExist(row, 1, column, -1, array)) {
+    array[column - 1][row + 1] === 1 && neighbours++;
+  }
+  if (cellExist(row, -1, column, 0, array)) {
+    array[column][row - 1] === 1 && neighbours++;
+  }
+  if (cellExist(row, 1, column, 0, array)) {
+    array[column - 0][row + 1] === 1 && neighbours++;
+  }
+  if (cellExist(row, 0, column, -1, array)) {
+    array[column - 1][row] === 1 && neighbours++;
+  }
+  if (cellExist(row, -1, column, 1, array)) {
+    array[column + 1][row - 1] === 1 && neighbours++;
+  }
+  if (cellExist(row, 0, column, 1, array)) {
+    array[column + 1][row] === 1 && neighbours++;
+  }
+  if (cellExist(row, 1, column, 1, array)) {
+    array[column + 1][row + 1] === 1 && neighbours++;
+  }
   return neighbours;
 };
-
-const newArray = createHorizontalBlinker(2, 2, initialArray);
-searchAlives(newArray);
 
 //Funcion que comprueba de los que estan muertos, si reviven con 3 vecinos alrededor!
 const reviveCell = (cellsArray) => {
@@ -100,4 +121,7 @@ const reviveCell = (cellsArray) => {
   console.log("revive", reviveArray);
   return reviveArray;
 };
-reviveCell(newArray);
+
+const newArray = createHorizontalBlinker(2, 2, initialArray);
+console.log(newArray);
+searchAlives(newArray);
