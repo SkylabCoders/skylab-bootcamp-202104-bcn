@@ -19,8 +19,8 @@ function createBoard(rowNumber,columnNumber){
         }
     }
     drawBoard();
+    time();
 }
-
 
 function drawBoard (){
     const cellRows = document.getElementsByClassName('cells-row');  
@@ -31,25 +31,11 @@ function drawBoard (){
                 boardArray[i][z]=1;
                 if(boardArray[i][z]===1){
                     cells[z].style.backgroundColor = 'yellow';
-                }
-                console.log(boardArray);              
+                }         
             });        
         }
     }
 }
-
-/*
-function changeCellColor() {
-    const cells = document.getElementsByClassName('cell');
-    for(let i=0;i<boardArray.length;i++){
-        for(let z=0;boardArray[i].length;z++){
-            if(boardArray[i][z]===1){
-                cells[i][z].style.backgroundColor = 'yellow';
-            }
-        }
-    }
-}*/
-
 
 function checkBoard() {
     for(let i=1;i<(boardArray.length)-1;i++){
@@ -70,7 +56,16 @@ function checkBoard() {
         }
     }
     drawCheckBoard();
-    console.log(newBoard);
+    cleanBoard();
+}
+
+function cleanBoard (){
+    for(let i=0;i<newBoard.length;i++){
+        for(let z=0;z<newBoard[i].length;z++){
+            boardArray[i][z] = newBoard[i][z];
+            newBoard[i][z] = 0; 
+        }
+    }
 }
 
 function drawCheckBoard(){
@@ -85,9 +80,21 @@ function drawCheckBoard(){
             }                                
         }
     }
-    
 }
 
-createBoard(20,20);
+function time (){
+    const play = document.querySelector('.button__play');
+    play.addEventListener('click', function(){
+        nIntervId = setInterval((checkBoard),600);
+    });
+    const stop = document.querySelector('.button__stop');
+    stop.addEventListener('click', function(){
+        clearInterval(nIntervId);
+    });
+}
+
+
+
+createBoard(30,50);
 
     

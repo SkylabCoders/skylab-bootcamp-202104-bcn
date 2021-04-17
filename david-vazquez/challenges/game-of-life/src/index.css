@@ -45,12 +45,21 @@
 }
 
 .cell {
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 0.1em solid #575757;
+  border: 0.1px solid #575757;
   background-color: gray;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  color: white;
 }
 /*# sourceMappingURL=index.css.map */
