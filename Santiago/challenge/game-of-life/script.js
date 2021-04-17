@@ -8,15 +8,14 @@ let createGrid = (rows, cols) => {
 
     return grid;
 }
-const fillGrid = createGrid(5, 5);
 
-
-const modifiedGrid = [...fillGrid];
+let fillGrid = createGrid(5, 5);
+let modifiedGrid = [...fillGrid];
 
 let coord = (a, b) => {
-
     return modifiedGrid[a][b] = 1;
 }
+
 
 let createBlinker = () => {
     coord(1, 2);
@@ -24,19 +23,40 @@ let createBlinker = () => {
     coord(3, 2);
 
     console.log(modifiedGrid);
+    return modifiedGrid;
 }
 createBlinker();
 
-let findNeighbours = () => {
+
+let findNeighbours = (a, b, modifiedGrid) => {
 
     let neighbours = 0;
 
-    for (let x = 0; x < modifiedGrid.length; x++) {
-        for (let y = 0; y < modifiedGrid.length; y++) {
-            if (modifiedGrid[x][y++] === undefined && modifiedGrid[x--][y++]) {
-                neighbours++;
-            }
-        }
+    if (modifiedGrid[a + 1] && modifiedGrid[a + 1][b - 1] === 1) {
+        neighbours++;
     }
+    if (modifiedGrid[a + 1] && modifiedGrid[a + 1][b] === 1) {
+        neighbours++;
+    }
+    if (modifiedGrid[a + 1] && modifiedGrid[a + 1][b + 1] === 1) {
+        neighbours++;
+    }
+    if (modifiedGrid[a] && modifiedGrid[a][b - 1] === 1) {
+        neighbours++;
+    }
+    if (modifiedGrid[a - 1] && modifiedGrid[a - 1][b - 1] === 1) {
+        neighbours++;
+    }
+    if (modifiedGrid[a - 1] && modifiedGrid[a - 1][b] === 1) {
+        neighbours++;
+    }
+    if (modifiedGrid[a - 1] && modifiedGrid[a - 1][b + 1] === 1) {
+        neighbours++;
+    }
+    if (modifiedGrid[a] && modifiedGrid[a][b + 1] === 1) {
+        neighbours++;
+    }
+
+    return neighbours;
 }
-findNeighbours();
+console.log(findNeighbours(2,1, modifiedGrid))
