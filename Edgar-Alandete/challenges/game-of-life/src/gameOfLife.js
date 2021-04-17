@@ -12,17 +12,9 @@ export function blinker(board, isAlive) {
     row.forEach((cell, cellIndex) => {
       const neighbours = getNeighbours(board, rowIndex, cellIndex);
       if (isAlive(cell)) {
-        if (neighbours === 2 || neighbours === 3) {
-          newRow.push(ALIVE);
-        } else {
-          newRow.push(DEAD);
-        }
+        newRow.push(updateCell(neighbours === 2 || neighbours === 3));
       } else {
-        if (neighbours === 3) {
-          newRow.push(ALIVE);
-        } else {
-          newRow.push(DEAD);
-        }
+        newRow.push(updateCell(neighbours === 3));
       }
     });
     newBoard.push(newRow);
@@ -31,68 +23,67 @@ export function blinker(board, isAlive) {
   return newBoard;
 }
 
+const hasNeighbour = (row, column, cell) => {
+  return cellExists(row) && cellExists(column);
+};
+
 const getNeighbours = (board, row, column) => {
   let neighbours = 0;
-  debugger;
   if (
-    cellExists(board[row - 1]) &&
-    cellExists(board[column - 1]) &&
+    hasNeighbour(board[row - 1], board[column - 1]) &&
     isAlive(board[row - 1][column - 1])
   ) {
     neighbours++;
   }
 
   if (
-    cellExists(board[row - 1]) &&
-    cellExists(board[column]) &&
+    hasNeighbour(board[row - 1], board[column]) &&
     isAlive(board[row - 1][column])
   ) {
     neighbours++;
   }
   if (
-    cellExists(board[row]) &&
-    cellExists(board[column - 1]) &&
+    hasNeighbour(board[row], board[column - 1]) &&
     isAlive(board[row][column - 1])
   ) {
     neighbours++;
   }
   if (
-    cellExists(board[row - 1]) &&
-    cellExists(board[column + 1]) &&
+    hasNeighbour(board[row - 1], board[column + 1]) &&
     isAlive(board[row - 1][column + 1])
   ) {
     neighbours++;
   }
   if (
-    cellExists(board[row]) &&
-    cellExists(board[column + 1]) &&
+    hasNeighbour(board[row], board[column + 1]) &&
     isAlive(board[row][column + 1])
   ) {
     neighbours++;
   }
   if (
-    cellExists(board[row + 1]) &&
-    cellExists(board[column - 1]) &&
+    hasNeighbour(board[row + 1], board[column - 1]) &&
     isAlive(board[row + 1][column - 1])
   ) {
     neighbours++;
   }
   if (
-    cellExists(board[row + 1]) &&
-    cellExists(board[column]) &&
+    hasNeighbour(board[row + 1], board[column]) &&
     isAlive(board[row + 1][column])
   ) {
     neighbours++;
   }
   if (
-    cellExists(board[row + 1]) &&
-    cellExists(board[column + 1]) &&
+    hasNeighbour(board[row + 1], board[column + 1]) &&
     isAlive(board[row + 1][column + 1])
   ) {
     neighbours++;
   }
 
   return neighbours;
+};
+
+const updateCell = (isAlive) => {
+  return isAlive ? ALIVE : DEAD;
 };
 
 const isAlive = (cell) => cell === ALIVE;
@@ -113,10 +104,6 @@ const initializeArray = () => {
   return initialArray;
 };
 
-function gameOfLifeBlinker(array) {
-  const returnArray = [];
-  return returnArray;
-}
 function createHorizontalBlinker(row, column, array) {
   const newArray = [...array];
   let isSuccesInit = true;
