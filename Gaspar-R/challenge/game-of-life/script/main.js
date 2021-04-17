@@ -29,42 +29,102 @@ const createVerticalBlinker = (column, row, array) => {
     }
 }
 const countNeighbours = (row, column, array) => {
+    
     let neighbours = 0
-    array[column - 1][row - 1] === 1 && neighbours++
-    array[column - 1][row] === 1 && neighbours++
-    array[column - 1][row + 1] === 1 && neighbours++
-    array[column][row - 1] === 1 && neighbours++
-    array[column][row + 1] === 1 && neighbours++
-    array[column + 1][row - 1] === 1 && neighbours++
-    array[column + 1][row] === 1 && neighbours++
-    array[column + 1][row + 1] === 1 && neighbours++
-    return neighbours
-    //console.log(neighbours)
+
+    if ( checkNeighbours(column, row, -1, -1, array) === true) {neighbours++}
+    if ( checkNeighbours(column, row, -1, +1, array) === true) {neighbours++}
+    if ( checkNeighbours(column, row, -1, 0, array) === true) {neighbours++}
+    if ( checkNeighbours(column, row, 0, -1, array) === true) {neighbours++}
+    if ( checkNeighbours(column, row, 0, +1, array) === true) {neighbours++}
+    if ( checkNeighbours(column, row, +1, -1, array) === true) {neighbours++}
+    if ( checkNeighbours(column, row, +1, 0, array) === true) {neighbours++}
+    if ( checkNeighbours(column, row, +1, +1, array) === true) {neighbours++}
+ 
+     return neighbours
 }
+
+function checkNeighbours(column, row, columnDesplacement, rowDisplacement, array){
+    let currentColumn = column + columnDesplacement;
+    let currentRow = row + rowDisplacement;
+    
+    if (array[currentRow][currentColumn] === 0) {checkNeighboursFromNeighbours (currentColumn,currentRow,array)}
+    if (array[currentRow][currentColumn] === 1) {
+     
+        return true;
+      }
+}
+
 const newArray = createVerticalBlinker(2, 2, initialArray)
+
+// function markDead (column,row,array){
+//    let newArrayy = [];
+//     newArray[column][row] = "D";
+//     console.log(newArrayy, "killfunctionarray");
+//     //return newArrayy;
+// }
+
 const searchAlives = (array) => {
     let oldArray = [...array]
-    let searchedArray = [...array]
+    let nextGenChanges = [[], [], [], [], []];
+
+
     for (let column = 0; column < oldArray.length; column++) {
         for (let row = 0; row < oldArray[column].length; row++) {
             if (oldArray[column][row] === 1) {
-                let neighbours = countNeighbours(row, column, oldArray)
-                searchedArray = [...oldArray];
-                // debugger
-                //console.log(neighbours)
-                if (neighbours < 2) {
-                    // debugger;
-                    console.log('old', oldArray)
-                    console.log(column, row)
+                neighbours = countNeighbours(column, row, oldArray)
 
-                    searchedArray[column][row] = 'd'
-
-                    console.log('new', searchedArray)
+                if (neighbours < 2 || neighbours >= 4)  {
+                    // console.log(row,column)
+                   nextGenChanges[column][row] = "D";
                 }
             }
         }
     }
-    //console.log('new', newArray)
+    applyChanges (nextGenChanges,oldArray)
     //return newArray
 }
 let array6 = searchAlives(newArray)
+
+function applyChanges(nextArray,originalArray){         //guardar posiciones de cambio para la proxima generacion
+   }
+
+
+
+function checkNeighboursFromNeighbours (currentColumn,currentRow,array) {
+    
+        let neighboursFromZeroCells = 0
+
+        if (countNeighboursFromNeighbours(currentColumn, currentRow, -1, -1, array) === true) {neighboursFromZeroCells++};
+        if ( countNeighboursFromNeighbours(currentColumn, currentRow, -1, +1, array) === true) {neighboursFromZeroCells++};
+        if ( countNeighboursFromNeighbours(currentColumn, currentRow, -1, 0, array) === true) {neighboursFromZeroCells++};
+        if ( countNeighboursFromNeighbours(currentColumn, currentRow, 0, -1, array) === true) {neighboursFromZeroCells++};
+        if ( countNeighboursFromNeighbours(currentColumn, currentRow, 0, +1, array) === true) {neighboursFromZeroCells++};
+        if ( countNeighboursFromNeighbours(currentColumn, currentRow, +1, -1, array) === true) {neighboursFromZeroCells++};
+        if ( countNeighboursFromNeighbours(currentColumn, currentRow, +1, 0, array) === true) {neighboursFromZeroCells++};
+        if ( countNeighboursFromNeighbours(currentColumn, currentRow, +1, +1, array) === true) {neighboursFromZeroCells++};
+        // console.log("zero cell column",currentColumn,"row",currentRow,"neighbours",neighboursFromZeroCells)
+        console.log("column", currentColumn,"row", currentRow,"vecinos de zero cells", neighboursFromZeroCells);
+     
+    
+}
+
+function countNeighboursFromNeighbours (column, row, columnDesplacement, rowDisplacement, array){
+//   console.log(column,row)
+   
+    let currentColumn = column + columnDesplacement;
+    let currentRow = row + rowDisplacement; 
+    
+    let currentArrayCheck =[];
+    let positionChecked=[]
+ 
+
+
+    if (array[currentColumn][currentRow] !==undefined && !positionChecked.includes(currentArrayCheck) ){
+    // console.log(currentRow,currentColumn)
+         if (array[currentRow][currentColumn] === 1 ) {
+               return true;
+             }
+    }         
+}
+
