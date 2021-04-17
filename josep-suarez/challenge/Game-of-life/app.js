@@ -1,5 +1,5 @@
-const arrayHeight = 5;
-const arrayRows = 5;
+const arrayHeight = 6;
+const arrayRows = 6;
 
 const directionBlinker = (row, column) => {
   let positions = [
@@ -101,7 +101,7 @@ const cellExists = (
   }
 };
 const searchAlives = (cellsArray) => {
-  let searchedArray = [[], [], [], [], [], []];
+  let searchedArray = createMatriz(6, 6, "");
   for (let column = 0; column < cellsArray.length; column++) {
     for (let row = 0; row < cellsArray[column].length; row++) {
       let neighbours = countNeighbours(row, column, cellsArray);
@@ -141,9 +141,7 @@ const gameOfLifeBlinker = () => {
   console.log(newArray);
 };
 const gameOfLifeSapo = () => {
-  sapoColumns = 6;
-  sapoRows = 6;
-  const matriz = createMatriz(sapoColumns, sapoRows, 0);
+  const matriz = createMatriz(arrayHeight, arrayRows, 0);
   const matrizVertical = createVerticalBlock(3, 2, matriz, directionSapo);
   console.log(matrizVertical);
   let newArray = searchAlives(matrizVertical);
@@ -153,4 +151,5 @@ const gameOfLifeSapo = () => {
 };
 
 // setInterval(gameOfLifeSapo, 5000);
+gameOfLifeBlinker();
 gameOfLifeSapo();
