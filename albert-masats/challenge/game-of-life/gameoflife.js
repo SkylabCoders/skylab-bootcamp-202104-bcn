@@ -15,17 +15,20 @@ const createGrid = (rows, columns) => {
 }
 
 const grid = createGrid(5, 5);
-const newGrid = [...grid];
+let arrayGameOfLife = [...grid];
+let newGrid3 = [...grid];
+
 
 const coordsCreation = (num1, num2) => {
-    return newGrid[num1][num2] = 1;
+    return arrayGameOfLife[num1][num2] = 1;
 }
 const blinkerCreation = () => {
     coordsCreation(1, 2);
     coordsCreation(2, 2);
     coordsCreation(3, 2);
-    console.log(newGrid);
+    console.log(arrayGameOfLife);
 }
+
 blinkerCreation();
 
 
@@ -55,8 +58,8 @@ blinkerCreation();
     // arrayGameOfLife[i+1][j+1]];
 
 function gol () {
-    let newGrid2 = createGrid(5, 5)
-
+    console.log(arrayGameOfLife)
+    let count = 0;
     for (let i = 0; i<arrayGameOfLife.length; i++) {
         for(let j=0; j<arrayGameOfLife[i].length; j++) {
 
@@ -65,26 +68,62 @@ function gol () {
             // }else{
             //     console.log("dead")
             // }
-            checkNeighbours()
+            // checkNeighbours()
+            console.log(arrayGameOfLife[i][j]);
+
+            if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
+                count++
+            } 
+            if (arrayGameOfLife[j-1] && arrayGameOfLife[i][j-1] ===1) {
+                count++
+            }
+            if (arrayGameOfLife[i-1] && arrayGameOfLife[j-1] && arrayGameOfLife[i-1][j-1] ===1) {
+                count++
+            }
+            if (arrayGameOfLife[i-1] && arrayGameOfLife[i-1][j] ===1) {
+                count++
+            }
+            if (arrayGameOfLife[i-1] && arrayGameOfLife[j+1] && arrayGameOfLife[i-1][j+1] ===1) {
+                count++
+            }
+            if (arrayGameOfLife[i+1] && arrayGameOfLife[j-1] && arrayGameOfLife[i+1][j-1] ===1) {
+                count++
+            }
+            if (arrayGameOfLife[i+1] && arrayGameOfLife[i+1][j] ===1) {
+                count++
+            }
+            if (arrayGameOfLife[i+1] && arrayGameOfLife[j+1] && arrayGameOfLife[i+1][j+1] ===1){
+                count++
+            }
 
             // if cell=true
             // talcual.push(1)
             // if cell=false
             // talcu
+            console.log(count)
+            if (arrayGameOfLife[i][j] === 1 && (count ===2 || count === 3 )) {
+                newGrid3[i][j] = "viu"
+                // cell = true;
+                // console.log(cell)
+            }else if (arrayGameOfLife[i][j] === 0 && count === 3){
+                newGrid3[i][j] = "viu"
+                // cell = true;
+                // console.log(cell)
+            }else{
+                newGrid3[i][j] = "mort"
+                // cell= false;
+                // console.log(cell)
+            }
+            count=0;
         } 
     }
-    arrayGameofLife = newGrid2
+
+    console.log(newGrid3)
+    // arrayGameOfLife = newGrid3
+
 }    
 
-timerGol () => {
-
-    setInterval(function() {
-        arrayGameofLife = createGrid(5,5)
-    }, 1000);
-
-}
-
-function checkNeighbours() => {
+let checkNeighbours = (i,j) => {
     let count = 0;
 
     if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
@@ -113,21 +152,29 @@ function checkNeighbours() => {
     }
 }
 
-checkLifeorDead() => {
-    let count = 0;
+// let checkLifeorDead = (i,j) => {
+//     let count = 0;
     
-    if (arrayGameOfLife[i][j] === 1 && (count ===2 || count === 3 )) {
-        newGrid2[i][j] = 1
-        // cell = true;
-        // console.log(cell)
-    }else if (arrayGameOfLife[i][j] === 0 && count === 3){
-        newGrid2[i][j] = 1
-        // cell = true;
-        // console.log(cell)
-    }else{
-        newGrid2[i][j] = 0
-        // cell= false;
-        // console.log(cell)
-    }
-    count=0;
+//     if (arrayGameOfLife[i][j] === 1 && (count ===2 || count === 3 )) {
+//         newGrid2[i][j] = 1
+//         // cell = true;
+//         // console.log(cell)
+//     }else if (arrayGameOfLife[i][j] === 0 && count === 3){
+//         newGrid2[i][j] = 1
+//         // cell = true;
+//         // console.log(cell)
+//     }else{
+//         newGrid2[i][j] = 0
+//         // cell= false;
+//         // console.log(cell)
+//     }
+//     count=0;
+// }
+
+
+let timerGol = () => {
+
+    setInterval(function() {
+        arrayGameofLife = createGrid(5,5)
+    }, 1000);
 }
