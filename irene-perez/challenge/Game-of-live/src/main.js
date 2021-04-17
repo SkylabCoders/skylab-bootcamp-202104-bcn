@@ -1,12 +1,15 @@
+const grid = createGrid(5, 5);
+const newGrid = [...grid];
+
 const createGrid = (rows, columns) => {
-
-    let newGrid = new Array(rows);
-
+    const grid = new Array(rows);
     for (let i = 0; i < rows; i++) {
-    newGrid[i] = new Array(columns).fill('0');
+        grid[i] = new Array(columns).fill('0');
     }
-
-    return newGrid;
+    return grid;
 }
 
-
+const coordsCreation = (num1, num2) => {
+    newGrid[num1][num2];
+    
+}
