@@ -1,11 +1,25 @@
-const MATRIX_COLUMNS = 5
-const MATRIX_ROWS = 5
+// const MATRIX_COLUMNS = 5
+// const MATRIX_ROWS = 5
+const MATRIX_COLUMNS = 6
+const MATRIX_ROWS = 6
 
 const vBlinker_positions_factory = (row, column) => {
 	let positions = [
 		[row - 1, column],
 		[row, column],
 		[row + 1, column]
+	]
+	return positions
+}
+
+const sapo_positions_factory = (row, column) => {
+	let positions = [
+		[row - 1, column],
+		[row + 1, column],
+		[row, column],
+		[row, column - 1],
+		[row + 1, column - 1],
+		[row + 2, column - 1]
 	]
 	return positions
 }
@@ -102,7 +116,8 @@ const cellExists = (
 }
 
 const searchAlives = (cellsArray) => {
-	let searchedArray = [[], [], [], [], []]
+	//let searchedArray = [[], [], [], [], []]
+	let searchedArray = createMatrix(6, 6, '')
 
 	for (let column = 0; column < cellsArray.length; column++) {
 		for (let row = 0; row < cellsArray[column].length; row++) {
@@ -121,6 +136,9 @@ const searchAlives = (cellsArray) => {
 				}
 				if (neighbours === 2) {
 					searchedArray[column][row] = 1
+				}
+				if (neighbours > 3) {
+					searchedArray[column][row] = 0
 				}
 			}
 			// searchedArray[column][row] = 1
@@ -164,7 +182,8 @@ const matrixWithVerticalBlinker = createVerticalBlinker(
 	2,
 	2,
 	matrix,
-	vBlinker_positions_factory
+	//vBlinker_positions_factory
+	sapo_positions_factory
 )
 // console.log(matrixWithVerticalBlinker)
 // let newArray = searchAlives(matrixWithVerticalBlinker)
@@ -187,6 +206,6 @@ const startGame = (matrix) => {
 			console.log(secondMatrix)
 			nextMatrixToShow = 'firstMatrix'
 		}
-	}, [1000])
+	}, [2000])
 }
 startGame(matrixWithVerticalBlinker)
