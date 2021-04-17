@@ -4,7 +4,7 @@ const MAX_HEIGHT = 5;
 const DEAD = 0;
 const ALIVE = 1;
 
-function gameOfLife(board, isAlive) {
+export function blinker(board, isAlive) {
   const newBoard = [];
 
   board.forEach((row, rowIndex) => {
@@ -148,4 +148,4 @@ const matrix = [
 ];
 
 console.log(matrix);
-console.log(gameOfLife(matrix, isAlive));
+console.log(blinker(matrix, isAlive));
