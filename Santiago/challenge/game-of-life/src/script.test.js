@@ -4,7 +4,7 @@ let createGrid = (rows, cols, callback) => {
 
     for (let i = 0; i < rows; i++) {
 
-        grid[i] = callback(new Array(cols));
+        grid[i] = new Array(cols).fill(0);
     }
 
     return grid;
@@ -19,14 +19,13 @@ describe("Given a createGrid function", () => {
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ],
-        callback: (el) => el.fill(0),
     }];
 
     scenarios.forEach(scenario => {
-        describe(`When invoked with values ${scenario.origin} with the callback function ${scenario.callback}`, () => {
-            test(`Then return ${scenario.result}`, () => {
+        describe(`When invoked with values ${scenario.rows} and ${scenario.columns}`, () => {
+            test(`Then return ${scenario.expectResult}`, () => {
 
-                const result = createGrid(scenario.rows, scenario.columns, scenario.callback);
+                const result = createGrid(scenario.rows, scenario.columns);
 
                 expect(result).toStrictEqual(scenario.expectResult);
             });
