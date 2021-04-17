@@ -22,10 +22,10 @@ let createBlinker = () => {
     coord(2, 2);
     coord(3, 2);
 
-    console.log(modifiedGrid);
     return modifiedGrid;
 }
-createBlinker();
+let blinker = createBlinker();
+console.log(blinker)
 
 
 let findNeighbours = (a, b, modifiedGrid) => {
@@ -59,4 +59,22 @@ let findNeighbours = (a, b, modifiedGrid) => {
 
     return neighbours;
 }
-console.log(findNeighbours(2,1, modifiedGrid))
+let neighboursNumber = findNeighbours(2, 2, modifiedGrid);
+console.log(` Número de vecinos de la posición indicada: ${neighboursNumber}`);
+
+
+let rules = () => {
+
+    if (neighboursNumber < 2) {
+        console.log("DEAD");
+    }
+    if (neighboursNumber === 2 || neighboursNumber === 3) {
+        console.log("LIVE");
+    }
+    if (neighboursNumber < 3) {
+        console.log("DEAD")
+    }
+    if (cell === 3) {
+        console.lo("BECOMES LIVE")
+    }
+}
