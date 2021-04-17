@@ -82,6 +82,7 @@ a:nth-child(10) {
 }
 
 .board {
+  position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -94,8 +95,21 @@ a:nth-child(10) {
           justify-content: flex-start;
   height: auto;
   width: auto;
-  background-color: black;
+  background-color: transparent;
   cursor: pointer;
+  z-index: 1;
+}
+
+.land {
+  position: absolute;
+  width: 100%;
+  top: 150px;
+  left: -120px;
+}
+
+.land img {
+  width: 110%;
+  background: transparent;
 }
 
 .cells-row {
@@ -118,8 +132,7 @@ a:nth-child(10) {
   display: -ms-flexbox;
   display: flex;
   border: none;
-  border: 0.1px solid #1d1d1d;
-  background-color: black;
+  background-color: transparent;
   border-radius: 50%;
 }
 
@@ -138,6 +151,7 @@ a:nth-child(10) {
 }
 
 button {
+  z-index: 1;
   cursor: pointer;
   margin: 0 10px;
   padding: 5px 20px;

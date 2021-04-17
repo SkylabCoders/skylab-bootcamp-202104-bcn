@@ -79,7 +79,7 @@ function drawCheckBoard(){
                 let colorNumber = Math.floor(Math.random()*(colors.length)+0);
                 cells[z].style.backgroundColor = '#' + colors[colorNumber];
             } else if (newBoard[i][z]===0){
-                cells[z].style.backgroundColor = 'black';
+                cells[z].style.backgroundColor = 'transparent';
             }                                
         }
     }
@@ -108,7 +108,7 @@ function reset (){
         for(let i=0;i<cellRows.length;i++){
             const cells = cellRows[i].getElementsByClassName('cell');
             for(let z=0;z<cells.length;z++){
-                cells[z].style.backgroundColor = 'black';
+                cells[z].style.backgroundColor = 'transparent';
                 boardArray[i][z]=0;
                 newBoard[i][z]=0;
             }

@@ -63,11 +63,24 @@ a:nth-child(10) {
 }
 
 .board {
+  position: relative;
   @include flexbox(inline-flex, column, flex-start, null);
   height: auto;
   width: auto;
-  background-color: black;
+  background-color: transparent;
   cursor: pointer;
+  z-index: 1;
+}
+
+.land {
+  position: absolute;
+  width: 100%;
+  top: 150px;
+  left: -120px;
+  img {
+    width: 110%;
+    background: transparent;
+  }
 }
 
 .cells-row {
@@ -79,16 +92,17 @@ a:nth-child(10) {
   height: 15px;
   display: flex;
   border: none;
-  border: 0.1px solid rgb(29, 29, 29);
-  background-color: black;
+  background-color: transparent;
   border-radius: 50%;
 }
+
 .controls {
   @include flexbox(flex, row, center, null);
   margin-top: 10px;
 }
 
 button {
+  z-index: 1;
   cursor: pointer;
   margin: 0 10px;
   padding: 5px 20px;
