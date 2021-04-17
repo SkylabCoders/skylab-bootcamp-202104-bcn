@@ -17,6 +17,13 @@
   width: 400px;
   height: 400px;
   background-color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .cells-row {
@@ -31,6 +38,9 @@
 }
 
 .cell {
-  border: 2px solid #575757;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #575757;
+  background-color: gray;
 }
 /*# sourceMappingURL=index.css.map */

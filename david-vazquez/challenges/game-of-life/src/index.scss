@@ -16,6 +16,8 @@
   width: 400px;
   height: 400px;
   background-color: gray;
+  display: flex;
+  flex-direction: column;
 }
 
 .cells-row {
@@ -25,5 +27,8 @@
 }
 
 .cell {
-  border: 2px solid rgb(87, 87, 87);
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgb(87, 87, 87);
+  background-color: gray;
 }

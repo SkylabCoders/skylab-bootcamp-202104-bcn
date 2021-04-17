@@ -1,3 +1,28 @@
+function drawBoard (){
+    const cells = document.getElementsByClassName('cell');
+    console.log(cells);
+    for(let i=0;0<cells.length;i++){
+        cells[i].addEventListener('click', function(){
+            cells[i].style.backgroundColor = 'yellow';
+        })
+    }
+    /*const cellRows = document.getElementsByClassName('cells-row');
+    
+    for(let i=0;i<cellRows.length;i++){
+        const cells = cellRows[i].getElementsByClassName('cell');
+        for(let z=0;z<cells.length;z++){
+            cells[i][z].addEventListener('click',function() {
+                cells[i][z].style.backgroundColor = 'yellow';
+            });
+        }
+    }*/
+
+}
+
+
+
+
+
 function checkTablero(tablero) {
     let newTablero=[[0,0,0,0,0,0,0,0],
                     [0,0,0,0,0,0,0,0],
