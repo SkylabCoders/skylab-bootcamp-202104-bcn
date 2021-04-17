@@ -91,12 +91,23 @@ const beacon = () => {
 
 
 //////////////////////////////
+const gridArray = createMatrix(100,100);
+const gridElement = document.querySelector('.grid');
 
-const grid = document.querySelector('.grid');
-const blinkerShape = blinker();
-console.log(blinker());
+gridArray.forEach((row) => {
+    
+    const rowElement = document.createElement('div');
+    rowElement.className = 'row';
 
+    row.forEach(cell => {
+        const cellElement = document.createElement('div');
+        cellElement.className = 'column';
+        rowElement.appendChild(cellElement);
+    })
+    gridElement.appendChild(rowElement);
+});
 
+console.log(gridElement);
 
 
 
