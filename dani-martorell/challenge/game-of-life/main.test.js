@@ -1,4 +1,3 @@
-
 const createMatrix = (numberRows, numberColumns) => {
     let newMatrix = new Array(numberRows);
     for (let index = 0; index < newMatrix.length; index++) {
@@ -6,27 +5,24 @@ const createMatrix = (numberRows, numberColumns) => {
     }
     return newMatrix;
 }
+
 const populateMatrix = (matrix, row, column) => {
-    const rowPlusBorders = row;
-    const columnPlusBorders = column;
-    if(!matrix[rowPlusBorders]) { return };
-    if(matrix[rowPlusBorders] && matrix[columnPlusBorders]) {
-        matrix[rowPlusBorders][columnPlusBorders] = 1;
+    if(!matrix[row]) { return };
+    if(matrix[row] && matrix[column]) {
+        matrix[row][column] = 1;
     }
 }
 const getNumberOfNeighbours = (array, row, column) => {
     let counter = 0;
-    const rowPlusBorders = row;
-    const columnPlusBorders = column;
-
-    if(array[rowPlusBorders - 1] && array[rowPlusBorders - 1][columnPlusBorders] === 1 ) counter ++;
-    if(array[rowPlusBorders - 1] && array[rowPlusBorders - 1][columnPlusBorders + 1] === 1 ) counter ++;
-    if(array[rowPlusBorders] && array[rowPlusBorders][columnPlusBorders + 1] === 1 ) counter ++;
-    if(array[rowPlusBorders + 1] && array[rowPlusBorders + 1][columnPlusBorders + 1] === 1 ) counter ++;
-    if(array[rowPlusBorders + 1] && array[rowPlusBorders + 1][columnPlusBorders] === 1 ) counter ++;
-    if(array[rowPlusBorders + 1] && array[rowPlusBorders + 1][columnPlusBorders - 1] === 1 ) counter ++;
-    if(array[rowPlusBorders] && array[rowPlusBorders][columnPlusBorders - 1] === 1) counter ++;
-    if(array[rowPlusBorders - 1] && array[rowPlusBorders - 1][columnPlusBorders - 1] === 1 ) counter ++;
+    
+    if(array[row - 1] && array[row - 1][column] === 1 ) counter ++;
+    if(array[row - 1] && array[row - 1][column + 1] === 1 ) counter ++;
+    if(array[row] && array[row][column + 1] === 1 ) counter ++;
+    if(array[row + 1] && array[row + 1][column + 1] === 1 ) counter ++;
+    if(array[row + 1] && array[row + 1][column] === 1 ) counter ++;
+    if(array[row + 1] && array[row + 1][column - 1] === 1 ) counter ++;
+    if(array[row] && array[row][column - 1] === 1) counter ++;
+    if(array[row - 1] && array[row - 1][column - 1] === 1 ) counter ++;
     
     return counter;
 }
@@ -53,17 +49,51 @@ const applyRules = (copy, value, row, column, numberOfNeighbours) => {
         copy[row][column] = 1;
     }
 }
-                
+       
+///////////////////////////////////////////////////
+
+const runApp = (shape) => {
+    setInterval(() => {
+        console.log(shape);
+        shape = runCycle(shape);
+    }, 1000);
+}
+
+const blinker = () => {
+    let matrix = createMatrix(5,5);
+    populateMatrix(matrix, 2, 1);
+    populateMatrix(matrix, 2, 2);
+    populateMatrix(matrix, 2, 3);
+    return matrix;
+}
+
+const toad = () => {
+    let matrix = createMatrix(6,6);
+    populateMatrix(matrix, 2, 2);
+    populateMatrix(matrix, 2, 3);
+    populateMatrix(matrix, 2, 4);
+    populateMatrix(matrix, 3, 1);
+    populateMatrix(matrix, 3, 2);
+    populateMatrix(matrix, 3, 3);
+    return matrix;
+}
+
+const beacon = () => {
+    let matrix = createMatrix(6,6);
+    populateMatrix(matrix, 1, 1);
+    populateMatrix(matrix, 1, 2);
+    populateMatrix(matrix, 2, 1);
+    populateMatrix(matrix, 2, 2);
+    populateMatrix(matrix, 3, 3);
+    populateMatrix(matrix, 3, 4);
+    populateMatrix(matrix, 4, 3);
+    populateMatrix(matrix, 4, 4);
+    return matrix;
+}
+runApp(beacon())
 
 
 
-let matrix = createMatrix(5,5);
-populateMatrix(matrix, 2, 1);
-populateMatrix(matrix, 2, 2);
-populateMatrix(matrix, 2, 3);
-matrix
-matrix = runCycle(matrix);
-matrix;
 
 
 
