@@ -9,7 +9,6 @@ In each cycle:
         IF cellNumOfNeighbours === 3 { cell isAlive TRUE }
 
 */
-let a = 5
 
 
 const createMatrix = (numberRows, numberColumns) => {
@@ -28,37 +27,43 @@ const populateMatrix = (matrix, row, column) => {
 
 const getNumberOfNeighbours = (array, row, column) => {
     let counter = 0;
-    if(array[row - 1] && array[row - 1][column]) counter ++;
-    if(array[row - 1] && array[row - 1][column + 1]) counter ++;
-    if(array[column + 1] && array[row][column + 1]) counter ++;
-    if(array[row + 1] && array[row + 1][column + 1]) counter ++;
-    if(array[row + 1] && array[row + 1][column]) counter ++;
-    if(array[row + 1] && array[row + 1][column - 1]) counter ++;
+    if(array[row - 1] && array[row - 1][column] ) counter ++;
+    if(array[row - 1] && array[row - 1][column + 1] ) counter ++;
+    if(array[column + 1] && array[row][column + 1] ) counter ++;
+    if(array[row + 1] && array[row + 1][column + 1] ) counter ++;
+    if(array[row + 1] && array[row + 1][column] ) counter ++;
+    if(array[row + 1] && array[row + 1][column - 1] ) counter ++;
     if(array[column - 1] && [row][column - 1]) counter ++;
-    if(array[row - 1] && array[row - 1][column - 1]) counter ++;
+    if(array[row - 1] && array[row - 1][column - 1] ) counter ++;
     
     return counter;
 }
 
 const matrix = createMatrix(5,5);
+
 populateMatrix(matrix,2,1);
 populateMatrix(matrix,2,2);
 populateMatrix(matrix,2,3);
+populateMatrix(matrix,0,3);
+populateMatrix(matrix,0,4);
 
+console.log(getNumberOfNeighbours(matrix, 0,4)
+);
 
 matrix
-
+console.log(getNumberOfNeighbours(matrix, 3,2)
+);
 const applyRules = (array) => {
-    const copyMatrix = new Array(...array);
-    copyMatrix[0][0] = 1;
-    copyMatrix
-    array
+    const copyMatrix = JSON.parse(JSON.stringify(array));
+    
     for (let row = 0; row < copyMatrix.length; row++) {
         for (let column = 0; column < copyMatrix.length; column++) {
-            const currentRow = copyMatrix[row];
-            const currentColumn = copyMatrix[column];
+            const currentRow = row;
+            const currentColumn = column;
             let currentCell = copyMatrix[row][column];
             const numberOfNeighbours = getNumberOfNeighbours(copyMatrix, currentRow, currentColumn);
+            console.log(numberOfNeighbours);
+            matrix
 
             if(currentCell === 0){
                 if(numberOfNeighbours !== 2 || numberOfNeighbours !== 3 ) { currentCell = 0 };
@@ -66,8 +71,9 @@ const applyRules = (array) => {
                 if(numberOfNeighbours === 3) { currentCell = 1};
             }
         }
-        return copyMatrix;
     }
+    return copyMatrix;
+
 }
 console.log(applyRules(matrix));
 
