@@ -20,6 +20,20 @@ const directionSapo = (row, column) => {
   ];
   return positions;
 };
+const directionBaliza = (row, column) => {
+  let positions = [
+    [row, column + 1],
+    [row + 1, column + 1],
+    [row + 1, column],
+    [row, column],
+    [row - 1, column - 1],
+    [row - 2, column - 1],
+    [row - 2, column - 2],
+    [row - 1, column - 2],
+    [row - 1, column - 1],
+  ];
+  return positions;
+};
 const createMatriz = (columns, rows, charToFillWith) => {
   let matriz = [];
   for (let column = 0; column < columns; column++) {
@@ -101,7 +115,7 @@ const cellExists = (
   }
 };
 const searchAlives = (cellsArray) => {
-  let searchedArray = createMatriz(6, 6, "");
+  let searchedArray = createMatriz(6, 6, 1);
   for (let column = 0; column < cellsArray.length; column++) {
     for (let row = 0; row < cellsArray[column].length; row++) {
       let neighbours = countNeighbours(row, column, cellsArray);
@@ -149,7 +163,16 @@ const gameOfLifeSapo = () => {
   newArray = searchAlives(newArray);
   console.log(newArray);
 };
-
-// setInterval(gameOfLifeSapo, 5000);
-gameOfLifeBlinker();
-gameOfLifeSapo();
+const gameOfLifeBaliza = () => {
+  const matriz = createMatriz(arrayHeight, arrayRows, 0);
+  const matrizVertical = createVerticalBlock(3, 2, matriz, directionBaliza);
+  console.log(matrizVertical);
+  let newArray = searchAlives(matrizVertical);
+  console.log(newArray);
+  newArray = searchAlives(newArray);
+  console.log(newArray);
+};
+setInterval(gameOfLifeSapo, 5000);
+// gameOfLifeBlinker();
+// gameOfLifeSapo();
+// gameOfLifeBaliza();
