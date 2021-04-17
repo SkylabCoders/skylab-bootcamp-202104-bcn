@@ -22,59 +22,65 @@ const blinkerCreation = () => {
 
 blinkerCreation();
 
-const checkNeighbours = () => {
-    let neighboursCounter = 0;
+const gol = () => {
     for(let i = 0; i < newGrid.length; i++){
         for (let j = 0; j < newGrid[i].length; j++){
-
-            if (newGrid[i][j] === 1) {
-                console.log("life");
-            } else {
-                console.log("dead")
-            }
-
-            if (newGrid[j+1] && newGrid[i][j+1]  === 1) {
-                neighboursCounter++;
-            } 
-            if (newGrid[j-1] && newGrid[i][j-1] === 1) {
-                neighboursCounter++
-            }
-            if (newGrid[i-1] && newGrid[j-1] && newGrid[i-1][j-1] === 1) {
-                neighboursCounter++
-            }
-            if (newGrid[i-1] && newGrid[i-1][j] === 1) {
-                neighboursCounter++
-            }
-            if (newGrid[i-1] && newGrid[j+1] && newGrid[i-1][j+1] === 1) {
-                neighboursCounter++
-            }
-            if (newGrid[i+1] && newGrid[j-1] && newGrid[i+1][j-1] === 1) {
-                neighboursCounter++
-            }
-            if (newGrid[i+1] && newGrid[i+1][j] === 1) {
-                neighboursCounter++
-            }
-            if (newGrid[i+1] && newGrid[j+1] && newGrid[i+1][j+1] === 1){
-                neighboursCounter++
-            }
-
-            if (newGrid[i][j] === 1 && (neighboursCounter === 2 || neighboursCounter === 3)){
-                newGrid[i][j] = 1;
-                cell = true;
-                console.log(cell)
-            } else if (newGrid[i][j] === 0 && neighboursCounter === 3){
-                cell = true;
-                console.log(cell)
-            } else {
-                cell= false;
-                console.log(cell)
-            }
-            neighboursCounter = 0;
-
+            checkNeighbours();
+            checklifeDead();
         }
     }
+    newGrid = newGrid2;
 }
 
+const checkNeighbours = () => {
+    if (newGrid[j+1] && newGrid[i][j+1]  === 1) {
+        neighboursCounter++;
+    } 
+    if (newGrid[j-1] && newGrid[i][j-1] === 1) {
+        neighboursCounter++
+    }
+    if (newGrid[i-1] && newGrid[j-1] && newGrid[i-1][j-1] === 1) {
+        neighboursCounter++
+    }
+    if (newGrid[i-1] && newGrid[i-1][j] === 1) {
+        neighboursCounter++
+    }
+    if (newGrid[i-1] && newGrid[j+1] && newGrid[i-1][j+1] === 1) {
+        neighboursCounter++
+    }
+    if (newGrid[i+1] && newGrid[j-1] && newGrid[i+1][j-1] === 1) {
+        neighboursCounter++
+    }
+    if (newGrid[i+1] && newGrid[i+1][j] === 1) {
+        neighboursCounter++
+    }
+    if (newGrid[i+1] && newGrid[j+1] && newGrid[i+1][j+1] === 1){
+        neighboursCounter++
+    }  
+}
+
+const checklifeDead = () => {
+    
+    let neighboursCounter = 0;
+            
+    if (newGrid[i][j] === 1 && (neighboursCounter === 2 || neighboursCounter === 3)){
+        newGrid2[i][j] = 1;
+
+    } else if (newGrid[i][j] === 0 && neighboursCounter === 3){
+        newGrid2[i][j] = 1;
+
+    } else {
+        newGrid2[i][j] = 0;
+
+    }
+
+    neighboursCounter = 0;
+}
+const timerGol = () => {
+    setInterval(function(){
+        alert("Hello"); 
+    }, 1000);
+}
 
 
 
