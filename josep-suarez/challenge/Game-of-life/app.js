@@ -146,14 +146,16 @@ const isAlive = (column, row, array) => {
   return isAlive;
 };
 const gameOfLifeBlinker = () => {
+  let reset = document.getElementById("app");
+  // reset.innerHTML = "";
   const matriz = createMatriz(arrayHeight, arrayRows, 0);
   const matrizVertical = createVerticalBlock(2, 2, matriz, directionBlinker);
-  console.log(matrizVertical);
-  playButton.addEventListener("click", generateTable);
   let newArray = searchAlives(matrizVertical);
-  console.log(newArray);
+  // playButton.addEventListener("click", generateTable(newArray));
+  generateTable(newArray);
   newArray = searchAlives(newArray);
-  console.log(newArray);
+  generateTable2(newArray);
+  // generateTable(newArray);
 };
 const gameOfLifeSapo = () => {
   const matriz = createMatriz(arrayHeight, arrayRows, 0);
@@ -173,32 +175,37 @@ const gameOfLifeBaliza = () => {
   newArray = searchAlives(newArray);
   console.log(newArray);
 };
-// setInterval(gameOfLifeSapo, 5000);
+setInterval(gameOfLifeBlinker, 5000);
 // gameOfLifeBlinker();
 // gameOfLifeSapo();
 // gameOfLifeBaliza();
 
-const generateTable = () => {
-  let newArray = [
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-  ];
+const generateTable = (array) => {
   let table = "<table><tr><td>Game Of Life</td>";
-  for (let i = 0; i < newArray.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     table += "<table><tr><td></td>";
-    for (let j = 0; j < newArray[i].length; j++) {
-      table += "<td>" + newArray[i][j] + "</td>";
+    for (let j = 0; j < array[i].length; j++) {
+      table += "<td>" + array[i][j] + "</td>";
     }
   }
   table += "</table>";
   let siteTable = document.getElementById("app");
   siteTable.innerHTML = table;
 };
+const generateTable2 = (array) => {
+  let table = "<table><tr><td>Game Of Life</td>";
+  for (let i = 0; i < array.length; i++) {
+    table += "<table><tr><td></td>";
+    for (let j = 0; j < array[i].length; j++) {
+      table += "<td>" + array[i][j] + "</td>";
+    }
+  }
+  table += "</table>";
+  let siteTable2 = document.getElementById("app2");
+  siteTable2.innerHTML = table;
+};
 
 const playButton = document.getElementsByClassName(
   "game-footer__buttons-play"
 )[0];
-// playButton.addEventListener("click", generateTable);
 window.onload = gameOfLifeBlinker;
