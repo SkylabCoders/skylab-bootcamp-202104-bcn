@@ -12,9 +12,9 @@ export function blinker(board, isAlive) {
     row.forEach((cell, cellIndex) => {
       const neighbours = getNeighbours(board, rowIndex, cellIndex);
       if (isAlive(cell)) {
-        newRow.push(updateCell(neighbours === 2 || neighbours === 3));
+        newRow.push(updateCell(continueLiving(neighbours)));
       } else {
-        newRow.push(updateCell(neighbours === 3));
+        newRow.push(updateCell(hasToLive(neighbours)));
       }
     });
     newBoard.push(newRow);
@@ -26,6 +26,9 @@ export function blinker(board, isAlive) {
 const hasNeighbour = (row, column, cell) => {
   return cellExists(row) && cellExists(column);
 };
+
+const continueLiving = (neighbours) => neighbours === 2 || neighbours === 3;
+const hasToLive = (neighbours) => neighbours === 2;
 
 const getNeighbours = (board, row, column) => {
   let neighbours = 0;
