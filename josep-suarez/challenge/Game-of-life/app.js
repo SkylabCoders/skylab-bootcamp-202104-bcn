@@ -146,25 +146,28 @@ const isAlive = (column, row, array) => {
   return isAlive;
 };
 const gameOfLifeBlinker = () => {
-  let reset = document.getElementById("app");
-  // reset.innerHTML = "";
   const matriz = createMatriz(arrayHeight, arrayRows, 0);
   const matrizVertical = createVerticalBlock(2, 2, matriz, directionBlinker);
   let newArray = searchAlives(matrizVertical);
-  // playButton.addEventListener("click", generateTable(newArray));
   generateTable(newArray);
   newArray = searchAlives(newArray);
-  setTimeout(() => generateTable(newArray), 1000);
+  setTimeout(() => generateTable(newArray), 2000);
 };
-
+const playBlinker = () => {
+  gameOfLifeBlinker();
+  setInterval(gameOfLifeBlinker, 5000);
+};
 const gameOfLifeSapo = () => {
   const matriz = createMatriz(arrayHeight, arrayRows, 0);
   const matrizVertical = createVerticalBlock(3, 2, matriz, directionSapo);
-  console.log(matrizVertical);
   let newArray = searchAlives(matrizVertical);
-  console.log(newArray);
+  generateTable(newArray);
   newArray = searchAlives(newArray);
-  console.log(newArray);
+  setTimeout(() => generateTable(newArray), 2000);
+};
+const playSapo = () => {
+  gameOfLifeSapo();
+  setInterval(gameOfLifeSapo, 5000);
 };
 const gameOfLifeBaliza = () => {
   const matriz = createMatriz(arrayHeight, arrayRows, 0);
@@ -175,10 +178,6 @@ const gameOfLifeBaliza = () => {
   newArray = searchAlives(newArray);
   console.log(newArray);
 };
-setInterval(gameOfLifeBlinker, 1000);
-// gameOfLifeBlinker();
-// gameOfLifeSapo();
-// gameOfLifeBaliza();
 
 const generateTable = (array) => {
   let table = "<table><tr><td>Game Of Life</td>";
@@ -192,8 +191,14 @@ const generateTable = (array) => {
   let siteTable = document.getElementById("app");
   siteTable.innerHTML = table;
 };
-
-const playButton = document.getElementsByClassName(
-  "game-footer__buttons-play"
+const blinkerButton = document.getElementsByClassName(
+  "game-footer__buttons--blinker"
 )[0];
-window.onload = gameOfLifeBlinker;
+const sapoButton = document.getElementsByClassName(
+  "game-footer__buttons--sapo"
+)[0];
+
+const blinkerFunction = playBlinker;
+blinkerButton.addEventListener("click", blinkerFunction);
+const sapoFunction = playSapo;
+sapoButton.addEventListener("click", sapoFunction);
