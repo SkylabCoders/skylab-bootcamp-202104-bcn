@@ -57,16 +57,48 @@ const createVerticalBlinker = (column, row, array, positionFunction) => {
 const countNeighbours = (row, column, array) => {
 	let neighbours = 0
 
-	array[column - 1][row - 1] === 1 && neighbours++
-	array[column - 1][row] === 1 && neighbours++
-	array[column - 1][row + 1] === 1 && neighbours++
-	array[column][row - 1] === 1 && neighbours++
-	array[column][row + 1] === 1 && neighbours++
-	array[column + 1][row - 1] === 1 && neighbours++
-	array[column + 1][row] === 1 && neighbours++
-	array[column + 1][row + 1] === 1 && neighbours++
+	cellExists(row, -1, column, -1, array) &&
+		array[column - 1][row - 1] === 1 &&
+		neighbours++
+	cellExists(row, 0, column, -1, array) &&
+		array[column - 1][row] === 1 &&
+		neighbours++
+	cellExists(row, 1, column, -1, array) &&
+		array[column - 1][row + 1] === 1 &&
+		neighbours++
+	cellExists(row, -1, column, 0, array) &&
+		array[column][row - 1] === 1 &&
+		neighbours++
+	cellExists(row, 1, column, 0, array) &&
+		array[column][row + 1] === 1 &&
+		neighbours++
+	cellExists(row, -1, column, 1, array) &&
+		array[column + 1][row - 1] === 1 &&
+		neighbours++
+	cellExists(row, 0, column, 1, array) &&
+		array[column + 1][row] === 1 &&
+		neighbours++
+	cellExists(row, 1, column, 1, array) &&
+		array[column + 1][row + 1] === 1 &&
+		neighbours++
 
 	return neighbours
+}
+const cellExists = (
+	row,
+	rowDisplacement,
+	column,
+	columnDisplacement,
+	array
+) => {
+	const newColumn = column + columnDisplacement
+	const newRow = row + rowDisplacement
+	if (array[newColumn] && array[newColumn][newRow]) {
+		//console.log(row, rowDisplacement, column, columnDisplacement)
+		return true
+	} else {
+		return false
+	}
 }
 
 const searchAlives = (cellsArray) => {
@@ -74,23 +106,58 @@ const searchAlives = (cellsArray) => {
 
 	for (let column = 0; column < cellsArray.length; column++) {
 		for (let row = 0; row < cellsArray[column].length; row++) {
-			if (cellsArray[column][row] === 0) {
-				searchedArray[column][row] = 0
-			}
-			if (cellsArray[column][row] === 1) {
-				let neighbours = countNeighbours(row, column, [...cellsArray])
+			let neighbours = countNeighbours(row, column, cellsArray)
 
+			if (!isAlive(column, row, cellsArray)) {
+				if (neighbours <= 2) {
+					searchedArray[column][row] = 0
+				}
+				if (neighbours > 2) {
+					searchedArray[column][row] = 1
+				}
+			} else {
 				if (neighbours < 2) {
 					searchedArray[column][row] = 0
-				} else {
+				}
+				if (neighbours === 2) {
 					searchedArray[column][row] = 1
 				}
 			}
+			// searchedArray[column][row] = 1
+			// console.log('neighbours:', neighbours, 'column:', column, 'row:', row)
 		}
 	}
 
 	return searchedArray
 }
+
+const isAlive = (column, row, array) => {
+	const isAlive = array[column][row] === 0 ? false : true
+	return isAlive
+}
+
+// const searchAlives = (cellsArray) => {
+// 	let searchedArray = [[], [], [], [], []]
+
+// 	for (let column = 0; column < cellsArray.length; column++) {
+// 		for (let row = 0; row < cellsArray[column].length; row++) {
+// 			if (cellsArray[column][row] === 0) {
+// 				searchedArray[column][row] = 0
+// 			}
+// 			if (cellsArray[column][row] === 1) {
+// 				let neighbours = countNeighbours(row, column, [...cellsArray])
+
+// 				if (neighbours < 2) {
+// 					searchedArray[column][row] = 0
+// 				} else {
+// 					searchedArray[column][row] = 1
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	return searchedArray
+// }
 
 const matrix = createMatrix(MATRIX_COLUMNS, MATRIX_ROWS, 0)
 const matrixWithVerticalBlinker = createVerticalBlinker(
@@ -99,6 +166,27 @@ const matrixWithVerticalBlinker = createVerticalBlinker(
 	matrix,
 	vBlinker_positions_factory
 )
-console.log(matrixWithVerticalBlinker)
-let newArreay = searchAlives(matrixWithVerticalBlinker)
-console.log(newArreay)
+// console.log(matrixWithVerticalBlinker)
+// let newArray = searchAlives(matrixWithVerticalBlinker)
+// console.log(newArray)
+// newArray = searchAlives(newArray)
+// console.log(newArray)
+
+const startGame = (matrix) => {
+	let firstMatrix
+	let secondMatrix = [...matrix]
+	let nextMatrixToShow = 'firstMatrix'
+	console.log(matrix)
+	let cicle = setInterval(() => {
+		if (nextMatrixToShow === 'firstMatrix') {
+			firstMatrix = searchAlives(secondMatrix)
+			console.log(firstMatrix)
+			nextMatrixToShow = 'secondMatrix'
+		} else {
+			secondMatrix = searchAlives(firstMatrix)
+			console.log(secondMatrix)
+			nextMatrixToShow = 'firstMatrix'
+		}
+	}, [1000])
+}
+startGame(matrixWithVerticalBlinker)
