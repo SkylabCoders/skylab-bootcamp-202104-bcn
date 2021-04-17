@@ -1,5 +1,8 @@
-const MAX_WIDTH = 5;
-const MAX_HEIGHT = 5;
+const BLINKER_WIDTH = 5;
+const BLINKER_HEIGHT = 5;
+
+const TOAD_WIDTH = 6;
+const TOAD_HEIGHT = 6;
 
 const DEAD = 0;
 const ALIVE = 1;
@@ -12,9 +15,9 @@ export function blinker(board, isAlive) {
     row.forEach((cell, cellIndex) => {
       const neighbours = getNeighbours(board, rowIndex, cellIndex);
       if (isAlive(cell)) {
-        newRow.push(updateCell(continueLiving(neighbours)));
+        newRow.push(updateCell(neighbours === 2 || neighbours === 3));
       } else {
-        newRow.push(updateCell(hasToLive(neighbours)));
+        newRow.push(updateCell(neighbours === 3));
       }
     });
     newBoard.push(newRow);
@@ -26,9 +29,6 @@ export function blinker(board, isAlive) {
 const hasNeighbour = (row, column, cell) => {
   return cellExists(row) && cellExists(column);
 };
-
-const continueLiving = (neighbours) => neighbours === 2 || neighbours === 3;
-const hasToLive = (neighbours) => neighbours === 2;
 
 const getNeighbours = (board, row, column) => {
   let neighbours = 0;
@@ -97,9 +97,9 @@ const cellExists = (cell) => {
 
 const initializeArray = () => {
   const initialArray = [];
-  for (let i = 0; i < MAX_WIDTH; i++) {
+  for (let i = 0; i < BLINKER_WIDTH; i++) {
     const row = [];
-    for (let j = 0; j < MAX_HEIGHT; j++) {
+    for (let j = 0; j < BLINKER_HEIGHT; j++) {
       row.push(0);
     }
     initialArray.push(row);
@@ -107,35 +107,22 @@ const initializeArray = () => {
   return initialArray;
 };
 
-function createHorizontalBlinker(row, column, array) {
-  const newArray = [...array];
-  let isSuccesInit = true;
-  cellExists(row, column - 1, array)
-    ? (isSuccesInit = true)
-    : (isSuccesInit = false);
-  cellExists(row, column + 1, array)
-    ? (isSuccesInit = true)
-    : (isSuccesInit = false);
-  cellExists(row, column, array)
-    ? (isSuccesInit = true)
-    : (isSuccesInit = false);
-  if (isSuccesInit) {
-    newArray[row][column + 1] = 1;
-    newArray[row][column - 1] = 1;
-    newArray[row][column] = 1;
-    return newArray;
-  } else {
-    alert("Esta ubicacion no es correcta!");
-  }
-}
+const createBlinker = (row, column, figure) => {
+  const figureToReturn = [...figure];
+  console.log("Initial figure");
+  console.log(figure);
+  figureToReturn[row - 1][column] = ALIVE;
+  figureToReturn[row][column] = ALIVE;
+  figureToReturn[row + 1][column] = ALIVE;
 
-const matrix = [
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 1, 1, 1, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-];
+  console.log("New");
+  console.log(figureToReturn);
 
-console.log(matrix);
-console.log(blinker(matrix, isAlive));
+  return figureToReturn;
+};
+
+const initialMatrix = initializeArray(BLINKER_WIDTH, BLINKER_HEIGHT);
+
+const blinkerFigure = createBlinker(3, 3, initialMatrix);
+
+console.log(blinker(blinkerFigure, isAlive));

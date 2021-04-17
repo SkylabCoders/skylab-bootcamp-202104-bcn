@@ -1,4 +1,4 @@
-import { blinker } from "../src/gameOfLife.js";
+import { blinkerFigure } from "../src/gameOfLife.js";
 
 describe("Given gameOfLife function", () => {
   const scenarios = [
@@ -28,7 +28,7 @@ describe("Given gameOfLife function", () => {
         const origin = scenario.origin;
         const result = scenario.result;
         //Act
-        const blinkerCreated = blinker(origin, GameofLife.isAlive);
+        const blinkerCreated = blinkerFigure(origin, GameofLife.isAlive);
         //Assert
         expect(blinkerCreated).toBe(result);
       });
