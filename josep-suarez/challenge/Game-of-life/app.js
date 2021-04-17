@@ -179,15 +179,17 @@ const gameOfLifeBaliza = () => {
 // gameOfLifeBaliza();
 
 const generateTable = () => {
-  let newArray = [0, 0, 0, 0, 0, 0];
-  let table = "<table><tr><td style='width: 100px; color: red;'>ID</td>";
+  let newArray = [
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+  ];
+  let table = "<table><tr><td>Game Of Life</td>";
   for (let i = 0; i < newArray.length; i++) {
-    table = "<table><tr><td style='width: 100px; color: red;'>ID</td>";
-    for (let j = 0; j < newArray.length; j++) {
-      table +=
-        "<tr><td style='width: 100px;text-align: right;'>" +
-        newArray[i][j] +
-        "</td></tr>";
+    table += "<table><tr><td></td>";
+    for (let j = 0; j < newArray[i].length; j++) {
+      table += "<td>" + newArray[i][j] + "</td>";
     }
   }
   table += "</table>";
