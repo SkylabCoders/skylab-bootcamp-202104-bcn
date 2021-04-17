@@ -1,13 +1,12 @@
-let grid = [];
+const createGrid = (rows, columns) => {
 
-function printGrid(row) {
-    for (let i = 0; i < row.length; i++ ) {
-        grid.push(row);
+    let newGrid = new Array(rows);
+
+    for (let i = 0; i < rows; i++) {
+    newGrid[i] = new Array(columns).fill('0');
     }
-    console.log(grid);
-    return grid;
-}
 
-printGrid([0, 0, 0, 0, 0]);
+    return newGrid;
+}
 
 
