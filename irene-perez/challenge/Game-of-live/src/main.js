@@ -7,7 +7,7 @@ const createGrid = (rows, columns) => {
 }
 
 const grid = createGrid(5, 5);
-const newGrid = [...grid];
+let newGrid = [...grid];
 
 const coordsCreation = (num1, num2) => {
     return newGrid[num1][num2] = 1;
@@ -17,22 +17,27 @@ const blinkerCreation = () => {
     coordsCreation(1, 2);
     coordsCreation(2, 2);
     coordsCreation(3, 2);
-    console.log(newGrid);
+    // console.log(newGrid);
+    return newGrid;
 }
 
-blinkerCreation();
+let newArray = blinkerCreation();
 
 const gol = () => {
+    
     for(let i = 0; i < newGrid.length; i++){
         for (let j = 0; j < newGrid[i].length; j++){
-            checkNeighbours();
+            checkNeighbours(1, 2, newGrid);
             checklifeDead();
         }
     }
+    
     newGrid = newGrid2;
 }
 
 const checkNeighbours = () => {
+    let neighboursCounter = 0;
+
     if (newGrid[j+1] && newGrid[i][j+1]  === 1) {
         neighboursCounter++;
     } 
@@ -60,8 +65,6 @@ const checkNeighbours = () => {
 }
 
 const checklifeDead = () => {
-    
-    let neighboursCounter = 0;
             
     if (newGrid[i][j] === 1 && (neighboursCounter === 2 || neighboursCounter === 3)){
         newGrid2[i][j] = 1;
@@ -73,14 +76,16 @@ const checklifeDead = () => {
         newGrid2[i][j] = 0;
 
     }
-
     neighboursCounter = 0;
 }
-const timerGol = () => {
-    setInterval(function(){
-        alert("Hello"); 
-    }, 1000);
-}
+
+
+
+// const timerGol = () => {
+//     setInterval(function(){
+//         alert("Hello"); 
+//     }, 1000);
+// }
 
 
 
