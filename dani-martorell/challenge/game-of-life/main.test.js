@@ -53,8 +53,11 @@ const applyRules = (copy, value, row, column, numberOfNeighbours) => {
 
 const runApp = (shape) => {
     setInterval(() => {
-        console.log(shape);
         shape = runCycle(shape);
+
+        ////// borra divs
+        deleteHtmlGrid();
+        createHtmlGrid(shape);
     }, 1000);
 }
 const blinker = () => {
@@ -90,33 +93,42 @@ const beacon = () => {
 //runApp(beacon());
 
 
-//////////////////////////////   HTML
+//////////////////////////////   HTML   ////////////////////////////////////////////////
 
-const gridArray = createMatrix(10,10);
+const gridArray = createMatrix(30,30);
 const gridElement = document.querySelector('.grid');
+const playButton = document.querySelector('button');
+
+const deleteHtmlGrid = ()=> {
+    gridElement.innerHTML = '';
+}
+
 const createHtmlGrid = (gridArray) => {
     gridArray.forEach((row, i) => {
     
         const rowElement = document.createElement('div');
         rowElement.className = 'row';
     
-        row.forEach(() => {
+        row.forEach((column, j) => {
             const cellElement = document.createElement('div');
             cellElement.className = 'column';
-            cellElement.dataset.state = 0;
+            cellElement.dataset.state = gridArray[i][j];
             rowElement.appendChild(cellElement);
         })
         gridElement.appendChild(rowElement);
     });
 }
+
 createHtmlGrid(gridArray);
 
 document.addEventListener('click', (e)=> {
-    e.target.dataset.state = 1;
-    console.log(e.target);
+    if(e.target.className === 'column'){
+        e.target.dataset.state = 1;
+        const row = +(e.target.dataset.row);
+        const col = +(e.target.dataset.col);
+        gridArray[row][col] = +(e.target.dataset.state);
+    }
 });
-
-const mainArray = new Array(60);
 
 const rows = Array.from(gridElement.querySelectorAll('.row'));
 rows.forEach((row, i) => {
@@ -126,6 +138,14 @@ rows.forEach((row, i) => {
     column.dataset.col = `${j}`;
     });
 });
-console.log(rows);
+
+playButton.addEventListener('click', ()=> {
+    runApp(gridArray);
+})
+
+
+
+
+
 
 
