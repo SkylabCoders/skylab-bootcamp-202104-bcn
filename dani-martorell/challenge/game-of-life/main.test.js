@@ -90,7 +90,7 @@ const beacon = () => {
     populateMatrix(matrix, 4, 4);
     return matrix;
 }
-runApp(beacon())
+runApp(beacon());
 
 
 
