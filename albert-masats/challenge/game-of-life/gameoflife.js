@@ -4,6 +4,8 @@
     
 // }
 
+// array, row, column
+
 const createGrid = (rows, columns) => {
     const grid = new Array(rows);
     for (let i = 0; i < rows; i++) {
@@ -53,59 +55,17 @@ blinkerCreation();
     // arrayGameOfLife[i+1][j+1]];
 
 function gol () {
-    let count = 0;
+    let newGrid2 = createGrid(5, 5)
+
     for (let i = 0; i<arrayGameOfLife.length; i++) {
         for(let j=0; j<arrayGameOfLife[i].length; j++) {
 
-            if (arrayGameOfLife[i][j] === 1) {
-                console.log("life");
-            }else{
-                console.log("dead")
-            }
-
-            if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
-                count++;
-            } 
-            if (arrayGameOfLife[j-1] && arrayGameOfLife[i][j-1] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i-1] && arrayGameOfLife[j-1] && arrayGameOfLife[i-1][j-1] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i-1] && arrayGameOfLife[i-1][j] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i-1] && arrayGameOfLife[j+1] && arrayGameOfLife[i-1][j+1] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i+1] && arrayGameOfLife[j-1] && arrayGameOfLife[i+1][j-1] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i+1] && arrayGameOfLife[i+1][j] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i+1] && arrayGameOfLife[j+1] && arrayGameOfLife[i+1][j+1] ===1){
-                count++
-            }
-
-            if (arrayGameOfLife[i][j] === 1 && (count ===2 || count === 3 )) {
-                arrayGameOfLife[i][j] = 1
-                cell = true;
-                console.log(cell)
-            }else if (arrayGameOfLife[i][j] === 0 && count === 3){
-                cell = true;
-                console.log(cell)
-            }else{
-                cell= false;
-                console.log(cell)
-            }
-
-            count=0;
-
-            nuevoArray.push(arrayGameOfLife[i][j])
-            
-            
-
+            // if (arrayGameOfLife[i][j] === 1) {
+            //     console.log("life");
+            // }else{
+            //     console.log("dead")
+            // }
+            checkNeighbours()
 
             // if cell=true
             // talcual.push(1)
@@ -113,4 +73,61 @@ function gol () {
             // talcu
         } 
     }
+    arrayGameofLife = newGrid2
 }    
+
+timerGol () => {
+
+    setInterval(function() {
+        arrayGameofLife = createGrid(5,5)
+    }, 1000);
+
+}
+
+function checkNeighbours() => {
+    let count = 0;
+
+    if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
+        count++;
+    } 
+    if (arrayGameOfLife[j-1] && arrayGameOfLife[i][j-1] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i-1] && arrayGameOfLife[j-1] && arrayGameOfLife[i-1][j-1] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i-1] && arrayGameOfLife[i-1][j] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i-1] && arrayGameOfLife[j+1] && arrayGameOfLife[i-1][j+1] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i+1] && arrayGameOfLife[j-1] && arrayGameOfLife[i+1][j-1] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i+1] && arrayGameOfLife[i+1][j] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i+1] && arrayGameOfLife[j+1] && arrayGameOfLife[i+1][j+1] ===1){
+        count++
+    }
+}
+
+checkLifeorDead() => {
+    let count = 0;
+    
+    if (arrayGameOfLife[i][j] === 1 && (count ===2 || count === 3 )) {
+        newGrid2[i][j] = 1
+        // cell = true;
+        // console.log(cell)
+    }else if (arrayGameOfLife[i][j] === 0 && count === 3){
+        newGrid2[i][j] = 1
+        // cell = true;
+        // console.log(cell)
+    }else{
+        newGrid2[i][j] = 0
+        // cell= false;
+        // console.log(cell)
+    }
+    count=0;
+}
