@@ -14,7 +14,7 @@ In each cycle:
 const createMatrix = (numberRows, numberColumns) => {
     let newMatrix = new Array(numberRows);
     for (let index = 0; index < newMatrix.length; index++) {
-        newMatrix[index] = new Array(numberColumns).fill(0); 
+        newMatrix[index] = new Array(numberColumns).fill('O'); 
     }
     for(let row of newMatrix){
         row.unshift(null);
@@ -26,50 +26,50 @@ const createMatrix = (numberRows, numberColumns) => {
     
     return newMatrix;
 }
-let matrix2 = createMatrix(5,5)
+let matrix2 = createMatrix(3,3)
 matrix2
 
 const populateMatrix = (matrix, row, column) => {
     const rowPlusBorders = row + 1;
     const columnPlusBorders = column + 1;
-    if(matrix[rowPlusBorders][columnPlusBorders] === null) { return };
+    if(!matrix[rowPlusBorders]) { return };
     if(matrix[rowPlusBorders] && matrix[columnPlusBorders]) {
-        matrix[rowPlusBorders][columnPlusBorders] = 1;
+        matrix[rowPlusBorders][columnPlusBorders] = 'X';
     }
 }
 const getNumberOfNeighbours = (array, row, column) => {
     let counter = 0;
-    console.log(array[row-1][column]);
-    if(array[row - 1] && array[row - 1][column] ) counter ++;
-    if(array[row - 1] && array[row - 1][column + 1] ) counter ++;
-    if(array[column + 1] && array[row][column + 1] ) counter ++;
-    if(array[row + 1] && array[row + 1][column + 1] ) counter ++;
-    if(array[row + 1] && array[row + 1][column] ) counter ++;
-    if(array[row + 1] && array[row + 1][column - 1] ) counter ++;
-    if(array[column - 1] && [row][column - 1]) counter ++;
-    if(array[row - 1] && array[row - 1][column - 1] ) counter ++;
+    const rowPlusBorders = row + 1;
+    const columnPlusBorders = column + 1;
+
+    if(!array[rowPlusBorders]) { return 0 };
+    
+    if( array[rowPlusBorders - 1][columnPlusBorders] === 'X' ) counter ++;
+    if( array[rowPlusBorders - 1][columnPlusBorders + 1] === 'X' ) counter ++;
+    if( array[rowPlusBorders][columnPlusBorders + 1] === 'X' ) counter ++;
+    if( array[rowPlusBorders + 1][columnPlusBorders + 1] === 'X' ) counter ++;
+    if( array[rowPlusBorders + 1][columnPlusBorders] === 'X' ) counter ++;
+    if( array[rowPlusBorders + 1][columnPlusBorders - 1] === 'X' ) counter ++;
+    if( array[rowPlusBorders][columnPlusBorders - 1] === 'X') counter ++;
+    if( array[rowPlusBorders - 1][columnPlusBorders - 1] === 'X' ) counter ++;
     
     return counter;
 }
-const matrix = createMatrix(5,5);
 
-populateMatrix(matrix,2,1);
-populateMatrix(matrix,2,2);
-populateMatrix(matrix,2,3);
-populateMatrix(matrix,0,3);
-populateMatrix(matrix,0,4);
-populateMatrix(matrix,1,5);
+populateMatrix(matrix2,0,1);
+populateMatrix(matrix2,1,1);
+populateMatrix(matrix2,1,2);
+populateMatrix(matrix2,2,0);
 
 
+populateMatrix(matrix2,2,1);
+populateMatrix(matrix2,2,23);
 
-matrix
 
-console.log(getNumberOfNeighbours(matrix, 0,4)
-);
+matrix2
+console.log(getNumberOfNeighbours(matrix2, 2,2));
 
-matrix
-console.log(getNumberOfNeighbours(matrix, 3,2)
-);
+
 const applyRules = (array) => {
     const copyMatrix = JSON.parse(JSON.stringify(array));
     
