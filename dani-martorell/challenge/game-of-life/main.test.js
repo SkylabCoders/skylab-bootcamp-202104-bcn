@@ -92,11 +92,10 @@ const beacon = () => {
 
 //////////////////////////////   HTML
 
-const gridArray = createMatrix(60,60);
+const gridArray = createMatrix(10,10);
 const gridElement = document.querySelector('.grid');
-
 const createHtmlGrid = (gridArray) => {
-    gridArray.forEach((row) => {
+    gridArray.forEach((row, i) => {
     
         const rowElement = document.createElement('div');
         rowElement.className = 'row';
@@ -117,15 +116,16 @@ document.addEventListener('click', (e)=> {
     console.log(e.target);
 });
 
+const mainArray = new Array(60);
 
-
-
-
-
-
-
-
-
-
+const rows = Array.from(gridElement.querySelectorAll('.row'));
+rows.forEach((row, i) => {
+    const columns = row.childNodes;
+    columns.forEach((column, j) => {
+    column.dataset.row = `${i}`;
+    column.dataset.col = `${j}`;
+    });
+});
+console.log(rows);
 
 
