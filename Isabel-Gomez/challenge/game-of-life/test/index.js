@@ -24,35 +24,52 @@ createOriginalBlinker();
 console.log('originalBlinker', newCells);
 
 const checkNeighbours = (row, column, array) => {
-    let numOfNeighbours = 0;
+    let neighbours = 0;
     if (array[row][column + 1] && array[row][column + 1] === 1) {
-        numOfNeighbours++;
+        neighbours++;
     }
     if (array[row][column - 1] && array[row][column - 1] === 1) {
-        numOfNeighbours++;
+        neighbours++;
     }
     if (array[row + 1][column] && array[row + 1][column] === 1) {
-        numOfNeighbours++;
+        neighbours++;
     }
     if (array[row - 1][column] && array[row - 1][column] === 1) {
-        numOfNeighbours++;
+        neighbours++;
     }
     if (array[row + 1][column + 1] && array[row + 1][column + 1] === 1) {
-        numOfNeighbours++;
+        neighbours++;
     }
     if (array[row + 1][column - 1] && array[row + 1][column - 1] === 1) {
-        numOfNeighbours++;
+        neighbours++;
     }
     if (array[row - 1][column + 1] && array[row - 1][column + 1] === 1) {
-        numOfNeighbours + 1;
+        neighbours + 1;
     }
     if (array[row - 1][column - 1] && array[row - 1][column - 1] === 1) {
-        numOfNeighbours + 1;
+        neighbours + 1;
     }
-    return numOfNeighbours;
+    return neighbours;
 }
 
-console.log('resultado', checkNeighbours(2, 2, newCells))
+let numOfNeighbours = checkNeighbours(2, 2, newCells);
+console.log('vecinos encontrados', numOfNeighbours);
+
+const changeCells = (row, column, array, neighbours) => {
+    let newCellsWithChanges = [...newCells];
+    if (neighbours < 2) {
+        array[row][column] = 0;
+    }
+    if (neighbours === 2 || neighbours === 3) {
+        console.log('entra');
+        array[row][column] = 1;
+    }
+    if (neighbours > 3) {
+        array[row][column] = 0;
+    }
+    return newCellsWithChanges;
+}
+console.log('nueva celda segun sus vecinos', changeCells(2, 2, newCells, numOfNeighbours));
 
 
 
