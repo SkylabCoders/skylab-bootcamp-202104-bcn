@@ -149,6 +149,7 @@ const gameOfLifeBlinker = () => {
   const matriz = createMatriz(arrayHeight, arrayRows, 0);
   const matrizVertical = createVerticalBlock(2, 2, matriz, directionBlinker);
   console.log(matrizVertical);
+  playButton.addEventListener("click", generateTable);
   let newArray = searchAlives(matrizVertical);
   console.log(newArray);
   newArray = searchAlives(newArray);
@@ -172,7 +173,30 @@ const gameOfLifeBaliza = () => {
   newArray = searchAlives(newArray);
   console.log(newArray);
 };
-setInterval(gameOfLifeSapo, 5000);
+// setInterval(gameOfLifeSapo, 5000);
 // gameOfLifeBlinker();
 // gameOfLifeSapo();
 // gameOfLifeBaliza();
+
+const generateTable = () => {
+  let newArray = [0, 0, 0, 0, 0, 0];
+  let table = "<table><tr><td style='width: 100px; color: red;'>ID</td>";
+  for (let i = 0; i < newArray.length; i++) {
+    table = "<table><tr><td style='width: 100px; color: red;'>ID</td>";
+    for (let j = 0; j < newArray.length; j++) {
+      table +=
+        "<tr><td style='width: 100px;text-align: right;'>" +
+        newArray[i][j] +
+        "</td></tr>";
+    }
+  }
+  table += "</table>";
+  let siteTable = document.getElementById("app");
+  siteTable.innerHTML = table;
+};
+
+const playButton = document.getElementsByClassName(
+  "game-footer__buttons-play"
+)[0];
+// playButton.addEventListener("click", generateTable);
+window.onload = gameOfLifeBlinker;
