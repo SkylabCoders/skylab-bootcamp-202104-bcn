@@ -22,58 +22,35 @@ const createOriginalBlinker = () => {
 createOriginalBlinker();
 console.log('originalBlinker', newCells);
 
-
-
-
-
-
-
-
-
-
-
-
-// const originBlinker = [
-//     [0, 0, 0, 0, 0],
-//     [0, 0, 1, 0, 0],
-//     [0, 0, 1, 0, 0],
-//     [0, 0, 1, 0, 0],
-//     [0, 0, 0, 0, 0]
-// ];
-
-// const newBlinker = [
-//     [0, 0, 0, 0, 0],
-//     [0, 0, 0, 0, 0],
-//     [0, 1, 1, 1, 0],
-//     [0, 0, 0, 0, 0],
-//     [0, 0, 0, 0, 0]
-// ]
-
-// const numOfNeighbours = () => {
-//     let index = 0;
-//     let subIndex = 0;
-//     let position = originBlinker[index][subIndex];
-
-//     originBlinker.forEach
-
-// }
-// numOfNeighbours();
-
-
-
-
-// /* ------------------------------ */
-
-// function playBlinker(originBlinker) {
-//     originBlinker.forEach((position) => {
-//         position.map((subPosition) => {
-//             numOfNeighbours();
-//             stateOfNeighbours();
-//             return newBlinker;
-//         })
-//     })
-// };
-
-
+const checkNeighbours = () => {
+    let numOfNeighbours = 0;
+    for (let row = 0; row < newCells.length; row++) {
+        for (let column = 0; column < newCells.length; column++) {
+            if (newCells[row][column++] !== undefined && newCells[row][column++] === 1) {
+                numOfNeighbours++;
+            }
+            if (newCells[row][column--] !== undefined && newCells[row][column--] === 1) {
+                numOfNeighbours++;
+            }
+            if (newCells[row++][column] !== undefined && newCells[row++][column] === 1) {
+                numOfNeighbours++;
+            }
+            if (newCells[row--][column] !== undefined && newCells[row--][column] === 1) {
+                numOfNeighbours++;
+            }
+            if (newCells[row++][column++] !== undefined && newCells[row++][column++] === 1) {
+                numOfNeighbours++;
+            }
+            if (newCells[row++][column--] !== undefined && newCells[row++][column--] === 1) {
+                numOfNeighbours++;
+            }
+            if (newCells[row--][column++] !== undefined && newCells[row--][column++] === 1) {
+                numOfNeighbours++;
+            }
+        }
+    }
+}
+checkNeighbours();
+console.log('startPlay', newCells);
 
 
