@@ -9,7 +9,15 @@ const createGrid = (rows, columns) => {
     return grid;
 }
 
+console.log(grid);
+
 const coordsCreation = (num1, num2) => {
     newGrid[num1][num2];
-    
+}
+
+const blinkerCreation = () => {
+    coordsCreation(1, 2);
+    coordsCreation(2, 2);
+    coordsCreation(3, 2);
+    console.log(newGrid);
 }
