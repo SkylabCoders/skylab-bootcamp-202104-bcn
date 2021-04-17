@@ -1,3 +1,5 @@
+@import "mixin";
+
 *,
  *::after,
  *::before  {
@@ -7,24 +9,29 @@
   box-sizing: border-box;
 }
 
-.body {
+body {
   margin: 0;
   padding: 0;
+  background-color: black;
+  font-family: "Lucida Sans";
+  color: white;
+}
+
+.game-board {
+  @include flexbox(flex, column, null, center);
+  margin: auto;
+  margin-top: 10px;
 }
 
 .board {
+  @include flexbox(inline-flex, column, flex-start, null);
   height: auto;
   width: auto;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  background-color: black;
 }
 
 .cells-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  @include flexbox(flex, row, flex-start, null);
 }
 
 .cell {
@@ -34,9 +41,15 @@
   border: none;
   border: 0.1px solid rgb(29, 29, 29);
   background-color: black;
+  border-radius: 50%;
+}
+.controls {
+  @include flexbox(flex, row, center, null);
+  margin-top: 10px;
 }
 
 button {
+  margin: 10px;
   padding: 10px 20px;
   font-size: 18px;
   text-transform: uppercase;
@@ -44,9 +57,22 @@ button {
   border: none;
   color: white;
 }
+
 .play {
-  background-color: red;
+  background-color: #cd5d7d;
 }
+
 .stop {
-  background-color: blue;
+  background-color: #949cdf;
+}
+
+.reset {
+  background-color: #a7c5eb;
+}
+
+.size {
+  @include flexbox(flex, row, center, null);
+  input {
+    margin: 0 20px;
+  }
 }

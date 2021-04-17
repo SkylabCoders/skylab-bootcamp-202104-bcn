@@ -1,6 +1,7 @@
 
 let boardArray = [];
-let newBoard = []
+let newBoard = [];
+let colors = ['F2E641','F2CB05','F2B705','F29F05','D96704'];
 
 function createBoard(rowNumber,columnNumber){
     let board = document.querySelector('.board');
@@ -18,8 +19,9 @@ function createBoard(rowNumber,columnNumber){
             newBoard[i][z] = 0;
         }
     }
-    drawBoard();
-    time();
+    drawBoard(); 
+    reset();
+    controls();
 }
 
 function drawBoard (){
@@ -35,6 +37,7 @@ function drawBoard (){
             });        
         }
     }
+    
 }
 
 function checkBoard() {
@@ -74,7 +77,8 @@ function drawCheckBoard(){
         const cells = cellRows[i].getElementsByClassName('cell');
         for(let z=0;z<cells.length;z++){
             if(newBoard[i][z]===1){
-                cells[z].style.backgroundColor = 'white';
+                let colorNumber = Math.floor(Math.random()*(colors.length)+0);
+                cells[z].style.backgroundColor = '#' + colors[colorNumber];
             } else if (newBoard[i][z]===0){
                 cells[z].style.backgroundColor = 'black';
             }                                
@@ -82,7 +86,7 @@ function drawCheckBoard(){
     }
 }
 
-function time (){
+function controls (){
     const play = document.querySelector('.play');
     play.addEventListener('click', function(){
         nIntervId = setInterval((checkBoard),600);
@@ -91,10 +95,40 @@ function time (){
     stop.addEventListener('click', function(){
         clearInterval(nIntervId);
     });
+    const reset = document.querySelector('.reset');
+    reset.addEventListener('click', function(){
+        clearInterval(nIntervId);
+        reset();
+    })
+}
+
+function reset (){
+    const reset = document.querySelector('.reset');
+    reset.addEventListener('click', function() {
+        const cellRows = document.getElementsByClassName('cells-row');
+        for(let i=0;i<cellRows.length;i++){
+            const cells = cellRows[i].getElementsByClassName('cell');
+            for(let z=0;z<cells.length;z++){
+                cells[z].style.backgroundColor = 'black';
+                boardArray[i][z]=0;
+                newBoard[i][z]=0;
+            }
+        }
+        });
+    drawBoard();
+}
+
+function boardSize(){
+    const create = document.querySelector('.create');
+    create.addEventListener('click', function (){
+        const row = document.getElementById('rows-quantity').value;
+        const column = document.getElementById('columns-quantity').value;
+        createBoard(row,column);
+        document.querySelector('.size').style.display = 'none';
+    })
 }
 
 
-
-createBoard(30,50);
+boardSize();
 
     

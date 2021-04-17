@@ -8,14 +8,30 @@
   box-sizing: border-box;
 }
 
-.body {
+body {
   margin: 0;
   padding: 0;
+  background-color: black;
+  font-family: "Lucida Sans";
+  color: white;
+}
+
+.game-board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  margin-top: 10px;
 }
 
 .board {
-  height: auto;
-  width: auto;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -26,8 +42,9 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  height: auto;
+  width: auto;
+  background-color: black;
 }
 
 .cells-row {
@@ -52,9 +69,25 @@
   border: none;
   border: 0.1px solid #1d1d1d;
   background-color: black;
+  border-radius: 50%;
+}
+
+.controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
 }
 
 button {
+  margin: 10px;
   padding: 10px 20px;
   font-size: 18px;
   text-transform: uppercase;
@@ -64,10 +97,31 @@ button {
 }
 
 .play {
-  background-color: red;
+  background-color: #cd5d7d;
 }
 
 .stop {
-  background-color: blue;
+  background-color: #949cdf;
+}
+
+.reset {
+  background-color: #a7c5eb;
+}
+
+.size {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.size input {
+  margin: 0 20px;
 }
 /*# sourceMappingURL=index.css.map */
