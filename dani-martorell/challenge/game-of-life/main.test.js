@@ -90,6 +90,11 @@ const beacon = () => {
 //runApp(beacon());
 
 
+//////////////////////////////
+
+const grid = document.querySelector('.grid');
+const blinkerShape = blinker();
+console.log(blinker());
 
 
 
