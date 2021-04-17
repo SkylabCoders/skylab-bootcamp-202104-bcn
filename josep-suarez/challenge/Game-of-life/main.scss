@@ -1,19 +1,21 @@
+$text-font: "Orelega One", cursive;
 body {
   background-image: url("./image/background.jpg");
   color: rgb(0, 0, 0);
   font-weight: bolder;
   font-size: x-large;
+  font-family: $text-font;
 }
 h1 {
   text-align: center;
   text-transform: uppercase;
-  color: black;
+  color: rgb(65, 150, 150);
 }
 .header-game {
   &__rules {
     text-align: left;
     list-style: decimal;
-    font-family: "Times New Roman", Times, serif;
+    font-family: $text-font;
   }
 }
 .table {
@@ -39,7 +41,9 @@ h1 {
     justify-content: center;
     &--blinker,
     &--sapo {
+      font-family: $text-font;
       background-color: aqua;
+      font-size: x-large;
       border: none;
       width: 150px;
       height: 50px;

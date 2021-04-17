@@ -3,18 +3,19 @@ body {
   color: black;
   font-weight: bolder;
   font-size: x-large;
+  font-family: "Orelega One", cursive;
 }
 
 h1 {
   text-align: center;
   text-transform: uppercase;
-  color: black;
+  color: #419696;
 }
 
 .header-game__rules {
   text-align: left;
   list-style: decimal;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Orelega One", cursive;
 }
 
 .table {
@@ -67,7 +68,9 @@ h1 {
 }
 
 .game-footer__buttons--blinker, .game-footer__buttons--sapo {
+  font-family: "Orelega One", cursive;
   background-color: aqua;
+  font-size: x-large;
   border: none;
   width: 150px;
   height: 50px;
