@@ -6,34 +6,99 @@ const ALIVE = 1;
 
 function gameOfLife(board, isAlive) {
   const newBoard = [];
-  let column = 0;
 
-  board.forEach((row, index) => {
-    const neighbours = getNeighbours(board, row[index], column);
-    if (isAlive(row[index])) {
-      //TODO ALIVE ACTIONS
-      if (neighbours !== 2 || neighbours !== 3) {
-        row[index] = DEAD;
+  board.forEach((row, rowIndex) => {
+    const newRow = [];
+    row.forEach((cell, cellIndex) => {
+      const neighbours = getNeighbours(board, rowIndex, cellIndex);
+      if (isAlive(cell)) {
+        if (neighbours === 2 || neighbours === 3) {
+          newRow.push(ALIVE);
+        } else {
+          newRow.push(DEAD);
+        }
+      } else {
+        if (neighbours === 3) {
+          newRow.push(ALIVE);
+        } else {
+          newRow.push(DEAD);
+        }
       }
-    } else {
-      if (neighbours === 3) {
-        row[index] === ALIVE;
-      }
-    }
-    column++;
+    });
+    newBoard.push(newRow);
   });
 
   return newBoard;
 }
 
 const getNeighbours = (board, row, column) => {
-  console.log(board[row][column]);
+  let neighbours = 0;
+  debugger;
+  if (
+    cellExists(board[row - 1]) &&
+    cellExists(board[column - 1]) &&
+    isAlive(board[row - 1][column - 1])
+  ) {
+    neighbours++;
+  }
+
+  if (
+    cellExists(board[row - 1]) &&
+    cellExists(board[column]) &&
+    isAlive(board[row - 1][column])
+  ) {
+    neighbours++;
+  }
+  if (
+    cellExists(board[row]) &&
+    cellExists(board[column - 1]) &&
+    isAlive(board[row][column - 1])
+  ) {
+    neighbours++;
+  }
+  if (
+    cellExists(board[row - 1]) &&
+    cellExists(board[column + 1]) &&
+    isAlive(board[row - 1][column + 1])
+  ) {
+    neighbours++;
+  }
+  if (
+    cellExists(board[row]) &&
+    cellExists(board[column + 1]) &&
+    isAlive(board[row][column + 1])
+  ) {
+    neighbours++;
+  }
+  if (
+    cellExists(board[row + 1]) &&
+    cellExists(board[column - 1]) &&
+    isAlive(board[row + 1][column - 1])
+  ) {
+    neighbours++;
+  }
+  if (
+    cellExists(board[row + 1]) &&
+    cellExists(board[column]) &&
+    isAlive(board[row + 1][column])
+  ) {
+    neighbours++;
+  }
+  if (
+    cellExists(board[row + 1]) &&
+    cellExists(board[column + 1]) &&
+    isAlive(board[row + 1][column + 1])
+  ) {
+    neighbours++;
+  }
+
+  return neighbours;
 };
 
 const isAlive = (cell) => cell === ALIVE;
 
-const isCellEmpty = (row, column, array) => {
-  return array[row][column] !== undefined && array[row][column] === 0;
+const cellExists = (cell) => {
+  return cell !== undefined;
 };
 
 const initializeArray = () => {
@@ -45,7 +110,6 @@ const initializeArray = () => {
     }
     initialArray.push(row);
   }
-  console.log(initialArray);
   return initialArray;
 };
 
@@ -56,13 +120,13 @@ function gameOfLifeBlinker(array) {
 function createHorizontalBlinker(row, column, array) {
   const newArray = [...array];
   let isSuccesInit = true;
-  isCellEmpty(row, column - 1, array)
+  cellExists(row, column - 1, array)
     ? (isSuccesInit = true)
     : (isSuccesInit = false);
-  isCellEmpty(row, column + 1, array)
+  cellExists(row, column + 1, array)
     ? (isSuccesInit = true)
     : (isSuccesInit = false);
-  isCellEmpty(row, column, array)
+  cellExists(row, column, array)
     ? (isSuccesInit = true)
     : (isSuccesInit = false);
   if (isSuccesInit) {
@@ -83,4 +147,5 @@ const matrix = [
   [0, 0, 0, 0, 0],
 ];
 
-console.log(getNeighbours(matrix, 2, 2));
+console.log(matrix);
+console.log(gameOfLife(matrix, isAlive));
