@@ -90,24 +90,42 @@ const beacon = () => {
 //runApp(beacon());
 
 
-//////////////////////////////
-const gridArray = createMatrix(100,100);
+//////////////////////////////   HTML
+
+const gridArray = createMatrix(60,60);
 const gridElement = document.querySelector('.grid');
 
-gridArray.forEach((row) => {
+const createHtmlGrid = (gridArray) => {
+    gridArray.forEach((row) => {
     
-    const rowElement = document.createElement('div');
-    rowElement.className = 'row';
+        const rowElement = document.createElement('div');
+        rowElement.className = 'row';
+    
+        row.forEach(() => {
+            const cellElement = document.createElement('div');
+            cellElement.className = 'column';
+            cellElement.dataset.state = 0;
+            rowElement.appendChild(cellElement);
+        })
+        gridElement.appendChild(rowElement);
+    });
+}
+createHtmlGrid(gridArray);
 
-    row.forEach(cell => {
-        const cellElement = document.createElement('div');
-        cellElement.className = 'column';
-        rowElement.appendChild(cellElement);
-    })
-    gridElement.appendChild(rowElement);
+document.addEventListener('click', (e)=> {
+    e.target.dataset.state = 1;
+    console.log(e.target);
 });
 
-console.log(gridElement);
+
+
+
+
+
+
+
+
+
 
 
 
