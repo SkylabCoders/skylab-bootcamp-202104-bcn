@@ -23,39 +23,36 @@ createOriginalBlinker();
 
 console.log('originalBlinker', newCells);
 
-const checkNeighbours = () => {
+const checkNeighbours = (row, column, array) => {
     let numOfNeighbours = 0;
-    for (let row = 0; row < newCells.length; row++) {
-        for (let column = 0; column < newCells.length; column++) {
-            if (newCells[row] && newCells[row][column++] !== undefined && newCells[row][column++] === 1) {
-                numOfNeighbours++;
-            }
-            if (newCells[row] && newCells[row][column--] !== undefined && newCells[row][column--] === 1) {
-                numOfNeighbours++;
-            }
-            if (newCells[row++] && newCells[row++][column] !== undefined && newCells[row++][column] === 1) {
-                numOfNeighbours++;
-            }
-            if (newCells[row--] && newCells[row][column] !== undefined && newCells[row--][column] === 1) {
-                numOfNeighbours++;
-            }
-            if (newCells[row++] && newCells[row++][column++] !== undefined && newCells[row++][column++] === 1) {
-                numOfNeighbours++;
-            }
-            if (newCells[row++] && newCells[row][column--] !== undefined && newCells[row++][column--] === 1) {
-                numOfNeighbours++;
-            }
-            if (newCells[row--] && newCells[row--][column++] !== undefined && newCells[row--][column++] === 1) {
-                numOfNeighbours++;
-            }
-            if (newCells[row--] && newCells[row--][column--] !== undefined && newCells[row--][column--] === 1) {
-                numOfNeighbours++;
-            }
-        }
+    if (array[row][column + 1] && array[row][column + 1] === 1) {
+        numOfNeighbours++;
     }
-    console.log(numOfNeighbours);
+    if (array[row][column - 1] && array[row][column - 1] === 1) {
+        numOfNeighbours++;
+    }
+    if (array[row + 1][column] && array[row + 1][column] === 1) {
+        numOfNeighbours++;
+    }
+    if (array[row - 1][column] && array[row - 1][column] === 1) {
+        numOfNeighbours++;
+    }
+    if (array[row + 1][column + 1] && array[row + 1][column + 1] === 1) {
+        numOfNeighbours++;
+    }
+    if (array[row + 1][column - 1] && array[row + 1][column - 1] === 1) {
+        numOfNeighbours++;
+    }
+    if (array[row - 1][column + 1] && array[row - 1][column + 1] === 1) {
+        numOfNeighbours + 1;
+    }
+    if (array[row - 1][column - 1] && array[row - 1][column - 1] === 1) {
+        numOfNeighbours + 1;
+    }
+    return numOfNeighbours;
 }
-checkNeighbours();
+
+console.log('resultado', checkNeighbours(2, 2, newCells))
 
 
 
