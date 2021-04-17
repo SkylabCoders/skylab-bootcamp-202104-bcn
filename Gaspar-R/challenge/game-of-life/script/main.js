@@ -3,7 +3,7 @@ const arrayHeight = 5
 const initialArray = [[], [], [], [], []]
 let killerArray = [];
 let resurrectArray = [];
-let nextGenChanges = [];
+let nextGenArray = [];
 
 
 
@@ -49,6 +49,7 @@ const countLiveCellsNeighbours = (row, column, array) => {
     
     if (neighbours < 2 || neighbours >= 4)  {
         killerArray.push([column,row]);
+        
     }
 }
 
@@ -57,8 +58,7 @@ function checkNeighbours(column, row, columnDesplacement, rowDisplacement, array
     let currentRow = row + rowDisplacement;
     
     if (array[currentRow][currentColumn] === 0) {checkNeighboursFromLiveNeighbours (currentColumn,currentRow,array)}
-    if (array[currentRow][currentColumn] === 1) {
-     
+    if (array[currentRow][currentColumn] === 1) {     
         return true;
       }
 }
@@ -68,25 +68,37 @@ const newArray = createVerticalBlinker(2, 2, initialArray)
 
 const searchAlives = (array) => {
     let oldArray = [...array]
-
+    console.log(array);
 
     for (let column = 0; column < oldArray.length; column++) {
         for (let row = 0; row < oldArray[column].length; row++) {
             if (oldArray[column][row] === 1) {
+                
                 neighbours = countLiveCellsNeighbours(column, row, oldArray)    
             }
         }
     }
-    applyChanges (nextGenChanges,oldArray)
-    //return newArray
+  
+   let nextGen = applyChanges (nextGenArray,oldArray)    
+   console.log(nextGen)   
 }
+
 let array6 = searchAlives(newArray)
 
-function applyChanges(nextGenChanges,newArray){         //guardar posiciones de cambio para la proxima generacion
-         nextGenChanges = [...newArray];
-         console.log(nextGenChanges) 
+function applyChanges(nextGenArray,newArray){       //guardar posiciones de cambio para la proxima generacion
+        nextGenArray = [...newArray]
+        
+        
 
-        }   
+         killerArray.forEach((element)=> {
+             nextGenArray[element[1]][element[0]] = 0
+            } )
+         resurrectArray.forEach((element)=> {
+             nextGenArray[element[1]][element[0]] = 1
+            } )  
+           
+            return nextGenArray;
+}
 
 
 function checkNeighboursFromLiveNeighbours (currentColumn,currentRow,array) {
@@ -101,15 +113,14 @@ function checkNeighboursFromLiveNeighbours (currentColumn,currentRow,array) {
         if ( countNeighboursFromLiveNeighbours(currentColumn, currentRow, +1, -1, array) === true) {neighboursFromZeroCells++};
         if ( countNeighboursFromLiveNeighbours(currentColumn, currentRow, +1, 0, array) === true) {neighboursFromZeroCells++};
         if ( countNeighboursFromLiveNeighbours(currentColumn, currentRow, +1, +1, array) === true) {neighboursFromZeroCells++};
-        // console.log("zero cell column",currentColumn,"row",currentRow,"neighbours",neighboursFromZeroCells)
-        console.log("column", currentColumn,"row", currentRow,"vecinos de zero cells", neighboursFromZeroCells);
+
         if (neighboursFromZeroCells === 3 ) {
-            if (checkRepetedValues (resurrectArray,currentColumn,currentRow) ===true){
-            
+            if (checkRepetedValues (resurrectArray,currentColumn,currentRow) ===true){            
             resurrectArray.push([currentColumn,currentRow])
-         }
+
+            
+            }
         } 
-    
 }
 
 function countNeighboursFromLiveNeighbours (column, row, columnDesplacement, rowDisplacement, array){
@@ -133,5 +144,3 @@ function checkRepetedValues (resurrectArray,currentColumn,currentRow){
      }
 }
 
-console.log("killer",killerArray)
-console.log("resurrect",resurrectArray)
