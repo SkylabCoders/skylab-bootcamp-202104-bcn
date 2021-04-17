@@ -5,35 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game of life</title>
     <link rel="stylesheet" href="index.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="game-board">
+      <h1 class="title">
+        <a>G</a><a>a</a><a>m</a><a>e</a><a> o</a><a>f </a><a>l</a><a>i</a
+        ><a>f</a><a>e</a>
+      </h1>
       <div class="board"></div>
       <div class="controls">
         <button class="play" type="button">Start</button>
         <button class="stop" type="button">Stop</button>
         <button class="reset" type="button">Reset</button>
-      </div>
-      <div class="size">
-        <label for="quantity">Rows:</label>
-        <input
-          type="number"
-          id="rows-quantity"
-          name="quantity"
-          min="5"
-          max="35"
-          value="35"
-        />
-        <label for="quantity">Columns:</label>
-        <input
-          type="number"
-          id="columns-quantity"
-          name="quantity"
-          min="5"
-          max="70"
-          value="70"
-        />
-        <button class="create">Crear</button>
       </div>
     </div>
     <script type="text/javascript" src="gameoflife.js"></script>

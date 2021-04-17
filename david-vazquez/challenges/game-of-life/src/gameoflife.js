@@ -1,4 +1,3 @@
-
 let boardArray = [];
 let newBoard = [];
 let colors = ['F2E641','F2CB05','F2B705','F29F05','D96704'];
@@ -118,17 +117,6 @@ function reset (){
     drawBoard();
 }
 
-function boardSize(){
-    const create = document.querySelector('.create');
-    create.addEventListener('click', function (){
-        const row = document.getElementById('rows-quantity').value;
-        const column = document.getElementById('columns-quantity').value;
-        createBoard(row,column);
-        document.querySelector('.size').style.display = 'none';
-    })
-}
-
-
-boardSize();
+createBoard(35,70);
 
     
