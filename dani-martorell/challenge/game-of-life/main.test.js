@@ -16,17 +16,30 @@ const createMatrix = (numberRows, numberColumns) => {
     for (let index = 0; index < newMatrix.length; index++) {
         newMatrix[index] = new Array(numberColumns).fill(0); 
     }
+    for(let row of newMatrix){
+        row.unshift(null);
+        row.push(null);
+    }
+    const newLength = newMatrix[0].length;
+    newMatrix.unshift(new Array(newLength).fill(null));
+    newMatrix.push(new Array(newLength).fill(null));
+    
     return newMatrix;
 }
+let matrix2 = createMatrix(5,5)
+matrix2
 
 const populateMatrix = (matrix, row, column) => {
-    if(matrix[row] && matrix[column]) {
-        matrix[row][column] = 1;
+    const rowPlusBorders = row + 1;
+    const columnPlusBorders = column + 1;
+    if(matrix[rowPlusBorders][columnPlusBorders] === null) { return };
+    if(matrix[rowPlusBorders] && matrix[columnPlusBorders]) {
+        matrix[rowPlusBorders][columnPlusBorders] = 1;
     }
 }
-
 const getNumberOfNeighbours = (array, row, column) => {
     let counter = 0;
+    console.log(array[row-1][column]);
     if(array[row - 1] && array[row - 1][column] ) counter ++;
     if(array[row - 1] && array[row - 1][column + 1] ) counter ++;
     if(array[column + 1] && array[row][column + 1] ) counter ++;
@@ -38,7 +51,6 @@ const getNumberOfNeighbours = (array, row, column) => {
     
     return counter;
 }
-
 const matrix = createMatrix(5,5);
 
 populateMatrix(matrix,2,1);
@@ -46,6 +58,11 @@ populateMatrix(matrix,2,2);
 populateMatrix(matrix,2,3);
 populateMatrix(matrix,0,3);
 populateMatrix(matrix,0,4);
+populateMatrix(matrix,1,5);
+
+
+
+matrix
 
 console.log(getNumberOfNeighbours(matrix, 0,4)
 );
