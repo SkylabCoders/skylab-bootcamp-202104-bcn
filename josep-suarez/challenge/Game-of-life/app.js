@@ -1,6 +1,7 @@
-const MATRIX_COLUMNS = 5;
-const MATRIX_ROWS = 5;
-const vBlinker_positions_factory = (row, column) => {
+const arrayHeight = 5;
+const arrayRows = 5;
+
+const directionBlinker = (row, column) => {
   let positions = [
     [row - 1, column],
     [row, column],
@@ -8,17 +9,27 @@ const vBlinker_positions_factory = (row, column) => {
   ];
   return positions;
 };
-const createMatrix = (columns, rows, charToFillWith) => {
-  let matrix = [];
+const directionSapo = (row, column) => {
+  let positions = [
+    [row - 1, column],
+    [row + 1, column],
+    [row, column - 1],
+    [row + 1, column - 1],
+    [row + 2, column - 1],
+  ];
+  return positions;
+};
+const createMatriz = (columns, rows, charToFillWith) => {
+  let matriz = [];
   for (let column = 0; column < columns; column++) {
-    matrix.push([]);
+    matriz.push([]);
   }
   for (let column = 0; column < columns; column++) {
     for (let row = 0; row < rows; row++) {
-      matrix[column][row] = charToFillWith;
+      matriz[column][row] = charToFillWith;
     }
   }
-  return matrix;
+  return matriz;
 };
 const isCellEmpty = (row, column, array) => {
   if (array[row][column] !== undefined && array[row][column] === 0) {
@@ -83,7 +94,6 @@ const cellExists = (
   const newColumn = column + columnDisplacement;
   const newRow = row + rowDisplacement;
   if (array[newColumn] && array[newColumn][newRow]) {
-    //console.log(row, rowDisplacement, column, columnDisplacement)
     return true;
   } else {
     return false;
@@ -109,8 +119,6 @@ const searchAlives = (cellsArray) => {
           searchedArray[column][row] = 1;
         }
       }
-      // searchedArray[column][row] = 1
-      // console.log('neighbours:', neighbours, 'column:', column, 'row:', row)
     }
   }
   return searchedArray;
@@ -119,34 +127,19 @@ const isAlive = (column, row, array) => {
   const isAlive = array[column][row] === 0 ? false : true;
   return isAlive;
 };
-// const searchAlives = (cellsArray) => {
-//  let searchedArray = [[], [], [], [], []]
-//  for (let column = 0; column < cellsArray.length; column++) {
-//      for (let row = 0; row < cellsArray[column].length; row++) {
-//          if (cellsArray[column][row] === 0) {
-//              searchedArray[column][row] = 0
-//          }
-//          if (cellsArray[column][row] === 1) {
-//              let neighbours = countNeighbours(row, column, [...cellsArray])
-//              if (neighbours < 2) {
-//                  searchedArray[column][row] = 0
-//              } else {
-//                  searchedArray[column][row] = 1
-//              }
-//          }
-//      }
-//  }
-//  return searchedArray
-// }
-const matrix = createMatrix(MATRIX_COLUMNS, MATRIX_ROWS, 0);
-const matrixWithVerticalBlinker = createVerticalBlinker(
-  2,
-  2,
-  matrix,
-  vBlinker_positions_factory
-);
-console.log(matrixWithVerticalBlinker);
-let newArreay = searchAlives(matrixWithVerticalBlinker);
-console.log(newArreay);
-newArreay = searchAlives(newArreay);
-console.log(newArreay);
+const gameOfLife = () => {
+  const matriz = createMatriz(arrayHeight, arrayRows, 0);
+  const matrizWithVerticalBlinker = createVerticalBlinker(
+    2,
+    2,
+    matriz,
+    directionBlinker
+  );
+  console.log(matrizWithVerticalBlinker);
+  let newArray = searchAlives(matrizWithVerticalBlinker);
+  console.log(newArray);
+  newArray = searchAlives(newArray);
+  console.log(newArray);
+};
+
+setInterval(gameOfLife, 5000);
