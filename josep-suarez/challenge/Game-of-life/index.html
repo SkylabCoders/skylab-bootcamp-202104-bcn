@@ -7,35 +7,37 @@
     <link rel="stylesheet" href="main.css" />
     <title>Game of life</title>
   </head>
-  <header>
-    <h1>Game of life</h1>
-    <ul class="rules">
-      <p>
-        Bienvenidos al Game of Life de Josep, un juego donde podrás expandirte,
-        según las siguientes instrucciones:
-      </p>
-      <li>Cada zelda tiene dos estados</li>
-      <li>
-        Interactua con sus 8 celdas de alrededor (horizontal, vertical y
-        diagonal)
-      </li>
-      <li>Si tu celda tiene menos de 2 vecinos muere</li>
-      <li>
-        Si tu celda tiene 2 o 3 vecinos, sobrevive y pasa a la siguiente
-        generación
-      </li>
-      <li>Si tiene mas de 3 vecinos, se muere por sobrepoblación</li>
-      <li>Cualquier celda muerta con 3 vecinos, sobrevive</li>
-    </ul>
-  </header>
   <body>
-    <div id="app"></div>
+    <header class="header-game">
+      <h1>Game of life</h1>
+      <ul class="header-game__rules">
+        <p>
+          Bienvenidos al Game of Life de Josep, un juego donde podrás
+          expandirte, según las siguientes instrucciones:
+        </p>
+        <li>Cada zelda tiene dos estados</li>
+        <li>
+          Interactua con sus 8 celdas de alrededor (horizontal, vertical y
+          diagonal)
+        </li>
+        <li>Si tu celda tiene menos de 2 vecinos muere</li>
+        <li>
+          Si tu celda tiene 2 o 3 vecinos, sobrevive y pasa a la siguiente
+          generación
+        </li>
+        <li>Si tiene mas de 3 vecinos, se muere por sobrepoblación</li>
+        <li>Cualquier celda muerta con 3 vecinos, sobrevive</li>
+      </ul>
+    </header>
+    <main class="table">
+      <div id="table__app"></div>
+    </main>
+    <footer class="game-footer">
+      <div class="game-footer__buttons">
+        <button class="game-footer__buttons--blinker">Blinker</button>
+        <button class="game-footer__buttons--sapo">Sapo</button>
+      </div>
+    </footer>
   </body>
-  <footer class="game-footer">
-    <div class="game-footer__buttons">
-      <button class="game-footer__buttons--blinker">Blinker</button>
-      <button class="game-footer__buttons--sapo">Sapo</button>
-    </div>
-  </footer>
   <script src="app.js"></script>
 </html>

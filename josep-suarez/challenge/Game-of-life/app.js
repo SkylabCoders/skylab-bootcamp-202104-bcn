@@ -188,7 +188,7 @@ const generateTable = (array) => {
     }
   }
   table += "</table>";
-  let siteTable = document.getElementById("app");
+  let siteTable = document.getElementById("table__app");
   siteTable.innerHTML = table;
 };
 const blinkerButton = document.getElementsByClassName(
