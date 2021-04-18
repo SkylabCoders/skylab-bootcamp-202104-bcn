@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Game Of Life</title>
+</head>
+<body>
+    <header class="common-header">
+        <h1 class="common-header__title">Game of Life</h1>
+    </header>
+    <main class="main">
+        <section class="game__display">
+            
+            <table class="game-display__table">
+                <tr>
+                    <td class="common-cell column-0" id="tr01-td02"></td>
+                    <td class="common-cell column-0" id="tr01-td01"></td>
+                    <td class="common-cell" id="tr01-td03"></td>
+                    <td class="common-cell" id="tr01-td04"></td>
+                    <td class="common-cell" id="tr01-td05"></td>
+                    <td class="common-cell" id="tr01-td06"></td>
+                    <td class="common-cell" id="tr01-td07"></td>
+                    <td class="common-cell" id="tr01-td08"></td>
+                    <td class="common-cell" id="tr01-td09"></td>
+                    <td class="common-cell" id="tr01-td10"></td>
+                    <td class="common-cell" id="tr01-td11"></td>
+                    <td class="common-cell" id="tr01-td12"></td>
+                    <td class="common-cell" id="tr01-td13"></td>
+                    <td class="common-cell" id="tr01-td14"></td>
+                    <td class="common-cell" id="tr01-td15"></td>
+                    <td class="common-cell" id="tr01-td16"></td>
+                    <td class="common-cell" id="tr01-td17"></td>
+                    <td class="common-cell" id="tr01-td18"></td>
+                    <td class="common-cell" id="tr01-td19"></td>
+                    <td class="common-cell" id="tr01-td20"></td>
+                </tr> 
+                <tr>
+                    <td class="common-cell" id="tr-02-td01"></td>
+                    <td class="common-cell" id="tr-02-td02"></td>
+                    <td class="common-cell" id="tr-02-td03"></td>
+                    <td class="common-cell" id="tr-02-td04"></td>
+                    <td class="common-cell" id="tr-02-td05"></td>
+                    <td class="common-cell" id="tr-02-td06"></td>
+                    <td class="common-cell" id="tr-02-td07"></td>
+                    <td class="common-cell" id="tr-02-td08"></td>
+                    <td class="common-cell" id="tr-02-td09"></td>
+                    <td class="common-cell" id="tr-02-td10"></td>
+                    <td class="common-cell" id="tr-02-td11"></td>
+                    <td class="common-cell" id="tr-02-td12"></td>
+                    <td class="common-cell" id="tr-02-td13"></td>
+                    <td class="common-cell" id="tr-02-td14"></td>
+                    <td class="common-cell" id="tr-02-td15"></td>
+                    <td class="common-cell" id="tr-02-td16"></td>
+                    <td class="common-cell" id="tr-02-td17"></td>
+                    <td class="common-cell" id="tr-02-td18"></td>
+                    <td class="common-cell" id="tr-02-td19"></td>
+                    <td class="common-cell" id="tr-02-td20"></td>
+                </tr> 
+                <tr>
+                    <td class="common-cell" id="tr-03-td01"></td>
+                    <td class="common-cell" id="tr-03-td02"></td>
+                    <td class="common-cell" id="tr-03-td03"></td>
+                    <td class="common-cell" id="tr-03-td04"></td>
+                    <td class="common-cell" id="tr-03-td05"></td>
+                    <td class="common-cell" id="tr-03-td06"></td>
+                    <td class="common-cell" id="tr-03-td07"></td>
+                    <td class="common-cell" id="tr-03-td08"></td>
+                    <td class="common-cell" id="tr-03-td09"></td>
+                    <td class="common-cell" id="tr-03-td10"></td>
+                    <td class="common-cell" id="tr-03-td11"></td>
+                    <td class="common-cell" id="tr-03-td12"></td>
+                    <td class="common-cell" id="tr-03-td13"></td>
+                    <td class="common-cell" id="tr-03-td14"></td>
+                    <td class="common-cell" id="tr-03-td15"></td>
+                    <td class="common-cell" id="tr-03-td16"></td>
+                    <td class="common-cell" id="tr-03-td17"></td>
+                    <td class="common-cell" id="tr-03-td18"></td>
+                    <td class="common-cell" id="tr-03-td19"></td>
+                    <td class="common-cell" id="tr-03-td20"></td>   
+                    </tr>  
+                    <tr>
+                    <td class="common-cell" id="tr-04-td01"></td>
+                    <td class="common-cell" id="tr-04-td02"></td>
+                    <td class="common-cell" id="tr-04-td03"></td>
+                    <td class="common-cell" id="tr-04-td04"></td>
+                    <td class="common-cell" id="tr-04-td05"></td>
+                    <td class="common-cell" id="tr-04-td06"></td>
+                    <td class="common-cell" id="tr-04-td07"></td>
+                    <td class="common-cell" id="tr-04-td08"></td>
+                    <td class="common-cell" id="tr-04-td09"></td>
+                    <td class="common-cell" id="tr-04-td10"></td>
+                    <td class="common-cell" id="tr-04-td11"></td>
+                    <td class="common-cell" id="tr-04-td12"></td>
+                    <td class="common-cell" id="tr-04-td13"></td>
+                    <td class="common-cell" id="tr-04-td14"></td>
+                    <td class="common-cell" id="tr-04-td15"></td>
+                    <td class="common-cell" id="tr-04-td16"></td>
+                    <td class="common-cell" id="tr-04-td17"></td>
+                    <td class="common-cell" id="tr-04-td18"></td>
+                    <td class="common-cell" id="tr-04-td19"></td>
+                    <td class="common-cell" id="tr-04-td20"></td>     
+                    </tr>  
+                    <tr>
+                    <td class="common-cell" id="tr-05-td01"></td>
+                    <td class="common-cell" id="tr-05-td02"></td>
+                    <td class="common-cell" id="tr-05-td03"></td>
+                    <td class="common-cell" id="tr-05-td04"></td>
+                    <td class="common-cell" id="tr-05-td05"></td>
+                    <td class="common-cell" id="tr-05-td06"></td>
+                    <td class="common-cell" id="tr-05-td07"></td>
+                    <td class="common-cell" id="tr-05-td08"></td>
+                    <td class="common-cell" id="tr-05-td09"></td>
+                    <td class="common-cell" id="tr-05-td10"></td>
+                    <td class="common-cell" id="tr-05-td11"></td>
+                    <td class="common-cell" id="tr-05-td12"></td>
+                    <td class="common-cell" id="tr-05-td13"></td>
+                    <td class="common-cell" id="tr-05-td14"></td>
+                    <td class="common-cell" id="tr-05-td15"></td>
+                    <td class="common-cell" id="tr-05-td16"></td>
+                    <td class="common-cell" id="tr-05-td17"></td>
+                    <td class="common-cell" id="tr-05-td18"></td>
+                    <td class="common-cell" id="tr-05-td19"></td>
+                    <td class="common-cell" id="tr-05-td20"></td>               
+                </tr>
+                <tr>
+                    <td class="common-cell" id="tr-06-td01"></td>
+                    <td class="common-cell" id="tr-06-td02"></td>
+                    <td class="common-cell" id="tr-06-td03"></td>
+                    <td class="common-cell" id="tr-06-td04"></td>
+                    <td class="common-cell" id="tr-06-td05"></td>
+                    <td class="common-cell" id="tr-06-td06"></td>
+                    <td class="common-cell" id="tr-06-td07"></td>
+                    <td class="common-cell" id="tr-06-td08"></td>
+                    <td class="common-cell" id="tr-06-td09"></td>
+                    <td class="common-cell" id="tr-06-td10"></td>
+                    <td class="common-cell" id="tr-06-td11"></td>
+                    <td class="common-cell" id="tr-06-td12"></td>
+                    <td class="common-cell" id="tr-06-td13"></td>
+                    <td class="common-cell" id="tr-06-td14"></td>
+                    <td class="common-cell" id="tr-06-td15"></td>
+                    <td class="common-cell" id="tr-06-td16"></td>
+                    <td class="common-cell" id="tr-06-td17"></td>
+                    <td class="common-cell" id="tr-06-td18"></td>
+                    <td class="common-cell" id="tr-06-td19"></td>
+                    <td class="common-cell" id="tr-06-td20"></td>
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr-07-td01"></td>
+                    <td class="common-cell" id="tr-07-td02"></td>
+                    <td class="common-cell" id="tr-07-td03"></td>
+                    <td class="common-cell" id="tr-07-td04"></td>
+                    <td class="common-cell" id="tr-07-td05"></td>
+                    <td class="common-cell" id="tr-07-td06"></td>
+                    <td class="common-cell" id="tr-07-td07"></td>
+                    <td class="common-cell" id="tr-07-td08"></td>
+                    <td class="common-cell" id="tr-07-td09"></td>
+                    <td class="common-cell" id="tr-07-td10"></td>
+                    <td class="common-cell" id="tr-07-td11"></td>
+                    <td class="common-cell" id="tr-07-td12"></td>
+                    <td class="common-cell" id="tr-07-td13"></td>
+                    <td class="common-cell" id="tr-07-td14"></td>
+                    <td class="common-cell" id="tr-07-td15"></td>
+                    <td class="common-cell" id="tr-07-td16"></td>
+                    <td class="common-cell" id="tr-07-td17"></td>
+                    <td class="common-cell" id="tr-07-td18"></td>
+                    <td class="common-cell" id="tr-07-td19"></td>
+                    <td class="common-cell" id="tr-07-td20"></td>
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr-08-td01"></td>
+                    <td class="common-cell" id="tr-08-td02"></td>
+                    <td class="common-cell" id="tr-08-td03"></td>
+                    <td class="common-cell" id="tr-08-td04"></td>
+                    <td class="common-cell" id="tr-08-td05"></td>
+                    <td class="common-cell" id="tr-08-td06"></td>
+                    <td class="common-cell" id="tr-08-td07"></td>
+                    <td class="common-cell" id="tr-08-td08"></td>
+                    <td class="common-cell" id="tr-08-td09"></td>
+                    <td class="common-cell" id="tr-08-td10"></td>
+                    <td class="common-cell" id="tr-08-td11"></td>
+                    <td class="common-cell" id="tr-08-td12"></td>
+                    <td class="common-cell" id="tr-08-td13"></td>
+                    <td class="common-cell" id="tr-08-td14"></td>
+                    <td class="common-cell" id="tr-08-td15"></td>
+                    <td class="common-cell" id="tr-08-td16"></td>
+                    <td class="common-cell" id="tr-08-td17"></td>
+                    <td class="common-cell" id="tr-08-td18"></td>
+                    <td class="common-cell" id="tr-08-td19"></td>
+                    <td class="common-cell" id="tr-08-td20"></td>
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr-09-td01"></td>
+                    <td class="common-cell" id="tr-09-td02"></td>
+                    <td class="common-cell" id="tr-09-td03"></td>
+                    <td class="common-cell" id="tr-09-td04"></td>
+                    <td class="common-cell" id="tr-09-td05"></td>
+                    <td class="common-cell" id="tr-09-td06"></td>
+                    <td class="common-cell" id="tr-09-td07"></td>
+                    <td class="common-cell" id="tr-09-td08"></td>
+                    <td class="common-cell" id="tr-09-td09"></td>
+                    <td class="common-cell" id="tr-09-td10"></td>
+                    <td class="common-cell" id="tr-09-td11"></td>
+                    <td class="common-cell" id="tr-09-td12"></td>
+                    <td class="common-cell" id="tr-09-td13"></td>
+                    <td class="common-cell" id="tr-09-td14"></td>
+                    <td class="common-cell" id="tr-09-td15"></td>
+                    <td class="common-cell" id="tr-09-td16"></td>
+                    <td class="common-cell" id="tr-09-td17"></td>
+                    <td class="common-cell" id="tr-09-td18"></td>
+                    <td class="common-cell" id="tr-09-td19"></td>
+                    <td class="common-cell" id="tr-09-td20"></td>
+                </tr>  <tr>
+                    <td class="common-cell" id="tr10-td01"></td>
+                    <td class="common-cell" id="tr10-td02"></td>
+                    <td class="common-cell" id="tr10-td03"></td>
+                    <td class="common-cell" id="tr10-td04"></td>
+                    <td class="common-cell" id="tr10-td05"></td>
+                    <td class="common-cell" id="tr10-td06"></td>
+                    <td class="common-cell" id="tr10-td07"></td>
+                    <td class="common-cell" id="tr10-td08"></td>
+                    <td class="common-cell" id="tr10-td09"></td>
+                    <td class="common-cell" id="tr10-td10"></td>
+                    <td class="common-cell" id="tr10-td11"></td>
+                    <td class="common-cell" id="tr10-td12"></td>
+                    <td class="common-cell" id="tr10-td13"></td>
+                    <td class="common-cell" id="tr10-td14"></td>
+                    <td class="common-cell" id="tr10-td15"></td>
+                    <td class="common-cell" id="tr10-td16"></td>
+                    <td class="common-cell" id="tr10-td17"></td>
+                    <td class="common-cell" id="tr10-td18"></td>
+                    <td class="common-cell" id="tr10-td19"></td>
+                    <td class="common-cell" id="tr10-td20"></td>  
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr11-td01"></td>
+                    <td class="common-cell" id="tr11-td02"></td>
+                    <td class="common-cell" id="tr11-td03"></td>
+                    <td class="common-cell" id="tr11-td04"></td>
+                    <td class="common-cell" id="tr11-td05"></td>
+                    <td class="common-cell" id="tr11-td06"></td>
+                    <td class="common-cell" id="tr11-td07"></td>
+                    <td class="common-cell" id="tr11-td08"></td>
+                    <td class="common-cell" id="tr11-td09"></td>
+                    <td class="common-cell" id="tr11-td10"></td>
+                    <td class="common-cell" id="tr11-td11"></td>
+                    <td class="common-cell" id="tr11-td12"></td>
+                    <td class="common-cell" id="tr11-td13"></td>
+                    <td class="common-cell" id="tr11-td14"></td>
+                    <td class="common-cell" id="tr11-td15"></td>
+                    <td class="common-cell" id="tr11-td16"></td>
+                    <td class="common-cell" id="tr11-td17"></td>
+                    <td class="common-cell" id="tr11-td18"></td>
+                    <td class="common-cell" id="tr11-td19"></td>
+                    <td class="common-cell" id="tr11-td20"></td>    
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr12-td01"></td>
+                    <td class="common-cell" id="tr12-td02"></td>
+                    <td class="common-cell" id="tr12-td03"></td>
+                    <td class="common-cell" id="tr12-td04"></td>
+                    <td class="common-cell" id="tr12-td05"></td>
+                    <td class="common-cell" id="tr12-td06"></td>
+                    <td class="common-cell" id="tr12-td07"></td>
+                    <td class="common-cell" id="tr12-td08"></td>
+                    <td class="common-cell" id="tr12-td09"></td>
+                    <td class="common-cell" id="tr12-td10"></td>
+                    <td class="common-cell" id="tr12-td11"></td>
+                    <td class="common-cell" id="tr12-td12"></td>
+                    <td class="common-cell" id="tr12-td13"></td>
+                    <td class="common-cell" id="tr12-td14"></td>
+                    <td class="common-cell" id="tr12-td15"></td>
+                    <td class="common-cell" id="tr12-td16"></td>
+                    <td class="common-cell" id="tr12-td17"></td>
+                    <td class="common-cell" id="tr12-td18"></td>
+                    <td class="common-cell" id="tr12-td19"></td>
+                    <td class="common-cell" id="tr12-td20"></td> 
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr13-td01"></td>
+                    <td class="common-cell" id="tr13-td02"></td>
+                    <td class="common-cell" id="tr13-td03"></td>
+                    <td class="common-cell" id="tr13-td04"></td>
+                    <td class="common-cell" id="tr13-td05"></td>
+                    <td class="common-cell" id="tr13-td06"></td>
+                    <td class="common-cell" id="tr13-td07"></td>
+                    <td class="common-cell" id="tr13-td08"></td>
+                    <td class="common-cell" id="tr13-td09"></td>
+                    <td class="common-cell" id="tr13-td10"></td>
+                    <td class="common-cell" id="tr13-td11"></td>
+                    <td class="common-cell" id="tr13-td12"></td>
+                    <td class="common-cell" id="tr13-td13"></td>
+                    <td class="common-cell" id="tr13-td14"></td>
+                    <td class="common-cell" id="tr13-td15"></td>
+                    <td class="common-cell" id="tr13-td16"></td>
+                    <td class="common-cell" id="tr13-td17"></td>
+                    <td class="common-cell" id="tr13-td18"></td>
+                    <td class="common-cell" id="tr13-td19"></td>
+                    <td class="common-cell" id="tr13-td20"></td> 
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr14-td01"></td>
+                    <td class="common-cell" id="tr14-td02"></td>
+                    <td class="common-cell" id="tr14-td03"></td>
+                    <td class="common-cell" id="tr14-td04"></td>
+                    <td class="common-cell" id="tr14-td05"></td>
+                    <td class="common-cell" id="tr14-td06"></td>
+                    <td class="common-cell" id="tr14-td07"></td>
+                    <td class="common-cell" id="tr14-td08"></td>
+                    <td class="common-cell" id="tr14-td09"></td>
+                    <td class="common-cell" id="tr14-td10"></td>
+                    <td class="common-cell" id="tr14-td11"></td>
+                    <td class="common-cell" id="tr14-td12"></td>
+                    <td class="common-cell" id="tr14-td13"></td>
+                    <td class="common-cell" id="tr14-td14"></td>
+                    <td class="common-cell" id="tr14-td15"></td>
+                    <td class="common-cell" id="tr14-td16"></td>
+                    <td class="common-cell" id="tr14-td17"></td>
+                    <td class="common-cell" id="tr14-td18"></td>
+                    <td class="common-cell" id="tr14-td19"></td>
+                    <td class="common-cell" id="tr14-td20"></td> 
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr15-td01"></td>
+                    <td class="common-cell" id="tr15-td02"></td>
+                    <td class="common-cell" id="tr15-td03"></td>
+                    <td class="common-cell" id="tr15-td04"></td>
+                    <td class="common-cell" id="tr15-td05"></td>
+                    <td class="common-cell" id="tr15-td06"></td>
+                    <td class="common-cell" id="tr15-td07"></td>
+                    <td class="common-cell" id="tr15-td08"></td>
+                    <td class="common-cell" id="tr15-td09"></td>
+                    <td class="common-cell" id="tr15-td10"></td>
+                    <td class="common-cell" id="tr15-td11"></td>
+                    <td class="common-cell" id="tr15-td12"></td>
+                    <td class="common-cell" id="tr15-td13"></td>
+                    <td class="common-cell" id="tr15-td14"></td>
+                    <td class="common-cell" id="tr15-td15"></td>
+                    <td class="common-cell" id="tr15-td16"></td>
+                    <td class="common-cell" id="tr15-td17"></td>
+                    <td class="common-cell" id="tr15-td18"></td>
+                    <td class="common-cell" id="tr15-td19"></td>
+                    <td class="common-cell" id="tr15-td20"></td>
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr16-td01"></td>
+                    <td class="common-cell" id="tr16-td02"></td>
+                    <td class="common-cell" id="tr16-td03"></td>
+                    <td class="common-cell" id="tr16-td04"></td>
+                    <td class="common-cell" id="tr16-td05"></td>
+                    <td class="common-cell" id="tr16-td06"></td>
+                    <td class="common-cell" id="tr16-td07"></td>
+                    <td class="common-cell" id="tr16-td08"></td>
+                    <td class="common-cell" id="tr16-td09"></td>
+                    <td class="common-cell" id="tr16-td10"></td>
+                    <td class="common-cell" id="tr16-td11"></td>
+                    <td class="common-cell" id="tr16-td12"></td>
+                    <td class="common-cell" id="tr16-td13"></td>
+                    <td class="common-cell" id="tr16-td14"></td>
+                    <td class="common-cell" id="tr16-td15"></td>
+                    <td class="common-cell" id="tr16-td16"></td>
+                    <td class="common-cell" id="tr16-td17"></td>
+                    <td class="common-cell" id="tr16-td18"></td>
+                    <td class="common-cell" id="tr16-td19"></td>
+                    <td class="common-cell" id="tr16-td20"></td>
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr17-td01"></td>
+                    <td class="common-cell" id="tr17-td02"></td>
+                    <td class="common-cell" id="tr17-td03"></td>
+                    <td class="common-cell" id="tr17-td04"></td>
+                    <td class="common-cell" id="tr17-td05"></td>
+                    <td class="common-cell" id="tr17-td06"></td>
+                    <td class="common-cell" id="tr17-td07"></td>
+                    <td class="common-cell" id="tr17-td08"></td>
+                    <td class="common-cell" id="tr17-td09"></td>
+                    <td class="common-cell" id="tr17-td10"></td>
+                    <td class="common-cell" id="tr17-td11"></td>
+                    <td class="common-cell" id="tr17-td12"></td>
+                    <td class="common-cell" id="tr17-td13"></td>
+                    <td class="common-cell" id="tr17-td14"></td>
+                    <td class="common-cell" id="tr17-td15"></td>
+                    <td class="common-cell" id="tr17-td16"></td>
+                    <td class="common-cell" id="tr17-td17"></td>
+                    <td class="common-cell" id="tr17-td18"></td>
+                    <td class="common-cell" id="tr17-td19"></td>
+                    <td class="common-cell" id="tr17-td20"></td>
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr18-td01"></td>
+                    <td class="common-cell" id="tr18-td02"></td>
+                    <td class="common-cell" id="tr18-td03"></td>
+                    <td class="common-cell" id="tr18-td04"></td>
+                    <td class="common-cell" id="tr18-td05"></td>
+                    <td class="common-cell" id="tr18-td06"></td>
+                    <td class="common-cell" id="tr18-td07"></td>
+                    <td class="common-cell" id="tr18-td08"></td>
+                    <td class="common-cell" id="tr18-td09"></td>
+                    <td class="common-cell" id="tr18-td10"></td>
+                    <td class="common-cell" id="tr18-td11"></td>
+                    <td class="common-cell" id="tr18-td12"></td>
+                    <td class="common-cell" id="tr18-td13"></td>
+                    <td class="common-cell" id="tr18-td14"></td>
+                    <td class="common-cell" id="tr18-td15"></td>
+                    <td class="common-cell" id="tr18-td16"></td>
+                    <td class="common-cell" id="tr18-td17"></td>
+                    <td class="common-cell" id="tr18-td18"></td>
+                    <td class="common-cell" id="tr18-td19"></td>
+                    <td class="common-cell" id="tr18-td20"></td>
+                </tr>  
+                <tr>
+                    <td class="common-cell" id="tr19-td01"></td>    
+                    <td class="common-cell" id="tr19-td02"></td>    
+                    <td class="common-cell" id="tr19-td03"></td>    
+                    <td class="common-cell" id="tr19-td04"></td>    
+                    <td class="common-cell" id="tr19-td05"></td>    
+                    <td class="common-cell" id="tr19-td06"></td>    
+                    <td class="common-cell" id="tr19-td07"></td>    
+                    <td class="common-cell" id="tr19-td08"></td>    
+                    <td class="common-cell" id="tr19-td09"></td>    
+                    <td class="common-cell" id="tr19-td10"></td>    
+                    <td class="common-cell" id="tr19-td11"></td>    
+                    <td class="common-cell" id="tr19-td12"></td>    
+                    <td class="common-cell" id="tr19-td13"></td>    
+                    <td class="common-cell" id="tr19-td14"></td>    
+                    <td class="common-cell" id="tr19-td15"></td>    
+                    <td class="common-cell" id="tr19-td16"></td>    
+                    <td class="common-cell" id="tr19-td17"></td>    
+                    <td class="common-cell" id="tr19-td18"></td>    
+                    <td class="common-cell" id="tr19-td19"></td>    
+                    <td class="common-cell" id="tr19-td20"></td>       
+                </tr>
+                <tr>
+                    <td class="common-cell" id="tr19-td01"></td>    
+                    <td class="common-cell" id="tr19-td02"></td>    
+                    <td class="common-cell" id="tr19-td03"></td>    
+                    <td class="common-cell" id="tr19-td04"></td>    
+                    <td class="common-cell" id="tr19-td05"></td>    
+                    <td class="common-cell" id="tr19-td06"></td>    
+                    <td class="common-cell" id="tr19-td07"></td>    
+                    <td class="common-cell" id="tr19-td08"></td>    
+                    <td class="common-cell" id="tr19-td09"></td>    
+                    <td class="common-cell" id="tr19-td10"></td>    
+                    <td class="common-cell" id="tr19-td11"></td>    
+                    <td class="common-cell" id="tr19-td12"></td>    
+                    <td class="common-cell" id="tr19-td13"></td>    
+                    <td class="common-cell" id="tr19-td14"></td>    
+                    <td class="common-cell" id="tr19-td15"></td>    
+                    <td class="common-cell" id="tr19-td16"></td>    
+                    <td class="common-cell" id="tr19-td17"></td>    
+                    <td class="common-cell" id="tr19-td18"></td>    
+                    <td class="common-cell" id="tr19-td19"></td>    
+                    <td class="common-cell" id="tr19-td20"></td>       
+                </tr>
+                <tr>
+                    <td class="common-cell" id="tr20-td01"></td>    
+                    <td class="common-cell" id="tr20-td02"></td>    
+                    <td class="common-cell" id="tr20-td03"></td>    
+                    <td class="common-cell" id="tr20-td04"></td>    
+                    <td class="common-cell" id="tr20-td05"></td>    
+                    <td class="common-cell" id="tr20-td06"></td>    
+                    <td class="common-cell" id="tr20-td07"></td>    
+                    <td class="common-cell" id="tr20-td08"></td>    
+                    <td class="common-cell" id="tr20-td09"></td>    
+                    <td class="common-cell" id="tr20-td10"></td>    
+                    <td class="common-cell" id="tr20-td11"></td>    
+                    <td class="common-cell" id="tr20-td12"></td>    
+                    <td class="common-cell" id="tr20-td13"></td>    
+                    <td class="common-cell" id="tr20-td14"></td>    
+                    <td class="common-cell" id="tr20-td15"></td>    
+                    <td class="common-cell" id="tr20-td16"></td>    
+                    <td class="common-cell" id="tr20-td17"></td>    
+                    <td class="common-cell" id="tr20-td18"></td>    
+                    <td class="common-cell" id="tr20-td19"></td>    
+                    <td class="common-cell" id="tr19-td20"></td>       
+                </tr>
+            </table>    
+        </section>  
+        <div>
+            <button id="button-start" class="common-button">start</button>
+        </div>
+    </main>
+</body>
+<script src="../game-test.js" type="text/styleship"></script>
+</html>
