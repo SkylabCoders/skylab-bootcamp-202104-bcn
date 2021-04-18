@@ -54,7 +54,7 @@ body {
             width: 600px;
             margin-top: 20px;
     
-            button {
+            &__play-button {
                 padding: 20px 50px;
                 font-family: inherit;
                 text-transform: uppercase;
@@ -89,7 +89,6 @@ body {
             }
             
         }
-
         .samples {
             display: flex;
             flex-direction: column;

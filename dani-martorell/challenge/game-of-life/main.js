@@ -62,12 +62,12 @@ const blinker = () => {
 }
 const toad = () => {
     let matrix = createMatrix(40,40);
-    populateMatrix(matrix, 16, 16);
+    populateMatrix(matrix, 16, 17);
     populateMatrix(matrix, 16, 18);
     populateMatrix(matrix, 16, 19);
-    populateMatrix(matrix, 18, 20);
-    populateMatrix(matrix, 18, 16);
-    populateMatrix(matrix, 18, 18);
+    populateMatrix(matrix, 17, 16);
+    populateMatrix(matrix, 17, 17);
+    populateMatrix(matrix, 17, 18);
     return matrix;
 }
 const beacon = () => {
@@ -124,20 +124,21 @@ const createHtmlGrid = (gridArray) => {
 createHtmlGrid(gridArray);
 
 blinkerButton.addEventListener('click', ()=> {
-    gridArray = blinker();
     deleteHtmlGrid();
+    gridArray = blinker();
     createHtmlGrid(gridArray);
+    runApp(gridArray);
 });
 
 beaconButton.addEventListener('click', ()=> {
-    gridArray = beacon();
     deleteHtmlGrid();
+    gridArray = beacon();
     createHtmlGrid(gridArray);
 });
 
 toadButton.addEventListener('click', ()=> {
-    gridArray = toad();
     deleteHtmlGrid();
+    gridArray = toad();
     createHtmlGrid(gridArray);
 });
 
