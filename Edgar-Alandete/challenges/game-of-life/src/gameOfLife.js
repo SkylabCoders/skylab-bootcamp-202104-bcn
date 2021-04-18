@@ -128,20 +128,51 @@ const initializeBoard = (width, height) => {
 
 const createBlinker = (row, column, figure) => {
   const figureToReturn = [...figure];
-  console.log("Initial figure");
-  console.log(figure);
   figureToReturn[row - 1][column] = ALIVE;
   figureToReturn[row][column] = ALIVE;
   figureToReturn[row + 1][column] = ALIVE;
-
-  console.log("New");
   console.log(figureToReturn);
+  let tableRows = document.getElementsByTagName("tr");
 
+  for (let row = 0; row < tableRows.length; row++) {
+    let cells = tableRows[row].cells;
+    for (let column = 0; column < cells.length; column++) {
+      if (isAlive(figure[row][column])) {
+        cells[column].classList.add("alive");
+      }
+    }
+  }
   return figureToReturn;
 };
 
-const initialMatrix = initializeBoard(BLINKER_WIDTH, BLINKER_HEIGHT);
+// const initialMatrix = initializeBoard(BLINKER_WIDTH, BLINKER_HEIGHT);
 
-const blinkerFigure = createBlinker(3, 3, initialMatrix);
+// const blinkerFigure = createBlinker(3, 3, initialMatrix);
 
-console.log(updateFigure(blinkerFigure, isAlive));
+//console.log(updateFigure(blinkerFigure, isAlive));
+
+//document.addEventListener("click", )
+
+const createBoard = (width, height) => {
+  let body = document.getElementById("app");
+  let table = document.createElement("table");
+  let tableBody = document.createElement("tbody");
+  for (let row = 0; row < width; row++) {
+    let tr = document.createElement("tr");
+    for (let column = 0; column < height; column++) {
+      let td = document.createElement("td");
+      tr.appendChild(td);
+    }
+    tableBody.appendChild(tr);
+  }
+  table.appendChild(tableBody);
+  body.appendChild(table);
+
+  const initialMatrix = initializeBoard(width, height);
+
+  document
+    .getElementsByClassName("game-footer__buttons--blinker")[0]
+    .addEventListener("click", () => createBlinker(3, 3, initialMatrix));
+};
+
+document.addEventListener("DOMContentLoaded", () => createBoard(5, 5));
