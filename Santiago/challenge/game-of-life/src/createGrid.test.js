@@ -1,4 +1,4 @@
-let createGrid = (rows, cols, callback) => {
+let createGrid = (rows, cols) => {
 
     let grid = new Array(rows);
 
