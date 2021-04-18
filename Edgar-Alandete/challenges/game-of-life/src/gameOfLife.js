@@ -21,9 +21,8 @@ const applyRules = (cell, neighbours, isAlive) => {
   return cellStatus;
 };
 
-export function updateFigure(board, isAlive) {
+const updateFigure = (board, isAlive) => {
   const updatedBoard = [];
-  console.log("entro");
   board.forEach((row, rowIndex) => {
     const newRow = [];
     row.forEach((cell, cellIndex) => {
@@ -38,7 +37,7 @@ export function updateFigure(board, isAlive) {
   newBoard = updatedBoard;
 
   return updateTableDom(updatedBoard);
-}
+};
 
 const hasNeighbour = (row, column) => {
   return cellExists(row) && cellExists(column);
@@ -137,7 +136,7 @@ const createBlinker = (row, column, figure) => {
   return newBoard;
 };
 
-const createBoard = (width, height) => {
+const createTableDOM = (width, height) => {
   let body = document.getElementById("app");
   let table = document.createElement("table");
   let tableBody = document.createElement("tbody");
@@ -151,9 +150,11 @@ const createBoard = (width, height) => {
   }
   table.appendChild(tableBody);
   body.appendChild(table);
+};
 
+const createBoard = (width, height) => {
   const initialBoard = initializeBoard(width, height);
-
+  createTableDOM(width, height);
   document
     .getElementsByClassName("game-footer__buttons--blinker")[0]
     .addEventListener("click", () => createBlinker(3, 3, initialBoard));
