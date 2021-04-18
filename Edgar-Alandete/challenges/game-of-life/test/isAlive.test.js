@@ -1,7 +1,7 @@
 const ALIVE = 1;
 const isAlive = (cell) => cell === ALIVE;
 
-describe("Given transformFigure function", () => {
+describe("Given isAlive function", () => {
   const scenarios = [
     {
       origin: 0,

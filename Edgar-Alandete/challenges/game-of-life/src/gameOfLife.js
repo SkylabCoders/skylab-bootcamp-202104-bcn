@@ -1,3 +1,7 @@
+const DEFAULT_BOARD_WIDTH = 10;
+const DEFAULT_BOARD_HEIGHT = 10;
+
+const BLINKER_HEIGHT = 5;
 const BLINKER_WIDTH = 5;
 const BLINKER_HEIGHT = 5;
 
@@ -95,11 +99,16 @@ const cellExists = (cell) => {
   return cell !== undefined;
 };
 
-const initializeArray = () => {
+const initializeBoard = (width, height) => {
   const initialArray = [];
-  for (let i = 0; i < BLINKER_WIDTH; i++) {
+  if (width == null || height == null) {
+    width = DEFAULT_BOARD_WIDTH;
+    height = DEFAULT_BOARD_HEIGHT;
+  }
+
+  for (let i = 0; i < width; i++) {
     const row = [];
-    for (let j = 0; j < BLINKER_HEIGHT; j++) {
+    for (let j = 0; j < height; j++) {
       row.push(0);
     }
     initialArray.push(row);
@@ -121,7 +130,7 @@ const createBlinker = (row, column, figure) => {
   return figureToReturn;
 };
 
-const initialMatrix = initializeArray(BLINKER_WIDTH, BLINKER_HEIGHT);
+const initialMatrix = initializeBoard(BLINKER_WIDTH, BLINKER_HEIGHT);
 
 const blinkerFigure = createBlinker(3, 3, initialMatrix);
 
