@@ -1,12 +1,19 @@
 let createGrid = (rows, cols) => {
 
-    let grid = new Array(rows);
+    let world = document.querySelector('#gol');
+
+    let tbl = document.createElement('table');
 
     for (let i = 0; i < rows; i++) {
-        grid[i] = new Array(cols).fill(0);
-    }
+        let tr = document.createElement('tr');
+        for (let j = 0; j < cols; j++) {
+            let cell = document.createElement('td');
 
-    return grid;
+            tr.appendChild(cell);
+        }
+        tbl.appendChild(tr);
+    }
+    world.appendChild(tbl);
 }
 
 let fillGrid = createGrid(5, 5);
