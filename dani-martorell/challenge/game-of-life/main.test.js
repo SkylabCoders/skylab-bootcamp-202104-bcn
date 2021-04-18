@@ -42,8 +42,9 @@ const applyRules = (copy, value, row, column, numberOfNeighbours) => {
     if(value === 1){
         if(numberOfNeighbours === 2 || numberOfNeighbours === 3){
             copy[row][column] = 1;
-        } else
+        } else{
         copy[row][column] === 0;
+        }
     } else if(numberOfNeighbours === 3){
         copy[row][column] = 1;
     }
@@ -51,41 +52,34 @@ const applyRules = (copy, value, row, column, numberOfNeighbours) => {
        
 ///////////////////////////////////////////////////
 
-const runApp = (shape) => {
-    const interval = setInterval(() => {
-        shape = gridArray;
-        shape = runCycle(shape);
-        deleteHtmlGrid();
-        createHtmlGrid(shape);
-    }, 2000);
-}
+
 const blinker = () => {
-    let matrix = createMatrix(5,5);
-    populateMatrix(matrix, 2, 1);
-    populateMatrix(matrix, 2, 2);
-    populateMatrix(matrix, 2, 3);
+    let matrix = createMatrix(40,40);
+    populateMatrix(matrix, 17, 16);
+    populateMatrix(matrix, 17, 17);
+    populateMatrix(matrix, 17, 18);
     return matrix;
 }
 const toad = () => {
-    let matrix = createMatrix(6,6);
-    populateMatrix(matrix, 2, 2);
-    populateMatrix(matrix, 2, 3);
-    populateMatrix(matrix, 2, 4);
-    populateMatrix(matrix, 3, 1);
-    populateMatrix(matrix, 3, 2);
-    populateMatrix(matrix, 3, 3);
+    let matrix = createMatrix(40,40);
+    populateMatrix(matrix, 16, 16);
+    populateMatrix(matrix, 16, 18);
+    populateMatrix(matrix, 16, 19);
+    populateMatrix(matrix, 18, 20);
+    populateMatrix(matrix, 18, 16);
+    populateMatrix(matrix, 18, 18);
     return matrix;
 }
 const beacon = () => {
-    let matrix = createMatrix(6,6);
-    populateMatrix(matrix, 1, 1);
-    populateMatrix(matrix, 1, 2);
-    populateMatrix(matrix, 2, 1);
-    populateMatrix(matrix, 2, 2);
-    populateMatrix(matrix, 3, 3);
-    populateMatrix(matrix, 3, 4);
-    populateMatrix(matrix, 4, 3);
-    populateMatrix(matrix, 4, 4);
+    let matrix = createMatrix(40,40);
+    populateMatrix(matrix, 15, 15);
+    populateMatrix(matrix, 15, 16);
+    populateMatrix(matrix, 16, 15);
+    populateMatrix(matrix, 16, 16);
+    populateMatrix(matrix, 17, 17);
+    populateMatrix(matrix, 17, 18);
+    populateMatrix(matrix, 18, 17);
+    populateMatrix(matrix, 18, 18);
     return matrix;
 }
 
@@ -93,14 +87,16 @@ const beacon = () => {
 
 
 //////////////////////////////   HTML   ////////////////////////////////////////////////
-const gridArray = createMatrix(40,40);
+let gridArray = createMatrix(40,40);
 const gridElement = document.querySelector('.grid');
-const playButton = document.querySelector('button');
+const playButton = document.querySelector('.controllers__play-button');
+const blinkerButton = document.querySelector('.samples__blinker');
+const toadButton = document.querySelector('.samples__toad');
+const beaconButton = document.querySelector('.samples__beacon');
 
 const deleteHtmlGrid = ()=> {
     gridElement.innerHTML = '';
 }
-
 const createHtmlGrid = (gridArray) => {
     gridArray.forEach((row, i) => {
     
@@ -127,9 +123,23 @@ const createHtmlGrid = (gridArray) => {
 
 createHtmlGrid(gridArray);
 
-playButton.addEventListener('click', () => {
-    
-})
+blinkerButton.addEventListener('click', ()=> {
+    gridArray = blinker();
+    deleteHtmlGrid();
+    createHtmlGrid(gridArray);
+});
+
+beaconButton.addEventListener('click', ()=> {
+    gridArray = beacon();
+    deleteHtmlGrid();
+    createHtmlGrid(gridArray);
+});
+
+toadButton.addEventListener('click', ()=> {
+    gridArray = toad();
+    deleteHtmlGrid();
+    createHtmlGrid(gridArray);
+});
 
 document.addEventListener('click', (e)=> {
     if(e.target.className === 'column'){
@@ -140,11 +150,18 @@ document.addEventListener('click', (e)=> {
     }
 });
 
-
-
 playButton.addEventListener('click', ()=> {
     runApp(gridArray);
-})
+});
+
+const runApp = (shape) => {
+    const interval = setInterval(() => {
+        let newShape = runCycle(shape);
+        deleteHtmlGrid();
+        createHtmlGrid(newShape);
+        shape = newShape;
+    }, 1000);
+}
 
 
 

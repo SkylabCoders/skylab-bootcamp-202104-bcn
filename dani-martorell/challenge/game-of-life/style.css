@@ -20,6 +20,7 @@ body {
 }
 
 body .container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,5 +114,43 @@ body .container .controllers .speed {
 body .container .controllers .speed p {
   padding: 0 10px;
   display: inline;
+}
+
+body .container .samples {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 0;
+  top: -12%;
+}
+
+body .container .samples button {
+  padding: 10px 25px;
+  font-family: inherit;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 80px;
+  color: white;
+  background-color: #138530;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 20px;
+}
+
+body .container .samples button:focus {
+  outline: none;
+}
+
+body .container .samples button:hover {
+  background-color: #0c521d;
 }
 /*# sourceMappingURL=style.css.map */
