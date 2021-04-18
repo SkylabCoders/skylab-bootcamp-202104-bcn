@@ -5,6 +5,22 @@ const createMatrix = (numberRows, numberColumns) => {
     }
     return newMatrix;
 }
+describe('Given a CreateMatrix function', () => {
+    const scenarios = [{
+        numberRows: 4,
+        numberColumns: 4,
+        result: [[0,0,0,0],[0,0,0,0], [0,0,0,0], [0,0,0,0]],
+    }];
+
+    scenarios.forEach((scenario) => {
+        describe(`When invoked with values ${scenario.numberRows} and ${scenario.numberColumns}`, () => {
+            test(`Then return ${scenario.result}`,() => {
+                const end = createMatrix(scenario.numberRows, scenario.numberColumns);
+                expect(end).toEqual(scenario.result);
+            })
+        })
+    })
+})
 
 
 
