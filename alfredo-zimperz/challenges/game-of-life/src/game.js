@@ -30,7 +30,8 @@ SAPO_BUTTON.addEventListener('click', () =>
 )
 STOP_BUTTON.addEventListener('click', () => play('stop'))
 
-const createMatrix = (columns, rows, charToFillWith) => {
+//Testeada
+const createMatrix = (rows, columns, charToFillWith) => {
 	let matrix = []
 
 	for (let column = 0; column < columns; column++) {
@@ -51,7 +52,7 @@ const createShape = (column, row, array, positionFunction) => {
 	const positions = positionFunction(row, column)
 
 	positions.forEach((cellPosition) => {
-		isCellEmpty(cellPosition[0], cellPosition[1], array)
+		isDead(cellPosition[0], cellPosition[1], array)
 			? (hasEnoughPlace = true)
 			: (hasEnoughPlace = false)
 	})
@@ -89,11 +90,6 @@ const generateTable = (matrix, destinationElementId) => {
 	htmlTableSpace.innerHTML = htmlTable
 }
 
-const isAlive = (column, row, array) => {
-	const isAlive = array[column][row] === 0 ? false : true
-	return isAlive
-}
-
 const countNeighbours = (row, column, array) => {
 	const DISPLACEMENTS = [
 		{ column: -1, row: -1 },
@@ -116,25 +112,30 @@ const countNeighbours = (row, column, array) => {
 	return neighbours
 }
 
-const isCellEmpty = (row, column, array) => {
-	if (array[row][column] !== undefined && array[row][column] === 0) {
-		return true
-	} else {
-		return false
+//Tested
+const isDead = (row, column, matrix) => {
+	if (matrix[row] !== undefined && matrix[row][column] !== undefined) {
+		if (matrix[row][column] === 0) {
+			return true
+		} else {
+			return false
+		}
 	}
+	return -1
 }
 
+//Tested
 const cellExists = (
-	column,
-	columnDisplacement,
 	row,
 	rowDisplacement,
-	array
+	column,
+	columnDisplacement,
+	matrix
 ) => {
-	const newColumn = column + columnDisplacement
 	const newRow = row + rowDisplacement
+	const newColumn = column + columnDisplacement
 
-	if (array[newColumn] && array[newColumn][newRow]) {
+	if (matrix[newRow] !== undefined && matrix[newRow][newColumn] !== undefined) {
 		return true
 	} else {
 		return false
@@ -152,7 +153,7 @@ const updateStates = (matrix) => {
 		for (let row = 0; row < matrix[column].length; row++) {
 			let neighbours = countNeighbours(row, column, matrix)
 
-			if (!isAlive(column, row, matrix)) {
+			if (isDead(column, row, matrix)) {
 				neighbours <= 2 && (newMatrix[column][row] = 0)
 				neighbours > 2 && (newMatrix[column][row] = 1)
 			} else {
