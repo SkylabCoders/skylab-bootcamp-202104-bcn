@@ -1,6 +1,4 @@
-import { blinkerFigure } from "../src/gameOfLife.js";
-
-describe("Given gameOfLife function", () => {
+describe("Given transformFigure function", () => {
   const scenarios = [
     {
       origin: [
@@ -24,7 +22,6 @@ describe("Given gameOfLife function", () => {
     describe(`When invoked with values ${scenario.origin} with the callback ${scenario.callback}`, () => {
       test(`Then return ${scenario.result}`, () => {
         //Arrange
-        const GameofLife = require("../src/gameOfLife/*");
         const origin = scenario.origin;
         const result = scenario.result;
         //Act
