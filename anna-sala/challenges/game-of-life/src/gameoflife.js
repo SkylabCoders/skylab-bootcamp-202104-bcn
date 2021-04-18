@@ -11,14 +11,37 @@ const currentGeneration = [
     [0, 0, 0, 0, 0, 0],
 ]
 let nextGeneration= [];
-
+let body = document.body
+let td;
+let tr;
 const gridCopy = (currentGeneration) => {
     for (let i = 0; i<currentGeneration.length; i++) {
         nextGeneration.push([...currentGeneration[i]])
     }
     return nextGeneration;
 }
+function tableCreate(rows, colums){
+    tbl  = document.createElement('table');
+    for(let i = 0; i < rows; i++){
+        tr = tbl.insertRow();
+        for(let j = 0; j < colums; j++){
+                td = tr.insertCell();
+                td.appendChild(document.createTextNode(currentGeneration[i][j]));
+                setTimeout(function(){printNewGeneration(); }, 1000);
 
+        }
+    }
+    body.appendChild(tbl);
+}
+tableCreate(rows, colums);
+
+function printNewGeneration(rows, colums){
+    for(let i = 0; i < rows; i++){
+        for(let j = 0; j < colums; j++){
+                td.document.innerText(nextGeneration[i][j]);
+        }
+    }
+}
 
 gridCopy(currentGeneration);
 checkAlive(rows, colums, currentGeneration);
@@ -89,20 +112,5 @@ function reviveCell (array, positionRow, positionColumn, neighbours){
     
 
 
-
-
-    // let currentGeneration = new Array (rows);
-    // let nextGeneration = new Array (rows);
-    // console.log(currentGeneration);
-    
-    // createSquares(rows,colums);
-    
-    // function createSquares(rows,colums){
-    //     for (let i=0; i<rows; i++){
-    //         currentGeneration[i]=new Array(j);
-    //         for (let j=0; j<colums; j++){
-    //             currentGeneration[i][j]=0;
-    //         }
-    //     }
-    // }
 }
+console.log(nextGeneration);
