@@ -12,15 +12,15 @@ let createGrid = (rows, cols) => {
 let fillGrid = createGrid(5, 5);
 let modifiedGrid = [...fillGrid];
 
-let coord = (a, b) => {
+let cellPosition = (a, b) => {
     return modifiedGrid[a][b] = 1;
 }
 
 
 let createBlinker = () => {
-    coord(1, 2);
-    coord(2, 2);
-    coord(3, 2);
+    cellPosition(1, 2);
+    cellPosition(2, 2);
+    cellPosition(3, 2);
 
     return modifiedGrid;
 }
@@ -61,7 +61,7 @@ let findNeighbours = (a, b, modifiedGrid) => {
     return neighbours;
 }
 let neighboursNumber = findNeighbours(2, 2, modifiedGrid);
-console.log(` Número de vecinos de la posición indicada: ${neighboursNumber}`);
+
 
 let rules = (a, b, modifiedGrid, neighboursNumber) => {
 
@@ -78,21 +78,23 @@ let rules = (a, b, modifiedGrid, neighboursNumber) => {
 
 let checkEveryCell = modifiedGrid => {
 
-    let lastArray = createGrid(5, 5);
+    let rowBlinker = createGrid(5, 5);
 
     modifiedGrid.forEach((row, indexRow) => {
         row.forEach((column, indexColumn) => {
 
             let neighboursOfEveryCell = findNeighbours(indexRow, indexColumn, modifiedGrid);
+
             if (modifiedGrid[indexRow][indexColumn] === 1) {
-                rules(indexRow, indexColumn, lastArray, neighboursOfEveryCell);
+                rules(indexRow, indexColumn, rowBlinker, neighboursOfEveryCell);
+
             } else if (modifiedGrid[indexRow][indexColumn] === 0 && neighboursOfEveryCell === 3) {
-                lastArray[indexRow][indexColumn] = 1;
+                rowBlinker[indexRow][indexColumn] = 1;
             }
         });
     });
 
-    console.log(lastArray)
-    return lastArray;
+    return rowBlinker;
 }
-checkEveryCell(modifiedGrid);
+let checkCell = checkEveryCell(modifiedGrid);
+console.log(checkCell);
