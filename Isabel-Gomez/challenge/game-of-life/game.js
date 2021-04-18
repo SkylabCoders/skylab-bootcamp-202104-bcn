@@ -67,23 +67,47 @@ const changeCells = (row, column, array, neighbours) => {
     return array;
 }
 
-const showLastArray = (array) => {
-    let tableBody = document.createElement('tableBody');
-    array.forEach(row => {
+// PENDIENTE TESTEAR //
+
+const printFirstMatrix = (array) => {
+    array.forEach((row, rowIndex) => {
         let creatTrTag = document.createElement('tr');
-        row.forEach(cell => {
+        row.forEach((cell, cellIndex) => {
             let creatTdTag = document.createElement('td');
+            creatTdTag.classList.add(`cell-${rowIndex}-${cellIndex}`)
             creatTdTag.appendChild(document.createTextNode(cell));
             creatTrTag.appendChild(creatTdTag);
         });
-        tableBody.appendChild(creatTrTag);
+        document.querySelector(".mainTable").appendChild(creatTrTag);
     });
-    document.querySelector(".mainTable").appendChild(tableBody);
 }
+printFirstMatrix(newCells);
+
+
+// PENDIENTE TESTEAR //
+
+document.querySelector(".play").addEventListener('click', (event) => {
+    executePlay(event);
+});
+
+// PENDIENTE TERMINAR //
+
+const printSecondMatrix = (array) => {
+    array.forEach((row, rowIndex) => {
+        row.forEach((cell, cellIndex) => {
+            console.log('BUTTON', array[rowIndex][cell]);
+            document.querySelector("td").innerHTML = array[rowIndex][cell];
+        });
+    });
+}
+
+
+
+// PENDIENTE TESTEAR DE NUEVO, CONTIENE MODIFICACIONES DESDE EL PRIMER TEST //
+
 
 const checkEveryPosition = (array) => {
     let lastArray = createNewMatrix(5, 5);
-    showLastArray(newCells);
     console.log('firstArray', array);
     array.forEach((row, rowIndex) => {
         row.forEach((cell, cellIndex) => {
@@ -96,7 +120,14 @@ const checkEveryPosition = (array) => {
         });
     });
     console.log('lastArray', lastArray);
+
     return lastArray;
 }
-checkEveryPosition(newCells);
+let getLastArray = checkEveryPosition(newCells);
+
+// PENDIENTE TESTEAR //
+
+const executePlay = () => {
+    printFirstMatrix(getLastArray);
+}
 
