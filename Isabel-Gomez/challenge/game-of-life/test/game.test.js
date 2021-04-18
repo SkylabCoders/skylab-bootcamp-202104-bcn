@@ -1,4 +1,10 @@
-import { createNewMatrix } from '../game'
+const createNewMatrix = (row, column) => {
+    let newArray = new Array(row);
+    for (let i = 0; i < row; i++) {
+        newArray[i] = new Array(column).fill(0);
+    }
+    return newArray;
+};
 
 describe('Given a createNewMatrix function', () => {
     const scenarios = [
