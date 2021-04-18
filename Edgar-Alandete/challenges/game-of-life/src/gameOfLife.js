@@ -3,7 +3,6 @@ const DEFAULT_BOARD_HEIGHT = 10;
 
 const BLINKER_HEIGHT = 5;
 const BLINKER_WIDTH = 5;
-const BLINKER_HEIGHT = 5;
 
 const TOAD_WIDTH = 6;
 const TOAD_HEIGHT = 6;
@@ -11,18 +10,25 @@ const TOAD_HEIGHT = 6;
 const DEAD = 0;
 const ALIVE = 1;
 
-export function blinker(board, isAlive) {
+const applyRules = (cell, neighbours, isAlive) => {
+  let cellStatus = DEAD;
+  if (isAlive(cell)) {
+    cellStatus = updateCell(neighbours === 2 || neighbours === 3);
+  } else {
+    cellStatus = updateCell(neighbours === 3);
+  }
+
+  return cellStatus;
+};
+
+export function updateFigure(board, isAlive) {
   const newBoard = [];
 
   board.forEach((row, rowIndex) => {
     const newRow = [];
     row.forEach((cell, cellIndex) => {
       const neighbours = getNeighbours(board, rowIndex, cellIndex);
-      if (isAlive(cell)) {
-        newRow.push(updateCell(neighbours === 2 || neighbours === 3));
-      } else {
-        newRow.push(updateCell(neighbours === 3));
-      }
+      newRow.push(applyRules(cell, neighbours, isAlive));
     });
     newBoard.push(newRow);
   });
@@ -134,4 +140,4 @@ const initialMatrix = initializeBoard(BLINKER_WIDTH, BLINKER_HEIGHT);
 
 const blinkerFigure = createBlinker(3, 3, initialMatrix);
 
-console.log(blinker(blinkerFigure, isAlive));
+console.log(updateFigure(blinkerFigure, isAlive));
