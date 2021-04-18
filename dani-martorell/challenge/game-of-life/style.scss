@@ -55,11 +55,11 @@ body {
             margin-top: 20px;
 
             &__reset-button{
-                padding: 20px 50px;
+                padding: 8px 12px;
                 font-family: inherit;
                 text-transform: uppercase;
                 border: none;
-                border-radius: 80px; 
+                border-radius: 10px; 
                 color: white;
                 background-color: rgb(159, 168, 255);;
                 cursor: pointer;
@@ -73,8 +73,9 @@ body {
                     background-color: rgb(190, 196, 255)
 
                 }            }
-            &__play-button {
-                padding: 20px 50px;
+            &__play-button, &__stop-button {
+                padding: 15px 35px;
+                margin-left: 10px;
                 font-family: inherit;
                 text-transform: uppercase;
                 border: none;
@@ -92,6 +93,10 @@ body {
                     background-color: rgb(0, 15, 148)
 
                 }
+            }
+
+            &__stop-button {
+                margin-left: auto;
             }
 
             
@@ -122,10 +127,7 @@ body {
                 padding: 10px 25px;
                 font-family: inherit;
                 text-transform: uppercase;
-                border: none;
-                border-radius: 80px; 
-                color: white;
-                background-color: #138530;;
+                color: grey;
                 cursor: pointer;
                 text-decoration: none;
                 margin: 20px;
@@ -135,7 +137,7 @@ body {
                 }
 
                 &:hover {
-                    background-color: #0c521d
+                    transform: scale(1.05);
 
                 }
                 

@@ -81,11 +81,11 @@ body .container .controllers {
 }
 
 body .container .controllers__reset-button {
-  padding: 20px 50px;
+  padding: 8px 12px;
   font-family: inherit;
   text-transform: uppercase;
   border: none;
-  border-radius: 80px;
+  border-radius: 10px;
   color: white;
   background-color: #9fa8ff;
   cursor: pointer;
@@ -100,8 +100,9 @@ body .container .controllers__reset-button:hover {
   background-color: #bec4ff;
 }
 
-body .container .controllers__play-button {
-  padding: 20px 50px;
+body .container .controllers__play-button, body .container .controllers__stop-button {
+  padding: 15px 35px;
+  margin-left: 10px;
   font-family: inherit;
   text-transform: uppercase;
   border: none;
@@ -112,12 +113,16 @@ body .container .controllers__play-button {
   text-decoration: none;
 }
 
-body .container .controllers__play-button:focus {
+body .container .controllers__play-button:focus, body .container .controllers__stop-button:focus {
   outline: none;
 }
 
-body .container .controllers__play-button:hover {
+body .container .controllers__play-button:hover, body .container .controllers__stop-button:hover {
   background-color: #000f94;
+}
+
+body .container .controllers__stop-button {
+  margin-left: auto;
 }
 
 body .container .controllers .speed {
@@ -157,10 +162,7 @@ body .container .samples button {
   padding: 10px 25px;
   font-family: inherit;
   text-transform: uppercase;
-  border: none;
-  border-radius: 80px;
-  color: white;
-  background-color: #138530;
+  color: grey;
   cursor: pointer;
   text-decoration: none;
   margin: 20px;
@@ -171,6 +173,7 @@ body .container .samples button:focus {
 }
 
 body .container .samples button:hover {
-  background-color: #0c521d;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 /*# sourceMappingURL=style.css.map */

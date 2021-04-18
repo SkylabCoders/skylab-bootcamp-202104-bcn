@@ -91,6 +91,7 @@ let gridArray = createMatrix(40,40);
 const gridElement = document.querySelector('.grid');
 const playButton = document.querySelector('.controllers__play-button');
 const resetButton = document.querySelector('.controllers__reset-button');
+const stopButton = document.querySelector('.controllers__stop-button');
 
 const blinkerButton = document.querySelector('.samples__blinker');
 const toadButton = document.querySelector('.samples__toad');
@@ -129,7 +130,6 @@ blinkerButton.addEventListener('click', ()=> {
     deleteHtmlGrid();
     gridArray = blinker();
     createHtmlGrid(gridArray);
-    runApp(gridArray);
 });
 
 beaconButton.addEventListener('click', ()=> {
@@ -162,6 +162,10 @@ resetButton.addEventListener('click', ()=> {
     deleteHtmlGrid();
     gridArray = createMatrix(40,40);
     createHtmlGrid(gridArray);
+});
+
+stopButton.addEventListener('click', ()=> {
+    clearInterval(interval);
 })
 
 const runApp = (shape) => {
