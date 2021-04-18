@@ -14,10 +14,6 @@ const generateMatrix = () => {
     return matrixResult;
 }
 
-const cloneMatrix = () => {
-    return result = [...matrix];
-}
-
 const paintBlinker = (row, column) => {
     matrix[row - 1][column] = 1;
     matrix[row][column] = 1;
