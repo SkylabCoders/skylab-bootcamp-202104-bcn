@@ -2,6 +2,7 @@ let matrix = [];
 // const dimension = 20;
 const maxRow = 50;
 const maxColumn = 100;
+
 const generateMatrix = () => {
     let matrixResult = [];
     for(let i=0; i<maxRow; i++) {
@@ -12,15 +13,18 @@ const generateMatrix = () => {
     }
     return matrixResult;
 }
+
 const cloneMatrix = () => {
     return result = [...matrix];
 }
+
 const paintBlinker = (row, column) => {
     matrix[row - 1][column] = 1;
     matrix[row][column] = 1;
     matrix[row + 1][column] = 1;
     return matrix;
 }
+
 const paintGlider = (row, column) => {
     matrix[row - 1][column] = 1;
     matrix[row][column + 1] = 1;
@@ -29,6 +33,7 @@ const paintGlider = (row, column) => {
     matrix[row + 1][column + 1] = 1;
     return matrix;
 }
+
 const startGame = () => {
     matrix = generateMatrix();
     generateEnvironmentTable();
@@ -50,11 +55,13 @@ const startGame = () => {
 
     timer = setInterval(updateMatrix, 50);
 }
+
 const updateMatrix = () => {
     let arrayOfChanges = gatherChanges();
     matrix = applyChanges(arrayOfChanges, matrix);
     updateTable();
 }
+
 const gatherChanges = () => {
     let arrayOfChanges = [];
     for(let i=0; i<maxRow; i++) {
@@ -66,6 +73,7 @@ const gatherChanges = () => {
     }
     return arrayOfChanges;
 }
+
 const applyChanges = (arrayOfChanges, matrix) => {
     for(let position of arrayOfChanges){
         if(matrix[position[0]][position[1]] === 1) {
@@ -76,6 +84,7 @@ const applyChanges = (arrayOfChanges, matrix) => {
     }
     return matrix;
 }
+
 const stateChanges = (row, column) => {
     let cellAlive = isCellAlive(row, column);
     let result = false;
@@ -91,6 +100,7 @@ const stateChanges = (row, column) => {
     }
     return result;
 }
+
 const collectNeighborHood = (row, column) => {
     let neighborHood = [];
     if (row !== 0 && column !== 0) {
@@ -128,6 +138,7 @@ const isCellAlive = (row, column) => {
     }
     return result;
 }
+
 const numberOfNeighbours = (neighborHood) => {
     let result = 0;
     for (let i = 0; i<neighborHood.length; i++){
@@ -146,6 +157,7 @@ const hasTwoOrThreeNeighbours = (neighborHood) => {
     }
     return result;
 }
+
 const hasThreeNeighbours = (neighborHood) => {
     let result = false;
     if(numberOfNeighbours(neighborHood) === 3) {
@@ -153,14 +165,17 @@ const hasThreeNeighbours = (neighborHood) => {
     }
     return result;
 }
+
 const killCell = (row, column, matrixResult) => {
     matrixResult[row][column] = 0;
     return matrixResult;
 }
+
 const reviveCell = (row, column, matrixResult) => {
     matrixResult[row][column] = 1;
     return matrixResult;
 }
+
 //clearInterval(timer);
 window.addEventListener('load', startGame);
 const environmentTable = document.getElementById('environment');
@@ -186,6 +201,7 @@ const generateEnvironmentTable = () => {
         environmentTable.appendChild(environmentRow);
     }
 }
+
 const updateTable = () => {
     for (let i=0; i< maxRow; i++) {
         for (let j=0; j<maxColumn; j++) {
