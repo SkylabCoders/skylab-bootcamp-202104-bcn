@@ -36,6 +36,7 @@ body .container {
 }
 
 body .container .grid {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,7 +47,6 @@ body .container .grid {
   width: 600px;
   height: 450px;
   margin: 40px 0;
-  background-color: #151533;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -68,6 +68,16 @@ body .container .grid .row .column {
 
 body .container .grid [data-state='1'] {
   background-color: white;
+}
+
+body .container .counter {
+  width: auto;
+  position: absolute;
+  color: white;
+  bottom: 125px;
+  right: 300px;
+  background-color: #02023d;
+  font-size: 14px;
 }
 
 body .container .controllers {

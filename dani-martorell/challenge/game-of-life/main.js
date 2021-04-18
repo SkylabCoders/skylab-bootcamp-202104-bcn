@@ -92,6 +92,7 @@ const gridElement = document.querySelector('.grid');
 const playButton = document.querySelector('.controllers__play-button');
 const resetButton = document.querySelector('.controllers__reset-button');
 const stopButton = document.querySelector('.controllers__stop-button');
+const counterElement = document.querySelector('.counter');
 
 const blinkerButton = document.querySelector('.samples__blinker');
 const toadButton = document.querySelector('.samples__toad');
@@ -100,7 +101,12 @@ const beaconButton = document.querySelector('.samples__beacon');
 const deleteHtmlGrid = ()=> {
     gridElement.innerHTML = '';
 }
+const updateCycleCounter = () => {
+    counterElement.textContent = Number(counterElement.textContent) + 1;
+}
+
 const createHtmlGrid = (gridArray) => {
+    updateCycleCounter();
     gridArray.forEach((row, i) => {
     
         const rowElement = document.createElement('div');
@@ -157,8 +163,18 @@ playButton.addEventListener('click', ()=> {
     runApp(gridArray);
 });
 
+const runApp = (shape) => {
+    interval = setInterval(() => {
+        let newShape = runCycle(shape);
+        deleteHtmlGrid();
+        createHtmlGrid(newShape);
+        shape = newShape;
+    }, 600);
+}
+
 resetButton.addEventListener('click', ()=> {
     clearInterval(interval);
+    counterElement.textContent = -1;
     deleteHtmlGrid();
     gridArray = createMatrix(40,40);
     createHtmlGrid(gridArray);
@@ -168,14 +184,7 @@ stopButton.addEventListener('click', ()=> {
     clearInterval(interval);
 })
 
-const runApp = (shape) => {
-    interval = setInterval(() => {
-        let newShape = runCycle(shape);
-        deleteHtmlGrid();
-        createHtmlGrid(newShape);
-        shape = newShape;
-    }, 600);
-}
+
 
 
 
