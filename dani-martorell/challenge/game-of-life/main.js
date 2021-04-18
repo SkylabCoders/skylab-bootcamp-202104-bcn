@@ -5,53 +5,17 @@ const createMatrix = (numberRows, numberColumns) => {
     }
     return newMatrix;
 }
-const populateMatrix = (matrix, row, column) => {
-    if(!matrix[row]) { return };
-    if(matrix[row] && matrix[column]) {
-        matrix[row][column] = 1;
-    }
-}
-const getNumberOfNeighbours = (array, row, column) => {
-    let counter = 0;
-    
-    if(array[row - 1] && array[row - 1][column] === 1 ) counter ++;
-    if(array[row - 1] && array[row - 1][column + 1] === 1 ) counter ++;
-    if(array[row] && array[row][column + 1] === 1 ) counter ++;
-    if(array[row + 1] && array[row + 1][column + 1] === 1 ) counter ++;
-    if(array[row + 1] && array[row + 1][column] === 1 ) counter ++;
-    if(array[row + 1] && array[row + 1][column - 1] === 1 ) counter ++;
-    if(array[row] && array[row][column - 1] === 1) counter ++;
-    if(array[row - 1] && array[row - 1][column - 1] === 1 ) counter ++;
-    
-    return counter;
-}
-const runCycle = (array) => {
-   
-    const copyMatrix = createMatrix(array.length, array[0].length);
-
-    for(let i = 0; i < copyMatrix.length; i++){
-        for(let j = 1; j < copyMatrix[0].length; j++){ 
-            let currentCell = array[i][j]
-            const numberOfNeighbours = getNumberOfNeighbours(array,i,j);                       
-            applyRules(copyMatrix, currentCell, i, j, numberOfNeighbours)
-        }
-    }
-    return copyMatrix;
-}
-const applyRules = (copy, value, row, column, numberOfNeighbours) => {
-    if(value === 1){
-        if(numberOfNeighbours === 2 || numberOfNeighbours === 3){
-            copy[row][column] = 1;
-        } else{
-        copy[row][column] === 0;
-        }
-    } else if(numberOfNeighbours === 3){
-        copy[row][column] = 1;
-    }
-}
-       
-///////////////////////////////////////////////////
-
+let gridArray = createMatrix(40,40);
+const gridElement = document.querySelector('.grid');
+const playButton = document.querySelector('.controllers__play-button');
+const resetButton = document.querySelector('.controllers__reset-button');
+const stopButton = document.querySelector('.controllers__stop-button');
+const counterElement = document.querySelector('.counter');
+const speedInput = document.querySelector('input');
+let speed = +(speedInput.value);
+const blinkerButton = document.querySelector('.samples__blinker');
+const toadButton = document.querySelector('.samples__toad');
+const beaconButton = document.querySelector('.samples__beacon');
 
 const blinker = () => {
     let matrix = createMatrix(40,40);
@@ -83,28 +47,54 @@ const beacon = () => {
     return matrix;
 }
 
-//runApp(beacon());
+const populateMatrix = (matrix, row, column) => {
+    if(!matrix[row]) { return };
+    if(matrix[row] && matrix[column]) {
+        matrix[row][column] = 1;
+    }
+}
+const getNumberOfNeighbours = (array, row, column) => {
+    let counter = 0;
+    if(array[row - 1] && array[row - 1][column] === 1 ) counter ++;
+    if(array[row - 1] && array[row - 1][column + 1] === 1 ) counter ++;
+    if(array[row] && array[row][column + 1] === 1 ) counter ++;
+    if(array[row + 1] && array[row + 1][column + 1] === 1 ) counter ++;
+    if(array[row + 1] && array[row + 1][column] === 1 ) counter ++;
+    if(array[row + 1] && array[row + 1][column - 1] === 1 ) counter ++;
+    if(array[row] && array[row][column - 1] === 1) counter ++;
+    if(array[row - 1] && array[row - 1][column - 1] === 1 ) counter ++;
+    
+    return counter;
+}
 
+const runCycle = (array) => {   
+    const copyMatrix = createMatrix(array.length, array[0].length);
+    for(let i = 0; i < copyMatrix.length; i++){
+        for(let j = 1; j < copyMatrix[0].length; j++){ 
+            let currentCell = array[i][j]
+            const numberOfNeighbours = getNumberOfNeighbours(array,i,j);                       
+            applyRules(copyMatrix, currentCell, i, j, numberOfNeighbours)
+        }
+    }
+    return copyMatrix;
+}
 
-//////////////////////////////   HTML   ////////////////////////////////////////////////
-let gridArray = createMatrix(40,40);
-
-const gridElement = document.querySelector('.grid');
-const playButton = document.querySelector('.controllers__play-button');
-const resetButton = document.querySelector('.controllers__reset-button');
-const stopButton = document.querySelector('.controllers__stop-button');
-const counterElement = document.querySelector('.counter');
-const speedInput = document.querySelector('input');
-let speed = +(speedInput.value);
-
-
-const blinkerButton = document.querySelector('.samples__blinker');
-const toadButton = document.querySelector('.samples__toad');
-const beaconButton = document.querySelector('.samples__beacon');
+const applyRules = (copy, value, row, column, numberOfNeighbours) => {
+    if(value === 1){
+        if(numberOfNeighbours === 2 || numberOfNeighbours === 3){
+            copy[row][column] = 1;
+        } else{
+        copy[row][column] === 0;
+        }
+    } else if(numberOfNeighbours === 3){
+        copy[row][column] = 1;
+    }
+}
 
 const deleteHtmlGrid = ()=> {
     gridElement.innerHTML = '';
 }
+
 const updateCycleCounter = () => {
     counterElement.textContent = Number(counterElement.textContent) + 1;
 }
@@ -132,6 +122,15 @@ const createHtmlGrid = (gridArray) => {
             column.dataset.col = `${j}`;
         });
     });
+}
+
+const runApp = (shape) => {
+    interval = setInterval(() => {
+        let newShape = runCycle(shape);
+        deleteHtmlGrid();
+        createHtmlGrid(newShape);
+        shape = newShape;
+    }, speed);
 }
 
 createHtmlGrid(gridArray);
@@ -174,16 +173,6 @@ playButton.addEventListener('click', ()=> {
     runApp(gridArray);
 });
 
-const runApp = (shape) => {
-    interval = setInterval(() => {
-        let newShape = runCycle(shape);
-        deleteHtmlGrid();
-        createHtmlGrid(newShape);
-        shape = newShape;
-    }, speed);
-}
-
-
 resetButton.addEventListener('click', ()=> {
     clearInterval(interval);
     counterElement.textContent = -1;
@@ -194,13 +183,4 @@ resetButton.addEventListener('click', ()=> {
 
 stopButton.addEventListener('click', ()=> {
     clearInterval(interval);
-})
-
-
-
-
-
-
-
-
-
+});
