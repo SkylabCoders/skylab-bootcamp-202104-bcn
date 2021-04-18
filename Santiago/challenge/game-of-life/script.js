@@ -25,7 +25,8 @@ let createBlinker = () => {
     return modifiedGrid;
 }
 let blinker = createBlinker();
-console.log(blinker)
+console.log(blinker);
+
 
 
 let findNeighbours = (a, b, modifiedGrid) => {
@@ -62,19 +63,36 @@ let findNeighbours = (a, b, modifiedGrid) => {
 let neighboursNumber = findNeighbours(2, 2, modifiedGrid);
 console.log(` Número de vecinos de la posición indicada: ${neighboursNumber}`);
 
-
-let rules = () => {
+let rules = (a, b, modifiedGrid, neighboursNumber) => {
 
     if (neighboursNumber < 2) {
-        console.log("DEAD");
+        modifiedGrid[a][b] = 0;
     }
     if (neighboursNumber === 2 || neighboursNumber === 3) {
-        console.log("LIVE");
+        modifiedGrid[a][b] = 1;
     }
-    if (neighboursNumber < 3) {
-        console.log("DEAD")
-    }
-    if (cell === 3) {
-        console.lo("BECOMES LIVE")
+    if (neighboursNumber > 3) {
+        modifiedGrid[a][b] = 0;
     }
 }
+
+let checkEveryCell = modifiedGrid => {
+
+    let lastArray = createGrid(5, 5);
+
+    modifiedGrid.forEach((row, indexRow) => {
+        row.forEach((column, indexColumn) => {
+
+            let neighboursOfEveryCell = findNeighbours(indexRow, indexColumn, modifiedGrid);
+            if (modifiedGrid[indexRow][indexColumn] === 1) {
+                rules(indexRow, indexColumn, lastArray, neighboursOfEveryCell);
+            } else if (modifiedGrid[indexRow][indexColumn] === 0 && neighboursOfEveryCell === 3) {
+                lastArray[indexRow][indexColumn] = 1;
+            }
+        });
+    });
+
+    console.log(lastArray)
+    return lastArray;
+}
+checkEveryCell(modifiedGrid);
