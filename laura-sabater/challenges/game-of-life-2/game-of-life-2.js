@@ -1,10 +1,9 @@
 let matrix = [];
-// const dimension = 20;
 const maxRow = 20;
 const maxColumn = 50;
 const generateMatrix = () => {
     let matrixResult = [];
-    for(let i=0; i<maxRow; i++) {
+    for(let i = 0; i < maxRow; i++) {
         matrixResult[i] = [];
         for(let j=0; j<maxColumn; j++) {
             matrixResult[i][j] = 0;
@@ -12,8 +11,60 @@ const generateMatrix = () => {
     }
     return matrixResult;
 }
+const isCellAlive = (row, column) => {
+    if (matrix[row][column] === 1) {
+        return true;
+    }
+    return false;
+}
+const collectNeighborHood = (row, column) => {
+    let neighborHood = [];
+    if (row !== 0 && column !== 0) {
+        neighborHood.push(matrix[row - 1][column - 1]);
+    }
+    if (row !== 0) {
+        neighborHood.push(matrix[row - 1][column]);
+    }
+    if (row !== 0 && column < (maxColumn-1)) {
+        neighborHood.push(matrix[row - 1][column + 1]);
+    }
+    if (column !== 0) {
+        neighborHood.push(matrix[row][column - 1]);
+    }
+    if (column < (maxColumn-1)) {
+        neighborHood.push(matrix[row][column + 1]);
+    }
+    if (row < (maxRow -1) && column !== 0) {
+        neighborHood.push(matrix[row + 1][column - 1]);
+    }
+    if(row < (maxRow -1)){
+        neighborHood.push(matrix[row + 1][column]);
+    }
+    if(row < (maxRow -1) && column < (maxColumn -1)) {
+        neighborHood.push(matrix[row + 1][column + 1]);
+    }
+    // neighborHood[0] = matrix[row - 1][column - 1];
+    // neighborHood[1] = matrix[row - 1][column];
+    // neighborHood[2] = matrix[row - 1][column + 1];
+    // neighborHood[3] = matrix[row][column - 1];
+    // neighborHood[4] = matrix[row][column + 1];
+    // neighborHood[5] = matrix[row + 1][column - 1];
+    // neighborHood[6] = matrix[row + 1][column];
+    // neighborHood[7] = matrix[row + 1][column + 1];
+    //neighborHood = checkNeighbordHood(neighborHood);
+    return neighborHood;
+}
+const numberOfNeighbours = (neighborHood) => {
+    let result = 0;
+    for (let i = 0; i<neighborHood.length; i++){
+        if (neighborHood[i] === 1) {
+            result++;
+        }
+    }
+    return result;
+}
 const cloneMatrix = () => {
-    return result = [...matrix];
+    return [...matrix];
 }
 const paintBlinker = (row, column) => {
     matrix[row - 1][column] = 1;
@@ -94,64 +145,14 @@ const stateChanges = (row, column) => {
     }
     return result;
 }
-const collectNeighborHood = (row, column) => {
-    let neighborHood = [];
-    if (row !== 0 && column !== 0) {
-        neighborHood.push(matrix[row - 1][column - 1]);
-    }
-    if (row !== 0) {
-        neighborHood.push(matrix[row - 1][column]);
-    }
-    if (row !== 0 && column < (maxColumn-1)) {
-        neighborHood.push(matrix[row - 1][column + 1]);
-    }
-    if (column !== 0) {
-        neighborHood.push(matrix[row][column - 1]);
-    }
-    if (column < (maxColumn-1)) {
-        neighborHood.push(matrix[row][column + 1]);
-    }
-    if (row < (maxRow -1) && column !== 0) {
-        neighborHood.push(matrix[row + 1][column - 1]);
-    }
-    if(row < (maxRow -1)){
-        neighborHood.push(matrix[row + 1][column]);
-    }
-    if(row < (maxRow -1) && column < (maxColumn -1)) {
-        neighborHood.push(matrix[row + 1][column + 1]);
-    }
-    // neighborHood[0] = matrix[row - 1][column - 1];
-    // neighborHood[1] = matrix[row - 1][column];
-    // neighborHood[2] = matrix[row - 1][column + 1];
-    // neighborHood[3] = matrix[row][column - 1];
-    // neighborHood[4] = matrix[row][column + 1];
-    // neighborHood[5] = matrix[row + 1][column - 1];
-    // neighborHood[6] = matrix[row + 1][column];
-    // neighborHood[7] = matrix[row + 1][column + 1];
-    //neighborHood = checkNeighbordHood(neighborHood);
-    return neighborHood;
-}
+
 // const checkNeighbordHood = (neighborHood) => {
 //     let checkedArray = [];
 //     checkedArray = neighborHood.filter(x => x !== undefined);
 //     return checkedArray;
 // }
-const isCellAlive = (row, column) => {
-    let result = false;
-    if (matrix[row][column] === 1) {
-        result = true;
-    }
-    return result;
-}
-const numberOfNeighbours = (neighborHood) => {
-    let result = 0;
-    for (let i = 0; i<neighborHood.length; i++){
-        if (neighborHood[i] === 1) {
-            result++;
-        }
-    }
-    return result;
-}
+
+
 // const updateCellStatus = (row, column) => {
 //     let neighborHood = collectNeighborHood(row, column);
 //     let cellAlive = isCellAlive(row, column);
