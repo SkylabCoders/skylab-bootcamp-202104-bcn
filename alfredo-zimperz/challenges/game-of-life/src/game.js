@@ -1,7 +1,7 @@
 import {
 	sapo_positions_factory,
 	vBlinker_positions_factory
-} from './positionFactories.mjs'
+} from './positionFactories.js'
 
 const MATRIX_COLUMNS = 50
 const MATRIX_ROWS = 50
@@ -185,11 +185,9 @@ const startGame = (shape) => {
 
 const play = (action, shapePositions) => {
 	if (action === 'stop') {
-		console.log('stop blink')
 		clearInterval(GAME_STATUS.interval)
 	}
 	if (action === 'start') {
-		console.log('start blink')
 		play('stop')
 		startGame(shapePositions)
 		GAME_STATUS.interval = setInterval(() => startGame(shapePositions), 5000)
