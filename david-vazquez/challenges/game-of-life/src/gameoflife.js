@@ -1,6 +1,7 @@
 let boardArray = [];
 let newBoard = [];
-let colors = ['F2E641','F2CB05','F2B705','F29F05','D96704'];
+let colors = ['F2E641','F2CB05','F2B705','F29F05','D96704',];
+let count = 0;
 
 function createBoard(rowNumber,columnNumber){
     let board = document.querySelector('.board');
@@ -35,8 +36,7 @@ function drawBoard (){
                 }         
             });        
         }
-    }
-    
+    }   
 }
 
 function checkBoard() {
@@ -83,6 +83,8 @@ function drawCheckBoard(){
             }                                
         }
     }
+    count++;
+    document.querySelector('.counter').innerHTML = count;
 }
 
 function controls (){
@@ -97,6 +99,7 @@ function controls (){
     const reset = document.querySelector('.reset');
     reset.addEventListener('click', function(){
         clearInterval(nIntervId);
+        count = 0;
         reset();
     })
 }
