@@ -30,7 +30,6 @@ SAPO_BUTTON.addEventListener('click', () =>
 )
 STOP_BUTTON.addEventListener('click', () => play('stop'))
 
-//Testeada
 const createMatrix = (rows, columns, charToFillWith) => {
 	let matrix = []
 
@@ -46,7 +45,6 @@ const createMatrix = (rows, columns, charToFillWith) => {
 	return matrix
 }
 
-//Testeada
 const createShape = (column, row, array, positionFunction) => {
 	let hasEnoughPlace = true
 	const createdVerticalArray = [...array]
@@ -67,6 +65,7 @@ const createShape = (column, row, array, positionFunction) => {
 		console.log('No hay espacios disponibles')
 	}
 }
+//test pendiente
 const generateTable = (matrix, destinationElementId) => {
 	const htmlTableSpace = document.getElementById(destinationElementId)
 	let htmlTable = '<table>'
@@ -91,7 +90,6 @@ const generateTable = (matrix, destinationElementId) => {
 	htmlTableSpace.innerHTML = htmlTable
 }
 
-//Tested
 const countNeighbours = (row, column, matrix) => {
 	const DISPLACEMENTS = [
 		{ column: -1, row: -1 },
@@ -114,7 +112,6 @@ const countNeighbours = (row, column, matrix) => {
 	return neighbours
 }
 
-//Tested
 const isDead = (row, column, matrix) => {
 	if (matrix[row] !== undefined && matrix[row][column] !== undefined) {
 		if (matrix[row][column] === 0) {
@@ -126,7 +123,6 @@ const isDead = (row, column, matrix) => {
 	return -1
 }
 
-//Tested
 const cellExists = (
 	row,
 	rowDisplacement,
@@ -144,7 +140,6 @@ const cellExists = (
 	}
 }
 
-//Tested
 const updateStates = (matrix, initialCharacter) => {
 	let newMatrix = createMatrix(
 		matrix.length,
@@ -168,7 +163,7 @@ const updateStates = (matrix, initialCharacter) => {
 	}
 	return newMatrix
 }
-
+//Test pendiente
 const startGame = (shape) => {
 	const matrix = createMatrix(
 		MATRIX_COLUMNS,
@@ -187,6 +182,7 @@ const startGame = (shape) => {
 	setTimeout(() => generateTable(newMatrix, 'app'), 2000)
 }
 
+//Tested mas o menos
 const play = (action, shapePositions) => {
 	if (action === 'stop') {
 		clearInterval(GAME_STATUS.interval)
