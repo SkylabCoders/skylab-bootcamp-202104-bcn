@@ -10,9 +10,16 @@ let matrix = createNewMatrix(5, 5);
 let newCells = [...matrix];
 
 const replaceCells = (row, column, array) => {
-    array[row][column] = 1;
-    array[row - 1][column] = 1;
-    array[row + 1][column] = 1;
+    if (array[row] && array[column]) {
+        array[row][column] = 1;
+    }
+    if (array[row - 1]) {
+        array[row - 1][column] = 1;
+    }
+    if (array[row + 1]) {
+        array[row + 1][column] = 1;
+    }
+    return array;
 }
 replaceCells(2, 2, newCells);
 
@@ -55,6 +62,7 @@ const changeCells = (row, column, array, neighbours) => {
     if (neighbours > 3) {
         array[row][column] = 0;
     }
+    return array;
 }
 
 const checkEveryPosition = (array) => {

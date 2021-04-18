@@ -9,13 +9,24 @@ const createNewMatrix = (row, column) => {
 describe('Given a createNewMatrix function', () => {
     const scenarios = [
         {
-            row: 5,
-            column: 5,
+            row: 5, column: 5,
             newArray: [[0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0]]
+        },
+        {
+            row: 1, column: 2,
+            newArray: [[0, 0]]
+        },
+        {
+            row: 'hola', column: 5,
+            newArray: ["hola"]
+        },
+        {
+            row: 0, column: 0,
+            newArray: []
         }
     ];
 
