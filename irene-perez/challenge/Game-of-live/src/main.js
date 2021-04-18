@@ -8,89 +8,73 @@ let createGrid = (rows, columns) => {
 
 let grid = createGrid(5, 5);
 let newGrid = [...grid];
+let grid2 = createGrid(5, 5);
 
-let coordsCreation = (i, j) => {
-    return newGrid[i][j] = 1;
+const coordsCreation = (num1, num2) => {
+    return newGrid[num1][num2] = 1;
 }
 
 let blinkerCreation = () => {
     coordsCreation(1, 2);
     coordsCreation(2, 2);
     coordsCreation(3, 2);
-    return newGrid;
 }
+blinkerCreation();
 
-let blinker = blinkerCreation();
-console.log(blinker);
-
-let checkNeighbours = (i, j, newGrid) => {
+let gol = () => {
+    console.log(newGrid);
     let neighboursCounter = 0;
-
-    if (newGrid[i + 1] && newGrid[i + 1][j - 1] === 1) {
-        neighboursCounter++;
-    }
-    if (newGrid[i + 1] && newGrid[i + 1][j] === 1) {
-        neighboursCounter++;
-    }
-    if (newGrid[i + 1] && newGrid[i + 1][j + 1] === 1) {
-        neighboursCounter++;
-    }
-    if (newGrid[i] && newGrid[i][j - 1] === 1) {
-        neighboursCounter++;
-    }
-    if (newGrid[i - 1] && newGrid[i - 1][j - 1] === 1) {
-        neighboursCounter++;
-    }
-    if (newGrid[i - 1] && newGrid[i - 1][j] === 1) {
-        neighboursCounter++;
-    }
-    if (newGrid[i - 1] && newGrid[i - 1][j + 1] === 1) {
-        neighboursCounter++;
-    }
-    if (newGrid[i] && newGrid[i][j + 1] === 1) {
-        neighboursCounter++;
-    } 
-    return neighboursCounter;
-}
-
-let neighboursNumber = checkNeighbours(2, 2, newGrid);
-
-let checklifeDead = (i, j, newGrid, neighboursNumber) => {
-            
-    if (neighboursNumber < 2){
-        newGrid[i][j] = 0;
-    } 
-    if (neighboursNumber === 2 || neighboursNumber === 3){
-        newGrid[i][j] = 1;
-    } 
-    if (neighboursNumber > 3) {
-        newGrid[i][j] = 0;
-    }
-}
-
-let checkEveryCell = newGrid => {
-    let rowBlinker = createGrid(5, 5);
-    newGrid.forEach((row, indexRow) => {
-        row.forEach((column, indexColumn) => {
-            let neighboursOfEveryCell = checkNeighbours(indexRow, indexColumn, newGrid);
-            if (newGrid[indexRow][indexColumn] === 1){
-                checklifeDead(indexRow, indexColumn, rowBlinker, neighboursOfEveryCell);
-            } else if ( newGrid[indexRow][indexColumn] === 0 && neighboursOfEveryCell === 3){
-                rowBlinker[indexRow][indexColumn] = 1;
+    for (let i = 0; i<newGrid.length; i++) {
+        for (let j=0; j<newGrid[i].length; j++){
+            if (newGrid[j+1] && newGrid[i][j+1]  === 1) {
+                neighboursCounter++
+            } 
+            if (newGrid[j-1] && newGrid[i][j-1] ===1) {
+                neighboursCounter++
             }
-        });
-    });
-    return rowBlinker;
+            if (newGrid[i-1] && newGrid[j-1] && newGrid[i-1][j-1] ===1) {
+                neighboursCounter++
+            }
+            if (newGrid[i-1] && newGrid[i-1][j] ===1) {
+                neighboursCounter++
+            }
+            if (newGrid[i-1] && newGrid[j+1] && newGrid[i-1][j+1] ===1) {
+                neighboursCounter++
+            }
+            if (newGrid[i+1] && newGrid[j-1] && newGrid[i+1][j-1] ===1) {
+                neighboursCounter++
+            }
+            if (newGrid[i+1] && newGrid[i+1][j] ===1) {
+                neighboursCounter++
+            }
+            if (newGrid[i+1] && newGrid[j+1] && newGrid[i+1][j+1] ===1){
+                neighboursCounter++
+            }
+            if (newGrid[i][j] === 1){ 
+                if(neighboursCounter <= 1 || neighboursCounter >= 4){
+                    grid2[i][j] = 0;
+                }else{
+                    grid2[i][j] = 1;
+                }
+            }else{
+                if(neighboursCounter === 3){
+                    grid2[i][j] = 1;
+                }
+            }
+           neighboursCounter =0
+        }
+    }
+    console.log(grid2);
 }
 
-let checkCell = checkEveryCell(newGrid);
-console.log(checkCell);
+gol();
 
 // const timerGol = () => {
 //     setInterval(function(){
-//         alert("Hello"); 
+//         checkEveryCell();
 //     }, 1000);
 // }
 
+// timerGol();
 
 
