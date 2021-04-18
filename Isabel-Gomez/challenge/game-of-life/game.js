@@ -20,8 +20,10 @@ const replaceCells = (row, column, array) => {
         array[row + 1][column] = 1;
     }
     return array;
+
 }
 replaceCells(2, 2, newCells);
+
 
 const checkNeighbours = (row, column, array) => {
     let neighbours = 0;
@@ -65,8 +67,23 @@ const changeCells = (row, column, array, neighbours) => {
     return array;
 }
 
+const showLastArray = (array) => {
+    let tableBody = document.createElement('tableBody');
+    array.forEach(row => {
+        let creatTrTag = document.createElement('tr');
+        row.forEach(cell => {
+            let creatTdTag = document.createElement('td');
+            creatTdTag.appendChild(document.createTextNode(cell));
+            creatTrTag.appendChild(creatTdTag);
+        });
+        tableBody.appendChild(creatTrTag);
+    });
+    document.querySelector(".mainTable").appendChild(tableBody);
+}
+
 const checkEveryPosition = (array) => {
     let lastArray = createNewMatrix(5, 5);
+    showLastArray(newCells);
     console.log('firstArray', array);
     array.forEach((row, rowIndex) => {
         row.forEach((cell, cellIndex) => {
@@ -82,3 +99,4 @@ const checkEveryPosition = (array) => {
     return lastArray;
 }
 checkEveryPosition(newCells);
+
