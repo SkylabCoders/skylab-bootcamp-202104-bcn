@@ -184,7 +184,17 @@ const generateTable = (array) => {
   for (let i = 0; i < array.length; i++) {
     table += "<table><tr><td></td>";
     for (let j = 0; j < array[i].length; j++) {
-      table += "<td>" + array[i][j] + "</td>";
+      if (array[i][j] === 1) {
+        table +=
+          "<td class='cell cell--alive'><span class='cell__text'>" +
+          array[i][j] +
+          "</span></td>";
+      } else {
+        table +=
+          "<td class='cell'><span class='cell__text'>" +
+          array[i][j] +
+          "</span></td>";
+      }
     }
   }
   table += "</table>";
