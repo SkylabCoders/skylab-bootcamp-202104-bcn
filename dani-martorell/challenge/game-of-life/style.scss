@@ -53,7 +53,26 @@ body {
             justify-content: space-around;
             width: 600px;
             margin-top: 20px;
-    
+
+            &__reset-button{
+                padding: 20px 50px;
+                font-family: inherit;
+                text-transform: uppercase;
+                border: none;
+                border-radius: 80px; 
+                color: white;
+                background-color: rgb(159, 168, 255);;
+                cursor: pointer;
+                text-decoration: none;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                    background-color: rgb(190, 196, 255)
+
+                }            }
             &__play-button {
                 padding: 20px 50px;
                 font-family: inherit;
@@ -73,8 +92,9 @@ body {
                     background-color: rgb(0, 15, 148)
 
                 }
-                
             }
+
+            
             .speed {
                 display: flex;
                 text-transform: uppercase;

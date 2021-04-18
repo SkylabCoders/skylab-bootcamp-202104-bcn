@@ -80,7 +80,27 @@ body .container .controllers {
   margin-top: 20px;
 }
 
-body .container .controllers button {
+body .container .controllers__reset-button {
+  padding: 20px 50px;
+  font-family: inherit;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 80px;
+  color: white;
+  background-color: #9fa8ff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body .container .controllers__reset-button:focus {
+  outline: none;
+}
+
+body .container .controllers__reset-button:hover {
+  background-color: #bec4ff;
+}
+
+body .container .controllers__play-button {
   padding: 20px 50px;
   font-family: inherit;
   text-transform: uppercase;
@@ -92,11 +112,11 @@ body .container .controllers button {
   text-decoration: none;
 }
 
-body .container .controllers button:focus {
+body .container .controllers__play-button:focus {
   outline: none;
 }
 
-body .container .controllers button:hover {
+body .container .controllers__play-button:hover {
   background-color: #000f94;
 }
 
