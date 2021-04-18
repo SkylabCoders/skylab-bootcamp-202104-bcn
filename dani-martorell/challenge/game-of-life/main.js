@@ -90,6 +90,8 @@ const beacon = () => {
 let gridArray = createMatrix(40,40);
 const gridElement = document.querySelector('.grid');
 const playButton = document.querySelector('.controllers__play-button');
+const resetButton = document.querySelector('.controllers__reset-button');
+
 const blinkerButton = document.querySelector('.samples__blinker');
 const toadButton = document.querySelector('.samples__toad');
 const beaconButton = document.querySelector('.samples__beacon');
@@ -155,13 +157,20 @@ playButton.addEventListener('click', ()=> {
     runApp(gridArray);
 });
 
+resetButton.addEventListener('click', ()=> {
+    clearInterval(interval);
+    deleteHtmlGrid();
+    gridArray = createMatrix(40,40);
+    createHtmlGrid(gridArray);
+})
+
 const runApp = (shape) => {
-    const interval = setInterval(() => {
+    interval = setInterval(() => {
         let newShape = runCycle(shape);
         deleteHtmlGrid();
         createHtmlGrid(newShape);
         shape = newShape;
-    }, 1000);
+    }, 600);
 }
 
 
