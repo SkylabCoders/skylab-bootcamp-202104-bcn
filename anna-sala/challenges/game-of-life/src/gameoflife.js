@@ -1,20 +1,14 @@
 let neighbours = 0;
-let rows = 6;
-let colums = 6;
+let rows = 20;
+let colums = 40;
 let created = false;
-let currentGeneration = [
-  [0, 0, 0, 0, 0, 0],
-  [0, 1, 1, 0, 0, 0],
-  [0, 1, 1, 0, 0, 0],
-  [0, 0, 0, 1, 1, 0],
-  [0, 0, 0, 1, 1, 0],
-  [0, 0, 0, 0, 0, 0],
-];
+let currentGeneration = [];
 let nextGeneration = [];
 let body = document.body;
 let td;
 let tr;
 let tbl;
+
 setInterval(runGame, 1000);
 
 const gridCopy = (currentGeneration) => {
@@ -23,27 +17,34 @@ const gridCopy = (currentGeneration) => {
   }
   return nextGeneration;
 };
+
 function tableCreate(rows, colums) {
   if (!created) {
     tbl = document.createElement("table");
     for (let i = 0; i < rows; i++) {
       tr = tbl.insertRow();
+      currentGeneration.push([]);
       for (let j = 0; j < colums; j++) {
         td = tr.insertCell();
+        currentGeneration[i].push(Math.round(Math.random()));
         td.appendChild(document.createTextNode(currentGeneration[i][j]));
+        if (currentGeneration[i][j] === 1) {
+          td.style.backgroundColor = "#99ff99";
+        }
       }
     }
     body.appendChild(tbl);
     created = true;
   }
+  return currentGeneration;
 }
 
 function printNewGeneration(rows, colums) {
-  var items = document.getElementsByTagName("table")[0].children;
-  for (let i = 0; i < rows; i++) {
-    let row = items[0].children[i];
-    for (let j = 0; j < colums; j++) {
-      row.children[j].innerHTML = nextGeneration[i][j];
+  let cells = document.getElementsByTagName("table")[0].children;
+  for (let x = 0; x < rows; x++) {
+    let row = cells[0].children[x];
+    for (let y = 0; y < colums; y++) {
+      row.children[y].innerHTML = nextGeneration[x][y];
     }
   }
 }
@@ -143,8 +144,8 @@ function reviveCell(array, positionRow, positionColumn, neighbours) {
 }
 
 function runGame() {
-  gridCopy(currentGeneration);
   tableCreate(rows, colums);
+  gridCopy(currentGeneration);
   checkAlive(rows, colums, currentGeneration);
   printNewGeneration(rows, colums);
   restartGeneration();
