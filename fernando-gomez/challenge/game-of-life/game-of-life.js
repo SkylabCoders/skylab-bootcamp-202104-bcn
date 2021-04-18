@@ -1,7 +1,12 @@
+const playButton = document.getElementById('play');
+const pauseButton = document.getElementById('pause');
+const speedInput = document.getElementById('speed');
 let matrix = [];
 // const dimension = 20;
 const maxRow = 54;
 const maxColumn = 100;
+let speed = 1000;
+let timer;
 
 const generateMatrix = () => {
     let matrixResult = [];
@@ -274,11 +279,11 @@ const updateTable = () => {
 
 startGame();
 
-const playButton = document.getElementById('play');
-const pauseButton = document.getElementById('pause');
+
 
 const playGame = () => {
-    timer = setInterval(updateMatrix, 50);
+    clearInterval(timer);
+    timer = setInterval(updateMatrix, speed);
 }
 
 const pauseGame = () => {
@@ -287,3 +292,10 @@ const pauseGame = () => {
 
 playButton.addEventListener('click', playGame);
 pauseButton.addEventListener('click', pauseGame);
+// speedInput.addEventListener('onchange', () => {
+//     speed = speedInput;
+// });
+
+const changeSpeed = (newSpeed) => {
+    speed = newSpeed;
+}
