@@ -1,24 +1,33 @@
-const arrayWidth = 6
-const arrayHeight = 8;
+const arrayWidth = 50;
+const arrayHeight = 20;
 
 let initialArray = [];
 let killerArray = [];
 let resurrectionArray = [];
 let nextGenArray = [];
+let lifeCicles = 0;
 
 function createMatrix (width,height){
     let array = new Array (height);
+    let htmlGrid= '<table class="grid"><tbody>';
  
      for (let i = 0; i < array.length; i++) {
          array[i] = new Array(width);
-         }
+        }
  
-     for (let i = 0; i < array.length; i++) {
-         for (let j = 0; j < array[i].length; j++) {
-              array[i][j] = 0;
-             }
-         }
-      return array
+     for (let i = 0; i < array.length; i++) {     00
+        htmlGrid+= "<tr> ";       
+        for (let j = 0; j < array[i].length; j++) {
+            array[i][j] = 0; 
+            htmlGrid += "<td class=`celdas`> 0";
+            htmlGrid+= "</td>";
+           }
+    }
+    htmlGrid += "</tr>"
+    
+    htmlGrid += "</tbody></table>";
+    document.querySelector(".grid").innerHTML = htmlGrid;
+    return array
  }
  
  let matrix = createMatrix (arrayWidth,arrayHeight)
@@ -88,10 +97,13 @@ function checkNeighbours(column,row,columnDesplacement,rowDisplacement,array) {
 
 
 const searchAlives = (array) => {
+     let time = setInterval(()=> {
     let oldArray = [...array];
+   
     console.log(array);
+    lifeCicles++
 
-    let time = setInterval(()=> {
+    
         for (let column = 0; column < oldArray.length; column++) {
             for (let row = 0; row < oldArray[column].length; row++) {
                 if (oldArray[column][row] === 1) {
@@ -104,6 +116,7 @@ const searchAlives = (array) => {
         
         killerArray = [];
         resurrectionArray = [];
+        console.log(lifeCicles);
         searchAlives(nextGen);
     }, [1000])
 };
