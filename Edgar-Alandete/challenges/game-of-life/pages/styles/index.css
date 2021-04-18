@@ -60,4 +60,8 @@ td {
 .alive {
   background-color: blue;
 }
+
+.dead {
+  background-color: white;
+}
 /*# sourceMappingURL=index.css.map */

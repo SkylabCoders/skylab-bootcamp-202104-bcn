@@ -10,6 +10,9 @@ const TOAD_HEIGHT = 6;
 const DEAD = 0;
 const ALIVE = 1;
 
+let newBoard = [];
+let intervalId = null;
+
 const applyRules = (cell, neighbours, isAlive) => {
   let cellStatus = DEAD;
   if (isAlive(cell)) {
@@ -22,8 +25,8 @@ const applyRules = (cell, neighbours, isAlive) => {
 };
 
 export function updateFigure(board, isAlive) {
-  const newBoard = [];
-
+  const updatedBoard = [];
+  console.log("entro");
   board.forEach((row, rowIndex) => {
     const newRow = [];
     row.forEach((cell, cellIndex) => {
@@ -31,10 +34,13 @@ export function updateFigure(board, isAlive) {
       const cellStatus = applyRules(cell, neighbours, isAlive);
       newRow.push(cellStatus);
     });
-    newBoard.push(newRow);
+    updatedBoard.push(newRow);
   });
 
-  return newBoard;
+  console.log(updatedBoard);
+  newBoard = updatedBoard;
+
+  return updateTableDom(updatedBoard);
 }
 
 const hasNeighbour = (row, column) => {
@@ -110,6 +116,7 @@ const initializeBoard = (width, height) => {
   const initialArray = [];
   const DEFAULT_BOARD_WIDTH = 10;
   const DEFAULT_BOARD_HEIGHT = 10;
+  //width = width ? width : DEFAULT_BOARD_WIDTH;
 
   if (width == null || height == null) {
     width = DEFAULT_BOARD_WIDTH;
@@ -127,22 +134,14 @@ const initializeBoard = (width, height) => {
 };
 
 const createBlinker = (row, column, figure) => {
-  const figureToReturn = [...figure];
-  figureToReturn[row - 1][column] = ALIVE;
-  figureToReturn[row][column] = ALIVE;
-  figureToReturn[row + 1][column] = ALIVE;
-  console.log(figureToReturn);
-  let tableRows = document.getElementsByTagName("tr");
-
-  for (let row = 0; row < tableRows.length; row++) {
-    let cells = tableRows[row].cells;
-    for (let column = 0; column < cells.length; column++) {
-      if (isAlive(figure[row][column])) {
-        cells[column].classList.add("alive");
-      }
-    }
-  }
-  return figureToReturn;
+  const newBoard = [...figure];
+  newBoard[row - 1][column] = ALIVE;
+  newBoard[row][column] = ALIVE;
+  newBoard[row + 1][column] = ALIVE;
+  console.log(newBoard);
+  updateTableDom(figure);
+  intervalId = setInterval(() => updateFigure(newBoard, isAlive), 2000);
+  return newBoard;
 };
 
 // const initialMatrix = initializeBoard(BLINKER_WIDTH, BLINKER_HEIGHT);
@@ -168,11 +167,28 @@ const createBoard = (width, height) => {
   table.appendChild(tableBody);
   body.appendChild(table);
 
-  const initialMatrix = initializeBoard(width, height);
+  const initialBoard = initializeBoard(width, height);
 
   document
     .getElementsByClassName("game-footer__buttons--blinker")[0]
-    .addEventListener("click", () => createBlinker(3, 3, initialMatrix));
+    .addEventListener("click", () => createBlinker(3, 3, initialBoard));
 };
 
 document.addEventListener("DOMContentLoaded", () => createBoard(5, 5));
+
+function updateTableDom(figure) {
+  let tableRows = document.getElementsByTagName("tr");
+
+  for (let row = 0; row < tableRows.length; row++) {
+    let cells = tableRows[row].cells;
+    for (let column = 0; column < cells.length; column++) {
+      if (isAlive(figure[row][column])) {
+        cells[column].classList.add("alive");
+        cells[column].classList.remove("dead");
+      } else {
+        cells[column].classList.add("dead");
+        cells[column].classList.remove("alive");
+      }
+    }
+  }
+}
