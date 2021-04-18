@@ -90,7 +90,8 @@ const generateTable = (matrix, destinationElementId) => {
 	htmlTableSpace.innerHTML = htmlTable
 }
 
-const countNeighbours = (row, column, array) => {
+//Tested
+const countNeighbours = (row, column, matrix) => {
 	const DISPLACEMENTS = [
 		{ column: -1, row: -1 },
 		{ column: -1, row: 0 },
@@ -104,8 +105,8 @@ const countNeighbours = (row, column, array) => {
 	let neighbours = 0
 
 	DISPLACEMENTS.forEach((DISPLACEMENTS) => {
-		cellExists(column, DISPLACEMENTS.column, row, DISPLACEMENTS.row, array) &&
-			array[column + DISPLACEMENTS.column][row + DISPLACEMENTS.row] === 1 &&
+		cellExists(row, DISPLACEMENTS.row, column, DISPLACEMENTS.column, matrix) &&
+			!isDead(row + DISPLACEMENTS.row, column + DISPLACEMENTS.column, matrix) &&
 			neighbours++
 	})
 
@@ -149,17 +150,17 @@ const updateStates = (matrix) => {
 		MATRIX_MAIN_CHARACTER
 	)
 
-	for (let column = 0; column < matrix.length; column++) {
-		for (let row = 0; row < matrix[column].length; row++) {
+	for (let row = 0; row < matrix.length; row++) {
+		for (let column = 0; column < matrix[row].length; column++) {
 			let neighbours = countNeighbours(row, column, matrix)
 
-			if (isDead(column, row, matrix)) {
-				neighbours <= 2 && (newMatrix[column][row] = 0)
-				neighbours > 2 && (newMatrix[column][row] = 1)
+			if (isDead(row, column, matrix)) {
+				neighbours <= 2 && (newMatrix[row][column] = 0)
+				neighbours > 2 && (newMatrix[row][column] = 1)
 			} else {
-				neighbours < 2 && (newMatrix[column][row] = 0)
-				neighbours === 2 && (newMatrix[column][row] = 1)
-				neighbours > 3 && (newMatrix[column][row] = 0)
+				neighbours < 2 && (newMatrix[row][column] = 0)
+				neighbours === 2 && (newMatrix[row][column] = 1)
+				neighbours > 3 && (newMatrix[row][column] = 0)
 			}
 		}
 	}
