@@ -52,13 +52,12 @@ const applyRules = (copy, value, row, column, numberOfNeighbours) => {
 ///////////////////////////////////////////////////
 
 const runApp = (shape) => {
-    setInterval(() => {
+    const interval = setInterval(() => {
+        shape = gridArray;
         shape = runCycle(shape);
-
-        ////// borra divs
         deleteHtmlGrid();
         createHtmlGrid(shape);
-    }, 1000);
+    }, 2000);
 }
 const blinker = () => {
     let matrix = createMatrix(5,5);
@@ -94,8 +93,7 @@ const beacon = () => {
 
 
 //////////////////////////////   HTML   ////////////////////////////////////////////////
-
-const gridArray = createMatrix(30,30);
+const gridArray = createMatrix(40,40);
 const gridElement = document.querySelector('.grid');
 const playButton = document.querySelector('button');
 
@@ -117,9 +115,21 @@ const createHtmlGrid = (gridArray) => {
         })
         gridElement.appendChild(rowElement);
     });
+    const rows = Array.from(gridElement.querySelectorAll('.row'));
+    rows.forEach((row, i) => {
+        const columns = row.childNodes;
+        columns.forEach((column, j) => {
+            column.dataset.row = `${i}`;
+            column.dataset.col = `${j}`;
+        });
+    });
 }
 
 createHtmlGrid(gridArray);
+
+playButton.addEventListener('click', () => {
+    
+})
 
 document.addEventListener('click', (e)=> {
     if(e.target.className === 'column'){
@@ -130,14 +140,7 @@ document.addEventListener('click', (e)=> {
     }
 });
 
-const rows = Array.from(gridElement.querySelectorAll('.row'));
-rows.forEach((row, i) => {
-    const columns = row.childNodes;
-    columns.forEach((column, j) => {
-    column.dataset.row = `${i}`;
-    column.dataset.col = `${j}`;
-    });
-});
+
 
 playButton.addEventListener('click', ()=> {
     runApp(gridArray);
