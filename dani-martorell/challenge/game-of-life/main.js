@@ -88,11 +88,15 @@ const beacon = () => {
 
 //////////////////////////////   HTML   ////////////////////////////////////////////////
 let gridArray = createMatrix(40,40);
+
 const gridElement = document.querySelector('.grid');
 const playButton = document.querySelector('.controllers__play-button');
 const resetButton = document.querySelector('.controllers__reset-button');
 const stopButton = document.querySelector('.controllers__stop-button');
 const counterElement = document.querySelector('.counter');
+const speedInput = document.querySelector('input');
+let speed = +(speedInput.value);
+
 
 const blinkerButton = document.querySelector('.samples__blinker');
 const toadButton = document.querySelector('.samples__toad');
@@ -159,6 +163,13 @@ document.addEventListener('click', (e)=> {
     }
 });
 
+speedInput.addEventListener('change', function(){
+    speed = +(speedInput.value);
+});
+speedInput.addEventListener('mousemove', function(){
+    speed = +(speedInput.value);
+});
+
 playButton.addEventListener('click', ()=> {
     runApp(gridArray);
 });
@@ -169,8 +180,10 @@ const runApp = (shape) => {
         deleteHtmlGrid();
         createHtmlGrid(newShape);
         shape = newShape;
-    }, 600);
+        console.log(speed);
+    }, speed);
 }
+
 
 resetButton.addEventListener('click', ()=> {
     clearInterval(interval);

@@ -108,21 +108,14 @@ body {
             &__stop-button {
                 margin-left: auto;
             }
-
-            
             .speed {
                 display: flex;
+                align-items: center;;
                 text-transform: uppercase;
                 font-size: 14px;
-                align-items: center;
-    
-                p {
-                    padding: 0 10px;
-                    display: inline;
-    
-                }
+                padding: 0 10px;
+                margin-left: 15px;
             }
-            
         }
         .samples {
             display: flex;

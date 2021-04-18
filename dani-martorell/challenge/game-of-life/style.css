@@ -139,16 +139,13 @@ body .container .controllers .speed {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-transform: uppercase;
-  font-size: 14px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-body .container .controllers .speed p {
+  text-transform: uppercase;
+  font-size: 14px;
   padding: 0 10px;
-  display: inline;
+  margin-left: 15px;
 }
 
 body .container .samples {
