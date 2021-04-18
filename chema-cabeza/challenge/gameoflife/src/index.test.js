@@ -1,4 +1,22 @@
-let grid = initializeGrid (10,10);
+let grid = initializeGrid (20,20);
+let board = document.getElementsByClassName("grid-board__board");
+let playButton = document.getElementById("play");
+let interval;
+
+printGrid();
+
+playButton.addEventListener("click", () =>{
+    if (playButton.className === "play") {
+        interval = setInterval(() => drawGrid(grid), 1000)
+        playButton.className = "stop";
+        playButton.innerText = "STOP";
+        interval;
+    } else if (playButton.className === "stop") {
+        playButton.className = "play";
+        playButton.innerText = "PLAY";
+        clearInterval(interval);
+    }
+}); 
 
 function arrayMaker (row, col) {
 
@@ -13,7 +31,7 @@ function arrayMaker (row, col) {
 
 
 function initializeGrid (row, col) {
-    
+
     let initializedGrid = arrayMaker(row, col)
     middleCol = (Math.round(initializedGrid[0].length/2) - 1);
     middleRow = (Math.round(initializedGrid.length/2) - 1);
@@ -28,9 +46,53 @@ function initializeGrid (row, col) {
     initializedGrid[middleRow+1][middleCol+1] = 1;
     initializedGrid[middleRow][middleCol+1] = 1;
     initializedGrid[middleRow-1][middleCol] = 1;
-    
     return initializedGrid;
 }
+
+function printGrid () {
+
+    for (i=0 ; i < grid.length ; i++) {
+        for (j=0 ; j < grid[0].length ; j++) {
+            
+            if (grid[i][j] === 1) {
+                let cell = document.createElement('div');
+                cell.className = "alive";
+                cell.addEventListener('click', () => {
+                    if (cell.class === "alive") {
+                        killCell(grid, (cell.id.split("x"))[0],(cell.id.split("x"))[1]);
+                    } else {newCell(grid, (cell.id.split("x"))[0],(cell.id.split("x"))[1])}
+                }); 
+                cell.id = `${i}x${j}`;
+                board[0].appendChild(cell);
+            } else if (grid[i][j] === 0) {
+                let cell = document.createElement('div');
+                cell.className = "dead";
+                cell.addEventListener('click', () => {
+                    if (cell.className === "alive") {
+                        killCell(grid, (cell.id.split("x"))[0],(cell.id.split("x"))[1]);
+                    } else {newCell(grid, (cell.id.split("x"))[0],(cell.id.split("x"))[1])}
+                }); 
+                cell.id = `${i}x${j}`;
+                board[0].appendChild(cell);
+            }
+        }
+    }
+}
+
+function reprintGrid () {
+    for (i=0 ; i < grid.length ; i++) {
+        for (j=0 ; j < grid[0].length ; j++) {
+            if (grid[i][j] === 1) {
+                let cell = document.getElementById(`${i}x${j}`);
+                cell.className = "alive";
+            } else if (grid[i][j] === 0) {
+                let cell = document.getElementById(`${i}x${j}`);
+                cell.className = "dead";
+            }
+        }
+    }
+}
+
 
 function drawGrid (previousGrid) {
     let newGrid = JSON.parse(JSON.stringify(previousGrid));
@@ -49,21 +111,21 @@ function drawGrid (previousGrid) {
             }
         }
     }
-
-    console.log (newGrid);
     grid = newGrid;
-    // return previousGrid;
+    reprintGrid();
 }
 
 function newCell (grid, row, col) {
 
     grid[row][col] = 1;
+    reprintGrid();
     return grid;
 }
 
 function killCell (grid, row, col) {
 
     grid[row][col] = 0;
+    reprintGrid();
     return grid;
 }
 
@@ -88,133 +150,133 @@ function countNeighbors (grid, row, col){
 
 // arrayMaker Test
 
-describe('Given an arrayMaker function', () => {
+// describe('Given an arrayMaker function', () => {
     
-    const scenarios = [
-        { a: 5, b: 5, result: 
-            [[undefined,undefined,undefined,undefined,undefined],
-            [undefined,undefined,undefined,undefined,undefined],
-            [undefined,undefined,undefined,undefined,undefined],
-            [undefined,undefined,undefined,undefined,undefined],
-            [undefined,undefined,undefined,undefined,undefined]]
-        }
-    ];
+//     const scenarios = [
+//         { a: 5, b: 5, result: 
+//             [[undefined,undefined,undefined,undefined,undefined],
+//             [undefined,undefined,undefined,undefined,undefined],
+//             [undefined,undefined,undefined,undefined,undefined],
+//             [undefined,undefined,undefined,undefined,undefined],
+//             [undefined,undefined,undefined,undefined,undefined]]
+//         }
+//     ];
     
-    scenarios.forEach((scenario) => {
-        describe(`When invoked with values ${scenario.a} and ${scenario.b}`, () => {
-            test(`Then return ${scenario.result}`,() => {
+//     scenarios.forEach((scenario) => {
+//         describe(`When invoked with values ${scenario.a} and ${scenario.b}`, () => {
+//             test(`Then return ${scenario.result}`,() => {
     
-                // Act 
-                const result = arrayMaker(scenario.a, scenario.b);
+//                 // Act 
+//                 const result = arrayMaker(scenario.a, scenario.b);
     
-                // Assert
-                expect(result).toStrictEqual(scenario.result);
-            })
-        })
-    })
-})
+//                 // Assert
+//                 expect(result).toStrictEqual(scenario.result);
+//             })
+//         })
+//     })
+// })
 
-// initializeGrid Test
+// // initializeGrid Test
 
-describe('Given an initializeGrid function', () => {
-    let testArray = initializeGrid(5,5)
-    const scenarios = [
-        { a: 5, b: 5, result: 
-           [[0,0,0,0,0],
-            [0,0,1,0,0],
-            [0,0,0,1,0],
-            [0,1,1,1,0],
-            [0,0,0,0,0]]
-        }
-    ];
+// describe('Given an initializeGrid function', () => {
+//     let testArray = initializeGrid(5,5)
+//     const scenarios = [
+//         { a: 5, b: 5, result: 
+//            [[0,0,0,0,0],
+//             [0,0,1,0,0],
+//             [0,0,0,1,0],
+//             [0,1,1,1,0],
+//             [0,0,0,0,0]]
+//         }
+//     ];
     
-    scenarios.forEach((scenario) => {
-        describe(`When invoked with values ${scenario.a} and ${scenario.b}`, () => {
-            test(`Then return ${scenario.result}`,() => {
-                // Act 
-                const result = initializeGrid(scenario.a, scenario.b);
-                // Assert
-                expect(result).toStrictEqual(scenario.result);
-            })
-        })
-    })
-})
+//     scenarios.forEach((scenario) => {
+//         describe(`When invoked with values ${scenario.a} and ${scenario.b}`, () => {
+//             test(`Then return ${scenario.result}`,() => {
+//                 // Act 
+//                 const result = initializeGrid(scenario.a, scenario.b);
+//                 // Assert
+//                 expect(result).toStrictEqual(scenario.result);
+//             })
+//         })
+//     })
+// })
 
-// newCell Test
+// // newCell Test
 
-describe('Given an newCell function', () => {
+// describe('Given an newCell function', () => {
     
-    const scenarios = [
-        { testArray: initializeGrid(5,5), b: 3, c: 0 ,
-            result: 
-                [[0,0,0,0,0],
-                [0,0,1,0,0],
-                [0,0,0,1,0],
-                [1,1,1,1,0],
-                [0,0,0,0,0]]
-        }
-    ];
+//     const scenarios = [
+//         { testArray: initializeGrid(5,5), b: 3, c: 0 ,
+//             result: 
+//                 [[0,0,0,0,0],
+//                 [0,0,1,0,0],
+//                 [0,0,0,1,0],
+//                 [1,1,1,1,0],
+//                 [0,0,0,0,0]]
+//         }
+//     ];
     
-    scenarios.forEach((scenario) => {
-        describe(`When invoked with values ${scenario.a} and ${scenario.b}`, () => {
-            test(`Then return ${scenario.result}`,() => {
-                // Act 
-                const result = newCell(scenario.testArray, scenario.b, scenario.c);
-                // Assert
-                expect(result).toStrictEqual(scenario.result);
-            })
-        })
-    })
-})
+//     scenarios.forEach((scenario) => {
+//         describe(`When invoked with values ${scenario.a} and ${scenario.b}`, () => {
+//             test(`Then return ${scenario.result}`,() => {
+//                 // Act 
+//                 const result = newCell(scenario.testArray, scenario.b, scenario.c);
+//                 // Assert
+//                 expect(result).toStrictEqual(scenario.result);
+//             })
+//         })
+//     })
+// })
 
-// killCell Test
+// // killCell Test
 
-describe('Given an newCell function', () => {
+// describe('Given an newCell function', () => {
     
-    const scenarios = [
-        { testArray: initializeGrid(5,5), b: 1, c: 2 ,
-            result: 
-                [[0,0,0,0,0],
-                [0,0,0,0,0],
-                [0,0,0,1,0],
-                [0,1,1,1,0],
-                [0,0,0,0,0]]
-        }
-    ];
+//     const scenarios = [
+//         { testArray: initializeGrid(5,5), b: 1, c: 2 ,
+//             result: 
+//                 [[0,0,0,0,0],
+//                 [0,0,0,0,0],
+//                 [0,0,0,1,0],
+//                 [0,1,1,1,0],
+//                 [0,0,0,0,0]]
+//         }
+//     ];
     
-    scenarios.forEach((scenario) => {
-        describe(`When invoked with the array ${scenario.testArray}, row: ${scenario.b} and ${scenario.c}`, () => {
-            test(`Then return ${scenario.result}`,() => {
-                // Act 
-                const result = killCell(scenario.testArray, scenario.b, scenario.c);
-                // Assert
-                expect(result).toStrictEqual(scenario.result);
-            })
-        })
-    })
-})
+//     scenarios.forEach((scenario) => {
+//         describe(`When invoked with the array ${scenario.testArray}, row: ${scenario.b} and ${scenario.c}`, () => {
+//             test(`Then return ${scenario.result}`,() => {
+//                 // Act 
+//                 const result = killCell(scenario.testArray, scenario.b, scenario.c);
+//                 // Assert
+//                 expect(result).toStrictEqual(scenario.result);
+//             })
+//         })
+//     })
+// })
 
-// countNeighbors Test
+// // countNeighbors Test
 
-describe('Given an countNeighbors function', () => {
+// describe('Given an countNeighbors function', () => {
     
-    const scenarios = [
-        { testArray: initializeGrid (5,5), b: 2, c: 2 ,
-            result: 5
-        },
-        { testArray: initializeGrid (5,5), b: 0, c: 0 ,
-            result: 0
-        }
-    ];
+//     const scenarios = [
+//         { testArray: initializeGrid (5,5), b: 2, c: 2 ,
+//             result: 5
+//         },
+//         { testArray: initializeGrid (5,5), b: 0, c: 0 ,
+//             result: 0
+//         }
+//     ];
     
-    scenarios.forEach((scenario) => {
-        describe(`When invoked with the array: ${scenario.testArray}, the row ${scenario.b} and ${scenario.c}`, () => {
-            test(`Then return ${scenario.result}`,() => {
-                // Act 
-                const result = countNeighbors(scenario.testArray, scenario.b, scenario.c);
-                // Assert
-                expect(result).toStrictEqual(scenario.result);
-            })
-        })
-    })
-})
+//     scenarios.forEach((scenario) => {
+//         describe(`When invoked with the array: ${scenario.testArray}, the row ${scenario.b} and ${scenario.c}`, () => {
+//             test(`Then return ${scenario.result}`,() => {
+//                 // Act 
+//                 const result = countNeighbors(scenario.testArray, scenario.b, scenario.c);
+//                 // Assert
+//                 expect(result).toStrictEqual(scenario.result);
+//             })
+//         })
+//     })
+// })
