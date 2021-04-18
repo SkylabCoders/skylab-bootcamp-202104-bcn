@@ -1,85 +1,90 @@
-const createGrid = (rows, columns) => {
-    const grid = new Array(rows);
+let createGrid = (rows, columns) => {
+    let grid = new Array(rows);
     for (let i = 0; i < rows; i++) {
-        grid[i] = new Array(columns).fill('0');
+        grid[i] = new Array(columns).fill(0);
     }
     return grid;
 }
 
-const grid = createGrid(5, 5);
+let grid = createGrid(5, 5);
 let newGrid = [...grid];
 
-const coordsCreation = (num1, num2) => {
-    return newGrid[num1][num2] = 1;
+let coordsCreation = (i, j) => {
+    return newGrid[i][j] = 1;
 }
 
-const blinkerCreation = () => {
+let blinkerCreation = () => {
     coordsCreation(1, 2);
     coordsCreation(2, 2);
     coordsCreation(3, 2);
-    // console.log(newGrid);
     return newGrid;
 }
 
-let newArray = blinkerCreation();
+let blinker = blinkerCreation();
+console.log(blinker);
 
-const gol = () => {
-    
-    for(let i = 0; i < newGrid.length; i++){
-        for (let j = 0; j < newGrid[i].length; j++){
-            checkNeighbours(1, 2, newGrid);
-            checklifeDead();
-        }
-    }
-    
-    newGrid = newGrid2;
-}
-
-const checkNeighbours = () => {
+let checkNeighbours = (i, j, newGrid) => {
     let neighboursCounter = 0;
 
-    if (newGrid[j+1] && newGrid[i][j+1]  === 1) {
+    if (newGrid[i + 1] && newGrid[i + 1][j - 1] === 1) {
+        neighboursCounter++;
+    }
+    if (newGrid[i + 1] && newGrid[i + 1][j] === 1) {
+        neighboursCounter++;
+    }
+    if (newGrid[i + 1] && newGrid[i + 1][j + 1] === 1) {
+        neighboursCounter++;
+    }
+    if (newGrid[i] && newGrid[i][j - 1] === 1) {
+        neighboursCounter++;
+    }
+    if (newGrid[i - 1] && newGrid[i - 1][j - 1] === 1) {
+        neighboursCounter++;
+    }
+    if (newGrid[i - 1] && newGrid[i - 1][j] === 1) {
+        neighboursCounter++;
+    }
+    if (newGrid[i - 1] && newGrid[i - 1][j + 1] === 1) {
+        neighboursCounter++;
+    }
+    if (newGrid[i] && newGrid[i][j + 1] === 1) {
         neighboursCounter++;
     } 
-    if (newGrid[j-1] && newGrid[i][j-1] === 1) {
-        neighboursCounter++
-    }
-    if (newGrid[i-1] && newGrid[j-1] && newGrid[i-1][j-1] === 1) {
-        neighboursCounter++
-    }
-    if (newGrid[i-1] && newGrid[i-1][j] === 1) {
-        neighboursCounter++
-    }
-    if (newGrid[i-1] && newGrid[j+1] && newGrid[i-1][j+1] === 1) {
-        neighboursCounter++
-    }
-    if (newGrid[i+1] && newGrid[j-1] && newGrid[i+1][j-1] === 1) {
-        neighboursCounter++
-    }
-    if (newGrid[i+1] && newGrid[i+1][j] === 1) {
-        neighboursCounter++
-    }
-    if (newGrid[i+1] && newGrid[j+1] && newGrid[i+1][j+1] === 1){
-        neighboursCounter++
-    }  
+    return neighboursCounter;
 }
 
-const checklifeDead = () => {
+let neighboursNumber = checkNeighbours(2, 2, newGrid);
+
+let checklifeDead = (i, j, newGrid, neighboursNumber) => {
             
-    if (newGrid[i][j] === 1 && (neighboursCounter === 2 || neighboursCounter === 3)){
-        newGrid2[i][j] = 1;
-
-    } else if (newGrid[i][j] === 0 && neighboursCounter === 3){
-        newGrid2[i][j] = 1;
-
-    } else {
-        newGrid2[i][j] = 0;
-
+    if (neighboursNumber < 2){
+        newGrid[i][j] = 0;
+    } 
+    if (neighboursNumber === 2 || neighboursNumber === 3){
+        newGrid[i][j] = 1;
+    } 
+    if (neighboursNumber > 3) {
+        newGrid[i][j] = 0;
     }
-    neighboursCounter = 0;
 }
 
+let checkEveryCell = newGrid => {
+    let rowBlinker = createGrid(5, 5);
+    newGrid.forEach((row, indexRow) => {
+        row.forEach((column, indexColumn) => {
+            let neighboursOfEveryCell = checkNeighbours(indexRow, indexColumn, newGrid);
+            if (newGrid[indexRow][indexColumn] === 1){
+                checklifeDead(indexRow, indexColumn, rowBlinker, neighboursOfEveryCell);
+            } else if ( newGrid[indexRow][indexColumn] === 0 && neighboursOfEveryCell === 3){
+                rowBlinker[indexRow][indexColumn] = 1;
+            }
+        });
+    });
+    return rowBlinker;
+}
 
+let checkCell = checkEveryCell(newGrid);
+console.log(checkCell);
 
 // const timerGol = () => {
 //     setInterval(function(){

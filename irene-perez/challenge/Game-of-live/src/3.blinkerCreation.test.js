@@ -18,9 +18,9 @@ describe("Given a blinkerCreation function", () => {
         results: [[0, 0, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 1, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 0, 0]]
     }];
     scenarios.forEach(scenario => {
-        describe(`When invoked with values ${scenario.num1} and ${scenario.num2}`, () => {
+        describe(`When invoked with values ${scenario.a} and ${scenario.b} and ${scenario.c}`, () => {
             test(`Then return ${scenario.results}`, () => {
-                const result = blinkerCreation(scenario.num1, scenario.num2);
+                const result = blinkerCreation(scenario.a, scenario.b, scenario.c);
                 expect(result).toStrictEqual(scenario.results);
             });
         });
