@@ -27,7 +27,7 @@ function tableCreate(rows, colums){
         for(let j = 0; j < colums; j++){
                 td = tr.insertCell();
                 td.appendChild(document.createTextNode(currentGeneration[i][j]));
-                setTimeout(function(){printNewGeneration(); }, 1000);
+                // setTimeout(function(){printNewGeneration(rows, colums); }, 1000);
 
         }
     }
@@ -35,13 +35,16 @@ function tableCreate(rows, colums){
 }
 tableCreate(rows, colums);
 
-function printNewGeneration(rows, colums){
-    for(let i = 0; i < rows; i++){
-        for(let j = 0; j < colums; j++){
-                td.document.innerText(nextGeneration[i][j]);
-        }
-    }
-}
+// function printNewGeneration(rows, colums){
+//     for(let i = 0; i < rows; i++){
+//         tr = tbl.insertRow();
+//         for(let j = 0; j < colums; j++){
+//             td = tr.insertCell();
+//             td.document.innerHTML(nextGeneration[i][j]);
+//         }
+//     }
+//     body.appendChild(tbl);
+// }
 
 gridCopy(currentGeneration);
 checkAlive(rows, colums, currentGeneration);
