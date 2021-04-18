@@ -164,10 +164,10 @@ document.addEventListener('click', (e)=> {
 });
 
 speedInput.addEventListener('change', function(){
-    speed = +(speedInput.value);
+    speed = (speedInput.value);
 });
 speedInput.addEventListener('mousemove', function(){
-    speed = +(speedInput.value);
+    speed = speedInput.value;
 });
 
 playButton.addEventListener('click', ()=> {
@@ -180,7 +180,6 @@ const runApp = (shape) => {
         deleteHtmlGrid();
         createHtmlGrid(newShape);
         shape = newShape;
-        console.log(speed);
     }, speed);
 }
 

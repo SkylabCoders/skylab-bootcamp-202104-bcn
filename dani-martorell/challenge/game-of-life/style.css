@@ -148,6 +148,10 @@ body .container .controllers .speed {
   margin-left: 15px;
 }
 
+body .container .controllers .input-range {
+  direction: rtl;
+}
+
 body .container .samples {
   display: -webkit-box;
   display: -ms-flexbox;

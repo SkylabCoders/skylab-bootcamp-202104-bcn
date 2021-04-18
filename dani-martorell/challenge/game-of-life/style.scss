@@ -7,13 +7,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(231, 231, 231);
     display: flex;
     justify-content: center;
-
     .container {
         position: relative;
         display: flex;
@@ -21,7 +19,6 @@ body {
         align-items: center;
         width: 90%;
         min-width: 800px;
-
         .grid {
             position: relative;
             display: flex;
@@ -42,7 +39,6 @@ body {
                     height: 100%;
                 }
             }
-
             [data-state = '1'] {
                 background-color: white;
 
@@ -57,7 +53,6 @@ body {
             background-color: rgb(2, 2, 61);
             font-size: 14px;
         }
-        
         .controllers {
             display: flex;
             justify-content: space-around;
@@ -98,13 +93,10 @@ body {
                 &:focus {
                     outline: none;
                 }
-
                 &:hover {
                     background-color: rgb(0, 15, 148)
-
                 }
             }
-
             &__stop-button {
                 margin-left: auto;
             }
@@ -115,6 +107,9 @@ body {
                 font-size: 14px;
                 padding: 0 10px;
                 margin-left: 15px;
+            }
+            .input-range {
+                direction: rtl;
             }
         }
         .samples {
@@ -143,8 +138,6 @@ body {
                     transform: scale(1.05);
 
                 }
-                
-
             }
         }
 
