@@ -1,6 +1,6 @@
 let matrix = [];
 // const dimension = 20;
-const maxRow = 50;
+const maxRow = 54;
 const maxColumn = 100;
 
 const generateMatrix = () => {
@@ -18,7 +18,6 @@ const paintBlinker = (row, column) => {
     matrix[row - 1][column] = 1;
     matrix[row][column] = 1;
     matrix[row + 1][column] = 1;
-    return matrix;
 }
 
 const paintGlider = (row, column) => {
@@ -27,29 +26,94 @@ const paintGlider = (row, column) => {
     matrix[row + 1][column -1] = 1;
     matrix[row + 1][column] = 1;
     matrix[row + 1][column + 1] = 1;
-    return matrix;
+}
+
+const paintBlock = (row, column) => {
+    matrix[row][column] = 1;
+    matrix[row-1][column] = 1;
+    matrix[row-1][column-1] = 1;
+    matrix[row][column-1] = 1;
+}
+
+const paintPulsar = (row, column) => {
+    matrix[row-2][column-1] = 1;
+    matrix[row-3][column-1] = 1;
+    matrix[row-4][column-1] = 1;
+    matrix[row-6][column-2] = 1;
+    matrix[row-6][column-3] = 1;
+    matrix[row-6][column-4] = 1;
+    matrix[row-1][column-2] = 1;
+    matrix[row-1][column-3] = 1;
+    matrix[row-1][column-4] = 1;
+    matrix[row-2][column-6] = 1;
+    matrix[row-3][column-6] = 1;
+    matrix[row-4][column-6] = 1;
+
+    matrix[row+2][column-1] = 1;
+    matrix[row+3][column-1] = 1;
+    matrix[row+4][column-1] = 1;
+    matrix[row+6][column-2] = 1;
+    matrix[row+6][column-3] = 1;
+    matrix[row+6][column-4] = 1;
+    matrix[row+1][column-2] = 1;
+    matrix[row+1][column-3] = 1;
+    matrix[row+1][column-4] = 1;
+    matrix[row+2][column-6] = 1;
+    matrix[row+3][column-6] = 1;
+    matrix[row+4][column-6] = 1;
+
+    matrix[row-2][column+1] = 1;
+    matrix[row-3][column+1] = 1;
+    matrix[row-4][column+1] = 1;
+    matrix[row-6][column+2] = 1;
+    matrix[row-6][column+3] = 1;
+    matrix[row-6][column+4] = 1;
+    matrix[row-1][column+2] = 1;
+    matrix[row-1][column+3] = 1;
+    matrix[row-1][column+4] = 1;
+    matrix[row-2][column+6] = 1;
+    matrix[row-3][column+6] = 1;
+    matrix[row-4][column+6] = 1;
+
+    matrix[row+2][column+1] = 1;
+    matrix[row+3][column+1] = 1;
+    matrix[row+4][column+1] = 1;
+    matrix[row+6][column+2] = 1;
+    matrix[row+6][column+3] = 1;
+    matrix[row+6][column+4] = 1;
+    matrix[row+1][column+2] = 1;
+    matrix[row+1][column+3] = 1;
+    matrix[row+1][column+4] = 1;
+    matrix[row+2][column+6] = 1;
+    matrix[row+3][column+6] = 1;
+    matrix[row+4][column+6] = 1;
+
 }
 
 const startGame = () => {
-    matrix = generateMatrix();
     generateEnvironmentTable();
-    paintGlider(3,3);
-    paintGlider(3,9);
-    paintGlider(3,14);
-    paintGlider(3,21);
-    paintGlider(3,36);
-    paintGlider(3,47);
-    paintGlider(7,7);
-    paintGlider(35,85);
-    paintGlider(3,59);
-    paintGlider(7,64);
-    paintGlider(15,36);
-    paintGlider(3,47);
-    paintGlider(17,47);
-    paintGlider(47,67);
-    paintGlider(47,87);
+    matrix = generateMatrix();
+    
+    // paintGlider(3,3);
+    // paintGlider(3,9);
+    // paintGlider(3,14);
+    // paintGlider(3,21);
+    // paintGlider(3,36);
+    // paintGlider(3,47);
+    // paintGlider(7,7);
+    // paintGlider(35,85);
+    // paintGlider(3,59);
+    // paintGlider(7,64);
+    // paintGlider(15,36);
+    // paintGlider(3,47);
+    // paintGlider(17,47);
+    // paintGlider(47,67);
+    // paintGlider(47,87);
+    // paintBlock(50,50);
 
-    timer = setInterval(updateMatrix, 50);
+    paintPulsar(20,40);
+    updateMatrix();
+    //updateTable();    
 }
 
 const updateMatrix = () => {
@@ -172,26 +236,24 @@ const reviveCell = (row, column, matrixResult) => {
     return matrixResult;
 }
 
-//clearInterval(timer);
-window.addEventListener('load', startGame);
 const environmentTable = document.getElementById('environment');
 const environmentRow = document.getElementsByClassName('environment__row');
+
 const generateEnvironmentTable = () => {
     for (let i = 0; i < maxRow; i++) {
         const environmentRow = document.createElement('tr');
         environmentRow.classList = 'environment__row';
         for (let j = 0; j<maxColumn; j++) {
             const environmentSpot = document.createElement('td');
-            //environmentSpot.innerHTML = 0;
-            // environmentSpot.addEventListener('click', () => {
-            //     if (matrix[i][j] === 1) {
-            //         matrix[i][j] = 0;
-            //         environmentRow[i].childNodes[j].style = 'background: grey';
-            //     } else {
-            //         matrix[i][j] = 1
-            //         environmentRow[i].childNodes[j].style = 'background: blue';
-            //     }
-            // });
+            environmentSpot.addEventListener('click', () => {
+                if (matrix[i][j] === 0) {
+                    matrix[i][j] = 1;
+                    environmentSpot.style = 'background: red';
+                } else {
+                    matrix[i][j] = 0
+                    environmentSpot.style = 'background: red';
+                }
+            });
             environmentRow.appendChild(environmentSpot);
         }
         environmentTable.appendChild(environmentRow);
@@ -202,29 +264,26 @@ const updateTable = () => {
     for (let i=0; i< maxRow; i++) {
         for (let j=0; j<maxColumn; j++) {
             if (matrix[i][j] === 1) {
-                environmentRow[i].childNodes[j].style = 'background: green';
+                environmentRow[i].childNodes[j].style = 'background: #09b9ff';
             } else {
-                environmentRow[i].childNodes[j].style = 'background: orange';
+                environmentRow[i].childNodes[j].style = 'background: #1d42a7';
             }
         }
     }
 }
 
-// const addListenerToSpot = () => {
-    
-// }
+startGame();
 
-// const drawBoard = () => {
-//     const cellRows = document.getElementsByClassName('cells-row');  
-//     for(let i=0;i<cellRows.length;i++){
-//         const cells = cellRows[i].getElementsByClassName('cell');
-//         for(let z=0;z<cells.length;z++){
-//             cells[z].addEventListener('click',function () {
-//                 boardArray[i][z]=1;
-//                 if(boardArray[i][z]===1){
-//                     cells[z].style.backgroundColor = 'white';
-//                 }         
-//             });        
-//         }
-//     }
-// }
+const playButton = document.getElementById('play');
+const pauseButton = document.getElementById('pause');
+
+const playGame = () => {
+    timer = setInterval(updateMatrix, 50);
+}
+
+const pauseGame = () => {
+    clearInterval(timer);
+}
+
+playButton.addEventListener('click', playGame);
+pauseButton.addEventListener('click', pauseGame);
