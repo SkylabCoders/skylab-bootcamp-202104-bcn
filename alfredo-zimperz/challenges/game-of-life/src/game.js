@@ -46,6 +46,7 @@ const createMatrix = (rows, columns, charToFillWith) => {
 	return matrix
 }
 
+//Testeada
 const createShape = (column, row, array, positionFunction) => {
 	let hasEnoughPlace = true
 	const createdVerticalArray = [...array]
@@ -143,11 +144,12 @@ const cellExists = (
 	}
 }
 
-const updateStates = (matrix) => {
+//Tested
+const updateStates = (matrix, initialCharacter) => {
 	let newMatrix = createMatrix(
-		MATRIX_COLUMNS,
-		MATRIX_ROWS,
-		MATRIX_MAIN_CHARACTER
+		matrix.length,
+		matrix[0].length,
+		initialCharacter
 	)
 
 	for (let row = 0; row < matrix.length; row++) {
@@ -181,7 +183,7 @@ const startGame = (shape) => {
 	)
 	let newMatrix = updateStates(matrixWithShape)
 	generateTable(newMatrix, 'app')
-	newMatrix = updateStates(newMatrix)
+	newMatrix = updateStates(newMatrix, MATRIX_MAIN_CHARACTER)
 	setTimeout(() => generateTable(newMatrix, 'app'), 2000)
 }
 
