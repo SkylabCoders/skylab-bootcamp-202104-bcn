@@ -1,5 +1,5 @@
-const DEFAULT_BOARD_WIDTH = 10;
-const DEFAULT_BOARD_HEIGHT = 10;
+// const DEFAULT_BOARD_WIDTH = 10;
+// const DEFAULT_BOARD_HEIGHT = 10;
 
 const BLINKER_HEIGHT = 5;
 const BLINKER_WIDTH = 5;
@@ -108,6 +108,9 @@ const cellExists = (cell) => {
 
 const initializeBoard = (width, height) => {
   const initialArray = [];
+  const DEFAULT_BOARD_WIDTH = 10;
+  const DEFAULT_BOARD_HEIGHT = 10;
+
   if (width == null || height == null) {
     width = DEFAULT_BOARD_WIDTH;
     height = DEFAULT_BOARD_HEIGHT;
