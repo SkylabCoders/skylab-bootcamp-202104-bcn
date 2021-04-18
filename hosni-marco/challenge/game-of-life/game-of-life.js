@@ -1,45 +1,3 @@
-const { blue } = require("chalk");
-
-//FUNCTION CREATE TABLE!!!!!!
- document.getElementById('common-cell').addEventListener('click', changeValue());
-
-let cell = document.getElementById('tr01-td01'); 
-    cell.addEventListener('click', ()=>{
-     debugger;
-     console.log("zsczxczxc")
-     document.getElementById('tr-td01').style.background = 'red';
- })
-function changeValue() {
-    debugger
-    return document.getElementById('common-cell').style.background = 'blue';
-}
-// function printTable(arrayOrigin){
-//     let setTable = document.createElement('table');
-//     setTable.setAttribute('class', 'common-table');
-//     setTable.setAttribute('id', 'common-table');
-
-//     let setRow = document.createElement('tr');
-//     setRow.setAttribute('class', 'common-tr');
-//     setRow.setAttribute('id', 'common-tr');
-
-//     let setTh = document.createElement('th');
-//     setTh.setAttribute('class', 'common-th');
-//     setTh.setAttribute('id', 'common-th');
-
-//     let body = document.main
-//     let main = document.getElementsByClassName('body')[0];
-
-//     setRow.appendChild(setTh);
-//     setTable.appendChild(setRow);
-//     main.appendChild(setTable);
-//     body.appendChild(main)
-// }
-function setArrayOrigin(){
-
-}
-//Dimensio 1 representa eix de les x
-//Dimensio 2 representa eix de les y
-
 let arrayOrigin = [
     [false, false, false, false, false],
     [false, false, true, false, false],
@@ -82,12 +40,9 @@ function getArroundValues(sourceArray, x, y) {
 }
 
 function arrFilter(getArray){    
-    debugger;
         let arrayCount = getArray.filter(bolean => bolean === true);
-
         return arrayCount.length;
 }
-
 
 function validateNewTable(getPositionValue, arrayAround){
     const dead = false;
