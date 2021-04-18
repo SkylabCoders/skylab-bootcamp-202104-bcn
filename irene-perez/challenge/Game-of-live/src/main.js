@@ -74,6 +74,8 @@ let timerGol = () => {
     }, 1000);
 }
 
+timerGol();
+
 
 
 
