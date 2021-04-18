@@ -1,21 +1,10 @@
 let createGrid = (rows, cols) => {
-
-    let world = document.querySelector('#gol');
-
-    let tbl = document.createElement('table');
-
+    let grid = new Array(rows);
     for (let i = 0; i < rows; i++) {
-        let tr = document.createElement('tr');
-        for (let j = 0; j < cols; j++) {
-            let cell = document.createElement('td');
-
-            tr.appendChild(cell);
-        }
-        tbl.appendChild(tr);
+        grid[i] = new Array(cols).fill(0);
     }
-    world.appendChild(tbl);
+    return grid;
 }
-
 let fillGrid = createGrid(5, 5);
 let modifiedGrid = [...fillGrid];
 
