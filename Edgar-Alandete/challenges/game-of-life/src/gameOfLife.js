@@ -1,6 +1,3 @@
-// const DEFAULT_BOARD_WIDTH = 10;
-// const DEFAULT_BOARD_HEIGHT = 10;
-
 const BLINKER_HEIGHT = 5;
 const BLINKER_WIDTH = 5;
 
@@ -116,12 +113,8 @@ const initializeBoard = (width, height) => {
   const initialArray = [];
   const DEFAULT_BOARD_WIDTH = 10;
   const DEFAULT_BOARD_HEIGHT = 10;
-  //width = width ? width : DEFAULT_BOARD_WIDTH;
-
-  if (width == null || height == null) {
-    width = DEFAULT_BOARD_WIDTH;
-    height = DEFAULT_BOARD_HEIGHT;
-  }
+  width = width ? width : DEFAULT_BOARD_WIDTH;
+  height = height ? height : DEFAULT_BOARD_HEIGHT;
 
   for (let i = 0; i < width; i++) {
     const row = [];
@@ -134,7 +127,7 @@ const initializeBoard = (width, height) => {
 };
 
 const createBlinker = (row, column, figure) => {
-  const newBoard = [...figure];
+  newBoard = [...figure];
   newBoard[row - 1][column] = ALIVE;
   newBoard[row][column] = ALIVE;
   newBoard[row + 1][column] = ALIVE;
