@@ -8,7 +8,7 @@ let createGrid = (rows, columns) => {
 
 let grid = createGrid(5, 5);
 let newGrid = [...grid];
-let grid2 = createGrid(5, 5);
+let newGrid2 = createGrid(5, 5);
 
 const coordsCreation = (num1, num2) => {
     return newGrid[num1][num2] = 1;
@@ -52,29 +52,28 @@ let gol = () => {
             }
             if (newGrid[i][j] === 1){ 
                 if(neighboursCounter <= 1 || neighboursCounter >= 4){
-                    grid2[i][j] = 0;
+                    newGrid2[i][j] = 0;
                 }else{
-                    grid2[i][j] = 1;
+                    newGrid2[i][j] = 1;
                 }
             }else{
                 if(neighboursCounter === 3){
-                    grid2[i][j] = 1;
+                    newGrid2[i][j] = 1;
                 }
             }
            neighboursCounter =0
         }
     }
-    console.log(grid2);
+    console.log(newGrid2);
 }
 
-gol();
 
-// const timerGol = () => {
-//     setInterval(function(){
-//         checkEveryCell();
-//     }, 1000);
-// }
+let timerGol = () => {
+    setInterval(function() {
+       gol()
+    }, 1000);
+}
 
-// timerGol();
+
 
 
