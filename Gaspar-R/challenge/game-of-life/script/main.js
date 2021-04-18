@@ -1,37 +1,35 @@
-const arrayWidth = 50;
-const arrayHeight = 20;
+const arrayWidth = 150;
+const arrayHeight = 100;
 
 let initialArray = [];
 let killerArray = [];
 let resurrectionArray = [];
 let nextGenArray = [];
 let lifeCicles = 0;
+let time ;
 
 function createMatrix (width,height){
     let array = new Array (height);
-    let htmlGrid= '<table class="grid"><tbody>';
+    
  
      for (let i = 0; i < array.length; i++) {
          array[i] = new Array(width);
         }
- 
-     for (let i = 0; i < array.length; i++) {     00
-        htmlGrid+= "<tr> ";       
-        for (let j = 0; j < array[i].length; j++) {
+
+        for (let i = 0; i < array.length; i++) {    
+           
+             for (let j = 0; j < array[i].length; j++) {
             array[i][j] = 0; 
-            htmlGrid += "<td class=`celdas`> 0";
-            htmlGrid+= "</td>";
-           }
-    }
-    htmlGrid += "</tr>"
-    
-    htmlGrid += "</tbody></table>";
-    document.querySelector(".grid").innerHTML = htmlGrid;
+                }
+        }
+      
+        
     return array
  }
  
  let matrix = createMatrix (arrayWidth,arrayHeight)
  initialArray = matrix;
+ createMatrixForHTML (matrix)
 
 
 const isCellEmpty = (row, column, array) => {
@@ -51,18 +49,21 @@ const createVerticalBlinker = (column, row, array) => {
     isCellEmpty(column, row -1, array) ? (allOK = true) : (allOK = false);
     isCellEmpty(column, row + 1, array) ? (allOK = true) : (allOK = false);
     if (allOK) {
-        createdVerticalArray[row - 1][column - 1] = 1;
+        createdVerticalArray[row - 1][column - 1] = 1;        
         createdVerticalArray[row][column] = 1;
         createdVerticalArray[row + 1][column] = 1;
         createdVerticalArray[row - 1][column] = 1;
         createdVerticalArray[row][column + 1] = 1;
+
+        createMatrixForHTML (array);
+
         return createdVerticalArray;
     } else {
         console.log("No hay espacios disponibles");
     }
 };
 
-const newArray = createVerticalBlinker(3, 3, initialArray);
+const newArray = createVerticalBlinker(arrayWidth/2, arrayHeight/2, initialArray);
 
 
 const countLiveCellsNeighbours = (row, column, array) => {
@@ -86,7 +87,7 @@ function checkNeighbours(column,row,columnDesplacement,rowDisplacement,array) {
     let currentColumn = column + columnDesplacement;
     let currentRow = row + rowDisplacement;
     
-    if (currentColumn !== -1 && currentRow !== -1){
+    if (currentColumn !== -1 && currentRow !== -1 && currentColumn < array[column].length && currentRow < array[row].length ){
         if (array[currentRow][currentColumn] === 0) {
             checkNeighboursFromLiveNeighbours(currentColumn, currentRow, array);
         }if (array[currentRow][currentColumn] === 1) {
@@ -97,7 +98,7 @@ function checkNeighbours(column,row,columnDesplacement,rowDisplacement,array) {
 
 
 const searchAlives = (array) => {
-     let time = setInterval(()=> {
+     time = setInterval(()=> {
     let oldArray = [...array];
    
     console.log(array);
@@ -116,9 +117,10 @@ const searchAlives = (array) => {
         
         killerArray = [];
         resurrectionArray = [];
+        createMatrixForHTML(array);
         console.log(lifeCicles);
-        searchAlives(nextGen);
-    }, [1000])
+        nextGen = newArray;
+    }, 100)
 };
 
 let array6 = searchAlives(newArray);
@@ -166,12 +168,16 @@ function countNeighboursFromLiveNeighbours(column,row,columnDesplacement,rowDisp
     
     let currentColumn = column + columnDesplacement;
     let currentRow = row + rowDisplacement;
-    
+
+    if ( column+1< array[column].length && row+1 < array[row].length ){
+
     if (currentColumn !== -1 && currentRow !== -1 && array[currentColumn][currentRow] !== undefined && 
-        array[currentRow][currentColumn] === 1) {
+        array[currentRow][currentColumn] === 1 )
+         {
               return true;
           }
     }
+}
 
 function checkRepetedValues(resurrectionArray, currentColumn, currentRow) {
     let currentPosition = (element) =>
@@ -193,3 +199,32 @@ function checkRepetedValues(resurrectionArray, currentColumn, currentRow) {
 //     lifeCicles++
 //     searchAlives(secondArray,lifeCicles);
 // }
+
+function createMatrixForHTML(array){
+
+        let htmlGrid= '<table class="grid"><tbody>';
+        for (let i = 0; i < array.length; i++) {    
+        htmlGrid+= "<tr> ";       
+            for (let j = 0; j < array[i].length; j++) {
+
+                if(array[i][j] === 0){
+                     
+                    htmlGrid += "<td class='deadCell'> ";
+                     htmlGrid+= "</td>";
+                 }else{
+                    htmlGrid += "<td class='aliveCell'> ";
+                    htmlGrid+= "</td>";
+                 }
+                }
+            }
+        htmlGrid += "</tr>"
+
+        htmlGrid += "</tbody></table>";
+        document.querySelector(".grid").innerHTML = htmlGrid;
+    }        
+
+function stopTime (){
+    clearInterval(time);
+}   
+
+

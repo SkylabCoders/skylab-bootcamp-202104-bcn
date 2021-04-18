@@ -1,4 +1,4 @@
-.environment {
+.grid {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -9,11 +9,40 @@
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
+    border: 0.5px solid green;
   }
   
-  .environment td {
-    border: 1px solid black;
-    height: 20px;
-    width: 20px;
+
+  .celdas{
+    border: 0.5px solid green;
+    height: 2px;
+    width: 2px;
     text-align: center;
+    border-radius: 50%;
+
+  }
+
+  .deadCell {
+    border: 0.5px solid green;
+    height: 2px;
+    width: 2px;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  .aliveCell {
+    border: 0.5px solid green;
+    height: 2px;
+    width: 2px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  .stopBtn{
+    height: 50px;
+    width: 70px;
+    align-items: center;
+    font-size: large;
+
   }
