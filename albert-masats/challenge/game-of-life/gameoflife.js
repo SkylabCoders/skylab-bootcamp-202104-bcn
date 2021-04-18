@@ -14,9 +14,8 @@ const createGrid = (rows, columns) => {
     return grid
 }
 
-
-let grid = createGrid(5, 5);
-let arrayGameOfLife = [...grid];
+// let grid = createGrid(5, 5);
+let arrayGameOfLife = createGrid(5,5);
 let grid2 = createGrid(5, 5);
 
 
@@ -31,20 +30,12 @@ const blinkerCreation = () => {
 
 blinkerCreation();
 
-
 function gol () {
     let count = 0;
+    console.log(arrayGameOfLife)
     for (let i = 0; i<arrayGameOfLife.length; i++) {
         for(let j=0; j<arrayGameOfLife[i].length; j++) {
-
-            // if (arrayGameOfLife[i][j] === 1) {
-            //     console.log("life");
-            // }else{
-            //     console.log("dead")
-            // }
-            // checkNeighbours()
             
-
             if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
                 count++
             } 
@@ -72,90 +63,33 @@ function gol () {
 
             if (arrayGameOfLife[i][j] === 1){ 
                 if(count <= 1 || count >= 4){
-                    grid2[i][j] = "muere"
+                    grid2[i][j] = 0
                 }else{
-                    grid2[i][j] = "vive"
+                    grid2[i][j] = 1
                 }
-
             }else{
                 if(count === 3){
-                    grid2[i][j] = "vive"
+                    grid2[i][j] = 1
                 }
             }
-
-           count =0 
-
+            count = 0 
         } 
     }
-
-    console.log(grid2)
-    // arrayGameOfLife = newGrid3
-
+    changeArray()
 }    
-
-// let checkNeighbours = (i,j) => {
-//     let count = 0;
-
-//     if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
-//         count++;
-//  
-//     if (arrayGameOfLife[j-1] && arrayGameOfLife[i][j-1] ===1) {
-//         count++
-//     }
-//     if (arrayGameOfLife[i-1] && arrayGameOfLife[j-1] && arrayGameOfLife[i-1][j-1] ===1) {
-//         count++
-//     }
-//     if (arrayGameOfLife[i-1] && arrayGameOfLife[i-1][j] ===1) {
-//         count++
-//     }
-//     if (arrayGameOfLife[i-1] && arrayGameOfLife[j+1] && arrayGameOfLife[i-1][j+1] ===1) {
-//         count++
-//     }
-//     if (arrayGameOfLife[i+1] && arrayGameOfLife[j-1] && arrayGameOfLife[i+1][j-1] ===1) {
-//         count++
-//     }
-//     if (arrayGameOfLife[i+1] && arrayGameOfLife[i+1][j] ===1) {
-//         count++
-//     }
-//     if (arrayGameOfLife[i+1] && arrayGameOfLife[j+1] && arrayGameOfLife[i+1][j+1] ===1){
-//         count++
-//     }
-// }
-
-// let checkLifeorDead = (i,j) => {
-//     let count = 0;
-    
-//     if (arrayGameOfLife[i][j] === 1 && (count ===2 || count === 3 )) {
-//         newGrid2[i][j] = 1
-//         // cell = true;
-//         // console.log(cell)
-//     }else if (arrayGameOfLife[i][j] === 0 && count === 3){
-//         newGrid2[i][j] = 1
-//         // cell = true;
-//         // console.log(cell)
-//     }else{
-//         newGrid2[i][j] = 0
-//         // cell= false;
-//         // console.log(cell)
-//     }
-//     count=0;
-// }
-
-// if (arrayGameOfLife[i][j] === 1 && (count ===2 || count === 3 )) {
-            //     grid2[i][j] = "viu"
-            // }else if (arrayGameOfLife[i][j] === 0 && count === 3){
-            //     grid2[i][j] = "viu"
-            // }else{
-            //     grid2[i][j] = "mort"
-            // }
-            // count=0;
 
 let timerGol = () => {
 
-    setInterval(function() {
-       gol()
-       arrayGameOfLife=grid2
-
-    }, 1000);
+    setInterval(
+       gol
+    , 6000);
 }
 
+let changeArray = () => {
+    for (let i=0; i<grid2.length; i++) {
+        for (let j=0; j<grid2[i].length; j++) {
+            arrayGameOfLife[i][j] = grid2 [i][j]
+        }
+    }
+}
+   
