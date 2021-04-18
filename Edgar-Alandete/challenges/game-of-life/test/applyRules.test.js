@@ -3,9 +3,8 @@ const ALIVE = 1;
 
 const isAlive = (cell) => cell === ALIVE;
 
-const updateCellStatus = (condition) => {
-  console.log("evaluate " + condition);
-  return condition ? ALIVE : DEAD;
+const updateCellStatus = (alive) => {
+  return alive ? ALIVE : DEAD;
 };
 
 const applyRules = (cell, neighbours, isAlive) => {
@@ -34,7 +33,7 @@ describe("Given applyRules function", () => {
       result: DEAD,
     },
     {
-      cell: 1,
+      cell: ALIVE,
       neighbours: 3,
       callbak: isAlive,
       result: ALIVE,
