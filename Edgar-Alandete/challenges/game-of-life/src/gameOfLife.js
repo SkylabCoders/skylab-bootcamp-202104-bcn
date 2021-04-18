@@ -13,9 +13,9 @@ const ALIVE = 1;
 const applyRules = (cell, neighbours, isAlive) => {
   let cellStatus = DEAD;
   if (isAlive(cell)) {
-    cellStatus = updateCell(neighbours === 2 || neighbours === 3);
+    cellStatus = updateCellStatus(neighbours === 2 || neighbours === 3);
   } else {
-    cellStatus = updateCell(neighbours === 3);
+    cellStatus = updateCellStatus(neighbours === 3);
   }
 
   return cellStatus;
@@ -28,7 +28,8 @@ export function updateFigure(board, isAlive) {
     const newRow = [];
     row.forEach((cell, cellIndex) => {
       const neighbours = getNeighbours(board, rowIndex, cellIndex);
-      newRow.push(applyRules(cell, neighbours, isAlive));
+      const cellStatus = applyRules(cell, neighbours, isAlive);
+      newRow.push(cellStatus);
     });
     newBoard.push(newRow);
   });
@@ -36,7 +37,7 @@ export function updateFigure(board, isAlive) {
   return newBoard;
 }
 
-const hasNeighbour = (row, column, cell) => {
+const hasNeighbour = (row, column) => {
   return cellExists(row) && cellExists(column);
 };
 
@@ -95,7 +96,7 @@ const getNeighbours = (board, row, column) => {
   return neighbours;
 };
 
-const updateCell = (isAlive) => {
+const updateCellStatus = (isAlive) => {
   return isAlive ? ALIVE : DEAD;
 };
 
