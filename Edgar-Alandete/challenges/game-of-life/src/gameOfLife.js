@@ -137,14 +137,6 @@ const createBlinker = (row, column, figure) => {
   return newBoard;
 };
 
-// const initialMatrix = initializeBoard(BLINKER_WIDTH, BLINKER_HEIGHT);
-
-// const blinkerFigure = createBlinker(3, 3, initialMatrix);
-
-//console.log(updateFigure(blinkerFigure, isAlive));
-
-//document.addEventListener("click", )
-
 const createBoard = (width, height) => {
   let body = document.getElementById("app");
   let table = document.createElement("table");
