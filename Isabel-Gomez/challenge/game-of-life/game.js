@@ -24,7 +24,6 @@ const replaceCells = (row, column, array) => {
 }
 replaceCells(2, 2, newCells);
 
-
 const checkNeighbours = (row, column, array) => {
     let neighbours = 0;
     if (array[row] && array[row][column + 1] && array[row][column + 1] === 1) {
@@ -67,8 +66,6 @@ const changeCells = (row, column, array, neighbours) => {
     return array;
 }
 
-// PENDIENTE TESTEAR //
-
 const printFirstMatrix = (array) => {
     array.forEach((row, rowIndex) => {
         let creatTrTag = document.createElement('tr');
@@ -83,28 +80,9 @@ const printFirstMatrix = (array) => {
 }
 printFirstMatrix(newCells);
 
-
-// PENDIENTE TESTEAR //
-
 document.querySelector(".play").addEventListener('click', (event) => {
     executePlay(event);
 });
-
-// PENDIENTE TERMINAR //
-
-const printSecondMatrix = (array) => {
-    array.forEach((row, rowIndex) => {
-        row.forEach((cell, cellIndex) => {
-            console.log('BUTTON', array[rowIndex][cell]);
-            document.querySelector("td").innerHTML = array[rowIndex][cell];
-        });
-    });
-}
-
-
-
-// PENDIENTE TESTEAR DE NUEVO, CONTIENE MODIFICACIONES DESDE EL PRIMER TEST //
-
 
 const checkEveryPosition = (array) => {
     let lastArray = createNewMatrix(5, 5);
@@ -125,9 +103,6 @@ const checkEveryPosition = (array) => {
 }
 let getLastArray = checkEveryPosition(newCells);
 
-// PENDIENTE TESTEAR //
-
 const executePlay = () => {
     printFirstMatrix(getLastArray);
 }
-
