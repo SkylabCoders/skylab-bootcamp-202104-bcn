@@ -22,15 +22,15 @@ function generateElement(elementProperties) {
   return element;
 }
 
-function populateList(properties) {
-  const selectedItems = properties.arrayOrigin
-    .slice(properties.extract.from, properties.extract.to);
+function populateList(elementProperties) {
+  const selectedItems = elementProperties.arrayOrigin
+    .slice(elementProperties.extract.from, elementProperties.extract.to);
   selectedItems.forEach((element) => {
     const item = generateElement({ type: 'li', classes: ['heroes-list__item'] });
     item.textContent = element.name;
-    properties.parentElement.append(item);
+    elementProperties.parentElement.append(item);
   });
-  return properties.parentElement;
+  return elementProperties.parentElement;
 }
 
 const mainContent = document.querySelector('.content');
