@@ -28,10 +28,10 @@ describe('Given a getNumberOfNeighbours function', () => {
     ];
 
     scenarios.forEach((scenario) => {
-        describe(`When invoked with values {scenario.array} and ${scenario.row} and ${scenario.column}`, () => {
+        describe(`When invoked with values ${scenario.array} and ${scenario.row} and ${scenario.column}`, () => {
             test(`Then return ${scenario.result}`,() => {
                 const end = getNumberOfNeighbours(scenario.array, scenario.row, scenario.column);
-                expect(end).toEqual(scenario.result);
+                expect(end).toBe(scenario.result);
             })
         })
     })
