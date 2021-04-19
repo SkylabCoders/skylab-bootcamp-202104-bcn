@@ -25,8 +25,6 @@ function creationOfBlinkerVertical(array, row, column) {
   array[row + 1][column] = "x";
   array[row - 1][column] = "x";
 
-  console.log(array);
-
   let rowTable2 = document.getElementsByClassName("row");
 
   for (let i = 0; i < rowTable2.length; i++) {
@@ -82,7 +80,6 @@ function changeCells(a, b, array, num) {
 
 function checkEveryPosition(array) {
   let evolutionOfBlinker = creationOfTable(5, 5);
-  console.log("new cell", array);
 
   array.forEach((row, indexRow) => {
     row.forEach((column, indexColumn) => {
@@ -94,7 +91,6 @@ function checkEveryPosition(array) {
       }
     });
   });
-  console.log("last Array ", evolutionOfBlinker);
   return evolutionOfBlinker;
 }
 
@@ -103,7 +99,6 @@ function gameOfLife() {
   let newCells = [...matrix];
 
   creationOfBlinkerVertical(newCells, 2, 2);
-  //checkNeighbours(2, 2, newCells);
   checkEveryPosition(newCells);
 }
 
