@@ -11,21 +11,6 @@ const heroes = [
   { id: 20, name: 'Tornado' },
 ];
 
-const mainContent = document.querySelector('.content');
-const headTitle = generateElement('div', ['head-title'], 'Tour of Heroes');
-mainContent.append(headTitle);
-const selectorGroup = generateElement('div', ['selector-group']);
-mainContent.append(selectorGroup);
-const linkDashboard = generateElement('a', ['selector-group__link-dasboard'], 'Dashboard', 'index.html');
-selectorGroup.append(linkDashboard);
-const linkHeroes = generateElement('a', ['selector-group__link-heroes'], 'Heroes', './../heroes/index.html');
-selectorGroup.append(linkHeroes);
-const mainTitle = generateElement('h3', [], 'Top Heroes');
-mainContent.append(mainTitle);
-const heroesList = generateElement('ul', ['heroes-list']);
-mainContent.appendChild(heroesList);
-const list = populateList(heroes, heroesList);
-
 function generateElement(typeOfElement, classNamesArray = '', context = '', hrefURL = '#') {
   const element = document.createElement(typeOfElement);
   element.classList.add(...classNamesArray);
@@ -45,3 +30,18 @@ function populateList(arrayOrigin, parentElement) {
   });
   return parentElement;
 }
+
+const mainContent = document.querySelector('.content');
+const headTitle = generateElement('div', ['head-title'], 'Tour of Heroes');
+mainContent.append(headTitle);
+const selectorGroup = generateElement('div', ['selector-group']);
+mainContent.append(selectorGroup);
+const linkDashboard = generateElement('a', ['selector-group__link-dasboard'], 'Dashboard', 'index.html');
+selectorGroup.append(linkDashboard);
+const linkHeroes = generateElement('a', ['selector-group__link-heroes'], 'Heroes', './../heroes/index.html');
+selectorGroup.append(linkHeroes);
+const mainTitle = generateElement('h3', [], 'Top Heroes');
+mainContent.append(mainTitle);
+const heroesList = generateElement('ul', ['heroes-list']);
+mainContent.appendChild(heroesList);
+populateList(heroes, heroesList);
