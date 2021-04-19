@@ -31,16 +31,22 @@ function createNavList() {
     navigationList.appendChild(navItem);
     navItem.appendChild(aTag);
     aTag.appendChild(text);
-    aTag.href = `./../heroes/${nav}.html`;
+    aTag.href = `./../${nav}/${nav}.html`;
   });
+}
+function printPageSubTitle() {
+  const subtitle = document.createElement('h2');
+  subtitle.innerHTML = 'My Heroes';
+  document.body.appendChild(subtitle);
 }
 function createHeroesList() {
   const navigationList = document.createElement('ul');
-  navigationList.setAttribute('id', 'navigation-list');
+  navigationList.setAttribute('id', 'heroes-list');
   document.body.appendChild(navigationList);
   heroes.forEach((hero) => {
     const eachHero = document.createElement('li');
-    const name = document.createTextNode(`${hero.name}`);
+    eachHero.setAttribute('id', `${hero.name}`);
+    const name = document.createTextNode(`${hero.id} ${hero.name}`);
     eachHero.appendChild(name);
     document.body.appendChild(eachHero);
   });
@@ -48,4 +54,5 @@ function createHeroesList() {
 
 printPageTitle();
 createNavList();
+printPageSubTitle();
 createHeroesList();

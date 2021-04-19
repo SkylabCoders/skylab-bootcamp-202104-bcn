@@ -31,7 +31,7 @@ function createNavList() {
     navigationList.appendChild(navItem);
     navItem.appendChild(aTag);
     aTag.appendChild(text);
-    aTag.href = `./../heroes/${nav}.html`;
+    aTag.href = `./../${nav}/${nav}.html`;
   });
 }
 function printPageSubTitle() {
@@ -42,17 +42,25 @@ function printPageSubTitle() {
 
 function createHeroesList() {
   const navigationList = document.createElement('ul');
-  navigationList.setAttribute('id', 'navigation-list');
+  navigationList.setAttribute('id', 'heroes-list');
   document.body.appendChild(navigationList);
-  heroes.forEach((hero) => {
+  heroes.slice(1, 5).forEach((hero) => {
     const eachHero = document.createElement('li');
-    const name = document.createTextNode(`${hero.name}`);
+    eachHero.setAttribute('id', `${hero.name}`);
+    const name = document.createTextNode(`${hero.id} ${hero.name}`);
     eachHero.appendChild(name);
     document.body.appendChild(eachHero);
   });
+}
+
+function createInput() {
+  const input = document.createElement('input');
+  input.setAttribute('type', 'text');
+  document.body.appendChild(input);
 }
 
 printPageTitle();
 createNavList();
 printPageSubTitle();
 createHeroesList();
+createInput();
