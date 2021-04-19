@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #e7e7e7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  min-width: 800px;
+}
+
+body .container .grid {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 600px;
+  height: 450px;
+  margin: 40px 0;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+body .container .grid .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #02023d;
+}
+
+body .container .grid .row .column {
+  width: 100%;
+  height: 100%;
+}
+
+body .container .grid [data-state='1'] {
+  background-color: white;
+}
+
+body .container .counter {
+  width: auto;
+  position: absolute;
+  color: white;
+  bottom: 125px;
+  right: 300px;
+  background-color: #02023d;
+  font-size: 14px;
+}
+
+body .container .controllers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 600px;
+  margin-top: 20px;
+}
+
+body .container .controllers__reset-button {
+  padding: 8px 12px;
+  font-family: inherit;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #9fa8ff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body .container .controllers__reset-button:focus {
+  outline: none;
+}
+
+body .container .controllers__reset-button:hover {
+  background-color: #bec4ff;
+}
+
+body .container .controllers__play-button, body .container .controllers__stop-button {
+  padding: 15px 35px;
+  margin-left: 10px;
+  font-family: inherit;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 80px;
+  color: white;
+  background-color: #382cdd;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body .container .controllers__play-button:focus, body .container .controllers__stop-button:focus {
+  outline: none;
+}
+
+body .container .controllers__play-button:hover, body .container .controllers__stop-button:hover {
+  background-color: #000f94;
+}
+
+body .container .controllers__stop-button {
+  margin-left: auto;
+}
+
+body .container .controllers .speed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 0 10px;
+  margin-left: 15px;
+}
+
+body .container .controllers .input-range {
+  direction: rtl;
+}
+
+body .container .samples {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 0;
+  top: -12%;
+}
+
+body .container .samples button {
+  padding: 10px 25px;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: grey;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 20px;
+}
+
+body .container .samples button:focus {
+  outline: none;
+}
+
+body .container .samples button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+/*# sourceMappingURL=style.css.map */

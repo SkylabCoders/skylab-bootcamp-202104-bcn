@@ -1,0 +1,124 @@
+@mixin header-big-icons {
+    display: flex;
+    background-color: #f2f2f2;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    padding: 10px;
+    margin-right: 3px;
+}
+
+@mixin big-icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin novedades-ofertas-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-right: 10px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@mixin big-icon-img {
+    width: 50px;
+    height: 70px;
+    margin-top: 5px;
+}
+
+@mixin color-icons ($width, $height){
+    width: $width;
+    height: $height;
+    margin: 0px 3px 0px 0px;
+    cursor: pointer;
+    
+}
+
+@mixin buscar-button ($width, $height) {
+    width: $width;
+    height: $height;
+    display: block;
+    float: right;
+    border: none;
+}
+
+@mixin caption-shape1 {
+    background-color: white;
+    opacity: 70%;
+    width: 260px;
+    height: 160px;
+    
+}
+@mixin caption-shape2 {
+    opacity: 70%;
+    width: 0;
+    height: 0;
+    border-right: 50px solid transparent;
+    border-top: 80px solid transparent;
+    border-left: 50px solid white;
+    border-bottom: 80px solid white;
+    
+}
+
+@mixin image-span {
+    position: absolute;
+    bottom: 15px;
+    right: 70px;
+    text-align: left;
+    color: black;
+    font-size: 20px;
+}
+
+@mixin section-title ($width) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 100px;
+    font-weight: 800;
+    font-size: 30px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    width: $width;
+    height: 60px;
+}
+
+@mixin contact-icons ($url){
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: $url;
+}
+
+@mixin contact-divisions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0px 30px;
+
+}
+
+@mixin input-text {
+    float: left;
+    width: calc(60% - 49px);
+    border: 1px solid #BBB8B6;
+    height: 26px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-indent: 0px;
+    text-align: start;
+    appearance: auto;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    font: 400 13.3333px Arial;
+}
