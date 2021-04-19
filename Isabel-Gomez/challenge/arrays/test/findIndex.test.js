@@ -3,6 +3,8 @@ function getFindIndex(array, callback) {
         const element = callback(array[index]);
         if (element) {
             return index;
+        } else {
+            return -1;
         }
     }
 };
