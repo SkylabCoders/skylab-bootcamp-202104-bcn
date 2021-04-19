@@ -14,7 +14,7 @@ const heroes = [
 function generateElement(elementProperties) {
   const element = document.createElement(elementProperties.type);
   element.classList.add(...elementProperties.classes);
-  element.id = elementProperties.id;
+  element.id = elementProperties.id || '';
   if (elementProperties.type === 'a') {
     element.setAttribute('href', elementProperties.url);
   }
@@ -27,7 +27,9 @@ function populateList(elementProperties) {
     .slice(elementProperties.extract.from, elementProperties.extract.to);
   selectedItems.forEach((element) => {
     const item = generateElement({ type: 'li', classes: ['heroes-list__item'] });
-    item.textContent = element.name;
+    const span = generateElement({ type: 'span', classes: [] });
+    span.textContent = element.name;
+    item.append(span);
     elementProperties.parentElement.append(item);
   });
   return elementProperties.parentElement;
