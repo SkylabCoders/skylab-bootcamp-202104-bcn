@@ -1,19 +1,19 @@
 let arrayFilter = (array, callback) => {
-
+    const newArray = [];
+    
     for (let i = 0; i < array.length; i++) {
-
-        if (array[i]){
-
-            return callback(array[i]);
+        if (callback(array[i])) {
+            newArray[newArray.length] = array[i]
         }
     }
+    return newArray;
 }
 
 describe("Given an arrayFilter function", () => {
     const scenarios = [{
-        origin: ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'],
-        expectResult: ["exuberant", "destruction", "present"],
-        callback: element => element.lenght > 6,
+        origin: [2,5,8],
+        callback: element => element > 6,
+        expectResult: [8],
     }, ];
 
 
@@ -29,7 +29,7 @@ describe("Given an arrayFilter function", () => {
                 const result = arrayFilter(origin, callbackFunction);
 
                 //Assert
-                expect(result).toEqual(expectResult);
+                expect(result).toStrictEqual(expectResult);
             })
         })
     })
