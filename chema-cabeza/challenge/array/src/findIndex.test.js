@@ -1,7 +1,8 @@
 function arrayFindIndex(arr, cbFunc) {  
     
     for(let i=0;i<arr.length;i++) {    
-        if (cbFunc(arr[i])) {return i} 
+        if (cbFunc(arr[i])) {return i}
+        else {return -1} 
     }    
 
 }
@@ -9,8 +10,8 @@ function arrayFindIndex(arr, cbFunc) {
     describe('Given an arrayFindIndex function', () => {
     const scenarios = [
         {   arr: [1,2,3], 
-            cbFunc: (num) => num === 2,
-            result: 1
+            cbFunc: (num) => num === 4,
+            result: -1
         },
         {   arr: [400,-34,-323, -323], 
             cbFunc: (num) => num === -323,
