@@ -32,13 +32,15 @@ const createHeaderDashboard = () => {
 };
 createHeaderDashboard();
 
-const createListHeroes = () => {
+const createListHeroes = (array) => {
   const createListContainer = document.createElement('div');
   mainSection.appendChild(createListContainer);
   const getList = document.createElement('ul');
   createListContainer.appendChild(getList);
-  const getDetailsList = document.createElement('li');
-  getList.appendChild(getDetailsList);
-  getDetailsList.innerHTML = `${heroes.name}`;
+  array.forEach((element) => {
+    const newLi = document.createElement('li');
+    getList.appendChild(newLi);
+    newLi.innerHTML = `${element.name}`;
+  });
 };
-createListHeroes();
+createListHeroes(heroes);
