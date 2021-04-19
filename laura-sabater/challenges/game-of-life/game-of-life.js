@@ -4,97 +4,96 @@ const gameCols = 50;
 window.addEventListener("load", () => startGame(gameRows, gameCols));
 
 const generateMatrix = (numRows, numCols) => {
-  let matrixResult = [];
+  let matrix = [];
   for (let i = 0; i < numRows; i++) {
-    matrixResult[i] = [];
+    matrix[i] = [];
     for(let j=0; j < numCols; j++) {
-      matrixResult[i][j] = 0;
+      matrix[i][j] = 0;
     }
   }
-  return matrixResult;
+  return matrix;
 }
 
-const generateEnvironmentTable = (numRows, numCols) => {
-  const environmentTable = document.getElementById("environment");
+const generateTable = (numRows, numCols) => {
+  const table = document.getElementById("environment");
   for (let i = 0; i < numRows; i++) {
-    const environmentRow = document.createElement("tr");
-    environmentRow.classList = "environment__row";
+    const tableRow = document.createElement("tr");
+    tableRow.classList = "environment__row";
     for (let j = 0; j < numCols; j++) {
-      const environmentSpot = document.createElement("td");
-      environmentSpot.innerHTML = 0;
-      environmentRow.appendChild(environmentSpot);   
+      const spot = document.createElement("td");
+      spot.innerHTML = 0;
+      tableRow.appendChild(spot);   
     }
-    environmentTable.appendChild(environmentRow);
+    table.appendChild(tableRow);
   }
 }
 
-const paintBlinker = (matrix, rowPosition, rowColumn) => {
-  matrix[rowPosition - 1][rowColumn] = 1;
-  matrix[rowPosition][rowColumn] = 1;
-  matrix[rowPosition + 1][rowColumn] = 1;
+const paintBlinker = (matrix, rowPosition, colPosition) => {
+  matrix[rowPosition - 1][colPosition] = 1;
+  matrix[rowPosition][colPosition] = 1;
+  matrix[rowPosition + 1][colPosition] = 1;
   return matrix;
 }
 
-const paintGlider = (matrix, rowPosition, rowColumn) => {
-  matrix[rowPosition - 1][rowColumn] = 1;
-  matrix[rowPosition][rowColumn + 1] = 1;
-  matrix[rowPosition + 1][rowColumn -1] = 1;
-  matrix[rowPosition + 1][rowColumn] = 1;
-  matrix[rowPosition + 1][rowColumn + 1] = 1;
+const paintGlider = (matrix, rowPosition, colPosition) => {
+  matrix[rowPosition - 1][colPosition] = 1;
+  matrix[rowPosition][colPosition + 1] = 1;
+  matrix[rowPosition + 1][colPosition -1] = 1;
+  matrix[rowPosition + 1][colPosition] = 1;
+  matrix[rowPosition + 1][colPosition + 1] = 1;
   return matrix;
 }
 
-const isCellAlive = (matrix, row, column) => {
-  if (matrix[row][column] === 1) {
+const isCellAlive = (matrix, rowPosition, colPosition) => {
+  if (matrix[rowPosition][colPosition] === 1) {
     return true;
   }
   return false;
 }
 
-const collectNeighbourhood = (matrix, numRows, numCols, rowPosition, columnPosition) => {
-  let neighbourhood = [];
-  if (rowPosition !== 0 && columnPosition !== 0) {
-    neighbourhood.push(matrix[rowPosition - 1][columnPosition - 1]);
+const collectNeighbours = (matrix, numRows, numCols, rowPosition, colPosition) => {
+  let neighbours = [];
+  if (rowPosition !== 0 && colPosition !== 0) {
+    neighbours.push(matrix[rowPosition - 1][colPosition - 1]);
   }
   if (rowPosition !== 0) {
-    neighbourhood.push(matrix[rowPosition - 1][columnPosition]);
+    neighbours.push(matrix[rowPosition - 1][colPosition]);
   }
-  if (rowPosition !== 0 && columnPosition < (numCols-1)) {
-    neighbourhood.push(matrix[rowPosition - 1][columnPosition + 1]);
+  if (rowPosition !== 0 && colPosition < (numCols-1)) {
+    neighbours.push(matrix[rowPosition - 1][colPosition + 1]);
   }
-  if (columnPosition !== 0) {
-    neighbourhood.push(matrix[rowPosition][columnPosition - 1]);
+  if (colPosition !== 0) {
+    neighbours.push(matrix[rowPosition][colPosition - 1]);
   }
-  if (columnPosition < (numCols-1)) {
-    neighbourhood.push(matrix[rowPosition][columnPosition + 1]);
+  if (colPosition < (numCols-1)) {
+    neighbours.push(matrix[rowPosition][colPosition + 1]);
   }
-  if (rowPosition < (numRows -1) && columnPosition !== 0) {
-    neighbourhood.push(matrix[rowPosition + 1][columnPosition - 1]);
+  if (rowPosition < (numRows -1) && colPosition !== 0) {
+    neighbours.push(matrix[rowPosition + 1][colPosition - 1]);
   }
   if(rowPosition < (numRows -1)){
-    neighbourhood.push(matrix[rowPosition + 1][columnPosition]);
+    neighbours.push(matrix[rowPosition + 1][colPosition]);
   }
-  if(rowPosition < (numRows -1) && columnPosition < (numCols -1)) {
-    neighbourhood.push(matrix[rowPosition + 1][columnPosition + 1]);
+  if(rowPosition < (numRows -1) && colPosition < (numCols -1)) {
+    neighbours.push(matrix[rowPosition + 1][colPosition + 1]);
   }
-  return neighbourhood;
+  return neighbours;
 }
 
-const countAliveNeighbours = (neighbourhood) => {
-  let aliveNeighbours = neighbourhood.filter((cell) => cell === 1);
-  let numberAliveNeighbours = aliveNeighbours.length;
-  return numberAliveNeighbours;
+const countAliveNeighbours = (neighbours) => {
+  let aliveNeighbours = neighbours.filter((cell) => cell === 1);
+  return aliveNeighbours.length;
 }
 
-const changeCellStatus = (matrix, numRows, numCols, rowPosition, columnPosition) => {
-  let cellAlive = isCellAlive(matrix, rowPosition, columnPosition);
-  let neighborHood = collectNeighbourhood(matrix, numRows, numCols, rowPosition, columnPosition);
-  let aliveNeighbours = countAliveNeighbours(neighborHood);
-  if (cellAlive && aliveNeighbours < 2) {
+const changeCellStatus = (matrix, numRows, numCols, rowPosition, colPosition) => {
+  let aliveCell = isCellAlive(matrix, rowPosition, colPosition);
+  let neighbours = collectNeighbours(matrix, numRows, numCols, rowPosition, colPosition);
+  let aliveNeighbours = countAliveNeighbours(neighbours);
+  if (aliveCell && aliveNeighbours < 2) {
     return true;
-  } else if (cellAlive && aliveNeighbours > 3) {
+  } else if (aliveCell && aliveNeighbours > 3) {
     return true;
-  } else if (!cellAlive && aliveNeighbours === 3) {
+  } else if (!aliveCell && aliveNeighbours === 3) {
     return true;
   } else {
     return false;
@@ -102,19 +101,19 @@ const changeCellStatus = (matrix, numRows, numCols, rowPosition, columnPosition)
 }
 
 const collectChanges = (matrix, numRows, numCols) => {
-  let arrayOfChanges = [];
+  let changes = [];
   for (let i = 0; i < numRows; i++) {
     for (let j = 0; j < numCols; j++) {
       if (changeCellStatus(matrix, numRows, numCols, i, j)) {
-        arrayOfChanges.push([i,j]);
+        changes.push([i,j]);
       }
     }
   }
-  return arrayOfChanges;
+  return changes;
 }
 
-const applyChanges = (arrayOfChanges, matrix) => {
-  for(let position of arrayOfChanges){
+const applyChanges = (matrix, changes) => {
+  for (let position of changes) {
     if(matrix[position[0]][position[1]] === 1) {
       matrix[position[0]][position[1]] = 0;
     } else {
@@ -125,36 +124,36 @@ const applyChanges = (arrayOfChanges, matrix) => {
 }
 
 const updateTable = (matrix, numRows, numCols) => {
-  const environmentRow = document.getElementsByClassName("environment__row");
+  const tableRow = document.getElementsByClassName("environment__row");
   for (let i=0; i < numRows; i++) {
     for (let j=0; j < numCols; j++) {
       if (matrix[i][j] === 1) {
-        environmentRow[i].childNodes[j].style = "background: blue";
+        tableRow[i].childNodes[j].style = "background: blue";
       } else {
-        environmentRow[i].childNodes[j].style = "background: grey";
+        tableRow[i].childNodes[j].style = "background: grey";
       }
     }
   }
 }
 
 const updateMatrix = (matrix, numRows, numCols) => {
-  let arrayOfChanges = collectChanges(matrix, numRows, numCols);
-  matrix = applyChanges(arrayOfChanges, matrix);
+  let changes = collectChanges(matrix, numRows, numCols);
+  matrix = applyChanges(changes, matrix);
   updateTable(matrix, numRows, numCols);
 }
 
 const startGame = (numRows, numCols) => {
   let matrix = generateMatrix(numRows, numCols);
-  generateEnvironmentTable(numRows, numCols);
-  matrix = paintBlinker(matrix, 3,3);
-  matrix = paintGlider(matrix, 10,10);
+  generateTable(numRows, numCols);
+  paintBlinker(matrix, 3,3);
+  paintGlider(matrix, 10,10);
   setInterval(() => updateMatrix(matrix, numRows, numCols), 1000);
 }
 
 module.exports = {
   generateMatrix: generateMatrix,
   isCellAlive: isCellAlive,
-  collectNeighbourhood: collectNeighbourhood,
+  collectNeighbourhood: collectNeighbours,
   countAliveNeighbours: countAliveNeighbours,
   paintBlinker: paintBlinker
 }
