@@ -31,7 +31,7 @@ function createDomElement(element, text, href, parent, id) {
 function showFavouriteHero(hero) {
   const container = document.getElementById('hero');
   container.innerText = `${hero.name} is my hero`;
-  createDomElement('a', 'View Details', `../heroDetails/heroDetails?id=${hero.id}.html`, container);
+  createDomElement('a', 'View Details', `../heroDetails/heroDetails.html?id=${hero.id}`, container);
 }
 
 const createHeroesList = () => {
