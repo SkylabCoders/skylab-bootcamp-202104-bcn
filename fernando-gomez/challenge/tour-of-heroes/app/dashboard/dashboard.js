@@ -47,12 +47,15 @@ const generateNavigator = () => {
   return navigator;
 };
 
-const topHeroButton = (heroId) => {
-  const heroButton = document.createElement('button');
+const topHeroAnchor = (heroId) => {
+  const heroAnchor = document.createElement('a');
   const hero = getHero(heroId);
-  heroButton.innerHTML = hero.name;
+  heroAnchor.classList = 'topHeroes__anchor';
+  heroAnchor.innerHTML = hero.name;
+  heroAnchor.setAttribute('href', './../hero/hero-detail.html');
+  heroAnchor.value = heroId;
 
-  return heroButton;
+  return heroAnchor;
 };
 
 const topHeroTitle = () => {
@@ -67,20 +70,83 @@ const generateTopHeroes = () => {
   const topHeroesTitle = topHeroTitle();
   topHeroes.classList = 'topHeroes';
   topHeroes.appendChild(topHeroesTitle);
-  topHeroes.appendChild(topHeroButton(12));
-  topHeroes.appendChild(topHeroButton(13));
-  topHeroes.appendChild(topHeroButton(14));
-  topHeroes.appendChild(topHeroButton(15));
+  topHeroes.appendChild(topHeroAnchor(12));
+  topHeroes.appendChild(topHeroAnchor(13));
+  topHeroes.appendChild(topHeroAnchor(14));
+  topHeroes.appendChild(topHeroAnchor(15));
 
   return topHeroes;
+};
+
+const searcherTitle = () => {
+  const searchTitle = document.createElement('h3');
+  searchTitle.classList = 'searcher__title';
+  searchTitle.innerHTML = 'Hero search';
+  return searchTitle;
+};
+
+const searcherInput = () => {
+  const input = document.createElement('input');
+  input.classList = 'searcher__input';
+  return input;
+};
+
+const generateSearcher = () => {
+  const searcherSection = document.createElement('section');
+  const title = searcherTitle();
+  const input = searcherInput();
+  searcherSection.classList = 'searcher';
+
+  searcherSection.appendChild(title);
+  searcherSection.appendChild(input);
+
+  return searcherSection;
+};
+
+const messagesTitle = () => {
+  const title = document.createElement('h2');
+  title.classList = 'messages__title';
+  title.innerHTML = 'Messages';
+  return title;
+};
+
+const singleLogMessage = (logMessage) => {
+  const message = document.createElement('li');
+  message.innerHTML = logMessage;
+
+  return message;
+};
+
+const messagesLog = () => {
+  const title = messagesTitle();
+  const log = document.createElement('ul');
+  const message = singleLogMessage('lorem lorem');
+
+  log.appendChild(title);
+  log.appendChild(message);
+
+  return log;
+};
+
+const messagesSection = () => {
+  const section = document.createElement('section');
+  const messages = messagesLog();
+  section.classList = 'messages';
+
+  section.appendChild(messages);
+  return messages;
 };
 
 const generateDashboard = () => {
   const navigator = generateNavigator();
   const topHeroes = generateTopHeroes();
+  const searcher = generateSearcher();
+  const messages = messagesSection();
 
   container.appendChild(navigator);
   container.appendChild(topHeroes);
+  container.appendChild(searcher);
+  container.appendChild(messages);
 };
 
 generateDashboard();
