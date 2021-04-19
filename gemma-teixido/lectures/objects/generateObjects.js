@@ -1,11 +1,9 @@
 function generatePizzas(ingredients, size) {
-  let pizza = {
+  const pizza = {
     ingredients,
-    size,
+    size
   };
   return pizza;
 }
-
-let orderPizza1 = generatePizzas("tomato, onion", "small");
-
+const orderPizza1 = generatePizzas('tomato, onion', 'small');
 console.log(orderPizza1);
