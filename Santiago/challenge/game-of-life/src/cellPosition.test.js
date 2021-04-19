@@ -13,13 +13,7 @@ describe("Given a cellPosition function", () => {
     const scenarios = [{
         a: 2,
         b: 3,
-        expectResult: [
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-            [0, 0, 1, 0, 0],
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0]
-        ],
+        expectResult: 1,
     }];
 
     scenarios.forEach(scenario => {
