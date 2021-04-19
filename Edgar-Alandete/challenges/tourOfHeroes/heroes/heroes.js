@@ -13,7 +13,7 @@ const heroes = [
   { id: 20, name: 'Tornado' },
 ];
 
-function createDomElement(element, text, href, parent) {
+function createDomElement(element, text, href, parent, id) {
   const elementToCreate = document.createElement(element);
   if (text) {
     elementToCreate.innerText = text;
@@ -21,8 +21,17 @@ function createDomElement(element, text, href, parent) {
   if (href) {
     elementToCreate.setAttribute('href', href);
   }
+  if (id) {
+    elementToCreate.setAttribute('id', id);
+  }
   parent.appendChild(elementToCreate);
   return elementToCreate;
+}
+
+function showFavouriteHero(hero) {
+  const container = document.getElementById('hero');
+  container.innerText = `${hero.name} is my hero`;
+  createDomElement('a', 'View Details', `../heroDetails/heroDetails#${hero.id}.html`, container);
 }
 
 const createHeroesList = () => {
@@ -31,7 +40,11 @@ const createHeroesList = () => {
     const heroItem = createDomElement('li', '', '', heroElements);
     // ../heroDetails/heroDetails#${hero.name}.html`
     createDomElement('span', hero.id, '', heroItem);
-    createDomElement('a', hero.name, '../heroDetails/heroDetails.html', heroItem);
+    createDomElement('a', hero.name, '', heroItem);
+    heroItem.onclick = function heroCreation() {
+      showFavouriteHero(hero);
+    };
+    // () => test;
   });
 };
 
@@ -51,6 +64,7 @@ const createHeroesPage = () => {
   createNavigator(header);
   createDomElement('h2', 'My heroes', '', heroesList);
   createHeroesList();
+  createDomElement('div', '', '', heroesList, 'hero');
 };
 
 createHeroesPage();
