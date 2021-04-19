@@ -34,12 +34,6 @@ function createNavList() {
     aTag.href = `./../heroes/${nav}.html`;
   });
 }
-function printPageSubTitle() {
-  const subtitle = document.createElement('h2');
-  subtitle.innerHTML = 'Top Heroes';
-  document.body.appendChild(subtitle);
-}
-
 function createHeroesList() {
   const navigationList = document.createElement('ul');
   navigationList.setAttribute('id', 'navigation-list');
@@ -54,5 +48,4 @@ function createHeroesList() {
 
 printPageTitle();
 createNavList();
-printPageSubTitle();
 createHeroesList();
