@@ -42,18 +42,6 @@ const generateHeader = () => {
   dashboardDiv.appendChild(heroesButton);
 };
 
-const obtainTopHeroes = (heroId) => {
-  let result;
-
-  heroes.forEach(((hero) => {
-    if (hero.id === heroId) {
-      result = hero;
-    }
-  }));
-
-  return result;
-};
-
 const topHeroesContainer = () => {
   const topHeroesDiv = document.createElement('div');
   topHeroesDiv.classList.add('heroes-container');
@@ -66,30 +54,15 @@ const topHeroesContainer = () => {
   topHeroes.classList.add('four-heroes');
   topHeroesDiv.appendChild(topHeroes);
 
-  const narco = obtainTopHeroes(12);
-  const narcoSpan = document.createElement('li');
-  narcoSpan.innerHTML = narco.name;
-  topHeroes.appendChild(narcoSpan);
-
-  const bombasto = obtainTopHeroes(13);
-  const bombastoSpan = document.createElement('li');
-  bombastoSpan.innerHTML = bombasto.name;
-  topHeroes.appendChild(bombastoSpan);
-
-  const celeritas = obtainTopHeroes(14);
-  const celeritasSpan = document.createElement('li');
-  celeritasSpan.innerHTML = celeritas.name;
-  topHeroes.appendChild(celeritasSpan);
-
-  const magneta = obtainTopHeroes(15);
-  const magnetaSpan = document.createElement('li');
-  magnetaSpan.innerHTML = magneta.name;
-  topHeroes.appendChild(magnetaSpan);
+  for (let i = 1; i < heroes.length - 5; i += 1) {
+    const li = document.createElement('li');
+    li.innerHTML = `${heroes[i].name}`;
+    topHeroes.appendChild(li);
+  }
 };
 
 const generateDashboard = () => {
   generateHeader();
   topHeroesContainer();
-  obtainTopHeroes();
 };
 generateDashboard();
