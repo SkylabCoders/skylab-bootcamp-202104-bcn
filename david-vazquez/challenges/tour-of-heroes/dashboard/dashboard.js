@@ -10,3 +10,8 @@ const heroes = [
     { id: 19, name: 'Magma' },
     { id: 20, name: 'Tornado' }
     ]
+
+
+const container = document.querySelector('.container');
+const title = container.createElement('h1');
+title.innerText = 'Tour of Heroes';
