@@ -26,7 +26,6 @@ function creationOfBlinkerVertical(array, row, column) {
   array[row - 1][column] = "x";
 
   let rowTable2 = document.getElementsByClassName("row");
-
   for (let i = 0; i < rowTable2.length; i++) {
     let deadCell2 = rowTable2[i].getElementsByClassName("cell");
     for (let j = 0; j < deadCell2.length; j++) {
@@ -39,28 +38,28 @@ function creationOfBlinkerVertical(array, row, column) {
 function checkNeighbours(a, b, array) {
   let neighbour = 0;
 
-  if (array[a] && array[a][b + 1] && array[a][b + 1] === "x") {
+  if (array[a] && array[a][b + 1] === "x") {
     neighbour++;
   }
-  if (array[a] && array[a][b - 1] && array[a][b - 1] === "x") {
+  if (array[a] && array[a][b - 1] === "x") {
     neighbour++;
   }
-  if (array[a + 1] && array[a + 1][b] && array[a + 1][b] === "x") {
+  if (array[a + 1] && array[a + 1][b] === "x") {
     neighbour++;
   }
-  if (array[a - 1] && array[a - 1][b] && array[a - 1][b] === "x") {
+  if (array[a - 1] && array[a - 1][b] === "x") {
     neighbour++;
   }
-  if (array[a + 1] && array[a + 1][b + 1] && array[a + 1][b + 1] === "x") {
+  if (array[a + 1] && array[a + 1][b + 1] === "x") {
     neighbour++;
   }
-  if (array[a - 1] && array[a - 1][b - 1] && array[a - 1][b - 1] === "x") {
+  if (array[a - 1] && array[a - 1][b - 1] === "x") {
     neighbour++;
   }
-  if (array[a - 1] && array[a - 1][b + 1] && array[a - 1][b + 1] === "x") {
+  if (array[a - 1] && array[a - 1][b + 1] === "x") {
     neighbour++;
   }
-  if (array[a + 1] && array[a + 1][b - 1] && array[a + 1][b - 1] === "x") {
+  if (array[a + 1] && array[a + 1][b - 1] === "x") {
     neighbour++;
   }
   return neighbour;
