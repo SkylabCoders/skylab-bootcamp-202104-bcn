@@ -12,7 +12,6 @@ const heroes = [
 ];
 
 const body = document.getElementById('bodyId');
-
 const title = document.createElement('h1');
 title.innerHTML = 'Tour of Heroes';
 body.appendChild(title);
@@ -27,15 +26,30 @@ buttonHeroes.innerHTML = 'Heroes';
 buttonHeroes.setAttribute('href', 'http://127.0.0.1:5500/heroes/html/heroes.html');
 body.appendChild(buttonHeroes);
 
-const subTitle = document.createElement('h2');
-subTitle.innerHTML = 'Top Heroes';
-body.appendChild(subTitle);
+const nameDetails = document.createElement('h2');
+nameDetails.innerHTML = `${heroes.name} details!`;
+body.appendChild(nameDetails);
 
-const firstHeroes = heroes.slice(0, 4);
+const id = document.createElement('h3');
+id.innerHTML = 'id:';
+body.appendChild(id);
 
-firstHeroes.forEach((firstHeroe) => {
-  const firstHeroesNames = document.createElement('a');
-  firstHeroesNames.innerText = `${firstHeroe.name}`;
-  firstHeroesNames.setAttribute('href', 'http://127.0.0.1:5500/detail/html/detail.html');
-  body.appendChild(firstHeroesNames);
-});
+const inputId = document.createElement('input');
+inputId.innerHTML = 'id:';
+body.appendChild(inputId);
+
+const nameOfHeroe = document.createElement('h3');
+nameOfHeroe.innerHTML = 'name:';
+body.appendChild(nameOfHeroe);
+
+const inputName = document.createElement('input');
+inputName.innerHTML = 'id:';
+body.appendChild(inputName);
+
+// const firstHeroes = heroes.slice(0, 4);
+
+// firstHeroes.forEach((firstHeroe) => {
+//   const firstHeroesNames = document.createElement('a');
+//   firstHeroesNames.innerText = `${firstHeroe.name}`;
+//   body.appendChild(firstHeroesNames);
+// });

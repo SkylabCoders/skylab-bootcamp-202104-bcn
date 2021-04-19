@@ -12,7 +12,6 @@ const heroes = [
 ];
 
 const body = document.getElementById('bodyId');
-
 const title = document.createElement('h1');
 title.innerHTML = 'Tour of Heroes';
 body.appendChild(title);
@@ -28,14 +27,14 @@ buttonHeroes.setAttribute('href', 'http://127.0.0.1:5500/heroes/html/heroes.html
 body.appendChild(buttonHeroes);
 
 const subTitle = document.createElement('h2');
-subTitle.innerHTML = 'Top Heroes';
+subTitle.innerHTML = 'My Heroes';
 body.appendChild(subTitle);
 
-const firstHeroes = heroes.slice(0, 4);
+const firstHeroes = heroes;
 
 firstHeroes.forEach((firstHeroe) => {
   const firstHeroesNames = document.createElement('a');
-  firstHeroesNames.innerText = `${firstHeroe.name}`;
-  firstHeroesNames.setAttribute('href', 'http://127.0.0.1:5500/detail/html/detail.html');
+  firstHeroesNames.innerText = `${firstHeroe.id} ${firstHeroe.name} `;
   body.appendChild(firstHeroesNames);
+  firstHeroesNames.setAttribute('href', 'http://127.0.0.1:5500/detail/html/detail.html');
 });
