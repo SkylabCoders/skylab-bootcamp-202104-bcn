@@ -11,37 +11,43 @@ const heroes = [
   { id: 20, name: 'Tornado' },
 ];
 
-function generateElement(typeOfElement, classNamesArray = '', context = '', hrefURL = '#') {
-  const element = document.createElement(typeOfElement);
-  element.classList.add(...classNamesArray);
-  if (typeOfElement === 'a') {
-    element.setAttribute('href', hrefURL);
+function generateElement(elementProperties) {
+  const element = document.createElement(elementProperties.type);
+  element.classList.add(...elementProperties.classes);
+  element.id = elementProperties.id;
+  if (elementProperties.type === 'a') {
+    element.setAttribute('href', elementProperties.url);
   }
-  element.textContent = context;
+  element.textContent = elementProperties.context;
   return element;
 }
 
-function populateList(arrayOrigin, parentElement) {
-  const selectedItems = arrayOrigin.slice(1, 5);
+function populateList(properties) {
+  const selectedItems = properties.arrayOrigin
+    .slice(properties.extract.from, properties.extract.to);
   selectedItems.forEach((element) => {
-    const item = generateElement('li', ['heroes-list__item']);
+    const item = generateElement({ type: 'li', classes: ['heroes-list__item'] });
     item.textContent = element.name;
-    parentElement.append(item);
+    properties.parentElement.append(item);
   });
-  return parentElement;
+  return properties.parentElement;
 }
 
 const mainContent = document.querySelector('.content');
-const headTitle = generateElement('div', ['head-title'], 'Tour of Heroes');
+const headTitle = generateElement({ type: 'div', classes: ['head-title'], context: 'Tour of Heroes' });
 mainContent.append(headTitle);
-const selectorGroup = generateElement('div', ['selector-group']);
+const selectorGroup = generateElement({ type: 'div', classes: ['selector-group'] });
 mainContent.append(selectorGroup);
-const linkDashboard = generateElement('a', ['selector-group__link-dasboard'], 'Dashboard', 'index.html');
+const linkDashboard = generateElement({
+  type: 'a', classes: ['selector-group__link-dasboard'], context: 'Dashboard', url: 'index.html',
+});
 selectorGroup.append(linkDashboard);
-const linkHeroes = generateElement('a', ['selector-group__link-heroes'], 'Heroes', './../heroes/index.html');
+const linkHeroes = generateElement({
+  type: 'a', classes: ['selector-group__link-heroes'], context: 'Heroes', url: './../heroes/index.html',
+});
 selectorGroup.append(linkHeroes);
-const mainTitle = generateElement('h3', [], 'Top Heroes');
+const mainTitle = generateElement({ type: 'h3', classes: [], context: 'Top Heroes' });
 mainContent.append(mainTitle);
-const heroesList = generateElement('ul', ['heroes-list']);
+const heroesList = generateElement({ type: 'ul', classes: ['heroes-list'] });
 mainContent.appendChild(heroesList);
-populateList(heroes, heroesList);
+populateList({ arrayOrigin: heroes, parentElement: heroesList, extract: { from: 1, to: 5 } });
