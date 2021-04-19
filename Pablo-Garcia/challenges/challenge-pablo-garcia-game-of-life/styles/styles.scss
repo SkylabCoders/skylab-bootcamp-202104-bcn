@@ -1,0 +1,38 @@
+body {
+  padding: 20px;
+  font-size: 16px;
+}
+
+#app {
+  padding-bottom: 10px;
+  table {
+    background-color: #d5d9d5;
+    border-spacing: 0;
+    tr{
+      &.live {
+        background-color: #0f637d;
+        border-radius: 10px;
+      }
+      td {
+        border: 1px solid #fafafa;
+        border-radius: 3px;
+        width: 10px;
+        height: 10px;
+        &.dead {
+          background-color: transparent;
+        }
+      }
+    }
+
+  }
+  button{
+    font-size: 1.2em;
+    padding: .75em;
+    border-radius: 0;
+    border: none;
+    background: rgba(63, 213, 130, 0.79);
+    color:#fff;
+    margin:15px 0px;
+  }
+
+}

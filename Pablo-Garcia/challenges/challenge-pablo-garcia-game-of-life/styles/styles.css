@@ -1,36 +1,29 @@
 body {
-    padding: 20px;
-    font-size: 16px;
-}
+  padding: 20px;
+  font-size: 16px; }
 
-#gridContainer {
-    padding-bottom: 10px;
-}
-
-table {
+#app {
+  padding-bottom: 10px; }
+  #app table {
     background-color: #d5d9d5;
-    border-spacing: 0;
-}
+    border-spacing: 0; }
+    #app table tr.live {
+      background-color: #0f637d;
+      border-radius: 10px; }
+    #app table tr td {
+      border: 1px solid #fafafa;
+      border-radius: 3px;
+      width: 10px;
+      height: 10px; }
+      #app table tr td.dead {
+        background-color: transparent; }
+  #app button {
+    font-size: 1.2em;
+    padding: .75em;
+    border-radius: 0;
+    border: none;
+    background: rgba(63, 213, 130, 0.79);
+    color: #fff;
+    margin: 15px 0px; }
 
-td {
-    border: 1px solid #fafafa;
-    border-radius: 3px;
-    width: 10px;
-    height: 10px;
-}
-td.dead {
-    background-color: transparent;
-}
-
-.live {
-    background-color: #0f637d;
-    border-radius: 10px;
-}button{
-     font-size: 1.2em;
-     padding: .75em;
-     border-radius: 0;
-     border: none;
-     background: rgba(63, 213, 130, 0.79);
-     color:#fff;
-     margin:15px 0px;
- }
+/*# sourceMappingURL=styles.css.map */
