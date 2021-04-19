@@ -19,7 +19,24 @@ function createDomElement(element, text) {
     elementToCreate.innerText = text;
   }
   dashboard.appendChild(elementToCreate);
+  return elementToCreate;
 }
+
+const getRandomHeroes = (heroesNumber) => {
+  const heroesCopy = [...heroes];
+  const shuffled = heroesCopy.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, heroesNumber);
+};
+const createHeroesList = () => {
+  const heroesToShow = getRandomHeroes(4);
+  const heroNames = createDomElement('ul');
+  heroesToShow.forEach(({ name }) => {
+    const hero = createDomElement('li', name);
+    heroNames.appendChild(hero);
+  });
+
+  dashboard.appendChild(heroNames);
+};
 
 const createNavigator = () => {
   createDomElement('ul');
@@ -31,6 +48,7 @@ const createDashboardPage = () => {
   createDomElement('h1', 'Tour of Heroes');
   createNavigator();
   createDomElement('h2', 'Top Heroes');
+  createHeroesList();
 };
 
 createDashboardPage();
