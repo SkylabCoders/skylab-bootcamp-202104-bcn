@@ -11,13 +11,15 @@ let grid = initializeGrid (rows,cols);
 
 printGrid();
 
-speedSlider[0].onchange = function () { //When changing speedSlider values
-    speedSliderText[0].innerText =`Speed (${(speedSlider[0].value/1000).toFixed(1)}s):`;
-    if (playButton.className === "stop") {
-        clearInterval(interval);
-        interval = setInterval(() => drawGrid(grid), speedSlider[0].value)
-    }
-};
+// if(speedSlider[0] && speedSlider[0].length) {
+    speedSlider[0].onchange = function () { //When changing speedSlider values
+        speedSliderText[0].innerText = `Speed (${(speedSlider[0]?.value/1000).toFixed(1)}s):`;
+        if (playButton.className === "stop") {
+            clearInterval(interval);
+            interval = setInterval(() => drawGrid(grid), speedSlider[0].value)
+        }
+    };
+// }
 
 playButton?.addEventListener("click", () =>{ //When pressing play/stop button
     if (playButton.className === "play") {
@@ -97,11 +99,14 @@ function reprintGrid () {
         for (j=0 ; j < grid[0].length ; j++) {
             if (grid[i][j] === 1) {
                 let cell = document.getElementById(`${i}x${j}`);
+                // if (cell && cell.length){cell.className = "alive";}
                 cell.className = "alive";
             } else if (grid[i][j] === 0) {
                 let cell = document.getElementById(`${i}x${j}`);
+                // if (cell && cell.length){cell.className = "dead";} 
                 cell.className = "dead";
             }
+
         }
     }
 }
@@ -187,7 +192,7 @@ function countNeighbors (grid, row, col){
 //     })
 // })
 
-// // // initializeGrid Test
+// // // // // initializeGrid Test
 
 // describe('Given an initializeGrid function', () => {
 //     let testArray = initializeGrid(5,5)
@@ -213,7 +218,7 @@ function countNeighbors (grid, row, col){
 //     })
 // })
 
-// // newCell Test
+// // // // newCell Test
 
 // describe('Given an newCell function', () => {
     
@@ -240,7 +245,7 @@ function countNeighbors (grid, row, col){
 //     })
 // })
 
-// // killCell Test
+// // // // killCell Test
 
 // describe('Given an newCell function', () => {
     
@@ -267,7 +272,7 @@ function countNeighbors (grid, row, col){
 //     })
 // })
 
-// // countNeighbors Test
+// // // // countNeighbors Test
 
 // describe('Given an countNeighbors function', () => {
     
