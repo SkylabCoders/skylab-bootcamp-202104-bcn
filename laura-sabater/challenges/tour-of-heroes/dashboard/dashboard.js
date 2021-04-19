@@ -1,9 +1,9 @@
-const generateTitle = () => {
+const generateMainTitle = () => {
   const mainTitle = document.createElement('h1');
   mainTitle.innerHTML = 'Tour of Heroes';
   document.body.appendChild(mainTitle);
 };
-generateTitle();
+generateMainTitle();
 const generateMenu = () => {
   const menu = document.createElement('ul');
   menu.className = 'menu';
@@ -15,3 +15,9 @@ const generateMenu = () => {
   document.body.appendChild(menu);
 };
 generateMenu();
+const generateTitle2 = () => {
+  const title2 = document.createElement('h2');
+  title2.innerHTML = 'Top Heroes';
+  document.body.appendChild(title2);
+};
+generateTitle2();
