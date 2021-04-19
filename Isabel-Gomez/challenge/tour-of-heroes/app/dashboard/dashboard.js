@@ -13,6 +13,10 @@ const heroes = [
 
 const mainSection = document.querySelector('.container-dashboard');
 
+const getOnclickList = () => {
+  window.location.replace('./../heroes/heroes.html');
+};
+
 const createHeaderDashboard = () => {
   const getTitle = document.createElement('h1');
   getTitle.innerHTML = 'Tour of Heroes';
@@ -25,6 +29,7 @@ const createHeaderDashboard = () => {
   const buttonHeroes = document.createElement('button');
   buttonHeroes.innerHTML = 'Heroes';
   mainSection.appendChild(buttonHeroes);
+  buttonHeroes.onclick = () => getOnclickList();
 
   const getSubTitle = document.createElement('h3');
   getSubTitle.innerHTML = 'Top Heroes';
@@ -32,28 +37,14 @@ const createHeaderDashboard = () => {
 };
 createHeaderDashboard();
 
-const createButtonsHeroes = () => {
+const createButtonsHeroes = (array) => {
   const createHeroesContainer = document.createElement('div');
   mainSection.appendChild(createHeroesContainer);
-
-  const detailsHeroesOne = document.createElement('a');
-  detailsHeroesOne.innerHTML = heroes[1].name;
-  detailsHeroesOne.setAttribute('href', './../heroes-details/heroes-details.html');
-  createHeroesContainer.appendChild(detailsHeroesOne);
-
-  const detailsHeroesTwo = document.createElement('a');
-  detailsHeroesTwo.innerHTML = 'Bombasto';
-  detailsHeroesTwo.setAttribute('href', './../heroes-details/heroes-details.html');
-  createHeroesContainer.appendChild(detailsHeroesTwo);
-
-  const detailsHeroesThree = document.createElement('a');
-  detailsHeroesThree.innerHTML = 'Celeritas';
-  detailsHeroesThree.setAttribute('href', './../heroes-details/heroes-details.html');
-  createHeroesContainer.appendChild(detailsHeroesThree);
-
-  const detailsHeroesFour = document.createElement('a');
-  detailsHeroesFour.innerHTML = 'Magneta';
-  detailsHeroesFour.setAttribute('href', './../heroes-details/heroes-details.html');
-  createHeroesContainer.appendChild(detailsHeroesFour);
+  array.forEach((element) => {
+    const reference = document.createElement('a');
+    createHeroesContainer.appendChild(reference);
+    reference.innerHTML = `${element.name}`;
+    reference.href = './../heroes-details/heroes-details.html';
+  });
 };
-createButtonsHeroes();
+createButtonsHeroes(heroes);

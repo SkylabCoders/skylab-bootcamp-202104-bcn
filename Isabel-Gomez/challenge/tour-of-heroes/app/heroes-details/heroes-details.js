@@ -13,6 +13,14 @@ const heroes = [
 
 const mainSection = document.querySelector('.container-heroes-details');
 
+const getOnclickDashboard = () => {
+  window.location.replace('./../dashboard/dashboard.html');
+};
+
+const getOnclickList = () => {
+  window.location.replace('./../heroes/heroes.html');
+};
+
 const createHeaderDashboard = () => {
   const getTitle = document.createElement('h1');
   getTitle.innerHTML = 'Tour of Heroes';
@@ -21,10 +29,12 @@ const createHeaderDashboard = () => {
   const buttonDashboard = document.createElement('button');
   buttonDashboard.innerHTML = 'Dashboard';
   mainSection.appendChild(buttonDashboard);
+  buttonDashboard.onclick = () => getOnclickDashboard();
 
   const buttonHeroes = document.createElement('button');
   buttonHeroes.innerHTML = 'Heroes';
   mainSection.appendChild(buttonHeroes);
+  buttonHeroes.onclick = () => getOnclickList();
 
   const getSubTitle = document.createElement('h3');
   getSubTitle.innerHTML = 'Details';
@@ -43,3 +53,10 @@ const getHeroeDetails = () => {
   getContainerInfo.appendChild(inputHeroe);
 };
 getHeroeDetails();
+
+const getButtonDetails = () => {
+  const buttonViewDetails = document.createElement('button');
+  buttonViewDetails.innerHTML = 'View details';
+  mainSection.appendChild(buttonViewDetails);
+};
+getButtonDetails();
