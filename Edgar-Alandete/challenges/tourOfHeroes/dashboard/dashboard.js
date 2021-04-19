@@ -50,7 +50,7 @@ const createNavigator = (parent) => {
   return nav;
 };
 
-const createDashboardPage = () => {
+const createHeroesPage = () => {
   const header = createDomElement('header', '', '', dashboard);
   createDomElement('h1', 'Tour of Heroes', '', header);
   createNavigator(header);
@@ -58,4 +58,4 @@ const createDashboardPage = () => {
   createHeroesList();
 };
 
-createDashboardPage();
+createHeroesPage();
