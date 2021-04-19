@@ -4,6 +4,7 @@ let row = 5;
 let col = 5;
 let arrayGame = [];
 let NeighborsCont;
+let display;
 
 game();
 
@@ -20,11 +21,11 @@ function game(){
 
 
 function matrix(row,col,arrayGeneral){
-    let row = [];
+    let rows = [];
     for (let i = 0; i<row; i++){
         display += "<tr class='game_row'>";
         for (let j = 0; j<col; j++){
-            row[j] = 0;
+            rows[j] = 0;
             display += "<td class='game_column'></td>";
         }
         display += "</tr>";
@@ -56,9 +57,9 @@ function checkPointGame(row, col, arrayGame, exitArray){
     for (let i = 0; i<row; i++){
         for (let j = 0; j<col; j++){
             checkNeighbors(i, j, arrayGame);
-            if (arrayGame[i][j] == 1 && cont == 2 || cont == 3){
+            if (arrayGame[i][j] == 1 && NeighborsCont == 2 || NeighborsCont == 3){
                 exitArray[i][j] = 1;
-            }else if (arrayGame[i][j] == 0 && cont == 3){
+            }else if (arrayGame[i][j] == 0 && NeighborsCont == 3){
                 exitArray[i][j] = 1;
             }else {
                 exitArray[i][j] = 0;
