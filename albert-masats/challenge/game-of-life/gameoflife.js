@@ -6,6 +6,8 @@
 
 // array, row, column
 
+let count = 0;
+
 const createGrid = (rows, columns) => {
     let grid = new Array(rows);
     for (let i = 0; i < rows; i++) {
@@ -31,51 +33,17 @@ const blinkerCreation = () => {
 blinkerCreation();
 
 function gol () {
-    let count = 0;
+    
     console.log(arrayGameOfLife)
-    for (let i = 0; i<arrayGameOfLife.length; i++) {
-        for(let j=0; j<arrayGameOfLife[i].length; j++) {
+    for(let i = 0; i<arrayGameOfLife.length; i++) {
+        for(let j =0; j<arrayGameOfLife[i].length; j++) {
             
-            if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
-                count++
-            } 
-            if (arrayGameOfLife[j-1] && arrayGameOfLife[i][j-1] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i-1] && arrayGameOfLife[j-1] && arrayGameOfLife[i-1][j-1] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i-1] && arrayGameOfLife[i-1][j] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i-1] && arrayGameOfLife[j+1] && arrayGameOfLife[i-1][j+1] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i+1] && arrayGameOfLife[j-1] && arrayGameOfLife[i+1][j-1] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i+1] && arrayGameOfLife[i+1][j] ===1) {
-                count++
-            }
-            if (arrayGameOfLife[i+1] && arrayGameOfLife[j+1] && arrayGameOfLife[i+1][j+1] ===1){
-                count++
-            }
-
-            if (arrayGameOfLife[i][j] === 1){ 
-                if(count <= 1 || count >= 4){
-                    grid2[i][j] = 0
-                }else{
-                    grid2[i][j] = 1
-                }
-            }else{
-                if(count === 3){
-                    grid2[i][j] = 1
-                }
-            }
-            count = 0 
+            checkneighbours(i,j);
+            checkConditions(i,j)
+            
         } 
     }
-    changeArray()
+    changeArray();
 }    
 
 let timerGol = () => {
@@ -93,3 +61,45 @@ let changeArray = () => {
     }
 }
    
+
+let checkneighbours = function (i,j) {
+    if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
+        count++
+    } 
+    if (arrayGameOfLife[j-1] && arrayGameOfLife[i][j-1] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i-1] && arrayGameOfLife[j-1] && arrayGameOfLife[i-1][j-1] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i-1] && arrayGameOfLife[i-1][j] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i-1] && arrayGameOfLife[j+1] && arrayGameOfLife[i-1][j+1] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i+1] && arrayGameOfLife[j-1] && arrayGameOfLife[i+1][j-1] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i+1] && arrayGameOfLife[i+1][j] ===1) {
+        count++
+    }
+    if (arrayGameOfLife[i+1] && arrayGameOfLife[j+1] && arrayGameOfLife[i+1][j+1] ===1){
+        count++
+    }
+}
+
+let checkConditions = function (i,j) {
+    if (arrayGameOfLife[i][j] === 1){ 
+        if(count <= 1 || count >= 4){
+            grid2[i][j] = 0
+        }else{
+            grid2[i][j] = 1
+        }
+    }else{
+        if(count === 3){
+            grid2[i][j] = 1
+        }
+    }
+    count = 0
+}
