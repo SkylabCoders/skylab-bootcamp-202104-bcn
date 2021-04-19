@@ -34,29 +34,30 @@ const cellMove = () => {
 } 
 
 const checkNeighbours = function (i,j) {
-    if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
-        countNeighbour++;
-    } 
-    if (arrayGameOfLife[j-1] && arrayGameOfLife[i][j-1] ===1) {
-        countNeighbour++;
+
+    if (arrayGameOfLife[j+1]) {
+        isAlive(arrayGameOfLife[i][j+1])
     }
-    if (arrayGameOfLife[i-1] && arrayGameOfLife[j-1] && arrayGameOfLife[i-1][j-1] ===1) {
-        countNeighbour++;
+    if(arrayGameOfLife[j-1]) {
+        isAlive(arrayGameOfLife[i][j-1]);
     }
-    if (arrayGameOfLife[i-1] && arrayGameOfLife[i-1][j] ===1) {
-        countNeighbour++;
+    if(arrayGameOfLife[i-1] && arrayGameOfLife[j-1]) {
+        isAlive(arrayGameOfLife[i-1][j-1]);
     }
-    if (arrayGameOfLife[i-1] && arrayGameOfLife[j+1] && arrayGameOfLife[i-1][j+1] ===1) {
-        countNeighbour++;
+    if(arrayGameOfLife[i-1]) {
+        isAlive(arrayGameOfLife[i-1][j]);
     }
-    if (arrayGameOfLife[i+1] && arrayGameOfLife[j-1] && arrayGameOfLife[i+1][j-1] ===1) {
-        countNeighbour++;
+    if (arrayGameOfLife[i-1] && arrayGameOfLife[j+1]) {
+        isAlive(arrayGameOfLife[i-1][j+1]);
     }
-    if (arrayGameOfLife[i+1] && arrayGameOfLife[i+1][j] ===1) {
-        countNeighbour++;
+    if(arrayGameOfLife[i+1] && arrayGameOfLife[j-1]) {
+        isAlive(arrayGameOfLife[i+1][j-1]);
     }
-    if (arrayGameOfLife[i+1] && arrayGameOfLife[j+1] && arrayGameOfLife[i+1][j+1] ===1){
-        countNeighbour++;
+    if(arrayGameOfLife[i+1]) {
+        isAlive(arrayGameOfLife[i+1][j]);
+    }
+    if(arrayGameOfLife[i+1] && arrayGameOfLife[j+1]) {
+        isAlive(arrayGameOfLife[i+1][j+1]);
     }
 }
 
@@ -84,3 +85,9 @@ const changeArray = () => {
 }
 
 const timerGameOfLife = () => {setInterval(cellMove, 4000)};
+
+const isAlive = (cell) => {
+    if (cell === 1) {
+        countNeighbour++
+    }
+}
