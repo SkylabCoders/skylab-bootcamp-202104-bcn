@@ -13,32 +13,24 @@ const heroes = [
   { id: 20, name: 'Tornado' },
 ];
 
-const createSecondTitle = () => {
-  const secondTitle = document.createElement('h2');
-  secondTitle.innerText = 'Top Heores';
-  dashboard.appendChild(secondTitle);
-};
+function createDomElement(element, text) {
+  const elementToCreate = document.createElement(element);
+  if (text) {
+    elementToCreate.innerText = text;
+  }
+  dashboard.appendChild(elementToCreate);
+}
 
 const createNavigator = () => {
-  const navigator = document.createElement('ul');
-  const dashboardItem = document.createElement('li');
-  dashboardItem.innerText = 'Dashboard';
-  const heroesItem = document.createElement('li');
-  heroesItem.innerText = 'Heores';
-  navigator.appendChild(dashboardItem);
-  navigator.appendChild(heroesItem);
-  dashboard.appendChild(navigator);
-};
-const createTitle = () => {
-  const titlePage = document.createElement('h1');
-  titlePage.innerText = 'Tour of Heroes';
-  dashboard.appendChild(titlePage);
+  createDomElement('ul');
+  createDomElement('li', 'Dashboard');
+  createDomElement('li', 'Heroes');
 };
 
 const createDashboardPage = () => {
-  createTitle();
+  createDomElement('h1', 'Tour of Heroes');
   createNavigator();
-  createSecondTitle();
+  createDomElement('h2', 'Top Heroes');
 };
 
 createDashboardPage();
