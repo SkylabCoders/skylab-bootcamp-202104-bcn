@@ -1,6 +1,8 @@
+const arrayGameOfLife = createGrid(5,5);
+const grid2 = createGrid(5, 5);
 let countNeighbour = 0;
 
-const createGrid = (rows, columns) => {
+function createGrid (rows, columns) {
     let grid = new Array(rows);
     for (let i = 0; i < rows; i++) {
         grid[i] = new Array(columns).fill(0);
@@ -8,12 +10,10 @@ const createGrid = (rows, columns) => {
     return grid;
 }
 
-const arrayGameOfLife = createGrid(5,5);
-const grid2 = createGrid(5, 5);
-
 const coordsCreation = (num1, num2) => {
     return arrayGameOfLife[num1][num2] = 1;
 }
+
 const blinkerCreation = () => {
     coordsCreation(1, 2);
     coordsCreation(2, 2);
@@ -25,7 +25,7 @@ blinkerCreation();
 const gol  = () => {
     for(let i = 0; i<arrayGameOfLife.length; i++) {
         for(let j =0; j<arrayGameOfLife[i].length; j++) {
-            checkneighbours(i,j);
+            checkNeighbours(i,j);
             checkConditions(i,j);
         } 
     }
@@ -33,7 +33,7 @@ const gol  = () => {
     return arrayGameOfLife;
 } 
 
-const checkneighbours = function (i,j) {
+const checkNeighbours = function (i,j) {
     if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
         countNeighbour++;
     } 
