@@ -12,19 +12,24 @@ const UP = -1;
 const DOWN = 1;
 
 function turn(sourceArray) {
-    const arrayModifier =[ [...sourceArray[0]], [...sourceArray[1]], [...sourceArray[2]], [...sourceArray[3]], [...sourceArray[4]]];
+    let arrayModifier = [];
+    arrayOrigin.forEach((currentValue, i) => {
+        arrayModifier[i] = [...currentValue]
+    });
     for(let x = 0; x < sourceArray.length; x++){
         for(let y = 0; y < sourceArray[x].length; y++) {
             let arrayAround =  getArroundValues(sourceArray, x, y);
             arrayModifier[x][y] = validateNewTable(sourceArray[x][y], arrayAround);          
         }
     }  
-    arrayOrigin =[ [...arrayModifier[0]], [...arrayModifier[1]], [...arrayModifier[2]], [...arrayModifier[3]], [...arrayModifier[4]]];
+    arrayModifier.forEach((currentValue, i) => {
+        arrayOrigin[i] = [...currentValue]
+    });
 }
 
 function getArroundValues(sourceArray, x, y) {
     let responseArray = [];
-        //TODO: intentar
+    
     if ((sourceArray[x + LEFT] !== undefined) && (sourceArray[x + LEFT][y + UP] !== undefined) ) { responseArray.push(sourceArray[x + LEFT][y + UP])};
     if ((sourceArray[x] !== undefined) && (sourceArray[x][y + UP] !== undefined) ) { responseArray.push(sourceArray[x][y + UP])};
     if ((sourceArray[x + RIGHT] !== undefined) && (sourceArray[x + RIGHT][y + UP] !== undefined) ) { responseArray.push(sourceArray[x + RIGHT][y + UP])};
