@@ -61,8 +61,22 @@ const topHeroesContainer = () => {
   }
 };
 
+const searchContainer = () => {
+  const searchDiv = document.createElement('div');
+  searchDiv.classList.add('search-container');
+  main.appendChild(searchDiv);
+
+  const searchTitle = title('Hero Search');
+  searchDiv.appendChild(searchTitle);
+
+  const inputSearch = document.createElement('input');
+  inputSearch.setAttribute('input', 'text');
+  searchDiv.appendChild(inputSearch);
+};
+
 const generateDashboard = () => {
   generateHeader();
   topHeroesContainer();
+  searchContainer();
 };
 generateDashboard();
