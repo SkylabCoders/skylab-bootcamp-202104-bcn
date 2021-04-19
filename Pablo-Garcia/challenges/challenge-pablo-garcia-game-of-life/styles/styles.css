@@ -22,7 +22,7 @@ td.dead {
     background-color: transparent;
 }
 
-td.live {
+.live {
     background-color: #0f637d;
     border-radius: 10px;
 }button{

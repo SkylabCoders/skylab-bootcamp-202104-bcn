@@ -7,8 +7,8 @@ const initSetting ={
 
 }
 let timer;
-const grid = new Array(initSetting.rows);
-const copyGrid = new Array(initSetting.rows);
+let grid = new Array(initSetting.rows);
+let copyGrid = new Array(initSetting.rows);
 
 const createTable = () =>{
     const gridTable = document.querySelector('#app');
@@ -32,9 +32,14 @@ const initGrid = () =>{
         copyGrid[i] = new Array(initSetting.cols)
     }
 }
+
+
 const controls = () =>{
     const play = document.querySelector('#start');
     start.onclick = playHandleClick;
+
+    const randomButton = document.querySelector('#random');
+    randomButton.onclick = randomButtonHandler;
 }
 function cellHandleClick(){
     const cellCoordinantes = this.id.split("_");
@@ -51,21 +56,26 @@ function cellHandleClick(){
         grid[cellCoordinateX][cellCoordinateY]=0;
     }
 }
-function playHandleClick(){
 
-    if(initSetting.playing){
-        initSetting.playing = false;
-    }else{
-        for(let i=0; i< initSetting.rows; i++){
-            for(let j=0; j< initSetting.cols; j++){
-                const isAlive = Math.round(Math.random());
-                if(isAlive === 1){
-                    const cell = document.getElementById(i + "_" + j);
-                    cell.setAttribute("class", "live");
-                    grid[i][j] = 1;
-                }
+function randomButtonHandler(){
+    if(initSetting.playing) return;
+    for(let i=0; i< initSetting.rows; i++){
+        for(let j=0; j< initSetting.cols; j++){
+            const isAlive = Math.round(Math.random());
+            if(isAlive === 1){
+                const cell = document.getElementById(i + "_" + j);
+                cell.setAttribute("class", "live");
+                grid[i][j] = 1;
             }
         }
+    }
+}
+function playHandleClick(){
+
+    if (initSetting.playing) {
+        initSetting.playing = false;
+        clearTimeout(timer);
+    } else {
         initSetting.playing = true;
         playGame();
     }
@@ -74,9 +84,9 @@ function playHandleClick(){
 }
 function playGame(){
     evaluateNextGrid();
-    /* if(initSetting.playing){
+     if(initSetting.playing){
          timer = setTimeout(playGame, initSetting.timePlay);
-     }*/
+     }
 
 }
 const evaluateNextGrid = () => {
@@ -89,20 +99,14 @@ const evaluateNextGrid = () => {
     updateView();
 }
 const updateView = () =>{
-    for(let i=0; i < initSetting.rows; i++) {
+    for (let i = 0; i < initSetting.rows; i++) {
         for (let j = 0; j < initSetting.cols; j++) {
-            let cell = document.getElementById(`${i}_${j}`);
-
-            if(copyGrid[i][j] === 0){
-                cell.setAttribute("class", "" +
-                    "¡¡'");
+            var cell = document.getElementById(i + "_" + j);
+            if (grid[i][j] == 0) {
+                cell.setAttribute("class", "dead");
+            } else {
+                cell.setAttribute("class", "live");
             }
-            /*    if (grid[i][j] === 1) {
-
-                } else {
-                    cell.setAttribute("class", "live");
-                }*/
-
         }
     }
 }
