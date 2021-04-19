@@ -13,13 +13,16 @@ const heroes = [
   { id: 20, name: 'Tornado' },
 ];
 
-function createDomElement(element, text, href, parent) {
+function createDomElement(element, text, href, parent, id) {
   const elementToCreate = document.createElement(element);
   if (text) {
     elementToCreate.innerText = text;
   }
   if (href) {
     elementToCreate.setAttribute('href', href);
+  }
+  if (id) {
+    elementToCreate.setAttribute('id', id);
   }
   parent.appendChild(elementToCreate);
   return elementToCreate;
@@ -35,8 +38,7 @@ const createHeroesList = () => {
   const heroNames = createDomElement('ul', '', '', dashboard);
   heroesToShow.forEach(({ name }) => {
     const heroItem = createDomElement('li', '', '', heroNames);
-    // ../heroDetails/heroDetails#${name}.html`
-    createDomElement('a', name, '../heroDetails/heroDetails.html', heroItem);
+    createDomElement('a', name, `../heroDetails/heroDetails#${name}.html`, heroItem);
   });
 };
 
