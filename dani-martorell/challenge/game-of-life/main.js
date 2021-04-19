@@ -84,7 +84,7 @@ const applyRules = (copy, value, row, column, numberOfNeighbours) => {
         if(numberOfNeighbours === 2 || numberOfNeighbours === 3){
             copy[row][column] = 1;
         } else{
-        copy[row][column] === 0;
+        copy[row][column] = 0;
         }
     } else if(numberOfNeighbours === 3){
         copy[row][column] = 1;
