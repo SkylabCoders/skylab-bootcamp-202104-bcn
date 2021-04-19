@@ -1,4 +1,5 @@
 const heroDetail = document.getElementById('hero-detail');
+const urlParams = new URLSearchParams(window.location.search);
 
 const heroes = [
   { id: 11, name: 'Dr Nice' },
@@ -38,11 +39,17 @@ const createNavigator = (parent) => {
   return nav;
 };
 
+const getHero = (heroId) => heroes.find((hero) => hero.id === parseInt(heroId, 10));
+
 const createHeroDetail = () => {
   const header = createDomElement('header', '', '', heroDetail);
+
+  const id = urlParams.get('id');
+  const hero = getHero(id);
+
   createDomElement('h1', 'Tour of Heroes', '', header);
   createNavigator(header);
-  createDomElement('h2', 'Top Heroes', '', heroDetail);
+  createDomElement('h2', `${hero.name} details!`, '', heroDetail);
 };
 
 createHeroDetail();
