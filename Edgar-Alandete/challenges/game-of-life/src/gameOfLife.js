@@ -10,6 +10,10 @@ const ALIVE = 1;
 let newBoard = [];
 let intervalId = null;
 
+const updateCellStatus = (isAlive) => {
+  return isAlive ? ALIVE : DEAD;
+};
+
 const applyRules = (cell, neighbours, isAlive) => {
   let cellStatus = DEAD;
   if (isAlive(cell)) {
@@ -21,22 +25,8 @@ const applyRules = (cell, neighbours, isAlive) => {
   return cellStatus;
 };
 
-const updateFigure = (board, isAlive) => {
-  const updatedBoard = [];
-  board.forEach((row, rowIndex) => {
-    const newRow = [];
-    row.forEach((cell, cellIndex) => {
-      const neighbours = getNeighbours(board, rowIndex, cellIndex);
-      const cellStatus = applyRules(cell, neighbours, isAlive);
-      newRow.push(cellStatus);
-    });
-    updatedBoard.push(newRow);
-  });
-
-  console.log(updatedBoard);
-  newBoard = updatedBoard;
-
-  return updateTableDom(updatedBoard);
+const cellExists = (cell) => {
+  return cell !== undefined;
 };
 
 const hasNeighbour = (row, column) => {
@@ -51,7 +41,6 @@ const getNeighbours = (board, row, column) => {
   ) {
     neighbours++;
   }
-
   if (
     hasNeighbour(board[row - 1], board[column]) &&
     isAlive(board[row - 1][column])
@@ -98,31 +87,43 @@ const getNeighbours = (board, row, column) => {
   return neighbours;
 };
 
-const updateCellStatus = (isAlive) => {
-  return isAlive ? ALIVE : DEAD;
-};
+const updateFigure = (board, isAlive) => {
+  let updatedBoard = [];
+  board.forEach((row) => {
+    console.log("row" + row);
+    //updatedBoard = [...row];
+  });
 
+  board.forEach((row, rowIndex) => {
+    const newRow = [];
+    row.forEach((cell, cellIndex) => {
+      const neighbours = getNeighbours(board, rowIndex, cellIndex);
+      const cellStatus = applyRules(cell, neighbours, isAlive);
+      newRow.push(cellStatus);
+    });
+    updatedBoard.push(newRow);
+  });
+
+  console.log(updatedBoard);
+  newBoard = updatedBoard;
+
+  return updateTableDom(updatedBoard);
+};
 const isAlive = (cell) => cell === ALIVE;
 
-const cellExists = (cell) => {
-  return cell !== undefined;
-};
+const updateTableDom = (figure) => {
+  let tableRows = document.getElementsByTagName("tr");
 
-const initializeBoard = (width, height) => {
-  const initialArray = [];
-  const DEFAULT_BOARD_WIDTH = 10;
-  const DEFAULT_BOARD_HEIGHT = 10;
-  width = width ? width : DEFAULT_BOARD_WIDTH;
-  height = height ? height : DEFAULT_BOARD_HEIGHT;
-
-  for (let i = 0; i < width; i++) {
-    const row = [];
-    for (let j = 0; j < height; j++) {
-      row.push(0);
+  for (let row = 0; row < tableRows.length; row++) {
+    let cells = tableRows[row].cells;
+    for (let column = 0; column < cells.length; column++) {
+      if (isAlive(figure[row][column])) {
+        cells[column].classList.add("alive");
+      } else {
+        cells[column].classList.remove("alive");
+      }
     }
-    initialArray.push(row);
   }
-  return initialArray;
 };
 
 const createBlinker = (row, column, figure) => {
@@ -152,6 +153,23 @@ const createTableDOM = (width, height) => {
   body.appendChild(table);
 };
 
+const initializeBoard = (width, height) => {
+  const initialArray = [];
+  const DEFAULT_BOARD_WIDTH = 10;
+  const DEFAULT_BOARD_HEIGHT = 10;
+  width = width ? width : DEFAULT_BOARD_WIDTH;
+  height = height ? height : DEFAULT_BOARD_HEIGHT;
+
+  for (let i = 0; i < width; i++) {
+    const row = [];
+    for (let j = 0; j < height; j++) {
+      row.push(0);
+    }
+    initialArray.push(row);
+  }
+  return initialArray;
+};
+
 const createBoard = (width, height) => {
   const initialBoard = initializeBoard(width, height);
   createTableDOM(width, height);
@@ -161,20 +179,3 @@ const createBoard = (width, height) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => createBoard(5, 5));
-
-function updateTableDom(figure) {
-  let tableRows = document.getElementsByTagName("tr");
-
-  for (let row = 0; row < tableRows.length; row++) {
-    let cells = tableRows[row].cells;
-    for (let column = 0; column < cells.length; column++) {
-      if (isAlive(figure[row][column])) {
-        cells[column].classList.add("alive");
-        cells[column].classList.remove("dead");
-      } else {
-        cells[column].classList.add("dead");
-        cells[column].classList.remove("alive");
-      }
-    }
-  }
-}
