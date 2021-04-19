@@ -1,10 +1,3 @@
-// function gameOfLife(array, callback) {
-
-//     if(array[0,0])
-    
-// }
-
-// array, row, column
 
 let count = 0;
 
@@ -16,7 +9,6 @@ const createGrid = (rows, columns) => {
     return grid
 }
 
-// let grid = createGrid(5, 5);
 let arrayGameOfLife = createGrid(5,5);
 let grid2 = createGrid(5, 5);
 
