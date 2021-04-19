@@ -3,33 +3,14 @@ let maxRow = grid.length;
 let maxColumn = grid[0].length;
 const allCells = document.getElementsByClassName("grid");
 const cell = document.getElementsByClassName("cell");
-const buttonStart = document.getElementsByClassName("controls--start");
 
 grid[2][1] = 1;
 grid[2][2] = 1;
 grid[2][3] = 1;
-console.log(grid);
-buttonStart[0].addEventListener("click", myFunction);
 
 paintCurrentGeneration();
-grid = gameOfLife();
-console.log(grid);
-paintCurrentGeneration();
-grid = gameOfLife();
-console.log(grid);
-myFunction();
-
-function test() {
-  alert("vas be");
-}
 
 function startGame() {
-  setInterval(function () {
-    playGame();
-  }, 500);
-}
-
-function myFunction() {
   setInterval(function () {
     playGame();
   }, 500);
@@ -106,13 +87,29 @@ function countLiveNeighbourCells(a, b) {
   let neighbours = [];
 
   if (a + 1 === maxRow && b + 1 < maxColumn) {
-    neighbours = [grid[a - 1][b - 1], grid[a][b - 1], grid[a - 1][b]];
+    neighbours = [
+      grid[a - 1][b - 1],
+      grid[a][b - 1],
+      grid[a - 1][b]
+    ];
   } else if (a + 1 === maxRow && b - 1 < 0) {
-    neighbours = [grid[a - 1][b], grid[a - 1][b + 1], grid[a][b + 1]];
+    neighbours = [
+      grid[a - 1][b],
+      grid[a - 1][b + 1],
+      grid[a][b + 1]
+    ];
   } else if (a - 1 < 0 && b + 1 === maxColumn) {
-    neighbours = [grid[a][b - 1], grid[a + 1][b - 1], grid[a + 1][b]];
+    neighbours = [
+      grid[a][b - 1],
+      grid[a + 1][b - 1],
+      grid[a + 1][b]
+    ];
   } else if (a - 1 < 0 && b - 1 < 0) {
-    neighbours = [grid[a + 1][b], grid[a][b + 1], grid[a + 1][b + 1]];
+    neighbours = [
+      grid[a + 1][b],
+      grid[a][b + 1],
+      grid[a + 1][b + 1]
+    ];
   } else if (a - 1 < 0) {
     neighbours = [
       grid[a][b - 1],
