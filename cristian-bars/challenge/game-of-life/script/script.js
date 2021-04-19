@@ -84,46 +84,14 @@ function copyArray(arrayGeneral){
 function checkNeighbors(i, j, arrayGame){
     
     NeighborsCont = 0;
-    if(!(i-1<0 ||j-1<0)){
-        if(arrayGame[i-1][j-1]==1){
-            NeighborsCont = NeighborsCont + 1;
-        };
-    }
-    if(!(i-1<0)){
-        if(arrayGame[i-1][j]==1){
-            NeighborsCont = NeighborsCont + 1;
-        };
-    }
-    if(!(i-1<0 || j+1>4)){
-        if(arrayGame[i-1][j+1]==1){
-            NeighborsCont = NeighborsCont + 1;
-        };
-    }
-    if(!(j-1<0)){
-        if(arrayGame[i][j-1]==1){
-            NeighborsCont = NeighborsCont + 1;
-        };
-    }
-    if(!(j+1>4)){
-        if(arrayGame[i][j+1]==1){
-            NeighborsCont = NeighborsCont + 1;
-        };
-    }
-    if(!(i+1>4 || j-1<0)){
-        if(arrayGame[i+1][j-1]==1){
-            NeighborsCont = NeighborsCont + 1;
-        };
-    }
-    if(!(i+1>4)){
-        if(arrayGame[i+1][j]==1){
-            NeighborsCont = NeighborsCont + 1;
-        };
-    }
-    if(!(i+1>4 || j+1>4)){
-        if(arrayGame[i+1][j+1]==1){
-            NeighborsCont = NeighborsCont + 1;
-        };
-    }   
+    if((!(i-1<0 ||j-1<0)) && (arrayGame[i-1][j-1]==1)){NeighborsCont ++;}
+    if((!(i-1<0)) && (arrayGame[i-1][j]==1)){NeighborsCont ++;};
+    if((!(i-1<0 || j+1>4)) && (arrayGame[i-1][j+1]==1)){NeighborsCont ++;}
+    if((!(j-1<0)) && (arrayGame[i][j-1]==1)){NeighborsCont ++;}
+    if((!(j+1>4)) && (arrayGame[i][j+1]==1)){NeighborsCont ++;}
+    if((!(i+1>4 || j-1<0)) && (arrayGame[i+1][j-1]==1)){NeighborsCont ++;}
+    if((!(i+1>4)) && (arrayGame[i+1][j]==1)){NeighborsCont ++;}
+    if((!(i+1>4 || j+1>4)) && (arrayGame[i+1][j+1]==1)){NeighborsCont ++;}   
     return NeighborsCont;
             
 }
