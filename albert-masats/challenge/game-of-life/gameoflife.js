@@ -83,8 +83,4 @@ const changeArray = () => {
     }
 }
 
-const timerGameOfLife = () => {
-    setInterval(
-        cellMove
-    , 4000);
-}
+const timerGameOfLife = () => {setInterval(cellMove, 4000)};
