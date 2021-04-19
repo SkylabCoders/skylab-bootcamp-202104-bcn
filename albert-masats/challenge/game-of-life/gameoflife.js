@@ -82,7 +82,7 @@ let timerGol = () => {
 
     setInterval(
        gol
-    , 6000);
+    , 4000);
 }
 
 let changeArray = () => {
