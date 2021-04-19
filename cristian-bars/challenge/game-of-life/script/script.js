@@ -3,7 +3,7 @@ let exitArray = [];
 let row = 5;
 let col = 5;
 let arrayGame = [];
-let cont;
+let NeighborsCont;
 
 game();
 
@@ -13,17 +13,17 @@ function game(){
     console.log("poso el blinker");
     blinker(arrayGeneral);
     console.log("miro els pins");
-    check(row, col, arrayGeneral, exitArray);
+    checkPointGame(row, col, arrayGeneral, exitArray);
     console.log("pinto la final");
     paint(arrayGeneral);
 }
 
 
-function matrix(a,b,arrayGeneral){
+function matrix(row,col,arrayGeneral){
     let row = [];
-    for (let i = 0; i<a; i++){
+    for (let i = 0; i<row; i++){
         display += "<tr class='game_row'>";
-        for (let j = 0; j<b; j++){
+        for (let j = 0; j<col; j++){
             row[j] = 0;
             display += "<td class='game_column'></td>";
         }
@@ -48,13 +48,13 @@ function drawPin(row,col) {
     return arrayGeneral[row][col] = 1;
 }
 
-function check(a, b, arrayGame, exitArray){
+function checkPointGame(row, col, arrayGame, exitArray){
     
     copyArray(arrayGeneral);
     console.log(arrayGame);
     
-    for (let i = 0; i<a; i++){
-        for (let j = 0; j<b; j++){
+    for (let i = 0; i<row; i++){
+        for (let j = 0; j<col; j++){
             checkNeighbors(i, j, arrayGame);
             if (arrayGame[i][j] == 1 && cont == 2 || cont == 3){
                 exitArray[i][j] = 1;
@@ -82,48 +82,48 @@ function copyArray(arrayGeneral){
 
 function checkNeighbors(i, j, arrayGame){
     
-    cont = 0;
+    NeighborsCont = 0;
     if(!(i-1<0 ||j-1<0)){
         if(arrayGame[i-1][j-1]==1){
-            cont = cont + 1;
+            NeighborsCont = NeighborsCont + 1;
         };
     }
     if(!(i-1<0)){
         if(arrayGame[i-1][j]==1){
-            cont = cont + 1;
+            NeighborsCont = NeighborsCont + 1;
         };
     }
     if(!(i-1<0 || j+1>4)){
         if(arrayGame[i-1][j+1]==1){
-            cont = cont + 1;
+            NeighborsCont = NeighborsCont + 1;
         };
     }
     if(!(j-1<0)){
         if(arrayGame[i][j-1]==1){
-            cont = cont + 1;
+            NeighborsCont = NeighborsCont + 1;
         };
     }
     if(!(j+1>4)){
         if(arrayGame[i][j+1]==1){
-            cont = cont + 1;
+            NeighborsCont = NeighborsCont + 1;
         };
     }
     if(!(i+1>4 || j-1<0)){
         if(arrayGame[i+1][j-1]==1){
-            cont = cont + 1;
+            NeighborsCont = NeighborsCont + 1;
         };
     }
     if(!(i+1>4)){
         if(arrayGame[i+1][j]==1){
-            cont = cont + 1;
+            NeighborsCont = NeighborsCont + 1;
         };
     }
     if(!(i+1>4 || j+1>4)){
         if(arrayGame[i+1][j+1]==1){
-            cont = cont + 1;
+            NeighborsCont = NeighborsCont + 1;
         };
     }   
-    return cont;
+    return NeighborsCont;
             
 }
 
