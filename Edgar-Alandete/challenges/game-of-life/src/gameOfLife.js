@@ -1,9 +1,7 @@
 const BLINKER_HEIGHT = 5;
 const BLINKER_WIDTH = 5;
-
 const TOAD_WIDTH = 6;
 const TOAD_HEIGHT = 6;
-
 const DEAD = 0;
 const ALIVE = 1;
 
@@ -91,7 +89,6 @@ const updateFigure = (board, isAlive) => {
   let updatedBoard = [];
   board.forEach((row) => {
     console.log("row" + row);
-    //updatedBoard = [...row];
   });
 
   board.forEach((row, rowIndex) => {
@@ -141,6 +138,7 @@ const createTableDOM = (width, height) => {
   let body = document.getElementById("app");
   let table = document.createElement("table");
   let tableBody = document.createElement("tbody");
+
   for (let row = 0; row < width; row++) {
     let tr = document.createElement("tr");
     for (let column = 0; column < height; column++) {
@@ -149,6 +147,7 @@ const createTableDOM = (width, height) => {
     }
     tableBody.appendChild(tr);
   }
+
   table.appendChild(tableBody);
   body.appendChild(table);
 };
@@ -167,6 +166,7 @@ const initializeBoard = (width, height) => {
     }
     initialArray.push(row);
   }
+
   return initialArray;
 };
 
