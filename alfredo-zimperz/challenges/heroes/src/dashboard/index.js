@@ -79,6 +79,12 @@ APP_ELEMENT.appendChild(topHeroesSection);
 // -- End Top Heroes section
 
 // -- Create search section
+const searchLabel = document.createElement('p');
+searchLabel.classList.add('search__label');
+
+const handleChange = (e) => {
+  searchLabel.innerText = e.target.value;
+};
 const searchSection = document.createElement('section');
 searchSection.classList.add('search');
 const searchH2 = document.createElement('h2');
@@ -87,8 +93,10 @@ const searchH3 = document.createElement('h3');
 searchH3.innerText = 'Search';
 const searchInput = document.createElement('input');
 searchInput.classList.add('search__input');
+searchInput.onkeyup = (e) => handleChange(e);
 searchSection.appendChild(searchH2);
 searchSection.appendChild(searchH3);
+searchSection.appendChild(searchLabel);
 searchSection.appendChild(searchInput);
 APP_ELEMENT.appendChild(searchSection);
 // -- End search section
