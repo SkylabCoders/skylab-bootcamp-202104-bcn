@@ -37,6 +37,15 @@ const createHeaderDashboard = () => {
 };
 createHeaderDashboard();
 
+function mouseOver(name) {
+  const title = document.querySelector('.title');
+  if (name) {
+    title.innerHTML = `${name} is my hero`;
+  } else {
+    title.innerHTML = '';
+  }
+}
+
 const createListHeroes = (array) => {
   const createListContainer = document.createElement('div');
   mainSection.appendChild(createListContainer);
@@ -48,14 +57,29 @@ const createListHeroes = (array) => {
     const reference = document.createElement('a');
     newLi.appendChild(reference);
     reference.innerHTML = `${element.name}`;
+    reference.classList.add('link');
     reference.href = './../heroes-details/heroes-details.html';
+    reference.onmouseover = (e) => (mouseOver(e.target.innerHTML));
+    reference.onmouseout = () => (mouseOver(undefined));
   });
 };
 createListHeroes(heroes);
 
-const getButtonBack = () => {
-  const buttonBack = document.createElement('button');
-  buttonBack.innerHTML = 'Back';
-  mainSection.appendChild(buttonBack);
+const addLastPhrase = () => {
+  const finalTitle = document.createElement('h3');
+  finalTitle.classList.add('title');
+  mainSection.appendChild(finalTitle);
 };
-getButtonBack();
+addLastPhrase();
+
+const getOnclickDetails = () => {
+  window.location.replace('./../heroes-details/heroes-details.html');
+};
+
+const getButtonDetails = () => {
+  const buttonDetails = document.createElement('button');
+  buttonDetails.innerHTML = 'View Details';
+  mainSection.appendChild(buttonDetails);
+  buttonDetails.onclick = () => getOnclickDetails();
+};
+getButtonDetails();

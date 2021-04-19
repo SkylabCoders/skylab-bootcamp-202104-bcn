@@ -54,9 +54,14 @@ const getHeroeDetails = () => {
 };
 getHeroeDetails();
 
-const getButtonDetails = () => {
-  const buttonViewDetails = document.createElement('button');
-  buttonViewDetails.innerHTML = 'View details';
-  mainSection.appendChild(buttonViewDetails);
+const getOnclickBack = () => {
+  window.location.replace('./../dashboard/dashboard.html');
 };
-getButtonDetails();
+
+const getButtonBack = () => {
+  const buttonBack = document.createElement('button');
+  buttonBack.innerHTML = 'Back';
+  mainSection.appendChild(buttonBack);
+  buttonBack.onclick = () => getOnclickBack();
+};
+getButtonBack();
