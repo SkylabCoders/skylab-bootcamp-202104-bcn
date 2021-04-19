@@ -28,9 +28,6 @@ function tableCreate(rows, colums) {
         td = tr.insertCell();
         currentGeneration[i].push(Math.round(Math.random()));
         td.appendChild(document.createTextNode(currentGeneration[i][j]));
-        if (currentGeneration[i][j] === 1) {
-          td.style.backgroundColor = "#99ff99";
-        }
       }
     }
     body.appendChild(tbl);
