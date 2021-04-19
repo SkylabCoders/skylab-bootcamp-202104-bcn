@@ -1,0 +1,59 @@
+$text-font: "Orelega One", cursive;
+body {
+  background-image: url("./image/background.jpg");
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  font-size: x-large;
+  font-family: $text-font;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(65, 150, 150);
+}
+.header-game {
+  &__rules {
+    text-align: left;
+    list-style: decimal;
+    font-family: $text-font;
+  }
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  color: rgb(0, 136, 255);
+  &__app {
+    display: flex;
+    justify-self: center;
+  }
+}
+.game-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    &--blinker,
+    &--sapo {
+      font-family: $text-font;
+      background-color: aqua;
+      font-size: x-large;
+      border: none;
+      width: 150px;
+      height: 50px;
+      margin-left: 20px;
+      border-radius: 15px;
+    }
+  }
+}
+.copy {
+  display: flex;
+  justify-content: center;
+  margin-top: 30vh;
+}

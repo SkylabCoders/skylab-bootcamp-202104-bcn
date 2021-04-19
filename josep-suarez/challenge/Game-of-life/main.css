@@ -1,0 +1,90 @@
+body {
+  background-image: url("./image/background.jpg");
+  color: black;
+  font-weight: bolder;
+  font-size: x-large;
+  font-family: "Orelega One", cursive;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #419696;
+}
+
+.header-game__rules {
+  text-align: left;
+  list-style: decimal;
+  font-family: "Orelega One", cursive;
+}
+
+.table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 20px;
+  color: #0088ff;
+}
+
+.table__app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: center;
+}
+
+.game-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.game-footer__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.game-footer__buttons--blinker, .game-footer__buttons--sapo {
+  font-family: "Orelega One", cursive;
+  background-color: aqua;
+  font-size: x-large;
+  border: none;
+  width: 150px;
+  height: 50px;
+  margin-left: 20px;
+  border-radius: 15px;
+}
+
+.copy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30vh;
+}
+/*# sourceMappingURL=main.css.map */
