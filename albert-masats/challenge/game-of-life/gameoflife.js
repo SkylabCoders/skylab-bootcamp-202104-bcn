@@ -22,7 +22,7 @@ const blinkerCreation = () => {
 
 blinkerCreation();
 
-const gol  = () => {
+const cellMove = () => {
     for(let i = 0; i<arrayGameOfLife.length; i++) {
         for(let j =0; j<arrayGameOfLife[i].length; j++) {
             checkNeighbours(i,j);
@@ -83,8 +83,8 @@ const changeArray = () => {
     }
 }
 
-const timerGol = () => {
+const timerGameOfLife = () => {
     setInterval(
-       gol
+        cellMove
     , 4000);
 }
