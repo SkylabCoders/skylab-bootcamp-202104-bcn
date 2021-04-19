@@ -11,21 +11,27 @@ const heroes = [
     { id: 20, name: 'Tornado' }
     ]
 
-function generateTitle (){
+function generateHeader(){
     const container = document.querySelector('.container');
-    const title = document.createElement('h1');
-    container.appendChild(title);
-    title.className='title';
-    title.innerText = 'Tour of Heroes';
-    generateNav(container);
+    const header = document.createElement('header');
+    header.className='header';
+    container.appendChild(header);
+    generateTitle(header);
+    generateNav(header);
     generateDashboard(container);
-
 }
 
-function generateNav (container){
+function generateTitle (header){ 
+    const title = document.createElement('h1');
+    header.appendChild(title);
+    title.className='header__title';
+    title.innerText = 'Tour of Heroes';   
+}
+
+function generateNav (header){
     const nav = document.createElement('nav');
-    container.appendChild(nav);
-    nav.className='nav';
+    header.appendChild(nav);
+    nav.className='header__nav';
     generateNavButton(nav,'Dashboard');
     generateNavButton(nav,'Heroes');
 }
