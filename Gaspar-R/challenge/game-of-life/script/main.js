@@ -1,5 +1,5 @@
-const arrayWidth = 150;
-const arrayHeight = 100;
+const arrayWidth = 82;
+const arrayHeight = 70;
 
 let initialArray = [];
 let killerArray = [];
@@ -55,6 +55,7 @@ const createVerticalBlinker = (column, row, array) => {
         createdVerticalArray[row - 1][column] = 1;
         createdVerticalArray[row][column + 1] = 1;
 
+
         createMatrixForHTML (array);
 
         return createdVerticalArray;
@@ -87,7 +88,8 @@ function checkNeighbours(column,row,columnDesplacement,rowDisplacement,array) {
     let currentColumn = column + columnDesplacement;
     let currentRow = row + rowDisplacement;
     
-    if (currentColumn !== -1 && currentRow !== -1 && currentColumn < array[column].length && currentRow < array[row].length ){
+    if (currentColumn !== -1 && currentRow !== -1 && array[column] !== undefined && array[column][row] !== undefined && currentColumn < 
+        array[column].length && currentRow < array[row].length){
         if (array[currentRow][currentColumn] === 0) {
             checkNeighboursFromLiveNeighbours(currentColumn, currentRow, array);
         }if (array[currentRow][currentColumn] === 1) {
@@ -123,7 +125,7 @@ const searchAlives = (array) => {
     }, 100)
 };
 
-let array6 = searchAlives(newArray);
+
 
 function applyChanges(nextGenArray, newArray) {
     nextGenArray = [...newArray];
@@ -168,14 +170,15 @@ function countNeighboursFromLiveNeighbours(column,row,columnDesplacement,rowDisp
     
     let currentColumn = column + columnDesplacement;
     let currentRow = row + rowDisplacement;
+    if (array[column] !== undefined && array[column][row] !== undefined && currentColumn !== 0 && currentRow !== 0 && currentColumn !== -1 && currentRow !== -1 &&  currentColumn !== array.length -1 && currentRow !== array[column].length -1){
+        if ( column< array[column].length && row < array[row].length ){
 
-    if ( column+1< array[column].length && row+1 < array[row].length ){
-
-    if (currentColumn !== -1 && currentRow !== -1 && array[currentColumn][currentRow] !== undefined && 
-        array[currentRow][currentColumn] === 1 )
-         {
-              return true;
-          }
+        if (currentColumn !== -1 && currentRow !== -1 && array[currentColumn] !== undefined && array[currentColumn][currentRow] !== undefined
+              && array[currentRow][currentColumn] === 1 )
+            {
+                return true;
+            }
+        }
     }
 }
 
@@ -228,3 +231,8 @@ function stopTime (){
 }   
 
 
+let array6 = searchAlives(newArray);
+
+function startGame (newArray){
+     searchAlives(newArray);
+}

@@ -9,40 +9,65 @@
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
-    border: 0.5px solid green;
+    border: 0.5px solid rgb(37, 18, 247);
+   
+    background: rgb(196, 92, 54);
+    background: url(./petri.jpg) center no-repeat;
+
   }
   
 
   .celdas{
-    border: 0.5px solid green;
-    height: 2px;
-    width: 2px;
+    border: 1px solid grey;
+    background-color: hotpink;
+    height: 3px;
+    width: 3px;
     text-align: center;
     border-radius: 50%;
 
   }
 
   .deadCell {
-    border: 0.5px solid green;
-    height: 2px;
-    width: 2px;
+    border: 0.5px solid rgb(2, 50, 2);
+    height: 3px;
+    width: 3px;
     text-align: center;
     border-radius: 50%;
+
   }
 
   .aliveCell {
-    border: 0.5px solid green;
-    height: 2px;
-    width: 2px;
+
+    border: 0.5px solid rgb(255, 11, 100);
+    height: 3px;
+    width: 3px;
     text-align: center;
     border-radius: 50%;
-    background-color: red;
+    background-color: rgb(230, 54, 177);
   }
 
-  .stopBtn{
+  .stopBtn , .startBtn {
     height: 50px;
     width: 70px;
     align-items: center;
     font-size: large;
+    justify-content: center;
+    color: mediumseagreen;
+    background-color: darkgreen;
+  }
 
+  .btns{
+    display: flex;
+    margin: 6px;
+    justify-content: space-evenly;
+    background: green;
+    }
+
+  h1 {
+      display: flex;
+      justify-content: center;
+      color: mediumseagreen;
+      background-color: darkgreen;
+      height: 41px;
+      margin: 6px auto;
   }
