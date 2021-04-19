@@ -31,20 +31,18 @@ function createDomElement(element, text, href, parent, id) {
 function showFavouriteHero(hero) {
   const container = document.getElementById('hero');
   container.innerText = `${hero.name} is my hero`;
-  createDomElement('a', 'View Details', `../heroDetails/heroDetails#${hero.id}.html`, container);
+  createDomElement('a', 'View Details', `../heroDetails/heroDetails?id=${hero.id}.html`, container);
 }
 
 const createHeroesList = () => {
   const heroElements = createDomElement('ul', '', '', heroesList);
   heroes.forEach((hero) => {
     const heroItem = createDomElement('li', '', '', heroElements);
-    // ../heroDetails/heroDetails#${hero.name}.html`
     createDomElement('span', hero.id, '', heroItem);
     createDomElement('a', hero.name, '', heroItem);
     heroItem.onclick = function heroCreation() {
       showFavouriteHero(hero);
     };
-    // () => test;
   });
 };
 
