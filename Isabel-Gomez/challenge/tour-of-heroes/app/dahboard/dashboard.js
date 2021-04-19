@@ -38,22 +38,22 @@ const createButtonsHeroes = () => {
 
   const detailsHeroesOne = document.createElement('a');
   detailsHeroesOne.innerHTML = heroes[1].name;
-  detailsHeroesOne.setAttribute('href', './../heroes/heroes.html');
+  detailsHeroesOne.setAttribute('href', './../heroes-details/heroes-details.html');
   createHeroesContainer.appendChild(detailsHeroesOne);
 
   const detailsHeroesTwo = document.createElement('a');
   detailsHeroesTwo.innerHTML = 'Bombasto';
-  detailsHeroesTwo.setAttribute('href', './../heroes/heroes.html');
+  detailsHeroesTwo.setAttribute('href', './../heroes-details/heroes-details.html');
   createHeroesContainer.appendChild(detailsHeroesTwo);
 
   const detailsHeroesThree = document.createElement('a');
   detailsHeroesThree.innerHTML = 'Celeritas';
-  detailsHeroesThree.setAttribute('href', './../heroes/heroes.html');
+  detailsHeroesThree.setAttribute('href', './../heroes-details/heroes-details.html');
   createHeroesContainer.appendChild(detailsHeroesThree);
 
   const detailsHeroesFour = document.createElement('a');
   detailsHeroesFour.innerHTML = 'Magneta';
-  detailsHeroesFour.setAttribute('href', './../heroes/heroes.html');
+  detailsHeroesFour.setAttribute('href', './../heroes-details/heroes-details.html');
   createHeroesContainer.appendChild(detailsHeroesFour);
 };
 createButtonsHeroes();

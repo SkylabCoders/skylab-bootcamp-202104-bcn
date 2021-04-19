@@ -40,7 +40,10 @@ const createListHeroes = (array) => {
   array.forEach((element) => {
     const newLi = document.createElement('li');
     getList.appendChild(newLi);
-    newLi.innerHTML = `${element.name}`;
+    const reference = document.createElement('a');
+    newLi.appendChild(reference);
+    reference.innerHTML = `${element.name}`;
+    reference.href = './../heroes-details/heroes-details.html';
   });
 };
 createListHeroes(heroes);
