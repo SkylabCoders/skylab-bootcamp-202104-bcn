@@ -59,8 +59,19 @@ function createInput() {
   document.body.appendChild(input);
 }
 
+function createButton() {
+  const button = document.createElement('button');
+  const link = document.createElement('a');
+  const text = document.createTextNode('Clear Messages');
+  button.appendChild(link);
+  link.appendChild(text);
+
+  document.body.appendChild(button);
+}
+
 printPageTitle();
 createNavList();
 printPageSubTitle();
 createHeroesList();
 createInput();
+createButton();

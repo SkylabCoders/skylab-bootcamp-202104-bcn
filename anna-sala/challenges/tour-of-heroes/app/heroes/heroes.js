@@ -39,6 +39,12 @@ function printPageSubTitle() {
   subtitle.innerHTML = 'My Heroes';
   document.body.appendChild(subtitle);
 }
+function createInput() {
+  const input = document.createElement('input');
+  input.setAttribute('type', 'text');
+  document.body.appendChild(input);
+}
+
 function createHeroesList() {
   const navigationList = document.createElement('ul');
   navigationList.setAttribute('id', 'heroes-list');
@@ -55,4 +61,5 @@ function createHeroesList() {
 printPageTitle();
 createNavList();
 printPageSubTitle();
+createInput();
 createHeroesList();
