@@ -1,16 +1,29 @@
-let grid = initializeGrid (20,20);
+let rows = 30;
+let cols = 30;
 let board = document.getElementsByClassName("grid-board__board");
 let playButton = document.getElementById("play");
+let speedSlider = document.getElementsByClassName("slidecontainer__slider");
+let speedSliderText = document.getElementsByClassName("slidecontainer__text");
+let generationCounter = document.getElementById("bottom-menu__generationCounter");
+let generation = 0;
 let interval;
+let grid = initializeGrid (rows,cols);
 
 printGrid();
 
-playButton.addEventListener("click", () =>{
+speedSlider[0].onchange = function () { //When changing speedSlider values
+    speedSliderText[0].innerText =`Speed (${(speedSlider[0].value/1000).toFixed(1)}s):`;
+    if (playButton.className === "stop") {
+        clearInterval(interval);
+        interval = setInterval(() => drawGrid(grid), speedSlider[0].value)
+    }
+};
+
+playButton?.addEventListener("click", () =>{ //When pressing play/stop button
     if (playButton.className === "play") {
-        interval = setInterval(() => drawGrid(grid), 1000)
+        interval = setInterval(() => drawGrid(grid), speedSlider[0].value)
         playButton.className = "stop";
         playButton.innerText = "STOP";
-        interval;
     } else if (playButton.className === "stop") {
         playButton.className = "play";
         playButton.innerText = "PLAY";
@@ -63,7 +76,7 @@ function printGrid () {
                     } else {newCell(grid, (cell.id.split("x"))[0],(cell.id.split("x"))[1])}
                 }); 
                 cell.id = `${i}x${j}`;
-                board[0].appendChild(cell);
+                board[0]?.appendChild(cell);
             } else if (grid[i][j] === 0) {
                 let cell = document.createElement('div');
                 cell.className = "dead";
@@ -73,7 +86,7 @@ function printGrid () {
                     } else {newCell(grid, (cell.id.split("x"))[0],(cell.id.split("x"))[1])}
                 }); 
                 cell.id = `${i}x${j}`;
-                board[0].appendChild(cell);
+                board[0]?.appendChild(cell);
             }
         }
     }
@@ -96,7 +109,8 @@ function reprintGrid () {
 
 function drawGrid (previousGrid) {
     let newGrid = JSON.parse(JSON.stringify(previousGrid));
-    // debugger;
+    generation++;
+    generationCounter.innerText =`${generation}`;
     for (i=0 ; i < previousGrid.length ; i++) {
         for (j=0 ; j < previousGrid[0].length ; j++) {
             
@@ -134,16 +148,13 @@ function countNeighbors (grid, row, col){
 
     for (k = -1; k < 2 ; k++) {
         for (l = -1 ; l < 2 ; l++) {
-            if (row+k > -1 && row+k < grid.length && col+l > -1 && col+l < grid[0].length){
-                sum += grid[row+k][col+l]
-            }
+                sum += grid[(row+k+rows) % rows][(col+l+cols) % cols]
         }
     } 
     sum = sum - grid[row][col];
     return sum;
 }
 
-// initializeGrid (5,5);
 
 ////////////////////// TEST SECTION //////////////////////////////////////////////////////////////////////
 
@@ -176,7 +187,7 @@ function countNeighbors (grid, row, col){
 //     })
 // })
 
-// // initializeGrid Test
+// // // initializeGrid Test
 
 // describe('Given an initializeGrid function', () => {
 //     let testArray = initializeGrid(5,5)
@@ -274,6 +285,33 @@ function countNeighbors (grid, row, col){
 //             test(`Then return ${scenario.result}`,() => {
 //                 // Act 
 //                 const result = countNeighbors(scenario.testArray, scenario.b, scenario.c);
+//                 // Assert
+//                 expect(result).toStrictEqual(scenario.result);
+//             })
+//         })
+//     })
+// })
+
+// drawGrid  Test
+
+// describe('Given an drawGrid  function', () => {
+    
+//     const scenarios = [
+//         { testArray: initializeGrid (5,5),
+//             result: 
+//                [[0,0,0,0,0],
+//                 [0,0,0,0,0],
+//                 [0,1,0,1,0],
+//                 [0,0,1,1,0],
+//                 [0,0,1,0,0]]
+//         }
+//     ];
+    
+//     scenarios.forEach((scenario) => {
+//         describe(`When invoked with the array: ${scenario.testArray}`, () => {
+//             test(`Then return ${scenario.result}`,() => {
+//                 // Act 
+//                 const result = countNeighbors(scenario.testArray);
 //                 // Assert
 //                 expect(result).toStrictEqual(scenario.result);
 //             })

@@ -5,20 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../style/style.css">
+    <link rel="shortcut icon" href="./../img/favicon.png" type="image/x-icon">
     <title>Game of life</title>
 </head>
 <body>
     <header>
         <div class="header__title"><img src="./../img/logo.png" alt=""></div>
     </header>
-    <div class="grid-board">
-        <input type="checkbox" class ="grid-board__grid-cell">
-        <input type="checkbox" class ="grid-board__grid-cell">
-        <input type="checkbox" class ="grid-board__grid-cell">
-        <input type="checkbox" class ="grid-board__grid-cell">
-        <input type="checkbox" class ="grid-board__grid-cell">
-        <input type="checkbox" class ="grid-board__grid-cell">
-    </div>
+    <section class="grid-board">
+        <div class="grid-board__board">
 
+        </div>
+    </section>
+
+    <section class="bottom-menu">
+        <div class="bottom-menu__slidecontainer">
+            <p class="slidecontainer__text">Speed (0.1s - 3s):</p>
+            <input class="slidecontainer__slider" type="range" min="100" max="3000" value="1500">
+        </div>
+        <button class="play" id="play">PLAY</button>
+        <button id="next" onclick="drawGrid(grid)">NEXT</button>
+        <span id="bottom-menu__generationCounter">0</span>
+    </section>
+
+<script src="./../src/index.test.js"></script>
 </body>
 </html>
