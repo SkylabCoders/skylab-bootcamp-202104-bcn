@@ -62,8 +62,8 @@ const checkNeighbours = function (i,j) {
 }
 
 const checkConditions = function (i,j) {
-    if (arrayGameOfLife[i][j] === 1){ 
-        if(countNeighbour <= 1 || countNeighbour >= 4){
+    if (arrayGameOfLife[i][j] === 1) { 
+        if(countNeighbour <= 1 || countNeighbour >= 4) {
             arrayGameOfLife2[i][j] = 0;
         }else{
             arrayGameOfLife2[i][j] = 1;
@@ -88,6 +88,6 @@ const timerGameOfLife = () => {setInterval(cellMove, 4000)};
 
 const isAlive = (cell) => {
     if (cell === 1) {
-        countNeighbour++
+        countNeighbour++;
     }
 }
