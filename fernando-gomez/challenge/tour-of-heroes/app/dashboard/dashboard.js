@@ -32,14 +32,16 @@ const mainTitle = () => {
 const navigationButton = (name) => {
   const newButton = document.createElement('button');
   newButton.innerHTML = name;
+  newButton.setAttribute('onclick', `location.href='./../${name}/${name}.html'`);
+
   return newButton;
 };
 
 const generateNavigator = () => {
   const navigator = document.createElement('div');
   const title = mainTitle();
-  const dashboardButton = navigationButton('Dashboard');
-  const heroesButton = navigationButton('Heroes');
+  const dashboardButton = navigationButton('dashboard');
+  const heroesButton = navigationButton('heroes');
   navigator.classList = 'navigator';
   navigator.appendChild(title);
   navigator.appendChild(dashboardButton);
@@ -47,15 +49,15 @@ const generateNavigator = () => {
   return navigator;
 };
 
-const topHeroAnchor = (heroId) => {
-  const heroAnchor = document.createElement('a');
+const topHeroButton = (heroId) => {
+  const heroButton = document.createElement('button');
   const hero = getHero(heroId);
-  heroAnchor.classList = 'topHeroes__anchor';
-  heroAnchor.innerHTML = hero.name;
-  heroAnchor.setAttribute('href', './../hero/hero-detail.html');
-  heroAnchor.value = heroId;
+  heroButton.classList = 'topHeroes__anchor';
+  heroButton.innerHTML = hero.name;
+  heroButton.setAttribute('onclick', "location.href='./../hero-detail/hero-detail.html'");
+  heroButton.value = heroId;
 
-  return heroAnchor;
+  return heroButton;
 };
 
 const topHeroTitle = () => {
@@ -70,10 +72,10 @@ const generateTopHeroes = () => {
   const topHeroesTitle = topHeroTitle();
   topHeroes.classList = 'topHeroes';
   topHeroes.appendChild(topHeroesTitle);
-  topHeroes.appendChild(topHeroAnchor(12));
-  topHeroes.appendChild(topHeroAnchor(13));
-  topHeroes.appendChild(topHeroAnchor(14));
-  topHeroes.appendChild(topHeroAnchor(15));
+  topHeroes.appendChild(topHeroButton(12));
+  topHeroes.appendChild(topHeroButton(13));
+  topHeroes.appendChild(topHeroButton(14));
+  topHeroes.appendChild(topHeroButton(15));
 
   return topHeroes;
 };

@@ -22,14 +22,16 @@ const mainTitle = () => {
 const navigationButton = (name) => {
   const newButton = document.createElement('button');
   newButton.innerHTML = name;
+  newButton.setAttribute('onclick', `location.href='./../${name}/${name}.html'`);
+
   return newButton;
 };
 
 const generateNavigator = () => {
   const navigator = document.createElement('div');
   const title = mainTitle();
-  const dashboardButton = navigationButton('Dashboard');
-  const heroesButton = navigationButton('Heroes');
+  const dashboardButton = navigationButton('dashboard');
+  const heroesButton = navigationButton('heroes');
   navigator.classList = 'navigator';
   navigator.appendChild(title);
   navigator.appendChild(dashboardButton);
