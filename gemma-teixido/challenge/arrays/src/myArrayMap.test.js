@@ -1,9 +1,10 @@
 function myArrayMap(array, callback) {
+  let arrayWithMap = [];
   for (i = 0; i < array.length; i++) {
     const value = array[i];
-    array[i] = callback(value);
+    arrayWithMap[i] = callback(value);
   }
-  return array;
+  return arrayWithMap;
 }
 
 describe("Given an array", () => {
