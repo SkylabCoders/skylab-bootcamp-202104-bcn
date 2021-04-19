@@ -1,6 +1,7 @@
 const arrayHeight = 6;
 const arrayRows = 6;
 
+//tested
 const directionBlinker = (row, column) => {
   let positions = [
     [row - 1, column],
@@ -9,6 +10,7 @@ const directionBlinker = (row, column) => {
   ];
   return positions;
 };
+//tested
 const directionSapo = (row, column) => {
   let positions = [
     [row - 1, column],
@@ -20,6 +22,7 @@ const directionSapo = (row, column) => {
   ];
   return positions;
 };
+//no tested
 const directionBaliza = (row, column) => {
   let positions = [
     [row, column + 1],
@@ -34,6 +37,7 @@ const directionBaliza = (row, column) => {
   ];
   return positions;
 };
+//tested
 const createMatriz = (columns, rows, charToFillWith) => {
   let matriz = [];
   for (let column = 0; column < columns; column++) {
@@ -46,6 +50,7 @@ const createMatriz = (columns, rows, charToFillWith) => {
   }
   return matriz;
 };
+//tested
 const isCellEmpty = (row, column, array) => {
   if (array[row][column] !== undefined && array[row][column] === 0) {
     return true;
@@ -53,6 +58,7 @@ const isCellEmpty = (row, column, array) => {
     return false;
   }
 };
+//tested
 const createVerticalBlock = (column, row, array, positionFunction) => {
   let allOK = true;
   const createdVerticalArray = [...array];
@@ -71,6 +77,7 @@ const createVerticalBlock = (column, row, array, positionFunction) => {
     console.log("No hay espacios disponibles");
   }
 };
+//tested
 const countNeighbours = (row, column, array) => {
   let neighbours = 0;
   cellExists(row, -1, column, -1, array) &&
@@ -99,6 +106,7 @@ const countNeighbours = (row, column, array) => {
     neighbours++;
   return neighbours;
 };
+//tessted
 const cellExists = (
   row,
   rowDisplacement,
@@ -114,6 +122,7 @@ const cellExists = (
     return false;
   }
 };
+//not pass test
 const searchAlives = (cellsArray) => {
   let searchedArray = createMatriz(6, 6, 1);
   for (let column = 0; column < cellsArray.length; column++) {
@@ -141,10 +150,12 @@ const searchAlives = (cellsArray) => {
   }
   return searchedArray;
 };
+//tested
 const isAlive = (column, row, array) => {
   const isAlive = array[column][row] === 0 ? false : true;
   return isAlive;
 };
+//dont pass test
 const gameOfLifeBlinker = () => {
   const matriz = createMatriz(arrayHeight, arrayRows, 0);
   const matrizVertical = createVerticalBlock(2, 2, matriz, directionBlinker);
@@ -155,7 +166,7 @@ const gameOfLifeBlinker = () => {
 };
 const playBlinker = () => {
   gameOfLifeBlinker();
-  setInterval(gameOfLifeBlinker, 5000);
+  interval = setInterval(gameOfLifeBlinker, 5000);
 };
 const gameOfLifeSapo = () => {
   const matriz = createMatriz(arrayHeight, arrayRows, 0);
@@ -167,7 +178,7 @@ const gameOfLifeSapo = () => {
 };
 const playSapo = () => {
   gameOfLifeSapo();
-  setInterval(gameOfLifeSapo, 5000);
+  interval = setInterval(gameOfLifeSapo, 5000);
 };
 const gameOfLifeBaliza = () => {
   const matriz = createMatriz(arrayHeight, arrayRows, 0);
@@ -180,24 +191,43 @@ const gameOfLifeBaliza = () => {
 };
 
 const generateTable = (array) => {
-  let table = "<table><tr><td>Game Of Life</td>";
+  let table = "<table><tr><td></td>";
   for (let i = 0; i < array.length; i++) {
     table += "<table><tr><td></td>";
     for (let j = 0; j < array[i].length; j++) {
-      table += "<td>" + array[i][j] + "</td>";
+      if (array[i][j] === 1) {
+        table +=
+          "<td class='cell cell--alive'><span class='cell__text'>" +
+          array[i][j] +
+          "</span></td>";
+      } else {
+        table +=
+          "<td class='cell'><span class='cell__text'>" +
+          array[i][j] +
+          "</span></td>";
+      }
     }
   }
   table += "</table>";
   let siteTable = document.getElementById("table__app");
   siteTable.innerHTML = table;
 };
+
+function myStopFunction() {
+  clearInterval(interval);
+}
 const blinkerButton = document.getElementsByClassName(
   "game-footer__buttons--blinker"
 )[0];
 const sapoButton = document.getElementsByClassName(
   "game-footer__buttons--sapo"
 )[0];
+const stopButton = document.getElementsByClassName(
+  "game-footer__buttons--stop"
+)[0];
 
+const stopFunction = myStopFunction;
+stopButton.addEventListener("click", stopFunction);
 const blinkerFunction = playBlinker;
 blinkerButton.addEventListener("click", blinkerFunction);
 const sapoFunction = playSapo;

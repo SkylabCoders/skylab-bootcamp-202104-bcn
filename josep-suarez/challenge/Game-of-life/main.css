@@ -22,25 +22,27 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: 20px;
-  color: #0088ff;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
-.table__app {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-self: center;
+.cell {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  font-size: 8px;
+  border: 1px solid #313030;
+}
+
+.cell__text {
+  display: none;
+}
+
+.cell--alive {
+  background-color: aqua;
+  color: aqua;
 }
 
 .game-footer {
@@ -49,11 +51,11 @@ h1 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
 }
@@ -63,11 +65,13 @@ h1 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.game-footer__buttons--blinker, .game-footer__buttons--sapo {
+.game-footer__buttons--blinker,
+.game-footer__buttons--sapo,
+.game-footer__buttons--stop {
   font-family: "Orelega One", cursive;
   background-color: aqua;
   font-size: x-large;
@@ -83,8 +87,7 @@ h1 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-top: 30vh;
 }
-/*# sourceMappingURL=main.css.map */
