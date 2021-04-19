@@ -64,18 +64,23 @@ let gol = () => {
            neighboursCounter =0
         }
     }
-    console.log(newGrid2);
+    changeArray();
 }
 
-
 let timerGol = () => {
-    setInterval(function() {
-       gol()
-    }, 1000);
+    setInterval(
+       gol
+    , 6000);
 }
 
 timerGol();
 
-
+let changeArray = () => {
+    for (let i=0; i<grid2.length; i++) {
+        for (let j=0; j<grid2[i].length; j++) {
+            newGrid[i][j] = grid2 [i][j]
+        }
+    }
+}
 
 
