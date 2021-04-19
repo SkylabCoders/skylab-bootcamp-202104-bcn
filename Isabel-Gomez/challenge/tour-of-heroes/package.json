@@ -19,5 +19,10 @@
   "homepage": "https://github.com/SkylabCoders/skylab-bootcamp-202104-bcn#readme",
   "dependencies": {
     "jest": "^26.6.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
   }
 }
