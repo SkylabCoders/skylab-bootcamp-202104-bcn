@@ -65,7 +65,7 @@ const createShape = (column, row, array, positionFunction) => {
 		console.log('No hay espacios disponibles')
 	}
 }
-//test pendiente
+
 const generateTable = (matrix, destinationElementId) => {
 	const htmlTableSpace = document.getElementById(destinationElementId)
 	let htmlTable = '<table>'
@@ -163,7 +163,7 @@ const updateStates = (matrix, initialCharacter) => {
 	}
 	return newMatrix
 }
-//Test pendiente
+
 const startGame = (shape) => {
 	const matrix = createMatrix(
 		MATRIX_COLUMNS,
@@ -182,7 +182,6 @@ const startGame = (shape) => {
 	setTimeout(() => generateTable(newMatrix, 'app'), 2000)
 }
 
-//Tested mas o menos
 const play = (action, shapePositions) => {
 	if (action === 'stop') {
 		clearInterval(GAME_STATUS.interval)
