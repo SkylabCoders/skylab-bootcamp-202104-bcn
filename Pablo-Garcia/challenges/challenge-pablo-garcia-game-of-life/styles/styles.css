@@ -1,10 +1,36 @@
-#gridLife {
-    padding: 10px;
-    background-color: whitesmoke;
+body {
+    padding: 20px;
+    font-size: 16px;
 }
 
-.cell {
-    border: 1px solid darkgray;
+#gridContainer {
+    padding-bottom: 10px;
+}
+
+table {
+    background-color: #d5d9d5;
+    border-spacing: 0;
+}
+
+td {
+    border: 1px solid #fafafa;
+    border-radius: 3px;
     width: 10px;
     height: 10px;
 }
+td.dead {
+    background-color: transparent;
+}
+
+td.live {
+    background-color: #0f637d;
+    border-radius: 10px;
+}button{
+     font-size: 1.2em;
+     padding: .75em;
+     border-radius: 0;
+     border: none;
+     background: rgba(63, 213, 130, 0.79);
+     color:#fff;
+     margin:15px 0px;
+ }
