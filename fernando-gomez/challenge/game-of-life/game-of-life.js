@@ -2,8 +2,8 @@ const playButton = document.getElementById('play');
 const pauseButton = document.getElementById('pause');
 const speedInput = document.getElementById('speed');
 let matrix = [];
-// const dimension = 20;
-const maxRow = 54;
+
+const maxRow = 50;
 const maxColumn = 100;
 let speed = 1000;
 let timer;
@@ -98,27 +98,9 @@ const paintPulsar = (row, column) => {
 const startGame = () => {
     generateEnvironmentTable();
     matrix = generateMatrix();
-    
-    // paintGlider(3,3);
-    // paintGlider(3,9);
-    // paintGlider(3,14);
-    // paintGlider(3,21);
-    // paintGlider(3,36);
-    // paintGlider(3,47);
-    // paintGlider(7,7);
-    // paintGlider(35,85);
-    // paintGlider(3,59);
-    // paintGlider(7,64);
-    // paintGlider(15,36);
-    // paintGlider(3,47);
-    // paintGlider(17,47);
-    // paintGlider(47,67);
-    // paintGlider(47,87);
-    // paintBlock(50,50);
 
     paintPulsar(20,40);
     updateMatrix();
-    //updateTable();    
 }
 
 const updateMatrix = () => {
@@ -256,7 +238,7 @@ const generateEnvironmentTable = () => {
                     environmentSpot.style = 'background: red';
                 } else {
                     matrix[i][j] = 0
-                    environmentSpot.style = 'background: red';
+                    environmentSpot.style = 'background: #1d42a7';
                 }
             });
             environmentRow.appendChild(environmentSpot);
@@ -279,8 +261,6 @@ const updateTable = () => {
 
 startGame();
 
-
-
 const playGame = () => {
     clearInterval(timer);
     timer = setInterval(updateMatrix, speed);
@@ -292,9 +272,6 @@ const pauseGame = () => {
 
 playButton.addEventListener('click', playGame);
 pauseButton.addEventListener('click', pauseGame);
-// speedInput.addEventListener('onchange', () => {
-//     speed = speedInput;
-// });
 
 const changeSpeed = (newSpeed) => {
     speed = newSpeed;
