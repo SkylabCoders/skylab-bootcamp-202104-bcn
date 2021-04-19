@@ -1,25 +1,28 @@
-const playButton = document.getElementById('play');
-const pauseButton = document.getElementById('pause');
-const speedInput = document.getElementById('speed');
+const PLAYBUTTON = document.getElementById('play');
+const PAUSEBUTTON = document.getElementById('pause');
+const SPEEDINPUT = document.getElementById('speed');
+const ENVIRONMENT_TABLE = document.getElementById('environment');
+const ENVIRONMENT_ROW = document.getElementsByClassName('environment__row');
+
 let matrix = [];
 
-const maxRow = 50;
-const maxColumn = 100;
+const MAX_ROW = 50;
+const MAX_COLUMN = 100;
 let speed = 1000;
 let timer;
 
 const generateMatrix = () => {
     let matrixResult = [];
-    for(let i=0; i<maxRow; i++) {
+    for(let i=0; i<MAX_ROW; i++) {
         matrixResult[i] = [];
-        for(let j=0; j<maxColumn; j++) {
+        for(let j=0; j<MAX_COLUMN; j++) {
             matrixResult[i][j] = 0;
         }
     }
     return matrixResult;
 }
 
-const paintBlinker = (row, column) => {
+const paintBlinker = (row, column, matrix) => {
     matrix[row - 1][column] = 1;
     matrix[row][column] = 1;
     matrix[row + 1][column] = 1;
@@ -111,8 +114,8 @@ const updateMatrix = () => {
 
 const gatherChanges = () => {
     let arrayOfChanges = [];
-    for(let i=0; i<maxRow; i++) {
-        for(let j=0; j<maxColumn; j++) {
+    for(let i=0; i<MAX_ROW; i++) {
+        for(let j=0; j<MAX_COLUMN; j++) {
             if(stateChanges(i, j)) {
                 arrayOfChanges.push([i,j]);
             }
@@ -156,22 +159,22 @@ const collectNeighborHood = (row, column) => {
     if (row !== 0) {
         neighborHood.push(matrix[row - 1][column]);
     }
-    if (row !== 0 && column < (maxColumn-1)) {
+    if (row !== 0 && column < (MAX_COLUMN-1)) {
         neighborHood.push(matrix[row - 1][column + 1]);
     }
     if (column !== 0) {
         neighborHood.push(matrix[row][column - 1]);
     }
-    if (column < (maxColumn-1)) {
+    if (column < (MAX_COLUMN-1)) {
         neighborHood.push(matrix[row][column + 1]);
     }
-    if (row < (maxRow -1) && column !== 0) {
+    if (row < (MAX_ROW -1) && column !== 0) {
         neighborHood.push(matrix[row + 1][column - 1]);
     }
-    if(row < (maxRow -1)){
+    if(row < (MAX_ROW -1)){
         neighborHood.push(matrix[row + 1][column]);
     }
-    if(row < (maxRow -1) && column < (maxColumn -1)) {
+    if(row < (MAX_ROW -1) && column < (MAX_COLUMN -1)) {
         neighborHood.push(matrix[row + 1][column + 1]);
     }
 
@@ -223,14 +226,13 @@ const reviveCell = (row, column, matrixResult) => {
     return matrixResult;
 }
 
-const environmentTable = document.getElementById('environment');
-const environmentRow = document.getElementsByClassName('environment__row');
+
 
 const generateEnvironmentTable = () => {
-    for (let i = 0; i < maxRow; i++) {
-        const environmentRow = document.createElement('tr');
-        environmentRow.classList = 'environment__row';
-        for (let j = 0; j<maxColumn; j++) {
+    for (let i = 0; i < MAX_ROW; i++) {
+        const newRow = document.createElement('tr');
+        newRow.classList = 'environment__row';
+        for (let j = 0; j<MAX_COLUMN; j++) {
             const environmentSpot = document.createElement('td');
             environmentSpot.addEventListener('click', () => {
                 if (matrix[i][j] === 0) {
@@ -241,19 +243,19 @@ const generateEnvironmentTable = () => {
                     environmentSpot.style = 'background: #1d42a7';
                 }
             });
-            environmentRow.appendChild(environmentSpot);
+            newRow.appendChild(environmentSpot);
         }
-        environmentTable.appendChild(environmentRow);
+        ENVIRONMENT_TABLE.appendChild(newRow);
     }
 }
 
 const updateTable = () => {
-    for (let i=0; i< maxRow; i++) {
-        for (let j=0; j<maxColumn; j++) {
+    for (let i=0; i< MAX_ROW; i++) {
+        for (let j=0; j<MAX_COLUMN; j++) {
             if (matrix[i][j] === 1) {
-                environmentRow[i].childNodes[j].style = 'background: #09b9ff';
+                ENVIRONMENT_ROW[i].childNodes[j].style = 'background: #09b9ff';
             } else {
-                environmentRow[i].childNodes[j].style = 'background: #1d42a7';
+                ENVIRONMENT_ROW[i].childNodes[j].style = 'background: #1d42a7';
             }
         }
     }
@@ -270,9 +272,9 @@ const pauseGame = () => {
     clearInterval(timer);
 }
 
-playButton.addEventListener('click', playGame);
-pauseButton.addEventListener('click', pauseGame);
-
 const changeSpeed = (newSpeed) => {
     speed = newSpeed;
 }
+
+PLAYBUTTON.addEventListener('click', playGame);
+PAUSEBUTTON.addEventListener('click', pauseGame);
