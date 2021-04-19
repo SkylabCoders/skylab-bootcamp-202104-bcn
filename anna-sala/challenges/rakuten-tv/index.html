@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Rakuten TV - Anna Sala</title>
+</head>
+<body>
+    <header class="header">
+        <div class="navigation-sections">
+            <img src="./images/rakuten_logo.png" alt="rakuten_logo" class="logo">
+            <nav class="main-navigation">
+                <a href="./movie.html" class="navigation-items">Cinema <span class="arrow">▼</span></a>
+                <a href="./movie.html" class="navigation-items">Gratis</a>
+                <a href="./movie.html" class="navigation-items">Suscripciones <span class="arrow">▼</span></a>
+                <input type="text" placeholder="Buscar" class="search-bar">
+            </nav>
+        </div>
+        <div class="navigation-sections">
+            <ul class="user-functions">
+                <li><a href="" class="user-links">Entrar</a></li>
+                <li><a href=""class="user-links" id="register">Registrarse</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="main-section">
+        <div class="slideshow-container">
+            <script defer type="text/javascript" src="https://stackend.com/launch.js"></script>
+            
+            <!--This is the actual slideshow-->
+            <div data-stackend-type="stackend-slideshow" data-stackend-indicators="true">
+              <!-- This is the code bins slide1 and slide2 -->
+                    <div data-stackend-type="stackend-cms" data-stackend-id="71:21"></div>
+                    <div data-stackend-type="stackend-cms" data-stackend-id="71:22"></div>
+            </div>
+             <!-- This closes the slideshow -->
+        </div>
+        <div class="themed-categories">
+            <figure><img class="images-categories" src="./images/destacados.png" alt=""></figure>
+            <figure><img class="images-categories" src="./images/estrenos.png" alt=""></figure>
+            <figure><img class="images-categories" src="./images/gratis.png" alt=""></figure>
+            <figure><img class="images-categories" src="./images/suscripcion.png" alt=""></figure>
+            <figure><img class="images-categories" src="./images/noche-de-peliculas.png" alt=""></figure>
+        </div>
+        <div>
+            <h2 class="movie-categories">GRATIS - La mejor selección de películas</h2>
+            <div class="movies">
+                <figure><img class="movie" src="./movies/atrapado-en-un-pirado-1612521195-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/buffalo-66-1611476862-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/cafe-society-1611322421-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/communion-1611322695-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/date-movie-1613033005-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/el-ultimo-engano-1611323815-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/luchando-por-un-sueno-1611323220-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/misteriosa-obsesion-1611320835-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/pawn-shop-chronicles-1611476838-width217-quality80.jpg" alt=""></figure>
+                <figure><img class="movie" src="./movies/triple-amenaza-1611323146-width217-quality80.jpg" alt=""></figure>
+            </div>
+        </div>
+        <form class="form">
+            <div class="form-row">
+                <div class="form-section">
+                    <span class="form-label">Viaje</span>
+                        <select class="form-control">
+                            <option>Ida y Vuelta</option>
+                            <option>Sólo ida</option>
+                            <option>Destinos múltiples</option>
+                        </select>
+                        <span class="selection-arrow"></span>
+                </div>
+                    <div class="form-section">
+                        <input class="form-control" type="text" placeholder="Salida de *">
+                    </div>
+                    <div class="form-section">
+                        <input class="form-control" type="text" placeholder="Llegada a *">
+                    </div> 
+            </div>
+            <div class="form-row">
+                <div class="form-section">
+                    <span class="form-label">Departing</span>
+                    <input class="form-control" type="date" required="" placeholder="Fecha de salida">
+                </div>
+                <div class="form-section">
+                    <span class="form-label">Returning</span>
+                    <input class="form-control" type="date" required="" placeholder="Fecha de vuelta">
+                </div>
+                <div class="form-section">
+                    <span class="form-label">Pasajeros</span>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    <span class="selection-arrow"></span>
+                </div>
+                <div class="form-section">
+                    <span class="form-label">Clase</span>
+                        <select class="form-control">
+                            <option>Economy</option>
+                            <option>Premium Economy</option>
+                            <option>Business</option>
+                            <option>Le Première</option>
+                        </select>
+                    <span class="selection-arrow"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                <div class="form-btn">
+                    <button class="submit-button">Buscar Vuelos</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer class="footer">
+        <div class="footer__info">
+            <div class="footer__info--first">
+                <h1 class="footer__info--header">Rakuten TV - Tu cine en casa</h1>
+                <p class="footer__info--text">
+                    Rakuten TV proporciona una serie de servicios que ofrecen todo un universo de contenidos en solo unos clics. Disfruta de una verdadera experiencia cinematográfica con los últimos estrenos, servicios de suscripción premium y una serie de canales temáticos gratis, como Movies, Euronews, Kids TV, Viki, Documentaries y Rakuten Stories, un canal que incorpora el contenido original y exclusivo de Rakuten TV.
+                </p>
+            </div>
+            <div class="footer__info--second additional-info">
+                <div class="additional-info__how-works">
+                    <img src="./images/screens.png" alt="" class="icon">
+                    <h3>Cómo funciona</h3>
+                    <p>Rakuten TV es compatible con la gran mayoria de dispositivos conectados.</p>
+                </div>
+                <div class="additional-info__payments">
+                    <img src="./images/payments.png" alt="" class="icon">
+                    <h3>Más formas de pago</h3>
+                    <p>Rakuten TV es compatible con PayPal y con tarjetas de crédito Visa y Mastercard.</p>
+                </div>
+                <div class="additional-info__info">
+                    <img src="./images/information.png" alt="" class="icon">
+                    <h3>Ayuda y soporte</h3>
+                    <p>¿Tienes problemas con nuestro servicio? Ponte en contacto con nuestro equipo de soporte</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer__nav">
+            
+            <ul>
+                <li><img src="./images/rakuten_logo.png" alt="rakuten_logo" class="logo"></li>
+                <li>Acerca de Rakuten</li>
+                <li>Quiènes Somos</li>
+                <li>Condiciones de Uso</li>
+                <li>Politica de Privacidad y Cookies</li>
+                <li>Proceso de autoregulación por edad</li>
+                <li>Trabaja con nosotros</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+

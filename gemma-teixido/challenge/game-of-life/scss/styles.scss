@@ -1,0 +1,23 @@
+#matrix {
+  display: inline flex;
+
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+table {
+  padding-top: 200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  border: 1px solid black;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}

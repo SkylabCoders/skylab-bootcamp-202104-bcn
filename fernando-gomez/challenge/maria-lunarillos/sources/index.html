@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utensilios de repostería - Tienda online María Lunarillos</title>
+    <link rel="stylesheet" href="./../styles/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../styles/form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class='nav-bars'>
+
+            <nav class='dropping-nav'>
+                <ul class='dropping-elements-list'>
+                    <li class='dropping-nav-element' id='maria-lunarillos-drop'><img  src="./../images/maria-lunarillos.png" alt="" srcset=""></li>
+                    <li class='dropping-nav-element cucute' ><img src="./../images/cucute.png" alt="" srcset=""></li>
+                    <li class='dropping-nav-element' id='mumuchu'><img  src="./../images/mumuchu.png" alt="" srcset=""></li>
+                </ul>
+            </nav>
+
+            <nav class='not-dropping-nav'>
+                <div id='register' class='not-dropping-element'>
+                    <i class="fas fa-user-plus">entra | registrate</i>
+                </div>
+                <ul class='not-dropping-element'>
+                    <li class='network'><i class="fab fa-facebook-f"></i></li>
+                    <li class='network'><i class="fab fa-twitter"></i></li>
+                    <li class='network'><i class="fab fa-instagram"></i></li>
+                    <li class='network'><i class="fab fa-pinterest"></i></li>
+                    <li class='network'><i class="fab fa-youtube"></i></li>
+                </ul>
+                <ul class='not-dropping-element'>
+                    <li class='shopping-icons'><i class="fas fa-shopping-cart"></i></li>
+                    <li class='shopping-icons'>0</li>
+                </ul>
+            </nav>
+
+        </div>
+            <div class='search-items'>
+                <div class='general-search'>
+                    <li id='news-button'><i class="far fa-star"></i>NOVEDADES</li>
+                    <li id='offers-button'><i class="far fa-circle"></i>OFERTAS</li>
+                    <input><i class="fas fa-search"></i>
+                </div>
+                <div>
+                    <ul class='specific-search'>
+                        <figure class='logo'>
+                            <img src="./../images/logo.svg" alt="My company name" />
+                        </figure>
+                        <li>
+                            <figure>
+                                <img class='specific-search-img' src="./../images/utensiliosML.png" alt="" srcset="">
+                                <figcaption>UTENSILIOS</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img class='specific-search-img' src="./../images/magdalena.png" alt="" srcset="">
+                                <figcaption>INGREDIENTES</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img class='specific-search-img' src="./../images/tarta-cumpleanos.png" alt="" srcset="">
+                                <figcaption>FIESTAS</figcaption>
+                             </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img id='marcas-img' class='specific-search-img' src="./../images/delantal.png" alt="" srcset="">
+                                <figcaption>MARCAS</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img class='blog-search' src="./../images/blog.svg" alt="" srcset="">
+                                <figcaption>BLOG</figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </header>
+
+    <main>
+
+        <div class='cuisine-section'>
+                <!-- <img class='cuisine-image' src="./../images/utensiliosbasicos.jpeg" alt="" srcset=""> -->
+                <div class='cuisine-text'>
+                    <h3 class='cuisine-title'>
+                        Utensilios básicos
+                    </h3>
+                    <p class='cuisine-description'>
+                        Rodillos, liras, espátulas, tapetes, bandejas, rejillas, mangas y boquillas... ¡Los imprescindibles!
+                    </p>
+                </div>
+                <p>A</p>
+                <p>B</p>
+        </div>
+
+        <hr>
+        <hr>
+        <hr>
+        
+        <div class='flex-form'>
+            <form class='fly-form' action="">
+                            
+            <div class='fly-form-title'>
+                <p><i class="fas fa-fighter-jet"></i> Reservar un vuelo</p>
+            </div>
+
+            <div class='fly-form-drop-downs'>
+
+                <div class='travel-drop-down'>
+                    <label for="travel">Viaje</label>
+                    <select class='travel' name="travel">
+                        <option value="go-return">Ida y vuelta</option>
+                        <option value="go">Sólo ida</option>
+                        <option value="multiple-destinations">Destinos múltiples</option>
+                    </select>
+                </div>
+                
+                <select class='outbound travel-drop-down' name="outbound">
+                    <option selected disabled>Outbound</option>
+                    <option value="PMI">Palma de Mallorca</option>
+                    <option value="BCN">Barcelona</option>
+                    <option value="MAD">Madrid</option>
+                </select>
+
+                <select class='arrival travel-drop-down' name="arrival">
+                    <option style="background-image:url(./../form-images/plane-arrival-solid.svg);" disabled selected> Arrival</option>
+                    <option value="PMI">Palma de Mallorca</option>
+                    <option value="BCN">Barcelona</option>
+                    <option value="MAD">Madrid</option>
+                </select>
+
+            </div>
+
+            <div class='fly-specifications'>
+
+                <input class='fly-date' type="date">
+
+                <div class='passengers-number'>
+                    <label for="travel">Pasajeros</label>
+                    <input class='passengers-number-input' type="text" placeholder="1 Pasajero">
+                </div>
+
+                <div class='fly-class-drop-down'>
+                    <label for="class">Clase</label>
+                    <select class='fly-class' name="class">
+                        <option value="economy">Economy</option>
+                        <option value="premium-economy">Premium economy</option>
+                        <option value="business">Business</option>
+                        <option value="la-premiere">La prèmiere</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class='professional-travel-selector'>
+                <input class='professional-travel' type="range" name="professional-travel" min="0" max="1">
+            </div>
+
+            <div class='fly-button'>
+                <button class='search-fly-button' type="submit" value='Submit'>
+                    Buscar vuelos
+                </button>
+            </div>
+
+        </form>
+        </div>
+
+        
+
+        <hr>
+        <hr>
+        <hr>
+
+
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore autem adipisci nesciunt inventore, ipsam cumque corporis quasi sit eius possimus modi nam fugiat consectetur perspiciatis ea odio voluptas assumenda ad.
+        </p>
+        
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus id doloremque magni. Sint animi perspiciatis asperiores qui pariatur, doloremque at, sunt aliquam, iste reiciendis sapiente id architecto repudiandae eius?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo qui fuga voluptatibus! Vero soluta architecto mollitia consequuntur, suscipit esse quos veniam, quo saepe libero, dolorem ullam quibusdam? Quas, nulla expedita!
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore autem adipisci nesciunt inventore, ipsam cumque corporis quasi sit eius possimus modi nam fugiat consectetur perspiciatis ea odio voluptas assumenda ad.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus id doloremque magni. Sint animi perspiciatis asperiores qui pariatur, doloremque at, sunt aliquam, iste reiciendis sapiente id architecto repudiandae eius?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo qui fuga voluptatibus! Vero soluta architecto mollitia consequuntur, suscipit esse quos veniam, quo saepe libero, dolorem ullam quibusdam? Quas, nulla expedita!
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore autem adipisci nesciunt inventore, ipsam cumque corporis quasi sit eius possimus modi nam fugiat consectetur perspiciatis ea odio voluptas assumenda ad.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus id doloremque magni. Sint animi perspiciatis asperiores qui pariatur, doloremque at, sunt aliquam, iste reiciendis sapiente id architecto repudiandae eius?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo qui fuga voluptatibus! Vero soluta architecto mollitia consequuntur, suscipit esse quos veniam, quo saepe libero, dolorem ullam quibusdam? Quas, nulla expedita!
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore autem adipisci nesciunt inventore, ipsam cumque corporis quasi sit eius possimus modi nam fugiat consectetur perspiciatis ea odio voluptas assumenda ad.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus id doloremque magni. Sint animi perspiciatis asperiores qui pariatur, doloremque at, sunt aliquam, iste reiciendis sapiente id architecto repudiandae eius?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo qui fuga voluptatibus! Vero soluta architecto mollitia consequuntur, suscipit esse quos veniam, quo saepe libero, dolorem ullam quibusdam? Quas, nulla expedita!
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore autem adipisci nesciunt inventore, ipsam cumque corporis quasi sit eius possimus modi nam fugiat consectetur perspiciatis ea odio voluptas assumenda ad.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus id doloremque magni. Sint animi perspiciatis asperiores qui pariatur, doloremque at, sunt aliquam, iste reiciendis sapiente id architecto repudiandae eius?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo qui fuga voluptatibus! Vero soluta architecto mollitia consequuntur, suscipit esse quos veniam, quo saepe libero, dolorem ullam quibusdam? Quas, nulla expedita!
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore autem adipisci nesciunt inventore, ipsam cumque corporis quasi sit eius possimus modi nam fugiat consectetur perspiciatis ea odio voluptas assumenda ad.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus id doloremque magni. Sint animi perspiciatis asperiores qui pariatur, doloremque at, sunt aliquam, iste reiciendis sapiente id architecto repudiandae eius?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo qui fuga voluptatibus! Vero soluta architecto mollitia consequuntur, suscipit esse quos veniam, quo saepe libero, dolorem ullam quibusdam? Quas, nulla expedita!
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore autem adipisci nesciunt inventore, ipsam cumque corporis quasi sit eius possimus modi nam fugiat consectetur perspiciatis ea odio voluptas assumenda ad.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus id doloremque magni. Sint animi perspiciatis asperiores qui pariatur, doloremque at, sunt aliquam, iste reiciendis sapiente id architecto repudiandae eius?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo qui fuga voluptatibus! Vero soluta architecto mollitia consequuntur, suscipit esse quos veniam, quo saepe libero, dolorem ullam quibusdam? Quas, nulla expedita!
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore autem adipisci nesciunt inventore, ipsam cumque corporis quasi sit eius possimus modi nam fugiat consectetur perspiciatis ea odio voluptas assumenda ad.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus id doloremque magni. Sint animi perspiciatis asperiores qui pariatur, doloremque at, sunt aliquam, iste reiciendis sapiente id architecto repudiandae eius?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo qui fuga voluptatibus! Vero soluta architecto mollitia consequuntur, suscipit esse quos veniam, quo saepe libero, dolorem ullam quibusdam? Quas, nulla expedita!
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore autem adipisci nesciunt inventore, ipsam cumque corporis quasi sit eius possimus modi nam fugiat consectetur perspiciatis ea odio voluptas assumenda ad.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus id doloremque magni. Sint animi perspiciatis asperiores qui pariatur, doloremque at, sunt aliquam, iste reiciendis sapiente id architecto repudiandae eius?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo qui fuga voluptatibus! Vero soluta architecto mollitia consequuntur, suscipit esse quos veniam, quo saepe libero, dolorem ullam quibusdam? Quas, nulla expedita!
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore autem adipisci nesciunt inventore, ipsam cumque corporis quasi sit eius possimus modi nam fugiat consectetur perspiciatis ea odio voluptas assumenda ad.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus id doloremque magni. Sint animi perspiciatis asperiores qui pariatur, doloremque at, sunt aliquam, iste reiciendis sapiente id architecto repudiandae eius?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo qui fuga voluptatibus! Vero soluta architecto mollitia consequuntur, suscipit esse quos veniam, quo saepe libero, dolorem ullam quibusdam? Quas, nulla expedita!
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore autem adipisci nesciunt inventore, ipsam cumque corporis quasi sit eius possimus modi nam fugiat consectetur perspiciatis ea odio voluptas assumenda ad.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus id doloremque magni. Sint animi perspiciatis asperiores qui pariatur, doloremque at, sunt aliquam, iste reiciendis sapiente id architecto repudiandae eius?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo qui fuga voluptatibus! Vero soluta architecto mollitia consequuntur, suscipit esse quos veniam, quo saepe libero, dolorem ullam quibusdam? Quas, nulla expedita!
+        </p>
+
+    </main>
+</body>
+</html>
