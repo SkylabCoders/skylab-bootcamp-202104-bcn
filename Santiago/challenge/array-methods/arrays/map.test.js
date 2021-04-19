@@ -1,12 +1,14 @@
 let arrayMap = (array, callback) => {
 
+    let newArr = [];
+
     for(let i = 0; i < array.length; i++){
 
         let value = array[i];
         
-        array[i] = callback(value);
+        newArr.push(array[i] = callback(value));
     }
-    return array;
+    return newArr;
 }
 
 describe("Given an function", () => {
