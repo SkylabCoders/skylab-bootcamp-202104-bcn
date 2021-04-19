@@ -5,6 +5,7 @@ let arrayFindIndex = (array, callback) => {
             return i;
         }
     }
+    return -1;
 }
 
 describe("Given an arrayFindIndex function", () => {
