@@ -40,8 +40,8 @@ const createHeroesList = () => {
   });
 };
 
-const createNavigator = () => {
-  const nav = createDomElement('ul', '', '', dashboard);
+const createNavigator = (parent) => {
+  const nav = createDomElement('ul', '', '', parent);
   const dashboardItem = createDomElement('li', '', '#', nav);
   createDomElement('a', 'Dashboard', '#', dashboardItem);
   const heroesItem = createDomElement('li', '', '', nav);
@@ -51,8 +51,9 @@ const createNavigator = () => {
 };
 
 const createDashboardPage = () => {
-  createDomElement('h1', 'Tour of Heroes', '', dashboard);
-  createNavigator();
+  const header = createDomElement('header', '', '', dashboard);
+  createDomElement('h1', 'Tour of Heroes', '', header);
+  createNavigator(header);
   createDomElement('h2', 'Top Heroes', '', dashboard);
   createHeroesList();
 };
