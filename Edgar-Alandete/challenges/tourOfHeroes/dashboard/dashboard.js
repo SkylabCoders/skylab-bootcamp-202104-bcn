@@ -13,10 +13,13 @@ const heroes = [
   { id: 20, name: 'Tornado' },
 ];
 
-function createDomElement(element, text, parent) {
+function createDomElement(element, text, href, parent) {
   const elementToCreate = document.createElement(element);
   if (text) {
     elementToCreate.innerText = text;
+  }
+  if (href) {
+    elementToCreate.setAttribute('href', href);
   }
   parent.appendChild(elementToCreate);
   return elementToCreate;
@@ -29,24 +32,28 @@ const getRandomHeroes = (heroesNumber) => {
 };
 const createHeroesList = () => {
   const heroesToShow = getRandomHeroes(4);
-  const heroNames = createDomElement('ul', '', dashboard);
+  const heroNames = createDomElement('ul', '', '', dashboard);
   heroesToShow.forEach(({ name }) => {
-    createDomElement('li', name, heroNames);
+    const heroItem = createDomElement('li', '', '', heroNames);
+    // ../heroDetails/heroDetails#${name}.html`
+    createDomElement('a', name, '../heroDetails/heroDetails.html', heroItem);
   });
 };
 
 const createNavigator = () => {
-  const nav = createDomElement('ul', '', dashboard);
-  createDomElement('li', 'Dashboard', nav);
-  createDomElement('li', 'Heroes', nav);
+  const nav = createDomElement('ul', '', '', dashboard);
+  const dashboardItem = createDomElement('li', '', '#', nav);
+  createDomElement('a', 'Dashboard', '#', dashboardItem);
+  const heroesItem = createDomElement('li', '', '', nav);
+  createDomElement('a', 'Heroes', '../heroes/heroes.html', heroesItem);
 
-  console.log(document.getElementsByTagName('ul'));
+  return nav;
 };
 
 const createDashboardPage = () => {
-  createDomElement('h1', 'Tour of Heroes', dashboard);
+  createDomElement('h1', 'Tour of Heroes', '', dashboard);
   createNavigator();
-  createDomElement('h2', 'Top Heroes', dashboard);
+  createDomElement('h2', 'Top Heroes', '', dashboard);
   createHeroesList();
 };
 
