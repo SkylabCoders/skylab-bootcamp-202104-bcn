@@ -29,18 +29,21 @@ function generateTitle (header){
 }
 
 function generateNav (header){
-    const nav = document.createElement('nav');
+    const nav = document.createElement('ul');
     header.appendChild(nav);
     nav.className='header__nav';
-    generateNavButton(nav,'Dashboard');
-    generateNavButton(nav,'Heroes');
+    generateNavButton(nav,'Dashboard', './../dashboard/dashboard.html');
+    generateNavButton(nav,'Heroes', './../list/heroes-list.html');
 }
 
-function generateNavButton (nav, text){
-    const button = document.createElement('button');
-    button.innerText = text;
+function generateNavButton (nav, text, html){
+    const button = document.createElement('li');
     nav.appendChild(button);
     button.className='nav__button';
+    const a = document.createElement('a');
+    button.appendChild(a);
+    a.setAttribute("href", html);
+    a.innerText = text;
 }
 
 function generateDashboard (container){
@@ -59,10 +62,10 @@ function generateList(dashboardContainer){
     const dashboardList = document.createElement('ul');
     dashboardContainer.appendChild(dashboardList);
     dashboardList.className='dashboard__list';
-    generateItems(dashboardList,'Narco');
-    generateItems(dashboardList,'Bombasto');
-    generateItems(dashboardList,'Celeritas');
-    generateItems(dashboardList,'Magneta');
+    for(let i=1;i<5;i++){
+        generateItems(dashboardList,heroes[i].name);
+    }
+    
 
 }
 
@@ -70,6 +73,9 @@ function generateItems(dashboardList, text){
     const dashboardItems = document.createElement('li');
     dashboardList.appendChild(dashboardItems);
     dashboardItems.className='list__items';
-    dashboardItems.innerText=text;
+    const link = document.createElement('a');
+    dashboardItems.appendChild(link);
+    link.innerText=text;
+    link.setAttribute('href','./../detail/heroes-detail.html') //pasar la id o nombre 
 }
 

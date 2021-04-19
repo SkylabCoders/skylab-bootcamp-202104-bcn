@@ -29,21 +29,21 @@ function generateTitle (header){
 }
 
 function generateNav (header){
-    const nav = document.createElement('nav');
+    const nav = document.createElement('ul');
     header.appendChild(nav);
     nav.className='header__nav';
-    generateNavButton(nav,'Dashboard','./../dashboard/dashboard.html');
-    generateNavButton(nav,'Heroes','./../list/heroes-list.html');
+    generateNavButton(nav,'Dashboard', './../dashboard/dashboard.html');
+    generateNavButton(nav,'Heroes', './../list/heroes-list.html');
 }
 
-function generateNavButton (nav, text, url){
-    const button = document.createElement('button');
-    button.innerText = text;
+function generateNavButton (nav, text, html){
+    const button = document.createElement('li');
     nav.appendChild(button);
     button.className='nav__button';
     const a = document.createElement('a');
     button.appendChild(a);
-    a.setAttribute('href', url);
+    a.setAttribute("href", html);
+    a.innerText = text;
 }
 
 function generateMyHeroesContainer(container){
@@ -67,11 +67,11 @@ function generateMyHeroesList(myHeroesContainer){
     myHeroesContainer.appendChild(myHeroesList);
     myHeroesList.className='myheroes__list';
     heroes.forEach(heroe => {
-        generateMyHeroesItems(myHeroesList, heroe.id, heroe.name);  
+        generateMyHeroesItems(myHeroesContainer, myHeroesList, heroe.id, heroe.name);  
     })
 }
 
-function generateMyHeroesItems(myHeroesList, id, text){
+function generateMyHeroesItems(myHeroesContainer, myHeroesList, id, name){
     const myHeroesItem = document.createElement('li');
     myHeroesItem.className='list__items';
     myHeroesList.appendChild(myHeroesItem);
@@ -82,27 +82,29 @@ function generateMyHeroesItems(myHeroesList, id, text){
     const a = document.createElement('a');
     myHeroesItem.appendChild(a);
     a.className='item__text';
-    a.innerText=text;  
-    //a.setAttribute('onclick','generateMyHeroDetail(null, text);');
+    a.innerText=name;  
+    myHeroesItem.onclick = function create () {generateHeroDetail(myHeroesContainer, name)};
 }
 
-function generateMyHeroDetail(myHeroesContainer){
+function generateMyHeroDetail(myHeroesContainer, text){
     const myHeroDetail = document.createElement('div');
     myHeroDetail.className='myheroes__detail';
     myHeroesContainer.appendChild(myHeroDetail);
     const myHeroTitle = document.createElement('h2');
     myHeroDetail.appendChild(myHeroTitle);
     myHeroTitle.className='detail__title';
-    myHeroTitle.innerText= + ' is my hero';
+    myHeroTitle.innerText= text + ' is my hero';
     generateMyHeroDetailMore(myHeroDetail);
 }
 
 function generateMyHeroDetailMore(myHeroDetail){
+    const link = document.createElement('a');
+    myHeroDetail.appendChild(link);
+    link.href='./../detail/heroes-detail.html'
     const myHeroButton = document.createElement('button');
-    myHeroDetail.appendChild(myHeroButton);
+    link.appendChild(myHeroButton);
     myHeroButton.className='detail__more';
     myHeroButton.innerText= 'View Details';
-    myHeroButton.setAttribute('href','./../detail/heroes-detail-js');
 }
 
 
