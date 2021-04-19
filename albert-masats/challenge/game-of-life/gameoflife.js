@@ -1,5 +1,5 @@
 const arrayGameOfLife = createGrid(5,5);
-const grid2 = createGrid(5, 5);
+const arrayGameOfLife2 = createGrid(5, 5);
 let countNeighbour = 0;
 
 function createGrid (rows, columns) {
@@ -63,22 +63,22 @@ const checkNeighbours = function (i,j) {
 const checkConditions = function (i,j) {
     if (arrayGameOfLife[i][j] === 1){ 
         if(countNeighbour <= 1 || countNeighbour >= 4){
-            grid2[i][j] = 0;
+            arrayGameOfLife2[i][j] = 0;
         }else{
-            grid2[i][j] = 1;
+            arrayGameOfLife2[i][j] = 1;
         }
     }else{
         if(countNeighbour === 3){
-            grid2[i][j] = 1;
+            arrayGameOfLife2[i][j] = 1;
         }
     }
     countNeighbour = 0;
 }
 
 const changeArray = () => {
-    for (let i=0; i<grid2.length; i++) {
-        for (let j=0; j<grid2[i].length; j++) {
-            arrayGameOfLife[i][j] = grid2 [i][j];
+    for (let i=0; i<arrayGameOfLife2.length; i++) {
+        for (let j=0; j<arrayGameOfLife2[i].length; j++) {
+            arrayGameOfLife[i][j] = arrayGameOfLife2[i][j];
         }
     }
 }
