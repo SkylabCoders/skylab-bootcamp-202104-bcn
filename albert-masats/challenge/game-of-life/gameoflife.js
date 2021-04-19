@@ -1,4 +1,3 @@
-
 let countNeighbour = 0;
 
 const createGrid = (rows, columns) => {
@@ -11,7 +10,6 @@ const createGrid = (rows, columns) => {
 
 let arrayGameOfLife = createGrid(5,5);
 let grid2 = createGrid(5, 5);
-
 
 const coordsCreation = (num1, num2) => {
     return arrayGameOfLife[num1][num2] = 1;
@@ -48,7 +46,6 @@ let changeArray = () => {
         }
     }
 }
-   
 
 let checkneighbours = function (i,j) {
     if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
