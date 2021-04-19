@@ -61,7 +61,7 @@ let gol = () => {
                     newGrid2[i][j] = 1;
                 }
             }
-           neighboursCounter =0
+           neighboursCounter = 0;
         }
     }
     changeArray();
@@ -73,14 +73,14 @@ let timerGol = () => {
     , 6000);
 }
 
-timerGol();
 
 let changeArray = () => {
-    for (let i=0; i<grid2.length; i++) {
-        for (let j=0; j<grid2[i].length; j++) {
-            newGrid[i][j] = grid2 [i][j]
+    for (let i=0; i<newGrid2.length; i++) {
+        for (let j=0; j<newGrid2[i].length; j++) {
+            newGrid[i][j] = newGrid2 [i][j]
         }
     }
 }
 
+timerGol();
 
