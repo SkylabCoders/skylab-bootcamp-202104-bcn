@@ -11,9 +11,9 @@ const heroes = [
   { id: 20, name: 'Tornado' },
 ];
 
-const mainSection = document.querySelector('.container');
+const mainSection = document.querySelector('.container-dashboard');
 
-const createDashboard = () => {
+const createHeaderDashboard = () => {
   const getTitle = document.createElement('h1');
   getTitle.innerHTML = 'Tour of Heroes';
   mainSection.appendChild(getTitle);
@@ -29,28 +29,31 @@ const createDashboard = () => {
   const getSubTitle = document.createElement('h3');
   getSubTitle.innerHTML = 'Top Heroes';
   mainSection.appendChild(getSubTitle);
+};
+createHeaderDashboard();
 
+const createButtonsHeroes = () => {
   const createHeroesContainer = document.createElement('div');
   mainSection.appendChild(createHeroesContainer);
 
-  const detailsHeroes = document.createElement('a');
-  detailsHeroes.innerHTML = 'Narco';
-  detailsHeroes.setAttribute('href', './../heroes/heroes.html');
-  createHeroesContainer.appendChild(detailsHeroes);
+  const detailsHeroesOne = document.createElement('a');
+  detailsHeroesOne.innerHTML = heroes[1].name;
+  detailsHeroesOne.setAttribute('href', './../heroes/heroes.html');
+  createHeroesContainer.appendChild(detailsHeroesOne);
 
-  detailsHeroes = document.createElement('a');
-  detailsHeroes.innerHTML = 'Bombasto';
-  detailsHeroes.setAttribute('href', './../heroes/heroes.html');
-  createHeroesContainer.appendChild(detailsHeroes);
+  const detailsHeroesTwo = document.createElement('a');
+  detailsHeroesTwo.innerHTML = 'Bombasto';
+  detailsHeroesTwo.setAttribute('href', './../heroes/heroes.html');
+  createHeroesContainer.appendChild(detailsHeroesTwo);
 
-  detailsHeroes = document.createElement('a');
-  detailsHeroes.innerHTML = 'Celeritas';
-  detailsHeroes.setAttribute('href', './../heroes/heroes.html');
-  createHeroesContainer.appendChild(detailsHeroes);
+  const detailsHeroesThree = document.createElement('a');
+  detailsHeroesThree.innerHTML = 'Celeritas';
+  detailsHeroesThree.setAttribute('href', './../heroes/heroes.html');
+  createHeroesContainer.appendChild(detailsHeroesThree);
 
-  detailsHeroes = document.createElement('a');
-  detailsHeroes.innerHTML = 'Magneta';
-  detailsHeroes.setAttribute('href', './../heroes/heroes.html');
-  createHeroesContainer.appendChild(detailsHeroes);
+  const detailsHeroesFour = document.createElement('a');
+  detailsHeroesFour.innerHTML = 'Magneta';
+  detailsHeroesFour.setAttribute('href', './../heroes/heroes.html');
+  createHeroesContainer.appendChild(detailsHeroesFour);
 };
-createDashboard();
+createButtonsHeroes();
