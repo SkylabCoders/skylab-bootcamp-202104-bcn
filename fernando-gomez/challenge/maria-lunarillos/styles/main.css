@@ -1,0 +1,178 @@
+html{
+    font-family: 'Source Sans Pro';
+}
+
+li {
+    list-style: none;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    border:blueviolet solid 2px;
+    flex-direction: column;
+    /* max-width: fit-content; */
+}
+
+.nav-bars {
+    display: flex;
+    background-color: rgb(242, 242, 242);
+}
+
+.dropping-nav {
+    display: flex;
+    background-color: #F8F8F8;
+    height: 50px;
+}
+
+.dropping-elements-list{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+figcaption {
+    text-align: center;
+}
+
+.dropping-nav-element {
+}
+
+.not-dropping-nav{
+    display: flex;
+    flex-grow: 1;
+}
+
+.not-dropping-element{
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+#register {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 3;
+}
+
+.login-register {
+
+}
+
+.network:hover {
+
+}
+
+.shopping-icons {
+
+}
+
+.header-container {
+    display:flex;
+}
+
+.logo {
+    display: flex;
+    align-items: flex-end;
+    padding-top: 150px;
+}
+
+.search-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.general-search {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.specific-search {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.specific-search-img {
+    padding: 15px 25px 15px 25px;
+    width: 42px;
+    background-color: rgb(242, 242, 242);
+}
+
+.specific-search-img:hover {
+    background-color: rgb(236, 101, 95);
+}
+
+.blog-search {
+    background-color: rgb(242, 242, 242);
+    padding: 15px;
+}
+
+.blog-search:hover {
+    background-color: rgb(236, 101, 95);
+}
+
+.fa-search {
+    background-color: #ccc;
+    transform: rotate(90deg);
+}
+
+input {
+    outline: none;
+    color: grey;
+}
+
+#marcas-img {
+    padding: 20px;
+}
+
+#news-button {
+    background-color: chartreuse;
+}
+
+#offers-button {
+  background-color: purple;  
+}
+
+#maria-lunarillos-drop {
+    display: flex;
+    align-items: flex-end;
+    background-color: rgb(236, 101, 95);
+    min-height: 140px;
+    max-width: 49vmin;
+}
+
+.cucute {
+    background-color: rgb(111, 152, 173);
+    height: 70px;
+    max-width: 49vmin;
+}
+
+.cucute:hover {
+    display: flex;
+    align-items: flex-end;
+    height: 140px;
+    transition: 1s;
+    transform: rotate(1080deg);
+}
+
+#mumuchu {
+    background-color: rgb(236, 183, 81);
+    height: 70px;
+    max-width: 49vmin;
+}
+
+#mumuchu:hover {
+    display: flex;
+    align-items: flex-end;
+    height: 140px;
+    transition: 1s;
+    transform: rotate(1080deg);
+}
