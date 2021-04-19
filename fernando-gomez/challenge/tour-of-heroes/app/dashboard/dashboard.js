@@ -12,6 +12,16 @@ const heroes = [
   { id: 20, name: 'Tornado' },
 ];
 
+const getHero = (heroId) => {
+  let result;
+  heroes.forEach((hero) => {
+    if (hero.id === heroId) {
+      result = hero;
+    }
+  });
+  return result;
+};
+
 const mainTitle = () => {
   const title = document.createElement('h1');
   title.innerHTML = 'Tour of heroes';
@@ -37,10 +47,40 @@ const generateNavigator = () => {
   return navigator;
 };
 
+const topHeroButton = (heroId) => {
+  const heroButton = document.createElement('button');
+  const hero = getHero(heroId);
+  heroButton.innerHTML = hero.name;
+
+  return heroButton;
+};
+
+const topHeroTitle = () => {
+  const topTitle = document.createElement('h2');
+  topTitle.classList = 'topHeroes__title';
+  topTitle.innerHTML = 'Top heroes';
+  return topTitle;
+};
+
+const generateTopHeroes = () => {
+  const topHeroes = document.createElement('div');
+  const topHeroesTitle = topHeroTitle();
+  topHeroes.classList = 'topHeroes';
+  topHeroes.appendChild(topHeroesTitle);
+  topHeroes.appendChild(topHeroButton(12));
+  topHeroes.appendChild(topHeroButton(13));
+  topHeroes.appendChild(topHeroButton(14));
+  topHeroes.appendChild(topHeroButton(15));
+
+  return topHeroes;
+};
+
 const generateDashboard = () => {
   const navigator = generateNavigator();
+  const topHeroes = generateTopHeroes();
 
   container.appendChild(navigator);
+  container.appendChild(topHeroes);
 };
 
 generateDashboard();
