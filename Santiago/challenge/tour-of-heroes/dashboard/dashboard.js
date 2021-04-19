@@ -20,7 +20,7 @@ const title = (textTitle) => {
 };
 
 const mainButtons = (btnsName) => {
-  const buttons = document.createElement('button');
+  const buttons = document.createElement('a');
   buttons.innerHTML = btnsName;
   return buttons;
 };
@@ -34,9 +34,11 @@ const generateHeader = () => {
   dashboardDiv.appendChild(titleDashboard);
 
   const dashboardButton = mainButtons('Dashboard');
+  dashboardButton.href = './../dashboard/dashboard.html';
   dashboardDiv.appendChild(dashboardButton);
 
-  const heroesButton = mainButtons('Dashboard');
+  const heroesButton = mainButtons('Heroes');
+  heroesButton.href = './../list/list.html';
   dashboardDiv.appendChild(heroesButton);
 };
 
@@ -61,27 +63,27 @@ const topHeroesContainer = () => {
   titleTopHeroes.innerHTML = 'Top Heroes';
   topHeroesDiv.appendChild(titleTopHeroes);
 
-  const topHeroes = document.createElement('div');
+  const topHeroes = document.createElement('ul');
   topHeroes.classList.add('four-heroes');
   topHeroesDiv.appendChild(topHeroes);
 
   const narco = obtainTopHeroes(12);
-  const narcoSpan = document.createElement('span');
+  const narcoSpan = document.createElement('li');
   narcoSpan.innerHTML = narco.name;
   topHeroes.appendChild(narcoSpan);
 
   const bombasto = obtainTopHeroes(13);
-  const bombastoSpan = document.createElement('span');
+  const bombastoSpan = document.createElement('li');
   bombastoSpan.innerHTML = bombasto.name;
   topHeroes.appendChild(bombastoSpan);
 
   const celeritas = obtainTopHeroes(14);
-  const celeritasSpan = document.createElement('span');
+  const celeritasSpan = document.createElement('li');
   celeritasSpan.innerHTML = celeritas.name;
   topHeroes.appendChild(celeritasSpan);
 
   const magneta = obtainTopHeroes(15);
-  const magnetaSpan = document.createElement('span');
+  const magnetaSpan = document.createElement('li');
   magnetaSpan.innerHTML = magneta.name;
   topHeroes.appendChild(magnetaSpan);
 };
