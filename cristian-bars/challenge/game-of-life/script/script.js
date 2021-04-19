@@ -16,39 +16,28 @@ function game(){
     check(row, col, arrayGeneral, exitArray);
     console.log("pinto la final");
     paint(arrayGeneral);
-    //console.log("Torno a passar")
-    //check(row, col, arrayGeneral, exitArray);
-    //console.log("pinto la final 2");
-    //paint(arrayGeneral);
 }
 
 
 function matrix(a,b,arrayGeneral){
     let row = [];
     for (let i = 0; i<a; i++){
-        //display += "<tr class='game_row'>";
+        display += "<tr class='game_row'>";
         for (let j = 0; j<b; j++){
             row[j] = 0;
-            //display += "<td class='game_column'></td>";
+            display += "<td class='game_column'></td>";
         }
-        //display += "</tr>";
+        display += "</tr>";
         arrayGeneral[i]=row;
     }
-    //display += "</table>";
+    display += "</table>";
     console.log(arrayGeneral);
-    //taula.innerHTML = display;
-    //exitArray = [...arrayGeneral];
-    //console.log("exit");
-    //console.log(exitArray);
     return arrayGeneral;
 };
 
 
 
 function blinker(){
-    /*drawPin(1,2);
-    drawPin(2,2);
-    drawPin(3,2);*/
     arrayGeneral = [[0,0,0,0,0],[0,0,0,0,0],[0,1,1,1,0],[0,0,0,0,0],[0,0,0,0,0]];
     exitArray = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
     console.log(arrayGeneral);
