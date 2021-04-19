@@ -8,8 +8,8 @@ const createGrid = (rows, columns) => {
     return grid;
 }
 
-let arrayGameOfLife = createGrid(5,5);
-let grid2 = createGrid(5, 5);
+const arrayGameOfLife = createGrid(5,5);
+const grid2 = createGrid(5, 5);
 
 const coordsCreation = (num1, num2) => {
     return arrayGameOfLife[num1][num2] = 1;
@@ -22,7 +22,7 @@ const blinkerCreation = () => {
 
 blinkerCreation();
 
-function gol () {
+const gol  = () => {
     for(let i = 0; i<arrayGameOfLife.length; i++) {
         for(let j =0; j<arrayGameOfLife[i].length; j++) {
             checkneighbours(i,j);
@@ -33,21 +33,7 @@ function gol () {
     return arrayGameOfLife;
 } 
 
-let timerGol = () => {
-    setInterval(
-       gol
-    , 4000);
-}
-
-let changeArray = () => {
-    for (let i=0; i<grid2.length; i++) {
-        for (let j=0; j<grid2[i].length; j++) {
-            arrayGameOfLife[i][j] = grid2 [i][j];
-        }
-    }
-}
-
-let checkneighbours = function (i,j) {
+const checkneighbours = function (i,j) {
     if (arrayGameOfLife[j+1] && arrayGameOfLife[i][j+1]  === 1) {
         countNeighbour++;
     } 
@@ -74,7 +60,7 @@ let checkneighbours = function (i,j) {
     }
 }
 
-let checkConditions = function (i,j) {
+const checkConditions = function (i,j) {
     if (arrayGameOfLife[i][j] === 1){ 
         if(countNeighbour <= 1 || countNeighbour >= 4){
             grid2[i][j] = 0;
@@ -87,4 +73,18 @@ let checkConditions = function (i,j) {
         }
     }
     countNeighbour = 0;
+}
+
+const changeArray = () => {
+    for (let i=0; i<grid2.length; i++) {
+        for (let j=0; j<grid2[i].length; j++) {
+            arrayGameOfLife[i][j] = grid2 [i][j];
+        }
+    }
+}
+
+const timerGol = () => {
+    setInterval(
+       gol
+    , 4000);
 }
