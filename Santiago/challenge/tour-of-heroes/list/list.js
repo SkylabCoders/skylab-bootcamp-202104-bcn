@@ -42,16 +42,6 @@ const generateHeader = () => {
   dashboardDiv.appendChild(heroesButton);
 };
 
-const obtainAllHereos = () => {
-  let fullList;
-
-  heroes.forEach(((hero) => {
-    console.log(hero.name);
-  }));
-
-  return fullList;
-};
-
 const heroesList = () => {
   const listOfHeroesDiv = document.createElement('div');
   listOfHeroesDiv.classList.add('heroes-list');
@@ -63,11 +53,15 @@ const heroesList = () => {
 
   const listDiv = document.createElement('div');
   listOfHeroesDiv.appendChild(listDiv);
+  for (let i = 0; i < heroes.length; i += 1) {
+    const li = document.createElement('li');
+    li.innerHTML = `${heroes[i].id} - ${heroes[i].name}`;
+    listDiv.appendChild(li);
+  }
 };
 
 const generateDashboard = () => {
   generateHeader();
   heroesList();
-  obtainAllHereos();
 };
 generateDashboard();

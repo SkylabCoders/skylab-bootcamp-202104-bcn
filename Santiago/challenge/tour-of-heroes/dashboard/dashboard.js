@@ -59,8 +59,7 @@ const topHeroesContainer = () => {
   topHeroesDiv.classList.add('heroes-container');
   main.appendChild(topHeroesDiv);
 
-  const titleTopHeroes = document.createElement('h3');
-  titleTopHeroes.innerHTML = 'Top Heroes';
+  const titleTopHeroes = title('Top Heroes');
   topHeroesDiv.appendChild(titleTopHeroes);
 
   const topHeroes = document.createElement('ul');
