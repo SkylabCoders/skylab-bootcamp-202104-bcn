@@ -11,7 +11,6 @@ let grid = initializeGrid(rows, cols);
 
 printGrid();
 
-// if(speedSlider[0] && speedSlider[0].length) {
 speedSlider[0].onchange = function () { // When changing speedSlider values
   speedSliderText[0].innerText = `Speed (${(speedSlider[0]?.value / 1000).toFixed(1)}s):`;
   if (playButton.className === 'stop') {
@@ -19,7 +18,6 @@ speedSlider[0].onchange = function () { // When changing speedSlider values
     interval = setInterval(() => drawGrid(grid), speedSlider[0].value);
   }
 };
-// }
 
 playButton?.addEventListener('click', () => { // When pressing play/stop button
   if (playButton.className === 'play') {
