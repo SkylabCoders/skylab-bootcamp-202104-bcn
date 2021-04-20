@@ -10,7 +10,7 @@ const createHeroesList = () => {
 
     heroesToShow.forEach(({ name, id }) => {
       const heroItem = createDomElement(heroNames, 'li', '', '');
-      createDomElement(heroItem, 'a', name, `../heroDetails/heroDetails.html?id=${id}`);
+      createDomElement(heroItem, 'a', name, `../hero-detail/heroDetail.html?id=${id}`);
     });
   });
 };
