@@ -4,8 +4,35 @@ body {
 }
 
 .table-container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: red solid 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: start;
+      align-self: start;
   height: 500px;
-  width: 100%;
+}
+
+.table {
+  border: springgreen solid 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.slot {
+  border: steelblue solid 2px;
+  height: 50px;
+  width: 50px;
 }
 /*# sourceMappingURL=style.css.map */
