@@ -24,13 +24,18 @@ function addLink() {
   const createNav = document.createElement('nav');
   createNav.setAttribute('id', 'nav');
   nodeContainer.appendChild(createNav);
-  for (let i = 0; i < 2; i += 1) {
-    const createLink = document.createElement('a');
-    createLink.setAttribute('id', `dashboard-link-${i}`);
-    createNav.appendChild(createLink);
-  }
-  document.getElementById('dashboard-link-0').innerHTML = 'Dashboard';
-  document.getElementById('dashboard-link-1').innerHTML = 'Heroes';
+
+  const createLinkDashboard = document.createElement('a');
+  createLinkDashboard.setAttribute('id', 'dashboard-link');
+  createNav.appendChild(createLinkDashboard);
+  createLinkDashboard.innerHTML = 'Dashboard';
+  createLinkDashboard.href = './../dashboard/dashboard.html';
+
+  const createLinkHeroDetails = document.createElement('a');
+  createLinkHeroDetails.setAttribute('id', 'hero-list-link');
+  createNav.appendChild(createLinkHeroDetails);
+  createLinkHeroDetails.innerHTML = 'hero list';
+  createLinkHeroDetails.href = './hero-list.html';
 }
 
 function addHeroesInput() {
@@ -73,6 +78,7 @@ function createHeroList() {
 
     const createLinkId = document.createElement('a');
     createLinkId.setAttribute('id', 'id-hero-list');
+    createLinkId.href = './../hero-detail/hero-detail.html';
     createLinkId.innerHTML = element.name;
     createLi.appendChild(createLinkId);
   });

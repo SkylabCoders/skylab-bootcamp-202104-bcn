@@ -1,4 +1,5 @@
 const nodeContainer = document.getElementById('main');
+
 const heroes = [
   { id: 11, name: 'Dr Nice' },
   { id: 12, name: 'Narco' },
@@ -12,7 +13,7 @@ const heroes = [
   { id: 20, name: 'Tornado' }
 ];
 
-function addTittle(text) {
+function addTitle(text) {
   const title = document.createElement('h1');
   title.innerHTML = text;
   title.classList.add = 'title';
@@ -24,13 +25,18 @@ function addLink() {
   const createNav = document.createElement('nav');
   createNav.setAttribute('id', 'nav');
   nodeContainer.appendChild(createNav);
-  for (let i = 0; i < 2; i += 1) {
-    const createLink = document.createElement('a');
-    createLink.setAttribute('id', `dashboard-link-${i}`);
-    createNav.appendChild(createLink);
-  }
-  document.getElementById('dashboard-link-0').innerHTML = 'Dashboard';
-  document.getElementById('dashboard-link-1').innerHTML = 'Heroes';
+
+  const createLinkDashboard = document.createElement('a');
+  createLinkDashboard.setAttribute('id', 'dashboard-link');
+  createNav.appendChild(createLinkDashboard);
+  createLinkDashboard.innerHTML = 'Dashboard';
+  createLinkDashboard.href = './dashboard.html';
+
+  const createLinkHeroDetails = document.createElement('a');
+  createLinkHeroDetails.setAttribute('id', 'hero-list-link');
+  createNav.appendChild(createLinkHeroDetails);
+  createLinkHeroDetails.innerHTML = 'hero list';
+  createLinkHeroDetails.href = './../hero-list/hero-list.html';
 }
 
 function addH2() {
@@ -46,16 +52,17 @@ function addHeroesList() {
   nodeContainer.appendChild(createUl);
 
   for (let i = 0; i < 4; i += 1) {
-    const createIl = document.createElement('il');
-    createIl.setAttribute('id', `common-il-${i}`);
+    const createIl = document.createElement('li');
+    createIl.setAttribute('id', `common-li-${i}`);
     createUl.appendChild(createIl);
+
+    const createLinkHero = document.createElement('a');
+    createLinkHero.setAttribute('id', `link-${heroes[i].name}`);
+    createLinkHero.innerHTML = heroes[i].name;
+    createIl.appendChild(createLinkHero);
+    createLinkHero.href = './../hero-detail/hero-detail.html';
   }
 }
-
-document.getElementById('common-il-0').innerHTML = heroes[1].name;
-document.getElementById('common-il-1').innerHTML = heroes[2].name;
-document.getElementById('common-il-2').innerHTML = heroes[3].name;
-document.getElementById('common-il-3').innerHTML = heroes[4].name;
 
 function addLabelInputs() {
   const createLabel = document.createElement('label');
@@ -67,7 +74,12 @@ function addLabelInputs() {
   const createInput = document.createElement('input');
   createInput.setAttribute('id', 'hero-search');
   createInput.setAttribute('type', 'text');
-  nodeContainer.appendChild(createInput);
+  createLabel.appendChild(createInput);
+
+  const createButton = document.createElement('button');
+  createButton.setAttribute('id', 'button-input');
+  createButton.innerHTML = 'Add Hero';
+  createLabel.appendChild(createButton);
 }
 
 function messageDivContainer() {
@@ -97,7 +109,7 @@ function messageDivContainer() {
   }
 }
 
-addTittle('tour of heroes');
+addTitle('tour of heroes');
 addLink();
 addH2();
 addHeroesList();
