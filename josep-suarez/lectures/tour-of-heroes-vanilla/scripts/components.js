@@ -13,8 +13,8 @@ const heroes =
         { id:"20", name: 'Tornado' }
    ];
 
-//creo el contenido html y le incluyo el id y el name del heroe
-// lo meto en la url en cuanto le doy click!
+//creo el contenido html y le incluyo el id y el name del heroe con destructuring
+// lo meto en la url con href y a partir del ? meto el heroID y la id correspondiente
 const modules = ({id, name}) => {
     let newContent = `<div class="heroe-item" id="${id}" >
         <a href="./hero-detail.html?heroID=${id}">${name}</a></div>`;
