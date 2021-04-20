@@ -33,16 +33,16 @@ buttonHeroes.setAttribute('href', 'http://127.0.0.1:5500/challenge/tour-of-heroe
 divFirstPart.appendChild(buttonHeroes);
 
 const nameDetails = document.createElement('h2');
-nameDetails.innerHTML = `${heroes.name} details!`;
+let param = new URLSearchParams(location.search);
+let heroeName = param.get('heroeName');
+nameDetails.innerHTML = `${heroeName} details!`;
 divSecondPart.appendChild(nameDetails);
 
-const id = document.createElement('h3');
-id.innerHTML = 'id:';
-divSecondPart.appendChild(id);
-
-const inputId = document.createElement('input');
-inputId.innerHTML = 'id:';
-divSecondPart.appendChild(inputId);
+const reuturnOfId = document.createElement('p');
+let paramID = new URLSearchParams(location.search);
+let heroeID = paramID.get('heroeID');
+reuturnOfId.innerHTML = `id: ${heroeID}`;
+divSecondPart.appendChild(reuturnOfId);
 
 const nameOfHeroe = document.createElement('h3');
 nameOfHeroe.innerHTML = 'name:';

@@ -40,7 +40,8 @@ const firstHeroes = heroes;
 
 firstHeroes.forEach((firstHeroe) => {
   const firstHeroesNames = document.createElement('a');
-  firstHeroesNames.innerText = `${firstHeroe.id} ${firstHeroe.name} `;
+  firstHeroesNames.innerText = `${firstHeroe.name}`;
+  firstHeroesNames.setAttribute('href', `http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html?heroeName=${firstHeroe.name}&heroeID=${firstHeroe.id}`);
   divSecondPart.appendChild(firstHeroesNames);
-  firstHeroesNames.setAttribute('href', 'http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html');
 });
+

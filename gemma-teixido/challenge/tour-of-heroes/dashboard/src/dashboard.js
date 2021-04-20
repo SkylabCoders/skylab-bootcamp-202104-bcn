@@ -41,6 +41,16 @@ const firstHeroes = heroes.slice(0, 4);
 firstHeroes.forEach((firstHeroe) => {
   const firstHeroesNames = document.createElement('a');
   firstHeroesNames.innerText = `${firstHeroe.name}`;
-  firstHeroesNames.setAttribute('href', 'http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html');
+  firstHeroesNames.setAttribute('href', `http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html?heroeName=${firstHeroe.name}&heroeID=${firstHeroe.id}`);
   divSecondPart.appendChild(firstHeroesNames);
 });
+
+
+/*
+createHtmlElement(selector, object, className) {
+  let node = document.createElement(selector);
+  node.setAttribute('id', object.id);
+  node.addClass(className);
+  return node;
+}
+*/
