@@ -1,4 +1,9 @@
-const modules= (heroe) =>{
-    let newContent = `<div class="heroe-item" id="${hero.id}
-    <a href='/hero-detail.html?heroID=${heroe.id}'>${heroe.id}`
+const modules = ({id, name}) => {
+    let newContent = `<div class="heroe-item" id="${id}" >
+        <a href="./hero-detail.html?heroID=${id}">${name}</a></div>`;
+    var node = document.getElementById('loader');
+    node.innerHTML += newContent;
+};
+function appendElement(heroe) {
+    modules(heroe);
 }

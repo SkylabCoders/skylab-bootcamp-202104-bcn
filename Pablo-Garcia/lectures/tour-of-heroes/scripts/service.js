@@ -1,13 +1,3 @@
-/*
-function getHeroes(){
-    return heroes.map(({ name }) => name);
-
-}
-
-module.exports = {
-    getHeroes,
-};*/
-
-function getHeroIDFromUrl(url, paramToSearch='heroID'){
+function getHeroIDFromUrl(url) {
     return new URLSearchParams(url).get('heroID');
 }
