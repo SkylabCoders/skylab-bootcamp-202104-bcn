@@ -3,10 +3,10 @@ function arrayEvery(arr, cbFunc) {
     
     for(let i=0;i<arr.length;i++) {  
         if (cbFunc(arr[i])) {counter++} 
-        
+        else {return false}
     }    
     if (counter === arr.length) {return true}
-    else {return false}
+    
 }
     
     describe('Given an arrayEvery function', () => {
@@ -21,6 +21,10 @@ function arrayEvery(arr, cbFunc) {
         },
         {   arr: [8,-34,-323, 3], 
             cbFunc: (num) => num === -34,
+        result: false
+        },
+        {   arr: ["hola","adios","luego", 3], 
+            cbFunc: (num) => num === "adios",
         result: false
         }
     ];
