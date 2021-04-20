@@ -20,7 +20,7 @@ const heroes = [
     { id: 20, name: 'Tornado' }
 ]
 
-const navigation = (nav) =>{
+const navigationls = (nav) =>{
 const routes = Object.values(nav)
 const routing = Object.getOwnPropertyNames(nav);
 const navigation = document.createElement('ul');
@@ -41,7 +41,7 @@ const heroeList = (data) =>{
 
    const listHeroes = document.createElement('ul');
    listHeroes.classList.add('listing__heroes');
-    heroes.forEach((item, index) =>{
+   heroes.forEach((item, index) =>{
         const {id, name} = item;
         const heroe = document.createElement('li');
         heroe.setAttribute('data_id', `${id}`);
@@ -55,10 +55,9 @@ const heroeList = (data) =>{
    sectionHeroeList.appendChild(listHeroes);
 
    return sectionHeroeList;
-}
+}npm
 const searBar = () =>{
     const form = document.createElement('form');
-    form.sett
 }
 
 const printData = ()=>{
