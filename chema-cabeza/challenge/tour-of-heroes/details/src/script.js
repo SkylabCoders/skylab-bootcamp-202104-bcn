@@ -55,3 +55,9 @@ detailsForm.appendChild(createElement('span', 'idDetailsBottom', 'name:'));
 const textInput = createElement('input', 'idDetailsBottom');
 textInput.value = heroName;
 detailsForm.appendChild(textInput);
+
+const goBackButton = createElement('a', 'goBackButton', 'Back');
+goBackButton.onclick = function goBack() {
+  window.history.back();
+};
+detailsBottomDiv.appendChild(goBackButton);
