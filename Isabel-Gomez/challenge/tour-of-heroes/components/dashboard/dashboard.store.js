@@ -13,38 +13,20 @@ const heroes = [
 
 const mainSection = document.querySelector('.container-dashboard');
 
-const getOnclickList = () => {
-  window.location.replace('./../heroes/heroes.html');
+const createElement = (tag, innerHTML, parent, href) => {
+  const getTag = document.createElement(tag);
+  getTag.innerHTML = innerHTML;
+  parent.appendChild(getTag);
+  getTag.href = href;
 };
+createElement('h1', 'Tour of Heroes', mainSection);
+createElement('a', 'Dashboard', mainSection);
+createElement('a', 'Heroes', mainSection, './../heroes/heroes.html');
+createElement('h3', 'Top Heroes', mainSection);
 
-const createHeaderDashboard = () => {
-  const getTitle = document.createElement('h1');
-  getTitle.innerHTML = 'Tour of Heroes';
-  mainSection.appendChild(getTitle);
-
-  const buttonDashboard = document.createElement('button');
-  buttonDashboard.innerHTML = 'Dashboard';
-  mainSection.appendChild(buttonDashboard);
-
-  const buttonHeroes = document.createElement('button');
-  buttonHeroes.innerHTML = 'Heroes';
-  mainSection.appendChild(buttonHeroes);
-  buttonHeroes.onclick = () => getOnclickList();
-
-  const getSubTitle = document.createElement('h3');
-  getSubTitle.innerHTML = 'Top Heroes';
-  mainSection.appendChild(getSubTitle);
-};
-createHeaderDashboard();
-
-const createButtonsHeroes = (array) => {
-  const createHeroesContainer = document.createElement('div');
-  mainSection.appendChild(createHeroesContainer);
+const createSelectorHeroes = (array) => {
   array.splice(1, 4).forEach((element) => {
-    const reference = document.createElement('a');
-    createHeroesContainer.appendChild(reference);
-    reference.innerHTML = `${element.name}`;
-    reference.href = './../heroes-details/heroes-details.html';
+    createElement('a', `${element.name}`, mainSection, './../heroes-details/heroes-details.html');
   });
 };
-createButtonsHeroes(heroes);
+createSelectorHeroes(heroes);
