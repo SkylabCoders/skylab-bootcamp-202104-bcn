@@ -1,31 +1,19 @@
-const newArray = [];
-
 const scenario = [
   {
-    array: [4, 5, 8, 15, 18, 21, 22],
-    callback: (x) => { if (x < 25) return true; }, // scenario 1///como es un solo parametro, puede pasarse solo x (sin parentesis)
-    result: true
-  },
-  {
-    array: [4, 0, 8, 0, 18, 21, 22],
-    callback: (x) => { if (x === 0) return true; },
-    result: false
-  },
-  {
-    array: [75, 75, 75, 75],
-    callback: (x) => { if (x === 75) return true; },
-    result: true
+    array: [8, 5, 8],
+    callback: (x) => { if (x !== NaN) return true; }, // scenario 1///como es un solo parametro, puede pasarse solo x (sin parentesis)
+    result: 21
   }
 ];
 
-function myEveryFunction(array, callback) {
-  let result = false;
+function myReduceFunction(array, callback) {
+  let result = 0;
+
   for (let i = 0; i < array.length; i++) {
     if (callback(array[i])) {
-      result = true;
-    } else return false;
-  }
-  return result;
+      result += array[i];
+    }
+  } return result;
 }
 
 scenario.forEach((scenario) => {
@@ -36,7 +24,7 @@ scenario.forEach((scenario) => {
       const b = scenario.callback;
 
       // Act
-      const result = myEveryFunction(a, b); // mi funcion a probar
+      const result = myReduceFunction(a, b); // mi funcion a probar
 
       // Assert
       expect(result).toBe(scenario.result); // resultado esperado vs mi resultado   ***toBe porque devuelve primitivo****
