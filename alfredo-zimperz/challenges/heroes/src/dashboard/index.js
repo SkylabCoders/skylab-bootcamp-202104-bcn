@@ -13,12 +13,12 @@ const HEROES = [
 const NAV_LIST_ELEMENTS = [
   {
     name: 'dashboard',
-    url: '/alfredo-zimperz/challenges/heroes/src/dashboard/',
+    url: '../dashboard/',
   },
   {
 
     name: 'hero-list',
-    url: '/alfredo-zimperz/challenges/heroes/src/hero-list/',
+    url: '../hero-list/',
 
   },
 ];
@@ -66,8 +66,11 @@ HEROES.forEach((hero) => {
   const liElement = document.createElement('li');
   liElement.classList.add('heroes-list_item');
   liElement.setAttribute('id', hero.id);
-  const buttonElement = document.createElement('button');
-  buttonElement.onclick = () => handleClick(hero.id);
+  // const buttonElement = document.createElement('button');
+  // buttonElement.onclick = () => handleClick(hero.id);
+  // buttonElement.innerText = hero.name;
+  const buttonElement = document.createElement('a');
+  buttonElement.href = `../hero-detail/?heroId=${hero.id}`;
   buttonElement.innerText = hero.name;
   liElement.appendChild(buttonElement);
   topHeroesList.appendChild(liElement);

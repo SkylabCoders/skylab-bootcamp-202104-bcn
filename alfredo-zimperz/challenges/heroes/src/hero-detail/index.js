@@ -53,8 +53,10 @@ APP_ELEMENT.appendChild(header);
 
 // -- Create Heroe detail section
 
-const heroIdFromSession = parseInt(sessionStorage.getItem('hero-id'), 10);
-const actualHero = HEROES.find((hero) => hero.id === heroIdFromSession);
+// const heroIdFromSession = parseInt(sessionStorage.getItem('hero-id'), 10);
+// const actualHero = HEROES.find((hero) => hero.id === heroIdFromSession);
+const heroIdFromURL = new URLSearchParams(window.location.search).get('heroId');
+const actualHero = HEROES.find((hero) => hero.id.toString() === heroIdFromURL);
 const myHeroesSection = document.createElement('section');
 myHeroesSection.classList.add('my-heroes');
 const myHeroesH2 = document.createElement('h2');
