@@ -57,7 +57,7 @@ function createHeroesList() {
     eachHero.appendChild(link);
     link.appendChild(name);
     document.body.appendChild(eachHero);
-    link.href = `./../details/details.html?id=${hero.id}`;
+    link.href = `./../details/details.html?heroid=${hero.id}`;
   });
 }
 
