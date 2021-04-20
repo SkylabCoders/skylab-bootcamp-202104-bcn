@@ -1,37 +1,40 @@
-// const modules = ({id, name}) => {
-//     let newContent = `<div class="heroe-item" id="${id}" >
-//         <a href="./hero-detail.html?heroID=${id}">${name}</a></div>`;
-//     let node = document.getElementById('dashboardHeroes');
-//     node.innerHTML += newContent;
-// };
-// function appendElement(heroe) {
-//     modules(heroe);
-// }
-// heroes.forEach(heroe => { appendElement(heroe)});
-// let heroID = getHeroIDFromUrl(location.search);
-//     appendElement(heroes.find(heroe => heroe.id.toString()=== heroID));
-//     function getHeroIDFromUrl(url) {
-//         return new URLSearchParams(url).get('heroID');
-//     }
 
-const startDash = () => {
-    siteOfButtons.appendChild(listHeroes);
-    heroes.forEach(hero => {
+const fetchHeroesData = () => {
+    return fetch(".././superheroes-data/superHeroData.json")
+    .then((response)=>{
+       return response.json();
+    })
+    .then(data => { 
+        startDash(data);
+    })
+}
+
+const startDash = (data) => {
+    const dashboard = document.getElementById("dashboard");
+    const listHeroes = document.createElement("ul");
+    dashboard.appendChild(listHeroes);
+    data.forEach(hero => {
             const liElement = document.createElement("li");
-            const list = document.createElement("button");
+            const list = document.createElement("a");
             const typeText = document.createElement("input");
-            list.onclick = () => heroeClicked(hero.name);
+            // list.onclick = () => heroeClicked(hero.id);
             list.innerHTML = hero.id + "  "+hero.name;
             liElement.appendChild(list);
+            list.href = (".././heroes-detail.html?heroID="+hero.id);
+            let heroID = getHeroIDFromUrl(location.search);
+            appendElement(heroes.find(heroe => heroe.id.toString()=== heroID));
+            function getHeroIDFromUrl(url) {
+                return new URLSearchParams(url).get('heroID');
+            }
             listHeroes.appendChild(liElement);
             let detailsText = document.createElement("p");
-            siteOfButtons.appendChild(detailsText)
+            dashboard.appendChild(detailsText)
             const writingDetails = () => {
                 detailsText.innerHTML = typeText.value + " details of heroe";
             }
             typeText.addEventListener("keyup",writingDetails);
-    })
-}
+        })
+    }
 
 const startDetail = () => {
     const typeText = document.createElement("input");
@@ -45,12 +48,14 @@ const startDetail = () => {
 }
 
 const startPage = () => {
-    for (hero in heroesLinks){
+    fetchHeroesData();
+    heroes.slice(1,5).forEach(hero => {
             const button = document.createElement("a");
-            let textHeroe = document.createTextNode(heroesLinks[hero]);
+            let textHeroe = document.createTextNode(hero.name);
             button.appendChild(textHeroe);
-            button.title = heroesLinks[hero];
+            button.title = hero.name;
             button.href = "../dashboard/dashboard.html";
             siteOfButtons.appendChild(button);
-    }
+    })
 }
+
