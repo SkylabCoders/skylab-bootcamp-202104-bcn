@@ -1,0 +1,119 @@
+@import "./mixin.scss";
+
+*,
+ *::after,
+ *::before  {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.game-board {
+  @include flexbox(flex, column, null, center);
+  margin: auto;
+  margin-top: 10px;
+}
+
+h1 {
+  padding: 5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+a:nth-child(1) {
+  color: #ff7700;
+}
+a:nth-child(2) {
+  color: #f2cb05;
+}
+a:nth-child(3) {
+  color: #f2b705;
+}
+a:nth-child(4) {
+  color: #d96704;
+}
+a:nth-child(5) {
+  color: #f2e641;
+}
+a:nth-child(6) {
+  color: #ff7700;
+}
+a:nth-child(7) {
+  color: #f2cb05;
+}
+a:nth-child(8) {
+  color: #f2e641;
+}
+a:nth-child(8) {
+  color: #d96704;
+}
+a:nth-child(9) {
+  color: #f2cb05;
+}
+a:nth-child(10) {
+  color: #f2e641;
+}
+
+.board {
+  position: relative;
+  @include flexbox(inline-flex, column, flex-start, null);
+  height: auto;
+  width: auto;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.cells-row {
+  @include flexbox(flex, row, flex-start, null);
+}
+
+.cell {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  border: none;
+  border: 0.1px solid rgb(29, 29, 29);
+  background-color: transparent;
+  border-radius: 50%;
+}
+.controls {
+  @include flexbox(flex, row, center, center);
+  margin-top: 10px;
+}
+
+button {
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 5px 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.play {
+  color: #f2cb05;
+}
+
+.stop {
+  color: #f2b705;
+}
+
+.reset {
+  color: #d96704;
+}
+
+.counter {
+  margin-left: 50px;
+  width: 20px;
+}
