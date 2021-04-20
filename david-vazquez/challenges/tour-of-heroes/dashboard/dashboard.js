@@ -54,8 +54,7 @@ function generateDashboard (container){
     dashboardContainer.appendChild(dashboardTitle);
     dashboardTitle.className='dashboard__title';
     dashboardTitle.innerText='Top Heroes';
-    generateList(dashboardContainer);
-    
+    generateList(dashboardContainer);   
 }
 
 function generateList(dashboardContainer){
@@ -63,13 +62,11 @@ function generateList(dashboardContainer){
     dashboardContainer.appendChild(dashboardList);
     dashboardList.className='dashboard__list';
     for(let i=1;i<5;i++){
-        generateItems(dashboardList,heroes[i].name);
+        generateItems(dashboardList,heroes[i].name, heroes[i].id);
     }
-    
-
 }
 
-function generateItems(dashboardList, text){
+function generateItems(dashboardList, text, id){
     const dashboardItems = document.createElement('li');
     dashboardList.appendChild(dashboardItems);
     dashboardItems.className='list__items';
