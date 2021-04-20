@@ -1,7 +1,5 @@
-const routing = {
-    dashboard:'../dashboard/dashboard.html',
-    heroes:'../hero/heroes.html',
-}
+/*
+
 const title = (title, type) => {
     const head = document.createElement(`${type}`);
     head.innerText = title;
@@ -72,4 +70,4 @@ const printData = ()=>{
 }
 
 
-window.onload = printData;
+window.onload = printData;*/
