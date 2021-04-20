@@ -35,9 +35,24 @@ heroesLink.innerHTML = "Heroes";
 nav.appendChild(heroesLink);
 
 
+const id = document.createElement('div')
+id.innerHTML = "id:" 
+main.appendChild(id)
+
+const name = document.createElement('div')
+name.innerHTML = "name:"
+main.appendChild(name)
+
+const input = document.createElement('input');
+// input
+main.appendChild(input);
+
+
 
 
 const viewDetails = document.createElement('a');
 viewDetails.setAttribute('href','../dashboard/dashboard.html')
 viewDetails.innerHTML = "Back";
-foot.appendChild(viewDetails);
+main.appendChild(viewDetails);
+
+    
