@@ -39,7 +39,6 @@ const startDash = () => {
             liElement.appendChild(list);
             listHeroes.appendChild(liElement);
     })
-    
 }
 const typeText = document.createElement("input");
 let detailsText = document.createElement("p");
