@@ -1,15 +1,5 @@
-const HEROES = [
-  { id: 11, name: 'Dr Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' },
-];
+const HEROES_LIST = fetchData('../../store/superHeroData.json');
+
 const NAV_LIST_ELEMENTS = [
   {
     name: 'dashboard',
@@ -55,19 +45,19 @@ APP_ELEMENT.appendChild(header);
 
 // const heroIdFromSession = parseInt(sessionStorage.getItem('hero-id'), 10);
 // const actualHero = HEROES.find((hero) => hero.id === heroIdFromSession);
-const heroIdFromURL = new URLSearchParams(window.location.search).get('heroId');
-const actualHero = HEROES.find((hero) => hero.id.toString() === heroIdFromURL);
-const myHeroesSection = document.createElement('section');
-myHeroesSection.classList.add('my-heroes');
-const myHeroesH2 = document.createElement('h2');
-myHeroesH2.innerText = `${actualHero.name} details`;
-const searchInput = document.createElement('input');
-searchInput.classList.add('search__input');
-const addHeroButton = document.createElement('button');
-addHeroButton.innerText = 'Add hero';
-myHeroesSection.appendChild(myHeroesH2);
-myHeroesSection.appendChild(searchInput);
-myHeroesSection.appendChild(addHeroButton);
-APP_ELEMENT.appendChild(myHeroesSection);
-
-// -- End Top Heroes section
+HEROES_LIST.then((heroes) => {
+  const heroIdFromURL = new URLSearchParams(window.location.search).get('heroId');
+  const actualHero = heroes.find((hero) => hero.id.toString() === heroIdFromURL);
+  const myHeroesSection = document.createElement('section');
+  myHeroesSection.classList.add('my-heroes');
+  const myHeroesH2 = document.createElement('h2');
+  myHeroesH2.innerText = `${actualHero.name} details`;
+  const searchInput = document.createElement('input');
+  searchInput.classList.add('search__input');
+  const addHeroButton = document.createElement('button');
+  addHeroButton.innerText = 'Add hero';
+  myHeroesSection.appendChild(myHeroesH2);
+  myHeroesSection.appendChild(searchInput);
+  myHeroesSection.appendChild(addHeroButton);
+  APP_ELEMENT.appendChild(myHeroesSection);
+});

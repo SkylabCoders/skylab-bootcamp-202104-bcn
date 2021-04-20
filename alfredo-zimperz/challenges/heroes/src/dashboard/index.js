@@ -1,15 +1,5 @@
-const HEROES = [
-  { id: 11, name: 'Dr Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' },
-];
+const HEROES_LIST = fetchData('../../store/superHeroData.json');
+
 const NAV_LIST_ELEMENTS = [
   {
     name: 'dashboard',
@@ -52,28 +42,31 @@ APP_ELEMENT.appendChild(header);
 // --- End header
 
 // -- Create Top Heroes section
-const handleClick = (id) => {
-  sessionStorage.setItem('hero-id', id);
-  window.location.replace('/alfredo-zimperz/challenges/heroes/src/hero-detail/');
-};
+// const handleClick = (id) => {
+//   sessionStorage.setItem('hero-id', id);
+//   window.location.replace('/alfredo-zimperz/challenges/heroes/src/hero-detail/');
+// };
 const topHeroesSection = document.createElement('section');
 topHeroesSection.classList.add('top-heroes');
 const topHeroesH2 = document.createElement('h2');
 topHeroesH2.innerText = 'Top Heroes';
 const topHeroesList = document.createElement('ul');
 topHeroesList.classList.add('heroes-list');
-HEROES.forEach((hero) => {
-  const liElement = document.createElement('li');
-  liElement.classList.add('heroes-list_item');
-  liElement.setAttribute('id', hero.id);
-  // const buttonElement = document.createElement('button');
-  // buttonElement.onclick = () => handleClick(hero.id);
-  // buttonElement.innerText = hero.name;
-  const buttonElement = document.createElement('a');
-  buttonElement.href = `../hero-detail/?heroId=${hero.id}`;
-  buttonElement.innerText = hero.name;
-  liElement.appendChild(buttonElement);
-  topHeroesList.appendChild(liElement);
+
+HEROES_LIST.then((heroes) => {
+  heroes.splice(0, 4).forEach((hero) => {
+    const liElement = document.createElement('li');
+    liElement.classList.add('heroes-list_item');
+    liElement.setAttribute('id', hero.id);
+    // const buttonElement = document.createElement('button');
+    // buttonElement.onclick = () => handleClick(hero.id);
+    // buttonElement.innerText = hero.name;
+    const buttonElement = document.createElement('a');
+    buttonElement.href = `../hero-detail/?heroId=${hero.id}`;
+    buttonElement.innerText = hero.name;
+    liElement.appendChild(buttonElement);
+    topHeroesList.appendChild(liElement);
+  });
 });
 topHeroesSection.appendChild(topHeroesH2);
 topHeroesSection.appendChild(topHeroesList);
