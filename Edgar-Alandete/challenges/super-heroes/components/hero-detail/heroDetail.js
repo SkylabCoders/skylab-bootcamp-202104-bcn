@@ -7,7 +7,7 @@ const createNavigator = (parent) => {
   const dashboardItem = createDomElement(nav, 'li', '', '', '', 'main-navigation__item');
   createDomElement(dashboardItem, 'a', 'Dashboard', '../dashboard/dashboard.html', '', '', '');
   const heroesItem = createDomElement(nav, 'li', '', '', '', 'main-navigation__item');
-  createDomElement(heroesItem, 'a', 'Heroes', '#', '');
+  createDomElement(heroesItem, 'a', 'Heroes', '../heroes/heroes.html', '');
 
   return nav;
 };

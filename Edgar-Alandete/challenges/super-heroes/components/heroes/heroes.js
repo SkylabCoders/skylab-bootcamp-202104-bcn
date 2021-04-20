@@ -2,6 +2,12 @@ const heroes = document.getElementById('heroes');
 const heroDataUrl = '../../store/superHeroData.json';
 const heroesData = fetchHeroes(heroDataUrl);
 
+function showFavouriteHero(name, id) {
+  const container = document.getElementById('hero');
+  container.innerText = `${name} is my hero`;
+  createDomElement(container, 'a', 'View Details', `../hero-detail/heroDetail.html?id=${id}`);
+}
+
 const createHeroesList = (section) => {
   heroesData.then((data) => {
     const heroesCopy = [...data].sort(() => 0.5 - Math.random());
@@ -11,7 +17,10 @@ const createHeroesList = (section) => {
     heroesToShow.forEach(({ name, id }) => {
       const heroItem = createDomElement(heroNames, 'li', '', '');
       createDomElement(heroItem, 'span', id, '', '', '');
-      createDomElement(heroItem, 'a', name, `../hero-detail/heroDetail.html?id=${id}`);
+      createDomElement(heroItem, 'a', name, '');
+      heroItem.onclick = function heroCreation() {
+        showFavouriteHero(name, id);
+      };
     });
   });
 };
@@ -37,6 +46,7 @@ const myHeroes = () => {
   const section = createDomElement(heroes, 'section', '', '', '', 'top-heroes');
   createDomElement(section, 'h2', 'My Heroes', '');
   createHeroesList(section);
+  createDomElement(heroes, 'div', '', '', 'hero');
 };
 
 myHeroes();
