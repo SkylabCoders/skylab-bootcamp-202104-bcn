@@ -55,14 +55,17 @@ const heroeTitle = generateElement({ type: 'h3', classes: ['heroe-title'], conte
 mainContent.append(heroeTitle);
 const heroeInfo = generateElement({ type: 'div', classes: ['heroe-data'] });
 mainContent.append(heroeInfo);
-const heroeId = generateElement({ type: 'p', classes: ['heroe-data__id'] });
+const heroeLabel = generateElement({ type: 'label', classes: [], context: 'Name' });
+heroeLabel.setAttribute('for', 'hname');
+const heroeId = generateElement({ type: 'p', classes: ['heroe-data__id'], context: 12 });
 const heroeName = generateElement({ type: 'input', classes: ['heroe-data__name'] });
 
 heroeName.setAttribute('type', 'text');
 heroeName.setAttribute('id', 'hname');
 heroeName.setAttribute('name', 'hname');
-
 heroeInfo.append(heroeId);
+heroeInfo.append(heroeLabel);
 heroeInfo.append(heroeName);
 
+heroeInfo.append(heroeLabel);
 mainContent.append(heroeInfo);
