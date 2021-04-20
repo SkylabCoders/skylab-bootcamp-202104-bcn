@@ -45,12 +45,10 @@ firstHeroes.forEach((firstHeroe) => {
   divSecondPart.appendChild(firstHeroesNames);
 });
 
-
-/*
-createHtmlElement(selector, object, className) {
+fetchSuperHeroes();
+/* createHtmlElement(selector, object, className) {
   let node = document.createElement(selector);
   node.setAttribute('id', object.id);
   node.addClass(className);
   return node;
-}
-*/
+} */
