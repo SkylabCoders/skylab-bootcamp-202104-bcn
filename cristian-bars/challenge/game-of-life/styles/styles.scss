@@ -1,0 +1,19 @@
+@import './variables';
+
+.game_column {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+}
+
+#content {
+    display: flex;
+}
+
+#buttons {
+    display: flex;
+}
+
+.bottom {
+    @include bottom;
+}
