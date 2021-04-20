@@ -34,9 +34,6 @@ const detailsContainer = () => {
   topDetailsDiv.classList.add('heroes-container');
   main.appendChild(topDetailsDiv);
 
-  const titleTopHeroes = title('Top Heroes');
-  topDetailsDiv.appendChild(titleTopHeroes);
-
   const heroID = document.createElement('p');
   topDetailsDiv.appendChild(heroID);
   const paramID = new URLSearchParams(location.search);
@@ -50,6 +47,9 @@ const detailsContainer = () => {
   const heroeName = paramName.get('heroeName');
   heroName.innerHTML = `name: ${heroeName}`;
   main.appendChild(heroName);
+
+  const titleTopHeroes = title(`${heroeName} details`);
+  topDetailsDiv.appendChild(titleTopHeroes);
 };
 
 const generateDetails = () => {
