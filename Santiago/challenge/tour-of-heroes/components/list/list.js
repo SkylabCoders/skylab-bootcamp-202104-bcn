@@ -1,3 +1,4 @@
+const listOfHeroes = fetchSuperHeroes();
 const main = document.querySelector('.main');
 
 const title = (textTitle) => {
@@ -41,15 +42,16 @@ const heroesList = () => {
   const listDiv = document.createElement('ul');
   listOfHeroesDiv.appendChild(listDiv);
 
-  for (let i = 0; i < heroes.length; i += 1) {
-    const li = document.createElement('li');
-    listDiv.appendChild(li);
-
-    const anchor = document.createElement('a');
-    anchor.href = `./../details/details.html?id=${heroes[i].id}`;
-    anchor.innerHTML = `${heroes[i].id} - ${heroes[i].name}`;
-    li.appendChild(anchor);
-  }
+  listOfHeroes.then((heroes) => {
+    heroes.forEach((hero) => {
+      const nameHero = document.createElement('li');
+      const heroLink = document.createElement('a');
+      heroLink.href = '#';
+      nameHero.appendChild(heroLink);
+      heroLink.innerHTML = hero.name;
+      listDiv.appendChild(nameHero);
+    });
+  });
 };
 
 const generateDashboard = () => {
