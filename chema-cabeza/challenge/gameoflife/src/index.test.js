@@ -154,30 +154,31 @@ function countNeighbors(grid, row, col) {
 // arrayMaker Test
 
 // describe('Given an arrayMaker function', () => {
+//   const scenarios = [
+//     {
+//       a: 5,
+//       b: 5,
+//       result:
+//             [[undefined, undefined, undefined, undefined, undefined],
+//               [undefined, undefined, undefined, undefined, undefined],
+//               [undefined, undefined, undefined, undefined, undefined],
+//               [undefined, undefined, undefined, undefined, undefined],
+//               [undefined, undefined, undefined, undefined, undefined]],
+//     },
+//   ];
 
-//     const scenarios = [
-//         { a: 5, b: 5, result:
-//             [[undefined,undefined,undefined,undefined,undefined],
-//             [undefined,undefined,undefined,undefined,undefined],
-//             [undefined,undefined,undefined,undefined,undefined],
-//             [undefined,undefined,undefined,undefined,undefined],
-//             [undefined,undefined,undefined,undefined,undefined]]
-//         }
-//     ];
+//   scenarios.forEach((scenario) => {
+//     describe(`When invoked with values ${scenario.a} and ${scenario.b}`, () => {
+//       test(`Then return ${scenario.result}`, () => {
+//         // Act
+//         const result = arrayMaker(scenario.a, scenario.b);
 
-//     scenarios.forEach((scenario) => {
-//         describe(`When invoked with values ${scenario.a} and ${scenario.b}`, () => {
-//             test(`Then return ${scenario.result}`,() => {
-
-//                 // Act
-//                 const result = arrayMaker(scenario.a, scenario.b);
-
-//                 // Assert
-//                 expect(result).toStrictEqual(scenario.result);
-//             })
-//         })
-//     })
-// })
+//         // Assert
+//         expect(result).toStrictEqual(scenario.result);
+//       });
+//     });
+//   });
+// });
 
 // // // // // initializeGrid Test
 
