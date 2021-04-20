@@ -51,6 +51,18 @@ const linkHeroes = generateElement({
   type: 'a', classes: ['selector-group__link-heroes'], context: 'Heroes', url: './../heroes/index.html',
 });
 selectorGroup.append(linkHeroes);
-
 const heroeTitle = generateElement({ type: 'h3', classes: ['heroe-title'], context: 'Magneta details!' });
 mainContent.append(heroeTitle);
+const heroeInfo = generateElement({ type: 'div', classes: ['heroe-data'] });
+mainContent.append(heroeInfo);
+const heroeId = generateElement({ type: 'p', classes: ['heroe-data__id'] });
+const heroeName = generateElement({ type: 'input', classes: ['heroe-data__name'] });
+
+heroeName.setAttribute('type', 'text');
+heroeName.setAttribute('id', 'hname');
+heroeName.setAttribute('name', 'hname');
+
+heroeInfo.append(heroeId);
+heroeInfo.append(heroeName);
+
+mainContent.append(heroeInfo);
