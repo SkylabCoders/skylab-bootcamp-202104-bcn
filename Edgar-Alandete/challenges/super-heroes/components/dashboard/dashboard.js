@@ -2,17 +2,16 @@ const dashboard = document.getElementById('dashboard');
 const heroDataUrl = '../../store/superHeroData.json?limit=10';
 const heroesData = fetchHeroes(heroDataUrl);
 
-const getRandomHeroes = (heroesNumber) => {
-  const heroesCopy = [...heroesData];
-  return heroesCopy.slice(0, heroesNumber);
-};
-
 const createHeroesList = () => {
-  const heroesToShow = getRandomHeroes(4);
-  const heroNames = createDomElement('ul', '', '', dashboard);
-  heroesToShow.forEach(({ name }) => {
-    const heroItem = createDomElement('li', '', '', heroNames);
-    createDomElement('a', name, `../heroDetails/heroDetails#${name}.html`, heroItem);
+  heroesData.then((data) => {
+    const heroesCopy = [...data];
+    const heroesToShow = heroesCopy.slice(0, 4);
+    const heroNames = createDomElement(dashboard, 'ul', '', '');
+
+    heroesToShow.forEach(({ name, id }) => {
+      const heroItem = createDomElement(heroNames, 'li', '', '');
+      createDomElement(heroItem, 'a', name, `../heroDetails/heroDetails.html?id=${id}`);
+    });
   });
 };
 
@@ -31,9 +30,7 @@ const createDashboard = () => {
   createDomElement(header, 'h1', 'Tour of Heroes', '', '', 'header__main-title');
   createNavigator(header);
   createDomElement(dashboard, 'h2', 'Top Heroes', '');
-  fetchHeroes(heroDataUrl).then((data) => {
-    console.log(data);
-  });
+  createHeroesList();
 };
 
 createDashboard();
