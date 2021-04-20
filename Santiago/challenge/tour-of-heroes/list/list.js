@@ -59,7 +59,7 @@ const heroesList = () => {
     listDiv.appendChild(li);
 
     const anchor = document.createElement('a');
-    anchor.href = '#';
+    anchor.href = `./../details/details.html?id=${heroes[i].id}`;
     anchor.innerHTML = `${heroes[i].id} - ${heroes[i].name}`;
     li.appendChild(anchor);
   }
