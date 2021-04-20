@@ -60,10 +60,10 @@ function createHeroList() {
   const createUl = document.createElement('ul');
   createUl.setAttribute('id', 'hero-ul');
   nodeContainer.appendChild(createUl);
+
   heroes.forEach((element, index) => {
     const createLi = document.createElement('li');
     createLi.setAttribute('id', 'hero-li');
-    // createLi.innerHTML = `${heroes.id} ${heroes.name}`;
     createUl.appendChild(createLi);
 
     const createSpan = document.createElement('span');
