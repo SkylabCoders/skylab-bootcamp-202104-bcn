@@ -51,12 +51,17 @@ const heroesList = () => {
   titleList.innerHTML = 'My heroes';
   listOfHeroesDiv.appendChild(titleList);
 
-  const listDiv = document.createElement('div');
+  const listDiv = document.createElement('ul');
   listOfHeroesDiv.appendChild(listDiv);
+
   for (let i = 0; i < heroes.length; i += 1) {
     const li = document.createElement('li');
-    li.innerHTML = `${heroes[i].id} - ${heroes[i].name}`;
     listDiv.appendChild(li);
+
+    const anchor = document.createElement('a');
+    anchor.href = '#';
+    anchor.innerHTML = `${heroes[i].id} - ${heroes[i].name}`;
+    li.appendChild(anchor);
   }
 };
 
