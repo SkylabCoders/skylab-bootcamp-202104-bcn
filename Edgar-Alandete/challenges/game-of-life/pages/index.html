@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Game of life</title>
+  </head>
+  <header>
+    <h1>Game of life</h1>
+  </header>
+  <main>
+    <section class="rules">
+      <h2>Rules</h2>
+      <ul class="rules">
+        <p>
+          Bienvenidos a Game of Life, un juego donde podrás expandirte, según
+          las siguientes instrucciones:
+        </p>
+        <li>Cada celda tiene dos estados</li>
+        <li>
+          Interactua con sus 8 celdas de alrededor (horizontal, vertical y
+          diagonal)
+        </li>
+        <li>Si tu celda tiene menos de 2 vecinos muere</li>
+        <li>
+          Si tu celda tiene 2 o 3 vecinos, sobrevive y pasa a la siguiente
+          generación
+        </li>
+        <li>Si tiene mas de 3 vecinos, se muere por sobrepoblación</li>
+        <li>Cualquier celda muerta con 3 vecinos, sobrevive</li>
+      </ul>
+    </section>
+    <section class="game__controls">
+      <button class="game-footer__buttons--blinker">Blinker</button>
+    </section>
+    <section class="game__space">
+      <div id="app"></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>Game of life</p>
+  </footer>
+  <script type="module" src="../src/gameOfLife.js"></script>
+</html>
