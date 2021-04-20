@@ -1,3 +1,16 @@
+const heroes = [
+  { id: 11, name: 'Dr Nice' },
+  { id: 12, name: 'Narco' },
+  { id: 13, name: 'Bombasto' },
+  { id: 14, name: 'Celeritas' },
+  { id: 15, name: 'Magneta' },
+  { id: 16, name: 'RubberMan' },
+  { id: 17, name: 'Dynama' },
+  { id: 18, name: 'Dr IQ' },
+  { id: 19, name: 'Magma' },
+  { id: 20, name: 'Tornado' },
+];
+
 const generateMainTitle = () => {
   const mainTitle = document.createElement('h1');
   mainTitle.innerHTML = 'Tour of Heroes';
@@ -25,14 +38,18 @@ const generateTitle2 = () => {
   document.body.appendChild(title2);
 };
 generateTitle2();
-const generateHeroesMenu = () => {
+const generateHeroesMenu = (list) => {
+  const topList = list.slice(1, 5);
   const heroesMenu = document.createElement('ul');
   heroesMenu.className = 'heroes-menu';
-  for (let i = 0; i < 4; i += 1) {
+  for (let i = 0; i < topList.length; i += 1) {
     const nav = document.createElement('li');
-    nav.innerHTML = 'Narco';
+    nav.innerHTML = topList[i].name;
+    const link = document.createElement('a');
+    link.href = topList[i].link;
+    nav.appendChild(link);
     heroesMenu.appendChild(nav);
   }
   document.body.appendChild(heroesMenu);
 };
-generateHeroesMenu();
+generateHeroesMenu(heroes);
