@@ -8,7 +8,8 @@ const title = (title, type) => {
     return head;
 }
 const heroes = [
-    { id: 11, name: 'Dr Nice' },
+    { id: 1
+        1, name: 'Dr Nice' },
     { id: 12, name: 'Narco' },
     { id: 13, name: 'Bombasto' },
     { id: 14, name: 'Celeritas' },
@@ -20,9 +21,10 @@ const heroes = [
     { id: 20, name: 'Tornado' }
 ]
 
-const navigationls = (nav) =>{
+const navigationlist = (nav) =>{
 const routes = Object.values(nav)
 const routing = Object.getOwnPropertyNames(nav);
+
 const navigation = document.createElement('ul');
   routing.forEach((item, index) =>{
             const navigationItem = document.createElement('li');
@@ -55,15 +57,13 @@ const heroeList = (data) =>{
    sectionHeroeList.appendChild(listHeroes);
 
    return sectionHeroeList;
-}npm
-const searBar = () =>{
-    const form = document.createElement('form');
 }
 
+
 const printData = ()=>{
-    const printInfo =document.querySelector('#root');
+    const printInfo = document.querySelector('#root');
     const heading = title('Tour of Heroes', 'h1');
-    const mainNav = navigation(routing);
+    const mainNav = navigationlistx(routing);
     const topHero = heroeList(heroes);
 
 
