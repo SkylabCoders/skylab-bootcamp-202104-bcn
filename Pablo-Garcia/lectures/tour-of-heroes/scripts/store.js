@@ -4,4 +4,3 @@ const heroes = [
     { id: 13, name: 'Bombasto' },
     { id: 14, name: 'Celeritas' },
 ];
-];
