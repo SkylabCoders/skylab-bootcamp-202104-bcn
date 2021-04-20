@@ -5,16 +5,21 @@ const heroesLinks =
     celeritas: "celeritas",
     magenta: "magenta"
 }
+const siteOfButtons = document.getElementById("header-heroes");
+siteOfButtons.setAttribute("class","site-buttons");
 const startPage = () => {
-    let siteOfButtons = document.getElementById("header-heroes");
-    let buttonDash = document.createElement("button");
-    let buttonHeroes = document.createElement("button");
-    let titleHeroes = document.createElement("h2");
+    const buttonDash = document.createElement("a");
+    const buttonHeroes = document.createElement("a");
+    buttonDash.setAttribute("class","button-dash");
+    buttonHeroes.setAttribute("class", "button-heroes");
+    buttonDash.href = "../dashboard/dashboard.html"
+    buttonHeroes.href = "../heroes/heroes.html"
+    const titleHeroes = document.createElement("h2");
     siteOfButtons.appendChild(buttonDash).innerHTML = "Dashboard";
     siteOfButtons.appendChild(buttonHeroes).innerHTML = "Heroes";
     siteOfButtons.appendChild(titleHeroes).innerHTML = "Top Heroes";
     for (propertyName in heroesLinks){
-            let button = document.createElement("a");
+            const button = document.createElement("a");
             let textHeroe = document.createTextNode(heroesLinks[propertyName]);
             button.appendChild(textHeroe);
             button.title = heroesLinks[propertyName];
