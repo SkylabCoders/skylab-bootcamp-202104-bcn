@@ -1,16 +1,3 @@
-const heroes = [
-  { id: 11, name: 'Dr Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-];
-
 const body = document.getElementById('bodyId');
 const divFirstPart = document.createElement('div');
 const divSecondPart = document.createElement('div');
@@ -40,11 +27,13 @@ divSecondPart.appendChild(subTitle);
 const listAll = fetchSuperHeroes();
 
 listAll.then(element =>  {
-  element.forEach((firstHeroe) => {
+  element.slice(0,5).forEach((firstHeroe) => {
+    const lista = document.createElement('li');
+    divSecondPart.appendChild(lista);
     const firstHeroesNames = document.createElement('a');
     firstHeroesNames.innerText = `${firstHeroe.name}`;
     firstHeroesNames.setAttribute('href', `http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html?heroeName=${firstHeroe.name}&heroeID=${firstHeroe.id}`);
-    divSecondPart.appendChild(firstHeroesNames);
+    lista.appendChild(firstHeroesNames);
   });
 });
 

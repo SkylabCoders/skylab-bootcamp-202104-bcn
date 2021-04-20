@@ -1,3 +1,5 @@
+const listAllinHeroes = fetchSuperHeroes();
+
 const body = document.getElementById('bodyId');
 const divFirstPart = document.createElement('div');
 const divSecondPart = document.createElement('div');
@@ -23,14 +25,15 @@ const subTitle = document.createElement('h2');
 subTitle.innerHTML = 'My Heroes';
 divSecondPart.appendChild(subTitle);
 
-const listAll = fetchSuperHeroes();
 
-listAll.then(element =>  {
-  element.forEach((firstHeroe) => {
+listAllinHeroes.then(element =>  {
+  element.slice(0,50).forEach((firstHeroe) => {
+    const lista = document.createElement('li');
+    divSecondPart.appendChild(lista);
     const firstHeroesNames = document.createElement('a');
     firstHeroesNames.innerText = `${firstHeroe.name}`;
     firstHeroesNames.setAttribute('href', `http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html?heroeName=${firstHeroe.name}&heroeID=${firstHeroe.id}`);
-    divSecondPart.appendChild(firstHeroesNames);
+    lista.appendChild(firstHeroesNames);
   });
 });
 
