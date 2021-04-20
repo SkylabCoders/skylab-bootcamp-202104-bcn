@@ -40,7 +40,7 @@ createHeaderDashboard();
 const createButtonsHeroes = (array) => {
   const createHeroesContainer = document.createElement('div');
   mainSection.appendChild(createHeroesContainer);
-  array.forEach((element) => {
+  array.splice(1, 4).forEach((element) => {
     const reference = document.createElement('a');
     createHeroesContainer.appendChild(reference);
     reference.innerHTML = `${element.name}`;
