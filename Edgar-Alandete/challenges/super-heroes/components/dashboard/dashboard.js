@@ -6,10 +6,10 @@ const createHeroesList = (section) => {
   heroesData.then((data) => {
     const heroesCopy = [...data];
     const heroesToShow = heroesCopy.slice(0, 4);
-    const heroNames = createDomElement(section, 'ul');
+    const heroNames = createDomElement(section, 'ul', '', [{ name: 'class', value: 'top-heroes__best-heroes-list best-heroes-list' }]);
 
     heroesToShow.forEach(({ name, id }) => {
-      const heroItem = createDomElement(heroNames, 'li');
+      const heroItem = createDomElement(heroNames, 'li', '', [{ name: 'class', value: 'best-heroes-list__item' }]);
       createDomElement(heroItem, 'a', name, [{ name: 'href', value: `../hero-detail/heroDetail.html?id=${id}` }]);
     });
   });
