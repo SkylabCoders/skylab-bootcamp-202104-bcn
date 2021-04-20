@@ -48,8 +48,9 @@ const linkDashboard = generateElement({
 });
 selectorGroup.append(linkDashboard);
 const linkHeroes = generateElement({
-  type: 'a', classes: ['selector-group__link-heroes'], context: 'Heroes', url: 'index.html',
+  type: 'a', classes: ['selector-group__link-heroes'], context: 'Heroes', url: './../heroes/index.html',
 });
 selectorGroup.append(linkHeroes);
-const mainTitle = generateElement({ type: 'h3', classes: [], context: 'My Heroes' });
-mainContent.append(mainTitle);
+
+const heroeTitle = generateElement({ type: 'h3', classes: ['heroe-title'], context: 'Magneta details!' });
+mainContent.append(heroeTitle);

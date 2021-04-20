@@ -63,21 +63,22 @@ populateListWithIds({
 const highlitedHero = generateElement({ type: 'div', classes: ['higlited-hero'] });
 const highlightHeroName = generateElement({ type: 'p', classes: ['highlighted-hero__name'] });
 const highlightHeroDetailsButton = generateElement({
-  type: 'button',
+  type: 'a',
   context: 'View Details',
   classes: ['highlighted-hero__details-btn', '--inactive'],
+  url: './../detalles/index.html',
 });
-highlitedHero.append(highlightHeroDetailsButton);
 highlitedHero.append(highlightHeroName);
+highlitedHero.append(highlightHeroDetailsButton);
 mainContent.append(highlitedHero);
 
-function highlightName(e) {
-  console.log(e.value);
-}
+// function highlightName(e) {
+//   console.log(e.value);
+// }
 
-const items = document.querySelectorAll('li');
-items.forEach((item) => {
-  this.onclick = highlightName(item);
-});
+// const items = document.querySelectorAll('li');
+// items.forEach((item) => {
+//   this.onclick = highlightName(item);
+// });
 
 highlightHeroDetailsButton.classList.replace('--inactive', '--active');
