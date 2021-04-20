@@ -34,35 +34,14 @@ function createNavList() {
     aTag.href = `./../${nav}/${nav}.html`;
   });
 }
-function printPageSubTitle() {
-  const subtitle = document.createElement('h2');
-  subtitle.innerHTML = 'My Heroes';
-  document.body.appendChild(subtitle);
-}
-function createInput() {
-  const input = document.createElement('input');
-  input.setAttribute('type', 'text');
-  document.body.appendChild(input);
-}
 
-function createHeroesList() {
-  const navigationList = document.createElement('ul');
-  navigationList.setAttribute('id', 'heroes-list');
-  document.body.appendChild(navigationList);
-  heroes.forEach((hero) => {
-    const eachHero = document.createElement('li');
-    eachHero.setAttribute('id', `${hero.name}`);
-    const link = document.createElement('a');
-    const name = document.createTextNode(`${hero.id} ${hero.name}`);
-    eachHero.appendChild(link);
-    link.appendChild(name);
-    document.body.appendChild(eachHero);
-    link.href = `./../details/details.html?id=${hero.id}`;
-  });
+function printPageSubTitle(hero) {
+  const subtitle = document.createElement('h2');
+  document.getElementById(`${heroes.name}`);
+  subtitle.innerHTML = `${hero.name}`;
+  document.body.appendChild(subtitle);
 }
 
 printPageTitle();
 createNavList();
 printPageSubTitle();
-createInput();
-createHeroesList();
