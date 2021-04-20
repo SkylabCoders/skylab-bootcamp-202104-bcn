@@ -18,11 +18,11 @@ function createNavList() {
   });
 }
 
-function createHeroesList() {
+function createHeroesList(heroes) {
   const navigationList = document.createElement('ul');
   navigationList.setAttribute('id', 'heroes-list');
   document.body.appendChild(navigationList);
-  heroes.slice(1, 5).forEach((hero) => {
+  heroes.forEach((hero) => {
     const eachHero = document.createElement('li');
     eachHero.setAttribute('id', `${hero.name}`);
     const link = document.createElement('a');
@@ -53,6 +53,12 @@ function createButton() {
 printOnPage('h1', 'Tour of Heroes');
 createNavList();
 printOnPage('h2', 'Top Heroes');
-createHeroesList();
 createInput();
 createButton();
+
+function fetchHeroes() {
+  fetch('./../store/superHeroData.json')
+    .then((response) => response.json())
+    .then((data) => createHeroesList(data.slice(0, 5)));
+}
+fetchHeroes();
