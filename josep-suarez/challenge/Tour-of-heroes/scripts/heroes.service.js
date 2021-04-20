@@ -8,6 +8,7 @@ const fetchHeroesData = () => {
         startDash(data);
     })
 }
+const prueba = fetchHeroesData();
 
 const startDash = (data) => {
     const dashboard = document.getElementById("dashboard");
@@ -20,12 +21,7 @@ const startDash = (data) => {
             // list.onclick = () => heroeClicked(hero.id);
             list.innerHTML = hero.id + "  "+hero.name;
             liElement.appendChild(list);
-            list.href = (".././heroes-detail.html?heroID="+hero.id);
-            let heroID = getHeroIDFromUrl(location.search);
-            appendElement(heroes.find(heroe => heroe.id.toString()=== heroID));
-            function getHeroIDFromUrl(url) {
-                return new URLSearchParams(url).get('heroID');
-            }
+            list.href = (".././heroes-detail/detail.html?heroID="+hero.id);
             listHeroes.appendChild(liElement);
             let detailsText = document.createElement("p");
             dashboard.appendChild(detailsText)
@@ -36,6 +32,11 @@ const startDash = (data) => {
         })
     }
 
+function getHeroIDFromUrl(url) {
+        return new URLSearchParams(url).get('heroID');
+}
+let heroID = getHeroIDFromUrl(location.search);
+
 const startDetail = () => {
     const typeText = document.createElement("input");
     siteOfButtons.appendChild(typeText);
@@ -45,6 +46,21 @@ const startDetail = () => {
                 detailsText.innerHTML = typeText.value + " details of heroe";
             }
             typeText.addEventListener("keyup",writingDetails);
+
+            
+    return fetch(".././superheroes-data/superHeroData.json")
+    .then((response)=>{
+       return response.json();
+    })
+    .then(data => { 
+        let prueba = data.find(hero => {
+            if(hero.id.toString() === heroID){
+            return hero.name
+            }
+        });
+        
+        siteOfButtons.appendChild(detailsText).innerHTML = prueba.name;
+    })
 }
 
 const startPage = () => {
