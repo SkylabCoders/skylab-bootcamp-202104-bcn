@@ -21,6 +21,12 @@ function printOnPage(tag, text) {
   document.body.appendChild(title);
 }
 
+function printHeroDetails(obj) {
+  printOnPage('h2', obj.name);
+  printOnPage('p', obj.appearance.gender);
+  printOnPage('p', obj.id);
+}
+
 function createNavList() {
   const navigationList = document.createElement('ul');
   navigationList.setAttribute('id', 'navigation-list');
@@ -35,10 +41,26 @@ function createNavList() {
     aTag.href = `./../${nav}/${nav}.html`;
   });
 }
+function createInput() {
+  const input = document.createElement('input');
+  input.setAttribute('type', 'text');
+  document.body.appendChild(input);
+}
 
 printOnPage('h1', 'Tour of Heroes');
 createNavList();
 
 const heroTitle = new URLSearchParams(location.search).get('heroid');
-const printTitle = heroes.find((heroe) => heroe.id.toString() === heroTitle);
-printOnPage('h2', printTitle.name);
+
+function fetchHeroes() {
+  return fetch('./../store/superHeroData.json')
+    .then((response) => response.json());
+}
+const dataFound = fetchHeroes();
+dataFound.then((data) => printHeroDetails(data.find((heroe) => heroe.id.toString() === heroTitle)));
+
+// const heroDetail = data.find((heroe) => heroe.id.toString() === heroTitle)
+
+createInput();
+
+// printOnPage('h2', (data.find((heroe) => heroe.id.toString() === heroTitle).name))
