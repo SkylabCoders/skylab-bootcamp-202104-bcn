@@ -53,31 +53,3 @@ const linkHeroes = generateElement({
 selectorGroup.append(linkHeroes);
 const mainTitle = generateElement({ type: 'h3', classes: [], context: 'My Heroes' });
 mainContent.append(mainTitle);
-const heroesList = generateElement({ type: 'ul', classes: ['heroes-list'] });
-mainContent.append(heroesList);
-populateListWithIds({
-  arrayOrigin: heroes,
-  parentElement: heroesList,
-  extract: { from: 0, to: 9 },
-});
-const highlitedHero = generateElement({ type: 'div', classes: ['higlited-hero'] });
-const highlightHeroName = generateElement({ type: 'p', classes: ['highlighted-hero__name'] });
-const highlightHeroDetailsButton = generateElement({
-  type: 'button',
-  context: 'View Details',
-  classes: ['highlighted-hero__details-btn', '--inactive'],
-});
-highlitedHero.append(highlightHeroDetailsButton);
-highlitedHero.append(highlightHeroName);
-mainContent.append(highlitedHero);
-
-function highlightName(e) {
-  console.log(e.value);
-}
-
-const items = document.querySelectorAll('li');
-items.forEach((item) => {
-  this.onclick = highlightName(item);
-});
-
-highlightHeroDetailsButton.classList.replace('--inactive', '--active');
