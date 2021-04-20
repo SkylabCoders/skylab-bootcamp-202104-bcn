@@ -22,3 +22,10 @@ function fetchHeroes(url) {
     .then((response) => response.json())
     .then((data) => data);
 }
+
+const getHeroById = (url, heroId) => fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    const heroData = data.find((hero) => hero.id === parseInt(heroId, 10));
+    return heroData;
+  });
