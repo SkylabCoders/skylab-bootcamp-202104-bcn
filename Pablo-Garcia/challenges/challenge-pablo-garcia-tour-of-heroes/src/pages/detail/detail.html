@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="./detai.js"></script>
+    <script src="../../../src/components/title/title.js"></script>
+    <script src="../../../src/application/config/routes-config.js"></script>
+    <script>
+        const renderNav = () =>{
+            const node = document.getElementById('root');
+            const heading = title('Tour of Hero', 'h1');
+            const nav = navigation(routing)
+            node.append(heading);
+            node.appendChild(nav);
+        }
+        window.onload = renderNav;
+    </script>
+</body>
+</html>

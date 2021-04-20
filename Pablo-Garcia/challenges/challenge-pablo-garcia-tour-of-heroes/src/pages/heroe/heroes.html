@@ -12,14 +12,18 @@
 
 <script src="../../../src/components/title/title.js"></script>
 <script src="../../../src/application/config/routes-config.js"></script>
+<script src="./hero.js"></script>
 <script>
     const renderNav = () =>{
         const node = document.getElementById('root');
         const heading = title('Tour of Hero', 'h1');
-        const nav = navigation(routing)
+        const nav = navigation(routing);
         node.append(heading);
-        node.appendChild(nav);
+        node.append(nav);
     }
+    const slideHeroes = getDataJson();
+    console.log(slideHeroes)
+
     window.onload = renderNav;
 </script>
 </body>
