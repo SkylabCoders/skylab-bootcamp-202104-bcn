@@ -35,21 +35,20 @@ const navigation = document.createElement('ul');
   return navigation;
  }
 const heroeList = (data) =>{
+   const heroes = data.slice(0, 3);
    const sectionHeroeList = document.createElement('section');
    const titleSection = title('Top Heroes', 'h2');
 
    const listHeroes = document.createElement('ul');
    listHeroes.classList.add('listing__heroes');
-   data.forEach((item, index) =>{
-        if(index <=3){
-            const {id, name} = item;
-            const heroe = document.createElement('li');
-            heroe.setAttribute('data_id', `${id}`);
-            heroe.setAttribute('class', 'listing__heroes single___hero');
-            heroe.innerText = name;
-            console.log(heroe)
-            listHeroes.appendChild(heroe);
-        }
+    heroes.forEach((item, index) =>{
+        const {id, name} = item;
+        const heroe = document.createElement('li');
+        heroe.setAttribute('data_id', `${id}`);
+        heroe.setAttribute('class', 'listing__heroes single___hero');
+        heroe.innerText = name;
+        console.log(heroe)
+        listHeroes.appendChild(heroe);
    })
 
    sectionHeroeList.appendChild(titleSection);
