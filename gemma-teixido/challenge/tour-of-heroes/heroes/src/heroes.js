@@ -24,12 +24,12 @@ divFirstPart.appendChild(title);
 
 const buttonDashboard = document.createElement('a');
 buttonDashboard.innerHTML = 'Dashboard';
-buttonDashboard.setAttribute('href', 'http://127.0.0.1:5500/dashboard/html/dashboard.html');
+buttonDashboard.setAttribute('href', 'http://127.0.0.1:5500/challenge/tour-of-heroes/dashboard/html/dashboard.html');
 divFirstPart.appendChild(buttonDashboard);
 
 const buttonHeroes = document.createElement('a');
 buttonHeroes.innerHTML = 'Heroes';
-buttonHeroes.setAttribute('href', 'http://127.0.0.1:5500/heroes/html/heroes.html');
+buttonHeroes.setAttribute('href', 'http://127.0.0.1:5500/challenge/tour-of-heroes/heroes/html/heroes.html');
 divFirstPart.appendChild(buttonHeroes);
 
 const subTitle = document.createElement('h2');
@@ -42,5 +42,5 @@ firstHeroes.forEach((firstHeroe) => {
   const firstHeroesNames = document.createElement('a');
   firstHeroesNames.innerText = `${firstHeroe.id} ${firstHeroe.name} `;
   divSecondPart.appendChild(firstHeroesNames);
-  firstHeroesNames.setAttribute('href', 'http://127.0.0.1:5500/detail/html/detail.html');
+  firstHeroesNames.setAttribute('href', 'http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html');
 });
