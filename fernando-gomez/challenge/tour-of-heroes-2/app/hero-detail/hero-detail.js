@@ -10,7 +10,6 @@ const mainTitle = () => {
 const urlParams = new URLSearchParams(window.location.search);
 const paramID = urlParams.getAll('heroID')[0];
 const paramHeroName = urlParams.getAll('heroName')[0];
-const paramHeroObject = urlParams.getAll('heroObject')[0];
 
 const navigationButton = (name) => {
   const newButton = document.createElement('a');
@@ -53,13 +52,6 @@ const heroInputTitle = () => {
   return inputTitle;
 };
 
-const heroDetailsGenerator = () => {
-  const paragraph = document.createElement('p');
-  paragraph.classList = 'details__paragraph';
-  paragraph.innerHTML = `${paramHeroObject}`;
-  return paragraph;
-};
-
 const currentNameInput = () => {
   const input = document.createElement('input');
   input.classList = 'details__input';
@@ -73,15 +65,12 @@ const generateDetails = () => {
   const id = heroNumberId();
   const inputTitle = heroInputTitle();
   const input = currentNameInput();
-  const paragraphWithDetails = heroDetailsGenerator();
 
   detailsSection.classList = 'details';
-
   detailsSection.appendChild(title);
   detailsSection.appendChild(id);
   detailsSection.appendChild(inputTitle);
   detailsSection.appendChild(input);
-  detailsSection.appendChild(paragraphWithDetails);
 
   return detailsSection;
 };
@@ -154,21 +143,132 @@ const heroDetail = (tag, data) => {
   return element;
 };
 
-const heroDetailsList = (heroObject) => {
-  const detailsList = document.createElement('ul');
+const heroPowerStats = (powerStats) => {
+  const result = document.createElement('ul');
+  const intelligence = heroDetail('li', `Intelligence: ${powerStats.intelligence}`);
+  const strength = heroDetail('li', `Strength: ${powerStats.strength}`);
+  const speed = heroDetail('li', `Speed: ${powerStats.speed}`);
+  const durability = heroDetail('li', `Durability: ${powerStats.durability}`);
+  const power = heroDetail('li', `Power: ${powerStats.power}`);
+  const combat = heroDetail('li', `Combat: ${powerStats.combat}`);
+
+  result.appendChild(intelligence);
+  result.appendChild(strength);
+  result.appendChild(speed);
+  result.appendChild(durability);
+  result.appendChild(power);
+  result.appendChild(combat);
+
+  return result;
+};
+
+const heroAppearance = (appearance) => {
+  const result = document.createElement('ul');
+  const gender = heroDetail('li', `Gender: ${appearance.gender}`);
+  const race = heroDetail('li', `Race: ${appearance.race}`);
+  const height = heroDetail('li', `Height: ${appearance.height[0]} and ${appearance.height[1]}`);
+  const weight = heroDetail('li', `Weight: ${appearance.weight[0]} and ${appearance.weight[1]}`);
+  const eyeColor = heroDetail('li', `Eye color: ${appearance.eyeColor}`);
+  const hairColor = heroDetail('li', `Hair color: ${appearance.hairColor}`);
+
+  result.appendChild(gender);
+  result.appendChild(race);
+  result.appendChild(height);
+  result.appendChild(weight);
+  result.appendChild(eyeColor);
+  result.appendChild(hairColor);
+
+  return result;
+};
+
+const heroBiography = (biography) => {
+  const result = document.createElement('ul');
+  const fullName = heroDetail('li', `Full name: ${biography.fullName}`);
+  const alterEgos = heroDetail('li', `Full name: ${biography.alterEgos}`);
+  const aliasesTitle = heroDetail('h3', 'Aliases:');
+  const placeOfBirth = heroDetail('li', `Place of birth: ${biography.placeOfBirth}`);
+  const firstAppearance = heroDetail('li', `First appearance: ${biography.firstAppearance}`);
+  const publisher = heroDetail('li', `Publisher: ${biography.publisher}`);
+  const alignment = heroDetail('li', `Alignment: ${biography.alignment}`);
+
+  result.appendChild(fullName);
+  result.appendChild(alterEgos);
+  result.appendChild(aliasesTitle);
+  biography.aliases.forEach((alias) => result.appendChild(heroDetail('li', alias)));
+  result.appendChild(placeOfBirth);
+  result.appendChild(firstAppearance);
+  result.appendChild(publisher);
+  result.appendChild(alignment);
+
+  return result;
+};
+
+const heroWork = (work) => {
+  const result = document.createElement('ul');
+  const occupation = heroDetail('li', `Occupation: ${work.occupation}`);
+  const base = heroDetail('li', `Base: ${work.base}`);
+
+  result.appendChild(occupation);
+  result.appendChild(base);
+
+  return result;
+};
+
+const heroConnections = (connections) => {
+  const result = document.createElement('ul');
+  const groupAffiliation = heroDetail('li', `Group affiliation: ${connections.groupAffiliation}`);
+  const relatives = heroDetail('li', `Relatives: ${connections.relatives}`);
+
+  result.appendChild(groupAffiliation);
+  result.appendChild(relatives);
+
+  return result;
+};
+
+const heroImage = (images) => {
+  const result = document.createElement('img');
+  result.setAttribute('src', `${images.sm}`);
+
+  return result;
+};
+
+const heroDetailsSection = (heroObject) => {
+  const detailSection = document.createElement('section');
   const name = heroDetail('h2', heroObject.name);
-  const id = heroDetail('p', heroObject.id);
-  const slug = heroDetail('p', heroObject.slug);
+  const id = heroDetail('h3', heroObject.id);
+  const slug = heroDetail('h3', heroObject.slug);
+  const powerStatsTitle = heroDetail('h3', 'Power stats');
+  const powerStats = heroPowerStats(heroObject.powerstats);
+  const appearanceTitle = heroDetail('h3', 'Appearance');
+  const appearanceList = heroAppearance(heroObject.appearance);
+  const biographyTitle = heroDetail('h3', 'Biography');
+  const biographyList = heroBiography(heroObject.biography);
+  const workTitle = heroDetail('h3', 'Work');
+  const workList = heroWork(heroObject.work);
+  const connectionsTitle = heroDetail('h3', 'Connections');
+  const connectionsList = heroConnections(heroObject.connections);
+  const image = heroImage(heroObject.images);
 
-  detailsList.appendChild(name);
-  detailsList.appendChild(id);
-  detailsList.appendChild(slug);
+  detailSection.appendChild(name);
+  detailSection.appendChild(image);
+  detailSection.appendChild(id);
+  detailSection.appendChild(slug);
+  detailSection.appendChild(powerStatsTitle);
+  detailSection.appendChild(powerStats);
+  detailSection.appendChild(appearanceTitle);
+  detailSection.appendChild(appearanceList);
+  detailSection.appendChild(biographyTitle);
+  detailSection.appendChild(biographyList);
+  detailSection.appendChild(workTitle);
+  detailSection.appendChild(workList);
+  detailSection.appendChild(connectionsTitle);
+  detailSection.appendChild(connectionsList);
 
-  return detailsList;
+  return detailSection;
 };
 
 const generateHeroesFeed = (data) => {
-  const heroDetails = heroDetailsList(data);
+  const heroDetails = heroDetailsSection(data);
   const navigator = generateNavigator();
   const details = generateDetails();
   const messages = messagesSection();
