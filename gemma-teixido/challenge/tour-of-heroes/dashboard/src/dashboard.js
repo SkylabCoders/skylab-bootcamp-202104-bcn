@@ -36,16 +36,18 @@ const subTitle = document.createElement('h2');
 subTitle.innerHTML = 'Top Heroes';
 divSecondPart.appendChild(subTitle);
 
-const firstHeroes = heroes.slice(0, 4);
 
-firstHeroes.forEach((firstHeroe) => {
-  const firstHeroesNames = document.createElement('a');
-  firstHeroesNames.innerText = `${firstHeroe.name}`;
-  firstHeroesNames.setAttribute('href', `http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html?heroeName=${firstHeroe.name}&heroeID=${firstHeroe.id}`);
-  divSecondPart.appendChild(firstHeroesNames);
+const listAll = fetchSuperHeroes();
+
+listAll.then(element =>  {
+  element.forEach((firstHeroe) => {
+    const firstHeroesNames = document.createElement('a');
+    firstHeroesNames.innerText = `${firstHeroe.name}`;
+    firstHeroesNames.setAttribute('href', `http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html?heroeName=${firstHeroe.name}&heroeID=${firstHeroe.id}`);
+    divSecondPart.appendChild(firstHeroesNames);
+  });
 });
 
-fetchSuperHeroes();
 /* createHtmlElement(selector, object, className) {
   let node = document.createElement(selector);
   node.setAttribute('id', object.id);

@@ -52,6 +52,8 @@ const inputName = document.createElement('input');
 inputName.innerHTML = 'id:';
 divSecondPart.appendChild(inputName);
 
+
+
 // const firstHeroes = heroes.slice(0, 4);
 
 // firstHeroes.forEach((firstHeroe) => {

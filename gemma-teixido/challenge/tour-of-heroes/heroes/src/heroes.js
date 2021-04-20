@@ -1,16 +1,3 @@
-const heroes = [
-  { id: 11, name: 'Dr Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-];
-
 const body = document.getElementById('bodyId');
 const divFirstPart = document.createElement('div');
 const divSecondPart = document.createElement('div');
@@ -24,24 +11,26 @@ divFirstPart.appendChild(title);
 
 const buttonDashboard = document.createElement('a');
 buttonDashboard.innerHTML = 'Dashboard';
-buttonDashboard.setAttribute('href', 'http://127.0.0.1:5500/challenge/tour-of-heroes/dashboard/html/dashboard.html');
+buttonDashboard.setAttribute('href', './../../dashboard/html/dashboard.html');
 divFirstPart.appendChild(buttonDashboard);
 
 const buttonHeroes = document.createElement('a');
 buttonHeroes.innerHTML = 'Heroes';
-buttonHeroes.setAttribute('href', 'http://127.0.0.1:5500/challenge/tour-of-heroes/heroes/html/heroes.html');
+buttonHeroes.setAttribute('href', './../html/heroes.html');
 divFirstPart.appendChild(buttonHeroes);
 
 const subTitle = document.createElement('h2');
 subTitle.innerHTML = 'My Heroes';
 divSecondPart.appendChild(subTitle);
 
-const firstHeroes = heroes;
+const listAll = fetchSuperHeroes();
 
-firstHeroes.forEach((firstHeroe) => {
-  const firstHeroesNames = document.createElement('a');
-  firstHeroesNames.innerText = `${firstHeroe.name}`;
-  firstHeroesNames.setAttribute('href', `http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html?heroeName=${firstHeroe.name}&heroeID=${firstHeroe.id}`);
-  divSecondPart.appendChild(firstHeroesNames);
+listAll.then(element =>  {
+  element.forEach((firstHeroe) => {
+    const firstHeroesNames = document.createElement('a');
+    firstHeroesNames.innerText = `${firstHeroe.name}`;
+    firstHeroesNames.setAttribute('href', `http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html?heroeName=${firstHeroe.name}&heroeID=${firstHeroe.id}`);
+    divSecondPart.appendChild(firstHeroesNames);
+  });
 });
 
