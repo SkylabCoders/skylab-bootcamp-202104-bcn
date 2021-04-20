@@ -67,20 +67,5 @@ myHeroesSection.appendChild(myHeroesH2);
 myHeroesSection.appendChild(searchInput);
 myHeroesSection.appendChild(addHeroButton);
 APP_ELEMENT.appendChild(myHeroesSection);
-// -- Create Heroes list
-const myHeroesList = document.createElement('ul');
-myHeroesList.classList.add('heroes-list');
-HEROES.forEach((heroe) => {
-  const liElement = document.createElement('li');
-  liElement.classList.add('heroes-list_item');
-  liElement.setAttribute('id', heroe.id);
-  const aElement = document.createElement('a');
-  aElement.href = '../hero-detail/';
-  aElement.innerText = heroe.name;
-  liElement.appendChild(aElement);
-  myHeroesList.appendChild(liElement);
-});
-myHeroesSection.appendChild(myHeroesList);
 
-APP_ELEMENT.appendChild(myHeroesSection);
 // -- End Top Heroes section
