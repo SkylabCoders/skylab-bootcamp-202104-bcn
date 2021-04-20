@@ -13,13 +13,13 @@ const GAME_STATUS = {
 }
 
 const BLINKER_BUTTON = document.getElementsByClassName(
-	'game-footer__buttons--blinker'
+	'controls__buttons--blinker'
 )[0]
 const SAPO_BUTTON = document.getElementsByClassName(
-	'game-footer__buttons--sapo'
+	'controls__buttons--sapo'
 )[0]
 const STOP_BUTTON = document.getElementsByClassName(
-	'game-footer__buttons--stop'
+	'controls__buttons--stop'
 )[0]
 
 BLINKER_BUTTON.addEventListener('click', () =>
@@ -114,13 +114,8 @@ const countNeighbours = (row, column, matrix) => {
 
 const isDead = (row, column, matrix) => {
 	if (matrix[row] !== undefined && matrix[row][column] !== undefined) {
-		if (matrix[row][column] === 0) {
-			return true
-		} else {
-			return false
-		}
+		 return matrix[row][column] === 0 ?  true : false	
 	}
-	return -1
 }
 
 const cellExists = (
