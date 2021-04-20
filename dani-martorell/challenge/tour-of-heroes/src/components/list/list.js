@@ -5,11 +5,11 @@ mainContent.append(headTitle);
 const selectorGroup = generateElement({ type: 'div', classes: ['selector-group'] });
 mainContent.append(selectorGroup);
 const linkDashboard = generateElement({
-  type: 'a', classes: ['selector-group__link-dasboard'], context: 'Dashboard', url: './../dashboard/index.html',
+  type: 'a', classes: ['selector-group__link-dasboard'], context: 'Dashboard', url: './../dashboard/dashboard.html',
 });
 selectorGroup.append(linkDashboard);
 const linkHeroes = generateElement({
-  type: 'a', classes: ['selector-group__link-heroes'], context: 'Heroes', url: 'index.html',
+  type: 'a', classes: ['selector-group__link-heroes'], context: 'Heroes', url: 'list.html',
 });
 selectorGroup.append(linkHeroes);
 
@@ -29,7 +29,7 @@ mainContent.append(heroesList);
 
 getAllHeroes('./../../store/superHeroData.json')
   .then((data) => {
-    data.slice(0, 10).forEach((heroe) => {
+    data.slice(0, 20).forEach((heroe) => {
       const li = generateElement({
         type: 'li',
         classes: ['heroes-list__item'],
