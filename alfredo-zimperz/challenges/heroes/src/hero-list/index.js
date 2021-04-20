@@ -1,15 +1,4 @@
-const HEROES = [
-  { id: 11, name: 'Dr Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' },
-];
+const HEROES_LIST = fetchData('../../store/superHeroData.json');
 const NAV_LIST_ELEMENTS = [
   {
     name: 'dashboard',
@@ -72,16 +61,22 @@ APP_ELEMENT.appendChild(myHeroesSection);
 // -- Create Heroes list
 const myHeroesList = document.createElement('ul');
 myHeroesList.classList.add('heroes-list');
-HEROES.forEach((hero) => {
-  const liElement = document.createElement('li');
-  liElement.classList.add('heroes-list_item');
-  liElement.setAttribute('id', hero.id);
-  const buttonElement = document.createElement('button');
-  buttonElement.onclick = () => handleClick(hero.id);
-  buttonElement.innerText = hero.name;
-  liElement.appendChild(buttonElement);
-  myHeroesList.appendChild(liElement);
+HEROES_LIST.then((heroes) => {
+  heroes.forEach((hero) => {
+    const liElement = document.createElement('li');
+    liElement.classList.add('heroes-list_item');
+    liElement.setAttribute('id', hero.id);
+    // const buttonElement = document.createElement('button');
+    // buttonElement.onclick = () => handleClick(hero.id);
+    // buttonElement.innerText = hero.name;
+    const buttonElement = document.createElement('a');
+    buttonElement.href = `../hero-detail/?heroId=${hero.id}`;
+    buttonElement.innerText = hero.name;
+    liElement.appendChild(buttonElement);
+    myHeroesList.appendChild(liElement);
+  });
 });
+
 myHeroesSection.appendChild(myHeroesList);
 
 APP_ELEMENT.appendChild(myHeroesSection);
