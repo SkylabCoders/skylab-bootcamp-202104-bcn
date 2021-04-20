@@ -1,34 +1,30 @@
-let createGrid = (rows, cols) => {
+const createGrid = (rows, cols) => {
+  const grid = new Array(rows);
 
-    let grid = new Array(rows);
+  for (let i = 0; i < rows; i += 1) {
+    grid[i] = new Array(cols).fill(0);
+  }
 
-    for (let i = 0; i < rows; i++) {
+  return grid;
+};
 
-        grid[i] = new Array(cols).fill(0);
-    }
+describe('Given a createGrid function', () => {
+  const scenarios = [{
+    rows: 2,
+    columns: 5,
+    expectResult: [
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ]
+  }];
 
-    return grid;
-}
+  scenarios.forEach((scenario) => {
+    describe(`When invoked with values ${scenario.rows} and ${scenario.columns}`, () => {
+      test(`Then return ${scenario.expectResult}`, () => {
+        const result = createGrid(scenario.rows, scenario.columns);
 
-describe("Given a createGrid function", () => {
-
-    const scenarios = [{
-        rows: 2,
-        columns: 5,
-        expectResult: [
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0]
-        ],
-    }];
-
-    scenarios.forEach(scenario => {
-        describe(`When invoked with values ${scenario.rows} and ${scenario.columns}`, () => {
-            test(`Then return ${scenario.expectResult}`, () => {
-
-                const result = createGrid(scenario.rows, scenario.columns);
-
-                expect(result).toStrictEqual(scenario.expectResult);
-            });
-        });
+        expect(result).toStrictEqual(scenario.expectResult);
+      });
     });
+  });
 });
