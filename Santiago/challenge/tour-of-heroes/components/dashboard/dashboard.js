@@ -1,3 +1,4 @@
+const listOfHeroes = fetchSuperHeroes();
 const main = document.querySelector('.main');
 
 const title = (textTitle) => {
@@ -41,11 +42,16 @@ const topHeroesContainer = () => {
   topHeroes.classList.add('four-heroes');
   topHeroesDiv.appendChild(topHeroes);
 
-  for (let i = 1; i < heroes.length - 5; i += 1) {
-    const li = document.createElement('li');
-    li.innerHTML = `${heroes[i].name}`;
-    topHeroes.appendChild(li);
-  }
+  listOfHeroes.then((heroes) => {
+    heroes.slice(1, 5).forEach((hero) => {
+      const nameHero = document.createElement('li');
+      const heroLink = document.createElement('a');
+      heroLink.href = '#';
+      nameHero.appendChild(heroLink);
+      heroLink.innerHTML = hero.name;
+      topHeroes.appendChild(nameHero);
+    });
+  });
 };
 
 const searchContainer = () => {
