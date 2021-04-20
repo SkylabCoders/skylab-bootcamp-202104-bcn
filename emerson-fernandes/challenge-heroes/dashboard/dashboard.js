@@ -7,11 +7,13 @@ document.body.appendChild(tourOfHerosH1)
 const dashBoard = document.createElement("nav")
 document.body.appendChild(dashBoard)
 
-const buttonDashBoard = document.createElement("button")
+const buttonDashBoard = document.createElement("a")
+buttonDashBoard.setAttribute('href','../dashboard/dashboard.html')
 buttonDashBoard.innerHTML = "DashBoard"
 dashBoard.appendChild(buttonDashBoard)
 
-const buttonHeroes = document.createElement("button")
+const buttonHeroes = document.createElement("a")
+buttonHeroes.setAttribute('href','../hero-list/hero-list.html')
 buttonHeroes.innerHTML = "Heroes"
 dashBoard.appendChild(buttonHeroes)
 
@@ -27,19 +29,19 @@ const divHerosMenu = document.createElement("div")
 document.body.appendChild(divHerosMenu)
 divHerosMenu.classList.add("heros-container")
 
-const narcoButton= document.createElement("button")
+const narcoButton= document.createElement("a")
 narcoButton.innerHTML= "Narco"
 divHerosMenu.appendChild(narcoButton)
 
-const bombastoButton= document.createElement("button")
+const bombastoButton= document.createElement("a")
 bombastoButton.innerHTML= "Bombasto"
 divHerosMenu.appendChild(bombastoButton)
 
-const celeritasButton= document.createElement("button")
+const celeritasButton= document.createElement("a")
 celeritasButton.innerHTML= "Celeritas"
 divHerosMenu.appendChild(celeritasButton)
 
-const magnetaButton= document.createElement("button")
+const magnetaButton= document.createElement("a")
 magnetaButton.innerHTML= "Magneta"
 divHerosMenu.appendChild(magnetaButton)
 
