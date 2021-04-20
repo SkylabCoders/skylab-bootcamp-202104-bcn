@@ -1,18 +1,14 @@
-function createDomElement(parent, element, text, href, id, elementClass) {
+function createDomElement(parent, element, text, attributes) {
   const elementToCreate = document.createElement(element);
   if (text) {
     elementToCreate.innerText = text;
   }
-  if (href) {
-    elementToCreate.setAttribute('href', href);
-  }
-  if (id) {
-    elementToCreate.setAttribute('id', id);
+  if (attributes) {
+    attributes.forEach((attribute) => {
+      elementToCreate.setAttribute(attribute.name, attribute.value);
+    });
   }
 
-  if (elementClass) {
-    elementToCreate.setAttribute('class', elementClass);
-  }
   parent.appendChild(elementToCreate);
   return elementToCreate;
 }
