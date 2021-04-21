@@ -1,5 +1,3 @@
-const obtainAllPokemons = async () => {
-  const pokemonsData = await fetch('https://pokeapi.co/api/v2/pokemon');
-  const pokemons = await pokemonsData.json();
-  console.log(pokemons);
-};
+const getPokemonData = () => fetch('https://pokeapi.co/api/v2/pokemon')
+  .then((response) => response.json())
+  .then((data) => data.results.forEach((element) => console.log(element.name)));

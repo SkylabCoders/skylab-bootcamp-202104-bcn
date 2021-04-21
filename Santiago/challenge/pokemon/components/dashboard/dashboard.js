@@ -1,4 +1,4 @@
-const allPokemons = obtainAllPokemons();
+const allPokemons = getPokemonData();
 const main = document.querySelector('.dashboard');
 
 const createDomElements = (element, text, href, parent, id) => {
