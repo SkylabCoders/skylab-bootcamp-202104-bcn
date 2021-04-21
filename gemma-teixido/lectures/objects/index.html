@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .invisible {
+            display: none;
+        }
+        .visible {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div id='content'>
+    </div>
+</body>
+    <script>
+        function createPersona(null, name, lastName, age, bio) {
+            return {
+                id:`id ${name}`,
+                name,
+                lastName,
+                age,
+                bio
+            }
+        }
+        let gemma = createPersona(null, 'Gemma', 'Teixido', 23, 'Barcelona');
+        let irene = createPersona(null, 'Irene', 'Linh', 30, 'Salamanca');
+        let illuminati = createPersona(null, 'Fernando', 'Gomez', 23, 'Mallorca');
+
+        let personas = [gemma, irene, illuminati];
+        const mainNode = document.getElementById('content');
+            
+        personas.forEach(persona => {
+            let nodeToRepeat = document.createElement('li');
+            nodeToRepeat.onclick = () => showBio(persona.id);
+            let bio = document.createElement('p');
+            bio.classList.add('invisible');
+            bio.setAttribute('id', persona.id);
+            bio.innerHTML = persona.bio;
+            nodeToRepeat.innerText = `${persona.name}, ${persona.lastName}`;
+            nodeToRepeat.appendChild(bio);
+            
+            mainNode.appendChild(nodeToRepeat);
+        });
+
+        function showBio(personalBio) {
+            let mainNode = document.getElementById('content');
+            mainNode.childNodes.forEach(el => {
+                el.nt.classList.remove("visible");
+            });
+            let visibleElement=document.getElementsByClassName('visible').classList.replace('invisible','visible');
+            document.getElementById(persona.id).classList.add('visible');
+        }
+       </script>
+</html>

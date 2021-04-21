@@ -1,0 +1,76 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: silver;
+}
+
+.body__box {
+  width: 70vw;
+  height: 85vh;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+header {
+  width: 40vw;
+  height: vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: darkgrey;
+}
+
+header h1 {
+  width: 20vw;
+  height: 20vh;
+  font-size: large;
+}
+
+header ul {
+  width: 20vw;
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header .list__link {
+  width: 14vw;
+  height: 8vh;
+  border-radius: 6%;
+  background-color: silver;
+}
+
+.main
+h2 {
+  color: grey;
+}
+/*# sourceMappingURL=style.css.map */

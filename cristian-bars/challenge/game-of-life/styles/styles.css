@@ -1,0 +1,28 @@
+.game_column {
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+}
+
+#content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bottom {
+  background-color: lightblue;
+  width: 100px;
+  cursor: pointer;
+  border-radius: 15px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+/*# sourceMappingURL=styles.css.map */
