@@ -11,8 +11,10 @@ heroes.then((info) => {
   const divContainer = createElement('div', mainSection, '');
   const getList = createElement('ul', divContainer, '');
   info.splice(0, 9).forEach((element) => {
-    const newLi = createElement('li', getList, '');
-    const reference = createElement('a', newLi, `${element.name}`, null, './../heroes-details/heroes-details.html');
+    const newLi = createElement('li', getList, '', 'heroe-item');
+    const reference = createElement('a', newLi, `${element.name}`, `ID:${element.id}`);
+    reference.setAttribute('href', `http://127.0.0.1:49321/Isabel-Gomez/challenge/tour-of-heroes/components/heroes-details/heroes-details.html?heroeName=${element.name}&heroeID=${element.id}`);
+
     reference.onmouseover = (e) => (mouseOver(e.target.innerHTML));
     reference.onmouseout = () => (mouseOver(undefined));
   });
