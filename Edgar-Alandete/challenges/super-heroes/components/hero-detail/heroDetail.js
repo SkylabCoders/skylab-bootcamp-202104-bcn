@@ -23,8 +23,17 @@ const heroDetail = () => {
   createHeader();
   const heroInfo = getHeroById(heroDataUrl, urlParams.get('id'));
 
-  heroInfo.then(({ name }) => {
-    createDomElement(hero, 'h2', `${name} details!`, [{ name: 'class', value: 'hero-detail__title' }]);
+  heroInfo.then(({ name, powerstats }) => {
+    createDomElement(hero, 'h2', `${name} details!`, [{ name: 'class', value: 'hero-detail--title' }]);
+    const powerstatsSection = createDomElement(hero, 'section', '', [{ name: 'class', value: 'hero-detail__powerstats powerstats' }]);
+    const powerstatsList = createDomElement(powerstatsSection, 'ul', '', [{ name: 'class', value: 'powerstats__stats-list stats-list' }]);
+    // createDomElement(powerstatsList, 'li', `Intelligence ${powerstats.intelligence}`, [{ name: 'class', value: 'stats-list--item' }]);
+    // createDomElement(powerstatsList, 'li', `Strength ${powerstats.strength}`, [{ name: 'class', value: 'stats-list--item' }]);
+    // createDomElement(powerstatsList, 'li', `Speed ${powerstats.speed}`, [{ name: 'class', value: 'stats-list--item' }]);
+    // createDomElement(powerstatsList, 'li', `Durability ${powerstats.durability}`, [{ name: 'class', value: 'stats-list--item' }]);
+    // createDomElement(powerstatsList, 'li', `Power ${powerstats.power}`, [{ name: 'class', value: 'stats-list--item' }]);
+    // createDomElement(powerstatsList, 'li', `Combat ${powerstats.combat}`, [{ name: 'class', value: 'stats-list--item' }]);
+    Object.entries(powerstats).map(([key, value]) => createDomElement(powerstatsList, 'li', `${key} ${value}`, [{ name: 'class', value: 'stats-list--item' }]));
   });
 };
 
