@@ -7,9 +7,24 @@ function createHero(heroName, age, city) {
 const spiderman = createHero('spiderman', 17, 'new york');
 
 class Hero {
-  constructor(heroName, age, city) {
-    this.heroName = heroName;
-    this.age = age;
-    this.city = city;
+    constructor(heroName, age, city, specialPower = null) {
+      this.heroName = heroName;
+      this.age = age;
+      this.city = city;
+      this.specialPower = specialPower;
+    }
+    lastComment = '';
+  
+    if(batSignal) {
+      this.goToAction();
+    }
+  
+    goToAction = (message) => {
+      let newMessage = message;
+      function talk() {
+          console.log(newMessage);
+      }
+      talk();
+      
+    }
   }
-}
