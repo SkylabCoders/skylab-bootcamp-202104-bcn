@@ -1,18 +1,11 @@
-const heroes = [
-  { id: 11, name: 'Dr Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-];
+const idHero = new URLSearchParams(window.location.search).get('heroID');
 
-const searchParams = new URLSearchParams(window.location.search);
-const idHero = searchParams.get('q');
+const fetchHero = () => fetch('../superHeroData.json')
+  .then((response) => response.json())
+  .then((data) => data);
+
+const misHeroes = fetchHero()
+  .then((data) => data.find((hero) => hero.id.toString() === idHero));
 
 const header = document.createElement('header');
 const title = document.createElement('h1');
@@ -23,27 +16,23 @@ const content = document.getElementById('content');
 content.appendChild(header);
 
 const buttonsZone = document.createElement('div');
-const buttonDash = document.createElement('button');
 const actionButtonDash = document.createElement('a');
 actionButtonDash.href = ('.././dashboard/dashboard.html');
 const textButDash = document.createTextNode('Dashboard');
 actionButtonDash.appendChild(textButDash);
-buttonDash.appendChild(actionButtonDash);
-buttonsZone.appendChild(buttonDash);
+buttonsZone.appendChild(actionButtonDash);
 content.appendChild(buttonsZone);
 
-const buttonHeroes = document.createElement('button');
 const actionButtonHero = document.createElement('a');
 actionButtonHero.href = ('.././heroes/heroes.html');
 const textButHero = document.createTextNode('Heroes');
 actionButtonHero.appendChild(textButHero);
-buttonHeroes.appendChild(actionButtonHero);
-buttonsZone.appendChild(buttonHeroes);
+buttonsZone.appendChild(actionButtonHero);
 content.appendChild(buttonsZone);
 
 const container = document.createElement('div');
 const titleSection = document.createElement('h2');
-const textContainer = document.createTextNode('XXXXX details');
+const textContainer = document.createTextNode(`${misHeroes.name} details`);
 titleSection.appendChild(textContainer);
 container.appendChild(titleSection);
 content.appendChild(container);
