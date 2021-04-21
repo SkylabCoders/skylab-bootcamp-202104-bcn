@@ -1,5 +1,5 @@
 const mainContent = document.querySelector('.content');
-const headTitle = generateElement({ type: 'div', classes: ['head-title'], context: 'Tour of Heroes' });
+const headTitle = generateElement({ type: 'div', classes: ['head-title'], context: 'Tour of Pokemons' });
 mainContent.append(headTitle);
 const selectorGroup = generateElement({ type: 'div', classes: ['selector-group'] });
 mainContent.append(selectorGroup);
@@ -7,41 +7,35 @@ const linkDashboard = generateElement({
   type: 'a', classes: ['selector-group__link-dasboard'], context: 'Dashboard', url: './../dashboard/dashboard.html',
 });
 selectorGroup.append(linkDashboard);
-const linkHeroes = generateElement({
-  type: 'a', classes: ['selector-group__link-heroes'], context: 'Heroes', url: './../list/list.html',
+const linkPokemons = generateElement({
+  type: 'a', classes: ['selector-group__link-pokemons'], context: 'Pokemons', url: './../list/list.html',
 });
-selectorGroup.append(linkHeroes);
+selectorGroup.append(linkPokemons);
 
 const paramId = getHeroe('heroeID', location.search);
 const paramName = getHeroe('heroeNAME', location.search);
 
-const heroeTitle = generateElement({ type: 'h3', classes: ['heroe-title'], context: paramName });
+const pokemonTitle = generateElement({ type: 'h3', classes: ['pokemon-title'], context: paramName });
 mainContent.append(heroeTitle);
-const heroeInfo = generateElement({ type: 'div', classes: ['heroe-data'] });
+const pokemonInfo = generateElement({ type: 'div', classes: ['pokemon-data'] });
 mainContent.append(heroeInfo);
-const heroeLabel = generateElement({ type: 'label', classes: [], context: 'Name' });
-heroeLabel.setAttribute('for', 'hname');
+const pokemonLabel = generateElement({ type: 'label', classes: [], context: 'Name' });
+pokemonLabel.setAttribute('for', 'hname');
 
-const heroeId = generateElement({ type: 'p', classes: ['heroe-data__id'], context: `ID: ${paramId}` });
-const heroeName = generateElement({ type: 'input', classes: ['heroe-data__name'] });
+const pokemonId = generateElement({ type: 'p', classes: ['pokemon-data__id'], context: `ID: ${paramId}` });
+const pokemonName = generateElement({ type: 'input', classes: ['pokemon-data__name'] });
 
-heroeName.setAttribute('type', 'text');
-heroeName.setAttribute('id', 'hname');
-heroeName.setAttribute('name', 'hname');
-heroeInfo.append(heroeId);
-heroeInfo.append(heroeLabel);
-heroeInfo.append(heroeName);
+pokemonName.setAttribute('type', 'text');
+pokemonName.setAttribute('id', 'hname');
+pokemonName.setAttribute('name', 'hname');
+pokemonName.append(pokemonId);
+pokemonName.append(pokemonLabel);
+pokemonName.append(pokemonName);
 
-heroeInfo.append(heroeLabel);
-mainContent.append(heroeInfo);
+pokemonInfo.append(pokemonLabel);
+mainContent.append(pokemonInfo);
 
 const someDetailsUl = generateElement({ type: 'ul', classes: [] });
-getAllHeroes('./../../store/superHeroData.json').then((heroe) => {
-  const { powerstats } = heroe.find((el) => el.id.toString() === paramId.toString());
-  for (const power in powerstats) {
-    const li = generateElement({ type: 'li', classes: [], context: `${power} : ${powerstats[power]}` });
-    someDetailsUl.append(li);
-  }
-});
+getAllPokemons('./../../store/superHeroD');
 
 mainContent.append(someDetailsUl);

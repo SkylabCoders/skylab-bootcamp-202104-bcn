@@ -7,30 +7,25 @@ const linkDashboard = generateElement({
   type: 'a', classes: ['selector-group__link-dasboard'], context: 'Dashboard', url: 'dashboard.html',
 });
 selectorGroup.append(linkDashboard);
-const linkHeroes = generateElement({
-  type: 'a', classes: ['selector-group__link-heroes'], context: 'Heroes', url: './../list/list.html',
+const linkPokemons = generateElement({
+  type: 'a', classes: ['selector-group__link-heroes'], context: 'Pokemons', url: './../list/list.html',
 });
-selectorGroup.append(linkHeroes);
-const mainTitle = generateElement({ type: 'h3', classes: [], context: 'Top Heroes' });
+selectorGroup.append(linkPokemons);
+const mainTitle = generateElement({ type: 'h3', classes: [], context: 'Top Pokemons' });
 mainContent.append(mainTitle);
 
-const heroesList = generateElement({ type: 'ul', classes: ['heroes-list'] });
-mainContent.append(heroesList);
+const pokemonsList = generateElement({ type: 'ul', classes: ['pokemons-list'] });
+mainContent.append(pokemonsList);
 
-getAllHeroes('./../../store/superHeroData.json')
-  .then((data) => {
-    data.slice(0, 3).forEach((heroe) => {
-      const li = generateElement({
-        type: 'li',
-        classes: ['heroes-list__item'],
-      });
+pokemonsShortList
+  .then((list) => {
+    const randomList = list.sort(randomNum).slice(0, 5);
+    randomList.forEach((poke) => {
+      const li = generateElement({ type: 'li', classes: ['pokemons-list__element'] });
       const anchor = generateElement({
-        type: 'a',
-        classes: [],
-        url: [`./../details/details.html?heroeID=${heroe.id}&heroeNAME=${heroe.name}`],
-        context: heroe.name,
+        type: 'a', classes: [], url: `${poke.url}`, context: poke.name,
       });
       li.append(anchor);
-      heroesList.append(li);
+      mainContent.append(li);
     });
   });

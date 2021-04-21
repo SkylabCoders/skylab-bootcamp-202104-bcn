@@ -1,8 +1,10 @@
-function getAllHeroes(url) {
-  return fetch(url)
-    .then((response) => response.json())
-    .then((data) => data);
+async function getPokemons(num = 0) {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=${num}`);
+  const data = await response.json();
+  return data.results;
 }
+
+const pokemonsShortList = getPokemons();
 
 function generateElement(elementProperties) {
   const element = document.createElement(elementProperties.type);
@@ -15,8 +17,12 @@ function generateElement(elementProperties) {
   return element;
 }
 
-function getHeroe(param) {
+function getPokemon(param) {
   const query = location.search;
   const params = new URLSearchParams(query);
   return params.get(param);
+}
+
+function randomNum(a, b) {
+  return 0.5 - Math.random();
 }
