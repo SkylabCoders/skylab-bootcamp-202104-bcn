@@ -2,12 +2,15 @@ const siteOfDashboard = document.getElementById("pokemon-select");
 let MIN_PAG = 10;
 let MAX_PAG = 10;
 
-function createList(selector, item, text, link, pokemon){
-    const containerPokemons = document.createElement(selector);
+const containerPokemons = document.createElement("ul");
+siteOfDashboard.appendChild(containerPokemons);
+containerPokemons.setAttribute("id","prueba");
+
+function createList(item, text, link, pokemon){
     const listOfPokemons = document.createElement(item);
     const itemPokemon = document.createElement(text);
-    siteOfDashboard.appendChild(containerPokemons);
     containerPokemons.appendChild(listOfPokemons);
+    listOfPokemons.setAttribute("id","lista");
     listOfPokemons.appendChild(itemPokemon);
     itemPokemon.href = link;
     return itemPokemon.innerHTML = pokemon;
@@ -28,8 +31,7 @@ const detailingPokemon = (element, list, detail) => {
     especificDetails.innerHTML = detail;
 }
 const nextPokemons = () => {
-    siteOfDashboard.innerHTML = "";
+    document.getElementById("prueba").innerHTML = "";
     MIN_PAG += 10;
-    MAX_PAG += 10;
     getPokemon(MIN_PAG, MAX_PAG);
 } 

@@ -4,9 +4,8 @@
            return response.json();
         })
         .then(data => { 
-            console.log(data);
             data.results.forEach(pokemon => {
-                createList("ul" ,"li" ,"a" ,`.././details/details.html?name=${pokemon.name}`,pokemon.name);
+                createList("li" ,"a" ,`.././details/details.html?name=${pokemon.name}`,pokemon.name);
             })
         })
     }
