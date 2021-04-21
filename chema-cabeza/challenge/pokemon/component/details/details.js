@@ -10,13 +10,18 @@ mainBlock.appendChild(pokemonListUL);
 const pokemonToDetail = bringPokemons(pokemonURL);
 
 pokemonToDetail.then((element) => {
-  const currentLI = createElement('li');
-  pokemonListUL.appendChild(currentLI);
+  const currentImgLI = createElement('li');
+  pokemonListUL.appendChild(currentImgLI);
   const pokemonIMG = createElement('img');
   pokemonIMG.src = element.sprites.front_default;
-  currentLI.appendChild(pokemonIMG);
+  currentImgLI.appendChild(pokemonIMG);
+
+  const currentNameLI = createElement('li');
+
+  pokemonListUL.appendChild(currentNameLI);
+
   const pokemonName = createElement('span', 'pokemonName', `Name: ${element.species.name}`);
-  currentLI.appendChild(pokemonName);
+  currentNameLI.appendChild(pokemonName);
 });
 
 const goBackButton = createElement('a', 'goBackButton', 'Back');
