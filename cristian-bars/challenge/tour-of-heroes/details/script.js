@@ -7,8 +7,6 @@ const fetchHero = () => fetch('../superHeroData.json')
 const misHeroes = fetchHero()
   .then((data) => data.find((hero) => hero.id.toString() === idHero));
 
-console.log(misHeroes);
-
 const header = document.createElement('header');
 const title = document.createElement('h1');
 const titleText = document.createTextNode('Tour of heroes');
