@@ -1,21 +1,6 @@
 const allPokemons = getPokemonData();
 const main = document.querySelector('.dashboard');
 
-const createDomElements = (element, text, href, parent, id) => {
-  const elementToCreate = document.createElement(element);
-  if (text) {
-    elementToCreate.innerText = text;
-  }
-  if (href) {
-    elementToCreate.setAttribute('href', href);
-  }
-  if (id) {
-    elementToCreate.setAttribute('id', id);
-  }
-  parent.appendChild(elementToCreate);
-  return elementToCreate;
-};
-
 const createList = () => {
   const listDiv = createDomElements('div', '', '', main);
   const ul = createDomElements('ol', '', '', listDiv);
