@@ -21,5 +21,3 @@ details.setAttribute('href', './../../component/details/details.html');
 pokemonList.setAttribute('href', './../../component/list/pokemonList.html');
 dashboardLI1.appendChild(details);
 dashboardLI2.appendChild(pokemonList);
-
-bringPokemons('https://pokeapi.co/api/v2/pokemon/1').then((pokemon) => console.log(pokemon));

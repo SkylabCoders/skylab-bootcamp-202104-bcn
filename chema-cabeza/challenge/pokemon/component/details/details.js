@@ -10,11 +10,9 @@ mainBlock.appendChild(pokemonListUL);
 const pokemonToDetail = bringPokemons(pokemonURL);
 
 pokemonToDetail.then((element) => {
-  console.log(element);
   const currentLI = createElement('li');
   pokemonListUL.appendChild(currentLI);
   const pokemonIMG = createElement('img');
-  console.log(element.sprites.front_default);
   pokemonIMG.src = element.sprites.front_default;
   currentLI.appendChild(pokemonIMG);
   const pokemonName = createElement('span', 'pokemonName', `Name: ${element.species.name}`);
