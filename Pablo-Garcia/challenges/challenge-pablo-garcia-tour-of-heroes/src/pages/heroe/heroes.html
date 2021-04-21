@@ -16,15 +16,20 @@
 <script>
     const renderNav = () =>{
         const node = document.getElementById('root');
-        const heading = title('Tour of Hero', 'h1');
-        const nav = navigation(routing);
-        node.append(heading);
-        node.append(nav);
-    }
-    const slideHeroes = getDataJson();
-    console.log(slideHeroes)
 
-    window.onload = renderNav;
+        const wrapper_head = document.createElement('div');
+        wrapper_head.setAttribute('class','header__wraper');
+        const heading = title('Tour of Hero', 'h1');
+        const nav = navigation(routing)
+
+        wrapper_head.appendChild(heading);
+        wrapper_head.appendChild(nav);
+
+        node.appendChild(wrapper_head);
+    }
+    renderNav()
+    getDataJson();
+
 </script>
 </body>
 </html>
