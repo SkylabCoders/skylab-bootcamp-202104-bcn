@@ -1,6 +1,6 @@
 const mainContent = document.querySelector('.content');
 
-const headTitle = generateElement({ type: 'div', classes: ['head-title'], context: 'Tour of Heroes' });
+const headTitle = generateElement({ type: 'div', classes: ['head-title'], context: 'Tour of Pokemons' });
 mainContent.append(headTitle);
 const selectorGroup = generateElement({ type: 'div', classes: ['selector-group'] });
 mainContent.append(selectorGroup);
@@ -8,23 +8,23 @@ const linkDashboard = generateElement({
   type: 'a', classes: ['selector-group__link-dasboard'], context: 'Dashboard', url: './../dashboard/dashboard.html',
 });
 selectorGroup.append(linkDashboard);
-const linkHeroes = generateElement({
-  type: 'a', classes: ['selector-group__link-heroes'], context: 'Heroes', url: 'list.html',
+const linkPokemons = generateElement({
+  type: 'a', classes: ['selector-group__link-pokemons'], context: 'Heroes', url: 'list.html',
 });
-selectorGroup.append(linkHeroes);
+selectorGroup.append(linkPokemons);
 
-const mainTitle = generateElement({ type: 'h3', classes: [], context: 'My Heroes' });
+const mainTitle = generateElement({ type: 'h3', classes: [], context: 'My Pokemons' });
 mainContent.append(mainTitle);
 
-const heroesList = generateElement({ type: 'ul', classes: ['heroes-list'] });
-mainContent.append(heroesList);
+const pokemonsList = generateElement({ type: 'ul', classes: ['pokemons-list'] });
+mainContent.append(pokemonsList);
 
 getAllHeroes('./../../store/superHeroData.json')
   .then((data) => {
     data.slice(0, 20).forEach((heroe) => {
       const li = generateElement({
         type: 'li',
-        classes: ['heroes-list__item'],
+        classes: ['pokemons-list__item'],
       });
       const anchor = generateElement({
         type: 'a',
@@ -34,18 +34,18 @@ getAllHeroes('./../../store/superHeroData.json')
 
       });
       li.append(anchor);
-      heroesList.append(li);
+      pokemonsList.append(li);
     });
   });
-const highlitedHero = generateElement({ type: 'div', classes: ['higlited-hero'] });
-const highlightHeroName = generateElement({ type: 'p', classes: ['highlighted-hero__name'], context: '' });
-const highlightHeroDetailsButton = generateElement({
+const highlitedPokemon = generateElement({ type: 'div', classes: ['higlited-hero'] });
+const highlightPokemonName = generateElement({ type: 'p', classes: ['highlighted-hero__name'], context: '' });
+const highlightPokemonDetailsButton = generateElement({
   type: 'a',
   context: 'View Details',
-  classes: ['highlighted-hero__details-btn', '--inactive'],
+  classes: ['highlighted-pokemon__details-btn', '--inactive'],
   url: './../details/details.html',
 });
 
-highlitedHero.append(highlightHeroName);
-highlitedHero.append(highlightHeroDetailsButton);
-mainContent.append(highlitedHero);
+highlitedPokemon.append(highlightPokemonName);
+highlitedPokemon.append(highlightPokemonDetailsButton);
+mainContent.append(highlitedPokemon);
