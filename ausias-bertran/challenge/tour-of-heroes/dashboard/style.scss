@@ -1,0 +1,64 @@
+$backgroundColor: silver;
+$backgroundBox: white;
+$h1Color: darkgrey;
+$h2Color: grey;
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: $backgroundColor;
+} 
+
+.body__box {
+    width: 70vw;
+    height: 85vh;
+    background-color: $backgroundBox;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+header {
+    width: 40vw;
+    height: vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color :$h1Color;
+
+    h1 {
+        width: 20vw;
+        height: 20vh;
+        font-size: large;
+    }
+    
+    ul {
+        width: 20vw;
+        height: 8vh;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .list__link {
+        width: 14vw;
+        height: 8vh;
+        border-radius: 6%;
+        background-color: $backgroundColor;
+    }
+}
+
+.main
+
+h2 {
+    color: $h2Color;
+}
+
+ul {
+}
+
+li {
+
+}

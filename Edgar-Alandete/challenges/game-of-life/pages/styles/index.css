@@ -1,0 +1,66 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  min-height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+td {
+  width: 20px;
+  height: 20px;
+  border: solid 1px;
+  background-color: white;
+}
+
+.rules {
+  margin-top: 20px;
+  text-align: justify;
+  text-align: center;
+}
+
+.rules h2 {
+  text-align: center;
+}
+
+.game__space {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.game__controls {
+  margin: 20px 0;
+}
+
+.alive {
+  background-color: blue;
+}
+
+.dead {
+  background-color: white;
+}
+/*# sourceMappingURL=index.css.map */
