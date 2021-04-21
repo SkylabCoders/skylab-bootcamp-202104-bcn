@@ -2,22 +2,12 @@ function createList(name) {
   const ulElement = document.getElementById('list-container');
   const listElement = document.createElement('li');
   const anchorElement = document.createElement('a');
-
   anchorElement.href = `./../html/pokemon-details.html?name=${name}`;
   anchorElement.innerText = name;
-
   listElement.setAttribute('id', `id-${name}`);
-
   ulElement.append(listElement);
   listElement.append(anchorElement);
 }
-
-// const setDetailsName = (ability) => {
-//   const ulElementDetails = document.getElementById('abilities');
-//   const listElementDetails = document.createElement('li');
-//   listElementDetails.innerText = ability;
-//   ulElementDetails.append(listElementDetails);
-// };
 
 const setAtributes = (ulID, atribute) => {
   const ulAbilities = document.getElementById(ulID);

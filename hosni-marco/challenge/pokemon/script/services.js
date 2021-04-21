@@ -15,7 +15,6 @@ const getabilities = async (name, list) => {
 };
 
 const getStats = async (URLname) => {
-  debugger;
   const pokemons = await fetch(`https://pokeapi.co/api/v2/pokemon/${URLname}`);
   const pokemonList = await pokemons.json();
   pokemonList.stats.forEach((element) => {
