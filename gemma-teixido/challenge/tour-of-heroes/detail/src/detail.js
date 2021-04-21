@@ -1,16 +1,3 @@
-const heroes = [
-  { id: 11, name: 'Dr Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-];
-
 const body = document.getElementById('bodyId');
 const divFirstPart = document.createElement('div');
 const divSecondPart = document.createElement('div');
@@ -51,13 +38,3 @@ divSecondPart.appendChild(nameOfHeroe);
 const inputName = document.createElement('input');
 inputName.innerHTML = 'id:';
 divSecondPart.appendChild(inputName);
-
-
-
-// const firstHeroes = heroes.slice(0, 4);
-
-// firstHeroes.forEach((firstHeroe) => {
-//   const firstHeroesNames = document.createElement('a');
-//   firstHeroesNames.innerText = `${firstHeroe.name}`;
-//   body.appendChild(firstHeroesNames);
-// });

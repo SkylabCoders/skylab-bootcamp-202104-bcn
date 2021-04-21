@@ -31,8 +31,8 @@ listAllinHeroes.then(element =>  {
     const lista = document.createElement('li');
     divSecondPart.appendChild(lista);
     const firstHeroesNames = document.createElement('a');
-    firstHeroesNames.innerText = `${firstHeroe.name}`;
     firstHeroesNames.setAttribute('href', `http://127.0.0.1:5500/challenge/tour-of-heroes/detail/html/detail.html?heroeName=${firstHeroe.name}&heroeID=${firstHeroe.id}`);
+    firstHeroesNames.innerText = `${firstHeroe.name}`;
     lista.appendChild(firstHeroesNames);
   });
 });
