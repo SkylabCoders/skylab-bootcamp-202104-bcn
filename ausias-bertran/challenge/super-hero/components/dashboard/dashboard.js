@@ -46,3 +46,7 @@ mainList.className = 'main__title';
 document.body.appendChild(dashboardMain);
 dashboardMain.appendChild(mainTitle);
 dashboardMain.appendChild(mainList);
+
+
+const superHeroes = fetchHeroes();
+console.log(superHeroes)
