@@ -6,8 +6,8 @@ const getPokemonList = async () => {
   });
 };
 
-const getabilities = async (name, list) => {
-  const pokemons = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+const getabilities = async (URLname, list) => {
+  const pokemons = await fetch(`https://pokeapi.co/api/v2/pokemon/${URLname}`);
   const pokemonList = await pokemons.json();
   pokemonList.abilities.forEach((element) => {
     setAtributes(list, element.ability.name);

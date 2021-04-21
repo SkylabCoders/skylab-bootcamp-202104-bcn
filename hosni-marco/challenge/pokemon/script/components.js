@@ -1,5 +1,5 @@
 function createList(name) {
-  const ulElement = document.getElementById('list-container');
+  const ulElement = document.getElementById('list-pokemon');
   const listElement = document.createElement('li');
   const anchorElement = document.createElement('a');
   anchorElement.href = `./../html/pokemon-details.html?name=${name}`;
@@ -26,14 +26,11 @@ const setTable = (nameStat, valueStat) => {
   const table = document.getElementById('stats');
   const tRow = document.createElement('tr');
   tRow.setAttribute('id', nameStat);
-
   const tdName = document.createElement('td');
   tdName.innerText = nameStat;
   const tdValue = document.createElement('td');
   tdValue.innerText = valueStat;
-
   tRow.append(tdName);
   tRow.append(tdValue);
-
   table.append(tRow);
 };
