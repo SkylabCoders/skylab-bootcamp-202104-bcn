@@ -30,7 +30,7 @@ getAllHeroes('./../../store/superHeroData.json')
         type: 'a',
         classes: [],
         context: heroe.name,
-        url: [`${window.location}?heroID=${heroe.id}`],
+        url: [`./../details/details.html?heroID=${heroe.id}`],
 
       });
       li.append(anchor);
