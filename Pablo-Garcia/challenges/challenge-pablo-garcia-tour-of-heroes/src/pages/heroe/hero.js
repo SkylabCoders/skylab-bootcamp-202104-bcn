@@ -16,7 +16,6 @@ const getDataJson = () => {
                wrapperTopHeroesSlide__item__link.innerHTML = `${name}`;
                wrapperTopHeroesSlide__item.appendChild(wrapperTopHeroesSlide__item__link);
                wrapperTopHeroesSlide.appendChild(wrapperTopHeroesSlide__item);
-
            })
             const insertHeroes = document.querySelector('.header__wraper');
             insertHeroes ? insertHeroes.append(wrapperTopHeroesSlide) : null;
