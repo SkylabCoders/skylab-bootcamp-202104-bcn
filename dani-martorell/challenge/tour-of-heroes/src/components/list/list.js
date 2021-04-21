@@ -30,7 +30,7 @@ getAllHeroes('./../../store/superHeroData.json')
         type: 'a',
         classes: [],
         context: heroe.name,
-        url: [`./../details/details.html?heroID=${heroe.id}`],
+        url: [`./../details/details.html?heroeID=${heroe.id}&heroeNAME=${heroe.name}`],
 
       });
       li.append(anchor);
@@ -38,7 +38,7 @@ getAllHeroes('./../../store/superHeroData.json')
     });
   });
 const highlitedHero = generateElement({ type: 'div', classes: ['higlited-hero'] });
-const highlightHeroName = generateElement({ type: 'p', classes: ['highlighted-hero__name'], context: 'Peter' });
+const highlightHeroName = generateElement({ type: 'p', classes: ['highlighted-hero__name'], context: 'XXXX' });
 const highlightHeroDetailsButton = generateElement({
   type: 'a',
   context: 'View Details',

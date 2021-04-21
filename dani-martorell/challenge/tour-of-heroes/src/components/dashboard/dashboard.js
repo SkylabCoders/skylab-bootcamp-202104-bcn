@@ -23,12 +23,12 @@ getAllHeroes('./../../store/superHeroData.json')
       const li = generateElement({
         type: 'li',
         classes: ['heroes-list__item'],
-        context: heroe.name,
       });
       const anchor = generateElement({
         type: 'a',
         classes: [],
-        url: [],
+        url: [`./../details/details.html?heroeID=${heroe.id}&heroeNAME=${heroe.name}`],
+        context: heroe.name,
       });
       li.append(anchor);
       heroesList.append(li);

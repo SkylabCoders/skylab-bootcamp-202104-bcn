@@ -11,13 +11,19 @@ const linkHeroes = generateElement({
   type: 'a', classes: ['selector-group__link-heroes'], context: 'Heroes', url: './../list/list.html',
 });
 selectorGroup.append(linkHeroes);
-const heroeTitle = generateElement({ type: 'h3', classes: ['heroe-title'], context: 'Magneta details!' });
+
+const paramId = getHeroe('heroeID');
+const paramName = getHeroe('heroeNAME');
+console.log(paramName);
+
+const heroeTitle = generateElement({ type: 'h3', classes: ['heroe-title'], context: paramName });
 mainContent.append(heroeTitle);
 const heroeInfo = generateElement({ type: 'div', classes: ['heroe-data'] });
 mainContent.append(heroeInfo);
 const heroeLabel = generateElement({ type: 'label', classes: [], context: 'Name' });
 heroeLabel.setAttribute('for', 'hname');
-const heroeId = generateElement({ type: 'p', classes: ['heroe-data__id'], context: 12 });
+
+const heroeId = generateElement({ type: 'p', classes: ['heroe-data__id'], context: paramId });
 const heroeName = generateElement({ type: 'input', classes: ['heroe-data__name'] });
 
 heroeName.setAttribute('type', 'text');
@@ -29,3 +35,6 @@ heroeInfo.append(heroeName);
 
 heroeInfo.append(heroeLabel);
 mainContent.append(heroeInfo);
+
+const someDetailsList = generateElement({ type: 'ul', classes: [] });
+const someDetailsLi = generateElement({ type: 'li', classes: [] });

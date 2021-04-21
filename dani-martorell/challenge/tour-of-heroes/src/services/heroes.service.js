@@ -14,3 +14,9 @@ function generateElement(elementProperties) {
   element.textContent = elementProperties.context;
   return element;
 }
+
+function getHeroe(param) {
+  const query = location.search;
+  const params = new URLSearchParams(query);
+  return params.get(param);
+}
