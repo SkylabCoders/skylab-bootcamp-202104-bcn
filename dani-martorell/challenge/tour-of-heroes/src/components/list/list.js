@@ -15,14 +15,6 @@ selectorGroup.append(linkHeroes);
 
 const mainTitle = generateElement({ type: 'h3', classes: [], context: 'My Heroes' });
 mainContent.append(mainTitle);
-const highlitedHero = generateElement({ type: 'div', classes: ['higlited-hero'] });
-const highlightHeroName = generateElement({ type: 'p', classes: ['highlighted-hero__name'], context: 'Peter' });
-const highlightHeroDetailsButton = generateElement({
-  type: 'a',
-  context: 'View Details',
-  classes: ['highlighted-hero__details-btn', '--inactive'],
-  url: './../detalles/index.html',
-});
 
 const heroesList = generateElement({ type: 'ul', classes: ['heroes-list'] });
 mainContent.append(heroesList);
@@ -33,14 +25,27 @@ getAllHeroes('./../../store/superHeroData.json')
       const li = generateElement({
         type: 'li',
         classes: ['heroes-list__item'],
-        context: heroe.name,
       });
       const anchor = generateElement({
         type: 'a',
         classes: [],
-        url: [],
+        context: heroe.name,
+        url: [`${window.location}?heroID=${heroe.id}`],
+
       });
       li.append(anchor);
       heroesList.append(li);
     });
   });
+const highlitedHero = generateElement({ type: 'div', classes: ['higlited-hero'] });
+const highlightHeroName = generateElement({ type: 'p', classes: ['highlighted-hero__name'], context: 'Peter' });
+const highlightHeroDetailsButton = generateElement({
+  type: 'a',
+  context: 'View Details',
+  classes: ['highlighted-hero__details-btn', '--inactive'],
+  url: './../details/details.html',
+});
+
+highlitedHero.append(highlightHeroName);
+highlitedHero.append(highlightHeroDetailsButton);
+mainContent.append(highlitedHero);
