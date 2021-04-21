@@ -19,8 +19,9 @@ const getRandomPokemons = async () => {
   const pokemonList = await fetchDashboardPokemons();
   console.log('API', pokemonList);
   pokemonList.results.slice(2, 7).forEach((element) => {
+    const id = element.url.split('/')[6];
     const newElementLi = createElement('li', getDashboardList, '', 'pokemon-item');
-    createElement('a', newElementLi, `${element.name.toUpperCase()}`, null, `../../details/details.html?pokemonName=${element.name}`);
+    createElement('a', newElementLi, `${element.name.toUpperCase()}`, null, `../details/details.html?pokemonId=${id}`);
   });
 };
 getRandomPokemons();

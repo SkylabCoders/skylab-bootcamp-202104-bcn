@@ -20,8 +20,11 @@ const getAllPokemons = async (numPage) => {
   const pokemonList = await fetchPagePokemons(numPage);
   console.log('API', pokemonList);
   pokemonList.results.forEach((element) => {
+    const id = element.url.split('/')[6];
     const newElementLi = createElement('li', getList, '', 'pokemon-item');
-    createElement('a', newElementLi, `${element.name.toUpperCase()}`, 'pokemon-detail', `../../details/details.html?pokemonName=${element.name}`);
+    createElement('a', newElementLi, `${element.name.toUpperCase()}`, 'pokemon-detail', `../details/details.html?pokemonId=${id}`);
+    const urlPokemonDetail = element.url;
+    console.log(urlPokemonDetail);
   });
 };
 getAllPokemons(0);
@@ -33,16 +36,15 @@ const clickPages = async (numberPage) => {
   });
 };
 
-const previousButton = createElement('button', mainSection, 'Previous', null);
-const nextButton = createElement('button', mainSection, 'Next', null);
-
 const onChangePage = (numberPage) => {
+  const previousButton = createElement('button', mainSection, 'Previous', null);
   previousButton.addEventListener('click', (event) => {
     event.preventDefault();
     if (numberPage >= 0) {
       clickPages(numberPage--);
     }
   });
+  const nextButton = createElement('button', mainSection, 'Next', null);
   nextButton.addEventListener('click', (event) => {
     event.preventDefault();
     if (numberPage <= 5) {
