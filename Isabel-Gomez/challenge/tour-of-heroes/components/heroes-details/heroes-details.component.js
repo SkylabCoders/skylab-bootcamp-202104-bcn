@@ -17,17 +17,17 @@ createElement('h3', mainSection, `${heroeName} details!`);
 
 const getContainerInfo = createElement('div', mainSection, '');
 
-createElement('div', getContainerInfo, `${heroeID}`);
 createElement('input', getContainerInfo);
-createElement('a', mainSection, 'Back', null, './../dashboard/dashboard.html');
 
 // pendiente cambiar esta funcion para mostrar el detalle de los superheroes //
 
-heroes.then((info) => {
-  const getDashboardList = createElement('ul', mainSection, '');
-  info.slice(0, 4).forEach((element) => {
-    const newElementLi = createElement('li', getDashboardList, '', 'heroe-item');
-    const firstHeroesNames = createElement('a', newElementLi, `${element.name}`);
-    firstHeroesNames.setAttribute('href', `http://127.0.0.1:49629/Isabel-Gomez/challenge/tour-of-heroes/components/heroes-details/heroes-details.html?heroeName=${element.name}&heroeID=${element.id}`);
+const heroDetails = heroes.then((info) => {
+  const heroData = info.find((hero) => hero.id === parseInt(heroeID, 10));
+  console.log(heroData);
+  const getDetailsList = createElement('ul', getContainerInfo, null);
+  Object.entries(heroData).forEach((property) => {
+    createElement('li', getDetailsList, `${property}`);
   });
 });
+
+createElement('a', mainSection, 'Back', null, './../dashboard/dashboard.html');
