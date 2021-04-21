@@ -14,7 +14,7 @@ const createList = () => {
   allPokemons.then((pokemons) => pokemons.results);
   allPokemons.then((data) => data.results.forEach((element) => {
     const pokem = createDomElements('li', '', '', ul);
-    createDomElements('a', `${element.name}`, 'http://127.0.0.1:5500/challenge/pokemon/components/details/details.html', pokem);
+    createDomElements('a', `${element.name}`, `http://127.0.0.1:5500/challenge/pokemon/components/details/details.html?pokemonName=${element.name}`, pokem);
   }));
 };
 

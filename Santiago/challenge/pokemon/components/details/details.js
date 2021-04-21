@@ -8,7 +8,16 @@ const createHeader = () => {
   createDomElements('a', 'ALL POKEMONS', 'http://127.0.0.1:5500/challenge/pokemon/components/pokemons/pokemons.html', header);
 };
 
+const obtainDetails = () => {
+  const allDetails = createDomElements('div', '', '', main);
+  const pokName = createDomElements('p', '', '', allDetails);
+  const paramName = new URLSearchParams(location.search);
+  const pokemonName = paramName.get('pokemonName');
+  pokName.innerHTML = `name: ${pokemonName}`;
+};
+
 const createPokemonsDashboard = () => {
   createHeader();
+  obtainDetails();
 };
 createPokemonsDashboard();
