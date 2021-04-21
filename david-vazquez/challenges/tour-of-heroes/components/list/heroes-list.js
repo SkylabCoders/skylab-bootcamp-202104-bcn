@@ -1,73 +1,53 @@
 const container = document.querySelector('.container');
 
 function generateHeader(){  
-    const headerHeroes = createHtmlElement('header',null,'header');
-    container.appendChild(headerHeroes);
-    const title = createHtmlElement('h1',null,'header__title');
+    const headerHeroes = createHtmlElement(container, 'header',null,'header');
+    const title = createHtmlElement(headerHeroes,'h1',null,'header__title');
     title.innerText='Tour of Heroes';
-    headerHeroes.appendChild(title);
-    const navBar = createHtmlElement('ul',null,'header__nav');
-    headerHeroes.appendChild(navBar);    
+    const navBar = createHtmlElement(headerHeroes, 'ul',null,'header__nav');
     generateNavButton(navBar,'Dashboard', './../dashboard/dashboard.html');
     generateNavButton(navBar,'Heroes', './../list/heroes-list.html');
     generateMyHeroesContainer();
 }
 
 function generateNavButton(parent ,name, link){
-    const button = createHtmlElement('li',null,'nav__button');
-    parent.appendChild(button);
-    const buttonLink = createHtmlElement('a',null,null);
-    button.appendChild(buttonLink);
+    const button = createHtmlElement(parent, 'li',null,'nav__button');
+    const buttonLink = createHtmlElement(button, 'a',null,null);
     buttonLink.innerText=name;
     buttonLink.setAttribute('href', link);
 }
 
 function generateMyHeroesContainer(){
-    const myHeroesContainer = createHtmlElement('div',null,'myheroes')
-    container.appendChild(myHeroesContainer);
-    const myHeroesTitle = createHtmlElement('h2',null,'myheroes__title');
+    const myHeroesContainer = createHtmlElement(container,'div',null,'myheroes')
+    const myHeroesTitle = createHtmlElement(myHeroesContainer,'h2',null,'myheroes__title');
     myHeroesTitle.innerText='My Heroes';
-    myHeroesContainer.appendChild(myHeroesTitle);
-    const myHeroesList = createHtmlElement('ul',null,'myheroes__list');
-    myHeroesContainer.appendChild(myHeroesList);
+    const myHeroesList = createHtmlElement(myHeroesContainer,'ul',null,'myheroes__list');
     const misheroes = fetchHeroes();
     misheroes.then(element=>{
-        element.slice(1,20).forEach((firstHeroe)=>{
-            const heroes = createHtmlElement('li',null,'list__hero')
-            myHeroesList.appendChild(heroes);
+        element.forEach((firstHeroe)=>{
+            const heroes = createHtmlElement(myHeroesList,'li',null,'list__hero')
             const firstHeroeNames = document.createElement('a');
             firstHeroeNames.innerText=`${firstHeroe.id} ${firstHeroe.name}`;
+            heroes.appendChild(firstHeroeNames);  
             const name = `${firstHeroe.name}`;
             const id = `${firstHeroe.id}`;
             firstHeroeNames.onclick = function () {generateMyHeroDetail(name, link)};
-            const link = ('href',`./../detail/heroes-detail.html?heroeName=${firstHeroe.name}&heroeID=${firstHeroe.id}`); 
-            heroes.appendChild(firstHeroeNames);  
+            const link = ('href',`./../detail/heroes-detail.html?heroeName=${firstHeroe.name}&heroeID=${firstHeroe.id}&heroeSlug=${firstHeroe.slug}&heroeBio=${firstHeroe.biography}`);       
             })
     })
 }
 
 function generateMyHeroDetail(name, link){
     const parent = document.querySelector('.myheroes');
-    const myHeroDetail = createHtmlElement('div', null, 'myheroes__detail')
-    parent.appendChild(myHeroDetail);
-    const myHeroTitle = createHtmlElement('h2',null,'detail__title')
-    myHeroDetail.appendChild(myHeroTitle);
+    const myHeroDetail = createHtmlElement(parent,'div', null, 'myheroes__detail')
+    const myHeroTitle = createHtmlElement(myHeroDetail, 'h2',null,'detail__title')
     myHeroTitle.innerText= name + ' is my hero';
     generateMyHeroDetailMore(myHeroDetail,link);
 }
 
 function generateMyHeroDetailMore(myHeroDetail, enlace){
-    const link = createHtmlElement('a',null,null);
-    myHeroDetail.appendChild(link);
+    const link = createHtmlElement(myHeroDetail, 'a',null,null);
     link.href = enlace;
-    const myHeroButton = createHtmlElement('button', null, 'detail__more')
-    link.appendChild(myHeroButton);
+    const myHeroButton = createHtmlElement(link, 'button', null, 'detail__more')
     myHeroButton.innerText= 'View Details';
-}
-
-function createHtmlElement(selector, object, classname){
-    let node=document.createElement(selector);
-    node.setAttribute('id',object);
-    node.className=classname;
-    return node;
 }
