@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard | Heroes</title>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="../../../src/components/title/title.js"></script>
+<script src="../../../src/application/config/routes-config.js"></script>
+<script src="../heroe/hero.js"></script>
+<script>
+        const renderNav = () =>{
+        const node = document.getElementById('root');
+
+        const wrapper_head = document.createElement('div');
+        wrapper_head.setAttribute('class','header__wraper');
+        const heading = title('Tour of Hero', 'h1');
+        const nav = navigation(routing)
+
+        wrapper_head.appendChild(heading);
+        wrapper_head.appendChild(nav);
+
+        node.appendChild(wrapper_head);
+    }
+        renderNav()
+        getDataJson();
+
+
+</script>
+</body>
+</html>
