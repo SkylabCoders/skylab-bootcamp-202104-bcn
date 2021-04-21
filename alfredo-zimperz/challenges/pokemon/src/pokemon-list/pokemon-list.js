@@ -1,6 +1,5 @@
 const POKEMON_LIST_BASE_URL = 'https://pokeapi.co/api/v2/';
 const MAIN_ELEMENT = document.querySelector('main');
-
 const listPagination = { offset: 0, limit: 20 };
 
 createElement('h1', null, 'Pokemon list', MAIN_ELEMENT);
@@ -29,8 +28,10 @@ createElement('footer', 'footer', null, MAIN_ELEMENT);
 createElement('button', 'footer_button--back', 'back', getElementByClassName('footer'));
 const backButton = getElementByClassName('footer_button--back');
 backButton.onclick = () => {
-  listPagination.offset >= 20 ? listPagination.offset -= 20 : null;
-  getPokemonList(listPagination.offset, listPagination.limit);
+  if (listPagination.offset >= 20) {
+    listPagination.offset -= 20;
+    getPokemonList(listPagination.offset, listPagination.limit);
+  }
 };
 createElement('button', 'footer_button--next', 'next', getElementByClassName('footer'));
 const nextButton = getElementByClassName('footer_button--next');
