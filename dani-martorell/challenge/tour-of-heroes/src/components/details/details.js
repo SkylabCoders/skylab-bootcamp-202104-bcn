@@ -14,7 +14,6 @@ selectorGroup.append(linkHeroes);
 
 const paramId = getHeroe('heroeID');
 const paramName = getHeroe('heroeNAME');
-console.log(paramName);
 
 const heroeTitle = generateElement({ type: 'h3', classes: ['heroe-title'], context: paramName });
 mainContent.append(heroeTitle);
@@ -36,5 +35,13 @@ heroeInfo.append(heroeName);
 heroeInfo.append(heroeLabel);
 mainContent.append(heroeInfo);
 
-const someDetailsList = generateElement({ type: 'ul', classes: [] });
-const someDetailsLi = generateElement({ type: 'li', classes: [] });
+const someDetailsUl = generateElement({ type: 'ul', classes: [] });
+getAllHeroes('./../../store/superHeroData.json').then((heroe) => {
+  const { powerstats } = heroe.find((el) => el.id.toString() === paramId.toString());
+  for (const power in powerstats) {
+    const li = generateElement({ type: 'li', classes: [], context: `${power} : ${powerstats[power]}` });
+    someDetailsUl.append(li);
+  }
+});
+
+mainContent.append(someDetailsUl);
