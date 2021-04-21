@@ -17,3 +17,4 @@ const getHeroById = (heroId) => fetch('./../../store/superHeroData.json')
     const heroData = data.find((hero) => hero.id === parseInt(heroId, 10));
     return heroData;
   });
+
