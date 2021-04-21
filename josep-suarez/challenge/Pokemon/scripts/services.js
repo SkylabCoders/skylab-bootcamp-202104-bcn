@@ -35,3 +35,10 @@ const nextPokemons = () => {
     MIN_PAG += 10;
     getPokemon(MIN_PAG, MAX_PAG);
 } 
+const beforePokemons = () => {
+    document.getElementById("prueba").innerHTML = "";
+    if (MIN_PAG >= 10){
+        MIN_PAG -= 10;
+    } 
+    getPokemon(MIN_PAG, MAX_PAG);
+} 
