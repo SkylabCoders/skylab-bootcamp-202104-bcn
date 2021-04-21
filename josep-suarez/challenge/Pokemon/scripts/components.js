@@ -1,13 +1,50 @@
        const getPokemon = () => {
-        return fetch("https://pokeapi.co/api/v2/pokemon/")
+        return fetch("https://pokeapi.co/api/v2/pokemon/?offset=30&limit=30")
         .then((response)=>{
            return response.json();
         })
         .then(data => { 
-            console.log(data.results);
+            console.log(data);
             data.results.forEach(pokemon => {
-                console.log(pokemon);
-                createList("ul","li","a",pokemon.url,pokemon.name);
+                createList("ul" ,"li" ,"a" ,`.././details/details.html?name=${pokemon.name}`,pokemon.name);
             })
         })
     }
+
+    function getPokemonIDFromUrl(url) {
+        return new URLSearchParams(url).get('name');
+    }
+    
+    const pokemonDetail = () => {
+        let pokemonClicked= getPokemonIDFromUrl(location.search);
+        detailOfPokemonClick(pokemonClicked)
+        return fetch("https://pokeapi.co/api/v2/pokemon/?offset=30&limit=30")
+        .then((response)=>{
+            return response.json();
+         })
+         .then(data => { 
+             data.results.forEach(pokemon => {
+                 if(pokemon.name === pokemonClicked){
+                     console.log(pokemon.url);
+                     paintDetailsOfPokemonClicked(pokemon.url);
+                 }
+             })
+         })
+     }
+    
+     const paintDetailsOfPokemonClicked = (url) => {
+            return fetch(url)
+            .then((response)=>{
+                return response.json();
+             })
+             .then(data => { 
+                detailingPokemon("ul","li","height: "+data.height);
+                detailingPokemon("ul","li", "weight: "+data.weight);
+                detailingPokemon("ul","li", "order: "+data.order);
+                detailingPokemon("ul","li", "id: "+data.id);
+                detailingPokemon("ul","li", "hability: "+data.abilities[0].ability.name);
+                detailingPokemon("ul","li", `<img src=${data.sprites.back_default}>`);
+             })
+     }
+
+
