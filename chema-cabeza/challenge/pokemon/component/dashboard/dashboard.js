@@ -18,7 +18,7 @@ dashboardUL.appendChild(dashboardLI2);
 const details = createElement('a', 'dashboardLI1__detailsButton', 'Details');
 const pokemonList = createElement('a', 'dashboardLI2__pokemonList', 'Pokemons');
 details.setAttribute('href', './../../component/details/details.html');
-pokemonList.setAttribute('href', './../../component/details/list.html');
+pokemonList.setAttribute('href', './../../component/list/pokemonList.html');
 dashboardLI1.appendChild(details);
 dashboardLI2.appendChild(pokemonList);
 

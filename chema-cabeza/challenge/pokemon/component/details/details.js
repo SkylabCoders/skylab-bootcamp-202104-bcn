@@ -20,3 +20,9 @@ pokemonToDetail.then((element) => {
   const pokemonName = createElement('span', 'pokemonName', `Name: ${element.species.name}`);
   currentLI.appendChild(pokemonName);
 });
+
+const goBackButton = createElement('a', 'goBackButton', 'Back');
+goBackButton.onclick = function goBack() {
+  window.history.back();
+};
+mainBlock.appendChild(goBackButton);
