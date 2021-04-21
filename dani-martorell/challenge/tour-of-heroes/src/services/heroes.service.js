@@ -20,3 +20,5 @@ function getHeroe(param) {
   const params = new URLSearchParams(query);
   return params.get(param);
 }
+
+describe;

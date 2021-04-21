@@ -22,7 +22,7 @@ mainContent.append(heroeInfo);
 const heroeLabel = generateElement({ type: 'label', classes: [], context: 'Name' });
 heroeLabel.setAttribute('for', 'hname');
 
-const heroeId = generateElement({ type: 'p', classes: ['heroe-data__id'], context: paramId });
+const heroeId = generateElement({ type: 'p', classes: ['heroe-data__id'], context: `ID: ${paramId}` });
 const heroeName = generateElement({ type: 'input', classes: ['heroe-data__name'] });
 
 heroeName.setAttribute('type', 'text');

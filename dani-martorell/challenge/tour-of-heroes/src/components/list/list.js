@@ -38,7 +38,7 @@ getAllHeroes('./../../store/superHeroData.json')
     });
   });
 const highlitedHero = generateElement({ type: 'div', classes: ['higlited-hero'] });
-const highlightHeroName = generateElement({ type: 'p', classes: ['highlighted-hero__name'], context: 'XXXX' });
+const highlightHeroName = generateElement({ type: 'p', classes: ['highlighted-hero__name'], context: '' });
 const highlightHeroDetailsButton = generateElement({
   type: 'a',
   context: 'View Details',
