@@ -21,11 +21,13 @@ pokemonsShortList
   .then((list) => {
     const randomList = list.sort(randomNum).slice(0, 5);
     randomList.forEach((poke) => {
-      const li = generateElement({ type: 'li', classes: ['pokemons-list__element'] });
-      const anchor = generateElement({
-        type: 'a', classes: [], url: `${poke.url}`, context: poke.name,
+      getPokemonId(poke.name).then((id) => {
+        const li = generateElement({ type: 'li', classes: ['pokemons-list__element'] });
+        const anchor = generateElement({
+          type: 'a', classes: [], context: `${poke.name}`, url: `./../details/details.html?ID=${id}&NAME=${poke.name}`,
+        });
+        li.append(anchor);
+        mainContent.append(li);
       });
-      li.append(anchor);
-      mainContent.append(li);
     });
   });

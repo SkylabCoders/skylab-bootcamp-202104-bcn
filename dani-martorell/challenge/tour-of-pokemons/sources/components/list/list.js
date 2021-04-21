@@ -19,24 +19,6 @@ mainContent.append(mainTitle);
 const pokemonsList = generateElement({ type: 'ul', classes: ['pokemons-list'] });
 mainContent.append(pokemonsList);
 
-getAllHeroes('./../../store/superHeroData.json')
-  .then((data) => {
-    data.slice(0, 20).forEach((heroe) => {
-      const li = generateElement({
-        type: 'li',
-        classes: ['pokemons-list__item'],
-      });
-      const anchor = generateElement({
-        type: 'a',
-        classes: [],
-        context: heroe.name,
-        url: [`./../details/details.html?heroeID=${heroe.id}&heroeNAME=${heroe.name}`],
-
-      });
-      li.append(anchor);
-      pokemonsList.append(li);
-    });
-  });
 const highlitedPokemon = generateElement({ type: 'div', classes: ['higlited-hero'] });
 const highlightPokemonName = generateElement({ type: 'p', classes: ['highlighted-hero__name'], context: '' });
 const highlightPokemonDetailsButton = generateElement({
@@ -49,3 +31,11 @@ const highlightPokemonDetailsButton = generateElement({
 highlitedPokemon.append(highlightPokemonName);
 highlitedPokemon.append(highlightPokemonDetailsButton);
 mainContent.append(highlitedPokemon);
+
+// BUTTONS
+const buttonsWrapper = generateElement({ type: 'div', classes: ['buttons-wrapper'] });
+const previous = generateElement({ type: 'a', classes: ['buttons-wrapper__previous'], context: 'Previous' });
+const next = generateElement({ type: 'a', classes: ['buttons-next'], context: 'Next' });
+buttonsWrapper.append(previous);
+buttonsWrapper.append(next);
+mainContent.append(buttonsWrapper);

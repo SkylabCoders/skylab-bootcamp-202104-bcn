@@ -4,6 +4,14 @@ async function getPokemons(num = 0) {
   return data.results;
 }
 
+async function getPokemonId(name) {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  const data = await response.json();
+  return data.id;
+}
+
+// const pokemonID = getPokemonId(paramName);
+
 const pokemonsShortList = getPokemons();
 
 function generateElement(elementProperties) {
