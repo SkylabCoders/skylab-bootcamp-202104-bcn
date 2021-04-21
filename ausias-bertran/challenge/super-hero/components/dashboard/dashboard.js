@@ -1,15 +1,6 @@
-const heroes = [
-{ id: 11, name: 'Dr Nice' },
-{ id: 12, name: 'Narco' },
-{ id: 13, name: 'Bombasto' },
-{ id: 14, name: 'Celeritas' },
-{ id: 15, name: 'Magneta' },
-{ id: 16, name: 'RubberMan' },
-{ id: 17, name: 'Dynama' },
-{ id: 18, name: 'Dr IQ' },
-{ id: 19, name: 'Magma' },
-{ id: 20, name: 'Tornado' }
-]
+const heroes = fetchHeroes();
+const heroesScreen = document.getElementById("heroes-attributes");
+
 const header = document.createElement("header");
 const headerTitle = document.createElement("h1");
 const headerList = document.createElement("ul");
@@ -37,7 +28,7 @@ const mainList = document.createElement("ul");
 for (let i = 0; i < 4; i++) {
     let mainElement = document.createElement("li");
     mainElement.className = `main__element${i}`;
-    mainElement.innerHTML = heroes[i].name;
+    mainElement.innerHTML = fetchHeroes();
     mainElement.style.listStyle = 'none';
     mainList.appendChild(mainElement);
 }
@@ -49,4 +40,21 @@ dashboardMain.appendChild(mainList);
 
 
 const superHeroes = fetchHeroes();
-console.log(superHeroes)
+
+
+superHeroes.then((heroes) => {
+    const heroesList = heroes.splice(1 - 5);
+    heroesScreen.innerHTML = heroesList.name;
+})
+
+listOfHeroes.then((heroes) => {
+    heroes.slice(1, 5).forEach((hero) => {
+      const nameHero = document.createElement('li');
+      const heroLink = document.createElement('a');
+      heroLink.setAttribute('href', `http://127.0.0.1:5500/skylab-bootcamp-202104-bcn/Santiago/challenge/tour-of-heroes/components/details/details.html?heroeID=${hero.id}&heroeName=${hero.name}&heroeFullName=${hero.biography.fullName}`);
+      nameHero.appendChild(heroLink);
+      heroLink.innerHTML = hero.name;
+      topHeroes.appendChild(nameHero);
+    });
+  });
+};
