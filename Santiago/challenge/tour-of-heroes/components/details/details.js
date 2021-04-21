@@ -48,6 +48,13 @@ const detailsContainer = () => {
   heroName.innerHTML = `name: ${heroeName}`;
   main.appendChild(heroName);
 
+  const fullName = document.createElement('p');
+  topDetailsDiv.appendChild(fullName);
+  const paramFullName = new URLSearchParams(location.search);
+  const heroeFullName = paramFullName.get('heroeFullName');
+  fullName.innerHTML = `full Name: ${heroeFullName}`;
+  main.appendChild(fullName);
+
   const titleTopHeroes = title(`${heroeName} details`);
   topDetailsDiv.appendChild(titleTopHeroes);
 };

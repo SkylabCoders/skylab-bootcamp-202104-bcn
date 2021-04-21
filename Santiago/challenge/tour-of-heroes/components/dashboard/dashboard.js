@@ -46,7 +46,7 @@ const topHeroesContainer = () => {
     heroes.slice(1, 5).forEach((hero) => {
       const nameHero = document.createElement('li');
       const heroLink = document.createElement('a');
-      heroLink.setAttribute('href', `http://127.0.0.1:5500/skylab-bootcamp-202104-bcn/Santiago/challenge/tour-of-heroes/components/details/details.html?heroeName=${hero.name}&heroeID=${hero.id}`);
+      heroLink.setAttribute('href', `http://127.0.0.1:5500/skylab-bootcamp-202104-bcn/Santiago/challenge/tour-of-heroes/components/details/details.html?heroeName=${hero.name}&heroeID=${hero.id}&heroeFullName=${hero.biography.fullName}`);
       nameHero.appendChild(heroLink);
       heroLink.innerHTML = hero.name;
       topHeroes.appendChild(nameHero);
