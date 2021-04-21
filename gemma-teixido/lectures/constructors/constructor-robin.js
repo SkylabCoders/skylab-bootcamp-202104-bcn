@@ -10,15 +10,16 @@ class Heroe { // la clase se escribe siempre con capitalize letter
         this.goToAction();
     }
     goToAction = (message) => {
-        this.lastComment = message; //es una variable de clase => propiedad de la clase
+        let newMessage = message => { //es una variable de clase => propiedad de la clase
         function talk() {
-            this.lastComment = message;
             console.log(this.lastComment);
         }
-        // talk();
-        console.log(this.lastComment);
+        talk();
+        console.log(this.lastComment);      
+        }
     }
 }
 
-let robin = new Heroe ('Robin', 16, 'Gotham', 'sidekik')
-robin.goToAction('Santas cantimploras, Batman!');
+let robin = new Heroe('Robin', 16, 'Gotham', 'sidekik');
+
+robin.goToAction('Santas cantimploras, Batman!').talk();
