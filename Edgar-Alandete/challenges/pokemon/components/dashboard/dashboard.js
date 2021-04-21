@@ -13,8 +13,23 @@ function createDomElement(parent, element, text = null, attributes = []) {
   parent.appendChild(elementToCreate);
   return elementToCreate;
 }
+
+const createNavigator = (parent) => {
+  const headerNavigator = createDomElement(parent, 'nav', '', { class: 'header__main-navigator main-navigator' });
+  const navigatorList = createDomElement(headerNavigator, 'ul', '', { class: 'main-navigator__list list' });
+  const dashBoardLink = createDomElement(navigatorList, 'li', '', { class: 'list--item' });
+  createDomElement(dashBoardLink, 'a', 'Dashboard', { href: '#' });
+  const pokemonsLink = createDomElement(navigatorList, 'li', '', { class: 'list--item' });
+  createDomElement(pokemonsLink, 'a', 'Pokemons', { href: '../pokemons/pokemons.html' });
+};
+
+const createHeader = () => {
+  const header = createDomElement(dashboard, 'header', '', { class: 'header' });
+  createDomElement(header, 'h1', 'Pokemon Dashboard', { class: 'header--title' });
+  createNavigator(header);
+};
 const createDashboard = () => {
-  createDomElement(dashboard, 'h1', 'Pokemon Dashboard');
+  createHeader();
 };
 
 createDashboard();

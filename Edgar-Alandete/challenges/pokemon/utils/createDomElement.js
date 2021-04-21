@@ -12,5 +12,3 @@ function createDomElement(parent, element, text = null, attributes = []) {
   document.appendChild(parent);
   return elementToCreate;
 }
-
-module.exports = createDomElement;
