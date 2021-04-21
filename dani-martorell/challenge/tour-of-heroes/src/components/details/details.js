@@ -12,8 +12,8 @@ const linkHeroes = generateElement({
 });
 selectorGroup.append(linkHeroes);
 
-const paramId = getHeroe('heroeID');
-const paramName = getHeroe('heroeNAME');
+const paramId = getHeroe('heroeID', location.search);
+const paramName = getHeroe('heroeNAME', location.search);
 
 const heroeTitle = generateElement({ type: 'h3', classes: ['heroe-title'], context: paramName });
 mainContent.append(heroeTitle);
