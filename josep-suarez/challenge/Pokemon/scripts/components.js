@@ -1,5 +1,5 @@
-       const getPokemon = () => {
-        return fetch("https://pokeapi.co/api/v2/pokemon/?offset=30&limit=30")
+       const getPokemon = (offset,limit) => {
+        return fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`)
         .then((response)=>{
            return response.json();
         })
@@ -43,6 +43,7 @@
                 detailingPokemon("ul","li", "order: "+data.order);
                 detailingPokemon("ul","li", "id: "+data.id);
                 detailingPokemon("ul","li", "hability: "+data.abilities[0].ability.name);
+                detailingPokemon("ul","li", `<img src=${data.sprites.front_default}>`);
                 detailingPokemon("ul","li", `<img src=${data.sprites.back_default}>`);
              })
      }
