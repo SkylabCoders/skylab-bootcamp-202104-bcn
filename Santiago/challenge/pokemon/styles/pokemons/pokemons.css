@@ -13,6 +13,9 @@ a {
   background-color: lightgreen;
   text-align: center;
   font-family: Comic Sans MS, Comic Sans, cursive;
+  text-decoration: none;
+  color: black;
+  padding: 5px;
 }
 
 .pokemons {
@@ -36,7 +39,6 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: -100px;
 }
 
 #pokemons-container ul {
@@ -47,15 +49,13 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 60%;
   list-style: none;
-  margin-top: 150px;
-  font-size: 30px;
+  margin-top: 120px;
+  font-size: 20px;
 }
 
 #pokemons-container ul li {
@@ -74,11 +74,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-a {
-  text-decoration: none;
-  color: black;
 }
 
 #back-btn, #next-btn {

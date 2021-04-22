@@ -21,7 +21,6 @@ const createList = () => {
   });
 };
 
-
 const createPokemonsDashboard = () => {
   createHeader();
   createList();

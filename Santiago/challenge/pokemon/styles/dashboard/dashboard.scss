@@ -1,11 +1,3 @@
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     background-image: url('./../../images/landscape.jpg');
     background-repeat: no-repeat;
@@ -21,6 +13,7 @@ a {
     background-color: lightgreen;
     text-align: center;
     font-family: Comic Sans MS, Comic Sans, cursive;
+    padding: 10px;
 }
 
 .dashboard {
@@ -33,9 +26,9 @@ a {
     flex-direction: column;
     align-items: center;
 
-    h1 {
-        padding-bottom: 50px;
-    }
+    // h1 {
+    //     padding-bottom: 50px;
+    // }
 }
 
 #dash-container {
