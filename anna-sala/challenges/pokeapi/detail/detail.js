@@ -6,8 +6,8 @@ function fetchApi(callback) {
     .then((data) => callback(data));
 }
 function iterationDetail(obj) {
-  obj.forEach((element) => {
-    printOnPage('a', element.name, `${element.name}`);
-  });
+  // obj.forEach((element) => {
+  printOnPage('h2', `${obj.name}`, `${obj.name}`);
+  // });
 }
-fetchApi(console.log);
+fetchApi(iterationDetail);
