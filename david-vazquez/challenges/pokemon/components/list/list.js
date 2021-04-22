@@ -2,7 +2,8 @@ const body = document.querySelector('.body');
 
 function createHeader() {
   const header = createHtmlElements(body, 'header', 'header', null);
-  const headerTitle = createHtmlElements(header, 'h1', 'header__title', 'POKEMON');
+  const headerLogo = createHtmlElements(header, 'img', 'header__logo', null);
+  headerLogo.setAttribute('src', './../../store/logo.png');
   const navBar = createHtmlElements(header, 'ul', 'header__navbar', null);
   createNavButton(navBar, 'Dashboard', './../dashboard/dashboard.html');
   createNavButton(navBar, 'List', './list.html');

@@ -26,6 +26,8 @@ function createMain() {
       const pokemon = createHtmlElements(dashboardList, 'li', 'dashboard__top__item', null);
       const myPokemonsDetail = getDataPokemon(firstPokemon.name);
       myPokemonsDetail.then((element) => {
+        const pokemonPicBall = createHtmlElements(pokemon, 'img', 'pokemon-detail__image--ball', null);
+        pokemonPicBall.setAttribute('src', './../../store/poke-bola.png');
         const pokemonPic = createHtmlElements(pokemon, 'img', 'pokemon-detail__image', null);
         pokemonPic.setAttribute('src', `${element.sprites.front_default}`);
       });
