@@ -24,7 +24,6 @@
          .then(data => { 
              data.results.forEach(pokemon => {
                  if(pokemon.name === pokemonClicked){
-                     console.log(pokemon.url);
                      paintDetailsOfPokemonClicked(pokemon.url);
                  }
              })
