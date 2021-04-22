@@ -16,8 +16,10 @@ const createElementHtml = (element, text, href, parent, id) => {
 async function getPokemons(url) {
   const list = await fetch(url);
   const parsedList = await list.json();
-  return parsedList;
+  console.log(parsedList);
 }
+
+const result = getPokemons('https://pokeapi.co/api/v2/pokemon/');
 
 function chooseNumberPoke(array, num) {
   const newArray = [];
