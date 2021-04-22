@@ -1,6 +1,7 @@
 const main = document.querySelector('.main-container');
-const offset = 0;
-const limit = 1118;
+const DOMpokeList = document.querySelector('.pokeList');
+let offset = 0;
+const limit = 70;
 
 const pokeElement = (tag, data) => {
   const element = document.createElement(tag);
@@ -9,21 +10,48 @@ const pokeElement = (tag, data) => {
 };
 
 const pokemonAnchor = (pokemon) => {
-  const listElement = document.createElement('li');
-  const anchor = pokeElement('a', pokemon.name);
+  const anchor = document.createElement('a');
   anchor.setAttribute('href', `./../pokeDetail/pokeDetail.html?name=${pokemon.name}`);
-  listElement.appendChild(anchor);
 
-  return listElement;
+  return anchor;
+};
+
+const removeAllChildNodes = (parent) => {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+};
+
+const setPokeImage = (pokemon) => {
+  const pokeImage = document.createElement('img');
+  const pokeAnchor = pokemonAnchor(pokemon);
+
+  pokeImage.setAttribute('src', pokemon.sprites.front_default);
+  pokeAnchor.appendChild(pokeImage);
+  DOMpokeList.appendChild(pokeAnchor);
+};
+
+const pokeList = (pokemon) => {
+  getPokemonData(pokemon.name, setPokeImage);
 };
 
 const nextButton = () => {
   const button = pokeElement('button', 'Next');
-
   button.setAttribute('onclick', 'increaseOffset()');
-  getPokeApiData(offset, limit, pokeList);
 
   return button;
+};
+
+const increaseOffset = () => {
+  offset += 70;
+  removeAllChildNodes(DOMpokeList);
+  getPokeApiData(offset, limit, pokeList);
+};
+
+const decreaseOffset = () => {
+  offset -= 70;
+  removeAllChildNodes(DOMpokeList);
+  getPokeApiData(offset, limit, pokeList);
 };
 
 const previousButton = () => {
@@ -35,15 +63,7 @@ const previousButton = () => {
   return button;
 };
 
-const pokeList = (pokemon) => {
-  const pokemonDetails = document.createElement('ul');
-  const pokeAnchor = pokemonAnchor(pokemon);
-
-  pokemonDetails.appendChild(pokeAnchor);
-  main.appendChild(pokemonDetails);
-};
-
 main.appendChild(pokeElement('h1', 'List of pokemons'));
-main.appendChild(nextButton());
 main.appendChild(previousButton());
+main.appendChild(nextButton());
 getPokeApiData(offset, limit, pokeList);

@@ -1,6 +1,11 @@
 function getPokeApiData(offset, limit, callBack) {
   fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error('Something failed', response.Error);
+    })
     .then((data) => data.results.forEach((pokemon) => callBack(pokemon)));
 }
 
