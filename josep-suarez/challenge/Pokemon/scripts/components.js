@@ -6,6 +6,7 @@
         .then(data => { 
             data.results.forEach(pokemon => {
                 createList("li" ,"a" ,`.././details/details.html?name=${pokemon.name}`,pokemon.name);
+                photosPokemon(pokemon.url,`.././details/details.html?name=${pokemon.name}`);
             })
         })
     }
@@ -35,6 +36,22 @@
                 detailingPokemon("ul","li", `<img src=${data.sprites.front_default}>`);
                 detailingPokemon("ul","li", `<img src=${data.sprites.back_default}>`);
              })
+     }
+     const photosPokemon = (url,href) => {
+        return fetch(url)
+        .then((response)=>{
+            return response.json();
+         })
+         .then(data => { 
+            let image = document.getElementById("photos-pokemon");
+            let photo = document.createElement("p");
+            let imagePokemon = image.appendChild(photo);
+            photo.setAttribute("id","pokeimagen");
+            imagePokemon.innerHTML = `<img src=${data.sprites.front_default}>`
+            imagePokemon.addEventListener("click", () => {
+                window.location.replace(href);
+            })
+         })
      }
 
 

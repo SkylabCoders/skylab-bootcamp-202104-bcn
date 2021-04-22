@@ -28,6 +28,7 @@ const detailingPokemon = (element, list, detail) => {
     especificDetails.innerHTML = detail;
 }
 const nextPokemons = () => {
+    document.getElementById("photos-pokemon").innerHTML = "";
     siteOfDashboard.innerHTML = "";
     let buttonNext = document.getElementById("next-button");
     buttonNext.innerHTML = "Next";
@@ -35,6 +36,7 @@ const nextPokemons = () => {
     getPokemon(MIN_PAG, MAX_PAG);
 } 
 const beforePokemons = () => {
+    document.getElementById("photos-pokemon").innerHTML = "";
     siteOfDashboard.innerHTML = "";
     if (MIN_PAG >= 10){
         MIN_PAG -= 10;
