@@ -1,6 +1,4 @@
 const dashboard = document.getElementById('pokemons');
-const limit = 10;
-const offset = 0;
 function createDomElement(parent, element, text = null, attributes = []) {
   const elementToCreate = document.createElement(element);
   if (text) {
@@ -35,7 +33,7 @@ const pokemonList = (page, limit, offset) => {
     page.removeChild(page.firstChild);
   }
 
-  const pokemonsPaginated = getPaginatedPokemons(limit, offset);
+  const pokemonsPaginated = getPokemons(limit, offset);
   pokemonsPaginated.then((data) => {
     const pokemons = data.results;
     const { previous, next } = data;
@@ -57,7 +55,7 @@ const pokemonList = (page, limit, offset) => {
 const createPokemonPaginatedList = () => {
   const paginatedPokemonsSection = createDomElement(dashboard, 'section', '', { class: 'paginated-pokemons' });
   createDomElement(paginatedPokemonsSection, 'h2', 'Pokemons', { class: 'paginated-pokemons--title' });
-  const page = createDomElement(paginatedPokemonsSection, 'ul', '', { class: 'paginated-pokemons__list-pokemon list-pokemon', id: 'pokemon-list' });
+  createDomElement(paginatedPokemonsSection, 'ul', '', { class: 'paginated-pokemons__list-pokemon list-pokemon', id: 'pokemon-list' });
   paginate();
 };
 
