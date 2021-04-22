@@ -14,5 +14,6 @@ const createNavigation = (routing) => {
     listRoutes.appendChild(route);
   })
   nav.appendChild(listRoutes);
+  return nav;
 
 }
