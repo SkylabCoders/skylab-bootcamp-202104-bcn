@@ -14,12 +14,25 @@ selectorGroup.append(linkPokemons);
 
 const pokemonTitle = generateElement({ type: 'h3', classes: ['pokemon-title'], context: paramName.toUpperCase() });
 mainContent.append(pokemonTitle);
-const pokemonInfo = generateElement({ type: 'div', classes: ['pokemon-data'] });
-mainContent.append(pokemonInfo);
 
 const pokemonId = generateElement({ type: 'p', classes: ['pokemon-data__id'], context: `ID: ${paramId}` });
-const pokemonName = generateElement({ type: 'input', classes: ['pokemon-data__name'] });
+mainContent.append(pokemonId);
 
-const someDetailsUl = generateElement({ type: 'ul', classes: [] });
+const detailsWrapper = generateElement({ type: 'div', classes: ['details-wrapper'] });
+mainContent.append(detailsWrapper);
 
-mainContent.append(someDetailsUl);
+getPokemonDetails(paramName)
+  .then(({abilities, sprites, height, weight, base_experience}) => {
+    const pokemonImage = generateElement({ type: 'img', classes: ['details__image'] });
+    pokemonImage.setAttribute('src', `${sprites.front_default}`);
+    detailsWrapper.append(pokemonImage);
+    const ul = generateElement({ type: 'ul', classes: [] });
+    detailsWrapper.append(ul);
+    const l3 = generateElement({type: 'li', classes: [], context: 'Height: ' + height});
+    ul.append(l3);
+    const l4 = generateElement({type: 'li', classes: [], context: 'Weight: ' + weight});
+    ul.append(l4);
+    const l5 = generateElement({type: 'li', classes: [], context: 'Base Experience: ' + base_experience});
+    ul.append(l5);
+  });
+

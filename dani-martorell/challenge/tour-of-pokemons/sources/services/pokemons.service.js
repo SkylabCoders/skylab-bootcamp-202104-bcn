@@ -10,7 +10,15 @@ async function getPokemonId(name) {
   return data.id;
 }
 
-// const pokemonID = getPokemonId(paramName);
+async function getPokemonDetails(name) {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  const data = await response.json();
+  return data;
+}
+
+// async function getPokemonStats()
+
+// const paramId = getPokemonId('ID', location.search);
 
 const pokemonsShortList = getPokemons();
 
@@ -30,6 +38,9 @@ function getPokemon(param) {
   const params = new URLSearchParams(query);
   return params.get(param);
 }
+
+const paramName = getPokemon('NAME', location.search);
+const paramId = getPokemon('ID', location.search);
 
 function randomNum(a, b) {
   return 0.5 - Math.random();
