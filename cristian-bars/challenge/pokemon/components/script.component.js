@@ -1,4 +1,4 @@
-const header = document.createElement('header');
+const header = createElementHtml('header', '', 'id', 'header', 'header', link = null);
 const title = createElementHtml('h1', 'Pokemons', 'id', 'headerTitle', 'header', link = null);
 header.appendChild(title);
 const content = document.getElementById('content');
@@ -13,9 +13,9 @@ const buttonsZone = createElementHtml('div', '', 'id', 'buttonsZone', 'buttons',
 const actionButtonNext = createElementHtml('button', 'Next', 'id', 'nextButton', 'listButton', link = null);
 actionButtonNext.setAttribute('onclick', 'moreItems()');
 const actionButtonPrev = createElementHtml('button', 'Prev', 'id', 'prevButton', 'listButton', link = null);
-actionButtonPrev.setAttribute('onclick', 'moreItems()');
-buttonsZone.appendChild(actionButtonNext);
+actionButtonPrev.setAttribute('onclick', 'lessItems()');
 buttonsZone.appendChild(actionButtonPrev);
+buttonsZone.appendChild(actionButtonNext);
 content.appendChild(buttonsZone);
 
 function createElementHtml(node, nodeContent, att, attValue, className, link = null) {

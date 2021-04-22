@@ -12,14 +12,14 @@ getPoke = async () => {
 getPoke();
 
 function pokeDetails(data) {
-  const header = document.createElement('header');
-  const title = document.createElement('h2');
-  const titleText = document.createTextNode(data.name.toUpperCase());
-  const pokemonImg = document.createElement('img');
+  const header = createElementHtml('header', '', 'id', 'pokemon', 'pokemon', link = null);
+  const title = createElementHtml('h2', data.name.toUpperCase(), 'id', data.name, 'pokemon__name', link = null);
+  const section = createElementHtml('section', '', 'id', 'pokemonSection', 'pokemon__section', link = null);
+  const pokemonImg = createElementHtml('img', '', 'id', 'pokemon_img', 'pokemon_img', link = null);
   pokemonImg.setAttribute('src', data.sprites.front_default);
-  title.appendChild(titleText);
   header.appendChild(title);
-  header.appendChild(pokemonImg);
+  section.appendChild(pokemonImg);
   const content = document.getElementById('content-details');
   content.appendChild(header);
+  content.appendChild(section);
 }
