@@ -14,8 +14,10 @@ function createHtmlNode(node, content, attribute, attributeValue, className, a =
 function drawHtml(data, selector) {
     let appender = document.getElementById(selector);
     appender.innerHTML = "";
-    data.forEach(data => {
-        let newNode = createHtmlNode('li', data.name, 'id', data.name, 'pokelist__list-item', data.url);
+    data.forEach(pokemonData => {
+        let newNode = createHtmlNode('li', pokemonData.name, 'id', `${pokemonData.name}-list-item`, 'pokelist__list-item');
+            let innerNode = createHtmlNode('a', pokemonData.name, 'id', `${pokemonData.name}-list-item`, 'pokelist__list-item', pokemonData.url);
+            newNode.append(innerNode);
         appender.append(newNode);
     });
 }
