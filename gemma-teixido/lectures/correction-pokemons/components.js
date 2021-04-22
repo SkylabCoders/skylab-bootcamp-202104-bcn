@@ -44,7 +44,10 @@ function getTagContainer(idReferer, tagName) {
 }
 
 function paginate(url) {
-    let param = url.split('?')[1].split('offset')[1].replace('=', '');
-    store.currentIndex = parseInt(param);
+    let offset = url.split('?')[1].split('offset')[1].replace('=', '');
+    let rowspercall = url.split('?')[1].split('limit')[1].replace('=', '');
+    store.currentIndex = parseInt(offset);
+    store.rowspercall = parseInt(rowspercall);
+    
     fetchListFromService(url);
 }

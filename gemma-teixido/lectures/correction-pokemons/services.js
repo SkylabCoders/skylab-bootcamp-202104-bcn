@@ -1,4 +1,4 @@
-async function getPokeApiData(url = `https://pokeapi.co/api/v2/pokemon?offset=${store.rowspercall}&limit=${store.currentIndex}`) {
+async function getPokeApiData(url = `https://pokeapi.co/api/v2/pokemon?limit=${store.rowspercall}&offset=${store.currentIndex}`) {
    return await fetch(url)
       .then((response) => {
         if (response.ok) {
