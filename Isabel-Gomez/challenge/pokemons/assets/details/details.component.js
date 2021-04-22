@@ -1,8 +1,8 @@
 const mainSection = document.querySelector('.main-container');
 
 const param = new URLSearchParams(location.search);
-const pokemonId = param.get('pokemonId');
-console.log('pokemonId', pokemonId);
+const pokemonName = param.get('pokemonName');
+console.log('pokemonName', pokemonName);
 
 const createElement = (tag, parent, innerHTML, className, href) => {
   const getTag = document.createElement(tag);
@@ -14,25 +14,17 @@ const createElement = (tag, parent, innerHTML, className, href) => {
 };
 
 createElement('h1', mainSection, 'Pokemons');
-createElement('a', mainSection, 'Dashboard', null, './../dashboard/dashboard.html');
-createElement('a', mainSection, 'List', null, './../list/list.html');
 
-const getDetails = async (id) => {
-  const pokemonList = await fetchDetailsPokemon(id);
-  console.log('API', pokemonList);
-
+const getDetails = async (name) => {
+  const pokemonList = await fetchDetailsPokemon(name);
+  console.log('API details', pokemonList);
   createElement('h3', mainSection, `${pokemonList.name.toUpperCase()} details!`);
   const getContainer = createElement('div', mainSection, '');
   const getList = createElement('ul', getContainer, '');
   createElement('li', getList, `Height: ${pokemonList.height}`);
   createElement('li', getList, `Weight: ${pokemonList.weight}`);
-  pokemonList.abilities.forEach((element) => {
-    createElement('li', getList, `Ability: ${element.ability.name}`);
-  });
-  pokemonList.game_indices.forEach((element) => {
-    createElement('li', getList, `Game indices: ${element.game_index} - ${element.version.name}`);
-  });
+  createElement('li', getList, `Ability: ${pokemonList.abilities[0].ability.name}`);
 };
-getDetails(pokemonId);
+getDetails(pokemonName);
 
 createElement('a', mainSection, 'Back', null, './../list/list.html');

@@ -1,19 +1,12 @@
-const fetchDashboardPokemons = async () => {
-  const url = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=40';
+const fetchPagePokemons = async (offsetNum, limitNum) => {
+  const url = `https://pokeapi.co/api/v2/pokemon/?offset=${offsetNum}0&limit=${limitNum}`;
   const response = await fetch(url);
   const data = await response.json();
   return data;
 };
 
-const fetchPagePokemons = async (page) => {
-  const url = `https://pokeapi.co/api/v2/pokemon/?offset=${page}0&limit=10`;
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
-};
-
-const fetchDetailsPokemon = async (id) => {
-  const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
+const fetchDetailsPokemon = async (name) => {
+  const url = `https://pokeapi.co/api/v2/pokemon/${name}/`;
   const response = await fetch(url);
   const data = await response.json();
   return data;

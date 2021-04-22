@@ -1,4 +1,6 @@
 const mainSection = document.querySelector('.main-container');
+let offsetNum = 0;
+const limitNum = 10;
 
 const createElement = (tag, parent, innerHTML, className, href) => {
   const getTag = document.createElement(tag);
@@ -10,45 +12,39 @@ const createElement = (tag, parent, innerHTML, className, href) => {
 };
 
 createElement('h1', mainSection, 'Pokemons');
-createElement('a', mainSection, 'Dashboard', null, './../dashboard/dashboard.html');
-createElement('a', mainSection, 'List', null, './../list/list.html');
-createElement('h3', mainSection, 'List Pokemons');
+createElement('h3', mainSection, 'Choose your Pokemon!');
 const getList = createElement('ul', mainSection, '');
-const numberPage = 1;
 
-const getAllPokemons = async (numPage) => {
-  const pokemonList = await fetchPagePokemons(numPage);
-  console.log('API', pokemonList);
+const getAllPokemons = async (offsetNum, limitNum) => {
+  const pokemonList = await fetchPagePokemons(offsetNum, limitNum);
+  console.log('API global', pokemonList);
   pokemonList.results.forEach((element) => {
-    const id = element.url.split('/')[6];
     const newElementLi = createElement('li', getList, '', 'pokemon-item');
-    createElement('a', newElementLi, `${element.name.toUpperCase()}`, 'pokemon-detail', `../details/details.html?pokemonId=${id}`);
-    const urlPokemonDetail = element.url;
+    createElement('a', newElementLi, `${element.name.toUpperCase()}`, 'pokemon-item__detail', `../details/details.html?pokemonName=${element.name}`);
   });
 };
-getAllPokemons(0);
+getAllPokemons(0, 10);
 
-const clickPages = async (numberPage) => {
-  const pokemonList = await fetchPagePokemons(numberPage);
+const clickPages = async (offsetNum, limitNum) => {
+  const pokemonList = await fetchPagePokemons(offsetNum, limitNum);
   pokemonList.results.forEach((element, position) => {
-    document.querySelectorAll('.pokemon-detail')[position].innerHTML = element.name.toUpperCase();
+    document.querySelectorAll('.pokemon-item__detail')[position].innerHTML = element.name.toUpperCase();
+    document.querySelectorAll('.pokemon-item__detail')[position].href = `../details/details.html?pokemonName=${element.name}`;
   });
 };
 
-const onChangePage = (numberPage) => {
+const onChangePage = () => {
   const previousButton = createElement('button', mainSection, 'Previous', null);
-  previousButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (numberPage >= 0) {
-      clickPages(numberPage--);
+  previousButton.onclick = () => {
+    if (offsetNum >= 10) {
+      clickPages(offsetNum -= limitNum, limitNum);
     }
-  });
+  };
   const nextButton = createElement('button', mainSection, 'Next', null);
-  nextButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (numberPage <= 5) {
-      clickPages(numberPage++);
+  nextButton.onclick = () => {
+    if (offsetNum >= 0) {
+      clickPages(offsetNum += limitNum, limitNum);
     }
-  });
+  };
 };
-onChangePage(numberPage);
+onChangePage();
