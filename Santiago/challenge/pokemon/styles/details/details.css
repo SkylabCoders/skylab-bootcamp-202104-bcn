@@ -1,1 +1,30 @@
-/* No CSS *//*# sourceMappingURL=details.css.map */
+body {
+  background-image: url("./../../images/landscape.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  width: 220px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: lightgreen;
+  text-align: center;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+#details-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=details.css.map */

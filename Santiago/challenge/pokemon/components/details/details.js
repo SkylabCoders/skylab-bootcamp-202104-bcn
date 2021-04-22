@@ -6,7 +6,7 @@ const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
 const pokemonData = getPokemonData(pokemonURL);
 
 const createHeader = () => {
-  const header = createDomElements('header', '', '', main);
+  const header = createDomElements('header', '', '', main, 'details-header');
   createDomElements('h1', 'Pokemon - Details', '', header);
   createDomElements('a', 'DASHBOARD', 'http://127.0.0.1:5500/challenge/pokemon/components/dashboard/dashboard.html', header);
   createDomElements('a', 'ALL POKEMONS', 'http://127.0.0.1:5500/challenge/pokemon/components/pokemons/pokemons.html', header);
@@ -14,7 +14,7 @@ const createHeader = () => {
 
 const obtainDetails = () => {
   pokemonData.then((pokemon) => {
-    const allDetails = createDomElements('div', '', '', main);
+    const allDetails = createDomElements('div', '', '', main, 'details-container');
     createDomElements('p', `name: ${pokemon.name}`, '', allDetails);
 
     const pokemonImg = createDomElements('img', '', '', allDetails);

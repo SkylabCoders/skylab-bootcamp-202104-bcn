@@ -1,0 +1,22 @@
+body {
+    background-image: url('./../../images/landscape.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    width: 220px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: lightgreen;
+    text-align: center;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+#details-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
