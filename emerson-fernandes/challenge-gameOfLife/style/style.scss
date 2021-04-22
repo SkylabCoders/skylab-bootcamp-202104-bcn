@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.table-container{
+    align-items: center;
+    border: red solid 2px;
+    display: flex;
+    justify-content: center;
+    align-self: start;
+    height: 500px;
+
+}   
+
+.table{
+    border: springgreen solid 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.slot{
+    border: steelblue solid 2px;
+    height: 50px;
+    width: 50px;
+}
+

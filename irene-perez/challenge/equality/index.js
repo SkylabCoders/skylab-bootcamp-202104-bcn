@@ -8,5 +8,5 @@ function strictEquals(a, b) {
     return result;
   }
   
-  strictEquals();
+strictEquals();
   

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <div id="content">
+
+    </div>
+</body>
+<script>
+    function crearPersona(name, lastName, age) {
+       return {
+            name,
+            lastName,
+            age
+        }
+    }
+
+    let edgar = crearPersona("Edgar", "Alandete", 28);
+    let irene = crearPersona("Irene", "Perez", 30);
+    let illuminati = crearPersona("Fernando", "Lopez", 23);
+
+    let personas = [edgar, irene, illuminati];
+    let display = `${edgar.name}, ${edgar.lastName}`;
+    const mainNode = document.getElementById("content");
+    const nodeToRepeat = document.createElement("p");
+
+    
+    personas.forEach(({name, lastName}) => {
+        nodeToRepeat.innerText = `${name}, ${lastName}`;
+        mainNode.append(nodeToRepeat);
+    });
+</script>
+</html>

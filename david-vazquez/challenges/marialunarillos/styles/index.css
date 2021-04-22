@@ -1,0 +1,340 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 12px;
+  background: #965f5f;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-toplink {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #f8f8f8;
+  padding: 0px 50px 0px 50px;
+}
+
+.first-block {
+  position: fixed;
+  top: 0;
+  width: 70px;
+  height: 130px;
+  background: url(img/maria-lunarillos.png) #ff5959 bottom center no-repeat;
+}
+
+.second-block {
+  position: fixed;
+  top: 0;
+  left: 125px;
+  width: 60px;
+  height: 70px;
+  background: url(img/cucute.png) #6199af bottom center no-repeat;
+}
+
+.second-block:hover {
+  height: 130px;
+}
+
+.third-block {
+  position: fixed;
+  top: 0;
+  left: 190px;
+  width: 60px;
+  height: 70px;
+  background: url(img/mumuchu.png) #f6b436 bottom center no-repeat;
+}
+
+.third-block:hover {
+  height: 130px;
+}
+
+.login-link {
+  float: right;
+  text-indent: 0;
+  width: auto;
+}
+
+.login {
+  display: block;
+  line-height: 50px;
+  font-weight: 400;
+  color: #2e2925;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.icon-login {
+  width: 27px;
+  height: 27px;
+  background: url(img/sprite.svg) 0 0 no-repeat;
+  margin: 10px;
+  float: left;
+}
+
+.social-medias {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  margin: 0 150px 0 40px;
+  width: auto;
+}
+
+.icon {
+  width: 25px;
+  height: 20px;
+  margin: 15px 7px 0;
+  background: url(img/sprite.svg) transparent 0 0 no-repeat;
+  display: block;
+  text-indent: -3000px;
+}
+
+.icon.facebook {
+  background-position: -4px -540px;
+}
+
+.icon.twitter {
+  background-position: -40px -540px;
+}
+
+.icon.instagram {
+  background-position: -75px -540px;
+}
+
+.icon.pinterest {
+  background-position: -110px -540px;
+}
+
+.icon.youtube {
+  background-position: -180px -540px;
+}
+
+.header-logo-links {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  background: white;
+  padding: 0px 50px 0px 50px;
+  margin-top: 50px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 50%;
+  padding-bottom: 50px;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.quick-access {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.links-quick-access {
+  display: flex;
+  flex-direction: row;
+}
+
+.link {
+  width: 130px;
+  height: 30px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 5px;
+  padding: 5px 15px;
+  display: block;
+}
+
+.submit {
+  display: block;
+  float: right;
+  width: 49px;
+  height: 29px;
+  background: url(img/menu.svg) -303px 2px no-repeat #bbb8b6;
+  border: none;
+}
+
+.submit span {
+  display: none;
+}
+
+.link.news {
+  background: #9faa4d;
+  padding-right: 8px;
+}
+
+/*.link.news a {
+  content: "";
+  float: left;
+  background: url(img/menu.svg) -244px 4px no-repeat;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}*/
+
+.link.sales {
+  background: #8e789d;
+  padding-right: 15px;
+}
+
+.search-box {
+  display: block;
+  width: 175px;
+
+  height: 30px;
+  border: 1px solid #bbb8b6;
+}
+
+.search-input {
+  float: left;
+  border: none;
+  height: 28px;
+  font-size: 12px;
+  padding: 0 5px;
+  color: #bbb8b6;
+  text-transform: uppercase;
+}
+
+.nav-bottom-container {
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  width: 80px;
+  height: 80px;
+  background-size: 50%;
+  background-color: #f2f2f2;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 3px;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #ff5959;
+}
+
+.button.utensilio {
+  background-image: url(img/utensiliosML.png);
+}
+
+.button.ingredientes {
+  background-image: url(img/magdalena.png);
+}
+
+.button.fiestas {
+  background-image: url(img/tarta-cumpleanos.png);
+}
+
+.button.marcas {
+  background-image: url(img/delantal.png);
+  background-size: 70%;
+}
+
+.button.blog {
+  background-image: url(img/menu.svg);
+  background-repeat: no-repeat;
+  background-color: #ff5959;
+  background-position: -320px 0;
+  background-size: 560px;
+}
+
+.button.blog:hover {
+  background-color: #f2f2f2;
+}
+
+.text-button {
+  bottom: -90px;
+  padding-top: 7px;
+  position: relative;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  color: #2e2925;
+}
+
+.form-container {
+  width: 100%;
+  background: lightgray;
+}
+
+input {
+  padding-bottom: 3px;
+}
+
+.form-reserve-flight {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 140px 50px 30px;
+}
+
+.ticket-number {
+  border: 0;
+  background: transparent;
+  padding: 5px;
+  padding-left: 0;
+  outline: none;
+  border-bottom: 2px solid rgb(49, 49, 49);
+  margin-bottom: 60px;
+}
+
+.flight-origin {
+  border: 0;
+  background: transparent;
+  padding: 5px;
+  outline: none;
+  border-bottom: 2px solid rgb(49, 49, 49);
+}

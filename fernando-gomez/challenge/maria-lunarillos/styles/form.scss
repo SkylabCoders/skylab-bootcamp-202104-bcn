@@ -1,0 +1,144 @@
+.network,
+.shopping-icons,
+#register {
+    &:hover {
+        color: rgb(236, 101, 95);
+    }
+}
+
+@mixin fly-form-inputs {
+    height: 20px;
+    width: 180px;
+    margin-right: 20px;   
+}
+
+input {
+    outline: 0 none;
+    
+    &:focus {
+        color: hotpink;
+        outline-color: hotpink;
+    }
+}
+
+.travel,
+.arrival,
+.outbound,
+.fly-date,
+.fly-class,
+.passengers-number-input {
+    @include fly-form-inputs();
+}
+
+.cuisine-section {
+    display: flex;
+    max-height: 67vmin;
+    max-width: 159vmin;
+    background-image:url("./../images/utensiliosbasicos.jpeg");
+    background-repeat: no-repeat;
+}
+
+.figure-content{
+
+}
+
+.cuisine-image {
+
+}
+
+.cuisine-text {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.cuisine-title {
+
+}
+
+.cuisine-description {
+
+}
+
+.flex-form {
+    display: flex;
+    justify-content: center;
+    font-family: 'Arimo',sans-serif;
+}
+
+.fly-form {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    margin: 10vmin;
+    padding: 0 10vmin 5vmin 10vmin;
+    border: 2px solid black;
+}
+
+.fly-form-title {
+    display: flex;
+}
+
+.fly-form-drop-downs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-right: 200px;
+}
+
+.travel-drop-down {
+    display: flex;
+    flex-direction: column;
+}
+
+.travel {
+    height: fit-content;
+    
+}
+.outbound {
+    max-height: fit-content;
+    height: fit-content;
+}
+.arrival {
+    height: fit-content;
+}
+
+.fly-specifications {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-right: 200px;
+}
+
+.fly-date {
+    height: fit-content;
+}
+
+.passengers-number {
+    display: flex;
+    flex-direction: column;
+}
+
+.fly-class-drop-down {
+    display: flex;
+    flex-direction: column;
+}
+
+.professional-travel-selector {
+    display: flex;
+}
+
+.professional-travel {
+    width: 30px;
+    height: 7vmin;
+}
+
+.fly-button {
+    display: flex;
+    justify-content: flex-end;
+}
+.search-fly-button {
+
+}

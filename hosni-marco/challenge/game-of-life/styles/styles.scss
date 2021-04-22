@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.common-header{
+    display: flex;
+    flex-direction: column;
+    &__title {
+        text-align: center;
+    }
+}
+
+.game-display__table{
+    display: flex;
+    flex-direction: column;
+    border: black solid 1px;
+}
+
+.common-cell{
+    background: grey;
+    border: black solid 1px;
+    width: 17px;
+    height: 17px;
+}
