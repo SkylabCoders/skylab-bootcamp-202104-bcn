@@ -1,6 +1,6 @@
 const routing = {
   pokeapi: '../../pages/pokeapi/pokeapi.html',
-  pokemos: '../../pages/pokemos/pokemons.html',
-  pokemon: '../../pages/pokemo/pokemon_detail.html',
+  pokemons: '../../pages/pokemons/pokemons.html',
+  pokemon: '../../pages/pokemon/pokemon.html',
 }
 
