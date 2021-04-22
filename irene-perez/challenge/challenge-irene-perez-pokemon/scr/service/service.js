@@ -19,16 +19,6 @@ async function getPokemons(url) {
   return parsedList;
 }
 
-const result = getPokemons('https://pokeapi.co/api/v2/pokemon/');
-result.then((list) => {
-  const arrayPokemons = list.results;
-  const newArray = chooseNumberPoke(arrayPokemons, 10);
-  newArray.forEach((element) => {
-    const li = createElementHtml('li', null, null, ul);
-    createElementHtml('a', element.name, '../../details/details.html', li);
-  });
-});
-
 function chooseNumberPoke(array, num) {
   const newArray = [];
   for (let i = 0; i < num; i + 1) {
