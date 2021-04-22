@@ -1,3 +1,13 @@
+html {
+    font-family: 'Press Start 2P', cursive;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+    padding: 0.5em;
+}
+
 body {
     background: url(https://i.pinimg.com/originals/7c/67/8b/7c678bffd31dc92dc80d95d471b0e83d.png);
     background-position: top;
@@ -5,4 +15,16 @@ body {
     background-size: cover;
     display: flex;
     justify-content: center;
+}
+
+img {
+    width: 70%;
+    display: flex;
+    align-self: center;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
 }

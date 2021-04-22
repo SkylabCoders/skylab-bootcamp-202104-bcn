@@ -1,7 +1,18 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 const main = document.querySelector('.main-container');
 const DOMpokeList = document.querySelector('.pokeList');
 let offset = 0;
 const limit = 70;
+
+const buttonsContainer = () => {
+  const container = document.createElement('div');
+  container.classList = 'buttons';
+
+  return container;
+};
+
+const buttons = buttonsContainer();
 
 const pokeElement = (tag, data) => {
   const element = document.createElement(tag);
@@ -38,6 +49,7 @@ const pokeList = (pokemon) => {
 const nextButton = () => {
   const button = pokeElement('button', 'Next');
   button.setAttribute('onclick', 'increaseOffset()');
+  button.classList = 'nextButton';
 
   return button;
 };
@@ -62,12 +74,15 @@ const previousButton = () => {
   const button = pokeElement('button', 'Previous');
 
   button.setAttribute('onclick', 'decreaseOffset()');
+  button.classList = 'previousButton';
+
   getPokeApiData(offset, limit, pokeList);
 
   return button;
 };
 
 main.appendChild(pokeElement('h1', 'Los pokemos'));
-main.appendChild(previousButton());
-main.appendChild(nextButton());
+buttons.appendChild(previousButton());
+buttons.appendChild(nextButton());
+main.appendChild(buttons);
 getPokeApiData(-70, 70, pokeList);

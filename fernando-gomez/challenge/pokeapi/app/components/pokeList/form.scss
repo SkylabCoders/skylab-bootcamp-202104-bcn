@@ -1,6 +1,38 @@
+html {
+    font-family: 'Press Start 2P', cursive;
+}
+
 body {
     background: url(https://i.pinimg.com/originals/7c/67/8b/7c678bffd31dc92dc80d95d471b0e83d.png);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+}
+
+.nextButton {
+    font-family: 'Press Start 2P', cursive;
+    width: 130px;
+    height: 50px;
+    border-radius: 15px;
+    outline: none;
+    margin: 15px;
+}
+
+.previousButton {
+    font-family: 'Press Start 2P', cursive;
+    width: 130px;
+    height: 50px;
+    border-radius: 15px;
+    outline: none;
+    margin: 15px;
 }

@@ -1,3 +1,13 @@
+html {
+  font-family: 'Press Start 2P', cursive;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+  padding: 0.5em;
+}
+
 body {
   background: url(https://i.pinimg.com/originals/7c/67/8b/7c678bffd31dc92dc80d95d471b0e83d.png);
   background-position: top;
@@ -9,5 +19,25 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+img {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 0;
 }
 /*# sourceMappingURL=form.css.map */

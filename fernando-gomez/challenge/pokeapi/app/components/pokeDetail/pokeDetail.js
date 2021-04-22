@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const pokeName = new URLSearchParams(window.location.search).get('name');
 const main = document.querySelector('.main-container');
 
@@ -9,14 +10,15 @@ const pokeElement = (tag, data) => {
 
 const pokeImage = (sprite) => {
   const image = document.createElement('img');
-
   image.setAttribute('src', sprite.front_default);
+  image.classList = 'front-image';
 
   return image;
 };
 
 const detailsList = (pokemon) => {
   const details = document.createElement('ul');
+  details.classList = 'details';
   const name = pokeElement('li', `Name: ${pokemon.name}`);
   const image = pokeImage(pokemon.sprites);
   const id = pokeElement('li', `Id: ${pokemon.id}`);
