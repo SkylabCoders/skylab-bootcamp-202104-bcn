@@ -20,11 +20,13 @@ function createPokemon(id, name, type) {
     id,
     name,
     type,
-    moves: '',
-    getMoves: (pokemonId) => {
-      if (!moves) {
+    moves: [],
+    getMoves: (pokemonId, pokemonMoves) => {
+      if (pokemonMoves.length === 0) {
         const pokemonMoves = getMovesFromPokemonByID(pokemonId);
         console.log(pokemonMoves);
+      } else {
+        return pokemonMoves;
       }
     },
   };
