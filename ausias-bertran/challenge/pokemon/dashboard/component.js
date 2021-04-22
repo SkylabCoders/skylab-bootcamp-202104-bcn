@@ -1,9 +1,15 @@
-let main = createNode('div', document.body, 'main-box',null)
+let main = createNode('div', document.body, 'main-box', null);
+let list = createNode('ul', main, 'list', null);
+
+
+
+insertCreature('https://pokeapi.co/api/v2/pokemon/3/');
 
 
 
 
-fetch('https://pokeapi.co/api/v2/pokemon/')
+
+fetch('https://pokeapi.co/')
 .then(response => response.json())
     .then(data => {
     
@@ -11,7 +17,7 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
 })
     .catch(e => console.log(e))
 
-fetch(url1)
+fetch(url3)
 .then(response => response.json())
 .then(data => {
     pokemonList.innerHTML += `
@@ -21,6 +27,8 @@ fetch(url1)
     `;
     console.log(data);
 })
+    
+    
 .catch(e => console.log(e))
 fetch(url2)
 .then(response => response.json())
