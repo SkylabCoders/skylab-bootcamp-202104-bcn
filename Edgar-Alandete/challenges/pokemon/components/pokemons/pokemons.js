@@ -18,6 +18,7 @@ const pokemonList = (page, limit, offset) => {
   const pokemonsPaginated = getPaginatedPokemons(limit, offset);
   pokemonsPaginated.then((data) => {
     const pokemons = data.results;
+    const { previous, next } = data;
     pokemons.forEach(({
       name,
     }) => {
@@ -26,6 +27,9 @@ const pokemonList = (page, limit, offset) => {
       // createDomElement(pokemonLink, 'img', '', { src: `${sprites.front_default}`, alt: `${name}` });
       createDomElement(pokemonItem, 'span', `${name}`);
     });
+
+    createDomElement(page, 'a', 'Anterior', { href: previous });
+    createDomElement(page, 'a', 'Siguiente', { href: next });
   });
 };
 
