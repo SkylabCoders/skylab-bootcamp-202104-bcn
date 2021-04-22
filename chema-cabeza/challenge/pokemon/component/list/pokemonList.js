@@ -1,5 +1,5 @@
 const body = document.getElementById('body-id');
-let currentPokemonID = 0;
+const currentPokemonID = 0;
 const sentOffset = parseInt(new URLSearchParams(location.search).get('offset'));
 let offsetPokemon = 0;
 if (sentOffset) { offsetPokemon = sentOffset; }
@@ -18,20 +18,10 @@ pokemonSelection.then((element) => {
     const newPokemonID = createElement('span', 'heroID', pokemon.length);
     currentLI.appendChild(newPokemonID);
     const newPokemonName = createElement('a', 'heroName', pokemon.name);
+    newPokemonName.setAttribute('href', `./../details/details.html?pokemonURL=${pokemon.url}`);
     currentLI.appendChild(newPokemonName);
-    newPokemonName.onclick = function () {
-      currentPokemonID = pokemon.id;
-      document.getElementsByClassName('pokemonDetailsButton')[0].setAttribute('href', `./../details/details.html?pokemonURL=${pokemon.url}`);
-      document.getElementsByClassName('h2BottomTitle')[0].innerText = `${pokemon.name} is my Pokemon!`;
-    };
   });
 });
-
-mainBlock.appendChild(createElement('h2', 'h2BottomTitle'));
-
-const pokemonDetailsButton = createElement('a', 'pokemonDetailsButton', 'View Details');
-mainBlock.appendChild(pokemonDetailsButton);
-pokemonDetailsButton.setAttribute('href', './../../component/details/details.html');
 
 const detailsUL = createElement('ul');
 mainBlock.appendChild(detailsUL);
