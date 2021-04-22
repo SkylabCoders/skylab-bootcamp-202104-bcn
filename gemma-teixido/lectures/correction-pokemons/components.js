@@ -9,7 +9,7 @@ function createHtmlNode(node, content, attribute, attributeValue, className, a =
     return newNode;
 }
 
-function drawHtml(data, selector) {
+function drawPokeListInHtml(data, selector) {
     let appender = document.getElementById(selector);
     appender.innerHTML = '';
     data.forEach(pokemonData => {
@@ -23,7 +23,7 @@ function drawHtml(data, selector) {
 function drawPokeList(data) {
     let pokeListNodeContainer = getTagContainer('pokelist', 'ul');
     document.getElementById('main').append(pokeListNodeContainer);
-    drawHtml(data, 'pokelist');
+    drawPokeListInHtml(data, 'pokelist');
     let prevButton = createHtmlNode('button', 'Previous', 'id','pokelist-prev-button', 'button button-previous');
     prevButton.classList.add(!store.previous && 'button--dissabled');
     let nextButton = createHtmlNode('button', 'Next', 'id','pokelist-next-button', 'button button-next');
@@ -48,6 +48,6 @@ function paginate(url) {
     let rowspercall = url.split('?')[1].split('limit')[1].replace('=', '');
     store.currentIndex = parseInt(offset);
     store.rowspercall = parseInt(rowspercall);
-    
+
     fetchListFromService(url);
 }
