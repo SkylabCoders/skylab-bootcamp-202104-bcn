@@ -1,9 +1,12 @@
 const POKEMON_LIST_BASE_URL = 'https://pokeapi.co/api/v2/';
 const POKEMON_URL = 'pokemon/';
 const MAIN_ELEMENT = document.querySelector('main');
-const listPagination = { offset: 0, limit: 20 };
+const listPagination = { offset: 0, limit: 6 };
 
-createElement('h1', null, 'Pokemon list', MAIN_ELEMENT);
+const h1Element = createElement('h1', null, 'Pokemon list', MAIN_ELEMENT);
+const logo = createElement('img', 'logo', null, MAIN_ELEMENT);
+logo.src = './../images/pokemon-logo.png';
+
 const pokemonListUl = createElement('ul', 'pokemon-list', null, MAIN_ELEMENT);
 
 const getPokemonDetails = async function (pokemonName) {
