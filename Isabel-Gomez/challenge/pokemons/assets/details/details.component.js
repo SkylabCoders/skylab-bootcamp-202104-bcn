@@ -21,9 +21,16 @@ const getDetails = async (name) => {
   createElement('h3', mainSection, `${pokemonList.name.toUpperCase()} details!`);
   const getContainer = createElement('div', mainSection, '');
   const getList = createElement('ul', getContainer, '');
+  createElement('li', getList, `Id: ${pokemonList.id}`);
   createElement('li', getList, `Height: ${pokemonList.height}`);
   createElement('li', getList, `Weight: ${pokemonList.weight}`);
   createElement('li', getList, `Ability: ${pokemonList.abilities[0].ability.name}`);
+  const urlFrontPhoto = pokemonList.sprites.front_default;
+  const getLiForFrontPhoto = createElement('li', getList, null);
+  createElement('img', getLiForFrontPhoto).setAttribute('src', urlFrontPhoto);
+  const urlBackPhoto = pokemonList.sprites.back_default;
+  const getLiForBackPhoto = createElement('li', getList, null);
+  createElement('img', getLiForBackPhoto).setAttribute('src', urlBackPhoto);
 };
 getDetails(pokemonName);
 
