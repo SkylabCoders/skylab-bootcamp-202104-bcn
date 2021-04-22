@@ -19,6 +19,10 @@ const obtainDetails = () => {
 
     const pokemonImg = createDomElements('img', '', '', allDetails);
     pokemonImg.src = pokemon.sprites.front_default;
+
+    createDomElements('p', `ability: ${pokemon.abilities[0].ability.name}`, '', allDetails);
+    createDomElements('p', `height: ${pokemon.height}`, '', allDetails);
+    createDomElements('p', `Best move: ${pokemon.moves[0].move.name}`, '', allDetails);
   });
 };
 
