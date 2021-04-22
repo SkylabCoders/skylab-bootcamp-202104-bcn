@@ -40,7 +40,7 @@ const createTopPokemonList = (topPokemons) => {
     }) => {
       // const pokemon = createPokemon(id, name, types[0].type.name);
       const pokemonItem = createDomElement(topPokemons, 'li', '', { class: 'list-pokemon--item' });
-      const pokemonLink = createDomElement(pokemonItem, 'a', '', { href: `../pokemon-detail.html?id=${id}` });
+      const pokemonLink = createDomElement(pokemonItem, 'a', '', { href: `../pokemon-detail/pokemon-detail.html?id=${id}` });
       createDomElement(pokemonLink, 'img', '', { src: `${sprites.front_default}`, alt: `${name}` });
       createDomElement(pokemonItem, 'span', `#${id} ${name}`);
     });
