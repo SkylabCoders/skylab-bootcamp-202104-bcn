@@ -14,19 +14,27 @@ function createDomElement(parent, element, text = null, attributes = []) {
   return elementToCreate;
 }
 
-const pokemonList = (limit, offset) => {
+const pokemonList = (page, limit, offset) => {
   const pokemonsPaginated = getPaginatedPokemons(limit, offset);
   pokemonsPaginated.then((data) => {
     const pokemons = data.results;
-    pokemons.forEach((pokemon) => {
-      console.log(pokemon);
+    debugger;
+    pokemons.forEach(({
+      name,
+    }) => {
+      const pokemonItem = createDomElement(page, 'li', '', { class: 'list-pokemon--item' });
+      // const pokemonLink = createDomElement(pokemonItem, 'a', '', { href: `../pokemon-detail/pokemon-detail.html?id=${id}` });
+      // createDomElement(pokemonLink, 'img', '', { src: `${sprites.front_default}`, alt: `${name}` });
+      createDomElement(pokemonItem, 'span', `${name}`);
     });
-    // const pokemon = createPokemon(id, name, types[0].type.name);
-    // const pokemonItem = createDomElement(topPokemons, 'li', '', { class: 'list-pokemon--item' });
-    // const pokemonLink = createDomElement(pokemonItem, 'a', '', { href: `../pokemon-detail.html?id=${id}` });
-    // createDomElement(pokemonLink, 'img', '', { src: `${sprites.front_default}`, alt: `${name}` });
-    // createDomElement(pokemonItem, 'span', `#${id} ${name}`);
   });
+};
+
+const createPokemonPaginatedList = () => {
+  const paginatedPokemonsSection = createDomElement(dashboard, 'section', '', { class: 'paginated-pokemons' });
+  createDomElement(paginatedPokemonsSection, 'h2', 'Pokemons', { class: 'paginated-pokemons--title' });
+  const page = createDomElement(paginatedPokemonsSection, 'ul', '', { class: 'paginated-pokemons__list-pokemon list-pokemon' });
+  pokemonList(page, 0, 10);
 };
 
 const createNavigator = (parent) => {
@@ -45,7 +53,7 @@ const createHeader = () => {
 };
 const createPokemonsList = () => {
   createHeader();
-  pokemonList(0, 10);
+  createPokemonPaginatedList();
 };
 
 createPokemonsList();
