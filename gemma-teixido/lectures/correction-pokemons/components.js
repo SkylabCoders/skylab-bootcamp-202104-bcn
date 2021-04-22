@@ -1,4 +1,3 @@
-
 function createHtmlNode(node, content, attribute, attributeValue, className, a = null) {
     let newNode = document.createElement(node);
     newNode.innerText = content;
@@ -45,6 +44,7 @@ function getTagContainer(idReferer, tagName) {
 }
 
 function paginate(url) {
-    debugger;
+    let param = url.split('?')[1].split('offset')[1].replace('=', '');
+    store.currentIndex = parseInt(param);
     fetchListFromService(url);
 }

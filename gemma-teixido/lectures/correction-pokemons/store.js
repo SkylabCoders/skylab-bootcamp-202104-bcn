@@ -1,17 +1,16 @@
 let pokemonMainData = null;
-const qty = 10;
-const current = 0;
 let store = {
     previous: "",
     next: "",
     pokemons: null,
+    rowspercall: 10,
+    currentIndex: 0,
 }
 
 pokemonMainData = fetchListFromService();
 
 function fetchListFromService(url) {
     pokemonMainData = getPokeApiData().then(({previous, next, results}) => {
-        
         setEnv(previous, next, results);
     });
 }
@@ -26,5 +25,5 @@ function setEnv(previous, next, data) {
 }
 
 function setContent(data) {
-    drawPokeList(data, 'pokelist');
+    drawPokeList(data);
 }

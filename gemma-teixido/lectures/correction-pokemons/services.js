@@ -1,4 +1,4 @@
-async function getPokeApiData(url = `https://pokeapi.co/api/v2/pokemon?offset=${current}&limit=${qty}`) {
+async function getPokeApiData(url = `https://pokeapi.co/api/v2/pokemon?offset=${store.rowspercall}&limit=${store.currentIndex}`) {
    return await fetch(url)
       .then((response) => {
         if (response.ok) {
@@ -7,8 +7,7 @@ async function getPokeApiData(url = `https://pokeapi.co/api/v2/pokemon?offset=${
         throw new Error('Something has failed', response.Error);
       })
       .then((responseJson) => {
-        // pokemonMainData = responseJson();
         return responseJson;
       })
       .catch((error) => console.log(error));
-  }''
+  }
