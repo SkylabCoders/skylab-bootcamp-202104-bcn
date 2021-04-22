@@ -28,8 +28,8 @@ function drawPokeList(data) {
     prevButton.classList.add(!store.previous && 'button--dissabled');
     let nextButton = createHtmlNode('button', 'Next', 'id','pokelist-next-button', 'button button-next');
     nextButton.classList.add(!store.next && 'button--dissabled');
-    prevButton.onclick = () => paginate(store.previous);
-    nextButton.onclick = () => paginate(store.next);
+    prevButton.onclick = (() => paginate(store.previous));
+    nextButton.onclick = (() => paginate(store.next));
 
     pokeListNodeContainer.append(prevButton);
     pokeListNodeContainer.append(nextButton);
@@ -44,7 +44,12 @@ function getTagContainer(idReferer, tagName) {
 }
 
 function paginate(url) {
-    let param = url.split('?')[1].split('offset')[1].replace('=', '');
-    store.currentIndex = parseInt(param);
+    let urlToparse = new URL(url);
+    let params = new URLSearchParams(urlToparse.search);
+
+    store.rowspercall = parseInt( params.get('limit'))
+    store.currentIndex = parseInt(params.get('offset'));
+
+    debugger;
     fetchListFromService(url);
 }
