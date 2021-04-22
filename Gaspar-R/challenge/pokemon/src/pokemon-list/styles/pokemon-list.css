@@ -1,0 +1,15 @@
+img {
+   align-self: center;
+}
+
+.pokemonImg {
+    display: inline-block;
+
+    height: 70px;
+    width: 70px;
+}
+
+main{
+    background: url(../../images/landscape.jpg) no-repeat 100%;
+
+}
