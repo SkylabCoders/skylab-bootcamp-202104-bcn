@@ -1,7 +1,8 @@
-function getPokeData() {
-  return fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=20')
+function getPokeData(init, max) {
+  debugger;
+  return fetch(`https://pokeapi.co/api/v2/pokemon?offset=${init}&limit=${max}`)
     .then((pokemon) => pokemon.json())
-    .catch((e) => { console.error('-> lean bastardos!', e); });
+    .catch((e) => { console.error('-> ERROR!', e); });
 }
 
 function createElements(tag, parent, className, text) {
