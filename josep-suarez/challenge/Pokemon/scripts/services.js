@@ -29,6 +29,8 @@ const detailingPokemon = (element, list, detail) => {
 }
 const nextPokemons = () => {
     siteOfDashboard.innerHTML = "";
+    let buttonNext = document.getElementById("next-button");
+    buttonNext.innerHTML = "Next";
     MIN_PAG += 10;
     getPokemon(MIN_PAG, MAX_PAG);
 } 
