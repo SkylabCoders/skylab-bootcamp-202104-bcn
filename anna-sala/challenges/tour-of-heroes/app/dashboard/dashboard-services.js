@@ -1,7 +1,3 @@
-const navigation = [
-  'dashboard', 'heroes',
-];
-
 function printOnPage(tag, text) {
   const title = document.createElement(tag);
   title.innerHTML = text;
@@ -21,11 +17,6 @@ function createNavList() {
     aTag.href = `./../${nav}/${nav}.html`;
   });
 }
-function createInput() {
-  const input = document.createElement('input');
-  input.setAttribute('type', 'text');
-  document.body.appendChild(input);
-}
 
 function createHeroesList(heroes) {
   const navigationList = document.createElement('ul');
@@ -42,13 +33,32 @@ function createHeroesList(heroes) {
     link.href = `./../details/details.html?heroid=${hero.id}`;
   });
 }
+
+function createInput() {
+  const input = document.createElement('input');
+  input.setAttribute('type', 'text');
+  document.body.appendChild(input);
+}
+
+function createButton() {
+  const button = document.createElement('button');
+  const link = document.createElement('a');
+  const text = document.createTextNode('Clear Messages');
+  button.appendChild(link);
+  link.appendChild(text);
+
+  document.body.appendChild(button);
+}
+
 printOnPage('h1', 'Tour of Heroes');
 createNavList();
 printOnPage('h2', 'Top Heroes');
 createInput();
+createButton();
+
 function fetchHeroes() {
   fetch('./../store/superHeroData.json')
     .then((response) => response.json())
-    .then((data) => createHeroesList(data.slice(0, 25)));
+    .then((data) => createHeroesList(data.slice(0, 5)));
 }
 fetchHeroes();
