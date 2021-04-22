@@ -9,36 +9,54 @@ body{
         list-style: none;
         }
     li{
+        display: flex;
         a{
             text-align: center;
             text-decoration: none;
             text-transform: none;
             color: black;
             text-transform: uppercase;
-            font-weight: 25px;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 13px;
+            justify-content: space-around;
+            font-family: 'Press Start 2P', cursive;
         }
     }
 }
 #pokemon-select {
     display: flex;
     justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+    li{
+        width: 10%;
+    }
     ul li p{
         justify-self: center;
     }
 }
 #photos-pokemon {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 0 auto;
+    li{
+        width: 10%;
+        cursor: pointer;
+    }
     ul li p{
         justify-self: center;
     }
+    img{
+        cursor: pointer;
+    }
+
 }
 #pokemon-select {
     display: flex;
     justify-content: center;
     ul li{
         justify-self: center;
+        width: 10%;
     }
 }
 #button-page {

@@ -11,14 +11,22 @@ body ul {
   list-style: none;
 }
 
+body li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 body li a {
   text-align: center;
   text-decoration: none;
   text-transform: none;
   color: black;
   text-transform: uppercase;
-  font-weight: 25px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 13px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-family: 'Press Start 2P', cursive;
 }
 
 #pokemon-select {
@@ -28,6 +36,12 @@ body li a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+#pokemon-select li {
+  width: 10%;
 }
 
 #pokemon-select ul li p {
@@ -39,14 +53,25 @@ body li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#photos-pokemon li {
+  width: 10%;
+  cursor: pointer;
 }
 
 #photos-pokemon ul li p {
   -ms-grid-column-align: center;
       justify-self: center;
+}
+
+#photos-pokemon img {
+  cursor: pointer;
 }
 
 #pokemon-select {
@@ -61,6 +86,7 @@ body li a {
 #pokemon-select ul li {
   -ms-grid-column-align: center;
       justify-self: center;
+  width: 10%;
 }
 
 #button-page {

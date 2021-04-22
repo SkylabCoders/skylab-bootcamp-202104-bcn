@@ -31,7 +31,7 @@
                 detailingPokemon("ul","li","height: "+data.height);
                 detailingPokemon("ul","li", "weight: "+data.weight);
                 detailingPokemon("ul","li", "order: "+data.order);
-                detailingPokemon("ul","li", "id: "+data.id);
+                // detailingPokemon("ul","li", "id: "+data.id);
                 detailingPokemon("ul","li", "hability: "+data.abilities[0].ability.name);
                 detailingPokemon("ul","li", `<img src=${data.sprites.front_default}>`);
                 detailingPokemon("ul","li", `<img src=${data.sprites.back_default}>`);
