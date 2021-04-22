@@ -24,7 +24,6 @@ const getAllPokemons = async (numPage) => {
     const newElementLi = createElement('li', getList, '', 'pokemon-item');
     createElement('a', newElementLi, `${element.name.toUpperCase()}`, 'pokemon-detail', `../details/details.html?pokemonId=${id}`);
     const urlPokemonDetail = element.url;
-    console.log(urlPokemonDetail);
   });
 };
 getAllPokemons(0);

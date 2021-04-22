@@ -19,6 +19,8 @@ createElement('a', mainSection, 'List', null, './../list/list.html');
 
 const getDetails = async (id) => {
   const pokemonList = await fetchDetailsPokemon(id);
+  console.log('API', pokemonList);
+
   createElement('h3', mainSection, `${pokemonList.name.toUpperCase()} details!`);
   const getContainer = createElement('div', mainSection, '');
   const getList = createElement('ul', getContainer, '');
