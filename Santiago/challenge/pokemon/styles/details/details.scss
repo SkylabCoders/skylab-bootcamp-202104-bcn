@@ -18,5 +18,23 @@ a {
 #details-header{
     display: flex;
     flex-direction: column;
+    align-items: center;  
+}
+
+#details-container {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 250px;
+    height: auto;
     align-items: center;
+    margin-top: 40px;
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
 }
