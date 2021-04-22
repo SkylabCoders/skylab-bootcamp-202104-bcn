@@ -21,8 +21,9 @@ function divListPokemons() {
     list.results.slice(init, max).forEach((pokemon) => {
       const listImportantPokemons = createElements('li', ulListPokemons, 'pokemons', null);
       const AnchorImportantPokemons = createElements('a', listImportantPokemons, null, `${pokemon.name}`);
-      AnchorImportantPokemons.setAttribute('href', 'http://127.0.0.1:5500/components/poke-details/poke-details.html');
+      AnchorImportantPokemons.setAttribute('href', `http://127.0.0.1:5500/components/poke-details/?name=${pokemon.name}`);
       buttonNext.onclick = () => nextPokemons(ulListPokemons);
+      buttonPrev.onclick = () => prevPokemons(ulListPokemons);
     });
   });
 }
@@ -34,7 +35,19 @@ function nextPokemons(ulListPokemons) {
     list.results.forEach((pokemon) => {
       const listImportantPokemons = createElements('li', ulListPokemons, 'pokemons', null);
       const AnchorImportantPokemons = createElements('a', listImportantPokemons, null, `${pokemon.name}`);
-      AnchorImportantPokemons.setAttribute('href', 'http://127.0.0.1:5500/components/poke-details/poke-details.html');
+      AnchorImportantPokemons.setAttribute('href', `http://127.0.0.1:5500/components/poke-details/?name=${pokemon.name}`);
+    });
+  });
+}
+
+function prevPokemons(ulListPokemons) {
+  init -= 10;
+  ulListPokemons.innerText = '';
+  getPokeData(init, 10).then((list) => {
+    list.results.forEach((pokemon) => {
+      const listImportantPokemons = createElements('li', ulListPokemons, 'pokemons', null);
+      const AnchorImportantPokemons = createElements('a', listImportantPokemons, null, `${pokemon.name}`);
+      AnchorImportantPokemons.setAttribute('href', `http://127.0.0.1:5500/components/poke-details/?name=${pokemon.name}`);
     });
   });
 }

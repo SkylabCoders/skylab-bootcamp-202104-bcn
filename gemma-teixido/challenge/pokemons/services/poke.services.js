@@ -1,5 +1,4 @@
 function getPokeData(init, max) {
-  debugger;
   return fetch(`https://pokeapi.co/api/v2/pokemon?offset=${init}&limit=${max}`)
     .then((pokemon) => pokemon.json())
     .catch((e) => { console.error('-> ERROR!', e); });
