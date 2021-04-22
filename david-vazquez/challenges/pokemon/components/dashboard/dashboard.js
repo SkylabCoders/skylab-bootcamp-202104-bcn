@@ -35,19 +35,3 @@ function createMain() {
     });
   });
 }
-
-//   myPokemons.then((element) => {
-//     element.results.slice(1, 5).forEach((firstPokemon) => {
-//       const pokemon = createHtmlElements(dashboardList, 'li', 'dashboard__top__item', null);
-//       const firstPokemonNames = createHtmlElements(pokemon, 'a', null, `${firstPokemon.name}`);
-//       firstPokemonNames.setAttribute('href', `http://127.0.0.1:5500/david-vazquez/challenges/pokemon/components/detail/detail.html?pokemonName=${firstPokemon.name}`);
-//       const myPokemonsDetail = getDataPokemon(firstPokemon.name);
-//       myPokemonsDetail.then((element) => {
-//         const pokemonPicBall = createHtmlElements(pokemon, 'img', 'pokemon-detail__image--ball', null);
-//         pokemonPicBall.setAttribute('src', './../../store/poke-bola.png');
-//         const pokemonPic = createHtmlElements(pokemon, 'img', 'pokemon-detail__image', null);
-//         pokemonPic.setAttribute('src', `${element.sprites.front_default}`);
-//       });
-//     });
-//   });
-// }

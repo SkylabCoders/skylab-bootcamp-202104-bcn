@@ -6,7 +6,7 @@ function createHeader() {
   headerLogo.setAttribute('src', './../../store/logo.png');
   const navBar = createHtmlElements(header, 'ul', 'header__navbar', null);
   createNavButton(navBar, 'Dashboard', './../dashboard/dashboard.html');
-  createNavButton(navBar, 'List', './../list/list.html');
+  createNavButton(navBar, 'Pokemons', './../list/list.html');
   createMain();
 }
 
@@ -29,7 +29,7 @@ function createMain() {
     const pokemonDetails = createHtmlElements(pokemonDetailContainer, 'ul', 'pokemon-detail__list', null);
     const pokemonWeight = createHtmlElements(pokemonDetails, 'li', 'list__item', `Weight: ${myPokemon.weight}`);
     const pokemonHeight = createHtmlElements(pokemonDetails, 'li', 'list__item', `Height: ${myPokemon.height}`);
-    const pokemonType = createHtmlElements(pokemonDetails, 'li', 'list__item', `Type: ${myPokemon.types[0].type.name}, ${myPokemon.types[1].type.name}`);
-    const pokemonAbilities = createHtmlElements(pokemonDetails, 'li', 'list__item', `Abilities: ${myPokemon.abilities[0].ability.name}, ${myPokemon.abilities[1].ability.name}`);
+    const pokemonType = createHtmlElements(pokemonDetails, 'li', 'list__item', `Type: ${myPokemon.types[0].type.name}`);
+    const pokemonAbilities = createHtmlElements(pokemonDetails, 'li', 'list__item', `Abilities: ${myPokemon.abilities[0].ability.name}`);
   });
 }
