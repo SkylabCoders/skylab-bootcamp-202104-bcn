@@ -11,6 +11,9 @@ function setEnv(previous, next, data) {
     previous = previous;
     next = next;
     pokemons = data;
-    drawHtml(data, 'pokeList');
+    initialContent(data);
 }
 
+function initialContent(data) {
+    drawPokeList(data, 'pokelist');
+}
