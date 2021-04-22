@@ -17,18 +17,9 @@
     const pokemonDetail = () => {
         let pokemonClicked= getPokemonIDFromUrl(location.search);
         detailOfPokemonClick(pokemonClicked)
-        return fetch("https://pokeapi.co/api/v2/pokemon/?offset=30&limit=30")
-        .then((response)=>{
-            return response.json();
-         })
-         .then(data => { 
-             data.results.forEach(pokemon => {
-                 if(pokemon.name === pokemonClicked){
-                     paintDetailsOfPokemonClicked(pokemon.url);
-                 }
-             })
-         })
-     }
+        let url = `https://pokeapi.co/api/v2/pokemon/${pokemonClicked}`;
+        paintDetailsOfPokemonClicked(url);
+    }
     
      const paintDetailsOfPokemonClicked = (url) => {
             return fetch(url)
