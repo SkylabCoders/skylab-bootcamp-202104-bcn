@@ -14,7 +14,7 @@ content.appendChild(contentSection);
 const buttonsZone = document.createElement('div');
 const actionButtonHero = document.createElement('button');
 actionButtonHero.setAttribute('onclick', 'moreItems()');
-const textButHero = document.createTextNode('Heroes');
+const textButHero = document.createTextNode('Next');
 actionButtonHero.appendChild(textButHero);
 buttonsZone.appendChild(actionButtonHero);
 content.appendChild(buttonsZone);
