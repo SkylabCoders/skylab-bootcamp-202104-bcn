@@ -43,15 +43,19 @@ const nextButton = () => {
 };
 
 const increaseOffset = () => {
-  offset += 70;
-  removeAllChildNodes(DOMpokeList);
-  getPokeApiData(offset, limit, pokeList);
+  if (offset < 1048) {
+    offset += 70;
+    removeAllChildNodes(DOMpokeList);
+    getPokeApiData(offset, limit, pokeList);
+  }
 };
 
 const decreaseOffset = () => {
-  offset -= 70;
-  removeAllChildNodes(DOMpokeList);
-  getPokeApiData(offset, limit, pokeList);
+  if (offset > 0) {
+    offset -= 70;
+    removeAllChildNodes(DOMpokeList);
+    getPokeApiData(offset, limit, pokeList);
+  }
 };
 
 const previousButton = () => {
