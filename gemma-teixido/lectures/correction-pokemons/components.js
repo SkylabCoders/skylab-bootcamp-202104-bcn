@@ -1,5 +1,5 @@
-function createHtmlNode(node, content, attribute, attributeValue, className, a = null) {
 
+function createHtmlNode(node, content, attribute, attributeValue, className, a = null) {
     let newNode = document.createElement(node);
     newNode.innerText = content;
     newNode.setAttribute(attribute, attributeValue);
@@ -7,7 +7,6 @@ function createHtmlNode(node, content, attribute, attributeValue, className, a =
     if (a) {
         newNode.href = a;
     }
-
     return newNode;
 }
 
@@ -26,6 +25,15 @@ function drawPokeList(data) {
     let pokeListNodeContainer = getTagContainer('pokelist', 'ul');
     document.getElementById('main').append(pokeListNodeContainer);
     drawHtml(data, 'pokelist');
+    let prevButton = createHtmlNode('button', 'Previous', 'id','pokelist-prev-button', 'button button-previous');
+    prevButton.classList.add(!store.previous && 'button--dissabled');
+    let nextButton = createHtmlNode('button', 'Next', 'id','pokelist-next-button', 'button button-next');
+    nextButton.classList.add(!store.next && 'button--dissabled');
+    prevButton.onclick = () => paginate(store.previous);
+    nextButton.onclick = () => paginate(store.next);
+
+    pokeListNodeContainer.append(prevButton);
+    pokeListNodeContainer.append(nextButton);
 }
 
 function getTagContainer(idReferer, tagName) {
@@ -34,4 +42,9 @@ function getTagContainer(idReferer, tagName) {
     document.createElement(tagName); 
     node.setAttribute('id', idReferer);
     return node;
+}
+
+function paginate(url) {
+    debugger;
+    fetchListFromService(url);
 }
