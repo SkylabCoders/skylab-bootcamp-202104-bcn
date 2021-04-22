@@ -1,4 +1,6 @@
 const dashboard = document.getElementById('pokemons');
+const limit = 10;
+const offset = 0;
 function createDomElement(parent, element, text = null, attributes = []) {
   const elementToCreate = document.createElement(element);
   if (text) {
@@ -14,7 +16,25 @@ function createDomElement(parent, element, text = null, attributes = []) {
   return elementToCreate;
 }
 
+function paginate(url = null) {
+  let rowspercall = 10;
+  let currentIndex = 0;
+  const page = document.getElementById('pokemon-list');
+  if (url) {
+    const urlToparse = new URL(url);
+    const params = new URLSearchParams(urlToparse.search);
+    rowspercall = parseInt(params.get('limit'));
+    currentIndex = parseInt(params.get('offset'));
+  }
+
+  pokemonList(page, rowspercall, currentIndex);
+}
+
 const pokemonList = (page, limit, offset) => {
+  while (page.firstChild) {
+    page.removeChild(page.firstChild);
+  }
+
   const pokemonsPaginated = getPaginatedPokemons(limit, offset);
   pokemonsPaginated.then((data) => {
     const pokemons = data.results;
@@ -23,21 +43,22 @@ const pokemonList = (page, limit, offset) => {
       name,
     }) => {
       const pokemonItem = createDomElement(page, 'li', '', { class: 'list-pokemon--item' });
-      // const pokemonLink = createDomElement(pokemonItem, 'a', '', { href: `../pokemon-detail/pokemon-detail.html?id=${id}` });
-      // createDomElement(pokemonLink, 'img', '', { src: `${sprites.front_default}`, alt: `${name}` });
       createDomElement(pokemonItem, 'span', `${name}`);
     });
 
-    createDomElement(page, 'a', 'Anterior', { href: previous });
-    createDomElement(page, 'a', 'Siguiente', { href: next });
+    const prevButton = createDomElement(page, 'button', 'Anterior');
+    const nextButton = createDomElement(page, 'button', 'Siguiente');
+
+    prevButton.onclick = (() => paginate(previous));
+    nextButton.onclick = (() => paginate(next));
   });
 };
 
 const createPokemonPaginatedList = () => {
   const paginatedPokemonsSection = createDomElement(dashboard, 'section', '', { class: 'paginated-pokemons' });
   createDomElement(paginatedPokemonsSection, 'h2', 'Pokemons', { class: 'paginated-pokemons--title' });
-  const page = createDomElement(paginatedPokemonsSection, 'ul', '', { class: 'paginated-pokemons__list-pokemon list-pokemon' });
-  pokemonList(page, 10, 0);
+  const page = createDomElement(paginatedPokemonsSection, 'ul', '', { class: 'paginated-pokemons__list-pokemon list-pokemon', id: 'pokemon-list' });
+  paginate();
 };
 
 const createNavigator = (parent) => {
