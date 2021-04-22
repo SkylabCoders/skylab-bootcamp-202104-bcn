@@ -11,6 +11,7 @@ body {
   padding: 0;
   font-family: 'Ubuntu Mono', monospace;
   font-size: 16px;
+  overflow: hidden;
 }
 
 .header {
@@ -41,6 +42,7 @@ body {
   width: 100%;
   background-color: black;
   margin: 0;
+  padding: 0;
   height: 40px;
 }
 
@@ -49,7 +51,7 @@ body {
 }
 
 .navbar__button {
-  margin-right: 10px;
+  margin: 0 20px;
   padding: 10px 10px;
   list-style: none;
 }
@@ -72,7 +74,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-color: crimson;
-  height: 300px;
+  height: 500px;
   color: white;
   width: 100%;
 }
@@ -94,7 +96,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0;
-  padding: 0;
+  padding: 50px 0;
   width: 100%;
 }
 
@@ -116,6 +118,13 @@ body {
   margin: 0 40px;
 }
 
+.dashboard__top__item:hover > .pokemon-detail__image--ball {
+  cursor: pointer;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 .dashboard__top a {
   margin-top: 150px;
   position: absolute;
@@ -134,12 +143,5 @@ body {
   width: 100px;
   position: absolute;
   cursor: pointer;
-}
-
-.pokemon-detail__image--ball:hover {
-  cursor: pointer;
-  visibility: hidden;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
 }
 /*# sourceMappingURL=dashboard.css.map */

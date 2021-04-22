@@ -6,15 +6,21 @@ function createHtmlElements(parent, element, classname, text) {
   return node;
 }
 
-function getData() {
-  return fetch('https://pokeapi.co/api/v2/pokemon')
-    .then((response) => response.json())
-    .catch(() => { console.error('-> error!'); });
-}
+// function getData() {
+//   return fetch('https://pokeapi.co/api/v2/pokemon')
+//     .then((response) => response.json())
+//     .catch(() => { console.error('-> error!'); });
+// }
 
 function getDataPokemon(name) {
   return fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
     .then((response) => response.json())
     .then((data) => data)
+    .catch(() => { console.error('-> error!'); });
+}
+
+function getDataUrl(url) {
+  return fetch(url)
+    .then((response) => response.json())
     .catch(() => { console.error('-> error!'); });
 }

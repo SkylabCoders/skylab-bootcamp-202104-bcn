@@ -25,6 +25,7 @@ body{
         width: 100%;  
         background-color: black;  
         margin: 0; 
+        padding: 0;
         height: 40px;
     }
     &__logo{
@@ -33,7 +34,7 @@ body{
 }
 
 .navbar__button{
-    margin-right: 10px;
+    margin: 0 20px;
     padding: 10px 10px;
     list-style: none;
     a{
