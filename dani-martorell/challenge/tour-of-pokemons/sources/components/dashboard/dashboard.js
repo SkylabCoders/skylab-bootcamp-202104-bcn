@@ -17,24 +17,23 @@ mainContent.append(mainTitle);
 const pokemonsList = generateElement({ type: 'ul', classes: ['pokemons-list'] });
 mainContent.append(pokemonsList);
 
-const getPokemons = async() => {
-  const response = await fetchPokemons(5);
-  const list = await response.json();
-  console.log(list);
+const getPokemons = async () => {
+  const list = await fetchPokemons();
+  const shortList = await list.results;
+  const randomList = await shortList.sort(randomNum);
+  return randomList.slice(0, 5);
+};
 
-
-}
-
-getPokemons();
-  // await getPokemons().results.sort(randomNum.slice(0,5));
-  //   randomList.forEach((poke) => {
-  //     getPokemonId(poke.name).then((id) => {
-  //       const li = generateElement({ type: 'li', classes: ['pokemons-list__element'] });
-  //       const anchor = generateElement({
-  //         type: 'a', classes: [], context: `${poke.name}`, url: `./../details/details.html?ID=${id}&NAME=${poke.name}`,
-  //       });
-  //       li.append(anchor);
-  //       mainContent.append(li);
-  //     });
-  //   });
-  // });
+getPokemons().then((list) => {
+  list.forEach((poke) => {
+    const li = generateElement({ type: 'li', classes: ['pokemons-list__element'] });
+    getPokemonId(poke.name).then((id) => {
+      const anchor = generateElement({
+        type: 'a', classes: [], context: `${poke.name}`, url: `./../details/details.html?ID=${id}&NAME=${poke.name}`,
+      });
+      li.append(anchor);
+      pokemonsList.append(li);
+      mainContent.append(pokemonsList);
+    });
+  });
+});
