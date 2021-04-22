@@ -22,17 +22,18 @@ const detailsWrapper = generateElement({ type: 'div', classes: ['details-wrapper
 mainContent.append(detailsWrapper);
 
 getPokemonDetails(paramName)
-  .then(({abilities, sprites, height, weight, base_experience}) => {
+  .then(({
+    abilities, sprites, height, weight, base_experience,
+  }) => {
     const pokemonImage = generateElement({ type: 'img', classes: ['details__image'] });
     pokemonImage.setAttribute('src', `${sprites.front_default}`);
     detailsWrapper.append(pokemonImage);
     const ul = generateElement({ type: 'ul', classes: [] });
     detailsWrapper.append(ul);
-    const l3 = generateElement({type: 'li', classes: [], context: 'Height: ' + height});
+    const l3 = generateElement({ type: 'li', classes: [], context: `Height: ${height}` });
     ul.append(l3);
-    const l4 = generateElement({type: 'li', classes: [], context: 'Weight: ' + weight});
+    const l4 = generateElement({ type: 'li', classes: [], context: `Weight: ${weight}` });
     ul.append(l4);
-    const l5 = generateElement({type: 'li', classes: [], context: 'Base Experience: ' + base_experience});
+    const l5 = generateElement({ type: 'li', classes: [], context: `Base Experience: ${base_experience}` });
     ul.append(l5);
   });
-
