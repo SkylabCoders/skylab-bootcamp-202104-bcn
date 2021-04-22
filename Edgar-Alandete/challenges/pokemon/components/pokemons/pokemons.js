@@ -18,7 +18,6 @@ const pokemonList = (page, limit, offset) => {
   const pokemonsPaginated = getPaginatedPokemons(limit, offset);
   pokemonsPaginated.then((data) => {
     const pokemons = data.results;
-    debugger;
     pokemons.forEach(({
       name,
     }) => {
@@ -34,7 +33,7 @@ const createPokemonPaginatedList = () => {
   const paginatedPokemonsSection = createDomElement(dashboard, 'section', '', { class: 'paginated-pokemons' });
   createDomElement(paginatedPokemonsSection, 'h2', 'Pokemons', { class: 'paginated-pokemons--title' });
   const page = createDomElement(paginatedPokemonsSection, 'ul', '', { class: 'paginated-pokemons__list-pokemon list-pokemon' });
-  pokemonList(page, 0, 10);
+  pokemonList(page, 10, 0);
 };
 
 const createNavigator = (parent) => {

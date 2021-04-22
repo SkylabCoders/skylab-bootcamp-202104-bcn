@@ -70,7 +70,7 @@ const createHeader = () => {
 };
 const createDashboard = () => {
   createHeader();
-  createPokemonPaginatedList();
+  createMostUsedPokemonsSection();
 };
 
 createDashboard();
