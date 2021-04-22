@@ -22,7 +22,6 @@ pokemonToDetail.then((element) => {
 });
 
 const goBackButton = createElement('a', 'goBackButton', 'Back');
-goBackButton.onclick = function goBack() {
-  window.history.back();
-};
+goBackButton.href = 'javascript:history.back()';
+
 mainBlock.appendChild(goBackButton);
