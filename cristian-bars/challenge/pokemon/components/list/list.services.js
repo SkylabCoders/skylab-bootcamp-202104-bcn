@@ -1,5 +1,5 @@
 const min = 0;
-const max = 20;
+const max = 10;
 
 getList = async (min, max) => {
   try {
