@@ -1,5 +1,9 @@
-const allPokemons = getPokemonData();
 const main = document.querySelector('.details');
+const pokeName = new URLSearchParams(window.location.search).get('name');
+
+const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
+
+const pokemonData = getPokemonData(pokemonURL);
 
 const createHeader = () => {
   const header = createDomElements('header', '', '', main);
@@ -9,11 +13,13 @@ const createHeader = () => {
 };
 
 const obtainDetails = () => {
-  const allDetails = createDomElements('div', '', '', main);
-  const pokName = createDomElements('p', '', '', allDetails);
-  const paramName = new URLSearchParams(location.search);
-  const pokemonName = paramName.get('pokemonName');
-  pokName.innerHTML = `name: ${pokemonName}`;
+  pokemonData.then((pokemon) => {
+    const allDetails = createDomElements('div', '', '', main);
+    createDomElements('p', `name: ${pokemon.name}`, '', allDetails);
+
+    const pokemonImg = createDomElements('img', '', '', allDetails);
+    pokemonImg.src = pokemon.sprites.front_default;
+  });
 };
 
 const createPokemonsDashboard = () => {

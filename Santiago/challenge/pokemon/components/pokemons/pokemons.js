@@ -15,7 +15,7 @@ const createList = () => {
   getPokemonData(pagination).then((pokemons) => {
     pokemons.results.forEach((pokemon) => {
       const pokem = createDomElements('li', '', '', ul);
-      createDomElements('a', `${pokemon.name}`, `http://127.0.0.1:5500/challenge/pokemon/components/details/details.html`, pokem);
+      createDomElements('a', `${pokemon.name}`, `./../details/?name=${pokemon.name}`, pokem);
     });
   });
 };

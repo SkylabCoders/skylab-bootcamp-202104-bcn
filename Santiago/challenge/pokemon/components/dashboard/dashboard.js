@@ -8,15 +8,19 @@ const createHeader = () => {
 };
 
 const createList = () => {
+  const pagination = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=6';
+
   const listDiv = createDomElements('div', '', '', main);
   const ul = createDomElements('ol', '', '', listDiv);
 
-  allPokemons.then((pokemons) => pokemons.results);
-  allPokemons.then((data) => data.results.slice(0, 5).forEach((element) => {
-    const pokem = createDomElements('li', '', '', ul);
-    createDomElements('a', `${element.name}`, `http://127.0.0.1:5500/challenge/pokemon/components/details/details.html?pokemonName=${element.name}`, pokem);
-  }));
+  getPokemonData(pagination).then((pokemons) => {
+    pokemons.results.forEach((pokemon) => {
+      const pokem = createDomElements('li', '', '', ul);
+      createDomElements('a', `${pokemon.name}`, `./../details/?name=${pokemon.name}`, pokem);
+    });
+  });
 };
+
 
 const createPokemonsDashboard = () => {
   createHeader();
