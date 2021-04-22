@@ -1,4 +1,4 @@
-const getPokemonData = () => fetch('https://pokeapi.co/api/v2/pokemon')
+const getPokemonData = () => fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=20')
   .then((response) => response.json());
 
 const createDomElements = (element, text, href, parent, id) => {
