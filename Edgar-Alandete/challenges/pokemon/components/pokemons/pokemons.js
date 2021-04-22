@@ -41,7 +41,7 @@ const pokemonList = (page, limit, offset) => {
       name,
     }) => {
       const pokemonItem = createDomElement(page, 'li', '', { class: 'list-pokemon--item' });
-      createDomElement(pokemonItem, 'span', `${name}`);
+      createDomElement(pokemonItem, 'a', `${name}`, { href: `../pokemon-detail/pokemon-detail.html?name=${name}` });
     });
 
     const prevButton = createDomElement(page, 'button', 'Anterior');

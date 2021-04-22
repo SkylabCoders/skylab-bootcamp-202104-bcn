@@ -8,6 +8,16 @@ const getPokemonById = async (pokemonId) => {
   }
 };
 
+const getPokemonByName = async (name) => {
+  try {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+    const pokemon = await response.json();
+    return pokemon;
+  } catch (error) {
+    console.error('-', error);
+  }
+};
+
 const getPokemons = async (limit, set) => {
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${set}`);

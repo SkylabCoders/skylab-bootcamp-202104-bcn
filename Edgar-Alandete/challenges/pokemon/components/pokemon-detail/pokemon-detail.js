@@ -14,6 +14,32 @@ function createDomElement(parent, element, text = null, attributes = []) {
   return elementToCreate;
 }
 
+const printPokemonDetail = (pokemon, detail) => {
+  pokemon.then(({
+    id, name, types, sprites,
+  }) => {
+    // const pokemon = createPokemon(id, name, types[0].type.name);
+    const pokemonItem = createDomElement(detail, 'li', '', { class: 'list-pokemon--item' });
+    const pokemonLink = createDomElement(pokemonItem, 'a', '', { href: `../pokemon-detail/pokemon-detail.html?id=${id}` });
+    createDomElement(pokemonLink, 'img', '', { src: `${sprites.front_default}`, alt: `${name}` });
+    createDomElement(pokemonItem, 'span', `#${id} ${name}`);
+  });
+};
+
+const createDetail = () => {
+  const detail = createDomElement(dashboard, 'ul');
+  const params = new URLSearchParams(window.location.search);
+  const pokeId = params.get('id');
+  if (pokeId) {
+    const pokemon = getPokemonById(pokeId);
+    printPokemonDetail(pokemon, detail);
+  } else {
+    const pokeName = params.get('name');
+    const pokemon = getPokemonById(pokeName);
+    printPokemonDetail(pokemon, detail);
+  }
+};
+
 const createNavigator = (parent) => {
   const headerNavigator = createDomElement(parent, 'nav', '', { class: 'header__main-navigator main-navigator' });
   const navigatorList = createDomElement(headerNavigator, 'ul', '', { class: 'main-navigator__list list' });
@@ -30,6 +56,7 @@ const createHeader = () => {
 };
 const createPokemonDetail = () => {
   createHeader();
+  createDetail();
 };
 
 createPokemonDetail();
