@@ -2,7 +2,7 @@ const allPokemons = getPokemonData();
 const main = document.querySelector('.dashboard');
 
 const createHeader = () => {
-  const header = createDomElements('header', '', '', main);
+  const header = createDomElements('header', '', '', main, 'header-dash');
   createDomElements('h1', 'Pokemons - Dashboard', '', header);
   createDomElements('a', 'ALL POKEMON', 'http://127.0.0.1:5500/challenge/pokemon/components/pokemons/pokemons.html', header);
 };
@@ -10,7 +10,7 @@ const createHeader = () => {
 const createList = () => {
   const pagination = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=6';
 
-  const listDiv = createDomElements('div', '', '', main);
+  const listDiv = createDomElements('div', '', '', main, 'dash-container');
   const ul = createDomElements('ol', '', '', listDiv);
 
   getPokemonData(pagination).then((pokemons) => {
