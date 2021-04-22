@@ -12,3 +12,14 @@ detailBtn.setAttribute('href', '../pokemon-detail/pokemon-detail.html');
 pokemonList.then((data) => data.results.forEach((element) => {
   createList(element.name, 'lista', '.div__main');
 }));
+
+pokemonList.then((data) => data.results.forEach((element) => {
+  const pokemonUrlDetails = fetchPokemon(element.url);
+
+  pokemonUrlDetails.then((data) => {
+    createAnchor(`${data.name}`, '../pokemon-list/pokemon-list.html', `${data.name}`, '.lista');
+    console.log(data);
+    createImg('pokemonImg', data.sprites.front_default, `.${data.name}`);
+    console.log(`name: ${data.name}`);
+  });
+}));
