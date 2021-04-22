@@ -1,7 +1,7 @@
-async function getPokemons(num = 0) {
+async function fetchPokemons(num = 0) {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=${num}`);
   const data = await response.json();
-  return data.results;
+  return data;
 }
 
 async function getPokemonId(name) {
@@ -16,11 +16,7 @@ async function getPokemonDetails(name) {
   return data;
 }
 
-// async function getPokemonStats()
-
-// const paramId = getPokemonId('ID', location.search);
-
-const pokemonsShortList = getPokemons();
+const pokemonsLongList = fetchPokemons(20);
 
 function generateElement(elementProperties) {
   const element = document.createElement(elementProperties.type);

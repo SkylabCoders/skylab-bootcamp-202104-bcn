@@ -21,21 +21,26 @@ mainContent.append(pokemonsList);
 
 const highlitedPokemon = generateElement({ type: 'div', classes: ['higlited-hero'] });
 const highlightPokemonName = generateElement({ type: 'p', classes: ['highlighted-hero__name'], context: '' });
-const highlightPokemonDetailsButton = generateElement({
-  type: 'a',
-  context: 'View Details',
-  classes: ['highlighted-pokemon__details-btn', '--inactive'],
-  url: './../details/details.html',
-});
+pokemonsLongList
+  .then(list => {
+    const results = list.results;
+    results.forEach((result) => {
+      const li = generateElement({type: 'li', classes: ['pokemons-list__element']});
+      const anchor = generateElement({type: 'a', classes: [], url: './../details/details.html?', context: result.name});
+      li.append(anchor);
+      pokemonsList.append(li);
+    }); 
+    // BUTTONS
+  const buttonsWrapper = generateElement({ type: 'div', classes: ['buttons-wrapper'] });
+  const previous = generateElement({ type: 'a', classes: ['buttons-wrapper__previous'], context: 'Previous', url:''  });
+  const next = generateElement({ type: 'a', classes: ['buttons-next'], context: 'Next', url:'' });
+  buttonsWrapper.append(previous);
+  buttonsWrapper.append(next);
+  mainContent.append(buttonsWrapper);
 
+  });
 highlitedPokemon.append(highlightPokemonName);
-highlitedPokemon.append(highlightPokemonDetailsButton);
+
 mainContent.append(highlitedPokemon);
 
-// BUTTONS
-const buttonsWrapper = generateElement({ type: 'div', classes: ['buttons-wrapper'] });
-const previous = generateElement({ type: 'a', classes: ['buttons-wrapper__previous'], context: 'Previous' });
-const next = generateElement({ type: 'a', classes: ['buttons-next'], context: 'Next' });
-buttonsWrapper.append(previous);
-buttonsWrapper.append(next);
-mainContent.append(buttonsWrapper);
+
