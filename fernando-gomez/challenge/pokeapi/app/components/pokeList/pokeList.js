@@ -63,7 +63,7 @@ const previousButton = () => {
   return button;
 };
 
-main.appendChild(pokeElement('h1', 'List of pokemons'));
+main.appendChild(pokeElement('h1', 'Los pokemos'));
 main.appendChild(previousButton());
 main.appendChild(nextButton());
-getPokeApiData(offset, limit, pokeList);
+getPokeApiData(-70, 70, pokeList);
