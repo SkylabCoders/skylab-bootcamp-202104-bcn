@@ -6,14 +6,13 @@
 </head>
 <body>
     <div id="heroe"></div>
-
-    <script src="../../../src/components/title/title.js"></script>
+    <script src="../../common/components/title/title.js"></script>
     <script src="../../../src/application/config/routes-config.js"></script>
     <script src="./detai.js"></script>
     <script>
         const renderNav = () =>{
             const node = document.getElementById('heroe');
-            const heading = title('Tour of Hero', 'h1');
+            const heading = createTitle('Tour of Hero', 'h1');
             const nav = navigation(routing)
             node.append(heading);
             node.appendChild(nav);

@@ -1,4 +1,4 @@
-const URL= '../../../src/common/utils/dataHeroes.json'
+const URL= '../../common/services/mock/dataHeroes.json'
 const getDataJson = (qty_data = null) => {
     fetch(URL)
         .then(function(res) {
