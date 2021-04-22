@@ -1,4 +1,4 @@
-const mainSection = document.querySelector('.main-container');
+const mainSection = document.querySelector('main');
 let offsetNum = 0;
 const limitNum = 10;
 
@@ -11,9 +11,8 @@ const createElement = (tag, parent, innerHTML, className, href) => {
   return getTag;
 };
 
-createElement('h1', mainSection, 'Pokemons');
-createElement('h3', mainSection, 'Choose your Pokemon!');
-const getList = createElement('ul', mainSection, '');
+createElement('h1', mainSection, 'Pokedex', 'main-header');
+const getList = createElement('ul', mainSection, null, 'list');
 
 const getAllPokemons = async (offsetNum, limitNum) => {
   const pokemonList = await fetchPagePokemons(offsetNum, limitNum);
@@ -25,7 +24,7 @@ const getAllPokemons = async (offsetNum, limitNum) => {
 };
 getAllPokemons(0, 10);
 
-const clickPages = async (offsetNum, limitNum) => {
+const onChangePages = async (offsetNum, limitNum) => {
   const pokemonList = await fetchPagePokemons(offsetNum, limitNum);
   pokemonList.results.forEach((element, position) => {
     document.querySelectorAll('.pokemon-item__detail')[position].innerHTML = element.name.toUpperCase();
@@ -33,18 +32,22 @@ const clickPages = async (offsetNum, limitNum) => {
   });
 };
 
-const onChangePage = () => {
-  const previousButton = createElement('button', mainSection, 'Previous', null);
+const buttonsForChangePage = () => {
+  const containerbuttons = createElement('div', mainSection, null, 'container-buttons');
+  const previousButton = createElement('button', containerbuttons, '<i class="fas fa-caret-square-left"></i>', 'container-buttons__previous');
   previousButton.onclick = () => {
     if (offsetNum >= 10) {
-      clickPages(offsetNum -= limitNum, limitNum);
+      onChangePages(offsetNum -= limitNum, limitNum);
     }
   };
-  const nextButton = createElement('button', mainSection, 'Next', null);
+  const nextButton = createElement('button', containerbuttons, '<i class="fas fa-caret-square-right"></i>', 'container-buttons__next');
   nextButton.onclick = () => {
     if (offsetNum >= 0) {
-      clickPages(offsetNum += limitNum, limitNum);
+      onChangePages(offsetNum += limitNum, limitNum);
     }
   };
 };
-onChangePage();
+buttonsForChangePage();
+
+const detailPhotoBall = createElement('div', mainSection, '', 'detail');
+createElement('img', detailPhotoBall, '', 'detail__photo');
