@@ -15,11 +15,8 @@ pokemonToDetail.then((element) => {
   const pokemonIMG = createElement('img');
   pokemonIMG.src = element.sprites.front_default;
   currentImgLI.appendChild(pokemonIMG);
-
   const currentNameLI = createElement('li');
-
   pokemonListUL.appendChild(currentNameLI);
-
   const pokemonName = createElement('span', 'pokemonName', `Name: ${element.species.name}`);
   currentNameLI.appendChild(pokemonName);
 });
