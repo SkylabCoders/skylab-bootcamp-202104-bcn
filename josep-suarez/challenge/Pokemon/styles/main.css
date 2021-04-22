@@ -1,13 +1,84 @@
+body {
+  background-image: url("../image/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+body ul {
+  list-style: none;
+}
+
+body li a {
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 25px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 #pokemon-select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#pokemon-select ul li p {
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 #photos-pokemon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#photos-pokemon ul li p {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+#pokemon-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#pokemon-select ul li {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+#button-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#button-page #back-button, #button-page #next-button {
+  background-color: aquamarine;
+  margin-left: 10px;
+  border: 2px solid orange;
+  border-radius: 10%;
+  width: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
 }
 /*# sourceMappingURL=main.css.map */

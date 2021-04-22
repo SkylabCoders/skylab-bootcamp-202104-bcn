@@ -1,8 +1,56 @@
+body{
+    background-image: url("../image/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    ul {
+        list-style: none;
+        }
+    li{
+        a{
+            text-align: center;
+            text-decoration: none;
+            text-transform: none;
+            color: black;
+            text-transform: uppercase;
+            font-weight: 25px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    }
+}
 #pokemon-select {
     display: flex;
-    list-style: none;
+    justify-content: center;
+    ul li p{
+        justify-self: center;
+    }
 }
 #photos-pokemon {
     display: flex;
-
+    justify-content: center;
+    ul li p{
+        justify-self: center;
+    }
+}
+#pokemon-select {
+    display: flex;
+    justify-content: center;
+    ul li{
+        justify-self: center;
+    }
+}
+#button-page {
+    display: flex;
+    justify-content: center;
+    #back-button, #next-button{
+        background-color: aquamarine;
+        margin-left: 10px;
+        border: 2px solid orange;
+        border-radius: 10%;
+        width: 100px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 20px;
+    }
 }
