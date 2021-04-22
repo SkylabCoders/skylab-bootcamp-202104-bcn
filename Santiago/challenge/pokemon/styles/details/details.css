@@ -12,7 +12,14 @@ a {
   border-radius: 10px;
   background-color: lightgreen;
   text-align: center;
-  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-family: 'Zen Dots', cursive;
+  margin-top: 5px;
+}
+
+a:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
 
 #details-header {
@@ -26,9 +33,11 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: 'Zen Dots', cursive;
 }
 
 #details-container {
+  font-family: 'Zen Dots', cursive;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,17 +49,17 @@ a {
   font-size: 20px;
   border: 2px solid black;
   border-radius: 10px;
-  width: 250px;
+  max-width: 310px;
   height: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 40px;
+  margin-top: 20px;
   background-color: lightgreen;
 }
 
 #details-container img {
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
 }
 /*# sourceMappingURL=details.css.map */

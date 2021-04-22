@@ -12,10 +12,16 @@ a {
   border-radius: 10px;
   background-color: lightgreen;
   text-align: center;
-  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-family: 'Zen Dots', cursive;
   text-decoration: none;
   color: black;
   padding: 5px;
+}
+
+a:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
 
 .pokemons {
@@ -74,11 +80,33 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: 'Zen Dots', cursive;
 }
 
-#back-btn, #next-btn {
+#footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 60px;
+}
+
+#back-btn,
+#next-btn {
+  margin-left: 5px;
+  font-size: 20px;
   border: 1px solid black;
   border-radius: 10px;
   background-color: lightgreen;
+  font-family: 'Zen Dots', cursive;
+}
+
+#back-btn:hover,
+#next-btn:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
 /*# sourceMappingURL=pokemons.css.map */

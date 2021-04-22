@@ -22,7 +22,7 @@ const obtainDetails = () => {
 
     createDomElements('p', `ability: ${pokemon.abilities[0].ability.name}`, '', allDetails);
     createDomElements('p', `height: ${pokemon.height}`, '', allDetails);
-    createDomElements('p', `Best move: ${pokemon.moves[0].move.name}`, '', allDetails);
+    createDomElements('p', `Move: ${pokemon.moves[0].move.name}`, '', allDetails);
   });
 };
 

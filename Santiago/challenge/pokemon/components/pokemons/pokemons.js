@@ -25,7 +25,7 @@ const createList = () => {
 };
 
 const createButtons = () => {
-  const foot = createDomElements('footer', '', '', main);
+  const foot = createDomElements('footer', '', '', main, 'footer');
   const btnBack = createDomElements('button', 'back', '', foot, 'back-btn');
 
   btnBack.onclick = () => {

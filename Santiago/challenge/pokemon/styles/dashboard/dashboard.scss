@@ -12,8 +12,14 @@ a {
     border-radius: 10px;
     background-color: lightgreen;
     text-align: center;
-    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-family: 'Zen Dots', cursive;
     padding: 10px;
+}
+
+a:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 
 .dashboard {
@@ -25,10 +31,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    // h1 {
-    //     padding-bottom: 50px;
-    // }
+    font-family: 'Zen Dots', cursive;
 }
 
 #dash-container {
@@ -38,6 +41,7 @@ a {
     ol {
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-evenly;
         list-style: none;
         align-items: center;
