@@ -2,13 +2,13 @@ const main = document.querySelector('.pokemons');
 const pagedList = { offset: 0, limit: 20 };
 
 const createHeader = () => {
-  const header = createDomElements('header', '', '', main);
+  const header = createDomElements('header', '', '', main, 'header-pokemons');
   createDomElements('h1', 'Pokemons - List', '', header);
   createDomElements('a', 'DASHBOARD', 'http://127.0.0.1:5500/challenge/pokemon/components/dashboard/dashboard.html', header);
 };
 createHeader();
 
-const listDiv = createDomElements('div', '', '', main);
+const listDiv = createDomElements('div', '', '', main, 'pokemons-container');
 const ul = createDomElements('ul', '', '', listDiv);
 
 const createList = () => {
@@ -26,7 +26,7 @@ const createList = () => {
 
 const createButtons = () => {
   const foot = createDomElements('footer', '', '', main);
-  const btnBack = createDomElements('button', 'back', '', foot);
+  const btnBack = createDomElements('button', 'back', '', foot, 'back-btn');
 
   btnBack.onclick = () => {
     if (pagedList.offset >= 20) {
@@ -34,7 +34,7 @@ const createButtons = () => {
       createList(pagedList.offset, pagedList.limit);
     }
   };
-  const btnNext = createDomElements('button', 'next', '', foot);
+  const btnNext = createDomElements('button', 'next', '', foot, 'next-btn');
   btnNext.onclick = () => {
     pagedList.offset += 20;
     createList(pagedList.offset, pagedList.limit);
