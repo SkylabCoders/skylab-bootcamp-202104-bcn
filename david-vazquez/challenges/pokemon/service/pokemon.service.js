@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 function createHtmlElements(parent, element, classname, text) {
   const node = document.createElement(element);
   parent.appendChild(node);
@@ -5,12 +7,6 @@ function createHtmlElements(parent, element, classname, text) {
   node.innerText = text;
   return node;
 }
-
-// function getData() {
-//   return fetch('https://pokeapi.co/api/v2/pokemon')
-//     .then((response) => response.json())
-//     .catch(() => { console.error('-> error!'); });
-// }
 
 function getDataPokemon(name) {
   return fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)

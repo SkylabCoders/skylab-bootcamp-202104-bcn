@@ -1,3 +1,6 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 const body = document.querySelector('.body');
 const myTopPokemons = ['pikachu', 'ivysaur', 'squirtle', 'charizard'];
 

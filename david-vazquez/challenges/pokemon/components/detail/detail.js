@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 const body = document.querySelector('.body');
@@ -22,7 +24,6 @@ function createMain() {
   const param = new URLSearchParams(location.search);
   const pokeName = param.get('pokemonName');
   const myPokemonDetails = getDataPokemon(pokeName);
-  console.log(myPokemonDetails);
   myPokemonDetails.then((myPokemon) => {
     const pokemonDetailContainer = createHtmlElements(body, 'main', 'pokemon-detail', null);
     const pokemonImage = createHtmlElements(pokemonDetailContainer, 'div', 'pokemon-detail__images', null);

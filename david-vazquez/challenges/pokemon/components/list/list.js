@@ -1,6 +1,8 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 const body = document.querySelector('.body');
 const header = document.querySelector('.header');
-const url = 'https://pokeapi.co/api/v2/pokemon';
 const removeAllChildNodes = (parent) => {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
