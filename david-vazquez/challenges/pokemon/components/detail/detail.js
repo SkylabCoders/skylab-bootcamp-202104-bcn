@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 const body = document.querySelector('.body');
 
 function createHeader() {
