@@ -17,7 +17,7 @@ const detailOfPokemonClick = (name) => {
     const nameDetail = document.getElementById("class-pokemons");
     let title = document.createElement("h2");
     nameDetail.appendChild(title);
-    title.innerHTML = name;
+     return title.innerHTML = name;
 }
 const detailingPokemon = (element, list, detail) => {
     let details = document.getElementById("class-pokemons");
@@ -25,9 +25,11 @@ const detailingPokemon = (element, list, detail) => {
     let especificDetails = document.createElement(list);
     details.appendChild(listDetails);
     listDetails.appendChild(especificDetails);
-    especificDetails.innerHTML = detail;
+    return especificDetails.innerHTML = detail;
 }
 const nextPokemons = () => {
+    let backButton = document.getElementById("back-button");
+    backButton.style.display = "flex";
     document.getElementById("photos-pokemon").innerHTML = "";
     siteOfDashboard.innerHTML = "";
     let buttonNext = document.getElementById("next-button");

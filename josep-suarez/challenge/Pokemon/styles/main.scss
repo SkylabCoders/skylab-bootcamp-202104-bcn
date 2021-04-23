@@ -62,7 +62,17 @@ body{
 #button-page {
     display: flex;
     justify-content: center;
-    #back-button, #next-button{
+    #next-button{
+        background-color: aquamarine;
+        margin-left: 10px;
+        border: 2px solid orange;
+        border-radius: 10%;
+        width: 100px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 20px;
+    }
+    #back-button{
+        display: none;
         background-color: aquamarine;
         margin-left: 10px;
         border: 2px solid orange;
