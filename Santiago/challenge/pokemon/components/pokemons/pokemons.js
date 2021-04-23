@@ -27,6 +27,7 @@ const createList = () => {
 const createButtons = () => {
   const foot = createDomElements('footer', '', '', main, 'footer');
   const btnBack = createDomElements('button', 'back', '', foot, 'back-btn');
+  const btnNext = createDomElements('button', 'next', '', foot, 'next-btn');
 
   btnBack.onclick = () => {
     if (pagedList.offset >= 20) {
@@ -34,7 +35,7 @@ const createButtons = () => {
       createList(pagedList.offset, pagedList.limit);
     }
   };
-  const btnNext = createDomElements('button', 'next', '', foot, 'next-btn');
+
   btnNext.onclick = () => {
     pagedList.offset += 20;
     createList(pagedList.offset, pagedList.limit);
