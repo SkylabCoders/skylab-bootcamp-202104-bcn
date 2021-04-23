@@ -1,14 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Raleway&display=swap');
+
 *, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
 }
 
-main {
+.wrapper {
     background: #159957;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(236, 236, 236) ;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px black;
 
 }
+
+
+main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+    min-width: 400px;
+
+    .top-logo {
+        width: 500px;
+        margin-bottom: -150px;
+        margin-top: -100px;
+    }
+
+    .head-title {
+        font-size: 35px;
+        color: white;
+        font-family: 'Orbitron', sans-serif;    
+    }
+
+    .selector-group {
+        width: 350px;
+        margin: 40px 20px;
+        a {
+            border: 2px solid white;
+            border-radius: 10px;
+            font-weight: 900;
+            font-size: 20px;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-family: 'Orbitron', sans-serif;    
+        }
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .pokemons-list__element {
+        border-radius: 30px;
+        background-color: rgbA(0, 0, 0, 0.2);
+        font-family: 'Orbitron', sans-serif;    
+        display: inline
+    
+    }
+
+}
+
+
+
 
