@@ -16,7 +16,6 @@ const getList = createElement('ul', mainSection, null, 'list');
 
 const getAllPokemons = async (offsetNum, limitNum) => {
   const pokemonList = await fetchPagePokemons(offsetNum, limitNum);
-  console.log('API global', pokemonList);
   pokemonList.results.forEach((element) => {
     const newElementLi = createElement('li', getList, '', 'pokemon-item');
     createElement('a', newElementLi, `${element.name.toUpperCase()}`, 'pokemon-item__detail', `../details/details.html?pokemonName=${element.name}`);

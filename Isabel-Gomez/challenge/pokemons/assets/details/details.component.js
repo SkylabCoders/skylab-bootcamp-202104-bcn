@@ -2,7 +2,6 @@ const mainSection = document.querySelector('.main-container');
 
 const param = new URLSearchParams(location.search);
 const pokemonName = param.get('pokemonName');
-console.log('pokemonName', pokemonName);
 
 const createElement = (tag, parent, innerHTML, className, href) => {
   const getTag = document.createElement(tag);
@@ -17,7 +16,6 @@ createElement('h1', mainSection, 'Pokedex');
 
 const getDetails = async (name) => {
   const pokemonList = await fetchDetailsPokemon(name);
-  console.log('API details', pokemonList);
   const getList = createElement('ul', mainSection, '', 'list');
   createElement('li', getList, `Id: ${pokemonList.id}`, 'pokemon-item');
   createElement('li', getList, `Height: ${pokemonList.height}`, 'pokemon-item');
