@@ -16,7 +16,7 @@ const linkPokemons = generateElement({
 });
 selectorGroup.append(linkPokemons);
 
-const mainTitle = generateElement({ type: 'h3', classes: [], context: 'My Pokemons' });
+const mainTitle = generateElement({ type: 'h3', classes: ['main-title'], context: 'My Pokemons' });
 mainContent.append(mainTitle);
 
 const pokemonsList = generateElement({ type: 'ul', classes: ['pokemons-list'] });

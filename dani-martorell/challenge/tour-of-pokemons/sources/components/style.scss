@@ -48,6 +48,10 @@ main {
 
     }
 
+    .main-title {
+        margin: 20px;
+    }
+
     .top-logo-small {
         width: 245px;
         // margin-bottom: -150px;
@@ -88,6 +92,7 @@ main {
     }
     
     .pokemons-list {
+        z-index: 1;
         width: 100%;
         margin-top: 20px;
         display: flex;
@@ -111,7 +116,13 @@ main {
         a {
             background-color: black;
             padding: 10px 10px;
+            margin: 20px 0;
         }
+    }
+
+    .details__image {
+        filter: drop-shadow(4px 7px 3px black);
+    
     }
 }
 

@@ -60,6 +60,10 @@ main .top-logo {
           filter: drop-shadow(4px 7px 3px black);
 }
 
+main .main-title {
+  margin: 20px;
+}
+
 main .top-logo-small {
   width: 245px;
   -webkit-filter: drop-shadow(4px 7px 3px black);
@@ -103,6 +107,7 @@ main .selector-group a {
 }
 
 main .pokemons-list {
+  z-index: 1;
   width: 100%;
   margin-top: 20px;
   display: -webkit-box;
@@ -134,5 +139,11 @@ main .pokemons-list a {
 main .buttons-wrapper a {
   background-color: black;
   padding: 10px 10px;
+  margin: 20px 0;
+}
+
+main .details__image {
+  -webkit-filter: drop-shadow(4px 7px 3px black);
+          filter: drop-shadow(4px 7px 3px black);
 }
 /*# sourceMappingURL=style.css.map */
