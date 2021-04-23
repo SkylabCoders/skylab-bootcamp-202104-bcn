@@ -1,5 +1,5 @@
-// const actionTypes = require('./actionTypes');
-import { GET_TASKS, DELETE_TASK } from './actionTypes';
+/* eslint-disable import/extensions */
+import { GET_TASKS, DELETE_TASK } from './actionTypes.js';
 
 const getTasks = () => ({
   type: GET_TASKS,
@@ -10,8 +10,4 @@ const deleteTask = (taskId) => ({
   taskId,
 });
 
-// module.exports = {
-//   getTasks,
-//   deleteTask,
-// };
-export { getTasks, deleteTask };
+export default { getTasks, deleteTask };

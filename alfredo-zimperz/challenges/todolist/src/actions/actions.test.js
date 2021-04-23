@@ -1,7 +1,14 @@
-// const actionTypes = require('./actionTypes');
-// const { getTasks, deleteTask } = require('./actions');
-import { GET_TASKS, DELETE_TASK } from './actionTypes';
-import { getTasks, deleteTask } from './actions';
+const GET_TASKS = 'GET_TASKS';
+const DELETE_TASK = 'DELETE_TASKS';
+
+const getTasks = () => ({
+  type: GET_TASKS,
+});
+
+const deleteTask = (taskId) => ({
+  type: DELETE_TASK,
+  taskId,
+});
 
 test('Given a getTasks action creator', () => {
   const result = getTasks();
