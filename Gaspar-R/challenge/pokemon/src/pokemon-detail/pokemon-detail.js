@@ -28,7 +28,7 @@ const pokemonURL = `${pokemonApiUrl}/${pokemonName}`;
 
 fetchPokemon(pokemonURL).then((pokemon) => {
   createElement('h1', null, `${pokemon.name} detail`, '.main__div');
-  console.log(pokemon);
+
   const pokeImg = createElement('img', 'pokemon__img', null);
   pokeImg.src = pokemon.sprites.front_default;
   const newParent = document.querySelector('.main__div');
@@ -39,12 +39,28 @@ fetchPokemon(pokemonURL).then((pokemon) => {
   const pokeImg3 = createElement('img', 'pokemon__img', null);
   pokeImg3.src = pokemon.sprites.other.dream_world.front_default;
   newParent.appendChild(pokeImg3);
+
   // console.log(pokemon.types[0].type.name);
   const pokeList = createElement('ol', 'pokemon__list', 'Poke Info', '.main__div');
-  createElement('li', 'pokemon__list-items', `type: ${pokemon.types[0].type.name} && ${pokemon.types[1].type.name}`, '.pokemon__list');
+  if (pokemon.types[1]) { createElement('li', 'pokemon__list-items', `type: ${pokemon.types[0].type.name} && ${pokemon.types[1].type.name}`, '.pokemon__list'); } else {
+    createElement('li', 'pokemon__list-items', `type: ${pokemon.types[0].type.name}`, '.pokemon__list');
+  }
   createElement('li', 'pokemon__list-items', `power: ${pokemon.base_experience}`, '.pokemon__list');
   createElement('li', 'pokemon__list-items', `weight: ${pokemon.weight}`, '.pokemon__list');
   createElement('li', 'pokemon__list-items', `best moves: ${pokemon.moves[3].move.name} & ${pokemon.moves[6].move.name}`, '.pokemon__list');
+  fetchPokemon(pokemon.species.url).then((info) => {
+    console.log(info);
+    fetchPokemon(info.evolution_chain.url).then((evol) => {
+      fetchPokemon(evol.chain.evolves_to[0].evolves_to[0].species.url).then((nextPoke) => {
+        console.log(nextPoke.name);
+
+        // const pokeImg4 = createElement('img', 'pokemon__img', '.pokemon__list');
+        // pokeImg4.src = evoPoke.sprites.front_default;
+        // console.log(evoPoke);
+      });
+    });
+  });
+  // document.querySelector('.pokemon__list').appendChild(pokeImg4)
 });
 
 // function createElement(tag, className = null, text = null, parent = null) {
