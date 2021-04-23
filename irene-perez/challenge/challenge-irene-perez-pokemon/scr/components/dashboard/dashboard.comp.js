@@ -6,8 +6,6 @@ function createDashboard() {
   logoPoke.setAttribute('src', './../../img/pokemon-logo.png');
   const prevButton = createElementHtml('button', 'Atrás', null, header);
   const nextButton = createElementHtml('button', 'Siguiente', null, header);
-  prevButton.onClick = (() => paginate(store.previous));
-  nextButton.onClick = (() => paginate(store.next));
   createElementHtml('h2', 'Pokemons List:', null, header);
   const ul = createElementHtml('ul', null, null, header);
   createPokeList(ul);
@@ -19,7 +17,7 @@ function createPokeList(ul) {
   result.then((element) => {
     element.results.forEach((pokemon) => {
       const pokemonItem = createElementHtml('li', null, null, ul);
-      const pokemonLink = createElementHtml('a', pokemon.name, '../../details/details.html', pokemonItem);
+      const pokemonLink = createElementHtml('a', pokemon.name, './../../details/details.html', pokemonItem);
       const detailsPoke = getDataDetails(pokemon.name);
       detailsPoke.then((element) => {
         const pokeImg = createElementHtml('img', null, null, pokemonItem);
