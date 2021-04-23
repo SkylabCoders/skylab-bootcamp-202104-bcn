@@ -84,7 +84,7 @@ body {
 }
 
 .pokemons__list {
-  margin: 20px 50px;
+  margin: 20px 200px;
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -133,12 +133,12 @@ body {
 }
 
 .button__right {
-  right: 0;
+  right: 30px;
   top: 150px;
 }
 
 .button__left {
-  left: 0;
+  left: 30px;
   top: 150px;
 }
 /*# sourceMappingURL=list.css.map */

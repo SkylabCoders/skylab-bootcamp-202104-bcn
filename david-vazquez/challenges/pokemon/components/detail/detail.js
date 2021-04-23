@@ -23,8 +23,11 @@ function createMain() {
   console.log(myPokemonDetails);
   myPokemonDetails.then((myPokemon) => {
     const pokemonDetailContainer = createHtmlElements(body, 'main', 'pokemon-detail', null);
-    const pokemonPic = createHtmlElements(pokemonDetailContainer, 'img', 'pokemon-detail__image', null);
-    pokemonPic.setAttribute('src', `${myPokemon.sprites.front_default}`);
+    const pokemonImage = createHtmlElements(pokemonDetailContainer, 'div', 'pokemon-detail__images', null);
+    const pokemonPicFront = createHtmlElements(pokemonImage, 'img', 'pokemon-detail__image', null);
+    pokemonPicFront.setAttribute('src', `${myPokemon.sprites.front_default}`);
+    const pokemonPicBack = createHtmlElements(pokemonImage, 'img', 'pokemon-detail__image', null);
+    pokemonPicBack.setAttribute('src', `${myPokemon.sprites.back_default}`);
     const pokemonName = createHtmlElements(pokemonDetailContainer, 'h2', 'pokemon-detail__name', `${myPokemon.name}`);
     const pokemonDetails = createHtmlElements(pokemonDetailContainer, 'ul', 'pokemon-detail__list', null);
     const pokemonWeight = createHtmlElements(pokemonDetails, 'li', 'list__item', `Weight: ${myPokemon.weight}`);
