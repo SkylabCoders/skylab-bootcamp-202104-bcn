@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 function getPokeApiData(offset, limit, callBack) {
   fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`)
     .then((response) => {

@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const pokeName = new URLSearchParams(window.location.search).get('name');
 const main = document.querySelector('.main-container');
 

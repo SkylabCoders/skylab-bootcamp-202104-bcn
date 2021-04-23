@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 const main = document.querySelector('.main-container');
 const DOMpokeList = document.querySelector('.pokeList');
 let offset = 0;
