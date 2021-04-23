@@ -7,7 +7,7 @@ const bottomImg = generateElement({ type: 'img', classes: ['bottom-img'] });
 bottomImg.setAttribute('src', 'https://www.freeiconspng.com/uploads/pokemon-png-22.png');
 mainContent.append(bottomImg);
 
-const headTitle = generateElement({ type: 'div', classes: ['head-title'], context: 'Tour of Heroes' });
+const headTitle = generateElement({ type: 'div', classes: ['head-title'], context: 'Tour of Pokemons' });
 mainContent.append(headTitle);
 const selectorGroup = generateElement({ type: 'div', classes: ['selector-group'] });
 mainContent.append(selectorGroup);

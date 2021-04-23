@@ -1,15 +1,18 @@
 const mainContent = document.querySelector('.content');
 
-const headTitle = generateElement({ type: 'div', classes: ['head-title'], context: 'Tour of Pokemons' });
-mainContent.append(headTitle);
+const topLogo = generateElement({ type: 'img', classes: ['top-logo-small'] });
+topLogo.setAttribute('src', 'https://www.freeiconspng.com/uploads/pokemon-png-23.png');
+mainContent.append(topLogo);
+
 const selectorGroup = generateElement({ type: 'div', classes: ['selector-group'] });
 mainContent.append(selectorGroup);
+
 const linkDashboard = generateElement({
   type: 'a', classes: ['selector-group__link-dasboard'], context: 'Dashboard', url: './../dashboard/dashboard.html',
 });
 selectorGroup.append(linkDashboard);
 const linkPokemons = generateElement({
-  type: 'a', classes: ['selector-group__link-pokemons'], context: 'Heroes', url: 'list.html',
+  type: 'a', classes: ['selector-group__link-pokemons'], context: 'Pokemons', url: 'list.html',
 });
 selectorGroup.append(linkPokemons);
 
@@ -27,7 +30,7 @@ const getPokemonsLongList = async (num) => {
   return list;
 };
 
-getPokemonsLongList(20).then((list) => {
+getPokemonsLongList(18).then((list) => {
   list.results.forEach((poke) => {
     const li = generateElement({ type: 'li', classes: ['pokemons-list__element'] });
     getPokemonId(poke.name).then((id) => {
