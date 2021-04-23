@@ -1,19 +1,3 @@
-$outline-width: 6px;
-$shadow-width: 4px;
-
-$button-background: #92CD41;
-$sec-button-background: #76c442;
-$shadow-color:  #4AA52E;
-
-$alt-button-background: #F7D51D;
-$alt-sec-button-background: #F2C409;
-$alt-shadow-color:  #E59400;
-
-$reset-button-background: #E76E55;
-$reset-sec-button-background: #CE372B;
-$reset-shadow-color:  #8C2022;
-
-
 *, *::after, *::before {
     margin: 0;
     padding: 0;
@@ -22,16 +6,19 @@ $reset-shadow-color:  #8C2022;
   }
 
   body{
-      background-image: url('https://pa1.narvii.com/6872/fc9cc1301aa4886d68e01a693dff26e5e6920cd4r1-500-375_hq.gif');
+      background-image: url('https://i.pinimg.com/originals/f4/7a/70/f47a703b66a1d1e2a2f9b3078a00215a.gif');
       background-repeat: no-repeat;
       background-size: cover;
       text-align: center;
   }
 
 .pokemons__list{
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
+    justify-content: center;
+    margin: auto;
     &--item{
         padding: 10px;
         margin: 10px;
@@ -41,9 +28,18 @@ $reset-shadow-color:  #8C2022;
 h1{
     font-size: 50px;
 }
-
-button{
-    margin-top: 5%;
+h2{
+    margin-top: 13%;
+    font-size: 40px;
+}
+img{
+    width:200px;
+}
+h3{
+    font-size: 30px;
+}
+p{
+    font-size: 20px;
 }
 
 a{
@@ -56,4 +52,28 @@ a{
     font-size: 15px;
     padding: 20px;
  
+}
+
+button {
+	background: #7C7C7C;
+	border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(255,255,255,.5);
+	border-top: 6px inset rgba(255,255,255,.5);
+	box-sizing: border-box;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 30px;
+	margin: 1rem;
+    bottom: 100px;
+	min-width: 200px;
+	padding: .5rem;
+	text-transform: uppercase;
+	width: auto;
+	
+	&:focus,
+	&:hover {
+		background: #BCBCBC;
+	}
 }
