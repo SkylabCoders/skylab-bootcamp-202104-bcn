@@ -1,4 +1,4 @@
-const urlList = 'https://pokeapi.co/api/v2/pokemon?limit=150&offset=0';
+const urlList = 'https://pokeapi.co/api/v2/pokemon?limit=50&offset=0';
 // const urlDetail =
 
 function fetchPokemon(url) {
@@ -6,7 +6,8 @@ function fetchPokemon(url) {
     .then((response) => response.json());
 }
 
-const pokemonList = fetchPokemon(urlList);
+// const pokemonList = fetchPokemon(urlList);
+
 // --------access to pokemons details---------- */
 
 // const pokemonDetails = pokemonList.then((data) => data.results.forEach((element) => {
@@ -15,3 +16,5 @@ const pokemonList = fetchPokemon(urlList);
 //       .then((response) => response.json());
 //   }
 // }));
+
+// const fetchData = (url) => fetch(url).then((response) => response.json());
