@@ -1,8 +1,10 @@
-function createHtmlElements(parent,tag,classname,text){
-    const node = document.createElement(tag);
-    parent.appendChild(node);
-    node.innerText=text;
-    node.className=classname;
-    return node;
+function addTask(task){
+    const payload = {
+        type: 'ADD_TASK',
+        data: task
+    }
+    reducer(payload)
+    return payload;
 }
+
 
