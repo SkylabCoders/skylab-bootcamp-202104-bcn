@@ -28,4 +28,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+
+#todo-container {
+  display: none;
+  margin-top: 10px;
+  width: 600px;
+  height: 400px;
+  border: 1px solid black;
+}
 /*# sourceMappingURL=todo-list.css.map */

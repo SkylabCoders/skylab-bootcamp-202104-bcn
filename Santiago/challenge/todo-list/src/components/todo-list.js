@@ -27,9 +27,15 @@ const createMainDiv = () => {
 };
 
 const createBtns = (mainDiv) => {
-  createDomElements('button', 'TO DO', '', mainDiv);
+  const displayDivBtn = createDomElements('button', 'DISPLAY TO DO', '', mainDiv);
+  displayDivBtn.onclick = displayListDiv;
+};
+
+const createTodoListDiv = (mainDiv) => {
+  createDomElements('div', '', '', mainDiv, 'todo-container');
 };
 
 createHeader();
 const divConatiner = createMainDiv();
 createBtns(divConatiner);
+createTodoListDiv(divConatiner);
