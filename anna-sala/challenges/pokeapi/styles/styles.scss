@@ -1,11 +1,59 @@
+$outline-width: 6px;
+$shadow-width: 4px;
+
+$button-background: #92CD41;
+$sec-button-background: #76c442;
+$shadow-color:  #4AA52E;
+
+$alt-button-background: #F7D51D;
+$alt-sec-button-background: #F2C409;
+$alt-shadow-color:  #E59400;
+
+$reset-button-background: #E76E55;
+$reset-sec-button-background: #CE372B;
+$reset-shadow-color:  #8C2022;
+
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+  }
+
+  body{
+      background-image: url('https://pa1.narvii.com/6872/fc9cc1301aa4886d68e01a693dff26e5e6920cd4r1-500-375_hq.gif');
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+  }
+
+.pokemons__list{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    &--item{
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+h1{
+    font-size: 50px;
+}
+
 button{
     margin-top: 5%;
 }
 
 a{
-    padding: 10px;
-    background-color: yellow;
     color:black;
     margin-right:5px;
     margin-bottom: 5%;
+}
+
+.pagination-button{
+    font-size: 15px;
+    padding: 20px;
+ 
 }

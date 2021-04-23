@@ -1,32 +1,47 @@
-const list = document.querySelector('ul');
+const list = document.querySelector('.pokemons__list');
+const oldLimit = new URLSearchParams(window.location.search).get('limit');
+let oldOffset = new URLSearchParams(window.location.search).get('offset');
+const pokemonPage = new URLSearchParams(window.location.search).get('pokemonName');
 
-function printOnPage(tag, text, idName, url) {
+function printOnListPage(tag, text, idName, url) {
+  const listItem = document.createElement('li');
   const content = document.createElement(tag);
-  document.createAttribute('id', idName);
+  listItem.setAttribute('class', idName);
   content.innerHTML = text;
   content.href = url;
-  list.appendChild(content);
+  listItem.appendChild(content);
+  list.appendChild(listItem);
 }
 
-function fetchApi(limit, offset, callback) {
+const removeAllChildNodes = (parent) => {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+};
+
+function fetchApiList(limit, offset, callback) {
   return fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
     .then((response) => response.json())
     .then((data) => callback(data));
 }
 function iterationList(obj) {
   obj.results.forEach((element) => {
-    printOnPage('a', element.name, `${element.name}`, `./../detail/detail.html?pokemonName=${element.name}`);
+    printOnListPage('a', element.name, 'pokemons__list--item', `./../detail/detail.html?pokemonName=${element.name}`);
   });
 }
-fetchApi(5, 5, iterationList);
+fetchApiList(0, 5, iterationList);
 
 function previousPage() {
-  const oldLimit = new URLSearchParams(window.location.search).get('limit');
-  const oldOffset = new URLSearchParams(window.location.search).get('offset');
-  fetchApi(oldLimit, oldOffset - 10, iterationList);
+  if (oldOffset < 0) {
+    oldOffset -= 5;
+    removeAllChildNodes(list);
+    fetchApiList(oldLimit, oldOffset, iterationList);
+  }
 }
 function nextPage() {
-  const oldLimit = new URLSearchParams(window.location.search).get('limit');
-  const oldOffset = new URLSearchParams(window.location.search).get('offset');
-  fetchApi(oldLimit, oldOffset + 10, iterationList);
+  if (oldOffset < 1113) {
+    oldOffset += 5;
+    removeAllChildNodes(list);
+    fetchApiList(oldLimit, oldOffset, iterationList);
+  }
 }

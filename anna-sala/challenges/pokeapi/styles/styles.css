@@ -1,6 +1,48 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'VT323', monospace;
+}
+
+body {
+  background-image: url("https://pa1.narvii.com/6872/fc9cc1301aa4886d68e01a693dff26e5e6920cd4r1-500-375_hq.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.pokemons__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+}
+
+.pokemons__list--item {
+  padding: 10px;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+button {
+  margin-top: 5%;
+}
+
 a {
-  padding: 20px;
-  background-color: yellow;
   color: black;
+  margin-right: 5px;
+  margin-bottom: 5%;
+}
+
+.pagination-button {
+  font-size: 15px;
+  padding: 20px;
 }
 /*# sourceMappingURL=styles.css.map */
