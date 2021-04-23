@@ -1,26 +1,32 @@
+/* eslint-disable no-unused-vars */
+
 function createElement(tag, className = null, text = null, parent = null) {
   const newElement = document.createElement(tag);
   newElement.classList.add(className);
   newElement.innerHTML = text;
 
-  const newParent = document.querySelector(parent);
-  newParent.appendChild(newElement);
+  if (parent) {
+    const newParent = document.querySelector(parent);
+    newParent.appendChild(newElement);
+  }
   return newElement;
 }
 
-function createList(text, className = null, parent = null) {
-  const newParent = document.querySelector(parent);
-  const list = document.createElement('ul');
+// const createElement = (tag, cssClass = null, innerText = null, parentElement) => {
+//   const element = document.createElement(tag);
+//   element.classList.add(cssClass);
+//   element.innerText = innerText;
 
-  const newElement = document.createElement('li');
-  newElement.classList.add(className);
-  newElement.innerHTML = text;
+//   if (parentElement) {
+//     const newParent = document.querySelector(`.${parentElement}`);
+//     newParent.appendChild(element);
+//   }
+//   return element;
+// };
 
-  list.appendChild(newElement);
+const getElementByClassName = (className) => document.querySelector(`.${className}`);
 
-  newParent.appendChild(list);
-  return newElement;
-}
+// const getElementByClassName = (className) => document.querySelector(`.${className}`);
 
 function createImg(className = null, src, parent = null) {
   const newImg = document.createElement('img');
