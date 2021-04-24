@@ -21,7 +21,9 @@ function addToList(element, array) {
   const deleteButton = createElement('button', 'Delete', null, li);
   const elementId = li.id;
   deleteButton.onclick = (() => deleteTask(myArray, elementId));
-  createElement('button', 'Done', null, li);
+  li.style = 'text-decoration:none';
+  const doneButton = createElement('button', 'Done', null, li);
+  doneButton.onclick = (() => addSyleElement(elementId));
 }
 
 function deleteTask(array, id) {
@@ -30,4 +32,9 @@ function deleteTask(array, id) {
   const liIndex = array.indexOf(childLi);
   array.splice(liIndex, 1);
   liToDelete.remove();
+}
+
+function addSyleElement(id) {
+  const elementToMark = document.getElementById(id);
+  elementToMark.style = 'text-decoration:line-through';
 }
