@@ -22,8 +22,7 @@ const createItem = (task, parent) => {
     editButton.textContent = 'Edit';
     editButton.classList.add('task-button', 'task-button__edit');
     editButton.setAttribute('role', 'button');
-    editButton.setAttribute('onclick', 'editTask(this.parentElement.firstChild.textContent)');
-
+    editButton.setAttribute('onclick', 'editTask(this.parentElement.firstChild.textContent, this.parentElement)');
 
     li.append(p);
     li.append(editButton);
@@ -40,6 +39,12 @@ const removeTaskFromStore = ((task) => {
   const index = list.findIndex((element) => element === task); 
   list.splice(index, 1);
   renderList(state.toDoList);
+});
+
+const editTaskFromStore = (({ task, htmlElement }) => {
+  const list = state.toDoList;
+  const index = list.findIndex((element) => element === task); 
+  htmlElement.style.backgroundColor = 'red';
 });
 
 const reducer = ({ type, data }) => {
@@ -69,9 +74,9 @@ const removeTask = (task) => reducer({
   data: task,
 });
 
-const editTask = (task) => reducer({
+const editTask = (task, htmlElement ) => reducer({
   type: 'EDIT_TASK',
-  data: task,
+  data: { task, htmlElement } 
 });
 
 window.onload = renderList(state.toDoList);
