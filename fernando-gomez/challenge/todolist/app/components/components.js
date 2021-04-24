@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 const tasksList = document.querySelector('.tasksList');
 const tasksInput = document.querySelector('.tasksInput');
 let editorInput = '';
