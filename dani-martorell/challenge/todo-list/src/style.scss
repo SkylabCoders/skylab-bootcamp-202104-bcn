@@ -71,10 +71,14 @@ form {
                     background-color: rgba(39, 41, 176, 0.8);
                     margin-left: auto;
                 }
-
+                &__edit:hover {
+                    background-color: rgba(39, 41, 176, 1);
+                }
                 &__delete {
                     background-color: rgba(223, 26, 26, 0.8);
-
+                }
+                &__delete:hover {
+                    background-color: rgba(223, 26, 26, 1);
                 }
             }
             p {

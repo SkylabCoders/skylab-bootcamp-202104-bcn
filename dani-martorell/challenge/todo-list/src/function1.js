@@ -1,3 +1,4 @@
+
 const input = document.querySelector('.input-field');
 const btn = document.querySelector('.btn');
 btn.addEventListener
@@ -26,7 +27,6 @@ const createItem = (task, parent) => {
     li.append(deleteButton);
     parent.append(li);
 }
-
 const addTaskToStore = ((task) => {
   state.toDoList.push(task);
   renderList(state.toDoList);
@@ -55,3 +55,6 @@ const removeTask = (task) => reducer({
   type: 'REMOVE_TASK',
   data: task,
 });
+
+window.onload = renderList(state.toDoList);
+

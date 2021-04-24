@@ -1,4 +1,4 @@
 const state = {
 
-  toDoList: [],
+  toDoList: ['Perro veterinario', 'Ir al banco', 'Comprar regalo'],
 };
