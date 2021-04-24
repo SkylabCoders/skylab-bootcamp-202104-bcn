@@ -53,16 +53,21 @@ form {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 5px 0;
+            margin: 10px 0;
             padding: 10px 8px;
-            background-color: rgb(235, 235, 235);
+            background-color: rgb(247, 247, 247);
+            box-shadow: 4px 4px 10px -10px rgba(0, 0, 0, 0.6);
 
+
+        
             .task-button {
                 color: white;
                 border-radius: 5px;;
                 margin: 0 2px;
                 padding: 5px 10px;
                 cursor: pointer;
+                font-size: 12px;
+
 
                 &__edit {
                     background-color: rgba(39, 41, 176, 0.8);

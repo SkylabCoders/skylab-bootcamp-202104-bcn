@@ -1,5 +1,6 @@
 const input = document.querySelector('.input-field');
 const btn = document.querySelector('.btn');
+btn.addEventListener
 const renderList = (list) => {
   const ul = document.querySelector('.tasks__list');
   ul.innerHTML = '';
@@ -11,7 +12,7 @@ const renderList = (list) => {
     const editButton = document.createElement('a');
     const deleteButton = document.createElement('a');
     deleteButton.textContent = 'X';
-    editButton.textContent = 'E';
+    editButton.textContent = 'Edit';
     deleteButton.classList.add('task-button', 'task-button__delete')
     editButton.classList.add('task-button', 'task-button__edit')
     deleteButton.setAttribute('role', 'button');
