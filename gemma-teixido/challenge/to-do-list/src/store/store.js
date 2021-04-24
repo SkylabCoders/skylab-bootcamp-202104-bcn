@@ -1,9 +1,12 @@
-const addtasks = {
-  type: 'ADD TASK',
-  data: ['Go to Mercadona']
-};
+const tasks = []; // megaobjeto
 
-const deletetasks = {
-  type: 'DELETE TASK',
-  data: ['Go to Mercadona']
+const reducer = ({ type, payload }) => {
+  switch (type) {
+    case 'ADD_TASK':
+      tasks.push(payload);
+      updateList(tasks);
+      break;
+    default:
+      break;
+  }
 };

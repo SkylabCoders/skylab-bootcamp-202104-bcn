@@ -1,8 +1,5 @@
-const actions = [{
-  type: 'ADD_TASK',
-  payload: 'Go To Mercadona'
-}];
-
 const buttonEnterTasks = () => {
-  console.log('Hola');
+  const dataInput = document.querySelector('.inputTasks');
+  createTaskAction(dataInput.value);
+  dataInput.value = '';
 };

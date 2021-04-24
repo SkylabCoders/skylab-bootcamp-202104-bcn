@@ -24,6 +24,12 @@ const buttonFunction = () => {
   buttonEnterTasks.setAttribute('onclick', 'buttonEnterTasks()');
 };
 
+const updateList = (myList) => {
+  const divList = createElements('div', body, 'divList', null);
+  const ulList = createElements('ul', divList, 'ulForList', null);
+  const liList = createElements('li', ulList, 'inputTasks', `${myList}`);
+};
+
 const onLoad = () => {
   createHeader();
   divTasks();
