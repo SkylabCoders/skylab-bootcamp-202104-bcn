@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/extensions */
-
 const tasklist = document.querySelector('.todo-list');
 
 const store = {
@@ -20,19 +17,6 @@ const store = {
     },
   ],
   nextTaskId: 3,
-
-  handleDelete(id) {
-    this.dispatch(deleteTask(id));
-  },
-
-  updateTaskList() {
-    tasklist.innerHTML = '';
-    this.tasks.forEach((task) => {
-      createTaskListItem(
-        task.id, task.title, task.description, task.done, tasklist, this.handleDelete,
-      );
-    });
-  },
 
   tasksReducer(tasks = this.tasks, action) {
     let newTasks = [...tasks];
@@ -54,7 +38,17 @@ const store = {
         newTasks = newTasks.map(
           (task) => {
             if (task.id === action.taskData.id) {
-              return { ...action.taskData };
+              return { ...action.taskData, done: false };
+            } return task;
+          },
+        );
+
+        break;
+      case TOOGLE_TASK_STATE:
+        newTasks = newTasks.map(
+          (task) => {
+            if (task.id === action.taskId) {
+              return { ...task, done: !task.done };
             } return task;
           },
         );
@@ -68,8 +62,7 @@ const store = {
 
   dispatch(action) {
     this.tasks = this.tasksReducer(this.tasks, action);
-    this.updateTaskList();
-    return true;
+    updateTaskList();
   },
 
 };

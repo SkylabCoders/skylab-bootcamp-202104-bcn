@@ -16,3 +16,8 @@ const modifyTask = (taskData) => ({
   type: MODIFY_TASK,
   taskData,
 });
+
+const tootleTaskState = (taskId) => ({
+  type: TOOGLE_TASK_STATE,
+  taskId,
+});

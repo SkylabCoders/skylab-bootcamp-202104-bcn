@@ -20,9 +20,11 @@ const createTaskListItem = (id, title, description, done, parent) => {
   const itemTextContainer = createElement('div', item, 'item__text-container', null, null);
   const itemActionsContainer = createElement('div', item, 'item__actions-container', null, null);
   const btnDelete = createElement('button', itemActionsContainer, 'actions__button--delete', id, 'Delete');
-  btnDelete.onclick = () => store.handleDelete(id);
+  btnDelete.onclick = () => handleDelete(id);
   const btnModify = createElement('button', itemActionsContainer, 'actions__button--modify', id, 'Modify');
   btnModify.onclick = () => handleModify(id);
+  const btnToogleState = createElement('button', itemActionsContainer, 'actions__button--toogle', id, 'Complete');
+  btnToogleState.onclick = () => handleComplete(id);
   createElement('h1', itemTextContainer, null, null, title);
   createElement('p', itemTextContainer, null, null, description);
   createElement('p', itemTextContainer, null, null, `done: ${done}`);

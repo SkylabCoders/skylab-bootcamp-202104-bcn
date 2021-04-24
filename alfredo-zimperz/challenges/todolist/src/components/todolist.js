@@ -13,20 +13,12 @@ const updateTaskTitle = () => {
 const updateTaskDescription = () => {
   newTaskInfo.description = event.target.value;
 };
+const handleDelete = (id) => {
+  store.dispatch(deleteTask(id));
+};
 
-const saveTask = () => {
-  console.log(newTaskInfo);
-  if (newTaskInfo.id === null) {
-    store.dispatch(createTask(newTaskInfo));
-    console.log(store.tasks);
-  } else {
-    store.dispatch(modifyTask({ ...newTaskInfo }));
-  }
-  newTaskInfo.title = null,
-  newTaskInfo.description = null;
-  newTaskInfo.id = null;
-  inputAddTaskTitle.value = '';
-  inputAddTaskDescription.value = '';
+const handleComplete = (id) => {
+  store.dispatch(tootleTaskState(id));
 };
 
 const handleModify = (id) => {
@@ -38,5 +30,26 @@ const handleModify = (id) => {
   newTaskInfo.id = taskToModify.id;
 };
 
-store.updateTaskList();
-// console.log('hola');
+const saveTask = () => {
+  if (newTaskInfo.id === null) {
+    store.dispatch(createTask(newTaskInfo));
+  } else {
+    store.dispatch(modifyTask({ ...newTaskInfo }));
+  }
+  newTaskInfo.title = null,
+  newTaskInfo.description = null;
+  newTaskInfo.id = null;
+  inputAddTaskTitle.value = '';
+  inputAddTaskDescription.value = '';
+};
+
+const updateTaskList = () => {
+  tasklist.innerHTML = '';
+  store.tasks.forEach((task) => {
+    createTaskListItem(
+      task.id, task.title, task.description, task.done, tasklist, handleDelete,
+    );
+  });
+};
+
+updateTaskList();
