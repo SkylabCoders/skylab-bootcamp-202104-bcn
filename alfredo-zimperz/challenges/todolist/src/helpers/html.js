@@ -1,7 +1,3 @@
-/* eslint-disable import/extensions */
-/* eslint-disable no-unused-expressions */
-import STORE from '../store/store.js';
-
 const getElementByClassName = (className) => document.querySelector(`.${className}`);
 
 const createElement = (
@@ -24,11 +20,9 @@ const createTaskListItem = (id, title, description, done, parent) => {
   const itemTextContainer = createElement('div', item, 'item__text-container', null, null);
   const itemActionsContainer = createElement('div', item, 'item__actions-container', null, null);
   const btnDelete = createElement('button', itemActionsContainer, 'actions__button--delete', id, 'Delete');
-  btnDelete.onclick = () => STORE.handleDelete(id);
+  btnDelete.onclick = () => store.handleDelete(id);
   createElement('button', itemActionsContainer, 'actions__button--modify', id, 'Modify');
   createElement('h1', itemTextContainer, null, null, title);
   createElement('p', itemTextContainer, null, null, description);
   createElement('p', itemTextContainer, null, null, `done: ${done}`);
 };
-
-export default { createElement, createTaskListItem, getElementByClassName };

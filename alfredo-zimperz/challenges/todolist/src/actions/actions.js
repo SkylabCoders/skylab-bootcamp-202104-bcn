@@ -1,6 +1,3 @@
-/* eslint-disable import/extensions */
-import { GET_TASKS, DELETE_TASK } from './actionTypes.js';
-
 const getTasks = () => ({
   type: GET_TASKS,
 });
@@ -10,4 +7,7 @@ const deleteTask = (taskId) => ({
   taskId,
 });
 
-export default { getTasks, deleteTask };
+const createTask = (taskData) => ({
+  type: CREATE_TASK,
+  taskData,
+});
