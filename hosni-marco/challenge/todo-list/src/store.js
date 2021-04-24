@@ -1,28 +1,18 @@
-const store = [
-    {
-        type: "CLIENT-CREATE",
-        cient: {
-            fname: "",
-            lname: "",
-    }
-    },
-    {
-        type: "OBTAIN-CLIENT"
-    },
-    {
-        type: "UPDATE-CLIENT",
-    },
-    {
-        type: "DELETE-CLIENT"
-    },
-    {
-        clients:[
-            {
-            clientID,
-            clientFname,
-            clientLname,
-            }
-        ]
-    }
-]
-  
+const store = {
+  clients: {
+    fname: 'hosni',
+    lname: 'marco'
+  }
+  // updateClient:{
+  //     fname,
+  //     lname,
+  // }
+};
+
+function kk() {
+  console.log('asdasd');
+}
+
+// export default {
+//   kk
+// };
