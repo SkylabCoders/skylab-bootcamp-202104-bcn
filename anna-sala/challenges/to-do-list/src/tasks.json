@@ -1,0 +1,11 @@
+{
+    "tasks":[
+        {"monday":[{"workRelated"}, {"houseHold"}, {"shopping"}, {"others"}]},
+        {"tuesday"}, 
+        {"wednesday"}, 
+        {"thursday"}, 
+        {"friday"}, 
+        {"saturday"}, 
+        {"sunday"}
+    ]
+}
