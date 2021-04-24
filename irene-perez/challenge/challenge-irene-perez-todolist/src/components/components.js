@@ -13,13 +13,13 @@ const createElement = (element, text, href, parent, id) => {
   return elementToCreate;
 };
 
-function createList(array) {
-  array.forEach((element) => {
-    const li = createElement('li', `${element}`, null, ul);
-    createElement('button', 'Modify', null, li);
+function createList(tasks) {
+  tasks.forEach((task) => {
+    const li = createElement('li', `${task.name}`, null, ul);
+    const modifyButton = createElement('button', 'Modify', null, li);
     const deleteButton = createElement('button', 'Delete', null, li);
-    deleteButton.onclick = function () { deleteToList(, myArray); };
-    createElement('button', 'Done', null, li);
+    deleteButton.onclick = (() => deleteTask(task.id));
+    const doneButton = createElement('button', 'Done', null, li);
   });
 }
 
@@ -30,6 +30,12 @@ function addToList(element, array) {
   createElement('button', 'Modify', null, li);
   createElement('button', 'Delete', null, li);
   createElement('button', 'Done', null, li);
+}
+
+function deleteTask(taskId) {
+  const liToDelete = document.getElementById(taskId);
+  const childLi = liToDelete.firstChild.textContent;
+  deleteToList(childLi, myArray);
 }
 
 function deleteToList(element, array) {
