@@ -3,9 +3,10 @@ const myReducer = ({ type, data }) => {
   switch (type) {
     case 'ADD_TASK':
       task.push(data);
-      chopped(task);
+      createTask(task);
       break;
     default:
       return type;
   }
+  return task;
 };
