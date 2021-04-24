@@ -1,0 +1,17 @@
+@import './colors.scss';
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    font-family: $MAIN-FONT;
+  }
+
+  .weekdays{
+    display: flex;
+    background-color:$BACKGROUND-COLOR;
+
+  }
