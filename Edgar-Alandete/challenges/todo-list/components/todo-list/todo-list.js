@@ -17,14 +17,6 @@ function createDomElement(parent, element, text = null, attributes = []) {
   return elementToCreate;
 }
 
-function deleteTask(taskId) {
-  const payload = {
-    type: 'DELETE_TASK',
-    data: taskId,
-  };
-  dispatcher(payload);
-}
-
 function drawTodoList(tasks) {
   const taskList = document.getElementById('todo-list');
   taskList.innerHTML = '';
@@ -46,4 +38,19 @@ function createTask() {
     data: taskToCreate,
   };
   dispatcher(payLoad);
+}
+
+function deleteTask(taskId) {
+  const payload = {
+    type: 'DELETE_TASK',
+    data: taskId,
+  };
+  dispatcher(payload);
+}
+
+function loadTasks() {
+  const payload = {
+    type: 'LOAD_TASKS',
+  };
+  dispatcher(payload);
 }

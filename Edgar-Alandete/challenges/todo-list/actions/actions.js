@@ -27,6 +27,9 @@ function dispatcher(payLoad) {
     case 'DELETE_TASK':
       tasksReducer(payLoad.data, payLoad.type);
       break;
+    case 'LOAD_TASKS':
+      tasksReducer(payLoad.data, payLoad.type);
+      break;
     default:
 
       console.log('no task defined');
