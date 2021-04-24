@@ -7,8 +7,20 @@
     <title><todo-list></todo-list></title>
 </head>
 <body>
-    
+    <main class="main-content">
+        <p id="fname-information"></p>
+        <p id="lname-information"></p>
+        <label for="fname-input">Input first name
+            <input type="text" id="fname-input">
+        </label>
+        <label for="lname-input">Input last name
+            <input type="text" id="lname-input">
+        </label>
+        <button onclick="clientDispatcherReduce(UPDATEclient)">Actualizar informacion</button>
+    </main>
 </body>
 <script src="./store.js"></script>
 <script src="./service.js"></script>
+<script src="./components.js"></script>
+<!-- <script src="./service.test.js"></script> -->
 </html>
