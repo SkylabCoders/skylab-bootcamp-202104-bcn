@@ -25,7 +25,8 @@ const createTaskListItem = (id, title, description, done, parent) => {
   btnModify.onclick = () => handleModify(id);
   const btnToogleState = createElement('button', itemActionsContainer, 'actions__button--toogle', id, 'Complete');
   btnToogleState.onclick = () => handleComplete(id);
-  createElement('h1', itemTextContainer, null, null, title);
+  const taskh1 = createElement('h1', itemTextContainer, null, null, title);
+  if (done) { taskh1.classList.add('done'); }
   createElement('p', itemTextContainer, null, null, description);
   createElement('p', itemTextContainer, null, null, `done: ${done}`);
 };
