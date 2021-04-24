@@ -8,10 +8,12 @@
     color: rgb(57, 57, 57)
 }
 
+
 main {
     padding: 50px 40px;
     max-width: 800px;
 }
+
 
 form {
     label {
@@ -38,6 +40,7 @@ form {
 
 .tasks {
     margin-top: 30px;
+
     h1 {
         text-transform: uppercase;
 
@@ -47,11 +50,35 @@ form {
         list-style: none;
 
         &-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             margin: 5px 0;
             padding: 10px 8px;
             background-color: rgb(235, 235, 235);
 
+            .task-button {
+                color: white;
+                border-radius: 5px;;
+                margin: 0 2px;
+                padding: 5px 10px;
+                cursor: pointer;
+
+                &__edit {
+                    background-color: rgba(39, 41, 176, 0.5);
+                    margin-left: auto;
+                }
+
+                &__delete {
+                    background-color: rgba(223, 26, 26, 0.5);
+
+                }
+            }
+            p {
+                margin: 0 5px;
+            }
         }
+        
     }
 
 }

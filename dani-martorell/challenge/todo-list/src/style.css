@@ -48,8 +48,38 @@ form .input-field {
 }
 
 .tasks .tasks__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 5px 0;
   padding: 10px 8px;
   background-color: #ebebeb;
+}
+
+.tasks .tasks__list-item .task-button {
+  color: white;
+  border-radius: 5px;
+  margin: 0 2px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.tasks .tasks__list-item .task-button__edit {
+  background-color: rgba(39, 41, 176, 0.5);
+  margin-left: auto;
+}
+
+.tasks .tasks__list-item .task-button__delete {
+  background-color: rgba(223, 26, 26, 0.5);
+}
+
+.tasks .tasks__list-item p {
+  margin: 0 5px;
 }
 /*# sourceMappingURL=style.css.map */

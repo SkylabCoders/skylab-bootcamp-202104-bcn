@@ -6,10 +6,18 @@ const renderList = (list) => {
   list.forEach((task) => {
     const li = document.createElement('li');
     li.className = 'tasks__list-item';
-    li.textContent = task;
+    const p = document.createElement('p');
+    p.textContent = task;
+    const editButton = document.createElement('a');
     const deleteButton = document.createElement('a');
     deleteButton.textContent = 'X';
+    editButton.textContent = 'E';
+    deleteButton.classList.add('task-button', 'task-button__delete')
+    editButton.classList.add('task-button', 'task-button__edit')
     deleteButton.setAttribute('role', 'button');
+    editButton.setAttribute('role', 'button');
+    li.append(p);
+    li.append(editButton);
     li.append(deleteButton);
     ul.append(li);
   });
