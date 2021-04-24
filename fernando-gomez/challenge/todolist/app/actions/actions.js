@@ -34,6 +34,14 @@ const editTask = (id, newContent) => {
   return result;
 };
 
+const markTaskAsDone = (id) => {
+  const result = {
+    type: MARK_AS_DONE,
+    payload: id,
+  };
+  return result;
+};
+
 const deleteTask = (taskToDelete) => {
   const result = {
     type: DELETE_TASK,

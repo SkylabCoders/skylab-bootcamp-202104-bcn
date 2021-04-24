@@ -4,14 +4,17 @@ const store = {
     {
       id: 1,
       description: 'pick up milk',
+      status: 'pending',
     },
     {
       id: 2,
       description: 'learn backbone',
+      status: 'pending',
     },
     {
       id: 3,
       description: 'go for a run',
+      status: 'pending',
     },
   ],
 
@@ -32,11 +35,25 @@ const store = {
         break;
 
       case EDIT_TASK:
+        this.editButtonOpened = null;
         store.allTasksDB = allTasksDB.map((task) => {
           if (task.id === payload.id) {
             return {
               id: payload.id,
               description: payload.newContent,
+            };
+          }
+          return task;
+        });
+        break;
+
+      case MARK_AS_DONE:
+        store.allTasksDB = allTasksDB.map((task) => {
+          if (task.id === payload) {
+            return {
+              id: task.id,
+              description: task.description,
+              status: 'done',
             };
           }
           return task;
@@ -72,4 +89,8 @@ const handleShowEditInput = (id) => {
 
 const handleEdit = (id) => {
   store.dispatch(editTask(id, editorInput));
+};
+
+const handleCompleted = (id) => {
+  store.dispatch(markTaskAsDone(id));
 };

@@ -11,6 +11,15 @@ const deleteButton = (taskObject) => {
   return deleteTaskButton;
 };
 
+const taskCompletedButton = (id) => {
+  const completedButton = document.createElement('button');
+  completedButton.classList = 'completed-button';
+  completedButton.innerText = '✔︎';
+  completedButton.setAttribute('onclick', `handleCompleted(${id})`);
+
+  return completedButton;
+};
+
 const editionDoneButton = () => {
   const doneButton = document.createElement('button');
   doneButton.classList = 'submit-edit-button';
@@ -30,10 +39,17 @@ const printTask = (taskObject) => {
   const taskListElement = document.createElement('li');
   const deleteTaskButton = deleteButton(taskObject);
   const editButton = editTaskButton(taskObject);
+  const taskCompleted = taskCompletedButton(taskObject.id);
   taskListElement.innerText = `Task: ${taskObject.id} -> ${taskObject.description}`;
   tasksList.appendChild(taskListElement);
   taskListElement.appendChild(deleteTaskButton);
-  taskListElement.appendChild(editButton);
+  taskListElement.appendChild(taskCompleted);
+
+  if (taskObject.status === 'done') {
+    taskListElement.style = 'color: green';
+  } else {
+    taskListElement.appendChild(editButton);
+  }
 };
 
 const handleKeyUp = () => {
