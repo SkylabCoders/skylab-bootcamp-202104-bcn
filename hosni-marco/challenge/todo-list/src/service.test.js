@@ -1,4 +1,4 @@
-describe(`Given the function, `, () =>{
+describe(`Given the function, `, () => {
     [
         {state: FIRSTNAMEreduce, action: 'omar', result: store.clients.fname === 'omar'}
     ]array.forEach(element => {
