@@ -8,9 +8,6 @@ title.innerHTML = 'To do List ! !';
 const main = document.createElement('main');
 document.body.appendChild(main);
 
-const containerTodo = document.createElement('div');
-main.appendChild(containerTodo);
-
 const containerInput = document.createElement('div');
 main.appendChild(containerInput);
 
@@ -18,14 +15,12 @@ const inputCreate = document.createElement('input');
 containerInput.appendChild(inputCreate);
 inputCreate.setAttribute('id', 'inputTodo');
 
-const listTodo = document.createElement('ul');
-
 const createButton = document.createElement('button');
 containerInput.appendChild(createButton);
 createButton.innerHTML = 'Create';
 createButton.setAttribute('onclick', 'createList()');
 
-const deleteButton = document.createElement('button');
-containerInput.appendChild(deleteButton);
-deleteButton.innerHTML = 'Delete';
-deleteButton.setAttribute('onclick', 'deleteList()');
+const containerTodo = document.createElement('div');
+main.appendChild(containerTodo);
+const listTodo = document.createElement('ul');
+containerTodo.appendChild(listTodo);

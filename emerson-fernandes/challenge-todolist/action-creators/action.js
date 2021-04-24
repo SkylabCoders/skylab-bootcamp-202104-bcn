@@ -1,29 +1,42 @@
-let state = [];
+const state = [];
+/* let idButton = 0; */
+let idList = 0;
 
 function deleteList() {
-  if (state.length === 0) {
-    alert('Your list must contain thing to do !');
-  } else {
-    const todoItem = document.getElementById('inputTodo').value;
-    const filteredList = state.filter(((item) => item !== todoItem));
-    state = filteredList;
-  }
+
 }
 
 function createList() {
   const todoItem = document.getElementById('inputTodo').value;
+  const createTodo = document.createElement('li');
+  createTodo.setAttribute('id', idList += 1);
+  listTodo.appendChild(createTodo);
+  createTodo.innerHTML = todoItem;
+
+  const deleteButton = document.createElement('button');
+  createTodo.appendChild(deleteButton);
+  /* deleteButton.setAttribute('id', idList += 1); */
+  deleteButton.innerHTML = 'Delete';
+  deleteButton.setAttribute('onclick', 'deleteList()');
+
+  /* const editButton = document.createElement('button');
+  createTodo.appendChild(editButton);
+  editButton.setAttribute('id', id);
+  editButton.innerHTML = 'Edit';
+  editButton.setAttribute('onclick', 'edit()'); */
+
   state.push(todoItem);
-  printList(todoItem);
+
   console.log(state);
 }
 
-function printList(update) {
-  containerInput.appendChild(listTodo);
-  const inputList = document.createElement('li');
-  listTodo.appendChild(inputList);
-  inputList.innerHTML = update;
-}
+/* const deleteButton = document.createElement('button');
+    toDoThings.appendChild(deleteButton);
+    deleteButton.setAttribute('id', id);
+    deleteButton.innerHTML = 'Delete';
+    deleteButton.setAttribute('onclick', 'deleteList()');
 
-if (state.length > 0) {
-  printList(state);
-}
+      const editButton = document.createElement('button');
+      toDoThings.appendChild(editButton);
+      editButton.innerHTML = 'Edit';
+      editButton.setAttribute('onclick', 'editList()'); */
