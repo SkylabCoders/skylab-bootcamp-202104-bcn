@@ -4,8 +4,11 @@ btn.addEventListener
 const renderList = (list) => {
   const ul = document.querySelector('.tasks__list');
   ul.innerHTML = '';
-  list.forEach((task) => {
-    const li = document.createElement('li');
+  list.forEach((task) => createItem(task, ul));
+};
+
+const createItem = (task, parent) => {
+  const li = document.createElement('li');
     li.className = 'tasks__list-item';
     const p = document.createElement('p');
     p.textContent = task;
@@ -21,9 +24,8 @@ const renderList = (list) => {
     li.append(p);
     li.append(editButton);
     li.append(deleteButton);
-    ul.append(li);
-  });
-};
+    parent.append(li);
+}
 
 const addTaskToStore = ((task) => {
   state.toDoList.push(task);
