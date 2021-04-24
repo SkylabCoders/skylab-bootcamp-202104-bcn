@@ -1,18 +1,7 @@
 const state = {
-    create:'create',
-    read:'read',
-    update:'update',
-    delete:'delete'
+    deleteButton: 'Delete Button',
+    uploadButton: 'Upload Button',
+    [`Pomodoro Break`]: 'Pomodoro Break'
 };
 
-const checkInputValue = 
-    switch (inputValue) {
-        case inputValue:
-            state.newValue = inputValue;
-            const listTodo = createTodoList();
-            break;  
-        default:
-            alert('error');
-            break;
-    }
 
