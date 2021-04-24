@@ -13,32 +13,21 @@ const createElement = (element, text, href, parent, id) => {
   return elementToCreate;
 };
 
-function createList(tasks) {
-  tasks.forEach((task) => {
-    const li = createElement('li', `${task.name}`, null, ul);
-    const modifyButton = createElement('button', 'Modify', null, li);
-    const deleteButton = createElement('button', 'Delete', null, li);
-    deleteButton.onclick = (() => deleteTask(task.id));
-    const doneButton = createElement('button', 'Done', null, li);
-  });
-}
-
 function addToList(element, array) {
   const newElementList = element.value;
   array.push(newElementList);
-  const li = createElement('li', `${newElementList}`, null, ul);
+  const li = createElement('li', `${newElementList}`, null, ul, `${array.length}`);
   createElement('button', 'Modify', null, li);
-  createElement('button', 'Delete', null, li);
+  const deleteButton = createElement('button', 'Delete', null, li);
+  const elementId = li.id;
+  deleteButton.onclick = (() => deleteTask(myArray, elementId));
   createElement('button', 'Done', null, li);
 }
 
-function deleteTask(taskId) {
-  const liToDelete = document.getElementById(taskId);
-  const childLi = liToDelete.firstChild.textContent;
-  deleteToList(childLi, myArray);
-}
-
-function deleteToList(element, array) {
-  const deletedElement = array.indexOf(element);
-  array.splice(deletedElement, 1);
+function deleteTask(array, id) {
+  const liToDelete = document.getElementById(id);
+  const childLi = liToDelete.innerHTML;
+  const liIndex = array.indexOf(childLi);
+  array.splice(liIndex, 1);
+  liToDelete.remove();
 }

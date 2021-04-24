@@ -6,8 +6,6 @@ createElement('h2', 'To Do list:', null, header);
 
 const ul = createElement('ul', null, null, header);
 
-createList(myArray);
-
 const input = createElement('input', null, null, header);
 input.getAttribute('value');
 
