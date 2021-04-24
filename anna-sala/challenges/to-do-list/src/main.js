@@ -1,4 +1,4 @@
-let days = [];
+let weekdays = [];
 
 function fetchTaskJson(callback) {
   return fetch('../store/tasks.json')
@@ -8,9 +8,8 @@ function fetchTaskJson(callback) {
 }
 function saveDesiredData(data) {
   const { tasks } = data;
-  days = tasks.forEach((day) => day);
-  console.log(days);
+  weekdays = tasks;
+  console.log(weekdays);
+  // weekdays.forEach((day) => day);
+  return weekdays;
 }
-
-fetchTaskJson(saveDesiredData);
-console.log(saveDesiredData);
