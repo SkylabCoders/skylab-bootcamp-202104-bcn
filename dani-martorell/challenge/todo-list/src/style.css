@@ -71,12 +71,12 @@ form .input-field {
 }
 
 .tasks .tasks__list-item .task-button__edit {
-  background-color: rgba(39, 41, 176, 0.5);
+  background-color: rgba(39, 41, 176, 0.8);
   margin-left: auto;
 }
 
 .tasks .tasks__list-item .task-button__delete {
-  background-color: rgba(223, 26, 26, 0.5);
+  background-color: rgba(223, 26, 26, 0.8);
 }
 
 .tasks .tasks__list-item p {

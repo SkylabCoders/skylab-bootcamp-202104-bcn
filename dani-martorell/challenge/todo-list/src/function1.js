@@ -15,6 +15,7 @@ const renderList = (list) => {
     deleteButton.classList.add('task-button', 'task-button__delete')
     editButton.classList.add('task-button', 'task-button__edit')
     deleteButton.setAttribute('role', 'button');
+    deleteButton.setAttribute('onclick', 'removeTask(this.parentElement.firstChild.textContent)');
     editButton.setAttribute('role', 'button');
     li.append(p);
     li.append(editButton);
@@ -30,15 +31,18 @@ const addTaskToStore = ((task) => {
 
 const removeTaskFromStore = ((task) => {
   const list = state.toDoList;
-  const index = list.findIndex((item) => item === task);
+  const index = list.findIndex((element) => element === task); 
   list.splice(index, 1);
+  renderList(state.toDoList);
 });
 
 const reducer = ({ type, data }) => {
   if (type === 'ADD_TASK') {
     addTaskToStore(data);
   }
-//   if( type === '')
+  if(type === 'REMOVE_TASK') {
+    removeTaskFromStore(data)
+  }
 };
 const addTask = (task) => reducer({
   type: 'ADD_TASK',
@@ -47,8 +51,4 @@ const addTask = (task) => reducer({
 const removeTask = (task) => reducer({
   type: 'REMOVE_TASK',
   data: task,
-});
-
-btn.onclick = (() => {
-  addTask(input.value);
 });
