@@ -23,14 +23,15 @@ function drawTodoList(tasks) {
 
   tasks.forEach(({ taskId, value, isFinished }) => {
     const newTask = createDomElement(taskList, 'li', '', { id: taskId, class: 'task-list__element element' });
-    createDomElement(newTask, 'p', value);
+    const taskNote = createDomElement(newTask, 'p', value);
     const buttonDelete = createDomElement(newTask, 'button', 'Delete', { class: 'element__button element__button--delete' });
     buttonDelete.onclick = (() => deleteTask(taskId));
-    if (!isFinished) {
-      const buttonUpdate = createDomElement(newTask, 'button', 'Done', { class: 'element__button element__button--done' });
-      buttonUpdate.onclick = (() => updateTask(taskId));
-    } else {
-      createDomElement(newTask, 'span', 'Task Finished');
+    const buttonUpdate = createDomElement(newTask, 'button', 'Done', { class: 'element__button element__button--done' });
+    buttonUpdate.onclick = (() => updateTask(taskId));
+
+    if (isFinished) {
+      taskNote.classList.add('done');
+      buttonUpdate.setAttribute('disabled', 'disabled');
     }
   });
 }
@@ -67,4 +68,9 @@ function updateTask(taskId) {
     data: taskId,
   };
   dispatcher(payload);
+}
+
+function clearInput() {
+  const task = document.getElementById('new-task');
+  task.value = '';
 }
