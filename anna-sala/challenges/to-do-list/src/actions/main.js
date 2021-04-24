@@ -10,6 +10,8 @@ function saveDesiredData(data) {
   const { tasks } = data;
   weekdays = tasks;
   console.log(weekdays);
-  // weekdays.forEach((day) => day);
-  return weekdays;
+  return {
+    type: 'PRINT_TASKS',
+    data: weekdays,
+  };
 }

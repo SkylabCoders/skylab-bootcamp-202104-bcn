@@ -41,3 +41,19 @@
         width: 90%;
     }
   }
+
+  .tasks{
+    display: flex;
+    background-color:$BACKGROUND-COLOR;
+    &__container{
+        border-color: $SECONDARY-LIGHT;
+        display: flex;
+        flex-direction: column;
+        font-size: 30px;
+        list-style: none;
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        width: 90%;
+    }
+  }
