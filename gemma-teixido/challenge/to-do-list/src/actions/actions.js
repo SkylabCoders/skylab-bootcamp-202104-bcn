@@ -3,3 +3,8 @@ const buttonEnterTasks = () => {
   createTaskAction(dataInput.value);
   dataInput.value = '';
 };
+
+const buttonTaskDelete = () => {
+  const buttonTaskDelete = document.querySelector('.buttonTaskDelete');
+  deleteTaskAction(buttonTaskDelete);
+};

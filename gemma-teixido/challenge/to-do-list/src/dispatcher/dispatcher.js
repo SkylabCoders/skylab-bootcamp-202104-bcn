@@ -6,6 +6,14 @@ const createTaskAction = (value) => {
   dispatch(addTask);
 };
 
+deleteTaskAction = () => {
+  const deleteTask = {
+    type: 'DELETE_TASK',
+    payload: ''
+  };
+  dispatch(deleteTask);
+};
+
 const dispatch = (action) => {
   reducer(action);
 };

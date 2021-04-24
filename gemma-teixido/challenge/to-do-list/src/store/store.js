@@ -6,6 +6,9 @@ const reducer = ({ type, payload }) => {
       tasks.push(payload);
       updateList(tasks);
       break;
+    case 'DELETE_TASK':
+      console.log('detele');
+      break;
     default:
       break;
   }

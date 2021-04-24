@@ -27,7 +27,13 @@ const buttonFunction = () => {
 const updateList = (myList) => {
   const divList = createElements('div', body, 'divList', null);
   const ulList = createElements('ul', divList, 'ulForList', null);
-  const liList = createElements('li', ulList, 'inputTasks', `${myList}`);
+  const liList = createElements('li', ulList, 'inputTasks', `${myList[myList.length - 1]}`);
+  createElements('button', liList, 'buttonTaskDone', 'Done');
+  // buttonEnterTasks.setAttribute('onclick', 'buttonEnterTasks()');
+  createElements('button', liList, 'buttonTaskDelete', 'Delete');
+  // buttonEnterTasks.setAttribute('onclick', 'buttonEnterTasks()');
+  const buttonTaskDelete = document.querySelector('.buttonTaskDelete');
+  buttonTaskDelete.setAttribute('onclick', 'buttonTaskDelete()');
 };
 
 const onLoad = () => {
