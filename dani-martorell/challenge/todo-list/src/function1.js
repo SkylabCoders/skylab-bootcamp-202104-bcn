@@ -1,12 +1,14 @@
 const input = document.querySelector('.input-field');
 const btn = document.querySelector('.btn');
-const createItem = (task, parent) => {
+const createItem = ({ task }, parent) => {
   const li = document.createElement('li');
   li.className = 'tasks__list-item';
   const p = document.createElement('p');
   p.textContent = task;
+
   const deleteButton = document.createElement('a');
   const editButton = document.createElement('a');
+  const editInput = document.createElement('input');
 
   deleteButton.textContent = 'X';
   deleteButton.classList.add('task-button', 'task-button__delete');
@@ -17,7 +19,6 @@ const createItem = (task, parent) => {
   editButton.setAttribute('role', 'button');
   editButton.setAttribute('onclick', 'editTask(this.parentElement.firstChild.textContent, this.parentElement)');
 
-  const editInput = document.createElement('input');
   editInput.classList.add('edit-input');
   editInput.setAttribute('type', 'text');
   editInput.setAttribute('autofocus', 'true');
@@ -33,15 +34,15 @@ const createItem = (task, parent) => {
 
   parent.append(li);
 };
-
 const renderList = (list) => {
   const ul = document.querySelector('.tasks__list');
   ul.innerHTML = '';
   list.forEach((task) => createItem(task, ul));
 };
 
-const addTaskToStore = ((task) => {
-  state.toDoList.push(task);
+const addTaskToStore = ((type, { task, id }) => {
+  state.toDoList.push({ task, id });
+  state.lastId = id;
   renderList(state.toDoList);
 });
 
@@ -74,7 +75,7 @@ const editTaskFromStore = (({ task, htmlElement }) => {
 const reducer = ({ type, data }) => {
   switch (type) {
     case 'ADD_TASK':
-      addTaskToStore(data);
+      addTaskToStore(type, data);
       break;
 
     case 'REMOVE_TASK':
@@ -91,7 +92,10 @@ const reducer = ({ type, data }) => {
 };
 const addTask = (task) => reducer({
   type: 'ADD_TASK',
-  data: task,
+  data: {
+    task,
+    id: state.lastId + 1,
+  },
 });
 const removeTask = (task) => reducer({
   type: 'REMOVE_TASK',
