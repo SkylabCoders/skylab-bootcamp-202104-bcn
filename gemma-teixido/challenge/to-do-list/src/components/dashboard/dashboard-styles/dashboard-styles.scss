@@ -1,0 +1,17 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: burlywood;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
