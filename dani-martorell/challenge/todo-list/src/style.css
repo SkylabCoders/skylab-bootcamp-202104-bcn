@@ -97,6 +97,7 @@ form .input-field {
 }
 
 .tasks .tasks__list-item .task-button__editOk {
+  display: none;
   background-color: rgba(236, 134, 0, 0.7);
 }
 
@@ -108,13 +109,8 @@ form .input-field {
   margin: 0 5px;
 }
 
-.tasks .tasks__list-item .editBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.tasks .tasks__list-item .editBox__input {
+.tasks .tasks__list-item .edit-input {
+  display: none;
   position: absolute;
   background-color: #f7f7f7;
   top: 3px;
@@ -126,9 +122,5 @@ form .input-field {
   outline: none;
   font-style: italic;
   z-index: 1;
-}
-
-.tasks .tasks__list-item .editBox__btn {
-  margin-left: auto;
 }
 /*# sourceMappingURL=style.css.map */
