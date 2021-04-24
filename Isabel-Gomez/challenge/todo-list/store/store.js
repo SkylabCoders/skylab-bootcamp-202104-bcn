@@ -1,3 +1,5 @@
+const { addNewTask, deleteTask, modifyTask } = require('../dispatcher/dispatcher');
+
 const store = [
   {
     id: 1,
@@ -25,4 +27,25 @@ const store = [
   },
 ];
 
-module.exports = store;
+const reducerToAdd = (action) => {
+  switch (action.type) {
+    case 'ADD_TASK':
+      createElements(); // como llamo a toDoList????? /////
+      break;
+
+    default:
+      break;
+  }
+};
+
+const reducerToDelete = () => {
+
+};
+
+const reducerToModify = () => {
+
+};
+
+module.exports = {
+  store, reducerToAdd, reducerToDelete, reducerToModify,
+};

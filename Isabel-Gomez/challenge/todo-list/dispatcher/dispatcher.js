@@ -2,8 +2,10 @@ const ACTIONS = require('../actions/actionTypes');
 
 // import { ACTIONS } from '../actions/actionTypes';
 
-export const addNewTask = (data) => ({ type: ACTIONS.ADD_TASK, data });
+const addNewTask = (data) => ({ type: ACTIONS.ADD_TASK, data });
 
-export const deleteTask = (id) => ({ type: ACTIONS.DELETE_TASK, id });
+const deleteTask = (id) => ({ type: ACTIONS.DELETE_TASK, id });
 
-export const modifyTask = (id) => ({ type: ACTIONS.MODIFY_TASK, id });
+const modifyTask = (id) => ({ type: ACTIONS.MODIFY_TASK, id });
+
+module.exports = { addNewTask, deleteTask, modifyTask };
