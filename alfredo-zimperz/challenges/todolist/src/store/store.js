@@ -49,6 +49,17 @@ const store = {
           { ...action.taskData, done: false, id: this.nextTaskId },
         ];
         this.nextTaskId++;
+        break;
+      case MODIFY_TASK:
+        newTasks = newTasks.map(
+          (task) => {
+            if (task.id === action.taskData.id) {
+              return { ...action.taskData };
+            } return task;
+          },
+        );
+
+        break;
       default:
         break;
     }

@@ -12,30 +12,13 @@
         <div class="addtask">
             <input type="text" class="addtask__input--title" placeholder="title" onkeyup="updateTaskTitle()">
             <input type="text" class="addtask__input--description" placeholder="description" onkeyup="updateTaskDescription()">
-            <button class="addtask__button" onclick="addTask()">+</button>
+            <button class="addtask__button" onclick="saveTask()">SAVE</button>
         </div>
         <div class="todo-list">
 
         </div>
     </main>
 </body>
-<script>
-    // const newTaskInfo = {
-    //     title: null,
-    //     description: null,
-    // };
-
-    // updateTaskTitle = ()=> {
-    // newTaskInfo.title = event.target.value;
-    // }
-    // updateTaskDescription = ()=> {
-    //     newTaskInfo.description = event.target.value;
-    // }
-    // addTask = (task) => {
-    //     store.dispach(createTask(task))
-
-    // }
-</script>
 
 <script src="./../helpers/html.js"></script>
 <script src="./../store/store.js"></script>

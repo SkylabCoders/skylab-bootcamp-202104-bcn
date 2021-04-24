@@ -11,3 +11,8 @@ const createTask = (taskData) => ({
   type: CREATE_TASK,
   taskData,
 });
+
+const modifyTask = (taskData) => ({
+  type: MODIFY_TASK,
+  taskData,
+});
