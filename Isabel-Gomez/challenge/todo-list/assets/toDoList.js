@@ -21,7 +21,7 @@ const createForm = () => {
   inputNewTask.setAttribute('required', 'required');
   inputNewTask.setAttribute('pattern', '[aA-zZ]{3,40}');
   inputNewTask.setAttribute('title', 'It cant be empty');
-  inputNewTask.setAttribute('placeholder', 'Detail your task');
+  inputNewTask.setAttribute('placeholder', 'Detail your task...');
 };
 
 const onClickCreateButton = () => {
@@ -32,18 +32,25 @@ const onClickCreateButton = () => {
   };
 };
 
+const onLoad = () => {
+  createTitle();
+  createForm();
+  onClickCreateButton();
+};
+
 const printNewTask = (arrayTask) => {
   const divList = createElements('div', getMainSection, 'list');
   const containerList = createElements('ul', divList, 'list-container');
   const newLi = createElements('li', containerList, 'list-container__item', `${arrayTask[arrayTask.length - 1].data}`);
-  const modifyButton = createElements('button', newLi, 'container-buttons__modify', 'Edit');
-  const editButton = createElements('button', newLi, 'container-buttons__edit', 'Do it');
-  const deleteButton = createElements('button', newLi, 'container-buttons__delete', 'Delete');
+  const divButtons = createElements('div', newLi, 'list-container__item-div');
+  const doItButton = createElements('button', divButtons, 'list__doIt-button', '<i class="far fa-check-circle"></i>');
+  const editButton = createElements('button', divButtons, 'list__edit-button', '<i class="far fa-edit"></i>');
+  const deleteButton = createElements('button', divButtons, 'list__delete-button', '<i class="far fa-trash-alt"></i>');
   onClickDeleteButton();
 };
 
 const onClickDeleteButton = () => {
-  const getDeleteButton = document.querySelector('.container-buttons__delete');
+  const getDeleteButton = document.querySelector('.list__delete-button');
   getDeleteButton.onclick = (element) => {
     element.preventDefault();
     console.log('delete');
@@ -53,10 +60,4 @@ const onClickDeleteButton = () => {
 
 const deleteSelectTask = (id) => {
   getDeleteButton.remove();
-};
-
-const onLoad = () => {
-  createTitle();
-  createForm();
-  onClickCreateButton();
 };
