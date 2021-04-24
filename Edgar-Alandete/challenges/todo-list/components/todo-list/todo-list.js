@@ -18,21 +18,26 @@ function createDomElement(parent, element, text = null, attributes = []) {
 }
 
 function drawTodoList(tasks) {
-  const taskList = document.getElementById('todo-list');
+  const taskList = document.querySelector('.task-list');
   taskList.innerHTML = '';
 
-  tasks.forEach(({ taskId, value }) => {
-    const newTask = createDomElement(taskList, 'div', value, { id: taskId });
-    const buttonDelete = createDomElement(newTask, 'button', 'Delete');
+  tasks.forEach(({ taskId, value, isFinished }) => {
+    const newTask = createDomElement(taskList, 'li', '', { id: taskId, class: 'task-list__element element' });
+    createDomElement(newTask, 'p', value);
+    const buttonDelete = createDomElement(newTask, 'button', 'Delete', { class: 'element__button element__button--delete' });
     buttonDelete.onclick = (() => deleteTask(taskId));
-
-    createDomElement(newTask, 'button', 'Update');
+    if (!isFinished) {
+      const buttonUpdate = createDomElement(newTask, 'button', 'Done', { class: 'element__button element__button--done' });
+      buttonUpdate.onclick = (() => updateTask(taskId));
+    } else {
+      createDomElement(newTask, 'span', 'Task Finished');
+    }
   });
 }
 
 function createTask() {
   const task = document.getElementById('new-task');
-  const taskToCreate = { taskId: '', value: task.value };
+  const taskToCreate = { taskId: '', value: task.value, isFinished: false };
   const payLoad = {
     type: 'CREATE_TASK',
     data: taskToCreate,
@@ -51,6 +56,15 @@ function deleteTask(taskId) {
 function loadTasks() {
   const payload = {
     type: 'LOAD_TASKS',
+  };
+  dispatcher(payload);
+}
+
+function updateTask(taskId) {
+  debugger;
+  const payload = {
+    type: 'UPDATE_TASK',
+    data: taskId,
   };
   dispatcher(payload);
 }

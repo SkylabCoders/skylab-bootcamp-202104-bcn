@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./todo-list.css">
     <title>Todo's</title>
 </head>
 <body onload="loadTasks()">
 
-    <main id="main">
-        <h1>Todo List</h1>
-        <input type="text" id= "new-task" class="main--input">
-        <button onclick="createTask() ">Create Task</button>
+    <main >
+        <section class="input-task-elements">
+            <input type="text" id= "new-task" class="input-task-elements__input">
+            <button onclick="createTask() " class="input-task-elements__button">Create Task</button>
+        </section>
+        <section class="list-section">
+            <h1>Things to Do</h1>
+            <ul class="list-section__task-list task-list"></ul>
+        </section>
     </main>
-    <section id="todo-list">
-
-    </section>
 
 <script src="todo-list.js"></script>
 <script src="../../actions/actions.js"></script>

@@ -30,6 +30,9 @@ function dispatcher(payLoad) {
     case 'LOAD_TASKS':
       tasksReducer(payLoad.data, payLoad.type);
       break;
+    case 'UPDATE_TASK':
+      tasksReducer(payLoad.data, payLoad.type);
+      break;
     default:
 
       console.log('no task defined');

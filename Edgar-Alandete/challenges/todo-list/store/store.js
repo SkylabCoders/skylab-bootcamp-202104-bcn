@@ -3,13 +3,14 @@ const GET_TASK = 'GET_TASK';
 const LOAD_TASKS = 'LOAD_TASKS';
 const CREATE_TASK = 'CREATE_TASK';
 const DELETE_TASK = 'DELETE_TASK';
+const UPDATE_TASK = 'UPDATE_TASK';
 
 // const tasksLoaded = require('./tasks.json');
 
 let appState = {
-  tasks: [{ taskId: '1', value: 'TAREA 1' }, { taskId: '2', value: 'TAREA 2' }],
+  tasks: [{ taskId: '1', value: 'Sacar al perro', isFinished: false }, { taskId: '2', value: 'Aprender CSS con Dani', isFinished: false }],
   selectedTask: null,
-  tasksNum: 0,
+  tasksNum: 2,
 };
 
 function setContent(data) {
@@ -19,6 +20,20 @@ function setContent(data) {
 function setEnv(state) {
   appState = state;
   setContent(appState.tasks);
+}
+
+function updateTaskStore(data) {
+  debugger;
+  const { tasks } = { ...appState };
+  const newTasks = tasks.map(({ taskId, isFinished, value }) => {
+    if (taskId === data) {
+      isFinished = true;
+    }
+
+    return { taskId, isFinished, value };
+  });
+
+  return newTasks;
 }
 
 function deleteTaskStore(data) {
@@ -49,8 +64,10 @@ function tasksReducer(data, action) {
     case DELETE_TASK:
       newState.tasks = deleteTaskStore(data);
       break;
+    case UPDATE_TASK:
+      newState.tasks = updateTaskStore(data);
+      break;
     default:
   }
-  console.log(newState);
   return setEnv(newState);
 }
