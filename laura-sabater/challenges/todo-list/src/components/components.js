@@ -26,6 +26,27 @@ function deleteElementList(array, id) {
   elementToDelete.remove();
 }
 
+function confirmModification(element, data, array) {
+  const oldValue = element.innHTML;
+  const indexOldValue = array.indexOf(oldValue);
+  const newValue = data.value;
+  array.splice(indexOldValue, 1, newValue);
+  element.innerHTML = data.value;
+}
+
+// function deleteModificationElement()
+
+function modifyElementList(id) {
+  const elementToModify = document.getElementById(id);
+  const newValue = createNewElement('input', 'input__element', elementToModify);
+  const okButton = createNewElement('button', 'okButton', elementToModify);
+  okButton.innerText = 'Ok';
+  okButton.onclick = function () {
+    confirmModification(elementToModify, newValue, todoList);
+    // deleteModificationElement(id);
+  };
+}
+
 function markElementList(id) {
   const elementToMark = document.getElementById(id);
   elementToMark.style = 'text-decoration: line-through';
@@ -39,7 +60,6 @@ function addToList(array, element) {
   elementList.id = `item${array.length}`;
   const elementId = elementList.id;
   elementList.style = 'text-decoration: none';
-  const elementStyle = elementList.style;
   const deleteButton = createNewElement('button', 'delete__button', elementList);
   deleteButton.innerHTML = 'Delete';
   deleteButton.onclick = function () {
@@ -47,6 +67,9 @@ function addToList(array, element) {
   };
   const modifyButton = createNewElement('button', 'modify__button', elementList);
   modifyButton.innerHTML = 'Modify';
+  modifyButton.onclick = function () {
+    modifyElementList(elementId);
+  };
   const doneButton = createNewElement('button', 'done__button', elementList);
   doneButton.innerHTML = 'Done';
   doneButton.onclick = function () {
