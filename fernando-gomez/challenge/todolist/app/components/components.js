@@ -44,17 +44,21 @@ const printTask = (taskObject) => {
   const taskCompleted = taskCompletedButton(taskObject.id);
   const input = document.createElement('input');
   const doneButton = editionDoneButton();
+  const buttonContainer = document.createElement('div');
+  buttonContainer.classList = 'tasks-button-container';
+  taskListElement.classList = 'task';
 
   if (taskObject.id !== store.editButtonOpened) {
-    taskListElement.innerText = `Task: ${taskObject.id} -> ${taskObject.description}`;
+    taskListElement.innerText = `Task ${taskObject.id} -> ${taskObject.description}`;
+    buttonContainer.appendChild(deleteTaskButton);
+    taskListElement.appendChild(buttonContainer);
     tasksList.appendChild(taskListElement);
-    taskListElement.appendChild(deleteTaskButton);
-    taskListElement.appendChild(taskCompleted);
 
     if (taskObject.status === 'done') {
       taskListElement.style = 'color: green';
     } else {
-      taskListElement.appendChild(editButton);
+      buttonContainer.appendChild(taskCompleted);
+      buttonContainer.appendChild(editButton);
     }
   } else {
     input.setAttribute('value', `${taskObject.description}`);
@@ -62,9 +66,11 @@ const printTask = (taskObject) => {
     doneButton.setAttribute('onclick', `handleEdit(${taskObject.id})`);
     taskListElement.innerText = `Task: ${taskObject.id} -> ${taskObject.description}`;
     tasksList.appendChild(taskListElement);
-    taskListElement.appendChild(deleteTaskButton);
-    taskListElement.appendChild(input);
-    taskListElement.appendChild(doneButton);
+    buttonContainer.appendChild(deleteTaskButton);
+    buttonContainer.appendChild(input);
+    buttonContainer.appendChild(doneButton);
+    taskListElement.appendChild(buttonContainer);
+    tasksList.appendChild(taskListElement);
   }
 };
 
@@ -80,5 +86,11 @@ const updateTaskList = () => {
     printTask(task);
   });
 };
+
+window.addEventListener('keydown', (event) => {
+  if (event.code === 'Enter') {
+    handleCreate();
+  }
+});
 
 updateTaskList();

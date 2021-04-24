@@ -72,12 +72,21 @@ const store = {
 };
 
 const handleCreate = () => {
-  const taskToAdd = {
-    id: store.allTasksDB.length + 1,
-    description: tasksInput.value,
-  };
-  store.dispatch(createTask(taskToAdd));
-  tasksInput.value = '';
+  const dataBase = store.allTasksDB;
+  let nextId = 1;
+
+  if (dataBase.length !== 0) {
+    nextId = dataBase[dataBase.length - 1].id + 1;
+  }
+
+  if (tasksInput.value !== '') {
+    const taskToAdd = {
+      id: nextId,
+      description: tasksInput.value,
+    };
+    store.dispatch(createTask(taskToAdd));
+    tasksInput.value = '';
+  }
 };
 
 const handleDelete = (id) => {
