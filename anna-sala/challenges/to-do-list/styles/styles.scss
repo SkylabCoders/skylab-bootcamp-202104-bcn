@@ -9,9 +9,35 @@
   body{
     font-family: $MAIN-FONT;
   }
+  .page-title{
+      background-color: $PRIMARY-DARK;
+      font-size: 50px;
+      margin: auto;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      padding: 20px;
+      text-align: center;
+      width: 20%;
+  }
+  .nav{
+    background-color:$PRIMARY-LIGHT;
+    padding: 15px;
+    .navigation__list{
+        display: flex;
+        list-style: none;
+    }
+  }
 
   .weekdays{
     display: flex;
     background-color:$BACKGROUND-COLOR;
-
+    &__day{
+        border-color: $SECONDARY-LIGHT;
+        font-size: 30px;
+        list-style: none;
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        width: 90%;
+    }
   }

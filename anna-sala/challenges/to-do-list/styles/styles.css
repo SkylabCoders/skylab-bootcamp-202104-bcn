@@ -9,10 +9,43 @@ body {
   font-family: "Amatic SC", cursive;
 }
 
+.page-title {
+  background-color: #7BDFF2;
+  font-size: 50px;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 20%;
+}
+
+.nav {
+  background-color: #B2F7EF;
+  padding: 15px;
+}
+
+.nav .navigation__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
 .weekdays {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background-color: #EFF7F6;
+}
+
+.weekdays__day {
+  border-color: #F7D6E0;
+  font-size: 30px;
+  list-style: none;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 90%;
 }
 /*# sourceMappingURL=styles.css.map */
