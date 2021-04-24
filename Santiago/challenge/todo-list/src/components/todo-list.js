@@ -32,12 +32,16 @@ const createTodoListDiv = (mainDiv) => {
 
 const createInputs = (todoContain) => {
   createDomElements('span', 'Add task', '', todoContain);
-  createDomElements('input', '', '', todoContain, 'first').value;
+  createDomElements('input', '', '', todoContain, 'first');
   const addBtn = createDomElements('button', 'ADD', '', todoContain);
-  addBtn.onclick = testeo;
-  createDomElements('span', 'Delete task', '', todoContain);
-  createDomElements('input', '', '', todoContain);
-  createDomElements('button', 'DELETE', '', todoContain);
+  addBtn.setAttribute('onclick', 'testeo()');
+  // createDomElements('span', 'Delete task', '', todoContain);
+  // createDomElements('input', '', '', todoContain);
+  // createDomElements('button', 'DELETE', '', todoContain);
+};
+
+const chopped = (task) => {
+  console.log(task.data);
 };
 
 createHeader();

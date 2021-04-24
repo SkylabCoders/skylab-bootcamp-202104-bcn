@@ -1,10 +1,11 @@
-const actions = [{
-  type: 'ADD_TASK',
-  data: 'addaddaddaddaddaddaddadd'
-}, {
-  type: 'EDIT_TASK',
-  data: 'addaddaddaddaddaddaddadd'
-}, {
-  type: 'EDIT_TASK',
-  data: 'addaddaddaddaddaddaddadd'
-}];
+const task = [];
+const myReducer = ({ type, data }) => {
+  switch (type) {
+    case 'ADD_TASK':
+      task.push(data);
+      chopped(task);
+      break;
+    default:
+      return type;
+  }
+};

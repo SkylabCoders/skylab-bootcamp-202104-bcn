@@ -1,4 +1,4 @@
 const testeo = () => {
-  let hedi = document.querySelector('#first').value;
-  console.log(hedi);
+  const addedTask = document.querySelector('#first');
+  createTaskAction(addedTask.value);
 };
