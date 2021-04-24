@@ -1,3 +1,3 @@
-const dispatcherNewTask = (value) => {
-  reducerToAdd(value);
+const dispatcher = (value) => {
+  reducer(value);
 };

@@ -1,5 +1,3 @@
-// const { addNewTask, deleteTask, modifyTask } = require('../dispatcher/dispatcher');
-
 const store = [
   {
     id: 1,
@@ -29,21 +27,16 @@ const store = [
 
 const arrayTask = [];
 
-const reducerToAdd = ({ type, data }) => {
+const reducer = ({ type, data }) => {
   switch (type) {
     case 'ADD_TASK':
-      arrayTask.push(data);
+      arrayTask.push({ type, data });
       printNewTask(arrayTask);
+      break;
+    case 'DELETE_TASK':
+      deleteSelectTask(arrayTask);
       break;
     default:
       break;
   }
 };
-
-// const reducerToDelete = () => {
-
-// };
-
-// const reducerToModify = () => {
-
-// };
