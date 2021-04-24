@@ -1,1 +1,1 @@
-const todoList = ['manzana', 'naranja', 'panyuelos'];
+const todoList = [];
