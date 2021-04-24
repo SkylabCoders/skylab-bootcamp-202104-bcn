@@ -16,7 +16,17 @@ const createElement = (element, text, href, parent, id) => {
 function createList(array) {
   array.forEach((element) => {
     const li = createElement('li', `${element}`, null, ul);
-    createElement('button', 'Modificar', null, li);
-    createElement('button', 'Eliminar', null, li);
+    createElement('button', 'Modify', null, li);
+    createElement('button', 'Delete', null, li);
+    createElement('button', 'Done', null, li);
   });
+}
+
+function addToList(element, array) {
+  const newElementList = element.value;
+  array.push(newElementList);
+  const li = createElement('li', `${newElementList}`, null, ul);
+  createElement('button', 'Modify', null, li);
+  createElement('button', 'Delete', null, li);
+  createElement('button', 'Done', null, li);
 }

@@ -1,9 +1,15 @@
 const main = document.querySelector('main');
 
 const header = createElement('header', null, null, main);
-createElement('h2', 'Elementos lista:', null, header);
+
+createElement('h2', 'To Do list:', null, header);
+
 const ul = createElement('ul', null, null, header);
-const input = createElement('input', 'hi', null, header);
-const prevButton = createElement('button', 'Añadir a la lista', null, header);
 
 createList(myArray);
+
+const input = createElement('input', null, null, header);
+input.getAttribute('value');
+
+const addButton = createElement('button', 'Add to list', null, header);
+addButton.onclick = function () { addToList(input, myArray); };

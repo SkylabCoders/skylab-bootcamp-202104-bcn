@@ -1,1 +1,1 @@
-const myArray = ['banana', 'eggs', 'arena para las gatas'];
+const myArray = ['banana', 'eggs', 'apple'];
