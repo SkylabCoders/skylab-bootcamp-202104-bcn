@@ -36,11 +36,13 @@ function addTask() {
     newTaskValue.value = '';
 }
 
-function deleteTask(dataSource) {
-
-    delete dataSource.firstname;
-
+function deleteTask() {
+    // delete dataSource.firstname;
+    alert('vas be')
+    // task.remove();
+    // createTodoList();
 
 }
+
 function updateTask(state,) { }
 
