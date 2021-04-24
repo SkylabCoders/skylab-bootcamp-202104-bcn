@@ -77,6 +77,7 @@ const handleCreate = () => {
     description: tasksInput.value,
   };
   store.dispatch(createTask(taskToAdd));
+  tasksInput.value = '';
 };
 
 const handleDelete = (id) => {

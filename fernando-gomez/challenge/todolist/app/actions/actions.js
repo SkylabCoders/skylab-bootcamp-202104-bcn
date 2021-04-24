@@ -6,14 +6,6 @@ const createTask = (newTask) => {
   return result;
 };
 
-const readTask = (taskToRead) => {
-  const result = {
-    type: READ_TASK,
-    payload: taskToRead,
-  };
-  return result;
-};
-
 const showEditInput = (id) => {
   const result = {
     type: SHOW_EDIT_TASK_BUTTON,
