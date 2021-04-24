@@ -51,11 +51,15 @@ const editTaskFromStore = (({ task, htmlElement }) => {
   const editBoxInput = document.createElement('input');
   editBoxInput.classList.add('editBox__input');
   editBoxInput.setAttribute('type', 'text');
-  editBoxInput.focus();
   editBoxInput.setAttribute('autofocus', 'true');
   editBoxInput.setAttribute('autocomplete', 'off');
+  const editBoxInputBtn = document.createElement('a');
+  editBoxInputBtn.classList.add('task-button', 'task-button__editOk');
+  editBoxInputBtn.textContent = 'Done';
   editBox.append(editBoxInput);
+  editBox.append(editBoxInputBtn)
   htmlElement.append(editBox);
+  console.log(htmlElement);
 });
 
 const reducer = ({ type, data }) => {

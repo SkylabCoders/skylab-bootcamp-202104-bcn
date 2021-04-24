@@ -83,11 +83,18 @@ form {
                 &__delete:hover {
                     background-color: rgba(223, 26, 26, 1);
                 }
+                &__editOk {
+                    background-color: rgba(236, 134, 0, 0.7);
+                }
+                &__editOk:hover {
+                    background-color: rgba(236, 134, 0, 1);
+                }
             }
             p {
                 margin: 0 5px;
             }
             .editBox {
+                display: flex;
                 &__input {
                     position: absolute;
                     background-color: #f7f7f7;
@@ -98,9 +105,12 @@ form {
                     width: 250px;
                     height: 25px;
                     outline:none;
-                    text-decoration-style: wavy;
+                    font-style:italic;
                     z-index: 1;
                 } 
+                &__btn {
+                    margin-left: auto;
+                }
             }
 
         }
