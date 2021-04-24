@@ -8,9 +8,14 @@
   color: #393939;
 }
 
-main {
+.main-content {
   padding: 50px 40px;
   max-width: 800px;
+}
+
+.main-content--blurEffect {
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
 }
 
 form label {
@@ -54,6 +59,7 @@ form .input-field {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -92,5 +98,20 @@ form .input-field {
 
 .tasks .tasks__list-item p {
   margin: 0 5px;
+}
+
+.tasks .tasks__list-item .editBox__input {
+  position: absolute;
+  background-color: #f7f7f7;
+  top: 3px;
+  left: 4px;
+  border: none;
+  padding: 20px 10px;
+  width: 250px;
+  height: 25px;
+  outline: none;
+  -webkit-text-decoration-style: wavy;
+          text-decoration-style: wavy;
+  z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */

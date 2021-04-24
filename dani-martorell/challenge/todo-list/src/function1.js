@@ -7,6 +7,7 @@ const renderList = (list) => {
   list.forEach((task) => createItem(task, ul));
 };
 
+
 const createItem = (task, parent) => {
   const li = document.createElement('li');
     li.className = 'tasks__list-item';
@@ -44,7 +45,17 @@ const removeTaskFromStore = ((task) => {
 const editTaskFromStore = (({ task, htmlElement }) => {
   const list = state.toDoList;
   const index = list.findIndex((element) => element === task); 
-  htmlElement.style.backgroundColor = 'red';
+  const main = document.querySelector('.main-content');
+  const editBox = document.createElement('div');
+  editBox.classList.add('editBox');
+  const editBoxInput = document.createElement('input');
+  editBoxInput.classList.add('editBox__input');
+  editBoxInput.setAttribute('type', 'text');
+  editBoxInput.focus();
+  editBoxInput.setAttribute('autofocus', 'true');
+  editBoxInput.setAttribute('autocomplete', 'off');
+  editBox.append(editBoxInput);
+  htmlElement.append(editBox);
 });
 
 const reducer = ({ type, data }) => {
@@ -74,7 +85,7 @@ const removeTask = (task) => reducer({
   data: task,
 });
 
-const editTask = (task, htmlElement ) => reducer({
+const editTask = (task, htmlElement) => reducer({
   type: 'EDIT_TASK',
   data: { task, htmlElement } 
 });
