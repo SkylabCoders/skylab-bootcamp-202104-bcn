@@ -17,7 +17,8 @@ function createList(array) {
   array.forEach((element) => {
     const li = createElement('li', `${element}`, null, ul);
     createElement('button', 'Modify', null, li);
-    createElement('button', 'Delete', null, li);
+    const deleteButton = createElement('button', 'Delete', null, li);
+    deleteButton.onclick = function () { deleteToList(, myArray); };
     createElement('button', 'Done', null, li);
   });
 }
@@ -29,4 +30,9 @@ function addToList(element, array) {
   createElement('button', 'Modify', null, li);
   createElement('button', 'Delete', null, li);
   createElement('button', 'Done', null, li);
+}
+
+function deleteToList(element, array) {
+  const deletedElement = array.indexOf(element);
+  array.splice(deletedElement, 1);
 }
