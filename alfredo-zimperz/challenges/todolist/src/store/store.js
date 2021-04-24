@@ -18,7 +18,7 @@ const store = {
   ],
   nextTaskId: 3,
 
-  tasksReducer(tasks = this.tasks, action) {
+  reducer(tasks = this.tasks, action) {
     let newTasks = [...tasks];
 
     switch (action.type) {
@@ -61,7 +61,7 @@ const store = {
   },
 
   dispatch(action) {
-    this.tasks = this.tasksReducer(this.tasks, action);
+    this.tasks = this.reducer(this.tasks, action);
     updateTaskList();
   },
 

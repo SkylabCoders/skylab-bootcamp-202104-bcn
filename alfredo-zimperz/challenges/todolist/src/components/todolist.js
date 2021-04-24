@@ -14,11 +14,11 @@ const updateTaskDescription = () => {
   newTaskInfo.description = event.target.value;
 };
 const handleDelete = (id) => {
-  store.dispatch(deleteTask(id));
+  deleteTask(id);
 };
 
 const handleComplete = (id) => {
-  store.dispatch(tootleTaskState(id));
+  tootleTaskState(id);
 };
 
 const handleModify = (id) => {
@@ -32,9 +32,9 @@ const handleModify = (id) => {
 
 const saveTask = () => {
   if (newTaskInfo.id === null) {
-    store.dispatch(createTask(newTaskInfo));
+    createTask(newTaskInfo);
   } else {
-    store.dispatch(modifyTask({ ...newTaskInfo }));
+    modifyTask({ ...newTaskInfo });
   }
   newTaskInfo.title = null,
   newTaskInfo.description = null;
