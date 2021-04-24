@@ -31,10 +31,12 @@ const createTodoListDiv = (mainDiv) => {
 };
 
 const createInputs = (todoContain) => {
-    createDomElements('span', 'Add task', '', todoContain);
+  createDomElements('span', 'Add task', '', todoContain);
   createDomElements('input', '', '', todoContain);
+  createDomElements('button', 'ADD', '', todoContain);
   createDomElements('span', 'Delete task', '', todoContain);
   createDomElements('input', '', '', todoContain);
+  createDomElements('button', 'DELETE', '', todoContain);
 };
 
 createHeader();
