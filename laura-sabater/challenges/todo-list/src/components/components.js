@@ -26,6 +26,11 @@ function deleteElementList(array, id) {
   elementToDelete.remove();
 }
 
+function markElementList(id) {
+  const elementToMark = document.getElementById(id);
+  elementToMark.style = 'text-decoration: line-through';
+}
+
 function addToList(array, element) {
   const newElement = element.value;
   array.push(newElement);
@@ -33,6 +38,8 @@ function addToList(array, element) {
   elementList.innerHTML = newElement;
   elementList.id = `item${array.length}`;
   const elementId = elementList.id;
+  elementList.style = 'text-decoration: none';
+  const elementStyle = elementList.style;
   const deleteButton = createNewElement('button', 'delete__button', elementList);
   deleteButton.innerHTML = 'Delete';
   deleteButton.onclick = function () {
@@ -42,5 +49,8 @@ function addToList(array, element) {
   modifyButton.innerHTML = 'Modify';
   const doneButton = createNewElement('button', 'done__button', elementList);
   doneButton.innerHTML = 'Done';
+  doneButton.onclick = function () {
+    markElementList(elementId);
+  };
   return elementList;
 }
