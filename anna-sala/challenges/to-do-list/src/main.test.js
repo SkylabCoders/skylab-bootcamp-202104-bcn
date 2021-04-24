@@ -1,3 +1,7 @@
-test('the data is peanut butter', () => fetchData().then((data) => {
-  expect(data).toBe('peanut butter');
+function fetchTaskJson() {
+  return Promise.resolve(true);
+}
+
+test('should resolve fetchTaskJson async function', () => fetchTaskJson().then((result) => {
+  expect(result).toBe(true);
 }));
