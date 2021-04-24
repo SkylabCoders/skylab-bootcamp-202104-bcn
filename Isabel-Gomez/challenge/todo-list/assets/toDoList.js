@@ -8,24 +8,34 @@ const createElements = (tag, parent, className, innerHTML = null) => {
   return newTag;
 };
 
-const mainTitle = createElements('h1', getMainSection, 'title', 'To Do List');
-const formTask = createElements('form', getMainSection, 'form-create');
-const inputToCreateNewTask = createElements('input', formTask, 'form-create__input');
-const createButton = createElements('button', formTask, 'form-create__button', 'Add Task');
-
-const getContainerButtons = createElements('div', getMainSection, 'container-buttons');
-const modifyButton = createElements('button', getContainerButtons, 'container-buttons__modify', 'Modify Task');
-const deleteButton = createElements('button', getContainerButtons, 'container-buttons__delete', 'Delete Task');
-
-const addMultipleAttributes = () => {
-  inputToCreateNewTask.setAttribute('type', 'text');
-  inputToCreateNewTask.setAttribute('name', 'newTask');
-  inputToCreateNewTask.setAttribute('required', 'required');
-  inputToCreateNewTask.setAttribute('pattern', '[aA-zZ]{3,40}');
-  inputToCreateNewTask.setAttribute('title', 'It cant be empty');
-  inputToCreateNewTask.setAttribute('placeholder', 'Detail your task');
+const createTitle = () => {
+  const mainTitle = createElements('h1', getMainSection, 'title', 'To Do List');
 };
-addMultipleAttributes();
+
+const createForm = () => {
+  const formTask = createElements('form', getMainSection, 'form-create');
+  const inputNewTask = createElements('input', formTask, 'form-create__input');
+  const createButton = createElements('button', formTask, 'form-create__button', 'Add Task');
+  inputNewTask.setAttribute('type', 'text');
+  inputNewTask.setAttribute('name', 'newTask');
+  inputNewTask.setAttribute('required', 'required');
+  inputNewTask.setAttribute('pattern', '[aA-zZ]{3,40}');
+  inputNewTask.setAttribute('title', 'It cant be empty');
+  inputNewTask.setAttribute('placeholder', 'Detail your task');
+};
+
+const createButtons = () => {
+  const getContainerButtons = createElements('div', getMainSection, 'container-buttons');
+  const modifyButton = createElements('button', getContainerButtons, 'container-buttons__modify', 'Modify Task');
+  const deleteButton = createElements('button', getContainerButtons, 'container-buttons__delete', 'Delete Task');
+};
+
+const onLoad = () => {
+  createTitle();
+  createForm();
+  createButtons();
+  onClickCreateButton();
+};
 
 // const ACTIONS = require('../actions/actionTypes');
 
@@ -33,13 +43,17 @@ addMultipleAttributes();
 //   store, reducerToAdd, reducerToDelete, reducerToModify,
 // } = require('../store/store');
 
-// const actionToDo = () => {
-//   ACTIONS.ADD_TASK = 'ADD_TASK'; // como llamo a ACTION???????? //
-// };
-
 const onClickCreateButton = () => {
-  createButton.onclick = () => {
-    actionToDo();
+  const getCreateButton = document.querySelector('.form-create__button');
+  getCreateButton.onclick = () => {
+    toCreateTask();
   };
 };
-onClickCreateButton();
+
+const printNewTask = (arrayTask) => {
+  const divList = createElements('div', getMainSection, 'list');
+  const containerList = createElements('ul', divList, 'list-container');
+  arrayTask.forEach((element) => {
+    const newLi = createElements('li', containerList, 'list-container__item', `${element}`);
+  });
+};

@@ -1,4 +1,4 @@
-const { addNewTask, deleteTask, modifyTask } = require('../dispatcher/dispatcher');
+// const { addNewTask, deleteTask, modifyTask } = require('../dispatcher/dispatcher');
 
 const store = [
   {
@@ -27,25 +27,27 @@ const store = [
   },
 ];
 
-const reducerToAdd = (action) => {
-  switch (action.type) {
-    case 'ADD_TASK':
-      createElements(); // como llamo a toDoList????? /////
-      break;
+const arrayTask = [];
 
+const reducerToAdd = ({ type, data }) => {
+  switch (type) {
+    case 'ADD_TASK':
+      arrayTask.push(data);
+      printNewTask(arrayTask);
+      break;
     default:
       break;
   }
 };
 
-const reducerToDelete = () => {
+// const reducerToDelete = () => {
 
-};
+// };
 
-const reducerToModify = () => {
+// const reducerToModify = () => {
 
-};
+// };
 
-module.exports = {
-  store, reducerToAdd, reducerToDelete, reducerToModify,
-};
+// module.exports = {
+//   store, reducerToAdd, reducerToDelete, reducerToModify,
+// };
