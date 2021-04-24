@@ -30,10 +30,8 @@ const store = [
 const arrayTask = [];
 
 const reducerToAdd = ({ type, data }) => {
-  console.log('pepa');
   switch (type) {
     case 'ADD_TASK':
-      console.log('hijo de pepa');
       arrayTask.push(data);
       printNewTask(arrayTask);
       break;
@@ -48,8 +46,4 @@ const reducerToAdd = ({ type, data }) => {
 
 // const reducerToModify = () => {
 
-// };
-
-// module.exports = {
-//   store, reducerToAdd, reducerToDelete, reducerToModify,
 // };

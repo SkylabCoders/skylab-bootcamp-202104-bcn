@@ -24,25 +24,6 @@ const createForm = () => {
   inputNewTask.setAttribute('placeholder', 'Detail your task');
 };
 
-const createButtons = () => {
-  const getContainerButtons = createElements('div', getMainSection, 'container-buttons');
-  const modifyButton = createElements('button', getContainerButtons, 'container-buttons__modify', 'Modify Task');
-  const deleteButton = createElements('button', getContainerButtons, 'container-buttons__delete', 'Delete Task');
-};
-
-const onLoad = () => {
-  createTitle();
-  createForm();
-  createButtons();
-  onClickCreateButton();
-};
-
-// const ACTIONS = require('../actions/actionTypes');
-
-// const {
-//   store, reducerToAdd, reducerToDelete, reducerToModify,
-// } = require('../store/store');
-
 const onClickCreateButton = () => {
   const getCreateButton = document.querySelector('.form-create__button');
   getCreateButton.onclick = (element) => {
@@ -52,10 +33,16 @@ const onClickCreateButton = () => {
 };
 
 const printNewTask = (arrayTask) => {
-  console.log('print');
   const divList = createElements('div', getMainSection, 'list');
   const containerList = createElements('ul', divList, 'list-container');
-  arrayTask.forEach((element) => {
-    const newLi = createElements('li', containerList, 'list-container__item', `${element}`);
-  });
+  const newLi = createElements('li', containerList, 'list-container__item', `${arrayTask[arrayTask.length - 1]}`);
+  const modifyButton = createElements('button', newLi, 'container-buttons__modify', 'Edit');
+  const editButton = createElements('button', newLi, 'container-buttons__edit', 'Do it');
+  const deleteButton = createElements('button', newLi, 'container-buttons__delete', 'Delete');
+};
+
+const onLoad = () => {
+  createTitle();
+  createForm();
+  onClickCreateButton();
 };

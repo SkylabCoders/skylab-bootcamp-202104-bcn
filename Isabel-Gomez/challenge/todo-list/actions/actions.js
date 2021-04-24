@@ -1,13 +1,10 @@
-const actions = [{ type: 'ADD_TASK', data: '' },
-  // { type: 'DELETE_TASK', data },
-  // { type: 'MODIFY_TASK', data },
-];
-
-// module.exports = ACTIONS;
+const addValueToNewTask = (value) => {
+  const addTask = { type: 'ADD_TASK', data: value };
+  dispatcherNewTask(addTask);
+};
 
 const toCreateTask = () => {
-  console.log('pepe');
   const dataNewTask = document.querySelector('.form-create__input');
-  console.log('dataNewTask.value', dataNewTask.value);
   addValueToNewTask(dataNewTask.value);
+  dataNewTask.value = '';
 };
