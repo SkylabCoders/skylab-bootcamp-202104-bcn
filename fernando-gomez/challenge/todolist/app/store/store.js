@@ -15,6 +15,8 @@ const store = {
     },
   ],
 
+  editButtonOpened: null,
+
   reducer({ type, payload }, allTasksDB = this.allTasksDB) {
     switch (type) {
       case CREATE_TASK:
@@ -23,6 +25,10 @@ const store = {
 
       case DELETE_TASK:
         store.allTasksDB = allTasksDB.filter((task) => payload !== task.id);
+        break;
+
+      case SHOW_EDIT_TASK_BUTTON:
+        this.editButtonOpened = payload;
         break;
 
       default:
@@ -45,6 +51,13 @@ const handleCreate = () => {
 };
 
 const handleDelete = (id) => {
-  // const taskToDelete = parseInt(tasksInput.value);
   store.dispatch(deleteTask(id));
 };
+
+const handleShowEditInput = (id) => {
+  store.dispatch(showEditInput(id));
+};
+
+// const handleEdit = (id) => {
+//   store.dispatch(editTask(id));
+// };

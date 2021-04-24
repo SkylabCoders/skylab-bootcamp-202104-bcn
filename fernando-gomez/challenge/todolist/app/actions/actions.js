@@ -14,13 +14,22 @@ const readTask = (taskToRead) => {
   return result;
 };
 
-const updateTask = (newContent) => {
+const showEditInput = (id) => {
   const result = {
-    type: UPDATE_TASK,
-    payload: newContent,
+    type: SHOW_EDIT_TASK_BUTTON,
+    payload: id,
   };
+
   return result;
 };
+
+// const editTask = (newContent) => {
+//   const result = {
+//     type: UPDATE_TASK,
+//     payload: newContent,
+//   };
+//   return result;
+// };
 
 const deleteTask = (taskToDelete) => {
   const result = {
