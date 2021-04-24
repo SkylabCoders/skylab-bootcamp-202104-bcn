@@ -70,6 +70,10 @@ main .task-list .element p {
   font-size: 1.7rem;
 }
 
+main .task-list .element .done {
+  text-decoration: line-through;
+}
+
 main .task-list .element__button {
   border: none;
   padding: 10px 20px;

@@ -58,6 +58,10 @@ main {
                 font-size: 1.7rem;
             }
 
+            .done {
+                text-decoration: line-through;
+            }
+
             &__button {
                 border: none;
                 padding: 10px 20px;
