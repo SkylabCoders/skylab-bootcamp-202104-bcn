@@ -4,13 +4,13 @@
 
 const addValueToNewTask = (value) => {
   const addTask = { type: 'ADD_TASK', data: value };
-  return addTask;
+  console.log('object', addTask);
+  dispatcherNewTask(addTask);
 };
 
 const dispatcherNewTask = (value) => {
-  reducerToAdd(objectItem);
+  reducerToAdd(value);
 };
-dispatcherNewTask(addValueToNewTask);
 // const deleteTask = (id) => ({ type: ACTIONS.DELETE_TASK, id });
 
 // const modifyTask = (id) => ({ type: ACTIONS.MODIFY_TASK, id });

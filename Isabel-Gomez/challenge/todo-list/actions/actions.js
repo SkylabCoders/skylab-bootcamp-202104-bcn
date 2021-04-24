@@ -7,6 +7,7 @@ const actions = [{ type: 'ADD_TASK', data: '' },
 
 const toCreateTask = () => {
   console.log('pepe');
-  const dataNewTask = document.querySelector('.inputNewTask');
+  const dataNewTask = document.querySelector('.form-create__input');
+  console.log('dataNewTask.value', dataNewTask.value);
   addValueToNewTask(dataNewTask.value);
 };

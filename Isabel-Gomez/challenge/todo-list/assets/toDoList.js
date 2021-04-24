@@ -45,12 +45,14 @@ const onLoad = () => {
 
 const onClickCreateButton = () => {
   const getCreateButton = document.querySelector('.form-create__button');
-  getCreateButton.onclick = () => {
+  getCreateButton.onclick = (element) => {
+    element.preventDefault();
     toCreateTask();
   };
 };
 
 const printNewTask = (arrayTask) => {
+  console.log('print');
   const divList = createElements('div', getMainSection, 'list');
   const containerList = createElements('ul', divList, 'list-container');
   arrayTask.forEach((element) => {
