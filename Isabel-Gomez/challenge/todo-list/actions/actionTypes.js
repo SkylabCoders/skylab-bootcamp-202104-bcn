@@ -1,5 +1,7 @@
-export const ACTIONS = {
+const ACTIONS = {
   ADD_TASK: 'ADD_TASK',
   DELETE_TASK: 'DELETE_TASK',
   MODIFY_TASK: 'MODIFY_TASK',
 };
+
+module.exports = ACTIONS;

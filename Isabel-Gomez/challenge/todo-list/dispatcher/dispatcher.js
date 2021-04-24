@@ -1,4 +1,6 @@
-import { ACTIONS } from '../actions/actionTypes';
+const ACTIONS = require('../actions/actionTypes');
+
+// import { ACTIONS } from '../actions/actionTypes';
 
 export const addNewTask = (data) => ({ type: ACTIONS.ADD_TASK, data });
 
