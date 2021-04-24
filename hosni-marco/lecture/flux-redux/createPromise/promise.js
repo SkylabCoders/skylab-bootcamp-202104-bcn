@@ -13,6 +13,6 @@ const pokelist = [];
     });
 
 }
-loadPokemons().then() = (pokelist) => {
+myFetch().then() = (pokelist) => {
     pokelist.forEach(poke => console.log(poke.name));
 }
