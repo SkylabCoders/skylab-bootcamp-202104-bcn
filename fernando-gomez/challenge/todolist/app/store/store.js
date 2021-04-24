@@ -31,6 +31,18 @@ const store = {
         this.editButtonOpened = payload;
         break;
 
+      case EDIT_TASK:
+        store.allTasksDB = allTasksDB.map((task) => {
+          if (task.id === payload.id) {
+            return {
+              id: payload.id,
+              description: payload.newContent,
+            };
+          }
+          return task;
+        });
+        break;
+
       default:
         break;
     }
@@ -58,6 +70,6 @@ const handleShowEditInput = (id) => {
   store.dispatch(showEditInput(id));
 };
 
-// const handleEdit = (id) => {
-//   store.dispatch(editTask(id));
-// };
+const handleEdit = (id) => {
+  store.dispatch(editTask(id, editorInput));
+};

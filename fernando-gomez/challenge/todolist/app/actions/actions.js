@@ -23,13 +23,16 @@ const showEditInput = (id) => {
   return result;
 };
 
-// const editTask = (newContent) => {
-//   const result = {
-//     type: UPDATE_TASK,
-//     payload: newContent,
-//   };
-//   return result;
-// };
+const editTask = (id, newContent) => {
+  const result = {
+    type: EDIT_TASK,
+    payload: {
+      id,
+      newContent,
+    },
+  };
+  return result;
+};
 
 const deleteTask = (taskToDelete) => {
   const result = {

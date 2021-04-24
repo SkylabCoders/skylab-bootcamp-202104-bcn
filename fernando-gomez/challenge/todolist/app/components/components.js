@@ -1,4 +1,6 @@
 const tasksList = document.querySelector('.tasksList');
+const tasksInput = document.querySelector('.tasksInput');
+let editorInput = '';
 
 const deleteButton = (taskObject) => {
   const deleteTaskButton = document.createElement('button');
@@ -34,13 +36,18 @@ const printTask = (taskObject) => {
   taskListElement.appendChild(editButton);
 };
 
+const handleKeyUp = () => {
+  editorInput = (event.target.value);
+};
+
 const printTaskWithEditInput = (taskObject) => {
   const taskListElement = document.createElement('li');
   const deleteTaskButton = deleteButton(taskObject);
   const input = document.createElement('input');
   input.setAttribute('value', `${taskObject.description}`);
+  input.setAttribute('onkeyup', 'handleKeyUp()');
   const doneButton = editionDoneButton();
-  doneButton.setAttribute('onclick', `handleEdite(${taskObject.id}, ${input.value})`);
+  doneButton.setAttribute('onclick', `handleEdit(${taskObject.id})`);
   taskListElement.innerText = `Task: ${taskObject.id} -> ${taskObject.description}`;
   tasksList.appendChild(taskListElement);
   taskListElement.appendChild(deleteTaskButton);
