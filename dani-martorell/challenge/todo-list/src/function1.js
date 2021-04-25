@@ -10,6 +10,7 @@ const createItem = ({ task, id }, parent) => {
   const deleteButton = document.createElement('a');
   const editButton = document.createElement('a');
   const editInput = document.createElement('input');
+  const editBoxInputBtn = document.createElement('a');
 
   deleteButton.textContent = 'X';
   deleteButton.classList.add('task-button', 'task-button__delete');
@@ -19,15 +20,18 @@ const createItem = ({ task, id }, parent) => {
   editButton.textContent = 'Edit';
   editButton.classList.add('task-button', 'task-button__edit');
   editButton.setAttribute('role', 'button');
-  editButton.setAttribute('onclick', 'editTask(this.parentElement.firstChild.textContent, this.parentElement)');
+  editButton.setAttribute('onclick', 'handleEdit(this.parentElement)');
 
   editInput.classList.add('edit-input');
   editInput.setAttribute('type', 'text');
   editInput.setAttribute('autofocus', 'true');
   editInput.setAttribute('autocomplete', 'off');
-  const editBoxInputBtn = document.createElement('a');
-  editBoxInputBtn.classList.add('task-button', 'task-button__editOk');
+
   editBoxInputBtn.textContent = 'Done';
+  editBoxInputBtn.classList.add('task-button', 'task-button__editOk');
+
+  // CUANDO PINCHE EDIT ARRANCAR LOGICA DE CAMBIO EStiLO PARA QUE APAREZCA BOTON.
+
   li.append(editInput);
   li.append(p);
   li.append(editButton);
@@ -55,24 +59,15 @@ const removeTaskFromStore = (id) => {
   renderList(state.toDoList);
 };
 
-const editTaskFromStore = (({ task, htmlElement }) => {
-  const list = state.toDoList;
-  const index = list.findIndex((element) => element === task);
-  const main = document.querySelector('.main-content');
-  const editBox = document.createElement('div');
-  editBox.classList.add('editBox');
-  const editBoxInput = document.createElement('input');
-  editBoxInput.classList.add('editBox__input');
-  editBoxInput.setAttribute('type', 'text');
-  editBoxInput.setAttribute('autofocus', 'true');
-  editBoxInput.setAttribute('autocomplete', 'off');
-  const editBoxInputBtn = document.createElement('a');
-  editBoxInputBtn.classList.add('task-button', 'task-button__editOk');
-  editBoxInputBtn.textContent = 'Done';
-  editBox.append(editBoxInput);
-  editBox.append(editBoxInputBtn);
-  htmlElement.append(editBox);
-});
+const modifyEditElement = (htmlElement) => {
+  const button = htmlElement.lastElementChild;
+  const inputField = htmlElement.firstElementChild;
+  button.classList.add('task-button__editOk--visible');
+  inputField.classList.add('edit-input--visible');
+  state.editedElement = htmlElement;
+  // const index = list.findIndex((element) => element.id === +id);
+  // const main = document.querySelector('.main-content');
+};
 
 const reducer = ({ type, data }) => {
   switch (type) {
@@ -84,8 +79,8 @@ const reducer = ({ type, data }) => {
       removeTaskFromStore(data);
       break;
 
-    case 'EDIT_TASK':
-      editTaskFromStore(data);
+    case 'OPEN_EDIT_FRAME':
+      modifyEditElement(data);
       break;
 
     default:
@@ -104,9 +99,18 @@ const removeTask = (id) => reducer({
   data: id,
 });
 
-const editTask = (task, htmlElement) => reducer({
-  type: 'EDIT_TASK',
-  data: { task, htmlElement },
+const handleEdit = (htmlElement) => reducer({
+  type: 'OPEN_EDIT_FRAME',
+  data: htmlElement,
+});
+
+const confirmTask = (task, id) => reducer({
+  type: 'CONFIRM_TASK',
+  data: {
+    task,
+    id,
+  },
+
 });
 
 window.onload = renderList(state.toDoList);

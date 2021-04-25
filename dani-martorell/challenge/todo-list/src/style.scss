@@ -86,7 +86,12 @@ form {
                 &__editOk {
                     display: none;
                     background-color: rgba(236, 134, 0, 0.7);
+                    
+                    &--visible {
+                        display: block;
+                    }
                 }
+                
                 &__editOk:hover {
                     background-color: rgba(236, 134, 0, 1);
                 }
@@ -107,6 +112,10 @@ form {
                 outline:none;
                 font-style:italic;
                 z-index: 1;
+                
+                &--visible {
+                    display: block;
+                }
             }
         }
     }

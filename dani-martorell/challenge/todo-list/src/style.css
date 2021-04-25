@@ -101,6 +101,10 @@ form .input-field {
   background-color: rgba(236, 134, 0, 0.7);
 }
 
+.tasks .tasks__list-item .task-button__editOk--visible {
+  display: block;
+}
+
 .tasks .tasks__list-item .task-button__editOk:hover {
   background-color: #ec8600;
 }
@@ -122,5 +126,9 @@ form .input-field {
   outline: none;
   font-style: italic;
   z-index: 1;
+}
+
+.tasks .tasks__list-item .edit-input--visible {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

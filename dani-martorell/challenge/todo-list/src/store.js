@@ -1,5 +1,6 @@
 const state = {
   lastId: 3,
+  editedElement: null,
   toDoList: [
     {
       task: 'Perro veterinario',
