@@ -29,6 +29,10 @@ form {
         padding: 12px 10px;
         width: 250px;
         height: 25px;
+
+        &:focus{
+            outline: none;
+        }
     }
 
 }

@@ -41,6 +41,10 @@ form .input-field {
   height: 25px;
 }
 
+form .input-field:focus {
+  outline: none;
+}
+
 .btn {
   padding: 4px 10px;
   font-size: 20px;
