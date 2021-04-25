@@ -5,7 +5,7 @@ let store = {
     pokemones: null,
     rowspercall: 10,
     currentIndex: 0,
-    allowed: () => false,
+    allowed: () => true,
     defaultFetchUrl: `https://pokeapi.co/api/v2/pokemon?limit=${rowspercall =10}&offset=${currentIndex = 0}`
 }
 
@@ -19,7 +19,6 @@ let isUserConnected = new Promise((resolve, reject) => {
         reject(drawError('You are not connected'));
     }
 });
-
 
 pokemonMainData = fetchListFromService();
 function fetchListFromService(url = store.url) {
@@ -47,6 +46,3 @@ function setContent(data)
 {
     drawPokelist(data);
 }
-
-
-
