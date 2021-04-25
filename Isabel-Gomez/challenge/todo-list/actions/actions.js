@@ -4,7 +4,7 @@ const addDataToNewTask = (id, value) => {
   const addTask = {
     type: 'ADD_TASK',
     data: {
-      id, value, complete: false, canceled: false,
+      id, value, completed: false,
     },
   };
   console.log('id', addTask.data.id);

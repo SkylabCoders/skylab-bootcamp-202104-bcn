@@ -44,15 +44,18 @@ const printNewTask = (dataBase) => {
   const newLi = createElements('li', containerList, 'list-container__item', `${dataBase[dataBase.length - 1].data.value}`);
   const IdTaskToDelete = newLi.setAttribute('id', `${dataBase[dataBase.length - 1].data.id}`);
   const divButtons = createElements('div', newLi, 'list-container__item-div');
-  const doItButton = createElements('button', divButtons, 'list__finished-button', '<i class="far fa-check-circle"></i>');
+  const finishedButton = createElements('button', divButtons, 'list__finished-button', '<i class="far fa-check-circle"></i>');
+  const setIdTaskToFinishedButton = finishedButton.setAttribute('id', `${dataBase[dataBase.length - 1].data.id}`);
   const editButton = createElements('button', divButtons, 'list__edit-button', '<i class="far fa-edit"></i>');
+  const setIdTaskToEditButton = editButton.setAttribute('id', `${dataBase[dataBase.length - 1].data.id}`);
   const deleteButton = createElements('button', divButtons, 'list__delete-button', '<i class="far fa-trash-alt"></i>');
-  onClickDeleteButton();
+  const setIdTaskToDeleteButton = deleteButton.setAttribute('id', `${dataBase[dataBase.length - 1].data.id}`);
+  onClickDeleteButton(indexDataBase);
   onClickFinishedButton();
 };
 
-const onClickDeleteButton = () => {
-  const getDeleteButton = document.querySelector('.list__delete-button');
+const onClickDeleteButton = (id) => {
+  const getDeleteButton = document.getElementsByClassName('list__delete-button')[id];
   getDeleteButton.onclick = (element) => {
     element.preventDefault();
     console.log('delete');
@@ -63,12 +66,8 @@ const onClickDeleteButton = () => {
 const deleteSelectTask = (id) => {
   console.log('id en component', id);
   console.log('dataBase', dataBase);
-  // const newDataBase = dataBase.filter((element) => element.data.id !== Number(id));
-  // console.log('newdataBase', newDataBase);
   const selectHtmlLine = document.getElementById(`${id}`);
   const deleteDivContainer = selectHtmlLine.parentNode.parentNode.remove();
-  const deleteUlContainer = selectHtmlLine.parentNode.remove();
-  const deleteLiElement = selectHtmlLine.remove();
 };
 
 const onClickFinishedButton = () => {
@@ -81,6 +80,7 @@ const onClickFinishedButton = () => {
 };
 
 const finishSelectTask = (id) => {
+  const getCompletedTask = dataBase[id].data.completed = true;
   const getFinishedTask = document.getElementById(`${id}`);
   getFinishedTask.classList.add('finish');
 };
