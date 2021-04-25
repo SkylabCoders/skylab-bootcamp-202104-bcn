@@ -1,13 +1,13 @@
-// const STORE = require('../store/store');
+// const actionType = require('./actionTypes');
 
-const TASKLIST = document.querySelector('.todo-list');
+const addTaskElement = document.querySelector('.addtask');
 const inputBtn = document.querySelector('.addtask-input');
 const todoUl = document.querySelector('.todo-list');
 
 const handlerAddTask = () => {
-  const newTask = addTask(inputBtn.value);
-  dispatcher(newTask);
-  updateHTML();
+  addTask(inputBtn.value)
+    .then((result) => dispatcher(result) && updateHTML());
+  // .catch((error)=> {alert (error.message);})
 };
 
 const handlerDeleteTask = (taskId) => {
@@ -24,6 +24,7 @@ const handlerDoneTask = (taskId) => {
 
 function updateHTML() {
   todoUl.innerText = '';
+
   state.forEach((task) => {
     const li = document.createElement('li');
     li.classList.add('task_li');
@@ -33,6 +34,15 @@ function updateHTML() {
     delBtnCreator(li, task);
     doneBtn(li, task);
   });
+}
+
+function addTaskBtn() {
+  const addBtn = document.createElement('button');
+  addBtn.classList.add('addtask_button');
+  addBtn.onclick = (() => handlerAddTask());
+
+  addBtn.innerText = '+';
+  addTaskElement.appendChild(addBtn);
 }
 
 function delBtnCreator(li, task) {
@@ -58,4 +68,5 @@ function doneBtn(li, task) {
 }
 
 updateHTML();
-console.log(state);
+addTaskBtn();
+getTask();

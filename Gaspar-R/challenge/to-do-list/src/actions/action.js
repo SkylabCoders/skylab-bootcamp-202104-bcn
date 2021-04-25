@@ -1,17 +1,30 @@
 // const actionType = require('./actionTypes');
 // import ** from "./actionTypes";
 
+const resolvePromise = true;
+
 const getTask = () => (
   {
     type: actionType.GET_TASK
   }
 );
 
-const addTask = (title) => ({
-  type: actionType.ADD_TASK,
-  data: {
-    title,
-    complete: false
+const addTask = (title) => new Promise((resolve, reject) => {
+  if (resolvePromise === true) {
+    setTimeout(() => {
+      resolve({
+        type: actionType.ADD_TASK,
+        data: {
+          title,
+          complete: false
+        }
+      });
+    }, 1500);
+  } else {
+    reject({
+      type: 'ERROR',
+      message: 'An error has occurred, task was not created'
+    });
   }
 });
 
