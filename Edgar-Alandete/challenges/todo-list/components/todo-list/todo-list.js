@@ -23,7 +23,7 @@ function drawTodoList(tasks) {
     const buttonDelete = createDomElement(newTask, 'button', 'Delete', { class: 'element__button element__button--delete' });
     buttonDelete.onclick = (() => handleDelete(taskId));
     const buttonUpdate = createDomElement(newTask, 'button', 'Done', { class: 'element__button element__button--done' });
-    buttonUpdate.onclick = (() => updateTask(taskId));
+    buttonUpdate.onclick = (() => handleUpdate(taskId));
 
     if (isFinished) {
       taskNote.classList.add('done');
@@ -32,16 +32,18 @@ function drawTodoList(tasks) {
   });
 }
 
-const createTask = () => {
+const handleCreateTask = () => {
   const task = document.getElementById('new-task');
   const taskToCreate = { taskId: '', value: task.value, isFinished: false };
+
+  const createAction = createTask(taskToCreate);
 
   const taskPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (taskToCreate.value) {
-        resolve({ type: 'CREATE_TASK', data: taskToCreate });
+        resolve(createTask(taskToCreate));
       } else {
-        reject({ type: 'ERROR', data: 'NO SE PUEDE CREAR LA TAREA' });
+        reject(createError());
       }
     }, 3000);
   });
@@ -53,23 +55,20 @@ const handleDelete = (id) => {
   dispatcher(deleteAction);
 };
 
-function handleLoadTasks() {
+const handleLoadTasks = () => {
   const tasksLoaded = loadTasks();
   dispatcher(tasksLoaded);
-}
+};
 
-function updateTask(taskId) {
-  const payload = {
-    type: 'UPDATE_TASK',
-    data: taskId,
-  };
-  dispatcher(payload);
-}
+const handleUpdate = (taskId) => {
+  const taskToUpdate = updateTask(taskId);
+  dispatcher(taskToUpdate);
+};
 
-function clearInput() {
+const clearInput = () => {
   const task = document.getElementById('new-task');
   task.value = '';
-}
+};
 
 function drawError(error) {
   alert(error);

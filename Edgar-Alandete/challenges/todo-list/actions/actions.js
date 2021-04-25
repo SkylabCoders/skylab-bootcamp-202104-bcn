@@ -1,10 +1,15 @@
-function deleteTask(taskId) {
+const deleteTask = (taskId) => {
   const payload = {
     type: 'DELETE_TASK',
     data: taskId,
   };
   return payload;
-}
+};
+
+const createTask = (taskToCreate) => {
+  const payload = { type: 'CREATE_TASK', data: taskToCreate };
+  return payload;
+};
 
 const loadTasks = () => {
   const payload = {
@@ -13,22 +18,35 @@ const loadTasks = () => {
 
   return payload;
 };
-function dispatcher(payLoad) {
-  switch (payLoad.type) {
+
+const updateTask = (taskId) => {
+  const payload = {
+    type: 'UPDATE_TASK',
+    data: taskId,
+  };
+  return payload;
+};
+
+const createError = () => {
+  const payload = { type: 'ERROR', data: 'NO SE PUEDE CREAR LA TAREA' };
+  return payload;
+};
+function dispatcher({ data, type }) {
+  switch (type) {
     case 'CREATE_TASK':
-      tasksReducer(payLoad.data, payLoad.type);
+      tasksReducer(data, type);
       break;
     case 'DELETE_TASK':
-      tasksReducer(payLoad.data, payLoad.type);
+      tasksReducer(data, type);
       break;
     case 'LOAD_TASKS':
-      tasksReducer(payLoad.data, payLoad.type);
+      tasksReducer(data, type);
       break;
     case 'UPDATE_TASK':
-      tasksReducer(payLoad.data, payLoad.type);
+      tasksReducer(data, type);
       break;
     case 'ERROR':
-      generalReducer(payLoad.data, payLoad.type);
+      generalReducer(data, type);
       break;
     default:
 
