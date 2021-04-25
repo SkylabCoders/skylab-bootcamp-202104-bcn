@@ -16,35 +16,28 @@ function createDomElement(parent, element, text = null, attributes = []) {
 }
 
 const createItem = ({ task, id }, parent) => {
-  const li = document.createElement('li');
-
-  li.className = 'tasks__list-item';
-  li.setAttribute('id', id);
-  createDomElement(li, 'input', null, {
+  const taskHtmlElement = createDomElement(parent, 'li', null, { class: 'tasks__list-item', id });
+  createDomElement(taskHtmlElement, 'input', null, {
     class: 'edit-input', type: 'text', autofocus: true, autocomplete: 'off',
   });
-  createDomElement(li, 'p', task);
-  createDomElement(li, 'a', '🖊', { class: 'task-button task-button__edit', role: 'button', onclick: 'handleEdit(this.parentElement.id)' });
-  createDomElement(li, 'a', '🚮', { class: 'task-button task-button__delete', role: 'button', onclick: 'removeTask(this.parentElement.id)' });
-  createDomElement(li, 'a', 'Done', { class: 'task-button task-button__editOk', role: 'button', onclick: 'confirmEdit(this.parentElement.firstElementChild.value, this.parentElement.id)' });
-  parent.append(li);
+  createDomElement(taskHtmlElement, 'p', task);
+  createDomElement(taskHtmlElement, 'a', '🖊', { class: 'task-button task-button__edit', role: 'button', onclick: 'handleEdit(this.parentElement.id)' });
+  createDomElement(taskHtmlElement, 'a', '🚮', { class: 'task-button task-button__delete', role: 'button', onclick: 'removeTask(this.parentElement.id)' });
+  createDomElement(taskHtmlElement, 'a', 'Done', { class: 'task-button task-button__editOk', role: 'button', onclick: 'confirmEdit(this.parentElement.firstElementChild.value, this.parentElement.id)' });
+  parent.append(taskHtmlElement);
 };
 
 const renderList = (list) => {
-  const img = document.querySelector('img');
-  const title = document.querySelector('h1');
-  const budaMessage = document.querySelector('span');
-  const ul = document.querySelector('.tasks__list');
-  ul.innerHTML = '';
-  list.forEach((task) => createItem(task, ul));
+  const listSection = document.querySelector('.tasks');
+  listSection.innerHTML = '';
+
   if (list.length === 0) {
-    img.className = 'buda-img--visible';
-    title.className = 'title--invisible';
-    budaMessage.className = 'buda-message--visible';
+    createDomElement(listSection, 'img', null, { class: 'buda-img--visible', src: './buda-img.png' });
+    createDomElement(listSection, 'span', 'Now U\nF**King\nRelax!', { class: 'buda-message--visible' });
   } else {
-    img.className = 'buda-img';
-    budaMessage.className = 'buda-img';
-    title.className = 'title';
+    createDomElement(listSection, 'h1', 'Don\'t Forget', { class: 'title' });
+    const ul = createDomElement(listSection, 'ul', null, { class: 'tasks__list' });
+    list.forEach((task) => createItem(task, ul));
   }
 };
 
