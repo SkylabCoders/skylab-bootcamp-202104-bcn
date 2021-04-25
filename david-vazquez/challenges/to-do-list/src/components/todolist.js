@@ -22,13 +22,15 @@ function createList(){
 const addingTask = (myTasks)=>{
     const list = document.querySelector('.list');
     list.innerHTML='';
-    myTasks.forEach(({id, task})=>{
+    myTasks.forEach(({id, task, done})=>{
         const listItem = createHtmlElements(list,'li','list__item',`${task}`);
         const doneButton = createHtmlElements(listItem,'button','list__item__button','Done');
+        doneButton.onclick = (()=>taskDone(id));
         const deleteButton = createHtmlElements(listItem,'button','list__item__button','Delete');  
-        deleteButton.onclick = (() => deleteTask(id)) 
-        // deleteButton.setAttribute('onclick','deleteTask()');   
+        deleteButton.onclick = (() => deleteTask(id));
+        if(done){
+            listItem.classList.add('list__item--done');
+        }
     });
     console.log(myTasks);
-   
 }

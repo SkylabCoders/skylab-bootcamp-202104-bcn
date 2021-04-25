@@ -1,5 +1,5 @@
 let state = {
-    myTasks: [{id: 1, task: 'Clean the room!'}],
+    myTasks: [{id: 1, task: 'Clean the room!',done:false}],
     lastId: 1
 }
 
@@ -14,6 +14,9 @@ function reducer({type,data}){
             newState.myTasks.splice(index,1);
             console.log(newState);
             break;
+        case 'TASK_DONE':
+            const indexDone = newState.myTasks.findIndex((element)=>element.id === data.id)
+            newState.myTasks[indexDone].done = true;
         default:
             break;
     }
