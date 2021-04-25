@@ -1,5 +1,5 @@
 const taskAdded = () => {
-  const addedTask = document.querySelector('#first');
+  const addedTask = document.querySelector('#text-input');
   addTaskDispatcher(addedTask.value);
   addedTask.value = '';
 };

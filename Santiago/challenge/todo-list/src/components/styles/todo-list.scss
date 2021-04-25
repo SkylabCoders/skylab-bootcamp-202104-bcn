@@ -1,6 +1,6 @@
 body {
     font-family: 'Rubik', sans-serif;
-    background-color:lightgoldenrodyellow ;
+    background-image: linear-gradient(120deg, #5d9be2, #a671d8);
 }
 
 #header-container {
@@ -13,26 +13,78 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#todo-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0 auto;
     margin-top: 10px;
+    border-radius: 10px;
     width: 1200px;
-    height: 500px;
-    background-color: lightgreen;
-    border: 1px solid black;
+    min-height: 500px;
+    border: 1px solid white;
+    background-image: linear-gradient(120deg, #97fdf5, #b771d8);
 
-    span{
-        margin-top: 10px;
+    span {
+        font-size: 25px;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
-    input {
-        width: 200px;
-        height: 20px;
+    #text-input {
+        padding: 5px;
+        font-size: 28px;
+        border-width: 2px;
+        border-color: #8b7df1;
+        background-color: #e6defd;
+        color: black;
+        border-style: ridge;
+        border-radius: 8px;
     }
+
+    button {
+        background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+        border-radius: 5px;
+        border: 1px solid #337bc4;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 17px;
+        font-weight: bold;
+        padding: 5px 21px;
+        text-decoration: none;
+    }
+
+    #unorderedLi {
+        list-style: none;
+
+        li {
+            font-size: 25px;
+            margin-top: 10px;
+
+            #delete-btn {
+                margin-left: 30px;
+                background: linear-gradient(to bottom, #ff799b 5%, #e53740 100%);
+                border-radius: 5px;
+                border: 1px solid #337bc4;
+                display: inline-block;
+                cursor: pointer;
+                color: #ffffff;
+                font-family: Arial;
+                font-size: 17px;
+                font-weight: bold;
+                padding: 5px 21px;
+                text-decoration: none;
+            }
+
+            #done-btn {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    #add-btn {
+        margin-top: 15px;
+    }
+
+
 }
 
 .done-task {
