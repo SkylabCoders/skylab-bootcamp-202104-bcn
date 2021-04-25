@@ -60,3 +60,9 @@ function addNewValue(elementToModify, input, button, array) {
   input.remove();
   button.remove();
 }
+
+function resetList(array, container) {
+  const removeArray = array.splice(0, array.length);
+  container.remove();
+  return removeArray;
+}

@@ -13,4 +13,4 @@ const addButton = createElement('button', 'Add to list', null, header);
 addButton.onclick = function () { addToList(input, myArray); };
 
 const resetButton = createElement('button', 'Clean all', null, main);
-resetButton.onclick = function () { resetList(myArray, element); };
+resetButton.onclick = function () { resetList(myArray, ul); };
