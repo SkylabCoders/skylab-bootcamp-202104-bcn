@@ -1,3 +1,6 @@
+@import './mixin.scss';
+@import './color.scss';
+
 *, *::after, *::before {
     margin: 0;
     padding: 0;
@@ -12,22 +15,22 @@ body {
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-color: $color-background;
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Noto Sans KR', sans-serif;   
+    @include flex-content(column,null,center);
+    @include background-img(url('./../img/pngfind.com-torn-notebook-paper-png-2535932.png'),650px,45% 10px);
+    font-family: 'Noto Sans KR', sans-serif; 
+    height: 900px;
 }
 
 .title {
-    font-size: 30px;
-    margin: 30px;
+    @include flex-content(null,center,null);
+    font-family: 'Londrina Solid', cursive;
+    font-size: 50px;
+    margin: 50px 0;
     width: 100%;
-    display: flex;
-    justify-content: center;
     text-transform: uppercase;
     font-weight: 700;
 }
@@ -39,17 +42,18 @@ body {
 }
 
 .input {
-    padding: 10px 30px;
+    padding: 10px 50px;
     width: 400px;
-    font-family: 'Noto Sans KR', sans-serif;  
+    font-family: 'Handlee', cursive; 
     font-size: 20px;
     outline: none;
     border-radius: 30px;
     &__value {
-        padding: 0 15px;
+        width: 50px;
+        height: 50px;
         font-size: 40px;
-        background-color: green;
-        color: white;
+        background-color:$color-green;
+        color:$color-text;
         border: 0;
         border-radius: 50%;
         margin-left: 10px;
@@ -59,16 +63,18 @@ body {
 
 .list {
     margin-top: 20px;
+    font-family: 'Handlee', cursive;
+    height: 590px;
+    overflow:scroll;
     &__item {
         list-style: none;
         width: 500px;
-        padding: 10px 10px 10px 30px;
+        padding: 10px 10px 10px 50px;
         font-size: 20px;
         border-radius: 30px;
-        background-color: lightgray;
+        background-color: $color-lightgray;
         margin: 5px 0;
-        display: flex;
-        align-items: center;           
+        @include flex-content(null,null,center);      
     }
 }
 
@@ -76,27 +82,21 @@ body {
     outline: none;
     border: none;
     float: right;  
-    color: white;
+    color: $color-text;
     padding: 10px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     &--delete{
-        background-image: url('./../img/trash-alt-solid.svg');
-        background-repeat: no-repeat;
-        background-size: 20px;
-        background-position: center;
+        @include background-img(url('./../img/trash-alt-solid.svg'),20px,center);
         margin: 0;
         margin-right: 0;
-        background-color: cyan;
+        background-color: $color-cyan-opposite;
         filter: invert(1);
     }
     &--done{
-        background-color: yellow;
-        background-image: url('./../img/check-solid.svg');
-        background-repeat: no-repeat;
-        background-size: 20px;
-        background-position: center;
+        @include background-img(url('./../img/check-solid.svg'),20px,center);
+        background-color: $color-yellow-opposite;
         filter: invert(1);
         margin: auto;
         margin-right: 5px;

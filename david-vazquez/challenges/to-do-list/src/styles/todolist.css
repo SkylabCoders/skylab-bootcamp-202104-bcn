@@ -14,6 +14,7 @@ body {
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-color: lightskyblue;
 }
 
 .main {
@@ -27,22 +28,25 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  background-image: url("./../img/pngfind.com-torn-notebook-paper-png-2535932.png");
+  background-position: 45% 10px;
+  background-repeat: no-repeat;
+  background-size: 650px;
   font-family: 'Noto Sans KR', sans-serif;
+  height: 900px;
 }
 
 .title {
-  font-size: 30px;
-  margin: 30px;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 50px;
+  margin: 50px 0;
+  width: 100%;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -58,16 +62,17 @@ body {
 }
 
 .input {
-  padding: 10px 30px;
+  padding: 10px 50px;
   width: 400px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Handlee', cursive;
   font-size: 20px;
   outline: none;
   border-radius: 30px;
 }
 
 .input__value {
-  padding: 0 15px;
+  width: 50px;
+  height: 50px;
   font-size: 40px;
   background-color: green;
   color: white;
@@ -78,15 +83,18 @@ body {
 
 .list {
   margin-top: 20px;
+  font-family: 'Handlee', cursive;
+  height: 590px;
+  overflow: scroll;
 }
 
 .list__item {
   list-style: none;
   width: 500px;
-  padding: 10px 10px 10px 30px;
+  padding: 10px 10px 10px 50px;
   font-size: 20px;
   border-radius: 30px;
-  background-color: lightgray;
+  background-color: #ebebeb;
   margin: 5px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -109,9 +117,9 @@ body {
 
 .list__button--delete {
   background-image: url("./../img/trash-alt-solid.svg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: 20px;
-  background-position: center;
   margin: 0;
   margin-right: 0;
   background-color: cyan;
@@ -120,11 +128,11 @@ body {
 }
 
 .list__button--done {
-  background-color: yellow;
   background-image: url("./../img/check-solid.svg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: 20px;
-  background-position: center;
+  background-color: yellow;
   -webkit-filter: invert(1);
           filter: invert(1);
   margin: auto;
