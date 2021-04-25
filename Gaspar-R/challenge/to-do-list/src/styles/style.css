@@ -1,0 +1,49 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doneBtn {
+  border: 2px solid green;
+}
+
+.doneBtn:hover {
+  border: 2px solid #599303;
+  background-color: #09ce09;
+}
+
+.completedTaskBtn {
+  border: 2px solid grey;
+  background-color: #d0d0d0;
+  color: grey;
+}
+
+.delBtn {
+  border: 2px solid #800505;
+}
+
+.delBtn:hover {
+  border: 2px solid #5d0303;
+  background-color: #d50101;
+}
+
+ul {
+  width: 160px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completedTask_li {
+  color: grey;
+}
+
+button {
+  height: 26px;
+  width: 26px;
+  margin-left: 11px;
+}/*# sourceMappingURL=style.css.map */
