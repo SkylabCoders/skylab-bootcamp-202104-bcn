@@ -19,25 +19,27 @@ const createHeader = () => {
   const header = createDomElements('header', '', '', main, 'header-container');
   createDomElements('h1', 'TO DO LIST!', '', header);
 };
+createHeader();
 
 const createMainDiv = () => {
   const mainDiv = createDomElements('div', '', '', main, 'main-container');
   return mainDiv;
 };
+const myMainDiv = createMainDiv();
 
 const createInputs = () => {
-  createDomElements('span', 'Add task', '', main);
-  createDomElements('input', '', '', main, 'first');
-  const addBtn = createDomElements('button', 'ADD', '', main);
+  createDomElements('span', 'Add task', '', myMainDiv);
+  createDomElements('input', '', '', myMainDiv, 'first');
+  const addBtn = createDomElements('button', 'ADD', '', myMainDiv);
   addBtn.setAttribute('onclick', 'taskAdded()');
 };
 
 const createULs = () => {
-  const tasksUL = createDomElements('ul', '', '', main, 'chopped');
+  const tasksUL = createDomElements('ul', '', '', myMainDiv, 'unorderedLi');
 };
 
 const updateList = ((payload) => {
-  const tasksList = document.querySelector('#chopped');
+  const tasksList = document.querySelector('#unorderedLi');
   tasksList.innerHTML = '';
   payload.forEach(({ id, description, completed }) => {
     const taskLi = createDomElements('li', `${description}`, '', tasksList);
@@ -52,9 +54,7 @@ const updateList = ((payload) => {
 });
 
 const init = () => {
-  createHeader();
-  createMainDiv();
   createInputs();
-  createULs();
+  createULs(myMainDiv);
 };
 init();
