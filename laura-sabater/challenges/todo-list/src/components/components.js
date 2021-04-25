@@ -1,79 +1,78 @@
-function createNewElement(elementType, elementClass, parent) {
-  const element = document.createElement(elementType);
-  element.classList.add(elementClass);
-  parent.appendChild(element);
-  return element;
+function createHtmlElement(elementType, elementClass, parent) {
+  const htmlElement = document.createElement(elementType);
+  htmlElement.classList.add(elementClass);
+  parent.appendChild(htmlElement);
+  return htmlElement;
 }
 
-function confirmModification(element, input, button, array, ul) {
-  const oldValue = element.innerText;
-  const indexOldValue = array.indexOf(oldValue);
-  const newValue = input.value;
-  array.splice(indexOldValue, 1, newValue);
-  element.innerText = input.value;
+function confirmModification(span, input, button, liId) {
+  const newItem = input.value;
+  span.innerHTML = newItem;
   input.remove();
   button.remove();
+  modifyFromTodoList(liId, newItem);
 }
 
 function modifyElementList(liId, spanId) {
-  const elementToModify = document.getElementById(liId);
+  const liToModify = document.getElementById(liId);
   const spanToModify = document.getElementById(spanId);
-  const newValue = createNewElement('input', 'input__element', elementToModify);
-  const okButton = createNewElement('button', 'okButton', elementToModify);
-  okButton.innerText = 'Ok';
-  okButton.onclick = function () {
-    confirmModification(spanToModify, newValue, okButton, store.todoList, list);
+  const temporalInput = createHtmlElement('input', 'input__element', liToModify);
+  const temporalButton = createHtmlElement('button', 'okButton', liToModify);
+  temporalButton.innerText = 'Ok';
+  temporalButton.onclick = function () {
+    confirmModification(spanToModify, temporalInput, temporalButton, liId);
   };
 }
 
-function deleteElementList(array, id) {
-  const elementToDelete = document.getElementById(id);
-  const content = elementToDelete.innerHTML;
-  const contentIndex = array.indexOf(content);
-  array.splice(contentIndex, 1);
-  elementToDelete.remove();
+function deleteElementList(liId) {
+  const liToDelete = document.getElementById(liId);
+  liToDelete.remove();
+  deleteFromTodoList(liId);
 }
 
-function markElementList(id) {
-  const elementToMark = document.getElementById(id);
-  elementToMark.style = 'text-decoration: line-through';
+function markElementList(spanId) {
+  const spanToMark = document.getElementById(spanId);
+  spanToMark.style = 'text-decoration: line-through';
 }
 
-function addToList(store, element) {
-  const newElement = element.value;
-  store.todoList.push(newElement);
-  const elementList = createNewElement('li', 'element__list', list);
-  elementList.id = `item${store.numCreatedElements}`;
-  const elementId = elementList.id;
+function addHtmlList(store, inputValue) {
+  const newItem = inputValue.value;
+  // store.todoList.push(newItem);
+  const liElement = createHtmlElement('li', 'list-element', list);
+  liElement.id = `list-element-${store.numCreatedElements}`;
+  const liElementId = liElement.id;
 
-  const elementListText = createNewElement('span', 'text-list', elementList);
-  elementListText.innerText = newElement;
-  elementListText.id = `itemText${store.numCreatedElements}`;
-  const textId = elementListText.id;
+  const spanElement = createHtmlElement('span', 'span-element', liElement);
+  spanElement.innerText = newItem;
+  spanElement.id = `item-${store.numCreatedElements}`;
+  const spanElementId = spanElement.id;
 
-  const modifyButton = createNewElement('button', 'modify__button', elementList);
+  const modifyButton = createHtmlElement('button', 'modify__button', liElement);
   modifyButton.innerHTML = 'Modify';
   modifyButton.onclick = function () {
-    modifyElementList(elementId, textId);
+    modifyElementList(liElementId, spanElementId);
   };
-  const deleteButton = createNewElement('button', 'delete__button', elementList);
+  const deleteButton = createHtmlElement('button', 'delete__button', liElement);
   deleteButton.innerHTML = 'Delete';
   deleteButton.onclick = function () {
-    deleteElementList(todoList, elementId);
+    deleteElementList(liElementId);
   };
-  const doneButton = createNewElement('button', 'done__button', elementList);
+  const doneButton = createHtmlElement('button', 'done__button', liElement);
   doneButton.innerHTML = 'Done';
   doneButton.onclick = function () {
-    markElementList(elementId);
+    markElementList(spanElementId);
   };
-  element.value = '';
-  store.numCreatedElements += 1;
+
+  addToTodoList(liElementId, newItem);
+
+  inputValue.value = '';
 }
 
 function resetList(store, ul) {
   while (ul.hasChildNodes()) {
     ul.removeChild(ul.firstChild);
   }
-  store.todoList = [];
-  store.numCreatedElements = 0;
+  resetTodoList();
 }
+
+module.exports = { createHtmlElement, confirmModification };

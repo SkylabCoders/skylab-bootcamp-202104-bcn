@@ -1,20 +1,22 @@
 const main = document.querySelector('main');
 
-const mainTitle = createNewElement('h2', 'title', main);
+const mainTitle = createHtmlElement('h2', 'title', main);
 mainTitle.innerHTML = 'Todo List';
 
-const list = createNewElement('ul', 'todo-list', main);
-list.getAttribute('id', 'myList');
+const inputContainer = createHtmlElement('div', 'input-container', main);
 
-const input = createNewElement('input', 'input', main);
+const input = createHtmlElement('input', 'input', inputContainer);
 
-const addButton = createNewElement('button', 'button-input', main);
+const addButton = createHtmlElement('button', 'button-input', inputContainer);
 addButton.innerHTML = 'Add to list';
 addButton.onclick = function () {
-  addToList(store, input);
+  addHtmlList(store, input);
 };
 
-const resetButton = createNewElement('button', 'reset-button', main);
+const list = createHtmlElement('ul', 'todo-list', main);
+list.getAttribute('id', 'myList');
+
+const resetButton = createHtmlElement('button', 'reset-button', main);
 resetButton.innerHTML = 'Reset List';
 resetButton.onclick = function () {
   resetList(store, list);
