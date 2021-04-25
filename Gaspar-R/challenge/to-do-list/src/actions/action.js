@@ -1,16 +1,39 @@
+// const actionType = require('./actionTypes');
+// import ** from "./actionTypes";
+
 const getTask = () => (
   {
-    type: 'GET_TASK'
-
+    type: actionType.GET_TASK
   }
 );
 
-const deleteTask = (taskId) => ({
-  type: 'DELETE_TASK',
-  taskId
+const addTask = (title) => ({
+  type: actionType.ADD_TASK,
+  data: {
+    title,
+    complete: false
+  }
 });
 
-module.exports = {
-  getTask,
-  deleteTask
-};
+const deleteTask = (taskId) => ({
+  type: actionType.DELETE_TASK,
+  data: {
+    id: taskId
+  }
+});
+
+const completedTask = (taskId) => ({
+  type: actionType.COMPLETED_TASK,
+  data:
+    {
+      taskId,
+      complete: true
+    }
+});
+
+// module.exports = {
+//   getTask,
+//   deleteTask,
+//   addTask,
+//   completedTask
+// };
