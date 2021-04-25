@@ -16,10 +16,10 @@ const createElement = (element, text, href, parent, id) => {
 function addToList(element, array) {
   const newElementList = element.value;
   array.push(newElementList);
-  const li = createElement('li', null, null, ul, `${array.length}`);
-  const span = createElement('span', `${newElementList}`, null, li, `${array.length}`);
+  const li = createElement('li', null, null, ul, `text${array.length}`);
+  const span = createElement('span', `${newElementList}`, null, li, `item${array.length}`);
   const modifyButton = createElement('button', 'Modify', null, li);
-  modifyButton.onclick = (() => modifyElement(elementIdSpan));
+  modifyButton.onclick = (() => modifyElement(elementIdLi, elementIdSpan));
   const deleteButton = createElement('button', 'Delete', null, li);
   const elementIdSpan = span.id;
   const elementIdLi = li.id;
@@ -42,18 +42,21 @@ function addSyleElement(id) {
   elementToMark.style = 'text-decoration:line-through';
 }
 
-function modifyElement(id) {
-  const elementToModify = document.getElementById(id);
-  const input = createElement('input', null, null, elementToModify);
+function modifyElement(LiId, spanId) {
+  const liToModify = document.getElementById(LiId);
+  const spanToModify = document.getElementById(spanId);
+  const newInput = createElement('input', null, null, liToModify);
   input.getAttribute('value');
-  const buttonInput = createElement('button', 'Change', null, elementToModify);
-  buttonInput.onclick = (() => addNewValue(elementToModify, input, myArray));
+  const buttonInput = createElement('button', 'Change', null, liToModify);
+  buttonInput.onclick = (() => addNewValue(spanToModify, newInput, buttonInput, myArray));
 }
 
-function addNewValue(oldTask, newTask, array) {
-  const value = oldTask.innerHTML;
-  const elementIndex = array.indexOf(value);
-  const newValue = newTask.value;
-  array.splice(elementIndex, 1, newValue);
-  oldTask.innerHTML = newTask.value;
+function addNewValue(elementToModify, input, button, array) {
+  const oldValue = elementToModify.innerHTML;
+  const oldValuetIndex = array.indexOf(oldValue);
+  const newValue = input.value;
+  array.splice(oldValuetIndex, 1, newValue);
+  elementToModify.innerHTML = input.value;
+  input.remove();
+  button.remove();
 }
