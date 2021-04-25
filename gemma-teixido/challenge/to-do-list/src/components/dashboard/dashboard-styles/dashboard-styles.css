@@ -34,4 +34,22 @@ body li {
   display: -ms-flexbox;
   display: flex;
 }
+
+body .done {
+  background-color: #21f04d;
+}
+
+body .buttonDelete {
+  background-color: #d63737;
+  height: 30px;
+  color: black;
+  font-weight: 800;
+}
+
+body .buttonDone {
+  background-color: #66c455;
+  color: black;
+  height: 30px;
+  font-weight: 800;
+}
 /*# sourceMappingURL=dashboard-styles.css.map */

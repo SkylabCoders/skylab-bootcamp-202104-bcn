@@ -17,5 +17,21 @@ body {
     
     li {
         display: flex;
+        
+    }
+    .done {
+        background-color: rgb(33, 240, 77);
+    }
+    .buttonDelete {
+        background-color: #d63737;
+        height: 30px;
+        color: black;
+        font-weight:800;
+    }
+    .buttonDone {
+        background-color: #66c455;
+        color: black;
+        height: 30px;
+        font-weight:800;
     }
 }

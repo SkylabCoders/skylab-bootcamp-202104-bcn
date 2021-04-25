@@ -31,10 +31,30 @@ const addNewTask = (myList) => {
   const getUl = document.querySelector('.ulForList');
   const liList = createElements('li', getUl, 'liOfTasks', null);
   const liText = createElements('p', liList, `taskID${id}`, `${myList[myList.length - 1]}`);
-  createElements('button', liList, 'buttonTaskDone', 'Done');
-  const buttonTaskDelete = createElements('button', liList, `${id}`, 'Delete');
+  const buttonTaskDone = createElements('button', liList, 'buttonDone', 'Done');
+  const buttonTaskDelete = createElements('button', liList, 'buttonDelete', 'Delete');
+  buttonTaskDone.setAttribute('onclick', `buttonTaskDone(${id})`);
   buttonTaskDelete.setAttribute('onclick', `buttonTaskDelete(${id})`);
   id += 1;
+};
+
+const deleteTask = (newArray) => {
+  const oldUl = document.querySelector('.ulForList');
+  oldUl.innerHTML = '';
+  newArray.forEach((string, index) => {
+    const newLi = createElements('li', oldUl, 'liOfTasks', null);
+    const newTask = createElements('p', newLi, `taskID${id}`, `${newArray[index]}`);
+    createElements('button', newLi, 'buttonDone', 'Done');
+    const buttonTaskDelete = createElements('button', newLi, 'buttonDelete', 'Delete');
+    buttonTaskDelete.setAttribute('onclick', `buttonTaskDelete(${id})`);
+  });
+};
+
+const doneTask = (taskDone) => {
+  const oldUl = document.querySelector('.ulForList');
+  oldUl.innerHTML = '';
+  taskDone.forEach((string, index) => {
+  });
 };
 
 const onLoad = () => {
