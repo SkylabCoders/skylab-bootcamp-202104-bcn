@@ -19,6 +19,8 @@ html {
 }
 
 form {
+    display: flex;
+    align-items: center;;
     label {
         margin-right: 10px;
     }
@@ -30,14 +32,19 @@ form {
 
 }
 .btn {
-    padding: 10px 30px;
-    margin-left: 35px;
+    padding: 4px 10px;
+    font-size: 20px;
+    margin-left: 10px;
     border: none;
     cursor: pointer;
     background-color:rgb(31, 201, 31);
-    border-radius: 30px;
-    color: white;
+    border-radius: 100%;
+    color: rgb(255, 255, 255);
     font-weight: bolder;
+}
+
+.btn:hover {
+    transform: scale(1.1);
 }
 
 .tasks {
@@ -63,29 +70,28 @@ form {
         
             .task-button {
                 color: white;
-                border-radius: 5px;;
                 margin: 0 2px;
-                padding: 5px 10px;
+                padding: 2px 2px;
                 cursor: pointer;
                 font-size: 12px;
+                border-radius: 40px;
 
 
                 &__edit {
-                    background-color: rgba(39, 41, 176, 0.8);
+                    font-size: 25px;
                     margin-left: auto;
                 }
-                &__edit:hover {
-                    background-color: rgba(39, 41, 176, 1);
-                }
+                
                 &__delete {
-                    background-color: rgba(223, 26, 26, 0.8);
+                    font-size: 25px;
                 }
-                &__delete:hover {
-                    background-color: rgba(223, 26, 26, 1);
-                }
+               
                 &__editOk {
                     display: none;
                     background-color: rgba(236, 134, 0, 0.7);
+                    padding: 5px 10px;
+
+
                     
                     &--visible {
                         display: block;
@@ -103,7 +109,7 @@ form {
                 display: none;
                 position: absolute;
                 background-color: #f7f7f7;
-                top: 3px;
+                top: 8px;
                 left: 4px;
                 border: none;
                 color:rgb(146, 146, 146);

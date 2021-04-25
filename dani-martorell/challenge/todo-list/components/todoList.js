@@ -19,45 +19,16 @@ const createItem = ({ task, id }, parent) => {
   const li = document.createElement('li');
   li.className = 'tasks__list-item';
   li.setAttribute('id', id);
-  const p = document.createElement('p');
-  p.textContent = task;
-
-  // const deleteButton = document.createElement('a');
-  const editButton = document.createElement('a');
-  const editInput = document.createElement('input');
-  const editBoxInputBtn = document.createElement('a');
-
-  // deleteButton.textContent = 'X';
-  // deleteButton.classList.add('task-button', 'task-button__delete');
-  // deleteButton.setAttribute('role', 'button');
-  // deleteButton.setAttribute('onclick', 'removeTask(this.parentElement.id)');
-
-  editButton.textContent = 'Edit';
-  editButton.classList.add('task-button', 'task-button__edit');
-  editButton.setAttribute('role', 'button');
-  editButton.setAttribute('onclick', 'handleEdit(this.parentElement)');
-
-  editInput.classList.add('edit-input');
-  editInput.setAttribute('type', 'text');
-  editInput.setAttribute('autofocus', 'true');
-  editInput.setAttribute('autocomplete', 'off');
-
-  editBoxInputBtn.textContent = 'Done';
-  editBoxInputBtn.classList.add('task-button', 'task-button__editOk');
-  editBoxInputBtn.setAttribute('role', 'button');
-  editBoxInputBtn.setAttribute('onclick', 'confirmEdit(this.parentElement.firstElementChild.value, this.parentElement.id)');
-
-  li.append(editInput);
-  li.append(p);
-  li.append(editButton);
-
-  // li.append(deleteButton);
-  createDomElement(li, 'a', 'X', { class: 'task-button task-button__delete', role: 'button', onclick: 'removeTask(this.parentElement.id)' });
-
-  li.append(editBoxInputBtn);
-
+  createDomElement(li, 'input', null, {
+    class: 'edit-input', type: 'text', autofocus: true, autocomplete: 'off',
+  });
+  createDomElement(li, 'p', task);
+  createDomElement(li, 'a', '🖊', { class: 'task-button task-button__edit', role: 'button', onclick: 'handleEdit(this.parentElement)' });
+  createDomElement(li, 'a', '🚮', { class: 'task-button task-button__delete', role: 'button', onclick: 'removeTask(this.parentElement.id)' });
+  createDomElement(li, 'a', 'Done', { class: 'task-button task-button__editOk', role: 'button', onclick: 'confirmEdit(this.parentElement.firstElementChild.value, this.parentElement.id)' });
   parent.append(li);
 };
+
 const renderList = (list) => {
   const ul = document.querySelector('.tasks__list');
   ul.innerHTML = '';
@@ -81,6 +52,3 @@ const modifyEditElement = (htmlElement) => {
 };
 
 window.onload = renderList(state.toDoList);
-
-/*
-<a class="task-button task-button__delete" role="button" onclick="removeTask(this.parentElement.id)">X</a> */
