@@ -24,6 +24,4 @@ const myReducer = ({ type, data }) => {
 const updateDom = (newTasks) => {
   tasks = newTasks;
   updateList(tasks.payload);
-
-  console.log(tasks.payload);
 };
