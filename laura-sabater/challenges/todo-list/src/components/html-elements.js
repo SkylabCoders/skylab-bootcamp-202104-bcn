@@ -6,8 +6,6 @@ mainTitle.innerHTML = 'Todo List';
 const list = createNewElement('ul', 'todo-list', main);
 list.getAttribute('id', 'myList');
 
-// createList(todoList);
-
 const input = createNewElement('input', 'input', main);
 
 const addButton = createNewElement('button', 'button-input', main);
