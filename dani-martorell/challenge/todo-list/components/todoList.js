@@ -50,8 +50,10 @@ const createItem = ({ task, id }, parent) => {
   li.append(editInput);
   li.append(p);
   li.append(editButton);
+
   // li.append(deleteButton);
   createDomElement(li, 'a', 'X', { class: 'task-button task-button__delete', role: 'button', onclick: 'removeTask(this.parentElement.id)' });
+
   li.append(editBoxInputBtn);
 
   parent.append(li);

@@ -1,10 +1,17 @@
-const addTask = (task) => reducer({
-  type: 'ADD_TASK',
-  data: {
-    task,
-    id: state.lastId + 1,
-  },
-});
+const addTask = (task) => {
+  const myPromise = Promise.resolve(
+    {
+      type: 'ADD_TASK',
+      data: {
+        task,
+        id: state.lastId + 1,
+      },
+    },
+  );
+  myPromise.then((data) => reducer(data));
+  // return reducer(myPromise);
+};
+
 const removeTask = (id) => reducer({
   type: 'REMOVE_TASK',
   data: id,
@@ -22,3 +29,13 @@ const confirmEdit = (task, id) => reducer({
     id,
   },
 });
+
+/*
+{
+    type: 'ADD_TASK',
+    data: {
+      task,
+      id: state.lastId + 1,
+    },
+  }
+*/
