@@ -16,15 +16,17 @@ const createElement = (element, text, href, parent, id) => {
 function addToList(element, array) {
   const newElementList = element.value;
   array.push(newElementList);
-  const li = createElement('li', `${newElementList}`, null, ul, `${array.length}`);
+  const li = createElement('li', null, null, ul, `${array.length}`);
+  const span = createElement('span', `${newElementList}`, null, li, `${array.length}`);
   const modifyButton = createElement('button', 'Modify', null, li);
-  modifyButton.onclick = (() => modifyElement(elementId));
+  modifyButton.onclick = (() => modifyElement(elementIdSpan));
   const deleteButton = createElement('button', 'Delete', null, li);
-  const elementId = li.id;
-  deleteButton.onclick = (() => deleteTask(myArray, elementId));
+  const elementIdSpan = span.id;
+  const elementIdLi = li.id;
+  deleteButton.onclick = (() => deleteTask(myArray, elementIdLi));
   li.style = 'text-decoration:none';
   const doneButton = createElement('button', 'Done', null, li);
-  doneButton.onclick = (() => addSyleElement(elementId));
+  doneButton.onclick = (() => addSyleElement(elementIdSpan));
 }
 
 function deleteTask(array, id) {
