@@ -26,11 +26,14 @@ header,
 }
 
 .newtask-container input, .newtask-container button {
+    outline-offset: -2px;
+    outline-color: #42033D;
     padding: 0.5rem;
     font-size: 2 rem;
     border: none;
     background-color: gainsboro;
 }
+
 
 .newtask-container button {
     color: #C2005D;
@@ -68,9 +71,10 @@ header,
 
 .todo li {
     flex: 1;
+    outline:none;
 }
 
-.trash-btn, .complete-btn {
+.trash-btn, .complete-btn, .edit-btn {
     background: #C2005D;
     color: gainsboro;
     border: none;
@@ -81,7 +85,9 @@ header,
 .complete-btn {
     background: #2a9d8f;
 }
-
+.edit-btn {
+    background: #e76f51;
+}
 .todo-item {
     padding: 0rem 0.5rem;
 }
