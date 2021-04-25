@@ -27,14 +27,29 @@ const createTaskAction = (value) => {
   });
   return addTask;
 };
-//   const addTask = {
-//     type: 'CREATE_TASK',
-//     // hago fetch para chequear id y añado el valor en value como objeto.
-//     data: value,
-//   };
-//   console.log('inside dispatcher', addTask);
-//   return addTask;
-// };
+
+const deleteTaskAction = (value) => {
+  console.log(value, 'this is the dispatcher pre promise');
+  const removeTask = new Promise((resolve, reject) => {
+    if (value) {
+      tasks.forEach((task) => {
+        if (task === value) {
+          resolve({
+            type: 'DELETE_TASK',
+            data: value,
+          });
+        }
+      });
+    } else {
+      reject({
+        type: 'ERROR',
+        message: 'Task Not Found',
+      });
+    }
+  });
+  console.log(value, 'this is the dispatcher afterr promise');
+  return removeTask;
+};
 
 const dispatch = (action) => {
   console.log('off to reducer from dispatcher');

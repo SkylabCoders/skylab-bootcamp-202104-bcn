@@ -30,10 +30,6 @@ function printNewTask() {
   taskOnList.appendChild(textNode);
   taskOnList.appendChild(buttonDone);
   taskOnList.appendChild(buttonDelete);
-  if (inputTextValue === '') {
-    document.getElementById('taskInput').style.border = 'red';
-  } else {
-    document.getElementById('tasks').appendChild(taskOnList);
-  }
-  inputTextValue.value = '';
+  document.getElementById('tasks').appendChild(taskOnList);
+  inputTextValue.innerHTML = '';
 }

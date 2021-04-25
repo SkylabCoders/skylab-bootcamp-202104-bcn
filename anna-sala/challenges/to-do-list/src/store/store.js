@@ -13,7 +13,7 @@ function reducer({ type, data }) {
       printNewTask(data);
       break;
     case DELETE_TASK:
-      console.log('delete');
+      console.log(tasks);
       break;
     default:
       return data;

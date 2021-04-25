@@ -1,10 +1,3 @@
-function fetchTaskJson(callback) {
-  return fetch('../store/tasks.json')
-    .then((response) => response.json())
-    .then((data) => callback(data))
-    .catch((error) => console.error(error));
-}
-
 function getInputValue() {
   const inputTextValue = document.getElementById('taskInput').value;
   console.log(inputTextValue);
@@ -12,6 +5,7 @@ function getInputValue() {
 }
 
 function deleteSelectedTask(taskToDelete) {
+  // const taskSelectedToDelete = document.getElementById('taskInput');
   console.log('we are deleting ', taskToDelete);
-  // deleteTaskAction();
+  deleteTaskAction(taskToDelete).then((data) => dispatch(data)).catch((error) => alert(`ERROR: ${error.message}`));
 }
