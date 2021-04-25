@@ -6,7 +6,7 @@ const addTask = () => {
 };
 
 const delTask = (id) => {
-  typeAction = DEL_TASK;
+  typeAction = DELETE_TASK;
   delTaskDispatcher(id, typeAction);
 };
 

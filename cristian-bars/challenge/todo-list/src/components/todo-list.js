@@ -14,7 +14,7 @@ function createElementHtml(node, nodeContent, className, link = null, parent) {
 
 const createHeader = () => {
   const header = createElementHtml('header', '', 'header', '', main);
-  const title = createElementHtml('h1', 'Todo list', 'header_title', '', header);
+  const title = createElementHtml('h1', 'Todo list', 'header__title', '', header);
 };
 
 const createContainer = () => {
@@ -58,6 +58,10 @@ const updateList = ((payload) => {
     deleteBtn.setAttribute('onclick', `delTask(${id})`);
     const doneBtn = createElementHtml('button', 'DONE', 'container__doneTaskButton', '', taskLi);
     doneBtn.setAttribute('onclick', `doneTask(${id})`);
+    const completeTask = taskLi.getAttribute('complete');
+    if (completeTask === 'true') {
+      taskLi.className += ' container__item-done';
+    }
   });
 });
 
