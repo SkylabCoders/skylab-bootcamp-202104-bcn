@@ -59,3 +59,12 @@ const modifyTask = ({ task, id }) => {
   selectedElement.task = task;
   renderList(state.toDoList);
 };
+
+const modifyEditElement = (htmlElement) => {
+  state.editedElement = htmlElement;
+  const button = state.editedElement.lastElementChild;
+  const inputField = state.editedElement.firstElementChild;
+  button.classList.add('task-button__editOk--visible');
+  inputField.classList.add('edit-input--visible');
+  renderElement(state.editedElement, htmlElement);
+};

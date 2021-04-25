@@ -61,6 +61,16 @@ form .input-field {
   text-transform: uppercase;
 }
 
+.tasks .buda-img {
+  display: none;
+}
+
+.tasks .buda-img--visible {
+  display: block;
+  width: 375px;
+  margin: 0 auto;
+}
+
 .tasks .tasks__list {
   margin-top: 20px;
   list-style: none;
@@ -79,7 +89,7 @@ form .input-field {
           justify-content: space-between;
   margin: 10px 0;
   padding: 10px 8px;
-  background-color: #f7f7f7;
+  background-color: #fdfdfd;
   -webkit-box-shadow: 4px 4px 10px -10px rgba(0, 0, 0, 0.6);
           box-shadow: 4px 4px 10px -10px rgba(0, 0, 0, 0.6);
 }
@@ -123,7 +133,7 @@ form .input-field {
 .tasks .tasks__list-item .edit-input {
   display: none;
   position: absolute;
-  background-color: #f7f7f7;
+  background-color: #fdfdfd;
   top: 8px;
   left: 4px;
   border: none;

@@ -17,6 +17,7 @@ function createDomElement(parent, element, text = null, attributes = []) {
 
 const createItem = ({ task, id }, parent) => {
   const li = document.createElement('li');
+
   li.className = 'tasks__list-item';
   li.setAttribute('id', id);
   createDomElement(li, 'input', null, {
@@ -30,25 +31,22 @@ const createItem = ({ task, id }, parent) => {
 };
 
 const renderList = (list) => {
+  const img = document.querySelector('img');
   const ul = document.querySelector('.tasks__list');
   ul.innerHTML = '';
   list.forEach((task) => createItem(task, ul));
+  if (list.length === 0) {
+    img.className = 'buda-img--visible';
+  } else {
+    img.className = 'buda-img';
+  }
 };
 
-const renderElement = (editedElement, oldElement) => {
+const renderElement = (editedElement) => {
   const id = editedElement.getAttribute('id');
   let elementToUpdate = document.getElementById(id);
   elementToUpdate = '';
   elementToUpdate = editedElement;
-};
-
-const modifyEditElement = (htmlElement) => {
-  state.editedElement = htmlElement;
-  const button = state.editedElement.lastElementChild;
-  const inputField = state.editedElement.firstElementChild;
-  button.classList.add('task-button__editOk--visible');
-  inputField.classList.add('edit-input--visible');
-  renderElement(state.editedElement, htmlElement);
 };
 
 window.onload = renderList(state.toDoList);

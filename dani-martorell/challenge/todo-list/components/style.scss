@@ -9,7 +9,6 @@
 
 html {
     background-color: rgb(243, 243, 243);
-
 }
 .main-content {
     padding: 50px 40px;
@@ -20,7 +19,7 @@ html {
 
 form {
     display: flex;
-    align-items: center;;
+    align-items: center;
     label {
         margin-right: 10px;
     }
@@ -54,6 +53,16 @@ form {
         text-transform: uppercase;
 
     }
+    .buda-img {
+        display: none;
+        
+        &--visible {
+            display: block;
+            width: 375px;
+            margin: 0 auto;
+
+        }
+    }
     .tasks__list {
         margin-top: 20px;
         list-style: none;
@@ -65,7 +74,7 @@ form {
             justify-content: space-between;
             margin: 10px 0;
             padding: 10px 8px;
-            background-color: rgb(247, 247, 247);
+            background-color: rgb(253, 253, 253);
             box-shadow: 4px 4px 10px -10px rgba(0, 0, 0, 0.6);
         
             .task-button {
@@ -75,7 +84,6 @@ form {
                 cursor: pointer;
                 font-size: 12px;
                 border-radius: 40px;
-
 
                 &__edit {
                     font-size: 25px;
@@ -108,7 +116,7 @@ form {
             .edit-input {
                 display: none;
                 position: absolute;
-                background-color: #f7f7f7;
+                background-color: rgb(253, 253, 253);
                 top: 8px;
                 left: 4px;
                 border: none;
