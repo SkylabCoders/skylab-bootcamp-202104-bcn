@@ -110,36 +110,38 @@ input {
 .addtask-container .addTask input {
   width: 200px;
   height: 30px;
-  border: 1px solid #5B2333;
-  background-color: #5B2333;
-  color: #F7F4F3;
+  border: 2px solid #5B2333;
+  background-color: #5b233338;
+  color: #5B2333;
   padding: 5px 12px;
   margin-right: 15px;
   border-radius: 15px;
   text-transform: capitalize;
   font-size: 15px;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .addtask-container .addTask input::-webkit-input-placeholder {
-  color: #F7F4F3;
+  color: #5B2333;
 }
 
 .addtask-container .addTask input:-ms-input-placeholder {
-  color: #F7F4F3;
+  color: #5B2333;
 }
 
 .addtask-container .addTask input::-ms-input-placeholder {
-  color: #F7F4F3;
+  color: #5B2333;
 }
 
 .addtask-container .addTask input::placeholder {
-  color: #F7F4F3;
+  color: #5B2333;
 }
 
 .addtask-container .addTask input:focus {
-  border-color: #564D4A;
-  -webkit-transition: 2s;
-  transition: 2s;
+  background-color: #F7F4F3;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .addtask-container .addTask button {

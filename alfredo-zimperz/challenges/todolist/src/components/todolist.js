@@ -32,7 +32,9 @@ const handleModify = (id) => {
 
 const saveTask = () => {
   if (newTaskInfo.id === null) {
-    createTask(newTaskInfo);
+    createTask(newTaskInfo)
+      .then((data) => store.dispatch(data))
+      .catch((error) => { alert(error.message); });
   } else {
     modifyTask({ ...newTaskInfo });
   }

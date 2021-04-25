@@ -17,6 +17,11 @@ const store = {
     },
   ],
   nextTaskId: 3,
+  waitingTask: false,
+  error: {
+    status: false,
+    message: null,
+  },
 
   reducer(tasks = this.tasks, action) {
     let newTasks = [...tasks];
@@ -52,8 +57,13 @@ const store = {
             } return task;
           },
         );
-
         break;
+
+        // case WAITING_TASK:
+        //   this.waitingTask === true
+        //     ? this.waitingTask = false
+        //     : this.waitingTask = true;
+        //   break
       default:
         break;
     }

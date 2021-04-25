@@ -13,9 +13,19 @@ const deleteTask = (taskId) => ({
   taskId,
 });
 
-const createTask = (taskData) => ({
-  type: CREATE_TASK,
-  taskData,
+const createTask = (taskData) => new Promise((resolve, reject) => {
+  const { title } = taskData;
+  const { description } = taskData;
+  if (LA_PROGRAMACION_MOLA === true) {
+    setTimeout(() => {
+      resolve({ type: CREATE_TASK, taskData: { title, description, id: null } });
+    }, 2000);
+  } else {
+    reject({
+      type: 'ERROR',
+      message: 'La programación no mola',
+    });
+  }
 });
 
 const modifyTask = (taskData) => ({
@@ -43,14 +53,31 @@ test('Given a deleteTask action creator', () => {
   });
 });
 
-test('Given a createTask action creator', () => {
-  const result = createTask({
+test('Given a createTask action creator, expecting to get a fullfilled promise', () => {
+  LA_PROGRAMACION_MOLA = true;
+
+  createTask({
     title: 'taskTitle',
     description: 'taskDescription',
+  }).then((result) => {
+    expect(result).resolves.toEqual({
+      type: 'CREATE_TASK',
+      taskData: { title: 'taskTitle', description: 'taskDescription' },
+    });
   });
-  expect(result).toEqual({
-    type: 'CREATE_TASK',
-    taskData: { title: 'taskTitle', description: 'taskDescription' },
+});
+
+test('Given a createTask action creator, expecting to get a rejected promise', () => {
+  LA_PROGRAMACION_MOLA = false;
+
+  createTask({
+    title: 'taskTitle',
+    description: 'taskDescription',
+  }).then((result) => {
+    expect(result).rejects.toEqual({
+      type: 'ERROR',
+      message: 'la programacion no mola',
+    });
   });
 });
 

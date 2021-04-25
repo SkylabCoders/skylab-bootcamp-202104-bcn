@@ -8,12 +8,6 @@ const deleteTask = (taskId) => store.dispatch(
   { type: DELETE_TASK, taskId },
 );
 
-// const createTask = (taskData) => {
-//   store.dispatch(
-//     { type: CREATE_TASK, taskData },
-//   );
-// };
-
 const createTask = (taskData) => new Promise((resolve, reject) => {
   const { title } = taskData;
   const { description } = taskData;
