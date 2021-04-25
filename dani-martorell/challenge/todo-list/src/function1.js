@@ -46,6 +46,13 @@ const renderList = (list) => {
   list.forEach((task) => createItem(task, ul));
 };
 
+const renderElement = (editedElement, oldElement) => {
+  const id = editedElement.getAttribute('id');
+  let elementToUpdate = document.getElementById(id);
+  elementToUpdate = '';
+  elementToUpdate = editedElement;
+};
+
 const addTaskToStore = ({ task, id }) => {
   state.toDoList.push({ task, id });
   state.lastId = id;
@@ -60,13 +67,14 @@ const removeTaskFromStore = (id) => {
 };
 
 const modifyEditElement = (htmlElement) => {
-  const button = htmlElement.lastElementChild;
-  const inputField = htmlElement.firstElementChild;
+  state.editedElement = htmlElement;
+  const button = state.editedElement.lastElementChild;
+  const inputField = state.editedElement.firstElementChild;
   button.classList.add('task-button__editOk--visible');
   inputField.classList.add('edit-input--visible');
-  state.editedElement = htmlElement;
+  renderElement(state.editedElement, htmlElement);
+
   // const index = list.findIndex((element) => element.id === +id);
-  // const main = document.querySelector('.main-content');
 };
 
 const reducer = ({ type, data }) => {
