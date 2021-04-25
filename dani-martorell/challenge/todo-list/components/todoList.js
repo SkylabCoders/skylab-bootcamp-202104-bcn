@@ -33,7 +33,9 @@ const renderList = (list) => {
 
   if (list.length === 0) {
     createDomElement(listSection, 'img', null, { class: 'buda-img--visible', src: './buda-img.png' });
-    createDomElement(listSection, 'span', 'Now U\nF**King\nRelax!', { class: 'buda-message--visible' });
+    setTimeout(() => {
+      createDomElement(listSection, 'span', 'Now U\nF**King\nRelax!', { class: 'buda-message--visible' });
+    }, 100);
   } else {
     createDomElement(listSection, 'h1', 'Don\'t Forget', { class: 'title' });
     const ul = createDomElement(listSection, 'ul', null, { class: 'tasks__list' });
