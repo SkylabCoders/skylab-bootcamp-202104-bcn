@@ -9,10 +9,15 @@ list.getAttribute('id', 'myList');
 // createList(todoList);
 
 const input = createNewElement('input', 'input', main);
-input.value = ('value');
 
 const addButton = createNewElement('button', 'button-input', main);
 addButton.innerHTML = 'Add to list';
 addButton.onclick = function () {
   addToList(todoList, input);
+};
+
+const resetButton = createNewElement('button', 'reset-button', main);
+resetButton.innerHTML = 'Reset List';
+resetButton.onclick = function () {
+  resetList(todoList, list);
 };
