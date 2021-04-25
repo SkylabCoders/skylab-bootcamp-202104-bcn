@@ -1,4 +1,5 @@
 const addTask = (task) => {
+  if (!task) return;
   const myPromise = new Promise((resolve, reject) => {
     const index = state.toDoList.find((element) => element.task === task);
     if (index) {
@@ -35,13 +36,3 @@ const confirmEdit = (task, id) => reducer({
     id,
   },
 });
-
-/*
-{
-    type: 'ADD_TASK',
-    data: {
-      task,
-      id: state.lastId + 1,
-    },
-  }
-*/

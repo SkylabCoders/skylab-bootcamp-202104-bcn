@@ -5,7 +5,10 @@
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  color: #393939;
+}
+
+html {
+  background-color: #f3f3f3;
 }
 
 .main-content {
@@ -116,6 +119,7 @@ form .input-field {
   top: 3px;
   left: 4px;
   border: none;
+  color: #929292;
   padding: 20px 10px;
   width: 250px;
   height: 25px;
