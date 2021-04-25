@@ -1,5 +1,5 @@
 let state = {
-    myTasks: [{id: 1, task: 'Clean the room!',done:false}],
+    myTasks: [],
     lastId: 1
 }
 

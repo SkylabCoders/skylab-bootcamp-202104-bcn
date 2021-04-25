@@ -9,12 +9,12 @@ function createHtmlElements(parent,tag,classname,text){
 
 function createList(){
     const main = document.querySelector('.main');
-    const title = createHtmlElements(main,'h1','title','Tasks to do!!');
-    const inputContainer = createHtmlElements(main,'div','input','');
+    const title = createHtmlElements(main,'h1','title','To do list');
+    const inputContainer = createHtmlElements(main,'div','input__container','');
     const inputTask = createHtmlElements(inputContainer,'input','input','');
     inputTask.setAttribute('id','input');
     inputTask.setAttribute('type','text');
-    const saveInput = createHtmlElements(inputContainer,'button','input__value','Save');  
+    const saveInput = createHtmlElements(inputContainer,'button','input__value','+');  
     saveInput.setAttribute('onclick','addTask()');
     const list = createHtmlElements(main,'ul','list','');
 }
@@ -24,9 +24,9 @@ const addingTask = (myTasks)=>{
     list.innerHTML='';
     myTasks.forEach(({id, task, done})=>{
         const listItem = createHtmlElements(list,'li','list__item',`${task}`);
-        const doneButton = createHtmlElements(listItem,'button','list__item__button','Done');
+        const doneButton = createHtmlElements(listItem,'button','list__button list__button--done','');
         doneButton.onclick = (()=>taskDone(id));
-        const deleteButton = createHtmlElements(listItem,'button','list__item__button','Delete');  
+        const deleteButton = createHtmlElements(listItem,'button','list__button list__button--delete','');  
         deleteButton.onclick = (() => deleteTask(id));
         if(done){
             listItem.classList.add('list__item--done');

@@ -1,13 +1,17 @@
-*, *::after, *::before {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-    } 
-
-body {
+*, *::after, *::before {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .main {
@@ -15,6 +19,89 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: 'Noto Sans KR', sans-serif;   
+}
+
+.title {
+    font-size: 30px;
+    margin: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.input__container {
+    width: 100%;
+    display:inline-flex;
+    justify-content: center;
+}
+
+.input {
+    padding: 10px 30px;
+    width: 400px;
+    font-family: 'Noto Sans KR', sans-serif;  
+    font-size: 20px;
+    outline: none;
+    border-radius: 30px;
+    &__value {
+        padding: 0 15px;
+        font-size: 40px;
+        background-color: green;
+        color: white;
+        border: 0;
+        border-radius: 50%;
+        margin-left: 10px;
+        
+    }
+}
+
+.list {
+    margin-top: 20px;
+    &__item {
+        list-style: none;
+        width: 500px;
+        padding: 10px 10px 10px 30px;
+        font-size: 20px;
+        border-radius: 30px;
+        background-color: lightgray;
+        margin: 5px 0;
+        display: flex;
+        align-items: center;           
+    }
+}
+
+.list__button{
+    outline: none;
+    border: none;
+    float: right;  
+    color: white;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    &--delete{
+        background-image: url('./../img/trash-alt-solid.svg');
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: center;
+        margin: 0;
+        margin-right: 0;
+        background-color: cyan;
+        filter: invert(1);
+    }
+    &--done{
+        background-color: yellow;
+        background-image: url('./../img/check-solid.svg');
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: center;
+        filter: invert(1);
+        margin: auto;
+        margin-right: 5px;
+
+    }
 }
 
 .list__item--done {

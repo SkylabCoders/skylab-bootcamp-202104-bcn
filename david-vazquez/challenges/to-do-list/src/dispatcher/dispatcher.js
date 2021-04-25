@@ -34,7 +34,6 @@ const deleteTaskDispatcher = (id) =>{
         }
     });
     return promiseDeleteTask;
-    reducer(deleteTask);
 }
 
 const taskDoneDispatcher = (id) =>{
