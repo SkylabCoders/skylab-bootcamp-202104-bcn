@@ -8,5 +8,10 @@ function fetchTaskJson(callback) {
 function getInputValue() {
   const inputTextValue = document.getElementById('taskInput').value;
   console.log(inputTextValue);
-  createTaskAction(inputTextValue);
+  createTaskAction(inputTextValue).then((data) => dispatch(data)).catch((error) => alert(`ERROR: ${error.message}`));
+}
+
+function deleteSelectedTask(taskToDelete) {
+  console.log('we are deleting ', taskToDelete);
+  // deleteTaskAction();
 }

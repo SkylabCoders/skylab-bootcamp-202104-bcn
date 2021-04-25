@@ -7,10 +7,13 @@ const PRINT_TASKS = 'PRINT_TASKS';
 
 function reducer({ type, data }) {
   switch (type) {
-    case type = CREATE_TASK:
+    case CREATE_TASK:
       tasks.push(data);
-      console.log('estamos in!!');
+      console.log('estamos in!!', tasks);
       printNewTask(data);
+      break;
+    case DELETE_TASK:
+      console.log('delete');
       break;
     default:
       return data;

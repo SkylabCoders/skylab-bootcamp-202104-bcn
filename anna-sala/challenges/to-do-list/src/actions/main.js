@@ -4,7 +4,7 @@
 //     .then((data) => callback(data))
 //     .catch((error) => console.error(error));
 // }
-// function getTasks(data) {
+// function getTasksID(data) {
 //   const { tasks } = data;
 //   weekdays = tasks;
 //   console.log(weekdays);
@@ -24,6 +24,8 @@ function printNewTask() {
   buttonDelete.innerHTML = 'Delete';
   taskOnList.setAttribute('class', 'task');
   buttonDone.setAttribute('class', 'done');
+  buttonDelete.setAttribute('id', `${inputTextValue}`);
+  buttonDelete.onclick = (() => deleteSelectedTask(inputTextValue));
   buttonDelete.setAttribute('class', 'delete');
   taskOnList.appendChild(textNode);
   taskOnList.appendChild(buttonDone);
