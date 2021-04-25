@@ -1,11 +1,22 @@
-const addTodo = () => {
+const addTodo = (data) => new Promise((resolve, reject) => {
   const dataInput = document.querySelector('.newtask-input');
-  store.dispatch({
-    type: 'ADD_TASK', id: findFreeId(store.tasks), title: dataInput.value, done: false,
-  });
 
-  dataInput.value = '';
-};
+  if (dataInput.value) {
+    setTimeout(() => {
+      resolve(store.dispatch({
+        type: 'ADD_TASK', id: findFreeId(store.tasks), title: dataInput.value, done: false,
+
+      }));
+      dataInput.value = '';
+    }, 1000);
+  } else {
+    reject({
+      type: 'ERROR404',
+      message: 'Input value of null',
+    });
+  }
+});
+
 const editTodo = (ID, editedText) => {
   store.dispatch({ type: 'EDIT_TASK', id: ID, editable: editedText });
 };
