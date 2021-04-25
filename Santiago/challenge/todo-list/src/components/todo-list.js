@@ -33,13 +33,14 @@ const createInputs = () => {
 };
 
 const createTask = (task) => {
-  const listContainer = createDomElements('div', '', '', main);
-  const taskUl = createDomElements('ul', '', '', listContainer);
-  const taskLi = createDomElements('li', task, '', taskUl);
-  createDomElements('button', 'DELETE', '', taskLi);
-  createDomElements('button', 'DONE', '', taskLi);
+  const taskP = createDomElements('p', `${task.splice(-1)}`, '', main);
+  createDomElements('button', 'DELETE', '', taskP);
+  createDomElements('button', 'DONE', '', taskP);
 };
 
-createHeader();
-createMainDiv();
-createInputs();
+const init = () => {
+  createHeader();
+  createMainDiv();
+  createInputs();
+};
+init();
