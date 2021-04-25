@@ -24,7 +24,7 @@ const createItem = ({ task, id }, parent) => {
     class: 'edit-input', type: 'text', autofocus: true, autocomplete: 'off',
   });
   createDomElement(li, 'p', task);
-  createDomElement(li, 'a', '🖊', { class: 'task-button task-button__edit', role: 'button', onclick: 'handleEdit(this.parentElement)' });
+  createDomElement(li, 'a', '🖊', { class: 'task-button task-button__edit', role: 'button', onclick: 'handleEdit(this.parentElement.id)' });
   createDomElement(li, 'a', '🚮', { class: 'task-button task-button__delete', role: 'button', onclick: 'removeTask(this.parentElement.id)' });
   createDomElement(li, 'a', 'Done', { class: 'task-button task-button__editOk', role: 'button', onclick: 'confirmEdit(this.parentElement.firstElementChild.value, this.parentElement.id)' });
   parent.append(li);
@@ -53,6 +53,16 @@ const renderElement = (editedElement) => {
   let elementToUpdate = document.getElementById(id);
   elementToUpdate = '';
   elementToUpdate = editedElement;
+};
+
+const editMode = (id) => {
+  const taskToEdit = document.getElementById(id);
+  const button = taskToEdit.lastElementChild;
+  const inputField = taskToEdit.firstElementChild;
+  button.classList.add('task-button__editOk--visible');
+  inputField.classList.add('edit-input--visible');
+
+  renderElement(htmlElement);
 };
 
 window.onload = renderList(state.toDoList);

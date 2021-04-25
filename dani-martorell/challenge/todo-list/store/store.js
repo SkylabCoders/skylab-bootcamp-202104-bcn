@@ -1,6 +1,6 @@
 const state = {
   lastId: 3,
-  editedElement: null,
+  editedElementId: null,
   toDoList: [
     {
       task: 'Perro veterinario',
@@ -60,11 +60,7 @@ const modifyTask = ({ task, id }) => {
   renderList(state.toDoList);
 };
 
-const modifyEditElement = (htmlElement) => {
-  state.editedElement = htmlElement;
-  const button = state.editedElement.lastElementChild;
-  const inputField = state.editedElement.firstElementChild;
-  button.classList.add('task-button__editOk--visible');
-  inputField.classList.add('edit-input--visible');
-  renderElement(state.editedElement, htmlElement);
+const modifyEditElement = (id) => {
+  state.editedElementId = id;
+  editMode(id);
 };

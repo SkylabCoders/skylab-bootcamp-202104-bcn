@@ -27,9 +27,9 @@ const removeTask = (id) => reducer({
   data: id,
 });
 
-const handleEdit = (htmlElement) => reducer({
+const handleEdit = (id) => reducer({
   type: 'OPEN_EDIT_FRAME',
-  data: htmlElement,
+  data: id,
 });
 
 const confirmEdit = (task, id) => reducer({
