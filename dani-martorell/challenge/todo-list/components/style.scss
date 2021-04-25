@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -46,10 +47,13 @@ form {
     border-radius: 100%;
     color: rgb(255, 255, 255);
     font-weight: bolder;
-}
 
-.btn:hover {
-    transform: scale(1.1);
+    &:hover {
+        transform: scale(1.1);
+    }
+    &:focus {
+        outline: none;;
+    }
 }
 
 .tasks {
@@ -68,9 +72,9 @@ form {
         
         &--visible {
             display: block;
-            width: 375px;
+            width: 355px;
             margin: 0 auto;
-            animation: buda-img---visible 4s ease-in-out infinite both;
+            animation: buda-img---visible 5s ease-in-out infinite both;
         }
     }
     .buda-message {
@@ -78,11 +82,12 @@ form {
         
         &--visible{
             display: block;
+            margin-top: -40px;
             font-family: 'Bungee', cursive;
             text-align: center;
-            font-size:35px;
-            color: #64B3C1;
-            text-shadow: 2px 2px rgb(48, 48, 48);
+            font-size:30px;
+            color: #65bfcf;
+            text-shadow: 1px 1.5px rgb(48, 48, 48);
         }
 
     }
@@ -159,15 +164,15 @@ form {
 
   @keyframes buda-img---visible {
     0% {
-              transform: translate(0, -30px);
+              transform: translate(0, -70px);
     }
     
     50% {
-              transform: translate(0px, -20px);
+              transform: translate(0px, -50px);
     }
    
     100% {
-              transform: translate(0, -30px);
+              transform: translate(0, -70px);
     }
   }
 

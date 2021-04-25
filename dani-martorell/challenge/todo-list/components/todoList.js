@@ -34,7 +34,7 @@ const renderList = (list) => {
   if (list.length === 0) {
     createDomElement(listSection, 'img', null, { class: 'buda-img--visible', src: './buda-img.png' });
     setTimeout(() => {
-      createDomElement(listSection, 'span', 'Now U\nF**King\nRelax!', { class: 'buda-message--visible' });
+      createDomElement(listSection, 'span', 'Now\nBreathe\nand\nChill', { class: 'buda-message--visible' });
     }, 100);
   } else {
     createDomElement(listSection, 'h1', 'Don\'t Forget', { class: 'title' });
@@ -57,7 +57,7 @@ const editMode = (id) => {
   button.classList.add('task-button__editOk--visible');
   inputField.classList.add('edit-input--visible');
 
-  renderElement(htmlElement);
+  renderElement(taskToEdit);
 };
 
 window.onload = renderList(state.toDoList);

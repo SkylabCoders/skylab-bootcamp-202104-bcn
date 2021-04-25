@@ -62,6 +62,10 @@ form .input-field:focus {
           transform: scale(1.1);
 }
 
+.btn:focus {
+  outline: none;
+}
+
 .tasks {
   margin-top: 30px;
 }
@@ -81,10 +85,10 @@ form .input-field:focus {
 
 .tasks .buda-img--visible {
   display: block;
-  width: 375px;
+  width: 355px;
   margin: 0 auto;
-  -webkit-animation: buda-img---visible 4s ease-in-out infinite both;
-          animation: buda-img---visible 4s ease-in-out infinite both;
+  -webkit-animation: buda-img---visible 5s ease-in-out infinite both;
+          animation: buda-img---visible 5s ease-in-out infinite both;
 }
 
 .tasks .buda-message {
@@ -93,11 +97,12 @@ form .input-field:focus {
 
 .tasks .buda-message--visible {
   display: block;
+  margin-top: -40px;
   font-family: 'Bungee', cursive;
   text-align: center;
-  font-size: 35px;
-  color: #64B3C1;
-  text-shadow: 2px 2px #303030;
+  font-size: 30px;
+  color: #65bfcf;
+  text-shadow: 1px 1.5px #303030;
 }
 
 .tasks .tasks__list {
@@ -181,31 +186,31 @@ form .input-field:focus {
 
 @-webkit-keyframes buda-img---visible {
   0% {
-    -webkit-transform: translate(0, -30px);
-            transform: translate(0, -30px);
+    -webkit-transform: translate(0, -70px);
+            transform: translate(0, -70px);
   }
   50% {
-    -webkit-transform: translate(0px, -20px);
-            transform: translate(0px, -20px);
+    -webkit-transform: translate(0px, -50px);
+            transform: translate(0px, -50px);
   }
   100% {
-    -webkit-transform: translate(0, -30px);
-            transform: translate(0, -30px);
+    -webkit-transform: translate(0, -70px);
+            transform: translate(0, -70px);
   }
 }
 
 @keyframes buda-img---visible {
   0% {
-    -webkit-transform: translate(0, -30px);
-            transform: translate(0, -30px);
+    -webkit-transform: translate(0, -70px);
+            transform: translate(0, -70px);
   }
   50% {
-    -webkit-transform: translate(0px, -20px);
-            transform: translate(0px, -20px);
+    -webkit-transform: translate(0px, -50px);
+            transform: translate(0px, -50px);
   }
   100% {
-    -webkit-transform: translate(0, -30px);
-            transform: translate(0, -30px);
+    -webkit-transform: translate(0, -70px);
+            transform: translate(0, -70px);
   }
 }
 /*# sourceMappingURL=style.css.map */
