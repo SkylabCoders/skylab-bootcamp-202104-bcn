@@ -24,7 +24,7 @@ const getIdtoDeleteTask = (id) => {
   dispatcher(deleteTask);
 };
 
-// const toDeleteTask = () => {
-// const dataDeleteTask = document.querySelector('.container-buttons__delete');
-//   getIdtoDeleteTask(deleteTask.id);
-// };
+const getIdtoFinishedTask = (id) => {
+  const finishedTask = { type: 'FINISH_TASK', data: id };
+  dispatcher(finishedTask);
+};

@@ -81,3 +81,8 @@ button {
 .fa-trash-alt {
  color: #ea5455;
 }
+
+.finish {
+    text-decoration: line-through;
+    COLOR: #1fab89;
+}

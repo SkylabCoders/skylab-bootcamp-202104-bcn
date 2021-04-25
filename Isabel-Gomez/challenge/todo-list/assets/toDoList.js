@@ -44,10 +44,11 @@ const printNewTask = (dataBase) => {
   const newLi = createElements('li', containerList, 'list-container__item', `${dataBase[dataBase.length - 1].data.value}`);
   const IdTaskToDelete = newLi.setAttribute('id', `${dataBase[dataBase.length - 1].data.id}`);
   const divButtons = createElements('div', newLi, 'list-container__item-div');
-  const doItButton = createElements('button', divButtons, 'list__doIt-button', '<i class="far fa-check-circle"></i>');
+  const doItButton = createElements('button', divButtons, 'list__finished-button', '<i class="far fa-check-circle"></i>');
   const editButton = createElements('button', divButtons, 'list__edit-button', '<i class="far fa-edit"></i>');
   const deleteButton = createElements('button', divButtons, 'list__delete-button', '<i class="far fa-trash-alt"></i>');
   onClickDeleteButton();
+  onClickFinishedButton();
 };
 
 const onClickDeleteButton = () => {
@@ -62,7 +63,24 @@ const onClickDeleteButton = () => {
 const deleteSelectTask = (id) => {
   console.log('id en component', id);
   console.log('dataBase', dataBase);
-  const newdataBase = dataBase.filter((element) => element.data.id !== Number(id));
-  dataBase = newdataBase;
-  console.log('newdataBase', newdataBase);
+  // const newDataBase = dataBase.filter((element) => element.data.id !== Number(id));
+  // console.log('newdataBase', newDataBase);
+  const selectHtmlLine = document.getElementById(`${id}`);
+  const deleteDivContainer = selectHtmlLine.parentNode.parentNode.remove();
+  const deleteUlContainer = selectHtmlLine.parentNode.remove();
+  const deleteLiElement = selectHtmlLine.remove();
+};
+
+const onClickFinishedButton = () => {
+  const getFinishedButton = document.querySelector('.list__finished-button');
+  getFinishedButton.onclick = (element) => {
+    element.preventDefault();
+    console.log('edit');
+    getIdtoFinishedTask(element.currentTarget.parentNode.parentNode.id);
+  };
+};
+
+const finishSelectTask = (id) => {
+  const getFinishedTask = document.getElementById(`${id}`);
+  getFinishedTask.classList.add('finish');
 };
