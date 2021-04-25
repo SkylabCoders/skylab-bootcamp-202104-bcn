@@ -53,12 +53,6 @@ const store = {
           },
         );
         break;
-
-        // case WAITING_TASK:
-        //   this.waitingTask === true
-        //     ? this.waitingTask = false
-        //     : this.waitingTask = true;
-        //   break
       default:
         break;
     }
