@@ -17,7 +17,14 @@ const reducer = ({ type, data }) => {
       break;
     case 'FINISH_TASK':
       console.log('id en data Finish', data);
+      const getCompletedTask = dataBase.completed = true;
+      console.log('dataBase con Finish', dataBase);
       finishSelectTask(data);
+      break;
+    case 'EDIT_TASK':
+      console.log('id en data Edit', data);
+      console.log('dataBase con Edit', dataBase);
+      editSelectTask(data);
       break;
     default:
       break;

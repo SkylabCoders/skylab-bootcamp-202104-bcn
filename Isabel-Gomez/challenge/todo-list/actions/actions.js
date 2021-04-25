@@ -28,3 +28,8 @@ const getIdtoFinishedTask = (id) => {
   const finishedTask = { type: 'FINISH_TASK', data: id };
   dispatcher(finishedTask);
 };
+
+const getIdtoEditTask = (id) => {
+  const editedTask = { type: 'EDIT_TASK', data: id };
+  dispatcher(editedTask);
+};

@@ -51,36 +51,56 @@ const printNewTask = (dataBase) => {
   const deleteButton = createElements('button', divButtons, 'list__delete-button', '<i class="far fa-trash-alt"></i>');
   const setIdTaskToDeleteButton = deleteButton.setAttribute('id', `${dataBase[dataBase.length - 1].data.id}`);
   onClickDeleteButton(indexDataBase);
-  onClickFinishedButton();
+  onClickFinishedButton(indexDataBase);
+  onClickEditButton(indexDataBase);
 };
 
 const onClickDeleteButton = (id) => {
   const getDeleteButton = document.getElementsByClassName('list__delete-button')[id];
   getDeleteButton.onclick = (element) => {
     element.preventDefault();
-    console.log('delete');
     getIdtoDeleteTask(element.currentTarget.parentNode.parentNode.id);
   };
 };
 
 const deleteSelectTask = (id) => {
-  console.log('id en component', id);
-  console.log('dataBase', dataBase);
   const selectHtmlLine = document.getElementById(`${id}`);
   const deleteDivContainer = selectHtmlLine.parentNode.parentNode.remove();
 };
 
-const onClickFinishedButton = () => {
-  const getFinishedButton = document.querySelector('.list__finished-button');
+const onClickFinishedButton = (id) => {
+  const getFinishedButton = document.getElementsByClassName('list__finished-button')[id];
   getFinishedButton.onclick = (element) => {
     element.preventDefault();
-    console.log('edit');
     getIdtoFinishedTask(element.currentTarget.parentNode.parentNode.id);
   };
 };
 
 const finishSelectTask = (id) => {
-  const getCompletedTask = dataBase[id].data.completed = true;
   const getFinishedTask = document.getElementById(`${id}`);
   getFinishedTask.classList.add('finish');
+  const getBloquedFinishButton = document.getElementsByClassName('list__finished-button')[id];
+  getBloquedFinishButton.firstChild.classList.add('bloqued');
+  const getBloquedEditButton = document.getElementsByClassName('list__edit-button')[id];
+  getBloquedEditButton.firstChild.classList.add('bloqued');
+};
+
+const onClickEditButton = (id) => {
+  const getEditButton = document.getElementsByClassName('list__edit-button')[id];
+  getEditButton.onclick = (element) => {
+    element.preventDefault();
+    getIdtoEditTask(element.currentTarget.parentNode.parentNode.id);
+  };
+};
+
+const editSelectTask = (id) => {
+  console.log('hola');
+  const setLiToEdit = document.getElementsByClassName('list-container__item')[id];
+  setLiToEdit.setAttribute('contentEditable', 'true');
+
+  // const saveInnerHtml = setLiToEdit.innerText;
+  // console.log(saveInnerHtml);
+  // // setLiToEdit.innerHTML = `<input class=list-container__item-input placeholder=${saveInnerHtml}>`;
+  // const newImputToEditTask = createElements('input', setLiToEdit, 'list-container__item-input');
+  // newImputToEditTask.setAttribute('placeholder', `${saveInnerHtml}`);
 };
