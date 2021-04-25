@@ -36,15 +36,26 @@ function drawTodoList(tasks) {
   });
 }
 
-function createTask() {
+const createTask = () => {
   const task = document.getElementById('new-task');
   const taskToCreate = { taskId: '', value: task.value, isFinished: false };
-  const payLoad = {
-    type: 'CREATE_TASK',
-    data: taskToCreate,
-  };
-  dispatcher(payLoad);
-}
+
+  const taskPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (taskToCreate.value) {
+        resolve({ type: 'CREATE_TASK', data: taskToCreate });
+      } else {
+        reject({ type: 'ERROR', data: 'NO SE PUEDE CREAR LA TAREA' });
+      }
+    }, 3000);
+  });
+  taskPromise.then(
+    (newTask) => dispatcher(newTask),
+  )
+    .catch(
+      (error) => dispatcher(error),
+    );
+};
 
 function deleteTask(taskId) {
   const payload = {
@@ -73,4 +84,8 @@ function updateTask(taskId) {
 function clearInput() {
   const task = document.getElementById('new-task');
   task.value = '';
+}
+
+function drawError(error) {
+  alert(error);
 }

@@ -12,9 +12,11 @@ function dispatcher(payLoad) {
     case 'UPDATE_TASK':
       tasksReducer(payLoad.data, payLoad.type);
       break;
+    case 'ERROR':
+      generalReducer(payLoad.data, payLoad.type);
+      break;
     default:
 
-      console.log('no task defined');
       break;
   }
 }

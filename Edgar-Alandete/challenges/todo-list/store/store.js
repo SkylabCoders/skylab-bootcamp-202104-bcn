@@ -4,6 +4,7 @@ const LOAD_TASKS = 'LOAD_TASKS';
 const CREATE_TASK = 'CREATE_TASK';
 const DELETE_TASK = 'DELETE_TASK';
 const UPDATE_TASK = 'UPDATE_TASK';
+const ERROR = 'ERROR';
 
 // const tasksLoaded = require('./tasks.json');
 
@@ -11,19 +12,19 @@ let appState = {
   tasks: [{ taskId: '1', value: 'Hacer el hundir la flota mejor que Gerard', isFinished: false }, { taskId: '2', value: 'Aprender CSS con Dani', isFinished: false }],
   selectedTask: null,
   tasksNum: 2,
+  error: null,
 };
 
-function setContent(data) {
-  drawTodoList(data);
+function setContent(data, error) {
+  (error) ? drawError(error) : drawTodoList(data);
 }
 
 function setEnv(state) {
   appState = state;
-  setContent(appState.tasks);
+  setContent(state.tasks, state.error);
 }
 
 function updateTaskStore(data) {
-  debugger;
   const { tasks } = { ...appState };
   const newTasks = tasks.map(({ taskId, isFinished, value }) => {
     if (taskId === data) {
@@ -70,4 +71,19 @@ function tasksReducer(data, action) {
     default:
   }
   return setEnv(newState);
+}
+
+function generalReducer(data, action) {
+  const newState = { ...appState };
+
+  switch (action) {
+    case ERROR:
+      newState.error = data;
+      break;
+
+    default:
+      break;
+  }
+
+  setEnv(newState);
 }
