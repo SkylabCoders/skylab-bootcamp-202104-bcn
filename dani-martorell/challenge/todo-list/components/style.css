@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -24,6 +25,9 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 form label {
@@ -69,6 +73,22 @@ form .input-field {
   display: block;
   width: 375px;
   margin: 0 auto;
+  -webkit-animation: buda-img---visible 4s ease-in-out infinite both;
+          animation: buda-img---visible 4s ease-in-out infinite both;
+}
+
+.tasks .buda-message {
+  display: none;
+}
+
+.tasks .buda-message--visible {
+  display: block;
+  margin-top: -40px;
+  font-family: 'Bungee', cursive;
+  text-align: center;
+  font-size: 35px;
+  color: #64B3C1;
+  text-shadow: 2px 2px #303030;
 }
 
 .tasks .tasks__list {
@@ -148,5 +168,35 @@ form .input-field {
 
 .tasks .tasks__list-item .edit-input--visible {
   display: block;
+}
+
+@-webkit-keyframes buda-img---visible {
+  0% {
+    -webkit-transform: translate(0, -50px);
+            transform: translate(0, -50px);
+  }
+  50% {
+    -webkit-transform: translate(0px, -40px);
+            transform: translate(0px, -40px);
+  }
+  100% {
+    -webkit-transform: translate(0, -50px);
+            transform: translate(0, -50px);
+  }
+}
+
+@keyframes buda-img---visible {
+  0% {
+    -webkit-transform: translate(0, -50px);
+            transform: translate(0, -50px);
+  }
+  50% {
+    -webkit-transform: translate(0px, -40px);
+            transform: translate(0px, -40px);
+  }
+  100% {
+    -webkit-transform: translate(0, -50px);
+            transform: translate(0, -50px);
+  }
 }
 /*# sourceMappingURL=style.css.map */

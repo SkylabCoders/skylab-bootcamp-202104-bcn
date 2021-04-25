@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -14,12 +16,11 @@ html {
     padding: 50px 40px;
     max-width: 700px;
     margin: 0 auto;
-
 }
-
 form {
     display: flex;
     align-items: center;
+    justify-content: center;;
     label {
         margin-right: 10px;
     }
@@ -60,8 +61,22 @@ form {
             display: block;
             width: 375px;
             margin: 0 auto;
-
+            animation: buda-img---visible 4s ease-in-out infinite both;
         }
+    }
+    .buda-message {
+        display:none;
+        
+        &--visible{
+            display:block;
+            margin-top: -40px;
+            font-family: 'Bungee', cursive;
+            text-align: center;
+            font-size:35px;
+            color: #64B3C1;
+            text-shadow: 2px 2px rgb(48, 48, 48);
+        }
+
     }
     .tasks__list {
         margin-top: 20px;
@@ -99,8 +114,6 @@ form {
                     background-color: rgba(236, 134, 0, 0.7);
                     padding: 5px 10px;
 
-
-                    
                     &--visible {
                         display: block;
                     }
@@ -135,6 +148,20 @@ form {
         }
     }
 }
+
+  @keyframes buda-img---visible {
+    0% {
+              transform: translate(0, -50px);
+    }
+    
+    50% {
+              transform: translate(0px, -40px);
+    }
+   
+    100% {
+              transform: translate(0, -50px);
+    }
+  }
 
 
 
