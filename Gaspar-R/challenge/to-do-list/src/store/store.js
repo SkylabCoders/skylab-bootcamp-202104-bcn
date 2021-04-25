@@ -1,6 +1,6 @@
-const actionTypes = require('../actions/actionTypes');
+// const actionType = require('../actions/actionTypes');
 
-const store = {
+export const store = {
   state: {
     tasks: [
       {
@@ -21,9 +21,9 @@ const store = {
     const newTasks = [...state.tasks];
 
     switch (action) {
-      case actionTypes.GET_TASKS:
+      case actionType.GET_TASKS:
         break;
-      case actionTypes.DELETE_TASK:
+      case actionType.DELETE_TASK:
         newTasks.filter((task) => task.id !== action.taskId);
         break;
       default:
@@ -34,6 +34,3 @@ const store = {
   }
 };
 
-module.exports = {
-  store,
-};

@@ -11,14 +11,21 @@
         <h1>To do list</h1>
 
     <div class="addtask">
-        <input type="text" class="addtask-input">
-        <button class="addtask_button">+</button>
+        <input type="text" class="addtask-input" value='' name='createTask'>
+        <button class="addtask_button" onclick=handlerAddTask() >+</button>
     </div>
         <ul class="todo-list">
+            
 
         </ul>
     </main>
     
-  <script src="./todolist.js"></script>  
+    <script src="../store/storeV2.js"></script>  
+    <script src="../actions/actionTypes.js"></script>  
+    <script src="../actions/action.js"></script>  
+    <script src="./todolist.js"></script>  
+  <script src="../store/reducer.js"></script>  
+
+
 </body>
 </html>
