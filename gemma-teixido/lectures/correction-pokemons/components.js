@@ -44,10 +44,10 @@ function getTagContainer(idReferer, tagName) {
 }
 
 function paginate(url) {
-    let offset = url.split('?')[1].split('offset')[1].replace('=', '');
-    let rowspercall = url.split('?')[1].split('limit')[1].replace('=', '');
-    store.currentIndex = parseInt(offset);
-    store.rowspercall = parseInt(rowspercall);
+    let offSet = url.split('?')[1].split('offset')[1].replace('=', '');
+    let rowsPerCall = url.split('?')[1].split('limit')[1].replace('=', '');
+    store.currentIndex = parseInt(offSet);
+    store.rowspercall = parseInt(rowsPerCall);
 
     fetchListFromService(url);
 }

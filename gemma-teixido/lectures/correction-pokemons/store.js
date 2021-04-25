@@ -3,7 +3,7 @@ let store = {
     previous: "",
     next: "",
     pokemons: null,
-    rowspercall: 10,
+    rowsPerCall: 10,
     currentIndex: 0,
 }
 
