@@ -29,6 +29,8 @@ const createItem = ({ task, id }, parent) => {
 
   editBoxInputBtn.textContent = 'Done';
   editBoxInputBtn.classList.add('task-button', 'task-button__editOk');
+  editBoxInputBtn.setAttribute('role', 'button');
+  editBoxInputBtn.setAttribute('onclick', 'confirmEdit(this.parentElement.firstElementChild.value, this.parentElement.id)');
 
   // CUANDO PINCHE EDIT ARRANCAR LOGICA DE CAMBIO EStiLO PARA QUE APAREZCA BOTON.
 
@@ -73,8 +75,13 @@ const modifyEditElement = (htmlElement) => {
   button.classList.add('task-button__editOk--visible');
   inputField.classList.add('edit-input--visible');
   renderElement(state.editedElement, htmlElement);
+};
 
-  // const index = list.findIndex((element) => element.id === +id);
+const modifyTask = ({ task, id }) => {
+  const list = state.toDoList;
+  const [selectedElement] = list.filter((element) => element.id === +id);
+  selectedElement.task = task;
+  renderList(state.toDoList);
 };
 
 const reducer = ({ type, data }) => {
@@ -89,6 +96,10 @@ const reducer = ({ type, data }) => {
 
     case 'OPEN_EDIT_FRAME':
       modifyEditElement(data);
+      break;
+
+    case 'CONFIRM_EDIT':
+      modifyTask(data);
       break;
 
     default:
@@ -112,13 +123,12 @@ const handleEdit = (htmlElement) => reducer({
   data: htmlElement,
 });
 
-const confirmTask = (task, id) => reducer({
-  type: 'CONFIRM_TASK',
+const confirmEdit = (task, id) => reducer({
+  type: 'CONFIRM_EDIT',
   data: {
     task,
     id,
   },
-
 });
 
 window.onload = renderList(state.toDoList);
