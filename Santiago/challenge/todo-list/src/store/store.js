@@ -1,16 +1,19 @@
-// const task = {
-//   type: 'ADD_TASK',
-//   data: [{ description: 'Vamos a la playa' }]
-// };
-// const myReducer = ({ type, data }) => {
-//   const test = { ...task };
-//   switch (type) {
-//     case 'ADD_TASK':
-//       task.push(data);
-//       createTask(task);
-//       break;
-//     default:
-//       return type;
-//   }
-//   return task;
-// };
+let tasks = {
+  payload: [{ description: 'Vamos a la playa' }]
+};
+const myReducer = ({ type, data }) => {
+  const newTasks = { ...tasks };
+  switch (type) {
+    case 'ADD_TASK':
+      tasks.payload.push(data);
+      break;
+    default:
+      break;
+  }
+  updateDom(newTasks);
+};
+
+const updateDom = (newTasks) => {
+  tasks = newTasks;
+  createTask(tasks.payload);
+};

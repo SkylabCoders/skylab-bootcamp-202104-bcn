@@ -1,5 +1,5 @@
 const taskAdded = () => {
   const addedTask = document.querySelector('#first');
-  createTaskAction(addedTask.value);
+  addTaskDispatcher(addedTask.value);
   addedTask.value = '';
 };

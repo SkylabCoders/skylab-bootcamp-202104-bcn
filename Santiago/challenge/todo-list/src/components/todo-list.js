@@ -32,15 +32,24 @@ const createInputs = () => {
   addBtn.setAttribute('onclick', 'taskAdded()');
 };
 
-const createTask = (task) => {
-  const taskP = createDomElements('p', `${task.splice(-1)}`, '', main);
-  createDomElements('button', 'DELETE', '', taskP);
-  createDomElements('button', 'DONE', '', taskP);
+const createULs = () => {
+  const tasksUL = createDomElements('ul', '', '', main, 'chopped');
 };
+
+const createTask = ((payload) => {
+  const tasksList = document.querySelector('#chopped');
+  tasksList.innerHTML = '';
+  payload.forEach(({ description }) => {
+    const taskP = createDomElements('li', `${description}`, '', tasksList);
+    createDomElements('button', 'DELETE', '', taskP);
+    createDomElements('button', 'DONE', '', taskP);
+  });
+});
 
 const init = () => {
   createHeader();
   createMainDiv();
   createInputs();
+  createULs();
 };
 init();

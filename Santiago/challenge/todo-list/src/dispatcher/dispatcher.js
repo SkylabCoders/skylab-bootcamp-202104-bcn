@@ -1,7 +1,7 @@
-const createTaskAction = (value) => {
+const addTaskDispatcher = (value) => {
   const addTask = {
     type: 'ADD_TASK',
-    data: value
+    data: { description: value }
   };
   dispatcher(addTask);
 };
