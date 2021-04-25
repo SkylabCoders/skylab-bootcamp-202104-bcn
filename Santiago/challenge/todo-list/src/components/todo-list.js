@@ -36,13 +36,18 @@ const createULs = () => {
   const tasksUL = createDomElements('ul', '', '', main, 'chopped');
 };
 
-const createTask = ((payload) => {
+const updateList = ((payload) => {
   const tasksList = document.querySelector('#chopped');
   tasksList.innerHTML = '';
-  payload.forEach(({ description }) => {
-    const taskP = createDomElements('li', `${description}`, '', tasksList);
-    createDomElements('button', 'DELETE', '', taskP);
-    createDomElements('button', 'DONE', '', taskP);
+  payload.forEach(({ id, description, completed }) => {
+    const taskLi = createDomElements('li', `${description}`, '', tasksList);
+    const deleteBtn = createDomElements('button', 'DELETE', '', taskLi);
+    deleteBtn.onclick = (() => taskDeleted(id));
+    const doneBtn = createDomElements('button', 'DONE', '', taskLi);
+    doneBtn.onclick = (() => taskDone(id));
+    if (completed) {
+      taskLi.classList.add('done-task');
+    }
   });
 });
 

@@ -55,4 +55,8 @@ body {
   width: 200px;
   height: 20px;
 }
+
+.done-task {
+  text-decoration: line-through;
+}
 /*# sourceMappingURL=todo-list.css.map */

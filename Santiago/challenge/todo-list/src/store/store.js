@@ -1,11 +1,19 @@
 let tasks = {
-  payload: [{ description: 'Vamos a la playa' }]
+  payload: []
 };
 const myReducer = ({ type, data }) => {
   const newTasks = { ...tasks };
   switch (type) {
     case 'ADD_TASK':
       tasks.payload.push(data);
+      break;
+    case 'DELETE_TASK':
+      const delItem = newTasks.payload.findIndex((element) => element.id === data.id);
+      newTasks.payload.splice(delItem, 1);
+      break;
+    case 'DONE_TASK':
+      const doneTask = newTasks.payload.findIndex((element) => element.id === data.id);
+      newTasks.payload[doneTask].completed = true;
       break;
     default:
       break;
@@ -15,5 +23,7 @@ const myReducer = ({ type, data }) => {
 
 const updateDom = (newTasks) => {
   tasks = newTasks;
-  createTask(tasks.payload);
+  updateList(tasks.payload);
+
+  console.log(tasks.payload);
 };
