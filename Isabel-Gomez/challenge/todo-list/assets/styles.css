@@ -40,7 +40,7 @@ main {
 }
 
 .list {
-    width: 48%;
+    width: 47.5%;
     margin: 20px 335px;
     display: flex;
     justify-content: center;
@@ -56,3 +56,28 @@ main {
     justify-content: space-between;
 }
 
+.list-container__item-div {
+    width: 16%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    border: none;
+}
+
+.far {
+    font-size: 20px;
+}
+
+.fa-check-circle {
+    color: #1fab89;
+}
+
+.fa-edit {
+    color: #3ec1d3;
+}
+
+.fa-trash-alt {
+ color: #ea5455;
+}
