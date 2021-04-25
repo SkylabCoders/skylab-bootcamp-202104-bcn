@@ -26,7 +26,7 @@ const completedTask = (taskId) => ({
   type: actionType.COMPLETED_TASK,
   data:
     {
-      taskId,
+      id: taskId,
       complete: true
     }
 });

@@ -1,14 +1,14 @@
 // const reducer = require ('../store/reducer')
-let accId = 2;
+let accId = 1;
 
 let state = [
   {
-    id: 1,
+    id: 0,
     title: 'First Task',
     complete: false
   },
   {
-    id: 2,
+    id: 1,
     title: 'Second Task',
     complete: false
   }
@@ -16,8 +16,8 @@ let state = [
 ];
 
 dispatcher = (action) => {
+  // console.log(action);
   state = reducer(action);
-  updateHTML();
 };
 
 reducer = (action, oldState = state) => {
@@ -29,11 +29,12 @@ reducer = (action, oldState = state) => {
       return state;
 
     case actionType.ADD_TASK:
-      const { title } = action.data;
+      const { title, complete } = action.data;
       accId += 1;
       return [...newState, {
         id: accId,
-        title
+        title,
+        complete
       }];
 
     case actionType.DELETE_TASK:
@@ -43,7 +44,10 @@ reducer = (action, oldState = state) => {
       // ((task) => task.id !== action.taskId));
 
     case actionType.COMPLETED_TASK:
-      return state.map((task) => (task.id !== task.data.id ? task : { ...task, complete: true }));
+      completedTaskId = newState.findIndex((task) => task.id === action.data.id);
+      newState[completedTaskId].complete = true;
+      return newState;
+
     default:
       return state;
   }
