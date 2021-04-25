@@ -10,19 +10,24 @@ function createHtmlElements(parent,tag,classname,text){
 function createList(){
     const main = document.querySelector('.main');
     const title = createHtmlElements(main,'h1','title','Tasks to do!!');
-    const list = createHtmlElements(main,'ul','list','');
-    console.log(tasks.type);
-    tasks.forEach((task) => {
-        const listItem = createHtmlElements(list,'li','list__item',task);
-    });
     const inputContainer = createHtmlElements(main,'div','input','');
     const inputTask = createHtmlElements(inputContainer,'input','input','');
     inputTask.setAttribute('id','input');
     inputTask.setAttribute('type','text');
-    inputTask.setAttribute('value','hola');
-    const saveInput = createHtmlElements(inputContainer,'button','input__value','Save');
-
-    let inputValue = document.getElementById('input').value;
-    saveInput.onclick = function(){addTask(inputValue)};
+    const saveInput = createHtmlElements(inputContainer,'button','input__value','Save');  
+    saveInput.setAttribute('onclick','addTask()');
+    const list = createHtmlElements(main,'ul','list','');
 }
 
+const addingTask = (myTasks)=>{
+    const list = document.querySelector('.list');
+    list.innerHTML='';
+    myTasks.forEach(({id, task})=>{
+        const listItem = createHtmlElements(list,'li','list__item',`${task}`);
+        const doneButton = createHtmlElements(listItem,'button','list__item__button','Done');
+        const deleteButton = createHtmlElements(listItem,'button','list__item__button','Delete');   
+        deleteButton.setAttribute('onclick','deleteTask()');   
+    });
+    console.log(myTasks);
+   
+}

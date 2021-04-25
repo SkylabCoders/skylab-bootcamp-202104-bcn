@@ -1,10 +1,11 @@
-function addTask(task){
-    const payload = {
-        type: 'ADD_TASK',
-        data: task
-    }
-    reducer(payload)
-    return payload;
+const addTask = () =>{
+    let inputValue = document.getElementById('input');
+    addTaskDispatcher(inputValue.value);
+    inputValue.value='';
 }
 
+const deleteTask = ()=>{
+    console.log(deleteTask);
+    deleteTaskDispatcher(deleteTask);
+}
 
