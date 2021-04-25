@@ -28,4 +28,10 @@ body header {
       -ms-flex-align: center;
           align-items: center;
 }
+
+body li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=dashboard-styles.css.map */

@@ -3,17 +3,13 @@ const createTaskAction = (value) => {
     type: 'ADD_TASK',
     payload: value
   };
-  dispatch(addTask);
+  reducer(addTask);
 };
 
-deleteTaskAction = () => {
+deleteTaskAction = (arrayOfTasks) => {
   const deleteTask = {
     type: 'DELETE_TASK',
-    payload: ''
+    payload: arrayOfTasks
   };
-  dispatch(deleteTask);
-};
-
-const dispatch = (action) => {
-  reducer(action);
+  reducer(deleteTask);
 };

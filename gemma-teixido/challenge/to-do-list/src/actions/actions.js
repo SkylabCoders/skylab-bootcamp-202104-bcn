@@ -4,7 +4,7 @@ const buttonEnterTasks = () => {
   dataInput.value = '';
 };
 
-const buttonTaskDelete = () => {
-  const buttonTaskDelete = document.querySelector('.buttonTaskDelete');
-  deleteTaskAction(buttonTaskDelete);
+const buttonTaskDelete = (id) => {
+  const taskToDelete = document.querySelector(`.taskID${id}`).textContent;
+  console.log(taskToDelete);
 };

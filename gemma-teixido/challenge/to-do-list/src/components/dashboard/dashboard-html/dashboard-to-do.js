@@ -1,5 +1,6 @@
 const headerToDoList = document.querySelector('header');
 const body = document.querySelector('body');
+let id = 0;
 
 const createElements = (tag, parent, className, text) => {
   const creationTag = document.createElement(tag);
@@ -17,6 +18,8 @@ const divTasks = () => {
   const registerTasks = createElements('div', body, 'registerTasks', null);
   createElements('input', registerTasks, 'inputTasks', null);
   createElements('button', registerTasks, 'buttonEnterTasks', 'Register Task');
+  const divList = createElements('div', body, 'divList', null);
+  const ulList = createElements('ul', divList, 'ulForList', null);
 };
 
 const buttonFunction = () => {
@@ -24,16 +27,14 @@ const buttonFunction = () => {
   buttonEnterTasks.setAttribute('onclick', 'buttonEnterTasks()');
 };
 
-const updateList = (myList) => {
-  const divList = createElements('div', body, 'divList', null);
-  const ulList = createElements('ul', divList, 'ulForList', null);
-  const liList = createElements('li', ulList, 'inputTasks', `${myList[myList.length - 1]}`);
+const addNewTask = (myList) => {
+  const getUl = document.querySelector('.ulForList');
+  const liList = createElements('li', getUl, 'liOfTasks', null);
+  const liText = createElements('p', liList, `taskID${id}`, `${myList[myList.length - 1]}`);
   createElements('button', liList, 'buttonTaskDone', 'Done');
-  // buttonEnterTasks.setAttribute('onclick', 'buttonEnterTasks()');
-  createElements('button', liList, 'buttonTaskDelete', 'Delete');
-  // buttonEnterTasks.setAttribute('onclick', 'buttonEnterTasks()');
-  const buttonTaskDelete = document.querySelector('.buttonTaskDelete');
-  buttonTaskDelete.setAttribute('onclick', 'buttonTaskDelete()');
+  const buttonTaskDelete = createElements('button', liList, `${id}`, 'Delete');
+  buttonTaskDelete.setAttribute('onclick', `buttonTaskDelete(${id})`);
+  id += 1;
 };
 
 const onLoad = () => {
