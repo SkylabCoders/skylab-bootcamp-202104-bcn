@@ -6,36 +6,31 @@ let store = {
     rowspercall: 10,
     currentIndex: 0,
     allowed: () => false,
-    defaultFetchUrl: `https://pokeapi.co/api/v2/pokemon?limit=${rowspercall}&offset=${currentIndex}`
+    defaultFetchUrl: `https://pokeapi.co/api/v2/pokemon?limit=${rowspercall =10}&offset=${currentIndex = 0}`
 }
 
 oldStore = {};
-pokemonMainData = fetchListFromService();
 
-
-let connected = new Promise((resolve, reject) => {
+let isUserConnected = new Promise((resolve, reject) => {
     let activeConnection = store.allowed();
     if(activeConnection) {
-        resolve('sucess');
-        // console.log('Connected');
-        // fetchListFromService(store.defaultFetchUrl);
+        resolve(true);
     }else {
-        reject('connection refused');
-        // console.error('Connection refused');
+        reject(drawError('You are not connected'));
     }
 });
 
 
-function fetchListFromService(url) {
-    connected.then(message => {
-        console.log(';)', message);
-        getPokeApiData().then(({previous, next, results}) => {
-            setEnv(previous, next, results)
-        });
+pokemonMainData = fetchListFromService();
+function fetchListFromService(url = store.url) {
+    isUserConnected.then((isActive) => {
+        if(isActive) {
+            getPokeApiData().then(({previous, next, results}) => {
+                setEnv(previous, next, results)
+            });
+        }
     }).catch(errorMessage => console.error(errorMessage));
 }
-
-
 
 function setEnv(previous, next, data) {
     let newStore = {...store};

@@ -2,7 +2,7 @@ function createHtmlNode(node, content, attribute, attributeValue, className, lin
 {
     let newNode = document.createElement(node);
     newNode.innerText = content;
-    newNode.setAttribute(attribute, attributeValue);
+    newNode.setAttribute(attribute, attributeVFdraalue);
     newNode.className = className;
     if(link) {
         newNode.href= link;
@@ -58,4 +58,10 @@ function paginate(url) {
     store.rowspercall = parseInt(rowspercall);
 
     fetchListFromService(url);
+}
+
+function drawError(errorMessage) {
+    let errorMessageNode = createHtmlNode('div', errorMessage, 'id', 'error-blob', 'blob__error-message');
+    container = document.getElementById('main').append(errorMessageNode);
+
 }

@@ -5,9 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+ 
+    <style>
+       .blob__error-message {
+            width: 30%;
+            display: flex;
+            border: solid 1px black;
+            border-radius: 10px;
+            background: #900;
+            color: white;
+            padding: 20px;
+            position: relative;
+            float: right;
+            margin-right: 30pX;
+       }
+
+       .blob__error-message:after {
+        content: " ";
+        display: block;
+        background: #900;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: -8px;
+        border-top: solid 1px black;
+        border-right: solid 1px black;
+        transform: rotate( 45deg );
+       }
+
+      </style>
 </head>
 <body>
-    <main id="main">
+    <main id="main" style="padding: 60px;">
         
     </main>
     
