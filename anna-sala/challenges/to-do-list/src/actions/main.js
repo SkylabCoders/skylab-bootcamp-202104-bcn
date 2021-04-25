@@ -8,7 +8,7 @@ function printNewTask({ task, id }) {
   buttonDelete.innerHTML = 'Delete';
   taskOnList.setAttribute('class', 'task');
   buttonDone.setAttribute('class', 'done');
-  buttonDelete.setAttribute('id', `${id}`);
+  taskOnList.setAttribute('id', `${id}`);
   buttonDelete.onclick = (() => deleteSelectedTask(id));
   buttonDelete.setAttribute('class', 'delete');
   taskOnList.appendChild(textNode);
@@ -16,4 +16,8 @@ function printNewTask({ task, id }) {
   taskOnList.appendChild(buttonDelete);
   document.getElementById('tasks').appendChild(taskOnList);
   inputTextValue.innerHTML = '';
+}
+
+function deleteItem(id) {
+  document.getElementById(`${id}`).remove();
 }

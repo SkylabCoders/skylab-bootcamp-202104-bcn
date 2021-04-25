@@ -1,5 +1,5 @@
-const tasks = [];
-const lastID = 0;
+let tasks = [];
+let lastID = 1;
 
 const CREATE_TASK = 'CREATE_TASK';
 const UPDATE_TASK = 'UPDATE_TASK';
@@ -10,8 +10,12 @@ function reducer({ type, data }) {
     case CREATE_TASK:
       tasks.push(data);
       printNewTask(data);
+      lastID++;
       break;
     case DELETE_TASK:
+      const newArray = tasks.filter((obj) => obj.id !== data);
+      tasks = newArray;
+      deleteItem(data);
       break;
     default:
       return data;

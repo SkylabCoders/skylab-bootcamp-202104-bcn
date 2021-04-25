@@ -21,13 +21,9 @@ const createTaskAction = (value) => {
 const deleteTaskAction = (value) => {
   const removeTask = new Promise((resolve, reject) => {
     if (value) {
-      tasks.forEach((task) => {
-        if (task === value) {
-          resolve({
-            type: 'DELETE_TASK',
-            data: value,
-          });
-        }
+      resolve({
+        type: 'DELETE_TASK',
+        data: value,
       });
     } else {
       reject({
