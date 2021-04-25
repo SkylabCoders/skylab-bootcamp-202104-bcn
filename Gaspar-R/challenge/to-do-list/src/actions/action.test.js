@@ -1,8 +1,18 @@
 // const actionType = require('./actionTypes');
 
-const {
-  getTask, deleteTask, addTask, completedTask
-} = require('./action');
+// const {getTask, deleteTask, addTask, completedTask} = require('./action');
+
+const GET_TASK = 'GET_TASK';
+const DELETE_TASK = 'DELETE_TASK';
+const ADD_TASK = 'ADD_TASK';
+const COMPLETED_TASK = 'COMPLETED_TASK';
+
+const actionType = {
+  GET_TASK,
+  DELETE_TASK,
+  ADD_TASK,
+  COMPLETED_TASK
+};
 
 test('Given a getTask function creator,', () => {
   const result = getTask();
@@ -11,16 +21,18 @@ test('Given a getTask function creator,', () => {
   });
 });
 
-test('Given a addTask function creator,', () => {
-  const result = addTask(2, 'compras');
-  expect(result).toEqual({
-    type: actionType.ADD_TASK,
-    data: {
-      taskId: 2,
-      title: 'compras',
-      complete: false
-    }
-  });
+test('Given an addTask creator, when promise is fulfilled', () => expect(addTask('task')).resolves.toEqual({
+  type: actionType.ADD_TASK,
+  data: {
+    title: 'task',
+    complete: false
+  }
+}));
+
+test('Given an addTask creator, when promise is rejected', () => {
+  expect(addTask('task')).rejects.toEqual(
+    { type: 'ERROR', message: 'An error has occurred, task was not created' }
+  );
 });
 
 test('Given a deleteTask function creator,', () => {
@@ -28,7 +40,7 @@ test('Given a deleteTask function creator,', () => {
   expect(result).toEqual({
     type: actionType.DELETE_TASK,
     data: {
-      taskId: 1
+      id: 1
     }
   });
 });
@@ -38,8 +50,51 @@ test('Given a completedTask function creator,', () => {
   expect(result).toEqual({
     type: actionType.COMPLETED_TASK,
     data: {
-      taskId: 1,
+      id: 1,
       complete: true
     }
   });
+});
+
+/// ////-----------funciones a testear------------/////////
+
+const getTask = () => (
+  {
+    type: actionType.GET_TASK
+  }
+);
+
+const addTask = (title) => new Promise((resolve, reject) => {
+  if (promiseResolve = true) {
+    setTimeout(() => {
+      resolve({
+        type: actionType.ADD_TASK,
+        data: {
+          title,
+          complete: false
+        }
+      });
+    }, 1500);
+  } else {
+    reject({
+      type: 'ERROR',
+      message: 'An error has occurred, task was not created'
+    });
+  }
+});
+
+const deleteTask = (taskId) => ({
+  type: actionType.DELETE_TASK,
+  data: {
+    id: taskId
+  }
+});
+
+const completedTask = (taskId) => ({
+  type: actionType.COMPLETED_TASK,
+  data:
+    {
+      id: taskId,
+      complete: true
+    }
 });
