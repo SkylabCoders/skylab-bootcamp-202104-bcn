@@ -1,7 +1,3 @@
-function getTasks() {
-  console.log('in get tasks');
-}
-
 function createDomElement(parent, element, text = null, attributes = []) {
   const elementToCreate = document.createElement(element);
   if (text) {
@@ -25,7 +21,7 @@ function drawTodoList(tasks) {
     const newTask = createDomElement(taskList, 'li', '', { id: taskId, class: 'task-list__element element' });
     const taskNote = createDomElement(newTask, 'p', value);
     const buttonDelete = createDomElement(newTask, 'button', 'Delete', { class: 'element__button element__button--delete' });
-    buttonDelete.onclick = (() => deleteTask(taskId));
+    buttonDelete.onclick = (() => handleDelete(taskId));
     const buttonUpdate = createDomElement(newTask, 'button', 'Done', { class: 'element__button element__button--done' });
     buttonUpdate.onclick = (() => updateTask(taskId));
 
@@ -52,23 +48,17 @@ const createTask = () => {
   taskPromise.then((newTask) => dispatcher(newTask)).catch((error) => dispatcher(error));
 };
 
-function deleteTask(taskId) {
-  const payload = {
-    type: 'DELETE_TASK',
-    data: taskId,
-  };
-  dispatcher(payload);
-}
+const handleDelete = (id) => {
+  const deleteAction = deleteTask(id);
+  dispatcher(deleteAction);
+};
 
-function loadTasks() {
-  const payload = {
-    type: 'LOAD_TASKS',
-  };
-  dispatcher(payload);
+function handleLoadTasks() {
+  const tasksLoaded = loadTasks();
+  dispatcher(tasksLoaded);
 }
 
 function updateTask(taskId) {
-  debugger;
   const payload = {
     type: 'UPDATE_TASK',
     data: taskId,

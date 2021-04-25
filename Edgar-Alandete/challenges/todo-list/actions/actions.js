@@ -1,3 +1,18 @@
+function deleteTask(taskId) {
+  const payload = {
+    type: 'DELETE_TASK',
+    data: taskId,
+  };
+  return payload;
+}
+
+const loadTasks = () => {
+  const payload = {
+    type: 'LOAD_TASKS',
+  };
+
+  return payload;
+};
 function dispatcher(payLoad) {
   switch (payLoad.type) {
     case 'CREATE_TASK':
