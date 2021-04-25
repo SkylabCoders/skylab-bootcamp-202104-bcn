@@ -1,8 +1,9 @@
 const input = document.querySelector('.input-field');
 const btn = document.querySelector('.btn');
-const createItem = ({ task }, parent) => {
+const createItem = ({ task, id }, parent) => {
   const li = document.createElement('li');
   li.className = 'tasks__list-item';
+  li.setAttribute('id', id);
   const p = document.createElement('p');
   p.textContent = task;
 
@@ -13,7 +14,8 @@ const createItem = ({ task }, parent) => {
   deleteButton.textContent = 'X';
   deleteButton.classList.add('task-button', 'task-button__delete');
   deleteButton.setAttribute('role', 'button');
-  deleteButton.setAttribute('onclick', 'removeTask(this.parentElement.firstChild.textContent)');
+  deleteButton.setAttribute('onclick', 'removeTask(this.parentElement.id)');
+
   editButton.textContent = 'Edit';
   editButton.classList.add('task-button', 'task-button__edit');
   editButton.setAttribute('role', 'button');
@@ -40,18 +42,18 @@ const renderList = (list) => {
   list.forEach((task) => createItem(task, ul));
 };
 
-const addTaskToStore = ((type, { task, id }) => {
+const addTaskToStore = ({ task, id }) => {
   state.toDoList.push({ task, id });
   state.lastId = id;
   renderList(state.toDoList);
-});
+};
 
-const removeTaskFromStore = ((task) => {
+const removeTaskFromStore = (id) => {
   const list = state.toDoList;
-  const index = list.findIndex((element) => element === task);
+  const index = list.findIndex((element) => element.id === +id);
   list.splice(index, 1);
   renderList(state.toDoList);
-});
+};
 
 const editTaskFromStore = (({ task, htmlElement }) => {
   const list = state.toDoList;
@@ -75,7 +77,7 @@ const editTaskFromStore = (({ task, htmlElement }) => {
 const reducer = ({ type, data }) => {
   switch (type) {
     case 'ADD_TASK':
-      addTaskToStore(type, data);
+      addTaskToStore(data);
       break;
 
     case 'REMOVE_TASK':
@@ -97,9 +99,9 @@ const addTask = (task) => reducer({
     id: state.lastId + 1,
   },
 });
-const removeTask = (task) => reducer({
+const removeTask = (id) => reducer({
   type: 'REMOVE_TASK',
-  data: task,
+  data: id,
 });
 
 const editTask = (task, htmlElement) => reducer({

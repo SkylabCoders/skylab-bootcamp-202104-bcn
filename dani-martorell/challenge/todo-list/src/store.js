@@ -13,6 +13,5 @@ const state = {
       task: 'Comprar regalo',
       id: 3,
     },
-
   ],
 };
