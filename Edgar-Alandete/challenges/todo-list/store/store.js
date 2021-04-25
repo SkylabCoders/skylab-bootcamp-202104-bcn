@@ -1,12 +1,9 @@
-// const actionTypes = require('../actions/actionTypes');
 const GET_TASK = 'GET_TASK';
 const LOAD_TASKS = 'LOAD_TASKS';
 const CREATE_TASK = 'CREATE_TASK';
 const DELETE_TASK = 'DELETE_TASK';
 const UPDATE_TASK = 'UPDATE_TASK';
 const ERROR = 'ERROR';
-
-// const tasksLoaded = require('./tasks.json');
 
 let appState = {
   tasks: [{ taskId: '1', value: 'Hacer el hundir la flota mejor que Gerard', isFinished: false }, { taskId: '2', value: 'Aprender CSS con Dani', isFinished: false }],

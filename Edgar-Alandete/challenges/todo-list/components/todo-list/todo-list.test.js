@@ -23,3 +23,11 @@ describe('Given a handleCreateTask function', () => {
     const result = promise.then((data) => expect(data).resolve.toEqual({ type: 'CREATE_TASK', data: { taskId: '', value: 'Task for the test', isFinished: false } }));
   });
 });
+
+describe('Given a handleCreateTask function', () => {
+  test('Then return REJECTED', () => {
+    const promise = handleCreateTask();
+    // Act
+    const result = promise.then((data) => expect(data).reject.toEqual({ type: 'ERROR', data: 'NO SE PUEDE CREAR LA TAREA' }));
+  });
+});
