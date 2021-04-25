@@ -17,15 +17,20 @@ function addToList(element, array) {
   const newElementList = element.value;
   array.push(newElementList);
   const li = createElement('li', null, null, ul, `text${array.length}`);
+  li.setAttribute('className', 'header__ul-list');
+  li.style = 'text-decoration:none';
   const span = createElement('span', `${newElementList}`, null, li, `item${array.length}`);
-  const modifyButton = createElement('button', 'Modify', null, li);
-  modifyButton.onclick = (() => modifyElement(elementIdLi, elementIdSpan));
-  const deleteButton = createElement('button', 'Delete', null, li);
+  span.setAttribute('className', 'header__ul-list--span');
   const elementIdSpan = span.id;
   const elementIdLi = li.id;
+  const modifyButton = createElement('button', 'Modify', null, li);
+  modifyButton.setAttribute('className', 'header__ul-list--modifyButton');
+  modifyButton.onclick = (() => modifyElement(elementIdLi, elementIdSpan));
+  const deleteButton = createElement('button', 'Delete', null, li);
+  deleteButton.setAttribute('className', 'header__ul-list--deleteButton');
   deleteButton.onclick = (() => deleteTask(myArray, elementIdLi));
-  li.style = 'text-decoration:none';
   const doneButton = createElement('button', 'Done', null, li);
+  doneButton.setAttribute('className', 'header__ul-list--doneButton');
   doneButton.onclick = (() => addSyleElement(elementIdSpan));
 }
 
@@ -46,8 +51,10 @@ function modifyElement(LiId, spanId) {
   const liToModify = document.getElementById(LiId);
   const spanToModify = document.getElementById(spanId);
   const newInput = createElement('input', null, null, liToModify);
+  newInput.setAttribute('className', 'header__ul-list--newInput');
   input.getAttribute('value');
   const buttonInput = createElement('button', 'Change', null, liToModify);
+  buttonInput.setAttribute('className', 'header__ul-list--buttonInput');
   buttonInput.onclick = (() => addNewValue(spanToModify, newInput, buttonInput, myArray));
 }
 
