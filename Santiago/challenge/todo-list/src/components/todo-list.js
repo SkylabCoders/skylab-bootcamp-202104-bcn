@@ -25,23 +25,21 @@ const createMainDiv = () => {
   return mainDiv;
 };
 
-const createTodoListDiv = (mainDiv) => {
-  const todoContain = createDomElements('div', '', '', mainDiv, 'todo-container');
-  return todoContain;
-};
-
-const createInputs = (todoContain) => {
-  createDomElements('span', 'Add task', '', todoContain);
-  createDomElements('input', '', '', todoContain, 'first');
-  const addBtn = createDomElements('button', 'ADD', '', todoContain);
+const createInputs = () => {
+  createDomElements('span', 'Add task', '', main);
+  createDomElements('input', '', '', main, 'first');
+  const addBtn = createDomElements('button', 'ADD', '', main);
   addBtn.setAttribute('onclick', 'taskAdded()');
 };
 
 const createTask = (task) => {
-  console.log(task);
+  const listContainer = createDomElements('div', '', '', main);
+  const taskUl = createDomElements('ul', '', '', listContainer);
+  const taskLi = createDomElements('li', task, '', taskUl);
+  createDomElements('button', 'DELETE', '', taskLi);
+  createDomElements('button', 'DONE', '', taskLi);
 };
 
 createHeader();
-const divConatiner = createMainDiv();
-const createTdList = createTodoListDiv(divConatiner);
-createInputs(createTdList);
+createMainDiv();
+createInputs();
