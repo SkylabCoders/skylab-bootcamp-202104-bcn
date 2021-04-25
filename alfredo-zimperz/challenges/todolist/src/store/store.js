@@ -17,11 +17,6 @@ const store = {
     },
   ],
   nextTaskId: 3,
-  waitingTask: false,
-  error: {
-    status: false,
-    message: null,
-  },
 
   reducer(tasks = this.tasks, action) {
     let newTasks = [...tasks];
