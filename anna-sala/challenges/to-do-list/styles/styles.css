@@ -10,7 +10,7 @@ body {
 }
 
 .page-title {
-  background-color: #7BDFF2;
+  background-color: #b8ecf7;
   font-size: 50px;
   margin: auto;
   margin-bottom: 20px;
@@ -21,7 +21,7 @@ body {
 }
 
 .nav {
-  background-color: #B2F7EF;
+  background-color: #EFF7F6;
   padding: 15px;
 }
 
@@ -29,7 +29,23 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   list-style: none;
+}
+
+.nav .navigation__list input {
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+}
+
+.nav .navigation__list button {
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+  margin-left: 2px;
+  background-color: #F7D6E0;
 }
 
 .weekdays {
@@ -50,14 +66,7 @@ body {
 }
 
 .tasks {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   background-color: #EFF7F6;
-}
-
-.tasks__container {
-  border-color: #F7D6E0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,11 +74,37 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: 30px;
+  width: 100%;
+}
+
+.tasks .task {
+  border-color: #F7D6E0;
+  font-size: 25px;
   list-style: none;
-  margin: 20px;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   width: 90%;
+}
+
+.tasks .done {
+  font-size: 25px;
+  font-family: "Amatic SC", cursive;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border-style: none;
+  margin-top: -10px;
+  margin-left: 10px;
+  background-color: #b5f2b8;
+}
+
+.tasks .delete {
+  font-size: 25px;
+  font-family: "Amatic SC", cursive;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border-style: none;
+  margin-top: -10px;
+  margin-left: 5px;
+  background-color: #f2b5b5;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -15,31 +15,24 @@
     <h1 class="page-title">TO-DO LIST</h1>
     <nav class="nav">
         <ul class="navigation__list">
-            <li class="navigation__list--item"><button onclick="fetchTaskJson(saveDesiredData)">Show tasks</button></li>
-            <li class="navigation__list--item"><input type="text" placeholder="New Task"></li>
+            <li class="navigation__list--item"><button onclick="fetchTaskJson(getInputValue)">Show all tasks</button></li>
+            <li class="navigation__list--item">
+                <form action="">
+                    <input type="text" placeholder="New Task" id="taskInput"><button type="button" onclick="getInputValue()">ADD</button>
+                </form>
+            </li>
         </ul>
 
     </nav>
     <main>
-        <ul class="weekdays">
-            <li class="weekdays__day">Monday</li>
-            <li class="weekdays__day">Tuesday</li>
-            <li class="weekdays__day">Wednesday</li>
-            <li class="weekdays__day">Thursday</li>
-            <li class="weekdays__day">Friday</li>
-            <li class="weekdays__day">Saturday</li>
-            <li class="weekdays__day">Sunday</li>
-        </ul>
-        <ul class="tasks">
-            <li class="tasks__container"></li>
-            <li class="tasks__container"></li>
-            <li class="tasks__container"></li>
-            <li class="tasks__container"></li>
-            <li class="tasks__container"></li>
-            <li class="tasks__container"></li>
-            <li class="tasks__container"></li>
+        <ul class="tasks" id="tasks">
+           
         </ul>
     </main>
 </body>
-<script src="./main.js"></script>
+<script type="text/javascript" src="./action.js"></script>
+<script type="text/javascript" src="../store/store.js"></script>
+<script type="text/javascript" src="../dispatcher/dispatcher.js"></script>
+<script type="text/javascript" src="../actions/main.js"></script>
 </html>
+
