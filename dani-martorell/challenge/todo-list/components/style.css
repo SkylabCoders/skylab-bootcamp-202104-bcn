@@ -61,8 +61,13 @@ form .input-field {
   margin-top: 30px;
 }
 
-.tasks h1 {
+.tasks .title {
   text-transform: uppercase;
+  font-size: 20px;
+}
+
+.tasks .title--invisible {
+  display: none;
 }
 
 .tasks .buda-img {
@@ -83,7 +88,6 @@ form .input-field {
 
 .tasks .buda-message--visible {
   display: block;
-  margin-top: -40px;
   font-family: 'Bungee', cursive;
   text-align: center;
   font-size: 35px;
@@ -172,31 +176,31 @@ form .input-field {
 
 @-webkit-keyframes buda-img---visible {
   0% {
-    -webkit-transform: translate(0, -50px);
-            transform: translate(0, -50px);
+    -webkit-transform: translate(0, -30px);
+            transform: translate(0, -30px);
   }
   50% {
-    -webkit-transform: translate(0px, -40px);
-            transform: translate(0px, -40px);
+    -webkit-transform: translate(0px, -20px);
+            transform: translate(0px, -20px);
   }
   100% {
-    -webkit-transform: translate(0, -50px);
-            transform: translate(0, -50px);
+    -webkit-transform: translate(0, -30px);
+            transform: translate(0, -30px);
   }
 }
 
 @keyframes buda-img---visible {
   0% {
-    -webkit-transform: translate(0, -50px);
-            transform: translate(0, -50px);
+    -webkit-transform: translate(0, -30px);
+            transform: translate(0, -30px);
   }
   50% {
-    -webkit-transform: translate(0px, -40px);
-            transform: translate(0px, -40px);
+    -webkit-transform: translate(0px, -20px);
+            transform: translate(0px, -20px);
   }
   100% {
-    -webkit-transform: translate(0, -50px);
-            transform: translate(0, -50px);
+    -webkit-transform: translate(0, -30px);
+            transform: translate(0, -30px);
   }
 }
 /*# sourceMappingURL=style.css.map */

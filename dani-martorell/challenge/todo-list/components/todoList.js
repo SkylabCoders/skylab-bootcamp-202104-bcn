@@ -32,16 +32,19 @@ const createItem = ({ task, id }, parent) => {
 
 const renderList = (list) => {
   const img = document.querySelector('img');
+  const title = document.querySelector('h1');
   const budaMessage = document.querySelector('span');
   const ul = document.querySelector('.tasks__list');
   ul.innerHTML = '';
   list.forEach((task) => createItem(task, ul));
   if (list.length === 0) {
     img.className = 'buda-img--visible';
+    title.className = 'title--invisible';
     budaMessage.className = 'buda-message--visible';
   } else {
     img.className = 'buda-img';
     budaMessage.className = 'buda-img';
+    title.className = 'title';
   }
 };
 

@@ -50,9 +50,13 @@ form {
 .tasks {
     margin-top: 30px;
 
-    h1 {
+    .title {
         text-transform: uppercase;
+        font-size: 20px;
 
+        &--invisible {
+            display: none;
+        }
     }
     .buda-img {
         display: none;
@@ -68,8 +72,7 @@ form {
         display:none;
         
         &--visible{
-            display:block;
-            margin-top: -40px;
+            display: block;
             font-family: 'Bungee', cursive;
             text-align: center;
             font-size:35px;
@@ -151,15 +154,15 @@ form {
 
   @keyframes buda-img---visible {
     0% {
-              transform: translate(0, -50px);
+              transform: translate(0, -30px);
     }
     
     50% {
-              transform: translate(0px, -40px);
+              transform: translate(0px, -20px);
     }
    
     100% {
-              transform: translate(0, -50px);
+              transform: translate(0, -30px);
     }
   }
 
