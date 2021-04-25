@@ -28,7 +28,7 @@ const onClickCreateButton = () => {
   const getCreateButton = document.querySelector('.form-create__button');
   getCreateButton.onclick = (element) => {
     element.preventDefault();
-    toCreateTask();
+    getInfoToCreateTask();
   };
 };
 
@@ -38,10 +38,11 @@ const onLoad = () => {
   onClickCreateButton();
 };
 
-const printNewTask = (arrayTask) => {
+const printNewTask = (dataBase) => {
   const divList = createElements('div', getMainSection, 'list');
   const containerList = createElements('ul', divList, 'list-container');
-  const newLi = createElements('li', containerList, 'list-container__item', `${arrayTask[arrayTask.length - 1].data}`);
+  const newLi = createElements('li', containerList, 'list-container__item', `${dataBase[dataBase.length - 1].data.value}`);
+  const IdTaskToDelete = newLi.setAttribute('id', `${dataBase[dataBase.length - 1].data.id}`);
   const divButtons = createElements('div', newLi, 'list-container__item-div');
   const doItButton = createElements('button', divButtons, 'list__doIt-button', '<i class="far fa-check-circle"></i>');
   const editButton = createElements('button', divButtons, 'list__edit-button', '<i class="far fa-edit"></i>');
@@ -54,10 +55,14 @@ const onClickDeleteButton = () => {
   getDeleteButton.onclick = (element) => {
     element.preventDefault();
     console.log('delete');
-    toDeleteTask();
+    getIdtoDeleteTask(element.currentTarget.parentNode.parentNode.id);
   };
 };
 
 const deleteSelectTask = (id) => {
-  getDeleteButton.remove();
+  console.log('id en component', id);
+  console.log('dataBase', dataBase);
+  const newdataBase = dataBase.filter((element) => element.data.id !== Number(id));
+  dataBase = newdataBase;
+  console.log('newdataBase', newdataBase);
 };
