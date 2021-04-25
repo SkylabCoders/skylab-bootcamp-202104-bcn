@@ -25,8 +25,9 @@ const addingTask = (myTasks)=>{
     myTasks.forEach(({id, task})=>{
         const listItem = createHtmlElements(list,'li','list__item',`${task}`);
         const doneButton = createHtmlElements(listItem,'button','list__item__button','Done');
-        const deleteButton = createHtmlElements(listItem,'button','list__item__button','Delete');   
-        deleteButton.setAttribute('onclick','deleteTask()');   
+        const deleteButton = createHtmlElements(listItem,'button','list__item__button','Delete');  
+        deleteButton.onclick = (() => deleteTask(id)) 
+        // deleteButton.setAttribute('onclick','deleteTask()');   
     });
     console.log(myTasks);
    

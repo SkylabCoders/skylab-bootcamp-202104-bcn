@@ -2,18 +2,16 @@ function addTaskDispatcher(task){
     const payload = {
         type: 'ADD_TASK',
         data: {
-            id: 1,
+            id: ++state.lastId,
             task: task}
     }
     reducer(payload);
 }
 
-const deleteTaskDispatcher = (tasks) =>{
+const deleteTaskDispatcher = (id) =>{
     const deleteTask = {
         type: 'DELETE_TASK',
-        data: {
-            id: id++,
-            task: tasks}   
+        data: {id}
     }
     reducer(deleteTask);
 }

@@ -4,8 +4,7 @@ const addTask = () =>{
     inputValue.value='';
 }
 
-const deleteTask = ()=>{
-    console.log(deleteTask);
-    deleteTaskDispatcher(deleteTask);
+const deleteTask = (id)=>{
+    deleteTaskDispatcher(id);
 }
 
