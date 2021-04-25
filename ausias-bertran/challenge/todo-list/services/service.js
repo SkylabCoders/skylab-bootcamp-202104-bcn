@@ -11,11 +11,22 @@ function createTodoList() {
     const listAtributeName = Object.values(state);
     const stateLenght = Object.values(state).length;
     for (let i = 0; i < stateLenght; i++) {
-        const todoTask = createNode('li', mainList, `main-list__${listAtributeName[i]}`, listAtributeName[i], 'beforeend');
-        const updateButton = createNode('button', todoTask, 'main-list__add-button', 'UPLOAD', 'beforeend');
-        updateButton.onclick = () => updateTask();
+        const todoTask = createNode('li', mainList, `main-list__task`, listAtributeName[i], 'beforeend');
+
+        const updateInput = createNode('input', todoTask, 'main-list__update-input', '', 'afterbegin');        
+        updateInput.value = listAtributeName[i];
+
+        const updateButton = createNode('button', todoTask, 'main-list__update-button', 'CHANGE', 'beforeend');
+        updateButton.onclick = () => updateTask(listAtributeName[i], updateInput.value);
+        
+        const showUpdateButton = createNode('button', updateInput, 'main-list__show-update-input-button', 'UPDATE', 'afterend');
+        showUpdateButton.onclick = () => showUpdateTask(updateInput, updateButton);
+        
         const deleteButton = createNode('button', todoTask, 'main-list__delete-button', 'DELETE', 'beforeend');
-        updateButton.onclick = () => deleteTask();
+        deleteButton.onclick = () => deleteTask(listAtributeName[i]);
+        
+        updateInput.style.display = 'none';
+        updateButton.style.display = 'none';
     }
     return mainList;
 }
@@ -29,20 +40,33 @@ function createNewTaskBox() {
 }
 
 function addTask() {
-    const newTaskValue = document.getElementsByTagName('input')[0];
-    state[`${newTaskValue.value}`] = newTaskValue.value;
+    const newTaskValue = document.getElementsByTagName('input');
+    state[`${newTaskValue[newTaskValue.length -1].value}`] = newTaskValue[newTaskValue.length -1].value;
     document.getElementsByTagName('ul')[0].remove();
     createTodoList();
-    newTaskValue.value = '';
+    newTaskValue[newTaskValue.length -1].value = '';
 }
 
-function deleteTask() {
-    // delete dataSource.firstname;
-    alert('vas be')
-    // task.remove();
-    // createTodoList();
-
+function deleteTask(atribute) {
+    delete state[`${atribute}`];
+    document.getElementsByTagName('ul')[0].remove();
+    createTodoList();
 }
 
-function updateTask(state,) { }
+function updateTask( atribute, newValue) {
+    state[`${atribute}`] = newValue;
+    document.getElementsByTagName('ul')[0].remove();
+    createTodoList();
+}
+
+function showUpdateTask(input,button) {
+    if (input.style.display === 'none') {
+        input.style.display = 'block';
+        button.style.display = 'block';
+    }
+    if (input.style.display === 'block') {
+        input.style.display = 'none';
+        button.style.display = 'none';
+    }
+}
 
