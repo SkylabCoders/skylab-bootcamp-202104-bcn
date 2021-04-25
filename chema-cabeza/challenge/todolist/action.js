@@ -16,11 +16,17 @@ function findFreeId(tasks) {
 
 const addTodo = () => {
   const dataInput = document.querySelector('.newtask-input');
-  createNewTask({ id: findFreeId(tasks), name: dataInput.value });
+  store.dispatch({
+    type: 'ADD_TASK', id: findFreeId(store.tasks), title: dataInput.value, done: false,
+  });
 
   dataInput.value = '';
 };
 
 const deleteTodo = (ID) => {
-  deleteTask(ID);
+  store.dispatch({ type: 'DELETE_TASK', id: ID });
+};
+
+const doneTodo = (ID, done) => {
+  store.dispatch({ type: 'DONE_TASK', id: ID });
 };

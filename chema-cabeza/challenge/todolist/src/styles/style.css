@@ -112,6 +112,10 @@ header,
   padding: 0rem 0.5rem;
 }
 
+.done {
+  text-decoration: line-through;
+}
+
 .fa-trash,
 .fa-check {
   pointer-events: none;

@@ -10,19 +10,22 @@ function printTasks(tasks) {
     const todoDiv = document.createElement('div');
     todoDiv.classList.add('todo');
     const newTodo = document.createElement('li');
-    newTodo.innerText = element.name;
+    newTodo.innerText = element.title;
     newTodo.classList.add('todo-item');
+    if (element.done === true) { newTodo.classList.add('done'); }
     todoDiv.appendChild(newTodo);
     const completedButton = document.createElement('button');
     completedButton.innerHTML = '<i class="fas fa-check"> </i>';
     completedButton.classList.add('complete-btn');
+    completedButton.onclick = function () {
+      doneTodo(element.id);
+    };
     todoDiv.appendChild(completedButton);
 
     const trashButton = document.createElement('button');
     trashButton.innerHTML = '<i class="fas fa-trash"> </i>';
     trashButton.classList.add('trash-btn');
-    const currentID = element.id;
-    trashButton.onclick = function () { deleteTodo(currentID); };
+    trashButton.onclick = function () { deleteTodo(element.id); };
     todoDiv.appendChild(trashButton);
     todoList.appendChild(todoDiv);
   });
