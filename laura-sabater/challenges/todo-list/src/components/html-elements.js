@@ -11,11 +11,11 @@ const input = createNewElement('input', 'input', main);
 const addButton = createNewElement('button', 'button-input', main);
 addButton.innerHTML = 'Add to list';
 addButton.onclick = function () {
-  addToList(todoList, input);
+  addToList(store, input);
 };
 
 const resetButton = createNewElement('button', 'reset-button', main);
 resetButton.innerHTML = 'Reset List';
 resetButton.onclick = function () {
-  resetList(todoList, list);
+  resetList(store, list);
 };

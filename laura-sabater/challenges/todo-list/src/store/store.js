@@ -1,1 +1,4 @@
-const todoList = [];
+const store = {
+  todoList: [],
+  numCreatedElements: 0,
+};

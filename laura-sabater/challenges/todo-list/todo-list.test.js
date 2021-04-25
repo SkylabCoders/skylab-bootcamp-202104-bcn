@@ -9,7 +9,7 @@ function myAsyncReject(param) {
 }
 module.exports = {mySync, myAsync};
 // JS.test
-const {mySync, myAsync} = required('./async');
+const {mySync, myAsync} = require('./async');
 test('should resolve and sync function', () => {
   const result = mySync();
   expect(result).toBe(true);

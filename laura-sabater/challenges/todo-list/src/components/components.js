@@ -9,7 +9,6 @@ function confirmModification(element, input, button, array, ul) {
   const oldValue = element.innerText;
   const indexOldValue = array.indexOf(oldValue);
   const newValue = input.value;
-
   array.splice(indexOldValue, 1, newValue);
   element.innerText = input.value;
   input.remove();
@@ -23,7 +22,7 @@ function modifyElementList(liId, spanId) {
   const okButton = createNewElement('button', 'okButton', elementToModify);
   okButton.innerText = 'Ok';
   okButton.onclick = function () {
-    confirmModification(spanToModify, newValue, okButton, todoList, list);
+    confirmModification(spanToModify, newValue, okButton, store.todoList, list);
   };
 }
 
@@ -40,16 +39,16 @@ function markElementList(id) {
   elementToMark.style = 'text-decoration: line-through';
 }
 
-function addToList(array, element) {
+function addToList(store, element) {
   const newElement = element.value;
-  array.push(newElement);
+  store.todoList.push(newElement);
   const elementList = createNewElement('li', 'element__list', list);
-  elementList.id = `item${array.length}`;
+  elementList.id = `item${store.numCreatedElements}`;
   const elementId = elementList.id;
 
   const elementListText = createNewElement('span', 'text-list', elementList);
   elementListText.innerText = newElement;
-  elementListText.id = `text${array.length}`;
+  elementListText.id = `itemText${store.numCreatedElements}`;
   const textId = elementListText.id;
 
   const modifyButton = createNewElement('button', 'modify__button', elementList);
@@ -68,13 +67,13 @@ function addToList(array, element) {
     markElementList(elementId);
   };
   element.value = '';
-  return elementList;
+  store.numCreatedElements += 1;
 }
 
-function resetList(array, ul) {
+function resetList(store, ul) {
   while (ul.hasChildNodes()) {
     ul.removeChild(ul.firstChild);
   }
-  array.length = 0;
-  return array;
+  store.todoList = [];
+  store.numCreatedElements = 0;
 }
