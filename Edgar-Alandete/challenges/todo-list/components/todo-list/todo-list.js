@@ -49,12 +49,7 @@ const createTask = () => {
       }
     }, 3000);
   });
-  taskPromise.then(
-    (newTask) => dispatcher(newTask),
-  )
-    .catch(
-      (error) => dispatcher(error),
-    );
+  taskPromise.then((newTask) => dispatcher(newTask)).catch((error) => dispatcher(error));
 };
 
 function deleteTask(taskId) {
