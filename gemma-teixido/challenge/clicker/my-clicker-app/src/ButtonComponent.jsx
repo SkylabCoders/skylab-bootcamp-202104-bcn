@@ -18,7 +18,7 @@ function ButtonComponent() {
         <p>{id}</p>
         <button onClick={DecrementButtom}>-</button>
         </div>
-    )
+  )
     
 }
     
