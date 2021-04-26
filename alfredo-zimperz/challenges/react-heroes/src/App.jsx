@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import HeroDetail from './components/HeroDetail';
 import HeroesList from './components/HeroesList';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
     <div className="App">
       <h1>Tour of Heroes</h1>
       <HeroesList heroesList={heroes} setSelectedHero={setSelectedHero} />
-      {selectedHero && <h2>{selectedHero.name}</h2> }
+      {selectedHero && (<HeroDetail hero={selectedHero} />) }
     </div>
   );
 }
