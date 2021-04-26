@@ -10,7 +10,7 @@ const getTask = () => (
 );
 
 const addTask = (title) => new Promise((resolve, reject) => {
-  if (title===undefined) {
+  if (title) {
     setTimeout(() => {
       resolve({
         type: actionType.ADD_TASK,
@@ -19,7 +19,7 @@ const addTask = (title) => new Promise((resolve, reject) => {
           complete: false
         }
       });
-    }, 1500);
+    }, 1000);
   } else {
     reject({
       type: 'ERROR',
