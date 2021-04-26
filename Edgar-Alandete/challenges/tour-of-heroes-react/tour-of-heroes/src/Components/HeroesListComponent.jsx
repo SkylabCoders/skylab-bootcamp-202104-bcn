@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import HeroItemComponent from './HeroItemComponent';
+import HeroDetailComponent from './HeroDetailComponent'
 
 
 function HeroesListComponent() {
@@ -15,10 +16,10 @@ function HeroesListComponent() {
         { id: 19, name: 'Magma' },
         { id: 20, name: 'Tornado' }
     ]);
-    const [selectedHero, setSelectedHero] = useState(null)
+    const [selectedHero, setSelectedHero] = useState(heroes[0].name)
 
     function onHandleSelectedHero(hero){
-        setSelectedHero(hero.name)
+        setSelectedHero(hero)
       }
 
     return (
@@ -29,7 +30,7 @@ function HeroesListComponent() {
             )}
         </ul>
 
-        <div>{selectedHero}</div>
+        <HeroDetailComponent hero = {selectedHero} />
         </div>
     )
 //
