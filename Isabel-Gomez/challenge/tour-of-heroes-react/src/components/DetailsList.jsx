@@ -7,7 +7,7 @@ const DetailsList = () => (
       {heroes.map((element) => (
         <ul key={element.id}>
           <li>{element.id}</li>
-          <li><input value={element.name} type="text" /></li>
+          <li><input defaultValue={element.name} type="text" /></li>
         </ul>
       ))}
     </ul>
