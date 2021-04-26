@@ -1,15 +1,13 @@
 /* eslint-disable react/react-in-jsx-scope */
 import './App.css';
-import Title from './components/Header';
-import ClickerBtns from './components/ClickerBtns';
+import React from 'react';
+import Dashboard from './components/dashboard/dashboard';
 
 function App() {
   return (
     <div className="App">
-      <Title />
-      <ClickerBtns />
+      <Dashboard />
     </div>
   );
 }
-
 export default App;
