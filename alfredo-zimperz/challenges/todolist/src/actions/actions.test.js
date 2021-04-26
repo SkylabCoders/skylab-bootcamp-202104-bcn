@@ -56,7 +56,7 @@ test('Given a deleteTask action creator', () => {
 test('Given a createTask action creator, expecting to get a fullfilled promise', () => {
   LA_PROGRAMACION_MOLA = true;
 
-  createTask({
+  return createTask({
     title: 'taskTitle',
     description: 'taskDescription',
   }).then((result) => {
@@ -67,17 +67,17 @@ test('Given a createTask action creator, expecting to get a fullfilled promise',
   });
 });
 
-test('Given a createTask action creator, expecting to get a rejected promise', () => {
-  LA_PROGRAMACION_MOLA = false;
+test('Given a createTask action creator, expecting to get a rejected promise', async () => {
+  LA_PROGRAMACION_MOLA = true;
 
-  createTask({
+  const result = await createTask({
     title: 'taskTitle',
     description: 'taskDescription',
-  }).then((result) => {
-    expect(result).rejects.toEqual({
-      type: 'ERROR',
-      message: 'la programacion no mola',
-    });
+  });
+
+  expect(result).rejects.toEqual({
+    type: 'ERROR',
+    message: 'la programacion no mola',
   });
 });
 
