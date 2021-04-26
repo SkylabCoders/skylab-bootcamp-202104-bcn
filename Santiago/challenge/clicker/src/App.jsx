@@ -1,9 +1,14 @@
 /* eslint-disable react/react-in-jsx-scope */
 import './App.css';
+import Title from './components/Header';
+import ClickerBtns from './components/ClickerBtns';
 
 function App() {
   return (
-    <h1>CLICKER CHALLENGE</h1>
+    <div className="App">
+      <Title />
+      <ClickerBtns />
+    </div>
   );
 }
 
