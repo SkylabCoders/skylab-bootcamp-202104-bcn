@@ -17,7 +17,7 @@ const Dashboard = () => {
   const myHereos = heroes.map((hero) => (
     <li>
       {hero.id}
-      {' '}
+      {' - '}
       {hero.name}
     </li>
   ));
