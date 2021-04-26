@@ -8,17 +8,17 @@ function ButtonComponent() {
         setId(id+1);
     }
     
-    const DecrementButtom = (id) => {
+    const DecrementButtom = () => {
         setId(id-1);
     }
 
     return (
-        <div>
+        <div class="container_counter">
         <button onClick={IncrementButtom}>+</button>
         <p>{id}</p>
         <button onClick={DecrementButtom}>-</button>
         </div>
-  )
+    )
     
 }
     
