@@ -1,0 +1,204 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Indie Flower', cursive;
+  background-color: #564D4A;
+  color: #564D4A;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: none;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  min-height: 600px;
+  background-color: #F7F4F3;
+  -webkit-box-shadow: 9px 10px 9px -8px #292929;
+          box-shadow: 9px 10px 9px -8px #292929;
+}
+
+.addtask-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  padding: 20px 20px 0 20px;
+}
+
+@media (max-width: 860px) {
+  .addtask-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.addtask-container h1 {
+  font-size: 40px;
+  display: inline-block;
+  width: 30%;
+  min-width: 160px;
+}
+
+.addtask-container .addTask {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 70%;
+}
+
+@media (max-width: 860px) {
+  .addtask-container .addTask {
+    width: 100%;
+  }
+}
+
+.addtask-container .addTask input {
+  width: 200px;
+  height: 30px;
+  border: 2px solid #5B2333;
+  background-color: #5b233338;
+  color: #5B2333;
+  padding: 5px 12px;
+  margin-right: 15px;
+  border-radius: 15px;
+  text-transform: capitalize;
+  font-size: 15px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.addtask-container .addTask input::-webkit-input-placeholder {
+  color: #5B2333;
+}
+
+.addtask-container .addTask input:-ms-input-placeholder {
+  color: #5B2333;
+}
+
+.addtask-container .addTask input::-ms-input-placeholder {
+  color: #5B2333;
+}
+
+.addtask-container .addTask input::placeholder {
+  color: #5B2333;
+}
+
+.addtask-container .addTask input:focus {
+  background-color: #F7F4F3;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.addtask-container .addTask button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #5B2333;
+  border: 2px solid #5B2333;
+  background-color: transparent;
+  -webkit-box-shadow: 4px 4px 5px -6px #7a747a;
+          box-shadow: 4px 4px 5px -6px #7a747a;
+}
+
+.todo-list {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.todo-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 20px;
+}
+
+.todo-list__item .item__text-container {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-list__item .item__text-container h2 {
+  margin-right: 20px;
+}
+
+.todo-list__item .item__text-container h2.done {
+  text-decoration: line-through;
+}
+
+.todo-list__item .item__actions-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+}
+
+.todo-list__item .item__actions-container i {
+  color: #5B2333;
+  background-color: transparent;
+}
+/*# sourceMappingURL=todolist.css.map */
