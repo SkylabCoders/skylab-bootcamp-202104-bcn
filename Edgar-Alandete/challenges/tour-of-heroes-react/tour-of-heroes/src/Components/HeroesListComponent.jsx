@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import HeroItemComponent from './HeroItemComponent';
 
 
 function HeroesListComponent() {
@@ -14,12 +15,12 @@ function HeroesListComponent() {
         { id: 19, name: 'Magma' },
         { id: 20, name: 'Tornado' }
     ]);
-
+    const [selectedHero, setSelectedHero] = useState(null)
 
     return (
         <ul>
             {heroes && heroes.map(
-                ({name}) => <li key = {name}>{name}</li>
+                ({name}) => <HeroItemComponent key = {name} heroName = {name}/>
             )}
         </ul>
     )
