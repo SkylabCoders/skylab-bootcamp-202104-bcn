@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 function ButtonComponent() {
   const [counter, setCounter] = useState(0);
@@ -13,9 +13,9 @@ function ButtonComponent() {
 
   return (
     <div>
-      <button onClick={increment}>+</button>
+      <button type="button" onClick={increment}>+</button>
       <p>{counter}</p>
-      <button onClick={decrement}>-</button>
+      <button type="button" onClick={decrement}>-</button>
     </div>
   );
 }
