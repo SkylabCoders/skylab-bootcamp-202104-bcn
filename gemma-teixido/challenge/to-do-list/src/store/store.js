@@ -1,4 +1,4 @@
-const tasks = []; // megaobjeto
+const tasks = [];
 
 const reducer = ({ type, payload }) => {
   switch (type) {
@@ -12,7 +12,6 @@ const reducer = ({ type, payload }) => {
       deleteTask(tasks);
       break;
     case 'DONE_TASK':
-      console.log('ID ->', payload);
       doneTask(payload);
       break;
     default:
