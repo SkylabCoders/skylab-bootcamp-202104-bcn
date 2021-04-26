@@ -1,5 +1,4 @@
 // const actionType = require('./actionTypes');
-
 // const {getTask, deleteTask, addTask, completedTask} = require('./action');
 
 const GET_TASK = 'GET_TASK';
