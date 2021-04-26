@@ -47,9 +47,9 @@ function createTaskStore(data) {
   return newTasks;
 }
 
-function tasksReducer(data, action) {
+function tasksReducer(data, actionType) {
   const newState = { ...appState };
-  switch (action) {
+  switch (actionType) {
     case CREATE_TASK:
       newState.tasks = createTaskStore(data);
       newState.tasksNum += 1;
@@ -70,17 +70,10 @@ function tasksReducer(data, action) {
   return setEnv(newState);
 }
 
-function generalReducer(data, action) {
+function generalReducer(data, actionType) {
   const newState = { ...appState };
 
-  switch (action) {
-    case ERROR:
-      newState.error = data;
-      break;
-
-    default:
-      break;
-  }
+  if (actionType === ERROR) newState.error = data;
 
   setEnv(newState);
 }
