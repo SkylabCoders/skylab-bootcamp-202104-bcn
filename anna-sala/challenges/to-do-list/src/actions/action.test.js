@@ -27,3 +27,16 @@ test('should resolve getInputValue async function', () => getInputValue('32').th
     data: '32',
   });
 }));
+
+test('should reject createTaskAction async function', () => {
+  const result = {
+    type: 'ERROR',
+    message: 'Empty Input',
+  };
+  createTaskAction(null, '32').then((result) => {
+    expect(result).toStrictEqual({
+      type: 'ERROR',
+      message: 'Empty Input',
+    });
+  });
+});
