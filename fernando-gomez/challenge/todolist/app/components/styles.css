@@ -54,6 +54,12 @@ li {
   padding: 0 0 0 0;
 }
 
+.tasksInput {
+  text-align: center;
+  outline: none;
+  margin-bottom: 1em;
+}
+
 .tasks-button-container {
   display: -webkit-box;
   display: -ms-flexbox;

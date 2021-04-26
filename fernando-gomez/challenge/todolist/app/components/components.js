@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 const tasksList = document.querySelector('.tasksList');
@@ -70,8 +71,8 @@ const printTask = (taskObject) => {
     tasksList.appendChild(taskListElement);
     buttonContainer.appendChild(deleteTaskButton);
     buttonContainer.appendChild(input);
-    buttonContainer.appendChild(doneButton);
     taskListElement.appendChild(buttonContainer);
+    buttonContainer.appendChild(doneButton);
     tasksList.appendChild(taskListElement);
   }
 };
