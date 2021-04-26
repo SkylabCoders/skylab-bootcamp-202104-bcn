@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    border-style: none;
+    border-radius: 6px;
+    font-family: 'Playfair Display', serif;
+    list-style: none;
+}
+
+body{
+    background-image: linear-gradient(#01cdfe,#b967ff); 
+    font-weight: bolder;
+    font-size: larger;
+    height: 100vh;
+}
+
+.title{
+    margin-top:30px ;
+    margin-left: 10px;
+}
+
+.container-input{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 10px;
+
+    button{
+        background-image: linear-gradient(#05ffa1,#01cdfe);
+        height: 33px;
+        margin-left: 10px;
+        width:80px;
+    }
+
+    input{
+        height: 30px;
+        width: 300px;
+        font-weight: bolder;
+        font-size: larger;
+
+        
+    }
+}
+
+.tasks{
+    display: flex;
+    font-weight: bolder;
+    font-size: larger;
+    margin-top: 20px;
+    
+    button{
+    background-color:#fffb96 ;
+    margin-left: 10px;
+    width:80px;
+    }
+}
