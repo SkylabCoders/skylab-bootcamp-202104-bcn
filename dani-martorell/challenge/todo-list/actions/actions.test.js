@@ -19,12 +19,11 @@ const addTask = (task) => {
       }
     }, 600);
   });
-  myPromise.then((data) => reducer(data)).catch((error) => alert(error));
+  return myPromise.then((data) => reducer(data)).catch((error) => alert(error));
 };
 
-describe('Guiven an addTask function', () => {
-  test('then return resolved', () => {
-    const myPromise = addTask();
-    const result = myPromise.then((data) => exepect(data).resolve.toEqual({ type: 'ADD_TASK', data: { task, id: state.lastId + 1 } }));
-  });
+describe('Given an addTask function', () => {
+  test('then return resolved', () => addTask().then((data) => {
+    expect(data).toEqual({ type: 'ADD_TASK', data: { task, id: state.lastId + 1 } });
+  }));
 });
