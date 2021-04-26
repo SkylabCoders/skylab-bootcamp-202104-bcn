@@ -1,4 +1,4 @@
-function addTaskDispatcher(task){
+async function addTaskDispatcher(task){
     const promiseAddTask = new Promise ((resolve,reject)=>{
         if(task){
             resolve({
@@ -43,3 +43,5 @@ const taskDoneDispatcher = (id) =>{
     }
     reducer(taskDone);
 }
+
+//module.exports = {addTaskDispatcher,deleteTaskDispatcher};
