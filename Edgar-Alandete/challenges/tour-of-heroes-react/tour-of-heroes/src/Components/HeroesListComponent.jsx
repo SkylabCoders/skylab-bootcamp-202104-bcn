@@ -17,13 +17,21 @@ function HeroesListComponent() {
     ]);
     const [selectedHero, setSelectedHero] = useState(null)
 
+    function onHandleSelectedHero(hero){
+        setSelectedHero(hero.name)
+      }
+
     return (
+        <div>
         <ul>
             {heroes && heroes.map(
-                ({name}) => <HeroItemComponent key = {name} heroName = {name}/>
+                (hero) => <HeroItemComponent key = {hero.name} heroName = {hero.name} selectedHero = {onHandleSelectedHero} hero = {hero}/>
             )}
         </ul>
-    )
 
+        <div>{selectedHero}</div>
+        </div>
+    )
+//
 }
 export default HeroesListComponent;

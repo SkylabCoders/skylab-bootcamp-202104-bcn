@@ -1,7 +1,6 @@
 import React from 'react'
 
-function HeroItemComponent({heroName}) {
-    return (<li key = {heroName}>{heroName}</li>);
+function HeroItemComponent({selectedHero, hero}) {
+    return (<li key = {hero.name}><button onClick= {()=>selectedHero(hero)} >{hero.name}</button></li>);
 }
-
 export default HeroItemComponent;
