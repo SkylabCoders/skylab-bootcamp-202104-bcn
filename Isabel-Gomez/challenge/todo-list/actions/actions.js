@@ -7,7 +7,6 @@ const addDataToNewTask = (id, value) => {
       id, value, completed: false,
     },
   };
-  console.log('id', addTask.data.id);
   dispatcher(addTask);
 };
 
@@ -20,7 +19,6 @@ const getInfoToCreateTask = () => {
 
 const getIdtoDeleteTask = (id) => {
   const deleteTask = { type: 'DELETE_TASK', data: id };
-  console.log('actiondeleteTask in action', deleteTask);
   dispatcher(deleteTask);
 };
 

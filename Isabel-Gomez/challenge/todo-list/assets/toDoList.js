@@ -94,13 +94,6 @@ const onClickEditButton = (id) => {
 };
 
 const editSelectTask = (id) => {
-  console.log('hola');
   const setLiToEdit = document.getElementsByClassName('list-container__item')[id];
   setLiToEdit.setAttribute('contentEditable', 'true');
-
-  // const saveInnerHtml = setLiToEdit.innerText;
-  // console.log(saveInnerHtml);
-  // // setLiToEdit.innerHTML = `<input class=list-container__item-input placeholder=${saveInnerHtml}>`;
-  // const newImputToEditTask = createElements('input', setLiToEdit, 'list-container__item-input');
-  // newImputToEditTask.setAttribute('placeholder', `${saveInnerHtml}`);
 };
