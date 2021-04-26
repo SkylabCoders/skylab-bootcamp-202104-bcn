@@ -1,13 +1,15 @@
+import React from 'react';
 import './App.css';
-import headerComponent from './components/Dashboard';
+import Dashboard from './pages/Dashboard';
+import Heroes from './pages/Heroes';
 
-function App() {
+const App = () => {
   return (
     <div>
-      <header/>
-        <h1>hola</h1>
-
+      <Dashboard/>
+      <Heroes/>
     </div>
+      
   );
 }
 
