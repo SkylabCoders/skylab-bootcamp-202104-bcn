@@ -1,8 +1,12 @@
 import React from 'react';
+import NavigatorComponent from './NavigatorComponent'
 
 const HeaderComponent = () => {
     return (
-      <h1>Tour of Heroes</h1>
+      <header>
+        <h1>Tour of Heroes</h1>
+        <NavigatorComponent />
+      </header>
     );
 }
 
