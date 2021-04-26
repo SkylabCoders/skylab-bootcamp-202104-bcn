@@ -1,12 +1,11 @@
 import React from 'react';
 import Title from './title';
-import Button from './button';
+import Nav from './nav';
 
 const Header = () => (
   <header className="header">
     <Title />
-    <Button />
-    <Button />
+    <Nav />
   </header>
 );
 
