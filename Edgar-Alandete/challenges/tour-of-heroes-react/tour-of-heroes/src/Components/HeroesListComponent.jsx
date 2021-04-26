@@ -16,7 +16,7 @@ function HeroesListComponent() {
         { id: 19, name: 'Magma' },
         { id: 20, name: 'Tornado' }
     ]);
-    const [selectedHero, setSelectedHero] = useState(heroes[0].name)
+    const [selectedHero, setSelectedHero] = useState(null)
 
     function onHandleSelectedHero(hero){
         setSelectedHero(hero)
@@ -29,8 +29,7 @@ function HeroesListComponent() {
                 (hero) => <HeroItemComponent key = {hero.name} heroName = {hero.name} selectedHero = {onHandleSelectedHero} hero = {hero}/>
             )}
         </ul>
-
-        <HeroDetailComponent hero = {selectedHero} />
+        {selectedHero &&  <HeroDetailComponent hero = {selectedHero} />}
         </div>
     )
 //
