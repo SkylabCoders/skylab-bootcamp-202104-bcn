@@ -6,8 +6,8 @@ const todoUl = document.querySelector('.todo-list');
 
 const handlerAddTask = () => {
   addTask(inputBtn.value)
-    .then((result) => dispatcher(result) && updateHTML());
-  // .catch((error)=> {alert (error.message);})
+    .then((result) => dispatcher(result) && updateHTML())
+   .catch((error)=> {alert (error.message);})
 };
 
 const handlerDeleteTask = (taskId) => {

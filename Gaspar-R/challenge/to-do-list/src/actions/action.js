@@ -10,7 +10,7 @@ const getTask = () => (
 );
 
 const addTask = (title) => new Promise((resolve, reject) => {
-  if (resolvePromise === true) {
+  if (title===undefined) {
     setTimeout(() => {
       resolve({
         type: actionType.ADD_TASK,
