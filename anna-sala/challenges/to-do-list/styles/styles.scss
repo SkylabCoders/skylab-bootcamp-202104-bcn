@@ -41,20 +41,6 @@
     }
   }
 
-  .weekdays{
-    display: flex;
-    background-color:$BACKGROUND-COLOR;
-    &__day{
-        border-color: $SECONDARY-LIGHT;
-        font-size: 30px;
-        list-style: none;
-        margin: 20px;
-        padding: 20px;
-        text-align: center;
-        width: 90%;
-    }
-  }
-
   .tasks{
     background-color:$BACKGROUND-COLOR;
     display: flex;
@@ -66,7 +52,6 @@
       list-style: none;
       padding: 10px;
       text-align: center;
-      width: 90%;
     }
     .done{
       font-size: 25px;
@@ -89,3 +74,37 @@
       background-color: #f2b5b5;
     }
   }
+.crossed{
+  background-color:$BACKGROUND-COLOR;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .task{
+    border-color: $SECONDARY-LIGHT;
+    font-size: 25px;
+    list-style: none;
+    padding: 10px;
+    text-align: center;
+  }
+    .done{
+      font-size: 25px;
+      font-family: $MAIN-FONT;
+      padding: 5px 10px;
+      border-radius: 10px;
+      border-style: none;
+      margin-top: -10px;
+      margin-left: 10px;
+      background-color: #b5f2b8;
+    }
+    .delete{
+      font-size: 25px;
+      font-family: $MAIN-FONT;
+      padding: 5px 10px;
+      border-radius: 10px;
+      border-style: none;
+      margin-top: -10px;
+      margin-left: 5px;
+      background-color: #f2b5b5;
+    }
+
+}

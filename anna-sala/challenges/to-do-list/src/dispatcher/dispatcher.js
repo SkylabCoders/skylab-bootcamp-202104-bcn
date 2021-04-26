@@ -34,6 +34,22 @@ const deleteTaskAction = (value) => {
   });
   return removeTask;
 };
+const crossTaskAction = (value) => {
+  const crossTask = new Promise((resolve, reject) => {
+    if (value) {
+      resolve({
+        type: 'UPDATE_TASK',
+        data: value,
+      });
+    } else {
+      reject({
+        type: 'ERROR',
+        message: 'Task Not Found',
+      });
+    }
+  });
+  return crossTask;
+};
 
 const dispatch = (action) => {
   reducer(action);

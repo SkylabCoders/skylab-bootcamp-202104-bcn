@@ -6,8 +6,13 @@ function getInputValue() {
 }
 
 function deleteSelectedTask(taskToDelete) {
-  // const taskSelectedToDelete = document.getElementById('taskInput');
   deleteTaskAction(taskToDelete)
+    .then((data) => dispatch(data))
+    .catch((error) => alert(`ERROR: ${error.message}`));
+}
+
+function crossSelectedTask(taskToCross) {
+  crossTaskAction(taskToCross)
     .then((data) => dispatch(data))
     .catch((error) => alert(`ERROR: ${error.message}`));
 }

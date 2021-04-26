@@ -17,6 +17,8 @@ function reducer({ type, data }) {
       tasks = newArray;
       deleteItem(data);
       break;
+    case UPDATE_TASK:
+      crossTaskText(data);
     default:
       return data;
   }
