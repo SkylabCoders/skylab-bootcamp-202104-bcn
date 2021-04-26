@@ -1,7 +1,7 @@
 const input = document.querySelector('.input-field');
 const btn = document.querySelector('.btn');
 
-function createDomElement(parent, element, text = null, attributes = []) {
+const createDomElement = (parent, element, text = null, attributes = []) => {
   const elementToCreate = document.createElement(element);
   if (text) {
     elementToCreate.innerText = text;
@@ -13,7 +13,7 @@ function createDomElement(parent, element, text = null, attributes = []) {
   }
   parent.appendChild(elementToCreate);
   return elementToCreate;
-}
+};
 
 const createItem = ({ task, id }, parent) => {
   const taskHtmlElement = createDomElement(parent, 'li', null, { class: 'tasks__list-item', id });
