@@ -30,6 +30,4 @@ function deleteItem(id) {
 }
 function crossTaskText(id) {
   document.getElementById(`${id}`).className = 'crossed';
-
-//   document.getElementById(`${id}`).innerHTML = taskText.strike();
 }
