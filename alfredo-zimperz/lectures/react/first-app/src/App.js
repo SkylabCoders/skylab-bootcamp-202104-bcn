@@ -1,13 +1,23 @@
-import logo from './logo.svg';
+import logoFer from './fer.png'
 import './App.css';
+import ClickerDisplay from './components/ClickerDisplay';
+import Clicker from './components/Clicker';
+import { useState } from 'react';
+
 
 function App() {
+
+  const [clicks, setclicks] = useState(0)
+
+  const addClickFunction = () => {setclicks(clicks + 1)}
+  const quitClickFunction = () => {setclicks(clicks - 1)}
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logoFer}  className="App-logo" alt="logo" />
         <p>
-          Hello, world!
+          Fer esta ausente de la reactChatAPP
         </p>
         <a
           className="App-link"
@@ -15,9 +25,13 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          estudia català autèntic en només 3 mesos
         </a>
       </header>
+      <main>
+        <ClickerDisplay clicks={clicks}/>
+        <Clicker addClick={addClickFunction} quitClick={quitClickFunction}/>
+      </main>
     </div>
   );
 }
