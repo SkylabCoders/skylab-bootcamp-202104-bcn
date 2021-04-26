@@ -10,8 +10,7 @@ let state = [
   {
     id: 1,
     title: 'Second Task',
-    complete: false
-  }
+    complete: false  }
 
 ];
 
