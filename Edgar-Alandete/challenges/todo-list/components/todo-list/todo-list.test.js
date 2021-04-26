@@ -12,7 +12,6 @@ const handleCreateTask = () => {
       }
     }, 3000);
   });
-  // taskPromise.then((newTask) => dispatcher(newTask)).catch((error) => dispatcher(error));
   return taskPromise;
 };
 
