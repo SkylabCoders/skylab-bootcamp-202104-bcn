@@ -4,18 +4,14 @@ import Anchorates from '../components/common/Anchorates';
 import Subtitle from '../components/common/Subtitle';
 import TopHeroes from '../components/TopHeroes';
 
-
-const Dashboard = () => {
-
-    return (
-         <div>
-      <Title text="Tour of Heroes"/>
-      <Anchorates text="Dashboard" href={null}/>
-      <Anchorates text="Heroes" href="#"/>
-      <Subtitle text="Top Heroes"/>
-      <TopHeroes/>
-    </div>
-    )
-}
+const Dashboard = () => (
+  <div>
+    <Title text="Tour of Heroes" />
+    <Anchorates text="Dashboard" href={null} />
+    <Anchorates text="Heroes" href="#" />
+    <Subtitle text="Top Heroes" />
+    <TopHeroes />
+  </div>
+);
 
 export default Dashboard;

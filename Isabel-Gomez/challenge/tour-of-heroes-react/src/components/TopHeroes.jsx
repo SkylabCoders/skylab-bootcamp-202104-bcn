@@ -1,28 +1,12 @@
-import React from 'react'
+import React from 'react';
+import heroes from '../data/heroes';
 
-const TopHeroes = () => {
-
-    const heroes = [
-  { id: 11, name: 'Dr Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-    ]
-
-return (
-    <section>
-        <ul>
-            {heroes.slice(0, 5).map(element => <li>{element.name}</li>)}
-        </ul>
-    </section>
-)
-
-}
+const TopHeroes = () => (
+  <section>
+    <ul>
+      {heroes.slice(0, 5).map((element) => <li key={element.id}>{element.name}</li>)}
+    </ul>
+  </section>
+);
 
 export default TopHeroes;
