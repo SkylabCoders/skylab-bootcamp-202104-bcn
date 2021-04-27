@@ -1,8 +1,19 @@
 import React from 'react';
+import HeroListComponent from './Components/HeroListComponent';
 
 function App() {
   return (
-    <h1>Hola Mundo</h1>
+    <>
+      <header>
+        <nav>
+          <ul>
+            <li>Heroes</li>
+            <li>Dashboard</li>
+          </ul>
+        </nav>
+      </header>
+      <HeroListComponent />
+    </>
   );
 }
 
