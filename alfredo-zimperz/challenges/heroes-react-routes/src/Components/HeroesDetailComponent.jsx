@@ -11,8 +11,10 @@ const HeroesDetailComponent = () => {
       <h2>
         {selectedHero.superhero}
         {' '}
-        details,
+        details
       </h2>
+      <p>{selectedHero.publisher}</p>
+      <p>{selectedHero.alter_ego}</p>
     </div>
   );
 };
