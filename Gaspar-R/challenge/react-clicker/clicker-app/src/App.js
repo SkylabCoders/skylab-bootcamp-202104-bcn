@@ -2,14 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import {useState} from 'react'
-
-const Incrementor = ({incrementor}) => (
-  <button onClick={incrementor}> + </button>  
-)
-const Decrementor = ({decrementor}) => (
-  <button onClick={decrementor}> - </button>  
-)
-
+import Incrementor from './components/incrementor';
+import Decrementor from './components/decrementor';
 
 
 
