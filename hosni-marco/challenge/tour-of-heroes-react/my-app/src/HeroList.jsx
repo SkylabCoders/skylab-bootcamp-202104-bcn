@@ -1,19 +1,13 @@
 import Store from "./Store"
 import React, {useState} from 'react';
-// import HeroDeteils from './HeroDetails'
-// const [id, getId] = useState(0);
-// let callID = null;
+import HeroDeteils from './HeroDetails'
+
 const HeroList = () => {
     const [count, setCount] = useState(0);
     const [heroID, setHeroID] = useState(0);
     const selectHero = (id) => {
         setHeroID(id);
-        // callID = heroID
-        // console.log(heroID + id)
-        debugger
-        // HeroDeteils(heroID)
-        // return <HeroDetails callID={heroID}/>
-// 
+        HeroDeteils(heroID);
     } 
     
     function ListStore({name}) {

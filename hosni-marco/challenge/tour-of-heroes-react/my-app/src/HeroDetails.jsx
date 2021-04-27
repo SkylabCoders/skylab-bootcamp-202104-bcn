@@ -1,19 +1,20 @@
 import Store from './Store';
-
-function HeroTitle({name}){
+// import HeroList from './HeroList'
+function HeroTitle(id){
     debugger
-    console.log('----->', name)
-    return <span>HERO: {name}</span>
+    console.log('----->', id.id.name)
+    return <span>HERO: {id.id.name}</span>
 }
 
  //TODO: RECIIR ID
-const HeroDetails = (id) => {
+const HeroDetails = () => {
+    
+    // console.log('herolist---->', HeroList)
     debugger
-    console.log('-herolist---->', Store[id].name)
 
     return <div>
             <h3>Hero Details</h3>
-            <HeroTitle name={Store[id].name}/>
+            <HeroTitle id={Store[0]}/>
             </div>
 }
 export default HeroDetails;
