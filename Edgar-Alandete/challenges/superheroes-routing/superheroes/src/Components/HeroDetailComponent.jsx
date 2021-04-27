@@ -7,7 +7,31 @@ const HeroDetailComponent = () => {
   const myHero = heroes.find((hero) => hero.id === heroId);
   if (myHero) {
     return (
-      <h1>{myHero.superhero}</h1>
+      <section>
+        <h1>{myHero.superhero}</h1>
+        <ul>
+          <li>
+            Publisher:
+            {' '}
+            {myHero.publisher}
+          </li>
+          <li>
+            First Appearance:
+            {' '}
+            {myHero.firstAppearance}
+          </li>
+          <li>
+            Alter Ego:
+            {' '}
+            {myHero.alterEgo}
+          </li>
+          <li>
+            Characters:
+            {' '}
+            {myHero.characters}
+          </li>
+        </ul>
+      </section>
     );
   }
   return (<h1>404 NOT Found</h1>);

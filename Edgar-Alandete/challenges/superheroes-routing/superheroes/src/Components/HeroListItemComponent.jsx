@@ -21,7 +21,7 @@ const HeroListItemComponent = ({
         {publisher}
       </p>
       <Link to={`./${id}`}>
-        Ver más
+        Show more
       </Link>
     </>
     )}
