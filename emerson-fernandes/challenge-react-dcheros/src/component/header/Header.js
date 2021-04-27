@@ -1,7 +1,7 @@
 export const Header = ()=>{
     return(
-        <di>
+        <header>
             <h1>DC Heroes</h1>
-        </di>
+        </header>
     )
 }
