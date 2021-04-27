@@ -1,0 +1,55 @@
+@import './header.scss';
+
+.dashboard{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: crimson;
+    height: 500px;
+    color: white;
+    width: 100%;
+    &__title{
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+}
+
+.dashboard__top{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:0;
+    padding: 50px 0;
+    width: 100%;
+    &__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin:0 40px;
+        }
+    &__item:hover > .pokemon-detail__image--ball{
+        cursor: pointer;
+        visibility: hidden;
+        transition: 0.5s;
+        }
+        a{
+            margin-top: 150px;
+            position: absolute;
+            text-decoration: none;
+            text-transform: capitalize; 
+            color: white;   
+            font-size: 20px;
+        }
+        img{
+            border-radius: 50%;
+            background-color: white;
+        }
+}
+
+.pokemon-detail__image--ball{
+    width: 100px;
+    position: absolute;
+    cursor: pointer;
+}
