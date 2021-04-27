@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const HeroListItemComponent = ({
-  // eslint-disable-next-line camelcase
   id, superhero, selectHero, publisher, alterEgo, selectedHero,
 }) => (
   <li key={id} superhero={superhero} id={id}>

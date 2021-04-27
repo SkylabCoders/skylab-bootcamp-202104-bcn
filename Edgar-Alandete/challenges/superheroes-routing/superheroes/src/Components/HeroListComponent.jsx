@@ -14,17 +14,14 @@ const HeroListComponent = () => {
       {
         heroes
         && heroes.map(
-          // eslint-disable-next-line camelcase
           ({
-            // eslint-disable-next-line camelcase
-            id, superhero, publisher, alter_ego,
+            id, superhero, publisher, alterEgo,
           }) => (
             <HeroListItemComponent
               id={id}
               superhero={superhero}
               publisher={publisher}
-              // eslint-disable-next-line camelcase
-              alterEgo={alter_ego}
+              alterEgo={alterEgo}
               selectHero={onHandleSelectedHero}
               selectedHero={selectedHero}
             />
