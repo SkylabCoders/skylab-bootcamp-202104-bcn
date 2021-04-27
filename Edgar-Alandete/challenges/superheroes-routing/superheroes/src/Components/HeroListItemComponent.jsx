@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const HeroListItemComponent = ({
   // eslint-disable-next-line camelcase
@@ -20,6 +21,9 @@ const HeroListItemComponent = ({
         {' '}
         {publisher}
       </p>
+      <Link to={`./${id}`}>
+        Ver más
+      </Link>
     </>
     )}
   </li>
