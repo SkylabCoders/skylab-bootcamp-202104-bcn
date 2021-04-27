@@ -12,11 +12,11 @@ const HeroListComponent = ({ li1 }) => (
 );
 
 HeroListComponent.propTypes = {
-  li1: PropTypes.string,
+  li1: PropTypes.string.isRequired,
 };
 
 HeroListComponent.defaultProps = {
-  li1: '',
+  //
 };
 
 export default HeroListComponent;
