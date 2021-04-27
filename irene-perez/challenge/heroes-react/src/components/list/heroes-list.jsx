@@ -1,18 +1,19 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import heroes from '../elements/heroes';
 
-const HeroesList = () => {
-  const listHeroes = heroes.map(({ id, superhero }) => (
-    <span>
-      <li key={`${id}-${superhero}`} className="list__hero-item">{superhero}</li>
-    </span>
+const HeroesList = ({ heroList, setSelectedHero }) => {
+  const listHeroes = heroList.map((superhero) => (
+    <li>
+      {superhero.superhero}
+      <button type="button" onClick={() => setSelectedHero(superhero)}>+</button>
+    </li>
   ));
   return (
-    <ul className="list__container">
-      {
-    listHeroes
-        }
-    </ul>
+    <div>
+      <ul>
+        { listHeroes }
+      </ul>
+    </div>
   );
 };
 
