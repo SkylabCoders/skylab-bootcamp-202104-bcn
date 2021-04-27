@@ -7,27 +7,31 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import HeroesList from './components/HeroesList';
+import HeroesFullDetail from './components/HeroFullDetail';
 
 function App() {
   return (
-    <main>
+    <>
       <header>
         <h1>Tour of Heroes</h1>
-        {/* <HeroesList
-          heroesArray={heroes}
-          heroSelector={selectedHero}
-          heroSelected={currentSelectedHero}
-        /> */}
+        <nav>
+          <ul>
+            <li>Heroes</li>
+            <li>Dashboard</li>
+          </ul>
+        </nav>
       </header>
-      <Router>
-        <Switch>
-          <Route exact path="/heroes/:heroId" component={HeroesList} />
-          <Route exact path="/heroes/" component={HeroesList} />
-          <Redirect to="/heroes/" />
-        </Switch>
-      </Router>
+      <main>
+        <Router>
+          <Switch>
+            <Route exact path="/heroes/" component={HeroesList} />
+            <Route exact path="/heroes/:heroId" component={HeroesFullDetail} />
+            <Redirect to="/heroes/" />
+          </Switch>
+        </Router>
 
-    </main>
+      </main>
+    </>
   );
 }
 

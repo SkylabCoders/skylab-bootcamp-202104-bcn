@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import HeroesDetail from './HeroesDetail';
 import heroes from '../assets/heroes';
 
@@ -15,9 +15,7 @@ function HeroesList() {
         heroes.map((hero) => (
           <li>
             <button type="button" id={hero.id} key={hero.name} onClick={() => updateSelectedHero(hero)}>Q</button>
-            <Link to={`./${hero.id}`}>
-              {hero.superhero}
-            </Link>
+            {hero.superhero}
             {currentSelectedHero === hero && <HeroesDetail hero={currentSelectedHero} />}
           </li>
         ))
