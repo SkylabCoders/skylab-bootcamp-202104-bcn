@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../elements/header';
-import FourHeroes from './four-heroes-list';
 import TittleH1 from './tittle';
+import FourHeroes from './four-heroes-list';
 
 function Dashboard() {
   return (

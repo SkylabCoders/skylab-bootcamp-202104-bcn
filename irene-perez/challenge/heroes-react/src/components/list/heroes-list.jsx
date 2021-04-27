@@ -1,8 +1,8 @@
 import React from 'react';
 import heroes from '../elements/heroes';
 
-const FourHeroes = () => {
-  const listItem = heroes.slice(0, 4).map(({ id, superhero }) => (
+const HeroesList = () => {
+  const listHeroes = heroes.map(({ id, superhero }) => (
     <span>
       <li key={`${id}-${superhero}`} className="list__hero-item">{superhero}</li>
     </span>
@@ -10,10 +10,10 @@ const FourHeroes = () => {
   return (
     <ul className="list__container">
       {
-     listItem
-      }
+    listHeroes
+        }
     </ul>
   );
 };
 
-export default FourHeroes;
+export default HeroesList;
