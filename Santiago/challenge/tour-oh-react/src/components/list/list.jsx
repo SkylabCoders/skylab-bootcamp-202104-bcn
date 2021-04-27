@@ -2,17 +2,17 @@ import React from 'react';
 import heroes from '../../store/store';
 
 const List = () => {
-  const myHereos = heroes.map((hero) => (
-    <li>
-      {hero.id}
+  const myHereos = heroes.map(({ id, name }) => (
+    <li className="list__item" key={`${id} - ${name}`}>
+      {id}
       {' - '}
-      {hero.name}
+      {name}
     </li>
   ));
 
   return (
     <div>
-      <ul>
+      <ul className="list__conatiner">
         {myHereos}
       </ul>
     </div>
