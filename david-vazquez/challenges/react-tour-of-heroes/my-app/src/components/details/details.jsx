@@ -7,7 +7,10 @@ function Details() {
   const foundHero = heroes.find((hero) => hero.id.toString() === heroId);
   return (
     <article>
-      <h2>{`Hola, hero ${foundHero.superhero}`}</h2>
+      <h2>{`Hi! I'm ${foundHero.superhero}`}</h2>
+      <p>{`My alter ego is ${foundHero.alter_ego}`}</p>
+      <p>{`I appeared at first time in ${foundHero.first_appearance}`}</p>
+      <p>{`My publisher is ${foundHero.publisher}`}</p>
     </article>
   );
 }
