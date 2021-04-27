@@ -6,19 +6,13 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
+import HeaderComponent from './Components/HeaderComponent';
 import HeroListComponent from './Components/HeroListComponent';
 
 function App() {
   return (
     <>
-      <header className="header">
-        <nav className="header__navigator">
-          <ul className="header__navigator-container">
-            <li className="header__navigator-item">Heroes</li>
-            <li className="header__navigator-item">Dashboard</li>
-          </ul>
-        </nav>
-      </header>
+      <HeaderComponent />
       <Router>
         <Switch>
           <Route exact path="/heroes" component={HeroListComponent} />
