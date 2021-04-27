@@ -1,0 +1,33 @@
+body{
+    background-image: url("../image/pokedex1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        display: flex;
+        }
+    li{
+        text-transform: lowercase;
+        display: flex;
+        img{
+            text-align: center;
+            text-decoration: none;
+            text-transform: none;
+            color: black;
+            text-transform: uppercase;
+            font-weight: 25px;
+            height: 120px;
+            width: 100px;
+        }
+    }
+}
