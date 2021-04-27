@@ -1,7 +1,8 @@
 import './App.css';
+import './form.css';
 import React, { useState } from 'react';
-import HeroesList from './HeroesListComponents';
-import HeroDetail from './HeroDetailComponent';
+import HeroesList from './components/HeroesListComponents';
+import HeroDetail from './components/HeroDetailComponent';
 
 function App() {
   const heroes = [
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Tour of heroes</h1>
+      <h1 className="title">Tour of heroes</h1>
       <HeroesList heroesList={heroes} setAsSelected={setCurrentHero} />
       {currentHero && <HeroDetail currentHero={currentHero} />}
     </div>
