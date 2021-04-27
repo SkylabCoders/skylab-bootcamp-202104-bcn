@@ -1,39 +1,28 @@
 import react from 'react'
 
 import React from "react";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {Heroes} from "../../pages/Heroes/Heroes";
+import {Dashboard} from "../../pages/Dashboard/dashboard";
 
-export const routing = () => {
+export const Routing = () => {
     return (
         <Router>
             <div>
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/Dashboard">Dashboard</Link>
                         </li>
                         <li>
-                            <Link to="/about">About</Link>
-                        </li>
-                        <li>
-                            <Link to="/users">Users</Link>
+                            <Link to="/Heroes">Heroes</Link>
                         </li>
                     </ul>
                 </nav>
                 <Switch>
-                    <Route path="/about">
-                        <About />
+                    <Route exact path="/Dashboard" component={Dashboard}>
                     </Route>
-                    <Route path="/users">
-                        <Users />
-                    </Route>
-                    <Route path="/">
-                        <Home />
+                    <Route exact path="/Heroes" component={Heroes}>
                     </Route>
                 </Switch>
             </div>

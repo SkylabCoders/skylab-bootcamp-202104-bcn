@@ -1,10 +1,10 @@
+import react from 'react'
+import {Routing} from "./application/config/routes-config";
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
-
+        <Routing />
     </div>
   );
 }
-
-export default App;
