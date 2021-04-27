@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AllDetails from './AllDetails';
+import { Link } from 'react-router-dom';
 
 const Details = ({ data }) => {
   const [showAllDetails, setShowAllDetails] = useState(false);
@@ -12,7 +12,7 @@ const Details = ({ data }) => {
         {`Alter ego: ${data.alter_ego}`}
       </li>
       <li><button type="button" onClick={() => setShowAllDetails(!showAllDetails)}>More details</button></li>
-      {showAllDetails && <AllDetails data={data} />}
+      {showAllDetails && <Link to={`./AllDetails/${data.id}`} />}
     </ul>
   );
 };

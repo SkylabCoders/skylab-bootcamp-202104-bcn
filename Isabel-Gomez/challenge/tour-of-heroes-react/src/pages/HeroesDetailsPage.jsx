@@ -4,7 +4,7 @@ import Anchorates from '../components/common/Anchorates';
 import Subtitle from '../components/common/Subtitle';
 import AllDetails from '../components/AllDetails';
 
-const HeroesPage = () => (
+const HeroesDetailsPage = () => (
   <div>
     <Title text="Tour of Heroes" />
     <Anchorates text="Dashboard" href="#" />
@@ -14,4 +14,4 @@ const HeroesPage = () => (
   </div>
 );
 
-export default HeroesPage;
+export default HeroesDetailsPage;
