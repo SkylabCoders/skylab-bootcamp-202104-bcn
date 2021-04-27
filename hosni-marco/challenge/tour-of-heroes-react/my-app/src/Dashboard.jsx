@@ -1,8 +1,8 @@
 import Store from './Store'
-// import HeroList from './HeroList' 
+
 
 function TopHeroes ({name}){
-    // debugger
+
     return <li><button>{name}</button></li>
 }
 
@@ -15,10 +15,6 @@ const Dashboard = () => {
                     <TopHeroes name={Store[2].name}/>
                     <TopHeroes name={Store[3].name}/>
                 </ul>
-                {/* <button onClick={HeroList()}>All heroes</button> */}
             </div>
 }
 export default Dashboard;
-
-//  TODO: heroe list
-// TODO: HEROE DETAILS

@@ -11,12 +11,11 @@ const HeroList = () => {
     } 
     
     function ListStore({name}) {
-        // debugger
         return <li><button onClick={() => {selectHero(name.id)}}> ID: {name.id}, NAME: {name.name}</button></li>
-    }//TODO: llamada a details
+    }
+    
     const sumOperation = count + 10;
     const restOperation = count - 10;
-    
           return <div>
                     <h2>Hero List</h2>
                     <ul>
@@ -36,7 +35,5 @@ const HeroList = () => {
                     <button onClick={ () =>  count === 10 ? alert('no puedes pasar!')  : setCount(sumOperation)}>
                     Next</button>
                 </div>
-
-    // })
 }
 export default HeroList;
