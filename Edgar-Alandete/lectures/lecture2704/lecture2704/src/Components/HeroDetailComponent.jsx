@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { useParams } from 'react-router';
 import heroes from '../assets/heroes';
 
@@ -15,8 +14,5 @@ const HeroDetailComponent = () => {
     </article>
   );
 };
-// HeroDetailComponent.propTypes = {
-//   id: PropTypes.number.isRequired,
-// };
 
 export default HeroDetailComponent;
