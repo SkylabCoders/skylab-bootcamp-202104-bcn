@@ -6,8 +6,8 @@ const HeroListItemComponent = ({
   id, superhero, selectHero, publisher, alterEgo, selectedHero,
 }) => (
   <li key={id} superhero={superhero} id={id}>
-    <button type="button" onClick={() => selectHero(id)}>Boton</button>
-    {superhero}
+    <a href onClick={() => selectHero(id)}>{superhero}</a>
+
     {selectedHero && selectedHero === id && (
     <>
       <p>
