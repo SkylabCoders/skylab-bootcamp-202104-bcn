@@ -34,7 +34,7 @@ const AllDetails = () => {
         }
         return null;
       })}
-      <li><Link to="/heroes">Back</Link></li>
+      <li><Link to="/heroes">Back to list</Link></li>
     </ul>
   );
 };
