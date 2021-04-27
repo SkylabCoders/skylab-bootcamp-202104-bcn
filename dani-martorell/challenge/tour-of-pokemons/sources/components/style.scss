@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Raleway&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+.wrapper {
+    background: #159957;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(236, 236, 236) ;
+    cursor: pointer;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px black;
+    margin-bottom: 15   px; 
+
+}
+
+main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+    min-width: 400px;
+    overflow: hidden;
+
+    .top-logo {
+        width: 500px;
+        margin-bottom: -150px;
+        margin-top: -100px;
+        filter: drop-shadow(4px 7px 3px black);
+
+    }
+
+    .main-title {
+        margin: 20px;
+    }
+
+    .top-logo-small {
+        width: 245px;
+        // margin-bottom: -150px;
+        // margin-top: -10px;
+        filter: drop-shadow(4px 7px 3px black);
+        margin-bottom: -124px;
+    }
+
+    .bottom-img {
+        width: 600px;
+        position: absolute;
+        bottom: -100px;
+        left: -200px;
+    }
+
+    .head-title {
+        font-size: 35px;
+        color: white;
+        font-family: 'Orbitron', sans-serif;    
+    }
+
+    .selector-group {
+        z-index: 1;
+        width: 350px;
+        margin: 40px 20px;
+        a {
+            cursor: pointer;
+            border: 2px solid white;
+            border-radius: 10px;
+            font-weight: 900;
+            font-size: 20px;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-family: 'Orbitron', sans-serif;    
+        }
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .pokemons-list {
+        z-index: 1;
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: space-around;
+        flex-wrap: wrap;
+        &__element {
+            border-radius: 10px;
+            margin: 10px 10px;
+            background-color: rgba(255, 0, 43, 0.2);
+            font-family: 'Orbitron', sans-serif;    
+            display: inline-block;
+        }
+        a {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+        }
+    }
+
+    .buttons-wrapper {
+        a {
+            background-color: black;
+            padding: 10px 10px;
+            margin: 20px 0;
+        }
+    }
+
+    .details__image {
+        filter: drop-shadow(4px 7px 3px black);
+    
+    }
+}
+
+
+
+
