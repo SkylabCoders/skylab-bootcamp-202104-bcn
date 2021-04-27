@@ -1,33 +1,18 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import heroes from '../elements/heroes';
 
-const HeroesDetails = ({ superhero }) => (
-  <div>
-    <h3>
-      {superhero.superhero}
-      {' '}
-      ID:
-    </h3>
-    <p>
-      {superhero.id}
-    </p>
-    <h3>
-      {superhero.superhero}
-      {' '}
-      PUBLISHED:
-    </h3>
-    <p>
-      {superhero.publisher}
-    </p>
-    <h3>
-      {superhero.superhero}
-      {' '}
-      ALTER-EGO:
-    </h3>
-    <p>
-      {superhero.alter_ego}
-    </p>
-  </div>
-);
+function HeroesDetails({ superhero }) {
+  const { heroId } = useParams();
+  const hero = heroes.find((id) => (id.toString() === heroId));
+  return (
+    <article>
+      <p>{`${hero.superhero} id:`${hero.id}}</p>
+      <p>{`${hero.superhero} publiseh:`${hero.published}</p>
+      <p>{`${hero.superhero} alter-ego:`${hero.alter_ego}</p>
+    </article>
+  )
+}
 
 export default HeroesDetails;
