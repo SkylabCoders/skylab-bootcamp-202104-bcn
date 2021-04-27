@@ -6,7 +6,7 @@ import HeroListItemComponent from './HeroListItemComponent';
 const HeroListComponent = () => (
   <ul className="list__container">
     {
-        heroes.map(({ id, name }) => <HeroListItemComponent key={`${id}-${name}`} id={id} name={name} />)
+        heroes.map(({ id, superhero }) => <HeroListItemComponent key={`${id}`} id={id} superhero={superhero} />)
     }
   </ul>
 );
