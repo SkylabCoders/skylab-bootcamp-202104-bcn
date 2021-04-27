@@ -4,9 +4,11 @@ import heroes from '../../store/store';
 const List = () => {
   const myHereos = heroes.map(({ id, name }) => (
     <li className="list__item" key={`${id} - ${name}`}>
-      {id}
-      {' - '}
-      {name}
+      <a href="./../details/details.jsx">
+        {id}
+        {' - '}
+        {name}
+      </a>
     </li>
   ));
 
