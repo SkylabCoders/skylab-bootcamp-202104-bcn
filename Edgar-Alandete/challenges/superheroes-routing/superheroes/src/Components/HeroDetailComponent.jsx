@@ -5,9 +5,11 @@ import heroes from '../assets/heroes';
 const HeroDetailComponent = () => {
   const { heroId } = useParams();
   const myHero = heroes.find((hero) => hero.id === heroId);
-
-  return (
-    <h1>{myHero.superhero}</h1>
-  );
+  if (myHero) {
+    return (
+      <h1>{myHero.superhero}</h1>
+    );
+  }
+  return (<h1>404 NOT Found</h1>);
 };
 export default HeroDetailComponent;
