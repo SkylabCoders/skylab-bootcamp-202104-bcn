@@ -1,0 +1,20 @@
+.top-pokemons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .list-pokemon {
+        display: flex;
+        flex-direction: row;
+        &--item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &--title {
+    
+    }
+}
