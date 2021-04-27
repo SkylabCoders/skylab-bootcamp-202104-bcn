@@ -1,5 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+
 import heroes from '../assets/heroes';
 
 const HeroDetailComponent = () => {
@@ -31,6 +33,9 @@ const HeroDetailComponent = () => {
             {myHero.characters}
           </li>
         </ul>
+        <Link to="./">
+          Go Back to List
+        </Link>
       </section>
     );
   }
