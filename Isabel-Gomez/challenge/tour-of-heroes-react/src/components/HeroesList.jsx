@@ -1,17 +1,12 @@
 import React from 'react';
 import heroes from '../data/heroes';
-import SelectedHero from './SelectedHero';
+import Card from './common/Card';
 
-const HeroesList = ({ SelectedHero, heroes }) => (
+const HeroesList = () => (
   <section>
     <ul>
       {heroes.map((element) => (
-        <>
-          <li key={element.name}>
-            <button onClick={() => SelectedHero(hero)}>+</button>
-            {element.name}
-          </li>
-        </>
+        <Card key={element.id} data={element} />
       ))}
     </ul>
   </section>
