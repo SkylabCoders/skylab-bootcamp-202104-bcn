@@ -212,11 +212,13 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background: white;
+          background: white;
   margin: 50px 10% 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background: white;
+  margin: 50px 10% 0;
   width: auto;
 }
 
@@ -344,6 +346,7 @@ header {
   width: 30px;
   display: inline-block;
 }*/
+
 .link.sales {
   background: #8e789d;
 }

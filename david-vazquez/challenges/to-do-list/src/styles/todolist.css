@@ -1,0 +1,145 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: lightskyblue;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("./../img/pngfind.com-torn-notebook-paper-png-2535932.png");
+  background-position: 45% 10px;
+  background-repeat: no-repeat;
+  background-size: 650px;
+  font-family: 'Noto Sans KR', sans-serif;
+  height: 900px;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 50px;
+  margin: 50px 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.input__container {
+  width: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.input {
+  padding: 10px 50px;
+  width: 400px;
+  font-family: 'Handlee', cursive;
+  font-size: 20px;
+  outline: none;
+  border-radius: 30px;
+}
+
+.input__value {
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  background-color: green;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.list {
+  margin-top: 20px;
+  font-family: 'Handlee', cursive;
+  height: 590px;
+  overflow: scroll;
+}
+
+.list__item {
+  list-style: none;
+  width: 500px;
+  padding: 10px 10px 10px 50px;
+  font-size: 20px;
+  border-radius: 30px;
+  background-color: #ebebeb;
+  margin: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list__button {
+  outline: none;
+  border: none;
+  float: right;
+  color: white;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.list__button--delete {
+  background-image: url("./../img/trash-alt-solid.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  margin: 0;
+  margin-right: 0;
+  background-color: cyan;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.list__button--done {
+  background-image: url("./../img/check-solid.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-color: yellow;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  margin: auto;
+  margin-right: 5px;
+}
+
+.list__item--done {
+  text-decoration: line-through;
+}
+/*# sourceMappingURL=todolist.css.map */
