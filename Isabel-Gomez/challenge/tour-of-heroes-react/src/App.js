@@ -7,14 +7,16 @@ import {
   Redirect
 } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
-import HeroesDetailsPage from './pages/HeroesDetailsPage';
+import HeroesDetails from './pages/HeroesDetails';
+import HeroesPage from './pages/HeroesPage';
 
 const App = () => (
   <Router>
     <Switch>
-      <Route exact path="./pages/Dashboard" component={Dashboard} />
-      <Route exact path="./pages/HeroesDetailsPage/:data.Id" component={HeroesDetailsPage} />
-      <Redirect to="./pages/Dashboard" />
+      <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/heroes" component={HeroesPage} />
+      <Route exact path="/details/:Id" component={HeroesDetails} />
+      <Redirect to="/dashboard" />
     </Switch>
   </Router>
 

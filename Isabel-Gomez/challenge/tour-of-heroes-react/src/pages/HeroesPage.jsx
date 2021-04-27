@@ -7,8 +7,8 @@ import HeroesList from '../components/HeroesList';
 const HeroesPage = () => (
   <div>
     <Title text="Tour of Heroes" />
-    <Anchorates text="Dashboard" href="#" />
-    <Anchorates text="Heroes" href={null} />
+    <Anchorates text="Dashboard" to="/dashboard" />
+    <Anchorates text="Heroes" />
     <Subtitle text="The Heroes" />
     <HeroesList />
   </div>

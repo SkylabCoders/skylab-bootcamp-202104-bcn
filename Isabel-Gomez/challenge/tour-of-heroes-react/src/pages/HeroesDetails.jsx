@@ -4,14 +4,14 @@ import Anchorates from '../components/common/Anchorates';
 import Subtitle from '../components/common/Subtitle';
 import AllDetails from '../components/AllDetails';
 
-const HeroesDetailsPage = () => (
+const HeroesDetails = () => (
   <div>
     <Title text="Tour of Heroes" />
-    <Anchorates text="Dashboard" href="#" />
-    <Anchorates text="Heroes" href={null} />
+    <Anchorates text="Dashboard" to="/dashboard" />
+    <Anchorates text="Heroes" to="/heroes" />
     <Subtitle text="All details!" />
     <AllDetails />
   </div>
 );
 
-export default HeroesDetailsPage;
+export default HeroesDetails;
