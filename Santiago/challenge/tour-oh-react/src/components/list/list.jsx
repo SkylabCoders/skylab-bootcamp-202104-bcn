@@ -2,13 +2,16 @@ import React from 'react';
 import heroes from '../../store/store';
 
 const List = () => {
+  const functionExample = () => {
+    console.log('HEROE CLICKED');
+  };
   const myHereos = heroes.map(({ id, name }) => (
     <li className="list__item" key={`${id} - ${name}`}>
-      <a href="./../details/details.jsx">
+      <button type="button" onClick={() => functionExample()}>
         {id}
         {' - '}
         {name}
-      </a>
+      </button>
     </li>
   ));
 
