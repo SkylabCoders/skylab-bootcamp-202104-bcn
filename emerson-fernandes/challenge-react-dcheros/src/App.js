@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route,Link} from "react-router-dom";
 import './App.css';
 import {Header} from './component/header/Header'
+import {HeroList} from './component/hero-list/hero-list'
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <h1>Primeira ruta</h1>
           </Route>
           <Route exact path='/HeroList'>
-            <h1>Segunda ruta</h1>
+            <HeroList/>
           </Route>
         </Switch>
       </Router>
