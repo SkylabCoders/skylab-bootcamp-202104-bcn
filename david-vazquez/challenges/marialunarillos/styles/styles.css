@@ -62,6 +62,10 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   padding: 0;
 }
 
@@ -168,6 +172,10 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .shop-icon {
@@ -204,6 +212,8 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+          background: white;
+  margin: 50px 10% 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -327,6 +337,15 @@ header {
 .link.news span {
   padding-left: 35px;
 }
+
+/*.link.news a {
+  content: "";
+  float: left;
+  background: url(img/menu.svg) -244px 4px no-repeat;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}*/
 
 .link.sales {
   background: #8e789d;
