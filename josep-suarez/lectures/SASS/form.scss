@@ -1,0 +1,37 @@
+//este archivo nos crea un archivo css, que es el que va linkado a la pagina html
+//a partir de las variables declaradas
+//importo archivo scss donde tengo los colores que usare en este archivo
+@import "./colors.scss";
+@import "./mixin.scss";
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+//declaro variables comunes que usare durante el css
+$padding: 20px;
+$margin: 20px;
+
+body {
+  background: #eaeaea;
+  color: #555;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin: 20px;
+}
+//apunto a un selector y le incluyo las variables comunes que tengo declaradas en el @mixin
+.main {
+  @include common-tags(row, $border-color);
+}
+.sidebar {
+  @include common-tags(column, $border-color);
+  &-title {
+    //apunto al hijo title de eso componente
+    color: $text-important;
+  }
+}
+.form {
+  @include common-tags(column, $generic-border-color);
+}

@@ -1,0 +1,70 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+  font-family: 'Zen Dots', cursive;
+  padding: 20px;
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+.rules {
+  margin-top: 20px;
+  text-align: justify;
+  text-align: center;
+}
+
+.rules h2 {
+  text-align: center;
+}
+
+.game__space {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.game__controls {
+  margin: 20px 0;
+}
+
+.cell {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  font-size: 8px;
+  border: 1px solid #313030;
+}
+
+.cell__text {
+  display: none;
+}
+
+.cell--alive {
+  background-color: red;
+  color: red;
+}
+/*# sourceMappingURL=index.css.map */

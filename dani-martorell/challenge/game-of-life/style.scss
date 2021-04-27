@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap');
+
+*, 
+*::after, 
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    justify-content: center;
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        min-width: 800px;
+        .grid {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+            height: 450px;
+            margin: 40px 0;
+            align-items: stretch;
+
+            .row {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(2, 2, 61);
+
+                .column {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            [data-state = '1'] {
+                background-color: white;
+
+            }
+        }
+        .counter {
+            width: auto;
+            position: absolute;
+            color: white;
+            bottom: 125px;
+            right: 300px;
+            background-color: rgb(2, 2, 61);
+            font-size: 14px;
+        }
+        .controllers {
+            display: flex;
+            justify-content: space-around;
+            width: 600px;
+            margin-top: 20px;
+
+            &__reset-button{
+                padding: 8px 12px;
+                font-family: inherit;
+                text-transform: uppercase;
+                border: none;
+                border-radius: 10px; 
+                color: white;
+                background-color: rgb(159, 168, 255);;
+                cursor: pointer;
+                text-decoration: none;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                    background-color: rgb(190, 196, 255)
+
+                }            }
+            &__play-button, &__stop-button {
+                padding: 15px 35px;
+                margin-left: 10px;
+                font-family: inherit;
+                text-transform: uppercase;
+                border: none;
+                border-radius: 80px; 
+                color: white;
+                background-color: rgb(56, 44, 221);;
+                cursor: pointer;
+                text-decoration: none;
+
+                &:focus {
+                    outline: none;
+                }
+                &:hover {
+                    background-color: rgb(0, 15, 148)
+                }
+            }
+            &__stop-button {
+                margin-left: auto;
+            }
+            .speed {
+                display: flex;
+                align-items: center;;
+                text-transform: uppercase;
+                font-size: 14px;
+                padding: 0 10px;
+                margin-left: 15px;
+            }
+            .input-range {
+                direction: rtl;
+            }
+        }
+        .samples {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            height: 100vh;
+            justify-content: center;
+            left: 0;
+            top: -12%;
+            
+            button {
+                padding: 10px 25px;
+                font-family: inherit;
+                text-transform: uppercase;
+                color: grey;
+                cursor: pointer;
+                text-decoration: none;
+                margin: 20px;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                    transform: scale(1.05);
+
+                }
+            }
+        }
+
+    }
+}
+
+

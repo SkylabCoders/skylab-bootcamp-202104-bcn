@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../styles/styles.css">
+    <title>AirFrance Form</title>
+</head>
+<body>
+    <div>
+        <img src="./../img/airfrance-logo.JPG">
+        <form class="container">
+            <div class="container__firstLine">
+                <li class="container__firstLine-viajes">Viajes 
+                    <select class="slider-input" type="text">
+                        <option value="au">Ida y vuelta</option>
+                        <option value="ca">Sólo ida</option>
+                        <option value="usa">Destino múltiples</option>
+                    </select>
+                </li>
+                <li class="container__firstLine-salida">Salida <input type="text" placeholder="Barcelona, Barcelona*"></li>
+                <li class="container__firstLine-llegada">Llegada <input type="text" placeholder="Dubai International Airport *"></li>
+            </div>
+            <div class="container__secondLine">
+                <li class="container__secondLine-fecha">Fecha de Salida <input type="text"></li>
+                <li class="container__secondLine-pasajeros">Pasasjeros <input type="text" placeholder="1 Pasajero"></li>
+                <li class="container__secondLine-clase">Clase 
+                    <select type="text" placeholder="ECONOMY">
+                        <option value="au">ECONOMY</option>
+                        <option value="ca">PREMIUM ECONOMY</option>
+                        <option value="usa">BUSINESS</option>
+                        <option value="usa">LA PREMIÈRE</option>
+                        </select>
+                </li>               
+            </div>
+        </form>
+    </div>
+</body>
+</html>

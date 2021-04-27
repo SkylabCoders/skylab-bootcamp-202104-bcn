@@ -1,0 +1,71 @@
+body {
+    height : 100% ;
+    width : 100% ;
+    background-color: lightblue;
+    margin: 0;
+    min-width: 100%;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    height : 10vh ;
+    width : 100vw ;
+    color: darkcyan;
+    text-align: center;
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    height : 75vh ;
+    width : 100vw ;
+    background-color: lightblue;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.cell:hover {
+    background-color: red;
+    color: goldenrod;
+}
+
+.controls {
+    height : 15vh ;
+    width : 100vw ;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls__button {
+    height : 10vh ;
+    width : 15vw ;
+    background-color: lightblue;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius : 15%;
+}
+
+.controls--start {
+    background-color: darkcyan;
+    color: aliceblue;
+}
+
+.controls--start:hover {
+    background-color: yellow;
+    color: goldenrod;
+
+}

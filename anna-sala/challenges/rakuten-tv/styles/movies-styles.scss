@@ -1,0 +1,157 @@
+@import"./styles.scss";
+
+@mixin spacings ($width){
+    width:$width;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.movie-header{
+    background: linear-gradient(to bottom, transparent 75%, black),
+    url("https://images-3.wuaki.tv/system/shots/196727/original/snapshot-1590665489-width1920-quality80.jpeg");
+    background-size:contain;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:100%;
+    height: auto;
+&__image{
+    min-height: 800px;
+    /* Create the parallax scrolling effect */
+}
+    &__info{
+        position: relative;
+        display: flex;
+        &--buttons{
+            display: flex;
+            position: absolute;
+            top: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            .buttons{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+            .button-section{
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                padding: 50px;
+                text-align: center;
+                color: white;
+                span{
+                    padding: $padding;
+                    text-align: center;
+                }
+            }
+            button{
+                border: none;
+                height: 100px;
+                width: 100px;
+                background-color: rgba(0, 0, 0, 0.555);
+                color: white;
+                border-radius: 50%;
+            }
+        }
+        &--title{
+            color: white;
+            font-size: 24px;
+            position: absolute;
+            bottom: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        &--watch{
+            color: $black;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            bottom: 15%;
+            a{
+                border-radius: 5px;
+                background-color: $amarillo;
+                text-align: center;
+                padding: 20px;
+
+            }
+        }
+    }
+}
+body{
+    background-color: #f1f1f1;
+}
+.sharing-buttons{
+    position:absolute;
+    right: 0;
+    margin-right: 15%;
+    display: flex;
+    flex-direction: column;
+    line-height: 40px;
+}
+.movie-info{
+    @include spacings(70%);
+    margin-top: 0px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.summary{
+    display: flex;
+    justify-content: space-between;
+    @include spacings(60%);
+}
+
+.sinopsis{
+    @include spacings(80%);
+    font-weight: 200;
+}
+.languages{
+    @include spacings(70%);
+    &-table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      td, th {
+        text-align: left;
+        padding: 8px;
+      }
+      td{
+        font-weight: 200;
+      }
+}
+
+.cast{
+    @include spacings(100%);
+    &-images{
+        display: flex;
+        overflow-x: scroll;
+        width: 98%;
+        padding: $padding;
+    }
+    img{
+        height: 110px;
+    }
+    .actor-image{
+        padding: $padding;
+    }
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    @include spacings(100%);
+}
+.score{
+    @include spacings(40%);
+}
+.generes{
+    @include spacings(40%);
+}

@@ -1,0 +1,11 @@
+@import "./colors";
+@import "./values";
+
+@mixin common-tags($direction, $specific-border-color) {
+  display: flex;
+  flex-direction: $direction;
+  border: solid, 2px, $specific-border-color;
+  padding: $padding;
+  margin: $margin;
+  color: $negro;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="shortcut icon" href="https://prod1-kraken-cloudfront.rakuten.tv/images/favicons/favicon-503f333345.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Rakuten TV - Tu cine en casa</title>
+</head>
+<body>
+
+<header class="rakuten-footer">
+  <img src="./img/rakuten-logo.png" alt="">
+  <a href="https://rakuten.tv/es/gardens/tienda-pan">
+    <span>CINEMA</span>
+  </a>
+  <a href="https://rakuten.tv/es/gardens/avod">
+    <span>GRATIS</span>
+  </a>
+  <a href="https://rakuten.tv/es/gardens/subscription">
+    <span>SUSCRIPCIONES</span>
+  </a>
+  <input type="text" class="rakuten-footer__search-input" name="search" placeholder="Buscar" maxlength="64" value="" autocomplete="off">
+  <div class="rakuten-footer__empty"></div>
+  <a href="https://ayuda.rakuten.tv">
+    <span>AYUDA Y DISPOSITIVOS</span>
+  </a>
+  <a href="https://ayuda.rakuten.tv">
+    <span>ENTRAR</span>
+  </a>
+  <a href="https://rakuten.tv/es/registrations/new" class="rakuten-footer__yellow-button">
+    <span button="button-registrarse">REGISTRARSE</span>
+  </a>
+</header>
+
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="./img/img-slider/img-slice-1.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="./img/img-slider/img-slice-2.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="./img/img-slider/img-slice-3.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="./img/img-slider/img-slice-4.png" style="width:100%">
+    </div>
+  
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    
+    </div>
+</div>
+
+  <section class="first-row">
+    <img src="./img/first-row-img/image(1).png" alt="">
+    <img src="./img/first-row-img/image.png" alt="">
+    <img src="./img/first-row-img/image(2).png" alt="">
+    <img src="./img/first-row-img/starzplay.png" alt="">
+    <img src="./img/first-row-img/dreamworks.jpeg" alt="">
+
+  </section>
+  <section class="row1-section">
+    <span>GRATIS - La mejor selección de películas</span>
+    <div class="row1-section__row-1">
+      <img src="./img/second-row-img/image.png" alt="">    
+      <img src="./img/second-row-img/image (1).png" alt="">
+      <img src="./img/second-row-img/image (2).png" alt="">    
+      <img src="./img/second-row-img/image (3).png" alt="">    
+      <img src="./img/second-row-img/image (4).png" alt="">    
+      <img src="./img/second-row-img/image (5).png" alt="">    
+      <img src="./img/second-row-img/image (6).png" alt="">    
+      <img src="./img/second-row-img/image (7).png" alt="">    
+    </div>
+  </section>
+
+  <section class="row2-section">
+    <span>CINEMA - Las películas del momento</span>
+    <div class="row2-section__row-2">
+      <img src="./img/second-row-img/image (5).png" alt="">    
+      <img src="./img/second-row-img/image (1).png" alt="">
+      <img src="./img/second-row-img/image (4).png" alt="">    
+      <img src="./img/second-row-img/image (2).png" alt="">    
+      <img src="./img/second-row-img/image.png" alt="">    
+      <img src="./img/second-row-img/image (7).png" alt="">    
+      <img src="./img/second-row-img/image (6).png" alt="">    
+      <img src="./img/second-row-img/image (3).png" alt="">    
+    </div>
+  </section>
+
+  <footer class="footer-section">
+    <span class="footer-section__tittle">Géneros</span>
+    <div class="footer-section__icon icon1">
+      <span class="footer-section--film-icon icon1"></span>
+      <span class="footer-section--film-text">Todo el catálogo</span>
+    </div>
+    <div class="footer-section__icon icon2">
+      <span class="footer-section--film-icon"></span>
+      <span class="footer-section--film-text">Todo el catálogo</span>
+    </div>
+  </footer>
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+    <script src="./scripts/script.js"> </script>
+    <script>
+      $(document).ready(function(){
+        $('.row1-section__row-1').slick({
+            slidesToShow: 6,
+            slidesToScroll: 6,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            arrows: true,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 3
+                }
+            }]
+        });
+      });
+      $(document).ready(function(){
+        $('.row2-section__row-2').slick({
+            slidesToShow: 6,
+            slidesToScroll: 6,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            arrows: true,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 3
+                }
+            }]
+        });
+      });
+    </script>
+
+</body>
+</html>

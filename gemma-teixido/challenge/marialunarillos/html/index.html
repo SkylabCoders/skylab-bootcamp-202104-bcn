@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../scss/style.css">
+    <title>Utensilios de respostería - Tienda online María Lunarillos</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <ul class="nav-bar__slider">
+                <li class="nav-bar__slider-ma"><img src="./../img/ma-slider.png"></li>
+                <li class="nav-bar__slider-cu"><img src="./../img/cu-slider.png"></li>
+                <li class="nav-bar__slider-mu"><img src="./../img/mu-slider.png"></li>
+            </ul>
+            <ul class="nav-bar__login">
+                <li class="nav-bar__login-img"></li>
+                <li class="nav-bar__login-text">ENTRA | REGISTRATE</li>
+            </ul>
+            <ul class="nav-bar__socials">
+                <li>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAkklEQVRIie3SvQkCQRCG4UcxEQPFKmzHCuzCwBrswT7MzS3ASCNzI0XO9Fhc3Tk48Ode2GBZvnmZneHfmGCNA2644IxFLjAIFJ9ih1mSH2GcC/UDglVSvIhIB/PkvsEWd+yj4mdcUdXOsCTUCwiqJtnIDBrxTlD/kldvy6aCUk5tC45tC7Id/P4WdYJO8AGC7+cBeUwZJHHtNTcAAAAASUVORK5CYII=" class="nav-bar__socials-fb">
+                </li>
+                <li>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABHUlEQVRIie3UvyuFURzH8Re6RFcUo0z+ASPKYjBabCwyyt8gt5SZ0UYZbDZG8mORyaLuVQbJIDJQfl3D89xFz7nnuUy37qe+w9M55/3+PqdzDq00Y3pQQhnvqKTf3ejEDFZCizfQFYGfo5pRFTyn4qGsxW34wD56A4JSAF6rN2xhKdThYzqxjImM8XJEUMU2CiHB5q/JZ1jAiGSPPyPw73QnginiOEeXoXqpB4dVTOH0j4LrmGDnH91XsRsTFHHyD8FcTADtWBQ+76G6l9yTaPZwg9cGBct54DCAgwbhh+jIK6hlFOv4isCvMJgXWkj/YAxreMrReV9e+DQuI8Ba3WJeciDqJutaj2MWkxhGPx5whwvJY3gkeapbaYL8ALfBvYa/6cTcAAAAAElFTkSuQmCC" class="nav-bar__socials-tw">
+                </li>
+                <li>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABrElEQVRYhe2WPU4CQRTHf4pCBdiKDXoGtRFoPADqMRStFTiFH+gJRK5homiCxkJBe+QAgh0Ei3mEybos+5ZgYsI/eWEz8/4fTHZmFmaY4R8gA1SAFtAD+mOqB3wKJz2J8SJw5cNwXF2KlhoD8zZwDCSBeR+8eWAVyAMd0ShpzTOW+bqWbGHDCpHSECtCOglofAbk5LkgWmWNQEtISZe5CHAIPGD+XQeoimFYem6BU3leE62mJkBXSCHH+ArwwugX7hlIODghmetqAgwEbUQs8zcgC0SldoCGzD0xXAkvPXWAIxmrA3EXTtwKcTCNAI8ylvXg7UpPdRoB2jIW9eDFpOfLbwA/B4stMg5zCj11gLr8bnv0DOZetUGccFuynIw1cH8Jl4AP6dn3oacOEMbs8z7wjnnhYlJ7lnmN35ePOsCogyhhhXCrGrDs4AQ6iLyO4jBmn99jdkYbuMMsu9u1G+govhFSXkMagaJoXWtIaSF1MFdqUGwC36K1pSWXrBAFzEeGn20bwix70TK/0JoDLFghJqlz0QqMFOZjoslwd3hVV3rLBFj2GWb4c/wARRe/UqytKVEAAAAASUVORK5CYII=" class="nav-bar__socials-in">
+                </li>
+                <li>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAEuklEQVRoge2ZW4hVZRTHfzNzkgZP5TRJo6MQFBVIgtOgXYgio5CZSRItQbSeJKKXoIsEZg/VEL4UjVRgJEUvTQNlEFHgpAYKKd0kavLSmI06M+VtxKOU08Pam9Zee+199j7uLHH+8MH+zvqv9a21v7XXdzkwgQlc3KgryE49MBe4G7gZuAGYDpQD+RgwBPwI7AQ2AV8BZwsav2bMALqBA8B4zvYr8BLQet69BpqB14HTGZ1NaxVgHXDl+XJ+KTDqODIErAeWA21IkJcE7SoktVYAbwEHHf0R4MF/0/ES8tbtwP1AB9CQ01Yn8IVjryeQF4pG4GMz0ABwbwG2FwA/G9sbgzELQYm48xuAyUUNgFSrd4gHUchM2LRZXYTRBDxnxnrtXA0uJZ/zNwJPAZ8jKTYGnAT2Ivm+Blkv0mCDWFyj7zQTrTYbUrhzkCk/S/yj9No24L4Ue+8q7jDQVEsAOnUG8HO+DlgF/JnRcdveAC517JaB3YqXO5VmEF2kvLdVT/RNjQeB9ALLgGuRoCcDs4CVwHYniK34FWeB4lSQrUlmdCvl/gTOWuPIJuD6DLYXEl8Ie/H3ZZsV58WszjcQ3dt0OJx7jAM95FvIrgP+MDaWObxOJR9EZr0qblFKQ8RrcQPwveK8n9WwQQfRAPYT/x5KwCHFqVbBAHhWKax35PrtHwGmGnkT8BiS85dXGavfBLHQ4byt5M9kCaBPKSx35G8q+Voja0H2/KH8B/wqE2KlCcAr1Q8reW+WAHYphTZH/rWS32Zk64xD48BDKWPNNtxvHU67kn+XJYDflUKzIx9Rcps+vzgBPJ0y1hWGO+JwpqbJvY+vrJ5PVJEfM7IWh/+b81uIk6Z/mcM5niavVj280jisnu0MHHH4Ayn2y6Y/WsWfGLwAxtSzl0J71fM8I/vG9E8g30wSZpr+QYejK1ksI7wAtJGrHfmn6nmFkf1k+l8i24skzDH97Q7nmgTfAD8A7US7I+8D/gqe7wduT+FvcfQ1Ok3f27bMSvAN8APYoZ5vdeS7kcUFZP9yU/DcSDyAfY5+iFagS/WHgU8c3l0JviViHtG9+CSH08I/+6XZwW93Ei+hXY5uCHuEfN7hlIDDiuNlRAz1yKVTqLQogdeGLDzhLK52Ang5QXeV4e3BP290KU7mzRzIjVmouDmjzmfEA6ggR8yZyMXVfOIXBBXgjgSbWxXvhazOg+RnRSk/UIVfQkqcDaBaO01ymund6ilyHmgguq/Zgyz7SZhrHDtKdMvttV0k53Q5GDPkvprXeZBFTO97+ki+zX7SOBdeTD2O3EaMAmeQRXAjsAS/OIR4T9k6TI2HepC7Su1YUh5+ZHhP1DogcvWibSUVkczoMQa7Hc6g4dgVNius86/UaCeCEjLt2vAHwBTFOa5kI+Q/YpaJps048CH5ztmpaCQexD5keuuI3gulXYB56CD6wYbOF3a5G6KEXDDZarIN+UDD/vyMtrqI1nldcQp78x4WE13ebV1/FCmr05C3OAn5g6MdeASZIU//EAV8sFnRhMyGXuxqbaeQtz6F/wDTkRuz/Rmd1W0QKcvTzsWBIv9mbSf6N2sr0b9ZDyDHyx3INeRO/gd/s05gAhc6/gZkAyEOjuu4fAAAAABJRU5ErkJggg=="class="nav-bar__socials-pi">
+                </li>
+                <li>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAACEUlEQVRIie3Wy4uNcRgH8I9xaVwyG6XJtVw2bkkWahYkC3+AKWXlstNQlkZsSA2KndRsLCeDJEQUoyHGpUwuOyVC7qQZxrF43uOcpnPO+57jNCzmW7/OezvP97l8n+f3YxT/CXbhF6ZhHnLYMhLEixOy9diUXM+qh+GxKe/fYBteYyEm4Qi2YwMG8BwbsRJPFbL04m+d68Q59KIDB/AFpzGIObiG+6IkOexOM9qQgfgSVmApLmJVQrIX45N3VSML8RVMF5H0YCY+i6hhRi3E4zJ88w5PRL0HMKYWouHIEjFRy8Hk+hWmJCt/n5Mu1JqIi3EPy9GOoeT+JebjsEIJKiKrl4O4jX7cEClvwB704aFooS6hgz4p7VSpXlOrcKwchoQQM2GRiCxXp9Wf2ExFbx1J8+vmcJJSqf6h0GZHhWrzaFdQM6wWdV6bEsxPMWz+oJSqh/d2D06WMfgAH1JIS9lMbacdIprZaMMFofAusXEQA6YT70Vau3Ecn6rypALuoDUhaMXl5PlZPMJjLBAbSTPu4kQ9iMths8jEM7xFC5bhVKU/1YMYGvFVCOiW6IzGkSAeSIgmYh32izFaFtXM6qbk9xgmFD0/j+uivkvEXt2Gg5WMlYr4u/A8jxaxH7dgn5hChzAXO8VBoFl0QJNQ9kdxPCq2mYoz6j+5urNEvFUM9jWYnMXTCviGq+IAOIp/g9+Of60RpEcFnQAAAABJRU5ErkJggg=="class="nav-bar__socials-yo">
+                </li>
+            </ul>
+            <ul class="nav-bar__shopping">
+                <li class="nav-bar__shopping-container">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/AP+gvaeTAAABkElEQVRIib3Wy0tVURTH8U/XQpQaVKSIWIRNmzRoakTgxKnQBSfiSAfRoL9BaOQfoBDUICIIERxVoNDEkaIgORB8gEiphx4IVj4G+xy6mNzzuCe/sAZnnbX2j7PWPmtvzpE32KuxXcyhp2yhZWziBq6iDY+xEz+XRjNaz/BPYagskQoOsH/Gu/d4UJZQPe4KJf3vXMBXdJe1WD3eYQHTDWjsYi1N6AmeY6ugyGX8wJ2LKYGzwjYvWr4x/MkSWGlA6BK+CJtKJSX4CJ8UmxJ9WMNSFiFC+YoIDeJFnoR72Mgp0o7vco6wCiLczpHzDK/ziCRMCaXIyiJ6ax1ZekS+Pt3HNXyodab9RwkzeIr+DLFVvMRhrTNtMiQ0CaNkRWhyPX5jGOsZ1/6HaQwUTc7aI/iIR0WFspYOujCPEWFX/aoTG8VWmCqOhX4dYxursUXCAI3w2alq5Skd3MIrXMc4JoSB2y3cnIaFy80BHjYi9DNeqMPfMZPwDTfRiStxbGFa8FY4zCaFgy0h+aoIo6cTTwDd0lEo0XTd/QAAAABJRU5ErkJggg==" class="nav-bar__shopping-container-img">
+                </li>
+                <div class="nav-bar__shopping-number">
+                    <li class="nav-bar__shopping-number-container">0</li>
+                </div>
+            </ul>
+        </nav>
+        <section class="section-header">
+            <div class="section-header__logo">
+                <img src="./../img/logo.svg">
+            </div>
+            <div class="section-header__search">
+                <div class="section-header__search-bar">
+                    <div>
+                        <button class="button-nov">NOVEDADES</button>
+                        <button class="button-off">OFERTAS</button>
+                    </div>
+                    <input>
+                </div>
+                <div class="section-header__search-nav">
+                    <li><img src="./../img/icon-nav-1.png">UTENSILIOS</li>
+                    <li><img src="./../img/icon-nav-2.png">INGREDIENTES</li>
+                    <li><img src="./../img/icon-nav-3.png">FIESTAS</li>
+                    <li><img src="./../img/icon-nav-4.png">MARCAS</li>
+                    <li class="last-icon"><img src="./../img/last-icon.JPG">BLOG</li>
+                </div>    
+            </div>
+        </section>
+    </header>
+    <main>
+        
+    </main>
+</body>
+</html>

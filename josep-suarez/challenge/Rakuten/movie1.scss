@@ -1,0 +1,366 @@
+@mixin colors($colorfondo, $colorletra) {
+  background-color: $colorfondo;
+  color: $colorletra;
+  font-family: NotoSans-Bold, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+@mixin icon-size {
+  width: 20px;
+  height: 20px;
+}
+@mixin hover-style {
+  filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(25deg)
+    brightness(160%) contrast(95%);
+  cursor: pointer;
+}
+$letra-web: NotoSans-Bold, Arial, sans-serif;
+
+@media (max-width: 800px) {
+  .free,
+  .nav-left {
+    display: flex;
+    flex-direction: column;
+    margin-top: -15px;
+  }
+  .search-movie,
+  .copy,
+  .recomendaciones {
+    display: none;
+  }
+  .free img {
+    height: 400px;
+    width: 320px;
+    margin-left: 150px;
+  }
+}
+
+.header-fix {
+  @include colors(black, white);
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  top: 0;
+  left: 0;
+  &__nav {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    &--logo {
+      height: 40px;
+      width: 150px;
+      align-self: center;
+      margin-top: 10px;
+    }
+    &--left {
+      display: flex;
+      list-style: none;
+      margin-top: 20px;
+      & p {
+        margin-top: 8px;
+        margin-left: 5px;
+      }
+      & ul {
+        list-style: none;
+        display: none;
+        position: fixed;
+        appearance: none;
+        width: 200px;
+        height: 90px;
+        background-color: black;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+.drop-list {
+  display: flex;
+  list-style: none;
+  margin-top: 20px;
+}
+.header-fix__nav--left:hover {
+  color: yellow;
+  cursor: pointer;
+  .header-fix__nav--arrow {
+    transform: rotate(180deg);
+  }
+  .drop-list {
+    color: white;
+    display: block;
+    li:hover {
+      color: yellow;
+      cursor: pointer;
+    }
+  }
+}
+.drop__list--right {
+  list-style: none;
+  display: none;
+  position: fixed;
+  appearance: none;
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  margin-top: 40px;
+}
+.header-fix__nav--right:hover {
+  color: yellow;
+  cursor: pointer;
+  .header-fix__nav--arrow {
+    transform: rotate(180deg);
+  }
+  .drop__list--right {
+    color: white;
+    display: block;
+    li:hover {
+      color: yellow;
+      cursor: pointer;
+    }
+  }
+}
+.gratis {
+  margin-right: 10px;
+  margin-left: 20px;
+  margin-top: 28px;
+}
+.suscripciones {
+  margin-top: 9px;
+  margin-left: -20px;
+}
+.header-fix__nav--arrow {
+  margin-top: 9px;
+}
+.search-movie {
+  height: 30px;
+  width: 200px;
+  background-color: #333;
+  border-radius: 2px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  border: 0px solid;
+}
+
+.register {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  &__buttons {
+    @include colors(black, white);
+    display: flex;
+    list-style: none;
+    margin-top: 20px;
+    &--help-disp,
+    &_--sign-up {
+      display: flex;
+      justify-content: space-around;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    &--sign-up {
+      margin-top: 5px;
+    }
+    &--help-disp {
+      color: rgb(59, 59, 59);
+    }
+    &--register-button {
+      @include colors(yellow, black);
+      margin-left: 10px;
+      margin-right: 5px;
+      padding-right: 8px;
+      padding-left: 8px;
+      min-height: 32px;
+      border-radius: 2px;
+      border: none;
+    }
+  }
+}
+
+.nav--left--select:hover,
+.gratis:hover,
+.suscripciones:hover,
+.register__buttons--help-disp:hover,
+.register__buttons--sign-up:hover {
+  // filter: invert(47%) sepia(35%) saturate(3020%) hue-rotate(326deg)
+  //   brightness(97%) contrast(95%);
+  color: yellow;
+  cursor: pointer;
+}
+.copy {
+  display: flex;
+  left: 0;
+  margin-top: 10px;
+  color: white;
+  margin-top: 60vh;
+}
+
+.movie__picture {
+  display: flex;
+  flex-direction: column;
+  font-family: $letra-web;
+  width: 100%;
+  height: 80vh;
+  margin-top: 65px;
+  background-image: linear-gradient(to bottom, transparent 65%, black),
+    url("https://images-1.wuaki.tv/system/shots/195245/original/the-forgotten-1597662391-width1920-quality80.jpeg");
+  &--actions {
+    display: flex;
+    list-style: none;
+    color: white;
+    flex-direction: space-around;
+    margin-top: -10vh;
+    li {
+      margin-left: 5px;
+      width: 80px;
+    }
+    .pin {
+      width: 50px;
+      height: 50px;
+    }
+    .pin:hover {
+      @include hover-style();
+    }
+  }
+  &--title {
+    align-self: center;
+    justify-self: flex-end;
+    margin-top: 45vh;
+    margin-left: 5vw;
+    width: 20vw;
+    height: 7vh;
+    & h2 {
+      color: white;
+    }
+  }
+  &--button {
+    align-self: center;
+    justify-self: flex-end;
+    background-color: #ffe300;
+    font-weight: bold;
+    border-radius: 5%;
+    border: none;
+    margin-top: 5vh;
+    width: 15vw;
+    height: 7vh;
+  }
+}
+
+.movie {
+  display: flex;
+  font-family: $letra-web;
+  &__description {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    border: 1px solid #333;
+    font-size: 16px;
+    line-height: 180%;
+    & ul {
+      display: flex;
+    }
+    &--time {
+      & li {
+        list-style: none;
+        margin-left: 15px;
+      }
+    }
+    & li {
+      list-style: none;
+      margin-left: 15px;
+    }
+    &--paragraph {
+      justify-self: flex-start;
+      margin-left: 3vw;
+      width: 70vw;
+    }
+  }
+  .icon__time {
+    @include icon-size();
+  }
+  &__language {
+    display: flex;
+    &--list {
+      display: flex;
+      flex-direction: column;
+    }
+    &--list2 {
+      display: flex;
+      flex-direction: column;
+      margin-top: 12.5vh;
+    }
+    &--title {
+      font-weight: bold;
+    }
+  }
+  .actors {
+    &__list ul li {
+      margin-top: 10vh;
+    }
+    &__list--name li {
+      margin-left: 5vw;
+    }
+    & h5 {
+      margin-left: 2vw;
+      img {
+        @include icon-size();
+      }
+    }
+  }
+}
+
+.social__media {
+  height: 30vh;
+  width: 30vw;
+  background-color: #ccc;
+  &--list {
+    li {
+      list-style: none;
+      margin-top: 3vh;
+    }
+    li:hover {
+      @include hover-style();
+    }
+  }
+}
+
+.icon__social {
+  @include icon-size();
+
+  &:hover {
+    @include hover-style();
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  font-family: $letra-web;
+  font-size: 14px;
+  position: absolute;
+  background-color: black;
+  color: white;
+  margin-top: 7vh;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  &--text {
+    width: 80vw;
+    align-self: center;
+  }
+  &--explain {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  &__firstexplain,
+  &__secondexplain,
+  &__thirdexplain {
+    width: 10vw;
+    color: white;
+    align-self: baseline;
+    & img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
