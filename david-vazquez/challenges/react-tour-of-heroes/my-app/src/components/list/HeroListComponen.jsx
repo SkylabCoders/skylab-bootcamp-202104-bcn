@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Link } from 'react-router-dom';
 
 function HeroListItemComponent({ id, name }) {
   return (
-
-    <li className="list__hero-item">
+    <li>
       <Link to={`heroes/${id}`}>
         {name}
       </Link>
