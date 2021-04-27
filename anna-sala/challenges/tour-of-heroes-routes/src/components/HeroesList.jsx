@@ -1,23 +1,27 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import HeroesDetail from './HeroesDetail';
+import heroes from '../assets/heroes';
 
-function HeroesList({ heroesArray, heroSelector, heroSelected }) {
+function HeroesList() {
+  const [currentSelectedHero, selectedHero] = useState(null);
   function updateSelectedHero(hero) {
-    heroSelector(hero);
+    selectedHero(hero);
   }
   return (
     <nav>
       {
-        heroesArray.map((hero) => (
+        heroes.map((hero) => (
           <li>
-            <button type="button" id={hero.id} onClick={() => updateSelectedHero(hero)}>Q</button>
-            {hero.superhero}
-            {heroSelected === hero && <HeroesDetail hero={heroSelected} />}
+            <button type="button" id={hero.id} key={hero.name} onClick={() => updateSelectedHero(hero)}>Q</button>
+            <Link to={`./${hero.id}`}>
+              {hero.superhero}
+            </Link>
+            {currentSelectedHero === hero && <HeroesDetail hero={currentSelectedHero} />}
           </li>
         ))
       }
-
     </nav>
   );
 }
