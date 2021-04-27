@@ -4,7 +4,8 @@ import React from 'react';
 function HeroesDetail({ heroToPrint }) {
   return (
     <div>
-      <p>{heroToPrint.name }</p>
+      <p>{heroToPrint.id}</p>
+      <p>{heroToPrint.name}</p>
     </div>
   );
 }
