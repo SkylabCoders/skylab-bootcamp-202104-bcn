@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import heroes from '../data/heroes';
 
 const AllDetails = () => {
@@ -10,22 +11,22 @@ const AllDetails = () => {
         if (element.id === Id) {
           return (
             <>
-              <li>
+              <li key="id">
                 {`Id: ${element.id}`}
               </li>
-              <li>
+              <li key="name">
                 {`Name: ${element.name}`}
               </li>
-              <li>
+              <li key="publisher">
                 {`Publisher: ${element.publisher}`}
               </li>
-              <li>
+              <li key="alter_ego">
                 {`Alter ego: ${element.alter_ego}`}
               </li>
-              <li>
+              <li key="first_appearance">
                 {`First appearance: ${element.first_appearance}`}
               </li>
-              <li>
+              <li key="characters">
                 {`Characters: ${element.characters}`}
               </li>
             </>
@@ -33,7 +34,7 @@ const AllDetails = () => {
         }
         return null;
       })}
-      <li><button type="button">Back</button></li>
+      <li><Link to="/heroes">Back</Link></li>
     </ul>
   );
 };
