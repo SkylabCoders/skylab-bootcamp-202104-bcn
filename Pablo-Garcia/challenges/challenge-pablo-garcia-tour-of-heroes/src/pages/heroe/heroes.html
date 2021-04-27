@@ -28,7 +28,10 @@
         node.appendChild(wrapper_head);
     }
     renderNav()
-    getDataJson();
+    getDataJson().then(data => {
+      const heroItems = createHeroItems(data);
+      drawItems(heroItems);
+    }
 
 </script>
 </body>

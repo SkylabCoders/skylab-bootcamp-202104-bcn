@@ -10,8 +10,10 @@
 <body>
 <div id="root"></div>
 
-<script src="../../../src/components/title/title.js"></script>
+<script src="../../../src/common/components/title/title.js"></script>
 <script src="../../../src/application/config/routes-config.js"></script>
+<script src="../../../src/common/components/searchbar/searchbar.js"></script>
+<script src="../../../src/common/services/service.js"></script>
 <script src="../heroe/hero.js"></script>
 <script>
         const renderNav = () =>{
@@ -19,7 +21,7 @@
 
         const wrapper_head = document.createElement('div');
         wrapper_head.setAttribute('class','header__wraper');
-        const heading = title('Tour of Hero', 'h1');
+        const heading = createTitle('Tour of Hero', 'h1');
         const nav = navigation(routing)
 
         wrapper_head.appendChild(heading);
@@ -28,7 +30,9 @@
         node.appendChild(wrapper_head);
     }
         renderNav()
-        getDataJson();
+        getDataJson(4);
+        inputSearch();
+      /*  searcHeroe()*/
 
 
 </script>
