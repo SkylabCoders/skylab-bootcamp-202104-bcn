@@ -4,19 +4,19 @@ import React from 'react';
 const HeroDetailComponent = ({ hero }) => (
   <div>
     <h2>
-      Hero ID:
-      {hero.id}
-      {' -- '}
-      {' '}
-      SuperHero:
-      {' '}
+      Details of:
       {hero.superhero}
-      {' -- '}
-      {' '}
-      Alter Ego:
-      {' '}
-      {hero.alterEgo}
     </h2>
+    <ul>
+      <li>
+        Hero ID:
+        {hero.id}
+      </li>
+      <li>
+        Alter Ego:
+        {hero.alterEgo}
+      </li>
+    </ul>
   </div>
 );
 

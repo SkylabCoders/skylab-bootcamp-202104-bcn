@@ -5,7 +5,7 @@ import List from './components/list/list';
 import HeroDetailComponent from './components/details/details';
 
 function App() {
-  const [selectedHero, setSelectedHero] = useState(null);
+  const [selectedHero, setSelectedHero] = useState();
   return (
     <div className="App">
       <Dashboard />

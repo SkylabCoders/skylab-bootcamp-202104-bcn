@@ -4,9 +4,7 @@ import React from 'react';
 const List = ({ heroesList, setSelectedHero }) => {
   const myHereos = heroesList.map((hero) => (
     <li className="list__item">
-      <button type="button" onClick={() => setSelectedHero(hero)}>
-        {hero.id}
-      </button>
+      <button type="button" onClick={() => setSelectedHero(hero)}>{hero.id}</button>
     </li>
   ));
 
