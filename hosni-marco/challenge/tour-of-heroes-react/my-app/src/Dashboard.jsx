@@ -1,8 +1,6 @@
 import Store from './Store'
 
-
 function TopHeroes ({name}){
-
     return <li><button>{name}</button></li>
 }
 
@@ -14,7 +12,7 @@ const Dashboard = () => {
                     <TopHeroes name={Store[1].name}/>
                     <TopHeroes name={Store[2].name}/>
                     <TopHeroes name={Store[3].name}/>
-                </ul>
+                </ul>git
             </div>
 }
 export default Dashboard;
