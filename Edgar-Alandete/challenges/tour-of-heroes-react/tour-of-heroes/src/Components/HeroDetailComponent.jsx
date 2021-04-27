@@ -1,6 +1,6 @@
-function HeroDetailComponent (hero) {
+function HeroDetailComponent ({hero : {id, name}}) {
     return (
-        <div>{hero.hero.id}:{hero.hero.name}</div>
+        <div>{id}:{name}</div>
     )
 }
 

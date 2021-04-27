@@ -32,6 +32,5 @@ function HeroesListComponent() {
         {selectedHero &&  <HeroDetailComponent hero = {selectedHero} />}
         </div>
     )
-//
 }
 export default HeroesListComponent;
