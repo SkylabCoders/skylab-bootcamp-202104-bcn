@@ -1,5 +1,11 @@
 import React from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import HeroListComponent from './Components/HeroListComponent';
 
 function App() {
@@ -13,7 +19,12 @@ function App() {
           </ul>
         </nav>
       </header>
-      <HeroListComponent />
+      <Router>
+        <Switch>
+          <Route exact path="/heroes" component={HeroListComponent} />
+          <Redirect to="./heroes" />
+        </Switch>
+      </Router>
     </>
   );
 }
