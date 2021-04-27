@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import HeaderComponent from './Components/HeaderComponent';
 import HeroListComponent from './Components/HeroListComponent';
+import HeroDetailComponent from './Components/HeroDetailComponent';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <HeaderComponent />
       <Router>
         <Switch>
+          <Route exact path="/heroes/:heroId" component={HeroDetailComponent} />
           <Route exact path="/heroes" component={HeroListComponent} />
           <Redirect to="./heroes" />
         </Switch>
