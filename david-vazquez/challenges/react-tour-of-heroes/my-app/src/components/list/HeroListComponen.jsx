@@ -9,28 +9,12 @@ function HeroListItemComponent({ id, name }) {
         {name}
       </Link>
     </li>
-
   );
 }
 
 HeroListItemComponent.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-
 };
 
 export default HeroListItemComponent;
-
-// // {hero.superhero}
-// {
-//   showStatus
-//     && (
-//     <div>
-//       <ul>
-//         <li>Publisher:</li>
-//         <li>Alterego:</li>
-//       </ul>
-//       <Link to={`./../heroes/${hero.id}`} />
-//     </div>
-//     );
-// }
