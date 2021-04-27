@@ -1,16 +1,11 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import heroes from '../../store/store';
 
-const List = () => {
-  const functionExample = () => {
-    console.log('HEROE CLICKED');
-  };
-  const myHereos = heroes.map(({ id, name }) => (
-    <li className="list__item" key={`${id} - ${name}`}>
-      <button type="button" onClick={() => functionExample()}>
-        {id}
-        {' - '}
-        {name}
+const List = ({ heroesList, setSelectedHero }) => {
+  const myHereos = heroesList.map((hero) => (
+    <li className="list__item">
+      <button type="button" onClick={() => setSelectedHero(hero)}>
+        {hero.id}
       </button>
     </li>
   ));
