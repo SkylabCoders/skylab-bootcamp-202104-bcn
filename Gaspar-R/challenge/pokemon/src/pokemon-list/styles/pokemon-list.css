@@ -1,0 +1,30 @@
+img {
+   align-self: center;
+}
+
+.pokemonImg {
+    display: inline-block;
+
+    height: 70px;
+    width: 70px;
+}
+
+main{
+    background: url(../../images/landscape.jpg) no-repeat 100%;
+
+}
+
+ul{
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.pokemon__list-items{
+    text-transform: capitalize;
+    font-size: x-large;
+    font-weight: bold;
+    background-color: rgb(236, 11, 11);
+    color: white;
+    border: 2px solid black;
+    width: 300px;
+}
