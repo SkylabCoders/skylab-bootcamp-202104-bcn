@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { useParams } from 'react-router';
 import heroes from '../assets/heroes';
-// { id }
+
 const HeroDetailComponent = () => {
   const { heroId } = useParams();
   const myHero = heroes.find((hero) => hero.id === parseInt(heroId, 10));
