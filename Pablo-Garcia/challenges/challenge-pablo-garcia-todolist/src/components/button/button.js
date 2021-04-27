@@ -1,6 +1,6 @@
 export const button = (title, action) => {
     const btn = document.createElement('button');
     btn.innerHTML = title;
-    button.onclick = action;
+    btn.addEventListener('click', action);
     return btn;
 }

@@ -1,29 +1,37 @@
-import {getListTask, createTask, editTask, deleteTask} from "./actionType.js";
+import { GET_TASKS, CREATE_TASK, DELETE_TASK, EDIT_TASK } from "./actionType.js";
 
 export const store = {
-
+    listeners: [],
     tasks:[
-        { id: 0, title: 'Task 1', completed: true },
-        { id: 1, title: 'Task 2', completed: false },
+        { title: 'Task 1', completed: true },
+        { title: 'Task 2', completed: false },
     ],
 
-    reducer(tasks = this.tasks, action){
+    updateStore(newState) {
+        this.tasks = newState;
+        if (this.listeners.length) {
+            this.listeners.forEach(callback => callback(this.tasks));
+        }
+    },
+
+    onStoreChange(callback) {
+        this.listeners = [...this.listeners, callback];
+    },
+
+    reducer(action){
         switch (action.type){
-            case getListTask:
-                break;
-            case createTask:
-                break;
-            case editTask:
-                break;
-            case deleteTask:
-                break;
+            case GET_TASKS:
+                return this.tasks;
+            case CREATE_TASK:
+                return [...this.tasks, action.payload];
+            case DELETE_TASK:
+                return this.tasks.filter((task, index) => index !== action.payload);
             default:
                 break;
         }
     },
-    dispatch(action){
-        this.tasks = this.reducer( this.tasks, action );
-        updateList();
+    dispatch(action) {
+        const newState = this.reducer(action);
+        this.updateStore(newState);
     },
-
-}
+};

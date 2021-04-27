@@ -1,12 +1,12 @@
-import { createForm } from "./form.js";
-import { button } from "./button.js";
+import { createForm } from "../components/form/form.js";
+import { createTasks } from "../components/tasks/tasks.js";
 
+createTasks();
 const form = createForm();
-const addTask = button('Add Task',)
-
-const body = document.querySelector('#root');
+const formNode = document.querySelector('#root');
+const tasksNode = document.querySelector('#list');
 
 /*Render app*/
-body.appendChild(form);
+formNode.appendChild(form);
 
 

@@ -1,20 +1,25 @@
+import { removeTask } from '../../common/store/actions.js'
+
+
 export const showTaskList = (elements) =>{
-    console.log(elements)
     const tableList = document.createElement('table');
     tableList.setAttribute('class', 'wrapper__list');
-        elements.forEach( ({ id, title, completed }) => {
+        elements.forEach( ({ title, completed }, index) => {
           const rowlist = document.createElement('tr');
-            const tdId = document.createElement('td');
-            tdId.innerHTML = id;
-            const tdtitle = document.createElement('td');
-            tdtitle.innerHTML = title;
-            const tdComplete = document.createElement('td');
-            tdComplete.innerHTML = completed;
+          const tdtitle = document.createElement('td');
+          tdtitle.innerHTML = title;
+          const tdComplete = document.createElement('td');
+          tdComplete.innerHTML = completed;
 
-            rowlist.appendChild(tdId);
-            rowlist.appendChild(tdtitle);
-            rowlist.appendChild(tdComplete);
-            tableList.appendChild(rowlist);
-        });
-    document.querySelector('#root').appendChild(tableList);
+          const deleteButton = document.createElement('button');
+          deleteButton.addEventListener('click', () => removeTask(index));
+          deleteButton.innerText = 'Delete';
+
+          rowlist.appendChild(tdtitle);
+          rowlist.appendChild(tdComplete);
+          tableList.appendChild(rowlist);
+          tableList.appendChild(deleteButton);
+    });
+  document.querySelector('#tasks').innerHTML = "";
+  document.querySelector('#tasks').appendChild(tableList);
 }
