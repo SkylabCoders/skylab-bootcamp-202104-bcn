@@ -15,7 +15,7 @@ function App() {
           heroSelector={selectedHero}
         />
       </header>
-      { currentSelectedHero && <HeroesDetail heroToPrint={currentSelectedHero} />}
+      { currentSelectedHero && <HeroesDetail hero={currentSelectedHero} />}
     </main>
   );
 }

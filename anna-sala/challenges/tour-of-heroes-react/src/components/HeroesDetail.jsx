@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-function HeroesDetail({ heroToPrint }) {
+function HeroesDetail({ hero }) {
   return (
     <div>
-      <p>{heroToPrint.id}</p>
-      <p>{heroToPrint.name}</p>
+      <p>{hero.id}</p>
+      <p>{hero.name}</p>
     </div>
   );
 }
