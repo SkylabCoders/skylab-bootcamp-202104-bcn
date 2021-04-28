@@ -33,6 +33,7 @@
     border-radius: 4px;
     display: block;
     width: 100%;
+    text-align: left;
   }
 
   .heroes a:hover {
@@ -74,6 +75,7 @@
   }
   
   button.delete {
+    margin:0;
     position: absolute;
     left: 210px;
     top: 5px;

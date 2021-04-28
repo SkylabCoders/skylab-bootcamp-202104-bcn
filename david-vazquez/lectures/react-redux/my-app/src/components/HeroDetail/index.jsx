@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import './herodetail.css';
 import PropTypes from 'prop-types';
 import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
@@ -25,6 +25,11 @@ function HeroDetail({ selectedHero, dispatch }) {
     dispatch(updateHero({ id: selectedHero.id, name: heroName }));
   }
 
+  const history = useHistory();
+  function goBack() {
+    history.goBack();
+  }
+
   return (
     selectedHero.id ? (
       <div>
@@ -43,7 +48,7 @@ function HeroDetail({ selectedHero, dispatch }) {
             <input id="hero-name" value={heroName} onChange={handleNameChange} placeholder="Hero name" />
           </label>
         </div>
-        <button type="button">go back</button>
+        <button type="button" onClick={goBack}>go back</button>
         <button type="button" onClick={save}>save</button>
       </div>
     )
