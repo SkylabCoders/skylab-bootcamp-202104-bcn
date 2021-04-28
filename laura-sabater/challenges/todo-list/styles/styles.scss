@@ -1,0 +1,113 @@
+* {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Indie Flower', cursive; 
+  color: blue;
+  background-image: url(./images/paper-texture.jpeg);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+h2 {
+  height: 20px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+}
+
+button {
+  height: 40px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 20px;
+  border-color: blue;
+  border-radius: 30px;
+  background: none;
+  font-family: 'Indie Flower', cursive;
+  transition-duration: 0.4s;
+}
+
+ul {
+  height: 65%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px;
+  
+  li {
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1px;
+
+    span {
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    button {
+      width: 40px;
+      margin: 5px;
+    }
+    button:hover {
+      background-color: blue;
+      color: white;
+    }
+
+    input {
+      height: 40px;
+      display: flex;
+
+    }
+
+    .modify__button {
+      border-color: orange;
+    }
+    .modify__button:hover {
+      background-color: orange;
+      color: white;
+    }
+    .delete__button {
+      border-color: red;
+    }
+    .delete__button:hover {
+      background-color: red;
+      color: white;
+    }
+    .done__button {
+      border-color: green;
+    }
+    .done__button:hover {
+      background-color: green;
+      color: white;
+    }
+  }
+}
+
+.input-container {
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 20px;
+
+  input {
+    width: 70%;
+  }
+}

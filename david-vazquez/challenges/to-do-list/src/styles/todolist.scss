@@ -1,0 +1,109 @@
+@import './mixin.scss';
+@import './color.scss';
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: $color-background;
+}
+
+.main {
+    @include flex-content(column,null,center);
+    @include background-img(url('./../img/pngfind.com-torn-notebook-paper-png-2535932.png'),650px,45% 10px);
+    font-family: 'Noto Sans KR', sans-serif; 
+    height: 900px;
+}
+
+.title {
+    @include flex-content(null,center,null);
+    font-family: 'Londrina Solid', cursive;
+    font-size: 50px;
+    margin: 50px 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.input__container {
+    width: 100%;
+    display:inline-flex;
+    justify-content: center;
+}
+
+.input {
+    padding: 10px 50px;
+    width: 400px;
+    font-family: 'Handlee', cursive; 
+    font-size: 20px;
+    outline: none;
+    border-radius: 30px;
+    &__value {
+        width: 50px;
+        height: 50px;
+        font-size: 40px;
+        background-color:$color-green;
+        color:$color-text;
+        border: 0;
+        border-radius: 50%;
+        margin-left: 10px;
+        
+    }
+}
+
+.list {
+    margin-top: 20px;
+    font-family: 'Handlee', cursive;
+    height: 590px;
+    overflow:scroll;
+    &__item {
+        list-style: none;
+        width: 500px;
+        padding: 10px 10px 10px 50px;
+        font-size: 20px;
+        border-radius: 30px;
+        background-color: $color-lightgray;
+        margin: 5px 0;
+        @include flex-content(null,null,center);      
+    }
+}
+
+.list__button{
+    outline: none;
+    border: none;
+    float: right;  
+    color: $color-text;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    &--delete{
+        @include background-img(url('./../img/trash-alt-solid.svg'),20px,center);
+        margin: 0;
+        margin-right: 0;
+        background-color: $color-cyan-opposite;
+        filter: invert(1);
+    }
+    &--done{
+        @include background-img(url('./../img/check-solid.svg'),20px,center);
+        background-color: $color-yellow-opposite;
+        filter: invert(1);
+        margin: auto;
+        margin-right: 5px;
+
+    }
+}
+
+.list__item--done {
+    text-decoration: line-through;
+}
