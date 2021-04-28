@@ -9,6 +9,12 @@ function Detail() {
   useEffect(() => {
     setSelectedHero(heroes.find((hero) => hero.id === +heroId));
   }, [heroId]);
+  function handleNameChange(event) {
+    setSelectedHero({
+      ...selectedHero,
+      name: event.target.value
+    });
+  }
   return (
     selectedHero ? (
       <>
@@ -23,7 +29,7 @@ function Detail() {
           {' '}
           {selectedHero?.id}
         </h3>
-        <input type="text" placeholder="Hero name" value={selectedHero?.name} />
+        <input type="text" placeholder="Hero name" value={selectedHero?.name} onChange={handleNameChange} />
         <button type="button">Go Back</button>
         <button type="button">Save</button>
       </>
