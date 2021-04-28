@@ -14,6 +14,10 @@ function HeroesList({ heroes, dispatch }) {
     dispatch(deleteHero(heroId));
   }
 
+  function handleCreate() {
+
+  }
+
   return (
     <>
       <h2>My Heroes</h2>
@@ -23,7 +27,7 @@ function HeroesList({ heroes, dispatch }) {
           Hero name:
           <input id="new-hero" />
         </label>
-        <button type="button" className="add-button">
+        <button type="button" className="add-button" onClick={() => handleCreate('hero.id')}>
           Add Hero
         </button>
       </div>
