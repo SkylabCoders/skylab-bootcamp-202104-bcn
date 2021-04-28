@@ -5,7 +5,7 @@ import {
   BrowserRouter, Route, Switch, Link,
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
-import HeroesList from './components/HeroesList';
+import HeroDetail from './components/HeroDetail';
 import NotFound from './components/NotFound';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         </nav>
         <Switch>
           <Route path="/" exact component={Dashboard} />
-          <Route path="/" exact component={HeroesList} />
+          <Route path="/detail/:heroId" component={HeroDetail} />
           <Route component={NotFound} />
         </Switch>
 
