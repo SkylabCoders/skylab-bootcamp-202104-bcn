@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import HEROES from '../constants/heroe.mock';
+import HEROES from '../../constants/heroe.mock';
 import './HeroDetail.css';
 
 function HeroDetail() {
   const { heroId } = useParams();
-  // const selectedHero = HEROES.find((hero) => hero.id === +heroId);
   const [selectedHero, setSelectedHero] = useState();
-  // recibe un callback que se va a utilizar dependiendo del segundo parametro.
+
   useEffect(() => {
     setSelectedHero(HEROES.find((hero) => hero.id === +heroId));
   }, [heroId]);
