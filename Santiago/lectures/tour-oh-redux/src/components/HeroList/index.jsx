@@ -1,17 +1,15 @@
 import React from 'react';
-import './dashboard.css';
 import { Link } from 'react-router-dom';
 import HEROES from '../Constants/heroes-mock';
 
-function Dashboard() {
+function HeroList() {
   return (
     <>
-      <h2>Top Heroes</h2>
+      <h2>Heroes List</h2>
       <div className="heroes-menu">
-        {HEROES.slice(0, 4).map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
+        {HEROES.map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
       </div>
     </>
   );
 }
-
-export default Dashboard;
+export default HeroList;

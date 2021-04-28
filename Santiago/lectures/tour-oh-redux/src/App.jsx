@@ -6,6 +6,8 @@ import {
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import HeroDetails from './components/HeroDetails';
+import NotFound from './components/NotFound';
+import HeroList from './components/HeroList';
 
 function App() {
   return (
@@ -14,12 +16,14 @@ function App() {
         <h1>Tour of heroes redux</h1>
         <nav type="button">
           <Link to="/">Dashboard</Link>
-          <Link to="/detail">Details</Link>
+          <Link to="/list">Hero list</Link>
         </nav>
 
         <Switch>
           <Route exact path="/" component={Dashboard} />
           <Route exact path="/detail" component={HeroDetails} />
+          <Route exact path="/list" component={HeroList} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </>
