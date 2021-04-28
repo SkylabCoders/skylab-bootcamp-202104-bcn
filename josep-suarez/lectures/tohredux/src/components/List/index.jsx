@@ -4,27 +4,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { deleteHero } from '../../redux/actions/actionCreators';
+import { deleteHero, addHero } from '../../redux/actions/actionCreators';
 
 function ListHeroes({ dispatch, heroes }) {
-  // const [newHeroes, setHeroesNow] = useState(heroes);
-
-  // useEffect(() => {
-  //   setHeroesNow();
-  // }, [newHeroes]);
-
   function deleteSelect(heroId) {
-    console.log(heroId);
     dispatch(deleteHero(heroId));
+  }
+  function newHero() {
+    const inputHero = document.getElementById('inputNew');
+    const heroNew = { id: (heroes[heroes.length - 1].id + 1), name: inputHero.value };
+    dispatch(addHero(heroNew));
   }
   return (
     <>
-      <button type="button">Add</button>
+      <input type="text" id="inputNew" />
+      <button type="button" onClick={() => newHero()}>Add</button>
       {heroes.map((hero) => (
         <li>
           <Link to={`/detail/${hero.id}`}>{`${hero.id}-${hero.name}`}</Link>
           <button type="button" onClick={() => deleteSelect(hero.id)}>Delete</button>
-          <button type="button">Modify</button>
         </li>
       ))}
     </>
