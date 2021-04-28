@@ -23,20 +23,20 @@ function HeroDetails() {
       ? (
         <div>
           <h2>
-            {selectedHero?.name}
+            {selectedHero.name}
             {'  '}
             Details
           </h2>
           <div>
             <span>
               ID:
-              {selectedHero?.id}
+              {selectedHero.id}
             </span>
           </div>
           <div>
             <label htmlFor="hero-name">
               Hero name:
-              <input id="hero-name" value={selectedHero?.name} onChange={handleNameChange} placeholder="Hero name" />
+              <input id="hero-name" value={selectedHero.name} onChange={handleNameChange} placeholder="Hero name" />
             </label>
           </div>
           <button type="button">Go back</button>
