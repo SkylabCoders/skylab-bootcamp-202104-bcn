@@ -9,6 +9,7 @@ import './App.css';
 import HeroDetail from './components/HeroDetail';
 import Dashboard from './components/Dashboard';
 import NotFound from './components/NotFound';
+import HeroesList from './components/List';
 import store from './redux/stores/index';
 
 function App() {
@@ -18,11 +19,12 @@ function App() {
         <h1>Tour of Heroes</h1>
         <nav>
           <Link to="/">Dashboard</Link>
-          <Link to="/detail">Heroes</Link>
+          <Link to="/list">Heroes</Link>
           <Link to="/notfound">NotFound</Link>
         </nav>
         <Switch>
           <Route path="/" exact component={Dashboard} />
+          <Route path="/list" component={HeroesList} />
           <Route path="/detail/:heroId" component={HeroDetail} />
           <Route path="/notfound" component={NotFound} />
         </Switch>
