@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import React, { useParams } from 'react-router-dom';
-import HEROES from '../../heroes.mock';
+import HEROES from '../../Constants/heroes.mock';
 import './heroDetail.css';
 
 const HeroDetail = () => {

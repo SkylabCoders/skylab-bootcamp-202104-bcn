@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeroSearch from '../HeroSearch';
-import HEROES from '../../heroes.mock';
+import HEROES from '../../Constants/heroes.mock';
 
 const Dashboard = () => (
   <>
