@@ -5,7 +5,8 @@ import {
   BrowserRouter, Route, Switch, Link,
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
-import HeroDetail from './components/HeroDetail';
+import HeroesList from './components/HeroesList';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -14,11 +15,12 @@ function App() {
         <h1>Tour of Heroes</h1>
         <nav>
           <Link to="/">Dashboard</Link>
-          <Link to"/List">Heroes</Link>
+          <Link to="/HeroesList">Heroes</Link>
         </nav>
         <Switch>
           <Route path="/" exact component={Dashboard} />
-          <Route path="/detail" exact component={HeroDetail} />
+          <Route path="/" exact component={HeroesList} />
+          <Route component={NotFound} />
         </Switch>
 
       </BrowserRouter>
