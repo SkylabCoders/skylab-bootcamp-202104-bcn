@@ -5,7 +5,7 @@ const heroesReducer = (heroes = [], action) => {
   switch (action.type) {
     case actionTypes.LOAD_HEROES:
       return HEROES;
-    case actionTypes.DELETE_HEROES:
+    case actionTypes.DELETE_HEROE:
       return heroes.filter((hero) => hero.id !== action.heroId);
     case actionTypes.ADD_HERO:
       return [
