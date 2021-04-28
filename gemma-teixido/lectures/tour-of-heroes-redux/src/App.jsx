@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles.css';
 import './App.css';
+import './styles.css';
 import {
   BrowserRouter, Route, Switch, Link
 } from 'react-router-dom';
@@ -9,6 +9,7 @@ import Dashboard from './components/Dashboard';
 import HeroDetail from './components/HeroDetail';
 import NotFound from './components/NotFound';
 import store from './redux/stores';
+import HeroList from './components/HeroList';
 
 function App() {
   return (
@@ -18,10 +19,11 @@ function App() {
           <h1>Tour Of Heroes</h1>
           <nav>
             <Link to="/">Dashboard</Link>
-            <Link to="/detail">Heroes</Link>
+            <Link to="/list">Heroes</Link>
           </nav>
           <Switch>
             <Route path="/" exact component={Dashboard} />
+            <Route path="/list" exact component={HeroList} />
             <Route path="/detail/:heroId" component={HeroDetail} />
             <Route component={NotFound} />
           </Switch>
