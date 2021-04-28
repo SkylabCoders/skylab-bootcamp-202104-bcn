@@ -2,8 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true,
-    jest: true
+    node: true
   },
   extends: [
     'plugin:react/recommended',
@@ -26,4 +25,3 @@ module.exports = {
     'eslint linebreak-style': [0, 'error', 'windows']
   }
 };
-
