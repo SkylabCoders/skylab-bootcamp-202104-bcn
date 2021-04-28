@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import {
+  BrowserRouter, Route, Switch, Link
+} from 'react-router-dom';
 import './index.css';
 import './App.css';
 import Dashboard from './components/Dashboard';
@@ -13,12 +15,14 @@ function App() {
       <BrowserRouter>
         <h1>Tour of heroes</h1>
         <nav>
-          <a href=" ">Dashboard</a>
-          <a href=" ">Heroes</a>
+          <Link to="/">Dashboard</Link>
+          <Link to="/heroes">Heroes</Link>
         </nav>
-        <Route path="/" component={Dashboard} />
-        <Route path="/heroes" component={List} />
-        <Route path="/detail" component={Detail} />
+        <Switch>
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/heroes" component={List} />
+          <Route path="/detail" component={Detail} />
+        </Switch>
         <Search />
       </BrowserRouter>
     </>
