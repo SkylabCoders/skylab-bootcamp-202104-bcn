@@ -36,7 +36,7 @@ const HeroDetail = () => {
             <input
               id="hero-name"
               placeholder="Hero name"
-              value={selectedHero.name}
+              value={selectedHero?.name}
               onChange={handleNameChange}
             />
           </label>
