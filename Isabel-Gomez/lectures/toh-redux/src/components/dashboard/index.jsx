@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { loadHeroes } from '../../redux/actions/actionCreators';
 import './dashboard.css';
 
@@ -17,6 +17,11 @@ const Dashboard = ({ heroes, dispatch }) => {
       </div>
     </>
   );
+};
+
+Dashboard.propTypes = {
+  heroes: PropTypes.shape([]).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (store) => ({
