@@ -4,7 +4,7 @@ import selectedHeroReducer from './selectedHeroReducer';
 
 const rootReducer = combineReducers({
   heroes: heroesReducer,
-  selecteHero: selectedHeroReducer,
+  selectedHero: selectedHeroReducer,
 });
 
 export default rootReducer;
