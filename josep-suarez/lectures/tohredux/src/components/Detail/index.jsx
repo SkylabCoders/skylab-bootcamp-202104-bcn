@@ -22,6 +22,9 @@ function Detail() {
         {' '}
         {selectedHero?.id}
       </h3>
+      <input type="text" placeholder="Hero name" value={selectedHero?.name} />
+      <button type="button">Go Back</button>
+      <button type="button">Save</button>
     </>
   );
 }
