@@ -1,29 +1,38 @@
 import { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import React, { useParams } from 'react-router-dom';
-import HEROES from '../../Constants/heroes.mock';
+import { PropTypes } from 'prop-types';
+import { getHeroById, updateHero } from '../../redux/actions/actionCreator';
 import './heroDetail.css';
 
-const HeroDetail = () => {
+const HeroDetail = ({ selectedHero, dispatch }) => {
   const { heroId } = useParams();
-  const [selectedHero, setSelectedHero] = useState();
+  const [heroName, setHeroName] = useState(selectedHero?.name);
 
   useEffect(() => {
-    setSelectedHero(HEROES.find((hero) => hero.id === +heroId));
+    dispatch(getHeroById(heroId));
   }, [heroId]);
 
+  useEffect(() => {
+    setHeroName(selectedHero?.name);
+  }, [selectedHero]);
+
   const handleNameChange = (event) => {
-    setSelectedHero({
-      ...selectedHero,
-      name: event.target.value,
-    });
+    setHeroName(event.target.value);
+  };
+
+  const save = () => {
+    // eslint-disable-next-line no-debugger
+    debugger;
+    dispatch(updateHero({ id: selectedHero.id, name: heroName }));
   };
 
   return (
-    selectedHero
+    selectedHero.id
       ? (
         <>
           <h2>
-            { selectedHero?.name }
+            { heroName }
             {' '}
             Details
           </h2>
@@ -36,12 +45,12 @@ const HeroDetail = () => {
             <input
               id="hero-name"
               placeholder="Hero name"
-              value={selectedHero?.name}
+              value={heroName}
               onChange={handleNameChange}
             />
           </label>
           <button type="button">go back</button>
-          <button type="button">save</button>
+          <button onClick={save} type="button">save</button>
         </>
       )
       : (
@@ -53,4 +62,17 @@ const HeroDetail = () => {
       )
   );
 };
-export default HeroDetail;
+
+HeroDetail.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  selectedHero: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+  }).isRequired,
+};
+
+const mapsStateToProps = ({ selectedHero }) => ({
+  selectedHero,
+});
+
+export default connect(mapsStateToProps)(HeroDetail);

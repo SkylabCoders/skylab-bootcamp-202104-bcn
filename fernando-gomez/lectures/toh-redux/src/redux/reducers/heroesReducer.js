@@ -1,7 +1,7 @@
 import HEROES from '../../Constants/heroes.mock';
 import actionTypes from '../actions/actionTypes';
 
-const heroesReducer = (heroes = {}, action) => {
+const heroesReducer = (heroes = [], action) => {
   let heroesUpdated;
 
   switch (action.type) {
@@ -22,6 +22,13 @@ const heroesReducer = (heroes = {}, action) => {
         ? { ...hero, ...action.hero }
         : hero));
       break;
+
+    case actionTypes.UPDATE_HERO:
+      return heroes.map(
+        (hero) => (hero.id === action.hero.id
+          ? { ...hero, ...action.hero }
+          : hero),
+      );
 
     default:
       heroesUpdated = heroes;

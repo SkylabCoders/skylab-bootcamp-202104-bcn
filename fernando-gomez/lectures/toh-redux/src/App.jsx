@@ -6,9 +6,9 @@ import {
   Link,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import './App.css';
 import Dashboard from './Components/Dashboard';
 import NotFound from './Components/NotFound';
+import './App.css';
 import './styles.css';
 import HeroDetail from './Components/HeroDetail';
 import store from './redux/stores';

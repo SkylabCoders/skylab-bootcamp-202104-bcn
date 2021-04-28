@@ -3,7 +3,7 @@ import actionTypes from '../actions/actionTypes';
 const selectedHeroReducer = (hero = {}, action) => {
   let heroesUpdated;
 
-  switch (action) {
+  switch (action.type) {
     case actionTypes.LOAD_HERO:
       heroesUpdated = action.hero;
       break;
