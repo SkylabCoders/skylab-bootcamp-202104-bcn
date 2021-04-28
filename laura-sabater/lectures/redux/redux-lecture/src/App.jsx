@@ -1,11 +1,18 @@
 import React from 'react';
+import './styles.css';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      hola
-    </div>
+    <>
+      <h1>Tour of Heroes</h1>
+      <nav>
+        <a href=" ">Dashboard</a>
+      </nav>
+      <nav>
+        <a href=" ">Heroes</a>
+      </nav>
+    </>
   );
 }
 
