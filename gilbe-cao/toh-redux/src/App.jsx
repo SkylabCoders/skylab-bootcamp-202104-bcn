@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import HeroDetail from './components/HeroDetail';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -17,11 +18,13 @@ function App() {
         <h1>Tour of Heroes</h1>
         <nav>
           <Link to="/">Dashboard</Link>
-          <Link to="/detail">Details</Link>
+          <Link to="/Heroes">Heroes</Link>
+          <Link to="/404">404</Link>
         </nav>
         <Switch>
           <Route path="/" exact component={Dashboard} />
           <Route path="/detail" component={HeroDetail} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </>
