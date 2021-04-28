@@ -17,17 +17,31 @@ function HeroesList({ heroes, dispatch }) {
   }
 
   return (
-    <ul className="heroes-list">
-      {heroes.map((hero) => (
-        <li>
-          <Link className="heroes" to={`/detail/${hero.id}`}>
-            <span>{hero.id}</span>
-            {hero.name}
-          </Link>
-          <button type="button" className="button-delete" onClick={() => handleDeleteHero(hero.id)}>X</button>
-        </li>
-      ))}
-    </ul>
+    <>
+      <h2>My Heroes</h2>
+      <div>
+        <label htmlFor="hero-name">
+          Hero name
+          <input
+            id="hero-name"
+          // onChange={}
+            placeholder="Hero name"
+          />
+          <button type="button">Add Hero</button>
+        </label>
+      </div>
+      <ul className="heroes-list">
+        {heroes.map((hero) => (
+          <li>
+            <Link className="heroes" to={`/detail/${hero.id}`}>
+              <span>{hero.id}</span>
+              {hero.name}
+            </Link>
+            <button type="button" className="button-delete" onClick={() => handleDeleteHero(hero.id)}>X</button>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 

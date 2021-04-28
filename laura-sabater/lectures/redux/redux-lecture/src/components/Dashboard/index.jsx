@@ -16,6 +16,17 @@ function Dashboard({ heroes, dispatch }) {
       <div className="heroes-menu">
         {heroes.slice(1, 5).map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
       </div>
+      <div>
+        <label htmlFor="hero-search">
+          Hero search
+          <input
+            id="hero-name"
+            // onChange={}
+            placeholder="Hero name"
+          />
+
+        </label>
+      </div>
     </>
   );
 }
