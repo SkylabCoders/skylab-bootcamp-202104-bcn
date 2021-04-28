@@ -1,11 +1,20 @@
 import React from 'react';
-// import { useParams } from 'react-router';
-
+import { useParams } from 'react-router';
 import './herodetail.css';
+import heroes from '../../assets/heroes';
 
 function HeroDetail() {
+  const { heroId } = useParams();
+  const myHero = heroes.find((hero) => hero.id === +heroId);
+
   return (
-    <h4>This is a detail</h4>
+    <div>
+      <h4>
+        This is my hero
+        {' '}
+        {myHero?.name}
+      </h4>
+    </div>
   );
 }
 

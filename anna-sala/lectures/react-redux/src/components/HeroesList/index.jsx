@@ -1,14 +1,14 @@
 import React from 'react';
-import './dashboard.css';
 import { Link } from 'react-router-dom';
+import './heroeslist.css';
 import heroes from '../../assets/heroes';
 
-function Dashboard() {
+function HeroesList() {
   return (
     <>
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
-        {heroes.slice(1, 5).map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
+        {heroes.map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
       </div>
       <form>
         <h3>Hero Search</h3>
@@ -17,4 +17,4 @@ function Dashboard() {
     </>
   );
 }
-export default Dashboard;
+export default HeroesList;

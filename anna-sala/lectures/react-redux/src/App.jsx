@@ -10,6 +10,8 @@ import {
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import HeroDetail from './components/HeroDetail';
+import HeroesList from './components/HeroesList';
+import NotFound from './components/Not Found';
 
 function App() {
   return (
@@ -17,13 +19,15 @@ function App() {
       <Router>
         <h1>Tour of Heroes</h1>
         <nav>
-          <a href="./">Dashboard</a>
-          <Link to="/detail">Heroes</Link>
+          <a href="/">Dashboard</a>
+          <Link to="/heroes">Heroes</Link>
         </nav>
 
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route exact path="/detail" component={HeroDetail} />
+          <Route exact path="/heroes" component={HeroesList} />
+          <Route exact path="/detail/:heroId" component={HeroDetail} />
+          <Route component={NotFound} />
           <Redirect to="/" />
         </Switch>
       </Router>
