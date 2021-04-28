@@ -26,7 +26,7 @@ const HeroDetail = ({ selectedHero, dispatch }) => {
   };
 
   return (
-    selectedHero ? (
+    selectedHero?.id ? (
       <section className="hero">
         <h2>
           {heroName?.toUpperCase()}

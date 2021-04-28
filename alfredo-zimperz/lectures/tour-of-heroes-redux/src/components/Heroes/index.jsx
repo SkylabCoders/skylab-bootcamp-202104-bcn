@@ -13,7 +13,11 @@ const Heroes = ({ heroes, dispatch }) => {
   }, []);
 
   const handleChangeInput = (event) => setNewHeroName(event.target.value);
-  const saveNewHero = () => dispatch(addHero(newHeroName));
+  const saveNewHero = () => {
+    if (newHeroName) {
+      dispatch(addHero(newHeroName));
+    }
+  };
   const handleDelete = (id) => dispatch(deleteHero(id));
 
   return (

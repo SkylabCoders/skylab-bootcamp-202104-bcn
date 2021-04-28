@@ -36,7 +36,9 @@ export function loadHero(hero) {
 }
 
 export function getHeroById(heroId) {
-  const hero = HEROES.find((current) => current.id === +heroId);
+  let hero;
+  const targetHero = HEROES.find((current) => current.id === +heroId);
+  if (targetHero) { hero = targetHero; } else { (hero = {}); }
 
   return {
     type: actionTypes.LOAD_HERO,
