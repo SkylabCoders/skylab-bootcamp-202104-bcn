@@ -18,4 +18,5 @@ function InfoHeroComponent(superhero) {
     </div>
   );
 }
+
 export default InfoHeroComponent;

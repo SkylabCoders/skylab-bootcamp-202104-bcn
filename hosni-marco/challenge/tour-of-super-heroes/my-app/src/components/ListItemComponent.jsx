@@ -6,14 +6,11 @@ import {
 } from 'react-router-dom';
 import { useParams } from 'react-router';
 import InfoHeroComponent from './InfoHeroComponent';
-// import Heroes from '../assets/Heroes';
 
 function ListItemComponent({
   superhero, id, alterEgo, publisher
 }) {
   const { heroId } = useParams();
-  // const searchHero = Heroes.find((hero) => hero.id === heroId);
-
   return (
     <div>
       <li className={`list__hero-item-${id}`}>
