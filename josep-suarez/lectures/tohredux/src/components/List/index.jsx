@@ -15,8 +15,7 @@ function ListHeroes() {
   ];
   return (
     <>
-      {heroes.map((hero) => (<li>{`${hero.id} ${hero.name}`}</li>))}
-      ;
+      {heroes.map((hero) => (<li>{`${hero.id}-${hero.name}`}</li>))}
     </>
   );
 }
