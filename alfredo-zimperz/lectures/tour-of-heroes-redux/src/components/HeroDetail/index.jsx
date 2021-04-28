@@ -7,7 +7,7 @@ const HeroDetail = () => {
   const { heroId } = useParams();
   const { id, name } = HEROES.find((hero) => hero.id === +heroId);
   return (
-    <div className="hero">
+    <section className="hero">
       <h2>
         {name.toUpperCase()}
         {' '}
@@ -26,7 +26,7 @@ const HeroDetail = () => {
       </div>
       <button type="button">go back</button>
       <button type="button">save</button>
-    </div>
+    </section>
 
   );
 };
