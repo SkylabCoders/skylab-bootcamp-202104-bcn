@@ -1,12 +1,17 @@
 import actionTypes from '../actions/actionTypes';
 
 function selectedHeroReducer(hero = {}, action) {
+  let selectedHero = { ...hero };
+
   switch (action.type) {
     case actionTypes.LOAD_HERO:
-      return action.hero;
+      selectedHero = action.hero;
+      break;
     default:
-      return hero;
+      selectedHero = hero;
+      break;
   }
+  return selectedHero;
 }
 
 export default selectedHeroReducer;
