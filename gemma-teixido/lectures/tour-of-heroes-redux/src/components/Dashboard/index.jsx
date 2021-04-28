@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './dashboard.css';
 
 function Dashboard() {
@@ -19,11 +20,11 @@ function Dashboard() {
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
         {HEROES.slice(1, 5).map((hero) => (
-          <a href=" ">
+          <Link to="/detail">
             {' '}
             {hero.name}
             {' '}
-          </a>
+          </Link>
         ))}
       </div>
     </>
