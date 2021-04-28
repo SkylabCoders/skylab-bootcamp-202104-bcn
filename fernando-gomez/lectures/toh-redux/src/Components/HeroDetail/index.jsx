@@ -22,8 +22,6 @@ const HeroDetail = ({ selectedHero, dispatch }) => {
   };
 
   const save = () => {
-    // eslint-disable-next-line no-debugger
-    debugger;
     dispatch(updateHero({ id: selectedHero.id, name: heroName }));
   };
 
