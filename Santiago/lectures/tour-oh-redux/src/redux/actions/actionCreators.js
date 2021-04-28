@@ -1,5 +1,5 @@
+import HEROES from '../../Constants/heroes-mock';
 import actionTypes from './actionTypes';
-import HEROES from '../../components/Constants/heroes-mock';
 
 export function loadHeroes() {
   return {

@@ -4,5 +4,5 @@ export default {
   ADD_HERO: 'ADD_HERO',
   UPDATE_HERO: 'UPDATE_HERO',
 
-  LOAD_HERO: 'LOAD_HERO',
+  LOAD_HERO: 'LOAD_HERO'
 };

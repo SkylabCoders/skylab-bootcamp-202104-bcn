@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import './heroDetails.css';
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import HEROES from '../Constants/heroes-mock';
 import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
+import './heroDetails.css';
 
 function HeroDetail({ selectedHero, dispatch }) {
   const { heroId } = useParams();
@@ -63,6 +64,7 @@ function HeroDetail({ selectedHero, dispatch }) {
 
   );
 }
+
 HeroDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
   selectedHero: PropTypes.shape({
@@ -76,4 +78,5 @@ function mapStateToProps({ selectedHero }) {
     selectedHero
   };
 }
-export default connect(mapStateToProps)(HeroDetails);
+
+export default connect(mapStateToProps)(HeroDetail);
