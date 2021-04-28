@@ -20,7 +20,7 @@ const index = () => {
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
         {HEROES.slice(1, 5).map((hero) => (
-          <a href=" ">
+          <a href=" " key={hero.id}>
             {hero.name}
           </a>
         ))}
