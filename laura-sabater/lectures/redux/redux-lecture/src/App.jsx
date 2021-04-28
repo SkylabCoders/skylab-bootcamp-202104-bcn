@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import './App.css';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -8,10 +9,9 @@ function App() {
       <h1>Tour of Heroes</h1>
       <nav>
         <a href=" ">Dashboard</a>
-      </nav>
-      <nav>
         <a href=" ">Heroes</a>
       </nav>
+      <Dashboard />
     </>
   );
 }
