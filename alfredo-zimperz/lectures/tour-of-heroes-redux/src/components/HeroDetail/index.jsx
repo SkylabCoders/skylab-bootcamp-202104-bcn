@@ -1,27 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import HEROES from '../../constants/heroes.mock';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
 import './heroDetail.css';
 
-const HeroDetail = () => {
+const HeroDetail = ({ selectedHero, dispatch }) => {
   const { heroId } = useParams();
-  const [selectedHero, setSelectedHero] = useState();
+  const [heroName, setHeroName] = useState(selectedHero?.name);
 
   useEffect(() => {
-    setSelectedHero(HEROES.find((hero) => hero.id === +heroId));
+    dispatch(getHeroById(heroId));
   }, [heroId]);
 
+  useEffect(() => {
+    setHeroName(selectedHero.name);
+  }, [selectedHero]);
+
   const handleNameChange = (event) => {
-    setSelectedHero(
-      { ...selectedHero, name: event.target.value },
-    );
+    setHeroName(event.target.value);
+  };
+
+  const save = () => {
+    dispatch(updateHero({ id: selectedHero.id, name: heroName }));
   };
 
   return (
     selectedHero ? (
       <section className="hero">
         <h2>
-          {selectedHero?.name.toUpperCase()}
+          {heroName?.toUpperCase()}
           {' '}
           Details
         </h2>
@@ -35,14 +43,14 @@ const HeroDetail = () => {
             <input
               id="hero-name"
               placeholder="Hero name"
-              value={selectedHero.name}
+              value={heroName}
               onChange={handleNameChange}
             />
           </label>
 
         </div>
         <button type="button">go back</button>
-        <button type="button">save</button>
+        <button type="button" onClick={save}>save</button>
       </section>
     ) : (
       <h2>
@@ -55,4 +63,16 @@ const HeroDetail = () => {
   );
 };
 
-export default HeroDetail;
+HeroDetail.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  selectedHero: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+  }).isRequired,
+};
+
+function mapStateToProps({ selectedHero }) {
+  return { selectedHero };
+}
+
+export default connect(mapStateToProps)(HeroDetail);

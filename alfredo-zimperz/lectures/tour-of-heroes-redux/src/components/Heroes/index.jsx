@@ -1,42 +1,69 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import HEROES from '../../constants/heroes.mock';
+import { PropTypes } from 'prop-types';
+// import HEROES from '../../constants/heroes.mock';
 import './heroes.css';
+import { loadHeroes, addHero } from '../../redux/actions/actionCreators';
 
-const Heroes = () => (
-  <>
-    <h2>My Heroes</h2>
+const Heroes = ({ heroes, dispatch }) => {
+  const [newHeroName, setNewHeroName] = useState();
 
-    <div>
-      <label htmlFor="new-hero" id="new-hero">
-        Hero name:
-        <input htmlFor="new-hero" />
-      </label>
-      <button className="add-button" type="button">
-        Add hero
-      </button>
-    </div>
+  useEffect(() => {
+    if (!heroes.length) dispatch(loadHeroes());
+  }, []);
 
-    <ul className="heroes">
-      {HEROES.map((hero) => (
-        <li key={hero.id}>
-          <Link to={`/heroes/${hero.id}`}>
-            <span className="badge">{hero.id}</span>
-            {' '}
-            {hero.name}
-          </Link>
-          <button
-            className="delete"
-            title="delete hero"
-            type="button"
-          >
-            x
-          </button>
-        </li>
-      ))}
+  const handleChangeInput = (event) => setNewHeroName(event.target.value);
+  const saveNewHero = () => dispatch(addHero(newHeroName));
 
-    </ul>
-  </>
-);
+  return (
+    <>
+      <h2>My Heroes</h2>
 
-export default Heroes;
+      <div>
+        <label htmlFor="new-hero" id="new-hero">
+          Hero name:
+          <input
+            htmlFor="new-hero"
+            value={newHeroName}
+            onChange={handleChangeInput}
+          />
+        </label>
+        <button className="add-button" type="button" onClick={saveNewHero}>
+          Add hero
+        </button>
+      </div>
+
+      <ul className="heroes">
+        {heroes.map((hero) => (
+          <li key={hero.id}>
+            <Link to={`/heroes/${hero.id}`}>
+              <span className="badge">{hero.id}</span>
+              {' '}
+              {hero.name}
+            </Link>
+            <button
+              className="delete"
+              title="delete hero"
+              type="button"
+            >
+              x
+            </button>
+          </li>
+        ))}
+
+      </ul>
+    </>
+  );
+};
+
+Heroes.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  heroes: PropTypes.shape([]).isRequired,
+};
+
+function mapStateToProps({ heroes }) {
+  return { heroes };
+}
+
+export default connect(mapStateToProps)(Heroes);
