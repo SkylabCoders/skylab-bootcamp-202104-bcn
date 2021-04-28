@@ -60,4 +60,4 @@ function HeroDetail() {
   );
 }
 
-export default HeroDetail;
+export default connect(mapStateToProps)(HeroDetail);
