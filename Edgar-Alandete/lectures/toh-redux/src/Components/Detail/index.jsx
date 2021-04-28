@@ -36,6 +36,8 @@ function Detail() {
               <input id="hero-name" onChange={handleNameChange} value={selectedHero.name} placeholder="Hero Name" />
             </label>
           </div>
+          <button type="button">Go Back</button>
+          <button type="button">Save</button>
         </div>
       )
       : (
