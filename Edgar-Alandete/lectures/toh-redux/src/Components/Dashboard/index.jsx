@@ -7,7 +7,7 @@ function Dashboard() {
     <>
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
-        {heroes.slice(1, 5).map(({ name }) => <a href=" ">{name}</a>)}
+        {heroes.slice(0, 4).map(({ name }) => <a href=" ">{name}</a>)}
       </div>
     </>
   );
