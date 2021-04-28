@@ -12,7 +12,6 @@ const HeroDetail = () => {
   }, [heroId]);
 
   const handleNameChange = (event) => {
-    console.log(event);
     setSelectedHero(
       { ...selectedHero, name: event.target.value },
     );
