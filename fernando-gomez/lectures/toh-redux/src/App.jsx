@@ -7,7 +7,9 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import Dashboard from './Components/Dashboard';
+import NotFound from './Components/NotFound';
 import './styles.css';
+import HeroDetail from './Components/HeroDetail';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         </nav>
         <Switch>
           <Route exact path="/" component={Dashboard} />
+          <Route exact path="/detail/:heroId" component={HeroDetail} />
+          <Route component={NotFound} />
         </Switch>
       </Router>
     </>
