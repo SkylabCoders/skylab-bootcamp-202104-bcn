@@ -1,55 +1,45 @@
-import actionTypes from './actionTypes';
 import HEROES from '../../constants/heroes.mock';
+import actionTypes from './actionTypes';
 
-function loadHeroes() {
+export function loadHeroes() {
   return {
     type: actionTypes.LOAD_HEROES,
   };
 }
 
-function addHero(hero) {
+export function addHero(hero) {
   return {
     type: actionTypes.ADD_HERO,
     hero,
   };
 }
 
-function deleteHero(heroId) {
+export function deleteHero(heroId) {
   return {
     type: actionTypes.DELETE_HERO,
     heroId,
   };
 }
 
-function updateHero(hero) {
+export function updateHero(hero) {
   return {
     type: actionTypes.UPDATE_HERO,
     hero,
   };
 }
 
-function loadHero(hero) {
+export function loadHero(hero) {
   return {
     type: actionTypes.LOAD_HERO,
     hero,
   };
 }
 
-function getHeroById(heroId) {
-  // eslint-disable-next-line no-debugger
-  debugger;
-  const hero = HEROES.find((selectedHero) => selectedHero.id === +heroId);
+export function getHeroById(heroId) {
+  const hero = HEROES.find((current) => current.id === +heroId);
+
   return {
     type: actionTypes.LOAD_HERO,
     hero,
   };
 }
-
-export {
-  loadHeroes,
-  deleteHero,
-  updateHero,
-  addHero,
-  loadHero,
-  getHeroById,
-};

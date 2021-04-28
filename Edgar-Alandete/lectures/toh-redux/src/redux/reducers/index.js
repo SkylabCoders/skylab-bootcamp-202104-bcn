@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import heroes from './heroesReducer';
-import selectedHero from './selectedHeroReducer';
+import heroesReducer from './heroesReducer';
+import selectedHeroReducer from './selectedheroReducer';
 
 const rootReducer = combineReducers({
-  heroes,
-  selectedHero,
+  heroes: heroesReducer,
+  selectedHero: selectedHeroReducer,
 });
 
 export default rootReducer;

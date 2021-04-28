@@ -2,28 +2,36 @@ import React from 'react';
 import './styles.css';
 import './App.css';
 import {
-  Route, BrowserRouter, Switch, Link,
+  BrowserRouter,
+  Route,
+  Switch,
+  Link,
 } from 'react-router-dom';
-import Dashboard from './Components/Dashboard';
-import Heroes from './Components/Heroes';
-import NotFound from './Components/NotFound';
-import Detail from './Components/Detail';
+import { Provider } from 'react-redux';
+import Dashboard from './components/Dashboard';
+import HeroDetail from './components/HeroDetail';
+import NotFound from './components/NotFound';
+import store from './redux/stores';
 
 function App() {
   return (
-    <BrowserRouter>
-      <h1>Tour of Heroes</h1>
-      <nav>
-        <Link to="/">Dashboard</Link>
-        <Link to="/heroes">Heroes</Link>
-      </nav>
-      <Switch>
-        <Route exact path="/" component={Dashboard} />
-        <Route path="/heroes" component={Heroes} />
-        <Route path="/detail/:heroId" component={Detail} />
-        <Route component={NotFound} />
-      </Switch>
-    </BrowserRouter>
+    <>
+      <Provider store={store}>
+        <BrowserRouter>
+          <h1>Tour of Heroes</h1>
+          <nav>
+            <Link to="/">Dashboard</Link>
+            <Link to="/Heroes">Heroes</Link>
+            <Link to="/404">404</Link>
+          </nav>
+          <Switch>
+            <Route path="/" exact component={Dashboard} />
+            <Route path="/detail/:heroId" component={HeroDetail} />
+            <Route component={NotFound} />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
+    </>
   );
 }
 
