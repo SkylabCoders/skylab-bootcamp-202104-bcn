@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 // import HEROES from '../../constants/heroes.mock';
 import './heroes.css';
-import { loadHeroes, addHero } from '../../redux/actions/actionCreators';
+import { loadHeroes, addHero, deleteHero } from '../../redux/actions/actionCreators';
 
 const Heroes = ({ heroes, dispatch }) => {
   const [newHeroName, setNewHeroName] = useState();
@@ -15,6 +15,7 @@ const Heroes = ({ heroes, dispatch }) => {
 
   const handleChangeInput = (event) => setNewHeroName(event.target.value);
   const saveNewHero = () => dispatch(addHero(newHeroName));
+  const handleDelete = (id) => dispatch(deleteHero(id));
 
   return (
     <>
@@ -46,6 +47,7 @@ const Heroes = ({ heroes, dispatch }) => {
               className="delete"
               title="delete hero"
               type="button"
+              onClick={() => handleDelete(hero.id)}
             >
               x
             </button>
