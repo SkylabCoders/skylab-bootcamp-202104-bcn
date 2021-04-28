@@ -16,11 +16,10 @@ function App() {
         <nav>
           <Link to="/">Dashboard</Link>
           <Link to="/detail">Heroes</Link>
-          <Link to="/404">Not Found</Link>
         </nav>
         <Switch>
           <Route path="/" exact component={Dashboard} />
-          <Route path="/detail" component={HeroDetail} />
+          <Route path="/detail/:heroId" component={HeroDetail} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
