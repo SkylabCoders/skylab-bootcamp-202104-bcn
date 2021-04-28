@@ -7,6 +7,7 @@ import {
 import Dashboard from './Components/Dashboard';
 import Heroes from './Components/Heroes';
 import NotFound from './Components/NotFound';
+import Detail from './Components/Detail';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route path="/heroes" component={Heroes} />
+        <Route path="/detail" component={Detail} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
