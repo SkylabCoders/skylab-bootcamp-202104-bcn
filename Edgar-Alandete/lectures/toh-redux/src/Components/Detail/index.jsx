@@ -1,21 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import heroes from '../../constants/heroes.mock';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './HeroDetail.css';
+import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
 
-function Detail() {
+function Detail({ selectedHero, dispatch }) {
   const { heroId } = useParams();
-  const [selectedHero, setSelectedHero] = useState();
+  const [heroName, setHeroName] = useState(selectedHero?.name);
 
   useEffect(() => {
-    setSelectedHero(heroes.find((hero) => hero.id === +heroId));
+    dispatch(getHeroById(heroId));
   }, [heroId]);
 
+  useEffect(() => {
+    setHeroName(selectedHero?.name);
+  }, [selectedHero]);
+
   function handleNameChange(event) {
-    setSelectedHero({
-      ...selectedHero,
-      name: event.target.value,
-    });
+    setHeroName(event.target.value);
+  }
+
+  function save() {
+    dispatch(updateHero({ id: selectedHero.id, name: heroName }));
   }
   return (
     selectedHero
@@ -37,7 +44,7 @@ function Detail() {
             </label>
           </div>
           <button type="button">Go Back</button>
-          <button type="button">Save</button>
+          <button type="button" onClick={save}>Save</button>
         </div>
       )
       : (
@@ -47,4 +54,18 @@ function Detail() {
   );
 }
 
-export default Detail;
+Detail.propTypes = {
+  selectedHero: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
+
+function mapStateToProps({ selectedHero }) {
+  return {
+    hero: selectedHero,
+  };
+}
+
+export default connect(mapStateToProps)(Detail);
