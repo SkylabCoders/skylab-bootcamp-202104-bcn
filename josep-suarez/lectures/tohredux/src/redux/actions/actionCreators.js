@@ -1,4 +1,5 @@
 import actionTypes from './actionTypes';
+import HEROES from '../../services/heroes';
 
 export function loadHeroes() {
   return {
@@ -26,6 +27,14 @@ export function deleteHero(heroId) {
 export function updateHero(hero) {
   return {
     type: actionTypes.UPDATE_HERO,
+    hero
+  };
+}
+export function getHeroById(heroId) {
+  const hero = HEROES.find((current) => current.id === +heroId);
+
+  return {
+    type: actionTypes.LOAD_HERO,
     hero
   };
 }

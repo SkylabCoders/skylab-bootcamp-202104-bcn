@@ -1,41 +1,78 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './detail.css';
-import HEROES from '../../services/heroes';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
 
-function Detail() {
+function Detail({ selectedHero, dispatch }) {
   const { heroId } = useParams();
-  const [selectedHero, setSelectedHero] = useState();
+  const [heroName, setHeroName] = useState(selectedHero?.name);
   useEffect(() => {
-    setSelectedHero(HEROES.find((hero) => hero.id === +heroId));
+    dispatch(getHeroById(heroId));
   }, [heroId]);
+
+  useEffect(() => {
+    setHeroName(selectedHero?.name);
+  }, [selectedHero]);
+
   function handleNameChange(event) {
-    setSelectedHero({
-      ...selectedHero,
-      name: event.target.value
-    });
+    setHeroName(event.target.value);
   }
+
+  function save() {
+    dispatch(updateHero({ id: selectedHero.id, name: heroName }));
+  }
+
   return (
-    selectedHero ? (
-      <>
-        <h2>Hero Details</h2>
+    selectedHero.id
+      ? (
+        <div>
+          <h2>
+            {heroName}
+            {' '}
+            Details
+          </h2>
+          <div>
+            <span>id: </span>
+            {selectedHero.id}
+          </div>
+          <div>
+            <label htmlFor="hero-name">
+              Hero name:
+              <input
+                id="hero-name"
+                value={heroName}
+                onChange={handleNameChange}
+                placeholder="Hero name"
+              />
+            </label>
+          </div>
+          <button type="button"><Link to="/">go back</Link></button>
+          <button onClick={save} type="button">save</button>
+        </div>
+      )
+      : (
         <h3>
-          name:
-          {' '}
-          {selectedHero?.name}
+          There is no hero with id=
+          {heroId}
         </h3>
-        <h3>
-          id:
-          {' '}
-          {selectedHero?.id}
-        </h3>
-        <input type="text" placeholder="Hero name" value={selectedHero?.name} onChange={handleNameChange} />
-        <button type="button">Go Back</button>
-        <button type="button">Save</button>
-      </>
-    )
-      : <h2>No hay heroe!</h2>
+      )
+
   );
 }
+Detail.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  selectedHero: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string
+  }).isRequired
+};
 
-export default Detail;
+function mapStateToProps({ selectedHero }) {
+  return {
+    selectedHero
+  };
+}
+
+export default connect(mapStateToProps)(Detail);
