@@ -15,12 +15,12 @@ function App() {
       <nav>
         <Link to="/">Dashboard</Link>
         <Link to="/detail">Heroes</Link>
-        <Link to="/NotFound">NotFound</Link>
+        <Link to="/notfound">NotFound</Link>
       </nav>
       <Switch>
         <Route path="/" exact component={Dashboard} />
         <Route path="/detail/:heroId" component={HeroDetail} />
-        <Route path="/NotFound" component={NotFound} />
+        <Route path="/notfound" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
