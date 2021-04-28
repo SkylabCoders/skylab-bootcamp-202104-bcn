@@ -19,7 +19,7 @@ function App() {
       </nav>
       <Switch>
         <Route path="/" exact component={Dashboard} />
-        <Route path="/detail" component={HeroDetail} />
+        <Route path="/detail/:heroId" component={HeroDetail} />
         <Route path="/NotFound" component={NotFound} />
       </Switch>
     </BrowserRouter>
