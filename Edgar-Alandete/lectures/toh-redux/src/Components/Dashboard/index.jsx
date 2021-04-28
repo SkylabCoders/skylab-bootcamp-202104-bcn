@@ -1,12 +1,14 @@
 import React from 'react';
 import './style.css';
+import heroes from '../../assets/heroes';
 
 function Dashboard() {
   return (
     <>
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
-        <a href=" ">El nombre del heroe</a>
+        {heroes.slice(1, 4).map(({ name }) => <a href=" ">{name}</a>)}
+        <a href=" ">Batman</a>
       </div>
     </>
   );
