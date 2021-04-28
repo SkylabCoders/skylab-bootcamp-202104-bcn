@@ -11,7 +11,7 @@ function List() {
         {heroes.map((hero) => (
           <li className="list__hero-item">
             {hero.superhero}
-            <button type="button" onClick={() => setSelectedHero(hero)}>INFO</button>
+            <button type="button" onClick={() => setSelectedHero(hero)}>+</button>
             {selectedHero === hero && <CreateDetail hero={hero} />}
           </li>
         ))}
