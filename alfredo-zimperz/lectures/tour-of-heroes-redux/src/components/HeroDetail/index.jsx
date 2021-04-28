@@ -5,15 +5,36 @@ import './heroDetail.css';
 
 const HeroDetail = () => {
   const { heroId } = useParams();
-  const selectesdHero = HEROES.find((hero) => hero.id === +heroId);
+  const selectedHero = HEROES.find((hero) => hero.id === +heroId);
   return (
-    <div>
+    // <div>
+    //   <h2>
+    //     {selectedHero.name}
+    //     {' '}
+    //     details
+    //   </h2>
+    // </div>
+    <div className="hero">
       <h2>
-        {selectesdHero.name}
+        {selectedHero.name.toUpperCase()}
         {' '}
-        details
+        Details
       </h2>
+      <div>
+        <span>id: </span>
+        {selectedHero.id}
+      </div>
+      <div>
+        <label htmlFor="hero-name">
+          Hero name:
+          <input htmlFor="hero-name" id="hero-name" placeholder="Hero name" />
+        </label>
+
+      </div>
+      <button type="button">go back</button>
+      <button type="button">save</button>
     </div>
+
   );
 };
 
