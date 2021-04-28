@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { loadHeroes, deleteHero } from '../../redux/actions/actionCreators';
+import { loadHeroes, deleteHero, addHero } from '../../redux/actions/actionCreators';
 import './HeroesList.css';
 
 function HeroesList({ heroes, dispatch }) {
+  const [heroName, setHeroName] = useState();
+
   useEffect(() => {
     if (!heroes.length) dispatch(loadHeroes());
   }, []);
@@ -14,8 +16,12 @@ function HeroesList({ heroes, dispatch }) {
     dispatch(deleteHero(heroId));
   }
 
-  function handleCreate() {
+  function getName(event) {
+    setHeroName(event.target.value);
+  }
 
+  function handleCreate() {
+    dispatch(addHero(heroName));
   }
 
   return (
@@ -25,9 +31,9 @@ function HeroesList({ heroes, dispatch }) {
       <div>
         <label htmlFor="new-hero">
           Hero name:
-          <input id="new-hero" />
+          <input id="new-hero" onChange={getName} />
         </label>
-        <button type="button" className="add-button" onClick={() => handleCreate('hero.id')}>
+        <button type="button" className="add-button" onClick={() => handleCreate()}>
           Add Hero
         </button>
       </div>
