@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import HeroSearch from '../HeroSearch';
 import { loadHeroes } from '../../redux/actions/actionCreator';
+import './form.css';
 
 const Dashboard = ({ heroes, dispatch }) => {
   useEffect(() => {

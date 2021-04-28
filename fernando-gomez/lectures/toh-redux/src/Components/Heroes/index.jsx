@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import HeroSearch from '../HeroSearch';
 import { deleteHero, loadHeroes, addHero } from '../../redux/actions/actionCreator';
+import './form.css';
 
 const Heroes = ({ heroes, dispatch }) => {
   useEffect(() => {
@@ -17,8 +18,12 @@ const Heroes = ({ heroes, dispatch }) => {
   };
 
   const handleAdd = () => {
+    let newId = 1;
+
+    if (heroes.length !== 0) newId = heroes[heroes.length - 1].id + 1;
+
     const newHero = {
-      id: heroes[heroes.length - 1].id + 1,
+      id: newId,
       name: newHeroName,
     };
     dispatch(addHero(newHero));
@@ -33,17 +38,18 @@ const Heroes = ({ heroes, dispatch }) => {
       <h2>Top heroes</h2>
       <HeroSearch
         onChange={handleNameChange}
+        className="new-hero"
       />
-      <button type="button" onClick={() => handleAdd()}>Add</button>
+      <button className="add-button" type="button" onClick={() => handleAdd()}>Add</button>
       {heroes.map((hero) => (
-        <>
-          <Link to={`/detail/${hero.id}`}>
+        <ul>
+          <Link className="badge" to={`/detail/${hero.id}`}>
             {hero.id}
             {' '}
             {hero.name}
           </Link>
           <button onClick={() => handleDelete(hero.id)} type="button">X</button>
-        </>
+        </ul>
       ))}
     </>
   );
