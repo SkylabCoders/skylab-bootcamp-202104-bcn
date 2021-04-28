@@ -33,7 +33,7 @@ const Heroes = () => {
       <ul className="heroes">
         {HEROES.map((hero) => (
           <li key={hero.id}>
-            <Link to={`./heroes/${hero.id}`}>
+            <Link to={`/heroes/${hero.id}`}>
               <span className="badge">{hero.id}</span>
               {' '}
               {hero.name}
