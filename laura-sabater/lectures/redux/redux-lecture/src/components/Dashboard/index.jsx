@@ -7,12 +7,12 @@ import { loadHeroes } from '../../redux/actions/actionCreators';
 
 function Dashboard({ heroes, dispatch }) {
   useEffect(() => {
-    dispatch(loadHeroes());
+    if (!heroes.length) dispatch(loadHeroes());
   }, []);
 
   return (
     <>
-      <h2> Top heroes </h2>
+      <h2>Top heroes</h2>
       <div className="heroes-menu">
         {heroes.slice(1, 5).map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
       </div>

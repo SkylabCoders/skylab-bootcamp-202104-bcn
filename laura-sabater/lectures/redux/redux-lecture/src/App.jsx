@@ -18,7 +18,7 @@ function App() {
           <h1>Tour of Heroes</h1>
           <nav>
             <Link to="/">Dashboard</Link>
-            <Link to="/HeroesList">Heroes</Link>
+            <Link to="/Heroes">Heroes</Link>
           </nav>
           <Switch>
             <Route path="/" exact component={Dashboard} />

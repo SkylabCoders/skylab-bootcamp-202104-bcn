@@ -1,3 +1,4 @@
+import HEROES from '../../constants/heroes.mock';
 import actionTypes from './actionTypes';
 
 export function loadHeroes() {
@@ -9,27 +10,35 @@ export function loadHeroes() {
 export function addHero(hero) {
   return {
     type: actionTypes.UPDATE_HERO,
-    data: hero,
+    hero,
   };
 }
 
 export function deleteHero(heroId) {
   return {
     type: actionTypes.DELETE_HERO,
-    data: heroId,
+    heroId,
   };
 }
 
 export function updateHero(hero) {
   return {
     type: actionTypes.UPDATE_HERO,
-    data: hero,
+    hero,
   };
 }
 
 export function loadHero(hero) {
   return {
     type: actionTypes.LOAD_HERO,
-    data: hero,
+    hero,
+  };
+}
+
+export function getHeroById(heroId) {
+  const hero = HEROES.find((current) => current.id === +heroId);
+  return {
+    type: actionTypes.LOAD_HERO,
+    hero,
   };
 }
