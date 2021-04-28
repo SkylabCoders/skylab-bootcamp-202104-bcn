@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
@@ -8,6 +8,7 @@ import './heroDetail.css';
 const HeroDetail = ({ selectedHero, dispatch }) => {
   const { heroId } = useParams();
   const [heroName, setHeroName] = useState(selectedHero?.name);
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(getHeroById(heroId));
@@ -49,7 +50,7 @@ const HeroDetail = ({ selectedHero, dispatch }) => {
           </label>
 
         </div>
-        <button type="button">go back</button>
+        <button type="button" onClick={() => history.goBack()}>go back</button>
         <button type="button" onClick={save}>save</button>
       </section>
     ) : (
