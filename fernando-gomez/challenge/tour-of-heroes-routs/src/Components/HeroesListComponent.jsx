@@ -9,7 +9,7 @@ const HeroesList = ({ heroesList, setAsSelected, currentHero }) => (
     {heroesList.map((hero, key) => (
       <li>
         <button type="button" key={key} onClick={() => setAsSelected(hero)} className="heroListElement">
-          Q
+          +
         </button>
         {hero.superhero}
         {currentHero && (currentHero.id === hero.id) && <HeroDetail currentHero={currentHero} />}
