@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './heroes.css';
 
-const index = () => {
+const Heroes = () => {
   const HEROES = [
     { id: 11, name: 'Dr Nice' },
     { id: 12, name: 'Narco' },
@@ -53,4 +53,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Heroes;
