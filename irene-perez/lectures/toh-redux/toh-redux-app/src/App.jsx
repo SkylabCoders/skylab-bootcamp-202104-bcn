@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import HeroDetail from './components/HeroDetail';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -15,10 +16,12 @@ function App() {
         <nav>
           <Link to="/">Dashboard</Link>
           <Link to="/detail">Details</Link>
+          <Link to="/404">404</Link>
         </nav>
         <Switch>
           <Route path="/" exact component={Dashboard} />
           <Route path="/detail" component={HeroDetail} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </>
