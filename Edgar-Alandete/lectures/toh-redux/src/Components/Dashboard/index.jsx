@@ -1,13 +1,14 @@
 import React from 'react';
 import './style.css';
-import heroes from '../../assets/heroes';
+import { Link } from 'react-router-dom';
+import heroes from '../../constants/heroes.mock';
 
 function Dashboard() {
   return (
     <>
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
-        {heroes.slice(0, 4).map(({ name }) => <a href=" ">{name}</a>)}
+        {heroes.slice(0, 4).map(({ name, id }) => <Link to={`/detail/${id}`}>{name}</Link>)}
       </div>
     </>
   );
