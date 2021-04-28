@@ -1,5 +1,6 @@
 import React from 'react';
 import './dashboard.css';
+import { Link } from 'react-router-dom';
 import heroes from '../../assets/heroes';
 
 function Dashboard() {
@@ -7,7 +8,7 @@ function Dashboard() {
     <>
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
-        {heroes.slice(1, 5).map((hero) => <a href="./">{hero.name}</a>)}
+        {heroes.slice(1, 5).map((hero) => <Link to="/detail">{hero.name}</Link>)}
       </div>
       <form>
         <h3>Hero Search</h3>
