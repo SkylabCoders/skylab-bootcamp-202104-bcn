@@ -20,7 +20,7 @@ function Dashboard() {
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
         {
-            heroes.slice(1, 5).map((hero) => <Link to="/detail">{hero.name}</Link>)
+            heroes.slice(1, 5).map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)
         }
       </div>
     </>

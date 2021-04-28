@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard';
 import Detail from './components/Detail';
 import Search from './components/Search';
 import List from './components/List';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Dashboard} />
           <Route path="/heroes" component={List} />
-          <Route path="/detail" component={Detail} />
+          <Route path="/detail/:heroId" component={Detail} />
+          <Route component={NotFound} />
         </Switch>
         <Search />
       </BrowserRouter>
