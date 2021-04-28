@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './dashboard.css';
-import HEROES from '../../const/heroes.mock';
+import HEROES from '../../constants/heroes.mock';
 
 function Dashboard() {
   return (
