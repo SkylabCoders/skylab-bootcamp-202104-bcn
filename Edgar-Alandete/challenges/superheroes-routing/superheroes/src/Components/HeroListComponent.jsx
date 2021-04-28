@@ -10,8 +10,10 @@ const HeroListComponent = () => {
   }
 
   return (
-    <ul className="list__container">
-      {
+    <>
+      <h1>Super Heroes</h1>
+      <ul className="list__container">
+        {
         heroes
         && heroes.map(
           ({
@@ -28,7 +30,8 @@ const HeroListComponent = () => {
           ),
         )
       }
-    </ul>
+      </ul>
+    </>
   );
 };
 

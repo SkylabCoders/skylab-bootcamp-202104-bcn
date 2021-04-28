@@ -9,16 +9,18 @@ import {
 import HeaderComponent from './Components/HeaderComponent';
 import HeroListComponent from './Components/HeroListComponent';
 import HeroDetailComponent from './Components/HeroDetailComponent';
+import DashboardComponent from './Components/DashboardComponent';
 
 function App() {
   return (
     <>
-      <HeaderComponent />
       <Router>
+        <HeaderComponent />
         <Switch>
+          <Route exact path="/dashboard" component={DashboardComponent} />
           <Route exact path="/heroes/:heroId" component={HeroDetailComponent} />
           <Route exact path="/heroes" component={HeroListComponent} />
-          <Redirect to="./heroes" />
+          <Redirect to="./dashboard" />
         </Switch>
       </Router>
     </>
