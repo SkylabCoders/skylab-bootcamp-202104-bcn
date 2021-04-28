@@ -18,6 +18,13 @@ label {
   input:focus {
     outline: #336699 auto 1px;
   }
+  .heroes-menu{
+    display: flex;
+    flex-direction: column;
+  }
+  .heroes-menu__item{
+    margin-top: 0px;
+  }
   
   li {
     list-style-type: none;
@@ -29,7 +36,7 @@ label {
     display: inline-block;
     width: 100%;
     max-width: 600px;
-    padding: .5rem;
+    padding: .7rem;
     box-sizing: border-box;
     text-decoration: none;
     color: black;

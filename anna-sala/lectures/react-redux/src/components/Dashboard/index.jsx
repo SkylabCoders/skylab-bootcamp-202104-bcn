@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
-import './dashboard.css';
+import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { loadHeroes } from '../../redux/actions/actionCreators';
+import './dashboard.css';
 
 function Dashboard({ heroes, dispatch }) {
   useEffect(() => {
-    // eslint-disable-next-line no-debugger
-    debugger;
     if (!heroes.length) dispatch(loadHeroes());
   }, []);
   return (
