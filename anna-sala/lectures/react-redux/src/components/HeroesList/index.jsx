@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { deleteHero, loadHeroes } from '../../redux/actions/actionCreators';
+import { deleteHero, loadHeroes, addHero } from '../../redux/actions/actionCreators';
 import './heroeslist.css';
 
 function HeroesList({ heroes, dispatch }) {
@@ -12,16 +12,20 @@ function HeroesList({ heroes, dispatch }) {
   function deleteClick(id) {
     dispatch(deleteHero(id));
   }
+  function clickAdd() {
+    const newHero = document.getElementById('new-hero-name');
+    dispatch(addHero({ id: heroes[heroes.length - 1] + 1, name: newHero.value }));
+  }
   return (
     <>
       <h2>Top Heroes</h2>
       <label htmlFor="hero-name">
         Add Hero:
         <input
-          id="hero-name"
+          id="new-hero-name"
           placeholder="New Hero Name"
         />
-        <button type="button">ADD</button>
+        <button type="button" onClick={() => clickAdd()}>ADD</button>
       </label>
       <ul className="heroes-menu">
         {heroes.map((hero) => (
