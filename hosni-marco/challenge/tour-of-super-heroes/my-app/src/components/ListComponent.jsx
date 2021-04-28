@@ -9,7 +9,6 @@ function ListComponent() {
         Heroes.map(({
           id, superhero, publisher, alterEgo
         }) => <ListItemComponent key={`${id}`} id={id} superhero={superhero} publisher={publisher} alterEgo={alterEgo} />)
-
         }
 
     </ul>
