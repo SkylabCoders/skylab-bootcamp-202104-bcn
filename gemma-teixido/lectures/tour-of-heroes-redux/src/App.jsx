@@ -4,9 +4,11 @@ import './App.css';
 function App() {
   return (
     <>
-      <h1>Hola Mundo</h1>
-      <button type="button">Dashboard</button>
-      <button type="button">Button</button>
+      <h1>Tour Of Heroes</h1>
+      <nav>
+        <a href=" ">Dashboard</a>
+        <a href=" ">Heroes</a>
+      </nav>
     </>
   );
 }
