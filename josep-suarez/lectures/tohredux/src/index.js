@@ -1,8 +1,9 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App.jsx';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
