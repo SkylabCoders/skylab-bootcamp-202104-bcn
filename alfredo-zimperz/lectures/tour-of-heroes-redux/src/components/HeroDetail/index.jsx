@@ -14,7 +14,7 @@ const HeroDetail = () => {
   const handleNameChange = (event) => {
     console.log(event);
     setSelectedHero(
-      { ...selectedHero, name: event.target.name },
+      { ...selectedHero, name: event.target.value },
     );
   };
 
@@ -36,7 +36,7 @@ const HeroDetail = () => {
             <input
               id="hero-name"
               placeholder="Hero name"
-              value={selectedHero?.name}
+              value={selectedHero.name}
               onChange={handleNameChange}
             />
           </label>
