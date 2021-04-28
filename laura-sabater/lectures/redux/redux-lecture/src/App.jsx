@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Dashboard from './components/Dashboard';
+import HeroesList from './components/Heroes';
 import HeroDetail from './components/HeroDetail';
 import NotFound from './components/NotFound';
 import store from './redux/stores';
@@ -22,6 +23,7 @@ function App() {
           </nav>
           <Switch>
             <Route path="/" exact component={Dashboard} />
+            <Route path="/Heroes" component={HeroesList} />
             <Route path="/detail/:heroId" component={HeroDetail} />
             <Route component={NotFound} />
           </Switch>
