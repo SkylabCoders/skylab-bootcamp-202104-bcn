@@ -16,8 +16,11 @@ function heroesReducer(heroes = [], action) {
       ];
 
     case actionTypes.UPDATE_HERO:
-      return heroes.map((hero) => (hero.id === action.hero.id
-        ? { ...hero, ...action.hero } : hero));
+      return heroes.map(
+        (hero) => (hero.id === action.hero.id
+          ? { ...hero, ...action.hero }
+          : hero)
+      );
 
     default:
       return heroes;

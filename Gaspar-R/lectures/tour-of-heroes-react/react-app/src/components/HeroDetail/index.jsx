@@ -1,32 +1,40 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
-
+import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import HEROES from '../constants/heroes.mock';
+import { PropTypes } from 'prop-types';
+import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
+import './heroDetail.css';
 
-function HeroDetail() {
+function HeroDetail({ selectedHero, dispatch }) {
   const { heroId } = useParams();
-  const [selectedHero, setSelectedHero] = useState();
+  const [heroName, setHeroName] = useState(selectedHero?.name);
 
   useEffect(() => {
-    setSelectedHero(HEROES.find((hero) => hero.id === +heroId));
+    dispatch(getHeroById(heroId));
   }, [heroId]);
 
+  useEffect(() => {
+    setHeroName(selectedHero?.name);
+  }, [selectedHero]);
+
   function handleNameChange(event) {
-    setSelectedHero({
-      ...selectedHero,
-      name: event.target.value
-
-    });
+    setHeroName(event.target.value);
   }
-  return (
 
-    selectedHero
+  function save() {
+    dispatch(updateHero({ id: selectedHero.id, name: heroName }));
+  }
+
+  return (
+    selectedHero.id
       ? (
         <div>
           <h2>
-            {selectedHero.name}
+            {heroName}
             {' '}
-            Detail
+            Details
           </h2>
           <div>
             <span>id: </span>
@@ -37,30 +45,38 @@ function HeroDetail() {
               Hero name:
               <input
                 id="hero-name"
-                value={selectedHero?.name}
+                value={heroName}
                 onChange={handleNameChange}
                 placeholder="Hero name"
               />
             </label>
-
           </div>
-
           <button type="button">go back</button>
-          <button type="button">save</button>
+          <button onClick={save} type="button">save</button>
         </div>
       )
       : (
         <h3>
-          {' '}
-          No hay hero con ese id
-          {' '}
+          There is no hero with id=
           {heroId}
-          {' '}
         </h3>
-
       )
 
   );
 }
 
-export default HeroDetail;
+HeroDetail.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  selectedHero: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string
+  }).isRequired
+};
+
+function mapStateToProps({ selectedHero }) {
+  return {
+    selectedHero
+  };
+}
+
+export default connect(mapStateToProps)(HeroDetail);

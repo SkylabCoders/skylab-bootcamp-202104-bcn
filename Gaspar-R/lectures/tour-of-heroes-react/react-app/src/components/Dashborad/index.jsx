@@ -1,20 +1,34 @@
-import React from 'react';
-import './dashboard.css';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import HEROES from '../constants/heroes.mock';
+import { connect } from 'react-redux';
+import './dashboard.css';
+import { PropTypes } from 'prop-types';
+import { loadHeroes } from '../../redux/actions/actionCreators';
 
-function Dashboard() {
+function Dashboard({ heroes, dispatch }) {
+  useEffect(() => {
+    if (!heroes.length) dispatch(loadHeroes());
+  }, []);
+
   return (
     <>
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
-        {HEROES.slice(1, 5).map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
-
+        {heroes.slice(1, 5).map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
       </div>
-
     </>
-
   );
 }
 
-export default Dashboard;
+Dashboard.propTypes = {
+  heroes: PropTypes.shape([]).isRequired,
+  dispatch: PropTypes.func.isRequired
+};
+
+function mapStateToProps(store) {
+  return {
+    heroes: store.heroes
+  };
+}
+
+export default connect(mapStateToProps)(Dashboard);
