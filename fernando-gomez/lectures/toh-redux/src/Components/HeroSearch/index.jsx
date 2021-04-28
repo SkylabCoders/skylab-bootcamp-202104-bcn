@@ -1,11 +1,18 @@
 import React from 'react';
 import './heroSearch.css';
+import { PropTypes } from 'prop-types';
 
-const HeroSearch = () => (
+const HeroSearch = ({ onChange }) => (
   <>
     <h2>Hero Search</h2>
-    <input />
+    <input
+      onChange={onChange}
+    />
   </>
 );
+
+HeroSearch.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};
 
 export default HeroSearch;
