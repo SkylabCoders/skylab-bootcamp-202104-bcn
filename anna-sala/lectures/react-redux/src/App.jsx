@@ -19,7 +19,7 @@ function App() {
       <Router>
         <h1>Tour of Heroes</h1>
         <nav>
-          <a href="/">Dashboard</a>
+          <Link to="/">Dashboard</Link>
           <Link to="/heroes">Heroes</Link>
         </nav>
 
