@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './dashboard.css';
 
 const index = () => {
@@ -20,9 +21,9 @@ const index = () => {
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
         {HEROES.slice(1, 5).map((hero) => (
-          <a href=" " key={hero.id}>
+          <Link to={`/detail/${hero.name}`} key={hero.id}>
             {hero.name}
-          </a>
+          </Link>
         ))}
 
       </div>

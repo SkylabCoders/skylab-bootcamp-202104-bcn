@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './heroes.css';
 
 const index = () => {
   const HEROES = [
@@ -16,7 +18,37 @@ const index = () => {
 
   return (
     <>
-      <h2>HEROES[0].name</h2>
+      <h2>My Heroes</h2>
+
+      <div>
+        <label htmlFor="new-hero" id="new-hero">
+          Hero name:
+          <input htmlFor="new-hero" />
+        </label>
+        <button className="add-button" type="button">
+          Add hero
+        </button>
+      </div>
+
+      <ul className="heroes">
+        {HEROES.map((hero) => (
+          <li key={hero.id}>
+            <Link to={`./heroes/${hero.id}`}>
+              <span className="badge">{hero.id}</span>
+              {' '}
+              {hero.name}
+            </Link>
+            <button
+              className="delete"
+              title="delete hero"
+              type="button"
+            >
+              x
+            </button>
+          </li>
+        ))}
+
+      </ul>
     </>
   );
 };
