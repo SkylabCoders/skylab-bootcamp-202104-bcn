@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './detail.css';
-import heroes from '../../services/heroes';
+import HEROES from '../../services/heroes';
 
 function Detail() {
   const { heroId } = useParams();
   const [selectedHero, setSelectedHero] = useState();
   useEffect(() => {
-    setSelectedHero(heroes.find((hero) => hero.id === +heroId));
+    setSelectedHero(HEROES.find((hero) => hero.id === +heroId));
   }, [heroId]);
   function handleNameChange(event) {
     setSelectedHero({
