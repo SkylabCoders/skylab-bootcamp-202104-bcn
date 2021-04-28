@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <h1>Tour of heroes redux</h1>
+        <h1>Tour of heroes</h1>
         <nav type="button">
           <Link to="/">Dashboard</Link>
           <Link to="/list">Hero list</Link>
