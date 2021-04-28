@@ -1,8 +1,13 @@
 import './App.css';
 import './form.css';
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import HeroesList from './Components/HeroesListComponent';
-import HeroDetail from './Components/HeroDetailComponent';
+import AllHeroDetails from './Components/AllDetailsComponent';
 
 function App() {
   const heroes = [
@@ -168,14 +173,29 @@ function App() {
     },
   ];
 
-  const [currentHero, setCurrentHero] = useState(null);
+  const [currentHero, setCurrentHero] = useState('');
 
   return (
-    <div className="App">
-      <h1 className="title">Tour of heroes</h1>
-      <HeroesList heroesList={heroes} setAsSelected={setCurrentHero} />
-      {currentHero && <HeroDetail currentHero={currentHero} />}
-    </div>
+    <>
+      <div className="App">
+        <h1 className="title">Tour of heroes</h1>
+        <Router>
+          <Switch>
+            <Route exact path={`/${currentHero.id}`}>
+              <AllHeroDetails hero={currentHero} />
+            </Route>
+            <Route exact path="/" component="">
+              <HeroesList
+                heroesList={heroes}
+                setAsSelected={setCurrentHero}
+                currentHero={currentHero}
+              />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+
+    </>
   );
 }
 

@@ -2,15 +2,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import SeeMore from './SeeMoreComponent';
 
-const HeroDetail = ({ currentHero: { id, superhero } }) => (
+const HeroDetail = ({ currentHero, currentHero: { superhero, publisher } }) => (
   <div className="heroesList">
     <h1>{superhero}</h1>
-    <p>
-      It's Id is
-      {' '}
-      {id}
-    </p>
+    <p>{publisher}</p>
+    <SeeMore hero={currentHero} />
   </div>
 );
 
