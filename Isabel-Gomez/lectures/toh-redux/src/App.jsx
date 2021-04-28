@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import './App.css';
+import Dashboard from './components/dashboard';
 
 function App() {
   return (
@@ -9,8 +10,8 @@ function App() {
       <nav>
         <a href=" ">Dashboard</a>
         <a href=" ">Heroes</a>
-
       </nav>
+      <Dashboard />
 
     </>
   );
