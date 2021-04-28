@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import './App.css';
+import Dashboard from './Components/Dashboard';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <a href=" ">Dashboard</a>
         <a href=" ">Heroes</a>
       </nav>
+      <Dashboard />
     </>
   );
 }
