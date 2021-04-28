@@ -10,12 +10,10 @@ function DetailHeroComponent() {
     <article>
       <p>
         Id:
-        {' '}
         {searchHero.id}
       </p>
       <p>
         Superhero:
-        {' '}
         {searchHero.superhero}
       </p>
       <p>
@@ -42,4 +40,5 @@ function DetailHeroComponent() {
     </article>
   );
 }
+
 export default DetailHeroComponent;

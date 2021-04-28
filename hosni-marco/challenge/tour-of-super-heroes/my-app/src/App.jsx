@@ -17,9 +17,9 @@ function App() {
       </header>
       <Router>
         <Switch>
-          <Route extact path="/heroes/:heroId" component={DetailHeroComponent} />
+          <Route extact path="/heroes/:heroId/Details" component={DetailHeroComponent} />
           <Route extact path="/heroes/" component={ListComponent} />
-          <Redirect to="./heroes" />
+          <Redirect to="/heroes" />
         </Switch>
       </Router>
     </>
