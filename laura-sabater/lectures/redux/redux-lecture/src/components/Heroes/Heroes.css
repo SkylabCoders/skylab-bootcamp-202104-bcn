@@ -98,4 +98,17 @@ can be found in the LICENSE file at https://angular.io/license
 .heroes-list {
   display: flex;
   flex-direction: column;
+  list-style-type: none
+}
+
+.button-delete {
+  background-color: white;
+  color:  #525252;
+  font-size: 1.1rem;
+  padding: 1px 10px 3px 10px;
+}
+
+.button-delete:hover {
+  background-color: #525252;
+  color: white;
 }

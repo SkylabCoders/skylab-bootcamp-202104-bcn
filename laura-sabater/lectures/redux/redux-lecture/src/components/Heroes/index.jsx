@@ -4,23 +4,30 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import './heroes.css';
-import { loadHeroes } from '../../redux/actions/actionCreators';
+import { deleteHero, loadHeroes } from '../../redux/actions/actionCreators';
 
 function HeroesList({ heroes, dispatch }) {
   useEffect(() => {
     if (!heroes.length) dispatch(loadHeroes());
   }, []);
 
+  function handleDeleteHero(heroId) {
+    debugger;
+    dispatch(deleteHero(heroId));
+  }
+
   return (
-    <div className="heroes-list">
+    <ul className="heroes-list">
       {heroes.map((hero) => (
-        <Link to={`/detail/${hero.id}`}>
-          {hero.id}
-          {' '}
-          {hero.name}
-        </Link>
+        <li>
+          <Link className="heroes" to={`/detail/${hero.id}`}>
+            <span>{hero.id}</span>
+            {hero.name}
+          </Link>
+          <button type="button" className="button-delete" onClick={() => handleDeleteHero(hero.id)}>X</button>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
