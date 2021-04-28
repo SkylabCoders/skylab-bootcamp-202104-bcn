@@ -1,3 +1,4 @@
+import HEROES from '../../constans/heroes';
 import actionType from './actionTypes';
 
 export function loadHeroes() {
@@ -29,7 +30,16 @@ export function updateHero(hero) {
 
 export function loadHeroe(hero) {
   return {
-    type: actionType.LOAD_HEROE,
+    type: actionType.LOAD_HERO,
+    hero
+  };
+}
+
+export function getHeroById(heroId) {
+  const hero = HEROES.find((current) => current.id === +heroId);
+
+  return {
+    type: actionType.LOAD_HERO,
     hero
   };
 }

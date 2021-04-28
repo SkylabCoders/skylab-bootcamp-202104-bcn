@@ -12,7 +12,8 @@ function heroesReducer(heroes = [], action) {
     case actionTypes.ADD_HERO:
       return [
         ...heroes,
-        action.hero];
+        action.hero
+      ];
 
     case actionTypes.UPDATE_HERO:
       return heroes.map(
