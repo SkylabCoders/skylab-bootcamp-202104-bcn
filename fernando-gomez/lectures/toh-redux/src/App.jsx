@@ -11,6 +11,7 @@ import NotFound from './Components/NotFound';
 import './App.css';
 import './styles.css';
 import HeroDetail from './Components/HeroDetail';
+import Heroes from './Components/Heroes';
 import store from './redux/stores';
 
 function App() {
@@ -21,11 +22,12 @@ function App() {
           <h1>Tour of heroes</h1>
           <nav>
             <Link to="/">Dashboard</Link>
-            <a href=" ">Heroes</a>
+            <Link to="/heroes/">Heroes</Link>
           </nav>
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route exact path="/detail/:heroId" component={HeroDetail} />
+            <Route exact path="/heroes/" component={Heroes} />
             <Route component={NotFound} />
           </Switch>
         </Router>
