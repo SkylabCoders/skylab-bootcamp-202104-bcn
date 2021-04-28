@@ -48,23 +48,6 @@ body {
   background-color: #F7D6E0;
 }
 
-.weekdays {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #EFF7F6;
-}
-
-.weekdays__day {
-  border-color: #F7D6E0;
-  font-size: 30px;
-  list-style: none;
-  margin: 20px;
-  padding: 20px;
-  text-align: center;
-  width: 90%;
-}
-
 .tasks {
   background-color: #EFF7F6;
   display: -webkit-box;
@@ -83,7 +66,6 @@ body {
   list-style: none;
   padding: 10px;
   text-align: center;
-  width: 90%;
 }
 
 .tasks .done {
@@ -106,5 +88,25 @@ body {
   margin-top: -10px;
   margin-left: 5px;
   background-color: #f2b5b5;
+}
+
+.crossed {
+  background-color: #EFF7F6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.crossed .task {
+  border-color: #F7D6E0;
+  font-size: 25px;
+  list-style: none;
+  padding: 10px;
+  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */
