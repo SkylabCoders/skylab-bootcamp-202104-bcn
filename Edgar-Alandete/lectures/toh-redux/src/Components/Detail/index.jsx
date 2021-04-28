@@ -18,25 +18,30 @@ function Detail() {
     });
   }
   return (
-    <>
-      <div>
-        <h2>
-          {selectedHero?.name}
-          {' '}
-          Details
-        </h2>
+    selectedHero
+      ? (
         <div>
-          <span>id: </span>
-          {selectedHero?.id}
+          <h2>
+            {selectedHero?.name}
+            {' '}
+            Details
+          </h2>
+          <div>
+            <span>id: </span>
+            {selectedHero?.id}
+          </div>
+          <div>
+            <label htmlFor="hero-name">
+              Hero Name:
+              <input id="hero-name" onChange={handleNameChange} value={selectedHero.name} placeholder="Hero Name" />
+            </label>
+          </div>
         </div>
-        <div>
-          <label htmlFor="hero-name">
-            Hero Name:
-            <input id="hero-name" onChange={handleNameChange} value={selectedHero.name} placeholder="Hero Name" />
-          </label>
-        </div>
-      </div>
-    </>
+      )
+      : (
+        <h3>No hero detected</h3>
+
+      )
   );
 }
 
