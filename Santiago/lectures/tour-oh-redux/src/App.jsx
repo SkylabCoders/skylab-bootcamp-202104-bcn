@@ -21,8 +21,8 @@ function App() {
 
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route exact path="/detail" component={HeroDetails} />
-          <Route exact path="/list" component={HeroList} />
+          <Route path="/detail" component={HeroDetails} />
+          <Route path="/list" component={HeroList} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
