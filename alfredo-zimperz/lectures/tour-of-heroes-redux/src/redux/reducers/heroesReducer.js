@@ -2,22 +2,30 @@ import actionTypes from '../actions/actionTypes';
 import HEROES from '../../constants/heroes.mock';
 
 function heroesReducer(heroes = [], action) {
+  let updatedHeroes = [...heroes];
+
   switch (action.type) {
     case actionTypes.LOAD_HEROES:
-      return HEROES;
+      updatedHeroes = HEROES;
+      break;
     case actionTypes.DELETE_HERO:
-      return heroes.filter((hero) => hero.id !== action.heroId);
+      updatedHeroes = heroes.filter((hero) => hero.id !== action.heroId);
+      break;
     case actionTypes.ADD_HERO:
-      return [...heroes, action.hero];
+      updatedHeroes = [...heroes, action.hero];
+      break;
     case actionTypes.UPDATE_HERO:
-      return heroes.map((hero) => (
+      updatedHeroes = heroes.map((hero) => (
         hero.id === action.hero.id
           ? { ...hero, ...action.hero }
           : hero
       ));
+      break;
     default:
-      return heroes;
+      updatedHeroes = heroes;
+      break;
   }
+  return updatedHeroes;
 }
 
 export default heroesReducer;
