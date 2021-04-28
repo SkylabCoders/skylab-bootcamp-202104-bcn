@@ -1,4 +1,5 @@
 import React from 'react';
+import './heroSearch.css';
 
 const HeroSearch = () => (
   <>
