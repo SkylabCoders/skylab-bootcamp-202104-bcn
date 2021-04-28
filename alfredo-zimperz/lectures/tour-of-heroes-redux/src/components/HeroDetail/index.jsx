@@ -5,24 +5,17 @@ import './heroDetail.css';
 
 const HeroDetail = () => {
   const { heroId } = useParams();
-  const selectedHero = HEROES.find((hero) => hero.id === +heroId);
+  const { id, name } = HEROES.find((hero) => hero.id === +heroId);
   return (
-    // <div>
-    //   <h2>
-    //     {selectedHero.name}
-    //     {' '}
-    //     details
-    //   </h2>
-    // </div>
     <div className="hero">
       <h2>
-        {selectedHero.name.toUpperCase()}
+        {name.toUpperCase()}
         {' '}
         Details
       </h2>
       <div>
         <span>id: </span>
-        {selectedHero.id}
+        {id}
       </div>
       <div>
         <label htmlFor="hero-name">
