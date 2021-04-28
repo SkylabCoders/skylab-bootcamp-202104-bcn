@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './heroDetails.css';
 import HEROES from '../Constants/heroes-mock';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 
 function HeroDetails() {
   const { heroId } = useParams();
-  const [selectedHero, setSelectedHero] = useState();
+  const [hero, setSelectedHero] = useState(selectedHero);
 
   useEffect(() => {
     setSelectedHero(HEROES.find((hero) => hero.id === +heroId));
@@ -52,5 +54,11 @@ function HeroDetails() {
       )
   );
 }
+HeroDetail.propTypes
 
-export default HeroDetails;
+funtion mapStateToProps({selectedHero}){
+  return {
+    hero:selectedHero
+  }
+}
+export default connect(mapStateToProps)(HeroDetails);
