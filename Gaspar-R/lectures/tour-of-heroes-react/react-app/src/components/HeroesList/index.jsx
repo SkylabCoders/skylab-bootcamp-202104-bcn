@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './heroesList.css';
 import { PropTypes } from 'prop-types';
-import { loadHeroes } from '../../redux/actions/actionCreators';
+import { loadHeroes, deleteHero } from '../../redux/actions/actionCreators';
 
 function HeroesList({ heroes, dispatch }) {
   useEffect(() => {
     if (!heroes.lenght) dispatch(loadHeroes());
   }, []);
+
+  function handleDelete(heroId) {
+    dispatch(deleteHero(heroId));
+  }
 
   return (
     <>
@@ -26,7 +30,7 @@ function HeroesList({ heroes, dispatch }) {
               <button
                 type="button"
                 className="delete"
-                onClick="delete(hero)"
+                onClick={() => handleDelete(hero.id)}
               >
                 {' '}
                 x

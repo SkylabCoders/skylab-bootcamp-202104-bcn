@@ -2,8 +2,9 @@
 /* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+
 import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
 import './heroDetail.css';
 
@@ -51,7 +52,13 @@ function HeroDetail({ selectedHero, dispatch }) {
               />
             </label>
           </div>
-          <button type="button">go back</button>
+          <button type="button">
+            <Link to="/">
+              go back
+            </Link>
+            {' '}
+
+          </button>
           <button onClick={save} type="button">save</button>
         </div>
       )
