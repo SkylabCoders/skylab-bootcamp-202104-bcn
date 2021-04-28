@@ -1,17 +1,27 @@
 import React from 'react';
 import './styles.css';
 import './App.css';
+import {
+  BrowserRouter, Route, Switch, Link,
+} from 'react-router-dom';
 import Dashboard from './components/Dashboard';
+import HeroDetail from './components/HeroDetail';
 
 function App() {
   return (
     <>
-      <h1>Tour of Heroes</h1>
-      <nav>
-        <a href=" ">Dashboard</a>
-        <a href=" ">Heroes</a>
-      </nav>
-      <Dashboard />
+      <BrowserRouter>
+        <h1>Tour of Heroes</h1>
+        <nav>
+          <Link to="/">Dashboard</Link>
+          <Link to"/List">Heroes</Link>
+        </nav>
+        <Switch>
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/detail" exact component={HeroDetail} />
+        </Switch>
+
+      </BrowserRouter>
     </>
   );
 }
