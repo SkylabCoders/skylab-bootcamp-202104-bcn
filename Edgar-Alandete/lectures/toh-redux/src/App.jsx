@@ -6,18 +6,20 @@ import {
 } from 'react-router-dom';
 import Dashboard from './Components/Dashboard';
 import Heroes from './Components/Heroes';
+import NotFound from './Components/NotFound';
 
 function App() {
   return (
     <BrowserRouter>
       <h1>Tour of Heroes</h1>
       <nav>
-        <Link href="/">Dashboard</Link>
+        <Link to="/">Dashboard</Link>
         <Link to="/heroes">Heroes</Link>
       </nav>
       <Switch>
         <Route exact path="/" component={Dashboard} />
-        <Route exact path="/heroes" component={Heroes} />
+        <Route path="/heroes" component={Heroes} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
