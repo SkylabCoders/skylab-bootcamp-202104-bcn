@@ -19,27 +19,37 @@ function HeroDetails() {
   }
 
   return (
-    <>
-      <div>
-        <h2>
-          {selectedHero?.name}
-          {'  '}
-          Details
-        </h2>
+    selectedHero
+      ? (
         <div>
-          <span>
-            ID:
-            {selectedHero?.id}
-          </span>
+          <h2>
+            {selectedHero?.name}
+            {'  '}
+            Details
+          </h2>
+          <div>
+            <span>
+              ID:
+              {selectedHero?.id}
+            </span>
+          </div>
+          <div>
+            <label htmlFor="hero-name">
+              Hero name:
+              <input id="hero-name" value={selectedHero?.name} onChange={handleNameChange} placeholder="Hero name" />
+            </label>
+          </div>
+          <button type="button">Go back</button>
+          <button type="button">Save</button>
         </div>
-      </div>
-      <div>
-        <label htmlFor="hero-name">
-          Hero name:
-          <input id="hero-name" value={selectedHero?.name} onChange={handleNameChange} placeholder="Hero name" />
-        </label>
-      </div>
-    </>
+      )
+      : (
+        <h1>
+          No heroe with id
+          {' '}
+          {heroId}
+        </h1>
+      )
   );
 }
 
