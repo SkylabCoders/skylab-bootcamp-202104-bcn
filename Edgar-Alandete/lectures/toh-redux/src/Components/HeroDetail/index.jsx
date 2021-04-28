@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import './HeroDetail.css';
+import { useParams } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
+import './HeroDetail.css';
 
-function Detail({ selectedHero, dispatch }) {
+function HeroDetail({ selectedHero, dispatch }) {
   const { heroId } = useParams();
   const [heroName, setHeroName] = useState(selectedHero?.name);
 
@@ -24,48 +26,57 @@ function Detail({ selectedHero, dispatch }) {
   function save() {
     dispatch(updateHero({ id: selectedHero.id, name: heroName }));
   }
+
   return (
-    selectedHero
+    selectedHero.id
       ? (
         <div>
           <h2>
-            {selectedHero?.name}
+            {heroName}
             {' '}
             Details
           </h2>
           <div>
             <span>id: </span>
-            {selectedHero?.id}
+            {selectedHero.id}
           </div>
           <div>
             <label htmlFor="hero-name">
-              Hero Name:
-              <input id="hero-name" onChange={handleNameChange} value={selectedHero.name} placeholder="Hero Name" />
+              Hero name:
+              <input
+                id="hero-name"
+                value={heroName}
+                onChange={handleNameChange}
+                placeholder="Hero name"
+              />
             </label>
           </div>
-          <button type="button">Go Back</button>
-          <button type="button" onClick={save}>Save</button>
+          <button type="button">go back</button>
+          <button onClick={save} type="button">save</button>
         </div>
       )
       : (
-        <h3>No hero detected</h3>
-
+        <h3>
+          There is no hero with id=
+          {heroId}
+        </h3>
       )
+
   );
 }
 
-Detail.propTypes = {
-  selectedHero: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-  }).isRequired,
+HeroDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  selectedHero: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+  }).isRequired,
 };
 
 function mapStateToProps({ selectedHero }) {
   return {
-    hero: selectedHero,
+    selectedHero,
   };
 }
 
-export default connect(mapStateToProps)(Detail);
+export default connect(mapStateToProps)(HeroDetail);
