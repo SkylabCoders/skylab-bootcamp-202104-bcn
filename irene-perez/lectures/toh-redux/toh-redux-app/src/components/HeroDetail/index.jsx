@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 import HEROES from '../../constans/heroes';
 import './HeroDetail.css';
+import { updateHero } from '../../redux/actions/actionCreators';
 
-function HeroDetail() {
+function HeroDetail({ selectedHero }) {
   const { heroId } = useParams();
-  const [selectedHero, setSelectHero] = useState();
+  const [hero, setSelectHero] = useState(selectedHero);
+
   useEffect(() => {
-    setSelectHero(HEROES.find((hero) => hero.id === +heroId));
+    setSelectHero(HEROES.find((current) => current.id === +heroId));
   }, [heroId]);
 
   function handleNameChange(event) {
@@ -58,5 +62,18 @@ function HeroDetail() {
         </div>
       )
   );
+
+  HeroDetail.protoTypes = {
+    hero: PropTypes.shape({
+      id: PropTypes.name
+
+    }).isRequired
+  };
+
+  function mapStateToProps({ selectedHero }) {
+    return {
+      selectedHero
+    };
+  }
 }
-export default HeroDetail;
+export default connect(mapStateToProps)(HeroDetail);
