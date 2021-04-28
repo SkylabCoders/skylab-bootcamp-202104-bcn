@@ -23,7 +23,6 @@ function App() {
         <Switch>
           <Route exact path="/heroes" components={HeroesList} />
           <Route exact path="/heroes/:heroId" components={Details} />
-          <Route exact path="/dashboard" components={Dashboard} />
           <Redirect to="/heroes" />
         </Switch>
       </Router>
