@@ -8,7 +8,6 @@ import Dashboard from './components/Dashboard';
 import tasks from './components/Tasks';
 import NotFound from './components/NotFound';
 import TaskDetail from './components/TaskDetail';
-import './styles.css';
 import './App.css';
 
 function App() {
