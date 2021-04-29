@@ -1,8 +1,8 @@
-.form-create {
+.label-create {
     margin-top: 50px;
 }
 
-.form-create__input {
+.label-create__input {
     width: 40%;
     outline: none;
     border: 1px solid #1fab89;
@@ -10,7 +10,7 @@
     padding: 10px 10px;
 }
 
-.form-create__button {
+.label-create__button {
     width: 8%;
     outline: none;
     border: 1px solid #1fab89;
