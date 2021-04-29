@@ -2,7 +2,7 @@ import HEROES from '../../constants/heroes-mock';
 import actionTypes from './actionTypes';
 
 // SE LAS PASAMOS AL REDUCER Y ALLI SE HACE EL SWITCH, EL REDUCER SE COMUNICA COM EL STORE
-export function loadHeroes() {
+export default function loadHeroes() {
   return {
     type: actionTypes.LOAD_HEROES
   };
