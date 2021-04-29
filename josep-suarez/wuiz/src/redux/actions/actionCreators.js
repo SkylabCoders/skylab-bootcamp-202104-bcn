@@ -24,3 +24,9 @@ export function modifyTask(task) {
     task
   };
 }
+export function deleteTasksSelected(taskSelected) {
+  return {
+    type: actionTypes.DELETE_ALL,
+    taskSelected
+  };
+}

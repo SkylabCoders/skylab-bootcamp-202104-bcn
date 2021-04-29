@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <h1>TO-DO List</h1>
+        <h1 className="titleTo">TO-DO List</h1>
         <HeaderToDo />
         <Switch>
           <Route path="/" exact component={TaskSite} />
