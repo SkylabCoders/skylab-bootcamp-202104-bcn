@@ -13,7 +13,7 @@ const toDoReducer = (tasks = [], action) => {
       break;
 
     case actionTypes.DELETE_TASK:
-      listOfTasksUpdated = tasks.filter((task) => task.id !== action.task.id);
+      listOfTasksUpdated = tasks.filter((task) => task.id !== action.task);
       break;
 
     case actionTypes.UPDATE_TASKS:
