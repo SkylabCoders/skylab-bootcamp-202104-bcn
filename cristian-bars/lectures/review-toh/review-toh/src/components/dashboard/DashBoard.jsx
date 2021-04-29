@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeroDetail = () => (
+const DashBoard = () => (
   <main>
     <h2> Top Heroes</h2>
     <div className="heroes-menu">
@@ -9,4 +9,4 @@ const HeroDetail = () => (
   </main>
 );
 
-export default HeroDetail;
+export default DashBoard;
