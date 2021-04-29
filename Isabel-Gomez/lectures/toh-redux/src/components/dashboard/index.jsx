@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { loadHeroes } from '../../redux/actions/actionCreators';
+import { connect } from 'react-redux';
 import './dashboard.css';
+import { PropTypes } from 'prop-types';
+import { loadHeroes } from '../../redux/actions/actionCreators';
 
-const Dashboard = ({ heroes, dispatch }) => {
+function Dashboard({ heroes, dispatch }) {
   useEffect(() => {
-    dispatch(loadHeroes());
+    if (!heroes.length) dispatch(loadHeroes());
   }, []);
+
   return (
     <>
       <h2>Top Heroes</h2>
@@ -17,15 +18,17 @@ const Dashboard = ({ heroes, dispatch }) => {
       </div>
     </>
   );
-};
+}
 
 Dashboard.propTypes = {
   heroes: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (store) => ({
-  heroes: store.heroes,
-});
+function mapStateToProps(store) {
+  return {
+    heroes: store.heroes,
+  };
+}
 
 export default connect(mapStateToProps)(Dashboard);
