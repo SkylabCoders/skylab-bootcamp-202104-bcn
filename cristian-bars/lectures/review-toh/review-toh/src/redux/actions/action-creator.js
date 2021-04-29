@@ -14,3 +14,13 @@ export function getHeroById(heroId) {
     hero
   };
 }
+
+export function createHero(hero) {
+  const indexes = HEROES.map((x) => x.id);
+  const maxIndex = indexes.indexOf(Math.max(...indexes));
+  const updatedHeroes = [...HEROES, { id: maxIndex + 1, name: hero }];
+  return {
+    type: actionTypes.CREATE_HERO,
+    hero: updatedHeroes
+  };
+}

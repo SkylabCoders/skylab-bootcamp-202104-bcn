@@ -4,6 +4,8 @@ function singleHeroReducer(hero = {}, action) {
   switch (action.type) {
     case actionTypes.LOAD_HERO:
       return hero;
+    case actionTypes.CREATE_HERO:
+      return hero;
     default:
       return hero;
   }
