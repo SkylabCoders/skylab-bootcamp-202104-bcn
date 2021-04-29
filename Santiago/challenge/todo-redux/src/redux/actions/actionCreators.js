@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 
-export default function loadTasks() {
+export function loadTasks() {
   return {
     type: actionTypes.LOAD_TASKS
   };

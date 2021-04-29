@@ -8,7 +8,7 @@ function TasksReducer(tasks = [], action) {
     case actionTypes.ADD_TASK:
       return [...tasks, action.newTask];
     case actionTypes.DELETE_TASK:
-      return tasks.filter((task) => task.id !== task.heroId);
+      return tasks.filter((task) => task.id !== action.taskId);
     default:
       return tasks;
   }
