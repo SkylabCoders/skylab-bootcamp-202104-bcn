@@ -39,10 +39,10 @@ const Heroes = ({ heroes, dispatch }) => {
       </div>
 
       <ul className="heroes">
-        {heroes.map((hero) => (
+        {heroes.map((hero, index) => (
           <li key={hero.id}>
             <Link to={`/heroes/${hero.id}`}>
-              <span className="badge">{hero.id}</span>
+              <span className="badge">{index + 1}</span>
               {' '}
               {hero.name}
             </Link>

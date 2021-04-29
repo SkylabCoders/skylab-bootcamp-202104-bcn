@@ -1,3 +1,4 @@
+import shortId from 'shortid';
 import actionTypes from './actionTypes';
 import HEROES from '../../constants/heroes.mock';
 
@@ -8,10 +9,10 @@ export function loadHeroes() {
 }
 
 export function addHero(heroName) {
-  const nextId = HEROES.length;
+  const id = shortId.generate();
   return {
     type: actionTypes.ADD_HERO,
-    hero: { id: nextId, name: heroName },
+    hero: { id, name: heroName },
   };
 }
 
