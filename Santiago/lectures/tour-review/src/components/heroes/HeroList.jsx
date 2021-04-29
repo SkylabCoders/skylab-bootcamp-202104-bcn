@@ -11,6 +11,7 @@ const HeroList = ({ heroes, dispatch }) => {
   return (
     <main>
       <h2>HERO LIST</h2>
+      <h3>Full heroe list</h3>
       <div>
         {
             heroes.map((hero) => (
