@@ -14,8 +14,10 @@ function List({ heroes, dispatch }) {
     dispatch(deleteHero(heroId));
   }
 
-  function handleAdd(hero) {
-    dispatch(addHero(hero));
+  function handleAdd() {
+    const inputNewHero = document.getElementById('heroInputCreation');
+    const heroNew = { id: (heroes[heroes.length - 1].id + 1), name: inputNewHero.value };
+    dispatch(addHero(heroNew));
   }
 
   return (
@@ -23,10 +25,8 @@ function List({ heroes, dispatch }) {
       <div>
         <h2>My Heroes</h2>
         <p>Hero name:</p>
-        <input />
-        {heroes.map((hero) => (
-          <button type="button" className="add-button" onClick={() => handleAdd(hero)} title="delete hero"> Add hero</button>
-        ))}
+        <input type="text" id="heroInputCreation" />
+        <button type="button" onClick={() => handleAdd()}>Add</button>
 
       </div>
       <ul className="heroes">
