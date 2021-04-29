@@ -2,20 +2,20 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadHeroes } from '../../redux/actions/actionCreators';
+import { loadTasks } from '../../redux/actions/actionCreators';
 import './dashboard.css';
 
-const Dashboard = ({ heroes, dispatch }) => {
+const Dashboard = ({ tasks, dispatch }) => {
   useEffect(() => {
-    if (!heroes.length) dispatch(loadHeroes());
+    if (!tasks.length) dispatch(loadTasks());
   }, []);
 
   return (
     <>
       <h2>Top Heroes</h2>
-      <div className="heroes-menu">
-        {heroes.slice(1, 5).map(({ id, name }) => (
-          <Link to={`/heroes/${id}`} key={id}>
+      <div className="tasks-menu">
+        {tasks.slice(1, 5).map(({ id, name }) => (
+          <Link to={`/tasks/${id}`} key={id}>
             {name}
           </Link>
         ))}
@@ -26,13 +26,13 @@ const Dashboard = ({ heroes, dispatch }) => {
 };
 
 Dashboard.propTypes = {
-  heroes: PropTypes.shape([]).isRequired,
+  tasks: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(store) {
   return {
-    heroes: store.heroes,
+    tasks: store.tasks,
   };
 }
 
