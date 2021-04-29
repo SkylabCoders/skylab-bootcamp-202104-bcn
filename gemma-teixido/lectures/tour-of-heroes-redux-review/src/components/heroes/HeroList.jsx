@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { loadHeroes } from '../redux/actions/actionCreator';
 
 const HeroList = ({ heroes, dispatch }) => {
-  // eslint-disable-next-line no-debugger
-  debugger;
   useEffect(() => {
     if (!heroes.length) {
       dispatch(loadHeroes());
