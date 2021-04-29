@@ -1,8 +1,8 @@
 import React from 'react';
-import createTask from './createTask.css';
+import './createTask.css';
 
-const CreateTask = () => {
-
-};
+const CreateTask = () => (
+  <h3>new task</h3>
+);
 
 export default CreateTask;

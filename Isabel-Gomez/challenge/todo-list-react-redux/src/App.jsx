@@ -1,8 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './redux/stores/index';
-
 import './App.css';
+import store from './redux/store/store';
 import CreateTask from './components/createTask/CreateTask';
 
 function App() {
