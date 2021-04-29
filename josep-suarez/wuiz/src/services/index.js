@@ -1,4 +1,4 @@
-const tasks = [
+const TASKS = [
   {
     id: 1,
     task: 'Aprender a testear'
@@ -13,4 +13,4 @@ const tasks = [
   }
 ];
 
-export default tasks;
+export default TASKS;

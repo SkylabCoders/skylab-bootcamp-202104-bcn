@@ -1,10 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 import actionTypes from './actionTypes';
 
-export function PrintTask(task) {
+export function PrintTask() {
   return {
-    type: actionTypes.PRINT_TASK,
-    task
+    type: actionTypes.PRINT_TASK
   };
 }
 export function addTask(task) {

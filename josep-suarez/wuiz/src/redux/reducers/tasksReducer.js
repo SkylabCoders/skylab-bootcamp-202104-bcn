@@ -1,11 +1,11 @@
 /* eslint-disable consistent-return */
 import actionTypes from '../actions/actionTypes';
+import TASKS from '../../services/index';
 
 function taskReducer(tasks = [], action) {
   switch (action.type) {
     case actionTypes.PRINT_TASK:
-      tasks.forEach((task) => task);
-      break;
+      return TASKS;
     case actionTypes.ADD_TASK:
       return [
         ...tasks,
