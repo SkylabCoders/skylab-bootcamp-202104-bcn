@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-// import heroesReducer from './heroesReducer';
+import tasksReducer from './tasksReducer';
 
 const rootReducer = combineReducers({
-//   heroes: heroesReducer,
-//   selectedHero: selectedHeroReducer
+  tasks: tasksReducer
+
 });
 
 export default rootReducer;

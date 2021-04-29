@@ -3,7 +3,8 @@ import actionTypes from './actionType';
 
 export function loadTasks() {
   return {
-    type: actionTypes.LOAD_TASKS
+    type: actionTypes.LOAD_TASKS,
+    TASKS
   };
 }
 
@@ -24,15 +25,6 @@ export function deleteTask(taskId) {
 export function modifyTask(task) {
   return {
     type: actionTypes.MODIFY_TASK,
-    task
-  };
-}
-
-export function getTask(taskId) {
-  const task = TASKS.find((current) => current.id === +taskId);
-
-  return {
-    type: actionTypes.LOAD_TASK,
     task
   };
 }
