@@ -2,11 +2,26 @@ import TASKS from '../../constants/tasks.mock';
 import actionTypes from '../actions/actionTypes';
 
 function tasksReducer(tasks = [], action) {
-  if (action.type === actionTypes.LOAD_TASKS) {
-    // eslint-disable-next-line no-debugger
-    debugger;
-    return TASKS;
+  switch (action.type) {
+    case actionTypes.LOAD_TASKS:
+      return TASKS;
+    case actionTypes.DELETE_TASK:
+      return tasks.filter((task) => task.id !== action.taskId);
+    case actionTypes.ADD_TASK:
+      return [
+        ...tasks,
+        action.task,
+      ];
+    case actionTypes.UPDATE_TASK:
+      return tasks.map(
+        (task) => (task.id === action.task.id
+          ? { ...task, ...action.task }
+          : task),
+      );
+    default:
+      break;
   }
+
   return tasks;
 }
 
