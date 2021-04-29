@@ -3,9 +3,9 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      innit
-    </div>
+    <header>
+      <h2>To Do List</h2>
+    </header>
   );
 }
 
