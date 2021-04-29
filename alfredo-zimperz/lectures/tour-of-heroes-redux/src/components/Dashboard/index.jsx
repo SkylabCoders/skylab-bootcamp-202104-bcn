@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadTasks } from '../../redux/actions/actionCreators';
@@ -10,19 +9,21 @@ const Dashboard = ({ tasks, dispatch }) => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
 
+  const pendingTasks = tasks.filter((task) => !task.done).length;
+
   return (
     <>
-      <h2>Older Tasks</h2>
-      <div className="tasks-menu">
-        {tasks.slice(1, 5).map(({
-          id, title, description, done,
-        }) => (
-          <Link to={`/tasks/${id}`} key={id}>
-            {`${title}, ${description}, done: ${done}`}
-          </Link>
-        ))}
-
-      </div>
+      <h2>Dashboard</h2>
+      <h3>
+        Total tasks:
+        {' '}
+        {tasks.length}
+      </h3>
+      <h3>
+        Pending tasks:
+        {' '}
+        {pendingTasks}
+      </h3>
     </>
   );
 };

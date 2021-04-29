@@ -7,11 +7,12 @@ const Task = ({ task, handleDelete }) => (
   <div key={task.id} className="task">
     <div className="task__text">
       <Link to={`/tasks/${task.id}`}>
-        <h1 className={task.done && 'done'}>{task.title}</h1>
+        <h1 className={task.done ? 'done' : ''}>{task.title}</h1>
         <p>{task.description}</p>
       </Link>
     </div>
     <div className="task__actions">
+      {handleDelete && (
       <button
         className="delete"
         title="delete task"
@@ -20,6 +21,8 @@ const Task = ({ task, handleDelete }) => (
       >
         x
       </button>
+      )}
+
     </div>
   </div>
 );
@@ -31,7 +34,11 @@ Task.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
   }).isRequired,
-  handleDelete: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func,
+};
+
+Task.defaultProps = {
+  handleDelete: null,
 };
 
 export default Task;
