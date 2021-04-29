@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./todo-list.css">
+    <title>Todo's</title>
+</head>
+<body onload="handleLoadTasks()">
+
+    <main >
+        <section class="input-task-elements">
+            <input type="text" id= "new-task" class="input-task-elements__input">
+            <button onclick="handleCreateTask(); clearInput()" class="input-task-elements__button">Create Task</button>
+        </section>
+        <section class="list-section">
+            <h1>Things to Do</h1>
+            <ul class="list-section__task-list task-list"></ul>
+        </section>
+    </main>
+
+<script src="todo-list.js"></script>
+<script src="../../actions/actions.js"></script>
+<script src="../../dispatcher.js"></script>
+<script src="../../store/store.js"></script>
+</body>
+
+</html>

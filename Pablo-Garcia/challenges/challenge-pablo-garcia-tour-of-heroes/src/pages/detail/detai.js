@@ -1,14 +1,11 @@
-
-
-const URL= '../../../src/common/utils/dataHeroes.json'
+const URL= '../../common/services/mock/dataHeroes.json'
 
 const getIdFromParam = () => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const id = urlParams.get('id')
+    const id = urlParams.get('id');
     return id;
 }
-
 
     const getHeroe = (data_id) => {
 

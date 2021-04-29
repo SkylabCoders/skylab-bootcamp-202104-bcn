@@ -1,12 +1,13 @@
-const URL= '../../../src/common/utils/dataHeroes.json'
-const getDataJson = () => {
+const URL= '../../common/services/mock/dataHeroes.json'
+const getDataJson = (qty_data = null) => {
     fetch(URL)
         .then(function(res) {
             const heroes = res.json();
             return heroes;
         })
         .then(function(data){
-           const heroesSlide = data.slice(data.length-4, data.length);
+            const heroesSlide = qty_data !== null ? data.slice(0 , qty_data) : data;
+
            const wrapperTopHeroesSlide = document.createElement('ul');
             wrapperTopHeroesSlide.setAttribute('class', 'slideTopHeroes');
             heroesSlide.forEach(({id, name}) =>{

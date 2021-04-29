@@ -1,0 +1,47 @@
+body {
+  background-image: url("../image/pokedex1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-transform: uppercase;
+  font-family: 'Press Start 2P', cursive;
+}
+
+body ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: flex;
+}
+
+body li {
+  text-transform: lowercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body li img {
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 25px;
+  height: 120px;
+  width: 100px;
+}
+/*# sourceMappingURL=detail.css.map */

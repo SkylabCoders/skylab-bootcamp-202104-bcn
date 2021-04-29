@@ -1,0 +1,56 @@
+@import './header.scss';
+
+.pokemons {
+    color: white;
+    background-image: url();
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    position: relative;
+    &__list{
+        margin: 20px 200px;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+    }
+}
+
+.pokemon-top__item:hover {
+border-radius: 50%;
+background: radial-gradient(red, yellow, rgb(30, 144, 255))
+}
+
+.pokemons__buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button {
+    color: white;
+    outline: none;
+    border: none;
+    width: 100px;
+    height: 30px;
+    background: none;
+    position: absolute;
+    font-size: 30px;
+    cursor: pointer;
+    &__right{
+        right: 30px;
+        top:150px;
+    }
+    &__left{
+        left:30px;
+        top:150px;
+    }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>Pokemon</title>
+</head>
+<header>
+    <h1><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="Pokemon" width="210px" height="90px"> </h1>
+</header>
+<body class="main-pokemon">
+    <div id="pokemon-select" onload="getPokemon(10,10)"></div>
+    <div id="photos-pokemon"></div>
+    
+</body>
+<footer id="button-page">
+    <button onclick="beforePokemons()" id="back-button">Back</button>
+    <button onclick="nextPokemons()"id="next-button">Mostrar Pokemons</button>
+</footer>
+<script src="../scripts/services.js"></script>
+<script src="../scripts/components.js"></script>
+</html>

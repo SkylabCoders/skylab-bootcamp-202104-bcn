@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  background-color: #f3f3f3;
+}
+
+.main-content {
+  padding: 50px 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 70px;
+}
+
+form label {
+  margin-right: 10px;
+}
+
+form .input-field {
+  padding: 12px 10px;
+  width: 250px;
+  height: 25px;
+}
+
+form .input-field:focus {
+  outline: none;
+}
+
+.btn {
+  padding: 4px 10px;
+  font-size: 20px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #1fc91f;
+  border-radius: 100%;
+  color: white;
+  font-weight: bolder;
+}
+
+.btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.tasks {
+  margin-top: 30px;
+}
+
+.tasks .title {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.tasks .title--invisible {
+  display: none;
+}
+
+.tasks .buda-img {
+  display: none;
+}
+
+.tasks .buda-img--visible {
+  display: block;
+  width: 355px;
+  margin: 0 auto;
+  -webkit-animation: buda-img---visible 5s ease-in-out infinite both;
+          animation: buda-img---visible 5s ease-in-out infinite both;
+}
+
+.tasks .buda-message {
+  display: none;
+}
+
+.tasks .buda-message--visible {
+  display: block;
+  margin-top: -40px;
+  font-family: 'Bungee', cursive;
+  text-align: center;
+  font-size: 30px;
+  color: #65bfcf;
+  text-shadow: 1px 1.5px #303030;
+}
+
+.tasks .tasks__list {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.tasks .tasks__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 0;
+  padding: 10px 8px;
+  background-color: #fdfdfd;
+  -webkit-box-shadow: 4px 4px 10px -10px rgba(0, 0, 0, 0.6);
+          box-shadow: 4px 4px 10px -10px rgba(0, 0, 0, 0.6);
+}
+
+.tasks .tasks__list-item .task-button {
+  color: white;
+  margin: 0 2px;
+  padding: 2px 2px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 40px;
+}
+
+.tasks .tasks__list-item .task-button__edit {
+  font-size: 25px;
+  margin-left: auto;
+}
+
+.tasks .tasks__list-item .task-button__delete {
+  font-size: 25px;
+}
+
+.tasks .tasks__list-item .task-button__editOk {
+  display: none;
+  background-color: rgba(236, 134, 0, 0.7);
+  padding: 5px 10px;
+}
+
+.tasks .tasks__list-item .task-button__editOk--visible {
+  display: block;
+}
+
+.tasks .tasks__list-item .task-button__editOk:hover {
+  background-color: #ec8600;
+}
+
+.tasks .tasks__list-item p {
+  margin: 0 5px;
+}
+
+.tasks .tasks__list-item .edit-input {
+  display: none;
+  position: absolute;
+  background-color: #fdfdfd;
+  top: 8px;
+  left: 4px;
+  border: none;
+  color: #929292;
+  padding: 20px 10px;
+  width: 250px;
+  height: 25px;
+  outline: none;
+  font-style: italic;
+  z-index: 1;
+}
+
+.tasks .tasks__list-item .edit-input--visible {
+  display: block;
+}
+
+@-webkit-keyframes buda-img---visible {
+  0% {
+    -webkit-transform: translate(0, -70px);
+            transform: translate(0, -70px);
+  }
+  50% {
+    -webkit-transform: translate(0px, -50px);
+            transform: translate(0px, -50px);
+  }
+  100% {
+    -webkit-transform: translate(0, -70px);
+            transform: translate(0, -70px);
+  }
+}
+
+@keyframes buda-img---visible {
+  0% {
+    -webkit-transform: translate(0, -70px);
+            transform: translate(0, -70px);
+  }
+  50% {
+    -webkit-transform: translate(0px, -50px);
+            transform: translate(0px, -50px);
+  }
+  100% {
+    -webkit-transform: translate(0, -70px);
+            transform: translate(0, -70px);
+  }
+}
+/*# sourceMappingURL=style.css.map */
