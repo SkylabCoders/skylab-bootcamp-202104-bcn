@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import { PropTypes } from 'prop-types';
 import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
-import './HeroDetail.css';
+import './heroDetail.css';
 
 function HeroDetail({ selectedHero, dispatch }) {
   const { heroId } = useParams();
