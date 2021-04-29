@@ -7,7 +7,7 @@ const Task = ({ task, handleDelete }) => (
   <div key={task.id} className="task">
     <div className="task__text">
       <Link to={`/tasks/${task.id}`}>
-        <h1 className={task.done ? 'done' : ''}>{task.title}</h1>
+        <h4 className={task.done ? 'done' : ''}>{task.title}</h4>
         <p>{task.description}</p>
       </Link>
     </div>

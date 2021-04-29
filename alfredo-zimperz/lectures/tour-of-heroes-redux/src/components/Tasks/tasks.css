@@ -11,22 +11,4 @@
           align-items: center;
   width: 100%;
 }
-
-.task {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  margin-top: 16px;
-  padding: 16px;
-  background-color: #cdedf0;
-}
-
-.task .done {
-  text-decoration: line-through;
-}
-
-.task__text {
-  width: 80%;
-}
 /*# sourceMappingURL=tasks.css.map */
