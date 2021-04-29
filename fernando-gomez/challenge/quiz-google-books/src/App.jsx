@@ -9,11 +9,11 @@ import { Provider } from 'react-redux';
 import NotFound from './Components/NotFound';
 import Welcome from './Components/MainMenu';
 import store from './redux/store';
-import TasksList from './Components/TasksList';
+import TasksList from './Components/TasksList/TasksList';
 
 function App() {
   return (
-    <>
+    <main className="main">
       <Provider store={store}>
         <Welcome />
         <TasksList />
@@ -24,7 +24,7 @@ function App() {
           </Switch>
         </Router>
       </Provider>
-    </>
+    </main>
   );
 }
 

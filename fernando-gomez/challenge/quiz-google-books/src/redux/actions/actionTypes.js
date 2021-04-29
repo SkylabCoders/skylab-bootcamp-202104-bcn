@@ -3,6 +3,8 @@ const actionTypes = {
   DELETE_TASK: 'DELETE_TASK',
   UPDATE_TASKS: 'UPDATE_TASKS',
   LOAD_TASKS: 'LOAD_TASKS',
+  EDIT_TASK: 'EDIT_TASK',
+  DELETE_SEVERAL_TASKS: 'DELETE_SEVERAL_TASKS',
 };
 
 export default actionTypes;

@@ -1,8 +1,9 @@
 import React from 'react';
+import './form.css';
 
 const Welcome = () => (
   <>
-    <h1>Your tasks list</h1>
+    <h1 className="main-title">Your tasks list</h1>
   </>
 );
 
