@@ -9,7 +9,7 @@ function taskReducer(tasks = [], action) {
     case actionTypes.ADD_TASK:
       return [
         ...tasks,
-        action.taskId
+        action.task
       ];
     case actionTypes.DELETE_TASK:
       return tasks.filter((task) => task.id !== action.taskId);

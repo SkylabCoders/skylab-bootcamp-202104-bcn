@@ -3,6 +3,7 @@ import {
   BrowserRouter, Route, Switch
 } from 'react-router-dom';
 import TaskSite from './componentes/TaskSite';
+import HeaderToDo from './componentes/Header';
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <>
       <BrowserRouter>
         <h1>TO-DO List</h1>
+        <HeaderToDo />
         <Switch>
           <Route path="/" exact component={TaskSite} />
         </Switch>

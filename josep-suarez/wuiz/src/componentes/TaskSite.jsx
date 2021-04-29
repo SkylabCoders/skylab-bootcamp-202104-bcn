@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-// import tasks from '../services/index';
 import { PrintTask } from '../redux/actions/actionCreators';
 
 function TaskSite({ tasks, dispatch }) {
