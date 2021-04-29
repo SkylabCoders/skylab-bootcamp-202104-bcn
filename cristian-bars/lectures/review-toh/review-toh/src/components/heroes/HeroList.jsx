@@ -14,7 +14,9 @@ const HeroList = ({ heroes, dispatch }) => {
     <main>
       <h2> Top Heroes</h2>
       <div className="heroes-menu">
-        Llista
+        {
+        heroes.length && heroes.map((hero) => <li key={hero.id}>{hero.name}</li>)
+}
       </div>
     </main>
   );
