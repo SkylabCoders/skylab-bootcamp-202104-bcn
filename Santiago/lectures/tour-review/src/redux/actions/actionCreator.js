@@ -8,7 +8,7 @@ export function loadHeroes() {
   };
 }
 
-export function getHeroById({ heroId }) {
+export function getHeroById(heroId) {
   const hero = HEROES.find((current) => current.id === +heroId);
   return {
     type: actionTypes.LOAD_HERO,
