@@ -1,4 +1,4 @@
-const HEROES = [
+const TASKS = [
   { id: 11, name: 'Dr Nice' },
   { id: 12, name: 'Narco' },
   { id: 13, name: 'Bombasto' },
@@ -11,4 +11,4 @@ const HEROES = [
   { id: 20, name: 'Tornado' },
 ];
 
-export default HEROES;
+export default TASKS;
