@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { loadTasks } from '../../redux/actions/actionCreators';
+import { deleteTask, loadTasks } from '../../redux/actions/actionCreators';
 
 function TasksList({ tasks, dispatch }) {
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
+
+  const handleDelete = (id) => {
+    dispatch(deleteTask(id));
+  };
 
   return (
     <>
@@ -18,6 +22,7 @@ function TasksList({ tasks, dispatch }) {
             {' '}
             {task.value}
             {' '}
+            <button type="button" onClick={() => handleDelete(task.taskId)}>Delete</button>
           </li>
         ))
     }
