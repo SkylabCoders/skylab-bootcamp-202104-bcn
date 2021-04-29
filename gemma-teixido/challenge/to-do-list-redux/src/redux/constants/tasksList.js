@@ -1,8 +1,8 @@
 const TASKS = [
-  { id: 1, name: 'Escuchar Álbum de Ariana Grande' },
-  { id: 2, name: 'Grabar Hit de Skylab' },
-  { id: 3, name: 'Hacer el challenge de to-do-list' },
-  { id: 4, name: 'Comprar chuches' }
+  { id: 1, name: 'Listen new Album of Ariana Grande' },
+  { id: 2, name: 'Record Skylab\'s new hit' },
+  { id: 3, name: 'Finish redux challenge' },
+  { id: 4, name: 'Buy candy for my co-workers of Skylab' }
 ];
 
 export default TASKS;
