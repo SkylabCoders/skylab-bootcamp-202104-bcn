@@ -22,6 +22,8 @@ const InputComponent = ({ tasks, dispatch }) => {
 
   const handleAddTask = () => {
     newTask.id = idGenerator(tasks);
+    const inputField = document.getElementById('input-task');
+    inputField.value = '';
     dispatch(addTask(newTask));
   };
 
