@@ -1,6 +1,6 @@
 import actionTypes from '../actions/actionTypes';
 
-const singleHeroReducers = (hero = {}, action) => {
+const SingleHeroReducers = (hero = {}, action) => {
   switch (action.types) {
     case actionTypes.LOAD_HERO:
       return hero;
@@ -9,4 +9,4 @@ const singleHeroReducers = (hero = {}, action) => {
   }
 };
 
-export default singleHeroReducers;
+export default SingleHeroReducers;
