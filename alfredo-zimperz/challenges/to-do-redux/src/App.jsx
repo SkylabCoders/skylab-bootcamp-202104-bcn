@@ -1,11 +1,36 @@
 import React from 'react';
+import {
+  BrowserRouter as Router, Switch, Route, Link,
+} from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import Game from './components/Game';
+import Ranking from './components/Ranking';
+import NotFound from './components/NotFoun';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello, World!</h1>
-    </div>
+    <>
+      <Router>
+        <header className="header">
+          <h1>The Book Quiz</h1>
+          <nav>
+            <Link to="/">Dashboard</Link>
+            <Link to="/game">Game</Link>
+            <Link to="/ranking">Ranking</Link>
+          </nav>
+        </header>
+        <main className="main">
+          <Switch>
+            <Route path="/" component={Dashboard} />
+            <Route path="/game" component={Game} />
+            <Route path="/ranking" component={Ranking} />
+            <Route component={NotFound} />
+          </Switch>
+        </main>
+      </Router>
+
+    </>
   );
 }
 
