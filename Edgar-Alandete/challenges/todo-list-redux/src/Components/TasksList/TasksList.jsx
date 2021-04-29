@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { deleteTask, loadTasks } from '../../redux/actions/actionCreators';
+import { deleteTask, loadTasks, createTask } from '../../redux/actions/actionCreators';
 
 function TasksList({ tasks, dispatch }) {
+  const [taskValue, setTaskValue] = useState();
+
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
@@ -12,9 +14,31 @@ function TasksList({ tasks, dispatch }) {
     dispatch(deleteTask(id));
   };
 
+  function getTaskValue(event) {
+    setTaskValue(event.target.value);
+  }
+
+  function handleCreate() {
+    tasks.sort((firstHero, secondHero) => {
+      if (firstHero.id > secondHero.id) {
+        return 1;
+      }
+      if (firstHero.id < secondHero.id) {
+        return -1;
+      }
+      return 0;
+    });
+
+    const newId = tasks[tasks.length - 1].id + 1;
+    dispatch(createTask({ id: newId, value: taskValue, status: 1 }));
+  }
+
   return (
     <>
       <h2>All tasks</h2>
+      <input type="text" onChange={getTaskValue} />
+      {' '}
+      <button type="button" onClick={() => handleCreate()}>Create</button>
       <ul>
         {
         tasks && tasks.map((task) => (
