@@ -1,13 +1,19 @@
 import React from 'react';
 import {
-  BrowserRouter, Route, Switch, Link
+  BrowserRouter, Route, Switch
 } from 'react-router-dom';
+import QuestionSite from './componentes/QuestionSite';
 import './App.css';
 
 function App() {
   return (
     <>
-      <h1>QUIZ</h1>
+      <BrowserRouter>
+        <h1>QUIZ</h1>
+        <Switch>
+          <Route path="/" exact component={QuestionSite} />
+        </Switch>
+      </BrowserRouter>
     </>
   );
 }

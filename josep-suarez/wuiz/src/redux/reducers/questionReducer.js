@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 // import ANSWER from '';
 import actionTypes from '../actions/actionTypes';
 
