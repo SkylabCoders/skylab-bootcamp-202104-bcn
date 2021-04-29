@@ -4,9 +4,11 @@ import {
   Switch,
   Route,
   Redirect,
-  Link,
+  // Link,
 } from 'react-router-dom';
 import './App.css';
+import Dashboard from './components/Dashboard';
+import Task from './components/Task';
 
 function App() {
   return (
