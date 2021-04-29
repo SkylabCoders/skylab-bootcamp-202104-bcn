@@ -7,7 +7,7 @@ import './taskDetail.css';
 
 const TaskDetail = ({ selectedTask, dispatch }) => {
   const { taskId } = useParams();
-  const [taskName, setTaskName] = useState(selectedTask?.name);
+  const [taskTitle, setTaskTitle] = useState(selectedTask?.title);
   const history = useHistory();
 
   useEffect(() => {
@@ -15,22 +15,22 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
   }, [taskId]);
 
   useEffect(() => {
-    setTaskName(selectedTask.name);
+    setTaskTitle(selectedTask.title);
   }, [selectedTask]);
 
   const handleNameChange = (event) => {
-    setTaskName(event.target.value);
+    setTaskTitle(event.target.value);
   };
 
   const save = () => {
-    dispatch(updateTask({ id: selectedTask.id, name: taskName }));
+    dispatch(updateTask({ id: selectedTask.id, title: taskTitle }));
   };
 
   return (
     selectedTask?.id ? (
       <section className="task">
         <h2>
-          {taskName?.toUpperCase()}
+          {taskTitle?.toUpperCase()}
           {' '}
           Details
         </h2>
@@ -40,11 +40,11 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
         </div>
         <div>
           <label htmlFor="task-name">
-            Task name:
+            Title
             <input
               id="task-name"
               placeholder="Task name"
-              value={taskName}
+              value={taskTitle}
               onChange={handleNameChange}
             />
           </label>
@@ -68,7 +68,7 @@ TaskDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
   selectedTask: PropTypes.shape({
     id: PropTypes.number,
-    name: PropTypes.string,
+    title: PropTypes.string,
   }).isRequired,
 };
 

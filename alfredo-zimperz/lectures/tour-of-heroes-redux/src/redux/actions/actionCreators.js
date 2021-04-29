@@ -12,7 +12,7 @@ export function addTask(task) {
   const id = shortId.generate();
   return {
     type: actionTypes.ADD_TASK,
-    task: { id, task },
+    task: { id, ...task, done: false },
   };
 }
 

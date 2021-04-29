@@ -6,16 +6,28 @@ import './tasks.css';
 import { loadTasks, addTask, deleteTask } from '../../redux/actions/actionCreators';
 
 const Tasks = ({ tasks, dispatch }) => {
-  const [newTaskName, setNewTaskName] = useState();
+  const [newTaskTitle, setNewTaskTitle] = useState();
+  const [newTaskDescription, setNewTaskDescription] = useState();
 
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
 
-  const handleChangeInput = (event) => setNewTaskName(event.target.value);
+  const handleChangeInput = (event) => {
+    switch (event.target.name) {
+      case 'title':
+        setNewTaskTitle(event.target.value);
+        break;
+      case 'description':
+        setNewTaskDescription(event.target.value);
+        break;
+      default:
+        break;
+    }
+  };
   const saveNewTask = () => {
-    if (newTaskName) {
-      dispatch(addTask(newTaskName));
+    if (newTaskTitle && newTaskDescription) {
+      dispatch(addTask({ title: newTaskTitle, description: newTaskDescription }));
     }
   };
   const handleDelete = (id) => dispatch(deleteTask(id));
@@ -23,13 +35,21 @@ const Tasks = ({ tasks, dispatch }) => {
   return (
     <>
       <h2>My Tasks</h2>
-
       <div>
-        <label htmlFor="new-task" id="new-task">
-          Task name:
+        <h3>New task:</h3>
+        <label htmlFor="new-task-title" id="new-task-title">
+          Title:
           <input
-            htmlFor="new-task"
-            value={newTaskName}
+            name="title"
+            value={newTaskTitle}
+            onChange={handleChangeInput}
+          />
+        </label>
+        <label htmlFor="new-task-description" id="new-task-description">
+          Description:
+          <input
+            name="description"
+            value={newTaskDescription}
             onChange={handleChangeInput}
           />
         </label>
@@ -38,26 +58,30 @@ const Tasks = ({ tasks, dispatch }) => {
         </button>
       </div>
 
-      <ul className="tasks">
-        {tasks.map((task, index) => (
-          <li key={task.id}>
-            <Link to={`/tasks/${task.id}`}>
-              <span className="badge">{index + 1}</span>
-              {' '}
-              {task.name}
-            </Link>
-            <button
-              className="delete"
-              title="delete task"
-              type="button"
-              onClick={() => handleDelete(task.id)}
-            >
-              x
-            </button>
-          </li>
+      <div className="tasks">
+        {tasks.map((task) => (
+          <div key={task.id} className="task">
+
+            <div className="task__text">
+              <Link to={`/tasks/${task.id}`}>
+                <h1>{task.title}</h1>
+                <p>{task.description}</p>
+              </Link>
+            </div>
+            <div className="task__actions">
+              <button
+                className="delete"
+                title="delete task"
+                type="button"
+                onClick={() => handleDelete(task.id)}
+              >
+                x
+              </button>
+            </div>
+          </div>
         ))}
 
-      </ul>
+      </div>
     </>
   );
 };
