@@ -1,19 +1,25 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import './HeroList.css';
-import { loadHeroes } from '../../redux/actions/actionCreators';
+import { deleteHero } from '../../redux/actions/actionCreators';
 
 function HeroList({ heroes, dispatch }) {
-  useEffect(() => {
-    dispatch(loadHeroes());
-  });
+  function deleteHeroSelected(heroId) {
+    dispatch(deleteHero(heroId));
+  }
+
   return (
     <>
       <div>
-        {heroes.map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
-        <button type="button">Delete</button>
+        {heroes.map((hero) => (
+          <li>
+            <Link to={`/detail/${hero.id}`}>{hero.name}</Link>
+            ,
+            <button type="button" onClick={() => deleteHeroSelected(hero.id)}>Delete</button>
+          </li>
+        ))}
       </div>
     </>
   );

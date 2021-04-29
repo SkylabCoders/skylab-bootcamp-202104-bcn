@@ -25,7 +25,7 @@ function App() {
           </nav>
           <Switch>
             <Route path="/" exact component={Dashboard} />
-            <Route path="/heroes" exact component={HeroList} />
+            <Route path="/heroes" component={HeroList} />
             <Route path="/detail/:heroId" component={HeroDetail} />
             <Route component={NotFound} />
           </Switch>
