@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import questionReducer from './questionReducer';
+import taskReducer from './tasksReducer';
 
 const rootReducer = combineReducers({
-  questions: questionReducer
+  tasks: taskReducer
 });
 
 export default rootReducer;
