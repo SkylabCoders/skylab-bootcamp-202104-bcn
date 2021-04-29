@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import './heroes.css';
-import { deleteHero, loadHeroes } from '../../redux/actions/actionCreators';
+import { deleteHero, loadHeroes, addHero } from '../../redux/actions/actionCreators';
 
 function HeroesList({ heroes, dispatch }) {
   useEffect(() => {
@@ -12,8 +12,19 @@ function HeroesList({ heroes, dispatch }) {
   }, []);
 
   function handleDeleteHero(heroId) {
-    debugger;
     dispatch(deleteHero(heroId));
+  }
+
+  // function handleNameChange(event) {
+  //   const heroName = event.target.value;
+  //   return heroName;
+  // }
+
+  function add() {
+    const newName = document.getElementById('hero-name').value;
+    debugger;
+    dispatch(addHero({ id: heroes[heroes.length - 1] + 1, name: newName }));
+    debugger;
   }
 
   return (
@@ -24,10 +35,10 @@ function HeroesList({ heroes, dispatch }) {
           Hero name
           <input
             id="hero-name"
-          // onChange={}
+            // onChange={handleNameChange}
             placeholder="Hero name"
           />
-          <button type="button">Add Hero</button>
+          <button onClick={() => add} type="button">Add Hero</button>
         </label>
       </div>
       <ul className="heroes-list">
