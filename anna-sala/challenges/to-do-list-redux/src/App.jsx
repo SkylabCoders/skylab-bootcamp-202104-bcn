@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Router>
-        <h1>TO DO LIST</h1>
+        <h1 className="page-title">TO DO LIST</h1>
         <Switch>
           <Route exact path="/" component={Dashboard} />
           <Route exact path="/:taskId" component={Task} />
