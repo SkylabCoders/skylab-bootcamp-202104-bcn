@@ -1,48 +1,48 @@
 import shortId from 'shortid';
 import actionTypes from './actionTypes';
-import HEROES from '../../constants/heroes.mock';
+import TASKS from '../../constants/tasks.mock';
 
-export function loadHeroes() {
+export function loadTasks() {
   return {
-    type: actionTypes.LOAD_HEROES,
+    type: actionTypes.LOAD_TASKS,
   };
 }
 
-export function addHero(heroName) {
+export function addTask(task) {
   const id = shortId.generate();
   return {
-    type: actionTypes.ADD_HERO,
-    hero: { id, name: heroName },
+    type: actionTypes.ADD_TASK,
+    task: { id, task },
   };
 }
 
-export function deleteHero(heroId) {
+export function deleteTask(taskId) {
   return {
-    type: actionTypes.DELETE_HERO,
-    heroId,
+    type: actionTypes.DELETE_TASK,
+    taskId,
   };
 }
 
-export function updateHero(hero) {
+export function updateTask(task) {
   return {
-    type: actionTypes.UPDATE_HERO,
-    hero,
+    type: actionTypes.UPDATE_TASK,
+    task,
   };
 }
-export function loadHero(hero) {
+export function loadTask(task) {
   return {
-    type: actionTypes.LOAD_HERO,
-    hero,
+    type: actionTypes.LOAD_TASK,
+    task,
   };
 }
 
-export function getHeroById(heroId) {
-  let hero;
-  const targetHero = HEROES.find((current) => current.id === +heroId);
-  if (targetHero) { hero = targetHero; } else { (hero = {}); }
+export function getTaskById(taskId) {
+  let task;
+  const targetHero = TASKS.find((current) => current.id === +taskId);
+  if (targetHero) { task = targetHero; } else { (task = {}); }
 
   return {
-    type: actionTypes.LOAD_HERO,
-    hero,
+    type: actionTypes.LOAD_TASK,
+    task,
   };
 }
