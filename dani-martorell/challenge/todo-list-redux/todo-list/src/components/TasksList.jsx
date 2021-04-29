@@ -5,7 +5,13 @@ const TasksList = () => (
   <ul className="task-list">
     {
     TASKS.map(({ task }) => (
-      <li className="task-item">{task}</li>
+      <li className="task-item">
+        {task}
+        <div className="task-item__buttons">
+          <button type="button">Delete</button>
+          <button type="button">Done</button>
+        </div>
+      </li>
     ))
       }
   </ul>
