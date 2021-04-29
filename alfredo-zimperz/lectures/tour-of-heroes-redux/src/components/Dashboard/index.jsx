@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadTasks } from '../../redux/actions/actionCreators';
+import Task from '../Task';
 import './dashboard.css';
 
 const Dashboard = ({ tasks, dispatch }) => {
@@ -9,21 +10,27 @@ const Dashboard = ({ tasks, dispatch }) => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
 
-  const pendingTasks = tasks.filter((task) => !task.done).length;
+  const pendingTasks = tasks.filter((task) => !task.done);
 
   return (
     <>
-      <h2>Dashboard</h2>
-      <h3>
-        Total tasks:
-        {' '}
-        {tasks.length}
-      </h3>
-      <h3>
-        Pending tasks:
-        {' '}
-        {pendingTasks}
-      </h3>
+      <div className="dashboard">
+        <h2>Dashboard</h2>
+        <p>
+          Total tasks:
+          {' '}
+          {tasks.length}
+        </p>
+        <p>
+          Pending tasks:
+          {' '}
+          {pendingTasks.length}
+        </p>
+      </div>
+      <div className="pendingTasks">
+        <h3>Pending tasks</h3>
+        {pendingTasks.map((task) => <Task task={task} key={task.id} />)}
+      </div>
     </>
   );
 };

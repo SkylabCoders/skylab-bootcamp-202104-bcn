@@ -6,3 +6,15 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+a {text-decoration: none;}
+
+.main{
+  display: flex;
+  direction: column;
+  align-items: center;
+}
