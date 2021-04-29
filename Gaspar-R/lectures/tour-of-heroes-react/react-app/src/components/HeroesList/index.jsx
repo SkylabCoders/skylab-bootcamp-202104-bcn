@@ -14,6 +14,10 @@ function HeroesList({ heroes, dispatch }) {
     dispatch(deleteHero(heroId));
   }
 
+  // useEffect(() => {
+  //   setHeroName(hero?.hernoName);
+  // }, [hero]);
+
   function handleAddHero() {
     const newHero = document.getElementById('add-hero');
     const lastId = heroes.length;
