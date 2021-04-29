@@ -16,23 +16,21 @@ import HeroesList from './components/HeroesList';
 
 function App() {
   return (
-    <>
-      <Provider store={store}>
-        <BrowserRouter>
-          <h1>Tour of Heroes</h1>
-          <nav>
-            <Link to="/">Dashboard</Link>
-            <Link to="/heroes">Heroes</Link>
-          </nav>
-          <Switch>
-            <Route path="/" exact component={Dashboard} />
-            <Route path="/heroes" exact component={HeroesList} />
-            <Route path="/detail/:heroId" component={HeroDetail} />
-            <Route component={NotFound} />
-          </Switch>
-        </BrowserRouter>
-      </Provider>
-    </>
+    <Provider store={store}>
+      <BrowserRouter>
+        <h1>Tour of Heroes</h1>
+        <nav>
+          <Link to="/">Dashboard</Link>
+          <Link to="/heroes">Heroes</Link>
+        </nav>
+        <Switch>
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/heroes" exact component={HeroesList} />
+          <Route path="/detail/:heroId" component={HeroDetail} />
+          <Route component={NotFound} />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
