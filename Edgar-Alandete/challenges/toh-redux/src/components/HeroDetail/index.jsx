@@ -50,7 +50,7 @@ function HeroDetail({ selectedHero, dispatch }) {
               />
             </label>
           </div>
-          <button type="button" onClick={() => history.goBack}>
+          <button type="button" onClick={() => history.goBack()}>
             Go Back
           </button>
           <button onClick={save} type="button">save</button>
