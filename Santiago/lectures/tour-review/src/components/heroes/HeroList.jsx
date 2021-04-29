@@ -12,7 +12,11 @@ const HeroList = ({ heroes, dispatch }) => {
     <main>
       <h2>HERO LIST</h2>
       <div>
-        aca vienen los heroes
+        {
+            heroes.map((hero) => (
+              <li key={hero.id}>{hero.name}</li>
+            ))
+        }
       </div>
     </main>
   );
