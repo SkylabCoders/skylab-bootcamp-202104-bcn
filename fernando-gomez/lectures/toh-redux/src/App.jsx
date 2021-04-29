@@ -8,7 +8,6 @@ import {
 import { Provider } from 'react-redux';
 import Dashboard from './Components/Dashboard';
 import NotFound from './Components/NotFound';
-import './App.css';
 import './styles.css';
 import HeroDetail from './Components/HeroDetail';
 import Heroes from './Components/Heroes';

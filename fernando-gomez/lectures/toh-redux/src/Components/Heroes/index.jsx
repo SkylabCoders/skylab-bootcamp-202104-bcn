@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import HeroSearch from '../HeroSearch';
 import { deleteHero, loadHeroes, addHero } from '../../redux/actions/actionCreator';
-
 import './form.css';
 
 const Heroes = ({ heroes, dispatch }) => {
