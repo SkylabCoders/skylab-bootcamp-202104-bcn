@@ -2,9 +2,9 @@ import actionTypes from './actionTypes';
 import apiServices from '../services/api';
 
 export function loadBooks() {
-  apiServices.fetchBooks().then((books) => ({
+  return apiServices.fetchBooks().then(({ items }) => ({
     type: actionTypes.LOAD_BOOKS,
-    books,
+    books: items,
   }));
 }
 
