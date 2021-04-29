@@ -5,7 +5,7 @@ import {
 import Dashboard from './components/Dashboard';
 import Game from './components/Game';
 import Ranking from './components/Ranking';
-import NotFound from './components/NotFoun';
+import NotFound from './components/NotFound';
 import './App.css';
 
 function App() {
