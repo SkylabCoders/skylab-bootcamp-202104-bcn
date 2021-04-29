@@ -13,6 +13,7 @@ function HeroList({ heroes, dispatch }) {
     <>
       <div>
         {heroes.map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
+        <button type="button">Delete</button>
       </div>
     </>
   );
