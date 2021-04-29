@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Dashboard = () => {
+const Dashboard = () => (
   <main>
     <h2>Hero List</h2>
     <div className="heroes-menu" />
-  </main>;
-};
+  </main>
+);
 
 export default Dashboard;
