@@ -122,4 +122,10 @@ a {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.hidden {
+  visibility: hidden;
+  margin: 0;
+  height: 30px;
+}
 /*# sourceMappingURL=App.css.map */

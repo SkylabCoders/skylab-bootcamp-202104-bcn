@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import './tasks.css';
 import { loadTasks, addTask, deleteTask } from '../../redux/actions/actionCreators';
 import Task from '../Task';
+import './tasks.css';
 
 const Tasks = ({ tasks, dispatch }) => {
   const [newTaskTitle, setNewTaskTitle] = useState();
@@ -34,11 +34,11 @@ const Tasks = ({ tasks, dispatch }) => {
 
   return (
     <>
-      <h2>My Tasks</h2>
-      <div>
-        <h3>New task:</h3>
+      <h2 className="hidden">My Tasks</h2>
+      <section className="new-task">
+        <h3>Add new task</h3>
         <label htmlFor="new-task-title" id="new-task-title">
-          Title:
+          <span>Title:</span>
           <input
             name="title"
             value={newTaskTitle}
@@ -46,7 +46,7 @@ const Tasks = ({ tasks, dispatch }) => {
           />
         </label>
         <label htmlFor="new-task-description" id="new-task-description">
-          Description:
+          <span>Description:</span>
           <input
             name="description"
             value={newTaskDescription}
@@ -56,14 +56,12 @@ const Tasks = ({ tasks, dispatch }) => {
         <button className="add-button" type="button" onClick={saveNewTask}>
           Add task
         </button>
-      </div>
-
-      <div className="tasks">
+      </section>
+      <section className="tasks">
         {tasks.map((task) => (
           <Task task={task} handleDelete={handleDelete} />
         ))}
-
-      </div>
+      </section>
     </>
   );
 };
