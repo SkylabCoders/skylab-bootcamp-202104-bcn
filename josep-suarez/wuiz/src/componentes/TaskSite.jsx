@@ -16,6 +16,8 @@ function TaskSite({ tasks, dispatch }) {
   function doneTask(taskId) {
     const classDone = document.getElementById(taskId);
     classDone.classList = 'done';
+    const buttonDone = document.getElementById(`button${taskId}`);
+    buttonDone.style.background = 'green';
   }
   return tasks.map((task) => (
     <>
@@ -24,8 +26,8 @@ function TaskSite({ tasks, dispatch }) {
         -
         {task.task}
       </p>
-      <button type="button" onClick={() => { trashTask(task.id); }}>Delete</button>
-      <button type="button" onClick={() => { doneTask(task.id); }}>Done</button>
+      <button type="button" id={`buttonDelete${task.id}`} onClick={() => { trashTask(task.id); }}>Delete</button>
+      <button type="button" id={`button${task.id}`} onClick={() => { doneTask(task.id); }}>Done</button>
       <button type="button">Modify</button>
     </>
   ));
