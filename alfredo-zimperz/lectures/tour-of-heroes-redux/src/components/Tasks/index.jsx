@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import './tasks.css';
 import { loadTasks, addTask, deleteTask } from '../../redux/actions/actionCreators';
+import Task from '../Task';
 
 const Tasks = ({ tasks, dispatch }) => {
   const [newTaskTitle, setNewTaskTitle] = useState();
@@ -60,25 +60,7 @@ const Tasks = ({ tasks, dispatch }) => {
 
       <div className="tasks">
         {tasks.map((task) => (
-          <div key={task.id} className="task">
-
-            <div className="task__text">
-              <Link to={`/tasks/${task.id}`}>
-                <h1>{task.title}</h1>
-                <p>{task.description}</p>
-              </Link>
-            </div>
-            <div className="task__actions">
-              <button
-                className="delete"
-                title="delete task"
-                type="button"
-                onClick={() => handleDelete(task.id)}
-              >
-                x
-              </button>
-            </div>
-          </div>
+          <Task task={task} handleDelete={handleDelete} />
         ))}
 
       </div>

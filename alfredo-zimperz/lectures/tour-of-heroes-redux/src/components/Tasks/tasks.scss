@@ -12,8 +12,12 @@
   margin-top: 16px;
   padding: 16px;
   background-color:#cdedf0;
+  .done {
+    text-decoration: line-through;
+  }
   &__text {
     width: 80%;
   }
+
 }
 
