@@ -7,14 +7,10 @@ export function loadHeroes() {
   };
 }
 
-export function addHero(name) {
-  const newId = HEROES.length + 1;
+export function addHero(hero) {
   return {
     type: actionTypes.ADD_HERO,
-    hero: {
-      id: newId,
-      name,
-    },
+    hero,
   };
 }
 
