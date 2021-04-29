@@ -2,10 +2,9 @@ import React from 'react';
 import {
   BrowserRouter,
   Route,
-  Switch,
-  Link
+  Switch
 } from 'react-router-dom';
-import Nav from './components/ui';
+import Nav from './components/ui/Nav';
 import Dashboard from './components/dashboard/Dashboard';
 import HeroList from './components/heroes/HeroList';
 import HeroDetails from './components/heroes/HeroDetails';
