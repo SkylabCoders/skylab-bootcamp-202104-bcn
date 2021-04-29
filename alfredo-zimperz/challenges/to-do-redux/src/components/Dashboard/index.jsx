@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { loadBooks } from '../../actions/actionCreators';
 
 const Dashboard = () => {
+  useEffect(() => {
+    loadBooks();
+  }, []);
+
   const title = 'Dashboard';
   return (
     <div>
