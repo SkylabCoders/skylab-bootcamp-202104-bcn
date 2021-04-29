@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import './taskSite.css';
 import { PrintTask, deleteTask } from '../redux/actions/actionCreators';
 
 function TaskSite({ tasks, dispatch }) {
@@ -14,7 +15,7 @@ function TaskSite({ tasks, dispatch }) {
   }
   function doneTask(taskId) {
     const classDone = document.getElementById(taskId);
-    classDone.style.color = 'green';
+    classDone.classList = 'done';
   }
   return tasks.map((task) => (
     <>
