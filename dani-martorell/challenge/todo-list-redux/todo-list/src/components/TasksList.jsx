@@ -1,19 +1,42 @@
-import React from 'react';
-import TASKS from '../constants/TASKS';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import { deleteTask, loadTasks } from '../redux/actions/actionCreator';
 
-const TasksList = () => (
-  <ul className="task-list">
-    {
-    TASKS.map(({ task }) => (
-      <li className="task-item">
-        {task}
+const TasksList = ({ tasks, dispatch }) => {
+  useEffect(() => {
+    if (!tasks.length) dispatch(loadTasks());
+  }, []);
+
+  const handleDelete = (id) => {
+    dispatch(deleteTask(id));
+  };
+
+  return (
+    <ul className="task-list">
+      {
+    tasks.map((task) => (
+      <li key={task.id} className="task-item">
+        {task.task}
         <div className="task-item__buttons">
-          <button type="button">Delete</button>
+          <button type="button" onClick={() => { handleDelete(task.id); }}>DELETE</button>
           <button type="button">Done</button>
         </div>
       </li>
     ))
       }
-  </ul>
-);
-export default TasksList;
+    </ul>
+  );
+};
+
+TasksList.propTypes = {
+  tasks: PropTypes.shape([{}]).isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
+
+function mapStateToProps(tasks) {
+  return {
+    tasks,
+  };
+}
+export default connect(mapStateToProps)(TasksList);

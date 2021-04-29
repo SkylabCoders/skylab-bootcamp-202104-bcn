@@ -2,6 +2,7 @@ import TASKS from '../../constants/TASKS';
 import actionType from '../actions/actionTypes';
 
 function taskReducer(tasks = [], action) {
+  // eslint-disable-next-line no-debugger
   switch (action.type) {
     case actionType.LOAD_TASKS:
       return TASKS;
