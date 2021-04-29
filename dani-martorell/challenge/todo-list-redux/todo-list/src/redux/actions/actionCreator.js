@@ -1,28 +1,28 @@
-import actionTypes from './actioTypes';
+import actionType from './actionTypes';
 
 export function loadTasks() {
   return {
-    type: actionTypes.LOAD_TASKS,
+    type: actionType.LOAD_TASKS,
   };
 }
 
 export function addTask(task) {
   return {
-    type: actionTypes.ADD_TASK,
+    type: actionType.ADD_TASK,
     task,
   };
 }
 
 export function deleteTask(idTask) {
   return {
-    type: actionTypes.DELETE_TASK,
+    type: actionType.DELETE_TASK,
     idTask,
   };
 }
 
 export function finish(idTask) {
   return {
-    type: actionTypes.DELETE_TASK,
+    type: actionType.DELETE_TASK,
     idTask,
   };
 }
