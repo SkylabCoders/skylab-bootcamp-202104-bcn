@@ -1,25 +1,22 @@
 import actionTypes from './actionTypes';
 
-export function addTask() {
+export function addTask(data) {
   return {
     type: actionTypes.ADD_TYPES,
+    payload: data,
   };
 }
 
-export function deleteTask() {
+export function deleteTask(data) {
   return {
     type: actionTypes.DELETE_TASK,
+    payload: data.id,
   };
 }
 
-export function editTask() {
+export function editTask(data) {
   return {
     type: actionTypes.EDIT_TASK,
-  };
-}
-
-export function loadTasks() {
-  return {
-    type: actionTypes.LOAD_TASKS,
+    payload: data,
   };
 }

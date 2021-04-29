@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import './App.css';
 import store from './redux/store/store';
-import CreateTask from './components/createTask/CreateTask';
+import Task from './components/task/Task';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <h2>To Do List</h2>
       </header>
       <main>
-        <CreateTask />
+        <Task />
       </main>
     </Provider>
 
