@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background-image: linear-gradient(120deg, #42033D, #680E4B);
+  color: gainsboro;
+  font-family: 'Roboto', sans-serif;
   min-height: 100vh;
+}
+
+header {
+  font-size: 1.5rem;
+}
+
+header,
+.newtask-container {
+  min-height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.newtask-container input, .newtask-container button {
+  outline-offset: -2px;
+  outline-color: #42033D;
+  padding: 0.5rem;
+  font-size: 2 rem;
+  border: none;
+  background-color: gainsboro;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.newtask-container input {
+  min-width: 30%;
+}
+
+.newtask-container button {
+  color: #C2005D;
+  background: gainsboro;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.newtask-container button:hover {
+  color: gainsboro;
+  background: #C2005D;
+}
+
+.todo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: gainsboro;
+  color: black;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  outline: none;
+}
+
+.trash-btn, .complete-btn, .edit-btn {
+  background: #C2005D;
+  color: gainsboro;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.complete-btn {
+  background: #2a9d8f;
+}
+
+.edit-btn {
+  background: #e76f51;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
 }
