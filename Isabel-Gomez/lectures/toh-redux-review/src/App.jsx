@@ -13,13 +13,12 @@ function App() {
     <>
       <BrowserRouter>
         <h1>Tour of Heroes</h1>
-        <Nav>
-          <Switch>
-            <Route exact path="/" component={Dashboard} />
-            <Route exact path="/heroes" component={HeroList} />
-            <Route exact path="/heroes/:heroId" component={HeroDetail} />
-          </Switch>
-        </Nav>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route path="/heroes" component={HeroList} />
+          <Route path="/heroes/:heroId" component={HeroDetail} />
+        </Switch>
       </BrowserRouter>
     </>
   );

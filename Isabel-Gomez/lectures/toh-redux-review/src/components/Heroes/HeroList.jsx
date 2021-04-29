@@ -1,10 +1,10 @@
 import React from 'react';
 
-const HeroList = () => {
+const HeroList = () => (
   <main>
     <h2>Heroes List</h2>
     <div className="heroes-menu">Aca vienen los heroes</div>
-  </main>;
-};
+  </main>
+);
 
 export default HeroList;
