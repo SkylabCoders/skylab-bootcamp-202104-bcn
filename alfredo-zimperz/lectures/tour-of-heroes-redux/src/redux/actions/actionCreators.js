@@ -38,8 +38,8 @@ export function loadTask(task) {
 
 export function getTaskById(taskId) {
   let task;
-  const targetHero = TASKS.find((current) => current.id === +taskId);
-  if (targetHero) { task = targetHero; } else { (task = {}); }
+  const targetTask = TASKS.find((current) => current.id === +taskId);
+  if (targetTask) { task = targetTask; } else { (task = {}); }
 
   return {
     type: actionTypes.LOAD_TASK,

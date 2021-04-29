@@ -2,49 +2,49 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
-import './heroDetail.css';
+import { getTaskById, updateTask } from '../../redux/actions/actionCreators';
+import './taskDetail.css';
 
-const HeroDetail = ({ selectedHero, dispatch }) => {
-  const { heroId } = useParams();
-  const [heroName, setHeroName] = useState(selectedHero?.name);
+const TaskDetail = ({ selectedTask, dispatch }) => {
+  const { taskId } = useParams();
+  const [taskName, setTaskName] = useState(selectedTask?.name);
   const history = useHistory();
 
   useEffect(() => {
-    dispatch(getHeroById(heroId));
-  }, [heroId]);
+    dispatch(getTaskById(taskId));
+  }, [taskId]);
 
   useEffect(() => {
-    setHeroName(selectedHero.name);
-  }, [selectedHero]);
+    setTaskName(selectedTask.name);
+  }, [selectedTask]);
 
   const handleNameChange = (event) => {
-    setHeroName(event.target.value);
+    setTaskName(event.target.value);
   };
 
   const save = () => {
-    dispatch(updateHero({ id: selectedHero.id, name: heroName }));
+    dispatch(updateTask({ id: selectedTask.id, name: taskName }));
   };
 
   return (
-    selectedHero?.id ? (
-      <section className="hero">
+    selectedTask?.id ? (
+      <section className="task">
         <h2>
-          {heroName?.toUpperCase()}
+          {taskName?.toUpperCase()}
           {' '}
           Details
         </h2>
         <div>
           <span>id: </span>
-          {selectedHero?.id}
+          {selectedTask?.id}
         </div>
         <div>
-          <label htmlFor="hero-name">
-            Hero name:
+          <label htmlFor="task-name">
+            Task name:
             <input
-              id="hero-name"
-              placeholder="Hero name"
-              value={heroName}
+              id="task-name"
+              placeholder="Task name"
+              value={taskName}
               onChange={handleNameChange}
             />
           </label>
@@ -55,25 +55,25 @@ const HeroDetail = ({ selectedHero, dispatch }) => {
       </section>
     ) : (
       <h2>
-        There is no hero with id
+        There is no task with id
         {' '}
-        {heroId}
+        {taskId}
       </h2>
     )
 
   );
 };
 
-HeroDetail.propTypes = {
+TaskDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  selectedHero: PropTypes.shape({
+  selectedTask: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
   }).isRequired,
 };
 
-function mapStateToProps({ selectedHero }) {
-  return { selectedHero };
+function mapStateToProps({ selectedTask }) {
+  return { selectedTask };
 }
 
-export default connect(mapStateToProps)(HeroDetail);
+export default connect(mapStateToProps)(TaskDetail);

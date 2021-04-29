@@ -1,14 +1,34 @@
 const TASKS = [
-  { id: 11, name: 'Dr Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' },
+  {
+    id: 11, title: 'Comprar pan', description: 'Task description', done: false,
+  },
+  {
+    id: 12, title: 'Comer pan', description: 'Task description', done: true,
+  },
+  {
+    id: 13, title: 'Volver a comprar pan', description: 'Task description', done: true,
+  },
+  {
+    id: 14, title: 'Acordarme que tengo pan', description: 'Task description', done: false,
+  },
+  {
+    id: 15, title: 'Comer pan', description: 'Task description', done: false,
+  },
+  {
+    id: 16, title: 'Hacer un to do', description: 'Task description', done: false,
+  },
+  {
+    id: 17, title: 'Testear', description: 'Task description', done: true,
+  },
+  {
+    id: 18, title: 'Comer algo', description: 'Task description', done: false,
+  },
+  {
+    id: 19, title: 'Pensar proyecto grupo', description: 'Task description', done: false,
+  },
+  {
+    id: 20, title: 'Ir al cine', description: 'Task description', done: false,
+  },
 ];
 
 export default TASKS;

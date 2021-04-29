@@ -5,9 +5,9 @@ import {
 import { Provider } from 'react-redux';
 import store from './redux/stores';
 import Dashboard from './components/Dashboard';
-import Heroes from './components/Heroes';
+import tasks from './components/Tasks';
 import NotFound from './components/NotFound';
-import HeroDetail from './components/HeroDetail';
+import TaskDetail from './components/TaskDetail';
 import './styles.css';
 import './App.css';
 
@@ -16,15 +16,15 @@ function App() {
     <>
       <Provider store={store}>
         <Router>
-          <h1>Tour of Heroes</h1>
+          <h1>To Do List</h1>
           <nav>
             <Link to="/">Dashboard</Link>
-            <Link to="/heroes">Heroes</Link>
+            <Link to="/tasks">tasks</Link>
           </nav>
           <Switch>
             <Route path="/" exact component={Dashboard} />
-            <Route path="/heroes" exact component={Heroes} />
-            <Route path="/heroes/:heroId" component={HeroDetail} />
+            <Route path="/tasks" exact component={tasks} />
+            <Route path="/tasks/:taskId" component={TaskDetail} />
             <Route component={NotFound} />
           </Switch>
         </Router>

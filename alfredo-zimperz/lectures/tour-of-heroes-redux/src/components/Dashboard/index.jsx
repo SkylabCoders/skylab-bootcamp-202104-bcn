@@ -12,11 +12,13 @@ const Dashboard = ({ tasks, dispatch }) => {
 
   return (
     <>
-      <h2>Top Heroes</h2>
+      <h2>Older Tasks</h2>
       <div className="tasks-menu">
-        {tasks.slice(1, 5).map(({ id, name }) => (
+        {tasks.slice(1, 5).map(({
+          id, title, description, done,
+        }) => (
           <Link to={`/tasks/${id}`} key={id}>
-            {name}
+            {`${title}, ${description}, done: ${done}`}
           </Link>
         ))}
 
