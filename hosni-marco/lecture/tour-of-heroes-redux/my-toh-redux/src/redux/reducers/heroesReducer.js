@@ -7,10 +7,8 @@ function heroesReducer(heroes = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_HERO:
       return HEROES;
-
     case actionTypes.DELETE_HEAD:
       return heroes.filter((hero) => hero.id !== action.heroId);
-
     case actionTypes.ADD_HERO:
       return [
         ...heroes,
