@@ -38,23 +38,25 @@ const InputTask = ({ tasks, dispatch }) => {
   }
 
   return (
-    <div>
-      <div>
+    <div className="main-container">
+      <div className="input-container">
         <label htmlFor="task-input">
           ADD YOUR TASK:
-          <input type="text" id="task-input" onChange={obtainTask} placeholder="Ex. Walk the dog" />
-          <button type="button" onClick={() => handleAdd()}>ADD</button>
+          <input type="text" className="input-itSelf" id="task-input" onChange={obtainTask} placeholder="Ex. Walk the dog" />
+          <button type="button" className="addBtn" onClick={() => handleAdd()}>ADD</button>
         </label>
       </div>
-      <ul>
-        {tasks.map((task) => (
-          <li className={!task.completed ? 'task-item' : 'task-item--done'}>
-            {task.task}
-            <button type="button" onClick={() => handleDone(task.id)}>DONE</button>
-            <button type="button" onClick={() => handleDelete(task.id)}>DELETE</button>
-          </li>
-        ))}
-      </ul>
+      <div className="tasks-container">
+        <ul>
+          {tasks.map((task) => (
+            <li className={!task.completed ? 'task-item' : 'task-item--done'}>
+              {task.task}
+              <button type="button" onClick={() => handleDone(task.id)}>DONE</button>
+              <button type="button" onClick={() => handleDelete(task.id)}>DELETE</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
