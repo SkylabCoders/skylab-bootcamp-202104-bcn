@@ -16,7 +16,7 @@
   flex-direction: column;
   display: flex;
   align-items: center;
-  min-width: 500px;
+  min-width: auto;
   min-height: 200px;
   background-color: lightgreen;
   border-radius: 10px;

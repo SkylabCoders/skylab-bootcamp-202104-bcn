@@ -49,7 +49,7 @@ const InputTask = ({ tasks, dispatch }) => {
       <div className="tasks-container">
         <ul>
           {tasks.map((task) => (
-            <li className={!task.completed ? 'task-item' : 'task-item--done'}>
+            <li key={task.id} className={!task.completed ? 'task-item' : 'task-item--done'}>
               {task.task}
               <button type="button" className="doneBtn" onClick={() => handleDone(task.id)}>DONE</button>
               <button type="button" className="deleteBtn" onClick={() => handleDelete(task.id)}>DELETE</button>
