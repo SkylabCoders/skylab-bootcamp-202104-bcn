@@ -13,8 +13,8 @@ function PokeList({ dispatch, pokemons }) {
   return (
     <ul>
       {
-            pokemons.length && pokemons[0]?.map(({ name }) => (
-              <li>
+            pokemons.length && pokemons[0]?.map(({ name, url }) => (
+              <li key={url}>
                 <span>{name}</span>
               </li>
             ))
