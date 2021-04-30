@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { deleteTask, loadTasks } from '../redux/actions/actionCreator';
+import { deleteTask, loadTasks } from '../../redux/actions/actionCreator';
+import './TasksList.css';
 
 const TasksList = ({ tasks, dispatch }) => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const TasksList = ({ tasks, dispatch }) => {
     <ul className="task-list">
       {
     tasks.map((task) => {
-      const date = new Date().toLocaleDateString() === new Date(task.timeStamp).toLocaleDateString() ? 'Today' : new Date(task.timeStamp).toLocaleDateString('en-EN', { day: 'numeric', month: 'short', year: 'numeric' });
+      const date = new Date().toLocaleDateString() === new Date(task.timeStamp).toLocaleDateString() ? 'Today' : new Date(task.timeStamp).toLocaleDateString();
 
       return (
         <li key={task.id} className="task-item">

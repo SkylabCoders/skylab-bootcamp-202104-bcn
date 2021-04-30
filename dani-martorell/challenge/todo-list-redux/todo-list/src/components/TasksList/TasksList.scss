@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@200;400&display=swap');
+
+ul {
+    max-width: 500px;
+    margin: 0 auto;
+  
+}
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    &__buttons {
+        background-color: #7d0088;
+        padding: 10px;
+        color: rgb(226, 226, 226);
+        text-decoration: none;
+        border: none;
+        margin: 5px;
+
+    }
+}

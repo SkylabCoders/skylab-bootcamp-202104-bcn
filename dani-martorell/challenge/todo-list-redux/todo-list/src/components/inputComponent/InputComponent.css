@@ -1,27 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@200;400&display=swap");
-input {
+label {
+  margin: 10px;
+}
+
+label input {
   margin-top: 15px;
   font-size: 1rem;
   color: #e0e0e0;
   padding: 0 10px;
-  width: 550px;
+  width: 540px;
   height: 35px;
   border: none;
   font-family: 'Poppins', sans-serif;
 }
 
-input button {
+label input:focus {
+  outline: none;
+}
+
+label .input-button {
   padding: 10px 30px;
-  margin-left: 35px;
   border: none;
   cursor: pointer;
   background-color: #7d0088;
-  border-radius: 30px;
   color: white;
   font-weight: bolder;
-}
-
-input:focus {
-  outline: none;
+  height: 36px;
+  margin-right: auto;
 }
 /*# sourceMappingURL=InputComponent.css.map */

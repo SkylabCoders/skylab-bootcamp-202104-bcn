@@ -33,7 +33,7 @@ const InputComponent = ({ tasks, dispatch }) => {
   return (
     <label htmlFor="input-task">
       <input type="text" id="input-task" placeholder="Write your task" onChange={(e) => handleChange(e)} />
-      <button type="button" onClick={handleAddTask}>Add</button>
+      <button className="input-button" type="button" onClick={handleAddTask}>Add</button>
     </label>
   );
 };

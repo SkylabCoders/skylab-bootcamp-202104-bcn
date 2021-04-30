@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@200;400&display=swap");
+ul {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.task-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.task-item__buttons {
+  background-color: #7d0088;
+  padding: 10px;
+  color: #e2e2e2;
+  text-decoration: none;
+  border: none;
+  margin: 5px;
+}
+/*# sourceMappingURL=TasksList.css.map */
