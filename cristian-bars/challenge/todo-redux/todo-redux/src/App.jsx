@@ -1,13 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import './App.css';
+import './styles/styles.css';
 import TodoListComponent from './components/todoList/TodoListComponent';
 import store from './redux/store/index';
 
 function App() {
   return (
     <Provider store={store}>
-      <h1>TO DO LIST</h1>
+      <h1 className="header__title">TO DO LIST</h1>
       <TodoListComponent />
     </Provider>
   );
