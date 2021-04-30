@@ -1,5 +1,3 @@
-/* eslint-disable no-debugger */
-/* eslint-disable indent */
 import TASKS from '../../constants/tasks.mock';
 import actionTypes from '../actions/actionTypes';
 
@@ -8,7 +6,6 @@ function tasksReducer(tasks = [], action) {
     case actionTypes.LOAD_TASKS:
       return TASKS;
     case actionTypes.DELETE_TASK:
-    debugger;
       return tasks.filter((task) => task.taskId !== action.taskId);
     case actionTypes.ADD_TASK:
       return [
