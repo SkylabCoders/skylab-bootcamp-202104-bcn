@@ -32,11 +32,21 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-li{
+li {
   list-style: none;
+}
+
+.task-item {
+  text-decoration: none;
+
+}
+
+.task-item--done {
+  text-decoration: line-through;
 }

@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadTasks, deleteTask, addTask } from '../redux/actions/actionCreators';
+import {
+  loadTasks, deleteTask, addTask, doneTask
+} from '../redux/actions/actionCreators';
+import '../App.css';
 
 const InputTask = ({ tasks, dispatch }) => {
+  const [newestTask, setNewestTask] = useState();
+
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
-
-  const [newestTask, setNewestTask] = useState();
-
-  function handleDelete(taskId) {
-    dispatch(deleteTask(taskId));
-  }
 
   const handleAdd = () => {
     let newId = 1;
@@ -21,14 +20,21 @@ const InputTask = ({ tasks, dispatch }) => {
 
     const newTask = {
       id: newId,
-      task: newestTask,
-      completed: false
+      task: newestTask
     };
     dispatch(addTask(newTask));
   };
 
   function obtainTask(event) {
     setNewestTask(event.target.value);
+  }
+
+  function handleDelete(taskId) {
+    dispatch(deleteTask(taskId));
+  }
+
+  function handleDone(taskId) {
+    dispatch(doneTask(taskId));
   }
 
   return (
@@ -42,10 +48,10 @@ const InputTask = ({ tasks, dispatch }) => {
       </div>
       <ul>
         {tasks.map((task) => (
-          <li>
+          <li className={!task.completed ? 'task-item' : 'task-item--done'}>
             {task.task}
+            <button type="button" onClick={() => handleDone(task.id)}>DONE</button>
             <button type="button" onClick={() => handleDelete(task.id)}>DELETE</button>
-            <button type="button">DONE</button>
           </li>
         ))}
       </ul>
