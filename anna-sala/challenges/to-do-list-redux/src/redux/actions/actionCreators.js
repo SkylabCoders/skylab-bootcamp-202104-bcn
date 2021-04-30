@@ -15,7 +15,7 @@ export function addTask(task) {
 export function deleteTask(taskID) {
   return {
     type: actionTypes.DELETE_TASK,
-    taskID,
+    taskId: taskID,
   };
 }
 

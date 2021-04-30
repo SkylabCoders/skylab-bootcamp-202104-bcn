@@ -11,6 +11,23 @@ body{
 .page-title{
   text-align: center;
 }
+form{
+  margin-top: 20px;
+  text-align: center;
+}
+input {
+  background-color: rgba(220, 220, 220, 0.523);
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+}
+.add{
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+  margin-left: 2px;
+  background-color: #F7D6E0;
+}
 
 .to-do-list{
   display: flex;
@@ -50,7 +67,14 @@ a:hover{
 
 .delete{
   background-color: rgb(241, 215, 215);
-  padding: 4px 6px;
+  padding: 5px 6px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+.done{
+  background-color: rgb(215, 241, 216);
+  padding: 5px 6px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -58,4 +82,7 @@ a:hover{
 
 .delete:hover{
   background-color: rgb(246, 69, 69);
+}
+.done:hover{
+  background-color: rgb(84, 246, 69);
 }
