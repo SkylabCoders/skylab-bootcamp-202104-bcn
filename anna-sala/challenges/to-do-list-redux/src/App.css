@@ -1,0 +1,94 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-title{
+  text-align: center;
+  color: rgb(51, 51, 51);
+}
+form{
+  margin-top: 20px;
+  text-align: center;
+}
+input {
+  background-color: rgba(220, 220, 220, 0.523);
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+}
+.add{
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+  margin-left: 2px;
+  background-color: #F7D6E0;
+}
+
+.to-do-list{
+  background-color: rgba(178, 242, 230, 0.667);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.to-do-list__task{
+  justify-self: center;
+  margin: 5px;
+}
+
+a:visited {
+  text-decoration: inherit;
+  cursor: pointer;
+}
+
+a:hover{
+  text-decoration: inherit;
+  color: rgb(197, 197, 197);
+}
+
+.task-name{
+  text-decoration: inherit;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+  background-color: rgb(166, 231, 211);
+  padding: 3px;
+  margin: 3px;
+  border-radius: 5px;
+}
+.task-name--done{
+  background-color: rgba(166, 231, 212, 0.626);
+  color: rgb(164, 164, 164);
+  padding: 3px;
+  margin: 3px;
+  border-radius: 5px;
+  text-decoration: line-through;
+}
+
+.delete{
+  background-color: rgb(241, 215, 215);
+  padding: 5px 6px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+.done{
+  background-color: rgb(215, 241, 216);
+  padding: 5px 6px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.delete:hover{
+  background-color: rgb(246, 69, 69);
+}
+.done:hover{
+  background-color: rgb(84, 246, 69);
+}
