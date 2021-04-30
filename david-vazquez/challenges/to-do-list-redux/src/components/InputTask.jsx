@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { loadTasks, deleteTask, addTask } from '../redux/actions/actionCreator';
+import {
+  loadTasks, deleteTask, addTask, doneTask,
+} from '../redux/actions/actionCreator';
+import './inputTask.css';
 
 function InputTask({ tasks, dispatch }) {
   const [taskText, setTaskText] = useState();
@@ -25,20 +28,25 @@ function InputTask({ tasks, dispatch }) {
   function selectDeleteTask(id) {
     dispatch(deleteTask(id));
   }
+
+  function selectDoneTask(id) {
+    dispatch(doneTask(id));
+  }
   return (
-    <div>
-      <label htmlFor="input-task">
-        Introduce tu tarea:
-        <input id="input-task" onChange={getTask} />
-        <button type="button" onClick={() => handleAdd()}>Añadir</button>
+    <div className="task-container">
+      <label htmlFor="input-task" className="input-container">
+        <input className="input-task" onChange={getTask} />
+        <button type="button" className="button-add" onClick={() => handleAdd()}>+</button>
       </label>
       <ul className="task-list">
         <h2>List of task: </h2>
         {tasks.map((task) => (
-          <li className="task-item">
+          <li className={!task.state ? 'task-item' : 'task-item--done'}>
             {task.text}
-            <button type="button">DONE</button>
-            <button type="button" onClick={() => selectDeleteTask(task.id)}>DELETE</button>
+            <div className="task-item__buttons">
+              <button type="button" className="button-done" onClick={() => selectDoneTask(task.id)}> </button>
+              <button type="button" className="button-delete" onClick={() => selectDeleteTask(task.id)}> </button>
+            </div>
           </li>
         ))}
       </ul>

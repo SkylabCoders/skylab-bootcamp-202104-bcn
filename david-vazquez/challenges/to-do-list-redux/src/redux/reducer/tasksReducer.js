@@ -9,6 +9,9 @@ function tasksReducer(tasks = [], action) {
       return [...tasks, action.newTask];
     case actionTypes.DELETE_TASK:
       return tasks.filter((task) => task.id !== action.idTask);
+    case actionTypes.DONE_TASK:
+      return tasks.map((task) => ((
+        task.id === action.idTask) ? { ...task, state: true } : task));
     default:
       return tasks;
   }
