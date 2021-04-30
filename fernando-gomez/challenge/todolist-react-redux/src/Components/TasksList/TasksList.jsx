@@ -76,7 +76,7 @@ const TasksList = ({ tasks = [], dispatch }) => {
       <ul className="tasks-list__list list">
         <li className="list__element">
           {tasks.map((task) => (
-            <>
+            <span key={task.id}>
               <p className="task">
                 <input
                   type="checkbox"
@@ -95,7 +95,7 @@ const TasksList = ({ tasks = [], dispatch }) => {
                 placeholder="Modify"
                 onChange={handleDescriptionChangeInput}
               />
-            </>
+            </span>
           ))}
         </li>
       </ul>
