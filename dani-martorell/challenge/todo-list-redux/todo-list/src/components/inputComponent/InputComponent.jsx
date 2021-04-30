@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { addTask } from '../redux/actions/actionCreator';
+import { addTask } from '../../redux/actions/actionCreator';
+import './InputComponent.css';
 
 const InputComponent = ({ tasks, dispatch }) => {
   const newTask = {
     task: null,
     id: null,
+    timeStamp: null,
   };
 
   const handleChange = (e) => {
@@ -22,6 +24,7 @@ const InputComponent = ({ tasks, dispatch }) => {
 
   const handleAddTask = () => {
     newTask.id = idGenerator(tasks);
+    newTask.timeStamp = Date.now();
     const inputField = document.getElementById('input-task');
     inputField.value = '';
     dispatch(addTask(newTask));
