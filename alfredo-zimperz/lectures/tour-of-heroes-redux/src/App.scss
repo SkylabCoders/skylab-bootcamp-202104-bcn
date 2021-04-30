@@ -71,6 +71,21 @@ nav a.active {
   background-color: black;
   color: white;
 }
+
+nav.secondary-nav {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  button {
+    background-color: $color-main;
+    color: $bg-color-main;
+  &:hover {
+    background-color: $bg-color-secondary;
+  }
+  }
+}
 hr {
   margin: 1.5rem 0;
 }

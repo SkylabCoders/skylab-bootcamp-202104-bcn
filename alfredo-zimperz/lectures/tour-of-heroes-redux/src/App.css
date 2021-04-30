@@ -77,6 +77,29 @@ nav a.active {
   color: white;
 }
 
+nav.secondary-nav {
+  padding-top: 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav.secondary-nav button {
+  background-color: #1a535c;
+  color: #f7fff7;
+}
+
+nav.secondary-nav button:hover {
+  background-color: #4ecdc4;
+}
+
 hr {
   margin: 1.5rem 0;
 }

@@ -38,49 +38,52 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
 
   return (
     selectedTask?.id ? (
-      <section className="task">
-        <h2>
-          {taskTitle?.toUpperCase()}
-          {' '}
-          Details
-        </h2>
-        <div>
-          <span>id: </span>
-          {selectedTask?.id}
-        </div>
-        <div>
-          <label htmlFor="task-title">
-            Title
-            <input
-              id="task-title"
-              placeholder="Task title"
-              value={taskTitle}
-              onChange={handleTitleChange}
-            />
-          </label>
-          <label htmlFor="task-description">
-            Description
-            <input
-              id="task-description"
-              placeholder="Task Description"
-              value={taskDescription}
-              onChange={handleDescriptionChange}
-            />
-          </label>
-          <label className="switch" htmlFor="Task done">
-            Done
-            <input
+      <>
+        <article className="task-detail">
+          <h2>
+            {taskTitle?.toUpperCase()}
+            {' '}
+            Details
+          </h2>
+          <div>
+            <span>id: </span>
+            {selectedTask?.id}
+          </div>
+          <div className="task-detail__modify">
+            <label htmlFor="task-title">
+              Title:
+              <input
+                id="task-detail__title"
+                placeholder="Task title"
+                value={taskTitle}
+                onChange={handleTitleChange}
+              />
+            </label>
+            <label htmlFor="task-description">
+              Description:
+              <input
+                id="task-description"
+                placeholder="Task Description"
+                value={taskDescription}
+                onChange={handleDescriptionChange}
+              />
+            </label>
+            <button
               type="button"
               placeholder="Task Done"
-              value={taskDone ? 'Mark as pending' : 'Mark as done'}
               onClick={handleDoneChange}
-            />
+            >
+              {taskDone ? 'Mark as pending' : 'Mark as done'}
+
+            </button>
             <span className="slider round" />
-          </label>
-        </div>
-        <button type="button" onClick={() => history.goBack()}>go back</button>
-        <button type="button" onClick={save}>save</button>
-      </section>
+          </div>
+          <button type="button" onClick={save}>save</button>
+        </article>
+        <nav className="secondary-nav">
+          <button type="button" onClick={() => history.goBack()}>go back</button>
+        </nav>
+      </>
     ) : (
       <h2>
         There is no task with id
