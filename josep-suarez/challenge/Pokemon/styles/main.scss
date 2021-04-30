@@ -1,0 +1,84 @@
+body{
+    background-image: url("../image/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    ul {
+        list-style: none;
+        }
+    li{
+        display: flex;
+        a{
+            text-align: center;
+            text-decoration: none;
+            text-transform: none;
+            color: black;
+            text-transform: uppercase;
+            font-size: 13px;
+            justify-content: space-around;
+            font-family: 'Press Start 2P', cursive;
+        }
+    }
+}
+#pokemon-select {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+    li{
+        width: 10%;
+    }
+    ul li p{
+        justify-self: center;
+    }
+}
+#photos-pokemon {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 0 auto;
+    li{
+        width: 10%;
+        cursor: pointer;
+    }
+    ul li p{
+        justify-self: center;
+    }
+    img{
+        cursor: pointer;
+    }
+
+}
+#pokemon-select {
+    display: flex;
+    justify-content: center;
+    ul li{
+        justify-self: center;
+        width: 10%;
+    }
+}
+#button-page {
+    display: flex;
+    justify-content: center;
+    #next-button{
+        background-color: aquamarine;
+        margin-left: 10px;
+        border: 2px solid orange;
+        border-radius: 10%;
+        width: 100px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 20px;
+    }
+    #back-button{
+        display: none;
+        background-color: aquamarine;
+        margin-left: 10px;
+        border: 2px solid orange;
+        border-radius: 10%;
+        width: 100px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 20px;
+    }
+}

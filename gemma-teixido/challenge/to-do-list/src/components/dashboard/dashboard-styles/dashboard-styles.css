@@ -1,0 +1,55 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: burlywood;
+}
+
+body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .done {
+  background-color: #21f04d;
+}
+
+body .buttonDelete {
+  background-color: #d63737;
+  height: 30px;
+  color: black;
+  font-weight: 800;
+}
+
+body .buttonDone {
+  background-color: #66c455;
+  color: black;
+  height: 30px;
+  font-weight: 800;
+}
+/*# sourceMappingURL=dashboard-styles.css.map */

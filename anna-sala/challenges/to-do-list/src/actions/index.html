@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Architects+Daughter&display=swap" rel="stylesheet">
+    <title>Anna-Sala To-Do List</title>
+</head>
+<body>
+    <h1 class="page-title">TO-DO LIST</h1>
+    <nav class="nav">
+        <ul class="navigation__list">
+            <li class="navigation__list--item"><button onclick="clearAllTasks()">Clear all tasks</button></li>
+            <li class="navigation__list--item">
+                <form action="">
+                    <input type="text" placeholder="New Task" id="taskInput" onfocus="this.value=''"><button type="button" onclick="getInputValue()">ADD</button>
+                </form>
+            </li>
+        </ul>
+
+    </nav>
+    <main>
+        <ul class="tasks" id="tasks">
+           
+        </ul>
+    </main>
+</body>
+<script type="text/javascript" src="./action.js"></script>
+<script type="text/javascript" src="../store/store.js"></script>
+<script type="text/javascript" src="../dispatcher/dispatcher.js"></script>
+<script type="text/javascript" src="../actions/main.js"></script>
+</html>
+

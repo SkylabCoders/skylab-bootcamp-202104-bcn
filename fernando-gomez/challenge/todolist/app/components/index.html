@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>To do List</title>
+    <link rel="icon" type="image/svg" href="./../list-solid.svg"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet">
+</head>
+<body class='container'>
+    <h1 class='container__title'>To do List</h1>
+    <main class='main-container'>
+        <input class='tasksInput' type="text">
+        <button class='new-task-button' onclick='handleCreate()'>New Task</button>
+        <h2 class=''>My tasks</h2>
+        <ul class='tasksList'></ul>    
+    </main>
+</body>
+<script src="./../store/store.js"></script>
+<script src="./components.js"></script>
+<script src="./../actions/actionTypes.js"></script>
+<script src="./../actions/actions.js"></script>
+<script src="./../store/notes.json"></script>
+</html>

@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    background-color: rgb(243, 243, 243);
+}
+.main-content {
+    padding: 50px 40px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+    label {
+        margin-right: 10px;
+    }
+    .input-field {
+        padding: 12px 10px;
+        width: 250px;
+        height: 25px;
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+}
+.btn {
+    padding: 4px 10px;
+    font-size: 20px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    background-color:rgb(31, 201, 31);
+    border-radius: 100%;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+    &:focus {
+        outline: none;;
+    }
+}
+
+.tasks {
+    margin-top: 30px;
+
+    .title {
+        text-transform: uppercase;
+        font-size: 20px;
+
+        &--invisible {
+            display: none;
+        }
+    }
+    .buda-img {
+        display: none;
+        
+        &--visible {
+            display: block;
+            width: 355px;
+            margin: 0 auto;
+            animation: buda-img---visible 5s ease-in-out infinite both;
+        }
+    }
+    .buda-message {
+        display:none;
+        
+        &--visible{
+            display: block;
+            margin-top: -40px;
+            font-family: 'Bungee', cursive;
+            text-align: center;
+            font-size:30px;
+            color: #65bfcf;
+            text-shadow: 1px 1.5px rgb(48, 48, 48);
+        }
+
+    }
+    .tasks__list {
+        margin-top: 20px;
+        list-style: none;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            position: relative;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 10px 8px;
+            background-color: rgb(253, 253, 253);
+            box-shadow: 4px 4px 10px -10px rgba(0, 0, 0, 0.6);
+        
+            .task-button {
+                color: white;
+                margin: 0 2px;
+                padding: 2px 2px;
+                cursor: pointer;
+                font-size: 12px;
+                border-radius: 40px;
+
+                &__edit {
+                    font-size: 25px;
+                    margin-left: auto;
+                }
+                
+                &__delete {
+                    font-size: 25px;
+                }
+               
+                &__editOk {
+                    display: none;
+                    background-color: rgba(236, 134, 0, 0.7);
+                    padding: 5px 10px;
+
+                    &--visible {
+                        display: block;
+                    }
+                }
+                
+                &__editOk:hover {
+                    background-color: rgba(236, 134, 0, 1);
+                }
+            }
+            p {
+                margin: 0 5px;
+            }
+            .edit-input {
+                display: none;
+                position: absolute;
+                background-color: rgb(253, 253, 253);
+                top: 8px;
+                left: 4px;
+                border: none;
+                color:rgb(146, 146, 146);
+                padding: 20px 10px;
+                width: 250px;
+                height: 25px;
+                outline:none;
+                font-style:italic;
+                z-index: 1;
+                
+                &--visible {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+  @keyframes buda-img---visible {
+    0% {
+              transform: translate(0, -70px);
+    }
+    
+    50% {
+              transform: translate(0px, -50px);
+    }
+   
+    100% {
+              transform: translate(0, -70px);
+    }
+  }
+
+
+
+
+
+
+
+

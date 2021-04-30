@@ -1,0 +1,92 @@
+*, 
+*::after, 
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eeeeee;
+    color: #303841;
+    list-style: none;
+}
+
+main {
+    text-align: center;
+}
+
+.form-create {
+    margin-top: 50px;
+}
+
+.form-create__input {
+    width: 40%;
+    outline: none;
+    border: 1px solid #1fab89;
+    border-radius: 4px 0 0 4px;
+    padding: 10px 10px;
+}
+
+.form-create__button {
+    width: 8%;
+    outline: none;
+    border: 1px solid #1fab89;
+    border-radius: 0 4px 4px 0;
+    padding: 10px 10px;
+    background-color: #dfd3d3;
+}
+
+.list {
+    width: 47.5%;
+    margin: 20px 335px;
+    display: flex;
+    justify-content: center;
+}
+
+.list-container {
+    width: 100%;
+}
+
+.list-container__item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-container__item-div {
+    width: 16%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    border: none;
+}
+
+.far {
+    font-size: 20px;
+}
+
+.fa-check-circle {
+    color: #1fab89;
+}
+
+.fa-edit {
+    color: #3ec1d3;
+}
+
+.fa-trash-alt {
+ color: #ea5455;
+}
+
+.finish {
+    text-decoration: line-through;
+    color: #1fab89;
+}
+
+.bloqued {
+    color: #b8b0b0
+}

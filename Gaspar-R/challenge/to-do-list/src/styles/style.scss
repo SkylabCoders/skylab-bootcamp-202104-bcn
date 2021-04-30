@@ -1,0 +1,49 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doneBtn{
+    border: 2px solid green;
+}
+
+.doneBtn:hover{
+    border: 2px solid rgb(89, 147, 3);
+    background-color: rgb(9, 206, 9);
+}
+
+
+.completedTaskBtn {
+    border: 2px solid grey;
+    background-color: rgb(208, 208, 208);
+    color: grey;
+}
+
+.delBtn{
+    border: 2px solid rgb(128, 5, 5);
+}
+.delBtn:hover{
+    border: 2px solid rgb(93, 3, 3);
+    background-color: rgb(213, 1, 1);
+}
+
+ul{
+    width: 160px;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.completedTask_li{
+    color: grey;
+}
+
+button{
+    height: 26px;
+    width: 26px;
+    margin-left: 11px;
+}
