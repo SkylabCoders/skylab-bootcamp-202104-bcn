@@ -25,7 +25,7 @@ function InputTask({ tasks, dispatch }) {
     setTaskText(event.target.value);
   }
 
-  function selectDeleteTask(id) {
+  function selectDeleteTaskId(id) {
     dispatch(deleteTask(id));
   }
 
@@ -41,11 +41,11 @@ function InputTask({ tasks, dispatch }) {
       <ul className="task-list">
         <h2>List of task: </h2>
         {tasks.map((task) => (
-          <li className={!task.state ? 'task-item' : 'task-item--done'}>
+          <li key={task.id} className={!task.state ? 'task-item' : 'task-item--done'}>
             {task.text}
             <div className="task-item__buttons">
               <button type="button" className="button-done" onClick={() => selectDoneTask(task.id)}> </button>
-              <button type="button" className="button-delete" onClick={() => selectDeleteTask(task.id)}> </button>
+              <button type="button" className="button-delete" onClick={() => selectDeleteTaskId(task.id)}> </button>
             </div>
           </li>
         ))}
