@@ -18,7 +18,7 @@ function Dashboard({ tasks, dispatch }) {
     dispatch(deleteTask(id));
   }
   function updateClick(task) {
-    dispatch(updateTask(task));
+    dispatch(updateTask({ id: task.id, taskName: task.taskName, done: true }));
   }
   return (
     <>
@@ -36,7 +36,7 @@ function Dashboard({ tasks, dispatch }) {
         {tasks.map((task) => (
           <li className="to-do-list__task">
             {' '}
-            <Link to={`/${task.id}`} className="task-name">{task.taskName}</Link>
+            <Link to={`/${task.id}`} className={!task.done ? 'task-name' : 'task-name--done'}>{task.taskName}</Link>
             <button
               type="button"
               className="delete"
@@ -54,6 +54,7 @@ function Dashboard({ tasks, dispatch }) {
           </li>
         ))}
       </ul>
+
     </>
   );
 }

@@ -5,11 +5,11 @@
 }
 body{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: rgb(51, 51, 51);
 }
 
 .page-title{
   text-align: center;
+  color: rgb(51, 51, 51);
 }
 form{
   margin-top: 20px;
@@ -30,6 +30,7 @@ input {
 }
 
 .to-do-list{
+  background-color: rgba(178, 242, 230, 0.667);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,27 +43,32 @@ input {
   margin: 5px;
 }
 
-a:link {
-  text-decoration: inherit;
-  color: inherit;
-  cursor: pointer;
-}
-
 a:visited {
   text-decoration: inherit;
-  color: inherit;
   cursor: pointer;
 }
 
 a:hover{
+  text-decoration: inherit;
   color: rgb(197, 197, 197);
 }
 
 .task-name{
+  text-decoration: inherit;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
   background-color: rgb(166, 231, 211);
   padding: 3px;
   margin: 3px;
   border-radius: 5px;
+}
+.task-name--done{
+  background-color: rgba(166, 231, 212, 0.626);
+  color: rgb(164, 164, 164);
+  padding: 3px;
+  margin: 3px;
+  border-radius: 5px;
+  text-decoration: line-through;
 }
 
 .delete{
