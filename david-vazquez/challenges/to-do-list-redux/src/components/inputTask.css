@@ -21,9 +21,11 @@ background-image: url("./../assets/pngfind.com-torn-notebook-paper-png-2535932.p
 
 .input-task {
     width: 300px;
-    border-radius: 20px;
-    padding: 10px 30px;
+    height: 45px;
+    border-radius: 30px;
+    padding: 0 30px;
     outline: none;
+    font-size: 18px;
 }
 
 .task-item {
@@ -31,10 +33,11 @@ background-image: url("./../assets/pngfind.com-torn-notebook-paper-png-2535932.p
         display:flex;
         justify-content: space-between;
         align-items: center;
-        margin:10px 0;
+        margin:5px 0;
         background-color: rgb(230, 230, 230);
         border-radius: 40px;
-        padding: 10px 30px;
+        padding: 0 15px 0 30px;
+        height: 50px;
 }
 
 .task-item--done {
@@ -46,7 +49,8 @@ background-image: url("./../assets/pngfind.com-torn-notebook-paper-png-2535932.p
         margin:10px 0;
         background-color: rgb(230, 230, 230);
         border-radius: 40px;
-        padding: 10px 30px;
+        padding: 0 15px 0 30px;
+        height: 50px;
 }
 
 .button-delete {
@@ -82,8 +86,8 @@ border: none;
 }
 
 .button-add {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     font-size: 35px;
     background-color: green;
     color: white;
