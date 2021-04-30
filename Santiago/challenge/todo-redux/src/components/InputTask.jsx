@@ -21,7 +21,8 @@ const InputTask = ({ tasks, dispatch }) => {
 
     const newTask = {
       id: newId,
-      task: newestTask
+      task: newestTask,
+      completed: false
     };
     dispatch(addTask(newTask));
   };
