@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect } from 'react';
@@ -31,6 +30,7 @@ function Todolist({ list, dispatch }) {
 }
 
 Todolist.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   list: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
