@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@200;400&display=swap');
-
+* {
+    font-family: 'Poppins';
+}
 ul {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 20px auto;
   
 }
 .task-item {
@@ -10,9 +12,10 @@ ul {
     justify-content: space-between;
     color: white;
     align-items: center;
-    &__buttons {
+    margin-bottom:15px;
+    .button {
         background-color: #7d0088;
-        padding: 10px;
+        padding: 2px;
         color: rgb(226, 226, 226);
         text-decoration: none;
         border: none;
