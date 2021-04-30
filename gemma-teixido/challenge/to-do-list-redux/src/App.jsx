@@ -10,7 +10,9 @@ function App() {
       <header>
         <h1>To-do-list</h1>
       </header>
-      <ToDoList />
+      <div className="bigContainer">
+        <ToDoList />
+      </div>
     </Provider>
   );
 }

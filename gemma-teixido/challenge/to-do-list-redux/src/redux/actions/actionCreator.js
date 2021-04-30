@@ -22,9 +22,9 @@ export function deleteTask(taskId) {
   };
 }
 
-export function modifyTask(task) {
+export function doneTask(taskId) {
   return {
-    type: actionTypes.MODIFY_TASK,
-    task
+    type: actionTypes.DONE_TASK,
+    taskId
   };
 }

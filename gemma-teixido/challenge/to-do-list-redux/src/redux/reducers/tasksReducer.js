@@ -15,12 +15,10 @@ function tasksReducer(tasks = [], action) {
         action.task
       ];
 
-    case actionType.MODIFY_TASK:
-      return tasks.map(
-        (task) => (task.id === action.task.id
-          ? { ...task, ...action.task }
-          : task)
-      );
+    case actionType.DONE_TASK:
+      return tasks.map((task) => ((task.id === action.taskId)
+        ? { ...task, completed: true }
+        : task));
 
     default:
       return tasks;
