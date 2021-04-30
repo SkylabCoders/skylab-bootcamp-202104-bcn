@@ -1,6 +1,4 @@
 import React from 'react';
-import './index.css';
-import './App.css';
 import {
   Switch, Route, BrowserRouter, Link
 } from 'react-router-dom';
@@ -10,6 +8,8 @@ import HeroDetails from './components/HeroDetails';
 import NotFound from './components/NotFound';
 import HeroList from './components/HeroList';
 import store from './redux/stores/index';
+import './index.css';
+import './App.css';
 
 function App() {
   return (
