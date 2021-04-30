@@ -5,10 +5,11 @@ import { loadBooks } from '../../actions/actionCreators';
 
 const Dashboard = ({ books, dispatch }) => {
   useEffect(() => {
-    loadBooks().then((updatedBooks) => {
-      console.log(updatedBooks);
-      dispatch(updatedBooks);
-    });
+    // loadBooks().then((updatedBooks) => {
+    //   console.log(updatedBooks);
+    //   dispatch(updatedBooks);
+    // });
+    dispatch(loadBooks());
   }, []);
 
   const title = 'Dashboard';
