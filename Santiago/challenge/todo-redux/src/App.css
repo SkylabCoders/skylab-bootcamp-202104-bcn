@@ -1,14 +1,14 @@
-*{
+* {
   font-family: 'New Tegomin', serif;
 }
 
-.main{
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.header{
+.header {
   font-size: 40px;
 }
 
@@ -18,29 +18,34 @@
   align-items: center;
   min-width: 500px;
   min-height: 200px;
-  background-color:lightgreen;
+  background-color: lightgreen;
   border-radius: 10px;
   padding: 10px;
   font-size: 30px;
 }
 
-.input-container{
+.input-container {
   display: flex;
   justify-content: space-around;
 }
 
-.input-itSelf{
+
+.input-itSelf {
   width: 200px;
   height: 30px;
   font-size: 20px;
   color: black;
 }
 
-.addBtn {
+.addBtn, .doneBtn, .deleteBtn {
   margin-left: 2px;
-  width: 60px;
+  min-width: 60px;
   height: 37px;
   font-size: 20px;
+}
+
+.doneBtn{
+  margin-left: 20px;
 }
 
 li {
@@ -48,8 +53,7 @@ li {
 }
 
 .task-item {
-  text-decoration: none;
-
+  margin-right: 20px;
 }
 
 .task-item--done {
