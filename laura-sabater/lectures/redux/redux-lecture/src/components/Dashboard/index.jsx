@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import './dashboard.css';
 import { loadHeroes } from '../../redux/actions/actionCreators';
+import './dashboard.css';
 
 function Dashboard({ heroes, dispatch }) {
   useEffect(() => {
