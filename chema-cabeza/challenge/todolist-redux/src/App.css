@@ -81,7 +81,7 @@ header,
   list-style: none;
 }
 
-.todo {
+.todo-item {
   margin: 0.5rem;
   background: gainsboro;
   color: black;
