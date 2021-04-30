@@ -39,7 +39,11 @@ const InputComponent = ({ tasks, dispatch }) => {
 };
 
 InputComponent.propTypes = {
-  tasks: PropTypes.shape([{}]).isRequired,
+  tasks: PropTypes.shape({
+    id: PropTypes.number,
+    task: PropTypes.string,
+    timeStamp: PropTypes.number,
+  }).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 

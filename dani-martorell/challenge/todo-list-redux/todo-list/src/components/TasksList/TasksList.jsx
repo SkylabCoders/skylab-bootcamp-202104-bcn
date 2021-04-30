@@ -24,8 +24,8 @@ const TasksList = ({ tasks, dispatch }) => {
           {task.task}
           <span>{date}</span>
           <div className="task-item__buttons">
-            <a className="button" href=" " role="button" onClick={() => { handleDelete(task.id); }}>DELETE</a>
-            <a className="button" href=" " role="button">DONE</a>
+            <button type="button" className="button" onClick={() => { handleDelete(task.id); }}>DELETE</button>
+            <button type="button" className="button">DONE</button>
           </div>
         </li>
       );

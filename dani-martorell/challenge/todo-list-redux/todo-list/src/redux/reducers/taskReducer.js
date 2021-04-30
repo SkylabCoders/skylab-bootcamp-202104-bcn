@@ -11,7 +11,7 @@ function taskReducer(tasks = [], action) {
     case actionType.DELETE_TASK:
       return tasks.filter((task) => task.id !== action.idTask);
     case actionType.FINISH_TASK:
-      return TASKS;
+      return tasks;
     default:
       return tasks;
   }
