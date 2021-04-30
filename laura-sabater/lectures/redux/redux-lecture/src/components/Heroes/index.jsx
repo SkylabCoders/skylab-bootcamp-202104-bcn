@@ -1,10 +1,12 @@
 /* eslint-disable no-debugger */
 import React, { useEffect } from 'react';
+// import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import './heroes.css';
 import { deleteHero, loadHeroes, addHero } from '../../redux/actions/actionCreators';
+// import { deleteHero, addHero } from '../../redux/actions/actionCreators';
 
 function HeroesList({ heroes, dispatch }) {
   useEffect(() => {
@@ -15,16 +17,13 @@ function HeroesList({ heroes, dispatch }) {
     dispatch(deleteHero(heroId));
   }
 
-  // function handleNameChange(event) {
-  //   const heroName = event.target.value;
-  //   return heroName;
-  // }
-
-  function add() {
+  function handleAddHero() {
     const newName = document.getElementById('hero-name').value;
-    debugger;
-    dispatch(addHero({ id: heroes[heroes.length - 1] + 1, name: newName }));
-    debugger;
+    const heroesIndex = heroes.map((hero) => hero.id);
+    const maxIndex = Math.max(...heroesIndex);
+    const newId = maxIndex + 1;
+    const newHero = { id: newId, name: newName };
+    dispatch(addHero(newHero));
   }
 
   return (
@@ -35,10 +34,9 @@ function HeroesList({ heroes, dispatch }) {
           Hero name
           <input
             id="hero-name"
-            // onChange={handleNameChange}
             placeholder="Hero name"
           />
-          <button onClick={() => add} type="button">Add Hero</button>
+          <button onClick={() => handleAddHero()} type="button">Add Hero</button>
         </label>
       </div>
       <ul className="heroes-list">

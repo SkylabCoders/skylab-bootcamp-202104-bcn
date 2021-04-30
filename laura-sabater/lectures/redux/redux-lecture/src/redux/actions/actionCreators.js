@@ -9,7 +9,7 @@ export function loadHeroes() {
 
 export function addHero(hero) {
   return {
-    type: actionTypes.UPDATE_HERO,
+    type: actionTypes.ADD_HERO,
     hero,
   };
 }
