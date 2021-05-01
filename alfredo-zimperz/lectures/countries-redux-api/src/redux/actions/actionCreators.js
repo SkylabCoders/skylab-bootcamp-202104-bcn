@@ -14,5 +14,8 @@ export function loadCountries(url = URL) {
 }
 
 export function fakeFunction() {
-
+  return {
+    type: 'FAKE_TYPE',
+    data: 'fakeData',
+  };
 }
