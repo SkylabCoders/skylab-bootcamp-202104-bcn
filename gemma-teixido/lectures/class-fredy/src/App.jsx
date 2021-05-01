@@ -7,13 +7,14 @@ import
   Link
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import store from './redux/Store';
 import Countries from './components/Countries';
 import Dashboard from './components/Dashboard';
 import './App.css';
 
 function App() {
   return (
-    <Provider>
+    <Provider store={store}>
       <Router>
         <div className="App">
           <header>
