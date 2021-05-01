@@ -4,7 +4,7 @@ import countriesReducer from './countriesReducers';
 
 const rootReducer = combineReducers({
   dashboardReducer,
-  countriesReducer
+  countries: countriesReducer
 });
 
 export default rootReducer;

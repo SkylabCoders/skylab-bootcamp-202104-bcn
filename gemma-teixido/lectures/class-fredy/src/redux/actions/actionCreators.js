@@ -1,10 +1,15 @@
-import COUNTRIES from '../../data/countries';
+import axios from 'axios';
 import actionTypes from './actionTypes';
 
-export function loadCountries() {
-  return {
-    type: actionTypes.LOAD_COUNTRIES,
-    countries: COUNTRIES
+const URL = ('https://restcountries.eu/rest/v2/all');
+
+export function loadCountries(url = URL) {
+  return async (dispatch) => {
+    const response = await axios.get(url);
+    dispatch({
+      type: actionTypes.LOAD_COUNTRIES,
+      countries: response.data
+    });
   };
 }
 
