@@ -1,5 +1,6 @@
 .list-element__image {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 50%;
 }
 /*# sourceMappingURL=form.css.map */
