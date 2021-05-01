@@ -9,12 +9,13 @@ const Countries = ({ myCountries }) => {
       {h1}
       <ul>
         {
-        myCountries?.lenght && myCountries.map((countryElement) => (
-          <li>
-            {countryElement.name}
-          </li>
-        ))
-        }
+          myCountries?.lenght ? (myCountries.map((countryElement) => (
+            <li>
+              {countryElement.name}
+            </li>
+          ))
+          ) : <h2>No countries to show</h2>
+      }
       </ul>
     </div>
   );
