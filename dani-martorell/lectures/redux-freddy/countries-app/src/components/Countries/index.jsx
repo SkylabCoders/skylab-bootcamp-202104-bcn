@@ -1,8 +1,8 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-const Dashboard = () => {
-  const h1 = 'Dashboard';
+const Countries = () => {
+  const h1 = 'Countries';
   return (
     <div>
       <h1>{h1}</h1>
@@ -10,4 +10,8 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+// index.propTypes = {
+
+// };
+
+export default Countries;
