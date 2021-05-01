@@ -14,7 +14,7 @@ function App() {
       <div className="App">
         <Router>
           <header>
-            <h1>Hello</h1>
+            <h1>App</h1>
             <Link to="/">Dashboard</Link>
             <Link to="/countries">Countries</Link>
           </header>
