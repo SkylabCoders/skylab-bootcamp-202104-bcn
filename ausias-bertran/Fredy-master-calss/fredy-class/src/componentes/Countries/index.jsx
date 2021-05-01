@@ -1,7 +1,7 @@
 import React from 'react';
 // import Proptypes from 'prop-types';
 
-const Dashboard = () => {
+const Countries = () => {
   const h1 = 'Dashboard';
   return (
     <div>
@@ -14,4 +14,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Countries;
