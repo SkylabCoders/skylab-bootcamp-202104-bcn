@@ -1,5 +1,5 @@
 import React from 'react';
-import './countries.scss';
+// import './countries.scss';
 
 const Countries = () => {
   const h1 = 'Countries';

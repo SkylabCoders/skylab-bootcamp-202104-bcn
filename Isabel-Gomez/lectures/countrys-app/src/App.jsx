@@ -9,19 +9,19 @@ import Dashboard from './components/dashboard/Dashboard';
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1>Countries App</h1>
-        <Link to="/">Dashboard</Link>
-        <Link to="/countries">Countries</Link>
-      </header>
-      <main>
-        <Router>
+      <Router>
+        <header>
+          <h1>Countries App</h1>
+          <Link to="/">Dashboard</Link>
+          <Link to="/countries">Countries</Link>
+        </header>
+        <main>
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route path="/countries" component={Countries} />
           </Switch>
-        </Router>
-      </main>
+        </main>
+      </Router>
     </div>
   );
 }
