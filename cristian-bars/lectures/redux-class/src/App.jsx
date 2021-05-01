@@ -6,7 +6,7 @@ import {
   Link
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './redux/store/index';
+import store from './redux/store';
 import Dashboard from './components/Dashboard/Index';
 import Countries from './components/Countries/Countries';
 import './App.css';
