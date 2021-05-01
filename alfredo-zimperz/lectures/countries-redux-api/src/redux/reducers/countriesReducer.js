@@ -6,7 +6,6 @@ function countriesReducer(initialCountries = [], action) {
     case actionTypes.LOAD_COUNTRIES:
       updatedCountries = [...action.countries];
       break;
-
     default:
       break;
   }
