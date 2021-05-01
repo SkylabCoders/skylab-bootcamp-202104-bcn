@@ -6,10 +6,11 @@ import {
 import { Provider } from 'react-redux';
 import Dashboard from './components/Dashboard/index';
 import Countries from './components/Countries/index';
+import store from './redux/store/index';
 
 function App() {
   return (
-    <Provider>
+    <Provider store={store}>
       <div className="App">
         <Router>
           <header>
