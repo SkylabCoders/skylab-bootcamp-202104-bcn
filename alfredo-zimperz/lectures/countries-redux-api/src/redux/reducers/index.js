@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import dashboardReducer from './dashboardReducer';
-import countriesReducer from './countriesReducer';
+import dashboard from './dashboardReducer';
+import countries from './countriesReducer';
 
 const rootReducer = combineReducers({
-  dashboard: dashboardReducer,
-  countries: countriesReducer,
+  dashboard,
+  countries,
 });
 
 export default rootReducer;
