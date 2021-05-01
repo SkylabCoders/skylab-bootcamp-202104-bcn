@@ -1,13 +1,34 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-const Countries = () => {
+const Countries = ({ myCountries }) => {
   const h1 = 'Countries';
   return (
     <div>
       {h1}
+      <ul>
+        {
+        myCountries?.lenght && myCountries.map((countryElement) => (
+          <li>
+            {countryElement.name}
+          </li>
+        ))
+        }
+      </ul>
     </div>
   );
 };
 
-export default Countries;
+Countries.propTypes = {
+
+  myCountries: PropTypes.shape([]).isRequired
+  // dispatch: PropTypes.func.isRequired
+
+};
+
+const mapStateToProps = (store) => (
+  { myCountries: store.initialCountries }
+);
+
+export default connect(mapStateToProps)(Countries);
