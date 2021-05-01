@@ -28,6 +28,7 @@ Countries.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 
+// Este countries es el del rootReducer countries: countriesReducer
 const mapStateToProps = ({ countries }) => ({
   myCountries: countries
 });
