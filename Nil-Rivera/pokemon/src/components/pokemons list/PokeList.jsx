@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import React from 'react-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -6,7 +5,6 @@ import { useEffect } from 'react';
 import loadPokemons from '../../redux/actions/actionCreator';
 
 function PokeList({ dispatch, pokemons }) {
-  debugger;
   useEffect(() => {
     dispatch(loadPokemons());
   }, []);
