@@ -1,7 +1,7 @@
 import TASKS from '../../constants/task-mock';
 import actionTypes from '../actions/actionTypes';
 
-function TasksReducer(tasks = [], action) {
+function tasksReducer(tasks = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_TASKS:
       return TASKS;
@@ -11,4 +11,4 @@ function TasksReducer(tasks = [], action) {
   }
 }
 
-export default TasksReducer;
+export default tasksReducer;
