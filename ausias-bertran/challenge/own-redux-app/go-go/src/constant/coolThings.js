@@ -1,6 +1,6 @@
 export default [
-  { id: 1, name: 'Play guitar' },
-  { id: 2, name: 'Draw' },
-  { id: 3, name: 'Beach & sun' },
-  { id: 4, name: 'Do nothing' },
+  { id: 1, task: 'Play guitar' },
+  { id: 2, task: 'Draw' },
+  { id: 3, task: 'Beach & sun' },
+  { id: 4, task: 'Do nothing' },
 ];
