@@ -6,7 +6,7 @@ import {
   Link,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './redux/store/index';
+import store from './redux/Store';
 import Dashboard from './componentes/Dashborad/index';
 import Countries from './componentes/Countries';
 import './App.css';
@@ -24,7 +24,7 @@ function App() {
           <main>
             <Switch>
               <Route path="/" exact component={Dashboard} />
-              <Route path="/countries" exact component={Countries} />
+              <Route path="/countries" component={Countries} />
             </Switch>
           </main>
         </Router>
