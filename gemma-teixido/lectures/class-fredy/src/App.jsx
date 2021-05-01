@@ -2,29 +2,31 @@ import React from 'react';
 import
 {
   BrowserRouter as Router,
-  Swtich,
+  Switch,
   Route,
   Link
 } from 'react-router-dom';
+import Countries from './components/Countries';
+import Dashboard from './components/Dashboard';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <h1>Hola</h1>
-        <Link to="/">Dashboard</Link>
-        <Link to="/countries">Countries</Link>
-      </header>
-      <main>
-        <Router>
-          <Swtich>
+    <Router>
+      <div className="App">
+        <header>
+          <h1>Hola</h1>
+          <Link to="/">Dashboard</Link>
+          <Link to="/countries">Countries</Link>
+        </header>
+        <main>
+          <Switch>
             <Route path="/" exact component={Dashboard} />
             <Route path="/countries" component={Countries} />
-          </Swtich>
-        </Router>
-      </main>
-    </div>
+          </Switch>
+        </main>
+      </div>
+    </Router>
   );
 }
 
