@@ -1,8 +1,7 @@
 import React from 'react';
-import 'dashboard.css';
 // import PropTypes from 'prop-types'
 
-const Dashboard = () => {
+const Countries = () => {
   const h1 = 'Dashboard';
   return (
     <div>
@@ -11,8 +10,8 @@ const Dashboard = () => {
   );
 };
 
-Dashboard.propTypes = {
+Countries.propTypes = {
 
 };
 
-export default Dashboard;
+export default Countries;
