@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router, Route, Switch, Link,
 } from 'react-router-dom';
 import './App.css';
+import Countries from './components/countries/Countries';
 import Dashboard from './components/dashboard/Dashboard';
 
 function App() {
