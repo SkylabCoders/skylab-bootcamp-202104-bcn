@@ -1,10 +1,15 @@
-import COUNTRIES from '../../../data/countries';
+import axios from 'axios';
 import actionTypes from './actionTypes';
 
-export const loadCountries = () => ({
-  type: actionTypes.LOAD_COUNTRIES,
-  countries: COUNTRIES,
-});
+const URL = 'https://restcountries.eu/rest/v2/all';
+
+export const loadCountries = (url = URL) => async (dispatch) => {
+  const response = await axios.get(url);
+  dispatch({
+    type: actionTypes.LOAD_COUNTRIES,
+    countries: response.data,
+  });
+};
 
 export const fakeFunction = () => {
 

@@ -3,8 +3,8 @@ import dashboardReducer from './dashboardReducer';
 import countriesReducers from './countriesReducers';
 
 const rootReducer = combineReducers({
-  dashboardReducer,
-  countriesReducers,
+  dashboard: dashboardReducer,
+  countries: countriesReducers,
 });
 
 export default rootReducer;
