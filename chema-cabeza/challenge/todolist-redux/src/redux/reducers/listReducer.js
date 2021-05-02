@@ -15,12 +15,12 @@ function listReducer(list = [], action) {
         action.task,
       ];
 
-      // case actionTypes.UPDATE_HERO:
-      //   return heroes.map(
-      //     (hero) => (hero.id === action.hero.id
-      //       ? { ...hero, ...action.hero }
-      //       : hero),
-      //   );
+    case actionTypes.UPDATE_TASK:
+      return list.map(
+        (task) => (task.id === action.taskId
+          ? { ...task, ...action.title }
+          : task),
+      );
 
     default:
       return list;

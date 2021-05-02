@@ -20,3 +20,10 @@ export function addtask(task) {
     task,
   };
 }
+
+export function updateTask(task) {
+  return {
+    type: actionTypes.UPDATE_TASK,
+    task,
+  };
+}

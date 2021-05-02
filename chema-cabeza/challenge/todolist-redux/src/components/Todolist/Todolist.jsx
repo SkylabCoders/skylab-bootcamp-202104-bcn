@@ -4,7 +4,9 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './Todolist.css';
 import { PropTypes } from 'prop-types';
-import { loadList, deleteTask, addtask } from '../../redux/actions/actionCreators';
+import {
+  loadList, deleteTask, addtask, updateTask,
+} from '../../redux/actions/actionCreators';
 
 function Todolist({ list, dispatch }) {
   useEffect(() => {
@@ -20,6 +22,10 @@ function Todolist({ list, dispatch }) {
     return dispatch(addtask({ id: (list[list.length - 1].id + 1), title: newTaskInput.value }));
   }
 
+  function handleUpdateTask(taskId, taskTitle) {
+    return dispatch(updateTask(taskId, taskTitle));
+  }
+
   return (
     <>
       <section className="newtask-section">
@@ -32,9 +38,8 @@ function Todolist({ list, dispatch }) {
             {list.map((task) => (
               <>
                 <div className="todo">
-                  <li className="todo-item" key={task.id}>{task.title}</li>
-                  <button type="button" className="edit-btn">Edit </button>
-                  <button type="button" className="complete-btn">Done</button>
+                  <li className="todo-item" key={task.id} contentEditable="true">{task.title}</li>
+                  <button type="button" className="edit-btn" onClick={() => { handleUpdateTask(task.id, task.title); }}>Edit</button>
                   <button type="button" className="trash-btn" onClick={() => { delTask(task.id); }}>Delete</button>
                 </div>
 
