@@ -20,7 +20,17 @@ function Todolist({ list, dispatch }) {
         </div>
         <div className="todo-container">
           <ul className="todo-list">
-            {list.map((task) => <li className="todo-item" key={task.id}>{task.title}</li>)}
+            {list.map((task) => (
+              <>
+                <div className="todo">
+                  <li className="todo-item" key={task.id}>{task.title}</li>
+                  <button type="button" className="edit-btn">Edit </button>
+                  <button type="button" className="complete-btn">Done</button>
+                  <button type="button" className="trash-btn">Delete</button>
+                </div>
+
+              </>
+            )) }
 
           </ul>
         </div>
