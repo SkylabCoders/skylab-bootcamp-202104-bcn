@@ -8,3 +8,14 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
+
+// import { combineReducers } from 'redux';
+// import todoReducer from './todoReducer';
+// import selectedTaskReducer from './selectedTaskReducer';
+
+// const rootReducer = combineReducers({
+//   task: todoReducer,
+//   selectedTask: selectedTaskReducer,
+// });
+
+// export default rootReducer;
