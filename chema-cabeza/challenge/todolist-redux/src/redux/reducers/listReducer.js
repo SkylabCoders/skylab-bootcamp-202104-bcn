@@ -6,14 +6,14 @@ function listReducer(list = [], action) {
     case actionTypes.LOAD_LIST:
       return LIST;
 
-      // case actionTypes.DELETE_HERO:
-      //   return heroes.filter((hero) => hero.id !== action.heroId);
+    case actionTypes.DELETE_TASK:
+      return list.filter((element) => element.id !== action.taskId);
 
-      // case actionTypes.ADD_HERO:
-      //   return [
-      //     ...heroes,
-      //     action.hero,
-      //   ];
+    case actionTypes.ADD_TASK:
+      return [
+        ...list,
+        action.task,
+      ];
 
       // case actionTypes.UPDATE_HERO:
       //   return heroes.map(

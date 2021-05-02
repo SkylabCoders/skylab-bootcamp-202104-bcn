@@ -6,3 +6,17 @@ export function loadList() {
     type: actionTypes.LOAD_LIST,
   };
 }
+
+export function deleteTask(taskId) {
+  return {
+    type: actionTypes.DELETE_TASK,
+    taskId,
+  };
+}
+
+export function addtask(task) {
+  return {
+    type: actionTypes.ADD_TASK,
+    task,
+  };
+}
