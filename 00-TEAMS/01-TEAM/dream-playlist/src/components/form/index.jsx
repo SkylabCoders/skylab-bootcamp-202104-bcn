@@ -55,7 +55,9 @@ function Form() {
           </label>
           <br />
           <br />
-          <input type="submit" value="Submit" />
+          <div>
+            <input type="submit" value="Submit" />
+          </div>
         </form>
       </div>
     </>
