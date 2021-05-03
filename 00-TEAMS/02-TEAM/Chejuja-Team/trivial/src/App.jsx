@@ -5,7 +5,7 @@ import {
 import { Provider } from 'react-redux';
 import store from './redux/store';
 // import Header from './components/Header';
-// import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard/index';
 import GameMode from './components/GameMode';
 // import WelcomeRules from './components/WelcomeRules';
 // import Game from './components/Game';
@@ -15,9 +15,9 @@ import GameMode from './components/GameMode';
 function App() {
   return (
     <Provider store={store}>
-      {/* <Header />
-      <Dashboard /> */}
       <BrowserRouter>
+        {/* <Header /> */}
+        <Dashboard />
         <Switch>
           {/* <Route path="/" exact component={WelcomeRules} /> */}
           <Route path="/game-mode" exact component={GameMode} />
