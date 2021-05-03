@@ -1,24 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import heroes from '../../assets/heroes';
+import CreateDetail from './CreateDetail';
 
 function List() {
-  const heroes = [
-    { id: 11, name: 'Dr Nice' },
-    { id: 12, name: 'Narco' },
-    { id: 13, name: 'Bombasto' },
-    { id: 14, name: 'Celeritas' },
-    { id: 15, name: 'Magneta' },
-    { id: 16, name: 'RubberMan' },
-    { id: 17, name: 'Dynama' },
-    { id: 18, name: 'Dr IQ' },
-    { id: 19, name: 'Magma' },
-    { id: 20, name: 'Tornado' },
-  ];
-
-  const listItems = heroes.map((heroe) => <li>{heroe.name}</li>);
+  const [selectedHero, setSelectedHero] = useState(null);
   return (
     <div>
       <h2>My heroes list</h2>
-      <ul>{listItems}</ul>
+      <ul className="list__container">
+        {heroes.map((hero) => (
+          <li className="list__hero-item">
+            {hero.superhero}
+            <button type="button" onClick={() => setSelectedHero(hero)}>+</button>
+            {selectedHero === hero && <CreateDetail hero={hero} />}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

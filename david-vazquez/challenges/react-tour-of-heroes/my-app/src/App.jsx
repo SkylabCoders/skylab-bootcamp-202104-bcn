@@ -1,27 +1,29 @@
 import './App.css';
 import React from 'react';
-import Dashboard from './components/dashboard/Dashboard';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import List from './components/list/List';
 import Details from './components/details/details';
+import Header from './components/header/header';
+import Dashboard from './components/dashboard/Dashboard';
 
 function App() {
-  function loadBoard() {
-    return (<p>Hola</p>);
-  }
-
   return (
-    <body>
-      <header>
-        <h1>Tour of Heroes</h1>
-        <ul>
-          <li><button type="button" onClick={() => loadBoard()}>Dashboard</button></li>
-          <li><button type="button" onClick={() => loadBoard()}>List</button></li>
-        </ul>
-      </header>
-      <Dashboard />
-      <List />
-      <Details />
-    </body>
+    <>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/heroes" component={List} />
+          <Route exact path="/heroes/:heroId" component={Details} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Redirect to="./heroes" />
+        </Switch>
+      </Router>
+    </>
   );
 }
 

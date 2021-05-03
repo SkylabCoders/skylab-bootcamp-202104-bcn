@@ -1,15 +1,24 @@
 import React from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
-import Heroes from './pages/Heroes';
-import Details from './pages/Details';
+import HeroesDetails from './pages/HeroesDetails';
+import HeroesPage from './pages/HeroesPage';
 
 const App = () => (
-  <div>
-    <Dashboard />
-    <Heroes />
-    <Details />
-  </div>
+  <Router>
+    <Switch>
+      <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/heroes" component={HeroesPage} />
+      <Route exact path="/details/:Id" component={HeroesDetails} />
+      <Redirect to="/dashboard" />
+    </Switch>
+  </Router>
 
 );
 
