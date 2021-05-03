@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import { loadArtworksFromApi } from '../../redux/actions/actionCreators';
 import Footer from '../Common/Footer';
 import categoriesToPrint from '../../redux/store/constants/categoriesToPrint';
+import { urlDepatments } from '../../redux/store/constants/urls';
 import './Home.scss';
 
 function Home({ dispatch, artworks }) {
   useEffect(() => {
-    dispatch(loadArtworksFromApi());
+    dispatch(loadArtworksFromApi(urlDepatments));
   }, []);
 
   function findfavoriteIdDepartment(idToMatch) {

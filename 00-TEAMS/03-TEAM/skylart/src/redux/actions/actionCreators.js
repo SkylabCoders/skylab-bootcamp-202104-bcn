@@ -1,9 +1,9 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-export function loadArtworksFromApi() {
+export function loadArtworksFromApi(url) {
   return async (dispatch) => {
-    const { data } = await axios('https://collectionapi.metmuseum.org/public/collection/v1/departments');
+    const { data } = await axios(url);
     dispatch({
       type: actionTypes.LOAD_ARTWORKS,
       artwork: data.departments,
