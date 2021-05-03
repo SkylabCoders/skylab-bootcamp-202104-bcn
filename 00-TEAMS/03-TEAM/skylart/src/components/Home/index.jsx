@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { loadArtworksFromApi } from '../../redux/actions/actionCreators';
+import Footer from '../Common/Footer';
+import './Home.scss';
 
 function Home({ dispatch, artworks }) {
   useEffect(() => {
@@ -15,17 +17,20 @@ function Home({ dispatch, artworks }) {
     return categoriesToPrint.some((favoriteValue) => idToMatch === favoriteValue);
   }
   return (
-    <ul>
-      {
-    artworks.length
-    && artworks.map(({ displayName, departmentId }) => findfavoriteIdDepartment(departmentId)
-        && (
-        <li key={displayName}>
-          {displayName}
-        </li>
-        ))
-      }
-    </ul>
+    <>
+      <ul className="category-list">
+        {
+          artworks.length
+          && artworks.map(({ displayName, departmentId }) => findfavoriteIdDepartment(departmentId)
+              && (
+              <li key={displayName} className="category-list__item">
+                {displayName}
+              </li>
+              ))
+        }
+      </ul>
+      <Footer />
+    </>
   );
 }
 
