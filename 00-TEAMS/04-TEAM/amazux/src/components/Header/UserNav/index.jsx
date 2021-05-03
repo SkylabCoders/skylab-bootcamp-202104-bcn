@@ -6,7 +6,7 @@ import login from '../../../images/login-white.png';
 // import search from '../../../images/search-slim.svg';
 
 const UserNav = () => (
-  <div className="navigation">
+  <nav className="navigation">
     <div className="navigation__img">
       <Link to="/">
         <img src={logo} alt="company-logo" />
@@ -20,10 +20,10 @@ const UserNav = () => (
         <img src={login} alt="Login" />
       </Link>
     </div>
-    <div className="navigation__basket">
-      <button type="button">basket</button>
+    <div className="navigation__cart">
+      <button type="button">Cart</button>
     </div>
-  </div>
+  </nav>
 );
 
 UserNav.propTypes = {

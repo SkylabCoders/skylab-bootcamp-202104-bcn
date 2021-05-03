@@ -37,11 +37,11 @@ body {
   cursor: pointer;
 }
 
-.navigation__basket {
+.navigation__cart {
   margin-right: 20px;
 }
 
-.navigation__basket img {
+.navigation__cart img {
   width: 30px;
   cursor: pointer;
 }
