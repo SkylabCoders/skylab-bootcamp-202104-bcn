@@ -1,15 +1,16 @@
 /* eslint-disable no-console */
 import React, { useRef } from 'react';
+import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import loadGame from '../../redux/actions/actionCreators';
 import './gameMode.css';
 
-function GameMode() {
+function GameMode({ dispatch }) {
   const myRefDifficult = useRef(null);
   const myRefType = useRef(null);
   function loadingGame(selectDiff, selectType) {
-    return loadGame(selectDiff, selectType);
+    return dispatch(loadGame(selectDiff, selectType));
   }
   return (
     <main className="mode-game">
@@ -32,6 +33,9 @@ function GameMode() {
     </main>
   );
 }
+GameMode.propTypes = {
+  dispatch: PropTypes.func.isRequired
+};
 function mapStateToProps(store) {
   return {
     game: store.gameData
