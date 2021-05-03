@@ -18,7 +18,6 @@ function App() {
 
       <BrowserRouter>
         <Header />
-        <Home />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/category" component={Category} />
