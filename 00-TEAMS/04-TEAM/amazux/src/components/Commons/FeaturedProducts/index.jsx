@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 import Loader from '../Loader';
 import './featuredProducts.css';
 
-const FeaturedProducts = ({ products }) => (
+const FeaturedProducts = ({ products, productsToShow }) => (
   <section className="feactured-products">
     {
         products.length ? (
           <div className="product-list">
-            {products.slice(0, 4).map((product) => (
+            {products.slice(0, productsToShow).map((product) => (
               <div className="product" key={product._id}>
                 <Link to={`/products/${product._id}`}>
                   <h3>{product.name}</h3>
@@ -29,7 +29,12 @@ const FeaturedProducts = ({ products }) => (
 );
 
 FeaturedProducts.propTypes = {
-  products: PropTypes.shape([]).isRequired
+  products: PropTypes.shape([]).isRequired,
+  productsToShow: PropTypes.number
+};
+
+FeaturedProducts.defaultProps = {
+  productsToShow: 4
 };
 
 export default FeaturedProducts;
