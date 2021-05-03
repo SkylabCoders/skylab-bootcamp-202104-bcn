@@ -1,8 +1,13 @@
+import axios from 'axios';
 import actionTypes from './actionTypes';
 
-export function loadArtworks() {
-  return {
-    type: actionTypes.LOAD_ARTWORKS,
+export function loadArtworksFromApi() {
+  return async (dispatch) => {
+    const { data } = await axios('https://collectionapi.metmuseum.org/public/collection/v1/departments');
+    dispatch({
+      type: actionTypes.LOAD_ARTWORKS,
+      artwork: data.departments,
+    });
   };
 }
 
