@@ -10,7 +10,7 @@ const getProductsFromApi = async (token = TOKEN, apiProductsUrl = API_PRODUCTS_U
       }
     };
 
-    const response = await fetch(`${apiProductsUrl}sdssd`, options);
+    const response = await fetch(apiProductsUrl, options);
     return { data: await response.json() };
   } catch ({ message }) {
     return { error: message };
