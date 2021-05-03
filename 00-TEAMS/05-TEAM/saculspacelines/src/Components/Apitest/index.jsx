@@ -1,17 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react-dom';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadSwapi } from '../../redux/Actions/actionCreator';
 
-const Apitest = ({ people = [], dispatch }) => {
+const Apitest = ({ dispatch, people }) => {
   useEffect(() => {
     console.log(people);
-    if (!people.length) dispatch(loadSwapi());
+    dispatch(loadSwapi());
   }, []);
 
   return (
     <ul>
-      {people.map((person) => <li>{person.name}</li>)}
+      {people.length && people[0].map((person) => <li>{person.name}</li>)}
     </ul>
   );
 };
@@ -22,7 +23,7 @@ Apitest.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  people: state.data
+  people: state.people
 });
 
 export default connect(mapStateToProps)(Apitest);
