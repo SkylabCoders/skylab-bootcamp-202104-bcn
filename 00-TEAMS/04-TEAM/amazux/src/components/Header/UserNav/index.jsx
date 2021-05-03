@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types'
 import logo from '../../../images/amazon_logo_RGB.jpg';
 import login from '../../../images/login-white.png';
-import basket from '../../../images/shopping-basket-white.png';
 // import search from '../../../images/search-slim.svg';
 
 const UserNav = () => (
@@ -17,13 +16,14 @@ const UserNav = () => (
       <input type="text" placeholder="Search product" />
     </div>
     <div className="navigation__login">
-      <img src={login} alt="Login" />
+      <Link to="/">
+        <img src={login} alt="Login" />
+      </Link>
     </div>
     <div className="navigation__basket">
-      <img src={basket} alt="Shopping basket" />
+      <button type="button">basket</button>
     </div>
   </div>
-
 );
 
 UserNav.propTypes = {
