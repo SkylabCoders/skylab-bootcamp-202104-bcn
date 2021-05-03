@@ -1,12 +1,12 @@
 import actionTypes from '../actions/actionTypes';
-import PRODUCTS from '../../data/products.mock';
+// import PRODUCTS from '../../data/products.mock';
 
-function productsReducer(products = {}, action) {
+function productsReducer(products = [], action) {
   let updatedProducts = { ...products };
 
   switch (action.type) {
     case actionTypes.LOAD_PRODUCTS:
-      updatedProducts = PRODUCTS;
+      updatedProducts = action.products;
       break;
     default:
       break;
