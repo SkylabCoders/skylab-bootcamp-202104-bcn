@@ -3,3 +3,5 @@ const USER = {
   lastName: 'Bertran',
   isLogged: true,
 };
+
+export default USER;
