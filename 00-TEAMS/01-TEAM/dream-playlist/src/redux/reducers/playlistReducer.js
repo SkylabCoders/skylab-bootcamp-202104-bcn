@@ -1,10 +1,11 @@
-import SONGS from '../../assets/musicList.mock';
 import actionTypes from '../actions/actionTypes';
 
-function playlistReducer(songs = [], action) {
-  switch (action.type) {
+function playlistReducer(songs = {}, { type, newSongs }) {
+  // eslint-disable-next-line no-debugger
+  debugger;
+  switch (type) {
     case (actionTypes.LOAD_SONGS):
-      return SONGS;
+      return newSongs;
     default:
       return songs;
   }

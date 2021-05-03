@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 import credentials from '../../assets/credentials';
@@ -35,13 +36,19 @@ export function getUserData(token) {
     });
   };
 }
-// https://api.spotify.com/v1/users/${userId}/collection/tracks`
 export function loadSongs(token, userId) {
+  debugger;
   return async (dispatch) => {
-    const response = await axios.get(urls.user + userId + urls.collection);
+    const response = await axios(urls.user + userId + urls.collection, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      json: true,
+      method: 'GET'
+    });
     dispatch({
       type: actionTypes.LOAD_SONGS,
-      songs: response.data
+      newSongs: response.data
     });
   };
 }
