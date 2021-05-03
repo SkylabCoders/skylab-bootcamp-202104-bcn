@@ -21,7 +21,7 @@ body {
         border: 1px solid $black;
     }
     
-    &__contentImg:hover {
+    &__contentImg:hover, &__location:hover, &__userLogin:hover, &__devolution:hover, &__cart:hover {
         border: 1px solid $white;
         border-radius: 2px;
     }
@@ -35,6 +35,10 @@ body {
     
     &__location {
         display: flex;
+        height: 55px;
+        align-items: center;
+        border: 1px solid $black;
+        cursor: pointer;
     }
     
     &__locationImg {
@@ -50,23 +54,44 @@ body {
         color: $black;
     }
     
+    &__userLogin {
+        width: 50px;
+        height: 55px;
+        border: 1px solid $black;
+        display: flex;
+        align-items: center;
+    }
     &__login {
-        width: 35px;
+        width: 40px;
         height: 28px;
-        background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -130px -340px;
+        background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -125px -340px;
         cursor: pointer;
+        border: 1px solid $black;
     }
     
     &__devolution {
-        width: 70px;
+        width: 110px;
+        cursor: pointer;
+        border: 1px solid $black;
+        height: 55px;
+        display: flex;
+        align-items: center;
     }
     
     &__cart {
         margin-right: 20px;
+        border: 1px solid $black;
+        height: 55px;
+        display: flex;
+        align-items: center;
     }
-    &__cart img {
-        width: 30px;
+    
+    &__cart button {
+        width: 50px;
+        height: 28px;
+        background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -4px -340px;
         cursor: pointer;
+        border: none;
     }
 }
 
