@@ -6,8 +6,57 @@ const {
   API_URL, PEOPLE_URL, PLANETS_URL, STARSHIPS_URL
 } = URLS;
 const {
-  LOAD_SWAPI, LOAD_PEOPLE, LOAD_PLANETS, LOAD_STARSHIPS
+  ADD_USER,
+  CHANGE_FACTION,
+  CREATE_TRAVEL,
+  DELETE_WISH,
+  LOAD_LOCAL_CHARACTERS,
+  LOAD_SWAPI,
+  LOAD_PEOPLE,
+  LOAD_PLANETS,
+  LOAD_STARSHIPS,
+  LOAD_LOCAL_PLANETS,
+  LOAD_LOCAL_STARSHIPS,
+  MODIFY_USERNAME,
+  MODIFY_WISH,
+  RESET_PROFILE,
+  SELECT_AVATAR,
+  SET_CURRENT_PLANET,
+  SHOW_DETAILS,
+  SHOW_PRICE
 } = actionTypes;
+
+export const addUser = (data) => ({
+  type: ADD_USER,
+  payload: data
+});
+
+export const changeFaction = (data) => ({
+  type: CHANGE_FACTION,
+  payload: data
+});
+
+export const createTravel = (data) => ({
+  type: CREATE_TRAVEL,
+  payload: data
+});
+
+export const deleteWish = (wishId) => ({
+  type: DELETE_WISH,
+  payload: wishId
+});
+
+export const loadLocalCharacters = () => ({
+  type: LOAD_LOCAL_CHARACTERS
+});
+
+export const loadLocalPlanets = () => ({
+  type: LOAD_LOCAL_PLANETS
+});
+
+export const loadLocalStarships = () => ({
+  type: LOAD_LOCAL_STARSHIPS
+});
 
 export const loadAPI = () => async (dispatch) => {
   const { data } = await axios(`${API_URL}`);
@@ -40,3 +89,38 @@ export const loadStarships = () => async (dispatch) => {
     payload: data.results
   });
 };
+
+export const modifyUserName = (data) => ({
+  type: MODIFY_USERNAME,
+  payload: data
+});
+
+export const modifyWish = (data) => ({
+  type: MODIFY_WISH,
+  payload: data
+});
+
+export const resetProfile = (userName) => ({
+  type: RESET_PROFILE,
+  payload: userName
+});
+
+export const selectAvatar = (data) => ({
+  type: SELECT_AVATAR,
+  payload: data
+});
+
+export const setCurrentPlanet = (planetName) => ({
+  type: SET_CURRENT_PLANET,
+  payload: planetName
+});
+
+export const showDetails = (data) => ({
+  type: SHOW_DETAILS,
+  payload: data
+});
+
+export const showPrice = (data) => ({
+  type: SHOW_PRICE,
+  payload: data
+});
