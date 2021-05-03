@@ -1,7 +1,7 @@
 import actionTypes from '../actions/actionTypes';
 
 function loadListReducer(list = [], action) {
-  const updatelist = [...list];
+  let updatelist = [...list];
 
   switch (action.type) {
     case actionTypes.LOAD_LIST:
