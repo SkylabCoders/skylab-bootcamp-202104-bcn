@@ -24,7 +24,7 @@ function Home({ dispatch, artworks }) {
           && artworks.map(({ displayName, departmentId }) => findfavoriteIdDepartment(departmentId)
               && (
               <li key={displayName} className="category-list__item">
-                {displayName}
+                <span className="category-name">{displayName}</span>
               </li>
               ))
         }
