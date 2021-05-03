@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Header from './components/Header';
 import ErrorMessage from './components/ErrorMessage';
 import Dashboard from './components/Dashboard';
+import Products from './components/Products';
 import './styles/styles.css';
 
 function App({ error }) {
@@ -14,7 +15,8 @@ function App({ error }) {
       <Header />
       <main className="main">
         <Switch>
-          <Route path="/" component={Dashboard} />
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/product/:id" exact component={Products} />
         </Switch>
       </main>
     </>
