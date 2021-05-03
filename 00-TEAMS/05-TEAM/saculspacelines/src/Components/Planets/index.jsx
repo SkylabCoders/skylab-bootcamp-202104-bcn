@@ -1,5 +1,5 @@
 import React from 'react';
-import PLANETS from '../../store/Constants/Planets';
+import PLANETS from '../../redux/Constants/Planets';
 import './form.css';
 
 const Planets = () => (

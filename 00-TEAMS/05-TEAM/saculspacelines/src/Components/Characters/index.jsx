@@ -1,5 +1,5 @@
 import React from 'react';
-import CHARACTERS from '../../store/Constants/Characters';
+import CHARACTERS from '../../redux/Constants/Characters';
 import './form.css';
 
 const Characters = () => (

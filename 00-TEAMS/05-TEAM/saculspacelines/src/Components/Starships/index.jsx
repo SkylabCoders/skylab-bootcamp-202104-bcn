@@ -1,5 +1,5 @@
 import React from 'react';
-import STARSHIPS from '../../store/Constants/Starships';
+import STARSHIPS from '../../redux/Constants/Starships';
 import './form.css';
 
 const Starships = () => (
