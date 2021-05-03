@@ -6,7 +6,13 @@ import { connect } from 'react-redux';
 
 function Game({ game }) {
   console.log(game);
-  return (<h1>Haaa</h1>);
+  return (
+    <main className="mode-game">
+      {
+        game.length ? <p>{game[0][0].question}</p> : <p>Cargando</p>
+      }
+    </main>
+  );
 }
 Game.propTypes = {
   game: PropTypes.shape([]).isRequired
