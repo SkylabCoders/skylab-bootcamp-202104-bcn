@@ -1,6 +1,5 @@
-import FACTION from './Faction';
-
-const { DARK, LIGHT } = FACTION;
+const DARK = 'DARK';
+const LIGHT = 'LIGHT';
 
 const CHARACTERS = [
   {

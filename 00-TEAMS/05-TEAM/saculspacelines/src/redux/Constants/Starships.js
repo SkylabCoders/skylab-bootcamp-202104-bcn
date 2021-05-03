@@ -1,6 +1,6 @@
-import FACTION from './Faction';
-
-const { DARK, LIGHT, NEUTRAL } = FACTION;
+const DARK = 'DARK';
+const LIGHT = 'LIGHT';
+const NEUTRAL = 'NEUTRAL';
 
 const STARSHIPS = [
   {

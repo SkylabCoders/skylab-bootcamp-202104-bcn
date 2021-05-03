@@ -1,4 +1,3 @@
-import FACTION from './Faction';
 import yaviniv from '../../Images/yaviniv.png';
 import chandrila from '../../Images/chandrila.png';
 import socorro from '../../Images/socorro.png';
@@ -8,7 +7,9 @@ import dorin from '../../Images/dorin.png';
 import zolan from '../../Images/zolan.png';
 import shili from '../../Images/shili.png';
 
-const { DARK, LIGHT, NEUTRAL } = FACTION;
+const DARK = 'DARK';
+const LIGHT = 'LIGHT';
+const NEUTRAL = 'NEUTRAL';
 
 const PLANETS = [
   {
