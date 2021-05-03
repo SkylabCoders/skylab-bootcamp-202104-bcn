@@ -2,6 +2,7 @@
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 .navigation {
@@ -17,11 +18,19 @@ body {
         cursor: pointer;
     }
     
+    &__search input {
+        height: 40px;
+        font-size: 20px;
+        color: $black;
+    }
+    
     &__login img {
         width: 30px;
         cursor: pointer;
     }
-    
+    &__basket {
+        margin-right: 20px;
+    }
     &__basket img {
         width: 30px;
         cursor: pointer;
