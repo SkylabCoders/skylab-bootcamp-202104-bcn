@@ -1,11 +1,12 @@
 /* eslint-disable no-console */
 import React, { useRef } from 'react';
+import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import loadGame from '../../redux/reducers/trivialReducer';
+import loadGame from '../../redux/actions/actionCreators';
 import './gameMode.css';
 
-function GameMode(dispatch) {
+function GameMode({ dispatch }) {
   const myRefDifficult = useRef(null);
   const myRefType = useRef(null);
   function loadingGame(selectDiff, selectType) {
@@ -24,7 +25,7 @@ function GameMode(dispatch) {
         <option value="multiple">MULTIPLE</option>
       </select>
       <Link to="./play">
-        <button type="button" className="mode-game__accept" onClick={() => loadingGame(myRefDifficult, myRefType)}>
+        <button type="button" className="mode-game__accept" onClick={() => loadingGame(myRefDifficult.current.value, myRefType.current.value)}>
           <img src="https://img.icons8.com/doodle/48/000000/ok.png" alt="OK" />
         </button>
 
@@ -32,6 +33,9 @@ function GameMode(dispatch) {
     </main>
   );
 }
+GameMode.propTypes = {
+  dispatch: PropTypes.func.isRequired
+};
 function mapStateToProps(store) {
   return {
     game: store.gameData
