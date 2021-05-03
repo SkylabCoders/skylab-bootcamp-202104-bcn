@@ -7,7 +7,7 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'airbnb'
+    'airbnb',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -17,15 +17,15 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'react'
+    'react',
   ],
   rules: {
     'comma-dangle': ['error', {
-      arrays: 'never',
+      arrays: 'always-multiline',
       objects: 'always',
       imports: 'never',
       exports: 'never',
-      functions: 'never',
+      functions: 'always-multiline',
     }],
     'linebreak-style': 0,
     'global-require': 0,
