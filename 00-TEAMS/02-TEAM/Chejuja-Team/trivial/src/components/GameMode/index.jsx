@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { useRef } from 'react';
-// import loadGame from '../../redux/reducers/trivialReducer';
+import loadGame from '../../redux/reducers/trivialReducer';
+import './gameMode.css';
 
 function GameMode() {
   const myRefDifficult = useRef(null);
@@ -17,7 +18,7 @@ function GameMode() {
         <option value="boolean">BOOLEAN</option>
         <option value="multiple">MULTIPLE</option>
       </select>
-      <button type="button" onClick={() => console.log(myRefDifficult.current.value, myRefType.current.value)}>
+      <button type="button" className="mode-game__accept" onClick={() => loadGame(myRefDifficult, myRefType)}>
         <img src="https://img.icons8.com/doodle/48/000000/ok.png" alt="OK" />
       </button>
     </main>
