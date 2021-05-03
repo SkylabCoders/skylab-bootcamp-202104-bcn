@@ -6,11 +6,11 @@ import Nav from './components/ui/Nav';
 import HeroList from './components/heroes/HeroList';
 import Dashboard from './components/dashboard/Dashboard';
 import HeroDetail from './components/heroes/HeroDetail';
-import store from './redux/store';
+import configureStore from './redux/store/configureStore';
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={configureStore}>
       <BrowserRouter>
         <h1>Tour of Heroes</h1>
         <Nav />

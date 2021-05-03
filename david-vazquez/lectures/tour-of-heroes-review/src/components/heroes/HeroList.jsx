@@ -1,21 +1,18 @@
 import React, { useEffect } from 'react';
-import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { loadHeroes } from '../../redux/actions/actionCreator';
+import { PropTypes } from 'prop-types';
+import { loadHeroesFromApi } from '../../redux/actions/actionCreator';
 
-function HeroList({ heroes, dispatch }) {
+function HeroList({ dispatch, heroes }) {
   useEffect(() => {
-    if (!heroes.length) {
-      dispatch(loadHeroes());
-    }
+    dispatch(loadHeroesFromApi());
   }, []);
   return (
-    <main>
-      <h2>List of heroes</h2>
-      <div className="heroes-menu">
-        {heroes.length && heroes.map((hero) => <li key={hero.id}>{hero.name}</li>)}
-      </div>
-    </main>
+    <ul>
+      { // Comprobamos si la lista tiene algo o no
+      heroes[0]?.map(({ name }) => <li><span>{name}</span></li>)
+      }
+    </ul>
   );
 }
 

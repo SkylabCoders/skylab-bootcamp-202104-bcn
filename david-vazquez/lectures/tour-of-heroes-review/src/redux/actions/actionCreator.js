@@ -1,9 +1,15 @@
+import axios from 'axios';
 import HEROES from '../../constants/heroes.mock';
 import actionTypes from './actionTypes';
+import url from './urls';
 
-export function loadHeroes() {
-  return {
-    type: actionTypes.LOAD_HEROES,
+export function loadHeroesFromApi() {
+  return async (dispatch) => {
+    const { data } = await axios(url);
+    dispatch({
+      type: actionTypes.LOAD_HEROES,
+      heroes: data.results,
+    });
   };
 }
 

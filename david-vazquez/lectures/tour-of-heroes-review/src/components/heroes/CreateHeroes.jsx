@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { createHero } from '../../redux/actions/actionCreator';
 
 function CreateHeroes({ hero, dispatch }) {
+  // eslint-disable-next-line no-unused-vars
   const [heroName, setHeroName] = useState();
 
   function handleNameChange(event) {
