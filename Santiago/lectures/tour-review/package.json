@@ -1,19 +1,20 @@
 {
-  "name": "tour-oh-redux",
+  "name": "tour-review",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+    "jest": "^26.6.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
+    "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "redux": "^4.1.0",
-    "redux-thunk": "^2.3.0",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
@@ -42,6 +43,9 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
     "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -49,8 +53,5 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
