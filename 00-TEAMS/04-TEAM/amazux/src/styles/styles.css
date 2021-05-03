@@ -68,6 +68,7 @@ body {
   height: 40px;
   font-size: 20px;
   color: #131921;
+  border-radius: 3px;
 }
 
 .navigation__user-login {
@@ -113,6 +114,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .navigation__cart button {
@@ -123,12 +125,27 @@ body {
   border: none;
 }
 
+.navigation__cart-number {
+  position: absolute;
+  left: 25px;
+  right: auto;
+  top: 7px;
+}
+
 @media (max-width: 600px) {
   .navigation {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .navigation__content-img, .navigation__location, .navigation__user-login, .navigation__devolution, .navigation__cart {
+    display: none;
+  }
+  .navigation__search {
+    width: 80%;
+  }
+  .navigation__search input {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -52,6 +52,7 @@ body {
         height: 40px;
         font-size: 20px;
         color: $black;
+        border-radius: 3px;
     }
     
     &__user-login {
@@ -84,6 +85,7 @@ body {
         height: 55px;
         display: flex;
         align-items: center;
+        position: relative;
     }
     
     &__cart button {
@@ -93,10 +95,29 @@ body {
         cursor: pointer;
         border: none;
     }
+    
+    &__cart-number {
+        position: absolute;
+        left: 25px;
+        right: auto;
+        top: 7px;
+    }
 }
 
 @media (max-width:600px) {
     .navigation {
-        flex-direction: column;
+        justify-content: center;
+        
+        &__content-img, &__location, &__user-login, &__devolution, &__cart {
+            display: none;
+        }
+        
+        &__search {
+            width: 80%;
+        }
+    
+        &__search input {
+            width: 100%;
+        }
     }
 }
