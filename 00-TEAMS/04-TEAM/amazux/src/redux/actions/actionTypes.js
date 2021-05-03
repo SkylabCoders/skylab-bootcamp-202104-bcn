@@ -1,0 +1,5 @@
+export default {
+  LOAD_USER: 'LOAD_USER',
+  LOAD_PRODUCTS: 'LOAD_PRODUCTS',
+  LOAD_CART: 'LOAD_CART',
+};
