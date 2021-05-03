@@ -1,9 +1,12 @@
 import React from 'react';
 import {
-  BrowserRouter, Route, Switch
+  BrowserRouter, Switch, Route // Route
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import Header from './components/Header';
+// import Dashboard from './components/Dashboard';
+// import GameMode from './components/GameMode';
 // import Header from './components/Header';
 // import Dashboard from './components/Dashboard';
 import GameMode from './components/GameMode';
@@ -18,7 +21,10 @@ function App() {
       {/* <Header />
       <Dashboard /> */}
       <BrowserRouter>
+        <Header />
+        {/* <Dashboard /> */}
         <Switch>
+          {/* <Route path="/" exact component={WelcomeRules} />
           {/* <Route path="/" exact component={WelcomeRules} /> */}
           <Route path="/game-mode" exact component={GameMode} />
           {/* <Route path="/play" exact component={Game} />
