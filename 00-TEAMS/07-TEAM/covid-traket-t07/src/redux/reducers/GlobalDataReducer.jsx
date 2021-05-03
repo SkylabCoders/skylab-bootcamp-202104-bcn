@@ -1,15 +1,15 @@
 import actionTypes from '../actions/actionTypes';
 
 const globalDataReducers = (initialGlobalData = [], action) => {
-  let updatedData = [...initialGlobalData];
+  let updatedGlobalData = [...initialGlobalData];
   switch (action.type) {
     case actionTypes.LOAD_GLOBAL:
-      updatedData = [...action.data];
+      updatedGlobalData = [...action.data];
       break;
     default:
       break;
   }
-  return updatedData;
+  return updatedGlobalData;
 };
 
 export default globalDataReducers;
