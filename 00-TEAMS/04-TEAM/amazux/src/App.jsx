@@ -1,12 +1,20 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Dashboard from './components/Dashboard';
 import './App.css';
 
 function App() {
-  const title = 'App';
   return (
-    <div className="App">
-      <h1>{title}</h1>
-    </div>
+    <>
+      <Header />
+      <main className="main">
+        <Switch>
+          <Route path="/" component={Dashboard} />
+        </Switch>
+      </main>
+    </>
+
   );
 }
 
