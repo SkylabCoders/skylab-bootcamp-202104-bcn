@@ -18,7 +18,6 @@ const CategoriesNav = () => {
         {showSideNav
           ? <SideNav closeSideNav={closeSideNav} />
           : <button type="button" onClick={openSideNav}>Open</button>}
-        ;
       </div>
       <p>Tu compra de supermercado con Amazux Prime</p>
     </nav>
