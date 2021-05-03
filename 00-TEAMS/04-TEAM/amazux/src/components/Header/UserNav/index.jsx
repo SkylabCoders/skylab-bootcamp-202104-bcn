@@ -13,7 +13,11 @@ const UserNav = () => (
 
     <div className="navigation__location">
       <div className="navigation__location-img" />
-      <div className="navigation__location-adress">Enviar a Joseluis</div>
+      <div className="navigation__direction">
+        <div className="navigation__location-name">Enviar a Joseluis</div>
+        <div className="navigation__location-adress">Calle falsa 123</div>
+      </div>
+
     </div>
     <div className="navigation__search">
       <input type="text" placeholder="Search product" />
@@ -29,6 +33,7 @@ const UserNav = () => (
     </div>
     <div className="navigation__cart">
       <button type="button"> </button>
+      <span className="navigation__cart-number">3</span>
     </div>
   </nav>
 );
