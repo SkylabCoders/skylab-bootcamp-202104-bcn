@@ -1,8 +1,6 @@
 import actionTypes from './actionTypes';
 
 export function loadTasks() {
-  // eslint-disable-next-line no-debugger
-  debugger;
   return {
     type: actionTypes.LOAD_TASKS
   };

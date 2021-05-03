@@ -5,10 +5,25 @@ import { loadTasks } from '../../redux/actions/actionCreator';
 
 function TodoListComponent({ tasks, dispatch }) {
   useEffect(() => {
-    if (!tasks.length) dispatch(loadTasks());
+    // eslint-disable-next-line no-debugger
+    debugger;
+    dispatch(loadTasks());
   }, []);
   return (
-    <div className="container">Hola mundo</div>
+    <div>
+      <ul className="container__list">
+        {
+          tasks?.length && (
+            tasks.map((element) => (
+              <>
+                <li className="container__item">{element.task}</li>
+                <button type="button" className="container__delTaskButton">Delete</button>
+              </>
+            ))
+          )
+        }
+      </ul>
+    </div>
   );
 }
 
