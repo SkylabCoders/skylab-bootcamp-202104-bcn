@@ -1,13 +1,20 @@
-import './App.css';
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import Dashboard from './components/dashboard/Dashboard';
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        header test
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <header>
+          header test
+        </header>
+        <main>
+          <Dashboard />
+        </main>
+      </div>
+    </Provider>
   );
 }
 
