@@ -1,5 +1,7 @@
 import actionTypes from '../Actions/actionTypes';
 import CHARACTERS from '../Constants/Characters';
+import PLANETS from '../Constants/Planets';
+import STARSHIPS from '../Constants/Starships';
 
 const {
   LOAD_SWAPI, LOAD_PEOPLE, LOAD_PLANETS, LOAD_STARSHIPS
@@ -9,18 +11,17 @@ export default function loadSwapiReducer(state = [], { type, payload }) {
   let result;
   let newPayload;
 
-  const combineObjectsArrays = (APIarray, localArray) => {
-    const localData = APIarray.map(
-      (APIarrayElement) => ({
-        ...APIarrayElement,
-        ...localArray
-          .filter((localArrayElement) => APIarrayElement.name === localArrayElement.name)
-      })
-    );
+  const combineObjectsArrays = (apiArray, localArray) => {
+    const newArray = apiArray.map((item) => {
+      const local = localArray
+        .find((localItem) => localItem.name.toLowerCase() === item.name.toLowerCase());
+      return {
+        ...item,
+        ...local
+      };
+    });
 
-    console.log(localData);
-
-    return localData;
+    return newArray;
   };
 
   switch (type) {
@@ -34,11 +35,13 @@ export default function loadSwapiReducer(state = [], { type, payload }) {
       break;
 
     case LOAD_PLANETS:
-      result = [...state, payload];
+      newPayload = combineObjectsArrays(payload, PLANETS);
+      result = [...state, newPayload];
       break;
 
     case LOAD_STARSHIPS:
-      result = [...state, payload];
+      newPayload = combineObjectsArrays(payload, STARSHIPS);
+      result = [...state, newPayload];
       break;
 
     default:

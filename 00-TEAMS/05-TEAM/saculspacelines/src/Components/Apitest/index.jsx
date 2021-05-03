@@ -2,12 +2,11 @@ import React from 'react-dom';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadPeople } from '../../redux/Actions/actionCreator';
+import { loadPlanets } from '../../redux/Actions/actionCreator';
 
 const Apitest = ({ dispatch, people }) => {
   useEffect(() => {
-    console.log(people);
-    dispatch(loadPeople());
+    dispatch(loadPlanets());
   }, []);
 
   return (
