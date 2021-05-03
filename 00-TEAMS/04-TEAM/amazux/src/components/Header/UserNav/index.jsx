@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types'
 import logo from '../../../images/amazon_logo_RGB.jpg';
 import login from '../../../images/login-white.png';
@@ -8,7 +9,9 @@ import basket from '../../../images/shopping-basket-white.png';
 const UserNav = () => (
   <div className="navigation">
     <div className="navigation__img">
-      <img src={logo} alt="company-logo" />
+      <Link to="/">
+        <img src={logo} alt="company-logo" />
+      </Link>
     </div>
     <div className="navigation__search">
       <input type="text" placeholder="Search product" />
