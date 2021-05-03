@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 function App() {
-  const title = 'Dashboard';
+  const title = 'App';
   return (
     <div className="App">
       <h1>{title}</h1>
