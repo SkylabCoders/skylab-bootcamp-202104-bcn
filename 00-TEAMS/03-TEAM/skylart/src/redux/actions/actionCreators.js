@@ -6,15 +6,21 @@ export function loadArtworks() {
   };
 }
 
+export function loadFavorites() {
+  return {
+    type: actionTypes.LOAD_FAVORITES,
+  };
+}
+
 export function deleteArtwork() {
   return {
-    type: actionTypes.DELETE_ARTWORK,
+    type: actionTypes.DELETE_FAVORITE,
   };
 }
 
 export function addArtwork() {
   return {
-    type: actionTypes.ADD_ARTWORK,
+    type: actionTypes.ADD_FAVORITE,
   };
 }
 
