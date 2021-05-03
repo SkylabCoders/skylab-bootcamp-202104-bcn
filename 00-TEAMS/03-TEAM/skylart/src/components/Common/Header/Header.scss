@@ -2,9 +2,50 @@
 @import './../../../styles/colors.scss';
 
 .header {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: aqua;
+    
+    background-color: $color-red-medium-dark;
+    color: $color-white;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    &__container {
+        @include flex-content (inline-flex,row,space-between,center);
+        padding: 0 5%;
+        &__left-elements{
+            padding: 0;
+            list-style: none;
+            @include flex-content (flex,row,null,center);
+            img {
+                height: 30px;
+                color: white;
+                padding-right: 50px;
+            }
+            .left-elements {
+                padding:  0 50px;
+                position: relative;
+                margin-right: auto;
+                &__list {
+                    @include flex-content(flex, column, row, null);
+                    list-style: none;
+                    position: absolute;
+                    background-color: $color-gray-ligth;
+                    color: $color-black-dark;
+                    padding: 0 10px;
+                    top: 40px;
+                    left: 40px;
+                    width: 150px;
+                }
+                &__item{
+                    padding: 5px 0;
+                }
+            }
+        }
+        &__right-elements{
+            margin: auto;
+            @include flex-content(null,null,flex-end,null);
+            float: left;
+    
+        }
+    }
+    
 }
