@@ -14,7 +14,7 @@ function HeaderMenu() {
               <img className="header__list--logo" src={logo} alt="CHEJUJA" />
             </Link>
           </li>
-          <li className="header__list--itemgit">Titulo</li>
+          <li className="header__list--itemgit">Titulo1</li>
           <li className="header__list--item">
             <Link to="./" className="header__list--login">
               <p className="header__list--paragraph">UserName</p>
