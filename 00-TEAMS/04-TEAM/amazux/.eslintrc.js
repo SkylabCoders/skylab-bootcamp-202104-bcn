@@ -20,7 +20,13 @@ module.exports = {
     'react'
   ],
   rules: {
-    'comma-dangle': [2, 'never'],
+    'comma-dangle': ['error', {
+      arrays: 'never',
+      objects: 'never',
+      imports: 'never',
+      exports: 'never',
+      functions: 'never'
+    }],
     'linebreak-style': 0,
     'global-require': 0,
     'eslint linebreak-style': [0, 'error', 'windows']
