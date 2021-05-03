@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { loadProducts } from '../../redux/actions/actionCreators';
+import FeaturedProducts from '../Commons/FeaturedProducts';
 
 const Dashboard = ({ products, dispatch }) => {
   useEffect(() => {
@@ -10,6 +11,7 @@ const Dashboard = ({ products, dispatch }) => {
   return (
     <div>
       <h2>Dashboard</h2>
+      <FeaturedProducts products={[]} />
       <ul>
         {
         products?.length && (
