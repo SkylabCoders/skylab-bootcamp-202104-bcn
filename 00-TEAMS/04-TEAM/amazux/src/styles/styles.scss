@@ -1,0 +1,44 @@
+@import './colors';
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    background-color: $black;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__img img {
+        width: 130px;
+        cursor: pointer;
+    }
+    
+    &__search input {
+        height: 40px;
+        font-size: 20px;
+        color: $black;
+    }
+    
+    &__login img {
+        width: 30px;
+        cursor: pointer;
+    }
+    &__cart {
+        margin-right: 20px;
+    }
+    &__cart img {
+        width: 30px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width:600px) {
+    .navigation {
+        flex-direction: column;
+    }
+}
