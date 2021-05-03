@@ -14,14 +14,14 @@ body {
     align-items: center;
     color: $white;
     
-    &__contentImg {
+    &__content-img {
         height: 55px;
         display: flex;
         align-items: center;
         border: 1px solid $black;
     }
     
-    &__contentImg:hover, &__location:hover, &__userLogin:hover, &__devolution:hover, &__cart:hover {
+    &__content-img:hover, &__location:hover, &__user-login:hover, &__devolution:hover, &__cart:hover {
         border: 1px solid $white;
         border-radius: 2px;
     }
@@ -41,7 +41,7 @@ body {
         cursor: pointer;
     }
     
-    &__locationImg {
+    &__location-img {
         width: 35px;
         height: 28px;
         background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -60px -340px;
@@ -54,7 +54,7 @@ body {
         color: $black;
     }
     
-    &__userLogin {
+    &__user-login {
         width: 50px;
         height: 55px;
         border: 1px solid $black;
