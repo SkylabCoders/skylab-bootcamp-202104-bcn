@@ -19,13 +19,8 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-<<<<<<< HEAD
-        {/* <Header /> */}
-        <Dashboard />
-=======
         <Header />
-        {/* <Dashboard /> */}
->>>>>>> 6457b88cb8111a9ef156819d249a8f0bab83a0b5
+        <Dashboard />
         <Switch>
           {/* <Route path="/" exact component={WelcomeRules} />
           {/* <Route path="/" exact component={WelcomeRules} /> */}
