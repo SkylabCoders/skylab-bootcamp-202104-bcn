@@ -5,19 +5,25 @@ import { loadArtworksFromApi } from '../../redux/actions/actionCreators';
 
 function Home({ dispatch, artworks }) {
   useEffect(() => {
-    // eslint-disable-next-line no-debugger
-    debugger;
     dispatch(loadArtworksFromApi());
   }, []);
+
+  const categoriesToPrint = [
+    1, 5, 6, 10, 11, 13,
+  ];
+  function findfavoriteIdDepartment(idToMatch) {
+    return categoriesToPrint.some((favoriteValue) => idToMatch === favoriteValue);
+  }
   return (
     <ul>
       {
-      artworks.length
-      && artworks.map(({ displayName }) => (
+    artworks.length
+    && artworks.map(({ displayName, departmentId }) => findfavoriteIdDepartment(departmentId)
+        && (
         <li key={displayName}>
           {displayName}
         </li>
-      ))
+        ))
       }
     </ul>
   );
