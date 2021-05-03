@@ -11,7 +11,7 @@ const Dashboard = ({ products, dispatch }) => {
   return (
     <div>
       <h2>Dashboard</h2>
-      <FeaturedProducts products={[]} />
+      <FeaturedProducts products={products} />
       <ul>
         {
         products?.length && (
