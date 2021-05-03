@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Header from './components/Header';
 import ErrorMessage from './components/ErrorMessage';
 import Dashboard from './components/Dashboard';
-import './App.css';
+import './styles/styles.css';
 
 function App({ error }) {
   return (

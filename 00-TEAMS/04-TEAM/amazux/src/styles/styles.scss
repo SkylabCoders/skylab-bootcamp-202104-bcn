@@ -1,0 +1,25 @@
+@import './colors';
+
+body {
+    margin: 0;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    background-color: $black;
+    height: 60px;
+    justify-content: space-between;
+    
+    &__img img {
+        width: 130px;
+    }
+    
+    &__login img {
+        width: 30px;
+    }
+    
+    &__basket img {
+        width: 30px;
+    }
+}
