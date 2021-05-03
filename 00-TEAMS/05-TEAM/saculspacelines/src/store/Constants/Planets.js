@@ -283,7 +283,7 @@ const PLANETS = [
   },
   {
     name: 'Ojom',
-    url: 'https://lh3.googleusercontent.com/proxy/-xvZzwW3t4cXnwlzbrf4GMz8EH-QiTOPnR99_gArxkKB5-2UC608BTlNflw5WGN3qiTYzTVNVkaCUKupxA2xUETxGE1JEIHJNRlcErdAbc7Lyl3M9g',
+    url: 'https://lh3.googleusercontent.com/proxy/8pYnFBsPlUqTKMx5cZdSjVR6nbVfKSqW1fh1IV4JGbkvaCbXDIzBKZf_6ONZBgMDDDj0lCl0trEjJwYIVMsMwj0TFqW8GIjMws2ONz9lEPa3MCVFVrgb',
     faction: LIGHT
   },
   {
@@ -303,7 +303,7 @@ const PLANETS = [
   },
   {
     name: 'Kalee',
-    url: 'https://lh3.googleusercontent.com/proxy/SPVKCH8OwCYQY3mqdLEZqUTGX2aMTaJ1Tdq3e7mBBheHSKNNKmviqgpt7hAasmWp_5c4IYgbABby4O8d2YXI1EGioRcagZdl1DU',
+    url: 'https://www.pngkit.com/png/full/3-32091_new-science-fiction-author-e-j-deen-dark.png',
     faction: DARK
   },
   {
