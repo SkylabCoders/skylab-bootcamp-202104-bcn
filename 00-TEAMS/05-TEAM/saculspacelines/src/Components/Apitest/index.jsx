@@ -31,7 +31,7 @@ Apitest.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  people: state.payload
+  people: state.swapiReducer
 });
 
 export default connect(mapStateToProps)(Apitest);

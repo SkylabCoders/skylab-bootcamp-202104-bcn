@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import payload from './swapireducer';
+import swapiReducer from './swapireducer';
+import localDataReducer from './localDataReducer';
 
 const rootReducer = combineReducers({
-  payload
+  swapiReducer,
+  localDataReducer
 });
 
 export default rootReducer;
