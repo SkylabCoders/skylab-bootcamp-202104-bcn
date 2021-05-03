@@ -10,16 +10,20 @@ body {
     background-color: $black;
     height: 60px;
     justify-content: space-between;
+    align-items: center;
     
     &__img img {
         width: 130px;
+        cursor: pointer;
     }
     
     &__login img {
         width: 30px;
+        cursor: pointer;
     }
     
     &__basket img {
         width: 30px;
+        cursor: pointer;
     }
 }
