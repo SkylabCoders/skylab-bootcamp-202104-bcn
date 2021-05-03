@@ -1,14 +1,14 @@
 import actionTypes from '../actions/actionTypes';
 
-function errorReducer(error = '', action) {
+function errorReducer(error = {}, action) {
   let updatedError = { ...error };
 
   switch (action.type) {
     case actionTypes.LOAD_ERROR:
-      updatedError = action.error;
+      updatedError = { ...error, message: action.error };
       break;
     case actionTypes.DELETE_ERROR:
-      updatedError = '';
+      updatedError = {};
       break;
     default:
       break;

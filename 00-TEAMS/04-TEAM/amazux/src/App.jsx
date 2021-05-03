@@ -10,7 +10,7 @@ import './App.css';
 function App({ error }) {
   return (
     <>
-      {error && <ErrorMessage message="Hay un error" />}
+      {error.message && <ErrorMessage message={error.message} />}
       <Header />
       <main className="main">
         <Switch>
