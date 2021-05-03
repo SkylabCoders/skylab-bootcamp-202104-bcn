@@ -2,15 +2,18 @@ import actionTypes from '../Actions/actionTypes';
 
 const { LOAD_SWAPI } = actionTypes;
 
-export default function loadSwapiReducer(state = [], { type, data }) {
+export default function loadSwapiReducer(people = [], { type, data }) {
   let result;
+
+  // eslint-disable-next-line no-debugger
+  debugger;
 
   switch (type) {
     case LOAD_SWAPI:
-      result = [...state, data];
+      result = [...people, data];
       break;
     default:
-      result = state;
+      result = people;
   }
   return result;
 }

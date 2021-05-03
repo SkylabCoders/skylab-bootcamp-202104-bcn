@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import swapiReducer from './swapireducer';
+import loadSwapiReducer from './swapireducer';
 
-const rootReducer = combineReducers(
-  swapiReducer
-);
+const rootReducer = combineReducers({
+  people: loadSwapiReducer
+});
 
 export default rootReducer;

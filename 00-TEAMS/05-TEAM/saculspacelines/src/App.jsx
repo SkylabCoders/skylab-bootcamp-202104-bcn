@@ -3,6 +3,7 @@ import './App.css';
 import Characters from './Components/Characters';
 import Planets from './Components/Planets';
 import Starships from './Components/Starships';
+import Apitest from './Components/Apitest';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Starships />
       <Characters />
       <Planets />
+      <Apitest />
     </div>
   );
 }
