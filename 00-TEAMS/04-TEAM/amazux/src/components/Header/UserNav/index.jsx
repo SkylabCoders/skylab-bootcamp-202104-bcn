@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom';
 
 const UserNav = () => (
   <nav className="navigation">
-    <div className="navigation__contentImg">
+    <div className="navigation__content-img">
       <Link to="/">
         <div className="navigation__img" />
       </Link>
     </div>
 
     <div className="navigation__location">
-      <div className="navigation__locationImg" />
-      <div className="navigation__locationAdress">Enviar a Joseluis</div>
+      <div className="navigation__location-img" />
+      <div className="navigation__location-adress">Enviar a Joseluis</div>
     </div>
     <div className="navigation__search">
       <input type="text" placeholder="Search product" />
     </div>
-    <div className="navigation__userLogin">
+    <div className="navigation__user-login">
       <Link to="/">
         <div className="navigation__login" />
       </Link>

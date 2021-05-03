@@ -22,7 +22,7 @@ body {
   color: #fff;
 }
 
-.navigation__contentImg {
+.navigation__content-img {
   height: 55px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,7 +33,7 @@ body {
   border: 1px solid #131921;
 }
 
-.navigation__contentImg:hover, .navigation__location:hover, .navigation__userLogin:hover, .navigation__devolution:hover, .navigation__cart:hover {
+.navigation__content-img:hover, .navigation__location:hover, .navigation__user-login:hover, .navigation__devolution:hover, .navigation__cart:hover {
   border: 1px solid #fff;
   border-radius: 2px;
 }
@@ -57,7 +57,7 @@ body {
   cursor: pointer;
 }
 
-.navigation__locationImg {
+.navigation__location-img {
   width: 35px;
   height: 28px;
   background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -60px -340px;
@@ -70,7 +70,7 @@ body {
   color: #131921;
 }
 
-.navigation__userLogin {
+.navigation__user-login {
   width: 50px;
   height: 55px;
   border: 1px solid #131921;
