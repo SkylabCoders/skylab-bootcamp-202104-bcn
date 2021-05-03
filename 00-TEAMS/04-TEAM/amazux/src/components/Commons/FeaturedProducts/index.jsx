@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Loader from '../Loader';
 import './featuredProducts.css';
 
 const FeaturedProducts = ({ products }) => (
@@ -22,7 +23,7 @@ const FeaturedProducts = ({ products }) => (
             ))}
           </div>
 
-        ) : (<h2>No hay products</h2>)
+        ) : <Loader />
     }
   </section>
 );
