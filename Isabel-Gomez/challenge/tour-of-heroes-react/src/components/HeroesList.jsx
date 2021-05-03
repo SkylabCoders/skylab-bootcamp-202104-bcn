@@ -1,10 +1,13 @@
 import React from 'react';
 import heroes from '../data/heroes';
+import Card from './common/Card';
 
 const HeroesList = () => (
   <section>
     <ul>
-      {heroes.map((element) => <li key={element.id}>{element.name}</li>)}
+      {heroes.map((element) => (
+        <Card key={element.id} data={element} />
+      ))}
     </ul>
   </section>
 );

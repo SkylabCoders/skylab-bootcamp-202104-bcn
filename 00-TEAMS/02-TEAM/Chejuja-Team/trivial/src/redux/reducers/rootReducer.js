@@ -1,8 +1,8 @@
-import {combineReducers} from 'redux'
-import trivialReducer from '../reducers/trivialReducer'
+import { combineReducers } from 'redux';
+import trivialReducer from './trivialReducer';
 
 const rootReducer = combineReducers({
-    gameData: trivialReducer,
-})
+  gameData: trivialReducer
+});
 
-export default rootReducer
+export default rootReducer;
