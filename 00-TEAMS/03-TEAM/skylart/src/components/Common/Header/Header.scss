@@ -1,51 +1,80 @@
 @import './../../../styles/mixin.scss';
 @import './../../../styles/colors.scss';
 
-.header {
-    
+.header {  
     background-color: $color-red-medium-dark;
     color: $color-white;
     width: 100%;
     height: 60px;
     margin: 0;
-    &__container {
-        @include flex-content (inline-flex,row,space-between,center);
-        padding: 0 5%;
-        &__left-elements{
-            padding: 0;
-            list-style: none;
-            @include flex-content (flex,row,null,center);
-            img {
-                height: 30px;
-                color: white;
-                padding-right: 50px;
+}
+
+.container {
+    @include flex-content (inline-flex,row,space-between,center);
+    padding: 0 5%;
+    width: 90%;
+    height: 100%;
+    &__left-elements{
+        padding: 0;
+        list-style: none;
+        @include flex-content (flex,row,null,center);
+        img {
+            height: 30px;
+            color: white;
+            padding-right: 50px;
+        }
+        .left-elements {
+            padding:  22px 50px;
+            height: 100%;
+            position: relative;
+            margin-right: auto;
+            &__list {
+                @include flex-content(none, column, row, null);
+                list-style: none;
+                position: absolute;
+                background-color: $color-gray-ligth;
+                color: $color-black-dark;
+                padding: 10px 20px;
+                top: 60px;
+                left: 30px;
+                width: 150px;
             }
-            .left-elements {
-                padding:  0 50px;
-                position: relative;
-                margin-right: auto;
-                &__list {
-                    @include flex-content(flex, column, row, null);
-                    list-style: none;
-                    position: absolute;
-                    background-color: $color-gray-ligth;
-                    color: $color-black-dark;
-                    padding: 0 10px;
-                    top: 40px;
-                    left: 40px;
-                    width: 150px;
-                }
-                &__item{
-                    padding: 5px 0;
-                }
+            &__item{
+                padding: 5px 0;
+            }
+            &__item:hover{
+                color: $color-red-medium-dark;
             }
         }
-        &__right-elements{
-            margin: auto;
-            @include flex-content(null,null,flex-end,null);
-            float: left;
-    
+        .left-elements:hover{
+            color: $color-black-dark;
+            cursor: pointer;
+        }
+        .left-elements:hover > .left-elements__list {
+            display: block;
         }
     }
-    
+    &__right-elements{
+        margin: 0;
+        list-style: none;
+        @include flex-content(flex,row,flex-end,center);
+        position: relative;
+        height: 100%
+    }
+    .right-elements {
+        padding: 15px;
+        img{
+            height: 20px;
+            padding-left: 10px;
+        }
+    }
+    .right-elements:hover{
+        filter: invert(1);
+        cursor: pointer;    
+    }
+}
+
+.arrow-category {
+    font-size: 10px;
+    padding-left: 5px;
 }
