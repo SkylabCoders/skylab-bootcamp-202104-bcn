@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
-    jest: true
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -11,10 +11,10 @@ module.exports = {
   ],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 12,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: [
     'react'
@@ -22,13 +22,13 @@ module.exports = {
   rules: {
     'comma-dangle': ['error', {
       arrays: 'never',
-      objects: 'never',
+      objects: 'always',
       imports: 'never',
       exports: 'never',
-      functions: 'never'
+      functions: 'never',
     }],
     'linebreak-style': 0,
     'global-require': 0,
-    'eslint linebreak-style': [0, 'error', 'windows']
-  }
+    'eslint linebreak-style': [0, 'error', 'windows'],
+  },
 };
