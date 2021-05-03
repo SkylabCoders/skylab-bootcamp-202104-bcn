@@ -22,7 +22,6 @@ const {
   RESET_PROFILE,
   SELECT_AVATAR,
   SET_CURRENT_PLANET,
-  SHOW_DETAILS,
   SHOW_PRICE
 } = actionTypes;
 
@@ -90,19 +89,18 @@ export const loadStarships = () => async (dispatch) => {
   });
 };
 
-export const modifyUserName = (data) => ({
+export const modifyUserName = (newUsername) => ({
   type: MODIFY_USERNAME,
-  payload: data
+  payload: newUsername
 });
 
-export const modifyWish = (data) => ({
+export const modifyWish = (newWish) => ({
   type: MODIFY_WISH,
-  payload: data
+  payload: newWish
 });
 
-export const resetProfile = (userName) => ({
-  type: RESET_PROFILE,
-  payload: userName
+export const resetProfile = () => ({
+  type: RESET_PROFILE
 });
 
 export const selectAvatar = (data) => ({
@@ -113,11 +111,6 @@ export const selectAvatar = (data) => ({
 export const setCurrentPlanet = (planetName) => ({
   type: SET_CURRENT_PLANET,
   payload: planetName
-});
-
-export const showDetails = (data) => ({
-  type: SHOW_DETAILS,
-  payload: data
 });
 
 export const showPrice = (data) => ({
