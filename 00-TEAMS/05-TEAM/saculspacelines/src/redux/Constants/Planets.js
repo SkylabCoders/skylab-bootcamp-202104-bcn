@@ -1,5 +1,4 @@
 import FACTION from './Faction';
-
 import yaviniv from '../../Images/yaviniv.png';
 import chandrila from '../../Images/chandrila.png';
 import socorro from '../../Images/socorro.png';
