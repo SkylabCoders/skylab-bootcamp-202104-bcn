@@ -45,4 +45,13 @@ body {
   width: 30px;
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .navigation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

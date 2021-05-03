@@ -36,3 +36,9 @@ body {
         cursor: pointer;
     }
 }
+
+@media (max-width:600px) {
+    .navigation {
+        flex-direction: column;
+    }
+}
