@@ -7,6 +7,9 @@ function errorReducer(error = '', action) {
     case actionTypes.LOAD_ERROR:
       updatedError = action.error;
       break;
+    case actionTypes.DELETE_ERROR:
+      updatedError = '';
+      break;
     default:
       break;
   }
