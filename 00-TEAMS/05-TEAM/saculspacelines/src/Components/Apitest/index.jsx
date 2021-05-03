@@ -12,7 +12,16 @@ const Apitest = ({ dispatch, people }) => {
 
   return (
     <ul>
-      {people.length && people[0].map((person) => <li>{person.name}</li>)}
+      {people.length && people[0].map((person) => (
+        <>
+          <li>{person.name}</li>
+          <img
+            src={person.imgUrl}
+            alt={person.name}
+            className="list-element__image"
+          />
+        </>
+      ))}
     </ul>
   );
 };

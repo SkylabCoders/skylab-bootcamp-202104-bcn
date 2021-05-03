@@ -13,7 +13,7 @@ const Planets = () => (
           {planets.name}
           {planets.faction}
           <img
-            src={planets.url}
+            src={planets.imgUrl}
             alt={planets.name}
             className="list-element__image"
           />

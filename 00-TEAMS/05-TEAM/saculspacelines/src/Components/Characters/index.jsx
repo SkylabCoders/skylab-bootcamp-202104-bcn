@@ -13,7 +13,7 @@ const Characters = () => (
           {character.name}
           {character.faction}
           <img
-            src={character.url}
+            src={character.imgUrl}
             alt={character.name}
             className="list-element__image"
           />

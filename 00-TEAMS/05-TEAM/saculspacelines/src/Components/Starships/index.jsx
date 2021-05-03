@@ -13,7 +13,7 @@ const Starships = () => (
           {starship.name}
           {starship.faction}
           <img
-            src={starship.url}
+            src={starship.imgUrl}
             alt={starship.name}
             className="list-element__image"
           />
