@@ -7,7 +7,6 @@ const Dashboard = ({ products, dispatch }) => {
   useEffect(() => {
     dispatch(loadProducts());
   }, []);
-
   return (
     <div>
       <h2>Dashboard</h2>
