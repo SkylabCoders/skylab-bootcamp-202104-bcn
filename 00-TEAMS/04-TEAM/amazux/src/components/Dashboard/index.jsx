@@ -5,17 +5,17 @@ import { loadProducts } from '../../redux/actions/actionCreators';
 import FeaturedProducts from '../Commons/FeaturedProducts';
 import ProductsList from '../Commons/ProductsList';
 import Slider from '../Commons/Slider';
+import './dashboard.css';
 
 const Dashboard = ({ products, dispatch }) => {
   useEffect(() => {
     dispatch(loadProducts());
   }, []);
   return (
-    <div>
+    <div className="dashboard">
       <Slider imgSources={[]} />
       <FeaturedProducts products={products} />
       <ProductsList products={products} productsToShow={20} pagination={10} />
-
     </div>
   );
 };
