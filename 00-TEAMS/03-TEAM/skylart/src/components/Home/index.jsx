@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { loadArtworksFromApi } from '../../redux/actions/actionCreators';
 import Footer from '../Common/Footer';
+import categoriesToPrint from '../../redux/store/constants/categoriesToPrint';
 import './Home.scss';
 
 function Home({ dispatch, artworks }) {
@@ -10,9 +11,6 @@ function Home({ dispatch, artworks }) {
     dispatch(loadArtworksFromApi());
   }, []);
 
-  const categoriesToPrint = [
-    1, 5, 6, 10, 11, 13,
-  ];
   function findfavoriteIdDepartment(idToMatch) {
     return categoriesToPrint.some((favoriteValue) => idToMatch === favoriteValue);
   }
