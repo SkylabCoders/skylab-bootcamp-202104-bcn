@@ -6,6 +6,7 @@ import './App.css';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Movies from './common/components/movies';
+import MoviesSlideHead from './common/components/slider-head';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <header>
             <h1>HELLO</h1>
             <Link to="/countries">Countries</Link>
+            <MoviesSlideHead />
           </header>
           <main>
             <Switch>
