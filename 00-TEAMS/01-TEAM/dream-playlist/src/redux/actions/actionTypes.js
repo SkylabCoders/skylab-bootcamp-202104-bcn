@@ -1,4 +1,5 @@
 export default {
-  LOAD_SONGS: 'LOAD_SONGS',
-  GET_TOKEN: 'GET_TOKEN'
+  GET_TOKEN: 'GET_TOKEN',
+  GET_USER: 'GET_USER',
+  LOAD_SONGS: 'LOAD_SONGS'
 };
