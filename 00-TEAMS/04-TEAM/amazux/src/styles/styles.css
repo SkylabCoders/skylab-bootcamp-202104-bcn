@@ -33,7 +33,7 @@ body {
   border: 1px solid #131921;
 }
 
-.navigation__contentImg:hover {
+.navigation__contentImg:hover, .navigation__location:hover, .navigation__userLogin:hover, .navigation__devolution:hover, .navigation__cart:hover {
   border: 1px solid #fff;
   border-radius: 2px;
 }
@@ -49,6 +49,12 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 55px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #131921;
+  cursor: pointer;
 }
 
 .navigation__locationImg {
@@ -64,24 +70,57 @@ body {
   color: #131921;
 }
 
+.navigation__userLogin {
+  width: 50px;
+  height: 55px;
+  border: 1px solid #131921;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .navigation__login {
-  width: 35px;
+  width: 40px;
   height: 28px;
-  background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -130px -340px;
+  background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -125px -340px;
   cursor: pointer;
+  border: 1px solid #131921;
 }
 
 .navigation__devolution {
-  width: 70px;
+  width: 110px;
+  cursor: pointer;
+  border: 1px solid #131921;
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navigation__cart {
   margin-right: 20px;
+  border: 1px solid #131921;
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.navigation__cart img {
-  width: 30px;
+.navigation__cart button {
+  width: 50px;
+  height: 28px;
+  background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -4px -340px;
   cursor: pointer;
+  border: none;
 }
 
 @media (max-width: 600px) {

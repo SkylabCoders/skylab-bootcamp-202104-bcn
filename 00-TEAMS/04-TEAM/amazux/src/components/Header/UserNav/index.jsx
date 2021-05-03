@@ -18,14 +18,17 @@ const UserNav = () => (
     <div className="navigation__search">
       <input type="text" placeholder="Search product" />
     </div>
-    <Link to="/">
-      <div className="navigation__login" />
-    </Link>
-    <div className="Navigation__devolution">
+    <div className="navigation__userLogin">
+      <Link to="/">
+        <div className="navigation__login" />
+      </Link>
+    </div>
+
+    <div className="navigation__devolution">
       Devoluciones y pedidos
     </div>
     <div className="navigation__cart">
-      <button type="button">Cart</button>
+      <button type="button"> </button>
     </div>
   </nav>
 );
