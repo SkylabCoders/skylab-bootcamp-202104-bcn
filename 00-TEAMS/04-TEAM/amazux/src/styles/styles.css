@@ -11,7 +11,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #0F1111;
+  background-color: #131921;
   height: 60px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -29,7 +29,7 @@ body {
 .navigation__search input {
   height: 40px;
   font-size: 20px;
-  color: #0F1111;
+  color: #131921;
 }
 
 .navigation__login img {
