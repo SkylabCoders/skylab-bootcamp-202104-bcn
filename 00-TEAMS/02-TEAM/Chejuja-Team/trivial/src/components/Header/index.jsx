@@ -4,7 +4,7 @@ import './header.css';
 import logo from './logo.png';
 import LoginImg from './user.png';
 
-function HeaderMenu() {
+function Header() {
   return (
     <header className="header">
       <nav className="header__nav">
@@ -27,4 +27,4 @@ function HeaderMenu() {
   );
 }
 
-export default HeaderMenu;
+export default Header;
