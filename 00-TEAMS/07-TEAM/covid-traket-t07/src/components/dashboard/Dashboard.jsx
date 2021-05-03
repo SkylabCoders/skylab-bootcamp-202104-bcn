@@ -1,28 +1,30 @@
+/* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import globalDataReducers from '../../redux/reducers/GlobalDataReducer';
+import loadGlobalData from '../../redux/actions/actionCreators';
 
-const Dashboard = ({ updatedGlobalData, dispatch }) => {
-  useEffect(() => { dispatch(globalDataReducers()); }, []);
+const Dashboard = ({ globalData, dispatch }) => {
+  console.log('globalData en Dashboard', globalData);
+  useEffect(() => { dispatch(loadGlobalData()); }, []);
+  console.log('globalData.0 en Dashboard', globalData);
   return (
-    <section>
+    <div>
       <h1>Tracking the virus worldwide</h1>
+
       <ul>
-        {
-          updatedGlobalData.All?.length && (
-            updatedGlobalData.All.map((element) => <li key={element}>{element}</li>))
-}
+        {Object.keys(globalData).length && (
+          globalData?.Afghanistan.All.map((element) => <li key={element}>hola</li>))}
       </ul>
-    </section>
+    </div>
   );
 };
 
 Dashboard.propTypes = {
-  updatedGlobalData: PropTypes.shape([]).isRequired,
+  globalData: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (store) => ({ updatedGlobalData: store.All });
+const mapStateToProps = (store) => ({ globalData: store.globalData });
 
 export default connect(mapStateToProps)(Dashboard);

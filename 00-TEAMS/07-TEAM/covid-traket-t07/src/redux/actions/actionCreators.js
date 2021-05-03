@@ -6,15 +6,12 @@ const casesUrl = 'cases';
 // eslint-disable-next-line no-unused-vars
 const vaccinesUrl = 'vaccines';
 
-export const loadGlobalData = (url = `${URL}+${casesUrl}`) => async (dispatch) => {
+const loadGlobalData = (url = `${URL}${casesUrl}`) => async (dispatch) => {
   const response = await axios.get(url);
-
   dispatch({
     type: actionTypes.LOAD_GLOBAL,
-    data: response.global
+    data: response.data
   });
 };
 
-export const fakeFunction = () => {
-
-};
+export default loadGlobalData;

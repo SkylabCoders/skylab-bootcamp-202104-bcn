@@ -1,3 +1,3 @@
 export default {
-  LOAD_CONTINENTS: 'LOAD_CONTINENTS'
+  LOAD_GLOBAL: 'LOAD_GLOBAL'
 };
