@@ -1,6 +1,8 @@
 import actionTypes from './actionTypes';
 import apiServices from '../../services/api';
 
+export const deleteError = () => ({ type: actionTypes.DELETE_ERROR });
+
 export const loadProductsActionCreator = (products) => (
   { type: actionTypes.LOAD_PRODUCTS, products }
 );
