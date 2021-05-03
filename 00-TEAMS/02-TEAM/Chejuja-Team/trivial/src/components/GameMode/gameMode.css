@@ -1,1 +1,35 @@
-/* No CSS *//*# sourceMappingURL=gameMode.css.map */
+.mode-game {
+  background-color: #023047;
+  border-radius: 25px;
+  color: #fa1919;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30vw;
+  height: 50vh;
+}
+
+.mode-game__difficult {
+  width: 10vw;
+  margin-bottom: 3vh;
+}
+
+.mode-game__type {
+  width: 10vw;
+}
+
+.mode-game__accept {
+  background-color: #023047;
+  width: 5vw;
+  border: none;
+  cursor: pointer;
+  margin-left: 20vw;
+}
+/*# sourceMappingURL=gameMode.css.map */
