@@ -1,13 +1,13 @@
-import actionTypes from  '../actions/actionTypes'
+import axios from 'axios';
+import actionTypes from './actionTypes';
 
-export default function loadGame(difficultySelection, typeSelection){
-    const url = `https://opentdb.com/api.php?amount=10&difficulty=${difficultySelection}&type=${typeSelection}`
-    return async (dispatch) => {
-        const {data} = await axios.get(url);      
-        console.log(data.results)
-        dispatch( {
-        type: actionTypes.LOAD_GAME,
-        game: data.results
-    })
-}
+export default function loadGame(difficultySelection, typeSelection) {
+  const url = `https://opentdb.com/api.php?amount=10&difficulty=${difficultySelection}&type=${typeSelection}`;
+  return async (dispatch) => {
+    const { data } = await axios.get(url);
+    dispatch({
+      type: actionTypes.LOAD_GAME,
+      game: data.results
+    });
+  };
 }
