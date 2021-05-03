@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import artworksReducer from './artworksReducer';
-import detailReducer from './detailReducer';
-import favoritesReducer from './favoritesReducer';
+import artworks from './artworksReducer';
+import favorites from './detailReducer';
+import detail from './favoritesReducer';
 
 const rootReducer = combineReducers({
-  artworks: artworksReducer,
-  favorites: favoritesReducer,
-  detail: detailReducer,
+  artworks,
+  favorites,
+  detail,
 });
 
 export default rootReducer;

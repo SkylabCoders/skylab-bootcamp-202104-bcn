@@ -3,10 +3,11 @@ import actionTypes from '../actions/actionTypes';
 function artworksReducer(artworks = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_ARTWORKS:
-      return artworks;
+      return action.artwork;
     default:
-      return artworks;
+      break;
   }
+  return artworks;
 }
 
 export default artworksReducer;
