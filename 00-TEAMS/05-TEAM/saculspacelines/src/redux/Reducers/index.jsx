@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import people from './swapireducer';
+import payload from './swapireducer';
 
 const rootReducer = combineReducers({
-  people
+  payload
 });
 
 export default rootReducer;

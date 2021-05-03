@@ -2,12 +2,12 @@ import React from 'react-dom';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadSwapi } from '../../redux/Actions/actionCreator';
+import { loadPeople } from '../../redux/Actions/actionCreator';
 
 const Apitest = ({ dispatch, people }) => {
   useEffect(() => {
     console.log(people);
-    dispatch(loadSwapi());
+    dispatch(loadPeople());
   }, []);
 
   return (
@@ -23,7 +23,7 @@ Apitest.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  people: state.people
+  people: state.payload
 });
 
 export default connect(mapStateToProps)(Apitest);
