@@ -12,7 +12,8 @@ const UserNav = () => (
     </div>
 
     <div className="navigation__location">
-      Enviar a Joseluis
+      <div className="navigation__locationImg" />
+      <div className="navigation__locationAdress">Enviar a Joseluis</div>
     </div>
     <div className="navigation__search">
       <input type="text" placeholder="Search product" />
@@ -20,6 +21,9 @@ const UserNav = () => (
     <Link to="/">
       <div className="navigation__login" />
     </Link>
+    <div className="Navigation__devolution">
+      Devoluciones y pedidos
+    </div>
     <div className="navigation__cart">
       <button type="button">Cart</button>
     </div>
