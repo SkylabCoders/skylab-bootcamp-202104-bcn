@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { loadProducts } from '../../redux/actions/actionCreators';
 import FeaturedProducts from '../Commons/FeaturedProducts';
+import ProductsList from '../Commons/ProductsList';
+import Slider from '../Commons/Slider';
 
 const Dashboard = ({ products, dispatch }) => {
   useEffect(() => {
@@ -10,15 +12,9 @@ const Dashboard = ({ products, dispatch }) => {
   }, []);
   return (
     <div>
-      <h2>Dashboard</h2>
+      <Slider imgSources={[]} />
       <FeaturedProducts products={products} />
-      <ul>
-        {
-        products?.length && (
-          products.map((product) => <li>{product.name}</li>)
-        )
-      }
-      </ul>
+      <ProductsList products={products} productsToShow={20} pagination={10} />
 
     </div>
   );
