@@ -1,5 +1,4 @@
 import actionTypes from '../actions/actionTypes';
-// import PRODUCTS from '../../data/products.mock';
 
 function productsReducer(products = [], action) {
   let updatedProducts = { ...products };

@@ -6,6 +6,13 @@ export const loadProductsActionCreator = (products) => (
 );
 
 export const loadProducts = () => async (dispatch) => {
-  const productsResponse = await apiServices.getProductsFromApi();
-  dispatch(loadProductsActionCreator(productsResponse));
+  const response = await apiServices.getProductsFromApi();
+  if (!response.error) {
+    dispatch(loadProductsActionCreator(response.data));
+  } else {
+    dispatch({
+      type: actionTypes.LOAD_ERROR,
+      error: response.error
+    });
+  }
 };
