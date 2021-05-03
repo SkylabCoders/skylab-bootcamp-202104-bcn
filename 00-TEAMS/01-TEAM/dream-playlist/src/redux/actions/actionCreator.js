@@ -1,12 +1,11 @@
-/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 import credentials from '../../assets/credentials';
+import urls from '../../assets/urls';
 
 export function getToken() {
-  debugger;
   return async (dispatch) => {
-    const token = await axios('https://accounts.spotify.com/api/token', {
+    const token = await axios(urls.token, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
         Authorization: `Basic ${btoa(`${credentials.clientId}:${credentials.clientSecret}`)}`
@@ -22,9 +21,8 @@ export function getToken() {
 }
 
 export function getUserData(token) {
-  debugger;
   return async (dispatch) => {
-    const user = await axios('https://api.spotify.com/v1/users/xengue', {
+    const user = await axios(`${urls.user}xengue`, {
       headers: {
         Authorization: `Bearer ${token}`
       },
@@ -37,10 +35,10 @@ export function getUserData(token) {
     });
   };
 }
-
-export function loadSongs(url = URL) {
+// https://api.spotify.com/v1/users/${userId}/collection/tracks`
+export function loadSongs(token, userId) {
   return async (dispatch) => {
-    const response = await axios.get(url);
+    const response = await axios.get(urls.user + userId + urls.collection);
     dispatch({
       type: actionTypes.LOAD_SONGS,
       songs: response.data
