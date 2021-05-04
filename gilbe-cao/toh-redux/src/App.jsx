@@ -8,14 +8,21 @@ import {
   Link,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { Auth0Provider } from '@auth0/auth0-react';
 import Dashboard from './components/Dashboard';
 import HeroDetail from './components/HeroDetail';
 import NotFound from './components/NotFound';
 import store from './redux/stores';
+import Login from './components/Login';
 
+// TODO Move credentials to .env
 function App() {
   return (
-    <>
+    <Auth0Provider
+      domain="gilbecao.auth0.com"
+      clientId="io9Tjw33V6UyLVbiQv6p4knDpaxcPu9x"
+      redirectUri={window.location.origin}
+    >
       <Provider store={store}>
         <BrowserRouter>
           <h1>Tour of Heroes</h1>
@@ -24,6 +31,7 @@ function App() {
             <Link to="/Heroes">Heroes</Link>
             <Link to="/404">404</Link>
           </nav>
+          <Login />
           <Switch>
             <Route path="/" exact component={Dashboard} />
             <Route path="/detail/:heroId" component={HeroDetail} />
@@ -31,7 +39,7 @@ function App() {
           </Switch>
         </BrowserRouter>
       </Provider>
-    </>
+    </Auth0Provider>
   );
 }
 
