@@ -11,6 +11,16 @@ export function loadCategoriesFromApi(url) {
   };
 }
 
+export function loadArtworksFromApi(url) {
+  return async (dispatch) => {
+    const { data } = await axios(url);
+    dispatch({
+      type: actionTypes.LOAD_ARTWORKS,
+      artwork: data,
+    });
+  };
+}
+
 export function loadFavorites() {
   return {
     type: actionTypes.LOAD_FAVORITES,
