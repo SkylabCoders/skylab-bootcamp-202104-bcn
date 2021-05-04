@@ -1,6 +1,6 @@
 import actionTypes from '../actions/actionTypes';
 
-const VaccinesReducers = (initialVaccinesContinentData = {}, action) => {
+const VaccinesReducers = (initialVaccinesContinentData = [], action) => {
   let updatedVaccinesContinent;
   switch (action.type) {
     case actionTypes.LOAD_VACCINES:
