@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { loadArtworksFromApi } from '../../redux/actions/actionCreators';
+import { loadCategoriesFromApi } from '../../redux/actions/actionCreators';
 import Footer from '../Common/Footer';
 import categoriesToPrint from '../../redux/store/constants/categoriesToPrint';
 import { urlDepatments } from '../../redux/store/constants/urls';
@@ -9,7 +9,7 @@ import './Home.scss';
 
 function Home({ dispatch, artworks }) {
   useEffect(() => {
-    dispatch(loadArtworksFromApi(urlDepatments));
+    dispatch(loadCategoriesFromApi(urlDepatments));
   }, []);
 
   function findfavoriteIdDepartment(idToMatch) {
@@ -19,8 +19,7 @@ function Home({ dispatch, artworks }) {
     <>
       <ul className="category-list">
         {
-          artworks.length
-          && artworks.map(
+          artworks.length && artworks.map(
             ({ displayName, departmentId }) => findfavoriteIdDepartment(departmentId)
               && (
               <li key={displayName} className="category-list__item">
@@ -42,7 +41,7 @@ Home.propTypes = {
 
 function mapStateToProps({ artworks }) {
   return {
-    artworks: artworks.departments,
+    artworks,
   };
 }
 

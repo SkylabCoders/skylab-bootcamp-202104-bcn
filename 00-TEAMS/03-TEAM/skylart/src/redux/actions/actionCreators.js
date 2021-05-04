@@ -1,12 +1,12 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-export function loadArtworksFromApi(url) {
+export function loadCategoriesFromApi(url) {
   return async (dispatch) => {
     const { data } = await axios(url);
     dispatch({
       type: actionTypes.LOAD_ARTWORKS,
-      artwork: data,
+      artwork: data.departments,
     });
   };
 }
