@@ -5,16 +5,23 @@ import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { loadGlobalData } from '../../redux/actions/actionCreators';
-import SearchInput from '../SearchInput';
+import './style.scss';
 import MapWorldwide from '../Map';
 
 const Dashboard = ({ globalData, dispatch }) => {
   useEffect(() => { dispatch(loadGlobalData()); }, []);
 
   return (
-    <div>
-      <SearchInput />
-      <h1>Tracking the virus worldwide</h1>
+
+      <section className="dashboard">
+      <div className="container">
+      <h2>Ante titular</h2>
+      <h1>
+Tracking the virus worldwide.
+      </h1>
+      <h3>
+Get the lastest updated info about the pandemic and vaccination by continent, country and region.
+      </h3>
       <ul>
         { globalData
         && globalData.map(([element, value]) => (
@@ -26,7 +33,8 @@ const Dashboard = ({ globalData, dispatch }) => {
         ))}
       </ul>
       {/* <MapWorldwide /> */}
-    </div>
+      </div>
+      </section>
   );
 };
 
