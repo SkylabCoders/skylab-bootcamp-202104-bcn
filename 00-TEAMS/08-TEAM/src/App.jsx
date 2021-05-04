@@ -11,12 +11,12 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Country from './components/Country';
 
-// TODO move credentials to .env
+// TODO Move Credentials to .env //
 function App() {
   return (
     <Auth0Provider
-      domain="dev-j78n23s8.us.auth0.com"
-      clientId="iP4yrFnARXs4n6GwFPHVZzyM1K9owt5f"
+      domain={process.env.REACT_APP_DOMAIN}
+      clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin}
     >
       <Provider store={store}>

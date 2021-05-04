@@ -1,12 +1,12 @@
+/* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { loadVaccinesData } from '../../redux/actions/actionCreators';
+import { loadVaccinesContinentData } from '../../redux/actions/actionCreators';
 
-const MapWorldWide = ({ globalVaccinesData, dispatch }) => {
-  useEffect(() => { dispatch(loadVaccinesData()); }, []);
-  // eslint-disable-next-line no-console
-  console.log('vaccines', globalVaccinesData);
+const MapWorldWide = ({ vaccinesContinentData, dispatch }) => {
+  useEffect(() => { dispatch(loadVaccinesContinentData()); }, []);
+  console.log('vaccines', vaccinesContinentData);
   //   const drawChart = () => {
   //     // Define the chart to be drawn.
   //     const data = new google.visualization.DataTable();
@@ -26,9 +26,10 @@ const MapWorldWide = ({ globalVaccinesData, dispatch }) => {
     <div>
       <h1>Vaccines</h1>
       <ul>
-        {Object.entries(globalVaccinesData).map(([e, value]) => (
-          <li ket={e}>
-            {e}
+        { vaccinesContinentData
+        && vaccinesContinentData.map(([element, value]) => (
+          <li>
+            {element}
             :
             {value}
           </li>
@@ -40,10 +41,13 @@ const MapWorldWide = ({ globalVaccinesData, dispatch }) => {
 };
 
 MapWorldWide.propTypes = {
-  globalVaccinesData: PropTypes.shape({}).isRequired,
+  vaccinesContinentData: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (store) => ({ globalVaccinesData: store.globalVaccinesData });
+const mapStateToProps = ({ vaccinesContinentData }) => ({
+  vaccinesContinentData:
+  Object.entries(vaccinesContinentData)
+});
 
 export default connect(mapStateToProps)(MapWorldWide);
