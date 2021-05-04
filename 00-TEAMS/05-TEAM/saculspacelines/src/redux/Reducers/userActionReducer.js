@@ -17,7 +17,7 @@ const {
 } = actionTypes;
 
 export default function userActionReducer(state = [], { type, payload }) {
-  const currentUser = null;
+  let currentUser = null;
   let currentPlanet = '';
   let result;
 
@@ -67,6 +67,7 @@ export default function userActionReducer(state = [], { type, payload }) {
 
     case SELECT_AVATAR:
       result = USERS.find((user) => user.email === currentUser);
+      currentUser = payload.username;
       result = { ...USERS, payload };
       break;
 
