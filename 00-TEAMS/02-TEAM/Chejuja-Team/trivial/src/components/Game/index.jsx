@@ -13,9 +13,23 @@ function Game({ game }) {
     return txt.value;
   }
   return (
-    <main className="game">
-      <div className="question">
+    <main className="game-window">
+      <div className="game-window__question">
         {game.length ? <p>{decodeHtml(game[0][0].question)}</p> : <p>Cargando</p>}
+      </div>
+      <div className="answer-box">
+        <div className="answer-box__answer">
+          {game.length ? <p>{decodeHtml(game[0][0].incorrect_answers[0])}</p> : <p>Cargando</p>}
+        </div>
+        <div className="answer-box__answer">
+          {game.length ? <p>{decodeHtml(game[0][0].incorrect_answers[1])}</p> : <p>Cargando</p>}
+        </div>
+        <div className="answer-box__answer">
+          {game.length ? <p>{decodeHtml(game[0][0].incorrect_answers[2])}</p> : <p>Cargando</p>}
+        </div>
+        <div className="answer-box__answer">
+          {game.length ? <p>{decodeHtml(game[0][0].correct_answer)}</p> : <p>Cargando</p>}
+        </div>
       </div>
     </main>
   );
