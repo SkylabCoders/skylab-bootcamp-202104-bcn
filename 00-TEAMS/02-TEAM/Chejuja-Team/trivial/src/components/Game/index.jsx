@@ -1,16 +1,21 @@
 /* eslint-disable no-debugger */
 /* eslint-disable no-console */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import './game.css';
 
 function Game({ game }) {
-  console.log(game);
   function decodeHtml(html) {
     const txt = document.createElement('textarea');
     txt.innerHTML = html;
     return txt.value;
+  }
+  function validateAnswer(givenAnswer) {
+    if (givenAnswer === game[0][0].correct_answer) {
+      return true;
+    }
+    return false;
   }
   let shuffledAnswers = [];
   if (game.length) {
@@ -26,9 +31,9 @@ function Game({ game }) {
       <div className="answer-box">
         {
           shuffledAnswers.map((answer) => (
-            <div className="answer-box__answer">
+            <button type="button" className="answer-box__answer" onClick={() => validateAnswer(answer)}>
               {game.length ? <p>{decodeHtml(answer)}</p> : <p>Cargando</p>}
-            </div>
+            </button>
           ))
         }
 
