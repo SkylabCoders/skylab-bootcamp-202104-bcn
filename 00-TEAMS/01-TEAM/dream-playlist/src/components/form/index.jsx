@@ -11,14 +11,16 @@ function Form() {
       </header>
       <div className="formContainer">
         <form>
-          {DROPDOWNDATA.map(({ category, options }) => (
+          {DROPDOWNDATA.map(({ category, options, defaultOption }) => (
             <>
-              <Dropdown category={category} options={options} />
+              <Dropdown category={category} defaultOption={defaultOption} options={options} />
               <br />
               <br />
             </>
           ))}
-          <input type="submit" value="Submit" />
+          <div className="continueSubmit">
+            <input type="submit" value="CONTINUE" />
+          </div>
         </form>
       </div>
     </>
