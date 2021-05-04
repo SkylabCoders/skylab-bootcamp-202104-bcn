@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Login from '../../Login';
-// import PropTypes from 'prop-types'
-// import search from '../../../images/search-slim.svg';
 
 const UserNav = () => (
   <nav className="navigation">
