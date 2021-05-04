@@ -4,8 +4,9 @@ import './sidenav.css';
 
 const SideNav = ({ closeSideNav }) => (
   <div className="sidenav-box">
-    <div className="sidenav__blackground"> </div>
+    <div className="sidenav__background"> </div>
     <div id="sidenav" className="sidenav">
+      <button type="button" className="sidenav__close-button" onClick={closeSideNav}>×</button>
       <div className="sidenav__user-bar">
         <div className="sidenav__user-icon"> </div>
         <div clasName="sidenav__user-welcome">
@@ -19,8 +20,14 @@ const SideNav = ({ closeSideNav }) => (
         <li>blanditiis fugiat voluptates</li>
         <li>doloremque eaque</li>
       </ul>
+      <menu className="sidenav__menu-header">Ayuda Y Ajustes</menu>
+      <ul className="sidenav__menu-list">
+        <li>Mi Cuenta</li>
+        <li>Something went wront?</li>
+        <li>About Amazux</li>
+        <li>Salir</li>
+      </ul>
     </div>
-    <button type="button" className="sidenav__close-button" onClick={closeSideNav}>×</button>
   </div>
 );
 
