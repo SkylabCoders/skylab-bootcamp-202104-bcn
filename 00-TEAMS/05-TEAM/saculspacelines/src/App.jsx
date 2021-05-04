@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import configureStore from './redux/store/configureStore';
 import Login from './Components/Login';
+import SelectAvatar from './Components/SelectAvatar';
 
 // TODO Move credentials to .env
 function App() {
@@ -22,8 +23,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" component={Login} />
-            <Route exact path="/select-faction/:faction" component={<p>Hola</p>} />
-            {/* <Route exact path="/select-avatar" component={SelectAvatar} /> */}
+            <Route path="/select-avatar/:faction" component={SelectAvatar} />
           </Switch>
         </Router>
       </Provider>

@@ -16,7 +16,7 @@ function ChooseFaction() {
         <button
           type="button"
           onClick={() => {
-            history.push('/select-avatar/:light');
+            history.push('/select-avatar/light');
           }}
         >
           <img
@@ -29,7 +29,7 @@ function ChooseFaction() {
         <button
           type="button"
           onClick={() => {
-            history.push('/select-avatar/:dark');
+            history.push('/select-avatar/dark');
           }}
         >
           <img src={darkSidePic} alt="dark side" className="darkPic" />
