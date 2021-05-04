@@ -1,0 +1,27 @@
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #182430;
+    color: #eeeeee;
+    width: 100%;
+    height: 110px;
+    padding: 10px 100px;
+
+    .nav-element {
+        text-decoration: none;
+        color: #eeeeee;
+        font-size: 15px;
+
+        .nav-icon {
+            font-size: 18px;
+            font-weight: bolder;
+        }
+    }
+}
