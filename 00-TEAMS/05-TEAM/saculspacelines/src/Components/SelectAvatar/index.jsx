@@ -11,7 +11,7 @@ function SelectAvatar({ people, dispatch }) {
     if (!people.lenght) dispatch(loadPeople());
   }, []);
 
-  const currentUserObject = USERS.filter((user) => user.email === 'email');
+  const currentUserObject = USERS.find((user) => user.email === 'email');
   const { faction } = currentUserObject;
   const lightList = CHARACTERS.filter((character) => character.faction === 'LIGHT');
   const darkList = CHARACTERS.filter((character) => character.faction === 'DARK');
