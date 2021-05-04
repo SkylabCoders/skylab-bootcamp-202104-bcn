@@ -18,7 +18,7 @@ function SelectAvatar({ people, dispatch }) {
 
   return (
     <>
-      <h1>Avatar</h1>
+      <h1>{USERS.avatar}</h1>
       <h2>Username</h2>
       <ul>
         {
@@ -35,6 +35,8 @@ function SelectAvatar({ people, dispatch }) {
               )
         }
       </ul>
+      <button type="button">BACK</button>
+      <button type="button">SUBMIT</button>
     </>
   );
 }
