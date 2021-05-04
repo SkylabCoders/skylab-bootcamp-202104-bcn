@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color:yellow ;
+    border-radius: 30px;
+    color: black;
+    height: 139px;
+    width: 1039px;
+    
+}
+
+.faction-container{
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    
+}
+
+.lightPic{
+    background-color: white;
+    border-radius: 50%;
+    height: 394px;
+    width: 403px;
+}
+
+.darkPic{
+    margin-left: 50px;
+    height: 394px;
+    width: 403px;
+    border-radius: 50%;
+    background-color: red;
+}
