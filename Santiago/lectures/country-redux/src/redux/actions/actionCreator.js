@@ -13,8 +13,6 @@ export function loadCountries(url = URL) {
   };
 }
 
-export function login() {
-  return {
-    type: 'AUTH_LOGIN'
-  };
+export function fakeCountries() {
+
 }
