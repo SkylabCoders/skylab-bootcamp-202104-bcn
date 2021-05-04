@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types'
 import SideNav from './SideNav/index';
 import './CategoriesNav.css';
 
