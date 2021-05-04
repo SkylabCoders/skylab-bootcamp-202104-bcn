@@ -30,9 +30,6 @@ function ListPreview({
     if (token && user) dispatch(loadPlaylists(currentToken, user.id));
   }, [currentUser]);
 
-  // eslint-disable-next-line no-console
-  console.log(playlists);
-
   return (
     <>
       <h1>
@@ -40,6 +37,14 @@ function ListPreview({
         {' '}
         {user?.id}
       </h1>
+      <ul className="playlists">
+        {playlists.length && playlists.map((playlist) => (
+          <li>
+            <span className="badge">{playlist.id}</span>
+            {' '}
+          </li>
+        ))}
+      </ul>
 
     </>
   );
