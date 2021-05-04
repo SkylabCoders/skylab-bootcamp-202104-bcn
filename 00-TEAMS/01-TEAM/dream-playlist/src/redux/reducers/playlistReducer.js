@@ -1,12 +1,11 @@
-import SONGS from '../../assets/musicList.mock';
 import actionTypes from '../actions/actionTypes';
 
-function playlistReducer(songs = [], action) {
-  switch (action.type) {
+function playlistReducer(playlists = [], { type, newPlaylists }) {
+  switch (type) {
     case (actionTypes.LOAD_SONGS):
-      return SONGS;
+      return newPlaylists;
     default:
-      return songs;
+      return playlists;
   }
 }
 
