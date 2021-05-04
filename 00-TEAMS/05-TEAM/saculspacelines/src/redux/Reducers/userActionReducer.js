@@ -17,8 +17,8 @@ const {
 } = actionTypes;
 
 export default function userActionReducer(state = [], { type, payload }) {
-  let currentPlanet = '';
   const currentUser = null;
+  let currentPlanet = '';
   let result;
 
   switch (type) {
