@@ -16,8 +16,8 @@ import './styles/styles.scss';
 function App() {
   return (
     <Auth0Provider
-      domain="dev-ovw36gxc.eu.auth0.com"
-      clientId="j3N82SWz5nKFRVUsRsaaesV95fEChY0Q"
+      domain={process.env.REACT_APP_DOMAIN}
+      clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin}
     >
       <Provider store={configureStore}>

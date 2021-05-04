@@ -6,11 +6,13 @@ function reducer(auth = {}, action) {
       return {
         ...auth,
         isLoggedIn: true,
+        user: action.user,
       };
     case actionTypes.AUTH_LOGOUT:
       return {
         ...auth,
         isLoggedIn: false,
+        user: null,
       };
     default:
       return auth;

@@ -1,20 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
-import { login, logout } from '../../redux/actions/actionCreators';
+import { useAuth0 } from '@auth0/auth0-react';
+import { login } from '../../redux/actions/actionCreators';
 
 function LogIn({ auth, actions }) {
+  const {
+    loginWithRedirect,
+    logout,
+    isAuthenticated,
+    user,
+  } = useAuth0();
+
+  useEffect(() => {
+    if (isAuthenticated && user) {
+      actions.login(user);
+    }
+  }, [isAuthenticated, user]);
+
   const loggedInTemplate = () => (
     <>
-      <p>Welcome Anna</p>
-      <button type="button" onClick={() => actions.logout()}>LOG OUT</button>
+      <p>
+        Welcome
+        {' '}
+        {auth?.user?.name}
+      </p>
+      <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>LOG OUT</button>
     </>
   );
   const loggedOutTemplate = () => (
     <>
       <p>Sign In Now</p>
-      <button type="button" onClick={() => actions.login()}>LOG IN</button>
+      <button type="button" onClick={() => loginWithRedirect()}>LOG IN</button>
     </>
   );
 
@@ -30,7 +48,11 @@ function LogIn({ auth, actions }) {
 LogIn.propTypes = {
   auth: PropTypes.shape({
     isLoggedIn: PropTypes.bool.isRequired,
+    user: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }),
   }).isRequired,
+
   actions: PropTypes.shape({
     login: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired,
@@ -46,7 +68,7 @@ function mapStateToProps({ auth }) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(
-      { login, logout },
+      { login },
       dispatch,
     ),
   };
