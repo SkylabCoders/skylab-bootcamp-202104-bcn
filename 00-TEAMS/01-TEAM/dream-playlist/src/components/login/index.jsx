@@ -1,21 +1,35 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
-import { login, logout } from '../../redux/actions/actionCreator';
+import { useAuth0 } from '@auth0/auth0-react';
+import { login } from '../../redux/actions/actionCreator';
 
 function LogIn({ auth, actions }) {
+  const {
+    loginWithRedirect,
+    logout,
+    isAuthenticated,
+    user
+  } = useAuth0();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      actions.login();
+    }
+  }, [isAuthenticated, user]);
+
   const loggedInTemplate = () => (
     <>
       <p>Welcome Gemma</p>
-      <button type="button" onClick={() => actions.logout()}>Log out</button>
+      <button type="button" onClick={() => logout(isAuthenticated, user)}>Log out</button>
     </>
   );
 
   const loggedOutTemplate = () => (
     <>
       <p>Hello Stranger, Please access with your credentials.</p>
-      <button type="button" onClick={() => actions.login()}>Login</button>
+      <button type="button" onClick={() => loginWithRedirect()}>Login</button>
     </>
   );
   return (
@@ -47,7 +61,7 @@ function mapStateToProps({ auth }) {
 function mapDispatchStateToProps(dispatch) {
   return {
     actions: bindActionCreators(
-      { login, logout },
+      { login },
       dispatch
     )
   };
