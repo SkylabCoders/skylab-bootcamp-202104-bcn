@@ -1,18 +1,20 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import Loader from '../Loader/index';
 
-const ProductList = () => {
-  const title = 'ProductList'; // remove when component has been build
-  return (
-    <div className="product-list">
-      {/* remove title when component has been build */}
-      <h2>{title}</h2>
-    </div>
-  );
-};
+const ProductList = ({ products }) => (
+  <div className="product-list">
+    {
+        products.length ? (
+          <div className="product-list">Hay productos</div>
+        ) : <Loader />
+    }
+  </div>
+);
 
 ProductList.propTypes = {
-
+  products: PropTypes.shape([]).isRequired
+  // productsToShow: PropTypes.number
 };
 
 export default ProductList;
