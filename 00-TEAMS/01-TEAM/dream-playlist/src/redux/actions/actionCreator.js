@@ -56,3 +56,9 @@ export function login() {
     type: actionTypes.AUTH_LOGIN
   });
 }
+
+export function logout() {
+  return ({
+    type: actionTypes.AUTH_LOGOUT
+  });
+}
