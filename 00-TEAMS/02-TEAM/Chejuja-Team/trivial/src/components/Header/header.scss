@@ -16,17 +16,6 @@ $colorHeader : #ffb533;
         margin-right: 35px;
             .header__list--logo{
                 height: 120px;
-            }.header__list--login{
-                display: flex;
-                flex-direction: row;
-                height: 100px;
-                text-decoration: none;
-            .header__list--paragraph{
-                margin-top:40px;
-            }
-            .header__list--loginImg{
-                height: 100px;
-                align-self: flex-start;
             }
         }
     }

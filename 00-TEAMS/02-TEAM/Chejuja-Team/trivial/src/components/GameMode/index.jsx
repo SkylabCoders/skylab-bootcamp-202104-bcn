@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import loadGame from '../../redux/actions/actionCreators';
+import { loadGame } from '../../redux/actions/actionCreators';
 import './gameMode.css';
 
 function GameMode({ dispatch }) {
