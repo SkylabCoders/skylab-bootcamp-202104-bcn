@@ -13,7 +13,7 @@ function Home({ dispatch, artworks }) {
   }, []);
 
   function findfavoriteIdDepartment(idToMatch) {
-    return categoriesToPrint.some((favoriteValue) => idToMatch === favoriteValue);
+    return categoriesToPrint.some((favoriteValue) => idToMatch === favoriteValue.id);
   }
   return (
     <>
@@ -23,6 +23,7 @@ function Home({ dispatch, artworks }) {
             ({ displayName, departmentId }) => findfavoriteIdDepartment(departmentId)
               && (
               <li key={displayName} className="category-list__item">
+                <figure><img src={categoriesToPrint.imageUrl} alt="" /></figure>
                 <span className="category-name">{displayName}</span>
               </li>
               ),
