@@ -25,7 +25,7 @@ const Dashboard = ({ globalData, dispatch }) => {
 </li>
         ))}
       </ul>
-      <MapWorldwide />
+      {/* <MapWorldwide /> */}
     </div>
   );
 };
