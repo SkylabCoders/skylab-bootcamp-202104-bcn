@@ -19,8 +19,8 @@ import Login from './components/Login';
 function App() {
   return (
     <Auth0Provider
-      domain="gilbecao.auth0.com"
-      clientId="io9Tjw33V6UyLVbiQv6p4knDpaxcPu9x"
+      domain={process.env.REACT_APP_DOMAIN}
+      clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin}
     >
       <Provider store={store}>
