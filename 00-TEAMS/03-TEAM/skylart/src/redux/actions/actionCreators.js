@@ -36,8 +36,14 @@ export function loadDetail(artId) {
   };
 }
 
-export function logIn() {
+export function login() {
   return {
     type: actionTypes.AUTH_LOGIN,
+  };
+}
+
+export function logout() {
+  return {
+    type: actionTypes.AUTH_LOGOUT,
   };
 }

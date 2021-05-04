@@ -18,6 +18,7 @@ function App() {
 
       <BrowserRouter>
         <Header />
+        <LogIn />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/category" component={Category} />

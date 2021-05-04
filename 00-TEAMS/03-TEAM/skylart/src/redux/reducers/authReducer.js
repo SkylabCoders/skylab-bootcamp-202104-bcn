@@ -1,8 +1,8 @@
 import actionTypes from '../actions/actionTypes';
 
-function reducer(auth = [], action) {
+function reducer(auth = {}, action) {
   switch (action.type) {
-    case actionTypes.AUTH_LOGINAUTH:
+    case actionTypes.AUTH_LOGIN:
       return {
         ...auth,
         isLoggedIn: true,
