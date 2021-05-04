@@ -1,12 +1,16 @@
 import actionTypes from '../actions/actionTypes';
 
 function playlistReducer(playlists = [], { type, newPlaylists }) {
+  let currentPlaylists = [...playlists];
   switch (type) {
     case (actionTypes.LOAD_PLAYLISTS):
-      return newPlaylists;
+      currentPlaylists = newPlaylists;
+      break;
     default:
-      return playlists;
+      break;
   }
+
+  return currentPlaylists;
 }
 
 export default playlistReducer;
