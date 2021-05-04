@@ -1,0 +1,146 @@
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #131921;
+  height: 60px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.navigation__content-img {
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #131921;
+}
+
+.navigation__content-img:hover, .navigation__location:hover, .navigation__user-login:hover, .navigation__devolution:hover, .navigation__cart:hover {
+  border: 1px solid #fff;
+  border-radius: 2px;
+}
+
+.navigation__img {
+  width: 130px;
+  height: 28px;
+  background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) 10px -85px;
+  cursor: pointer;
+}
+
+.navigation__location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 55px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #131921;
+  cursor: pointer;
+}
+
+.navigation__location-img {
+  width: 35px;
+  height: 28px;
+  background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -60px -340px;
+  cursor: pointer;
+}
+
+.navigation__search input {
+  height: 40px;
+  font-size: 20px;
+  color: #131921;
+  border-radius: 3px;
+}
+
+.navigation__user-login {
+  width: 50px;
+  height: 55px;
+  border: 1px solid #131921;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigation__login {
+  width: 40px;
+  height: 28px;
+  background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -125px -340px;
+  cursor: pointer;
+  border: 1px solid #131921;
+}
+
+.navigation__devolution {
+  width: 110px;
+  cursor: pointer;
+  border: 1px solid #131921;
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigation__cart {
+  margin-right: 20px;
+  border: 1px solid #131921;
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.navigation__cart button {
+  width: 50px;
+  height: 28px;
+  background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -4px -340px;
+  cursor: pointer;
+  border: none;
+}
+
+.navigation__cart-number {
+  position: absolute;
+  left: 25px;
+  right: auto;
+  top: 7px;
+}
+
+@media (max-width: 600px) {
+  .navigation {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .navigation__content-img, .navigation__location, .navigation__user-login, .navigation__devolution, .navigation__cart {
+    display: none;
+  }
+  .navigation__search {
+    width: 80%;
+  }
+  .navigation__search input {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=header.css.map */
