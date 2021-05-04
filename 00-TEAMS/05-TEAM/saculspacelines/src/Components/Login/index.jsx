@@ -5,10 +5,7 @@ import { PropTypes } from 'prop-types';
 import { useAuth0 } from '@auth0/auth0-react';
 import { bindActionCreators } from 'redux';
 import { login } from '../../redux/Actions/actionCreator';
-import Characters from '../Characters';
-import Planets from '../Planets';
-import Starships from '../Starships';
-import Apitest from '../Apitest';
+import ChooseFaction from '../ChooseFaction';
 
 const Login = ({ auth, actions }) => {
   const [thermsAccepted, setThermsAccepted] = useState(false);
@@ -32,11 +29,8 @@ const Login = ({ auth, actions }) => {
 
   const loggedInTemplate = () => (
     <>
+      <ChooseFaction />
       <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
-      <Apitest />
-      <Starships />
-      <Characters />
-      <Planets />
     </>
   );
 

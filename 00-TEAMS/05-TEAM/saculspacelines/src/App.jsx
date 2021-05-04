@@ -22,7 +22,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" component={Login} />
-            <Route exact path="/select-faction" component={<p>Hola</p>} />
+            <Route exact path="/select-faction/:faction" component={<p>Hola</p>} />
             {/* <Route exact path="/select-avatar" component={SelectAvatar} /> */}
           </Switch>
         </Router>
