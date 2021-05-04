@@ -1,14 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Dropdown({ filter }) {
+function Dropdown({ category, options }) {
   return (
-    <label htmlFor={filter.category}>
-      {filter.category}
-      <select name={filter.category} selected="selected">
-        <option disabled selected value> -- select an option -- </option>
+    <label htmlFor={category}>
+      {category}
+      <select name={category} selected="selected">
+        <option disabled selected value>
+          {' '}
+          -- select
+          {' '}
+          {category}
+          {' '}
+          --
+          {' '}
+        </option>
         {
-        filter.options.map((optionData) => (
+        options.map((optionData) => (
           (<option value={optionData}>{optionData}</option>)))
         }
       </select>
@@ -17,10 +25,8 @@ function Dropdown({ filter }) {
 }
 
 Dropdown.propTypes = {
-  filter: PropTypes.shape({
-    category: PropTypes.string.isRequired,
-    options: PropTypes.shape([]).isRequired
-  }).isRequired
+  category: PropTypes.string.isRequired,
+  options: PropTypes.shape([]).isRequired
 };
 
 export default Dropdown;

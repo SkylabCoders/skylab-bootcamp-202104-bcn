@@ -7,25 +7,16 @@ function Form() {
   return (
     <>
       <h1>Form</h1>
-      <div>
-        <form>
-          <Dropdown filter={DROPDOWNDATA[0]} />
-          <br />
-          <br />
-          <Dropdown filter={DROPDOWNDATA[1]} />
-          <br />
-          <br />
-          <Dropdown filter={DROPDOWNDATA[2]} />
-          <br />
-          <br />
-          <Dropdown filter={DROPDOWNDATA[3]} />
-          <br />
-          <br />
-          <div>
-            <input type="submit" value="Submit" />
-          </div>
-        </form>
-      </div>
+      <form>
+        {DROPDOWNDATA.map(({ category, options }) => (
+          <>
+            <Dropdown category={category} options={options} />
+            <br />
+            <br />
+          </>
+        ))}
+        <input type="submit" value="Submit" />
+      </form>
     </>
   );
 }
