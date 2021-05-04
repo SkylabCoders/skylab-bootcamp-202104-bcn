@@ -19,14 +19,15 @@ function Home({ dispatch, artworks }) {
     <>
       <ul className="category-list">
         {
-          artworks.departments.length
-          // eslint-disable-next-line max-len
-          && artworks.departments.map(({ displayName, departmentId }) => findfavoriteIdDepartment(departmentId)
+          artworks.length
+          && artworks.map(
+            ({ displayName, departmentId }) => findfavoriteIdDepartment(departmentId)
               && (
               <li key={displayName} className="category-list__item">
                 <span className="category-name">{displayName}</span>
               </li>
-              ))
+              ),
+          )
         }
       </ul>
       <Footer />
@@ -41,7 +42,7 @@ Home.propTypes = {
 
 function mapStateToProps({ artworks }) {
   return {
-    artworks,
+    artworks: artworks.departments,
   };
 }
 
