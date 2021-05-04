@@ -5,6 +5,7 @@ function Dropdown({ category, options }) {
   return (
     <label htmlFor={category}>
       {category}
+      {' '}
       <select name={category} selected="selected">
         <option disabled selected value>
           {' '}

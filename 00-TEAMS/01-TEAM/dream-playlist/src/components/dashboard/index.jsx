@@ -28,7 +28,7 @@ function Dashboard() {
             <li>Chill and listen with your dream list</li>
           </ul>
           <div className="containerImg" />
-          <button className="begginButton" type="button">BEGGIN TEST</button>
+          <Link to="/form">BEGGIN TEST</Link>
         </div>
       </main>
     </>
