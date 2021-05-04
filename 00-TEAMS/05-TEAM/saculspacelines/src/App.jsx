@@ -10,6 +10,7 @@ import {
 import configureStore from './redux/store/configureStore';
 import Login from './Components/Login';
 
+// TODO Move credentials to .env
 function App() {
   return (
     <Auth0Provider
