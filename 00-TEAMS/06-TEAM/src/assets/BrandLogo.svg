@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="236.615" height="50.569" viewBox="0 0 236.615 50.569">
+  <g id="Grupo_2032" data-name="Grupo 2032" transform="translate(-139 -17)">
+    <text id="Skylab" transform="translate(139 58.569)" fill="#fff" font-size="37" font-family="Leelawadee-Bold, Leelawadee" font-weight="700"><tspan x="0" y="0">Skylab</tspan></text>
+    <text id="Films" transform="translate(257.795 58.569)" fill="#fff" font-size="37" font-family="Leelawadee"><tspan x="0" y="0">Films</tspan></text>
+    <g id="Grupo_5" data-name="Grupo 5" transform="translate(349.816 17)">
+      <g id="Grupo_4" data-name="Grupo 4" transform="translate(0 0)">
+        <path id="Trazado_4" data-name="Trazado 4" d="M352.312-191.247l13.882-3.686,3.636,13.787-2.238.639-2.6-9.967-5.183,8.868-2-1.2,4.905-8.629-9.828,2.492Z" transform="translate(-352.312 206.025)" fill="#fff"/>
+        <path id="Trazado_6" data-name="Trazado 6" d="M357.71-249.107l1.231-2.015,8.876,5.115-2.54-10.106,2.3-.639,2.566,10.208,5.234-8.993,1.982,1.023-4.989,9.056,9.883-2.586.6,2.328-9.894,2.619,8.82,5.283-1.231,1.925-7.733-4.432s-1.265-4.681-1.657-5.57c-.007-.018.017.011,0,0-.224-.138-5.631,1.326-5.631,1.326Z" transform="translate(-357.061 256.752)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

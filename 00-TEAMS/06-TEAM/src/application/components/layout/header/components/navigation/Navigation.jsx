@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Navigation from './styles';
+import BrandLogo from '../../../../../../assets/BrandLogo.svg';
 
 const Navbar = () => (
   <Navigation>
     <div>
-      <Link className="navbar-brand" to="/">LOGO</Link>
+      <Link className="navbar-brand" to="/">
+        <img src={BrandLogo} alt="" />
+      </Link>
     </div>
 
     <div className="navbar-main">
