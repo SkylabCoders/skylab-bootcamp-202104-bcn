@@ -1,0 +1,23 @@
+@import '../../../styles/colors';
+
+.products {
+    display: flex;
+    
+    &__list{
+        width: 100%;
+        list-style: none;
+    }
+    
+    &__item {
+        display: flex;
+    }
+    
+    &__img {
+        width: 140px;
+    }
+    
+    &__details {
+        display: flex;
+        flex-direction: column;
+    }
+}

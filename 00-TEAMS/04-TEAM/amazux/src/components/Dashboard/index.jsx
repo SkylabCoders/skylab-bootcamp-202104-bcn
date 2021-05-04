@@ -15,7 +15,7 @@ const Dashboard = ({ products, dispatch }) => {
     <div className="dashboard">
       <Slider imgSources={[]} />
       <FeaturedProducts products={products} />
-      <ProductsList products={products} productsToShow={20} pagination={10} />
+      <ProductsList products={products} productsToShow={3} pagination={10} />
     </div>
   );
 };
