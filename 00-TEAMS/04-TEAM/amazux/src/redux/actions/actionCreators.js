@@ -1,11 +1,12 @@
 import actionTypes from './actionTypes';
 import apiServices from '../../services/api';
 
-export const login = () => ({
-  type: actionTypes.AUTH_LOGIN
+export const signIn = (user) => ({
+  type: actionTypes.AUTH_LOGIN,
+  user
 });
 
-export const logout = () => ({
+export const signOut = () => ({
   type: actionTypes.AUTH_LOGOUT
 });
 

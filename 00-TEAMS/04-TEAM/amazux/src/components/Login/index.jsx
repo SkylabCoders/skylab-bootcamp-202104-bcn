@@ -1,26 +1,62 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
-import { login, logout } from '../../redux/actions/actionCreators';
+import { useAuth0 } from '@auth0/auth0-react';
+import { signIn, signOut } from '../../redux/actions/actionCreators';
 
-const Login = ({ auth, actions }) => (
-  <div className="login">
-    {
-      auth.isLoggedIn
-        ? <button type="button" onClick={() => actions.logout()}>Logout</button>
-        : <button type="button" onClick={() => actions.login()}>Login</button>
+const Login = ({ auth, actions }) => {
+  const {
+    loginWithRedirect,
+    logout,
+    isAuthenticated,
+    user
+  } = useAuth0();
+
+  useEffect(() => {
+    if (isAuthenticated && user) {
+      actions.signIn(user);
     }
-  </div>
-);
+  }, [isAuthenticated, user]);
+
+  const loggedInTemplate = () => (
+    <>
+      <p>
+        Welcome
+        {' '}
+        {auth.user.name}
+        . Skylab mola.
+      </p>
+      <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
+    </>
+  );
+
+  const loggedOutTemplate = () => (
+    <>
+      <p>Hello stranger. Please access with your credentials.</p>
+      <button type="button" onClick={() => loginWithRedirect()}>Login</button>
+    </>
+  );
+
+  return (
+    <>
+      { auth.isLoggedIn
+        ? loggedInTemplate()
+        : loggedOutTemplate()}
+    </>
+  );
+};
 
 Login.propTypes = {
   auth: PropTypes.shape({
-    isLoggedIn: PropTypes.bool.isRequired
+    isLoggedIn: PropTypes.bool.isRequired,
+    user: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }).isRequired
   }).isRequired,
   actions: PropTypes.shape({
-    login: PropTypes.func.isRequired,
-    logout: PropTypes.func.isRequired
+    signIn: PropTypes.func.isRequired,
+    signOut: PropTypes.func.isRequired
   }).isRequired
 };
 
@@ -31,7 +67,7 @@ function mapStateToProps({ auth }) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(
-      { login, logout },
+      { signIn, signOut },
       dispatch
     )
   };
