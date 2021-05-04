@@ -1,9 +1,9 @@
-import actionTypes from '../actions/actionTypes';
+import Types from '../actions/actionTypes';
 
 function moviesReducer(initialMovies = [], action) {
   let updatedMovies = [...initialMovies];
   switch (action.type) {
-    case actionTypes.LOAD_MOVIES:
+    case Types.LOAD_MOVIES:
       updatedMovies = [...action.movies];
       break;
     default:
