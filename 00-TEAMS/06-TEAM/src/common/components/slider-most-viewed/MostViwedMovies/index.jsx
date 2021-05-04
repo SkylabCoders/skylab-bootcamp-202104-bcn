@@ -24,6 +24,7 @@ const MostViwedMovies = ({ myMovies, dispatch }) => {
       naturalSlideHeight={100}
       totalSlides={20}
       visibleSlides={6}
+      step={4}
     >
       <Slider className="slider">
         {
