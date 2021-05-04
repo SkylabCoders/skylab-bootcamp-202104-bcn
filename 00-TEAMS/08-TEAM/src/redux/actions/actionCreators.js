@@ -34,15 +34,20 @@ export const loadVaccinesByCountry = (country) => async (dispatch) => {
     data: response.data.All
   });
 };
-// export const loadVaccinesContinentData = (url = `${URL}${vaccinesUrl}`) => async (dispatch) => {
-//   const { data } = await axios.get(url);
-//   let continents = ['Africa', 'Asia', 'Australia', 'Oceania', 'European Union'];
-//   continents = continents.map((continent) => ({ name: continent, data: data[continent] }));
-//   dispatch({
-//     type: actionTypes.LOAD_VACCINES,
-//     data: continents
-//   });
-// };
+export const loadVaccinesContinentData = (url = `${URL}${vaccinesUrl}`) => async (dispatch) => {
+  const { data } = await axios.get(url);
+  const allContinents = ['Africa', 'Asia', 'Australia', 'Oceania', 'European Union'];
+  const continents = allContinents.map((continent) => ({
+    name:
+    continent,
+    data: data[continent].All
+  }));
+  debugger;
+  dispatch({
+    type: actionTypes.LOAD_VACCINES,
+    data: continents
+  });
+};
 
 export const login = (user) => (
   {
