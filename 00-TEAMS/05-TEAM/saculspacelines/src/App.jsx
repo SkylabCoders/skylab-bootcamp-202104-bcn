@@ -11,7 +11,6 @@ import configureStore from './redux/store/configureStore';
 import Login from './Components/Login';
 import SelectAvatar from './Components/SelectAvatar';
 
-// TODO Move credentials to .env
 function App() {
   return (
     <Auth0Provider

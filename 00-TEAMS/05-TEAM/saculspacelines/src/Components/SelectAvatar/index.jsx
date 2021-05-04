@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 // import { useAuth0 } from '@auth0/auth0-react';
 import { connect } from 'react-redux';
@@ -9,9 +9,14 @@ import '../Characters/form.css';
 
 function SelectAvatar({ people, dispatch }) {
   const { faction } = useParams();
+  const [currentAvatar, setCurrentAvatar] = useState({ name: 'none', imgUrl: 'https://static.filmin.es/images/user/579233/3/user_0_3_256x256.jpeg' });
   const LIGHT = 'light';
   const DARK = 'dark';
   // const { user } = useAuth0();
+
+  const handleAvatarSelection = (url) => {
+    setCurrentAvatar(url);
+  };
 
   useEffect(() => {
     if (!people.lenght) dispatch(loadPeople());
@@ -24,7 +29,10 @@ function SelectAvatar({ people, dispatch }) {
 
   return (
     <>
-      <h1>USERAVATAR</h1>
+      <img
+        src={currentAvatar.imgUrl}
+        alt={currentAvatar.name}
+      />
       <h2>Username</h2>
       <p>{faction}</p>
       <ul>
@@ -33,19 +41,30 @@ function SelectAvatar({ people, dispatch }) {
             ? lightList.map((lightCharacter) => (
               <li>
                 {lightCharacter.name}
-                <img
-                  src={lightCharacter.imgUrl}
-                  alt={lightCharacter.name}
-                />
+                <button
+                  type="button"
+                  onClick={() => handleAvatarSelection(lightCharacter)}
+                >
+                  <img
+                    src={lightCharacter.imgUrl}
+                    alt={lightCharacter.name}
+                  />
+                </button>
+
               </li>
             ))
             : darkList.map((darkCharacter) => (
               <li>
                 {darkCharacter.name}
-                <img
-                  src={darkCharacter.imgUrl}
-                  alt={darkCharacter.name}
-                />
+                <button
+                  type="button"
+                  onClick={() => handleAvatarSelection(darkCharacter)}
+                >
+                  <img
+                    src={darkCharacter.imgUrl}
+                    alt={darkCharacter.name}
+                  />
+                </button>
               </li>
             ))
         }
