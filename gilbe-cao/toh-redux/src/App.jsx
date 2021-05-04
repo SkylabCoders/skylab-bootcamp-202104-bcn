@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard';
 import HeroDetail from './components/HeroDetail';
 import NotFound from './components/NotFound';
 import store from './redux/stores';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Link to="/Heroes">Heroes</Link>
             <Link to="/404">404</Link>
           </nav>
+          <Login />
           <Switch>
             <Route path="/" exact component={Dashboard} />
             <Route path="/detail/:heroId" component={HeroDetail} />
