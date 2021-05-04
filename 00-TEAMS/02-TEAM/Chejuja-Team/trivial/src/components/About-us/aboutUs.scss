@@ -10,7 +10,9 @@
         justify-content: space-between;
         height: 40vh;
         &--chema, &--juanda, &--josep{
-
+            box-shadow: 15px 21px 47px -5px rgba(21,8,232,0.75);
+-webkit-box-shadow: 15px 21px 47px -5px rgba(21,8,232,0.75);
+-moz-box-shadow: 15px 21px 47px -5px rgba(21,8,232,0.75);
             border-bottom:5px dashed #2eb9ce;
             border-left:6px dashed #FFCC70;
             text-transform: uppercase;
