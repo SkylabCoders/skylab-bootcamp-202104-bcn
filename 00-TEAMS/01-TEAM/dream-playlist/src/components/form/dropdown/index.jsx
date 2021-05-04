@@ -1,18 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Dropdown({ category, options }) {
+function Dropdown({ category, defaultOption, options }) {
   return (
     <label htmlFor={category}>
       {category}
-      <select name={category} selected="selected">
+      {' '}
+      <select name={defaultOption} selected="selected">
         <option disabled selected value>
           {' '}
-          -- select
-          {' '}
-          {category}
-          {' '}
-          --
+          {defaultOption}
           {' '}
         </option>
         {
@@ -26,6 +23,7 @@ function Dropdown({ category, options }) {
 
 Dropdown.propTypes = {
   category: PropTypes.string.isRequired,
+  defaultOption: PropTypes.string.isRequired,
   options: PropTypes.shape([]).isRequired
 };
 

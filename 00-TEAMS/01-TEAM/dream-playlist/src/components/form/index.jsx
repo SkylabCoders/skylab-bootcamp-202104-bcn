@@ -6,17 +6,23 @@ import DROPDOWNDATA from '../../assets/dropdown.mock';
 function Form() {
   return (
     <>
-      <h1>Form</h1>
-      <form>
-        {DROPDOWNDATA.map(({ category, options }) => (
-          <>
-            <Dropdown category={category} options={options} />
-            <br />
-            <br />
-          </>
-        ))}
-        <input type="submit" value="Submit" />
-      </form>
+      <header>
+        <h1>Form</h1>
+      </header>
+      <div className="formContainer">
+        <form>
+          {DROPDOWNDATA.map(({ category, options, defaultOption }) => (
+            <>
+              <Dropdown category={category} defaultOption={defaultOption} options={options} />
+              <br />
+              <br />
+            </>
+          ))}
+          <div className="continueSubmit">
+            <input type="submit" value="CONTINUE" />
+          </div>
+        </form>
+      </div>
     </>
   );
 }
