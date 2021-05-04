@@ -24,7 +24,7 @@ function Login({ auth, actions }) {
       <p>
         Welcome
         {' '}
-        {auth.user.name}
+        {auth?.user?.name}
         . Skylab mola.
       </p>
       <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
@@ -40,7 +40,7 @@ function Login({ auth, actions }) {
 
   return (
     <>
-      { auth.isLoggedIn
+      { auth.isLoggedIn === true
         ? loggedInTemplate()
         : loggedOutTemplate()}
     </>
