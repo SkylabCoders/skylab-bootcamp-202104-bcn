@@ -1,5 +1,7 @@
 import React from 'react';
 import './index-form.css';
+import Dropdown from './dropdown';
+import DROPDOWNDATA from '../../assets/dropdown.mock';
 
 function Form() {
   return (
@@ -7,16 +9,7 @@ function Form() {
       <h1>Form</h1>
       <div>
         <form>
-          <label htmlFor="genre">
-            genre
-            <select name="genre" selected="selected">
-              <option disabled selected value> -- select an option -- </option>
-              <option value="rock">rock</option>
-              <option value="pop">pop</option>
-              <option value="classical">classical</option>
-              <option value="electronic">electronic</option>
-            </select>
-          </label>
+          <Dropdown filter={DROPDOWNDATA[0]} />
           <br />
           <br />
           <label htmlFor="energy">
