@@ -52,8 +52,6 @@ export function loadPlaylists(token, userId) {
 }
 
 export function loadSongsfromPlaylist(token, playlistId) {
-  // eslint-disable-next-line no-debugger
-  debugger;
   return async (dispatch) => {
     const response = await axios(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
       headers: {

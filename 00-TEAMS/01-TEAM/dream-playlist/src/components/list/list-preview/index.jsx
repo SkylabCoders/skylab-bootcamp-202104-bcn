@@ -1,5 +1,3 @@
-/* eslint-disable no-debugger */
-/* eslint-disable no-console */
 import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -34,7 +32,6 @@ function ListPreview({
     if (token && user) dispatch(loadPlaylists(currentToken, user.id));
   }, [currentUser]);
   if (currentPlaylist === null && playlists.length) {
-    debugger;
     setCurrentPlaylist(playlists[0]);
   }
 
@@ -50,14 +47,17 @@ function ListPreview({
         {user?.id}
       </h1>
       <ul className="playlists">
-        {playlists.length && playlists.map((playlist) => (
+        {songs.length && songs.map((song) => (
           <li>
-            <span className="badge">{playlist.id}</span>
-            {' '}
+            <span className="badge">{song.track.album.artists[0].name}</span>
+            <br />
+            <span className="badge">{song.track.album.images[0].url}</span>
+            <br />
+            <span className="badge">{song.track.name}</span>
+            <br />
           </li>
         ))}
       </ul>
-      {console.log(songs)}
     </>
   );
 }
