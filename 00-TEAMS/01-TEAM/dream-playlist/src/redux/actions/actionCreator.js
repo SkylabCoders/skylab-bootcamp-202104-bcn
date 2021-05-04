@@ -1,6 +1,5 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
-import credentials from '../../assets/credentials';
 import urls from '../../assets/urls';
 
 export function getToken() {
@@ -8,7 +7,7 @@ export function getToken() {
     const token = await axios(urls.token, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        Authorization: `Basic ${btoa(`${credentials.clientId}:${credentials.clientSecret}`)}`
+        Authorization: `Basic ${btoa(`${process.env.REACT_APP_SPOTIFY_CLIENT_ID}:${process.env.REACT_APP_SPOTIFY_SECRET_CLIENT_ID}`)}`
       },
       data: 'grant_type=client_credentials',
       method: 'POST'
