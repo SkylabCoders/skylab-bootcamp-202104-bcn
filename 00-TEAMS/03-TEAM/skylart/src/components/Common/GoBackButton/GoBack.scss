@@ -1,8 +1,9 @@
 @import './../../../styles/colors.scss';
 
 .go-back-button{
-  width: 100px;
-  height: 30px;
+  width: 120px;
+  height: 40px;
+  padding: 10px;
   background-color: $color-gray-ligth;
   border-radius: 20px;
   border: none;
@@ -11,4 +12,9 @@
   align-items: center;
   font-family: "Ubuntu", sans-serif;
   font-size: 15px;
+  cursor: pointer;
+}
+
+.go-back-button:hover {
+  background-color: $color-gray-medium;
 }
