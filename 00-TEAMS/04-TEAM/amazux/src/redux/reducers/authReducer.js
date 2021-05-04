@@ -5,10 +5,10 @@ function authReducer(auth = {}, action) {
 
   switch (action.type) {
     case actionTypes.AUTH_LOGIN:
-      updatedAuth = { ...auth, isLoggedIn: true };
+      updatedAuth = { ...auth, isLoggedIn: true, user: action.user };
       break;
     case actionTypes.AUTH_LOGOUT:
-      updatedAuth = { ...auth, isLoggedIn: false };
+      updatedAuth = { ...auth, isLoggedIn: false, user: null };
       break;
     default:
       break;
