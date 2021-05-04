@@ -5,4 +5,7 @@ export default {
   UPDATE_HERO: 'UPDATE_HERO',
 
   LOAD_HERO: 'LOAD_HERO',
+
+  AUTH_LOGIN: 'AUTH_LOGIN',
+  AUTH_LOGOUT: 'AUTH_LOGOUT',
 };
