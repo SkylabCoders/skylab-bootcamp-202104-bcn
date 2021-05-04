@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 function Dropdown({ filter }) {
   return (
-    <label htmlFor="genre">
+    <label htmlFor={filter.category}>
       {filter.category}
-      <select name="genre" selected="selected">
+      <select name={filter.category} selected="selected">
         <option disabled selected value> -- select an option -- </option>
         <option value={filter.options[0]}>{filter.options[0]}</option>
         <option value={filter.options[1]}>{filter.options[1]}</option>
