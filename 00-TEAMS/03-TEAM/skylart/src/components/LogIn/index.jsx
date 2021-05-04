@@ -4,6 +4,8 @@ import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { useAuth0 } from '@auth0/auth0-react';
 import { login } from '../../redux/actions/actionCreators';
+import './LogIn.scss';
+import iconLogin from '../../assets/iconLogin.svg';
 
 function LogIn({ auth, actions }) {
   const {
@@ -21,18 +23,24 @@ function LogIn({ auth, actions }) {
 
   const loggedInTemplate = () => (
     <>
-      <p>
-        Welcome
-        {' '}
-        {auth?.user?.name}
-      </p>
-      <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>LOG OUT</button>
+      <div className="right-elements">
+        <p className="user-text">
+          Welcome
+          {' '}
+          {auth?.user?.name}
+          ,
+        </p>
+        <img src={iconLogin} className="logout-icon" alt="logout" />
+        <button type="button" className="logout-button" onClick={() => logout({ returnTo: window.location.origin })}>LOG OUT</button>
+      </div>
     </>
   );
   const loggedOutTemplate = () => (
     <>
-      <p>Sign In Now</p>
-      <button type="button" onClick={() => loginWithRedirect()}>LOG IN</button>
+      <div className="right-elements">
+        <button type="button" className="login-button" onClick={() => loginWithRedirect()}>Log In</button>
+        <img src={iconLogin} className="login-icon" alt="login" />
+      </div>
     </>
   );
 

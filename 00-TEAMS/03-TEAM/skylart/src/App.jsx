@@ -10,7 +10,6 @@ import Home from './components/Home';
 import Category from './components/Category';
 import Detail from './components/Detail';
 import Favorites from './components/Favorites';
-import LogIn from './components/LogIn';
 import './styles/styles.scss';
 
 function App() {
@@ -23,13 +22,11 @@ function App() {
       <Provider store={configureStore}>
         <BrowserRouter>
           <Header />
-          <LogIn />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/category" component={Category} />
             <Route path="/detail/:artworkId" component={Detail} />
             <Route path="/favorites" component={Favorites} />
-            <Route path="/login" component={LogIn} />
             <Redirect to="/" />
           </Switch>
         </BrowserRouter>
