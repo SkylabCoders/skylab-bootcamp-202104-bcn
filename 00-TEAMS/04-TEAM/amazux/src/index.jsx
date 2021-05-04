@@ -12,8 +12,8 @@ import './index.css';
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="fredyzz.eu.auth0.com"
-      clientId="G7hYqsbR0ORjzsSs2IHUiZ5tWd91QfRS"
+      domain={process.env.REACT_APP_DOMAIN}
+      clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin}
     >
       <Provider store={store}>
