@@ -7,10 +7,10 @@ function Dropdown({ filter }) {
       {filter.category}
       <select name={filter.category} selected="selected">
         <option disabled selected value> -- select an option -- </option>
-        <option value={filter.options[0]}>{filter.options[0]}</option>
-        <option value={filter.options[1]}>{filter.options[1]}</option>
-        <option value={filter.options[2]}>{filter.options[2]}</option>
-        <option value={filter.options[3]}>{filter.options[3]}</option>
+        {
+        filter.options.map((optionData) => (
+          (<option value={optionData}>{optionData}</option>)))
+        }
       </select>
     </label>
   );
