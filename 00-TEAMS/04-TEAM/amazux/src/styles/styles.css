@@ -173,13 +173,15 @@ body {
   justify-content: flex-start;
 }
 
-.sidenav__blackground {
-  height: 100vh;
+.sidenav__background {
+  height: 150vh;
   width: 100vw;
   position: absolute;
   background-color: black;
   opacity: 0.7;
   z-index: 1;
+  /* scroll: ; */
+  bottom: 0px;
 }
 
 .navbar__menu-button {
@@ -210,10 +212,9 @@ body {
   color: #FFF;
   background: none;
   border: none;
-  margin-left: 30%;
   right: 25px;
   font-size: 36px;
-  margin-left: 50px;
+  margin-left: 100px;
   z-index: 2;
 }
 
