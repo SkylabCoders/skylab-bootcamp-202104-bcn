@@ -1,4 +1,7 @@
-.mode-game{
+.game{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #023047;
     border-radius: 25px;
     color: #fa1919;
@@ -6,6 +9,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 50vw;
     height: 50vh;
+     
+}
+div {
+    display: flex;
+    background-color: #219EBC;
+    border: 1px solid red;
+    border-radius: 25px;
+    width: 10vw;
+    height: 10vh;
+
 }
