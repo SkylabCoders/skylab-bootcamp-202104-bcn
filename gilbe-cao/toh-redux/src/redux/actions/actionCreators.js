@@ -43,3 +43,9 @@ export function getHeroById(heroId) {
     hero,
   };
 }
+
+export function login() {
+  return {
+    type: actionTypes.AUTH_LOGIN,
+  };
+}
