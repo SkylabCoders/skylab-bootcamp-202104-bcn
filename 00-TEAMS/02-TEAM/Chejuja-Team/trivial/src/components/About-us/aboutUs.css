@@ -40,4 +40,15 @@
   border-radius: 5px;
   height: 25vh;
 }
+
+.about-us__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about-us__lema {
+  text-transform: uppercase;
+  font-weight: 20px;
+}
 /*# sourceMappingURL=aboutUs.css.map */

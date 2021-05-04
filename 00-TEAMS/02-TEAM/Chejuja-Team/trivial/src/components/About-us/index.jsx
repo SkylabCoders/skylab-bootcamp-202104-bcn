@@ -28,6 +28,14 @@ function AboutUs() {
           <a href="https://www.instagram.com/jasuarez21/" target="_blank" rel="noreferrer"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="instagram" /></a>
         </div>
       </section>
+      <div className="about-us__footer">
+        <img src="https://img.icons8.com/cotton/64/000000/witch.png" alt="hat-witch" />
+        <p className="about-us__lema">
+          Chejuja mejor que el tren de la bruja!
+          {' '}
+          <img src="https://img.icons8.com/doodle/48/000000/witch-broom.png" alt="witch" className="about-us__lema--barrier" />
+        </p>
+      </div>
     </main>
   );
 }
