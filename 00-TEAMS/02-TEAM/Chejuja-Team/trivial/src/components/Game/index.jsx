@@ -12,24 +12,26 @@ function Game({ game }) {
     txt.innerHTML = html;
     return txt.value;
   }
+  let shuffledAnswers = [];
+  if (game.length) {
+    const answers = [...game[0][0].incorrect_answers, game[0][0].correct_answer];
+    // eslint-disable-next-line no-unused-vars
+    shuffledAnswers = answers.sort((a, b) => 0.5 - Math.random());
+  }
   return (
     <main className="game-window">
       <div className="game-window__question">
         {game.length ? <p>{decodeHtml(game[0][0].question)}</p> : <p>Cargando</p>}
       </div>
       <div className="answer-box">
-        <div className="answer-box__answer">
-          {game.length ? <p>{decodeHtml(game[0][0].incorrect_answers[0])}</p> : <p>Cargando</p>}
-        </div>
-        <div className="answer-box__answer">
-          {game.length ? <p>{decodeHtml(game[0][0].incorrect_answers[1])}</p> : <p>Cargando</p>}
-        </div>
-        <div className="answer-box__answer">
-          {game.length ? <p>{decodeHtml(game[0][0].incorrect_answers[2])}</p> : <p>Cargando</p>}
-        </div>
-        <div className="answer-box__answer">
-          {game.length ? <p>{decodeHtml(game[0][0].correct_answer)}</p> : <p>Cargando</p>}
-        </div>
+        {
+          shuffledAnswers.map((answer) => (
+            <div className="answer-box__answer">
+              {game.length ? <p>{decodeHtml(answer)}</p> : <p>Cargando</p>}
+            </div>
+          ))
+        }
+
       </div>
     </main>
   );
