@@ -1,72 +1,94 @@
 import React from 'react-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { addUser } from '../../redux/Actions/actionCreator';
+import { useAuth0 } from '@auth0/auth0-react';
+import { bindActionCreators } from 'redux';
+import { login } from '../../redux/Actions/actionCreator';
+import Characters from '../Characters';
+import Planets from '../Planets';
+import Starships from '../Starships';
+import Apitest from '../Apitest';
 
-const Login = ({ dispatch }) => {
-  const [loginOrRegister, setLoginOrRegister] = useState(null);
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const LOGIN = 'login';
-  const REGISTER = 'register';
+const Login = ({ auth, actions }) => {
+  const [thermsAccepted, setThermsAccepted] = useState(false);
 
-  const handleSubmit = () => {
-    // if (loginOrRegister === LOGIN) {
+  const {
+    loginWithRedirect,
+    logout,
+    user,
+    isAuthenticated
+  } = useAuth0();
 
-    // } else
-    if (loginOrRegister === REGISTER) {
-      dispatch(addUser({ email, password, wishlist: [] }));
+  useEffect(() => {
+    if (isAuthenticated && user) {
+      actions.login(user);
     }
+  }, [isAuthenticated, user]);
+
+  const handleAcceptTherms = () => {
+    setThermsAccepted(!thermsAccepted);
   };
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
+  const loggedInTemplate = () => (
+    <>
+      <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
+      <Apitest />
+      <Starships />
+      <Characters />
+      <Planets />
+    </>
+  );
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleLogin = () => {
-    setLoginOrRegister(LOGIN);
-  };
-
-  const handleRegister = () => {
-    setLoginOrRegister(REGISTER);
-  };
-
-  return (
+  const loggedOutTemplate = () => (
     <>
       <h1>Sacul spacelines</h1>
       <h2>Wookie subtitle</h2>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
-          placeholder="EMAIL"
-          type="email"
-          onChange={handleEmailChange}
+          type="checkbox"
+          onChange={() => handleAcceptTherms()}
           required
         />
-        <input
-          placeholder="PASSWORD"
-          type="password"
-          onChange={handlePasswordChange}
-          required
-        />
-        <input type="submit" value="Login" onClick={handleLogin} />
-        <input type="submit" value="Register" onClick={handleRegister} />
-      </form>
+        <p>Aceptar términos y condiciones</p>
+        <button
+          type="submit"
+          onClick={thermsAccepted ? () => {
+            loginWithRedirect();
+          } : null}
+        >
+          Log In
 
+        </button>
+      </form>
+    </>
+  );
+
+  return (
+    <>
+      {auth.isLoggedIn ? loggedInTemplate() : loggedOutTemplate()}
     </>
   );
 };
 
 Login.propTypes = {
-  dispatch: PropTypes.func.isRequired
+  auth: PropTypes.shape({
+    isLoggedIn: PropTypes.bool.isRequired,
+    user: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    })
+  }).isRequired,
+  actions: PropTypes.shape({
+    login: PropTypes.func.isRequired
+  }).isRequired
 };
 
-const mapStateToProps = (state) => ({
-  user: state.userActionReducer
+const mapStateToProps = ({ authReducer }) => ({
+  auth: authReducer
 });
 
-export default connect(mapStateToProps)(Login);
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({ login }, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

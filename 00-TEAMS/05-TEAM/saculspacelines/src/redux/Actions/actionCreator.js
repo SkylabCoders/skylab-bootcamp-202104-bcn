@@ -7,6 +7,8 @@ const {
 } = URLS;
 const {
   ADD_USER,
+  AUTH_LOGIN,
+  AUTH_LOGOUT,
   CHANGE_FACTION,
   CREATE_TRAVEL,
   DELETE_WISH,
@@ -28,6 +30,14 @@ const {
 export const addUser = (data) => ({
   type: ADD_USER,
   payload: data
+});
+
+export const login = () => ({
+  type: AUTH_LOGIN
+});
+
+export const logout = () => ({
+  type: AUTH_LOGOUT
 });
 
 export const changeFaction = (data) => ({

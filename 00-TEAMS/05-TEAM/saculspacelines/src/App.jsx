@@ -1,22 +1,32 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import './App.css';
-import Characters from './Components/Characters';
-import Planets from './Components/Planets';
-import Starships from './Components/Starships';
-import Apitest from './Components/Apitest';
+import { Auth0Provider } from '@auth0/auth0-react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 import configureStore from './redux/store/configureStore';
 import Login from './Components/Login';
 
 function App() {
   return (
-    <Provider store={configureStore}>
-      <Login />
-      <Apitest />
-      <Starships />
-      <Characters />
-      <Planets />
-    </Provider>
+    <Auth0Provider
+      domain={process.env.REACT_APP_DOMAIN}
+      clientId={process.env.REACT_APP_CLIENT_ID}
+      redirectUri={window.location.origin}
+    >
+      <Provider store={configureStore}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route exact path="/select-faction" component={<p>Hola</p>} />
+            {/* <Route exact path="/select-avatar" component={SelectAvatar} /> */}
+          </Switch>
+        </Router>
+      </Provider>
+    </Auth0Provider>
   );
 }
 
