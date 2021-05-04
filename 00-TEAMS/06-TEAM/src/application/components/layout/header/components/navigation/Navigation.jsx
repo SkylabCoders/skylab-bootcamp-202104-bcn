@@ -4,7 +4,7 @@ import {
   Navigation, BrandImage, BrandWrapper, LoginWrapper, NavigationWrapper
 } from './styles';
 import GlobalFonts from '../../../../../../fonts/fonts';
-import BrandLogo from '../../../../../../assets/BrandLogo.png';
+import BrandLogo from '../../../../../../assets/BrandLogo.svg';
 
 const Navbar = () => (
 
