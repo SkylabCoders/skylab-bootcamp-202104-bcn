@@ -10,12 +10,17 @@ import '../Characters/form.css';
 function SelectAvatar({ people, dispatch }) {
   const { faction } = useParams();
   const [currentAvatar, setCurrentAvatar] = useState({ name: 'none', imgUrl: 'https://static.filmin.es/images/user/579233/3/user_0_3_256x256.jpeg' });
+  const [currentUsername, setCurrentUsername] = useState('Input your username');
   const LIGHT = 'light';
   const DARK = 'dark';
   // const { user } = useAuth0();
 
   const handleAvatarSelection = (url) => {
     setCurrentAvatar(url);
+  };
+
+  const handleUsernameChange = (event) => {
+    setCurrentUsername(event.target.value);
   };
 
   useEffect(() => {
@@ -33,8 +38,11 @@ function SelectAvatar({ people, dispatch }) {
         src={currentAvatar.imgUrl}
         alt={currentAvatar.name}
       />
-      <h2>Username</h2>
-      <p>{faction}</p>
+      <h2>{currentUsername}</h2>
+      <input
+        onChange={handleUsernameChange}
+        type="text"
+      />
       <ul>
         {
           faction.toLowerCase() === LIGHT.toLowerCase()
