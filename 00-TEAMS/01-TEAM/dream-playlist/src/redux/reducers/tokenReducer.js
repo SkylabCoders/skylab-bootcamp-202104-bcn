@@ -1,12 +1,16 @@
 import actionTypes from '../actions/actionTypes';
 
 function tokenReducer(token = false, { type, newToken }) {
+  let currentToken = token;
   switch (type) {
     case (actionTypes.GET_TOKEN):
-      return newToken;
+      currentToken = newToken;
+      break;
     default:
-      return token;
+      break;
   }
+
+  return currentToken;
 }
 
 export default tokenReducer;
