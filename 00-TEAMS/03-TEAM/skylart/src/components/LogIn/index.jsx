@@ -5,11 +5,24 @@ import { bindActionCreators } from 'redux';
 import { login, logout } from '../../redux/actions/actionCreators';
 
 function LogIn({ auth, actions }) {
+  const loggedInTemplate = () => (
+    <>
+      <p>Welcome Anna</p>
+      <button type="button" onClick={() => actions.logout()}>LOG OUT</button>
+    </>
+  );
+  const loggedOutTemplate = () => (
+    <>
+      <p>Sign In Now</p>
+      <button type="button" onClick={() => actions.login()}>LOG IN</button>
+    </>
+  );
+
   return (
     <>
       {auth.isLoggedIn
-        ? <button type="button" onClick={() => actions.logout()}>LOG OUT</button>
-        : <button type="button" onClick={() => actions.login()}>LOG IN</button>}
+        ? loggedInTemplate()
+        : loggedOutTemplate()}
     </>
   );
 }
