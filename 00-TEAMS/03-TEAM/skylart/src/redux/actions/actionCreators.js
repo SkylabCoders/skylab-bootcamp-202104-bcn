@@ -6,7 +6,7 @@ export function loadArtworksFromApi(url) {
     const { data } = await axios(url);
     dispatch({
       type: actionTypes.LOAD_ARTWORKS,
-      artwork: data.departments,
+      artwork: data,
     });
   };
 }
