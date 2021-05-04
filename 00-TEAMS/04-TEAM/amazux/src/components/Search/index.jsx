@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 // import PropTypes from 'prop-types';
-// import { splitQueryStringIntoArray, filterProductsByName } from '../../helpers/index';
+// import { splitQueryStringIntoArray, filterProductsByKeyList } from '../../helpers/index';
 
 const Search = () => {
   const { searchQuery } = useParams();
