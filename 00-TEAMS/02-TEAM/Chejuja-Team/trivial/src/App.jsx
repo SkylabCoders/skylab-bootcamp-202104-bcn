@@ -10,8 +10,9 @@ import GameMode from './components/GameMode';
 import './App.css';
 import WelcomeRules from './components/WelcomeRules';
 import Game from './components/Game';
+import AboutUs from './components/About-us/index';
 // import Login from './components/Login';
-import Ranking from './components/Ranking';
+import Ranking from './components/Ranking/index';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/play" exact component={Game} />
             {/* <Route path="/log-in" exact component={Login} /> */}
             <Route path="/ranking" exact component={Ranking} />
+            <Route path="/info" exact component={AboutUs} />
           </div>
         </Switch>
       </BrowserRouter>
