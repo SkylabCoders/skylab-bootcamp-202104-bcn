@@ -21,19 +21,21 @@ const Login = ({ auth, actions }) => {
 
   const loggedInTemplate = () => (
     <>
-      <p>
-        Welcome
-        {' '}
-        {auth.user.name}
-        . Skylab mola.
-      </p>
-      <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
+      <div className="navigation__user-login">
+        <div className="navigation__login" />
+        <p>
+          Welcome
+          {' '}
+          {auth.user.name}
+        </p>
+        <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
+      </div>
     </>
   );
 
   const loggedOutTemplate = () => (
     <>
-      <p>Hello stranger. Please access with your credentials.</p>
+      <p>Hello stranger! Please login</p>
       <button type="button" onClick={() => loginWithRedirect()}>Login</button>
     </>
   );
