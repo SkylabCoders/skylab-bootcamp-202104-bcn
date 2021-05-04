@@ -27,7 +27,7 @@ export default function userActionReducer(state = [], { type, payload }) {
       break;
 
     case CHANGE_FACTION:
-      result = USERS.filter((user) => user.username !== payload.username);
+      result = USERS.filter((user) => user.email !== payload.email);
       result = { ...result, payload };
       break;
 
