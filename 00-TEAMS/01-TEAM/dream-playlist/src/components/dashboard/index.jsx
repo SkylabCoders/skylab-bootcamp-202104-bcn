@@ -1,4 +1,8 @@
 import { React } from 'react';
+import
+{
+  Link
+} from 'react-router-dom';
 import './dashboard.css';
 
 function Dashboard() {
@@ -16,7 +20,7 @@ function Dashboard() {
             <li>
               Lets see to which playlist do you listen
               {' '}
-              <button type="button">Login to your Spotify</button>
+              <Link to="/login">Login to your Spotify</Link>
               {' '}
             </li>
             <li>Answer the questions about what do you feel listening today</li>

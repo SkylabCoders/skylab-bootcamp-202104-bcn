@@ -1,9 +1,70 @@
-import React from 'react';
+import { React, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { useAuth0 } from '@auth0/auth0-react';
+import { login } from '../../redux/actions/actionCreator';
 
-function LogIn() {
+function LogIn({ auth, actions }) {
+  const {
+    loginWithRedirect,
+    logout,
+    isAuthenticated,
+    user
+  } = useAuth0();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      actions.login();
+    }
+  }, [isAuthenticated, user]);
+
+  const loggedInTemplate = () => (
+    <>
+      <p>Welcome Gemma</p>
+      <button type="button" onClick={() => logout(isAuthenticated, user)}>Log out</button>
+    </>
+  );
+
+  const loggedOutTemplate = () => (
+    <>
+      <p>Hello Stranger, Please access with your credentials.</p>
+      <button type="button" onClick={() => loginWithRedirect()}>Login</button>
+    </>
+  );
   return (
-    <h3>This is the log-in</h3>
+    <>
+      {auth.isLoggedIn
+        ? loggedInTemplate()
+        : loggedOutTemplate()}
+    </>
   );
 }
 
-export default LogIn;
+LogIn.propTypes = {
+  auth: PropTypes.shape({
+    isLoggedIn: PropTypes.bool.isRequired
+  }).isRequired,
+
+  actions: PropTypes.shape({
+    login: PropTypes.func.isRequired,
+    logout: PropTypes.func.isRequired
+  }).isRequired
+};
+
+function mapStateToProps({ auth }) {
+  return {
+    auth
+  };
+}
+
+function mapDispatchStateToProps(dispatch) {
+  return {
+    actions: bindActionCreators(
+      { login },
+      dispatch
+    )
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchStateToProps)(LogIn);

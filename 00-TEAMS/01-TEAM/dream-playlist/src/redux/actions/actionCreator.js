@@ -50,3 +50,15 @@ export function loadPlaylists(token, userId) {
     });
   };
 }
+
+export function login() {
+  return ({
+    type: actionTypes.AUTH_LOGIN
+  });
+}
+
+export function logout() {
+  return ({
+    type: actionTypes.AUTH_LOGOUT
+  });
+}
