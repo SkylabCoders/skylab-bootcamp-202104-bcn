@@ -44,7 +44,6 @@ MostViwedMovies.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 
-// Este countries es el del rootReducer countries: countriesReducer
 const mapStateToProps = ({ movies }) => ({
   myMovies: movies
 });
