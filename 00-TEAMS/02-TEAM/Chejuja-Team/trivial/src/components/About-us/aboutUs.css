@@ -41,6 +41,11 @@
   height: 25vh;
 }
 
+.about-us__info--socialmedia:hover {
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+}
+
 .about-us__footer {
   display: -webkit-box;
   display: -ms-flexbox;
