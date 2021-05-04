@@ -1,13 +1,13 @@
 import actionTypes from '../actions/actionTypes';
 
-function playlistReducer(songs = {}, { type, newSongs }) {
+function playlistReducer(playlists = [], { type, newPlaylists }) {
   // eslint-disable-next-line no-debugger
   debugger;
   switch (type) {
     case (actionTypes.LOAD_SONGS):
-      return newSongs;
+      return newPlaylists;
     default:
-      return songs;
+      return playlists;
   }
 }
 

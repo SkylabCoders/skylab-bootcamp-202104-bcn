@@ -2,10 +2,10 @@
 import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getToken, getUserData, loadSongs } from '../../../redux/actions/actionCreator';
+import { getToken, getUserData, loadPlaylists } from '../../../redux/actions/actionCreator';
 
 function ListPreview({
-  token, user, songs, dispatch
+  token, user, playlists, dispatch
 }) {
   const [currentToken, setCurrentToken] = useState(token);
   const [currentUser, setCurrentUser] = useState(null);
@@ -27,11 +27,11 @@ function ListPreview({
   }
 
   useEffect(() => {
-    if (token && user) dispatch(loadSongs(currentToken, user.id));
+    if (token && user) dispatch(loadPlaylists(currentToken, user.id));
   }, [currentUser]);
 
   // eslint-disable-next-line no-console
-  console.log(songs);
+  console.log(playlists);
 
   return (
     <>
@@ -50,15 +50,15 @@ ListPreview.propTypes = {
   user: PropTypes.shape({
     id: PropTypes.string
   }).isRequired,
-  songs: PropTypes.shape({}).isRequired,
+  playlists: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
-function mapStateToProps({ token, user, songs }) {
+function mapStateToProps({ token, user, playlists }) {
   return {
     token,
     user,
-    songs
+    playlists
   };
 }
 
