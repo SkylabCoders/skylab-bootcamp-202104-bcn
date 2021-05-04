@@ -1,6 +1,15 @@
 import actionTypes from './actionTypes';
 import apiServices from '../../services/api';
 
+export const signIn = (user) => ({
+  type: actionTypes.AUTH_LOGIN,
+  user
+});
+
+export const signOut = () => ({
+  type: actionTypes.AUTH_LOGOUT
+});
+
 export const deleteError = () => ({ type: actionTypes.DELETE_ERROR });
 
 export const loadProductsActionCreator = (products) => (
