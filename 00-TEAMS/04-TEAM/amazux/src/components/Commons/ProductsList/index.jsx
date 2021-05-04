@@ -5,9 +5,9 @@ import Loader from '../Loader/index';
 const ProductList = ({ products }) => (
   <div className="product-list">
     {
-        products.length ? (
-          <div className="product-list">Hay productos</div>
-        ) : <Loader />
+      products.length ? (
+        <div className="product-list">Hay productos</div>
+      ) : <Loader />
     }
   </div>
 );
