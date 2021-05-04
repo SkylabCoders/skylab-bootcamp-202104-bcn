@@ -1,50 +1,6 @@
-
-/* .slider__btn {
-    display: flex;
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.7);
-    top: 52%;
-    transform: translateY(-50%);
-    font-size: 26px;
-    font-weight: bold;
-    font-family: monospace;
-    text-align: center;
-    border-radius: 50%;
-    cursor: pointer;
-    justify-content: center;
-}
-
-.slider__btn:hover {
-    background: #fff;
-}
-.slider__btn--right{
-    right: 30px;
-}
-.slider__btn--left{
-    left: 30px;
-} */
-
-
-
-/* max-width constrains the width of our carousel to 550, but shrinks on small devices */
-
-/* animation: cambio 20s infinite normal; */
-@keyframes cambio {
-    0% {margin-left: 0%;}
-    20% {margin-left: 0%;}
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-    75% {margin-left: -300%;}
-    90% {margin-left: -300%;}
-}
 .carousel__container {
-    max-width: 550px;
     margin: auto;
-    
+    max-width: 550px;
 }
 
 .carousel__slider {
@@ -52,18 +8,16 @@
     object-fit: cover;
 }
 
-
 .carousel__inner-slide {
-      animation: cambio 20s infinite normal;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
+    animation: cambio 20s infinite normal;
+    height: calc(88% - 20px);
     left: 10px;
     top: 10px;
+    width: calc(100% - 20px);
+}
 
-  }
 .slider__image{
     width: 100%;
-
 }  
 
 .slideHorizontal___1NzNV {
@@ -71,33 +25,42 @@
     width: 50%;
 }
 
-element.style {
-    /* width: 25%; */
-    padding-bottom: 16.25%;
-}
-
 .carousel__slider-tray-wrapper{
     overflow: hidden;
 }
-.buttonBack___1mlaL, .buttonNext___2mOCa{
-    display: flex;
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.7);
-    top: 52%;
-    transform: translateY(-50%);
-    font-size: 26px;
-    font-weight: bold;
-    font-family: monospace;
-    text-align: center;
-    border-radius: 50%;
-    cursor: pointer;
-    justify-content: center;
-}
+
 .carousel__back-button{
     left: 30px;
 }
+
 .carousel__next-button{
     right: 30px;
+}
+
+.slider--information{
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.overview {
+    font-size: 33px;
+    font-style: italic;
+    font-weight: bolder;
+    margin-left: 30px;
+    margin-top: 23%;
+    width: 76%;
+}
+
+.slider__title{
+    font-size: 50px;
+    margin-left: 9%;
+    margin-top: 14%;
+}
+
+.slider__vote-average{
+    font-size: 16px;
+    margin-left: 10%;
+    margin-top: 24%;
 }
