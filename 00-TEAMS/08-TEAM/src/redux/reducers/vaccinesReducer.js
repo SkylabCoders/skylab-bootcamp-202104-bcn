@@ -1,15 +1,16 @@
 import actionTypes from '../actions/actionTypes';
 
-const VaccinesReducers = (initialGlobalData = {}, action) => {
-  let updatedVaccines = { ...initialGlobalData };
+const VaccinesReducers = (initialVaccinesContinentData = {}, action) => {
+  let updatedVaccinesContinent;
   switch (action.type) {
     case actionTypes.LOAD_VACCINES:
-      updatedVaccines = { ...action.data };
+      updatedVaccinesContinent = action.data;
       break;
     default:
+      updatedVaccinesContinent = initialVaccinesContinentData;
       break;
   }
-  return updatedVaccines;
+  return updatedVaccinesContinent;
 };
 
 export default VaccinesReducers;
