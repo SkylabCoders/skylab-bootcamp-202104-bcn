@@ -3,7 +3,7 @@ import actionTypes from './actionTypes';
 
 const URL = 'https://api.themoviedb.org/3/movie/popular?api_key=676fcc92f08e6b8bd969d6b857cce0c4&language=en-US&page=1';
 
-function loadMovies(url = URL) {
+export default function loadMovies(url = URL) {
   return async (dispatch) => {
     const response = await axios.get(url);
     dispatch({
@@ -13,4 +13,15 @@ function loadMovies(url = URL) {
   };
 }
 
-export default loadMovies;
+export function login(user) {
+  return {
+    type: actionTypes.AUTH_LOGIN,
+    user
+  };
+}
+
+export function logout() {
+  return {
+    type: actionTypes.AUTH_LOGOUT
+  };
+}
