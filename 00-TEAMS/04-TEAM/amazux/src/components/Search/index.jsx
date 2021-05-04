@@ -1,15 +1,28 @@
-import React, { useEffect } from 'react';
+/* eslint-disable no-debugger */
+/* eslint-disable no-console */
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
-// import PropTypes from 'prop-types';
-// import { splitQueryStringIntoArray, filterProductsByKeyList } from '../../helpers/index';
+import PropTypes from 'prop-types';
+import { filterProductsByKeyList, splitQueryStringIntoArray } from '../../helpers/index';
+import { loadProducts } from '../../redux/actions/actionCreators';
 
-const Search = () => {
+const Search = ({ products, dispatch }) => {
   const { searchQuery } = useParams();
+  const [foundProducts, setFoundProducts] = useState([]);
   useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(searchQuery);
-  }, [searchQuery]);
+    if (!products.length) {
+      dispatch(loadProducts());
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log('searchQuery');
+    const keyWordsArray = splitQueryStringIntoArray(searchQuery);
+    if (products.length) setFoundProducts(filterProductsByKeyList(products, keyWordsArray));
+    console.log('found', foundProducts);
+  }, [searchQuery, products]);
+
   return (
     <div>
       <h2>{searchQuery}</h2>
@@ -18,7 +31,8 @@ const Search = () => {
 };
 
 Search.propTypes = {
-//   products: PropTypes.shape([]).isRequired
+  products: PropTypes.shape([]).isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps({ products }) {
