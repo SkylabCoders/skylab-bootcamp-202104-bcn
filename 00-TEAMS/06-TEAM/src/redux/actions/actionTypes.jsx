@@ -1,3 +1,6 @@
-export default {
-  LOAD_MOVIES: 'LOAD_MOVIES'
+const Types = {
+  login: '[AUTH]_LOGIN',
+  logout: '[AUTH]_LOGOUT',
+  loadMovies: 'LOAD_MOVIES'
 };
+export default Types;
