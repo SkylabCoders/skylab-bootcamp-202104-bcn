@@ -15,7 +15,7 @@ const UserNav = () => {
         .trim()
         .toLowerCase()
         .replace(' ', '-');
-      history.push(`/search/:${searchString}`);
+      history.push(`/search/${searchString}`);
       setSearchInput('');
     }
   };

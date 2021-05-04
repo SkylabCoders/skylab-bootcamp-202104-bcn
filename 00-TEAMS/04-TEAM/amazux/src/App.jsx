@@ -7,6 +7,7 @@ import ErrorMessage from './components/ErrorMessage';
 import Dashboard from './components/Dashboard';
 import Products from './components/Products';
 import Footer from './components/Footer';
+import Search from './components/Search';
 import './styles/styles.css';
 
 function App({ error }) {
@@ -17,7 +18,8 @@ function App({ error }) {
       <main className="main">
         <Switch>
           <Route path="/" exact component={Dashboard} />
-          <Route path="/product/:id" exact component={Products} />
+          <Route path="/product/:id" component={Products} />
+          <Route path="/search/:searchQuery" component={Search} />
         </Switch>
       </main>
       <Footer />
