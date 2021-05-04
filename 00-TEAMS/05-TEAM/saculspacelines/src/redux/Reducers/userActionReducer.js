@@ -27,46 +27,46 @@ export default function userActionReducer(state = [], { type, payload }) {
       break;
 
     case CHANGE_FACTION:
-      result = USERS.filter((user) => user.id !== payload.id);
+      result = USERS.filter((user) => user.username !== payload.username);
       result = { ...result, payload };
       break;
 
     case CREATE_TRAVEL:
-      result = USERS.find((user) => user.id === currentUser);
+      result = USERS.find((user) => user.username === currentUser);
       result.wishlist = [...result.wishlist, payload];
       result = { ...USERS, result };
       break;
 
     case DELETE_WISH:
-      result = USERS.find((user) => user.id === currentUser);
+      result = USERS.find((user) => user.username === currentUser);
       result.wishlist = result.wishlist.filter((wish) => wish.id !== payload);
       result = { ...USERS, result };
       break;
 
     case LOAD_WISHLIST:
-      result = USERS.find((user) => user.id === currentUser);
+      result = USERS.find((user) => user.username === currentUser);
       result = result.wishlist;
       break;
 
     case MODIFY_USERNAME:
-      result = USERS.find((user) => user.id === currentUser);
+      result = USERS.find((user) => user.username === currentUser);
       result.username = payload;
       result = { ...USERS, result };
       break;
 
     case MODIFY_WISH:
-      result = USERS.find((user) => user.id === currentUser);
+      result = USERS.find((user) => user.username === currentUser);
       result.wishlist = result.wishlist.filter((wish) => wish.id !== payload.id);
       result.wishlist = { ...result.wishlist, payload };
       result = { ...USERS, result };
       break;
 
     case RESET_PROFILE:
-      result = USERS.filter((user) => user.id !== currentUser);
+      result = USERS.filter((user) => user.username !== currentUser);
       break;
 
     case SELECT_AVATAR:
-      result = USERS.find((user) => user.id === currentUser);
+      result = USERS.find((user) => user.email === currentUser);
       result = { ...USERS, payload };
       break;
 

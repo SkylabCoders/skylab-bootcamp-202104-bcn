@@ -1,6 +1,6 @@
 const USERS = [
   {
-    id: 0,
+    email: 'admin@admin.com',
     username: 'admin',
     password: 'admin',
     faction: 'DARK',
