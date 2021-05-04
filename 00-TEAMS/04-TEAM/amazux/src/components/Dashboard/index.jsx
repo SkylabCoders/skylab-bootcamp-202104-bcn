@@ -5,6 +5,7 @@ import { loadProducts } from '../../redux/actions/actionCreators';
 import FeaturedProducts from '../Commons/FeaturedProducts';
 import ProductsList from '../Commons/ProductsList';
 import Slider from '../Commons/Slider';
+import Login from '../Login';
 import './dashboard.css';
 
 const Dashboard = ({ products, dispatch }) => {
@@ -13,6 +14,7 @@ const Dashboard = ({ products, dispatch }) => {
   }, []);
   return (
     <div className="dashboard">
+      <Login />
       <Slider imgSources={[]} />
       <FeaturedProducts products={products} />
       <ProductsList products={products} productsToShow={3} pagination={10} />
