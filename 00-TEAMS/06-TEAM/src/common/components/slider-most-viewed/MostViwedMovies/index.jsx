@@ -28,7 +28,7 @@ const MostViwedMovies = ({ myMovies, dispatch }) => {
     >
       <Slider className="slider">
         {
-         myMovies.map((element) => <Slide className="slider__item"><img className="slider__img" key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt="" /></Slide>)
+         myMovies.map((element) => <Slide className="slider__item" key={element.id}><img className="slider__img" src={`${baseImgUrl}${element.poster_path}`} alt="" /></Slide>)
         }
       </Slider>
       <div className="buttons-container">
