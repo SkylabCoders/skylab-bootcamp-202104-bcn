@@ -39,7 +39,6 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
     <>
       <div>
         <h1>{country}</h1>
-<<<<<<< HEAD
         <ul>
           {myCountryStats.map((value) => (
             <li key={`${value}`}>
@@ -54,32 +53,21 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
             </li>
           ))}
         </ul>
-=======
-
->>>>>>> Add isabel files
       </div>
     </>
   );
 }
 
 Country.propTypes = {
-<<<<<<< HEAD
   dispatch: PropTypes.func.isRequired,
   countryData: PropTypes.shape({}).isRequired,
   vaccineByCountryData: PropTypes.shape({}).isRequired
-=======
-  dispatch: PropTypes.func.isRequired
->>>>>>> Add isabel files
 };
 
 function mapStateToProps(store) {
   return {
-<<<<<<< HEAD
     countryData: store.countryData,
     vaccineByCountryData: store.vaccineByCountryData
-=======
-    tasks: store.tasks
->>>>>>> Add isabel files
   };
 }
 
