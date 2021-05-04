@@ -1,13 +1,12 @@
 @import './../../../styles/colors.scss';
+@import './../../../styles/mixin.scss';
 
 footer {
   width: 100%;
   height: 50px;
   background-color: $color-black-light;
   color: $color-white;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  @include flex-content(flex, null, flex-start, center);
 }
 
 .footer__content {
