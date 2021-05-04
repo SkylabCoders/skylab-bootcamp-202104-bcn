@@ -1,17 +1,22 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Navigation from './styles';
-import BrandLogo from '../../../../../../assets/BrandLogo.svg';
+import {
+  Navigation, BrandImage, BrandWrapper, LoginWrapper, NavigationWrapper
+} from './styles';
+import GlobalFonts from '../../../../../../fonts/fonts';
+import BrandLogo from '../../../../../../assets/BrandLogo.png';
 
 const Navbar = () => (
-  <Navigation>
-    <div>
-      <Link className="navbar-brand" to="/">
-        <img src={BrandLogo} alt="" />
-      </Link>
-    </div>
 
-    <div className="navbar-main">
+  <Navigation>
+    <GlobalFonts />
+    <BrandWrapper>
+      <Link className="navbar-brand" to="/">
+        <BrandImage src={BrandLogo} alt="" />
+      </Link>
+    </BrandWrapper>
+
+    <NavigationWrapper className="navbar-main">
       <ul className="navbar-nav">
         <li>
           <NavLink activeClassName="active" className="nav-item nav-link" exact to="/films">Películas</NavLink>
@@ -20,13 +25,13 @@ const Navbar = () => (
           <NavLink activeClassName="active" className="nav-item nav-link" exact to="/tv-shows">Tv Shows</NavLink>
         </li>
       </ul>
-    </div>
+    </NavigationWrapper>
 
-    <div className="navbar-login">
+    <LoginWrapper className="navbar-login">
       <ul className="navbar-nav ml-auto">
-        <NavLink activeClassName="active" className="nav-item nav-link" exact to="/login">Logout</NavLink>
+        <NavLink activeClassName="active" className="nav-item nav-link" exact to="/login">Entrar</NavLink>
       </ul>
-    </div>
+    </LoginWrapper>
   </Navigation>
 );
 
