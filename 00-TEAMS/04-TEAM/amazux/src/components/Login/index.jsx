@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { useAuth0 } from '@auth0/auth0-react';
 import { signIn, signOut } from '../../redux/actions/actionCreators';
+import './login.css';
 
 const Login = ({ auth, actions }) => {
   const {
@@ -21,31 +22,31 @@ const Login = ({ auth, actions }) => {
 
   const loggedInTemplate = () => (
     <>
-      <div className="navigation__user-login">
-        <div className="navigation__login" />
-        <p>
-          Welcome
-          {' '}
-          {auth.user.name}
-        </p>
-        <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
-      </div>
+      <img src={auth.user.picture} alt={auth.user.given_name} />
+      <p>
+        Welcome
+        {' '}
+        {auth.user.given_name}
+      </p>
+      <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
     </>
   );
 
   const loggedOutTemplate = () => (
     <>
-      <p>Hello stranger! Please login</p>
+      <p>Hello! Please login</p>
       <button type="button" onClick={() => loginWithRedirect()}>Login</button>
     </>
+
   );
 
   return (
-    <>
+    <div className="login">
       { auth.isLoggedIn
         ? loggedInTemplate()
         : loggedOutTemplate()}
-    </>
+    </div>
+
   );
 };
 
@@ -53,7 +54,8 @@ Login.propTypes = {
   auth: PropTypes.shape({
     isLoggedIn: PropTypes.bool.isRequired,
     user: PropTypes.shape({
-      name: PropTypes.string.isRequired
+      given_name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired
     }).isRequired
   }).isRequired,
   actions: PropTypes.shape({
