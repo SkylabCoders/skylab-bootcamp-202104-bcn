@@ -1,7 +1,7 @@
 import React from 'react';
 import lightSidePic from '../../Images/lightSide.svg';
 import darkSidePic from '../../Images/darkSide.svg';
-import './style.css';
+import './style/style.css';
 
 function ChooseFaction() {
   return (
@@ -13,13 +13,12 @@ function ChooseFaction() {
         <img src={lightSidePic} alt="light side" className="lightPic" />
         <img src={darkSidePic} alt="dark side" className="darkPic" />
       </div>
-
-      <button type="button">Dark Side</button>
-      <button type="button">Light Side</button>
+      <div className="button-container">
+        <button type="button">Light Side</button>
+        <button type="button">Dark Side</button>
+      </div>
       <footer>
         <button type="button">Back</button>
-        <input type="checkbox" name="terms of service" id="" />
-        <p>terms of service</p>
       </footer>
     </div>
   );

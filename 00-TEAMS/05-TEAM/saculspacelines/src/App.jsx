@@ -1,22 +1,25 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import './App.css';
-/* import Characters from './Components/Characters';
+import Characters from './Components/Characters';
 import Planets from './Components/Planets';
 import Starships from './Components/Starships';
-import Apitest from './Components/Apitest'; */
+import Apitest from './Components/Apitest';
 import configureStore from './redux/store/configureStore';
 import ChooseFaction from './Components/ChooseFaction';
 
+// TODO Move credentials to .env
 function App() {
   return (
+
     <Provider store={configureStore}>
-      {/* <Apitest />
+      <Apitest />
       <Starships />
       <Characters />
-      <Planets /> */}
+      <Planets />
       <ChooseFaction />
     </Provider>
+
   );
 }
 
