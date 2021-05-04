@@ -11,11 +11,9 @@ function Category({ dispatch, artworks }) {
   return (
     <>
       <ul>
-        {artworks.length && artworks.map(({ primaryImage, title, objectDate }) => (
+        {artworks.length && artworks.map((artwork) => (
           <li>
-            <img src={primaryImage} alt="categoryImage" />
-            <p>{title}</p>
-            <p>{objectDate}</p>
+            <p>{artwork}</p>
           </li>
         ))}
       </ul>
