@@ -1,0 +1,37 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.slider {
+  overflow: hidden;
+  position: relative;
+  margin-top: 120px;
+}
+
+.slider__img {
+  width: 200px;
+  height: 280px;
+  margin-left: 2px;
+}
+
+.buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.buttons-container__backButton, .buttons-container__nextButton {
+  border-radius: 50%;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+}
+/*# sourceMappingURL=style.css.map */
