@@ -35,3 +35,16 @@ export function loadDetail(artId) {
     artId,
   };
 }
+
+export function login(user) {
+  return {
+    type: actionTypes.AUTH_LOGIN,
+    user,
+  };
+}
+
+export function logout() {
+  return {
+    type: actionTypes.AUTH_LOGOUT,
+  };
+}
