@@ -6,6 +6,7 @@ import Header from './components/Header';
 import ErrorMessage from './components/ErrorMessage';
 import Dashboard from './components/Dashboard';
 import Products from './components/Products';
+import Footer from './components/Footer';
 import './styles/styles.css';
 
 function App({ error }) {
@@ -19,6 +20,7 @@ function App({ error }) {
           <Route path="/product/:id" exact component={Products} />
         </Switch>
       </main>
+      <Footer />
     </>
 
   );

@@ -1,1 +1,39 @@
-/* No CSS *//*# sourceMappingURL=CategoriesNav.css.map */
+.navbar {
+  width: 100%;
+  height: 7%;
+  color: #FFFFFF;
+  background-color: #232F3E;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar-menu {
+  height: 100%;
+  width: 50%;
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__menu-button {
+  width: 6vw;
+  height: 28px;
+  background: url(https://images-eu.ssl-images-amazon.com/images/G/30/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936353_.png) -125px -250px;
+  border: none;
+}
+
+.navbar__adverstiment-text {
+  margin-right: 20px;
+}
+/*# sourceMappingURL=CategoriesNav.css.map */
