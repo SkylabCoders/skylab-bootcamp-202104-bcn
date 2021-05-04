@@ -1,0 +1,31 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerIntroduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerInstructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerImg{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 290px;
+    height: 210px;
+    background-image: url("https://www.creativefabrica.com/wp-content/uploads/2021/03/13/cartoon-cat-listening-to-music-svgpng-Graphics-9551560-1-1-580x387.png");
+    background-size: 300px;
+}
+
+.begginButton{
+    margin-top: 20px;
+}

@@ -45,7 +45,7 @@ export function loadPlaylists(token, userId) {
       method: 'GET'
     });
     dispatch({
-      type: actionTypes.LOAD_SONGS,
+      type: actionTypes.LOAD_PLAYLISTS,
       newPlaylists: response.data.items
     });
   };
