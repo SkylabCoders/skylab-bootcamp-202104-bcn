@@ -29,29 +29,35 @@
             position: relative;
             margin-right: auto;
             &__list {
-                @include flex-content(none, column, row, null);
+                @include flex-content(flex, column, row, null);
+                visibility: hidden;
+                opacity: 0;
                 list-style: none;
                 position: absolute;
                 background-color: $color-gray-ligth;
                 color: $color-black-dark;
                 padding: 10px 20px;
-                top: 60px;
+                top: 61px;
                 left: 30px;
-                width: 150px;
+                width: 200px;
             }
             &__item{
-                padding: 5px 0;
+                padding: 8px 0;
             }
             &__item:hover{
                 color: $color-red-medium-dark;
+                transition: 0.3s;
             }
         }
         .left-elements:hover{
             color: $color-black-dark;
             cursor: pointer;
+            transition: 0.3s;
         }
         .left-elements:hover > .left-elements__list {
-            display: block;
+            visibility: visible;
+            opacity: 1;
+            transition: 0.5s;
         }
     }
     &__right-elements{
@@ -62,7 +68,9 @@
         height: 100%
     }
     .right-elements {
-        padding: 15px;
+        padding: 20px;
+        padding-top: 12px;
+        padding-right: 0;
         img{
             height: 20px;
             padding-left: 10px;
@@ -71,6 +79,7 @@
     .right-elements:hover{
         filter: invert(1);
         cursor: pointer;    
+        transition: 0.3s;
     }
 }
 
