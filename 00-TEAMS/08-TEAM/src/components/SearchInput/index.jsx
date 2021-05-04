@@ -1,16 +1,8 @@
-/* eslint-disable no-debugger */
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function SearchInput() {
-  const newInput = document.getElementById('search-input');
-
   const [newSearch, setNewSearch] = useState('');
-
-  function getValue() {
-    setNewSearch(newInput.value);
-  }
 
   return (
     <>
@@ -20,7 +12,7 @@ function SearchInput() {
           <input
             id="search-input"
             placeholder="Search country"
-            onChange={() => getValue()}
+            onChange={(event) => setNewSearch(event.target.value)}
           />
           <button
             type="button"
