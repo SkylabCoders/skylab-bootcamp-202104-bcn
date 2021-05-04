@@ -1,12 +1,14 @@
+/* eslint-disable no-debugger */
 import actionTypes from '../actions/actionTypes';
 
 const globalDataReducers = (initialGlobalData = {}, action) => {
-  let updatedGlobalData = { ...initialGlobalData };
+  let updatedGlobalData;
   switch (action.type) {
     case actionTypes.LOAD_GLOBAL:
-      updatedGlobalData = { ...action.data };
+      updatedGlobalData = action.data;
       break;
     default:
+      updatedGlobalData = initialGlobalData;
       break;
   }
   return updatedGlobalData;

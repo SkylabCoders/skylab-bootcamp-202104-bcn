@@ -11,33 +11,30 @@ import MapWorldwide from '../Map';
 const Dashboard = ({ globalData, dispatch }) => {
   useEffect(() => { dispatch(loadGlobalData()); }, []);
 
-  console.log('dashboard', globalData);
-
   return (
     <div>
       <SearchInput />
       <h1>Tracking the virus worldwide</h1>
-
       <ul>
-        {Object.entries(globalData).map(([element, value]) => (
-        <li key={element}>
+        { globalData
+        && globalData.map(([element, value]) => (
+<li>
 {element}
- :
+:
 {value}
-        </li>
+</li>
         ))}
       </ul>
       <MapWorldwide />
     </div>
-
   );
 };
 
 Dashboard.propTypes = {
-  globalData: PropTypes.shape({}).isRequired,
+  globalData: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (store) => ({ globalData: store.globalData });
+const mapStateToProps = ({ globalData }) => ({ globalData: Object.entries(globalData) });
 
 export default connect(mapStateToProps)(Dashboard);
