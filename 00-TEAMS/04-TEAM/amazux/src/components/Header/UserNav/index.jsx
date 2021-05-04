@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Login from '../../Login';
 // import PropTypes from 'prop-types'
 // import search from '../../../images/search-slim.svg';
 
@@ -22,11 +23,7 @@ const UserNav = () => (
     <div className="navigation__search">
       <input type="text" placeholder="Search product" />
     </div>
-    <div className="navigation__user-login">
-      <Link to="/">
-        <div className="navigation__login" />
-      </Link>
-    </div>
+    <Login />
 
     <div className="navigation__devolution">
       Devoluciones y pedidos
