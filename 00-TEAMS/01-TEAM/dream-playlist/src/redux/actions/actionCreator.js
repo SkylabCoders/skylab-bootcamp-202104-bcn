@@ -34,6 +34,7 @@ export function getUserData(token) {
     });
   };
 }
+
 export function loadPlaylists(token, userId) {
   return async (dispatch) => {
     const response = await axios(urls.user + userId + urls.collection, {
@@ -46,6 +47,24 @@ export function loadPlaylists(token, userId) {
     dispatch({
       type: actionTypes.LOAD_PLAYLISTS,
       newPlaylists: response.data.items
+    });
+  };
+}
+
+export function loadSongsfromPlaylist(token, playlistId) {
+  // eslint-disable-next-line no-debugger
+  debugger;
+  return async (dispatch) => {
+    const response = await axios(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      json: true,
+      method: 'GET'
+    });
+    dispatch({
+      type: actionTypes.LOAD_SONGS,
+      newSongs: response.data.items
     });
   };
 }
