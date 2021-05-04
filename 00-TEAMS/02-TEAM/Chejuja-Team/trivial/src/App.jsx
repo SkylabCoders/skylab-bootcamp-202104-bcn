@@ -11,7 +11,7 @@ import './App.css';
 import WelcomeRules from './components/WelcomeRules';
 import Game from './components/Game';
 // import Login from './components/Login';
-import Ranking from './components/Ranking';
+import Ranking from './components/Ranking/index';
 
 function App() {
   return (

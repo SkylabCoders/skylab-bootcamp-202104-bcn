@@ -2,7 +2,7 @@ import React from 'react';
 import './ranking.css';
 import Confeti from './confeti';
 
-export function Ranking() {
+function Ranking() {
   return (
     <main className="ranking-game">
       <Confeti />
