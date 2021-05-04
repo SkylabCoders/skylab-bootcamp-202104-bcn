@@ -1,14 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './GoBack.scss';
+import { useHistory } from 'react-router-dom';
 import goBackArrow from '../../../assets/goBackArrow.svg';
+import './GoBack.scss';
 
 function GoBackButton() {
+  const history = useHistory();
   return (
-    <Link to="/" className="go-back-button">
+    <button onClick={() => history.goBack()} className="go-back-button" type="button">
       Go Back
       <img src={goBackArrow} alt="arrow" />
-    </Link>
+    </button>
   );
 }
 
