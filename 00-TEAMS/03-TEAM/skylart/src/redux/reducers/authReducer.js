@@ -1,6 +1,6 @@
 import actionTypes from '../actions/actionTypes';
 
-function reducer(auth = {}, action) {
+function authReducer(auth = {}, action) {
   switch (action.type) {
     case actionTypes.AUTH_LOGIN:
       return {
@@ -19,4 +19,4 @@ function reducer(auth = {}, action) {
   }
 }
 
-export default reducer;
+export default authReducer;
