@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import PropTypes from 'prop-types'
 import SideNav from './SideNav/index';
+import './CategoriesNav.css';
 
 const CategoriesNav = () => {
   const [showSideNav, setShowSideNav] = useState(false);
@@ -17,11 +18,19 @@ const CategoriesNav = () => {
       <div className="navbar__menu">
         {showSideNav
           ? <SideNav closeSideNav={closeSideNav} />
-          : <button type="button" onClick={openSideNav}>Open</button>}
+          : (
+            <div className="navbar-menu">
+              <button className="navbar__menu-button" type="button" onClick={openSideNav}>   </button>
+              <div className="navbar__menu-head">Todo</div>
+            </div>
+          )}
       </div>
-      <p>Tu compra de supermercado con Amazux Prime</p>
+      <p className="navbar__adverstiment-text">
+        Tu compra de supermercado con
+        {' '}
+        <strong>Amazux Prime</strong>
+      </p>
     </nav>
-
   );
 };
 
