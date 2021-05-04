@@ -6,6 +6,7 @@ import './App.css';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Movies from './common/components/movies';
+import slideShow from './common/components/slideShow/slideShow';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           </header>
           <main>
             <Switch>
+              <Route path="/" component={slideShow} />
               <Route path="/countries" component={Movies} />
             </Switch>
           </main>
