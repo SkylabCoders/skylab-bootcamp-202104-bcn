@@ -9,13 +9,13 @@ import {
 import PropTypes from 'prop-types';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { connect } from 'react-redux';
-import { loadMovies } from '../../../../redux/actions/actionsCreator';
+import { loadMovies } from '../../../../application/store/actions/actionsCreator';
 import './styles/style.css';
 
-const MostViwedMovies = ({ myMovies, dispatch }) => {
+const MostViwedMovies = ({ myMovies, type, dispatch }) => {
   const baseImgUrl = 'https://image.tmdb.org/t/p/w200/';
   useEffect(() => {
-    dispatch(loadMovies());
+    dispatch(loadMovies(type));
   }, []);
 
   return (
@@ -28,7 +28,7 @@ const MostViwedMovies = ({ myMovies, dispatch }) => {
     >
       <Slider className="slider">
         {
-         myMovies.map((element) => <Slide className="slider__item" key={element.id}><img className="slider__img" src={`${baseImgUrl}${element.poster_path}`} alt="" /></Slide>)
+         myMovies[type].map((element) => <Slide className="slider__item" key={element.id}><img className="slider__img" src={`${baseImgUrl}${element.poster_path}`} alt="" /></Slide>)
         }
       </Slider>
       <div className="buttons-container">
@@ -42,7 +42,8 @@ const MostViwedMovies = ({ myMovies, dispatch }) => {
 
 MostViwedMovies.propTypes = {
   myMovies: PropTypes.arrayOf(PropTypes.object).isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired
 };
 
 const mapStateToProps = ({ movies }) => ({

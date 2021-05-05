@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { useAuth0 } from '@auth0/auth0-react';
-import { login } from '../../../redux/actions/actionsCreator';
+import { login } from '../../../application/store/actions/actionsCreator';
 import Profile from './styles';
 
 function Login({ auth, actions }) {
   const {
     loginWithRedirect,
     isAuthenticated,
+    logout,
     user
   } = useAuth0();
 
@@ -23,6 +24,7 @@ function Login({ auth, actions }) {
     <>
       <Profile>
         <img src={user?.picture} alt={user.name} />
+        <button type="button" onClick={() => logout()}>Logout</button>
         <div className="UserName">
           Welcome
           {' '}
