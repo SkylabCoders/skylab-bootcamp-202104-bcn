@@ -8,7 +8,7 @@ const Map = ({ vaccinesContinentData }) => {
   console.log(vaccinesContinentData);
   return (
     <>
-      <div style={{ display: 'flex', maxWidth: 900 }}>
+      <div style={{ display: 'flex', justifyContent: 'center', maxWidth: 900 }}>
         <Chart
           width="500px"
           height="300px"
@@ -16,8 +16,9 @@ const Map = ({ vaccinesContinentData }) => {
           data={vaccinesContinentData}
           options={{
             resolution: 'continents',
-            colors: ['#FAB06C', '#FF3939'],
+            colors: ['green', '#C4D64E'],
             backgroundColor: 'transparent'
+
           }}
           mapsApiKey={process.env.REACT_APP_GOOGLE_MAP_KEY}
           rootProps={{ 'data-testid': '1' }}
