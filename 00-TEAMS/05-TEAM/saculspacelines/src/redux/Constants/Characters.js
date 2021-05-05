@@ -14,7 +14,7 @@ const CHARACTERS = [
   },
   {
     name: 'R2-D2',
-    imgUrl: 'https://cdn.icon-icons.com/icons2/193/PNG/256/R2D2_-_02_23245.png',
+    imgUrl: 'https://pbs.twimg.com/profile_images/620767378239045632/STpzI3oc.png',
     faction: LIGHT
   },
   {
@@ -339,7 +339,7 @@ const CHARACTERS = [
   },
   {
     name: 'Jango Fett',
-    imgUrl: 'https://cdn.icon-icons.com/icons2/193/PNG/256/Jango_Fett_23265.png',
+    imgUrl: 'https://pbs.twimg.com/profile_images/724992769756942337/g1wqfreT_400x400.jpg',
     faction: DARK
   },
   {
