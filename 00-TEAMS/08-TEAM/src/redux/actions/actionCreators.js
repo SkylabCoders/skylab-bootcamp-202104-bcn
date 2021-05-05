@@ -37,7 +37,7 @@ export const loadVaccinesByCountry = (country) => async (dispatch) => {
 
 export const loadVaccinesContinentData = (url = `${URL}${vaccinesUrl}`) => async (dispatch) => {
   const { data } = await axios.get(url);
-  const allContinents = ['Africa', 'Asia', 'Australia', 'Oceania', 'European Union'];
+  const allContinents = ['Africa', 'Asia', 'Oceania', 'European Union', 'North America', 'South America'];
   const continents = allContinents.map((continent) => ({
     name:
     continent,
