@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Provider } from 'react-redux';
+import { Auth0Provider } from '@auth0/auth0-react';
 import store from './redux/store';
 <<<<<<< HEAD
 import Movies from './common/components/movies';
@@ -11,7 +12,11 @@ import HeaderLayout from './application/components/layout/Layout';
 
 function App() {
   return (
-    <div className="App">
+    <Auth0Provider
+      domain="blopez-devv.eu.auth0.com"
+      clientId="6LYLNXO67WSQsZKKBqxW4TZPjTL9waa7"
+      redirectUri={window.location.origin}
+    >
       <Provider store={store}>
 <<<<<<< HEAD
         <Router>
@@ -30,7 +35,7 @@ function App() {
         <HeaderLayout />
 >>>>>>> 116aa0102078dfabbb4b7c9c95f6a9234804e664
       </Provider>
-    </div>
+    </Auth0Provider>
   );
 }
 

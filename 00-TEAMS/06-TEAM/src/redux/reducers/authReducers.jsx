@@ -1,16 +1,24 @@
-import Types from '../actions/actionTypes';
+import actionTypes from '../actions/actionTypes';
 
-const authReducers = (state = {}, action) => {
+function reducer(auth = { isLoggedIn: false }, action) {
   switch (action.type) {
-    case Types.login:
+    case actionTypes.AUTH_LOGIN:
       return {
-        uid: action.payload.uid,
-        name: action.payload.displayName
+        ...auth,
+        isLoggedIn: true,
+        user: action.user
       };
-    case Types.logout:
-      return {};
+
+    case actionTypes.AUTH_LOGOUT:
+      return {
+        ...auth,
+        isLoggedIn: false,
+        user: null
+      };
+
     default:
-      return state;
+      return auth;
   }
-};
-export default authReducers;
+}
+
+export default reducer;

@@ -1,0 +1,66 @@
+.carousel__container {
+    margin: auto;
+    max-width: 550px;
+}
+
+.carousel__slider {
+    height: 630px;
+    object-fit: cover;
+}
+
+.carousel__inner-slide {
+    animation: cambio 20s infinite normal;
+    height: calc(88% - 20px);
+    left: 10px;
+    top: 10px;
+    width: calc(100% - 20px);
+}
+
+.slider__image{
+    width: 100%;
+}  
+
+.slideHorizontal___1NzNV {
+    float: left;
+    width: 50%;
+}
+
+.carousel__slider-tray-wrapper{
+    overflow: hidden;
+}
+
+.carousel__back-button{
+    left: 30px;
+}
+
+.carousel__next-button{
+    right: 30px;
+}
+
+.slider--information{
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.overview {
+    font-size: 33px;
+    font-style: italic;
+    font-weight: bolder;
+    margin-left: 30px;
+    margin-top: 23%;
+    width: 76%;
+}
+
+.slider__title{
+    font-size: 50px;
+    margin-left: 9%;
+    margin-top: 14%;
+}
+
+.slider__vote-average{
+    font-size: 16px;
+    margin-left: 10%;
+    margin-top: 24%;
+}
