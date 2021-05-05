@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './style.scss';
 
 function SearchInput() {
   const [newSearch, setNewSearch] = useState('');
@@ -8,7 +9,6 @@ function SearchInput() {
     <>
       <form>
         <label htmlFor="search-input">
-          Search by country:
           <input
             id="search-input"
             placeholder="Search country"
