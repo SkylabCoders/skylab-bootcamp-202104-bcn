@@ -1,3 +1,7 @@
+* {
+    list-style: none;
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -16,16 +20,45 @@ header {
     align-items: center;
 }
 
+.first-li{
+    display: flex;
+}
+
 .containerImg{
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
     width: 290px;
     height: 210px;
-    background-image: url("https://www.creativefabrica.com/wp-content/uploads/2021/03/13/cartoon-cat-listening-to-music-svgpng-Graphics-9551560-1-1-580x387.png");
+    background-image: url("https://download.logo.wine/logo/Spotify/Spotify-Logo.wine.png");
     background-size: 300px;
 }
 
 .begginButton{
-    margin-top: 20px;
+    margin-top: 10px;
 }
+
+.musicLogo {
+    width: 30px;
+    height: 30px;
+}
+
+button {
+    background: orange;
+     margin-left: 15px;
+     padding: 5px 10px;
+     text-align: center;
+     text-transform: uppercase;
+     transition: 0.5s;
+     background-size: 200% auto;
+     color: white;            
+     border-radius: 10px;
+     display: block;
+     
+     .button:hover {
+       background-position: right center; /* change the direction of the change here */
+       color: #fff;
+       text-decoration: none;
+     }
+}
+
+  

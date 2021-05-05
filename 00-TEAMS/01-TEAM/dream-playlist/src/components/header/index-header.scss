@@ -2,7 +2,8 @@
     display: flex;
     justify-content: flex-end;
     height: 60px;
-    background-color: rgb(182, 255, 227);
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,237,238,1) 0%, rgba(43,43,52,1) 0%, rgba(60,60,59,1) 100%);
     width: fill;
     .icon {
         margin-right: auto;
