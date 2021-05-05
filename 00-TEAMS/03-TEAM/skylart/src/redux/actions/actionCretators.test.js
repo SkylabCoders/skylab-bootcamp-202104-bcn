@@ -1,6 +1,6 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import fetchMock from 'fecth-mock';
+import fetchMock from 'fetch-mock';
 import actionTypes from './actionTypes';
 import * as actions from './actionCreators';
 
@@ -10,6 +10,14 @@ const mockStore = configureMockStore(middlewares);
 describe('actions', () => {
   it('should create an action to load a detail', () => {
     const detail = {};
+    const expectedAction = {
+      type: actionTypes.LOAD_DETAIL,
+      detail,
+    };
+    expect(actions.loadDetail(detail)).toEqual(expectedAction);
+  });
+  test('should return action', () => {
+    const detail = { name: 'ArtWorkName' };
     const expectedAction = {
       type: actionTypes.LOAD_DETAIL,
       detail,
@@ -42,7 +50,7 @@ describe('async actions', () => {
       artwork: data.departments,
     });
     const expectedActions = [
-      { type: actionTypes.LOAD_ARTWORKS, artwork: data.department },
+      { type: actionTypes.LOAD_ARTWORKS, artwork: data.departments },
     ];
     const store = mockStore({ artworks: [] });
     return store.dispatch(actions.loadArtworksFromApi(url)).then(() => {
