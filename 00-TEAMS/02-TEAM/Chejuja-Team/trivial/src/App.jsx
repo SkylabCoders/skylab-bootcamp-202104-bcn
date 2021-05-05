@@ -11,18 +11,13 @@ import GameMode from './components/GameMode';
 import './App.css';
 import WelcomeRules from './components/WelcomeRules';
 import Game from './components/Game';
-<<<<<<< HEAD
 import Login from './components/Login';
-=======
-import AboutUs from './components/About-us/index';
-// import Login from './components/Login';
->>>>>>> proyecto/chejuja
+import Aboutus from './components/About-us/index';
 import Ranking from './components/Ranking/index';
 
 // TODO Mode credentials to .env
 function App() {
   return (
-<<<<<<< HEAD
     <Auth0Provider
       domain={process.env.REACT_APP_DOMAIN}
       clientId={process.env.REACT_APP_CLIENTE_ID}
@@ -38,30 +33,13 @@ function App() {
               <Route path="/game-mode" exact component={GameMode} />
               <Route path="/play" exact component={Game} />
               <Route path="/log-in" exact component={Login} />
+              <Route path="/info" exact component={Aboutus} />
               <Route path="/ranking" exact component={Ranking} />
             </div>
           </Switch>
         </BrowserRouter>
       </Provider>
     </Auth0Provider>
-=======
-    <Provider store={store}>
-      <BrowserRouter>
-        <Header />
-        <Dashboard />
-        <Switch>
-          <div className="main-window">
-            <Route path="/" exact component={WelcomeRules} />
-            <Route path="/game-mode" exact component={GameMode} />
-            <Route path="/play" exact component={Game} />
-            {/* <Route path="/log-in" exact component={Login} /> */}
-            <Route path="/ranking" exact component={Ranking} />
-            <Route path="/info" exact component={AboutUs} />
-          </div>
-        </Switch>
-      </BrowserRouter>
-    </Provider>
->>>>>>> proyecto/chejuja
   );
 }
 
