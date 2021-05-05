@@ -19,7 +19,9 @@ function SearchInput() {
           >
             <Link
               to={`/country/${newSearch}`}
-            />
+            >
+              Search country
+            </Link>
           </button>
         </label>
       </form>
