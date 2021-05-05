@@ -22,12 +22,14 @@ function Login({ auth, actions }) {
   const loggedInTemplate = () => (
     <>
       <Profile>
-        Welcome
-        {' '}
-        <p>
-          {auth?.user?.name}
-        </p>
         <img src={user?.picture} alt={user.name} />
+        <div className="UserName">
+          Welcome
+          {' '}
+          <p>
+            {auth?.user?.name}
+          </p>
+        </div>
       </Profile>
     </>
   );
