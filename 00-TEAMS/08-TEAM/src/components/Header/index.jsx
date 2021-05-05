@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import SearchInput from '../SearchInput';
+import logo from '../../assets/logoC19.png';
 
 const Header = () => (
   <nav>
     <Link className="nav-element" to="/">
-      <img className="nav-icon" src="../../assets/logoC19.png" alt="icon" />
+      <img className="nav-icon" src={logo} alt="icon" />
     </Link>
     <Link className="nav-element" to="/global">Global</Link>
     <Link className="nav-element" to="/mysavedplaces">My Saved Places</Link>
