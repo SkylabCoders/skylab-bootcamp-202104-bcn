@@ -9,10 +9,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 // Import your own reducer
-<<<<<<< HEAD:00-TEAMS/02-TEAM/Chejuja-Team/trivial/src/test-util.js
-=======
 import { BrowserRouter } from 'react-router-dom';
->>>>>>> proyecto/chejuja:00-TEAMS/02-TEAM/Chejuja-Team/trivial/test-util.test.js
 import reducer from './redux/reducers/rootReducer';
 
 function render(

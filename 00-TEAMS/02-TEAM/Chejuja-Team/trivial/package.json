@@ -25,11 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-<<<<<<< HEAD
-    "test": "react-scripts test --watchAll",
-=======
     "test": "react-scripts test --watchAll --collect-coverage",
->>>>>>> proyecto/chejuja
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
