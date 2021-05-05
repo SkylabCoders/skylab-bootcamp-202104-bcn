@@ -38,7 +38,7 @@ function ListPreview({
   }
 
   useEffect(() => {
-    if (token && playlists) dispatch(loadSongsfromPlaylist(currentToken, playlists[0].id));
+    if (token && playlists) dispatch(loadSongsfromPlaylist(currentToken, playlists[0]?.id));
   }, [currentPlaylist]);
 
   return (
