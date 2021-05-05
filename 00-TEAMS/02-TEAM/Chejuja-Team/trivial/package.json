@@ -5,6 +5,7 @@
   "dependencies": {
     "@auth0/auth0-react": "^1.4.0",
     "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "@testing-library/react": "^11.2.6",
     "axios": "^0.21.1",
@@ -24,7 +25,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+<<<<<<< HEAD
     "test": "react-scripts test --watchAll",
+=======
+    "test": "react-scripts test --watchAll --collect-coverage",
+>>>>>>> proyecto/chejuja
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -46,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.12.13",
     "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
