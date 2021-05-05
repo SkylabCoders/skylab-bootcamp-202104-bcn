@@ -9,12 +9,11 @@
 .slider {
   overflow: hidden;
   position: relative;
-  margin-top: 120px;
 
   &__img {
     width: 200px;
     height: 280px;
-    margin-left: 10px;
+    margin-left: 4px;
 
     &:hover {
       cursor: pointer;
@@ -27,15 +26,17 @@
 .buttons-container {
   display: flex;
   justify-content: space-between;
-  margin-top: -200px;
-  position: relative;
+  min-height: 10px;
+  margin: 0;
+  top: 20%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-580%);
 
   &__backButton,
   &__nextButton {
-    border-radius: 50%;
     font-size: 30px;
-    width: 40px;
+    width: 30px;
     opacity: 0.5;
-    height: 40px;
+    height: 90px;
   }
 }
