@@ -16,4 +16,28 @@ describe('List preview component', () => {
 
     expect(screen.getByText(/Grande/i)).toBeInTheDocument();
   });
+  test('should contain arist name Ariana', () => {
+    render(<ListPreview />, {
+      initialState: {
+        token: 'faketoken',
+        user: {
+          id: 'Grande'
+        },
+        songs: [{
+          track: {
+            album: {
+              artists: [
+                { name: 'Ariana' }
+              ],
+              images: [
+                { url: 'hhttpfkewfja' }
+              ]
+            }
+          }
+        }]
+      }
+    });
+
+    expect(screen.getByText(/Ariana/i)).toBeInTheDocument();
+  });
 });

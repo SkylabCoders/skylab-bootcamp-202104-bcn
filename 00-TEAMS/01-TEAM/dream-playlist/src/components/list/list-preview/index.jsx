@@ -55,9 +55,9 @@ function ListPreview({
         <ul>
           {songs.length && songs.map((song) => (
             <li>
-              <span className="badge">{song.track.album.artists[0].name}</span>
+              <span className="badge">{song.track.album.artists[0]?.name}</span>
               <br />
-              <span className="badge">{song.track.album.images[0].url}</span>
+              <span className="badge">{song.track.album?.images[0]?.url}</span>
               <br />
               <span className="badge">{song.track.name}</span>
               <br />
