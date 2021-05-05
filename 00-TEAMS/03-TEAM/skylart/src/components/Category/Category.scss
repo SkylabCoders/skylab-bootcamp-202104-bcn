@@ -1,0 +1,19 @@
+@import './../../styles/mixin.scss';
+
+.category{
+    @include flex-content (flex, row, center, flex-start);
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 20px 100px;
+    &__item{
+        width: auto;
+        height: auto;     
+        margin: 10px; 
+        img{
+            width: 200px;
+            object-fit: scale-down;  
+            border-radius: 20px;  
+        }
+    }
+}
+

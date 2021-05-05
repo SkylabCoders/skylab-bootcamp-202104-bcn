@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router';
 import { loadArtworksFromApi, loadCategory } from '../../redux/actions/actionCreators';
 import Footer from '../Common/Footer';
+import './Category.scss';
 
 function Category({ dispatch, artworks, category }) {
   const { categoryId } = useParams();
@@ -12,20 +13,18 @@ function Category({ dispatch, artworks, category }) {
   }, []);
 
   useEffect(() => {
-    artworks.slice(1, 6).map((artworkId) => dispatch(loadCategory(artworkId)));
+    artworks.slice(1, 16).map((artworkId) => dispatch(loadCategory(artworkId)));
   }, [artworks]);
   return (
     <>
-      <ul>
-        {category.map((individualDetail) => (
-          <>
-            {' '}
-            <p>{individualDetail.accessionYear}</p>
+      <ul className="category">
+        {category.length && category?.map((individualDetail) => (
+          <li className="category__item">
             <img
               src={individualDetail.primaryImageSmall}
               alt={individualDetail.primaryImageSmall}
             />
-          </>
+          </li>
         ))}
       </ul>
       <Footer />
