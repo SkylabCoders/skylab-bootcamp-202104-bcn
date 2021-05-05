@@ -1,7 +1,6 @@
-/* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadDetail } from '../../redux/actions/actionCreators';
 import GoBackButton from '../Common/GoBackButton';
@@ -9,17 +8,13 @@ import Footer from '../Common/Footer';
 
 function Detail({ dispatch, detail }) {
   const { artworkId } = useParams();
-  // eslint-disable-next-line no-debugger
-  debugger;
+
   useEffect(() => {
-    // eslint-disable-next-line no-debugger
-    debugger;
     dispatch(loadDetail(urlDetail));
   }, []);
 
   return (
     <>
-      {console.log(detail)}
       <figure>
         <img src="" alt="" />
         <h2>
