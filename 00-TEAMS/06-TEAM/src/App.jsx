@@ -7,19 +7,15 @@ import HeaderLayout from './application/components/layout/Layout';
 
 function App() {
   return (
-    <>
-      <Auth0Provider
-        domain={process.env.REACT_APP_DOMAIN}
-        clientId={process.env.REACT_APP_CLIENT_ID}
-        redirectUri={window.location.origin}
-      />
-      <div className="App">
-        <Provider store={store}>
-          <HeaderLayout />
-        </Provider>
-      </div>
-      <Auth0Provider />
-    </>
+    <Auth0Provider
+      domain="blopez-devv.eu.auth0.com"
+      clientId="6LYLNXO67WSQsZKKBqxW4TZPjTL9waa7"
+      redirectUri={window.location.origin}
+    >
+      <Provider store={store}>
+        <HeaderLayout />
+      </Provider>
+    </Auth0Provider>
   );
 }
 

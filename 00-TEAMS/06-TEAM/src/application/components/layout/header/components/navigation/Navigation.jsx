@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import Login from '../../../../../../common/components/Login/Login';
 import {
   Navigation, BrandImage, BrandWrapper, LoginWrapper, NavigationWrapper
 } from './styles';
@@ -29,7 +30,7 @@ const Navbar = () => (
 
     <LoginWrapper className="navbar-login">
       <ul className="navbar-nav ml-auto">
-        <NavLink activeClassName="active" className="nav-item nav-link" exact to="/login">Entrar</NavLink>
+        <Login />
       </ul>
     </LoginWrapper>
   </Navigation>
