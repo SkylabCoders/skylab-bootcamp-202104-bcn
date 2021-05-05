@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -6,12 +6,10 @@ import { loadDetail } from '../../redux/actions/actionCreators';
 import GoBackButton from '../Common/GoBackButton';
 import Footer from '../Common/Footer';
 
-function Detail({ dispatch, detail }) {
+function Detail({ dispatch, category, detail }) {
   const { artworkId } = useParams();
-
-  useEffect(() => {
-    dispatch(loadDetail(urlDetail));
-  }, []);
+  const selectedArtwork = category.find((artwork) => artwork.objectID === +artworkId);
+  dispatch(loadDetail(selectedArtwork));
 
   return (
     <>
@@ -55,6 +53,7 @@ function Detail({ dispatch, detail }) {
 
 Detail.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  category: PropTypes.shape([]).isRequired,
   detail: PropTypes.shape({
     objectId: PropTypes.number,
     department: PropTypes.string,
