@@ -4,7 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Login from './index';
 import {
   render, screen, fireEvent
-} from './test-utils';
+} from '../../test-utils';
 
 jest.mock('@auth0/auth0-react');
 
@@ -51,7 +51,7 @@ describe('Login Component', () => {
 
     expect(screen.getByText(/Please login/i)).toBeInTheDocument();
   });
-  test('...', () => {
+  test('should call logout function', () => {
     const { getAllByRole } = render(<Login />, {
       initialState: {
         auth: {
