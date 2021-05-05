@@ -12,9 +12,7 @@ function App() {
       clientId="6LYLNXO67WSQsZKKBqxW4TZPjTL9waa7"
       redirectUri={window.location.origin}
     >
-      <Provider store={store}>
-        <HeaderLayout />
-      </Provider>
+      <Provider store={store} />
     </Auth0Provider>
   );
 }
