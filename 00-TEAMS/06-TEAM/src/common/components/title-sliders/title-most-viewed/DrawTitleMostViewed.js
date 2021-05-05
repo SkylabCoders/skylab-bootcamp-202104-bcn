@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { loadTitleMostVewed } from '../../../../redux/actions/actionsCreator';
+import { loadTitleMostVewed } from '../../../../application/store/actions/actionsCreator';
 import '../style.css';
 
 function DrawTitleMostViewed({ title, dispatch }) {

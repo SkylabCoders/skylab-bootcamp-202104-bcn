@@ -3,6 +3,7 @@ import MostViwedMovies from '../../common/components/slider-most-viewed/MostViwe
 import SlideShow from '../../common/components/slide-show/slideShow';
 import DrawTitleMostViewed from '../../common/components/title-sliders/title-most-viewed/DrawTitleMostViewed';
 import DrawTitleLastReleases from '../../common/components/title-sliders/title-last-releases/DrawTitleLastReleases';
+import { TYPE_PARAMS } from '../../common/services/films';
 import './home.css';
 
 const Home = () => (
@@ -11,11 +12,11 @@ const Home = () => (
     <div className="banner-container">
       <div className="banner-container__first">
         <DrawTitleMostViewed />
-        <MostViwedMovies />
+        <MostViwedMovies type={TYPE_PARAMS.popular} />
       </div>
       <div className="banner-container__second">
         <DrawTitleLastReleases />
-        <MostViwedMovies />
+        <MostViwedMovies type={TYPE_PARAMS.topRated} />
       </div>
     </div>
   </>

@@ -25,6 +25,9 @@ module.exports = {
     'linebreak-style': 0,
     'global-require': 0,
     'eslint linebreak-style': [0, 'error', 'windows'],
+    'import/prefer-default-export': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   },
 };

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { loadTitleLastRelase } from '../../../../redux/actions/actionsCreator';
+import { loadTitleLastRelase } from '../../../../application/store/actions/actionsCreator';
 import '../style.css';
 
 function DrawTitleLastReleases({ titleLastRelases, dispatch }) {
