@@ -32,7 +32,7 @@ const Login = ({ auth, actions }) => {
   const loggedInTemplate = () => (
     <>
       <ChooseFaction />
-      <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
+      <button className="logout-button" type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
     </>
   );
 

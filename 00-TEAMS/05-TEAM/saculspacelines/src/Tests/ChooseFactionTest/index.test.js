@@ -1,18 +1,13 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { render, screen } from '../TestUtils';
+import { render } from '@testing-library/react';
 import ChooseFaction from '../../Components/ChooseFaction';
 
 describe('Given a ChooseFaction component', () => {
   test('Should print a choose faction section', () => {
-    render(<ChooseFaction />, {
-      initialState: {
-        auth: {
-          isLoggedIn: true
-        }
-      }
-    });
-  });
+    const { container } = render(<ChooseFaction />);
 
-  expect(screen.toBeInTheDocument());
+    const chooseTitle = container.querySelector('h1');
+    expect(chooseTitle.textContent).toBe('Choose your Faction');
+  });
 });
