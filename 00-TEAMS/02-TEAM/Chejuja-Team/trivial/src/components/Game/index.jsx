@@ -1,6 +1,6 @@
 /* eslint-disable no-debugger */
 /* eslint-disable no-console */
-import React, { useState } from 'react';
+import React from 'react';
 import { PropTypes } from 'prop-types';
 import {
   Link,
@@ -10,11 +10,6 @@ import { connect } from 'react-redux';
 import './game.css';
 
 function Game({ game }) {
-  const [isCorrect, setIsCorrect] = useState(false);
-
-  const onClickAnswer = () => {
-    setIsCorrect(!isCorrect);
-  };
   let { currentQuestion } = (useParams());
   // eslint-disable-next-line radix
   currentQuestion = parseInt(currentQuestion) + 1;
@@ -23,9 +18,15 @@ function Game({ game }) {
     txt.innerHTML = html;
     return txt.value;
   }
-  // function isCorrectAnswer(givenAnswer) {
-  //   return (givenAnswer === game[0][currentQuestion].correct_answer);
-  // }
+  function isCorrectAnswer(givenAnswer, index) {
+    if (givenAnswer === game[0][currentQuestion].correct_answer) {
+      const correctAnswer = document.getElementById(index);
+      correctAnswer.className = 'answer-box__answer correct';
+    } else {
+      const incorrectAnswer = document.getElementById(index);
+      incorrectAnswer.className = 'answer-box__answer incorrect';
+    }
+  }
   let shuffledAnswers = [];
   if (game.length) {
     // eslint-disable-next-line max-len
@@ -40,8 +41,8 @@ function Game({ game }) {
       </div>
       <div className="answer-box">
         {
-          shuffledAnswers.map((answer) => (
-            <button type="button" className={`answer-box__answer ${isCorrect ? 'correct' : ''}`} onClick={onClickAnswer}>
+          shuffledAnswers.map((answer, index) => (
+            <button id={index} type="button" className="answer-box__answer" onClick={() => isCorrectAnswer(answer, index)}>
               {game.length ? <p>{decodeHtml(answer)}</p> : <p>Cargando</p>}
             </button>
           ))
