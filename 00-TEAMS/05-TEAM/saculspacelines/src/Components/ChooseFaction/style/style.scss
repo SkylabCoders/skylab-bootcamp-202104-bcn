@@ -1,65 +1,74 @@
-// *{
-//     margin: 0;
-//     padding: 0;
-// }
+$sw-yellow: #FCE952;
 
-// body{
-//     display: flex;
-//     justify-content: center;
-// }
+*{
+    margin: 0;
+    padding: 0;
+}
 
-// .button-container{
-//     display: flex;
-//     justify-content: center;
+.button-container{
+    display: flex;
+    justify-content: center;
 
-//     button{
-//         background-color: yellow;
-//         border-style: none;
-//         border-radius: 30px;
-//         height: 43px;
-//         width: 171px ;
-//     }
-// }
+    button{
+        background-color: $sw-yellow;
+        border-style: none;
+    }
+}
 
-// header{
-//     align-items: center;
-//     border-radius: 30px;
-//     background-color:yellow ;
-//     color: black;
-//     display: flex;
-//     height: 139px;
-//     justify-content: center;
-//     width: 1039px;
+header{
+    align-items: center;
+    padding-bottom: 1em;
+    border-radius: 3em;
+    background-color: #FCE952;
+    font-family: 'Starjedi';
+    color: black;
+    display: flex;
+    height: 6em;
+    justify-content: center;
+    width: 75em;
 
-//     h1{
-//         font-size: 70px;
-//     }
+    h1{
+       font-size: 5em;
+    }
 
-// }
+}
 
-// .faction-container{
-//     display: flex;
-//     margin-top: 30px;
-//     justify-content: center;
+.faction-container{
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+
+    button {
+        border-radius: 50%;
+        display: flex;
+        border-style: none;
+        align-items: center;
+    }
     
-// }
+}
 
-// footer{
-//     display: flex;
-//     justify-content:center;
-// }
+.factions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-// .lightPic{
-//     background-color: white;
-//     border-radius: 50%;
-//     height: 394px;
-//     width: 403px;
-// }
+footer{
+    display: flex;
+    justify-content:center;
+}
 
-// .darkPic{
-//     margin-left: 50px;
-//     height: 394px;
-//     width: 403px;
-//     border-radius: 50%;
-//     background-color: red;
-// }
+.lightPic{
+    background-color: white;
+    border-radius: 50%;
+    height: 30em;
+    width: 30em;
+    
+}
+
+.darkPic{
+    height: 30em;
+    width: 30em;
+    border-radius: 50%;
+    background-color: red;
+}
