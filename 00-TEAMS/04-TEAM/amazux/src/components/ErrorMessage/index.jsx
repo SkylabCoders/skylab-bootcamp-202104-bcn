@@ -11,7 +11,7 @@ const ErrorMessage = ({ message, dispatch }) => {
   return (
     <div>
       <div className="error__text">
-        <h3>Something went wront</h3>
+        <h3>Something went wrong</h3>
         <p>{message ? `${JSON.stringify(message)}` : 'nada'}</p>
       </div>
       <div className="error__action">
