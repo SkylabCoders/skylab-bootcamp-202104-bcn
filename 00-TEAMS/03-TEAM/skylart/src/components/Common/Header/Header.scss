@@ -14,6 +14,11 @@
     padding: 0 5%;
     width: 100%;
     height: 100%;
+    a{
+        outline: none;
+        text-decoration: none;
+        color:white;
+    }
     &__left-elements{
         padding: 0;
         list-style: none;
@@ -35,7 +40,6 @@
                 list-style: none;
                 position: absolute;
                 background-color: $color-gray-ligth;
-                color: $color-black-dark;
                 padding: 10px 20px;
                 top: 61px;
                 left: 30px;
@@ -43,16 +47,25 @@
             }
             &__item{
                 padding: 8px 0;
+                a{
+                    color: $color-black-dark;
+                }
+                
             }
-            &__item:hover{
-                color: $color-red-medium-dark;
-                transition: 0.3s;
+            &__item:hover {
+                a:hover{
+                    color: $color-red-medium-dark;
+                    transition: 0.3s;
+                }
             }
         }
         .left-elements:hover{
-            color: $color-black-dark;
             cursor: pointer;
-            transition: 0.3s;
+            color: $color-black-dark;
+            a{
+                color: $color-black-dark;
+                transition: 0.3s;
+            }
         }
         .left-elements:hover > .left-elements__list {
             visibility: visible;
