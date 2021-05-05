@@ -6,6 +6,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { bindActionCreators } from 'redux';
 import { login } from '../../redux/Actions/actionCreator';
 import ChooseFaction from '../ChooseFaction';
+import './form.css';
+import starwarspolicyvideo from '../../Images/starwarspolicyvideo.mp4';
 
 const Login = ({ auth, actions }) => {
   const [thermsAccepted, setThermsAccepted] = useState(false);
@@ -35,27 +37,44 @@ const Login = ({ auth, actions }) => {
   );
 
   const loggedOutTemplate = () => (
-    <>
-      <h1>Sacul spacelines</h1>
-      <h2>Wookie subtitle</h2>
-      <form>
-        <input
-          type="checkbox"
-          onChange={() => handleAcceptTherms()}
-          required
-        />
-        <p>Aceptar términos y condiciones</p>
-        <button
-          type="submit"
-          onClick={thermsAccepted ? () => {
-            loginWithRedirect();
-          } : null}
-        >
-          Log In
+    <section className="login">
+      <video
+        autoPlay
+        muted
+        loop
+        id="starwarspolicy"
+      >
+        <source src={starwarspolicyvideo} type="video/mp4" />
+        Video not supported
+      </video>
+      <div className="login__auth auth">
+        <h1 className="auth__title">Sacul spacelines</h1>
+        <h2 className="auth__subtitle">
+          { '}'}
+          {' '}
+          Sacul Spacelines
+          {' '}
+          { '{'}
+        </h2>
+        <form>
+          <input
+            type="checkbox"
+            onChange={() => handleAcceptTherms()}
+            required
+          />
+          <p>Accept privacy policy</p>
+          <button
+            type="submit"
+            onClick={thermsAccepted ? () => {
+              loginWithRedirect();
+            } : null}
+          >
+            Log In
 
-        </button>
-      </form>
-    </>
+          </button>
+        </form>
+      </div>
+    </section>
   );
 
   return (

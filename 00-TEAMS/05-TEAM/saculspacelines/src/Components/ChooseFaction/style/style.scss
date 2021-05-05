@@ -1,67 +1,65 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+// *{
+//     margin: 0;
+//     padding: 0;
+// }
 
-body{
-    display: flex;
-    justify-content: center;
-}
+// body{
+//     display: flex;
+//     justify-content: center;
+// }
 
-.button-container{
-    display: flex;
-    justify-content: center;
+// .button-container{
+//     display: flex;
+//     justify-content: center;
 
-    button{
-        background-color: yellow;
-        border-style: none;
-        border-radius: 30px;
-        height: 43px;
-        width: 171px ;
-    }
-}
+//     button{
+//         background-color: yellow;
+//         border-style: none;
+//         border-radius: 30px;
+//         height: 43px;
+//         width: 171px ;
+//     }
+// }
 
-header{
-    align-items: center;
-    border-radius: 30px;
-    background-color:yellow ;
-    color: black;
-    display: flex;
-    height: 139px;
-    justify-content: center;
-    width: 1039px;
+// header{
+//     align-items: center;
+//     border-radius: 30px;
+//     background-color:yellow ;
+//     color: black;
+//     display: flex;
+//     height: 139px;
+//     justify-content: center;
+//     width: 1039px;
 
-    h1{
-        font-size: 70px;
-    }
+//     h1{
+//         font-size: 70px;
+//     }
 
-}
+// }
 
-
-
-.faction-container{
-    display: flex;
-    margin-top: 30px;
-    justify-content: center;
+// .faction-container{
+//     display: flex;
+//     margin-top: 30px;
+//     justify-content: center;
     
-}
+// }
 
-footer{
-    display: flex;
-    justify-content:center;
-}
+// footer{
+//     display: flex;
+//     justify-content:center;
+// }
 
-.lightPic{
-    background-color: white;
-    border-radius: 50%;
-    height: 394px;
-    width: 403px;
-}
+// .lightPic{
+//     background-color: white;
+//     border-radius: 50%;
+//     height: 394px;
+//     width: 403px;
+// }
 
-.darkPic{
-    margin-left: 50px;
-    height: 394px;
-    width: 403px;
-    border-radius: 50%;
-    background-color: red;
-}
+// .darkPic{
+//     margin-left: 50px;
+//     height: 394px;
+//     width: 403px;
+//     border-radius: 50%;
+//     background-color: red;
+// }
