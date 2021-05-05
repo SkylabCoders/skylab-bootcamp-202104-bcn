@@ -11,9 +11,9 @@ export function loadCategoriesFromApi(url) {
   };
 }
 
-export function loadArtworksFromApi(url) {
+export function loadArtworksFromApi(categoryId) {
   return async (dispatch) => {
-    const { data } = await axios(url);
+    const { data } = await axios(`https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=${categoryId}`);
     dispatch({
       type: actionTypes.LOAD_ARTWORKS,
       artwork: data.objectIDs,
@@ -39,12 +39,19 @@ export function addArtwork() {
   };
 }
 
-export function loadDetail(url) {
+export function loadCategory(artworkId) {
   return async (dispatch) => {
-    const { data } = await axios(url);
+    const { data } = await axios(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artworkId}`);
     dispatch({
-      type: actionTypes.LOAD_DETAIL,
+      type: actionTypes.LOAD_CATEGORY,
       detail: data,
     });
+  };
+}
+
+export function loadDetail(detail) {
+  return {
+    type: actionTypes.LOAD_DETAIL,
+    detail,
   };
 }

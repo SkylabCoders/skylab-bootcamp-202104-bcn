@@ -2,23 +2,21 @@
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { loadArtworksFromApi, loadDetail } from '../../redux/actions/actionCreators';
+import { loadArtworksFromApi, loadCategory } from '../../redux/actions/actionCreators';
 import Footer from '../Common/Footer';
 
-function Category({ dispatch, artworks, detail }) {
+function Category({ dispatch, artworks, category }) {
   useEffect(() => {
-    dispatch(loadArtworksFromApi('https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=6&q=cat'));
+    dispatch(loadArtworksFromApi(6));
   }, []);
-  console.log(artworks);
 
   useEffect(() => {
-    artworks.map((artwork) => dispatch(loadDetail(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artwork}`)));
+    artworks.slice(1, 6).map((artworkId) => dispatch(loadCategory(artworkId)));
   }, [artworks]);
-  console.log(detail);
   return (
     <>
       <ul>
-        {detail.map((individualDetail) => (
+        {category.map((individualDetail) => (
           <>
             {' '}
             <p>{individualDetail.accessionYear}</p>
@@ -37,13 +35,13 @@ function Category({ dispatch, artworks, detail }) {
 Category.propTypes = {
   dispatch: PropTypes.func.isRequired,
   artworks: PropTypes.shape([]).isRequired,
-  detail: PropTypes.shape([]).isRequired,
+  category: PropTypes.shape([]).isRequired,
 };
 
-function mapStateToProps({ artworks, detail }) {
+function mapStateToProps({ artworks, category }) {
   return {
     artworks,
-    detail,
+    category,
   };
 }
 
