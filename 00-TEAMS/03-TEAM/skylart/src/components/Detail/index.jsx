@@ -6,10 +6,9 @@ import { connect } from 'react-redux';
 import { loadDetail } from '../../redux/actions/actionCreators';
 import GoBackButton from '../Common/GoBackButton';
 import Footer from '../Common/Footer';
-import { urlDetail } from '../../redux/store/constants/urls';
 
 function Detail({ dispatch, detail }) {
-  // const { artworkId } = useParams();
+  const { artworkId } = useParams();
   // eslint-disable-next-line no-debugger
   debugger;
   useEffect(() => {
@@ -68,8 +67,9 @@ Detail.propTypes = {
   }).isRequired,
 };
 
-function mapStateToProps({ detail }) {
+function mapStateToProps({ category, detail }) {
   return {
+    category,
     detail,
   };
 }
