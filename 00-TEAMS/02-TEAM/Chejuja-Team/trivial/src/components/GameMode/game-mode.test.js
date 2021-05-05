@@ -1,8 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { screen } from 'redux';
 import GameMode from './index';
-import { render } from '../../../test-util.test';
+import { render, screen } from '../../test-util';
 
 describe('GameMode Component', () => {
   test('should contain input', () => {
