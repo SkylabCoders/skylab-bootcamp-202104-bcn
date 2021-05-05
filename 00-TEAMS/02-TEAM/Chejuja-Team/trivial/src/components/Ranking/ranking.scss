@@ -5,6 +5,16 @@
     height: 55vh;
     width: 60vw;
     margin-left: 5vw;
+        &__container-gif{
+            width: 20vw;
+            margin-left: 50vw;
+            position: absolute;
+            margin-bottom: 50vh;
+            text-align: center;
+            img{
+                width: 10vw;
+            }
+        }
         &__avatar {
             align-self: center;
             display: flex;

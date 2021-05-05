@@ -1,5 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+/* eslint-disable react/prop-types */
+/* eslint-disable prefer-const */
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import './header.css';
 import logo from './logo.png';
 import Login from '../Login/index';
@@ -14,7 +17,7 @@ function Header() {
               <img className="header__list--logo" src={logo} alt="CHEJUJA" />
             </Link>
           </li>
-          <li className="header__list--itemgit">Titulo1</li>
+          <li className="header__list--itemgit">CHEJUJA</li>
           <li className="header__list--item">
             <Login />
           </li>
