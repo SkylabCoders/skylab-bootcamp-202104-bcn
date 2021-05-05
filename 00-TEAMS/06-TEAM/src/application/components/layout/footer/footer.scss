@@ -1,0 +1,21 @@
+.footer {
+   background-color: #212121;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   height: 200px;
+
+   &-logo{
+       &__img {
+        width: 150px;
+        height: 150px;
+       }
+   }
+
+   &-info, &-films{
+       p{
+           margin-top: 20px;
+           font-size: 15px;
+       }
+   }
+}
