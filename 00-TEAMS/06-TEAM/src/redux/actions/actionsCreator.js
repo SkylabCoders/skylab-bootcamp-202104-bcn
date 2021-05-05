@@ -13,7 +13,14 @@ export function loadMovies(url = URL) {
   };
 }
 
-export function loadTitle() {
+export function loadTitleMostVewed() {
+  return {
+    type: actionTypes.LOAD_TITLE,
+    title: 'Las más vistas'
+  };
+}
+
+export function loadTitleLastRelase() {
   return {
     type: actionTypes.LOAD_TITLE,
     title: 'Las más vistas'
