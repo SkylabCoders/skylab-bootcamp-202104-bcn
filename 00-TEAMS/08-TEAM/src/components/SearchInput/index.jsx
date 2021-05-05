@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
+import magnifying from '../../assets/magnifying-pic.png';
 
 function SearchInput() {
   const [newSearch, setNewSearch] = useState('');
@@ -20,7 +21,7 @@ function SearchInput() {
             <Link
               to={`/country/${newSearch}`}
             >
-              Search country
+              <img src={magnifying} alt="icon" />
             </Link>
           </button>
         </label>
