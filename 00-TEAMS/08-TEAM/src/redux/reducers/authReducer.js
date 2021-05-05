@@ -1,6 +1,6 @@
 import actionTypes from '../actions/actionTypes';
 
-const reducer = (auth = {}, action) => {
+const loginReducer = (auth = {}, action) => {
   switch (action.type) {
     case actionTypes.AUTH_LOGIN:
       return {
@@ -19,4 +19,4 @@ const reducer = (auth = {}, action) => {
   }
 };
 
-export default reducer;
+export default loginReducer;

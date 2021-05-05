@@ -32,7 +32,7 @@ Get the lastest updated info about the pandemic and vaccination by continent, co
 </li>
         ))}
       </ul>
-      {/* <MapWorldwide /> */}
+      <MapWorldwide />
       </div>
       </section>
   );
