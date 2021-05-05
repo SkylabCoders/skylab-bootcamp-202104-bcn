@@ -12,6 +12,7 @@ function Login({ auth, actions }) {
     isAuthenticated,
     user
   } = useAuth0();
+  console.log(user);
 
   useEffect(() => {
     if (isAuthenticated && user) {
