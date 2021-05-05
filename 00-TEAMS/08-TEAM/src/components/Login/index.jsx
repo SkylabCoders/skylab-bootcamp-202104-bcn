@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { login } from '../../redux/actions/actionCreators';
+import './style.scss';
 
 const Login = ({ auth, actions }) => {
   const {
@@ -33,10 +34,12 @@ const Login = ({ auth, actions }) => {
 
   return (
     <>
-      <h3>This is Login</h3>
-      {auth.isLoggedIn
-        ? loggInTemplate()
-        : loggOutTemplate()}
+      <div className="login">
+        <h3>This is Login</h3>
+        {auth.isLoggedIn
+          ? loggInTemplate()
+          : loggOutTemplate()}
+      </div>
     </>
   );
 };
