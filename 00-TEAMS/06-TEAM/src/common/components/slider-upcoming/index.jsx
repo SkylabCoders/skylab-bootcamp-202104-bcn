@@ -11,7 +11,6 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import { connect } from 'react-redux';
 import loadMovies from '../../../redux/actions/actionsCreator';
 import { TYPE_PARAMS } from '../../../application/services/services';
-import './styles/style.css';
 
 const Upcoming = ({ myMovies, dispatch }) => {
   const baseImgUrl = 'https://image.tmdb.org/t/p/w200/';
