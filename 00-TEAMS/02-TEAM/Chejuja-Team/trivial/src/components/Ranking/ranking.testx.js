@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Ranking from './index';
 
 describe('When invoked Ranking func', () => {
   test('Wants to contain', () => {
-    render(<BrowserRouter><Ranking /></BrowserRouter>);
-    expect(screen.getByText('Chejuja')).toBeInTheDocument();
+    const container = render(<BrowserRouter><Ranking /></BrowserRouter>);
+    const prueba = container.querySelector('.ranking-game__text');
+    expect(prueba.textContent).toBe('Has quedado en X posicion!');
   });
 });

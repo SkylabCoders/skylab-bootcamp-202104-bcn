@@ -33,7 +33,7 @@ function App() {
               <Route path="/play" exact component={Game} />
               <Route path="/log-in" exact component={Login} />
               <Route path="/info" exact component={Aboutus} />
-              <Route path="/ranking" exact component={Ranking} />
+              <Route path="/Ranking" exact component={Ranking} />
             </div>
           </Switch>
         </BrowserRouter>

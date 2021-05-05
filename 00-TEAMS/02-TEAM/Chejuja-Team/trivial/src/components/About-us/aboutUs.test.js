@@ -5,10 +5,9 @@ import { BrowserRouter } from 'react-router-dom';
 import AboutUs from './index';
 
 describe('When invoked a aboutUs func', () => {
-  test('Expect to print', () => {
-    const { container } = render(<BrowserRouter><AboutUs /></BrowserRouter>);
-    const prueba = container.querySelector('.prueba');
+  const { container } = render(<BrowserRouter><AboutUs /></BrowserRouter>);
+  test('Expect to print chema', () => {
+    const prueba = container.querySelector('.chema');
     expect(prueba.textContent).toBe('Chema');
-    // expect(screen.getByText('Chejuja')).toBeInTheDocument();
   });
 });
