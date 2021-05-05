@@ -18,7 +18,7 @@ const DashboardRoutes = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/films" component={Films} />
         <Route exact path="/tv-shows" component={TvShows} />
-        <Redirect to="/" component={Home} />
+        <Redirect to="/" />
       </Switch>
     </div>
   </>
