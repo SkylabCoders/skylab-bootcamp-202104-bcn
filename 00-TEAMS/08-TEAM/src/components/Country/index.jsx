@@ -17,7 +17,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
 
   function getStatsCountryValues() {
     Object.entries(countryData).map(([element, value]) => {
-      if (myInterestValuesArray.find((x) => x === element)) {
+      if (myInterestValuesArray.find((keys) => keys === element)) {
         myCountryStats.push(value);
       }
       return myCountryStats;
@@ -25,7 +25,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
   }
   function getVaccinesCountryValues() {
     Object.entries(vaccineByCountryData).map(([element, value]) => {
-      if (myInterestVaccinesValuesArray.find((x) => x === element)) {
+      if (myInterestVaccinesValuesArray.find((keys) => keys === element)) {
         myCountryVaccineStats.push(value);
       }
       return myCountryVaccineStats;
