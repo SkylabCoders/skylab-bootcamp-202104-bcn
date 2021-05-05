@@ -9,7 +9,7 @@ import {
 import PropTypes from 'prop-types';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { connect } from 'react-redux';
-import loadMovies from '../../../../redux/actions/actionsCreator';
+import { loadMovies } from '../../../../redux/actions/actionsCreator';
 import './styles/style.css';
 
 const MostViwedMovies = ({ myMovies, dispatch }) => {
