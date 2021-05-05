@@ -2,6 +2,7 @@ import React from 'react';
 import MostViwedMovies from '../../common/components/slider-most-viewed/MostViwedMovies';
 import SlideShow from '../../common/components/slide-show/slideShow';
 import DrawTitleMostViewed from '../../common/components/title-sliders/title-most-viewed/DrawTitleMostViewed';
+import DrawTitleLastReleases from '../../common/components/title-sliders/title-last-releases/DrawTitleLastReleases';
 import './home.css';
 
 const Home = () => (
@@ -13,7 +14,7 @@ const Home = () => (
         <MostViwedMovies />
       </div>
       <div className="banner-container__second">
-        <h1>TEMP</h1>
+        <DrawTitleLastReleases />
         <MostViwedMovies />
       </div>
     </div>
