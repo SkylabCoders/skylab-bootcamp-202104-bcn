@@ -1,11 +1,12 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { render, screen } from './test-utils';
+import {
+  render, screen
+} from './test-utils';
 import ErrorMessage from './index';
 
-describe('UserNav Component', () => {
-  test('should contain wrong', () => {
-    // eslint-disable-next-line react/jsx-filename-extension
-    render(<ErrorMessage />);
-    expect(screen.getByText(/wrong/i)).toBeInTheDocument();
-  });
+test('should return an error message', () => {
+  render(<ErrorMessage message="Hola Josep" />);
+
+  expect(screen.getByText(/Hola Josep/i)).toBeInTheDocument();
 });
