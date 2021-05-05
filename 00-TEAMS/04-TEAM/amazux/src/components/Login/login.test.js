@@ -51,7 +51,7 @@ describe('Login Component', () => {
 
     expect(screen.getByText(/Please login/i)).toBeInTheDocument();
   });
-  test('...', () => {
+  test('should call logout function', () => {
     const { getAllByRole } = render(<Login />, {
       initialState: {
         auth: {
