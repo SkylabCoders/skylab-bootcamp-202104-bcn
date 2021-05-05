@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Login from '../../../../../../common/components/Login/Login';
 import {
-  Navigation, BrandImage, BrandWrapper, LoginWrapper, NavigationWrapper
+  Navigation, BrandImage, BrandWrapper, LoginWrapper, NavigationWrapper, LoginBtn
 } from './styles';
 import GlobalFonts from '../../../../../../fonts/fonts';
 import BrandLogo from '../../../../../../assets/BrandLogo.svg';
@@ -30,7 +30,10 @@ const Navbar = () => (
 
     <LoginWrapper className="navbar-login">
       <ul className="navbar-nav ml-auto">
-        <Login />
+        <LoginBtn>
+          <Login />
+        </LoginBtn>
+
       </ul>
     </LoginWrapper>
   </Navigation>

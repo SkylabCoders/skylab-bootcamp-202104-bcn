@@ -51,3 +51,14 @@ export const LoginWrapper = styled.div`
     margin:15px 20px;
   }
 `;
+
+export const LoginBtn = styled.div`
+  button {
+    background-color: #cdc11d;
+    color: #000000;
+    font-family: 'Ubuntu';
+    text-transform: capitalize;
+    border:0;
+    padding:8px 35px; 
+  }
+`;

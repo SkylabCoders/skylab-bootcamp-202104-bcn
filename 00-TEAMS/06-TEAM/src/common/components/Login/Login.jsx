@@ -12,6 +12,7 @@ function Login({ auth, actions }) {
     isAuthenticated,
     user
   } = useAuth0();
+  console.log(user);
 
   useEffect(() => {
     if (isAuthenticated && user) {
@@ -21,6 +22,11 @@ function Login({ auth, actions }) {
 
   const loggedInTemplate = () => (
     <>
+      <p>
+        Welcomes
+        {' '}
+        {auth?.user?.name}
+      </p>
       <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Cerrar Sesión</button>
     </>
   );
@@ -28,6 +34,7 @@ function Login({ auth, actions }) {
   const loggedOutTemplate = () => (
     <>
       <button type="button" onClick={() => loginWithRedirect()}>Registrarse</button>
+
     </>
   );
 

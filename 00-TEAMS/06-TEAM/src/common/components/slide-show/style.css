@@ -7,7 +7,16 @@
     height: 630px;
     object-fit: cover;
 }
-
+.slider--wrapper--information{
+    display: block;
+    min-height: 245px;
+    position: absolute;
+    overflow: hidden;
+    width: 37%;
+    bottom: 30%;
+    left: 2%;
+    background-color:rgba(255, 255, 255, 0.4);
+}
 .carousel__inner-slide {
     animation: cambio 20s infinite normal;
     height: calc(88% - 20px);
@@ -18,7 +27,7 @@
 
 .slider__image{
     width: 100%;
-}  
+}
 
 .slideHorizontal___1NzNV {
     float: left;

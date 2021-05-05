@@ -36,12 +36,14 @@ function SlideShow({ myMovies, dispatch }) {
       <Slider>
         { myMovies.slice(0, 4).map((element, i) => (
           <Slide key={element.id} index={i} className="slider__section">
-            <span className="slider--information slider__title">{element.title}</span>
-            <span className="slider--information slider__vote-average">
-              IMDB:
-              {' '}
-              {element.vote_average}
-            </span>
+            <div className="slider--wrapper--information">
+              <span className="slider--information slider__title">{element.title}</span>
+              <span className="slider--information slider__vote-average">
+                IMDB:
+                {' '}
+                {element.vote_average}
+              </span>
+            </div>
             <Link to={`${element.id}`}>
               <img className="slider__image" key={element.id} src={`${baseImgUrl}${element.backdrop_path}`} alt="" />
             </Link>
