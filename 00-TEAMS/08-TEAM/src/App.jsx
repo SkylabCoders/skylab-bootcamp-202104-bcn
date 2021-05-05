@@ -28,7 +28,9 @@ function App() {
   google.charts.setOnLoadCallback(drawChart);
   ...
 </script> */}
+
           <header>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" />
             <Header />
           </header>
           <main>
