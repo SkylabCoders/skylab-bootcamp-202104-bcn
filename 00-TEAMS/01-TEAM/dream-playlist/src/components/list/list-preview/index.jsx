@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import {
   getToken, getUserData, loadPlaylists, loadSongsfromPlaylist
 } from '../../../redux/actions/actionCreator';
+import Header from '../../header';
+import './list-preview.css';
 
 function ListPreview({
   token, user, playlists, dispatch, songs
@@ -41,23 +43,28 @@ function ListPreview({
 
   return (
     <>
-      <h1>
-        This is the List of
-        {' '}
-        {user?.id}
-      </h1>
-      <ul className="playlists">
-        {songs.length && songs.map((song) => (
-          <li>
-            <span className="badge">{song.track.album.artists[0].name}</span>
-            <br />
-            <span className="badge">{song.track.album.images[0].url}</span>
-            <br />
-            <span className="badge">{song.track.name}</span>
-            <br />
-          </li>
-        ))}
-      </ul>
+      <Header />
+      <div className="userListTitle">
+        <h1>
+          This is the List of
+          {' '}
+          {user?.id}
+        </h1>
+      </div>
+      <div className="containerListSongs">
+        <ul>
+          {songs.length && songs.map((song) => (
+            <li>
+              <span className="badge">{song.track.album.artists[0].name}</span>
+              <br />
+              <span className="badge">{song.track.album.images[0].url}</span>
+              <br />
+              <span className="badge">{song.track.name}</span>
+              <br />
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
