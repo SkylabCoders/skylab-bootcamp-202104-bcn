@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './style.scss';
 import SearchInput from '../SearchInput';
 import logo from '../../assets/logoC19.png';
+import userAvatar from '../../assets/user-avatar.png';
 
 const Header = () => (
   <nav>
@@ -13,7 +14,10 @@ const Header = () => (
     <Link className="nav-element" to="/mysavedplaces">My Saved Places</Link>
     <Link className="nav-element" to="/advices">Advices</Link>
     <SearchInput />
-    <Link className="nav-element" to="/login">Login</Link>
+    <Link className="nav-element" to="/login">
+      Login
+      <img className="user-avatar" src={userAvatar} alt="icon" />
+    </Link>
   </nav>
 );
 
