@@ -1,0 +1,71 @@
+.select-avatar__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 5%;
+  background-color: #FCE952;
+  border-radius: 10px;
+}
+
+.header__img {
+  border: 0.5em solid black;
+  width: 20%;
+  border-radius: 50%;
+  margin-right: 10%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.header__username {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header__username-name {
+  color: black;
+}
+
+.ul__list {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.select-avatar__ul {
+  background-color: #C4C4C4;
+  margin: 5%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.caracter-button {
+  border-style: none;
+  border-radius: 50%;
+}
+
+.caracter-img {
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=form.css.map */

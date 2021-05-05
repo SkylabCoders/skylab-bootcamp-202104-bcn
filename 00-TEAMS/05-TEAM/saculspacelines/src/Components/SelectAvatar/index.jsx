@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadPeople } from '../../redux/Actions/actionCreator';
 import CHARACTERS from '../../redux/Constants/Characters';
-import '../Characters/form.css';
+import './form.css';
 
 function SelectAvatar({ people, dispatch }) {
   const { faction } = useParams();
@@ -14,61 +14,63 @@ function SelectAvatar({ people, dispatch }) {
   const LIGHT = 'light';
   const DARK = 'dark';
   // const { user } = useAuth0();
-
   const handleAvatarSelection = (url) => {
     setCurrentAvatar(url);
   };
-
   const handleUsernameChange = (event) => {
     setCurrentUsername(event.target.value);
   };
-
   useEffect(() => {
     if (!people.lenght) dispatch(loadPeople());
   }, []);
-
   const lightList = CHARACTERS
     .filter((character) => character.faction.toLowerCase() === LIGHT.toLowerCase());
   const darkList = CHARACTERS
     .filter((character) => character.faction.toLowerCase() === DARK.toLowerCase());
-
   return (
-    <>
-      <img
-        src={currentAvatar.imgUrl}
-        alt={currentAvatar.name}
-      />
-      <h2>{currentUsername}</h2>
-      <input
-        onChange={handleUsernameChange}
-        type="text"
-      />
-      <ul>
+    <section className="select-avatar">
+      <div className="select-avatar__header header">
+        <img
+          className="header__img"
+          src={currentAvatar.imgUrl}
+          alt={currentAvatar.name}
+        />
+        <div className="header__username">
+          <h2 className="header__username-name">{currentUsername}</h2>
+          <input
+            className="header__username-input"
+            onChange={handleUsernameChange}
+            type="text"
+          />
+        </div>
+      </div>
+      <ul className="select-avatar__ul ul">
         {
           faction.toLowerCase() === LIGHT.toLowerCase()
             ? lightList.map((lightCharacter) => (
-              <li>
-                {lightCharacter.name}
+              <li className="ul__list">
                 <button
+                  className="caracter-button"
                   type="button"
                   onClick={() => handleAvatarSelection(lightCharacter)}
                 >
                   <img
+                    className="caracter-img"
                     src={lightCharacter.imgUrl}
                     alt={lightCharacter.name}
                   />
                 </button>
-
               </li>
             ))
             : darkList.map((darkCharacter) => (
-              <li>
-                {darkCharacter.name}
+              <li className="ul__list">
                 <button
+                  className="caracter-button"
                   type="button"
                   onClick={() => handleAvatarSelection(darkCharacter)}
                 >
                   <img
+                    className="caracter-img"
                     src={darkCharacter.imgUrl}
                     alt={darkCharacter.name}
                   />
@@ -79,20 +81,17 @@ function SelectAvatar({ people, dispatch }) {
       </ul>
       <button type="button">BACK</button>
       <button type="button">SUBMIT</button>
-    </>
+    </section>
   );
 }
-
 SelectAvatar.propTypes = {
   people: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
-
 function mapStateToProps({ userActionReducer, authReducer }) {
   return {
     people: userActionReducer,
     auth: authReducer
   };
 }
-
 export default connect(mapStateToProps)(SelectAvatar);
