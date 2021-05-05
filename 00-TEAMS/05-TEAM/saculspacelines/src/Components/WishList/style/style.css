@@ -31,23 +31,27 @@
   margin-right: 100px;
   height: 30vh;
   width: 15vw;
+  border-radius: 50%;
 }
 
-.button-container {
+.change-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-bottom: 1em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-right: 17em;
 }
 
-.button-container button {
+.change-container__item {
   border-style: none;
   border-radius: 20px;
   background-color: yellow;
   width: 15%;
   height: 5vh;
+  margin-left: 8em;
 }
 
 .main-container {
@@ -101,6 +105,8 @@
   border-style: none;
   border-radius: 20px;
   background-color: yellow;
+  height: 3vh;
+  width: 10vw;
 }
 
 .footer-container {
