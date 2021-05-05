@@ -9,6 +9,7 @@ import {
 import PropTypes from 'prop-types';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { loadMovies } from '../../../../redux/actions/actionsCreator';
 import './styles/style.css';
 
@@ -28,7 +29,13 @@ const MostViwedMovies = ({ myMovies, dispatch }) => {
     >
       <Slider className="slider">
         {
-         myMovies.map((element) => <Slide className="slider__item" key={element.id}><img className="slider__img" src={`${baseImgUrl}${element.poster_path}`} alt="" /></Slide>)
+         myMovies.map((element) => (
+           <Slide className="slider__item" key={element.id}>
+             <Link to={`/detail/${element.id}`}>
+               <img className="slider__img" src={`${baseImgUrl}${element.poster_path}`} alt="" />
+             </Link>
+           </Slide>
+         ))
         }
       </Slider>
       <div className="buttons-container">

@@ -1,8 +1,7 @@
 import React from 'react';
 import {
   Switch,
-  Route,
-  Redirect
+  Route
 } from 'react-router-dom';
 import Navbar from '../application/components/layout/header/components/navigation/Navigation';
 import Home from '../pages/home/Home';
@@ -18,7 +17,6 @@ const DashboardRoutes = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/films" component={Films} />
         <Route exact path="/tv-shows" component={TvShows} />
-        <Redirect to="/" />
       </Switch>
     </div>
   </>

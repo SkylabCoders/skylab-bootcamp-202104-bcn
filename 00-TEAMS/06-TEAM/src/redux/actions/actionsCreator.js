@@ -27,6 +27,15 @@ export function loadTitleLastRelase() {
   };
 }
 
+export function getMovieById(movieId) {
+  const movie = URL.find((current) => current.id === +movieId);
+
+  return {
+    type: actionTypes.LOAD_MOVIE,
+    movie
+  };
+}
+
 export function login(user) {
   return {
     type: actionTypes.AUTH_LOGIN,
