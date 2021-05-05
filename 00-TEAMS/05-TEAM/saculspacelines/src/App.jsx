@@ -18,7 +18,7 @@ function App() {
       clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin}
     >
-      <Provider store={configureStore}>
+      <Provider store={configureStore()}>
         <Router>
           <Switch>
             <Route exact path="/" component={Login} />
