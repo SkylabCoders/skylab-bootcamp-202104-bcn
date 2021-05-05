@@ -22,9 +22,8 @@
         margin-bottom: 50px;
 
         .total {
-            padding: 50px;
-            border: 1px solid #2D509F;
-            border-radius: 30px;
+            padding: 10px;
+            border-top: 4px solid #2D509F;
             background-color: none; 
 
             .identifier {
@@ -36,12 +35,28 @@
 
     h2 {
         text-align: center;
+        margin: 40px 0;
     }
 
-    .continentCards {
+    .continent-cards {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         margin-bottom: 50px;
+        flex-wrap: wrap;
+        margin: 30px;
+
+        .continent-card {
+            padding: 50px;
+            background-color: #3D5566;
+            .card-name {
+                font-weight: bolder;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+        }
+
+        
 
     }
 
