@@ -13,6 +13,18 @@
   margin-left: 5vw;
 }
 
+.ranking-game__container-gif {
+  width: 20vw;
+  margin-left: 50vw;
+  position: absolute;
+  margin-bottom: 50vh;
+  text-align: center;
+}
+
+.ranking-game__container-gif img {
+  width: 10vw;
+}
+
 .ranking-game__avatar {
   -ms-flex-item-align: center;
       align-self: center;
