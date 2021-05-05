@@ -1,10 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 
-const Global = () => (
-  <>
-    <h3>This is Global</h3>
-  </>
+import { loadGlobalData } from '../../redux/actions/actionCreators';
 
-);
+const Global = ({ globalData, dispatch }) => {
+  useEffect(() => {
+    dispatch(loadGlobalData());
+  }, []);
 
-export default Global;
+  return (
+    <>
+      <h1>Global</h1>
+      <h3>Affected countries: 220</h3>
+      <section className="mainData">
+        <ul className="globalCards">
+          { globalData
+        && globalData.map(([element, value]) => (
+          <li key={element} className="total">
+            <p className="identifier">{element}</p>
+            <p className="number">{value}</p>
+          </li>
+        ))}
+        </ul>
+      </section>
+
+    </>
+
+  );
+};
+
+Global.propTypes = {
+  globalData: PropTypes.shape([]).isRequired,
+  dispatch: PropTypes.func.isRequired
+};
+
+const mapStateToProps = ({ globalData }) => ({ globalData: Object.entries(globalData) });
+
+export default connect(mapStateToProps)(Global);
