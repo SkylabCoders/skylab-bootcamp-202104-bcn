@@ -1,5 +1,8 @@
 import actionTypes from '../../redux/Actions/actionTypes';
 import localDataReducer from '../../redux/Reducers/localDataReducer';
+import CHARACTERS from '../../redux/Constants/Characters';
+import PLANETS from '../../redux/Constants/Planets';
+import STARSHIPS from '../../redux/Constants/Starships';
 
 const {
   LOAD_LOCAL_CHARACTERS, LOAD_LOCAL_PLANETS, LOAD_LOCAL_STARSHIPS
@@ -11,7 +14,7 @@ const scenarios = [
       type: LOAD_LOCAL_CHARACTERS
 
     },
-    result: [[{ name: 'a', url: 'b' }]]
+    result: [...CHARACTERS]
   },
   {
     state: [],
@@ -19,7 +22,7 @@ const scenarios = [
       type: LOAD_LOCAL_PLANETS
 
     },
-    result: [[{ name: 'a', url: 'b' }]]
+    result: [...PLANETS]
   },
   {
     state: [],
@@ -27,7 +30,7 @@ const scenarios = [
       type: LOAD_LOCAL_STARSHIPS
 
     },
-    result: [[{ name: 'a', url: 'b' }]]
+    result: [...STARSHIPS]
   }
 ];
 scenarios.forEach((scenario) => describe('Given a local data reducer function', () => {
