@@ -42,7 +42,6 @@ export const loadVaccinesContinentData = (url = `${URL}${vaccinesUrl}`) => async
     continent,
     data: data[continent].All
   }));
-  debugger;
   dispatch({
     type: actionTypes.LOAD_VACCINES,
     data: continents
