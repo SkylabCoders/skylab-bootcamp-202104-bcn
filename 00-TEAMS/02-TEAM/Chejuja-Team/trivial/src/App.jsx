@@ -15,7 +15,6 @@ import Login from './components/Login';
 import Aboutus from './components/About-us/index';
 import Ranking from './components/Ranking/index';
 
-// TODO Mode credentials to .env
 function App() {
   return (
     <Auth0Provider
