@@ -22,4 +22,9 @@ describe('Dashboard Component', () => {
 
     expect(screen.getByText(/Welcome to Dream List/i)).toBeInTheDocument();
   });
+  test('should exist ul html element', () => {
+    render(<Dashboard />, container);
+
+    expect(screen.getByText(/Lets see to which playlist do you listen/)).toBeTruthy();
+  });
 });
