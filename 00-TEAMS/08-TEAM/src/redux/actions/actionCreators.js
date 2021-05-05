@@ -34,16 +34,56 @@ export const loadVaccinesByCountry = (country) => async (dispatch) => {
     data: response.data.All
   });
 };
+
 export const loadVaccinesContinentData = (url = `${URL}${vaccinesUrl}`) => async (dispatch) => {
   const { data } = await axios.get(url);
-  const allContinents = ['Africa', 'Asia', 'Australia', 'Oceania', 'European Union'];
-  const continents = allContinents.map((continent) => ({
-    name:
+  const allContinents = ['Africa', 'Asia', 'Oceania', 'European Union', 'North America', 'South America'];
+  // eslint-disable-next-line no-debugger
+  debugger;
+  let continents = allContinents.map((continent) => ([
     continent,
-    data: data[continent].All
-  }));
+    data[continent].All.people_vaccinated,
+    data[continent].All.people_partially_vaccinated
+  ]));
+
+  const getAmericasData = (array) => {
+    const peopleVaccinatedAmericas = array[4][1] + array[5][1];
+    const peoplePartiallyVaccinatedAmericas = array[4][2] + array[5][2];
+    const americasData = ['Americas', peopleVaccinatedAmericas, peoplePartiallyVaccinatedAmericas];
+    const segmentArray = array.splice(0, 4);
+    const segmentArraywithAmericas = [...segmentArray, americasData];
+    return segmentArraywithAmericas;
+  };
+  continents = getAmericasData(continents);
+
+  continents.forEach((element) => {
+    switch (element[0]) {
+      case 'Africa':
+        element.unshift('002');
+        break;
+      case 'Asia':
+        element.unshift('142');
+        break;
+      case 'Oceania':
+        element.unshift('009');
+        break;
+      case 'European Union':
+        element.unshift('150');
+        break;
+      case 'Americas':
+        element.unshift('019');
+        break;
+      default:
+        break;
+    }
+    if (element[1] === 'European Union') {
+      // eslint-disable-next-line no-param-reassign
+      element[1] = 'Europe';
+    }
+  });
+
   dispatch({
-    type: actionTypes.LOAD_VACCINES,
+    type: actionTypes.LOAD_VACCINES_MAP,
     data: continents
   });
 };

@@ -7,36 +7,26 @@ import { loadVaccinesContinentData } from '../../redux/actions/actionCreators';
 const MapWorldWide = ({ vaccinesContinentData, dispatch }) => {
   useEffect(() => { dispatch(loadVaccinesContinentData()); }, []);
   console.log('vaccines', vaccinesContinentData);
-  //   const drawChart = () => {
-  //     // Define the chart to be drawn.
-  //     const data = new google.visualization.DataTable();
-  //     data.addColumn('string', 'Element');
-  //     data.addColumn('number', 'Percentage');
-  //     data.addRows([
-  //       ['Nitrogen', 0.78],
-  //       ['Oxygen', 0.21],
-  //       ['Other', 0.01]
-  //     ]);
 
-  //     // Instantiate and draw the chart.
-  //     const chart = new google.visualization.PieChart(document.getElementById('myPieChart'));
-  //     chart.draw(data, null);
-  //   };
   return (
     <div>
       <h1>Vaccines</h1>
       <ul>
         { vaccinesContinentData?.length > 0
-        && vaccinesContinentData.map(({ name, data }) => (
+        && vaccinesContinentData.map(({ name }) => (
           <li>
             {name}
-            :
-            {data.administered}
+            {/* {Object.entries(data.All).slice(1, 3).map(([key, value]) => (
+              <li>
+                {key}
+                :
+                {value}
+              </li> */}
+            {/* ))} */}
           </li>
         ))}
       </ul>
     </div>
-
   );
 };
 

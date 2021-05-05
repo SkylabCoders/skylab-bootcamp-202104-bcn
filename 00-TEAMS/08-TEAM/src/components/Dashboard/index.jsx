@@ -8,6 +8,7 @@ import { loadGlobalData } from '../../redux/actions/actionCreators';
 import './style.scss';
 import MapWorldwide from '../Map';
 import Footer from '../Footer';
+import Chart from '../Map/map';
 
 const Dashboard = ({ globalData, dispatch }) => {
   useEffect(() => { dispatch(loadGlobalData()); }, []);
@@ -34,6 +35,7 @@ Get the lastest updated info about the pandemic and vaccination by continent, co
         ))}
       </ul>
       <MapWorldwide />
+      <Chart />
       </div>
       <Footer />
       </section>
