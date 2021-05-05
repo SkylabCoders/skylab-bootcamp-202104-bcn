@@ -5,6 +5,7 @@ import React from 'react';
 import { render as rtlRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
 // Import your own reducer
+import { BrowserRouter } from 'react-router-dom';
 import configureStore from '../../redux/store/index';
 
 function render(
@@ -15,7 +16,13 @@ function render(
   } = {}
 ) {
   function Wrapper({ children }) {
-    return <Provider store={configureStore(initialState)}>{children}</Provider>;
+    return (
+      <BrowserRouter>
+        <Provider store={configureStore(initialState)}>
+          {children}
+        </Provider>
+      </BrowserRouter>
+    );
   }
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }
