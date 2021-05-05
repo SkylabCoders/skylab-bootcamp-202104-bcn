@@ -64,9 +64,6 @@ describe('Login Component', () => {
       }
     });
 
-    // const btn = ----
-    //    fireEvent.click(btn);
-
     const { logout } = useAuth0();
     const btn = getAllByRole('button')[0];
     fireEvent.click(btn);
