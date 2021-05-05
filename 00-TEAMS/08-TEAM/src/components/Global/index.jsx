@@ -24,6 +24,10 @@ const Global = ({ globalData, dispatch }) => {
         ))}
         </ul>
       </section>
+      <section className="vaccinatedByContinent">
+        <h2>Vaccinated by continents</h2>
+        <p>test test </p>
+      </section>
 
     </>
 
