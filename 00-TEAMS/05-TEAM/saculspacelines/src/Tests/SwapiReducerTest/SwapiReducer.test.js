@@ -1,12 +1,49 @@
-// import React from 'react';
-// import { render } from '@testing-library/react';
-// import loadSwapiReducer from '../../redux/Reducers/swapireducer';
+import actionTypes from '../../redux/Actions/actionTypes';
+import loadSwapiReducer from '../../redux/Reducers/swapireducer';
 
-// describe('Given a ChooseFaction component', () => {
-//   test('Should print a choose faction section', () => {
-//     const { container } = render(<ChooseFaction />);
+const {
+  LOAD_SWAPI, LOAD_PEOPLE, LOAD_PLANETS, LOAD_STARSHIPS
+} = actionTypes;
 
-//     const chooseTitle = container.querySelector('h1');
-//     expect(chooseTitle.textContent).toBe('Choose your Faction');
-//   });
-// });
+const scenarios = [
+  {
+    state: [],
+    action: {
+      type: LOAD_SWAPI,
+      payload: [{ name: 'a', url: 'b' }]
+    },
+    result: [[{ name: 'a', url: 'b' }]]
+  },
+  {
+    state: [],
+    action: {
+      type: LOAD_PEOPLE,
+      payload: [{ name: 'a', url: 'b' }]
+    },
+    result: [[{ name: 'a', url: 'b' }]]
+  },
+  {
+    state: [],
+    action: {
+      type: LOAD_PLANETS,
+      payload: [{ name: 'a', url: 'b' }]
+    },
+    result: [[{ name: 'a', url: 'b' }]]
+  },
+  {
+    state: [],
+    action: {
+      type: LOAD_STARSHIPS,
+      payload: [{ name: 'a', url: 'b' }]
+    },
+    result: [[{ name: 'a', url: 'b' }]]
+  }
+
+];
+
+scenarios.forEach((scenario) => describe('Given a Swapi reducer function', () => {
+  test('Should return a new array', () => {
+    const result = loadSwapiReducer(scenario.state, scenario.action);
+    expect(result).toEqual(scenario.result);
+  });
+}));
