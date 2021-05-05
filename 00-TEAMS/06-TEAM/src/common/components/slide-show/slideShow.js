@@ -11,7 +11,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import loadMovies from '../../../redux/actions/actionsCreator';
+import { loadMovies } from '../../../redux/actions/actionsCreator';
 import './style.css';
 
 function SlideShow({ myMovies, dispatch }) {
