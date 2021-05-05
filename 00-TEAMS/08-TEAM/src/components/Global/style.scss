@@ -1,0 +1,65 @@
+.global {
+    background-color:#182430;
+    height: 100vh;
+    color: #eeeeee;
+    
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .globalCards {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-bottom: 50px;
+
+        .total {
+            padding: 10px;
+            border-top: 4px solid #2D509F;
+            background-color: none; 
+
+            .identifier {
+                font-weight: bolder;
+                font-size: 18px;
+            }
+        }
+    }
+
+    h2 {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .continent-cards {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+        margin: 30px;
+
+        .continent-card {
+            padding: 50px;
+            background-color: #3D5566;
+            .card-name {
+                font-weight: bolder;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+        }
+
+        
+
+    }
+
+
+
+}
