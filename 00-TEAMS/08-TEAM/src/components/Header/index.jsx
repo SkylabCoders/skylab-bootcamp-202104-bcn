@@ -8,7 +8,6 @@ const Header = () => (
     <Link className="nav-element" to="/">
       <img className="nav-icon" src="../../assets" alt="icon" />
     </Link>
-    <Link className="nav-element" to="/">Dashboard</Link>
     <Link className="nav-element" to="/global">Global</Link>
     <Link className="nav-element" to="/mysavedplaces">My Saved Places</Link>
     <Link className="nav-element" to="/advices">Advices</Link>
