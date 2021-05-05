@@ -9,7 +9,6 @@
 .slider {
   overflow: hidden;
   position: relative;
-  min-height: 200px;
 
   &__img {
     width: 200px;
@@ -25,19 +24,19 @@
 }
 
 .buttons-container {
-    display: flex;
-    justify-content: space-between;
-    min-height: 10px;
-    margin: 0;
-    top: 20%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-580%);
+  display: flex;
+  justify-content: space-between;
+  min-height: 10px;
+  margin: 0;
+  top: 20%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-580%);
 
-    &__backButton,
-    &__nextButton {
-      font-size: 30px;
-      width: 30px;
-      opacity: 0.5;
-      height: 90px;
-    }
+  &__backButton,
+  &__nextButton {
+    font-size: 30px;
+    width: 30px;
+    opacity: 0.5;
+    height: 90px;
   }
+}
