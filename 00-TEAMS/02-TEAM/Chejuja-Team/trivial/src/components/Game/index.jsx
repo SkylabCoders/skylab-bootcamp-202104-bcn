@@ -11,11 +11,8 @@ function Game({ game }) {
     txt.innerHTML = html;
     return txt.value;
   }
-  function validateAnswer(givenAnswer) {
-    if (givenAnswer === game[0][0].correct_answer) {
-      return true;
-    }
-    return false;
+  function isCorrectAnswer(givenAnswer) {
+    return (givenAnswer === game[0][0].correct_answer);
   }
   let shuffledAnswers = [];
   if (game.length) {
@@ -31,7 +28,7 @@ function Game({ game }) {
       <div className="answer-box">
         {
           shuffledAnswers.map((answer) => (
-            <button type="button" className="answer-box__answer" onClick={() => validateAnswer(answer)}>
+            <button type="button" className="answer-box__answer" onClick={() => isCorrectAnswer(answer)}>
               {game.length ? <p>{decodeHtml(answer)}</p> : <p>Cargando</p>}
             </button>
           ))
