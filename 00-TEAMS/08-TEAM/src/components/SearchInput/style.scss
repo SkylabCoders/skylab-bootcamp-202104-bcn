@@ -16,13 +16,17 @@ input {
     }
 }
 
+Link {
+    width: 30px;
+    height: 30px;
+}
+
 button {
-    width: 20px;
-    height: 20px;
+    margin-left: 5px;
+
     background-color: transparent;
-    background-image: url('./../../assets/magnifying-pic.png');
-    background-repeat: no-repeat;
     border: none;
+
 
 }
 
