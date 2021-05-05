@@ -9,13 +9,14 @@ import {
 import PropTypes from 'prop-types';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { connect } from 'react-redux';
-import loadMovies from '../../../../redux/actions/actionsCreator';
+import loadMovies from '../../../redux/actions/actionsCreator';
+import { TYPE_PARAMS } from '../../../application/services/services';
 import './styles/style.css';
 
-const MostViwedMovies = ({ myMovies, dispatch }) => {
+const Upcoming = ({ myMovies, dispatch }) => {
   const baseImgUrl = 'https://image.tmdb.org/t/p/w200/';
   useEffect(() => {
-    dispatch(loadMovies());
+    dispatch(loadMovies(TYPE_PARAMS.now_playing));
   }, []);
 
   return (
@@ -39,7 +40,7 @@ const MostViwedMovies = ({ myMovies, dispatch }) => {
   );
 };
 
-MostViwedMovies.propTypes = {
+Upcoming.propTypes = {
   myMovies: PropTypes.arrayOf(PropTypes.object).isRequired,
   dispatch: PropTypes.func.isRequired
 };
@@ -48,4 +49,4 @@ const mapStateToProps = ({ movies }) => ({
   myMovies: movies
 });
 
-export default connect(mapStateToProps)(MostViwedMovies);
+export default connect(mapStateToProps)(Upcoming);

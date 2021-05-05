@@ -1,11 +1,11 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
+import { API_KEY, BASE_URL } from '../../application/services/services';
 
-const URL = 'https://api.themoviedb.org/3/movie/popular?api_key=676fcc92f08e6b8bd969d6b857cce0c4&language=en-US&page=1';
-
-export default function loadMovies(url = URL) {
+export default function loadMovies(searchParam) {
+  const newUrl = `${BASE_URL}${searchParam}?api_key=${API_KEY}&language=en-US&page=1`;
   return async (dispatch) => {
-    const response = await axios.get(url);
+    const response = await axios.get(newUrl);
     dispatch({
       type: actionTypes.LOAD_MOVIES,
       movies: response.data.results

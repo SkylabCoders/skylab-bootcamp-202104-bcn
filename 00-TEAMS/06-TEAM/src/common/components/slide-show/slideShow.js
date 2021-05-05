@@ -13,12 +13,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import loadMovies from '../../../redux/actions/actionsCreator';
 import './style.css';
+import { TYPE_PARAMS } from '../../../application/services/services';
 
 function SlideShow({ myMovies, dispatch }) {
   const baseImgUrl = 'https://image.tmdb.org/t/p/original';
   const [autoPlayBool, setBool] = useState(true);
   useEffect(() => {
-    dispatch(loadMovies());
+    dispatch(loadMovies(TYPE_PARAMS.popular));
     setBool(true);
   }, []);
 
