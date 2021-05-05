@@ -1,0 +1,76 @@
+/* eslint-disable no-console */
+import React, { useEffect } from 'react';
+import { PropTypes } from 'prop-types';
+// import { useParams } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { loadDetail } from '../../redux/actions/actionCreators';
+import GoBackButton from '../Common/GoBackButton';
+import Footer from '../Common/Footer';
+import { urlDetail } from '../../redux/store/constants/urls';
+
+function Detail({ dispatch, detail }) {
+  // const { artworkId } = useParams();
+  // eslint-disable-next-line no-debugger
+  debugger;
+  useEffect(() => {
+    // eslint-disable-next-line no-debugger
+    debugger;
+    dispatch(loadDetail(urlDetail));
+  }, []);
+
+  return (
+    <>
+      {console.log(detail)}
+      <figure>
+        <img src="" alt="" />
+        <h2>
+          {' '}
+
+          {' '}
+        </h2>
+      </figure>
+
+      <div className="information-container">
+        <h3>Artwork title</h3>
+        <span>any</span>
+        <span>autor</span>
+        <ul>
+          <li>
+            Artist:
+            {' '}
+            {detail.department}
+          </li>
+          <li>Date: </li>
+          <li>Culture: </li>
+          <li>Medium: </li>
+          <li>Dimensions: </li>
+          <li>Credit Line: </li>
+          <li>Accession Number: </li>
+        </ul>
+        <button type="button">Add to favorites</button>
+        <GoBackButton />
+      </div>
+
+      <ul>
+        <li>imatges</li>
+      </ul>
+      <Footer />
+    </>
+  );
+}
+
+Detail.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  detail: PropTypes.shape({
+    objectId: PropTypes.number,
+    department: PropTypes.string,
+    objectDate: PropTypes.string,
+  }).isRequired,
+};
+
+function mapStateToProps({ detail }) {
+  return {
+    detail,
+  };
+}
+export default connect(mapStateToProps)(Detail);
