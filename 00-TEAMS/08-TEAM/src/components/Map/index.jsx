@@ -16,7 +16,7 @@ const MapWorldWide = ({ vaccinesContinentData, dispatch }) => {
         && vaccinesContinentData.map(({ name, data }) => (
           <li>
             {name}
-            {Object.entries(data.All).map(([key, value]) => (
+            {Object.entries(data.All).slice(1, 3).map(([key, value]) => (
               <li>
                 {key}
                 :
