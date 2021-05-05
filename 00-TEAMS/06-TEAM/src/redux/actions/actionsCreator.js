@@ -13,6 +13,20 @@ export default function loadMovies(url = URL) {
   };
 }
 
+export function loadTitleMostVewed() {
+  return {
+    type: actionTypes.LOAD_TITLE,
+    title: 'Las más vistas'
+  };
+}
+
+export function loadTitleLastRelase() {
+  return {
+    type: actionTypes.LOAD_TITLE,
+    title: 'Últimos estrenos'
+  };
+}
+
 export function login(user) {
   return {
     type: actionTypes.AUTH_LOGIN,
