@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
 import logo from './logo.png';
-import LoginImg from './user.png';
+import Login from '../Login/index';
 
 function Header() {
   return (
@@ -16,10 +16,7 @@ function Header() {
           </li>
           <li className="header__list--itemgit">Titulo1</li>
           <li className="header__list--item">
-            <Link to="./" className="header__list--login">
-              <p className="header__list--paragraph">UserName</p>
-              <img className="header__list--loginImg" src={LoginImg} alt="img" />
-            </Link>
+            <Login />
           </li>
         </ul>
       </nav>
