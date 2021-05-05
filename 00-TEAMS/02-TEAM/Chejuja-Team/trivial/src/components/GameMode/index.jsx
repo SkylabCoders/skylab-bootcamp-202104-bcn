@@ -15,7 +15,7 @@ function GameMode({ dispatch }) {
   }
   return (
     <main className="mode-game">
-      <h2>GAME MODE</h2>
+      <h2 className="title">GAME MODE</h2>
       <select className="mode-game__difficult" ref={myRefDifficult}>
         <option value="easy">EASY</option>
         <option value="medium">MEDIUM</option>
