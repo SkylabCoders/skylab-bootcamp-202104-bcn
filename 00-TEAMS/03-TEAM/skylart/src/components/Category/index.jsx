@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
@@ -8,19 +9,25 @@ function Category({ dispatch, artworks, detail }) {
   useEffect(() => {
     dispatch(loadArtworksFromApi('https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=6&q=cat'));
   }, []);
+  console.log(artworks);
+
+  useEffect(() => {
+    artworks.map((artwork) => dispatch(loadDetail(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artwork}`)));
+  }, [artworks]);
+  console.log(detail);
   return (
     <>
       <ul>
-        {artworks.length && artworks.map((id) => {
-          useEffect(() => {
-            dispatch(loadDetail(id));
-          }, []);
-          return (
-            <li>
-              <p>{detail.artistDisplayName}</p>
-            </li>
-          );
-        })}
+        {detail.map((individualDetail) => (
+          <>
+            {' '}
+            <p>{individualDetail.accessionYear}</p>
+            <img
+              src={individualDetail.primaryImageSmall}
+              alt={individualDetail.primaryImageSmall}
+            />
+          </>
+        ))}
       </ul>
       <Footer />
     </>
@@ -30,7 +37,7 @@ function Category({ dispatch, artworks, detail }) {
 Category.propTypes = {
   dispatch: PropTypes.func.isRequired,
   artworks: PropTypes.shape([]).isRequired,
-  detail: PropTypes.shape({}).isRequired,
+  detail: PropTypes.shape([]).isRequired,
 };
 
 function mapStateToProps({ artworks, detail }) {

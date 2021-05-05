@@ -39,12 +39,12 @@ export function addArtwork() {
   };
 }
 
-export function loadDetail(artId) {
+export function loadDetail(url) {
   return async (dispatch) => {
-    const { data } = await axios(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artId}`);
+    const { data } = await axios(url);
     dispatch({
       type: actionTypes.LOAD_DETAIL,
-      artwork: data,
+      detail: data,
     });
   };
 }
