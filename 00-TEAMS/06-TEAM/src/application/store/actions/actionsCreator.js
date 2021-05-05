@@ -1,13 +1,12 @@
-import axios from 'axios';
+import { getFilms } from '../../../common/services/films';
 import actionTypes from './actionTypes';
 
-const URL = 'https://api.themoviedb.org/3/movie/popular?api_key=676fcc92f08e6b8bd969d6b857cce0c4&language=en-US&page=1';
-
-export function loadMovies(url = URL) {
+export function loadMovies(searchParam) {
   return async (dispatch) => {
-    const response = await axios.get(url);
+    const response = await getFilms(searchParam);
     dispatch({
       type: actionTypes.LOAD_MOVIES,
+      moviesType: searchParam,
       movies: response.data.results
     });
   };

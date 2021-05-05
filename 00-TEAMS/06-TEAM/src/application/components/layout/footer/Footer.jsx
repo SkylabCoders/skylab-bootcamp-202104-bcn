@@ -1,6 +1,6 @@
 import React from 'react';
 import './footer.css';
-import BrandLogo from '../../../../assets/BrandLogo.svg';
+import BrandLogo from '../assets/BrandLogo.svg';
 
 const Footer = () => (
   <>
