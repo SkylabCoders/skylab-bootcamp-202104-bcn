@@ -8,7 +8,7 @@ function ChooseFaction() {
   const history = useHistory();
 
   return (
-    <div>
+    <div className="factions">
       <header>
         <h1>Choose your Faction</h1>
       </header>
