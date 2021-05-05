@@ -35,6 +35,7 @@ const MostViwedMovies = ({ myMovies, dispatch }) => {
         <ButtonBack className="buttons-container__backButton">&#60;</ButtonBack>
         <ButtonNext className="buttons-container__nextButton">&#62;</ButtonNext>
       </div>
+
     </CarouselProvider>
   );
 };
