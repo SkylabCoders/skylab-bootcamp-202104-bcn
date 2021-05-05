@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadGlobalData, loadVaccinesContinentData } from '../../redux/actions/actionCreators';
+import './style.scss';
 
 const Global = ({ globalData, vaccinesContinentData, dispatch }) => {
   useEffect(() => {
@@ -14,27 +15,29 @@ const Global = ({ globalData, vaccinesContinentData, dispatch }) => {
   const entries = ['administered',
     'people_vaccinated', 'people_partially_vaccinated', 'updated'];
 
-  console.log(vaccinesContinentData);
-
   return (
     <>
-      <h1>Global</h1>
-      <h3>Affected countries: 220</h3>
-      <section className="mainData">
-        <ul className="globalCards">
-          { globalData
+      <main className="global">
+        <div className="container">
+          <div className="title">
+            <h1>Global</h1>
+            <h3>Affected countries: 220</h3>
+          </div>
+          <section className="mainData">
+            <ul className="globalCards">
+              { globalData
         && globalData.map(([element, value]) => (
           <li key={element} className="total">
             <p className="identifier">{element}</p>
             <p className="number">{value}</p>
           </li>
         ))}
-        </ul>
-      </section>
-      <section className="vaccinatedByContinent">
-        <h2>Vaccinated by continents</h2>
-        <ul className="continentCards">
-          { vaccinesContinentData
+            </ul>
+          </section>
+          <section className="vaccinatedByContinent">
+            <h2>Vaccinated by continents</h2>
+            <ul className="continentCards">
+              { vaccinesContinentData
         && vaccinesContinentData.map(({ name, data }) => (
           <li key={name}>
             <p className="card-name">{name.toUpperCase()}</p>
@@ -49,9 +52,10 @@ const Global = ({ globalData, vaccinesContinentData, dispatch }) => {
             ))}
           </li>
         ))}
-        </ul>
-
-      </section>
+            </ul>
+          </section>
+        </div>
+      </main>
 
     </>
 
