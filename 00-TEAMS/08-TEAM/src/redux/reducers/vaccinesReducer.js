@@ -1,10 +1,10 @@
 import actionTypes from '../actions/actionTypes';
 
 const VaccinesReducers = (initialVaccinesContinentData = [], action) => {
-  let updatedVaccinesContinent;
+  let updatedVaccinesContinent = [['Region Code', 'Continent', 'People vaccinated', 'People partially vaccinated']];
   switch (action.type) {
     case actionTypes.LOAD_VACCINES:
-      updatedVaccinesContinent = action.data;
+      updatedVaccinesContinent.push(action.data);
       break;
     default:
       updatedVaccinesContinent = initialVaccinesContinentData;
@@ -12,4 +12,5 @@ const VaccinesReducers = (initialVaccinesContinentData = [], action) => {
   }
   return updatedVaccinesContinent;
 };
+
 export default VaccinesReducers;

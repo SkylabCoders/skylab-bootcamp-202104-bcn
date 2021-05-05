@@ -37,12 +37,40 @@ export const loadVaccinesByCountry = (country) => async (dispatch) => {
 
 export const loadVaccinesContinentData = (url = `${URL}${vaccinesUrl}`) => async (dispatch) => {
   const { data } = await axios.get(url);
-  const allContinents = ['Africa', 'Asia', 'Oceania', 'European Union', 'North America', 'South America'];
-  const continents = allContinents.map((continent) => ({
-    name:
+  // eslint-disable-next-line max-len
+  // const allContinents = [['002', 'Africa'], ['142', 'Asia'], ['009', 'Oceania'], ['150', 'European Union']];
+  const allContinents = ['Africa', 'Asia', 'Oceania', 'European Union'];
+  // eslint-disable-next-line no-debugger
+  debugger;
+  const continents = allContinents.map((continent) => ([
     continent,
-    data: data[continent]
-  }));
+    data[continent].All.people_vaccinated,
+    data[continent].All.people_partially_vaccinated
+  ]));
+
+  continents.forEach((element) => {
+    switch (element[0]) {
+      case 'Africa':
+        element.unshift('002');
+        break;
+      case 'Asia':
+        element.unshift('142');
+        break;
+      case 'Oceania':
+        element.unshift('009');
+        break;
+      case 'European Union':
+        element.unshift('150');
+        break;
+      default:
+        break;
+    }
+    if (element[1] === 'European Union') {
+      // eslint-disable-next-line no-param-reassign
+      element[1] = 'Europe';
+    }
+  });
+
   dispatch({
     type: actionTypes.LOAD_VACCINES,
     data: continents
