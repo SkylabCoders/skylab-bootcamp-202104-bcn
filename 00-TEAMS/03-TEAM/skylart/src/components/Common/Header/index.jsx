@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.svg';
 import './Header.scss';
 import Login from '../../LogIn';
@@ -8,22 +9,22 @@ function Header() {
     <header className="header">
       <div className="container">
         <ul className="container__left-elements">
-          <img src={logo} alt="logo" />
-          <li className="left-elements">Home</li>
+          <Link to="/"><img src={logo} alt="logo" /></Link>
+          <li className="left-elements"><Link to="/">Home</Link></li>
           <li className="left-elements">
             Category
             {' '}
             <span className="arrow-category">▼</span>
             <ul className="left-elements__list">
-              <li className="left-elements__item">Egyptian Art</li>
-              <li className="left-elements__item">Asian Art</li>
-              <li className="left-elements__item">Arts of Africa, Oceania and America</li>
-              <li className="left-elements__item">Euro paintings</li>
-              <li className="left-elements__item">Greek and Roman</li>
-              <li className="left-elements__item">The American Wing</li>
+              <li className="left-elements__item"><Link to={`/category/${10}`}>Egyptian Art</Link></li>
+              <li className="left-elements__item"><Link to={`/category/${6}`}>Asian Art</Link></li>
+              <li className="left-elements__item"><Link to={`/category/${5}`}>Arts of Africa, Oceania and America</Link></li>
+              <li className="left-elements__item"><Link to={`/category/${11}`}>European paintings</Link></li>
+              <li className="left-elements__item"><Link to={`/category/${13}`}>Greek and Roman</Link></li>
+              <li className="left-elements__item"><Link to={`/category/${1}`}>The American Wing</Link></li>
             </ul>
           </li>
-          <li className="left-elements">Favorites</li>
+          <li className="left-elements"><Link to="/favorites">Favorites</Link></li>
         </ul>
         <ul className="container__right-elements">
           <Login />
