@@ -18,7 +18,16 @@ afterEach(() => {
 });
 
 describe('Dropdown Component', () => {
-  test('should contain a dropdown', () => {
+  test('should contain default option how old you want to be', () => {
+    render(<Dropdown
+      category={DROPDOWNDATA[0].category}
+      defaultOption={DROPDOWNDATA[1].defaultOption}
+      options={DROPDOWNDATA[0].options}
+    />, container);
+
+    expect(screen.getByText(/How old you want to be/i)).toBeInTheDocument();
+  });
+  test('should contain category rock', () => {
     render(<Dropdown
       category={DROPDOWNDATA[0].category}
       defaultOption={DROPDOWNDATA[0].defaultOption}
@@ -26,5 +35,14 @@ describe('Dropdown Component', () => {
     />, container);
 
     expect(screen.getByText(/rock/i)).toBeInTheDocument();
+  });
+  test('should contain option very slow ', () => {
+    render(<Dropdown
+      category={DROPDOWNDATA[0].category}
+      defaultOption={DROPDOWNDATA[0].defaultOption}
+      options={DROPDOWNDATA[2].options}
+    />, container);
+
+    expect(screen.getByText(/very slow/i)).toBeInTheDocument();
   });
 });
