@@ -38,10 +38,55 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
+  font-size: 5em;
+  text-align: center;
 }
 
 .auth__subtitle {
   font-family: 'Imperial-SW';
+  font-size: 2em;
+  text-align: center;
+  margin: 0;
+}
+
+.policy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.policy__checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-right: 5em;
+}
+
+.policy input {
+  margin-right: 1em;
+}
+
+.policy input::after {
+  background-color: #FCE952;
+}
+
+.login-button {
+  background: #FCE952;
+  font-family: 'Starjedi';
+  outline: 0;
+  border-style: none;
+  border-radius: 1em;
+  font-size: 1em;
+  padding: 0.2em 1em;
 }
 
 #starwarspolicy {
@@ -49,5 +94,8 @@
   width: 100%;
   width: 100%;
   height: 100%;
+  bottom: 0;
+  outline: 0px;
+  border-style: none;
 }
 /*# sourceMappingURL=form.css.map */

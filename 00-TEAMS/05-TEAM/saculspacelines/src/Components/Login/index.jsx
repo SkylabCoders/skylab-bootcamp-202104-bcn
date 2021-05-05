@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import { login } from '../../redux/Actions/actionCreator';
 import ChooseFaction from '../ChooseFaction';
 import './form.css';
-import starwarspolicyvideo from '../../Images/starwarspolicyvideo.mp4';
+import starwarspolicyvideo from '../../Images/policy.mp4';
 
 const Login = ({ auth, actions }) => {
   const [thermsAccepted, setThermsAccepted] = useState(false);
@@ -56,21 +56,23 @@ const Login = ({ auth, actions }) => {
           {' '}
           { '{'}
         </h2>
-        <form>
-          <input
-            type="checkbox"
-            onChange={() => handleAcceptTherms()}
-            required
-          />
-          <p>Accept privacy policy</p>
+        <form className="auth__accept-policy policy">
+          <div className="policy__checkbox">
+            <input
+              type="checkbox"
+              onChange={() => handleAcceptTherms()}
+              required
+            />
+            <p>Accept privacy policy</p>
+          </div>
           <button
+            className="login-button"
             type="submit"
             onClick={thermsAccepted ? () => {
               loginWithRedirect();
             } : null}
           >
-            Log In
-
+            Log in
           </button>
         </form>
       </div>
