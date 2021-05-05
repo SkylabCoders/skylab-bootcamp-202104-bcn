@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { loadCountry, loadVaccinesByCountry } from '../../redux/actions/actionCreators';
+import './style.scss';
 
 function Country({ dispatch, countryData, vaccineByCountryData }) {
   const { country } = useParams();
@@ -18,7 +19,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
   function getStatsCountryValues() {
     Object.entries(countryData).map(([element, value]) => {
       if (myInterestValuesArray.find((keys) => keys === element)) {
-        myCountryStats.push(value);
+        myCountryStats.push([element, value]);
       }
       return myCountryStats;
     });
@@ -26,7 +27,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
   function getVaccinesCountryValues() {
     Object.entries(vaccineByCountryData).map(([element, value]) => {
       if (myInterestVaccinesValuesArray.find((keys) => keys === element)) {
-        myCountryVaccineStats.push(value);
+        myCountryVaccineStats.push([element, value]);
       }
       return myCountryVaccineStats;
     });
@@ -37,7 +38,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
 
   return (
     <>
-      <div>
+      <div className="country-section">
         <h1>{country}</h1>
         <ul>
           {myCountryStats.map((value) => (
@@ -46,6 +47,11 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
             </li>
           ))}
         </ul>
+        <h1>
+          Vaccines
+          {' '}
+
+        </h1>
         <ul>
           {myCountryVaccineStats.map((value) => (
             <li key={`${value}`}>
