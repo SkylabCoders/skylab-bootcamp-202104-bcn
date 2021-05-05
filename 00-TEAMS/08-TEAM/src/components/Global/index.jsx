@@ -11,6 +11,9 @@ const Global = ({ globalData, vaccinesContinentData, dispatch }) => {
     dispatch(loadVaccinesContinentData());
   }, []);
 
+  const entries = ['administered',
+    'people_vaccinated', 'people_partially_vaccinated', 'updated'];
+
   console.log(vaccinesContinentData);
 
   return (
@@ -32,10 +35,18 @@ const Global = ({ globalData, vaccinesContinentData, dispatch }) => {
         <h2>Vaccinated by continents</h2>
         <ul className="continentCards">
           { vaccinesContinentData
-        && vaccinesContinentData.map((element) => (
-          <li key={element.name} className="total">
-            <p className="identifier">{element.name.toUpperCase()}</p>
-            <p className="number">{element.data.administered}</p>
+        && vaccinesContinentData.map(({ name, data }) => (
+          <li key={name}>
+            <p className="card-name">{name.toUpperCase()}</p>
+            {entries.map((entry) => (
+              <p className="card-entry">
+                {entry}
+                {' '}
+                :
+                {' '}
+                {data[entry]}
+              </p>
+            ))}
           </li>
         ))}
         </ul>
