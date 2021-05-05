@@ -6,6 +6,16 @@ export const Navigation = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color:#000000;
+  height:60px;
+  .header__wrapper__container {
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
   a{
     text-decoration: none;
     color:#fff;
@@ -32,6 +42,10 @@ export const BrandImage = styled.img`
 
 export const BrandWrapper = styled.div`
   width:20%;
+  .navbar-brand{
+    display:block;
+    width:auto;
+  }
 `;
 export const NavigationWrapper = styled.div`
   display: flex;

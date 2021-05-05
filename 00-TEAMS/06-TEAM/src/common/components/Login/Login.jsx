@@ -4,15 +4,14 @@ import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { useAuth0 } from '@auth0/auth0-react';
 import { login } from '../../../redux/actions/actionsCreator';
+import Profile from './styles';
 
 function Login({ auth, actions }) {
   const {
     loginWithRedirect,
-    logout,
     isAuthenticated,
     user
   } = useAuth0();
-  console.log(user);
 
   useEffect(() => {
     if (isAuthenticated && user) {
@@ -22,12 +21,16 @@ function Login({ auth, actions }) {
 
   const loggedInTemplate = () => (
     <>
-      <p>
-        Welcomes
-        {' '}
-        {auth?.user?.name}
-      </p>
-      <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Cerrar Sesión</button>
+      <Profile>
+        <img src={user?.picture} alt={user.name} />
+        <div className="UserName">
+          Welcome
+          {' '}
+          <p>
+            {auth?.user?.name}
+          </p>
+        </div>
+      </Profile>
     </>
   );
 
@@ -51,7 +54,8 @@ Login.propTypes = {
   auth: PropTypes.shape({
     isLoggedIn: PropTypes.bool.isRequired,
     user: PropTypes.shape({
-      name: PropTypes.string.isRequired
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired
     })
   }).isRequired,
   actions: PropTypes.shape({

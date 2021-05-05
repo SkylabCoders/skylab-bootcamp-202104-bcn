@@ -10,32 +10,32 @@ import BrandLogo from '../../../../../../assets/BrandLogo.svg';
 const Navbar = () => (
 
   <Navigation>
-    <GlobalFonts />
-    <BrandWrapper>
-      <Link className="navbar-brand" to="/">
-        <BrandImage src={BrandLogo} alt="" />
-      </Link>
-    </BrandWrapper>
+    <div className="header__wrapper__container">
+      <GlobalFonts />
+      <BrandWrapper>
+        <Link className="navbar-brand" to="/">
+          <BrandImage src={BrandLogo} alt="" />
+        </Link>
+      </BrandWrapper>
 
-    <NavigationWrapper className="navbar-main">
-      <ul className="navbar-nav">
-        <li>
-          <NavLink activeClassName="active" className="nav-item nav-link" exact to="/films">Películas</NavLink>
-        </li>
-        <li>
-          <NavLink activeClassName="active" className="nav-item nav-link" exact to="/tv-shows">Tv Shows</NavLink>
-        </li>
-      </ul>
-    </NavigationWrapper>
-
-    <LoginWrapper className="navbar-login">
-      <ul className="navbar-nav ml-auto">
-        <LoginBtn>
-          <Login />
-        </LoginBtn>
-
-      </ul>
-    </LoginWrapper>
+      <NavigationWrapper className="navbar-main">
+        <ul className="navbar-nav">
+          <li>
+            <NavLink activeClassName="active" className="nav-item nav-link" exact to="/films">Películas</NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName="active" className="nav-item nav-link" exact to="/tv-shows">Tv Shows</NavLink>
+          </li>
+        </ul>
+      </NavigationWrapper>
+      <LoginWrapper className="navbar-login">
+        <ul className="navbar-nav ml-auto">
+          <LoginBtn>
+            <Login />
+          </LoginBtn>
+        </ul>
+      </LoginWrapper>
+    </div>
   </Navigation>
 );
 
