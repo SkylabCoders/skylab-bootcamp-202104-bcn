@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { loadTitle } from '../../../../redux/actions/actionsCreator';
 
 function DrawTitle({ title, dispatch }) {
+  // eslint-disable-next-line no-debugger
+  debugger;
   useEffect(() => {
     dispatch(loadTitle());
   }, []);
