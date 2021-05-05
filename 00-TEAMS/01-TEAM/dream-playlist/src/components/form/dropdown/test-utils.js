@@ -13,7 +13,7 @@ function render(
   } = {}
 ) {
   function Wrapper({ children }) {
-    return <Provider store={configureStore}>{children}</Provider>;
+    return <Provider store={configureStore()}>{children}</Provider>;
   }
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }

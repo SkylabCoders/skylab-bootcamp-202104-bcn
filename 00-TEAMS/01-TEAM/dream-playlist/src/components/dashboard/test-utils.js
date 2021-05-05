@@ -15,7 +15,7 @@ function render(
 ) {
   function Wrapper({ children }) {
     return (
-      <Provider store={configureStore}>
+      <Provider store={configureStore()}>
         <Router>
           {children}
         </Router>
