@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// import { useAuth0 } from '@auth0/auth0-react';
+import { useAuth0 } from '@auth0/auth0-react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadPeople } from '../../redux/Actions/actionCreator';
+import { loadPeople, addUser } from '../../redux/Actions/actionCreator';
 import CHARACTERS from '../../redux/Constants/Characters';
 import './form.css';
+import USERS from '../../redux/store/userList/index';
 
 function SelectAvatar({ people, dispatch }) {
   const { faction } = useParams();
@@ -13,20 +14,39 @@ function SelectAvatar({ people, dispatch }) {
   const [currentUsername, setCurrentUsername] = useState('Input your username');
   const LIGHT = 'light';
   const DARK = 'dark';
-  // const { user } = useAuth0();
+  const { user } = useAuth0();
+
   const handleAvatarSelection = (url) => {
     setCurrentAvatar(url);
   };
+
   const handleUsernameChange = (event) => {
     setCurrentUsername(event.target.value);
   };
+
+  const handleSubmit = () => {
+    const newUser = {
+      email: user.email,
+      username: currentUsername,
+      faction,
+      avatar: currentAvatar.imgUrl,
+      wishlist: []
+    };
+
+    dispatch(addUser(newUser));
+    console.log(USERS);
+  };
+
   useEffect(() => {
     if (!people.lenght) dispatch(loadPeople());
   }, []);
+
   const lightList = CHARACTERS
     .filter((character) => character.faction.toLowerCase() === LIGHT.toLowerCase());
+
   const darkList = CHARACTERS
     .filter((character) => character.faction.toLowerCase() === DARK.toLowerCase());
+
   return (
     <section className="select-avatar">
       <div className="select-avatar__header header">
@@ -80,7 +100,7 @@ function SelectAvatar({ people, dispatch }) {
         }
       </ul>
       <button type="button">BACK</button>
-      <button type="button">SUBMIT</button>
+      <button onClick={handleSubmit} type="button">SUBMIT</button>
     </section>
   );
 }

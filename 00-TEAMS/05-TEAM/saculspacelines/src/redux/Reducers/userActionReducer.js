@@ -1,5 +1,5 @@
 import actionTypes from '../Actions/actionTypes';
-import USERS from '../store/userList';
+import USERS from '../store/userList/index';
 
 const {
   ADD_USER,
@@ -19,11 +19,12 @@ const {
 export default function userActionReducer(state = [], { type, payload }) {
   let currentUser = null;
   let currentPlanet = '';
-  let result;
+  let result = 0;
 
   switch (type) {
     case ADD_USER:
-      result = { ...USERS, payload };
+      // result = { ...USERS, payload };
+      USERS.push(payload);
       break;
 
     case CHANGE_FACTION:
