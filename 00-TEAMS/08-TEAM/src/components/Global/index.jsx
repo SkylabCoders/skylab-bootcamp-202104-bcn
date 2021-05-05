@@ -36,10 +36,10 @@ const Global = ({ globalData, vaccinesContinentData, dispatch }) => {
           </section>
           <section className="vaccinatedByContinent">
             <h2>Vaccinated by continents</h2>
-            <ul className="continentCards">
+            <ul className="continent-cards">
               { vaccinesContinentData
         && vaccinesContinentData.map(({ name, data }) => (
-          <li key={name}>
+          <li key={name} className="continent-card">
             <p className="card-name">{name.toUpperCase()}</p>
             {entries.map((entry) => (
               <p className="card-entry">
