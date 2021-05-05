@@ -17,49 +17,55 @@ const ProductList = ({ products, productsToShow }) => {
     setLastPosition(lastPosition + (productsToShow * 2));
   };
 
-  // const list = productsToShow;
-  // const min = 0;
+  const productList = (initialProductPosition, finalProductPosition) => (
+    <ul className="products__list">
+      {products.slice(initialProductPosition, finalProductPosition).map((element) => (
+        <li key={element.name} className="products__item">
+          <img className="products__img" src={element.img.url} alt={element.name} />
+          <div className="products__details">
+            <span className="products__name">{element.name}</span>
+            <span className="products__price">
+              {element.cost}
+              {' '}
+              €
+            </span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <div className="product-list">
-      <button type="button" onClick={prev}>{'<'}</button>
+      { initialPosition > 0
+        && (
+        <button
+          id="prevButton"
+          className="product-list__button--visible"
+          type="button"
+          onClick={prev}
+        >
+          {'<'}
+        </button>
+        )}
       {
       products.length ? (
         <div className="products">
-          <ul className="products__list">
-            {products.slice(initialPosition, lastPosition).map((element) => (
-              <li key={element.name} className="products__item">
-                <img className="products__img" src={element.img.url} alt={element.name} />
-                <div className="products__details">
-                  <span className="products__name">{element.name}</span>
-                  <span className="products__price">
-                    {element.cost}
-                    {' '}
-                    €
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <ul className="products__list">
-            {products.slice(initialPosition + productsToShow, lastPosition + productsToShow)
-              .map((element) => (
-                <li key={element.name} className="products__item">
-                  <img className="products__img" src={element.img.url} alt={element.name} />
-                  <div className="products__details">
-                    <span className="products__name">{element.name}</span>
-                    <span className="products__price">
-                      {element.cost}
-                      {' '}
-                      €
-                    </span>
-                  </div>
-                </li>
-              ))}
-          </ul>
+          {productList(initialPosition, lastPosition)}
+          {productList(initialPosition + productsToShow, lastPosition + productsToShow)}
         </div>
       ) : <Loader />
     }
-      <button type="button" onClick={next}>{'>'}</button>
+      { products.length > lastPosition && (
+        <button
+          id="nextButton"
+          className="product-list__button--visible"
+          type="button"
+          onClick={next}
+        >
+          {'>'}
+        </button>
+      )}
     </div>
   );
 };
