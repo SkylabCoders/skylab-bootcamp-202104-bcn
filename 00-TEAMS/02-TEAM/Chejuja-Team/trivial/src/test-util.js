@@ -7,7 +7,8 @@ import { render as rtlRender } from '@testing-library/react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 // Import your own reducer
-import reducer from './src/redux/reducers/rootReducer';
+import { BrowserRouter } from 'react-router-dom';
+import reducer from './redux/reducers/rootReducer';
 
 function render(
   ui,
@@ -18,7 +19,7 @@ function render(
   } = {}
 ) {
   function Wrapper({ children }) {
-    return <Provider store={store}>{children}</Provider>;
+    return <Provider store={store}><BrowserRouter>{children}</BrowserRouter></Provider>;
   }
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }
