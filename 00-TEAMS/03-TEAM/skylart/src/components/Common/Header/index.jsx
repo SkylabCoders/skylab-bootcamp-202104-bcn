@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../../assets/logo.svg';
-import iconLogin from '../../../assets/iconLogin.svg';
 import './Header.scss';
+import Login from '../../LogIn';
 
 function Header() {
   return (
@@ -26,10 +26,7 @@ function Header() {
           <li className="left-elements">Favorites</li>
         </ul>
         <ul className="container__right-elements">
-          <li className="right-elements">
-            Login
-            <img src={iconLogin} alt="login" />
-          </li>
+          <Login />
         </ul>
       </div>
     </header>
