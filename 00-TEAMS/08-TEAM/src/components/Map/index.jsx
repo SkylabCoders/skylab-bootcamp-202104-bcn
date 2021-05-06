@@ -3,26 +3,21 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Chart } from 'react-google-charts';
 import { loadVaccinesContinentData } from '../../redux/actions/actionCreators';
+import './style.scss';
 
 const Map = ({ vaccinesContinentData, dispatch }) => {
   useEffect(() => { dispatch(loadVaccinesContinentData()); }, []);
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'center', maxWidth: 900 }}>
+      <div className="worldwide-map">
         <Chart
-          width="500px"
-          height="300px"
           chartType="GeoChart"
           data={vaccinesContinentData}
           options={{
             resolution: 'continents',
-            colors: ['green', '#C4D64E'],
+            colors: ['#CCDBDC', '#007EA7'],
             backgroundColor: 'transparent',
-            legend: {
-              textStyle: {
-                color: 'black', bold: false, fontSize: 20, fontName: 'Raleway'
-              }
-            }
+            legend: 'none'
           }}
           mapsApiKey={process.env.REACT_APP_GOOGLE_MAP_KEY}
           rootProps={{ 'data-testid': '1' }}
