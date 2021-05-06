@@ -26,6 +26,13 @@ export function loadTitleLastRelase() {
   };
 }
 
+export function loadTitleMostValued() {
+  return {
+    type: actionTypes.LOAD_TITLE_MOST_VALUED,
+    title: 'Las más valoradas'
+  };
+}
+
 export function login(user) {
   return {
     type: actionTypes.AUTH_LOGIN,
