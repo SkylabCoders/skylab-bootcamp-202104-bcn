@@ -11,7 +11,8 @@ const {
   MODIFY_WISH,
   RESET_PROFILE,
   SELECT_AVATAR,
-  SET_CURRENT_PLANET
+  SET_CURRENT_PLANET,
+  SET_CURRENT_STARSHIP
   //   SHOW_PRICE
 
 } = actionTypes;
@@ -19,6 +20,7 @@ const {
 export default function userActionReducer(state = [], { type, payload }) {
   let currentUser = null;
   let currentPlanet = '';
+  let currentStarship = '';
   let result = 0;
 
   switch (type) {
@@ -75,6 +77,11 @@ export default function userActionReducer(state = [], { type, payload }) {
     case SET_CURRENT_PLANET:
       currentPlanet = payload;
       result = currentPlanet;
+      break;
+
+    case SET_CURRENT_STARSHIP:
+      currentStarship = payload;
+      result = currentStarship;
       break;
 
       // case SHOW_PRICE:

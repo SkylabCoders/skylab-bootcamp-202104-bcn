@@ -11,7 +11,7 @@ import configureStore from './redux/store/configureStore';
 import Login from './Components/Login';
 import SelectAvatar from './Components/SelectAvatar';
 import ChoosePlanet from './Components/ChoosePlanet';
-import ApiTest from './Components/Apitest';
+import ChooseStarship from './Components/ChooseStarship';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
             <Route exact path="/" component={Login} />
             <Route path="/select-avatar/:faction" component={SelectAvatar} />
             <Route path="/select-destiny" component={ChoosePlanet} />
-            <Route path="/select-starship" component={ApiTest} />
+            <Route path="/select-starship" component={ChooseStarship} />
           </Switch>
         </Router>
       </Provider>

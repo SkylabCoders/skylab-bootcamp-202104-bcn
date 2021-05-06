@@ -24,6 +24,7 @@ const {
   RESET_PROFILE,
   SELECT_AVATAR,
   SET_CURRENT_PLANET,
+  SET_CURRENT_STARSHIP,
   SHOW_PRICE
 } = actionTypes;
 
@@ -91,8 +92,8 @@ export const loadPlanets = (page) => async (dispatch) => {
   });
 };
 
-export const loadStarships = () => async (dispatch) => {
-  const { data } = await axios(`${STARSHIPS_URL}`);
+export const loadStarships = (page) => async (dispatch) => {
+  const { data } = await axios(`${STARSHIPS_URL}${page}`);
   dispatch({
     type: LOAD_STARSHIPS,
     payload: data.results
@@ -118,9 +119,14 @@ export const selectAvatar = (data) => ({
   payload: data
 });
 
-export const setCurrentPlanet = (planetName) => ({
+export const setCurrentPlanet = (planet) => ({
   type: SET_CURRENT_PLANET,
-  payload: planetName
+  payload: planet
+});
+
+export const setCurrentStarship = (starship) => ({
+  type: SET_CURRENT_STARSHIP,
+  payload: starship
 });
 
 export const showPrice = (data) => ({
