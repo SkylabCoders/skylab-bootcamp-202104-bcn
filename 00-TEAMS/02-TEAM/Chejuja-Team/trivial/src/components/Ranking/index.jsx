@@ -30,6 +30,7 @@ function Ranking({ auth, ranking }) {
       <Confeti />
       <div className="ranking-game__avatar">
         <img src={`${auth.user.picture}`} alt="avatar" className="ranking-game__avatar--photoUser" />
+        {console.log(ranking[0])}
         <p className="ranking-game__text">{`Enhorabuena ${auth.user.name}, has acertado ${ranking[0].correctAnswers} y fallado ${ranking[0].incorrectAnswers}`}</p>
       </div>
       <div className="ranking-game__container-gif">
