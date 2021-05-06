@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
-
 import SearchInput from '../SearchInput';
 import './style.scss';
 
 const MySavedPlaces = ({ favoriteCountry }) => {
+  // eslint-disable-next-line no-debugger
+  debugger;
   const history = useHistory();
   const { isAuthenticated } = useAuth0();
 

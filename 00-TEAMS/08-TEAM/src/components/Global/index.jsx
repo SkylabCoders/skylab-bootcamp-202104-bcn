@@ -17,7 +17,7 @@ const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
 
   return (
     <>
-      <main className="global">
+      <section className="global">
         <div className="container">
           <div className="title">
             <h1>Global</h1>
@@ -68,7 +68,7 @@ const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
             </ul>
           </section>
         </div>
-      </main>
+      </section>
     </>
   );
 };
