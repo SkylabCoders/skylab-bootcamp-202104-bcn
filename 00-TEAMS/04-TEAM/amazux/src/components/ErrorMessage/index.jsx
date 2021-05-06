@@ -5,8 +5,6 @@ import { deleteError } from '../../redux/actions/actionCreators';
 
 const ErrorMessage = ({ message, dispatch }) => {
   const handleClick = () => {
-    // eslint-disable-next-line no-console
-    console.log('---->1');
     dispatch(deleteError());
   };
 

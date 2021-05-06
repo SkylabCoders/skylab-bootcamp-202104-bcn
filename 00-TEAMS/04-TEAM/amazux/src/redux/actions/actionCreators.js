@@ -10,11 +10,7 @@ export const signOut = () => ({
   type: actionTypes.AUTH_LOGOUT
 });
 
-export const deleteError = () => {
-  // eslint-disable-next-line no-console
-  console.log('2');
-  return { type: actionTypes.DELETE_ERROR };
-};
+export const deleteError = () => ({ type: actionTypes.DELETE_ERROR });
 
 export const loadProductsActionCreator = (products) => (
   { type: actionTypes.LOAD_PRODUCTS, products }
