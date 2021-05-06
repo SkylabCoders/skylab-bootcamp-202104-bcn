@@ -26,15 +26,26 @@ function Game({ game, dispatch }) {
     Array.from(document.getElementsByClassName('answer-box__answer')).forEach((element) => {
       // eslint-disable-next-line no-param-reassign
       element.className = 'answer-box__answer';
+      // eslint-disable-next-line no-param-reassign
+      element.disabled = false;
+    });
+  }
+
+  function disableButtons() {
+    Array.from(document.getElementsByClassName('answer-box__answer')).forEach((element) => {
+      // eslint-disable-next-line no-param-reassign
+      element.disabled = true;
     });
   }
 
   function isCorrectAnswer(givenAnswer, index) {
     if (givenAnswer === game[0][currentQuestion].correct_answer) {
+      disableButtons();
       const correctAnswer = document.getElementById(index);
       correctAnswer.className = 'answer-box__answer correct';
       correctAnswers += 1;
     } else {
+      disableButtons();
       const incorrectAnswer = document.getElementById(index);
       incorrectAnswer.className = 'answer-box__answer incorrect';
       incorrectAnswers += 1;
@@ -95,14 +106,7 @@ function Game({ game, dispatch }) {
 }
 Game.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  game: PropTypes.shape([]).isRequired,
-  auth: PropTypes.shape({
-    isLoggedIn: PropTypes.bool.isRequired,
-    user: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      picture: PropTypes.string.isRequired
-    })
-  }).isRequired
+  game: PropTypes.shape([]).isRequired
 };
 
 function mapStateToProps(store) {
