@@ -12,7 +12,8 @@ const PlanetDetail = ({
   terrain,
   surfaceWater,
   population,
-  imgUrl
+  imgUrl,
+  clickHandler
 //   faction
 }) => {
   const [showDetails, setShowDetails] = useState(false);
@@ -23,11 +24,16 @@ const PlanetDetail = ({
 
   return (
     <li key={name} className="planet">
-      <img
-        src={imgUrl}
-        alt={name}
-        className="planet__image"
-      />
+      <button
+        type="button"
+        onClick={clickHandler}
+      >
+        <img
+          src={imgUrl}
+          alt={name}
+          className="planet__image"
+        />
+      </button>
       <section className="planet__details details">
         <p className="details__name">{name}</p>
         <button
@@ -102,7 +108,8 @@ PlanetDetail.propTypes = {
   terrain: PropTypes.string.isRequired,
   surfaceWater: PropTypes.string.isRequired,
   population: PropTypes.string.isRequired,
-  imgUrl: PropTypes.string.isRequired
+  imgUrl: PropTypes.string.isRequired,
+  clickHandler: PropTypes.func.isRequired
 };
 
 export default PlanetDetail;

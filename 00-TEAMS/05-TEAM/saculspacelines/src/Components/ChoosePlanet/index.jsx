@@ -1,12 +1,14 @@
 import React from 'react-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadPlanets } from '../../redux/Actions/actionCreator';
+import { loadPlanets, setCurrentPlanet } from '../../redux/Actions/actionCreator';
 import PlanetDetail from '../PlanetDetail';
 
 const Apitest = ({ dispatch, planets }) => {
   const pages = ['?page=1', '?page=2', '?page=3', '?page=4', '?page=5', '?page=6'];
+  const [currentPlanet, setPlanet] = useState(null);
+
   useEffect(() => {
     pages.forEach((page) => dispatch(loadPlanets(page)));
   }, []);
@@ -28,6 +30,12 @@ const Apitest = ({ dispatch, planets }) => {
   //     }]
   //   };
   // };
+
+  const handlePlanetSelection = (planet) => {
+    setPlanet(planet);
+    dispatch(setCurrentPlanet(currentPlanet));
+  };
+
   return (
     <div>
       {planets.length && planets?.map((planetsArray) => (
@@ -45,6 +53,7 @@ const Apitest = ({ dispatch, planets }) => {
               population={planet.population}
               faction={planet.faction}
               imgUrl={planet.imgUrl}
+              clickHandler={() => handlePlanetSelection(planet)}
             />
           ))}
         </ul>
@@ -58,8 +67,8 @@ Apitest.propTypes = {
   planets: PropTypes.shape([]).isRequired
 };
 
-const mapStateToProps = (state) => ({
-  planets: state.loadSwapiPlanets
+const mapStateToProps = ({ loadSwapiPlanets }) => ({
+  planets: loadSwapiPlanets
 });
 
 export default connect(mapStateToProps)(Apitest);
