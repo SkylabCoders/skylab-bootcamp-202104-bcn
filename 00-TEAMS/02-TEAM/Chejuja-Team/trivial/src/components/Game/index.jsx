@@ -7,9 +7,13 @@ import {
   useHistory // Route
 } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { loadRanking } from '../../redux/actions/actionCreators';
 import './game.css';
 
-function Game({ game }) {
+let correctAnswers = 0;
+let incorrectAnswers = 0;
+
+function Game({ game, dispatch, auth }) {
   const history = useHistory();
   let { currentQuestion } = (useParams());
   currentQuestion = parseInt(currentQuestion, 10) + 1;
@@ -29,15 +33,19 @@ function Game({ game }) {
     if (givenAnswer === game[0][currentQuestion].correct_answer) {
       const correctAnswer = document.getElementById(index);
       correctAnswer.className = 'answer-box__answer correct';
+      correctAnswers += 1;
     } else {
       const incorrectAnswer = document.getElementById(index);
       incorrectAnswer.className = 'answer-box__answer incorrect';
+      incorrectAnswers += 1;
     }
     setTimeout(() => {
       resetButtons();
       if (currentQuestion < 9) {
         history.push(`${currentQuestion}`);
       } else {
+        debugger;
+        dispatch(loadRanking(auth, correctAnswers, incorrectAnswers));
         history.replace('/Ranking');
       }
     }, 3000);
@@ -63,15 +71,44 @@ function Game({ game }) {
           ))
         }
       </div>
+      <div className="game-window__info">
+        <span>
+          {' '}
+          Correct:
+          {' '}
+          {`${correctAnswers}`}
+        </span>
+        <span>
+          {' '}
+          Incorrect:
+          {' '}
+          {`${incorrectAnswers}`}
+        </span>
+        <span>
+          {' '}
+          Current Question:
+          {' '}
+          {`${currentQuestion}/10`}
+        </span>
+      </div>
     </main>
   );
 }
 Game.propTypes = {
-  game: PropTypes.shape([]).isRequired
+  dispatch: PropTypes.func.isRequired,
+  game: PropTypes.shape([]).isRequired,
+  auth: PropTypes.shape({
+    isLoggedIn: PropTypes.bool.isRequired,
+    user: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired
+    })
+  }).isRequired
 };
 
-function mapStateToProps(store) {
+function mapStateToProps(store, { auth }) {
   return {
+    auth,
     game: store.gameData
   };
 }
