@@ -6,9 +6,8 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { loadGlobalData } from '../../redux/actions/actionCreators';
 import './style.scss';
-import MapWorldwide from '../Map';
 import Footer from '../Footer';
-import Chart from '../Map/map';
+import Chart from '../Map/index';
 
 const Dashboard = ({ globalData, dispatch }) => {
   useEffect(() => { dispatch(loadGlobalData()); }, []);
@@ -34,7 +33,6 @@ Get the lastest updated info about the pandemic and vaccination by continent, co
 </li>
         ))}
       </ul>
-      <MapWorldwide />
       <Chart />
       </div>
       <Footer />
