@@ -35,7 +35,11 @@ function Game({ game }) {
     }
     setTimeout(() => {
       resetButtons();
-      history.push(`${currentQuestion}`);
+      if (currentQuestion < 9) {
+        history.push(`${currentQuestion}`);
+      } else {
+        history.replace('/Ranking');
+      }
     }, 3000);
   }
   let shuffledAnswers = [];
