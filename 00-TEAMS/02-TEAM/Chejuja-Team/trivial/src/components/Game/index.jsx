@@ -6,11 +6,13 @@ import { connect } from 'react-redux';
 import './game.css';
 
 function Game({ game }) {
-  console.log(game);
   function decodeHtml(html) {
     const txt = document.createElement('textarea');
     txt.innerHTML = html;
     return txt.value;
+  }
+  function isCorrectAnswer(givenAnswer) {
+    return (givenAnswer === game[0][0].correct_answer);
   }
   let shuffledAnswers = [];
   if (game.length) {
@@ -26,9 +28,9 @@ function Game({ game }) {
       <div className="answer-box">
         {
           shuffledAnswers.map((answer) => (
-            <div className="answer-box__answer">
+            <button type="button" className="answer-box__answer" onClick={() => isCorrectAnswer(answer)}>
               {game.length ? <p>{decodeHtml(answer)}</p> : <p>Cargando</p>}
-            </div>
+            </button>
           ))
         }
 
