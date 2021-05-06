@@ -11,7 +11,6 @@ function MovieDetail({ selectedMovie, dispatch }) {
     dispatch(getMovieById(movieId));
   }, [movieId]);
 
-  console.log(selectedMovie);
   const baseImgUrl = 'https://image.tmdb.org/t/p/w200/';
 
   return (
