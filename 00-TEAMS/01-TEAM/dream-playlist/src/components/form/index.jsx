@@ -1,6 +1,8 @@
 import React from 'react';
 import './index-form.css';
+import { Link } from 'react-router-dom';
 import Dropdown from './Dropdown';
+
 import DROPDOWNDATA from '../../assets/dropdown.mock';
 
 function Form() {
@@ -20,6 +22,7 @@ function Form() {
           ))}
           <div className="continueSubmit">
             <input type="submit" value="CONTINUE" />
+            <button type="button"><Link to="/list-preview">List</Link></button>
           </div>
         </form>
       </div>

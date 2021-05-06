@@ -21,7 +21,9 @@ function ListPreview({
 
   useEffect(() => {
     if (token && auth) {
-      dispatch(getUserData(currentToken, auth.user.sub));
+      // eslint-disable-next-line no-debugger
+      debugger;
+      dispatch(getUserData(currentToken, auth?.user?.sub));
     }
   }, [currentToken]);
 
@@ -46,7 +48,8 @@ function ListPreview({
         <h1>
           This is the List of
           {' '}
-          {user?.id}
+          {user?.display_name}
+          {console.log(user)}
         </h1>
       </div>
       <div className="containerListSongs">
@@ -70,7 +73,8 @@ function ListPreview({
 ListPreview.propTypes = {
   token: PropTypes.string.isRequired,
   user: PropTypes.shape({
-    id: PropTypes.string
+    id: PropTypes.string.isRequired,
+    display_name: PropTypes.string
   }).isRequired,
   playlists: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired,
