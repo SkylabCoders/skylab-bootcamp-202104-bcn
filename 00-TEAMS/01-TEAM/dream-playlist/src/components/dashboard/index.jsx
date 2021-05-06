@@ -19,7 +19,7 @@ function Dashboard() {
           <ul className="instructions">
             <li className="first-li">
               <img className="musicLogo" src="https://img.icons8.com/doodle/48/000000/apple-music--v1.png" alt="music-logo" />
-              Lets see to which playlist do you listen
+              Lets see to which playlist do you listen.
               <button type="button"><Link to="/login">Login to your Spotify</Link></button>
             </li>
             <li>

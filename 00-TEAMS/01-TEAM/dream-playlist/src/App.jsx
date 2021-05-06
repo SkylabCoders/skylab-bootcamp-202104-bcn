@@ -5,10 +5,10 @@ import
   Switch,
   Route
 } from 'react-router-dom';
-import Dashboard from './components/dashboard';
-import LogIn from './components/login';
-import Form from './components/form';
-import ListPreview from './components/list/list-preview';
+import Dashboard from './components/Dashboard';
+import LogIn from './components/Login';
+import Form from './components/Form';
+import ListPreview from './components/List/List-preview';
 import './App.css';
 
 function App() {

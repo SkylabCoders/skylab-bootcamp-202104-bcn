@@ -21,7 +21,7 @@ function LogIn({ auth, actions }) {
 
   const loggedInTemplate = () => (
     <>
-      <p>Welcome Gemma</p>
+      <p>Welcome User</p>
       <button type="button" onClick={() => logout(isAuthenticated, user)}>Log out</button>
     </>
   );
