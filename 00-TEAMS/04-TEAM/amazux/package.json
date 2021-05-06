@@ -54,6 +54,10 @@
   "jest": {
     "moduleNameMapper": {
       "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js"
-    }
+    },
+    "watchPathIgnorePatterns": [
+      "<rootDir>/src/test-utils.js",
+      "<rootDir>/src/reportWebVitals.js"
+    ]
   }
 }
