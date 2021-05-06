@@ -23,7 +23,7 @@ export function loadArtworksFromApi(categoryId) {
       const { data } = await axios(`https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=${categoryId}`);
       dispatch({
         type: actionTypes.LOAD_ARTWORKS,
-        artwork: data,
+        artwork: data.objectIDs,
       });
     } catch (error) {
       dispatch({
