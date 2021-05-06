@@ -55,6 +55,8 @@ function Game({ game, dispatch }) {
       if (currentQuestion < 9) {
         history.push(`${currentQuestion}`);
       } else {
+        correctAnswers = 0;
+        incorrectAnswers = 0;
         dispatch(loadRanking(correctAnswers, incorrectAnswers));
         history.replace('/Ranking');
       }
