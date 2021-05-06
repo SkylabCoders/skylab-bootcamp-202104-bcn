@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadGlobalData, loadVaccinesByContinent } from '../../redux/actions/actionCreators';
 import './style.scss';
+import HistoryGraph from '../HistoryGraph';
 
 const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
   useEffect(() => {
@@ -35,6 +36,7 @@ const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
         ))}
           </ul>
         </section>
+        <HistoryGraph />
         <section className="vaccinatedByContinent">
           <h2>Vaccinated by continents</h2>
           <ul className="continent-cards">
