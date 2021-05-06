@@ -2,7 +2,7 @@
 import React from 'react';
 import {
   render, screen, fireEvent
-} from './test-utils';
+} from '../../test-utils';
 import ErrorMessage from './index';
 import { deleteError } from '../../redux/actions/actionCreators';
 
