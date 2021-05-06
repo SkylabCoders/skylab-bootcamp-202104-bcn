@@ -45,6 +45,7 @@ export function loadCategory(artworkId) {
     dispatch({
       type: actionTypes.LOAD_CATEGORY,
       detail: data,
+      artworkId,
     });
   };
 }
