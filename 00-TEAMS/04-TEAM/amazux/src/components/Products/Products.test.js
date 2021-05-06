@@ -5,12 +5,12 @@ import Products from './index';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useParams: () => ({ id: '10' })
+  useParams: () => ({ id: '5a0b35c1734d1d08bf7084c3' })
 }));
 
 describe('<Products/>', () => {
-  test('should return a title with an id', () => {
+  test('should return an sku with the same string as the title', () => {
     render(<Products />);
-    expect(screen.getByText(/10/i)).toBeInTheDocument();
+    expect(screen.getByText(/5a0b35c1734d1d08bf7084c3/i)).toBeInTheDocument();
   });
 });
