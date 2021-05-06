@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loadGlobalData } from '../../redux/actions/actionCreators';
 import './style.scss';
-import Footer from '../Footer';
 import Chart from '../Map/index';
 
 const Dashboard = ({ globalData, dispatch }) => {
@@ -44,7 +43,6 @@ Get the lastest updated info about the pandemic and vaccination by continent, co
         </div>
       </div>
       </section>
-      <Footer />
     </>
   );
 };
