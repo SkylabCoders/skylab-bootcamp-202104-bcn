@@ -19,7 +19,7 @@ export const loadGlobalData = (url = `${URL}${casesUrl}`) => async (dispatch) =>
 };
 
 export const loadCountry = (country) => async (dispatch) => {
-  const url = `${URL}${casesUrl}?country=${country}`; // TODO VALIDACION DE INPUT CASES AND TEXT
+  const url = `${URL}${casesUrl}?country=${country}`;
   const response = await axios.get(url);
   dispatch({
     type: actionTypes.LOAD_COUNTRY,
@@ -36,7 +36,7 @@ export const loadCountryHistory = (country) => async (dispatch) => {
 };
 
 export const loadVaccinesByCountry = (country) => async (dispatch) => {
-  const url = `${URL}${vaccinesUrl}?country=${country}`; // TODO VALIDACION DE INPUT CASES AND TEXT
+  const url = `${URL}${vaccinesUrl}?country=${country}`;
   const response = await axios.get(url);
   dispatch({
     type: actionTypes.LOAD_VACCINES_BY_COUNTRY,
@@ -122,19 +122,6 @@ export const loadVaccinesContinentData = (url = `${URL}${vaccinesUrl}`) => async
     data: continents
   });
 };
-
-export const login = (user) => (
-  {
-    type: actionTypes.AUTH_LOGIN,
-    user
-  }
-);
-
-export const logout = () => (
-  {
-    type: actionTypes.AUTH_LOGOUT
-  }
-);
 
 export function addCountryToFav(country) {
   return {

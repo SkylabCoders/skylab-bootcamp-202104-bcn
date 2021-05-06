@@ -1,31 +1,26 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { login } from '../../redux/actions/actionCreators';
 import './style.scss';
 
-const Login = ({ auth, actions }) => {
+const Login = () => {
   const {
     loginWithRedirect, logout, isAuthenticated, user
   } = useAuth0();
 
-  useEffect(() => {
-    if (isAuthenticated && user) { actions.login(user); }
-  }, [isAuthenticated, user]);
-  const loggInTemplate = () => (
+  const loggOutTemplate = () => (
     <>
       <p>
         Welcome
         {' '}
-        {auth.user.name}
+        {user.name}
       </p>
-      <button type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
+      <button type="button" onClick={() => logout()}>Log out</button>
     </>
   );
 
-  const loggOutTemplate = () => (
+  const loggInTemplate = () => (
     <>
       <p>Please access with your credentials</p>
       <button type="button" onClick={() => loginWithRedirect()}>Login</button>
@@ -36,9 +31,9 @@ const Login = ({ auth, actions }) => {
     <>
       <div className="login">
         <h3>This is Login</h3>
-        {auth.isLoggedIn
-          ? loggInTemplate()
-          : loggOutTemplate()}
+        {isAuthenticated
+          ? loggOutTemplate()
+          : loggInTemplate()}
       </div>
     </>
   );
@@ -48,10 +43,6 @@ Login.propTypes = {
   auth: PropTypes.shape({
     isLoggedIn: PropTypes.bool.isRequired,
     user: PropTypes.shape({ name: PropTypes.string.isRequired }).isRequired
-  }).isRequired,
-  actions: PropTypes.shape({
-    login: PropTypes.func.isRequired,
-    logout: PropTypes.func.isRequired
   }).isRequired
 };
 
@@ -59,10 +50,4 @@ const mapStateToProps = ({ auth }) => ({
   auth
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({
-    login
-  }, dispatch)
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps)(Login);
