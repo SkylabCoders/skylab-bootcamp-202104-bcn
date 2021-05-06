@@ -3,19 +3,24 @@ import { PropTypes } from 'prop-types';
 import './form.css';
 
 const PlanetDetail = ({
-  name,
-  rotationPeriod,
-  orbitalPeriod,
-  diameter,
-  climate,
-  gravity,
-  terrain,
-  surfaceWater,
-  population,
-  imgUrl,
-  clickHandler
-//   faction
+  data
 }) => {
+  const
+    {
+      name,
+      rotationPeriod,
+      orbitalPeriod,
+      diameter,
+      climate,
+      gravity,
+      terrain,
+      surfaceWater,
+      population,
+      imgUrl,
+      clickHandler
+      // faction
+    } = data;
+
   const [showDetails, setShowDetails] = useState(false);
 
   const handleShow = () => {
@@ -98,18 +103,22 @@ const PlanetDetail = ({
   //   };
   );
 };
+
 PlanetDetail.propTypes = {
-  name: PropTypes.string.isRequired,
-  rotationPeriod: PropTypes.string.isRequired,
-  orbitalPeriod: PropTypes.string.isRequired,
-  diameter: PropTypes.string.isRequired,
-  climate: PropTypes.string.isRequired,
-  gravity: PropTypes.string.isRequired,
-  terrain: PropTypes.string.isRequired,
-  surfaceWater: PropTypes.string.isRequired,
-  population: PropTypes.string.isRequired,
-  imgUrl: PropTypes.string.isRequired,
-  clickHandler: PropTypes.func.isRequired
+  data: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    rotationPeriod: PropTypes.string.isRequired,
+    orbitalPeriod: PropTypes.string.isRequired,
+    diameter: PropTypes.string.isRequired,
+    climate: PropTypes.string.isRequired,
+    gravity: PropTypes.string.isRequired,
+    terrain: PropTypes.string.isRequired,
+    surfaceWater: PropTypes.string.isRequired,
+    population: PropTypes.string.isRequired,
+    imgUrl: PropTypes.string.isRequired,
+    clickHandler: PropTypes.func.isRequired
+  }).isRequired
+
 };
 
 export default PlanetDetail;
