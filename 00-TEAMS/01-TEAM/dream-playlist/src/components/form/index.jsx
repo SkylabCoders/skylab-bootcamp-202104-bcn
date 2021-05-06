@@ -21,7 +21,6 @@ function Form() {
             </>
           ))}
           <div className="continueSubmit">
-            <input type="submit" value="CONTINUE" />
             <button type="button"><Link to="/list-preview">List</Link></button>
           </div>
         </form>

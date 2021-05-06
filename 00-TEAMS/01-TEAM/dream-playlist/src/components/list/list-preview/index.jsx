@@ -43,19 +43,18 @@ function ListPreview({
   return (
     <>
       <div className="userListTitle">
-        <h1>
-          This is the List of
-          {' '}
+        <h2>
           {user?.display_name}
-        </h1>
+          , here is what we though you would like...
+        </h2>
       </div>
       <div className="containerListSongs">
-        <ul>
+        <ul className="mosaicSongs">
           {songs.length && songs.map((song) => (
-            <li>
+            <li className="li-container">
               <span className="badge">{song.track.album.artists[0]?.name}</span>
               <br />
-              <span className="badge">{song.track.album?.images[0]?.url}</span>
+              <img src={song.track.album?.images[1]?.url} className="badge" alt="track img" />
               <br />
               <span className="badge">{song.track.name}</span>
               <br />

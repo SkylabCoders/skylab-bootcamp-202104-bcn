@@ -37,7 +37,7 @@ function Dashboard() {
             </li>
           </ul>
           <div className="containerImg" />
-          <button type="button"><Link to="/form">BEGIN TEST</Link></button>
+          <button className="beginTestButton" type="button"><Link to="/form">BEGIN TEST</Link></button>
         </div>
       </main>
     </>

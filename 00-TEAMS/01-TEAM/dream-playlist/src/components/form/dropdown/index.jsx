@@ -20,7 +20,7 @@ function Dropdown({ category, defaultOption, options }) {
     </label>
   );
 }
-// TODO: DELETE COMMENT
+
 Dropdown.propTypes = {
   category: PropTypes.string.isRequired,
   defaultOption: PropTypes.string.isRequired,
