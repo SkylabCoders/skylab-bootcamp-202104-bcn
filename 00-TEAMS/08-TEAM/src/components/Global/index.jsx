@@ -57,7 +57,7 @@ const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
               </span>
             </p>
             <p className="continent-card__entry">
-              Updated
+              Updated:
               {' '}
               <span className="continent-card__data">
                 {' '}
