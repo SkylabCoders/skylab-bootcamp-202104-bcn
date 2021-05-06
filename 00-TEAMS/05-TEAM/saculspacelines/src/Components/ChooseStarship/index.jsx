@@ -24,6 +24,10 @@ const Apitest = ({ dispatch, starships }) => {
     history.push('/select-destiny');
   };
 
+  const handleBack = () => {
+    history.goBack();
+  };
+
   return (
     <div>
       <button
@@ -31,6 +35,12 @@ const Apitest = ({ dispatch, starships }) => {
         onClick={handleSubmit}
       >
         Submit
+      </button>
+      <button
+        type="button"
+        onClick={handleBack}
+      >
+        BACK
       </button>
       {starships.length && starships?.map((starshipsArray) => (
         <ul key={starshipsArray.indexOf()}>
