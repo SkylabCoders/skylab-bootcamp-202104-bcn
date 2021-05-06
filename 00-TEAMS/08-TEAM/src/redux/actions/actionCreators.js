@@ -126,3 +126,17 @@ export const logout = () => (
     type: actionTypes.AUTH_LOGOUT
   }
 );
+
+export function addCountryToFav(country) {
+  return {
+    type: actionTypes.ADD_FAV,
+    data: [country]
+  };
+}
+
+export function deleteFavCountry(country) {
+  return {
+    type: actionTypes.DELETE_FAV,
+    country
+  };
+}

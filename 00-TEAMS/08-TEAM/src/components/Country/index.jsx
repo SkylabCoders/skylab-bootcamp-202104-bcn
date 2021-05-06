@@ -5,6 +5,7 @@ import { PropTypes } from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { loadCountry, loadVaccinesByCountry } from '../../redux/actions/actionCreators';
 import './style.scss';
+import FavoriteButton from '../FavoriteButton';
 
 function Country({ dispatch, countryData, vaccineByCountryData }) {
   const { country } = useParams();
@@ -59,6 +60,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
             </li>
           ))}
         </ul>
+        <FavoriteButton />
       </div>
     </>
   );
