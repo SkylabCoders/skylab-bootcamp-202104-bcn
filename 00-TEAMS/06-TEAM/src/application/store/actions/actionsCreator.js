@@ -1,4 +1,4 @@
-import { getFilms } from '../../../common/services/films';
+import { getFilms, getGenres } from '../../../common/services/films';
 import actionTypes from './actionTypes';
 
 export function loadMovies(searchParam) {
@@ -8,6 +8,28 @@ export function loadMovies(searchParam) {
       type: actionTypes.LOAD_MOVIES,
       moviesType: searchParam,
       movies: response.data.results
+    });
+  };
+}
+
+export function loadGenres(genreId) {
+  return async (dispatch) => {
+    const response = await getGenres(genreId);
+    dispatch({
+      type: actionTypes.LOAD_GENRE_MOVIE,
+      movieType: genreId,
+      genres: response.data.results
+    });
+  };
+}
+
+export function getMovieById(movieId) {
+  return async (dispatch) => {
+    const response = await getFilms(movieId);
+    console.log(response);
+    dispatch({
+      type: actionTypes.LOAD_MOVIE,
+      movie: response.data
     });
   };
 }
@@ -22,14 +44,5 @@ export function login(user) {
 export function logout() {
   return {
     type: actionTypes.AUTH_LOGOUT
-  };
-}
-
-export function getFilmById(movieId) {
-  const movies = movies.find((current) => current.id === +movieId);
-
-  return {
-    type: actionTypes.LOAD_MOVIE,
-    movie
   };
 }

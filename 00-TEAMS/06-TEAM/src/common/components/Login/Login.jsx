@@ -10,7 +10,6 @@ function Login({ auth, actions }) {
   const {
     loginWithRedirect,
     isAuthenticated,
-    logout,
     user
   } = useAuth0();
 
@@ -24,7 +23,6 @@ function Login({ auth, actions }) {
     <>
       <Profile>
         <img src={user?.picture} alt={user.name} />
-        <button type="button" onClick={() => logout()}>Logout</button>
         <div className="UserName">
           Welcome
           {' '}

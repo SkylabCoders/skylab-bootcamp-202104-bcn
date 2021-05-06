@@ -30,9 +30,8 @@ const Navbar = () => (
       </NavigationWrapper>
       <LoginWrapper className="navbar-login">
         <ul className="navbar-nav ml-auto">
-          <LoginBtn>
-            <Login />
-          </LoginBtn>
+          <LoginBtn />
+          <Login />
         </ul>
       </LoginWrapper>
     </div>
