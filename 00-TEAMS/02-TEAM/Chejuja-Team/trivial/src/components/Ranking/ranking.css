@@ -45,6 +45,7 @@
       align-self: center;
   width: 8vw;
   height: 15vh;
+  border-radius: 50%;
 }
 
 .ranking-game__podium {

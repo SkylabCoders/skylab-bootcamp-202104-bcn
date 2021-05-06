@@ -13,7 +13,7 @@ import './game.css';
 let correctAnswers = 0;
 let incorrectAnswers = 0;
 
-function Game({ game, dispatch, auth }) {
+function Game({ game, dispatch }) {
   const history = useHistory();
   let { currentQuestion } = (useParams());
   currentQuestion = parseInt(currentQuestion, 10) + 1;
@@ -44,11 +44,10 @@ function Game({ game, dispatch, auth }) {
       if (currentQuestion < 9) {
         history.push(`${currentQuestion}`);
       } else {
-        debugger;
-        dispatch(loadRanking(auth, correctAnswers, incorrectAnswers));
+        dispatch(loadRanking(correctAnswers, incorrectAnswers));
         history.replace('/Ranking');
       }
-    }, 3000);
+    }, 500);
   }
   let shuffledAnswers = [];
   if (game.length) {
@@ -106,9 +105,8 @@ Game.propTypes = {
   }).isRequired
 };
 
-function mapStateToProps(store, { auth }) {
+function mapStateToProps(store) {
   return {
-    auth,
     game: store.gameData
   };
 }

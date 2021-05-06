@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-console */
 import axios from 'axios';
 import actionTypes from './actionTypes';
@@ -23,11 +24,11 @@ export function logout() {
     type: actionTypes.AUTH_LOGOUT
   };
 }
-export function loadRanking(user, correct, incorrect) {
+export function loadRanking(correct, incorrect) {
+  debugger;
   return {
     type: actionTypes.LOAD_RANKING,
     score: {
-      player: user,
       correctAnswers: correct,
       incorrectAnswers: incorrect
     }
