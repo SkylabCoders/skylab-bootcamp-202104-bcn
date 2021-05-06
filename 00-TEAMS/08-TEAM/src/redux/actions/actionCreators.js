@@ -130,7 +130,7 @@ export const logout = () => (
 export function addCountryToFav(country) {
   return {
     type: actionTypes.ADD_FAV,
-    data: [country]
+    data: country
   };
 }
 

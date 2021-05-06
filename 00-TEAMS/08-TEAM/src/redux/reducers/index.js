@@ -15,7 +15,7 @@ const rootReducers = combineReducers({
   vaccineByCountryData: vaccineByCountryReducer,
   vaccinesByContinent: vaccinesByContinentReducer,
   auth: loginReducer,
-  favoriteCounty: favoriteReducer
+  favoriteCountry: favoriteReducer
 });
 
 export default rootReducers;
