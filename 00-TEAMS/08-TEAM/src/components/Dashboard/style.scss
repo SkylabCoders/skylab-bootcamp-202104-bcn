@@ -42,9 +42,16 @@
             }
         }
         
-        .data-container {
-             display: flex;
-            flex-direction: column;
+        .chart-container__data {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0 0 140px
+        }
+
+        ul {
+            text-align: center;
+            display: flex;
+
         }
     }
 
