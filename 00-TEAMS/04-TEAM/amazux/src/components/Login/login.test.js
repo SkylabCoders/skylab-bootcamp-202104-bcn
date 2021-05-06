@@ -69,4 +69,19 @@ describe('Login Component', () => {
     fireEvent.click(btn);
     expect(logout).toHaveBeenCalled();
   });
+
+  test('should call login function', () => {
+    const { getAllByRole } = render(<Login />, {
+      initialState: {
+        auth: {
+          isLoggedIn: false
+        }
+      }
+    });
+
+    const { loginWithRedirect } = useAuth0();
+    const btn = getAllByRole('button')[0];
+    fireEvent.click(btn);
+    expect(loginWithRedirect).toHaveBeenCalled();
+  });
 });
