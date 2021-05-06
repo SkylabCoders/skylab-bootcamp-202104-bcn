@@ -6,7 +6,7 @@ import Ranking from './index';
 
 describe('When invoked Ranking func', () => {
   test('Wants to contain', () => {
-    const container = render(<BrowserRouter><Ranking /></BrowserRouter>);
+    const { container } = render(<BrowserRouter><Ranking /></BrowserRouter>);
     const prueba = container.querySelector('.ranking-game__text');
     expect(prueba.textContent).toBe('Has quedado en X posicion!');
   });

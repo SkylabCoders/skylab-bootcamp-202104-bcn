@@ -5,8 +5,8 @@
   "dependencies": {
     "@auth0/auth0-react": "^1.4.0",
     "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/user-event": "^12.8.3",
     "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -56,7 +56,7 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(css|less|sass|scss|png)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js"
     }
   }
 }
