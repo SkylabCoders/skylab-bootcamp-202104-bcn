@@ -12,6 +12,7 @@ import Login from './Components/Login';
 import SelectAvatar from './Components/SelectAvatar';
 import ChoosePlanet from './Components/ChoosePlanet';
 import ChooseStarship from './Components/ChooseStarship';
+import WishList from './Components/WishList';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/select-avatar/:faction" component={SelectAvatar} />
             <Route path="/select-destiny" component={ChoosePlanet} />
             <Route path="/select-starship" component={ChooseStarship} />
+            <Route path="/profile" component={WishList} />
           </Switch>
         </Router>
       </Provider>

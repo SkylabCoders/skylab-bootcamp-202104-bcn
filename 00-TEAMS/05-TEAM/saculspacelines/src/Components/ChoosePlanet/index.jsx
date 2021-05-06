@@ -24,6 +24,10 @@ const ChoosePlanet = ({ dispatch, planets }) => {
     history.push('/select-starship');
   };
 
+  const handleProfile = () => {
+    history.push('/profile');
+  };
+
   return (
     <div>
       <button
@@ -31,6 +35,12 @@ const ChoosePlanet = ({ dispatch, planets }) => {
         onClick={handleSubmit}
       >
         Submit
+      </button>
+      <button
+        type="button"
+        onClick={handleProfile}
+      >
+        Profile
       </button>
       {planets.length && planets?.map((planetsArray) => (
         <ul key={planetsArray.indexOf()}>
