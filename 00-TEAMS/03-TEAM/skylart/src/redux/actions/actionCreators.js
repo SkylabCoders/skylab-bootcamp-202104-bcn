@@ -33,32 +33,20 @@ export function loadArtworksFromApi(categoryId) {
   };
 }
 
-export function loadFavorites() {
-  return {
-    type: actionTypes.LOAD_FAVORITES,
-  };
-}
-
-export function deleteArtwork() {
-  return {
-    type: actionTypes.DELETE_FAVORITE,
-  };
-}
-
-export function addArtwork() {
-  return {
-    type: actionTypes.ADD_FAVORITE,
-  };
-}
-
 export function loadCategory(artworkId) {
   return async (dispatch) => {
-    const { data } = await axios(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artworkId}`);
-    dispatch({
-      type: actionTypes.LOAD_CATEGORY,
-      detail: data,
-      artworkId,
-    });
+    try {
+      const { data } = await axios(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artworkId}`);
+      dispatch({
+        type: actionTypes.LOAD_CATEGORY,
+        detail: data,
+        artworkId,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'LOAD_ERROR',
+      });
+    }
   };
 }
 
@@ -79,5 +67,23 @@ export function login(user) {
 export function logout() {
   return {
     type: actionTypes.AUTH_LOGOUT,
+  };
+}
+
+export function loadFavorites() {
+  return {
+    type: actionTypes.LOAD_FAVORITES,
+  };
+}
+
+export function deleteArtwork() {
+  return {
+    type: actionTypes.DELETE_FAVORITE,
+  };
+}
+
+export function addArtwork() {
+  return {
+    type: actionTypes.ADD_FAVORITE,
   };
 }
