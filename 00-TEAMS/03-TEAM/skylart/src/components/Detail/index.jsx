@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadDetail } from '../../redux/actions/actionCreators';
 import GoBackButton from '../Common/GoBackButton';
-import Footer from '../Common/Footer';
 
 function Detail({ dispatch, category, detail }) {
   const { artworkId } = useParams();
