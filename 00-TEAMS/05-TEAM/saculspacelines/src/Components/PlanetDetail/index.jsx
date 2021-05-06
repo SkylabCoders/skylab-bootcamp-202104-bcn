@@ -8,13 +8,10 @@ const PlanetDetail = ({
   const
     {
       name,
-      rotationPeriod,
-      orbitalPeriod,
       diameter,
       climate,
       gravity,
       terrain,
-      surfaceWater,
       population,
       imgUrl,
       clickHandler
@@ -52,14 +49,14 @@ const PlanetDetail = ({
           ? (
             <ul className="details__list planetList">
               <li className="planetList__rotation">
-                Rotarion period:
+                Rotation period:
                 {' '}
-                {rotationPeriod}
+                {data.rotation_period}
               </li>
               <li className="planetList__orbital">
                 Orbital period:
                 {' '}
-                {orbitalPeriod}
+                {data.orbital_period}
               </li>
               <li className="planetList__diameter">
                 Diameter:
@@ -84,7 +81,7 @@ const PlanetDetail = ({
               <li className="planetList__surfaceWater">
                 Surface water:
                 {' '}
-                {surfaceWater}
+                {data.surface_water}
               </li>
               <li className="planetList__population">
                 Population:
@@ -107,13 +104,13 @@ const PlanetDetail = ({
 PlanetDetail.propTypes = {
   data: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    rotationPeriod: PropTypes.string.isRequired,
-    orbitalPeriod: PropTypes.string.isRequired,
+    rotation_period: PropTypes.string.isRequired,
+    orbital_period: PropTypes.string.isRequired,
     diameter: PropTypes.string.isRequired,
     climate: PropTypes.string.isRequired,
     gravity: PropTypes.string.isRequired,
     terrain: PropTypes.string.isRequired,
-    surfaceWater: PropTypes.string.isRequired,
+    surface_water: PropTypes.string.isRequired,
     population: PropTypes.string.isRequired,
     imgUrl: PropTypes.string.isRequired,
     clickHandler: PropTypes.func.isRequired
