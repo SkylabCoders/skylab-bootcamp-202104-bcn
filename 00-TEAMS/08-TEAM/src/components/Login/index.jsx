@@ -10,20 +10,21 @@ const Login = () => {
   } = useAuth0();
 
   const loggOutTemplate = () => (
-    <>
-      <p>
+    <div className="container-login">
+      <h3>
         Welcome
         {' '}
         {user.name}
-      </p>
-      <button type="button" onClick={() => logout()}>Log out</button>
-    </>
+      </h3>
+      <img className="login__photo" src={user.picture} alt="user_photo" />
+      <button className="login__button" type="button" onClick={() => logout()}>Log out</button>
+    </div>
   );
 
   const loggInTemplate = () => (
     <>
-      <p>Please access with your credentials</p>
-      <button type="button" onClick={() => loginWithRedirect()}>Login</button>
+      <h3>Please access with your credentials</h3>
+      <button className="login__button" type="button" onClick={() => loginWithRedirect()}>Login</button>
     </>
   );
 
