@@ -13,7 +13,7 @@ import './game.css';
 let correctAnswers = 0;
 let incorrectAnswers = 0;
 
-function Game({ game, dispatch, auth }) {
+function Game({ game, dispatch }) {
   const history = useHistory();
   let { currentQuestion } = (useParams());
   currentQuestion = parseInt(currentQuestion, 10) + 1;
@@ -26,15 +26,26 @@ function Game({ game, dispatch, auth }) {
     Array.from(document.getElementsByClassName('answer-box__answer')).forEach((element) => {
       // eslint-disable-next-line no-param-reassign
       element.className = 'answer-box__answer';
+      // eslint-disable-next-line no-param-reassign
+      element.disabled = false;
+    });
+  }
+
+  function disableButtons() {
+    Array.from(document.getElementsByClassName('answer-box__answer')).forEach((element) => {
+      // eslint-disable-next-line no-param-reassign
+      element.disabled = true;
     });
   }
 
   function isCorrectAnswer(givenAnswer, index) {
     if (givenAnswer === game[0][currentQuestion].correct_answer) {
+      disableButtons();
       const correctAnswer = document.getElementById(index);
       correctAnswer.className = 'answer-box__answer correct';
       correctAnswers += 1;
     } else {
+      disableButtons();
       const incorrectAnswer = document.getElementById(index);
       incorrectAnswer.className = 'answer-box__answer incorrect';
       incorrectAnswers += 1;
@@ -44,8 +55,7 @@ function Game({ game, dispatch, auth }) {
       if (currentQuestion < 9) {
         history.push(`${currentQuestion}`);
       } else {
-        debugger;
-        dispatch(loadRanking(auth, correctAnswers, incorrectAnswers));
+        dispatch(loadRanking(correctAnswers, incorrectAnswers));
         history.replace('/Ranking');
       }
     }, 3000);
@@ -96,19 +106,11 @@ function Game({ game, dispatch, auth }) {
 }
 Game.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  game: PropTypes.shape([]).isRequired,
-  auth: PropTypes.shape({
-    isLoggedIn: PropTypes.bool.isRequired,
-    user: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      picture: PropTypes.string.isRequired
-    })
-  }).isRequired
+  game: PropTypes.shape([]).isRequired
 };
 
-function mapStateToProps(store, { auth }) {
+function mapStateToProps(store) {
   return {
-    auth,
     game: store.gameData
   };
 }
