@@ -32,9 +32,7 @@ describe('loadArtworksFromApi function', () => {
   test('should dispatch LOAD_ARTWORKS', async () => {
     axios.mockResolvedValue({ data: { objectIDs: 10 } });
     const dispatch = jest.fn();
-
     await loadArtworksFromApi()(dispatch);
-
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.LOAD_ARTWORKS,
       artwork: 10,
@@ -43,7 +41,6 @@ describe('loadArtworksFromApi function', () => {
   test('should dispatch LOAD_ERROR', async () => {
     axios.mockRejectedValue();
     const dispatch = jest.fn();
-
     await loadArtworksFromApi()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
       type: 'LOAD_ERROR',
@@ -56,13 +53,20 @@ describe('loadCategory function', () => {
     axios.mockResolvedValue({ data: ['hello world'] });
     const dispatch = jest.fn();
     const artworkId = 10;
-
     await loadCategory(artworkId)(dispatch);
-
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.LOAD_CATEGORY,
       detail: ['hello world'],
       artworkId: 10,
+    });
+  });
+  test('should dispatch LOAD_ERROR', async () => {
+    axios.mockRejectedValue();
+    const dispatch = jest.fn();
+    const artworkId = 10;
+    await loadCategory(artworkId)(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: 'LOAD_ERROR',
     });
   });
 });
