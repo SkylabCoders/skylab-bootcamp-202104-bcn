@@ -1,9 +1,41 @@
+import axios from 'axios';
 import HEROES from '../../constants/heroes.mock';
 import actionTypes from './actionTypes';
 
 export function loadHeroes() {
-  return {
-    type: actionTypes.LOAD_HEROES,
+  return async (dispatch) => {
+    const url = 'superHeroData.json';
+    try {
+      const response = await fetch(url);
+      const heroes = await response.json();
+      dispatch({
+        type: actionTypes.LOAD_HEROES,
+        heroes,
+      });
+    } catch (error) {
+      console.log(error);
+      dispatch({
+        type: 'LOAD_HEROES_ERROR',
+      });
+    }
+  };
+}
+
+export function loadHeroesAxios() {
+  return async (dispatch) => {
+    const url = 'superHeroData.json';
+    try {
+      const { data } = await axios(url);
+      dispatch({
+        type: actionTypes.LOAD_HEROES,
+        heroes: data,
+      });
+    } catch (error) {
+      console.log(error);
+      dispatch({
+        type: 'LOAD_HEROES_ERROR',
+      });
+    }
   };
 }
 
