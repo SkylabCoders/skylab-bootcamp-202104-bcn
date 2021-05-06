@@ -1,0 +1,13 @@
+.addToCartButton {
+  width: 200px;
+  height: 40px;
+  background: #f0ca70;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f0ca70), color-stop(50%, #f0c04d), to(#94721f));
+  background: linear-gradient(180deg, #f0ca70 0%, #f0c04d 50%, #94721f 100%);
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+/*# sourceMappingURL=AddToCartButton.css.map */
