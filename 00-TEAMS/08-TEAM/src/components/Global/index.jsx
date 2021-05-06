@@ -23,22 +23,21 @@ const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
             <h1>Global</h1>
             <h3>Affected countries: 220</h3>
           </div>
-        </div>
-        <section className="mainData">
-          <ul className="globalCards">
-            { globalData
+          <section className="mainData">
+            <ul className="globalCards">
+              { globalData
         && globalData.map(([element, value]) => (
           <li key={element} className="total">
             <p className="identifier">{element}</p>
             <p className="number">{value}</p>
           </li>
         ))}
-          </ul>
-        </section>
-        <section className="vaccinatedByContinent">
-          <h2>Vaccinated by continents</h2>
-          <ul className="continent-cards">
-            { infoByContinent
+            </ul>
+          </section>
+          <section className="vaccinatedByContinent">
+            <h2>Vaccinated by continents</h2>
+            <ul className="continent-cards">
+              { infoByContinent
         && infoByContinent.map((country) => (
           <li key={country} className="continent-card">
             <p className="continent-card__name">{country[0].toUpperCase()}</p>
@@ -66,8 +65,9 @@ const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
             </p>
           </li>
         ))}
-          </ul>
-        </section>
+            </ul>
+          </section>
+        </div>
       </main>
     </>
   );

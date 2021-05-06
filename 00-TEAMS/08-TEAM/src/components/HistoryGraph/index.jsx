@@ -1,11 +1,16 @@
 /* eslint-disable no-console */
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-// import { PropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types';
 import './style.scss';
 import { Line } from 'react-chartjs-2';
+import { loadCountryHistory } from '../../redux/actions/actionCreators';
 
-const HistoryGraph = () => {
+const HistoryGraph = ({ countryHistoryData, dispatch }) => {
+  useEffect(() => {
+    dispatch(loadCountryHistory('Spain', 'deaths'));
+  }, []);
+
   const [state] = useState(
     {
       labels: ['January', 'February', 'March',
@@ -14,15 +19,17 @@ const HistoryGraph = () => {
         {
           label: 'Rainfall',
           fill: false,
-          lineTension: 0.5,
-          backgroundColor: 'rgba(75,192,192,1)',
-          borderColor: 'rgba(0,0,0,1)',
+          lineTension: 0.1,
+          backgroundColor: 'rgba(255, 255, 255, 1)',
+          borderColor: 'rgba(255,255,255,1)',
           borderWidth: 2,
-          data: [65, 59, 80, 81, 56]
+          data: [65, 59, 50, 80, 81, 56]
         }
       ]
     }
   );
+
+  console.log(countryHistoryData);
 
   return (
     <section className="global-graphs">
@@ -44,13 +51,15 @@ const HistoryGraph = () => {
   );
 };
 
-// HistoryGraph.propTypes = {
-//   globalData: PropTypes.shape([]).isRequired
-// };
+HistoryGraph.propTypes = {
+  countryHistoryData: PropTypes.shape([]).isRequired,
+  dispatch: PropTypes.func.isRequired
+};
 
-const mapStateToProps = ({ globalData }) => (
+const mapStateToProps = ({ countryHistoryData, dispatch }) => (
   {
-    globalData: Object.entries(globalData)
+    countryHistoryData,
+    dispatch
   }
 );
 
