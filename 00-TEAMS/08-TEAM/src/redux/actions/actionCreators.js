@@ -7,6 +7,7 @@ import actionTypes from './actionTypes';
 const URL = 'https://covid-api.mmediagroup.fr/v1/';
 const casesUrl = 'cases';
 const vaccinesUrl = 'vaccines';
+const historyUrl = 'history';
 
 export const loadGlobalData = (url = `${URL}${casesUrl}`) => async (dispatch) => {
   const { data } = await axios.get(url);
@@ -23,6 +24,14 @@ export const loadCountry = (country) => async (dispatch) => {
   dispatch({
     type: actionTypes.LOAD_COUNTRY,
     data: response.data.All
+  });
+};
+export const loadCountryHistory = (country, status) => async (dispatch) => {
+  const url = `${URL}${historyUrl}?country=${country}&status=${status}`; // TODO VALIDACION DE INPUT CASES AND TEXT
+  const response = await axios.get(url);
+  dispatch({
+    type: actionTypes.LOAD_COUNTRY_HISTORY,
+    data: response.data
   });
 };
 

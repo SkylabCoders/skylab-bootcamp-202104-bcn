@@ -39,7 +39,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
 
   return (
     <>
-      <div className="country-section">
+      <section className="country-section">
         <h1>{country}</h1>
         <ul>
           {myCountryStats.map((value) => (
@@ -61,7 +61,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
           ))}
         </ul>
         <FavoriteButton />
-      </div>
+      </section>
     </>
   );
 }
