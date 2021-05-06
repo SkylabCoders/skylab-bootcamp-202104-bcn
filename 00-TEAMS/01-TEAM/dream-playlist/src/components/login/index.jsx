@@ -41,9 +41,11 @@ function LogIn({ auth, actions }) {
   );
   return (
     <>
-      {auth.isLoggedIn
+      {
+      auth.isLoggedIn
         ? loggedInTemplate()
-        : loggedOutTemplate()}
+        : loggedOutTemplate()
+      }
     </>
   );
 }
@@ -52,7 +54,8 @@ LogIn.propTypes = {
   auth: PropTypes.shape({
     isLoggedIn: PropTypes.bool.isRequired,
     user: PropTypes.shape({
-      name: PropTypes.string.isRequired
+      name: PropTypes.string.isRequired,
+      sub: PropTypes.string.isRequired
     })
   }).isRequired,
 
