@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { loadCountry, loadVaccinesByCountry } from '../../redux/actions/actionCreators';
 import './style.scss';
 import FavoriteButton from '../FavoriteButton';
+import HistoryGraph from '../HistoryGraph';
 
 function Country({ dispatch, countryData, vaccineByCountryData }) {
   const { country } = useParams();
@@ -61,6 +62,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
           ))}
         </ul>
         <FavoriteButton />
+        <HistoryGraph />
       </section>
     </>
   );
