@@ -4,93 +4,61 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadDetail } from '../../redux/actions/actionCreators';
 import GoBackButton from '../Common/GoBackButton';
+import './Detail.scss';
 
 function Detail({ dispatch, category, detail }) {
   const { artworkId } = useParams();
   const selectedArtwork = category.find((artwork) => artwork.objectID === +artworkId);
   dispatch(loadDetail(selectedArtwork));
 
-  // function createReturnComponent() {
-  //   return <span>{detail.period}</span>;
-  // }
-
-  // function verifyHasPeriod() {
-  //   const hasPeriod = detail.period;
-  //   return hasPeriod;
-  // }
-
   return (
     <>
-      <figure>
-        <img src={detail.primaryImage} alt={detail.title} />
+      <figure className="main-imatge-container">
+        <img className="main-imatge" src={detail.primaryImage} alt={detail.title} />
         <h2>{detail.title}</h2>
       </figure>
-
       <div className="information-container">
         <h3>{detail.title}</h3>
-        {/* {if (hasPeriod) {
-      return <createReturnComponent />;
-    }} */}
-        <span>{detail.artistDisplayName}</span>
-        <span>{detail.objectDate}</span>
-        {/* {
-          hasPeriod && (
-          <span>
-            Period:
-            {' '}
-            {detail.period}
-          </span>
-          )
-        } */}
-        <ul>
-          <li>
-            Title:
-            {' '}
+        <h4>{detail.objectDate}</h4>
+        <h4>{detail.artistDisplayName}</h4>
+        <ul className="table-information">
+          <li className="table-row">
+            <span>Title:</span>
             {detail.title}
           </li>
-          <li>
-            Artist:
-            {' '}
+          <li className="table-row">
+            <span>Artist:</span>
             {detail.artistDisplayName}
           </li>
-          <li>
-            Date:
-            {' '}
+          <li className="table-row">
+            <span>Date:</span>
             {detail.objectDate}
           </li>
-          <li>
-            Period:
-            {' '}
+          <li className="table-row">
+            <span>Period:</span>
             {detail.period}
           </li>
-          <li>
-            Medium:
-            {' '}
+          <li className="table-row">
+            <span>Medium:</span>
             {detail.medium}
           </li>
-          <li>
-            Dimensions:
-            {' '}
+          <li className="table-row">
+            <span>Dimensions:</span>
             {detail.dimensions}
           </li>
-          <li>
-            Credit Line:
-            {' '}
+          <li className="table-row">
+            <span>Credit Line:</span>
             {detail.creditLine}
           </li>
-          <li>
-            Accession Number:
-            {' '}
+          <li className="table-row">
+            <span>Accession Number:</span>
             {detail.accessionNumber}
           </li>
         </ul>
-        <button type="button">Add to favorites</button>
-        <GoBackButton />
+        <div className="button-container">
+          <GoBackButton />
+        </div>
       </div>
-
-      <ul>
-        <li>imatges</li>
-      </ul>
     </>
   );
 }
@@ -102,11 +70,9 @@ Detail.propTypes = {
     objectId: PropTypes.number,
     primaryImage: PropTypes.string,
     title: PropTypes.string,
-
     artistDisplayName: PropTypes.string,
     objectDate: PropTypes.string,
     period: PropTypes.string,
-
     medium: PropTypes.string,
     dimensions: PropTypes.string,
     creditLine: PropTypes.string,
