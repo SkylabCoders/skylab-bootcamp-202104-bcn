@@ -1,23 +1,17 @@
 .footer-element {
     background-color:#21384f;
-    height: 20vh;
     color: #eeeeee;
-    padding-top:25px ;
+    padding:25px ;
     .resources-element, .aboutUs {
-        max-width: 1400px;
-        margin: 0 auto;
         max-width: 1400px;
         margin: 0 auto;
         display: flex;
         justify-content: space-evenly;
     }
-
 }
 
-    
- 
 .madeBy-element {
-    margin-top: 50px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -25,8 +19,11 @@
     color: grey;
 }
 
-
 a {
     color: #eeeeee;
 
 }    
+
+.aboutUs {
+    padding-top: 20px;
+}

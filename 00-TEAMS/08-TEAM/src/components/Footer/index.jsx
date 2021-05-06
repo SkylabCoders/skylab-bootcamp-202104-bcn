@@ -27,16 +27,17 @@ const Footer = () => {
           Wikipedia Covid-19
         </a>
       </div>
-      <div className="aboutUs" />
-      <a className="aboutUs__link" href={githubGax}>
-        GitHub Gax
-      </a>
-      <a className="aboutUs__link" href={githubDani}>
-        GitHub Dani
-      </a>
-      <a className="aboutUs__link" href={githubIsabel}>
-        GitHub Isabel
-      </a>
+      <div className="aboutUs">
+        <a className="aboutUs__link" href={githubGax}>
+          GitHub Gax
+        </a>
+        <a className="aboutUs__link" href={githubDani}>
+          GitHub Dani
+        </a>
+        <a className="aboutUs__link" href={githubIsabel}>
+          GitHub Isabel
+        </a>
+      </div>
       <div className="madeBy-element"> Made by Isabel, Dani, Gax</div>
     </footer>
   );

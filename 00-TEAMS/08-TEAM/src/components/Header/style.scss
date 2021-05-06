@@ -9,12 +9,13 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #182430;
+    background-color: #21384f;
     color: #eeeeee;
     width: 100%;
-    height: 110px;
+    height: 70px;
     padding: 10px 100px;
     position: fixed;
+    z-index: 2;
 
     .nav-element {
         text-decoration: none;
