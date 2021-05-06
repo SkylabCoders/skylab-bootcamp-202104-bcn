@@ -47,6 +47,7 @@
         .continent-card {
             padding: 50px;
             background-color: #3D5566;
+            margin: 10px;
             
             &__name {
                 font-weight: bolder;
@@ -61,7 +62,5 @@
             }
         }
     }
-
-
 
 }

@@ -2,24 +2,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import './style.scss';
 
-const HistoryGraph = (globalData) => {
-  console.log({ globalData });
-  (
-    <div>
-      <h2>HistoryGraph component</h2>
-      <p>
-        Confirmed:
-        {' '}
-        {globalData}
-      </p>
-    </div>
-  );
-};
+const HistoryGraph = ({ globalData }) => (
+  <section className="global-graphs">
+    <h2>HistoryGraph component</h2>
+    <p>
+      Confirmed:
+      {' '}
+      {globalData}
+    </p>
+  </section>
+);
 
 HistoryGraph.propTypes = {
-  globalData: PropTypes.shape([]).isRequired,
-  dispatch: PropTypes.func.isRequired
+  globalData: PropTypes.shape([]).isRequired
 };
 
 const mapStateToProps = ({ globalData }) => (
