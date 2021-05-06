@@ -19,9 +19,10 @@ export function getToken() {
   };
 }
 
-export function getUserData(token) {
+export function getUserData(token, sub) {
+  const userID = sub.split(':').pop();
   return async (dispatch) => {
-    const user = await axios(`${urls.user}xengue`, {
+    const user = await axios(`${urls.user}${userID}`, {
       headers: {
         Authorization: `Bearer ${token}`
       },
