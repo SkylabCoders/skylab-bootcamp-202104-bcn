@@ -10,6 +10,7 @@ import {
 import configureStore from './redux/store/configureStore';
 import Login from './Components/Login';
 import SelectAvatar from './Components/SelectAvatar';
+import Apitest from './Components/Apitest';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/select-avatar/:faction" component={SelectAvatar} />
+            <Route path="/select-destiny" component={Apitest} />
           </Switch>
         </Router>
       </Provider>

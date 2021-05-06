@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -9,6 +9,7 @@ import './form.css';
 import USERS from '../../redux/store/userList/index';
 
 function SelectAvatar({ people, dispatch }) {
+  const history = useHistory();
   const { faction } = useParams();
   const [currentAvatar, setCurrentAvatar] = useState({ name: 'none', imgUrl: 'https://static.filmin.es/images/user/579233/3/user_0_3_256x256.jpeg' });
   const [currentUsername, setCurrentUsername] = useState('Input your username');
@@ -34,7 +35,7 @@ function SelectAvatar({ people, dispatch }) {
     };
 
     dispatch(addUser(newUser));
-    console.log(USERS);
+    history.push('/select-destiny');
   };
 
   useEffect(() => {
@@ -100,7 +101,13 @@ function SelectAvatar({ people, dispatch }) {
         }
       </ul>
       <button type="button">BACK</button>
-      <button onClick={handleSubmit} type="button">SUBMIT</button>
+      <button
+        onClick={handleSubmit}
+        type="button"
+      >
+        SUBMIT
+
+      </button>
     </section>
   );
 }
