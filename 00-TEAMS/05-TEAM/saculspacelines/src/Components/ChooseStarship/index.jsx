@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 import { loadStarships, setCurrentStarship } from '../../redux/Actions/actionCreator';
 import StarshipDetail from '../StarshipDetail';
 
-const Apitest = ({ dispatch, starships }) => {
+const ChooseStarship = ({ dispatch, starships }) => {
   const pages = ['?page=1', '?page=2', '?page=3', '?page=4'];
   const [currentStarship, setStarship] = useState(null);
   const history = useHistory();
@@ -56,7 +56,7 @@ const Apitest = ({ dispatch, starships }) => {
   );
 };
 
-Apitest.propTypes = {
+ChooseStarship.propTypes = {
   dispatch: PropTypes.func.isRequired,
   starships: PropTypes.shape([]).isRequired
 };
@@ -65,4 +65,4 @@ const mapStateToProps = ({ loadSwapiStarships }) => ({
   starships: loadSwapiStarships
 });
 
-export default connect(mapStateToProps)(Apitest);
+export default connect(mapStateToProps)(ChooseStarship);

@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 import { loadPlanets, setCurrentPlanet } from '../../redux/Actions/actionCreator';
 import PlanetDetail from '../PlanetDetail';
 
-const Apitest = ({ dispatch, planets }) => {
+const ChoosePlanet = ({ dispatch, planets }) => {
   const pages = ['?page=1', '?page=2', '?page=3', '?page=4', '?page=5', '?page=6'];
   const [currentPlanet, setPlanet] = useState(null);
   const history = useHistory();
@@ -46,7 +46,7 @@ const Apitest = ({ dispatch, planets }) => {
   );
 };
 
-Apitest.propTypes = {
+ChoosePlanet.propTypes = {
   dispatch: PropTypes.func.isRequired,
   planets: PropTypes.shape([]).isRequired
 };
@@ -55,4 +55,4 @@ const mapStateToProps = ({ loadSwapiPlanets }) => ({
   planets: loadSwapiPlanets
 });
 
-export default connect(mapStateToProps)(Apitest);
+export default connect(mapStateToProps)(ChoosePlanet);
