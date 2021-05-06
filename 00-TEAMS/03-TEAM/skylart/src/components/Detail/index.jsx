@@ -11,33 +11,79 @@ function Detail({ dispatch, category, detail }) {
   const selectedArtwork = category.find((artwork) => artwork.objectID === +artworkId);
   dispatch(loadDetail(selectedArtwork));
 
+  // function createReturnComponent() {
+  //   return <span>{detail.period}</span>;
+  // }
+
+  // function verifyHasPeriod() {
+  //   const hasPeriod = detail.period;
+  //   return hasPeriod;
+  // }
+
   return (
     <>
       <figure>
-        <img src="" alt="" />
-        <h2>
-          {' '}
-
-          {' '}
-        </h2>
+        <img src={detail.primaryImage} alt={detail.title} />
+        <h2>{detail.title}</h2>
       </figure>
 
       <div className="information-container">
-        <h3>Artwork title</h3>
-        <span>any</span>
-        <span>autor</span>
+        <h3>{detail.title}</h3>
+        {/* {if (hasPeriod) {
+      return <createReturnComponent />;
+    }} */}
+        <span>{detail.artistDisplayName}</span>
+        <span>{detail.objectDate}</span>
+        {/* {
+          hasPeriod && (
+          <span>
+            Period:
+            {' '}
+            {detail.period}
+          </span>
+          )
+        } */}
         <ul>
+          <li>
+            Title:
+            {' '}
+            {detail.title}
+          </li>
           <li>
             Artist:
             {' '}
-            {detail.department}
+            {detail.artistDisplayName}
           </li>
-          <li>Date: </li>
-          <li>Culture: </li>
-          <li>Medium: </li>
-          <li>Dimensions: </li>
-          <li>Credit Line: </li>
-          <li>Accession Number: </li>
+          <li>
+            Date:
+            {' '}
+            {detail.objectDate}
+          </li>
+          <li>
+            Period:
+            {' '}
+            {detail.period}
+          </li>
+          <li>
+            Medium:
+            {' '}
+            {detail.medium}
+          </li>
+          <li>
+            Dimensions:
+            {' '}
+            {detail.dimensions}
+          </li>
+          <li>
+            Credit Line:
+            {' '}
+            {detail.creditLine}
+          </li>
+          <li>
+            Accession Number:
+            {' '}
+            {detail.accessionNumber}
+          </li>
         </ul>
         <button type="button">Add to favorites</button>
         <GoBackButton />
@@ -56,8 +102,17 @@ Detail.propTypes = {
   category: PropTypes.shape([]).isRequired,
   detail: PropTypes.shape({
     objectId: PropTypes.number,
-    department: PropTypes.string,
+    primaryImage: PropTypes.string,
+    title: PropTypes.string,
+
+    artistDisplayName: PropTypes.string,
     objectDate: PropTypes.string,
+    period: PropTypes.string,
+
+    medium: PropTypes.string,
+    dimensions: PropTypes.string,
+    creditLine: PropTypes.string,
+    accessionNumber: PropTypes.string,
   }).isRequired,
 };
 
