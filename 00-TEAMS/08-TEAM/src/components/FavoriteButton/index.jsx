@@ -12,13 +12,22 @@ function FavoriteButton({ dispatch }) {
   function handleAddCountry() {
     dispatch(addCountryToFav(country));
   }
+  function popUpFunction() {
+    const popup = document.querySelector('#popUp');
+    popup.classList.add('show');
+  }
 
   return (
     <>
       <button
         type="button"
-        onClick={() => handleAddCountry()}
+        className="popUp"
+        onClick={() => {
+          handleAddCountry();
+          popUpFunction();
+        }}
       >
+        <span className="popuptext" id="popUp">Country added to saved places</span>
         ✪
       </button>
     </>
