@@ -47,7 +47,7 @@ export default function userActionReducer(state = [], { type, payload }) {
       break;
 
     case LOAD_WISHLIST:
-      result = USERS.find((user) => user.username === currentUser);
+      result = USERS.find((user) => user.email === currentUser);
       result = result.wishlist;
       break;
 
