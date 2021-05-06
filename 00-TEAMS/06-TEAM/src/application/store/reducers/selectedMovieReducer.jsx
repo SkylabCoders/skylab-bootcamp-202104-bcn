@@ -4,7 +4,6 @@ function moviesReducer(movie = {}, action) {
   switch (action.type) {
     case actionTypes.LOAD_MOVIE:
       return action.movie;
-
     default:
       return movie;
   }

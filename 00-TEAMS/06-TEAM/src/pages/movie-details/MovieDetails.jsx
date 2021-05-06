@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -11,13 +12,15 @@ function MovieDetail({ selectedMovie, dispatch }) {
     dispatch(getMovieById(movieId));
   }, [movieId]);
 
+  console.log({ selectedMovie });
+
   return (
     selectedMovie.id
       ? (
         <div>
           MOVIE ID:
           {selectedMovie.id}
-          ORIGINAL TITLE
+          ORIGINAL TITLE:
           {selectedMovie.original_title}
         </div>
       )

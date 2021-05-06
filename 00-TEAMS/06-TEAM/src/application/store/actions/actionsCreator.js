@@ -24,11 +24,12 @@ export function loadGenres(genreId) {
 }
 
 export function getMovieById(movieId) {
-  const movie = URL.find((current) => current.id === +movieId);
-
-  return {
-    type: actionTypes.LOAD_MOVIE,
-    movie
+  return async (dispatch) => {
+    const response = await getFilms(movieId);
+    dispatch({
+      type: actionTypes.LOAD_MOVIE,
+      movie: response.data
+    });
   };
 }
 
