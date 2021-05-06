@@ -27,19 +27,20 @@ Get the lastest updated info about the pandemic and vaccination by continent, co
         <Link className="main-button" to="/global">Find a region</Link>
       </button>
       </div>
-        <div className="data-container">
+        <div className="chart-container">
         <Chart />
+        <div className="chart-container__data">
       <ul>
         { globalData
         && globalData.map(([element, value]) => (
 <li>
 {element.toUpperCase()}
-:
 {'  '}
 {Number(value).toLocaleString()}
 </li>
         ))}
       </ul>
+        </div>
         </div>
       </div>
       </section>
