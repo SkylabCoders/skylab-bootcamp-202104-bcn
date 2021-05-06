@@ -7,86 +7,26 @@ import { loadPlanets } from '../../redux/Actions/actionCreator';
 const Apitest = ({ dispatch, planets }) => {
   const pages = ['?page=1', '?page=2', '?page=3', '?page=4', '?page=5', '?page=6'];
   useEffect(() => {
-    console.log(planets);
     pages.forEach((page) => dispatch(loadPlanets(page)));
-    console.log(planets);
   }, []);
 
   return (
-    <>
-      <ul>
-        {planets.length && planets[0]?.map((person) => (
-          <>
-            <li>{person.name}</li>
-            <img
-              src={person.imgUrl}
-              alt={person.name}
-              className="list-element__image"
-            />
-          </>
-        ))}
-      </ul>
-      <ul>
-        {planets.length && planets[1]?.map((person) => (
-          <>
-            <li>{person.name}</li>
-            <img
-              src={person.imgUrl}
-              alt={person.name}
-              className="list-element__image"
-            />
-          </>
-        ))}
-      </ul>
-      <ul>
-        {planets.length && planets[2]?.map((person) => (
-          <>
-            <li>{person.name}</li>
-            <img
-              src={person.imgUrl}
-              alt={person.name}
-              className="list-element__image"
-            />
-          </>
-        ))}
-      </ul>
-      <ul>
-        {planets.length && planets[3]?.map((person) => (
-          <>
-            <li>{person.name}</li>
-            <img
-              src={person.imgUrl}
-              alt={person.name}
-              className="list-element__image"
-            />
-          </>
-        ))}
-      </ul>
-      <ul>
-        {planets.length && planets[4]?.map((person) => (
-          <>
-            <li>{person.name}</li>
-            <img
-              src={person.imgUrl}
-              alt={person.name}
-              className="list-element__image"
-            />
-          </>
-        ))}
-      </ul>
-      <ul>
-        {planets.length && planets[5]?.map((person) => (
-          <>
-            <li>{person.name}</li>
-            <img
-              src={person.imgUrl}
-              alt={person.name}
-              className="list-element__image"
-            />
-          </>
-        ))}
-      </ul>
-    </>
+    <div>
+      {planets.length && planets?.map((planetsArray) => (
+        <ul key={planetsArray.indexOf()}>
+          {planetsArray.length && planetsArray?.map((planet) => (
+            <>
+              <li key={planet.name}>{planet.name}</li>
+              <img
+                src={planet.imgUrl}
+                alt={planet.name}
+                className="list-element__image"
+              />
+            </>
+          ))}
+        </ul>
+      )) }
+    </div>
   );
 };
 
@@ -96,7 +36,7 @@ Apitest.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  planets: state.swapiReducer
+  planets: state.loadSwapiPlanets
 });
 
 export default connect(mapStateToProps)(Apitest);

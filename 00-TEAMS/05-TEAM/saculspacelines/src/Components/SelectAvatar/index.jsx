@@ -25,8 +25,6 @@ function SelectAvatar({ people, dispatch }) {
   };
 
   const handleSubmit = () => {
-    // eslint-disable-next-line no-debugger
-    debugger;
     const newUser = {
       email: user.email,
       username: currentUsername,

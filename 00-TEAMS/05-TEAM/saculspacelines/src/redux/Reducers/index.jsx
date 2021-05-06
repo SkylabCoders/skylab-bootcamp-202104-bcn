@@ -1,11 +1,16 @@
 import { combineReducers } from 'redux';
-import swapiReducer from './swapireducer';
+import {
+  loadSwapiReducer, loadSwapiPeople, loadSwapiStarships, loadSwapiPlanets
+} from './swapireducer';
 import localDataReducer from './localDataReducer';
 import userActionReducer from './userActionReducer';
 import authReducer from './authReducer';
 
 const rootReducer = combineReducers({
-  swapiReducer,
+  loadSwapiPeople,
+  loadSwapiPlanets,
+  loadSwapiReducer,
+  loadSwapiStarships,
   localDataReducer,
   userActionReducer,
   authReducer
