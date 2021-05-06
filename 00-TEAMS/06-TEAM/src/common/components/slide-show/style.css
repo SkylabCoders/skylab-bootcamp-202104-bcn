@@ -8,14 +8,18 @@
     object-fit: cover;
 }
 .slider--wrapper--information{
-    display: block;
     min-height: 245px;
     position: absolute;
     overflow: hidden;
-    width: 37%;
-    bottom: 30%;
+    width: 40%;
+    bottom: 46%;
     left: 2%;
-    background-color:rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px 40px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
 }
 .carousel__inner-slide {
     animation: cambio 20s infinite normal;
@@ -47,10 +51,7 @@
 }
 
 .slider--information{
-    color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
+
 }
 
 .overview {
@@ -63,13 +64,12 @@
 }
 
 .slider__title{
-    font-size: 50px;
-    margin-left: 9%;
-    margin-top: 14%;
+    font-size: 45px;
+    line-height:60px;
 }
 
 .slider__vote-average{
     font-size: 16px;
-    margin-left: 10%;
-    margin-top: 24%;
+    line-height: 24px;
+    max-width: 70%;
 }

@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 const GlobalApp = styled.div`
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
   font-family: 'Ubuntu';
   background-color:#000000;
 `;

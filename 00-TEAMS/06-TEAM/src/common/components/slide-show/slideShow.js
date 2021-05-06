@@ -19,7 +19,7 @@ function SlideShow({ myMovies, dispatch }) {
   useEffect(() => {
     dispatch(loadMovies(TYPE_PARAMS.upcoming));
   }, []);
-
+  const truncatestring = (str) => (str.length > 150 ? `${str.substring(0, 149)}...` : str);
   return (
     <CarouselProvider
       naturalSlideWidth={1000}
@@ -28,18 +28,21 @@ function SlideShow({ myMovies, dispatch }) {
       visibleSlides={1}
       currentSlide={0}
       isPlaying="true"
-      interval={60000}
+      interval={3000}
       infinite="true"
     >
       <Slider>
-        { myMovies.popular.slice(0, 4).map((element, i) => (
+        {myMovies.popular.forEach((myMovie) => {
+          console.log(myMovie);
+        })}
+        { myMovies.popular.slice(0, 6).map((element, i) => (
           <Slide key={element.id} index={i} className="slider__section">
             <div className="slider--wrapper--information">
               <span className="slider--information slider__title">{element.title}</span>
               <span className="slider--information slider__vote-average">
                 IMDB:
                 {' '}
-                {element.vote_average}
+                {truncatestring(element.overview)}
               </span>
             </div>
             <Link to={`${element.id}`}>
