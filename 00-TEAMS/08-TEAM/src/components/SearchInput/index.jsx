@@ -4,6 +4,8 @@ import './style.scss';
 import magnifying from '../../assets/magnifying-pic.png';
 
 function SearchInput() {
+  const capitalizeFirstLetter = (item) => item.charAt(0).toUpperCase() + item.slice(1);
+
   const [newSearch, setNewSearch] = useState('');
 
   return (
@@ -13,7 +15,7 @@ function SearchInput() {
           <input
             id="search-input"
             placeholder="Search country"
-            onChange={(event) => setNewSearch(event.target.value)}
+            onChange={(event) => setNewSearch((capitalizeFirstLetter(event.target.value)))}
           />
           <button
             type="button"
