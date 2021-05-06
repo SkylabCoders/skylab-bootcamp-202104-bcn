@@ -14,15 +14,15 @@ export function loadMovies(searchParam) {
 
 export function loadTitleMostVewed() {
   return {
-    type: actionTypes.LOAD_TITLE,
+    type: actionTypes.LOAD_TITLE_MOST_VIEWED,
     title: 'Las más vistas'
   };
 }
 
 export function loadTitleLastRelase() {
   return {
-    type: actionTypes.LOAD_TITLE,
-    title: 'Las más vistas'
+    type: actionTypes.LOAD_TITLE_LAST_RELEASES,
+    title: 'Últimos estrenos'
   };
 }
 

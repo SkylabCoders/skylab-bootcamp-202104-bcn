@@ -1,6 +1,5 @@
 import React, {
-  useEffect,
-  useState
+  useEffect
 } from 'react';
 import {
   CarouselProvider,
@@ -17,10 +16,8 @@ import './style.css';
 
 function SlideShow({ myMovies, dispatch }) {
   const baseImgUrl = 'https://image.tmdb.org/t/p/original';
-  const [autoPlayBool, setBool] = useState(true);
   useEffect(() => {
     dispatch(loadMovies(TYPE_PARAMS.upcoming));
-    setBool(true);
   }, []);
 
   return (
@@ -30,7 +27,7 @@ function SlideShow({ myMovies, dispatch }) {
       totalSlides={4}
       visibleSlides={1}
       currentSlide={0}
-      isPlaying={autoPlayBool}
+      isPlaying="true"
       interval={60000}
       infinite="true"
     >

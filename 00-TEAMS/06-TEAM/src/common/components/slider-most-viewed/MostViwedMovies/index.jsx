@@ -25,6 +25,7 @@ const MostViwedMovies = ({ myMovies, type, dispatch }) => {
       totalSlides={20}
       visibleSlides={6}
       step={4}
+      infinite="true"
     >
       <Slider className="slider">
         {
