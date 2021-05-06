@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { useAuth0 } from '@auth0/auth0-react';
 import { login } from '../../redux/actions/actionCreator';
+import './login.css';
 
 function LogIn({ auth, actions }) {
   const {
@@ -21,19 +22,21 @@ function LogIn({ auth, actions }) {
 
   const loggedInTemplate = () => (
     <>
-      <p>
-        Welcome
+      <p className="loginMessage">
+        Welcome,
         {' '}
         {auth?.user?.name}
       </p>
-      <button type="button" onClick={() => logout(isAuthenticated, user)}>Log out</button>
+      <button id="auth-button" type="button" onClick={() => logout(isAuthenticated, user)}>Log out</button>
     </>
   );
 
   const loggedOutTemplate = () => (
     <>
-      <p>Hello Stranger, Please access with your credentials.</p>
-      <button type="button" onClick={() => loginWithRedirect()}>Login</button>
+      <p className="loginMessage">
+        Please, log in ➡️
+      </p>
+      <button id="auth-button" type="button" onClick={() => loginWithRedirect()}>Login</button>
     </>
   );
   return (

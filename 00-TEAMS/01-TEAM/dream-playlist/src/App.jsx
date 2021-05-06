@@ -9,12 +9,14 @@ import Dashboard from './components/Dashboard';
 import LogIn from './components/Login';
 import Form from './components/Form';
 import ListPreview from './components/List/List-preview';
+import Header from './components/Header';
 import './App.css';
 
 function App() {
   return (
     <>
       <Router>
+        <Header />
         <Switch>
           <Route path="/" exact component={Dashboard} />
           <Route path="/login" component={LogIn} />

@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import {
   getToken, getUserData, loadPlaylists, loadSongsfromPlaylist
 } from '../../../redux/actions/actionCreator';
-import Header from '../../Header';
 import './list-preview.css';
 
 function ListPreview({
@@ -43,7 +42,6 @@ function ListPreview({
 
   return (
     <>
-      <Header />
       <div className="userListTitle">
         <h1>
           This is the List of
