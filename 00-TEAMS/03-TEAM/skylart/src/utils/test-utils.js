@@ -3,7 +3,8 @@
 import React from 'react';
 import { render as rtlRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import configureStore from '../../redux/store/index';
+import { Route, MemoryRouter } from 'react-router-dom';
+import configureStore from '../redux/store/index';
 
 function render(
   ui,
@@ -11,9 +12,18 @@ function render(
     initialState,
     ...renderOptions
   } = {},
+  urlParam,
 ) {
   function Wrapper({ children }) {
-    return <Provider store={configureStore(initialState)}>{children}</Provider>;
+    return (
+      <Provider store={configureStore(initialState)}>
+        <MemoryRouter initialEntries={['/23']}>
+          <Route path={`/:${urlParam}`}>
+            {children}
+          </Route>
+        </MemoryRouter>
+      </Provider>
+    );
   }
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }
