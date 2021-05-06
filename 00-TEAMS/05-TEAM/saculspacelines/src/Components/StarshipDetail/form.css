@@ -8,7 +8,7 @@
   src: url("./../../imperial-sw.ttf") format("truetype");
 }
 
-.planet {
+.starShip {
   font-family: 'Starjedi';
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,7 +21,7 @@
   max-width: 55em;
 }
 
-.planet__image {
+.starShip__image {
   width: 12em;
   height: 12em;
   border-radius: 50%;
@@ -32,7 +32,7 @@
   color: black;
 }
 
-.planetList {
+.starShipList {
   background-color: black;
   color: #FCE952;
 }

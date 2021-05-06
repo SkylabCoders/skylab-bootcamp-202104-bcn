@@ -9,7 +9,7 @@ $sw-yellow: #FCE952;
     src: url('./../../imperial-sw.ttf') format('truetype');
 }
 
-.planet {
+.starShip {
     font-family: 'Starjedi';
     display: flex;
     justify-content: space-around;
@@ -31,7 +31,7 @@ $sw-yellow: #FCE952;
     }
 }
 
-.planetList {
+.starShipList {
     background-color: black;
     color: $sw-yellow;
 }
