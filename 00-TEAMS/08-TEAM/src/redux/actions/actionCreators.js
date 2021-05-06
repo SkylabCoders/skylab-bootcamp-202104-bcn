@@ -35,6 +35,15 @@ export const loadVaccinesByCountry = (country) => async (dispatch) => {
   });
 };
 
+export const loadVaccinesByContinent = (continent) => async (dispatch) => {
+  const url = `${URL}${vaccinesUrl}?continent=${continent}`; // TODO VALIDACION DE INPUT CASES AND TEXT
+  const response = await axios.get(url);
+  dispatch({
+    type: actionTypes.LOAD_VACCINES_BY_CONTINENT,
+    data: response.data.All
+  });
+};
+
 export const loadVaccinesContinentData = (url = `${URL}${vaccinesUrl}`) => async (dispatch) => {
   const { data } = await axios.get(url);
   const allContinents = ['Africa', 'Asia', 'Oceania', 'European Union', 'North America', 'South America'];
