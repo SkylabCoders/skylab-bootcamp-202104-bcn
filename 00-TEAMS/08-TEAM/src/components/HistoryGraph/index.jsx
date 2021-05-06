@@ -4,16 +4,14 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import './style.scss';
 import { Line } from 'react-chartjs-2';
+import { useParams } from 'react-router-dom';
 import { loadCountryHistory } from '../../redux/actions/actionCreators';
 
 const HistoryGraph = ({ countryHistoryData, dispatch }) => {
+  const { country } = useParams();
   useEffect(() => {
-    dispatch(loadCountryHistory('Germany', 'confirmed'));
-  }, []);
-
-  // const last30DaysData = Object.values(countryHistoryData).reverse();
-
-  console.log(countryHistoryData);
+    dispatch(loadCountryHistory(country, 'confirmed'));
+  }, [country]);
 
   return (
     <section className="global-graphs">
@@ -22,7 +20,7 @@ const HistoryGraph = ({ countryHistoryData, dispatch }) => {
           labels: [...countryHistoryData],
           datasets: [
             {
-              label: 'Deaths',
+              label: 'Confirmed',
               data: [...countryHistoryData],
               backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
