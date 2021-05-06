@@ -1,65 +1,65 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useAuth0 } from '@auth0/auth0-react';
+import React from 'react-dom';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadPlanets, addUser } from '../../redux/Actions/actionCreator';
+import { loadPlanets } from '../../redux/Actions/actionCreator';
+import PlanetDetail from '../PlanetDetail';
 
-function PlanetDetail({ planet, dispatch }) {
-  const { faction } = useParams();
-  const [currentPlanet, setCurrentPlanet] = useState({ name: 'none', imUrl: 'https://i.pinimg.com/474x/69/9a/5b/699a5bdbf5511dfeddeab7dd39862237.jpg' });
-  const { user } = useAuth0();
-
-  const handlePlanetSelection = (url) => {
-    setCurrentPlanet(url);
-  };
-
-  const handleSubmit = () => {
-    const newUser = {
-      email: user.email,
-      username: user.username,
-      faction,
-      avatar: user.avatar,
-      wishlist: [{
-        id: 0,
-        planet: currentPlanet,
-        starship: 'Death Star',
-        price: 0
-      }]
-    };
-  };
-
-  dispatch(addUser(newUser));
-
+const Apitest = ({ dispatch, planets }) => {
+  const pages = ['?page=1', '?page=2', '?page=3', '?page=4', '?page=5', '?page=6'];
   useEffect(() => {
-    if (!planet.lenght) dispatch(loadPlanets());
+    pages.forEach((page) => dispatch(loadPlanets(page)));
   }, []);
 
+  // const { faction } = useParams();
+  // const [currentPlanet, setCurrentPlanet] = useState({ name: 'none', imUrl: 'https://i.pinimg.com/474x/69/9a/5b/699a5bdbf5511dfeddeab7dd39862237.jpg' });
+  // const { user } = useAuth0();
+  // const handleSubmit = () => {
+  //   const newUser = {
+  //     email: user.email,
+  //     username: user.username,
+  //     faction,
+  //     avatar: user.avatar,
+  //     wishlist: [{
+  //       id: 0,
+  //       planet: currentPlanet,
+  //       starship: 'Death Star',
+  //       price: 0
+  //     }]
+  //   };
+  // };
   return (
-    <section className="choose-planet">
-      <div className="choose-planet__header header">
-        <h1>Choose your Planet</h1>
-        <img
-          className="header_img"
-          src={user.avatar}
-          alt={user.username}
-        />
-      </div>
-
-    </section>
+    <div>
+      {planets.length && planets?.map((planetsArray) => (
+        <ul key={planetsArray.indexOf()}>
+          {planetsArray.length && planetsArray?.map((planet) => (
+            <PlanetDetail
+              name={planet.name}
+              rotationPeriod={planet.rotation_period}
+              orbitalPeriod={planet.orbital_period}
+              diameter={planet.diameter}
+              climate={planet.climate}
+              gravity={planet.gravity}
+              terrain={planet.terrain}
+              surfaceWater={planet.surface_water}
+              population={planet.population}
+              faction={planet.faction}
+              imgUrl={planet.imgUrl}
+            />
+          ))}
+        </ul>
+      )) }
+    </div>
   );
-}
-
-PlanetDetail.propTypes = {
-  planet: PropTypes.shape([]).isRequired,
-  dispatch: PropTypes.func.isRequired
 };
 
-function mapStateToProps({ userActionReducer, authReducer }) {
-  return {
-    planet: userActionReducer,
-    auth: authReducer
-  };
-}
+Apitest.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  planets: PropTypes.shape([]).isRequired
+};
 
-export default connect(mapStateToProps)(PlanetDetail);
+const mapStateToProps = (state) => ({
+  planets: state.loadSwapiPlanets
+});
+
+export default connect(mapStateToProps)(Apitest);
