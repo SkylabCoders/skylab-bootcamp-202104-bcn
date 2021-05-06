@@ -1,36 +1,33 @@
-/* eslint-disable no-console */
 import React, { useEffect } from 'react';
-import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import { Chart } from 'react-google-charts';
 import { loadVaccinesContinentData } from '../../redux/actions/actionCreators';
+import './style.scss';
 
-const MapWorldWide = ({ vaccinesContinentData, dispatch }) => {
+const Map = ({ vaccinesContinentData, dispatch }) => {
   useEffect(() => { dispatch(loadVaccinesContinentData()); }, []);
-  console.log('vaccines', vaccinesContinentData);
-
   return (
-    <div>
-      <h1>Vaccines</h1>
-      <ul>
-        { vaccinesContinentData?.length > 0
-        && vaccinesContinentData.map(({ name }) => (
-          <li>
-            {name}
-            {/* {Object.entries(data.All).slice(1, 3).map(([key, value]) => (
-              <li>
-                {key}
-                :
-                {value}
-              </li> */}
-            {/* ))} */}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div className="worldwide-map">
+        <Chart
+          chartType="GeoChart"
+          data={vaccinesContinentData}
+          options={{
+            resolution: 'continents',
+            colors: ['#FAB06C', '#2d6a4f'],
+            backgroundColor: 'transparent',
+            legend: 'none'
+          }}
+          mapsApiKey={process.env.REACT_APP_GOOGLE_MAP_KEY}
+          rootProps={{ 'data-testid': '1' }}
+        />
+      </div>
+    </>
   );
 };
 
-MapWorldWide.propTypes = {
+Map.propTypes = {
   vaccinesContinentData: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
@@ -39,4 +36,4 @@ const mapStateToProps = ({ vaccinesContinentData }) => ({
   vaccinesContinentData
 });
 
-export default connect(mapStateToProps)(MapWorldWide);
+export default connect(mapStateToProps)(Map);
