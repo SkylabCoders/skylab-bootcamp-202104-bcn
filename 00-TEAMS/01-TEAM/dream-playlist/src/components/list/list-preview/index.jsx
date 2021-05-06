@@ -7,7 +7,7 @@ import {
 import './list-preview.css';
 
 function ListPreview({
-  token, user, playlists, dispatch, songs
+  token, user, playlists, dispatch, songs, auth
 }) {
   const [currentToken, setCurrentToken] = useState(token);
   const [currentUser, setCurrentUser] = useState(null);
@@ -20,8 +20,8 @@ function ListPreview({
   if (currentToken === false && token) setCurrentToken(token);
 
   useEffect(() => {
-    if (token) {
-      dispatch(getUserData(currentToken));
+    if (token && auth) {
+      dispatch(getUserData(currentToken, auth?.user?.sub));
     }
   }, [currentToken]);
 
@@ -46,7 +46,7 @@ function ListPreview({
         <h1>
           This is the List of
           {' '}
-          {user?.id}
+          {user?.display_name}
         </h1>
       </div>
       <div className="containerListSongs">
@@ -70,21 +70,28 @@ function ListPreview({
 ListPreview.propTypes = {
   token: PropTypes.string.isRequired,
   user: PropTypes.shape({
-    id: PropTypes.string
+    id: PropTypes.string.isRequired,
+    display_name: PropTypes.string
   }).isRequired,
   playlists: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired,
-  songs: PropTypes.shape([]).isRequired
+  songs: PropTypes.shape([]).isRequired,
+  auth: PropTypes.shape({
+    user: PropTypes.shape({
+      sub: PropTypes.shape({})
+    })
+  }).isRequired
 };
 
 function mapStateToProps({
-  token, user, playlists, songs
+  token, user, playlists, songs, auth
 }) {
   return {
     token,
     user,
     playlists,
-    songs
+    songs,
+    auth
   };
 }
 
