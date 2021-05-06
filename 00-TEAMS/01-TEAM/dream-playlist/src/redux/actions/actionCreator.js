@@ -1,9 +1,11 @@
+/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 import urls from '../../assets/urls';
 
 export function getToken() {
   return async (dispatch) => {
+    debugger;
     const token = await axios(urls.token, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

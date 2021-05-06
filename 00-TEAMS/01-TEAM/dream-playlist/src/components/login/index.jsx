@@ -1,12 +1,14 @@
-import { React, useEffect } from 'react';
+/* eslint-disable no-debugger */
+/* eslint-disable no-console */
+import { React, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { useAuth0 } from '@auth0/auth0-react';
-import { login } from '../../redux/actions/actionCreator';
+import { login, getToken } from '../../redux/actions/actionCreator';
 import './login.css';
 
-function LogIn({ auth, actions }) {
+function LogIn({ auth, actions, token }) {
   const {
     loginWithRedirect,
     logout,
@@ -14,11 +16,20 @@ function LogIn({ auth, actions }) {
     user
   } = useAuth0();
 
+  const [currentToken, setCurrentToken] = useState(token);
+
   useEffect(() => {
     if (isAuthenticated) {
       actions.login(user);
     }
   }, [isAuthenticated, user]);
+
+  useEffect(() => {
+    debugger;
+    if (!token) actions.getToken();
+  }, [currentToken]);
+
+  if (currentToken === false && token) setCurrentToken(token);
 
   const loggedInTemplate = () => (
     <>
@@ -58,23 +69,26 @@ LogIn.propTypes = {
       sub: PropTypes.string.isRequired
     })
   }).isRequired,
+  token: PropTypes.string.isRequired,
 
   actions: PropTypes.shape({
     login: PropTypes.func.isRequired,
-    logout: PropTypes.func.isRequired
+    logout: PropTypes.func.isRequired,
+    getToken: PropTypes.func.isRequired
   }).isRequired
 };
 
-function mapStateToProps({ auth }) {
+function mapStateToProps({ auth, token }) {
   return {
-    auth
+    auth,
+    token
   };
 }
 
 function mapDispatchStateToProps(dispatch) {
   return {
     actions: bindActionCreators(
-      { login },
+      { login, getToken },
       dispatch
     )
   };
