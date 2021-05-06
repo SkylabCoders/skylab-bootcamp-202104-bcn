@@ -1,5 +1,9 @@
+import axios from 'axios';
 import actionTypes from './actionTypes';
 import * as actions from './actionCreators';
+import { loadArtworksFromApi } from './actionCreators';
+
+jest.mock('axios');
 
 describe('actions', () => {
   it('should create an action to load a detail', () => {
@@ -31,5 +35,26 @@ describe('actions', () => {
       type: actionTypes.AUTH_LOGOUT,
     };
     expect(actions.logout()).toEqual(expectedAction);
+  });
+
+  test('should dispatch LOAD_ARTWORKS', async () => {
+    axios.mockResolvedValue({ data: 'hola' });
+    const dispatch = jest.fn();
+
+    await loadArtworksFromApi()(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.LOAD_ARTWORKS,
+      artwork: 'hola',
+    });
+  });
+  test('should dispatch LOAD_ERROR', async () => {
+    axios.mockRejectedValue();
+    const dispatch = jest.fn();
+
+    await loadArtworksFromApi()(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: 'LOAD_ERROR',
+    });
   });
 });
