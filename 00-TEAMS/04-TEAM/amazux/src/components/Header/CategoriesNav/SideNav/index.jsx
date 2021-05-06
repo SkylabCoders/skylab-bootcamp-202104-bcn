@@ -9,7 +9,7 @@ const SideNav = ({ closeSideNav }) => (
       <button type="button" className="sidenav__close-button" onClick={closeSideNav}>×</button>
       <div className="sidenav__user-bar">
         <div className="sidenav__user-icon"> </div>
-        <div clasName="sidenav__user-welcome">
+        <div className="sidenav__user-welcome">
           Hola, User
         </div>
       </div>
