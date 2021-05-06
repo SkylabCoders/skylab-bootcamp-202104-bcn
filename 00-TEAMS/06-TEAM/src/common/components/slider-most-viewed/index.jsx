@@ -36,10 +36,8 @@ const SliderCarousel = ({
               myMovies[type].map((element) => <Slide className="slider__item" key={element.id}><img className="slider__img" src={`${baseImgUrl}${element.poster_path}`} alt="" /></Slide>)
             }
           </Slider>
-          <div className="buttons-container">
-            <ButtonBack className="buttons-container__backButton">&#60;</ButtonBack>
-            <ButtonNext className="buttons-container__nextButton">&#62;</ButtonNext>
-          </div>
+          <ButtonBack className="backButton">&#60;</ButtonBack>
+          <ButtonNext className="nextButton">&#62;</ButtonNext>
         </CarouselProvider>
       </Carousel>
 

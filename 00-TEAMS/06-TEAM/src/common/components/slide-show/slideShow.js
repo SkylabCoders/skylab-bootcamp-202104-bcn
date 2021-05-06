@@ -16,7 +16,6 @@ import './style.css';
 
 function SlideShow({ myMovies, dispatch }) {
   const baseImgUrl = 'https://image.tmdb.org/t/p/original';
-  console.log(myMovies);
 
   useEffect(() => {
     dispatch(loadMovies(TYPE_PARAMS.upcoming));
@@ -29,7 +28,7 @@ function SlideShow({ myMovies, dispatch }) {
     <CarouselProvider
       naturalSlideWidth={1000}
       naturalSlideHeight={650}
-      totalSlides={10}
+      totalSlides={6}
       visibleSlides={1}
       currentSlide={0}
       isPlaying="true"

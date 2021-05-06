@@ -31,21 +31,27 @@ export const Carousel = styled.div`
     }
   }
 
-  .buttons-container {
-    display: flex;
-    justify-content: space-between;
+  .backButton {
     min-height: 10px;
     margin: 0;
     top: 20%;
     -ms-transform: translateY(-50%);
     transform: translateY(-580%);
-
-    &__backButton,
-    &__nextButton {
-      font-size: 30px;
-      width: 30px;
-      opacity: 0.5;
-      height: 90px;
-    }
+    font-size: 30px;
+    width: 30px;
+    opacity: 0.5;
+    height: 90px;
+  }
+  
+  .nextButton {
+    min-height: 10px;
+    margin: 0;
+    top: 20%;
+    float: right;
+    transform: translateY(-580%);
+    font-size: 30px;
+    width: 30px;
+    opacity: 0.5;
+    height: 90px;
   }
 `;
