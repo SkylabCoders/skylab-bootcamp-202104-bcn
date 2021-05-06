@@ -1,11 +1,32 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
-import * as actions from './actionCreators';
-import { loadArtworksFromApi, loadCategory } from './actionCreators';
+import {
+  loadCategoriesFromApi, loadArtworksFromApi, loadCategory, loadDetail, login, logout,
+} from './actionCreators';
 
 jest.mock('axios');
 
-// Test Anna
+describe('loadCategoriesFromApi function', () => {
+  test('should dispatch LOAD_ARTWORKS', async () => {
+    axios.mockResolvedValue({ data: { departments: { displayName: 'American Decorative Arts' } } });
+    const url = 'https://collectionapi.metmuseum.org/public/collection/v1/departments';
+    const dispatch = jest.fn();
+    await loadCategoriesFromApi(url)(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.LOAD_ARTWORKS,
+      artwork: { displayName: 'American Decorative Arts' },
+    });
+  });
+  test('should dispatch LOAD_ARTWORKS', async () => {
+    axios.mockResolvedValue();
+    const url = 'https://collectionapi.metmuseum.org/public/collection/v1/departments';
+    const dispatch = jest.fn();
+    await loadCategoriesFromApi(url)(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: 'LOAD_ERROR',
+    });
+  });
+});
 
 describe('loadArtworksFromApi function', () => {
   test('should dispatch LOAD_ARTWORKS', async () => {
@@ -19,7 +40,6 @@ describe('loadArtworksFromApi function', () => {
       artwork: 10,
     });
   });
-
   test('should dispatch LOAD_ERROR', async () => {
     axios.mockRejectedValue();
     const dispatch = jest.fn();
@@ -54,7 +74,7 @@ describe('loadDetail function', () => {
       type: actionTypes.LOAD_DETAIL,
       detail,
     };
-    expect(actions.loadDetail(detail)).toEqual(expectedAction);
+    expect(loadDetail(detail)).toEqual(expectedAction);
   });
 });
 
@@ -65,7 +85,7 @@ describe('login function', () => {
       type: actionTypes.AUTH_LOGIN,
       user,
     };
-    expect(actions.login(user)).toEqual(expectedAction);
+    expect(login(user)).toEqual(expectedAction);
   });
 });
 
@@ -74,6 +94,6 @@ describe('logout function', () => {
     const expectedAction = {
       type: actionTypes.AUTH_LOGOUT,
     };
-    expect(actions.logout()).toEqual(expectedAction);
+    expect(logout()).toEqual(expectedAction);
   });
 });
