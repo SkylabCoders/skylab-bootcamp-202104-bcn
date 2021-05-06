@@ -38,14 +38,14 @@ describe('actions', () => {
   });
 
   test('should dispatch LOAD_ARTWORKS', async () => {
-    axios.mockResolvedValue({ data: 'hola' });
+    axios.mockResolvedValue({ data: { objectIDs: 10 } });
     const dispatch = jest.fn();
 
     await loadArtworksFromApi()(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.LOAD_ARTWORKS,
-      artwork: 'hola',
+      artwork: 10,
     });
   });
   test('should dispatch LOAD_ERROR', async () => {
