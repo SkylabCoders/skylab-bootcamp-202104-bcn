@@ -12,7 +12,7 @@ const ErrorMessage = ({ message, dispatch }) => {
     <div>
       <div className="error__text">
         <h3>Something went wrong</h3>
-        <p>{message ? `${JSON.stringify(message)}` : 'nada'}</p>
+        <p>{message && `${JSON.stringify(message)}`}</p>
       </div>
       <div className="error__action">
         <button type="button" onClick={handleClick}>X</button>
