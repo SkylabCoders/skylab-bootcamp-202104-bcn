@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './addToCartButton.css';
 
 const AddToCartButton = ({ product }) => (
-  <button type="button">
+  <button type="button" className="addToCartButton">
     Add
     {' '}
     {product.name}
