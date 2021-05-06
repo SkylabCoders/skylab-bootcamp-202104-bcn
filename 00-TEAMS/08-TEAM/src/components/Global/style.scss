@@ -43,21 +43,23 @@
         justify-content: center;
         margin-bottom: 50px;
         flex-wrap: wrap;
-        margin: 30px;
 
         .continent-card {
             padding: 50px;
             background-color: #3D5566;
-            .card-name {
+            
+            &__name {
                 font-weight: bolder;
                 font-size: 20px;
                 margin-bottom: 10px;
             }
-
+            &__entry {
+                font-weight: bolder; 
+            }
+            &__data {
+                font-weight: normal;
+            }
         }
-
-        
-
     }
 
 
