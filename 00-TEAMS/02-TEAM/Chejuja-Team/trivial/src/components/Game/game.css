@@ -69,4 +69,12 @@
   height: 10vh;
   background-color: yellow;
 }
+
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
 /*# sourceMappingURL=game.css.map */

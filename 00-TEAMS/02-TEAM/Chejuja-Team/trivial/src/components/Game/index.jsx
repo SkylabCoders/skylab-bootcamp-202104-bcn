@@ -2,48 +2,113 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import {
+  useParams,
+  useHistory // Route
+} from 'react-router-dom';
 import { connect } from 'react-redux';
+import { loadRanking } from '../../redux/actions/actionCreators';
 import './game.css';
 
-function Game({ game }) {
+let correctAnswers = 0;
+let incorrectAnswers = 0;
+
+function Game({ game, dispatch, auth }) {
+  const history = useHistory();
+  let { currentQuestion } = (useParams());
+  currentQuestion = parseInt(currentQuestion, 10) + 1;
   function decodeHtml(html) {
     const txt = document.createElement('textarea');
     txt.innerHTML = html;
     return txt.value;
   }
-  function isCorrectAnswer(givenAnswer) {
-    return (givenAnswer === game[0][0].correct_answer);
+  function resetButtons() {
+    Array.from(document.getElementsByClassName('answer-box__answer')).forEach((element) => {
+      // eslint-disable-next-line no-param-reassign
+      element.className = 'answer-box__answer';
+    });
+  }
+
+  function isCorrectAnswer(givenAnswer, index) {
+    if (givenAnswer === game[0][currentQuestion].correct_answer) {
+      const correctAnswer = document.getElementById(index);
+      correctAnswer.className = 'answer-box__answer correct';
+      correctAnswers += 1;
+    } else {
+      const incorrectAnswer = document.getElementById(index);
+      incorrectAnswer.className = 'answer-box__answer incorrect';
+      incorrectAnswers += 1;
+    }
+    setTimeout(() => {
+      resetButtons();
+      if (currentQuestion < 9) {
+        history.push(`${currentQuestion}`);
+      } else {
+        debugger;
+        dispatch(loadRanking(auth, correctAnswers, incorrectAnswers));
+        history.replace('/Ranking');
+      }
+    }, 3000);
   }
   let shuffledAnswers = [];
   if (game.length) {
-    const answers = [...game[0][0].incorrect_answers, game[0][0].correct_answer];
+    const answers = [...game[0][currentQuestion].incorrect_answers,
+      game[0][currentQuestion].correct_answer];
     // eslint-disable-next-line no-unused-vars
     shuffledAnswers = answers.sort((a, b) => 0.5 - Math.random());
   }
   return (
     <main className="game-window">
       <div className="game-window__question">
-        {game.length ? <p>{decodeHtml(game[0][0].question)}</p> : <p>Cargando</p>}
+        {game.length ? <p>{decodeHtml(game[0][currentQuestion].question)}</p> : <p>Cargando</p>}
       </div>
       <div className="answer-box">
         {
-          shuffledAnswers.map((answer) => (
-            <button type="button" className="answer-box__answer" onClick={() => isCorrectAnswer(answer)}>
+          shuffledAnswers.map((answer, index) => (
+            <button id={index} type="button" className="answer-box__answer" onClick={() => isCorrectAnswer(answer, index)}>
               {game.length ? <p>{decodeHtml(answer)}</p> : <p>Cargando</p>}
             </button>
           ))
         }
-
+      </div>
+      <div className="game-window__info">
+        <span>
+          {' '}
+          Correct:
+          {' '}
+          {`${correctAnswers}`}
+        </span>
+        <span>
+          {' '}
+          Incorrect:
+          {' '}
+          {`${incorrectAnswers}`}
+        </span>
+        <span>
+          {' '}
+          Current Question:
+          {' '}
+          {`${currentQuestion}/10`}
+        </span>
       </div>
     </main>
   );
 }
 Game.propTypes = {
-  game: PropTypes.shape([]).isRequired
+  dispatch: PropTypes.func.isRequired,
+  game: PropTypes.shape([]).isRequired,
+  auth: PropTypes.shape({
+    isLoggedIn: PropTypes.bool.isRequired,
+    user: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired
+    })
+  }).isRequired
 };
 
-function mapStateToProps(store) {
+function mapStateToProps(store, { auth }) {
   return {
+    auth,
     game: store.gameData
   };
 }

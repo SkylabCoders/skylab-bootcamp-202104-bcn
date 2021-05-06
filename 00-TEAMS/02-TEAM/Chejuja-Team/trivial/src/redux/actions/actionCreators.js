@@ -23,3 +23,13 @@ export function logout() {
     type: actionTypes.AUTH_LOGOUT
   };
 }
+export function loadRanking(user, correct, incorrect) {
+  return {
+    type: actionTypes.LOAD_RANKING,
+    score: {
+      player: user,
+      correctAnswers: correct,
+      incorrectAnswers: incorrect
+    }
+  };
+}
