@@ -24,3 +24,12 @@ export function logout() {
     type: actionTypes.AUTH_LOGOUT
   };
 }
+
+export function getFilmById(movieId) {
+  const movies = movies.find((current) => current.id === +movieId);
+
+  return {
+    type: actionTypes.LOAD_MOVIE,
+    movie
+  };
+}

@@ -6,6 +6,7 @@ import {
   ButtonBack,
   ButtonNext
 } from 'pure-react-carousel';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { connect } from 'react-redux';
@@ -33,7 +34,11 @@ const SliderCarousel = ({
         >
           <Slider className="slider">
             {
-              myMovies[type].map((element) => <Slide className="slider__item" key={element.id}><img className="slider__img" src={`${baseImgUrl}${element.poster_path}`} alt="" /></Slide>)
+              myMovies[type].map((element) => (
+                <Slide className="slider__item" key={element.id}>
+                  <img className="slider__img" src={`${baseImgUrl}${element.poster_path}`} alt="" />
+                </Slide>
+              ))
             }
           </Slider>
           <div className="buttons-container">
