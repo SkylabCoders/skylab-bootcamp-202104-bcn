@@ -23,11 +23,11 @@ const Products = ({ products, dispatch }) => {
   return (
     selectedProduct
       ? (
-        <section className="product">
-          <div className="product__image">
+        <section className="product-details">
+          <div className="product-details__image">
             <img src={selectedProduct.img.hdUrl} alt={selectedProduct.name} />
           </div>
-          <div className="product__info">
+          <div className="product-details__info">
             <h2 className="product__title">{selectedProduct.name}</h2>
             <p className="product__category">
               Category:
