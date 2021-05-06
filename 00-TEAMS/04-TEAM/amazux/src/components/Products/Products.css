@@ -31,4 +31,8 @@
   font-size: 20px;
   font-weight: bold;
 }
+
+.product__info .product__sku {
+  font-size: 8px;
+}
 /*# sourceMappingURL=Products.css.map */

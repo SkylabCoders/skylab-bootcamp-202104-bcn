@@ -52,6 +52,11 @@ const Products = ({ products, dispatch }) => {
                 Repellat possimus velit accusamus ea soluta.
               </span>
             </p>
+            <p className="product__sku">
+              SKU:
+              {' '}
+              {selectedProduct._id}
+            </p>
           </div>
         </section>
       ) : <Loader />
