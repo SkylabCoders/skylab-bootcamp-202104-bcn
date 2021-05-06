@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 
 const Products = () => {
   const { id } = useParams();
@@ -15,10 +14,6 @@ const Products = () => {
       </h3>
     </section>
   );
-};
-
-Products.propTypes = {
-
 };
 
 export default Products;
