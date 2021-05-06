@@ -41,27 +41,29 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
   return (
     <>
       <section className="country-section">
-        <h1>{country}</h1>
-        <ul>
-          {myCountryStats.map((value) => (
-            <li key={`${value}`}>
-              {value}
-            </li>
-          ))}
-        </ul>
-        <h1>
-          Vaccines
-          {' '}
+        <div className="country-section__data">
+          <h1>{country}</h1>
+          <ul>
+            {myCountryStats.map((value) => (
+              <li key={`${value}`}>
+                {value}
+              </li>
+            ))}
+          </ul>
+          <h1>
+            Vaccines
+            {' '}
 
-        </h1>
-        <ul>
-          {myCountryVaccineStats.map((value) => (
-            <li key={`${value}`}>
-              {value}
-            </li>
-          ))}
-        </ul>
-        <FavoriteButton />
+          </h1>
+          <ul>
+            {myCountryVaccineStats.map((value) => (
+              <li key={`${value}`}>
+                {value}
+              </li>
+            ))}
+          </ul>
+          <FavoriteButton />
+        </div>
         <HistoryGraph />
       </section>
     </>
