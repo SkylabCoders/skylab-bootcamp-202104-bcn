@@ -126,3 +126,10 @@ export const logout = () => (
     type: actionTypes.AUTH_LOGOUT
   }
 );
+
+export const addCountryToFav = ([country, cases]) => {
+  dispatch({
+    type: actionTypes.ADD_FAV,
+    data: [country, cases]
+  });
+};
