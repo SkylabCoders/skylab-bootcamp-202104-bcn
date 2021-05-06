@@ -9,7 +9,7 @@ function Header() {
           <span />
         </div>
         <ul className="header-list">
-          <li>Name</li>
+          <li>Username</li>
           <li />
           <li>Logout</li>
         </ul>

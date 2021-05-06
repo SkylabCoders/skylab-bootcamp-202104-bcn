@@ -2,7 +2,7 @@
 import React from 'react';
 import { unmountComponentAtNode } from 'react-dom';
 import { render, screen } from './test-utils';
-import Form from '.';
+import Form from './index';
 
 let container = null;
 beforeEach(() => {
@@ -20,7 +20,7 @@ describe('Form Component', () => {
   test('should contain title Form', () => {
     render(<Form />, container);
 
-    expect(screen.getByText(/form/i)).toBeTruthy();
+    expect(screen.getByText(/Dreamlist Questions/i)).toBeTruthy();
   });
   test('should exist select html element', () => {
     render(<Form />, container);

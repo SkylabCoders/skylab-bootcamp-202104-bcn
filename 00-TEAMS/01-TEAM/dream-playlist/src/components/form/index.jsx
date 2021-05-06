@@ -1,13 +1,13 @@
 import React from 'react';
 import './index-form.css';
-import Dropdown from './dropdown';
+import Dropdown from './Dropdown';
 import DROPDOWNDATA from '../../assets/dropdown.mock';
 
 function Form() {
   return (
     <>
       <header>
-        <h1>Form</h1>
+        <h1>Dreamlist Questions</h1>
       </header>
       <div className="formContainer">
         <form>

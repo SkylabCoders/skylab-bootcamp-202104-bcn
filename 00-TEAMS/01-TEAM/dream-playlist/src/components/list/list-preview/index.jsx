@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {
   getToken, getUserData, loadPlaylists, loadSongsfromPlaylist
 } from '../../../redux/actions/actionCreator';
-import Header from '../../header';
+import Header from '../../Header';
 import './list-preview.css';
 
 function ListPreview({
