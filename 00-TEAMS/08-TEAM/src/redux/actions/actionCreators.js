@@ -127,9 +127,17 @@ export const logout = () => (
   }
 );
 
-export const addCountryToFav = ([country, cases]) => {
-  dispatch({
+export function addCountryToFav(country, cases) {
+  return {
     type: actionTypes.ADD_FAV,
-    data: [country, cases]
-  });
-};
+    country,
+    cases
+  };
+}
+
+export function deleteFavCountry(country) {
+  return {
+    type: actionTypes.DELETE_FAV,
+    country
+  };
+}
