@@ -10,8 +10,8 @@ import Advices from './components/Advices';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Country from './components/Country';
+import Footer from './components/Footer';
 
-// TODO Move Credentials to .env //
 function App() {
   return (
     <Auth0Provider
@@ -21,16 +21,8 @@ function App() {
     >
       <Provider store={store}>
         <BrowserRouter>
-          {/* <script src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="https://www.google.com/jsapi"></script>
-<script>
-  google.charts.load('current', {packages: ['corechart']});
-  google.charts.setOnLoadCallback(drawChart);
-  ...
-</script> */}
-
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" />
           <header>
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" />
             <Header />
           </header>
           <main>
@@ -43,6 +35,7 @@ function App() {
               <Route path="/country/:country" component={Country} />
             </Switch>
           </main>
+          <Footer />
         </BrowserRouter>
       </Provider>
     </Auth0Provider>
