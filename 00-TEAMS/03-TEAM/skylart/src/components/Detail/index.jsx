@@ -92,7 +92,6 @@ function Detail({ dispatch, category, detail }) {
       <ul>
         <li>imatges</li>
       </ul>
-      <Footer />
     </>
   );
 }
