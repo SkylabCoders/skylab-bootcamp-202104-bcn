@@ -41,5 +41,4 @@ function App() {
     </Auth0Provider>
   );
 }
-
 export default App;
