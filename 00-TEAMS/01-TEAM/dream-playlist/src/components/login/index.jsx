@@ -5,10 +5,12 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { useAuth0 } from '@auth0/auth0-react';
-import { login, getToken } from '../../redux/actions/actionCreator';
+import { login, getToken, getUserData } from '../../redux/actions/actionCreator';
 import './login.css';
 
-function LogIn({ auth, actions, token }) {
+function LogIn({
+  auth, actions, token, spotifyUser
+}) {
   const {
     loginWithRedirect,
     logout,
@@ -17,6 +19,7 @@ function LogIn({ auth, actions, token }) {
   } = useAuth0();
 
   const [currentToken, setCurrentToken] = useState(token);
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -31,12 +34,23 @@ function LogIn({ auth, actions, token }) {
 
   if (currentToken === false && token) setCurrentToken(token);
 
+  useEffect(() => {
+    if (token && auth) {
+      actions.getUserData(currentToken, auth?.user?.sub);
+    }
+  }, [currentToken]);
+
+  if (currentUser === null && token && spotifyUser) {
+    setCurrentUser(spotifyUser);
+  }
+
   const loggedInTemplate = () => (
     <>
       <p className="loginMessage">
         Welcome,
         {' '}
         {auth?.user?.name}
+        {console.log(spotifyUser)}
       </p>
       <button id="auth-button" type="button" onClick={() => logout(isAuthenticated, user)}>Log out</button>
     </>
@@ -70,25 +84,31 @@ LogIn.propTypes = {
     })
   }).isRequired,
   token: PropTypes.string.isRequired,
+  spotifyUser: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    display_name: PropTypes.string
+  }).isRequired,
 
   actions: PropTypes.shape({
     login: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired,
-    getToken: PropTypes.func.isRequired
+    getToken: PropTypes.func.isRequired,
+    getUserData: PropTypes.func.isRequired
   }).isRequired
 };
 
-function mapStateToProps({ auth, token }) {
+function mapStateToProps({ auth, token, user }) {
   return {
     auth,
-    token
+    token,
+    spotifyUser: user
   };
 }
 
 function mapDispatchStateToProps(dispatch) {
   return {
     actions: bindActionCreators(
-      { login, getToken },
+      { login, getToken, getUserData },
       dispatch
     )
   };
