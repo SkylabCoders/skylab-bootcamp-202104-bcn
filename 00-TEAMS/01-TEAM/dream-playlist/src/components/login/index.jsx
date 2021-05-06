@@ -15,13 +15,17 @@ function LogIn({ auth, actions }) {
 
   useEffect(() => {
     if (isAuthenticated) {
-      actions.login();
+      actions.login(user);
     }
   }, [isAuthenticated, user]);
 
   const loggedInTemplate = () => (
     <>
-      <p>Welcome User</p>
+      <p>
+        Welcome
+        {' '}
+        {auth?.user?.name}
+      </p>
       <button type="button" onClick={() => logout(isAuthenticated, user)}>Log out</button>
     </>
   );
@@ -43,7 +47,10 @@ function LogIn({ auth, actions }) {
 
 LogIn.propTypes = {
   auth: PropTypes.shape({
-    isLoggedIn: PropTypes.bool.isRequired
+    isLoggedIn: PropTypes.bool.isRequired,
+    user: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    })
   }).isRequired,
 
   actions: PropTypes.shape({
