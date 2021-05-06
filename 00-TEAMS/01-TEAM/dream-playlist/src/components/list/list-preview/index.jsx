@@ -21,8 +21,6 @@ function ListPreview({
 
   useEffect(() => {
     if (token && auth) {
-      // eslint-disable-next-line no-debugger
-      debugger;
       dispatch(getUserData(currentToken, auth?.user?.sub));
     }
   }, [currentToken]);
@@ -49,7 +47,6 @@ function ListPreview({
           This is the List of
           {' '}
           {user?.display_name}
-          {console.log(user)}
         </h1>
       </div>
       <div className="containerListSongs">
