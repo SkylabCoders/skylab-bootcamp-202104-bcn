@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { React, useState, useEffect } from 'react';
+import { React, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import './style.scss';
@@ -8,42 +8,60 @@ import { loadCountryHistory } from '../../redux/actions/actionCreators';
 
 const HistoryGraph = ({ countryHistoryData, dispatch }) => {
   useEffect(() => {
-    dispatch(loadCountryHistory('Spain', 'deaths'));
+    dispatch(loadCountryHistory('Germany', 'confirmed'));
   }, []);
 
-  const [state] = useState(
-    {
-      labels: ['January', 'February', 'March',
-        'April', 'May'],
-      datasets: [
-        {
-          label: 'Rainfall',
-          fill: false,
-          lineTension: 0.1,
-          backgroundColor: 'rgba(255, 255, 255, 1)',
-          borderColor: 'rgba(255,255,255,1)',
-          borderWidth: 2,
-          data: [65, 59, 50, 80, 81, 56]
-        }
-      ]
-    }
-  );
+  // const last30DaysData = Object.values(countryHistoryData).reverse();
 
   console.log(countryHistoryData);
 
   return (
     <section className="global-graphs">
       <Line
-        data={state}
+        data={{
+          labels: [...countryHistoryData],
+          datasets: [
+            {
+              label: 'Deaths',
+              data: [...countryHistoryData],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+            }
+
+          ]
+        }}
+        height={400}
+        width={600}
         options={{
-          title: {
-            display: true,
-            text: 'Average Rainfall per month',
-            fontSize: 20
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true
+                }
+              }
+            ]
           },
           legend: {
-            display: true,
-            position: 'right'
+            labels: {
+              fontSize: 25
+            }
           }
         }}
       />
@@ -58,7 +76,7 @@ HistoryGraph.propTypes = {
 
 const mapStateToProps = ({ countryHistoryData, dispatch }) => (
   {
-    countryHistoryData,
+    countryHistoryData: Object.values(countryHistoryData).reverse(),
     dispatch
   }
 );
