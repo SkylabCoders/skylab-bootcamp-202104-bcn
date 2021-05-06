@@ -30,7 +30,6 @@ const Login = () => {
   return (
     <>
       <div className="login">
-        <h3>This is Login</h3>
         {isAuthenticated
           ? loggOutTemplate()
           : loggInTemplate()}
