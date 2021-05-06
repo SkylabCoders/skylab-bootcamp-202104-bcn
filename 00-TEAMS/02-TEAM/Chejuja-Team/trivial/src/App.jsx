@@ -30,7 +30,7 @@ function App() {
             <div className="main-window">
               <Route path="/" exact component={WelcomeRules} />
               <Route path="/game-mode" exact component={GameMode} />
-              <Route path="/play" exact component={Game} />
+              <Route path="/play/:currentQuestion" exact component={Game} />
               <Route path="/log-in" exact component={Login} />
               <Route path="/info" exact component={Aboutus} />
               <Route path="/Ranking" exact component={Ranking} />
