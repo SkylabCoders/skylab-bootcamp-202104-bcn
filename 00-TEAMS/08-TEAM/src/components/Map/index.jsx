@@ -15,7 +15,7 @@ const Map = ({ vaccinesContinentData, dispatch }) => {
           data={vaccinesContinentData}
           options={{
             resolution: 'continents',
-            colors: ['#FAB06C', '#2d6a4f'],
+            colors: ['#CCDBDC', '#007EA7'],
             backgroundColor: 'transparent',
             legend: 'none'
           }}
