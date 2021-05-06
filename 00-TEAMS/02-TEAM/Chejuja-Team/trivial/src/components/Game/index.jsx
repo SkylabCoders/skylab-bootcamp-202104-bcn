@@ -18,7 +18,12 @@ function Game({ game }) {
     txt.innerHTML = html;
     return txt.value;
   }
+  function disableButtons() {
+    const buttons = document.getElementsByTagName('button');
+    console.log(buttons);
+  }
   function isCorrectAnswer(givenAnswer, index) {
+    disableButtons();
     if (givenAnswer === game[0][currentQuestion].correct_answer) {
       const correctAnswer = document.getElementById(index);
       correctAnswer.className = 'answer-box__answer correct';
