@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import {
@@ -22,7 +21,6 @@ describe('<ErrorMessage/>', () => {
   test('should call deleteError actionCreator', () => {
     const { getAllByRole } = render(<ErrorMessage message="Hola Josep" />);
     const btn = getAllByRole('button')[0];
-    // console.log(btn);
     fireEvent.click(btn);
     expect(deleteError).toHaveBeenCalled();
   });
