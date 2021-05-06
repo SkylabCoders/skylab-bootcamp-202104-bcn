@@ -19,7 +19,7 @@ function App() {
       clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin}
     >
-      <Provider store={configureStore}>
+      <Provider store={configureStore()}>
         <BrowserRouter>
           <Header />
           <Switch>
