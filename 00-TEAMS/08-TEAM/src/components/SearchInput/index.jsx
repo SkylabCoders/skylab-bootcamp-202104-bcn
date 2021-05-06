@@ -10,7 +10,7 @@ function SearchInput() {
 
   return (
     <>
-      <form>
+      <form className="form-container">
         <label htmlFor="search-input">
           <input
             id="search-input"

@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 import SearchInput from '../SearchInput';
 import './style.scss';
 
@@ -17,7 +18,9 @@ const MySavedPlaces = ({ favoriteCountry }) => {
         <div className="countriesSaved-cointainer">
           <ul>
             { favoriteCountry.map((element) => (
-              <li>{element}</li>
+              <Link to={`/country/${element}`}>
+                <li>{element}</li>
+              </Link>
             ))}
             {' '}
 
