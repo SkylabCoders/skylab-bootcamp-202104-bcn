@@ -1,6 +1,5 @@
 .header-container{
     display: flex;
-    justify-content: flex-start;
     align-items: center ;
 }
 
@@ -24,23 +23,23 @@
 
 .change-container{
     display: flex;
-    padding-bottom: 1em;
     justify-content: center;
-    margin-right: 17em;
-   
+    
     &__item{
         border-style: none;
         border-radius: 20px;
         background-color: yellow;
         width: 15%;
         height: 5vh;
-        margin-left: 8em;
+        margin-right: 9%;
     }
 }
 
 .main-container{
     background-color: gray;
     border-radius: 20px;
+    padding-bottom: 1%;
+    margin-top: 2%;
 
     &__title{
         margin-left: 5%;
@@ -50,29 +49,17 @@
 
 .wishlist-container{
     border-radius: 20px;
-    padding: 3%;
-    background-color: gray;
-    height: 25vh;
-
+    
     &__tablerow{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5%;
-        
+        padding: 1%;
         border-radius: 20px;
         background-color: black;
-        margin-top: 1%;
         width: 65%;
+        margin-top: 2%;
+        margin-bottom: 2%; 
     }
 
-    &__tabledata{
-        display: flex;
-        justify-content: center;
-        margin-top: 1%;
-        align-items: center;
-        
-    }
     &__button{
         border-style: none;
         border-radius: 20px;
@@ -87,18 +74,28 @@
  justify-content: space-between;
 
     &__button{
-        margin-top: 5%;
+        margin-top: 7%;
         border-radius: 20px;
         border-style: none;
         background-color: gray;
+        height: 3em;
 
-        &--big{
-            margin-top: 2%;
+        &--back{
+            margin-top: 2em;
+            width: 6em;
+            height: 4vh;
             border-style: none;
             background-color: gray;
             border-radius: 20px;
-            height: 7vh;
-            width: 10vw;
+        }
+        
+        &--big{
+            margin-top: 1em;
+            border-style: none;
+            background-color: gray;
+            border-radius: 20px;
+            height: 8vh;
+            width:  10em;
         }
     }
 }

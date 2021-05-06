@@ -1,3 +1,5 @@
+import avataTest from '../../../Images/polismassa.png';
+
 const USERS = [
   {
     email: 'admin@admin.com',
@@ -10,7 +12,46 @@ const USERS = [
       planet: 'Naboo',
       starship: 'Death Star',
       price: 0
-    }]
+    },
+    {
+      id: 1,
+      planet: 'Blabla',
+      starship: 'Tie',
+      price: 100
+    },
+    {
+      id: 2,
+      planet: 'Namekuzen',
+      starship: 'capsule',
+      price: 100
+    }
+    ]
+  },
+  {
+    email: 'emerson@admin.com',
+    username: 'emerson',
+    password: 'xxxxx',
+    faction: 'DARK',
+    avatar: avataTest,
+    wishlist: [{
+      id: 0,
+      planet: 'Naboo',
+      starship: 'Death Star',
+      price: 0
+    },
+    {
+      id: 1,
+      planet: 'Blabla',
+      starship: 'Tie',
+      price: 100
+    },
+    {
+      id: 2,
+      planet: 'Namekuzen',
+      starship: 'capsule',
+      price: 100
+    }
+    ]
   }
 ];
 

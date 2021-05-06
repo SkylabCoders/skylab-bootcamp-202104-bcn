@@ -2,10 +2,11 @@ import React from 'react';
 import './style/style.css';
 import USERS from '../../redux/store/userList';
 
-const { username, avatar, wishlist } = USERS[0];
-const { planet, starship, price } = wishlist[0];
-
 function WishList() {
+  const currentUser = USERS.find((user) => user.username === 'emerson');
+  const currentWishlist = currentUser.wishlist;
+  const { username, avatar } = currentUser;
+
   return (
     <div>
       <div className="header-container">
@@ -20,46 +21,22 @@ function WishList() {
       </div>
       <div className="main-container">
         <h3 className="main-container__title">Wishlist</h3>
-        <div className="wishlist-container">
-          <tr className="wishlist-container__tablerow">
-            <td className="wishlist-container__tabledata">
-              {planet}
-            </td>
-            <td>{starship}</td>
-            <td>
-              {price}
-              {' '}
-              <button type="button" className="wishlist-container__button">modify</button>
-              {' '}
-              <button type="button" className="wishlist-container__button">delete</button>
-            </td>
-          </tr>
-          <tr className="wishlist-container__tablerow">
-            <td>planet</td>
-            <td>starship</td>
-            <td>
-              price
-              {' '}
-              <button type="button" className="wishlist-container__button">modify</button>
-              {' '}
-              <button type="button" className="wishlist-container__button">delete</button>
-            </td>
-          </tr>
-          <tr className="wishlist-container__tablerow">
-            <td>planet</td>
-            <td>starship</td>
-            <td>
-              price
-              {' '}
-              <button type="button" className="wishlist-container__button">modify</button>
-              {' '}
-              <button type="button" className="wishlist-container__button">delete</button>
-            </td>
-          </tr>
-        </div>
+        <div className="wishlist-container" />
+        {
+            currentWishlist.map((item) => (
+              <tr className="wishlist-container__tablerow">
+                <td className="wishlist-container__tabledata">
+                  {`${item.planet} ${item.starship} ${item.price}`}
+                  {' '}
+                  <button type="button" className="wishlist-container__button">modify</button>
+                  <button type="button" className="wishlist-container__button">delete</button>
+                </td>
+              </tr>
+            ))
+        }
       </div>
       <div className="footer-container">
-        <button type="button" className="footer-container__button">Back</button>
+        <button type="button" className="footer-container__button--back">Back</button>
         <button type="button" className="footer-container__button--big">Reset Profile</button>
       </div>
     </div>
