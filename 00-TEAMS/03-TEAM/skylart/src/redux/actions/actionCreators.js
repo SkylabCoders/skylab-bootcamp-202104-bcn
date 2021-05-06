@@ -35,12 +35,18 @@ export function loadArtworksFromApi(categoryId) {
 
 export function loadCategory(artworkId) {
   return async (dispatch) => {
-    const { data } = await axios(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artworkId}`);
-    dispatch({
-      type: actionTypes.LOAD_CATEGORY,
-      detail: data,
-      artworkId,
-    });
+    try {
+      const { data } = await axios(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artworkId}`);
+      dispatch({
+        type: actionTypes.LOAD_CATEGORY,
+        detail: data,
+        artworkId,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'LOAD_ERROR',
+      });
+    }
   };
 }
 
