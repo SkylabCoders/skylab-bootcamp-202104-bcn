@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import loginReducer from './authReducer';
 import countryReducer from './CountryReducer';
+import favoriteReducer from './favoriteReducer';
 import globalDataReducers from './GlobalDataReducer';
 import vaccineByCountryReducer from './VaccinesByCountryReducer';
 import vaccinesByContinentReducer from './VaccinesByContinentReducer';
@@ -13,7 +14,8 @@ const rootReducers = combineReducers({
   countryData: countryReducer,
   vaccineByCountryData: vaccineByCountryReducer,
   vaccinesByContinent: vaccinesByContinentReducer,
-  auth: loginReducer
+  auth: loginReducer,
+  favoriteCounty: favoriteReducer
 });
 
 export default rootReducers;
