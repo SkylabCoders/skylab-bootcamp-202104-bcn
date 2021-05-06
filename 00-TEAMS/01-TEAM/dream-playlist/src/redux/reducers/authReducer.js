@@ -5,13 +5,15 @@ function reducer(auth = {}, action) {
     case actionTypes.AUTH_LOGIN:
       return ({
         ...auth,
-        isLoggedIn: true
+        isLoggedIn: true,
+        user: action.user
       });
 
     case actionTypes.AUTH_LOGOUT:
       return ({
         ...auth,
-        isLoggedIn: false
+        isLoggedIn: false,
+        user: null
       });
 
     default:
