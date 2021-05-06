@@ -30,7 +30,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 30px;
+    margin: 30px 30px 10px 30px;
     width: 35vw;
     height: 25vh;
 }
@@ -57,4 +57,7 @@
 
 .incorrect {
     background-color: #e63946;
+}
+.game-window__info {
+    color: #e63946;
 }
