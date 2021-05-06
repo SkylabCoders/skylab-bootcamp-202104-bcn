@@ -1,10 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
-import React, { useParams } from 'react';
-import axios from 'axios';
+import React from 'react';
 import Category from './index';
 import { render, screen } from '../../utils/test-utils';
-
-jest.mock('axios');
 
 describe('For a Category component', () => {
   test('should contain <img> ', () => {
