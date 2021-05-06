@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { loadArtworksFromApi, loadCategory } from '../../redux/actions/actionCreators';
 import Footer from '../Common/Footer';
@@ -18,12 +19,14 @@ function Category({ dispatch, artworks, category }) {
   return (
     <>
       <ul className="category">
-        {category.length && category?.map((individualDetail) => (
+        {category.length && category.map((individualDetail) => (
           <li className="category__item">
-            <img
-              src={individualDetail.primaryImageSmall}
-              alt={individualDetail.primaryImageSmall}
-            />
+            <Link to={`/detail/${individualDetail.objectID}`}>
+              <img
+                src={individualDetail.primaryImageSmall}
+                alt={individualDetail.primaryImageSmall}
+              />
+            </Link>
           </li>
         ))}
       </ul>
