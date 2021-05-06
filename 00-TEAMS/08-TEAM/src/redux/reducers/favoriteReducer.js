@@ -1,10 +1,12 @@
+/* eslint-disable no-debugger */
 import actionTypes from '../actions/actionTypes';
 
 function favoriteReducer(initialFavData = [], action) {
   let updatedFavData = [...initialFavData];
+
   switch (action.type) {
     case actionTypes.ADD_FAV:
-      updatedFavData = [...action.data];
+      updatedFavData = [...updatedFavData, action.data];
       break;
     case actionTypes.DELETE_FAV:
       updatedFavData.filter((country) => country !== action.country);
