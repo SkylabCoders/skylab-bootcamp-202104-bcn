@@ -1,5 +1,6 @@
 import detailReducer from './detailReducer';
 import authReducer from './authReducer';
+import artworksReducer from './artworksReducer';
 import actionTypes from '../actions/actionTypes';
 
 describe('Given a detail Reducer', () => {
@@ -37,6 +38,31 @@ describe('Given a auth Reducer', () => {
         isLoggedIn: false,
         user: null,
       });
+    });
+  });
+});
+
+describe('Given a artworks Reducer', () => {
+  describe('With Action Type LOAD_ARTWORKS', () => {
+    test('Should return ArtWorkName', () => {
+      expect(artworksReducer({}, {
+        type: actionTypes.LOAD_ARTWORKS,
+        artwork: [12345, 39025, 33641],
+      })).toEqual(
+        [12345, 39025, 33641],
+      );
+    });
+  });
+});
+
+describe('Given a category Reducer', () => {
+  describe('With Action Type LOAD_CATEGORY', () => {
+    test('Should return new category array', () => {
+      expect(artworksReducer([{ name: 'Anna' }, { name: 'Laura' }], {
+        type: actionTypes.LOAD_CATEGORY,
+        detail: { name: 'David' },
+      })).toEqual([{ name: 'Anna' }, { name: 'Laura' }],
+        [{ name: 'David' }]);
     });
   });
 });
