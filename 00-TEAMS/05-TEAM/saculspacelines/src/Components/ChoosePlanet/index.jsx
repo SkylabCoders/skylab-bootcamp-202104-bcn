@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { useAuth0 } from '@auth0/auth0-react';
 import { loadPlanets, setCurrentPlanet } from '../../redux/Actions/actionCreator';
 import PlanetDetail from '../PlanetDetail';
 
@@ -10,6 +11,8 @@ const ChoosePlanet = ({ dispatch, planets }) => {
   const pages = ['?page=1', '?page=2', '?page=3', '?page=4', '?page=5', '?page=6'];
   const [currentPlanet, setPlanet] = useState(null);
   const history = useHistory();
+
+  const { logout } = useAuth0();
 
   useEffect(() => {
     pages.forEach((page) => dispatch(loadPlanets(page)));
@@ -30,6 +33,7 @@ const ChoosePlanet = ({ dispatch, planets }) => {
 
   return (
     <div>
+      <button className="logout-button" type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
       <button
         type="button"
         onClick={handleSubmit}

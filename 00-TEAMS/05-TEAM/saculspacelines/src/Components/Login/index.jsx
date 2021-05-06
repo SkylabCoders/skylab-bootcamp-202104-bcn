@@ -1,5 +1,6 @@
 import React from 'react-dom';
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { useAuth0 } from '@auth0/auth0-react';
@@ -8,9 +9,11 @@ import { login } from '../../redux/Actions/actionCreator';
 import ChooseFaction from '../ChooseFaction';
 import './form.css';
 import starwarspolicyvideo from '../../Images/policy.mp4';
+import USERS from '../../redux/store/userList';
 
 const Login = ({ auth, actions }) => {
   const [thermsAccepted, setThermsAccepted] = useState(false);
+  const history = useHistory();
 
   const {
     loginWithRedirect,
@@ -31,8 +34,17 @@ const Login = ({ auth, actions }) => {
 
   const loggedInTemplate = () => (
     <>
-      <ChooseFaction />
-      <button className="logout-button" type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
+      {
+      !USERS
+        .some((userObject) => userObject.email.toLowerCase() === user.email.toLowerCase())
+        ? (
+          <>
+            <ChooseFaction />
+            <button className="logout-button" type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
+          </>
+        )
+        : history.push('/select-destiny')
+}
     </>
   );
 
