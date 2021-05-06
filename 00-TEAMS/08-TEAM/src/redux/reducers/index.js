@@ -3,6 +3,8 @@ import loginReducer from './authReducer';
 import countryReducer from './CountryReducer';
 import globalDataReducers from './GlobalDataReducer';
 import vaccineByCountryReducer from './VaccinesByCountryReducer';
+import vaccinesByContinentReducer from './VaccinesByContinentReducer';
+
 import VaccinesReducers from './vaccinesReducer';
 
 const rootReducers = combineReducers({
@@ -10,6 +12,7 @@ const rootReducers = combineReducers({
   vaccinesContinentData: VaccinesReducers,
   countryData: countryReducer,
   vaccineByCountryData: vaccineByCountryReducer,
+  vaccinesByContinentData: vaccinesByContinentReducer,
   auth: loginReducer
 });
 
