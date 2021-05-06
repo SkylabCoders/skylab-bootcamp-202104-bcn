@@ -26,12 +26,12 @@ export const loadCountry = (country) => async (dispatch) => {
     data: response.data.All
   });
 };
-export const loadCountryHistory = (country, status) => async (dispatch) => {
-  const url = `${URL}${historyUrl}?country=${country}&status=${status}`; // TODO VALIDACION DE INPUT CASES AND TEXT
+export const loadCountryHistory = (country) => async (dispatch) => {
+  const url = `${URL}${historyUrl}?country=${country}&status=confirmed`; // TODO VALIDACION DE INPUT CASES AND TEXT
   const response = await axios.get(url);
   dispatch({
     type: actionTypes.LOAD_COUNTRY_HISTORY,
-    data: response.data
+    data: response.data.All.dates
   });
 };
 
