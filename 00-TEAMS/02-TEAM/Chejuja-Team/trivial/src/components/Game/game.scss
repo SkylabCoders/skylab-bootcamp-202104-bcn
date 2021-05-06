@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     width: 50vw;
-    height: 50vh;
+    height: auto;
      
 } 
 .game-window__question {
@@ -46,6 +46,7 @@
     height: 10vh;
     background-color: #e9c46a;
     box-shadow: 0 9px #999;
+    cursor: pointer;
 }
 .answer-box__answer:active {
     box-shadow: 0 5px #666;
@@ -60,4 +61,5 @@
 }
 .game-window__info {
     color: #e63946;
+    padding-bottom: 5vh;
 }
