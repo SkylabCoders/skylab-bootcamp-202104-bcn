@@ -18,10 +18,9 @@ function Game({ game }) {
     txt.innerHTML = html;
     return txt.value;
   }
-  function disableButtons() {
-    const buttons = document.getElementsByTagName('button');
-    console.log(buttons);
-  }
+  // function disableButtons() {
+  //   const buttons = document.getElementsByTagName('button');
+  // }
   function isCorrectAnswer(givenAnswer, index) {
     disableButtons();
     if (givenAnswer === game[0][currentQuestion].correct_answer) {
