@@ -17,7 +17,6 @@ const Header = () => {
       <Link className="nav-element" to="/mysavedplaces">My Saved Places</Link>
       <Link className="nav-element" to="/advices">Advices</Link>
       <SearchInput />
-
       <Link className="nav-element" to="/login">
         { !isAuthenticated ? 'Login' : 'Logout'}
         <img className="user-avatar" src={userAvatar} alt="icon" />
