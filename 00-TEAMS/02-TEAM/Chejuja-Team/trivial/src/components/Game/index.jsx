@@ -40,8 +40,8 @@ function Game({ game }) {
   }
   let shuffledAnswers = [];
   if (game.length) {
-    // eslint-disable-next-line max-len
-    const answers = [...game[0][currentQuestion].incorrect_answers, game[0][currentQuestion].correct_answer];
+    const answers = [...game[0][currentQuestion].incorrect_answers,
+      game[0][currentQuestion].correct_answer];
     // eslint-disable-next-line no-unused-vars
     shuffledAnswers = answers.sort((a, b) => 0.5 - Math.random());
   }
