@@ -12,7 +12,7 @@ const rootReducers = combineReducers({
   vaccinesContinentData: VaccinesReducers,
   countryData: countryReducer,
   vaccineByCountryData: vaccineByCountryReducer,
-  vaccinesByContinentData: vaccinesByContinentReducer,
+  vaccinesByContinent: vaccinesByContinentReducer,
   auth: loginReducer
 });
 

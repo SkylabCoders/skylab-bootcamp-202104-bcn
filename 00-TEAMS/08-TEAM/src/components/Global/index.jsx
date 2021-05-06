@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import { loadGlobalData, loadVaccinesByContinent } from '../../redux/actions/actionCreators';
 import './style.scss';
 
-const Global = ({ globalData, vaccinesByContinentData, dispatch }) => {
+const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
   useEffect(() => {
     dispatch(loadGlobalData());
   }, []);
@@ -13,13 +13,7 @@ const Global = ({ globalData, vaccinesByContinentData, dispatch }) => {
     dispatch(loadVaccinesByContinent());
   }, []);
 
-  console.log({ globalData });
-  console.log({ vaccinesByContinentData });
-  // eslint-disable-next-line no-console
-  // console.log(vaccinesByContinentData);
-
-  // const entries = ['administered',
-  //   'people_vaccinated', 'people_partially_vaccinated', 'updated'];
+  const infoByContinent = Object.values(vaccinesByContinent);
 
   return (
     <>
@@ -30,6 +24,50 @@ const Global = ({ globalData, vaccinesByContinentData, dispatch }) => {
             <h3>Affected countries: 220</h3>
           </div>
         </div>
+        <section className="mainData">
+          <ul className="globalCards">
+            { globalData
+        && globalData.map(([element, value]) => (
+          <li key={element} className="total">
+            <p className="identifier">{element}</p>
+            <p className="number">{value}</p>
+          </li>
+        ))}
+          </ul>
+        </section>
+        <section className="vaccinatedByContinent">
+          <h2>Vaccinated by continents</h2>
+          <ul className="continent-cards">
+            { infoByContinent
+        && infoByContinent.map((country) => (
+          <li key={country} className="continent-card">
+            <p className="continent-card__name">{country[0].toUpperCase()}</p>
+            <p className="continent-card__entry">
+              Vaccinated:
+              <span className="continent-card__data">
+                {' '}
+                {country[1]}
+              </span>
+            </p>
+            <p className="continent-card__entry">
+              Partially Vaccinated:
+              <span className="continent-card__data">
+                {' '}
+                {country[2]}
+              </span>
+            </p>
+            <p className="continent-card__entry">
+              Updated
+              {' '}
+              <span className="continent-card__data">
+                {' '}
+                {country[3]}
+              </span>
+            </p>
+          </li>
+        ))}
+          </ul>
+        </section>
       </main>
     </>
   );
@@ -37,14 +75,14 @@ const Global = ({ globalData, vaccinesByContinentData, dispatch }) => {
 
 Global.propTypes = {
   globalData: PropTypes.shape([]).isRequired,
-  vaccinesByContinentData: PropTypes.shape([]).isRequired,
+  vaccinesByContinent: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
-const mapStateToProps = ({ globalData, vaccinesByContinentData }) => (
+const mapStateToProps = ({ globalData, vaccinesByContinent }) => (
   {
     globalData: Object.entries(globalData),
-    vaccinesByContinentData
+    vaccinesByContinent
   }
 );
 

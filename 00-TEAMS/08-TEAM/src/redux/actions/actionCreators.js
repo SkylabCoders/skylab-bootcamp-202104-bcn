@@ -58,7 +58,6 @@ export const loadVaccinesByContinent = (url = `${URL}${vaccinesUrl}`) => async (
     return segmentArraywithAmericas;
   };
   continents = getAmericasData(continents);
-  console.log({ continents });
   dispatch({
     type: actionTypes.LOAD_VACCINES_BY_CONTINENT,
     data: continents
