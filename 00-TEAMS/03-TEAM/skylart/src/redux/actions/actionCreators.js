@@ -3,21 +3,33 @@ import actionTypes from './actionTypes';
 
 export function loadCategoriesFromApi(url) {
   return async (dispatch) => {
-    const { data } = await axios(url);
-    dispatch({
-      type: actionTypes.LOAD_ARTWORKS,
-      artwork: data.departments,
-    });
+    try {
+      const { data } = await axios(url);
+      dispatch({
+        type: actionTypes.LOAD_ARTWORKS,
+        artwork: data.departments,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'LOAD_ERROR',
+      });
+    }
   };
 }
 
 export function loadArtworksFromApi(categoryId) {
   return async (dispatch) => {
-    const { data } = await axios(`https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=${categoryId}`);
-    dispatch({
-      type: actionTypes.LOAD_ARTWORKS,
-      artwork: data.objectIDs,
-    });
+    try {
+      const { data } = await axios(`https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=${categoryId}`);
+      dispatch({
+        type: actionTypes.LOAD_ARTWORKS,
+        artwork: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'LOAD_ERROR',
+      });
+    }
   };
 }
 
