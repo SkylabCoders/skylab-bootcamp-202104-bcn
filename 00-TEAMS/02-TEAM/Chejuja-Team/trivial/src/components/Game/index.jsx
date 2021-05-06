@@ -3,26 +3,29 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import {
-  Link,
-  useParams // Route
+  useParams,
+  useHistory // Route
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './game.css';
 
 function Game({ game }) {
+  const history = useHistory();
   let { currentQuestion } = (useParams());
-  // eslint-disable-next-line radix
-  currentQuestion = parseInt(currentQuestion) + 1;
+  currentQuestion = parseInt(currentQuestion, 10) + 1;
   function decodeHtml(html) {
     const txt = document.createElement('textarea');
     txt.innerHTML = html;
     return txt.value;
   }
-  // function disableButtons() {
-  //   const buttons = document.getElementsByTagName('button');
-  // }
+  function resetButtons() {
+    Array.from(document.getElementsByClassName('answer-box__answer')).forEach((element) => {
+      // eslint-disable-next-line no-param-reassign
+      element.className = 'answer-box__answer';
+    });
+  }
+
   function isCorrectAnswer(givenAnswer, index) {
-    disableButtons();
     if (givenAnswer === game[0][currentQuestion].correct_answer) {
       const correctAnswer = document.getElementById(index);
       correctAnswer.className = 'answer-box__answer correct';
@@ -30,6 +33,10 @@ function Game({ game }) {
       const incorrectAnswer = document.getElementById(index);
       incorrectAnswer.className = 'answer-box__answer incorrect';
     }
+    setTimeout(() => {
+      resetButtons();
+      history.push(`${currentQuestion}`);
+    }, 3000);
   }
   let shuffledAnswers = [];
   if (game.length) {
@@ -51,11 +58,6 @@ function Game({ game }) {
             </button>
           ))
         }
-      </div>
-      <div className="game-window__question-menu">
-        <Link to={`${currentQuestion}`}>
-          <button type="button">Next</button>
-        </Link>
       </div>
     </main>
   );
