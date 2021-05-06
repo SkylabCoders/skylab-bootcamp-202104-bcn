@@ -9,7 +9,6 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 // Import your own reducer
-import { BrowserRouter } from 'react-router-dom';
 import reducer from './redux/reducers/rootReducer';
 
 function render(

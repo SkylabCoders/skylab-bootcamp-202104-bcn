@@ -1,8 +1,9 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import GameMode from './index';
-import { render, screen } from '../../test-util';
+import { render } from '../../test-util.js';
 
 describe('GameMode Component', () => {
   test('should contain ', () => {
