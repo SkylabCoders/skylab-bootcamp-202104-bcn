@@ -11,18 +11,17 @@ import Chart from '../Map/index';
 
 const Dashboard = ({ globalData, dispatch }) => {
   useEffect(() => { dispatch(loadGlobalData()); }, []);
-
   return (
-
       <section className="dashboard">
       <div className="container">
-      <h2>Ante titular</h2>
+      <p>Powered by WHO</p>
       <h1>
 Tracking the virus worldwide.
       </h1>
       <h3>
 Get the lastest updated info about the pandemic and vaccination by continent, country and region.
       </h3>
+        <Chart />
       <ul>
         { globalData
         && globalData.map(([element, value]) => (
@@ -33,7 +32,6 @@ Get the lastest updated info about the pandemic and vaccination by continent, co
 </li>
         ))}
       </ul>
-      <Chart />
       </div>
       <Footer />
       </section>

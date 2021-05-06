@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -24,7 +23,6 @@ const Map = ({ vaccinesContinentData, dispatch }) => {
                 color: 'black', bold: false, fontSize: 20, fontName: 'Raleway'
               }
             }
-
           }}
           mapsApiKey={process.env.REACT_APP_GOOGLE_MAP_KEY}
           rootProps={{ 'data-testid': '1' }}
