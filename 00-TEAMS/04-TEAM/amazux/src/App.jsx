@@ -17,7 +17,7 @@ function App({ error }) {
       <main className="main">
         <Switch>
           <Route path="/" exact component={Dashboard} />
-          <Route path="/product/:id" exact component={Products} />
+          <Route path="/products/:id" exact component={Products} />
         </Switch>
       </main>
       <Footer />
