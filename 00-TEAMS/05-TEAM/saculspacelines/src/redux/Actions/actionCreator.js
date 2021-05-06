@@ -83,8 +83,8 @@ export const loadPeople = () => async (dispatch) => {
   });
 };
 
-export const loadPlanets = () => async (dispatch) => {
-  const { data } = await axios(`${PLANETS_URL}`);
+export const loadPlanets = (page) => async (dispatch) => {
+  const { data } = await axios(`${PLANETS_URL}${page}`);
   dispatch({
     type: LOAD_PLANETS,
     payload: data.results

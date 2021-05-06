@@ -6,7 +6,6 @@ import { PropTypes } from 'prop-types';
 import { loadPeople, addUser } from '../../redux/Actions/actionCreator';
 import CHARACTERS from '../../redux/Constants/Characters';
 import './form.css';
-import USERS from '../../redux/store/userList/index';
 
 function SelectAvatar({ people, dispatch }) {
   const history = useHistory();
@@ -26,6 +25,8 @@ function SelectAvatar({ people, dispatch }) {
   };
 
   const handleSubmit = () => {
+    // eslint-disable-next-line no-debugger
+    debugger;
     const newUser = {
       email: user.email,
       username: currentUsername,
@@ -36,6 +37,10 @@ function SelectAvatar({ people, dispatch }) {
 
     dispatch(addUser(newUser));
     history.push('/select-destiny');
+  };
+
+  const handleBack = () => {
+    history.goBack();
   };
 
   useEffect(() => {
@@ -100,7 +105,7 @@ function SelectAvatar({ people, dispatch }) {
             ))
         }
       </ul>
-      <button type="button">BACK</button>
+      <button type="button" onClick={handleBack}>BACK</button>
       <button
         onClick={handleSubmit}
         type="button"

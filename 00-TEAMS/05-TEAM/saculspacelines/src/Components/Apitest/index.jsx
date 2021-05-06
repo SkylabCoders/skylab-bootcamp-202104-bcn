@@ -4,34 +4,99 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadPlanets } from '../../redux/Actions/actionCreator';
 
-const Apitest = ({ dispatch, people }) => {
+const Apitest = ({ dispatch, planets }) => {
+  const pages = ['?page=1', '?page=2', '?page=3', '?page=4', '?page=5', '?page=6'];
   useEffect(() => {
-    dispatch(loadPlanets());
+    console.log(planets);
+    pages.forEach((page) => dispatch(loadPlanets(page)));
+    console.log(planets);
   }, []);
 
   return (
-    <ul>
-      {people.length && people[0].map((person) => (
-        <>
-          <li>{person.name}</li>
-          <img
-            src={person.imgUrl}
-            alt={person.name}
-            className="list-element__image"
-          />
-        </>
-      ))}
-    </ul>
+    <>
+      <ul>
+        {planets.length && planets[0]?.map((person) => (
+          <>
+            <li>{person.name}</li>
+            <img
+              src={person.imgUrl}
+              alt={person.name}
+              className="list-element__image"
+            />
+          </>
+        ))}
+      </ul>
+      <ul>
+        {planets.length && planets[1]?.map((person) => (
+          <>
+            <li>{person.name}</li>
+            <img
+              src={person.imgUrl}
+              alt={person.name}
+              className="list-element__image"
+            />
+          </>
+        ))}
+      </ul>
+      <ul>
+        {planets.length && planets[2]?.map((person) => (
+          <>
+            <li>{person.name}</li>
+            <img
+              src={person.imgUrl}
+              alt={person.name}
+              className="list-element__image"
+            />
+          </>
+        ))}
+      </ul>
+      <ul>
+        {planets.length && planets[3]?.map((person) => (
+          <>
+            <li>{person.name}</li>
+            <img
+              src={person.imgUrl}
+              alt={person.name}
+              className="list-element__image"
+            />
+          </>
+        ))}
+      </ul>
+      <ul>
+        {planets.length && planets[4]?.map((person) => (
+          <>
+            <li>{person.name}</li>
+            <img
+              src={person.imgUrl}
+              alt={person.name}
+              className="list-element__image"
+            />
+          </>
+        ))}
+      </ul>
+      <ul>
+        {planets.length && planets[5]?.map((person) => (
+          <>
+            <li>{person.name}</li>
+            <img
+              src={person.imgUrl}
+              alt={person.name}
+              className="list-element__image"
+            />
+          </>
+        ))}
+      </ul>
+    </>
   );
 };
 
 Apitest.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  people: PropTypes.shape([]).isRequired
+  planets: PropTypes.shape([]).isRequired
 };
 
 const mapStateToProps = (state) => ({
-  people: state.swapiReducer
+  planets: state.swapiReducer
 });
 
 export default connect(mapStateToProps)(Apitest);
