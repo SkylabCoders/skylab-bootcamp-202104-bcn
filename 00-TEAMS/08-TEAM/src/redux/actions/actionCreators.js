@@ -35,12 +35,33 @@ export const loadVaccinesByCountry = (country) => async (dispatch) => {
   });
 };
 
-export const loadVaccinesByContinent = (continent) => async (dispatch) => {
-  const url = `${URL}${vaccinesUrl}?continent=${continent}`; // TODO VALIDACION DE INPUT CASES AND TEXT
-  const response = await axios.get(url);
+export const loadVaccinesByContinent = (url = `${URL}${vaccinesUrl}`) => async (dispatch) => {
+  const { data } = await axios.get(url);
+
+  const allContinents = ['Africa', 'Asia', 'Oceania', 'European Union', 'North America', 'South America'];
+  let continents = allContinents.map((continent) => ([
+    continent,
+    data[continent].All.people_vaccinated,
+    data[continent].All.people_partially_vaccinated,
+    data[continent].All.updated
+
+  ]));
+
+  const getAmericasData = (array) => {
+    const peopleVaccinatedAmericas = array[4][1] + array[5][1];
+    const peoplePartiallyVaccinatedAmericas = array[4][2] + array[5][2];
+    const updated = array[4][3];
+
+    const americasData = ['Americas', peopleVaccinatedAmericas, peoplePartiallyVaccinatedAmericas, updated];
+    const segmentArray = array.splice(0, 4);
+    const segmentArraywithAmericas = [...segmentArray, americasData];
+    return segmentArraywithAmericas;
+  };
+  continents = getAmericasData(continents);
+  console.log({ continents });
   dispatch({
     type: actionTypes.LOAD_VACCINES_BY_CONTINENT,
-    data: response.data.All
+    data: continents
   });
 };
 
