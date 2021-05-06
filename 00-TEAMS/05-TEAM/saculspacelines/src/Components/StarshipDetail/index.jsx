@@ -10,15 +10,10 @@ const StarshipDetail = ({
       name,
       model,
       manufacturer,
-      costInCredits,
       length,
-      maxAtmospheringSpeed,
       crew,
       passengers,
-      cargoCapacity,
       consumables,
-      hyperdriveRating,
-      starshipClass,
       clickHandler,
       imgUrl
       // faction
@@ -67,7 +62,7 @@ const StarshipDetail = ({
               <li className="starShipList__credits">
                 Cost in credits:
                 {' '}
-                {costInCredits}
+                {data.cost_in_credits}
               </li>
               <li className="starShipList__length">
                 Length:
@@ -77,7 +72,7 @@ const StarshipDetail = ({
               <li className="starShipList__speed">
                 Max atmosphering speed:
                 {' '}
-                {maxAtmospheringSpeed}
+                {data.max_atmosphering_speed}
               </li>
               <li className="starShipList__crew">
                 Crew:
@@ -92,7 +87,7 @@ const StarshipDetail = ({
               <li className="starShipList__capacity">
                 Cargo capacity:
                 {' '}
-                {cargoCapacity}
+                {data.cargo_capacity}
               </li>
               <li className="starShipList__consumables">
                 Consumables:
@@ -102,12 +97,12 @@ const StarshipDetail = ({
               <li className="starShipList__hyperdrive">
                 Hyperdrive rating:
                 {' '}
-                {hyperdriveRating}
+                {data.hyperdrive_rating}
               </li>
               <li className="starShipList__class">
                 Starship class:
                 {' '}
-                {starshipClass}
+                {data.starship_class}
               </li>
             </ul>
           )
@@ -127,15 +122,15 @@ StarshipDetail.propTypes = {
     name: PropTypes.string.isRequired,
     model: PropTypes.string.isRequired,
     manufacturer: PropTypes.string.isRequired,
-    costInCredits: PropTypes.string.isRequired,
+    cost_in_credits: PropTypes.string.isRequired,
     length: PropTypes.string.isRequired,
-    maxAtmospheringSpeed: PropTypes.string.isRequired,
+    max_atmosphering_speed: PropTypes.string.isRequired,
     crew: PropTypes.string.isRequired,
     passengers: PropTypes.string.isRequired,
-    cargoCapacity: PropTypes.string.isRequired,
+    cargo_capacity: PropTypes.string.isRequired,
     consumables: PropTypes.string.isRequired,
-    hyperdriveRating: PropTypes.string.isRequired,
-    starshipClass: PropTypes.func.isRequired,
+    hyperdrive_rating: PropTypes.string.isRequired,
+    starship_class: PropTypes.func.isRequired,
     imgUrl: PropTypes.string.isRequired,
     clickHandler: PropTypes.func.isRequired
   }).isRequired
