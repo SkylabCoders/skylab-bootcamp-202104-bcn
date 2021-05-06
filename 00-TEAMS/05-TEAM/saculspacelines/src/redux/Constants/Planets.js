@@ -284,7 +284,7 @@ const PLANETS = [
   },
   {
     name: 'Ojom',
-    imgUrl: 'https://lh3.googleusercontent.com/proxy/8pYnFBsPlUqTKMx5cZdSjVR6nbVfKSqW1fh1IV4JGbkvaCbXDIzBKZf_6ONZBgMDDDj0lCl0trEjJwYIVMsMwj0TFqW8GIjMws2ONz9lEPa3MCVFVrgb',
+    imgUrl: 'https://i.pinimg.com/originals/eb/5b/bc/eb5bbcb1d0397620c6c4f8a8127ac9e9.jpg',
     faction: LIGHT
   },
   {
