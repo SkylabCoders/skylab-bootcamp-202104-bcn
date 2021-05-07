@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loadTvShows } from '../../application/store/actions/actionsCreator';
@@ -14,7 +15,9 @@ const TvShows = ({ myShows, dispatch }) => {
   return (
     <div className="shows-conatiner">
       {myShows.map((element) => (
-        <img key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt="" />
+        <Link to={`/detail/${element.id}`}>
+          <img key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt="" />
+        </Link>
       ))}
     </div>
   );

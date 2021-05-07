@@ -6,7 +6,6 @@ import {
   ButtonBack, ButtonNext, CarouselProvider, Slide, Slider
 } from 'pure-react-carousel';
 import { getMovieById, getCastMovie, loadRecomended } from '../../application/store/actions/actionsCreator';
-// eslint-disable-next-line import/no-cycle
 import {
   WrapperMovie, ContainerBackground, Description, Genres, Cast, WrapperInfo
 } from './styles';
@@ -16,8 +15,6 @@ import { Carousel } from '../../common/components/slider-most-viewed/styles';
 function MovieDetail({
   selectedMovie, selectedCast, recomendedMovies, dispatch
 }) {
-  console.log(recomendedMovies);
-
   const { movieId } = useParams();
 
   useEffect(() => {

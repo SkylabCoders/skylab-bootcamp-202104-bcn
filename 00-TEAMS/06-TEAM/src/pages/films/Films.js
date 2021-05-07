@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loadGridMovies } from '../../application/store/actions/actionsCreator';
@@ -11,10 +12,12 @@ const showMoviesGrid = ({ myGrid, dispatch }) => {
     dispatch(loadGridMovies());
   }, []);
 
-  return (
+  return ( // TODO LINK
     <div className="shows-conatiner">
       {myGrid.map((element) => (
-        <img key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt="" />
+        <Link to={`/detail/${element.id}`}>
+          <img key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt="" />
+        </Link>
       ))}
     </div>
   );
