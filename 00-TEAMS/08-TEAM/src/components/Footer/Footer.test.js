@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { unmountComponentAtNode } from 'react-dom';
-import Header from './index';
+import Footer from './index';
 import { render, screen } from './test-utils';
 
 let container = null;
@@ -16,10 +16,10 @@ afterEach(() => {
   container = null;
 });
 
-describe('Header Component', () => {
-  test('should contain Global', () => {
-    render(<Header />, container);
+describe('Footer Component', () => {
+  test('should contain World Health Organization', () => {
+    render(<Footer />, container);
 
-    expect(screen.getByText(/Global/i)).toBeInTheDocument();
+    expect(screen.getByText(/World Health Organization/i)).toBeInTheDocument();
   });
 });
