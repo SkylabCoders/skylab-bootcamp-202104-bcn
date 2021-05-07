@@ -1,5 +1,8 @@
+/* eslint-disable no-console */
 import axios from 'axios';
-import { loadGlobalData } from './actionCreators';
+import {
+  loadGlobalData, loadCountry, loadVaccinesByCountry, loadVaccinesByContinent
+} from './actionCreators';
 import actionTypes from './actionTypes';
 
 jest.mock('axios');
@@ -7,7 +10,7 @@ jest.mock('axios');
 describe('loadGlobalData', () => {
   test('should dispatch LOAD_GLOBAL', async () => {
     const mockData = { data: { Global: { All: { skylab: 'Yes' } } } };
-    axios.mockResolvedValue(mockData);
+    axios.get.mockResolvedValue(mockData);
 
     const dispatch = jest.fn();
     // act
@@ -20,12 +23,57 @@ describe('loadGlobalData', () => {
   });
 
   test('should dispatch LOAD_GLOBAL_ERROR', async () => {
-    axios.mockRejectedValue();
+    axios.get.mockRejectedValue();
     const dispatch = jest.fn();
     // act
     await loadGlobalData()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
       type: 'LOAD_GLOBAL_ERROR'
+    });
+  });
+});
+
+describe('loadCountry', () => {
+  test('should dispatch LOAD_COUNTRY', async () => {
+    const mockData = { data: { France: { All: {} } } };
+    axios.get.mockResolvedValue(mockData);
+
+    const dispatch = jest.fn();
+    // act
+    await loadCountry()(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.LOAD_COUNTRY,
+      data: mockData.data.All
+    });
+  });
+});
+
+describe('loadVaccinesByCountry', () => {
+  test('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
+    const mockData = { data: { France: { All: {} } } };
+    axios.get.mockResolvedValue(mockData);
+
+    const dispatch = jest.fn();
+    // act
+    await loadVaccinesByCountry()(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.LOAD_VACCINES_BY_COUNTRY,
+      data: mockData.data.All
+    });
+  });
+});
+
+describe('loadVaccinesByContinent', () => {
+  test('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
+    const mockData = { data: { Global: { All: {} } } };
+    axios.get.mockResolvedValue(mockData);
+
+    const dispatch = jest.fn();
+    // act
+    await loadVaccinesByContinent()(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.LOAD_VACCINES_BY_CONTINENT,
+      data: mockData.data.All
     });
   });
 });
