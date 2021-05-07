@@ -8,14 +8,16 @@ function cartReducer(cart = [], action) {
       return updateCart;
 
     case actionTypes.ADD_PRODUCT:
-      return [...cart, action.product];// falta fakeIdProduct
+      return [...cart, action.product];
 
     case actionTypes.DELETE_PRODUCT:
-      return updateCart.filter((x) => x.fakeIdProduct !== action.fakeIdProduct);// falta fakeIdProduct
+      return updateCart.filter((x) => x.fakeIdProduct
+        !== action.fakeIdProduct);// falta fakeIdProduct
 
     default:
       break;
   }
+
   return updateCart;
 }
 export default cartReducer;
