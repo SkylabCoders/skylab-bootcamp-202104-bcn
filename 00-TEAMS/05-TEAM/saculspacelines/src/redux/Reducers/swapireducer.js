@@ -7,18 +7,14 @@ const {
   LOAD_SWAPI, LOAD_PEOPLE, LOAD_PLANETS, LOAD_STARSHIPS
 } = actionTypes;
 
-const combineObjectsArrays = (apiArray, localArray) => {
-  const newArray = apiArray.map((item) => {
-    const local = localArray
-      .find((localItem) => localItem.name.toLowerCase() === item.name.toLowerCase());
-    return {
-      ...item,
-      ...local
-    };
-  });
-
-  return newArray;
-};
+const combineObjectsArrays = (apiArray, localArray) => apiArray.map((item) => {
+  const local = localArray
+    .find((localItem) => localItem.name.toLowerCase() === item.name.toLowerCase());
+  return {
+    ...item,
+    ...local
+  };
+});
 
 export function loadSwapiReducer(state = [], { type, payload }) {
   let result;
