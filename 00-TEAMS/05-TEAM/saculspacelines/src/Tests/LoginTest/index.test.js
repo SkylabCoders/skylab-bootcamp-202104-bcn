@@ -37,3 +37,14 @@ describe('Given a Login component', () => {
     expect(loginLogInTitle.textContent).toBe('Log out');
   });
 });
+
+describe('Given a Login component', () => {
+  test('When handleAcceptTherms is called a setThermsAccepted should have been called', () => {
+    Login.handleAcceptTherms = jest.fn();
+    Login.setThermsAccepted = jest.fn();
+
+    Login.handleAcceptTherms();
+
+    expect(Login.setThermsAccepted).toHaveBeenCalled();
+  });
+});

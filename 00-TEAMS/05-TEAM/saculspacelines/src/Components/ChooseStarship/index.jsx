@@ -69,7 +69,8 @@ const ChooseStarship = ({ dispatch, starships, userState }) => {
 
   return (
     <div>
-      <h1>{currentPrice}</h1>
+      <h1 className="starships__title">Choose a starhsip</h1>
+      <h2>{currentPrice}</h2>
       <button
         type="button"
         onClick={handleSubmit}

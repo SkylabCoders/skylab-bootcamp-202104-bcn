@@ -2,14 +2,16 @@ import React from 'react';
 import './style/style.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import USERS from '../../redux/store/userList';
 
-const Profile = () => {
+const Profile = ({ auth }) => {
   const {
     user
   } = useAuth0();
 
-  const currentUser = USERS.find((userElement) => userElement.email === user.email);
+  const currentUser = auth.isLoggedIn ? USERS.find((userElement) => userElement.email === user.email) : '';
   const currentWishlist = currentUser.wishlist;
   const { username, avatar } = currentUser;
   const history = useHistory();
@@ -34,16 +36,16 @@ const Profile = () => {
         <h3 className="main-container__title">Wishlist</h3>
         <div className="wishlist-container" />
         {
-            currentWishlist.map((item) => (
-              <tr className="wishlist-container__tablerow">
-                <td className="wishlist-container__tabledata">
-                  {`${item.planet.name} ${item.starship.name} ${item.price}`}
-                  {' '}
-                  <button type="button" className="wishlist-container__button">modify</button>
-                  <button type="button" className="wishlist-container__button">delete</button>
-                </td>
-              </tr>
-            ))
+           currentWishlist?.length && currentWishlist.map((item) => (
+             <tr className="wishlist-container__tablerow">
+               <td className="wishlist-container__tabledata">
+                 {`${item.planet.name} ${item.starship.name} ${item.price}`}
+                 {' '}
+                 <button type="button" className="wishlist-container__button">modify</button>
+                 <button type="button" className="wishlist-container__button">delete</button>
+               </td>
+             </tr>
+           ))
         }
       </div>
       <div className="footer-container">
@@ -54,4 +56,18 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+Profile.propTypes = {
+  auth: PropTypes.shape({
+    isLoggedIn: PropTypes.bool,
+    user: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired
+    })
+  }).isRequired
+};
+
+const mapStateToProps = ({ authReducer }) => ({
+  auth: authReducer
+});
+
+export default connect(mapStateToProps)(Profile);
