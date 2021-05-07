@@ -44,8 +44,8 @@ const SliderCarousel = ({
             }
           </Slider>
           <div className="buttons-container">
-            <ButtonBack className="buttons-container__backButton">&#60;</ButtonBack>
-            <ButtonNext className="buttons-container__nextButton">&#62;</ButtonNext>
+            <ButtonBack className="backButton">&#60;</ButtonBack>
+            <ButtonNext className="nextButton">&#62;</ButtonNext>
           </div>
         </CarouselProvider>
       </Carousel>

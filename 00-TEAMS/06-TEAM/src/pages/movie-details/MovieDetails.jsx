@@ -9,9 +9,8 @@ import {
 } from './styles';
 import Heading from '../../common/components/TitleSlider/TitleSlider';
 
-function MovieDetail({ selectedMovie, selectedCast, dispatch }) {
+function MovieDetail({ selectedMovie, dispatch }) {
   const { movieId } = useParams();
-  console.log(selectedCast);
   useEffect(() => {
     dispatch(getMovieById(movieId));
   }, [movieId]);
