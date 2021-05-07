@@ -3,13 +3,8 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
-<<<<<<< HEAD
 import categoriesToPrint from '../../redux/store/constants/categoriesToPrint';
 import { loadArtworksFromApi, loadCategory } from '../../redux/actions/actionCreators';
-=======
-import { loadArtworksFromApi, loadCategory } from '../../redux/actions/actionCreators';
-import categoriesToPrint from '../../redux/store/constants/categoriesToPrint';
->>>>>>> 527bb19f... resolve second rebase conflict
 import './Category.scss';
 
 let alreadyCalledId = [2];
