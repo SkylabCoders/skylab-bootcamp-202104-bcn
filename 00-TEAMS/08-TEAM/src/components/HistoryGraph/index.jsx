@@ -13,15 +13,21 @@ const HistoryGraph = ({ countryHistoryData, dispatch }) => {
     dispatch(loadCountryHistory(country, 'confirmed'));
   }, [country]);
 
+  const countryHistoryDate = countryHistoryData.map(([element]) => (
+    element));
+
+  const countryHistoryValue = countryHistoryData.map(([, value]) => (
+    value));
+
   return (
     <section className="global-graphs">
       <Line
         data={{
-          labels: [...countryHistoryData],
+          labels: [...countryHistoryDate],
           datasets: [
             {
               label: 'Confirmed',
-              data: [...countryHistoryData],
+              data: [...countryHistoryValue],
               backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -40,10 +46,9 @@ const HistoryGraph = ({ countryHistoryData, dispatch }) => {
               ],
               borderWidth: 1
             }
-
           ]
         }}
-        height={400}
+        height={600}
         width={600}
         options={{
           maintainAspectRatio: false,
@@ -57,9 +62,7 @@ const HistoryGraph = ({ countryHistoryData, dispatch }) => {
             ]
           },
           legend: {
-            labels: {
-              fontSize: 25
-            }
+            display: 'none'
           }
         }}
       />
@@ -74,7 +77,7 @@ HistoryGraph.propTypes = {
 
 const mapStateToProps = ({ countryHistoryData, dispatch }) => (
   {
-    countryHistoryData: Object.values(countryHistoryData).reverse(),
+    countryHistoryData: Object.entries(countryHistoryData).reverse(),
     dispatch
   }
 );

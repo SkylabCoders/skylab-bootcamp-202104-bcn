@@ -60,7 +60,7 @@ const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
               {' '}
               <span className="continent-card__data">
                 {' '}
-                {country[3]}
+                {country[3].slice(0, 10)}
               </span>
             </p>
           </li>
