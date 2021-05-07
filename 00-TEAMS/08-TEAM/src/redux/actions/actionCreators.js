@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -42,7 +41,6 @@ export const loadCountryHistory = (country) => async (dispatch) => {
 export const loadVaccinesByCountry = (country) => async (dispatch) => {
   const url = `${URL}${vaccinesUrl}?country=${country}`;
   const { data } = await axios.get(url);
-  console.log(data);
   dispatch({
     type: actionTypes.LOAD_VACCINES_BY_COUNTRY,
     data: data.All
@@ -74,8 +72,6 @@ export const loadVaccinesByContinent = (url = `${URL}${vaccinesUrl}`) => async (
   const allContinents = ['Africa', 'Asia', 'Oceania', 'European Union', 'North America', 'South America'];
   let continents = getContinetData(allContinents, data);
   continents = getAmericaData(continents);
-  console.log(continents);
-  console.log(data);
   dispatch({
     type: actionTypes.LOAD_VACCINES_BY_CONTINENT,
     data: continents

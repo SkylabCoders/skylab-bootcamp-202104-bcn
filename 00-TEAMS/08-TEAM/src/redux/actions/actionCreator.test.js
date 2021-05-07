@@ -8,7 +8,7 @@ import actionTypes from './actionTypes';
 jest.mock('axios');
 
 describe('loadGlobalData', () => {
-  xtest('should dispatch LOAD_GLOBAL', async () => {
+  test('should dispatch LOAD_GLOBAL', async () => {
     const mockData = { data: { Global: { All: { skylab: 'Yes' } } } };
     axios.get.mockResolvedValue(mockData);
 
@@ -22,7 +22,7 @@ describe('loadGlobalData', () => {
     });
   });
 
-  xtest('should dispatch LOAD_GLOBAL_ERROR', async () => {
+  test('should dispatch LOAD_GLOBAL_ERROR', async () => {
     axios.get.mockRejectedValue();
     const dispatch = jest.fn();
     // act
@@ -34,7 +34,7 @@ describe('loadGlobalData', () => {
 });
 
 describe('loadCountry', () => {
-  xtest('should dispatch LOAD_COUNTRY', async () => {
+  test('should dispatch LOAD_COUNTRY', async () => {
     const mockData = { data: { France: { All: {} } } };
     axios.get.mockResolvedValue(mockData);
 
@@ -49,7 +49,7 @@ describe('loadCountry', () => {
 });
 
 describe('loadVaccinesByCountry', () => {
-  xtest('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
+  test('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
     const mockData = { data: { France: { All: {} } } };
     axios.get.mockResolvedValue(mockData);
 
@@ -64,7 +64,7 @@ describe('loadVaccinesByCountry', () => {
 });
 
 describe('loadVaccinesByContinent', () => {
-  xtest('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
+  test('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
     const mockData = { data: { Global: { All: {} } } };
     axios.get.mockResolvedValue(mockData);
 
