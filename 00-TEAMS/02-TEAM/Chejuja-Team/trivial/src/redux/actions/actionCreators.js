@@ -25,7 +25,6 @@ export function logout() {
   };
 }
 export function loadRanking(correct, incorrect) {
-  debugger;
   return {
     type: actionTypes.LOAD_RANKING,
     score: {

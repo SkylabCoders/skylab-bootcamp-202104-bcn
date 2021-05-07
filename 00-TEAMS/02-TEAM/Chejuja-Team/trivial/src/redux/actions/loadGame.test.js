@@ -1,16 +1,25 @@
+// import axios from 'axios';
 import { loadGame } from './actionCreators';
 import actionTypes from './actionTypes';
 
 jest.mock('./actionCreators');
+jest.mock('axios');
+
 describe('When invoked a loadGame function', () => {
   test('Should return a object with type and data', () => {
     const result = loadGame;
     expect(result.type).toBe(actionTypes.loadGame);
   });
-  test.only('loadGame function', async () => {
-    const dispatch = jest.fn();
-    const newfunction = loadGame();
-    await newfunction(dispatch);
-    expect(dispatch).toHaveBeenCall();
-  });
+  // test('loadGameAxios function', async () => {
+  //   axios.mockResolvedValue({ data: ['Testeando bajo el sol'] });
+  //   const diff = 'easy';
+  //   const type = 'boolean';
+  //   const dispatch = jest.fn();
+  //   const testFn = loadGame(diff, type);
+  //   await testFn(dispatch);
+  //   expect(dispatch).toHaveBeenCalledWith({
+  //     type: actionTypes.LOAD_GAME,
+  //     data: ['Testeando bajo el sol']
+  //   });
+  // });
 });
