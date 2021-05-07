@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-  getFilms, getGenres, getCast, getRecomended, getShows
+  getFilms, getGenres, getCast, getShows, getRecomended
 } from '../../../common/services/films';
 import actionTypes from './actionTypes';
 
