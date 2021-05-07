@@ -8,7 +8,7 @@ const historyUrl = 'history';
 
 export const loadGlobalData = (url = `${URL}${casesUrl}`) => async (dispatch) => {
   try {
-    const { data } = await axios(url);
+    const { data } = await axios.get(url);
     dispatch({
       type: actionTypes.LOAD_GLOBAL,
       data: data.Global.All
@@ -22,27 +22,28 @@ export const loadGlobalData = (url = `${URL}${casesUrl}`) => async (dispatch) =>
 
 export const loadCountry = (country) => async (dispatch) => {
   const url = `${URL}${casesUrl}?country=${country}`;
-  const response = await axios.get(url);
+  const { data } = await axios.get(url);
+
   dispatch({
     type: actionTypes.LOAD_COUNTRY,
-    data: response.data.All
+    data: data.All
   });
 };
 export const loadCountryHistory = (country) => async (dispatch) => {
   const url = `${URL}${historyUrl}?country=${country}&status=confirmed`;
-  const response = await axios.get(url);
+  const { data } = await axios.get(url);
   dispatch({
     type: actionTypes.LOAD_COUNTRY_HISTORY,
-    data: response.data.All.dates
+    data: data.All.dates
   });
 };
 
 export const loadVaccinesByCountry = (country) => async (dispatch) => {
   const url = `${URL}${vaccinesUrl}?country=${country}`;
-  const response = await axios.get(url);
+  const { data } = await axios.get(url);
   dispatch({
     type: actionTypes.LOAD_VACCINES_BY_COUNTRY,
-    data: response.data.All
+    data: data.All
   });
 };
 
