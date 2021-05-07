@@ -1,5 +1,6 @@
+import axios from 'axios';
 import {
-  getFilms, getGenres, getCast, getRecomended
+  getFilms, getGenres, getCast, getRecomended, getShows
 } from '../../../common/services/films';
 import actionTypes from './actionTypes';
 
@@ -10,6 +11,16 @@ export function loadMovies(searchParam) {
       type: actionTypes.LOAD_MOVIES,
       moviesType: searchParam,
       movies: response.data.results
+    });
+  };
+}
+export function loadTvShows() {
+  return async (dispatch) => {
+    const response = await axios.get(getShows);
+    console.log(response);
+    dispatch({
+      type: actionTypes.LOAD_SHOWS,
+      shows: response.data.results
     });
   };
 }
