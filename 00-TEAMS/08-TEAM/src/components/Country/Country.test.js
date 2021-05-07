@@ -1,25 +1,27 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { unmountComponentAtNode } from 'react-dom';
 import Country from './index';
-import { render, screen } from './test-utils';
+import { loadCountry, loadCountryHistory, loadVaccinesByCountry } from '../../redux/actions/actionCreators';
+import { render } from './test-utils';
 
-let container = null;
-beforeEach(() => {
-  container = document.createElement('div');
-  document.body.appendChild(container);
-});
+jest.mock('./../../redux/actions/actionCreators');
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useParams: () => ({ country: 'France' })
+}));
 
-afterEach(() => {
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
+describe('Country component ', () => {
+  test('should dispatch loadCountry action', () => {
+    loadCountry.mockReturnValue(jest.fn);
+    loadCountryHistory.mockReturnValue(jest.fn);
+    loadVaccinesByCountry.mockReturnValue(jest.fn);
 
-describe('Country component', () => {
-  test('should contain Vaccines', () => {
-    render(<Country />, container);
+    render(<Country />, {
+      initialState: {
+        countryData: {}
+      }
+    });
 
-    expect(screen.getByText(/Vaccines/i)).toBeInTheDocument();
+    expect(loadCountry).toHaveBeenCalled();
   });
 });
