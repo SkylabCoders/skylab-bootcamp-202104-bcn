@@ -5,22 +5,22 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 85px;
   background-color: #282828;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: fill;
+  width: 100%;
 }
 
 .header-container .icon {
-  margin-right: auto;
+  margin: 30px;
   margin-left: 30px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   border-radius: 50%;
-  width: 70px;
-  height: 50px;
-  display: block;
+  width: 75px;
+  height: 75px;
 }
 /*# sourceMappingURL=index-header.css.map */

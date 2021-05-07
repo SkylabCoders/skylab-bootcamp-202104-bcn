@@ -1,9 +1,25 @@
-import { React } from 'react';
+import { React, useEffect, useState } from 'react';
 import
 { Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 import './dashboard.css';
 
 function Dashboard() {
+  const {
+    isAuthenticated
+  } = useAuth0();
+
+  const [beginTestButton, setBeginTestButton] = useState();
+
+  const displayButtonBegin = () => (
+    <button className="beginTestButton" type="button"><Link to="/form">BEGIN TEST</Link></button>
+  );
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      setBeginTestButton(displayButtonBegin());
+    }
+  }, [isAuthenticated]);
   return (
     <>
       <header>
@@ -23,7 +39,6 @@ function Dashboard() {
               <img className="musicLogo" src="https://img.icons8.com/doodle/48/000000/apple-music--v1.png" alt="music-logo" />
               {' '}
               Answer the questions about what do you feel listening today
-
             </li>
             <li>
               <img className="musicLogo" src="https://img.icons8.com/doodle/48/000000/apple-music--v1.png" alt="music-logo" />
@@ -37,7 +52,7 @@ function Dashboard() {
             </li>
           </ul>
           <div className="containerImg" />
-          <button className="beginTestButton" type="button"><Link to="/form">BEGIN TEST</Link></button>
+          {beginTestButton}
         </div>
       </main>
     </>
