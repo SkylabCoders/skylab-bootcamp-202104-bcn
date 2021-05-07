@@ -19,7 +19,7 @@ function App() {
       clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin}
     >
-      <Provider store={store}>
+      <Provider store={store()}>
         <BrowserRouter>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" />
           <header>
