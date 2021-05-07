@@ -4,7 +4,7 @@ import Login from './index';
 import { render, screen } from './test-utils';
 
 describe('Login Component', () => {
-  test('should contain username', () => {
+  test.only('should contain username', () => {
     render(<Login />, {
       initialState: {
         auth: {
