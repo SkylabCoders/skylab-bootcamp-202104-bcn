@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import PlanetDetail from '../../Components/PlanetDetail';
 
 describe('Given a PlanetDetail component', () => {
-  test.only('should print a planet details section', () => {
+  test('should print a planet details section', () => {
     const clickHandler = jest.fn();
     const data = {
       name: 'random',
