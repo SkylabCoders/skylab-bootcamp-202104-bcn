@@ -16,11 +16,12 @@ const Movies = ({ myMovies, dispatch }) => {
 };
 
 Movies.propTypes = {
-  myMovies: PropTypes.arrayOf(PropTypes.object).isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  myMovies: PropTypes.shape({
+    poster_path: PropTypes.string
+  }).isRequired
 };
 
-// Este countries es el del rootReducer countries: countriesReducer
 const mapStateToProps = ({ movies }) => ({
   myMovies: movies
 });

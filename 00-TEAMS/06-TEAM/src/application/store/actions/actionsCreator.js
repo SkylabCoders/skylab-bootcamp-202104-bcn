@@ -1,4 +1,4 @@
-import { getFilms, getGenres } from '../../../common/services/films';
+import { getFilms, getGenres, getCast } from '../../../common/services/films';
 import actionTypes from './actionTypes';
 
 export function loadMovies(searchParam) {
@@ -26,7 +26,6 @@ export function loadGenres(genreId) {
 export function getMovieById(movieId) {
   return async (dispatch) => {
     const response = await getFilms(movieId);
-    console.log(response);
     dispatch({
       type: actionTypes.LOAD_MOVIE,
       movie: response.data
@@ -34,6 +33,15 @@ export function getMovieById(movieId) {
   };
 }
 
+export function getCastMovie(movieId) {
+  return async (dispatch) => {
+    const response = await getCast(movieId);
+    dispatch({
+      type: actionTypes.LOAD_CAST,
+      cast: response.data
+    });
+  };
+}
 export function login(user) {
   return {
     type: actionTypes.AUTH_LOGIN,

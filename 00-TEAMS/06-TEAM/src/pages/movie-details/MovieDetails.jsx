@@ -2,17 +2,22 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import { getMovieById } from '../../application/store/actions/actionsCreator';
+import { getMovieById, getCastMovie } from '../../application/store/actions/actionsCreator';
+// eslint-disable-next-line import/no-cycle
 import {
   WrapperMovie, ContainerBackground, Description, Genres
 } from './styles';
 import Heading from '../../common/components/TitleSlider/TitleSlider';
 
-function MovieDetail({ selectedMovie, dispatch }) {
+function MovieDetail({ selectedMovie, selectedCast, dispatch }) {
   const { movieId } = useParams();
-  console.log(selectedMovie);
+  console.log(selectedCast);
   useEffect(() => {
     dispatch(getMovieById(movieId));
+  }, [movieId]);
+
+  useEffect(() => {
+    dispatch(getCastMovie(movieId));
   }, [movieId]);
 
   const baseImgUrl = 'https://image.tmdb.org/t/p/w300/';
@@ -42,10 +47,8 @@ function MovieDetail({ selectedMovie, dispatch }) {
                   </li>
                 ))}
               </ul>
-
             </Genres>
           </div>
-
         </div>
       </WrapperMovie>
     )
@@ -74,12 +77,17 @@ MovieDetail.propTypes = {
     title: PropTypes.string,
     backdrop_path: PropTypes.string
 
+  }).isRequired,
+  selectedCast: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string
   }).isRequired
 };
 
-function mapStateToProps({ selectedMovie }) {
+function mapStateToProps({ selectedMovie, selectedCast }) {
   return {
-    selectedMovie
+    selectedMovie,
+    selectedCast
   };
 }
 

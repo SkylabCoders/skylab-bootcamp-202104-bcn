@@ -66,7 +66,7 @@ export const Genres = styled.span`
       flex-flow:row wrap;
       justify-content: flex-start;
       align-self: center;
-      max-width: 70%;
+      max-width: 55%;
       list-style: none;
       padding-left:0 !important;
       li{
@@ -74,12 +74,12 @@ export const Genres = styled.span`
         justify-content: center;
         align-items: center;
         border:1px solid #fff;
-        border-radius:50px;
+        border-radius:10px;
         width:15%;
         min-height:30px;
-        font-size: 0.85em;
+        font-size: 0.75em;
         margin: 0 15px;
-        padding: 0 9px;
+        padding:0;
       }
     }
 `;
