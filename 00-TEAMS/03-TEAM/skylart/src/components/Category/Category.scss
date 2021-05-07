@@ -7,6 +7,7 @@
     width: 90%;
     margin: 30px 5%;
     &__item{
+        position:relative;
         width: 150px;
         margin: 0 1.5rem 1.5rem 0;
         display: inline-block;
@@ -17,9 +18,35 @@
             border-radius: 20px;
         }
         &:hover{
-            z-index: 1;
-            opacity: 0.5;
+            position: relative;
+            cursor: pointer;
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: calc(100% - 13px);
+                top: 5px;
+                left: 5px;
+                border-radius: 20px;
+                background: $color-red-dark;
+                opacity: .5;
+
+                width: calc(100% - 10px);
+
+            }
+            .detail-name{
+                visibility: visible;
+            }
         }
+    }
+    .detail-name{
+        position:absolute;
+        color: white;
+        padding: 20px;
+        bottom: 0;
+        margin-bottom: 30px;
+        visibility: hidden;
     }
     
 }

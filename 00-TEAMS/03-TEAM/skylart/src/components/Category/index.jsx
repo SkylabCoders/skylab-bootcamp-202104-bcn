@@ -29,6 +29,7 @@ function Category({ dispatch, artworks, category }) {
         ).map((individualDetail) => (
           <li className="category__item">
             <Link to={`/detail/${individualDetail.objectID}`}>
+              <p className="detail-name">{individualDetail.title}</p>
               <img
                 src={individualDetail.primaryImageSmall}
                 alt={individualDetail.primaryImageSmall}
