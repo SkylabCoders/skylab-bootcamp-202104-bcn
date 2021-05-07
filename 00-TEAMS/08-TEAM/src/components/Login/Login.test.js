@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import Login from './index';
-import { render, screen } from './test-utils';
+import { render, screen } from '../../utils/test-utils';
 
 describe('Login Component', () => {
   test.only('should contain username', () => {
