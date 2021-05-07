@@ -6,6 +6,7 @@ import sliderTitleLastRelasesReducer from './draw-titles/sliderTitleLastRelasses
 import sliderTitleMostValuedReducer from './draw-titles/sliderTitleMostValuedReducer';
 import selectedMovieReducer from './selectedMovieReducer';
 import castReducer from './selectCastMovieReducer';
+import showsReducer from './showsReducers';
 
 const rootReducer = combineReducers({
   movies: moviesReducer,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   titleLastRelases: sliderTitleLastRelasesReducer,
   titleMostValued: sliderTitleMostValuedReducer,
   selectedMovie: selectedMovieReducer,
-  selectedCast: castReducer
+  selectedCast: castReducer,
+  shows: showsReducer
 });
 
 export default rootReducer;
