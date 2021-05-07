@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { unmountComponentAtNode } from 'react-dom';
-import Global from './index';
+import Dashboard from './index';
 import { render, screen } from './test-utils';
 
 let container = null;
@@ -17,9 +17,9 @@ afterEach(() => {
 });
 
 describe('Header Component', () => {
-  test('should contain Global', () => {
-    render(<Global />, container);
+  test('should contain Tracking the virus worldwide', () => {
+    render(<Dashboard />, container);
 
-    expect(screen.getByText(/Global/i)).toBeInTheDocument();
+    expect(screen.getByText(/Tracking the virus worldwide/i)).toBeInTheDocument();
   });
 });
