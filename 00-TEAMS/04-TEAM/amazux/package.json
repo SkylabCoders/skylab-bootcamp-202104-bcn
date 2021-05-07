@@ -58,7 +58,7 @@
     "watchPathIgnorePatterns": [
       "<rootDir>/src/test-utils.js",
       "<rootDir>/src/reportWebVitals.js",
-      "<rootDir>/index.jsx"
+      "<rootDir>/src/index.jsx"
     ]
   }
 }
