@@ -38,15 +38,14 @@ export default function userActionReducer(
 
     case CREATE_TRAVEL:
       result = USERS.find((user) => user.email === state.currentUser.email);
-      result.wishlist = [...result.wishlist,
-        payload];
-      result = { ...USERS, result };
+      result.wishlist = [...result.wishlist, payload];
+      result = { ...updateState, result };
       break;
 
     case DELETE_WISH:
       result = USERS.find((user) => user.username === state.currentUser);
       result.wishlist = result.wishlist.filter((wish) => wish.id !== payload);
-      result = { ...USERS, result };
+      result = { ...USERS, result, updateState };
       break;
 
     case LOAD_WISHLIST:

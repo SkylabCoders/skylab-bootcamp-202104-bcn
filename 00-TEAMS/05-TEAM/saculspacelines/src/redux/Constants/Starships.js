@@ -194,7 +194,7 @@ const STARSHIPS = [
 
   {
     name: 'Banking clan frigte',
-    imgUrl: 'https://www.igorstshirts.com/blog/conceptships/2012/david_llewelyn/dl_01.jpg',
+    imgUrl: 'https://media.sketchfab.com/models/d43f57b7baaa49ee95dec414fae4f2a8/thumbnails/acbb790[…]a4357ad59f84c940a328b/97ee07e067a4472c8c08259e40a15e71.jpeg',
     faction: DARK
   },
   {
