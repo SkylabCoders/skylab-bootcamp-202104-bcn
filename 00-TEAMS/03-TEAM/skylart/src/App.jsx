@@ -7,6 +7,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import configureStore from './redux/store';
 import Header from './components/Common/Header';
 import Home from './components/Home';
+import Footer from './components/Common/Footer';
 import Category from './components/Category';
 import Detail from './components/Detail';
 import Favorites from './components/Favorites';
@@ -29,6 +30,7 @@ function App() {
             <Route path="/favorites" component={Favorites} />
             <Redirect to="/" />
           </Switch>
+          <Footer />
         </BrowserRouter>
       </Provider>
     </Auth0Provider>

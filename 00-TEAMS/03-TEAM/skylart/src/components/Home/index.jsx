@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { loadCategoriesFromApi } from '../../redux/actions/actionCreators';
-import Footer from '../Common/Footer';
 import categoriesToPrint from '../../redux/store/constants/categoriesToPrint';
 import { urlDepatments } from '../../redux/store/constants/urls';
 import './Home.scss';
@@ -13,8 +13,9 @@ function Home({ dispatch, artworks }) {
   }, []);
 
   function findfavoriteIdDepartment(idToMatch) {
-    return categoriesToPrint.some((favoriteValue) => idToMatch === favoriteValue);
+    return categoriesToPrint.some((favoriteValue) => idToMatch === favoriteValue.id);
   }
+
   return (
     <>
       <ul className="category-list">
@@ -22,14 +23,18 @@ function Home({ dispatch, artworks }) {
           artworks.length && artworks.map(
             ({ displayName, departmentId }) => findfavoriteIdDepartment(departmentId)
               && (
-              <li key={displayName} className="category-list__item">
-                <span className="category-name">{displayName}</span>
-              </li>
+                <Link
+                  to={`/category/${departmentId}`}
+                  className="category-list__item"
+                >
+                  <li key={displayName}>
+                    <span className="category-name">{displayName}</span>
+                  </li>
+                </Link>
               ),
           )
         }
       </ul>
-      <Footer />
     </>
   );
 }
