@@ -1,20 +1,26 @@
 @import './../../styles/mixin.scss';
+@import '../../styles/colors.scss';
 
 .category{
-    @include flex-content (flex, row, center, flex-start);
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 20px 100px;
     columns: 5 200px;
+    column-gap: 1.5rem;
+    width: 90%;
+    margin: 30px 5%;
     &__item{
-        width: auto;
-        height: auto;     
-        margin: 10px; 
+        width: 150px;
+        margin: 0 1.5rem 1.5rem 0;
+        display: inline-block;
+        width: 100%;
+        padding: 5px;
         img{
-            width: 200px;
-            object-fit: scale-down;  
-            border-radius: 20px;  
+            width: 100%;
+            border-radius: 20px;
+        }
+        &:hover{
+            z-index: 1;
+            opacity: 0.5;
         }
     }
+    
 }
 
