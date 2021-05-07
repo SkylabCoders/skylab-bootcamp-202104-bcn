@@ -1,5 +1,7 @@
 import actionTypes from './actionTypes';
-import { signIn, signOut, deleteError } from './actionCreators';
+import {
+  signIn, signOut, deleteError, loadProductsActionCreator
+} from './actionCreators';
 
 describe('ActionCreators', () => {
   test('singIn should return an action, with an actionType AUTH_LOGIN a user', () => {
@@ -26,5 +28,10 @@ describe('ActionCreators', () => {
   test('deleteErorr should return an action, with an actionType DELETE_ERROR', () => {
     const result = deleteError();
     expect(result).toEqual({ type: actionTypes.DELETE_ERROR });
+  });
+
+  test('loadProductsActionCreator should return an action, with an actionType LOAD_PRODUCTS, and a products array', () => {
+    const result = loadProductsActionCreator([{}, {}]);
+    expect(result).toEqual({ type: actionTypes.LOAD_PRODUCTS, products: [{}, {}] });
   });
 });
