@@ -51,7 +51,7 @@ const ChoosePlanet = ({ dispatch, planets }) => {
           {planetsArray.length && planetsArray?.map((planet) => (
             <PlanetDetail
               data={planet}
-              clickHandler={() => handlePlanetSelection(planet)}
+              clickHandler={handlePlanetSelection}
             />
           ))}
         </ul>
@@ -65,8 +65,9 @@ ChoosePlanet.propTypes = {
   planets: PropTypes.shape([]).isRequired
 };
 
-const mapStateToProps = ({ loadSwapiPlanets }) => ({
-  planets: loadSwapiPlanets
+const mapStateToProps = ({ loadSwapiPlanets, userActionReducer }) => ({
+  planets: loadSwapiPlanets,
+  userState: userActionReducer
 });
 
 export default connect(mapStateToProps)(ChoosePlanet);

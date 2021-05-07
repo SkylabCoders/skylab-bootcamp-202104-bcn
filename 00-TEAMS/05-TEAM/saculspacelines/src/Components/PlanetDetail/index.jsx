@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 import './form.css';
 
 const PlanetDetail = ({
-  data
+  data, clickHandler
 }) => {
   const
     {
@@ -13,8 +13,7 @@ const PlanetDetail = ({
       gravity,
       terrain,
       population,
-      imgUrl,
-      clickHandler
+      imgUrl
       // faction
     } = data;
 
@@ -23,12 +22,11 @@ const PlanetDetail = ({
   const handleShow = () => {
     setShowDetails(!showDetails);
   };
-
   return (
     <li key={name} className="planet">
       <button
         type="button"
-        onClick={clickHandler}
+        onClick={() => clickHandler(data)}
       >
         <img
           src={imgUrl}
@@ -112,10 +110,10 @@ PlanetDetail.propTypes = {
     terrain: PropTypes.string.isRequired,
     surface_water: PropTypes.string.isRequired,
     population: PropTypes.string.isRequired,
-    imgUrl: PropTypes.string.isRequired,
-    clickHandler: PropTypes.func.isRequired
-  }).isRequired
+    imgUrl: PropTypes.string.isRequired
+  }).isRequired,
 
+  clickHandler: PropTypes.func.isRequired
 };
 
 export default PlanetDetail;

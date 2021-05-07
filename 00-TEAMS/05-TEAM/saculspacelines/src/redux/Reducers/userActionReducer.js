@@ -17,16 +17,18 @@ const {
 
 } = actionTypes;
 
-export default function userActionReducer(state = [], { type, payload }) {
-  let currentUser = null;
-  let currentPlanet = '';
-  let currentStarship = '';
+export default function userActionReducer(
+  state = { currentUser: null, currentPlanet: null, currentStarship: null }, { type, payload }
+) {
+  let updateState = { ...state };
   let result = 0;
 
   switch (type) {
     case ADD_USER:
       // result = { ...USERS, payload };
       USERS.push(payload);
+      updateState = { ...updateState, currentUser: { ...payload } };
+      result = { ...updateState };
       break;
 
     case CHANGE_FACTION:
@@ -35,53 +37,54 @@ export default function userActionReducer(state = [], { type, payload }) {
       break;
 
     case CREATE_TRAVEL:
-      result = USERS.find((user) => user.username === currentUser);
-      result.wishlist = [...result.wishlist, payload];
+      result = USERS.find((user) => user.email === state.currentUser.email);
+      result.wishlist = [...result.wishlist,
+        payload];
       result = { ...USERS, result };
       break;
 
     case DELETE_WISH:
-      result = USERS.find((user) => user.username === currentUser);
+      result = USERS.find((user) => user.username === state.currentUser);
       result.wishlist = result.wishlist.filter((wish) => wish.id !== payload);
       result = { ...USERS, result };
       break;
 
     case LOAD_WISHLIST:
-      result = USERS.find((user) => user.email === currentUser);
+      result = USERS.find((user) => user.email === state.currentUser);
       result = result.wishlist;
       break;
 
     case MODIFY_USERNAME:
-      result = USERS.find((user) => user.username === currentUser);
+      result = USERS.find((user) => user.username === state.currentUser);
       result.username = payload;
       result = { ...USERS, result };
       break;
 
     case MODIFY_WISH:
-      result = USERS.find((user) => user.username === currentUser);
+      result = USERS.find((user) => user.username === state.currentUser);
       result.wishlist = result.wishlist.filter((wish) => wish.id !== payload.id);
       result.wishlist = { ...result.wishlist, payload };
       result = { ...USERS, result };
       break;
 
     case RESET_PROFILE:
-      result = USERS.filter((user) => user.username !== currentUser);
+      result = USERS.filter((user) => user.username !== state.currentUser);
       break;
 
     case SELECT_AVATAR:
-      result = USERS.find((user) => user.email === currentUser);
-      currentUser = payload.username;
+      result = USERS.find((user) => user.email === state.currentUser);
+      updateState.currentUser = payload.username;
       result = { ...USERS, payload };
       break;
 
     case SET_CURRENT_PLANET:
-      currentPlanet = payload;
-      result = currentPlanet;
+      updateState = { ...updateState, currentPlanet: { ...payload } };
+      result = { ...updateState };
       break;
 
     case SET_CURRENT_STARSHIP:
-      currentStarship = payload;
-      result = currentStarship;
+      updateState.currentStarship = { ...payload };
+      result = { ...updateState };
       break;
 
       // case SHOW_PRICE:

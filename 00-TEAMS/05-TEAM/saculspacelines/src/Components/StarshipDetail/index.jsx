@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 import './form.css';
 
 const StarshipDetail = ({
-  data
+  data, clickHandler
 }) => {
   const
     {
@@ -14,7 +14,6 @@ const StarshipDetail = ({
       crew,
       passengers,
       consumables,
-      clickHandler,
       imgUrl
       // faction
     } = data;
@@ -131,9 +130,9 @@ StarshipDetail.propTypes = {
     consumables: PropTypes.string.isRequired,
     hyperdrive_rating: PropTypes.string.isRequired,
     starship_class: PropTypes.func.isRequired,
-    imgUrl: PropTypes.string.isRequired,
-    clickHandler: PropTypes.func.isRequired
-  }).isRequired
+    imgUrl: PropTypes.string.isRequired
+  }).isRequired,
+  clickHandler: PropTypes.func.isRequired
 };
 
 export default StarshipDetail;

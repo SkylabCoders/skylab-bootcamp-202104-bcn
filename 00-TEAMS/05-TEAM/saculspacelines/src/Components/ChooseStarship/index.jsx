@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadStarships, setCurrentStarship } from '../../redux/Actions/actionCreator';
+import { loadStarships, setCurrentStarship, createTravel } from '../../redux/Actions/actionCreator';
 import StarshipDetail from '../StarshipDetail';
 
-const ChooseStarship = ({ dispatch, starships }) => {
+const ChooseStarship = ({ dispatch, starships, userState }) => {
   const pages = ['?page=1', '?page=2', '?page=3', '?page=4'];
   const [currentStarship, setStarship] = useState(null);
   const history = useHistory();
@@ -21,6 +21,13 @@ const ChooseStarship = ({ dispatch, starships }) => {
 
   const handleSubmit = () => {
     dispatch(setCurrentStarship(currentStarship));
+    dispatch(createTravel(
+      {
+        planet: userState.currentPlanet,
+        starship: userState.currentStarship,
+        price: '5$'
+      }
+    ));
     history.push('/select-destiny');
   };
 
@@ -58,11 +65,23 @@ const ChooseStarship = ({ dispatch, starships }) => {
 
 ChooseStarship.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  starships: PropTypes.shape([]).isRequired
+  starships: PropTypes.shape([]).isRequired,
+  userState: PropTypes.shape({
+    currentPlanet: PropTypes.shape({}).isRequired,
+    currentStarship: PropTypes.shape({}).isRequired
+  }).isRequired
 };
 
-const mapStateToProps = ({ loadSwapiStarships }) => ({
-  starships: loadSwapiStarships
-});
+// const mapStateToProps = ({ loadSwapiStarships, userActionReducer }) => ({
+//   starships: loadSwapiStarships,
+//   planet: userActionReducer.currentPlanet
+// });
+
+function mapStateToProps({ loadSwapiStarships, userActionReducer }) {
+  return {
+    starships: loadSwapiStarships,
+    userState: userActionReducer
+  };
+}
 
 export default connect(mapStateToProps)(ChooseStarship);
