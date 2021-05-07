@@ -1,19 +1,21 @@
 import axios from 'axios';
 import { loadGlobalData } from './actionCreators';
+import actionTypes from './actionTypes';
 
 jest.mock('axios');
-const url = 'https://covid-api.mmediagroup.fr/v1/cases';
 
 describe('loadGlobalData', () => {
   test('should dispatch LOAD_GLOBAL', async () => {
-    axios.mockResolvedValue({ data: { Global: { All: { skylab: 'Yes' } } } });
+    const mockData = { data: { Global: { All: { skylab: 'Yes' } } } };
+    axios.mockResolvedValue(mockData);
 
     const dispatch = jest.fn();
     // act
-    await loadGlobalData(url)(dispatch);
+    await loadGlobalData()(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
-      type: 'LOAD_GLOBAL'
+      type: actionTypes.LOAD_GLOBAL,
+      data: mockData.data.Global.All
     });
   });
 
