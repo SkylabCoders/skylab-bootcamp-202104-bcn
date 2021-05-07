@@ -1,5 +1,6 @@
+import axios from 'axios';
 import {
-  getFilms, getGenres, getCast, getRecomended
+  getFilms, getGenres, getCast, getRecomended, getShows
 } from '../../../common/services/films';
 import actionTypes from './actionTypes';
 
@@ -31,6 +32,19 @@ export function getMovieById(movieId) {
     dispatch({
       type: actionTypes.LOAD_MOVIE,
       movie: response.data
+    });
+  };
+}
+
+export function loadTvShows() {
+  return async (dispatch) => {
+    const response = await axios.get(getShows);
+    console.log(response);
+    // eslint-disable-next-line no-console
+    console.log(response);
+    dispatch({
+      type: actionTypes.LOAD_SHOWS,
+      shows: response.data.results
     });
   };
 }
