@@ -15,8 +15,8 @@ describe('When invoked a loadGame function', () => {
   //   const diff = 'easy';
   //   const type = 'boolean';
   //   const dispatch = jest.fn();
-  //   const testFn = await loadGame(diff, type);
-  //   testFn(dispatch);
+  //   const testFn = loadGame(diff, type);
+  //   await testFn(dispatch);
   //   expect(dispatch).toHaveBeenCalledWith({
   //     type: actionTypes.LOAD_GAME,
   //     data: ['Testeando bajo el sol']
