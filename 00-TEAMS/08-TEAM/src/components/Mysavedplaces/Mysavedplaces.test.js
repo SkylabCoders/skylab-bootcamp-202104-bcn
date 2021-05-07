@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { unmountComponentAtNode } from 'react-dom';
-import Header from './index';
+import MySavedPlaces from './index';
 import { render, screen } from './test-utils';
 
 let container = null;
@@ -17,9 +17,9 @@ afterEach(() => {
 });
 
 describe('Header Component', () => {
-  test('should contain Global', () => {
-    render(<Header />, container);
+  test('should contain My Saved Places', () => {
+    render(<MySavedPlaces />, container);
 
-    expect(screen.getByText(/Global/i)).toBeInTheDocument();
+    expect(screen.getByText(/My Saved Places/i)).toBeInTheDocument();
   });
 });

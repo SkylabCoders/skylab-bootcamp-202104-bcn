@@ -25,6 +25,6 @@ describe('FavoriteButton Component', () => {
       }
     });
 
-    expect(addCountryToFav).toHaveBeenCalled();
+    expect(addCountryToFav()).toHaveBeenCalled();
   });
 });
