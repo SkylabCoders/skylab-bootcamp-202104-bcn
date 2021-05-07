@@ -1,15 +1,12 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import './Slider.css';
+import bannerImage from '../../../images/macbook-pro-banner.jpeg';
 
-const Slider = () => {
-  const title = 'Slider';// remove when component has been build
-  return (
-    <div>
-      {/* remove title when component has been build */}
-      <h2>{title}</h2>
-    </div>
-  );
-};
+const Slider = () => (
+  <div className="slider">
+    <img src={bannerImage} alt="macbook-pro" />
+  </div>
+);
 
 Slider.propTypes = {
 
