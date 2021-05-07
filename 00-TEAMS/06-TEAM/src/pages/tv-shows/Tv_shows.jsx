@@ -11,9 +11,6 @@ const TvShows = ({ myShows, dispatch }) => {
     dispatch(loadTvShows());
   }, []);
 
-  // eslint-disable-next-line no-console
-  console.log(myShows);
-
   return (
     <div className="shows-conatiner">
       {myShows.map((element) => (
