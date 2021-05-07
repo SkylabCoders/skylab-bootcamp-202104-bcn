@@ -11,7 +11,9 @@ const historyUrl = 'history';
 
 export const loadGlobalData = (url = `${URL}${casesUrl}`) => async (dispatch) => {
   try {
-    const { data } = await axios.get(url);
+    console.log('try');
+    const { data } = await axios(url);
+    console.log(data.Global.All);
     dispatch({
       type: actionTypes.LOAD_GLOBAL,
       data: data.Global.All
