@@ -8,8 +8,6 @@ import SearchInput from '../SearchInput';
 import './style.scss';
 
 const MySavedPlaces = ({ favoriteCountry }) => {
-  // eslint-disable-next-line no-debugger
-  debugger;
   const history = useHistory();
   const { isAuthenticated } = useAuth0();
 
@@ -30,7 +28,6 @@ const MySavedPlaces = ({ favoriteCountry }) => {
               </Link>
             ))}
             {' '}
-
           </ul>
         </div>
       </div>
