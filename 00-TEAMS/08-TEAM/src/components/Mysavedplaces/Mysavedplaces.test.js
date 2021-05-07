@@ -2,7 +2,7 @@
 import React from 'react';
 import { unmountComponentAtNode } from 'react-dom';
 import MySavedPlaces from './index';
-import { render, screen } from './test-utils';
+import { render, screen } from '../../utils/test-utils';
 
 let container = null;
 beforeEach(() => {

@@ -5,7 +5,7 @@ import React from 'react';
 import { render as rtlRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
 // Import your own reducer
-import configureStore from '../../redux/store/index';
+import configureStore from '../redux/store/index';
 
 function render(
   ui,

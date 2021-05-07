@@ -2,7 +2,7 @@
 import React from 'react';
 import Country from './index';
 import { loadCountry, loadCountryHistory, loadVaccinesByCountry } from '../../redux/actions/actionCreators';
-import { render } from './test-utils';
+import { render } from '../../utils/test-utils';
 
 jest.mock('./../../redux/actions/actionCreators');
 jest.mock('react-router-dom', () => ({
