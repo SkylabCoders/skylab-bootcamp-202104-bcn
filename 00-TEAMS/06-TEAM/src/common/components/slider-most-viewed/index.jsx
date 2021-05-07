@@ -13,10 +13,9 @@ import { connect } from 'react-redux';
 import { loadMovies } from '../../../application/store/actions/actionsCreator';
 import { Carousel } from './styles';
 
-const SliderCarousel = ({
-  myMovies, type, dispatch
-}) => {
+const SliderCarousel = ({ myMovies, type, dispatch }) => {
   const baseImgUrl = 'https://image.tmdb.org/t/p/w200/';
+
   useEffect(() => {
     dispatch(loadMovies(type));
   }, []);

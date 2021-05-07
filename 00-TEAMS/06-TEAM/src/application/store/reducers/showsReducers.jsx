@@ -3,7 +3,7 @@ import actionTypes from '../actions/actionTypes';
 function showsReducer(state = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_SHOWS:
-      return [...action.shows];
+      return [...state, ...action.shows];
     default:
       break;
   }

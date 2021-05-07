@@ -9,7 +9,7 @@ import { getMovieById, getCastMovie, loadRecomended } from '../../application/st
 import {
   WrapperMovie, ContainerBackground, Description, Genres, Cast, WrapperInfo
 } from './styles';
-import Heading from '../../common/components/TitleSlider/TitleSlider';
+import Heading from '../../common/components/heading/Heading';
 import { Carousel } from '../../common/components/slider-most-viewed/styles';
 
 function MovieDetail({
@@ -42,7 +42,7 @@ function MovieDetail({
               <img className="slider__img" src={`${baseImgUrl}${selectedMovie.poster_path}`} alt="" />
             </div>
             <div className="container__info_col__Right">
-              <Heading Content={selectedMovie.title} Type="1" />
+              <Heading content={selectedMovie.title} type={1} />
               <span>{selectedMovie.runtime}</span>
               <Description>
                 {selectedMovie.overview}
@@ -72,7 +72,6 @@ function MovieDetail({
           </div>
         </WrapperMovie>
         <WrapperInfo>
-
           <Carousel>
             <CarouselProvider
               naturalSlideWidth={70}
