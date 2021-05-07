@@ -26,10 +26,12 @@ const UserNav = () => (
     <div className="navigation__devolution">
       Devoluciones y pedidos
     </div>
-    <div className="navigation__cart">
-      <button type="button"> </button>
-      <span className="navigation__cart-number">3</span>
-    </div>
+    <Link to="/Cart">
+      <div className="navigation__cart">
+        <button type="button"> </button>
+        <span className="navigation__cart-number">3</span>
+      </div>
+    </Link>
   </nav>
 );
 

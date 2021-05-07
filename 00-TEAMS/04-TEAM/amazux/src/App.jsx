@@ -7,6 +7,7 @@ import ErrorMessage from './components/ErrorMessage';
 import Dashboard from './components/Dashboard';
 import Products from './components/Products';
 import Footer from './components/Footer';
+import Cart from './components/Cart';
 import './styles/styles.css';
 
 function App({ error }) {
@@ -18,6 +19,7 @@ function App({ error }) {
         <Switch>
           <Route path="/" exact component={Dashboard} />
           <Route path="/products/:id" exact component={Products} />
+          <Route path="/cart" exact component={Cart} />
         </Switch>
       </main>
       <Footer />
