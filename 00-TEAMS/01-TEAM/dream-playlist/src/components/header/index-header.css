@@ -6,9 +6,7 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
   height: 60px;
-  background: #020024;
-  background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(0%, #e8edee), color-stop(0%, #2b2b34), to(#3c3c3b));
-  background: linear-gradient(90deg, #020024 0%, #e8edee 0%, #2b2b34 0%, #3c3c3b 100%);
+  background-color: #282828;
   width: -webkit-fill-available;
   width: -moz-available;
   width: fill;

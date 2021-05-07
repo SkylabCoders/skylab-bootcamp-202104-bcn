@@ -9,4 +9,5 @@ REACT_APP_SPOTIFY_SECRET_CLIENT_ID=<YOUR SPOTIFY SECRET CLIENT ID>
 
 *To run the project with https must run the command:
 
-npm set HTTPS=true&&react-scripts start
+To run program in WINDOWS: HTTPS=true npm start
+To run program in MAC or Linux: export HTTPS=true&& npm start

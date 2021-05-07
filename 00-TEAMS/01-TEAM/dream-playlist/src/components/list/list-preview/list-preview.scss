@@ -6,6 +6,29 @@
 
 .containerListSongs {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
+
+.mosaicSongs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content:center;
+}
+
+.li-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #282828;
+    margin: 10px;
+    padding: 10px;
+    height: 100%;
+}
+
+span {
+    color:white;
+    font-weight: 400;
+}
+
