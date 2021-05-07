@@ -80,7 +80,8 @@ MovieDetail.propTypes = {
 
   }).isRequired,
   selectedCast: PropTypes.shape({
-    cast: []
+    cast: [],
+    crew: []
   }).isRequired
 };
 
