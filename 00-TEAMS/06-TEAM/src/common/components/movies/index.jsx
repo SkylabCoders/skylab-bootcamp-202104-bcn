@@ -19,7 +19,7 @@ Movies.propTypes = {
   dispatch: PropTypes.func.isRequired,
   myMovies: PropTypes.shape({
     poster_path: PropTypes.string
-  }).isRequired
+  }).isRequiredwsele
 };
 
 const mapStateToProps = ({ movies }) => ({
