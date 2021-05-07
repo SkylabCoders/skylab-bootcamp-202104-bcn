@@ -9,7 +9,9 @@ import {
 } from './styles';
 import Heading from '../../common/components/TitleSlider/TitleSlider';
 
-function MovieDetail({ selectedMovie, dispatch }) {
+function MovieDetail({ selectedMovie, dispatch, selectedCast }) {
+  // eslint-disable-next-line no-console
+  console.log('---->', selectedCast);
   const { movieId } = useParams();
   useEffect(() => {
     dispatch(getMovieById(movieId));
@@ -78,8 +80,7 @@ MovieDetail.propTypes = {
 
   }).isRequired,
   selectedCast: PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string
+    cast: []
   }).isRequired
 };
 
