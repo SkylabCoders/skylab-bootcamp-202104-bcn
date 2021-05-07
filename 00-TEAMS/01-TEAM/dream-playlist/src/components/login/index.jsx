@@ -50,12 +50,12 @@ function LogIn({
 
   const loggedInTemplate = () => (
     <>
-      {userImage}
       <p className="loginMessage">
         Welcome,
         {' '}
         {auth?.user?.name}
       </p>
+      {userImage}
       <button id="auth-button" type="button" onClick={() => logout(isAuthenticated, user)}>Log out</button>
     </>
   );
