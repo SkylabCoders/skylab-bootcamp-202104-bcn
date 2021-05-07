@@ -1,4 +1,7 @@
-import { getFilms, getGenres, getCast } from '../../../common/services/films';
+import axios from 'axios';
+import {
+  getFilms, getGenres, getCast, getShows, getRecomended
+} from '../../../common/services/films';
 import actionTypes from './actionTypes';
 
 export function loadMovies(searchParam) {
@@ -8,6 +11,15 @@ export function loadMovies(searchParam) {
       type: actionTypes.LOAD_MOVIES,
       moviesType: searchParam,
       movies: response.data.results
+    });
+  };
+}
+export function loadTvShows() {
+  return async (dispatch) => {
+    const response = await axios.get(getShows);
+    dispatch({
+      type: actionTypes.LOAD_SHOWS,
+      shows: response.data.results
     });
   };
 }
@@ -42,6 +54,17 @@ export function getCastMovie(movieId) {
     });
   };
 }
+
+export function loadRecomended(movieId) {
+  return async (dispatch) => {
+    const response = await getRecomended(movieId);
+    dispatch({
+      type: actionTypes.LOAD_RECOMENDED,
+      recomended: response.data.results
+    });
+  };
+}
+
 export function login(user) {
   return {
     type: actionTypes.AUTH_LOGIN,

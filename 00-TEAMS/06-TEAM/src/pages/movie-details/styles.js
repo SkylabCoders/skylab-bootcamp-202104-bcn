@@ -37,7 +37,10 @@ export const WrapperMovie = styled.div`
     }
   }
 `;
-
+export const WrapperInfo = styled.div`
+  position:relative;
+  display:block;
+`;
 export const ContainerBackground = styled.div`
   background-image: url(${(props) => props.img});
   width: 100%;
