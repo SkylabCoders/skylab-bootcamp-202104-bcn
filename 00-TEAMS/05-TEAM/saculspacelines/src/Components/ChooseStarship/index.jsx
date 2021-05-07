@@ -24,7 +24,7 @@ const ChooseStarship = ({ dispatch, starships, userState }) => {
     dispatch(createTravel(
       {
         planet: userState.currentPlanet,
-        starship: userState.currentStarship,
+        starship: currentStarship,
         price: '5$'
       }
     ));

@@ -37,7 +37,7 @@ const Profile = () => {
             currentWishlist.map((item) => (
               <tr className="wishlist-container__tablerow">
                 <td className="wishlist-container__tabledata">
-                  {`${item.planet.name} ${item.starship} ${item.price}`}
+                  {`${item.planet.name} ${item.starship.name} ${item.price}`}
                   {' '}
                   <button type="button" className="wishlist-container__button">modify</button>
                   <button type="button" className="wishlist-container__button">delete</button>
