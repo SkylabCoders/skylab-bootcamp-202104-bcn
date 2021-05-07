@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { loadArtworksFromApi, loadCategory } from '../../redux/actions/actionCreators';
-import Footer from '../Common/Footer';
 import './Category.scss';
 
 function Category({ dispatch, artworks, category }) {
@@ -30,7 +29,6 @@ function Category({ dispatch, artworks, category }) {
           </li>
         ))}
       </ul>
-      <Footer />
     </>
   );
 }
