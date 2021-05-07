@@ -41,17 +41,18 @@ const ProductList = ({ products, productsToShow }) => {
 
   return (
     <div className="product-list">
-      { initialPosition > 0
-        && (
-        <button
-          id="prevButton"
-          className="product-list__button--visible"
-          type="button"
-          onClick={prev}
-        >
-          {'<'}
-        </button>
-        )}
+      <button
+        id="prevButton"
+        className={
+            initialPosition > 0
+              ? 'product-list__button--visible'
+              : 'product-list__button--hidden'
+          }
+        type="button"
+        onClick={prev}
+      >
+        {'<'}
+      </button>
       {
       products.length ? (
         <div className="products">
@@ -63,7 +64,11 @@ const ProductList = ({ products, productsToShow }) => {
       { products.length > lastPosition && (
         <button
           id="nextButton"
-          className="product-list__button--visible"
+          className={
+            products.length > lastPosition
+              ? 'product-list__button--visible'
+              : 'product-list__button--hidden'
+          }
           type="button"
           onClick={next}
         >
