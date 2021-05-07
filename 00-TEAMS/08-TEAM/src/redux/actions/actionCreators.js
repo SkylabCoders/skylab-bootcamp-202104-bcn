@@ -10,12 +10,18 @@ const vaccinesUrl = 'vaccines';
 const historyUrl = 'history';
 
 export const loadGlobalData = (url = `${URL}${casesUrl}`) => async (dispatch) => {
-  const { data } = await axios.get(url);
-
-  dispatch({
-    type: actionTypes.LOAD_GLOBAL,
-    data: data.Global.All
-  });
+  try {
+    const { data } = await axios.get(url);
+    dispatch({
+      type: actionTypes.LOAD_GLOBAL,
+      data: data.Global.All
+    });
+  } catch (error) {
+    console.log(error);
+    dispatch({
+      type: 'LOAD_GLOBAL_ERROR'
+    });
+  }
 };
 
 export const loadCountry = (country) => async (dispatch) => {
