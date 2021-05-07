@@ -13,6 +13,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 5px;
 }
 
 .products__img {
@@ -27,5 +30,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=productList.css.map */
