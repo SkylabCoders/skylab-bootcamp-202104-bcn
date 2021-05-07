@@ -41,7 +41,7 @@ export const WrapperMovie = styled.div`
 export const ContainerBackground = styled.div`
   background-image: url(${(props) => props.img});
   width: 100%;
-  height: 65vh;
+  height: 95vh;
   background-size: 100%;
   background-position: 0% 39%;
   background-repeat: no-repeat;
@@ -79,6 +79,33 @@ export const Genres = styled.span`
         min-height:30px;
         font-size: 0.75em;
         margin: 0 15px;
+        padding:0;
+      }
+    }
+`;
+
+export const Cast = styled.span`
+  font-family: 'Ubuntu',sans-serif;
+  font-size:0.95em;
+  line-height: 1.5em;
+  color:#fff;
+  width:100%;
+    ul{
+      display:flex;
+      flex-flow:row wrap;
+      justify-content: flex-start;
+      align-self: center;
+      max-width: 74%;
+      list-style: none;
+      padding-left:0 !important;
+      li{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:15%;
+        min-height:30px;
+        font-size: 0.85em;
+        margin: 0;
         padding:0;
       }
     }

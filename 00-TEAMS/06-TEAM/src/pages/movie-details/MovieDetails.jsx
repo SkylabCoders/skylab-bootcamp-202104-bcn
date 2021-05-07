@@ -5,11 +5,11 @@ import { PropTypes } from 'prop-types';
 import { getMovieById, getCastMovie } from '../../application/store/actions/actionsCreator';
 // eslint-disable-next-line import/no-cycle
 import {
-  WrapperMovie, ContainerBackground, Description, Genres
+  WrapperMovie, ContainerBackground, Description, Genres, Cast
 } from './styles';
 import Heading from '../../common/components/TitleSlider/TitleSlider';
 
-function MovieDetail({ selectedMovie, dispatch }) {
+function MovieDetail({ selectedMovie, selectedCast, dispatch }) {
   const { movieId } = useParams();
   useEffect(() => {
     dispatch(getMovieById(movieId));
@@ -47,6 +47,16 @@ function MovieDetail({ selectedMovie, dispatch }) {
                 ))}
               </ul>
             </Genres>
+            <Cast>
+              <ul>
+                {
+                  selectedCast.cast?.slice(0, 5).map((element) => (
+                    <li>{element.name}</li>
+                  ))
+                }
+              </ul>
+
+            </Cast>
           </div>
         </div>
       </WrapperMovie>
@@ -78,8 +88,7 @@ MovieDetail.propTypes = {
 
   }).isRequired,
   selectedCast: PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string
+    cast: []
   }).isRequired
 };
 
