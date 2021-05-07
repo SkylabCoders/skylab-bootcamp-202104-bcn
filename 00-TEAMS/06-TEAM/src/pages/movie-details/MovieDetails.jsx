@@ -67,6 +67,7 @@ function MovieDetail({ selectedMovie, selectedCast, dispatch }) {
           {movieId}
         </h3>
       )
+
   );
 }
 
