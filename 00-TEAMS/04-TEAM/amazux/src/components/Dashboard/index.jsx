@@ -13,7 +13,7 @@ const Dashboard = ({ products, dispatch }) => {
   }, []);
   return (
     <div className="dashboard">
-      <Slider imgSources={[]} />
+      <Slider productUrl="/products/5a0b35df734d1d08bf7084cb" />
       <FeaturedProducts products={products} />
       <ProductsList products={products} productsToShow={3} pagination={10} />
     </div>
