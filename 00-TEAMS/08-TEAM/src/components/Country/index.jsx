@@ -43,6 +43,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
       <section className="country-section">
         <div className="country-section__data">
           <h1>{country}</h1>
+          <FavoriteButton />
           <ul>
             {myCountryStats.map((value) => (
               <li key={`${value}`}>
@@ -62,7 +63,6 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
               </li>
             ))}
           </ul>
-          <FavoriteButton />
         </div>
         <HistoryGraph />
       </section>
