@@ -2,11 +2,12 @@ button {
     font-size: xx-large;
     color: yellow;
     cursor: pointer;
-    
 }
+
 button:active{
     color:green
 }
+
 button:visited{
     color:grey
 }
@@ -40,7 +41,7 @@ button:visited{
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
-  }
+}
 
 .popup .show {
     visibility: visible;

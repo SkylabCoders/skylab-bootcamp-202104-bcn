@@ -9,9 +9,11 @@ import { addCountryToFav } from '../../redux/actions/actionCreators';
 
 function FavoriteButton({ dispatch }) {
   const { country } = useParams();
+
   function handleAddCountry() {
     dispatch(addCountryToFav(country));
   }
+
   function popUpFunction() {
     const popup = document.querySelector('#popUp');
     popup.classList.add('show');
@@ -36,7 +38,6 @@ function FavoriteButton({ dispatch }) {
 
 FavoriteButton.propTypes = {
   dispatch: PropTypes.func.isRequired
-//   country: PropTypes.string.isRequired
 };
 
 function mapStateToProps(store) {

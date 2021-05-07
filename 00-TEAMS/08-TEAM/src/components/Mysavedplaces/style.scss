@@ -14,7 +14,7 @@
             padding: 5px;
             background-color: transparent;
         }
-    }
+}
 
 .countriesSaved-cointainer{
     width: 84%;
@@ -24,11 +24,11 @@
     flex-wrap: wrap;
         padding: 34px;
        
-    ul{
+    ul {
     display: flex;
     width: 84%;
     }
-    li{
+    li {
         display: flex;
         color: #eeeeee;
         border: 2px solid #eeeeee;
@@ -38,6 +38,5 @@
         width: 16vw;
         margin: 18px;
         background-color: #3D5566;
-
     }
 }
