@@ -69,21 +69,3 @@ export function logout() {
     type: actionTypes.AUTH_LOGOUT,
   };
 }
-
-export function loadFavorites() {
-  return {
-    type: actionTypes.LOAD_FAVORITES,
-  };
-}
-
-export function deleteArtwork() {
-  return {
-    type: actionTypes.DELETE_FAVORITE,
-  };
-}
-
-export function addArtwork() {
-  return {
-    type: actionTypes.ADD_FAVORITE,
-  };
-}
