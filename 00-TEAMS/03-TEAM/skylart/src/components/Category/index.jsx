@@ -10,12 +10,7 @@ import './Category.scss';
 let alreadyCalledId = [2];
 function Category({ dispatch, artworks, category }) {
   const { categoryId } = useParams();
-<<<<<<< HEAD
   const departmentProp = categoriesToPrint.find((element) => element.id === +categoryId);
-=======
-  // const [initialList, setinitialList] = useState();
-
->>>>>>> 2eee97e6... Changes to load category
   useEffect(() => {
     if (!alreadyCalledId.includes(+categoryId)) {
       alreadyCalledId = [...alreadyCalledId, +categoryId];
