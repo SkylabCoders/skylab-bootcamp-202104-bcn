@@ -1,5 +1,3 @@
-/* eslint-disable no-debugger */
-/* eslint-disable no-console */
 import { React, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -11,15 +9,17 @@ import './login.css';
 function LogIn({
   auth, actions, token, spotifyUser
 }) {
+  const defaultImage = (<img src="https://www.ecestaticos.com/image/clipping/557/418/cf475d592df7554d671971a7838a5461/el-maquillaje-retro-que-ariana-grande-ha-hecho-viral-paso-a-paso.jpg" className="icon" alt="icono" />
+  );
   const {
     loginWithRedirect,
     logout,
     isAuthenticated,
     user
   } = useAuth0();
-
   const [currentToken, setCurrentToken] = useState(token);
   const [currentUser, setCurrentUser] = useState(null);
+  const [userImage, setUserImage] = useState(defaultImage);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -28,29 +28,33 @@ function LogIn({
   }, [isAuthenticated, user]);
 
   useEffect(() => {
-    debugger;
     if (!token) actions.getToken();
   }, [currentToken]);
 
   if (currentToken === false && token) setCurrentToken(token);
 
   useEffect(() => {
-    if (token && auth) {
+    if (token && auth.isLoggedIn) {
       actions.getUserData(currentToken, auth?.user?.sub);
     }
-  }, [currentToken]);
+  }, [auth.isLoggedIn]);
+
+  const getImageFromUser = () => (
+    <img src={spotifyUser.images[0].url} className="icon" alt="icono" />
+  );
 
   if (currentUser === null && token && spotifyUser) {
     setCurrentUser(spotifyUser);
+    if (spotifyUser.images[0]?.url) { setUserImage(getImageFromUser()); }
   }
 
   const loggedInTemplate = () => (
     <>
+      {userImage}
       <p className="loginMessage">
         Welcome,
         {' '}
         {auth?.user?.name}
-        {console.log(spotifyUser)}
       </p>
       <button id="auth-button" type="button" onClick={() => logout(isAuthenticated, user)}>Log out</button>
     </>
@@ -86,7 +90,8 @@ LogIn.propTypes = {
   token: PropTypes.string.isRequired,
   spotifyUser: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    display_name: PropTypes.string
+    display_name: PropTypes.string,
+    images: PropTypes.shape([])
   }).isRequired,
 
   actions: PropTypes.shape({
