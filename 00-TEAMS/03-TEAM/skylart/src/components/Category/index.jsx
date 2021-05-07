@@ -20,6 +20,7 @@ function Category({ dispatch, artworks, category }) {
   useEffect(() => {
     artworks.slice(1, 16).map((artworkId) => dispatch(loadCategory(artworkId)));
   }, [artworks]);
+
   return (
     <>
       <ul className="category">
