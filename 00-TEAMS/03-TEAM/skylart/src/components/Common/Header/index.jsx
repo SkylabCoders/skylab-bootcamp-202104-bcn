@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.svg';
-import './Header.scss';
 import Login from '../../LogIn';
+import './Header.scss';
 
 function Header() {
   return (
@@ -24,7 +24,6 @@ function Header() {
               <li className="left-elements__item"><Link to={`/category/${1}`}>The American Wing</Link></li>
             </ul>
           </li>
-          <li className="left-elements"><Link to="/favorites">Favorites</Link></li>
         </ul>
         <ul className="container__right-elements">
           <Login />
