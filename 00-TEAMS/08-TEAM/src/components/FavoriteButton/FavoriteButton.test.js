@@ -3,7 +3,6 @@ import React from 'react';
 import FavoriteButton from './index';
 import { addCountryToFav } from '../../redux/actions/actionCreators';
 import { render, fireEvent } from './test-utils';
-// import { useParams } from 'react-router';
 
 jest.mock('./../../redux/actions/actionCreators');
 jest.mock('react-router-dom', () => ({
