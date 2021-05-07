@@ -15,6 +15,6 @@ describe('When invoked Ranking func', () => {
         ranking: [{ correctAnswers: 0, incorrectAnswers: 2 }]
       }
     });
-    expect(screen.getByText(/Josep/i)).toBeInTheDocument();
+    expect(screen.getByText(/Has acertado/i)).toBeInTheDocument();
   });
 });
