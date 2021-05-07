@@ -58,6 +58,15 @@ function ListPreview({
               <br />
               <span className="badge">{song.track.name}</span>
               <br />
+              <iframe
+                src={`https://open.spotify.com/embed/track/${song.track.id}`}
+                width="300"
+                height="80"
+                frameBorder="0"
+                allowtransparency="true"
+                allow="encrypted-media"
+                title={song.track.uri}
+              />
             </li>
           ))}
         </ul>
