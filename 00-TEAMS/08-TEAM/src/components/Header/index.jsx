@@ -15,7 +15,6 @@ const Header = () => {
       </Link>
       <Link className="nav-element" to="/global">Global</Link>
       <Link className="nav-element" to="/mysavedplaces">My Saved Places</Link>
-      <Link className="nav-element" to="/advices">Advices</Link>
       <SearchInput />
       <Link className="nav-element" to="/login">
         { !isAuthenticated ? 'Login' : 'Logout'}
