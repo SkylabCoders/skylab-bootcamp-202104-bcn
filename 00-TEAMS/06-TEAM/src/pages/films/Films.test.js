@@ -1,24 +1,15 @@
-/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { unmountComponentAtNode } from 'react-dom';
-import { render, screen } from './test.utils';
+import { render, screen } from '../../common/test';
+import { createStore } from '../../application/store';
 import Films from './Films';
 
-let container = null;
-beforeEach(() => {
-  container = document.createElement('div');
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
+const store = createStore({
+  moviesGrid: [{ id: 3, poster_path: 'www.google.es', originalTitle: 'SuperFilm' }]
 });
 
 describe('Footer Component', () => {
   test('should contain text Films', () => {
-    render(<Films />, container);
-    expect(screen.getByText(/Films/i)).toBeInTheDocument();
+    render(<Films />, { store });
+    expect(screen.getByAltText('SuperFilm')).toBeInTheDocument();
   });
 });

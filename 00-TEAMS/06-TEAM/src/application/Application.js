@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Auth0Provider } from '@auth0/auth0-react';
-import store from './store';
+import { createStore } from './store';
 import HeaderLayout from './components/layout/Layout';
 import GlobalApp from './styles/GlobalStyles';
 
@@ -13,7 +13,7 @@ function App() {
         clientId="NtRILJGUuayWtHP9G8fFFDWgTFNMubaY"
         redirectUri={window.location.origin}
       >
-        <Provider store={store}>
+        <Provider store={createStore()}>
           <HeaderLayout />
         </Provider>
       </Auth0Provider>

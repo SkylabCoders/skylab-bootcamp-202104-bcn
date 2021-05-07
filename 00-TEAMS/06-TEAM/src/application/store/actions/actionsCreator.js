@@ -1,6 +1,5 @@
-import axios from 'axios';
 import {
-  getFilms, getGenres, getCast, getShows, getRecomended, getGrid
+  getFilms, getGenres, getCast, getShows, getRecommended, getGrid
 } from '../../../common/services/films';
 import actionTypes from './actionTypes';
 
@@ -15,9 +14,9 @@ export function loadMovies(searchParam) {
   };
 }
 
-export function loadGridMovies() {
+export function loadGridMovies(searchParam) {
   return async (dispatch) => {
-    const response = await axios.get(getGrid);
+    const response = await getGrid(searchParam);
     dispatch({
       type: actionTypes.LOAD_GRID_MOVIES,
       moviesGrid: response.data.results
@@ -25,9 +24,9 @@ export function loadGridMovies() {
   };
 }
 
-export function loadTvShows() {
+export function loadTvShows(searchParam) {
   return async (dispatch) => {
-    const response = await axios.get(getShows);
+    const response = await getShows(searchParam);
     dispatch({
       type: actionTypes.LOAD_SHOWS,
       shows: response.data.results
@@ -68,7 +67,7 @@ export function getCastMovie(movieId) {
 
 export function loadRecomended(movieId) {
   return async (dispatch) => {
-    const response = await getRecomended(movieId);
+    const response = await getRecommended(movieId);
     dispatch({
       type: actionTypes.LOAD_RECOMENDED,
       recomended: response.data.results
