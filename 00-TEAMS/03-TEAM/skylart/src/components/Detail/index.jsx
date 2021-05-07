@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadDetail } from '../../redux/actions/actionCreators';
 import GoBackButton from '../Common/GoBackButton';
-import Footer from '../Common/Footer';
+import './Detail.scss';
 
 function Detail({ dispatch, category, detail }) {
   const { artworkId } = useParams();
@@ -13,40 +13,52 @@ function Detail({ dispatch, category, detail }) {
 
   return (
     <>
-      <figure>
-        <img src="" alt="" />
-        <h2>
-          {' '}
-
-          {' '}
-        </h2>
+      <figure className="main-imatge-container">
+        <img className="main-imatge" src={detail.primaryImage} alt={detail.title} />
+        <h2>{detail.title}</h2>
       </figure>
-
       <div className="information-container">
-        <h3>Artwork title</h3>
-        <span>any</span>
-        <span>autor</span>
-        <ul>
-          <li>
-            Artist:
-            {' '}
-            {detail.department}
+        <h3>{detail.title}</h3>
+        <h4>{detail.objectDate}</h4>
+        <h4>{detail.artistDisplayName}</h4>
+        <ul className="table-information">
+          <li className="table-row">
+            <span>Title:</span>
+            {detail.title}
           </li>
-          <li>Date: </li>
-          <li>Culture: </li>
-          <li>Medium: </li>
-          <li>Dimensions: </li>
-          <li>Credit Line: </li>
-          <li>Accession Number: </li>
+          <li className="table-row">
+            <span>Artist:</span>
+            {detail.artistDisplayName}
+          </li>
+          <li className="table-row">
+            <span>Date:</span>
+            {detail.objectDate}
+          </li>
+          <li className="table-row">
+            <span>Period:</span>
+            {detail.period}
+          </li>
+          <li className="table-row">
+            <span>Medium:</span>
+            {detail.medium}
+          </li>
+          <li className="table-row">
+            <span>Dimensions:</span>
+            {detail.dimensions}
+          </li>
+          <li className="table-row">
+            <span>Credit Line:</span>
+            {detail.creditLine}
+          </li>
+          <li className="table-row">
+            <span>Accession Number:</span>
+            {detail.accessionNumber}
+          </li>
         </ul>
-        <button type="button">Add to favorites</button>
-        <GoBackButton />
+        <div className="button-container">
+          <GoBackButton />
+        </div>
       </div>
-
-      <ul>
-        <li>imatges</li>
-      </ul>
-      <Footer />
     </>
   );
 }
@@ -56,8 +68,15 @@ Detail.propTypes = {
   category: PropTypes.shape([]).isRequired,
   detail: PropTypes.shape({
     objectId: PropTypes.number,
-    department: PropTypes.string,
+    primaryImage: PropTypes.string,
+    title: PropTypes.string,
+    artistDisplayName: PropTypes.string,
     objectDate: PropTypes.string,
+    period: PropTypes.string,
+    medium: PropTypes.string,
+    dimensions: PropTypes.string,
+    creditLine: PropTypes.string,
+    accessionNumber: PropTypes.string,
   }).isRequired,
 };
 
