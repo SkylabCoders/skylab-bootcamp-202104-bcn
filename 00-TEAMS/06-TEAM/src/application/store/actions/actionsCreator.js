@@ -17,7 +17,6 @@ export function loadMovies(searchParam) {
 export function loadTvShows() {
   return async (dispatch) => {
     const response = await axios.get(getShows);
-    console.log(response);
     dispatch({
       type: actionTypes.LOAD_SHOWS,
       shows: response.data.results
