@@ -27,3 +27,12 @@ export const loadProducts = () => async (dispatch) => {
     });
   }
 };
+
+export const addProduct = (product) => ({
+  type: actionTypes.ADD_PRODUCT,
+  product
+});
+
+export const deleteProduct = () => ({
+  type: actionTypes.DELETE_PRODUCT
+});
