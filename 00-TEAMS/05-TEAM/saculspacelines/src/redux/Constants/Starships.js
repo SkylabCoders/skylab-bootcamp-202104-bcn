@@ -194,7 +194,7 @@ const STARSHIPS = [
 
   {
     name: 'Banking clan frigte',
-    imgUrl: 'https://media.sketchfab.com/models/d43f57b7baaa49ee95dec414fae4f2a8/thumbnails/acbb790[…]a4357ad59f84c940a328b/97ee07e067a4472c8c08259e40a15e71.jpeg',
+    imgUrl: 'https://i.pinimg.com/originals/c4/e5/e5/c4e5e5915500e020b152da939c524a64.gif',
     faction: DARK
   },
   {

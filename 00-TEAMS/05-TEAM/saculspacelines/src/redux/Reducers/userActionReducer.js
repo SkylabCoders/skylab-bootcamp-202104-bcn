@@ -25,7 +25,6 @@ export default function userActionReducer(
 
   switch (type) {
     case ADD_USER:
-      // result = { ...USERS, payload };
       USERS.push(payload);
       updateState = { ...updateState, currentUser: { ...payload } };
       result = { ...updateState };
