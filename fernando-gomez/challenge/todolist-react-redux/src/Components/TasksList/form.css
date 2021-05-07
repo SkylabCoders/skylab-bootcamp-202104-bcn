@@ -1,0 +1,36 @@
+input, button {
+  font-family: 'Antonio', sans-serif;
+}
+
+.tasks-list {
+  width: 50vw;
+}
+
+.tasks-list__main-features {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tasks-list__list {
+  width: 50vw;
+  color: green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.list__element {
+  list-style: none;
+}
+
+.main-features input {
+  width: 30vw;
+}
+/*# sourceMappingURL=form.css.map */

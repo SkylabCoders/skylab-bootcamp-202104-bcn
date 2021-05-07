@@ -1,0 +1,33 @@
+input, button {
+    font-family: 'Antonio', sans-serif;
+}
+
+.tasks-list {
+
+    width: 50vw;
+
+    &__main-features {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__list {
+        width: 50vw;
+        color: green;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.list {
+    &__element {
+        list-style: none;
+    }
+}
+
+.main-features {
+    
+    input{
+        width: 30vw;
+    }
+}

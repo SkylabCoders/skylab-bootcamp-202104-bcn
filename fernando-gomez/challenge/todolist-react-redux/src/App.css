@@ -1,0 +1,12 @@
+body {
+  background: black;
+  color: white;
+  font-family: 'Antonio', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=App.css.map */
