@@ -20,6 +20,7 @@ function Category({ dispatch, artworks, category }) {
   useEffect(() => {
     artworks.slice(1, 16).map((artworkId) => dispatch(loadCategory(artworkId)));
   }, [artworks]);
+
   return (
     <>
       <ul className="category">
@@ -28,6 +29,7 @@ function Category({ dispatch, artworks, category }) {
         ).map((individualDetail) => (
           <li className="category__item">
             <Link to={`/detail/${individualDetail.objectID}`}>
+              <p className="detail-name">{individualDetail.title}</p>
               <img
                 src={individualDetail.primaryImageSmall}
                 alt={individualDetail.primaryImageSmall}
