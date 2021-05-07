@@ -28,8 +28,8 @@ const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
               { globalData
         && globalData.map(([element, value]) => (
           <li key={element} className="total">
-            <p className="identifier">{element}</p>
-            <p className="number">{value}</p>
+            <p className="identifier">{element.toUpperCase()}</p>
+            <p className="number">{Number(value).toLocaleString()}</p>
           </li>
         ))}
             </ul>
@@ -45,14 +45,14 @@ const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
               Vaccinated:
               <span className="continent-card__data">
                 {' '}
-                {country[1]}
+                {Number(country[1]).toLocaleString()}
               </span>
             </p>
             <p className="continent-card__entry">
               Partially Vaccinated:
               <span className="continent-card__data">
                 {' '}
-                {country[2]}
+                {Number(country[2]).toLocaleString()}
               </span>
             </p>
             <p className="continent-card__entry">
