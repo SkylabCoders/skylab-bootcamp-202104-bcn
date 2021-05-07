@@ -1,18 +1,19 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+import './Slider.css';
+import bannerImage from '../../../images/macbook-pro-banner.jpeg';
 
-const Slider = () => {
-  const title = 'Slider';// remove when component has been build
-  return (
-    <div>
-      {/* remove title when component has been build */}
-      <h2>{title}</h2>
-    </div>
-  );
-};
+const Slider = ({ productUrl }) => (
+  <div className="slider">
+    <Link to={productUrl}>
+      <img src={bannerImage} alt="macbook-pro" />
+    </Link>
+  </div>
+);
 
 Slider.propTypes = {
-
+  productUrl: PropTypes.string.isRequired
 };
 
 export default Slider;

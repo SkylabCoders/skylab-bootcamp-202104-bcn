@@ -1,4 +1,6 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Loader from '../Loader/index';
 import './productList.css';
@@ -21,15 +23,17 @@ const ProductList = ({ products, productsToShow }) => {
     <ul className="products__list">
       {products.slice(initialProductPosition, finalProductPosition).map((element) => (
         <li key={element.name} className="products__item">
-          <img className="products__img" src={element.img.url} alt={element.name} />
-          <div className="products__details">
-            <span className="products__name">{element.name}</span>
-            <span className="products__price">
-              {element.cost}
-              {' '}
-              €
-            </span>
-          </div>
+          <Link to={`/products/${element._id}`}>
+            <img className="products__img" src={element.img.url} alt={element.name} />
+            <div className="products__details">
+              <span className="products__name">{element.name}</span>
+              <span className="products__price">
+                {element.cost}
+                {' '}
+                €
+              </span>
+            </div>
+          </Link>
         </li>
       ))}
     </ul>
@@ -37,17 +41,18 @@ const ProductList = ({ products, productsToShow }) => {
 
   return (
     <div className="product-list">
-      { initialPosition > 0
-        && (
-        <button
-          id="prevButton"
-          className="product-list__button--visible"
-          type="button"
-          onClick={prev}
-        >
-          {'<'}
-        </button>
-        )}
+      <button
+        id="prevButton"
+        className={
+            initialPosition > 0
+              ? 'product-list__button--visible'
+              : 'product-list__button--hidden'
+          }
+        type="button"
+        onClick={prev}
+      >
+        {'<'}
+      </button>
       {
       products.length ? (
         <div className="products">
@@ -59,7 +64,11 @@ const ProductList = ({ products, productsToShow }) => {
       { products.length > lastPosition && (
         <button
           id="nextButton"
-          className="product-list__button--visible"
+          className={
+            products.length > lastPosition
+              ? 'product-list__button--visible'
+              : 'product-list__button--hidden'
+          }
           type="button"
           onClick={next}
         >

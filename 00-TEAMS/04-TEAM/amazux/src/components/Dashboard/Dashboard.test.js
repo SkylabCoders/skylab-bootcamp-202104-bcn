@@ -31,6 +31,6 @@ test('should return a div with class products__list', () => {
       ]
     }
   });
-
-  expect(screen.getByText(/Slider/i)).toBeInTheDocument();
+  const slider = container.querySelector('.slider');
+  expect(slider).toBeInTheDocument();
 });
