@@ -1,4 +1,6 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Loader from '../Loader/index';
 import './productList.css';
@@ -21,15 +23,17 @@ const ProductList = ({ products, productsToShow }) => {
     <ul className="products__list">
       {products.slice(initialProductPosition, finalProductPosition).map((element) => (
         <li key={element.name} className="products__item">
-          <img className="products__img" src={element.img.url} alt={element.name} />
-          <div className="products__details">
-            <span className="products__name">{element.name}</span>
-            <span className="products__price">
-              {element.cost}
-              {' '}
-              €
-            </span>
-          </div>
+          <Link to={`/products/${element._id}`}>
+            <img className="products__img" src={element.img.url} alt={element.name} />
+            <div className="products__details">
+              <span className="products__name">{element.name}</span>
+              <span className="products__price">
+                {element.cost}
+                {' '}
+                €
+              </span>
+            </div>
+          </Link>
         </li>
       ))}
     </ul>
