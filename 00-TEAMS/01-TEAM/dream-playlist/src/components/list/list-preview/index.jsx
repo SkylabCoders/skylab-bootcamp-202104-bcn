@@ -54,13 +54,22 @@ function ListPreview({
             <li className="li-container">
               <span className="badge">{song.track.album.artists[0]?.name}</span>
               <br />
-              <img src={song.track.album?.images[1]?.url} className="badge" alt="track img" />
+              <img src={song.track.album?.images[1]?.url} className="img-tracks" alt="track img" />
               <br />
               <span className="badge">{song.track.name}</span>
               <br />
             </li>
           ))}
         </ul>
+        <div>
+          <div className="containerSoundcloud">
+            Click
+            <button type="button">
+              <a href="https://soundcloud.com/gemmasings/sky-push" target="_blank" rel="noreferrer">HERE</a>
+            </button>
+            if you want to listen the new hit of the summer
+          </div>
+        </div>
       </div>
     </>
   );
