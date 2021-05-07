@@ -26,7 +26,6 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/category/:categoryId" component={Category} />
             <Route path="/detail/:artworkId" component={Detail} />
-            <Route path="/favorites" component={Favorites} />
             <Redirect to="/" />
           </Switch>
           <Footer />
