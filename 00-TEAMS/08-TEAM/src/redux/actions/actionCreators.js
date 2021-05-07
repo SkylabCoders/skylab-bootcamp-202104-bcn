@@ -8,15 +8,12 @@ const historyUrl = 'history';
 
 export const loadGlobalData = (url = `${URL}${casesUrl}`) => async (dispatch) => {
   try {
-    console.log('try');
     const { data } = await axios(url);
-    console.log(data.Global.All);
     dispatch({
       type: actionTypes.LOAD_GLOBAL,
       data: data.Global.All
     });
   } catch (error) {
-    console.log(error);
     dispatch({
       type: 'LOAD_GLOBAL_ERROR'
     });
@@ -32,7 +29,7 @@ export const loadCountry = (country) => async (dispatch) => {
   });
 };
 export const loadCountryHistory = (country) => async (dispatch) => {
-  const url = `${URL}${historyUrl}?country=${country}&status=confirmed`; // TODO VALIDACION DE INPUT CASES AND TEXT
+  const url = `${URL}${historyUrl}?country=${country}&status=confirmed`;
   const response = await axios.get(url);
   dispatch({
     type: actionTypes.LOAD_COUNTRY_HISTORY,
@@ -58,7 +55,6 @@ export const loadVaccinesByContinent = (url = `${URL}${vaccinesUrl}`) => async (
     data[continent].All.people_vaccinated,
     data[continent].All.people_partially_vaccinated,
     data[continent].All.updated
-
   ]));
 
   const getAmericasData = (array) => {

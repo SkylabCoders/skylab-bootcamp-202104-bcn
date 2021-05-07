@@ -3,16 +3,18 @@
     color: #eeeeee;
     
     .container {
-        max-width: 1400px;
-        margin: 0 auto;
         display: flex;
         flex-direction: column;
-        padding: 90px 100px 60px 100px;
+        padding: 60px 100px 30px 100px;
     }
 
     .title {
         margin: 40px 0;
         text-align: center;
+    }
+
+    .mainData {
+        height: 60px;
     }
 
     .globalCards {
@@ -41,13 +43,14 @@
     .continent-cards {
         display: flex;
         justify-content: center;
-        margin-bottom: 50px;
         flex-wrap: wrap;
 
         .continent-card {
-            padding: 50px;
+            padding: 34px;
             background-color: #3D5566;
-            margin: 10px;
+            margin: 16px;
+            border-radius: 20px;
+            text-align: center;
             
             &__name {
                 font-weight: bolder;
@@ -62,5 +65,4 @@
             }
         }
     }
-
 }

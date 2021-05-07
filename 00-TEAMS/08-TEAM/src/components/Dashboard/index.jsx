@@ -33,11 +33,11 @@ Get the lastest updated info about the pandemic and vaccination by continent, co
       <ul>
         { globalData
         && globalData.map(([element, value]) => (
-<li className="Highlighted-data-card">
-{element.toUpperCase()}
-{'  '}
-{Number(value).toLocaleString()}
-</li>
+          <li className="Highlighted-data-card">
+            {element.toUpperCase()}
+            {'  '}
+            {Number(value).toLocaleString()}
+          </li>
         ))}
       </ul>
         </div>
