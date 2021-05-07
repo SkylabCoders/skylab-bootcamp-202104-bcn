@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-  getFilms, getGenres, getCast, getShows, getRecomended
+  getFilms, getGenres, getCast, getShows, getRecomended, getGrid
 } from '../../../common/services/films';
 import actionTypes from './actionTypes';
 
@@ -14,6 +14,17 @@ export function loadMovies(searchParam) {
     });
   };
 }
+
+export function loadGridMovies() {
+  return async (dispatch) => {
+    const response = await axios.get(getGrid);
+    dispatch({
+      type: actionTypes.LOAD_GRID_MOVIES,
+      moviesGrid: response.data.results
+    });
+  };
+}
+
 export function loadTvShows() {
   return async (dispatch) => {
     const response = await axios.get(getShows);
