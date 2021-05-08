@@ -13,6 +13,7 @@ const showMoviesGrid = ({ myGrid, dispatch }) => {
     dispatch(loadGridMovies(TYPE_PARAMS.popular));
   }, []);
 
+  
   return (
     <div className="shows-conatiner">
       {myGrid.map((element) => (
