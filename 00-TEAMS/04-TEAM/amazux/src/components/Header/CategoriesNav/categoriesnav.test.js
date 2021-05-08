@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '../test-utils';
+import { render, screen } from '../../../test-utils';
 import CategoriesNav from './index';
 
 describe('CategoriesNav Component', () => {
