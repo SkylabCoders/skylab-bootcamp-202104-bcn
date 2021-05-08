@@ -11,8 +11,8 @@ function cartReducer(cart = [], action) {
       return [...cart, action.product];
 
     case actionTypes.DELETE_PRODUCT:
-      return updateCart.filter((x) => x.fakeIdProduct
-        !== action.fakeIdProduct);// falta fakeIdProduct
+      return updateCart.filter((product) => product.name
+        !== action.productName);
 
     default:
       break;

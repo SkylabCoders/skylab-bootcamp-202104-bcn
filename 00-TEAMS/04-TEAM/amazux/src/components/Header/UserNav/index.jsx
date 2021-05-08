@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
 import Login from '../../Login';
 
-const UserNav = () => (
+const UserNav = ({ cart }) => (
   <nav className="navigation">
     <div className="navigation__content-img">
       <Link to="/">
@@ -29,14 +31,19 @@ const UserNav = () => (
     <Link to="/Cart">
       <div className="navigation__cart">
         <button type="button"> </button>
-        <span className="navigation__cart-number">3</span>
+        <span className="navigation__cart-number">{ cart.length }</span>
       </div>
     </Link>
   </nav>
 );
 
 UserNav.propTypes = {
+  cart: PropTypes.shape([]).isRequired
 
 };
 
-export default UserNav;
+function mapStateToProps(cart) {
+  return cart;
+}
+
+export default connect(mapStateToProps)(UserNav);
