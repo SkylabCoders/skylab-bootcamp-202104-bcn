@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 import {
-  signIn, signOut, deleteError, loadProductsActionCreator, loadProducts, addProduct
+  signIn, signOut, deleteError, loadProductsActionCreator, loadProducts, addProduct, deleteProduct
 } from './actionCreators';
 
 global.fetch = jest.fn(() => Promise.resolve({
@@ -45,12 +45,19 @@ describe('ActionCreators', () => {
     await loadProducts()(dispatch);
     expect(dispatch).toHaveBeenCalled();
   });
-});
 
-test('addProduct should return an action, with an actionType ADD_PRODUCT', () => {
-  const result = addProduct({ name: 'Iphone' });
-  expect(result).toEqual({
-    type: actionTypes.ADD_PRODUCT,
-    product: { name: 'Iphone' }
+  test('addProduct should return an action, with an actionType ADD_PRODUCT', () => {
+    const result = addProduct({ name: 'Iphone' });
+    expect(result).toEqual({
+      type: actionTypes.ADD_PRODUCT,
+      product: { name: 'Iphone' }
+    });
+  });
+
+  test('deleteProduct should return an action, with an actionType DELETE_PRODUCT', () => {
+    const result = deleteProduct('Iphone 8');
+    expect(result).toEqual(
+      { type: actionTypes.DELETE_PRODUCT, productName: 'Iphone 8' }
+    );
   });
 });
