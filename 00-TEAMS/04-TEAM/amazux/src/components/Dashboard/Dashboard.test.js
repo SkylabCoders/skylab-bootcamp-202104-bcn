@@ -1,8 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import Dashboard from './index';
-import { render, screen } from '../../test-utils';
+import { render } from '../../test-utils';
 
 test('should return a div with class products__list', () => {
   const { container } = render(<Dashboard />, {
