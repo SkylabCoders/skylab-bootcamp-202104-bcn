@@ -11,4 +11,9 @@ export const ContainerFilms = styled.div`
   .Heading--Title{
     font-size: 1.3em;
   }
+  a{
+    img{
+      margin:15px;
+    }
+  }
 `;

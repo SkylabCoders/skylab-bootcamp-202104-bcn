@@ -24,10 +24,10 @@ function Login({ auth, actions }) {
       <Profile>
         <img src={user?.picture} alt={user.name} />
         <div className="UserName">
-          Welcome
           {' '}
           <p>
             {auth?.user?.name}
+            {' '}
           </p>
         </div>
       </Profile>
