@@ -1,7 +1,13 @@
 import actionTypes from './actionTypes';
 import {
-  signIn, signOut, deleteError, loadProductsActionCreator
+  signIn, signOut, deleteError, loadProductsActionCreator, loadProducts
 } from './actionCreators';
+
+global.fetch = jest.fn(() => Promise.resolve({
+  json: () => ({ rates: { CAD: 1.42 } })
+}));
+
+const dispatch = jest.fn();
 
 describe('ActionCreators', () => {
   test('singIn should return an action, with an actionType AUTH_LOGIN a user', () => {
@@ -33,5 +39,10 @@ describe('ActionCreators', () => {
   test('loadProductsActionCreator should return an action, with an actionType LOAD_PRODUCTS, and a products array', () => {
     const result = loadProductsActionCreator([{}, {}]);
     expect(result).toEqual({ type: actionTypes.LOAD_PRODUCTS, products: [{}, {}] });
+  });
+
+  test('loadProducts should return an action, with an actionType LOAD_PRODUCTS and a products array', async () => {
+    await loadProducts()(dispatch);
+    expect(dispatch).toHaveBeenCalled();
   });
 });
