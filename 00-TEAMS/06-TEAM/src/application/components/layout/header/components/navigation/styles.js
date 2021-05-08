@@ -39,7 +39,7 @@ export const Navigation = styled.header`
 `;
 export const BrandImage = styled.img`
   display:block;
-  margin:5px auto;
+  margin: 5px 15px;
   max-width: 180px;
 `;
 
