@@ -90,7 +90,7 @@ export function loadRecommendedShows(showId) {
     const response = await getShowsPopular(showId);
     dispatch({
       type: actionTypes.LOAD_SHOWS_RECOMMENDED,
-      recomenShow: response.data
+      recomenShow: response.data.results
     });
   };
 }
