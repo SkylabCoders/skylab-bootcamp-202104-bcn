@@ -5,6 +5,7 @@ import Home from '../../pages/home/Home';
 import Films from '../../pages/films/Films';
 import TvShows from '../../pages/tv-shows/Tv_shows';
 import MovieDetails from '../../pages/movie-details/MovieDetails';
+import ShowDetails from '../../pages/show-detail/ShowDetails';
 
 const DashboardRoutes = () => (
   <>
@@ -15,6 +16,7 @@ const DashboardRoutes = () => (
         <Route exact path="/films" component={Films} />
         <Route exact path="/tv-shows" component={TvShows} />
         <Route path="/detail/:movieId" component={MovieDetails} />
+        <Route path="/detailShow/:showId" component={ShowDetails} />
         <Redirect to="/" />
       </Switch>
     </div>

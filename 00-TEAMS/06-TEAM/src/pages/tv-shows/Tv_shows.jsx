@@ -16,7 +16,7 @@ const TvShows = ({ myShows, dispatch }) => {
   return (
     <div className="shows-conatiner">
       {myShows.map((element) => (
-        <Link to={`/detail/${element.id}`}>
+        <Link to={`/detailShow/${element.id}`}>
           <img key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt={element.originalTitle} />
         </Link>
       ))}

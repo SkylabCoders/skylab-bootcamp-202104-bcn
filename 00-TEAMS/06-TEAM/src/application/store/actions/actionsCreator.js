@@ -55,6 +55,16 @@ export function getMovieById(movieId) {
   };
 }
 
+export function getShowById(showId) {
+  return async (dispatch) => {
+    const response = await getShows(showId);
+    dispatch({
+      type: actionTypes.LOAD_SHOW,
+      show: response.data
+    });
+  };
+}
+
 export function getCastMovie(movieId) {
   return async (dispatch) => {
     const response = await getCast(movieId);
