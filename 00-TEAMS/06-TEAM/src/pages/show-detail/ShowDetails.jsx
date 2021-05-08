@@ -19,9 +19,6 @@ function ShowDetail({ selectedShow, recommendedShows, dispatch }) {
     dispatch(getShowById(showId));
   }, [showId]);
 
-  // eslint-disable-next-line no-console
-  console.log(recommendedShows);
-
   useEffect(() => {
     dispatch(loadRecommendedShows(showId));
   }, []);
@@ -69,7 +66,7 @@ function ShowDetail({ selectedShow, recommendedShows, dispatch }) {
             >
               <Slider className="slider">
                 {
-                  recommendedShows?.map((show) => (
+                  recommendedShows.map((show) => (
                     <Slide className="slider__item" key={show.id}>
                       <Link to={`/detailShow/${show.id}`}>
                         <img className="slider__img" src={`${baseImgUrl}${show.poster_path}`} alt="" />
