@@ -15,6 +15,9 @@ export const Navigation = styled.header`
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
+    > div {
+      max-height: 50px;
+    }
   }
   a{
     text-decoration: none;
@@ -36,12 +39,15 @@ export const Navigation = styled.header`
 `;
 export const BrandImage = styled.img`
   display:block;
-  margin:15px 20px;
+  margin: 5px 15px;
   max-width: 180px;
 `;
 
 export const BrandWrapper = styled.div`
   width:20%;
+  height: auto;
+  display: inline-block;
+  max-height: 50px;
   .navbar-brand{
     display:block;
     width:auto;
@@ -53,16 +59,17 @@ export const NavigationWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding-left:0;
-  width:60%;
+  width:50%;
 `;
 export const LoginWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  width:20%;
-  ul{
-    margin:15px 20px;
+  width:25%;
+  margin:0;
+  .navbar-nav{
+    margin: 0 auto;
   }
 `;
 

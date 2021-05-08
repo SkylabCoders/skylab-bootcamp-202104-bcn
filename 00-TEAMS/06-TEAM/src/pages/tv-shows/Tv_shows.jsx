@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loadTvShows } from '../../application/store/actions/actionsCreator';
+import Heading from '../../common/components/heading/Heading';
 import { TYPE_PARAMS } from '../../common/services/films';
-import { ContainerFilms } from './style';
+import { ContainerFilms, Grid, CardMovie } from './style';
 
 const TvShows = ({ myShows, dispatch }) => {
   const baseImgUrl = 'https://image.tmdb.org/t/p/w200';
@@ -15,13 +16,16 @@ const TvShows = ({ myShows, dispatch }) => {
 
   return (
     <ContainerFilms>
-      <div className="shows-conatiner">
+      <Heading type={1} content="Series Tv" />
+      <Grid>
         {myShows.map((element) => (
-          <Link to={`/detailShow/${element.id}`}>
-            <img key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt={element.originalTitle} />
-          </Link>
+          <CardMovie>
+            <Link to={`/detailShow/${element.id}`}>
+              <img key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt={element.originalTitle} />
+            </Link>
+          </CardMovie>
         ))}
-      </div>
+      </Grid>
     </ContainerFilms>
 
   );

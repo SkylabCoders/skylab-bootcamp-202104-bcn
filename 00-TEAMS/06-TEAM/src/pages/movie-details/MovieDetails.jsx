@@ -6,11 +6,10 @@ import {
   ButtonBack, ButtonNext, CarouselProvider, Slide, Slider
 } from 'pure-react-carousel';
 import { getMovieById, getCastMovie, loadRecomended } from '../../application/store/actions/actionsCreator';
-import {
-  WrapperMovie, ContainerBackground, Description, Genres, Cast, WrapperInfo
-} from './styles';
 import Heading from '../../common/components/heading/Heading';
-import { Carousel } from '../../common/components/slider-most-viewed/styles';
+import {
+  WrapperMovie, ContainerBackground, Description, Genres, Cast, WrapperInfo, CarouselRelated
+} from './styles';
 
 function MovieDetail({
   selectedMovie, selectedCast, recomendedMovies, dispatch
@@ -72,7 +71,7 @@ function MovieDetail({
           </div>
         </WrapperMovie>
         <WrapperInfo>
-          <Carousel>
+          <CarouselRelated>
             <CarouselProvider
               naturalSlideWidth={70}
               naturalSlideHeight={100}
@@ -97,7 +96,7 @@ function MovieDetail({
                 <ButtonNext className="nextButton">&#62;</ButtonNext>
               </div>
             </CarouselProvider>
-          </Carousel>
+          </CarouselRelated>
         </WrapperInfo>
       </>
     )
