@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Chart } from 'react-google-charts';
-import { loadVaccinesContinent } from '../../redux/actions/actionCreators';
+import { loadVaccinesContinentData } from '../../redux/actions/actionCreators';
 import './style.scss';
 
 const Map = ({ vaccinesContinentData, dispatch }) => {
-  useEffect(() => { dispatch(loadVaccinesContinent()); }, []);
+  useEffect(() => { dispatch(loadVaccinesContinentData()); }, []);
   return (
     <>
       <div className="worldwide-map">

@@ -2,7 +2,7 @@
 import axios from 'axios';
 import {
   loadGlobalData, loadCountry, loadVaccinesByCountry,
-  loadCountryHistory, loadVaccinesByContinentWithUpdated
+  loadVaccinesByContinent, addCountryToFav
 } from './actionCreators';
 import actionTypes from './actionTypes';
 
@@ -29,7 +29,7 @@ describe('loadGlobalData', () => {
     // act
     await loadGlobalData()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.LOAD_GLOBAL
+      type: 'LOAD_GLOBAL_ERROR'
     });
   });
 });
@@ -49,21 +49,6 @@ describe('loadCountry', () => {
   });
 });
 
-describe('loadCountryHistory', () => {
-  test('should dispatch LOAD_COUNTRY_HISTORY,', async () => {
-    const mockData = { data: { France: { All: {} } } };
-    axios.get.mockResolvedValue(mockData);
-
-    const dispatch = jest.fn();
-    // act
-    await loadCountryHistory()(dispatch);
-    expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.LOAD_COUNTRY_HISTORY,
-      data: mockData.data.All.dates
-    });
-  });
-});
-
 describe('loadVaccinesByCountry', () => {
   test('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
     const mockData = { data: { France: { All: {} } } };
@@ -79,16 +64,31 @@ describe('loadVaccinesByCountry', () => {
   });
 });
 
-describe('loadVaccinesByContinentWithUpdated', () => {
+describe('loadVaccinesByContinent', () => {
   test('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
     const mockData = { data: { Global: { All: {} } } };
     axios.get.mockResolvedValue(mockData);
 
     const dispatch = jest.fn();
     // act
-    await loadVaccinesByContinentWithUpdated()(dispatch);
+    await loadVaccinesByContinent()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.LOAD_VACCINES_BY_CONTINENT,
+      data: mockData.data.All
+    });
+  });
+});
+
+describe('loadVaccinesContinentData', () => {
+  test('should dispatch LOAD_VACCINES_MAP', async () => {
+    const mockData = { data: { Global: { All: {} } } };
+    axios.get.mockResolvedValue(mockData);
+
+    const dispatch = jest.fn();
+    // act
+    await loadVaccinesByContinent()(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.LOAD_VACCINES_MAP,
       data: mockData.data.All
     });
   });
