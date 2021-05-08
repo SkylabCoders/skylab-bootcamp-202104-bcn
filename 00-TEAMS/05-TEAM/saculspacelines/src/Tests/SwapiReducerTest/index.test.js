@@ -1,9 +1,9 @@
-import { loadSwapiPeople } from '../../redux/Reducers/swapireducer';
+import { loadSwapiPeople, loadSwapiPlanets, loadSwapiStarships } from '../../redux/Reducers/swapireducer';
 import actionTypes from '../../redux/Actions/actionTypes';
 
-const { LOAD_PEOPLE } = actionTypes;
+const { LOAD_PEOPLE, LOAD_PLANETS, LOAD_STARSHIPS } = actionTypes;
 
-const scenarios2 = [
+const scenarioPeople = [
 
   {
     action: {
@@ -16,8 +16,46 @@ const scenarios2 = [
 
 test.only('Should return a new array', () => {
   const result = loadSwapiPeople(
-    scenarios2.state, scenarios2[0].action,
-    scenarios2[0].action.payload
+    scenarioPeople.state, scenarioPeople[0].action,
+    scenarioPeople[0].action.payload
   );
-  expect(result).toEqual(scenarios2[0].result);
+  expect(result).toEqual(scenarioPeople[0].result);
+});
+
+const scenariosPlanets = [
+
+  {
+    action: {
+      type: LOAD_PLANETS,
+      payload: [{ name: 'a', url: 'b' }]
+    },
+    result: [[{ name: 'a', url: 'b' }]]
+  }
+];
+
+test.only('Should return a new array', () => {
+  const result = loadSwapiPlanets(
+    scenariosPlanets.state, scenariosPlanets[0].action,
+    scenariosPlanets[0].action.payload
+  );
+  expect(result).toEqual(scenariosPlanets[0].result);
+});
+
+const scenarioStarship = [
+
+  {
+    action: {
+      type: LOAD_STARSHIPS,
+      payload: [{ name: 'a', url: 'b' }]
+    },
+    result: [[{ name: 'a', url: 'b' }]]
+  }
+];
+
+test.only('Should return a new array', () => {
+  const result = loadSwapiStarships(
+    scenarioStarship.state, scenarioStarship[0].action,
+    scenarioStarship[0].action.payload
+  );
+  expect(result).toEqual(scenarioStarship[0].result);
 });
