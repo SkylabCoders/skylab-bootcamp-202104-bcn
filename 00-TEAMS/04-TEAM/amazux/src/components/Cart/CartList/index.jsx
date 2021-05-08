@@ -2,28 +2,41 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { deleteProduct } from '../../../redux/actions/actionCreators';
 
-const CartList = ({ cartList }) => (
+const CartList = ({ cartList, dispatch }) => {
+  const handleClick = (element) => {
+    dispatch(deleteProduct(element));
+  };
+  return (
 
-  <>
-    <h2>Carrito</h2>
+    <>
+      <h2>Carrito</h2>
 
-    <ul className="cart-list">
-      {
+      <ul className="main-cart__list">
+        {
           cartList.length
             ? (
 
               cartList.map((element) => (
-                <li key={element.name} className="products__item">
-                  <img className="products__img" src={element.img.url} alt={element.name} />
-                  <div className="products__details">
-                    <span className="products__name">{element.name}</span>
-                    <span className="products__price">
+                <li key={element.name} className="main-cart__item">
+                  <img className="main-cart__img" src={element.img.url} alt={element.name} />
+                  <div className="main-cart__details">
+                    <span className="main-cart__name">{element.name}</span>
+                    <span className="main-cart__price">
                       {element.cost}
                       {' '}
                       €
                     </span>
                   </div>
+                  <button
+                    type="button"
+                    className="main-cart__button"
+                    onClick={() => handleClick(element.name)}
+                  >
+                    X
+
+                  </button>
                 </li>
               ))
 
@@ -34,11 +47,12 @@ const CartList = ({ cartList }) => (
                 <Link to="/">Quiza te interese algo de nuestro catalogo</Link>
               </div>
             )
-}
+        }
 
-    </ul>
-  </>
-);
+      </ul>
+    </>
+  );
+};
 
 CartList.propTypes = {
   cartList: PropTypes.shape([{
@@ -50,7 +64,8 @@ CartList.propTypes = {
       url: PropTypes.string.isRequired,
       hdUrl: PropTypes.string.isRequired
     }
-  }]).isRequired
+  }]).isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (store) => ({
