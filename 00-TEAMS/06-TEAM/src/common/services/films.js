@@ -15,3 +15,4 @@ export const getCast = (entryPoint) => http.get(`/movie/${entryPoint}/credits?ap
 export const getRecommended = (entryPoint) => http.get(`/movie/${entryPoint}/recommendations?api_key=${API_KEY}&language=en-US&page=1`);
 export const getShows = (entryPoint) => http.get(`/tv/${entryPoint}?api_key=${API_KEY}`);
 export const getGrid = (entryPoint) => http.get(`/movie/${entryPoint}?api_key=${API_KEY}&language=en-US&page=1`);
+export const getShowsPopular = (entryPoint) => http.get(`/tv/${entryPoint}/recommendations?api_key=${API_KEY}`);
