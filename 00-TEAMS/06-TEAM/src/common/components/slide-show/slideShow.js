@@ -57,7 +57,9 @@ function SlideShow({ myMovies, dispatch }) {
 }
 
 SlideShow.propTypes = {
-  myMovies: PropTypes.arrayOf({}).isRequired,
+  myMovies: PropTypes.shape({
+    popular: []
+  }).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
