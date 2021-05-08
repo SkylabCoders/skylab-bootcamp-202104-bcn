@@ -125,6 +125,7 @@
   left: 25px;
   right: auto;
   top: 7px;
+  color: white;
 }
 
 @media (max-width: 600px) {
