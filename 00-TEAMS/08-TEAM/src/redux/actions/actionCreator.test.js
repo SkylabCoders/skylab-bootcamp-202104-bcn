@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 import axios from 'axios';
 import {
-  loadGlobalData, loadCountry, loadVaccinesByCountry, loadVaccinesByContinent
+  loadGlobalData, loadCountry, loadVaccinesByCountry,
+  loadVaccinesByContinent, addCountryToFav
 } from './actionCreators';
 import actionTypes from './actionTypes';
 
@@ -73,6 +74,21 @@ describe('loadVaccinesByContinent', () => {
     await loadVaccinesByContinent()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.LOAD_VACCINES_BY_CONTINENT,
+      data: mockData.data.All
+    });
+  });
+});
+
+describe('loadVaccinesContinentData', () => {
+  test('should dispatch LOAD_VACCINES_MAP', async () => {
+    const mockData = { data: { Global: { All: {} } } };
+    axios.get.mockResolvedValue(mockData);
+
+    const dispatch = jest.fn();
+    // act
+    await loadVaccinesByContinent()(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.LOAD_VACCINES_MAP,
       data: mockData.data.All
     });
   });

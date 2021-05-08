@@ -17,7 +17,7 @@ const Login = () => {
         {user.name}
       </h3>
       <img className="login__photo" src={user.picture} alt="user_photo" />
-      <button className="login__button" type="button" onClick={() => logout()}>Log out</button>
+      <button className="login__button" type="button" onClick={() => logout()}>Logout</button>
     </div>
   );
 
@@ -27,7 +27,6 @@ const Login = () => {
       <button className="login__button" type="button" onClick={() => loginWithRedirect()}>Login</button>
     </>
   );
-
   return (
     <>
       <div className="login">
@@ -41,7 +40,6 @@ const Login = () => {
 
 Login.propTypes = {
   auth: PropTypes.shape({
-    isLoggedIn: PropTypes.bool.isRequired,
     user: PropTypes.shape({ name: PropTypes.string.isRequired }).isRequired
   }).isRequired
 };

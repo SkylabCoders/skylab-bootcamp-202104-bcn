@@ -15,7 +15,7 @@ export const loadGlobalData = (url = `${URL}${casesUrl}`) => async (dispatch) =>
     });
   } catch (error) {
     dispatch({
-      type: 'LOAD_GLOBAL_ERROR'
+      type: actionTypes.LOAD_GLOBAL_ERROR
     });
   }
 };
@@ -46,20 +46,18 @@ export const loadVaccinesByCountry = (country) => async (dispatch) => {
     data: data.All
   });
 };
-function getContinetData(allContinents, data) {
-  return allContinents.map((continent) => ([
-    continent,
-    data[continent].All.people_vaccinated,
-    data[continent].All.people_partially_vaccinated,
-    data[continent].All.updated
-  ]));
-}
+
+const getContinetData = (allContinents, data) => allContinents.map((continent) => ([
+  continent,
+  data[continent].All.people_vaccinated,
+  data[continent].All.people_partially_vaccinated,
+  data[continent].All.updated
+]));
 
 const getAmericaData = (array) => {
   const peopleVaccinatedAmericas = array[4][1] + array[5][1];
   const peoplePartiallyVaccinatedAmericas = array[4][2] + array[5][2];
   const updated = array[4][3];
-
   const americasData = ['Americas', peopleVaccinatedAmericas, peoplePartiallyVaccinatedAmericas, updated];
   const segmentArray = array.splice(0, 4);
   const segmentArraywithAmericas = [...segmentArray, americasData];
@@ -68,7 +66,6 @@ const getAmericaData = (array) => {
 
 export const loadVaccinesByContinent = (url = `${URL}${vaccinesUrl}`) => async (dispatch) => {
   const { data } = await axios.get(url);
-
   const allContinents = ['Africa', 'Asia', 'Oceania', 'European Union', 'North America', 'South America'];
   let continents = getContinetData(allContinents, data);
   continents = getAmericaData(continents);
