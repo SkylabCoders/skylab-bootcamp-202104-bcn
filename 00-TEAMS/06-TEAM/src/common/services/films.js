@@ -14,4 +14,4 @@ export const getGenres = (entryPoint) => http.get(`/movie/${entryPoint}?api_key=
 export const getCast = (entryPoint) => http.get(`/movie/${entryPoint}/credits?api_key=${API_KEY}&language=en-US&page=1`);
 export const getRecommended = (entryPoint) => http.get(`/movie/${entryPoint}/recommendations?api_key=${API_KEY}&language=en-US&page=1`);
 export const getShows = (entryPoint) => http.get(`/tv/${entryPoint}?api_key=${API_KEY}`);
-export const getGrid = (entryPoint) => http.get(`/movie/${entryPoint}?api_key=${API_KEY}`);
+export const getGrid = (entryPoint) => http.get(`/movie/${entryPoint}?api_key=${API_KEY}&language=en-US&page=1`);

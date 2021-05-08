@@ -70,7 +70,8 @@ export const LoginBtn = styled.div`
   button {
     background-color: #cdc11d;
     color: #000000;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: 600;
     text-transform: capitalize;
     border:0;
     padding:8px 35px; 
