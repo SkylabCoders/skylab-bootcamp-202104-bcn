@@ -6,7 +6,7 @@ const Heading = ({ type, content }) => {
   const Tag = `h${type}`;
   return (
     <Title>
-      <Tag>
+      <Tag className="Heading--Title">
         {' '}
         {content}
       </Tag>

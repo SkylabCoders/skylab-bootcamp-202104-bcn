@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Login from '../../../../../../common/components/Login/Login';
+import GlobalFonts from '../../../../../../common/fonts/fonts';
+import BrandLogo from '../../../assets/BrandLogo.svg';
 import {
   Navigation, BrandImage, BrandWrapper, LoginWrapper, NavigationWrapper, LoginBtn
 } from './styles';
-import GlobalFonts from '../../../../../../common/fonts/fonts';
-import BrandLogo from '../../../assets/BrandLogo.svg';
 
 const Navbar = () => (
 
@@ -30,8 +30,9 @@ const Navbar = () => (
       </NavigationWrapper>
       <LoginWrapper className="navbar-login">
         <ul className="navbar-nav ml-auto">
-          <LoginBtn />
-          <Login />
+          <LoginBtn>
+            <Login />
+          </LoginBtn>
         </ul>
       </LoginWrapper>
     </div>
