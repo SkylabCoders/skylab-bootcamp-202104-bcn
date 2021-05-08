@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 import axios from 'axios';
 import {
-  loadGlobalData, loadCountry, loadVaccinesByCountry, loadVaccinesByContinent
+  loadGlobalData, loadCountry, loadVaccinesByCountry,
+  loadCountryHistory, loadVaccinesByContinentWithUpdated
 } from './actionCreators';
 import actionTypes from './actionTypes';
 
@@ -28,7 +29,7 @@ describe('loadGlobalData', () => {
     // act
     await loadGlobalData()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
-      type: 'LOAD_GLOBAL_ERROR'
+      type: actionTypes.LOAD_GLOBAL
     });
   });
 });
@@ -48,6 +49,21 @@ describe('loadCountry', () => {
   });
 });
 
+describe('loadCountryHistory', () => {
+  test('should dispatch LOAD_COUNTRY_HISTORY,', async () => {
+    const mockData = { data: { France: { All: {} } } };
+    axios.get.mockResolvedValue(mockData);
+
+    const dispatch = jest.fn();
+    // act
+    await loadCountryHistory()(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.LOAD_COUNTRY_HISTORY,
+      data: mockData.data.All.dates
+    });
+  });
+});
+
 describe('loadVaccinesByCountry', () => {
   test('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
     const mockData = { data: { France: { All: {} } } };
@@ -63,14 +79,14 @@ describe('loadVaccinesByCountry', () => {
   });
 });
 
-describe('loadVaccinesByContinent', () => {
+describe('loadVaccinesByContinentWithUpdated', () => {
   test('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
     const mockData = { data: { Global: { All: {} } } };
     axios.get.mockResolvedValue(mockData);
 
     const dispatch = jest.fn();
     // act
-    await loadVaccinesByContinent()(dispatch);
+    await loadVaccinesByContinentWithUpdated()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.LOAD_VACCINES_BY_CONTINENT,
       data: mockData.data.All
