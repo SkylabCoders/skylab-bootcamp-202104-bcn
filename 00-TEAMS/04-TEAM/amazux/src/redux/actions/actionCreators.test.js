@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 import {
-  signIn, signOut, deleteError, loadProductsActionCreator, loadProducts
+  signIn, signOut, deleteError, loadProductsActionCreator, loadProducts, addProduct
 } from './actionCreators';
 
 global.fetch = jest.fn(() => Promise.resolve({
@@ -44,5 +44,13 @@ describe('ActionCreators', () => {
   test('loadProducts should return an action, with an actionType LOAD_PRODUCTS and a products array', async () => {
     await loadProducts()(dispatch);
     expect(dispatch).toHaveBeenCalled();
+  });
+});
+
+test('addProduct should return an action, with an actionType ADD_PRODUCT', () => {
+  const result = addProduct({ name: 'Iphone' });
+  expect(result).toEqual({
+    type: actionTypes.ADD_PRODUCT,
+    product: { name: 'Iphone' }
   });
 });
