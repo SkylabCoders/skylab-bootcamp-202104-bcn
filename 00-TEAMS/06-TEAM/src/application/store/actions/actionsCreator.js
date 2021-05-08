@@ -85,6 +85,16 @@ export function loadRecomended(movieId) {
   };
 }
 
+export function loadRecommendedShows(showId) {
+  return async (dispatch) => {
+    const response = await getRecommended(showId);
+    dispatch({
+      type: actionTypes.LOAD_SHOWS_RECOMMENDED,
+      recomended: response.data.results
+    });
+  };
+}
+
 export function login(user) {
   return {
     type: actionTypes.AUTH_LOGIN,
