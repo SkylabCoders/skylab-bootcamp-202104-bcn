@@ -54,6 +54,7 @@ function SelectAvatar({ people, dispatch }) {
   return (
     <section className="select-avatar">
       <div className="select-avatar__header header">
+        <h1 className="header-title">Choose your avatar</h1>
         <img
           className="header__img"
           src={currentAvatar.imgUrl}
