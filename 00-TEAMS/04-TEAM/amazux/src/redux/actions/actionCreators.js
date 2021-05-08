@@ -33,6 +33,7 @@ export const addProduct = (product) => ({
   product
 });
 
-export const deleteProduct = () => ({
-  type: actionTypes.DELETE_PRODUCT
+export const deleteProduct = (productName) => ({
+  type: actionTypes.DELETE_PRODUCT,
+  productName
 });
