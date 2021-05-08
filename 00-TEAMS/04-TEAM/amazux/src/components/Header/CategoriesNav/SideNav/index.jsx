@@ -10,7 +10,7 @@ const SideNav = ({ closeSideNav }) => (
       <div className="sidenav__user-bar">
         <div className="sidenav__user-icon"> </div>
         <div className="sidenav__user-welcome">
-          Hola, User
+          Welcome, User
         </div>
       </div>
       <menu className="sidenav__menu-header">Menu</menu>
@@ -20,12 +20,12 @@ const SideNav = ({ closeSideNav }) => (
         <li>blanditiis fugiat voluptates</li>
         <li>doloremque eaque</li>
       </ul>
-      <menu className="sidenav__menu-header">Ayuda Y Ajustes</menu>
+      <menu className="sidenav__menu-header">Help & Settings</menu>
       <ul className="sidenav__menu-list">
-        <li>Mi Cuenta</li>
+        <li>My account</li>
         <li>Something went wront?</li>
         <li>About Amazux</li>
-        <li>Salir</li>
+        <li>Logout</li>
       </ul>
     </div>
   </div>
