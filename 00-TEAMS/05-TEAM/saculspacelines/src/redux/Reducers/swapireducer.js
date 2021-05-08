@@ -4,7 +4,7 @@ import PLANETS from '../Constants/Planets';
 import STARSHIPS from '../Constants/Starships';
 
 const {
-  LOAD_SWAPI, LOAD_PEOPLE, LOAD_PLANETS, LOAD_STARSHIPS
+  LOAD_PEOPLE, LOAD_PLANETS, LOAD_STARSHIPS
 } = actionTypes;
 
 const combineObjectsArrays = (apiArray, localArray) => {
@@ -19,20 +19,6 @@ const combineObjectsArrays = (apiArray, localArray) => {
 
   return newArray;
 };
-
-export function loadSwapiReducer(state = [], { type, payload }) {
-  let result;
-
-  switch (type) {
-    case LOAD_SWAPI:
-      result = [...state, payload];
-      break;
-
-    default:
-      result = state;
-  }
-  return result;
-}
 
 export function loadSwapiPeople(state = [], { type, payload }) {
   let result;
@@ -49,6 +35,9 @@ export function loadSwapiPeople(state = [], { type, payload }) {
   }
   return result;
 }
+
+// eslint-disable-next-line no-console
+console.log(loadSwapiPeople);
 
 export function loadSwapiPlanets(state = [], { type, payload }) {
   let result;
