@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loadTvShows } from '../../application/store/actions/actionsCreator';
 import { TYPE_PARAMS } from '../../common/services/films';
-import './styles/styles.css';
+import { ContainerFilms } from './style';
 
 const TvShows = ({ myShows, dispatch }) => {
   const baseImgUrl = 'https://image.tmdb.org/t/p/w200';
@@ -14,13 +14,16 @@ const TvShows = ({ myShows, dispatch }) => {
   }, []);
 
   return (
-    <div className="shows-conatiner">
-      {myShows.map((element) => (
-        <Link to={`/detailShow/${element.id}`}>
-          <img key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt={element.originalTitle} />
-        </Link>
-      ))}
-    </div>
+    <ContainerFilms>
+      <div className="shows-conatiner">
+        {myShows.map((element) => (
+          <Link to={`/detailShow/${element.id}`}>
+            <img key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt={element.originalTitle} />
+          </Link>
+        ))}
+      </div>
+    </ContainerFilms>
+
   );
 };
 
