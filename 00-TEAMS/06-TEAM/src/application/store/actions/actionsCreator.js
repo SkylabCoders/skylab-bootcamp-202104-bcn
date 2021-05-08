@@ -1,5 +1,5 @@
 import {
-  getFilms, getGenres, getCast, getShows, getRecommended, getGrid
+  getFilms, getGenres, getCast, getShows, getRecommended, getGrid, getShowsPopular
 } from '../../../common/services/films';
 import actionTypes from './actionTypes';
 
@@ -87,10 +87,10 @@ export function loadRecomended(movieId) {
 
 export function loadRecommendedShows(showId) {
   return async (dispatch) => {
-    const response = await getRecommended(showId);
+    const response = await getShowsPopular(showId);
     dispatch({
       type: actionTypes.LOAD_SHOWS_RECOMMENDED,
-      recomended: response.data.results
+      recomenShow: response.data
     });
   };
 }
