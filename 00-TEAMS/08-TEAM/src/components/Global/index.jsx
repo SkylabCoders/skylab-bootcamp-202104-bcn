@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadGlobalData, loadVaccinesByContinentWithUpdated } from '../../redux/actions/actionCreators';
+import { loadGlobalData, loadVaccinesByContinent } from '../../redux/actions/actionCreators';
 import './style.scss';
 
 const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
@@ -10,7 +10,7 @@ const Global = ({ globalData, vaccinesByContinent, dispatch }) => {
     dispatch(loadGlobalData());
   }, []);
   useEffect(() => {
-    dispatch(loadVaccinesByContinentWithUpdated());
+    dispatch(loadVaccinesByContinent());
   }, []);
 
   const infoByContinent = Object.values(vaccinesByContinent);
