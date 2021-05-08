@@ -8,6 +8,8 @@ import userAvatar from '../../assets/user-avatar.png';
 
 const Header = () => {
   const { isAuthenticated } = useAuth0();
+  const nameLoginButton = 'Login';
+  const nameLogoutButton = 'Logout';
   return (
     <nav>
       <Link className="nav-element" to="/">
@@ -17,7 +19,7 @@ const Header = () => {
       <Link className="nav-element" to="/mysavedplaces">My Saved Places</Link>
       <SearchInput />
       <Link className="nav-element" to="/login">
-        { !isAuthenticated ? 'Login' : 'Logout'}
+        { !isAuthenticated ? nameLoginButton : nameLogoutButton}
         <img className="user-avatar" src={userAvatar} alt="icon" />
       </Link>
     </nav>
