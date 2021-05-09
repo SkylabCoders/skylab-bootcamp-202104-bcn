@@ -11,7 +11,7 @@ function SelectAvatar({ people, dispatch }) {
   const history = useHistory();
   const { faction } = useParams();
   const [currentAvatar, setCurrentAvatar] = useState({ name: 'none', imgUrl: 'https://static.filmin.es/images/user/579233/3/user_0_3_256x256.jpeg' });
-  const [currentUsername, setCurrentUsername] = useState('Input your username');
+  const [currentUsername, setCurrentUsername] = useState('input your username');
   const LIGHT = 'light';
   const DARK = 'dark';
   const { user } = useAuth0();
@@ -53,20 +53,23 @@ function SelectAvatar({ people, dispatch }) {
 
   return (
     <section className="select-avatar">
-      <div className="select-avatar__header header">
-        <h1 className="header-title">Choose your avatar</h1>
-        <img
-          className="header__img"
-          src={currentAvatar.imgUrl}
-          alt={currentAvatar.name}
-        />
-        <div className="header__username">
-          <h2 className="header__username-name">{currentUsername}</h2>
-          <input
-            className="header__username-input"
-            onChange={handleUsernameChange}
-            type="text"
+      <h1 className="header-title">Choose your avatar</h1>
+      <div className="selected-avatar">
+        <div className="select-avatar__header header">
+          <img
+            className="header__img"
+            src={currentAvatar.imgUrl}
+            alt={currentAvatar.name}
           />
+          <div className="header__username">
+            <h2 className="header__username-name">{currentUsername}</h2>
+            <input
+              className="header__username-input"
+              onChange={handleUsernameChange}
+              type="text"
+              required
+            />
+          </div>
         </div>
       </div>
       <ul className="select-avatar__ul ul">
@@ -104,14 +107,16 @@ function SelectAvatar({ people, dispatch }) {
             ))
         }
       </ul>
-      <button type="button" onClick={handleBack}>BACK</button>
-      <button
-        onClick={handleSubmit}
-        type="button"
-      >
-        SUBMIT
-
-      </button>
+      <nav className="bottom-buttons">
+        <button type="button" className="bottom-buttons__back" onClick={handleBack}>back</button>
+        <button
+          onClick={handleSubmit}
+          type="button"
+          className="bottom-buttons__submit"
+        >
+          submit
+        </button>
+      </nav>
     </section>
   );
 }

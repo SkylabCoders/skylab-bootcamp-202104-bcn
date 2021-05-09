@@ -1,3 +1,10 @@
+.selected-avatar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: black;
+}
+
 .select-avatar__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5,21 +12,21 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 5%;
+  margin: 1em;
   background-color: #FCE952;
-  border-radius: 10px;
+  height: 16em;
+  border-radius: 1em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0em 12em;
 }
 
 .header__img {
   border: 0.5em solid black;
-  width: 20%;
+  height: 13em;
+  padding: 0;
   border-radius: 50%;
-  margin-right: 10%;
-  margin-top: 2%;
-  margin-bottom: 2%;
 }
 
 .header__username {
@@ -30,10 +37,21 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 75%;
+  text-align: center;
 }
 
 .header__username-name {
   color: black;
+  font-family: 'Starjedi';
+  letter-spacing: 0.1em;
+  font-size: 4em;
+}
+
+.header__username-input {
+  outline: none;
+  font-size: 2em;
+  text-align: center;
 }
 
 .ul__list {
@@ -48,24 +66,52 @@
 }
 
 .select-avatar__ul {
+  margin: 18em 5% 4em 5%;
   background-color: #C4C4C4;
-  margin: 5%;
-  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  border-radius: 2em;
+  padding: 1em 0.2em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .caracter-button {
   border-style: none;
   border-radius: 50%;
+  margin: 0.5em;
 }
 
 .caracter-img {
   width: 15em;
   height: 15em;
   border-radius: 50%;
+}
+
+.bottom-buttons {
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1em 0em;
+}
+
+.bottom-buttons__back, .bottom-buttons__submit {
+  background: #FCE952;
+  font-family: 'Starjedi';
+  outline: 0;
+  border-style: none;
+  border-radius: 1em;
+  font-size: 1em;
+  padding: 0.2em 1em;
 }
 /*# sourceMappingURL=form.css.map */
