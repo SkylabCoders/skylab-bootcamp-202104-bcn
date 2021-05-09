@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Footer from './components/Common/Footer';
 import Category from './components/Category';
 import Detail from './components/Detail';
+import Favorites from './components/Favorites';
 import './styles/styles.scss';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/category/:categoryId" component={Category} />
             <Route path="/detail/:artworkId" component={Detail} />
+            <Route path="/favorites" component={Favorites} />
             <Redirect to="/" />
           </Switch>
           <Footer />
