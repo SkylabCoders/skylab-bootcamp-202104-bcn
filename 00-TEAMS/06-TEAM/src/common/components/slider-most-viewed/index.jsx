@@ -54,7 +54,7 @@ const SliderCarousel = ({ myMovies, type, dispatch }) => {
 };
 
 SliderCarousel.propTypes = {
-  myMovies: PropTypes.arrayOf(PropTypes.object).isRequired,
+  myMovies: PropTypes.shape({}).isRequired,
   dispatch: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired
 };

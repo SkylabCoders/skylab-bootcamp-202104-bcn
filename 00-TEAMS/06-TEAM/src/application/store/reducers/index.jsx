@@ -7,6 +7,7 @@ import castReducer from './selectCastMovieReducer';
 import recomendedReducer from './recomendedMovieReducer';
 import showsReducer from './showsReducers';
 import showsGridReducer from './moviesGridReducer';
+import recommendedShowReducer from './recommendedShowReducer';
 
 const rootReducer = combineReducers({
   movies: moviesReducer,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   selectedCast: castReducer,
   recomendedMovies: recomendedReducer,
   shows: showsReducer,
-  moviesGrid: showsGridReducer
+  moviesGrid: showsGridReducer,
+  recommendedShows: recommendedShowReducer
 });
 
 export default rootReducer;
