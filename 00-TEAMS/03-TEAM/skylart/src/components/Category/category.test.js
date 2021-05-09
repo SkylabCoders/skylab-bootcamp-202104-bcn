@@ -4,16 +4,17 @@ import Category from './index';
 import { render, screen } from '../../utils/test-utils';
 
 describe('For a Category component', () => {
-  test('should contain <img> ', () => {
+  test.only('should contain <img> ', () => {
     render(<Category />, {
       initialState: {
+
         category: [
           {
             primaryImageSmall: 'hola',
           },
         ],
       },
-      urlParam: '/23',
+      urlParam: '/:categoryId',
     });
     expect(screen.getByAltText('hola')).toBeInTheDocument();
   });
