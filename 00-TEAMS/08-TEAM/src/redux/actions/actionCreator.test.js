@@ -65,7 +65,7 @@ describe('loadVaccinesByCountry', () => {
 });
 
 describe('loadVaccinesByContinent', () => {
-  test('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
+  test('should dispatch LOAD_VACCINES_BY_CONTINENT', async () => {
     const mockData = { data: { Global: { All: {} } } };
     axios.get.mockResolvedValue(mockData);
 
@@ -80,7 +80,7 @@ describe('loadVaccinesByContinent', () => {
 });
 
 describe('loadVaccinesContinentData', () => {
-  test('should dispatch LOAD_VACCINES_MAP', async () => {
+  xtest('should dispatch LOAD_VACCINES_MAP', async () => {
     const mockData = { data: { Global: { All: {} } } };
     axios.get.mockResolvedValue(mockData);
 

@@ -47,7 +47,7 @@ export const loadVaccinesByCountry = (country) => async (dispatch) => {
   });
 };
 
-const getContinetData = (allContinents, data) => allContinents.map((continent) => ([
+const getContinentData = (allContinents, data) => allContinents.map((continent) => ([
   continent,
   data[continent].All.people_vaccinated,
   data[continent].All.people_partially_vaccinated,
@@ -66,7 +66,7 @@ const getAmericaData = (array) => {
 export const loadVaccinesByContinent = (url = `${URL}${vaccinesUrl}`) => async (dispatch) => {
   const { data } = await axios.get(url);
   const allContinents = ['Africa', 'Asia', 'Oceania', 'European Union', 'North America', 'South America'];
-  let continents = getContinetData(allContinents, data);
+  let continents = getContinentData(allContinents, data);
   continents = getAmericaData(continents);
   dispatch({
     type: actionTypes.LOAD_VACCINES_BY_CONTINENT,
