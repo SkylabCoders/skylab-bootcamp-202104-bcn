@@ -26,7 +26,7 @@ describe('Given a function creator', () => {
 
 describe('Given a function getToken', () => {
   describe('When invoked', () => {
-    test.only('Should Dispatch actionType GET_TOKEN', async () => {
+    test('Should Dispatch actionType GET_TOKEN', async () => {
       const dispatch = jest.fn();
       await getToken()(dispatch);
       expect(dispatch).toHaveBeenCalled();
