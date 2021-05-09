@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ListPreview from './index';
-import { render, screen } from './test-utils';
+import { render, screen } from '../../../assets/test-utils';
 
 describe('List preview component', () => {
   test('should contain user Grande', () => {
