@@ -44,6 +44,16 @@
   border-radius: 50%;
 }
 
+.details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .details__name {
   color: black;
   letter-spacing: 0.1em;
@@ -52,10 +62,21 @@
 .planetList {
   background-color: black;
   color: #FCE952;
+  list-style: none;
+  background-color: black;
+  color: #FCE952;
+  letter-spacing: 0.1em;
+  padding: 1em;
 }
 
 .dropdownButton {
   font-family: 'Imperial-sw';
+  background-color: black;
+  color: #FCE952;
+  padding: 0.5em 0.8em;
+  border-radius: 1em;
+  max-width: 8em;
+  margin: 0.5em 0;
 }
 
 .opened-true {

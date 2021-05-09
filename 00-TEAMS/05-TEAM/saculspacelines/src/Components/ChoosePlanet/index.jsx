@@ -44,7 +44,6 @@ const ChoosePlanet = ({ dispatch, planets }) => {
 
   const handlePlanetSelection = (planet) => {
     setPlanet(planet);
-    console.log(currentPlanet);
   };
 
   const handleSubmit = () => {

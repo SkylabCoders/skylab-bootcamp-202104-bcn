@@ -48,6 +48,9 @@ $sw-yellow: #FCE952;
 }
 
 .details {
+    display: flex;
+    flex-direction: column;
+    
     &__name {
         color: black;
         letter-spacing: 0.1em;
@@ -57,10 +60,21 @@ $sw-yellow: #FCE952;
 .planetList {
     background-color: black;
     color: $sw-yellow;
+    list-style: none;
+    background-color: black;
+    color: $sw-yellow;
+    letter-spacing: 0.1em;
+    padding: 1em;
 }
 
 .dropdownButton {
     font-family: 'Imperial-sw';
+    background-color: black;
+    color: $sw-yellow;
+    padding: 0.5em 0.8em;
+    border-radius: 1em;
+    max-width: 8em;
+    margin: 0.5em 0;
 }
 
 .opened-true {

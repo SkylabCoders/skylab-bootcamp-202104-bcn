@@ -1,4 +1,4 @@
-.planet-buttons {
+.starships-buttons {
   background-color: black;
   position: fixed;
   bottom: 0;
@@ -11,7 +11,7 @@
   padding: 1em 0em;
 }
 
-.planet-buttons__submit, .planet-buttons__logout {
+.starships-buttons__submit, .starships-buttons__back {
   background: #FCE952;
   font-family: 'Starjedi';
   outline: 0;
@@ -21,12 +21,12 @@
   padding: 0.2em 1em;
 }
 
-.all-planets {
+.all-starships {
   padding-top: 20em;
   padding-bottom: 3em;
 }
 
-.planets-listing {
+.starships-listing {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,7 +40,7 @@
   width: 100%;
 }
 
-.planet-top-nav {
+.starship-top-nav {
   position: fixed;
   background-color: black;
   width: 100%;
@@ -55,9 +55,10 @@
       -ms-flex-align: center;
           align-items: center;
   padding-bottom: 1em;
+  top: 0;
 }
 
-.planet-top-nav__title {
+.starship-top-nav__title {
   font-family: 'Starjedi';
   font-size: 3em;
   letter-spacing: 0.1em;
@@ -67,13 +68,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 35%;
+  width: 55%;
 }
 
 .top-buttons__image {
@@ -83,10 +84,18 @@
   border: 1em solid #FCE952;
 }
 
-.top-buttons__profile {
-  height: 15em;
-  padding: 0;
-  border-radius: 50%;
-  border: 1em solid #FCE952;
+.top-buttons__price {
+  font-size: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.price-symbol {
+  font-family: 'Imperial-sw';
+  font-size: 1em;
 }
 /*# sourceMappingURL=form.css.map */

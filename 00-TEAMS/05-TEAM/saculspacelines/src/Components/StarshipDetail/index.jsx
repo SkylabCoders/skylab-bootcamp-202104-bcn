@@ -14,8 +14,8 @@ const StarshipDetail = ({
       crew,
       passengers,
       consumables,
-      imgUrl
-      // faction
+      imgUrl,
+      faction
     } = data;
 
   const [showDetails, setShowDetails] = useState(false);
@@ -25,7 +25,7 @@ const StarshipDetail = ({
   };
 
   return (
-    <li key={name} className="starShip">
+    <li key={name} className={`starShip ${faction.toLowerCase()}`}>
       <button
         type="button"
         onClick={clickHandler}
@@ -37,7 +37,7 @@ const StarshipDetail = ({
         />
       </button>
       <section className="starShip__details details">
-        <p className="details__name">{name}</p>
+        <p className={`details__name opened-${showDetails}`}>{name.toLowerCase()}</p>
         <button
           className="dropdownButton"
           type="button"
@@ -51,57 +51,57 @@ const StarshipDetail = ({
               <li className="starShipList__model">
                 Model:
                 {' '}
-                {model}
+                {model.toLowerCase()}
               </li>
               <li className="starShipList__manufacturer">
                 Manufacturer:
                 {' '}
-                {manufacturer}
+                {manufacturer.toLowerCase()}
               </li>
               <li className="starShipList__credits">
                 Cost in credits:
                 {' '}
-                {data.cost_in_credits}
+                {data.cost_in_credits.toLowerCase()}
               </li>
               <li className="starShipList__length">
                 Length:
                 {' '}
-                {length}
+                {length.toLowerCase()}
               </li>
               <li className="starShipList__speed">
                 Max atmosphering speed:
                 {' '}
-                {data.max_atmosphering_speed}
+                {data.max_atmosphering_speed.toLowerCase()}
               </li>
               <li className="starShipList__crew">
                 Crew:
                 {' '}
-                {crew}
+                {crew.toLowerCase()}
               </li>
               <li className="starShipList__passengers">
                 Passengers:
                 {' '}
-                {passengers}
+                {passengers.toLowerCase()}
               </li>
               <li className="starShipList__capacity">
                 Cargo capacity:
                 {' '}
-                {data.cargo_capacity}
+                {data.cargo_capacity.toLowerCase()}
               </li>
               <li className="starShipList__consumables">
                 Consumables:
                 {' '}
-                {consumables}
+                {consumables.toLowerCase()}
               </li>
               <li className="starShipList__hyperdrive">
                 Hyperdrive rating:
                 {' '}
-                {data.hyperdrive_rating}
+                {data.hyperdrive_rating.toLowerCase()}
               </li>
               <li className="starShipList__class">
                 Starship class:
                 {' '}
-                {data.starship_class}
+                {data.starship_class.toLowerCase()}
               </li>
             </ul>
           )
@@ -109,10 +109,6 @@ const StarshipDetail = ({
 
       </section>
     </li>
-
-  //   const handlestarShipSelection = (url) => {
-  //     setCurrentPlanet(url);
-  //   };
   );
 };
 
@@ -130,7 +126,8 @@ StarshipDetail.propTypes = {
     consumables: PropTypes.string.isRequired,
     hyperdrive_rating: PropTypes.string.isRequired,
     starship_class: PropTypes.func.isRequired,
-    imgUrl: PropTypes.string.isRequired
+    imgUrl: PropTypes.string.isRequired,
+    faction: PropTypes.string.isRequired
   }).isRequired,
   clickHandler: PropTypes.func.isRequired
 };
