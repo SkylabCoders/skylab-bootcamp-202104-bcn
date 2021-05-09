@@ -15,7 +15,11 @@ function render(
   } = {}
 ) {
   function Wrapper({ children }) {
-    return <Provider store={configureStore(initialState)}>{children}</Provider>;
+    return (
+      <Provider store={configureStore(initialState)}>
+        {children}
+      </Provider>
+    );
   }
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }

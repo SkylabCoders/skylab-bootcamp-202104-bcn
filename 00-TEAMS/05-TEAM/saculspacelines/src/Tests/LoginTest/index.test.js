@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { Provider } from 'react-redux';
+import { Auth0Provider } from '@auth0/auth0-react';
 import { render } from '../TestUtils';
 import Login from '../../Components/Login';
 import configureStore from '../../redux/store/configureStore';
@@ -8,9 +9,15 @@ import configureStore from '../../redux/store/configureStore';
 describe('Given a Login component', () => {
   test('Should print Login section with a loggedOutTemplate when loged out', () => {
     const { container } = render(
-      <Provider store={configureStore()}>
-        <Login />
-      </Provider>, {
+      <Auth0Provider
+        domain={process.env.REACT_APP_DOMAIN}
+        clientId={process.env.REACT_APP_CLIENT_ID}
+        redirectUri={window.location.origin}
+      >
+        <Provider store={configureStore()}>
+          <Login />
+        </Provider>
+      </Auth0Provider>, {
         initialState: {
           auth: {
             isLoggedIn: false

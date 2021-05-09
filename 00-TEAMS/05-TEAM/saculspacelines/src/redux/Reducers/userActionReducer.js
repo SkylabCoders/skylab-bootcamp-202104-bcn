@@ -32,7 +32,7 @@ export default function userActionReducer(
     case CHANGE_FACTION:
       result = USERS.find((user) => user.email === payload.email);
       result.faction = payload.faction;
-      result = { ...updateState, ...result };
+      result = { ...updateState, currentUser: { ...result } };
       break;
 
     case CREATE_TRAVEL:

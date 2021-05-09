@@ -2,6 +2,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
+import {
+  BrowserRouter as Router
+} from 'react-router-dom';
 import SelectAvatar from '../../Components/SelectAvatar';
 import configureStore from '../../redux/store/configureStore';
 
@@ -9,8 +12,11 @@ describe('Given a SelectAvatar component', () => {
   test('Should print a choose avatar section', () => {
     const { container } = render(
       <Provider store={configureStore()}>
-        <SelectAvatar />
-      </Provider>, {
+        <Router>
+          <SelectAvatar />
+        </Router>
+      </Provider>,
+      {
         initialState: {
           people: [{
             name: '',

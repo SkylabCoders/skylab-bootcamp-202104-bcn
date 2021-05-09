@@ -10,7 +10,8 @@ describe('Given a Choose Starship component', () => {
     const { container } = render(
       <Provider store={configureStore()}>
         <ChooseStarship />
-      </Provider>, {
+      </Provider>,
+      {
         initialState: {
           auth: {
             isLoggedIn: true,
