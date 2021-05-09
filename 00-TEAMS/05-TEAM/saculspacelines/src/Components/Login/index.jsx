@@ -30,10 +30,10 @@ const Login = ({ auth, actions }) => {
   };
 
   const loggedInTemplate = () => (
-    <>
+    <section className="choose-faction">
       <ChooseFaction />
       <button className="logout-button" type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
-    </>
+    </section>
   );
 
   const loggedOutTemplate = () => (

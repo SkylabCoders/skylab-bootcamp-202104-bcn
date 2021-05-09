@@ -2,3 +2,7 @@ body {
   background: black;
   color: #FCE952;
 }
+
+button:hover {
+  cursor: pointer;
+}

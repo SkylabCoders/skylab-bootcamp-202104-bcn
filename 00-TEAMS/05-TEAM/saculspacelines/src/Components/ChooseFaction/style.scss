@@ -1,8 +1,17 @@
+@font-face {
+    font-family: 'Imperial-SW' ;
+    src: url('./../../imperial-sw.ttf') format('truetype');
+}
+
 $sw-yellow: #FCE952;
 
 *{
     margin: 0;
     padding: 0;
+}
+
+button {
+    border-style: none;
 }
 
 .button-container{
@@ -18,6 +27,7 @@ $sw-yellow: #FCE952;
 header{
     align-items: center;
     padding-bottom: 1em;
+    margin-top: 4em;
     border-radius: 3em;
     background-color: #FCE952;
     font-family: 'Starjedi';
@@ -36,7 +46,16 @@ header{
 .faction-container{
     display: flex;
     margin-top: 30px;
-    justify-content: center;
+    justify-content: space-between;
+    width: 60em;
+
+    &__side {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 30em;
+        justify-content: space-between;
+    }
 
     button {
         border-radius: 50%;
@@ -63,7 +82,6 @@ footer{
     border-radius: 50%;
     height: 30em;
     width: 30em;
-    
 }
 
 .darkPic{
@@ -71,4 +89,13 @@ footer{
     width: 30em;
     border-radius: 50%;
     background-color: red;
+}
+
+.faction-name {
+    background-color: $sw-yellow;
+    color: black;
+    font-family: 'Starjedi';
+    font-size: 3em;
+    border-radius: 3em;
+    padding: 0 1em;
 }

@@ -8,6 +8,10 @@
   src: url("./../../imperial-sw.ttf") format("truetype");
 }
 
+.choose-faction {
+  text-align: center;
+}
+
 .login {
   margin: auto;
   font-family: 'Starjedi';
@@ -87,6 +91,17 @@
   border-radius: 1em;
   font-size: 1em;
   padding: 0.2em 1em;
+}
+
+.logout-button {
+  background: #FCE952;
+  font-family: 'Starjedi';
+  outline: 0;
+  border-style: none;
+  border-radius: 1em;
+  font-size: 1em;
+  padding: 0.2em 1em;
+  margin-top: 5em;
 }
 
 #starwarspolicy {
