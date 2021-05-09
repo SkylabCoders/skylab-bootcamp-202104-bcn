@@ -13,10 +13,12 @@ function Detail({ dispatch, category, detail }) {
 
   return (
     <>
-      <figure className="main-imatge-container">
-        <img className="main-imatge" src={detail.primaryImage} alt={detail.title} />
-      </figure>
-      <h2>{detail.title}</h2>
+      <div>
+        <figure className="main-imatge-container">
+          <img className="main-imatge" src={detail.primaryImage} alt={detail.title} />
+        </figure>
+        <h2>{detail.title}</h2>
+      </div>
       <div className="detail-container">
         <div className="information-container">
           <h3>{detail.title}</h3>
