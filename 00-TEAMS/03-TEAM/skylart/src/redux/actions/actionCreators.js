@@ -69,3 +69,19 @@ export function logout() {
     type: actionTypes.AUTH_LOGOUT,
   };
 }
+export function loadFavorites() {
+  return {
+    type: actionTypes.LOAD_FAVORITES,
+  };
+}
+
+export function addFavorite() {
+  return {
+    type: actionTypes.ADD_FAVORITE,
+  };
+}
+export function deleteFavorite() {
+  return {
+    type: actionTypes.DELETE_FAVORITE,
+  };
+}
