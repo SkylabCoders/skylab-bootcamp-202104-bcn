@@ -13,8 +13,8 @@ const PlanetDetail = ({
       gravity,
       terrain,
       population,
-      imgUrl
-      // faction
+      imgUrl,
+      faction
     } = data;
 
   const [showDetails, setShowDetails] = useState(false);
@@ -23,7 +23,7 @@ const PlanetDetail = ({
     setShowDetails(!showDetails);
   };
   return (
-    <li key={name} className="planet">
+    <li key={name} className={`planet ${faction.toLowerCase()}`}>
       <button
         type="button"
         onClick={() => clickHandler(data)}
@@ -35,7 +35,7 @@ const PlanetDetail = ({
         />
       </button>
       <section className="planet__details details">
-        <p className="details__name">{name}</p>
+        <p className={`details__name opened-${showDetails}`}>{name.toLowerCase()}</p>
         <button
           className="dropdownButton"
           type="button"
@@ -49,42 +49,42 @@ const PlanetDetail = ({
               <li className="planetList__rotation">
                 Rotation period:
                 {' '}
-                {data.rotation_period}
+                {data.rotation_period.toLowerCase()}
               </li>
               <li className="planetList__orbital">
                 Orbital period:
                 {' '}
-                {data.orbital_period}
+                {data.orbital_period.toLowerCase()}
               </li>
               <li className="planetList__diameter">
                 Diameter:
                 {' '}
-                {diameter}
+                {diameter.toLowerCase()}
               </li>
               <li className="planetList__climate">
                 Climate:
                 {' '}
-                {climate}
+                {climate.toLowerCase()}
               </li>
               <li className="planetList__gravity">
                 Gravity:
                 {' '}
-                {gravity}
+                {gravity.toLowerCase()}
               </li>
               <li className="planetList__terrain">
                 Terrain:
                 {' '}
-                {terrain}
+                {terrain.toLowerCase()}
               </li>
               <li className="planetList__surfaceWater">
                 Surface water:
                 {' '}
-                {data.surface_water}
+                {data.surface_water.toLowerCase()}
               </li>
               <li className="planetList__population">
                 Population:
                 {' '}
-                {population}
+                {population.toLowerCase()}
               </li>
             </ul>
           )
@@ -110,7 +110,8 @@ PlanetDetail.propTypes = {
     terrain: PropTypes.string.isRequired,
     surface_water: PropTypes.string.isRequired,
     population: PropTypes.string.isRequired,
-    imgUrl: PropTypes.string.isRequired
+    imgUrl: PropTypes.string.isRequired,
+    faction: PropTypes.string.isRequired
   }).isRequired,
 
   clickHandler: PropTypes.func.isRequired

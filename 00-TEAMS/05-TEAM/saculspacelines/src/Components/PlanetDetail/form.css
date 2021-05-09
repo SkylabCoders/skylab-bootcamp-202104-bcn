@@ -8,6 +8,18 @@
   src: url("./../../imperial-sw.ttf") format("truetype");
 }
 
+.light img {
+  border: 1em solid blue;
+}
+
+.neutral img {
+  border: 1em solid black;
+}
+
+.dark img {
+  border: 1em solid red;
+}
+
 .planet {
   font-family: 'Starjedi';
   display: -webkit-box;
@@ -18,18 +30,23 @@
   background-color: #FCE952;
   border-radius: 5em;
   margin: 1.5em;
-  max-width: 55em;
+  max-width: 90%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em 0;
+  width: 100%;
 }
 
 .planet__image {
   width: 12em;
   height: 12em;
   border-radius: 50%;
-  padding: 1em 0;
 }
 
 .details__name {
   color: black;
+  letter-spacing: 0.1em;
 }
 
 .planetList {
@@ -39,5 +56,13 @@
 
 .dropdownButton {
   font-family: 'Imperial-sw';
+}
+
+.opened-true {
+  font-size: 1em;
+}
+
+.opened-false {
+  font-size: 5em;
 }
 /*# sourceMappingURL=form.css.map */
