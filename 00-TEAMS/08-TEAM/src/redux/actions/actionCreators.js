@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -47,13 +48,6 @@ export const loadVaccinesByCountry = (country) => async (dispatch) => {
   });
 };
 
-const getContinentData = (allContinents, data) => allContinents.map((continent) => ([
-  continent,
-  data[continent].All.people_vaccinated,
-  data[continent].All.people_partially_vaccinated,
-  data[continent].All.updated
-]));
-
 const getAmericaData = (array) => {
   const peopleVaccinatedAmericas = array[4][1] + array[5][1];
   const peoplePartiallyVaccinatedAmericas = array[4][2] + array[5][2];
@@ -62,6 +56,13 @@ const getAmericaData = (array) => {
   const segmentArray = array.splice(0, 4);
   return [...segmentArray, americasData];
 };
+
+const getContinentData = (allContinents, data) => allContinents.map((continent) => ([
+  continent,
+  data[continent].All.people_vaccinated,
+  data[continent].All.people_partially_vaccinated,
+  data[continent].All.updated
+]));
 
 export const loadVaccinesByContinent = (url = `${URL}${vaccinesUrl}`) => async (dispatch) => {
   const { data } = await axios.get(url);
