@@ -6,7 +6,6 @@ import Films from '../../pages/films/Films';
 import TvShows from '../../pages/tv-shows/Tv_shows';
 import MovieDetails from '../../pages/movie-details/MovieDetails';
 import ShowDetails from '../../pages/show-detail/ShowDetails';
-import Search from '../../pages/search/search';
 
 const DashboardRoutes = () => (
   <>
@@ -16,7 +15,6 @@ const DashboardRoutes = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/films" component={Films} />
         <Route exact path="/tv-shows" component={TvShows} />
-        <Route exact path="/search" component={Search} />
         <Route path="/detail/:movieId" component={MovieDetails} />
         <Route path="/detailShow/:showId" component={ShowDetails} />
         <Redirect to="/" />
