@@ -13,7 +13,6 @@ const {
   SELECT_AVATAR,
   SET_CURRENT_PLANET,
   SET_CURRENT_STARSHIP
-  //   SHOW_PRICE
 
 } = actionTypes;
 
@@ -31,8 +30,9 @@ export default function userActionReducer(
       break;
 
     case CHANGE_FACTION:
-      result = USERS.filter((user) => user.email !== payload.email);
-      result = { ...result, payload };
+      result = USERS.find((user) => user.email === payload.email);
+      result.faction = payload.faction;
+      result = { ...updateState, ...result };
       break;
 
     case CREATE_TRAVEL:
