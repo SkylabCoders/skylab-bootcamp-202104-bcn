@@ -9,7 +9,13 @@ describe('List preview component', () => {
       initialState: {
         token: 'faketoken',
         user: {
-          id: 'Grande'
+          id: 'ppppp',
+          display_name: 'Grande'
+        },
+        auth: {
+          user: {
+            sub: 'aaaaaa:fffffff:ppppp'
+          }
         }
       }
     });
