@@ -60,8 +60,7 @@ const getAmericaData = (array) => {
   const updated = array[4][3];
   const americasData = ['Americas', peopleVaccinatedAmericas, peoplePartiallyVaccinatedAmericas, updated];
   const segmentArray = array.splice(0, 4);
-  const segmentArraywithAmericas = [...segmentArray, americasData];
-  return segmentArraywithAmericas;
+  return [...segmentArray, americasData];
 };
 
 export const loadVaccinesByContinent = (url = `${URL}${vaccinesUrl}`) => async (dispatch) => {
@@ -89,8 +88,7 @@ export const loadVaccinesContinentData = (url = `${URL}${vaccinesUrl}`) => async
     const peoplePartiallyVaccinatedAmericas = array[4][2] + array[5][2];
     const americasData = ['Americas', peopleVaccinatedAmericas, peoplePartiallyVaccinatedAmericas];
     const segmentArray = array.splice(0, 4);
-    const segmentArraywithAmericas = [...segmentArray, americasData];
-    return segmentArraywithAmericas;
+    return [...segmentArray, americasData];
   };
   continents = getAmericasData(continents);
 
