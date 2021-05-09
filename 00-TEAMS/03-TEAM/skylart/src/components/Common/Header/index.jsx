@@ -24,6 +24,7 @@ function Header() {
               <li className="left-elements__item"><Link to={`/category/${1}`}>The American Wing</Link></li>
             </ul>
           </li>
+          <li className="left-elements"><Link to="/favorites">Favorites</Link></li>
         </ul>
         <ul className="container__right-elements">
           <Login />
