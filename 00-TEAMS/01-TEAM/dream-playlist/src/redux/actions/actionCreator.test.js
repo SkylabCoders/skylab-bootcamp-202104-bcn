@@ -1,27 +1,14 @@
 import actionTypes from './actionTypes';
 import { login, logout } from './actionCreator';
 
-describe('Given a login function creator', () => {
+describe('Given a function creator', () => {
   const scenarios = [
     {
+      callback: login,
       result: { type: actionTypes.AUTH_LOGIN }
-    }
-  ];
-
-  scenarios.forEach((scenario) => {
-    describe('When invoked', () => {
-      test(`Then return ${scenario.result}`, () => {
-        const resultScenario = scenario.result;
-        const result = login();
-        expect(resultScenario).toEqual(result);
-      });
-    });
-  });
-});
-
-describe('Given a logout function creator', () => {
-  const scenarios = [
+    },
     {
+      callback: logout,
       result: { type: actionTypes.AUTH_LOGOUT }
     }
   ];
@@ -30,7 +17,7 @@ describe('Given a logout function creator', () => {
     describe('When invoked', () => {
       test(`Then return ${scenario.result}`, () => {
         const resultScenario = scenario.result;
-        const result = logout();
+        const result = scenario.callback();
         expect(resultScenario).toEqual(result);
       });
     });
