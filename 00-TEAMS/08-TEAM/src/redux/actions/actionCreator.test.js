@@ -65,8 +65,8 @@ describe('loadVaccinesByCountry', () => {
 });
 
 describe('loadVaccinesByContinent', () => {
-  test('should dispatch LOAD_VACCINES_BY_COUNTRY', async () => {
-    const mockData = { data: { Global: { All: {} } } };
+  test('should dispatch LOAD_VACCINES_BY_CONTINENT', async () => {
+    const mockData = { data: { Global: { All: [] } } };
     axios.get.mockResolvedValue(mockData);
 
     const dispatch = jest.fn();
