@@ -8,7 +8,6 @@
     margin: 30px 5%;
     &__item{
         position:relative;
-        width: 150px;
         margin: 0 1.5rem 1.5rem 0;
         display: inline-block;
         width: 100%;
@@ -24,7 +23,6 @@
                 content: '';
                 display: block;
                 position: absolute;
-                width: 100%;
                 height: calc(100% - 13px);
                 top: 5px;
                 left: 5px;
