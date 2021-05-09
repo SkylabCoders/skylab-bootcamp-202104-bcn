@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteProduct } from '../../../redux/actions/actionCreators';
 
-const CartList = ({ cartList, dispatch }) => {
+const CartList = ({ cart, dispatch }) => {
   const handleClick = (element) => {
     dispatch(deleteProduct(element));
   };
@@ -15,10 +15,10 @@ const CartList = ({ cartList, dispatch }) => {
 
       <ul className="main-cart__list">
         {
-          cartList.length
+          cart.length
             ? (
 
-              cartList.map((element) => (
+              cart.map((element) => (
                 <li key={element.name} className="main-cart__item">
                   <img className="main-cart__img" src={element.img.url} alt={element.name} />
                   <div className="main-cart__details">
@@ -55,7 +55,7 @@ const CartList = ({ cartList, dispatch }) => {
 };
 
 CartList.propTypes = {
-  cartList: PropTypes.shape([{
+  cart: PropTypes.shape([{
     name: PropTypes.string.isRequired,
     cost: PropTypes.number.isRequired,
     category: PropTypes.string.isRequired,
@@ -68,8 +68,8 @@ CartList.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (store) => ({
-  cartList: store.cart
+const mapStateToProps = ({ cart }) => ({
+  cart
 });
 
 export default connect(mapStateToProps)(CartList);
