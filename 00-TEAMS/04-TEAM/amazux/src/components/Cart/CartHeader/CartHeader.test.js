@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { render, screen } from '../../../test-utils';
+import { render } from '../../../test-utils';
 import CartHeader from './index';
 
 describe('<CartHeader/>', () => {
