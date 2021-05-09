@@ -39,8 +39,11 @@ const Footer = () => {
           <i className="fab fa-github" />
           GitHub Isabel
         </a>
+        <img className="sonarqube" src="http://localhost:9000/api/project_badges/quality_gate?project=covidtracker" alt="sonarqube badge" />
+
       </div>
       <div className="madeBy-element"> Made by Isabel, Dani, Gax</div>
+
     </footer>
   );
 };
