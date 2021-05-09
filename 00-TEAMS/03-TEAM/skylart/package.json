@@ -58,11 +58,6 @@
   "jest": {
     "moduleNameMapper": {
       "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js"
-    },
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!src/serviceWorker.ts",
-      "!src/index.tsx"
-    ]
+    }
   }
 }
