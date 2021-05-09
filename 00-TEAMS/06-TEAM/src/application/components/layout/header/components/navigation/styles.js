@@ -73,7 +73,7 @@ export const NavigationWrapper = styled.div`
   padding-left:0;
   width:40%;
   .navbar-nav{
-    width: 51%;
+    width: 65%;
     margin: 0 auto 0 100px;
   }
 `;

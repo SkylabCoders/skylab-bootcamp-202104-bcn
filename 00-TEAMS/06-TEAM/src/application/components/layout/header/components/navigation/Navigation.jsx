@@ -3,10 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import Login from '../../../../../../common/components/Login/Login';
 import GlobalFonts from '../../../../../../common/fonts/fonts';
 import BrandLogo from '../../../assets/BrandLogo.svg';
-import Searcher from '../SearchBar/SearchBar';
-import ResultSearch from '../SearchBar/SearchBarResult';
 import {
-  Navigation, BrandImage, BrandWrapper, LoginWrapper, NavigationWrapper, LoginBtn, Search
+  Navigation, BrandImage, BrandWrapper, LoginWrapper, NavigationWrapper, LoginBtn
 } from './styles';
 
 const Navbar = () => (
@@ -19,10 +17,6 @@ const Navbar = () => (
           <BrandImage src={BrandLogo} alt="" />
         </Link>
       </BrandWrapper>
-      <Search>
-        <Searcher />
-        <ResultSearch />
-      </Search>
       <NavigationWrapper className="navbar-main">
         <ul className="navbar-nav">
           <li>
@@ -30,6 +24,9 @@ const Navbar = () => (
           </li>
           <li>
             <NavLink activeClassName="active" className="nav-item nav-link" exact to="/tv-shows">Tv Shows</NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName="active" className="nav-item nav-link" exact to="/search">Search Movies</NavLink>
           </li>
         </ul>
       </NavigationWrapper>
