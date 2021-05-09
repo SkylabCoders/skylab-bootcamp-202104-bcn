@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import queryString from 'query-string';
-import { API_KEY, baseURL } from '../../common/http';
-import { SearcherInput } from './style';
+import { API_KEY, baseURL } from '../../../../../../common/http';
+import {
+  ContainerResults, SearcherInput, ListResult, InfoMovie
+} from './style';
 
 const Search = (props) => {
   // eslint-disable-next-line react/prop-types,no-unused-vars
@@ -37,27 +39,41 @@ const Search = (props) => {
 
   const listMovies = movieList.results;
   // eslint-disable-next-line no-unused-vars
-  const baseImgUrl = 'https://image.tmdb.org/t/p/w200';
+  const baseImgUrl = 'https://image.tmdb.org/t/p/w92';
+  const truncatestring = (str) => (str.length > 100 ? `${str.substring(0, 70)}...` : str);
+
   return (
     <>
-      <div>
-        <SearcherInput type="text" value={searchValue} onChange={onChangeSearch} />
-      </div>
-      <div>
-        {
-          listMovies && (
-            listMovies.map((element) => (
-              <Link to={`/detail/${element.id}`}>
-                <img
-                  key={element.id}
-                  src={`${baseImgUrl}${element.poster_path}`}
-                  alt={element.originalTitle}
-                />
-              </Link>
-            ))
-          )
-        }
-      </div>
+      <ContainerResults>
+        <div>
+          <SearcherInput type="text" value={searchValue} onChange={onChangeSearch} placeholder="Search movie..." />
+        </div>
+        <ListResult>
+          <ul>
+            {
+              listMovies && (
+                listMovies.map((element) => (
+                  <li>
+                    <Link to={`/detail/${element.id}`}>
+                      <img
+                        key={element.id}
+                        src={`${baseImgUrl}${element.poster_path}`}
+                        alt={element.originalTitle}
+                      />
+                      <InfoMovie>
+                        <h4>{element.title}</h4>
+                        <p>{element.release_date}</p>
+                        <p>{truncatestring(element.overview)}</p>
+                      </InfoMovie>
+                    </Link>
+                  </li>
+                ))
+              )
+            }
+          </ul>
+
+        </ListResult>
+      </ContainerResults>
     </>
   );
 };

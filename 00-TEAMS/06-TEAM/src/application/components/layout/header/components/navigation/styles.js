@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const Navigation = styled.header`
+  position: relative;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   background-color:#000000;
   height:60px;
+  z-index: 1;
   .header__wrapper__container {
     display: flex;
     flex-flow:row wrap;
@@ -42,7 +44,6 @@ export const BrandImage = styled.img`
   margin: 5px 15px;
   max-width: 180px;
 `;
-
 export const BrandWrapper = styled.div`
   width:15%;
   height: auto;
@@ -53,7 +54,24 @@ export const BrandWrapper = styled.div`
     width:auto;
   }
 `;
-
+export const SearchBox = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  > *{
+    width:100%;
+    input{
+      display: block;
+      width:100%;
+      min-height: 20px;
+      margin:8px auto;
+      padding:5px;
+      color:#212121;
+    }
+  }
+`;
 export const Search = styled.div`
   width:18%;
   height: auto;
@@ -64,7 +82,6 @@ export const Search = styled.div`
     width:auto;
   }
 `;
-
 export const NavigationWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
@@ -89,7 +106,6 @@ export const LoginWrapper = styled.div`
     width:100%;
   }
 `;
-
 export const LoginBtn = styled.div`
   button {
     background-color: #cdc11d;
@@ -100,12 +116,4 @@ export const LoginBtn = styled.div`
     border:0;
     padding:8px 35px; 
   }
-`;
-
-export const SearchBar = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  width:25%;
 `;
