@@ -19,7 +19,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
   const myCountryVaccineStats = [];
 
   function getStatsCountryValues() {
-    Object.entries(countryData).map(([element, value]) => {
+    Object.entries(countryData).forEach(([element, value]) => {
       if (myInterestValuesArray.find((keys) => keys === element)) {
         myCountryStats.push([element, value]);
       }
@@ -27,7 +27,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
     });
   }
   function getVaccinesCountryValues() {
-    Object.entries(vaccineByCountryData).map(([element, value]) => {
+    Object.entries(vaccineByCountryData).forEach(([element, value]) => {
       if (myInterestVaccinesValuesArray.find((keys) => keys === element)) {
         myCountryVaccineStats.push([element, value]);
       }
@@ -37,6 +37,16 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
 
   getStatsCountryValues();
   getVaccinesCountryValues();
+  function printStats(array) {
+    return array.map(([element, value]) => (
+      <li key={`${value}`}>
+        {element.toUpperCase()}
+        :
+        {' '}
+        {Number(value).toLocaleString()}
+      </li>
+    ));
+  }
 
   return (
     <>
@@ -46,14 +56,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
             <h1>{country}</h1>
             <FavoriteButton />
             <ul>
-              {myCountryStats.map(([element, value]) => (
-                <li key={`${value}`}>
-                  {element.toUpperCase()}
-                  :
-                  {' '}
-                  {Number(value).toLocaleString()}
-                </li>
-              ))}
+              {printStats(myCountryStats)}
             </ul>
           </div>
           <div className="vacciones-container">
@@ -61,14 +64,7 @@ function Country({ dispatch, countryData, vaccineByCountryData }) {
               Vaccines
             </h3>
             <ul>
-              {myCountryVaccineStats.map(([element, value]) => (
-                <li key={`${value}`}>
-                  {element.toUpperCase()}
-                  :
-                  {' '}
-                  {Number(value).toLocaleString()}
-                </li>
-              ))}
+              {printStats(myCountryVaccineStats)}
             </ul>
           </div>
         </div>

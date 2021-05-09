@@ -6,7 +6,6 @@ import store from './redux/store';
 import Header from './components/Header';
 import Global from './components/Global';
 import MySavedPlaces from './components/Mysavedplaces';
-import Advices from './components/Advices';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Country from './components/Country';
@@ -30,7 +29,6 @@ function App() {
               <Route path="/" exact component={Dashboard} />
               <Route path="/global" component={Global} />
               <Route path="/mysavedplaces" component={MySavedPlaces} />
-              <Route path="/advices" component={Advices} />
               <Route path="/login" component={Login} />
               <Route path="/country/:country" component={Country} />
             </Switch>

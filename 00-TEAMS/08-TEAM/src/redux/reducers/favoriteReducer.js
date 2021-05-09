@@ -7,7 +7,7 @@ function favoriteReducer(initialFavData = [], action) {
       updatedFavData = [...updatedFavData, action.data];
       break;
     case actionTypes.DELETE_FAV:
-      updatedFavData.filter((country) => country !== action.country);
+      updatedFavData = updatedFavData.filter((country) => country !== action.country);
       break;
     default:
       break;
