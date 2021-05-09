@@ -27,7 +27,13 @@ describe('List preview component', () => {
       initialState: {
         token: 'faketoken',
         user: {
-          id: 'Grande'
+          id: 'Grande',
+          display_name: 'Grande'
+        },
+        auth: {
+          user: {
+            sub: 'aaaaaa:fffffff:ppppp'
+          }
         },
         songs: [{
           track: {
