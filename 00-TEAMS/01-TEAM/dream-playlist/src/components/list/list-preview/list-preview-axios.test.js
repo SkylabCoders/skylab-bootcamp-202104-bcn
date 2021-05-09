@@ -18,7 +18,9 @@ describe('Given a function getToken', () => {
   describe('When invoked', () => {
     test('Should Dispatch actionType GET_TOKEN', async () => {
       render(<ListPreview />, {
-        initialState: {}
+        initialState: {
+          token: false
+        }
       });
       axios.mockResolvedValue(token);
       const dispatch = jest.fn();
