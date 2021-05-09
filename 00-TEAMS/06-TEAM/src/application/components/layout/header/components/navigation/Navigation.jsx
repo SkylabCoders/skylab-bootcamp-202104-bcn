@@ -17,7 +17,6 @@ const Navbar = () => (
           <BrandImage src={BrandLogo} alt="" />
         </Link>
       </BrandWrapper>
-
       <NavigationWrapper className="navbar-main">
         <ul className="navbar-nav">
           <li>
@@ -25,6 +24,9 @@ const Navbar = () => (
           </li>
           <li>
             <NavLink activeClassName="active" className="nav-item nav-link" exact to="/tv-shows">Tv Shows</NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName="active" className="nav-item nav-link" exact to="/search">Search Movies</NavLink>
           </li>
         </ul>
       </NavigationWrapper>

@@ -13,7 +13,7 @@ export const Navigation = styled.header`
     justify-content: space-between;
     align-content: center;
     width: 100%;
-    max-width: 1440px;
+    max-width: 1600px;
     margin: 0 auto;
     > div {
       max-height: 50px;
@@ -44,7 +44,7 @@ export const BrandImage = styled.img`
 `;
 
 export const BrandWrapper = styled.div`
-  width:20%;
+  width:15%;
   height: auto;
   display: inline-block;
   max-height: 50px;
@@ -53,13 +53,29 @@ export const BrandWrapper = styled.div`
     width:auto;
   }
 `;
+
+export const Search = styled.div`
+  width:18%;
+  height: auto;
+  display: inline-block;
+  max-height: 50px;
+  .navbar-brand{
+    display:block;
+    width:auto;
+  }
+`;
+
 export const NavigationWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding-left:0;
-  width:50%;
+  width:40%;
+  .navbar-nav{
+    width: 65%;
+    margin: 0 auto 0 100px;
+  }
 `;
 export const LoginWrapper = styled.div`
   display: flex;
@@ -70,6 +86,7 @@ export const LoginWrapper = styled.div`
   margin:0;
   .navbar-nav{
     margin: 0 auto;
+    width:100%;
   }
 `;
 
@@ -83,4 +100,12 @@ export const LoginBtn = styled.div`
     border:0;
     padding:8px 35px; 
   }
+`;
+
+export const SearchBar = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width:25%;
 `;
