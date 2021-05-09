@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ListPreview from './index';
-import { render, screen } from './test-utils';
+import { render, screen } from '../../../assets/test-utils';
 
 describe('List preview component', () => {
   test('should contain user Grande', () => {
@@ -9,7 +9,13 @@ describe('List preview component', () => {
       initialState: {
         token: 'faketoken',
         user: {
-          id: 'Grande'
+          id: 'ppppp',
+          display_name: 'Grande'
+        },
+        auth: {
+          user: {
+            sub: 'aaaaaa:fffffff:ppppp'
+          }
         }
       }
     });
@@ -21,7 +27,13 @@ describe('List preview component', () => {
       initialState: {
         token: 'faketoken',
         user: {
-          id: 'Grande'
+          id: 'Grande',
+          display_name: 'Grande'
+        },
+        auth: {
+          user: {
+            sub: 'aaaaaa:fffffff:ppppp'
+          }
         },
         songs: [{
           track: {

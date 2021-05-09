@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { unmountComponentAtNode } from 'react-dom';
-import { render, screen } from './test-utils';
+import { render, screen } from '../../../assets/test-utils';
 import Dropdown from './index';
 import DROPDOWNDATA from '../../../assets/dropdown.mock';
 

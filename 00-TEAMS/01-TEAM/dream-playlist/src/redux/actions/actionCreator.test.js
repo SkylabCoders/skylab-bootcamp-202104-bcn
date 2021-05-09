@@ -1,5 +1,5 @@
 import actionTypes from './actionTypes';
-import { login, logout } from './actionCreator';
+import { login, logout, getToken } from './actionCreator';
 
 describe('Given a function creator', () => {
   const scenarios = [
@@ -20,6 +20,16 @@ describe('Given a function creator', () => {
         const result = scenario.callback();
         expect(resultScenario).toEqual(result);
       });
+    });
+  });
+});
+
+describe('Given a function getToken', () => {
+  describe('When invoked', () => {
+    test('Should Dispatch actionType GET_TOKEN', async () => {
+      const dispatch = jest.fn();
+      await getToken()(dispatch);
+      expect(dispatch).toHaveBeenCalled();
     });
   });
 });
