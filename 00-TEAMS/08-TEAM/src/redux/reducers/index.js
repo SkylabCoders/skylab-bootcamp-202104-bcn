@@ -1,20 +1,19 @@
 import { combineReducers } from 'redux';
 import countryReducer from './CountryReducer';
 import favoriteReducer from './favoriteReducer';
-import globalDataReducers from './GlobalDataReducer';
-import vaccineByCountryReducer from './VaccinesByCountryReducer';
-import vaccinesByContinentReducer from './VaccinesByContinentReducer';
+import globalDataReducer from './globalDataReducer';
+import vaccineByCountryReducer from './vaccineByCountryReducer';
+import vaccineByContinentReducer from './vaccinesByContinentReducer';
 import CountryHistoryReducer from './CountryHistoryReducer';
-
-import VaccinesReducers from './vaccinesReducer';
+import vaccineReducer from './vaccineReducer';
 
 const rootReducers = combineReducers({
-  globalData: globalDataReducers,
-  vaccinesContinentData: VaccinesReducers,
+  globalData: globalDataReducer,
+  vaccinesContinentData: vaccineReducer,
   countryData: countryReducer,
   countryHistoryData: CountryHistoryReducer,
   vaccineByCountryData: vaccineByCountryReducer,
-  vaccinesByContinent: vaccinesByContinentReducer,
+  vaccinesByContinent: vaccineByContinentReducer,
   favoriteCountry: favoriteReducer
 });
 

@@ -2,7 +2,7 @@
 import axios from 'axios';
 import {
   loadGlobalData, loadCountry, loadVaccinesByCountry,
-  loadVaccinesByContinent, addCountryToFav
+  loadVaccinesByContinent
 } from './actionCreators';
 import actionTypes from './actionTypes';
 
