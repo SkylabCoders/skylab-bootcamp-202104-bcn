@@ -15,48 +15,53 @@ function Detail({ dispatch, category, detail }) {
     <>
       <figure className="main-imatge-container">
         <img className="main-imatge" src={detail.primaryImage} alt={detail.title} />
-        <h2>{detail.title}</h2>
       </figure>
-      <div className="information-container">
-        <h3>{detail.title}</h3>
-        <h4>{detail.objectDate}</h4>
-        <h4>{detail.artistDisplayName}</h4>
-        <ul className="table-information">
-          <li className="table-row">
-            <span>Title:</span>
-            {detail.title}
-          </li>
-          <li className="table-row">
-            <span>Artist:</span>
-            {detail.artistDisplayName}
-          </li>
-          <li className="table-row">
-            <span>Date:</span>
-            {detail.objectDate}
-          </li>
-          <li className="table-row">
-            <span>Period:</span>
-            {detail.period}
-          </li>
-          <li className="table-row">
-            <span>Medium:</span>
-            {detail.medium}
-          </li>
-          <li className="table-row">
-            <span>Dimensions:</span>
-            {detail.dimensions}
-          </li>
-          <li className="table-row">
-            <span>Credit Line:</span>
-            {detail.creditLine}
-          </li>
-          <li className="table-row">
-            <span>Accession Number:</span>
-            {detail.accessionNumber}
-          </li>
-        </ul>
-        <div className="button-container">
-          <GoBackButton />
+      <h2>{detail.title}</h2>
+      <div className="detail-container">
+        <div className="information-container">
+          <h3>{detail.title}</h3>
+          <h4>{detail.objectDate}</h4>
+          <h4>{detail.artistDisplayName}</h4>
+          <ul className="table-information">
+            <li className="table-row">
+              <span>Title:</span>
+              {detail.title}
+            </li>
+            <li className="table-row">
+              <span>Artist:</span>
+              {detail.artistDisplayName}
+            </li>
+            <li className="table-row">
+              <span>Date:</span>
+              {detail.objectDate}
+            </li>
+            <li className="table-row">
+              <span>Period:</span>
+              {detail.period}
+            </li>
+            <li className="table-row">
+              <span>Medium:</span>
+              {detail.medium}
+            </li>
+            <li className="table-row">
+              <span>Dimensions:</span>
+              {detail.dimensions}
+            </li>
+            <li className="table-row">
+              <span>Credit Line:</span>
+              {detail.creditLine}
+            </li>
+            <li className="table-row">
+              <span>Accession Number:</span>
+              {detail.accessionNumber}
+            </li>
+          </ul>
+          <div className="button-container">
+            <GoBackButton />
+          </div>
+        </div>
+        <div className="images-container">
+          <img className="main-image" src={detail.primaryImage} alt={detail.title} />
         </div>
       </div>
     </>
@@ -77,6 +82,7 @@ Detail.propTypes = {
     dimensions: PropTypes.string,
     creditLine: PropTypes.string,
     accessionNumber: PropTypes.string,
+    additionalImages: PropTypes.string,
   }).isRequired,
 };
 
