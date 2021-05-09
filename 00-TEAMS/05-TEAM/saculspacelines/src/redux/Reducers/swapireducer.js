@@ -32,9 +32,6 @@ export function loadSwapiPeople(state = [], { type, payload }) {
   return result;
 }
 
-// eslint-disable-next-line no-console
-console.log(loadSwapiPeople);
-
 export function loadSwapiPlanets(state = [], { type, payload }) {
   let result;
   let newPayload;

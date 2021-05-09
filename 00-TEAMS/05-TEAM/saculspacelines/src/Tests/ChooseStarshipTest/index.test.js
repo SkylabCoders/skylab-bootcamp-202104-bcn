@@ -1,28 +1,29 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
+import {
+  BrowserRouter as Router
+} from 'react-router-dom';
+import { render } from '../TestUtils';
 import ChooseStarship from '../../Components/ChooseStarship';
-import configureStore from '../../redux/store/configureStore';
 
-describe('Given a Choose Starship component', () => {
+describe('Given a ChooseStarship component', () => {
   test('Should print a choose starship section', () => {
     const { container } = render(
-      <Provider store={configureStore()}>
+      <Router>
         <ChooseStarship />
-      </Provider>,
+      </Router>,
       {
         initialState: {
           auth: {
-            isLoggedIn: true,
+            isLoggedIn: false,
             user: {
               email: 'admin@admin.com'
             }
+
           }
         }
       }
     );
-
     const chooseTitle = container.querySelector('.starships__title');
     expect(chooseTitle.textContent).toBe('Choose a starhsip');
   });

@@ -9,7 +9,7 @@ import SelectAvatar from '../../Components/SelectAvatar';
 import configureStore from '../../redux/store/configureStore';
 
 describe('Given a SelectAvatar component', () => {
-  test('Should print a choose avatar section', () => {
+  test('Should print a select avatar section', () => {
     const { container } = render(
       <Provider store={configureStore()}>
         <Router>
@@ -21,7 +21,7 @@ describe('Given a SelectAvatar component', () => {
           people: [{
             name: '',
             imgUrl: '',
-            faction: ''
+            faction: 'LIGHT'
           }]
         }
       }

@@ -32,7 +32,8 @@ const ChoosePlanet = ({ dispatch, planets }) => {
   };
 
   return (
-    <div>
+    <div className="choose-planet">
+      <h1>Choose a planet</h1>
       <button className="logout-button" type="button" onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
       <button
         className="submit-button"
