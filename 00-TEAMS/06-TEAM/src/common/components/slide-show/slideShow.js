@@ -8,14 +8,15 @@ import {
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loadMovies } from '../../../application/store/actions/actionsCreator';
 import { TYPE_PARAMS } from '../../services/films';
 import './style.css';
 
-// eslint-disable-next-line react/prop-types
 function SlideShow({ myMovies, dispatch }) {
   const baseImgUrl = 'https://image.tmdb.org/t/p/original';
+
   useEffect(() => {
     dispatch(loadMovies(TYPE_PARAMS.upcoming));
   }, []);
@@ -33,12 +34,14 @@ function SlideShow({ myMovies, dispatch }) {
       infinite="true"
     >
       <Slider>
-        {/* eslint-disable-next-line react/prop-types */}
         { myMovies.popular.slice(0, 6).map((element, i) => (
           <Slide key={element.id} index={i} className="slider__section">
             <div className="slider--wrapper--information">
               <span className="slider--information slider__title">{element.title}</span>
               <span className="slider--information slider__vote-average">
+                {' '}
+                {element.genre_ids}
+                {' '}
                 {truncatestring(element.overview)}
               </span>
             </div>
@@ -52,6 +55,13 @@ function SlideShow({ myMovies, dispatch }) {
     </CarouselProvider>
   );
 }
+
+SlideShow.propTypes = {
+  myMovies: PropTypes.shape({
+    popular: []
+  }).isRequired,
+  dispatch: PropTypes.func.isRequired
+};
 
 const mapStateToProps = ({ movies }) => ({
   myMovies: movies
