@@ -4,16 +4,16 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import { updateHero } from '../../redux/actions/actionCreators';
+import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
 import './HeroDetail.css';
 
 function HeroDetail({ selectedHero, dispatch }) {
   const { heroId } = useParams();
   const [heroName, setHeroName] = useState(selectedHero?.name);
 
-  /* useEffect(() => {
+  useEffect(() => {
     dispatch(getHeroById(heroId));
-  }, [heroId]); */
+  }, [heroId]);
 
   useEffect(() => {
     setHeroName(selectedHero?.name);

@@ -48,11 +48,12 @@ export function loadHero(hero) {
   };
 }
 
-/* export function getHeroById(heroId) {
-  const hero = HEROES.find((current) => current.id === +heroId);
-
-  return {
-    type: actionTypes.LOAD_HERO,
-    hero
+export function getHeroById(heroId) {
+  return async (dispatch) => {
+    const { data } = await axios(`${url}/${heroId}`);
+    dispatch({
+      type: actionTypes.LOAD_HERO,
+      hero: data
+    });
   };
-} */
+}
