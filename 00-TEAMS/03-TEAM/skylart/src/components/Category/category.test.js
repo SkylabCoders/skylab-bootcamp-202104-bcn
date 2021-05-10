@@ -7,13 +7,14 @@ describe('For a Category component', () => {
   test('should contain <img> ', () => {
     render(<Category />, {
       initialState: {
+
         category: [
           {
             primaryImageSmall: 'hola',
           },
         ],
       },
-      urlParam: '/23',
+      urlParam: '/:categoryId',
     });
     expect(screen.getByAltText('hola')).toBeInTheDocument();
   });

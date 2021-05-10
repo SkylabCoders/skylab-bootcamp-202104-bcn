@@ -4,7 +4,7 @@
 .main-imatge-container {
   width: 100%;
   height: 600px;
-  overflow: hidden;
+  overflow: scroll;
   position: relative;
   display: inline-block;
 }
@@ -30,7 +30,8 @@ h2 {
 }
 
 .information-container {
-  @include flex-content(flex, column, flex-start, flex-start)
+  @include flex-content(flex, column, flex-start, flex-start);
+  width: 50%;
 }
 
 h3 {
@@ -44,7 +45,7 @@ h4 {
 }
 
 .table-information {
-  width: 50%;
+  width: 100%;
   @include flex-content(flex, column, flex-start, flex-start);
   padding: 30px 30px;
 }
@@ -67,4 +68,20 @@ span {
   width: 100%;
   @include flex-content(flex, row, flex-start, flex-start);
   padding: 30px 30px;
+}
+
+.detail-container{
+  @include flex-content(flex,row,null,null);
+  flex-wrap: nowrap;
+}
+
+.images-container {
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  padding: 60px 60px;
+
+  img{
+    width: 100%;
+  }
 }
