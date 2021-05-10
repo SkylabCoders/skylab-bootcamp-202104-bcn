@@ -1,42 +1,70 @@
+import axios from 'axios';
 import HEROES from '../../Constants/heroes.mock';
 import actionTypes from './actionTypes';
 
-export const loadHeroes = () => ({
-  type: actionTypes.LOAD_HEROES,
-});
+const url = 'http://localhost:2021/heroes';
 
-export const addHero = (hero) => ({
-  type: actionTypes.ADD_HERO,
-  hero,
-});
+export function loadHeroes() {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios(url);
+      dispatch({
+        type: actionTypes.LOAD_HEROES,
+        heroes: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'LOAD_HEROES_ERROR',
+      });
+    }
+  };
+}
 
-export const deleteHero = (heroId) => ({
-  type: actionTypes.DELETE_HERO,
-  heroId,
-});
+export function addHero(hero) {
+  return async (dispatch) => {
+    const { data } = await axios.post(url, hero);
+    dispatch({
+      type: actionTypes.ADD_HERO,
+      hero: data,
+    });
+  };
+}
 
-export const getHeroById = (heroId) => {
-  let hero;
-  const targetHero = HEROES.find((current) => current.id === +heroId);
+export function deleteHero(heroId) {
+  return async (dispatch) => {
+    await axios.delete(`${url}/${heroId}`);
+    dispatch({
+      type: actionTypes.DELETE_HERO,
+      heroId,
+    });
+  };
+}
 
-  if (targetHero) {
-    hero = targetHero;
-  } else {
-    hero = {};
-  }
+export function updateHero(hero) {
+  return async (dispatch) => {
+    const { data } = await axios.put(`${url}/${hero.id}`, hero);
+    dispatch({
+      type: actionTypes.UPDATE_HERO,
+      hero: data,
+    });
+  };
+}
 
-  return ({
+export function loadHero(hero) {
+  return async (dispatch) => {
+    const { data } = await axios(`${url}/${hero.id}`);
+    dispatch({
+      type: actionTypes.LOAD_HERO,
+      hero: data,
+    });
+  };
+}
+
+export function getHeroById(heroId) {
+  const hero = HEROES.find((current) => current.id === +heroId);
+
+  return {
     type: actionTypes.LOAD_HERO,
     hero,
-  });
-};
-
-export const updateHero = (hero) => ({
-  type: actionTypes.UPDATE_HERO,
-  hero,
-});
-
-export const loadHero = (hero) => ({
-  type: actionTypes.LOAD_HERO,
-  hero,
-});
+  };
+}
