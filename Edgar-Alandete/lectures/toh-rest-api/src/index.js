@@ -5,7 +5,6 @@ server.use(express.json());
 
 const heroesRouter = require('./routes/heroesRouter');
 
-console.log('hola');
 server.use('/heroes', heroesRouter);
 
 server.listen('2021');
