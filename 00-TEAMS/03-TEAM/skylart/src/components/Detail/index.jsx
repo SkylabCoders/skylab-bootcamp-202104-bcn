@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadDetail } from '../../redux/actions/actionCreators';
 import GoBackButton from '../Common/GoBackButton';
+import FavoriteButton from '../Common/FavoriteButton';
 import './Detail.scss';
 
 function Detail({ dispatch, category, detail }) {
@@ -59,6 +60,7 @@ function Detail({ dispatch, category, detail }) {
             </li>
           </ul>
           <div className="button-container">
+            <FavoriteButton />
             <GoBackButton />
           </div>
         </div>
