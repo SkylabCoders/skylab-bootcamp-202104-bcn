@@ -50,6 +50,7 @@ describe('createOne', () => {
     createOne(req, res);
 
     // assert
+    expect(res.status).toHaveBeenCalledWith(400);
     expect(res.json).toHaveBeenCalledWith({ message: 'Invalid Id.' });
   });
 });
@@ -63,10 +64,26 @@ describe('getById', () => {
     };
 
     const req = {
-      params: heroId,
+      params: { heroId: 10 },
     };
     // act
     const { getById } = heroesController([{ id: 10, name: 'Samy' }, { id: 11, name: 'Davis' }]);
     getById(req, res);
+
+    expect(res.json).toHaveBeenCalledWith({ id: 10, name: 'Samy' });
+  });
+
+  test('Should get an invalid id message', () => {
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+    };
+    const req = {
+      params: { heroId: 12 },
+    };
+    const { getById } = heroesController([{ id: 10, name: 'Samy' }, { id: 11, name: 'Davis' }]);
+    getById(req, res);
+    expect(res.json).toHaveBeenCalledWith({ message: 'Invalid Id.' });
+    expect(res.status).toHaveBeenCalledWith(404);
   });
 });

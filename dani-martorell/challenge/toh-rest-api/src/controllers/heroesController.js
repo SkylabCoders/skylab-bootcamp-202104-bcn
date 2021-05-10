@@ -24,7 +24,8 @@ function heroesController(heroes) {
     if (heroToGet) {
       res.json(heroToGet);
     } else {
-      res.status(404).send({ message: 'Invalid Id.' });
+      res.status(404);
+      res.json({ message: 'Invalid Id.' });
     }
   }
 
