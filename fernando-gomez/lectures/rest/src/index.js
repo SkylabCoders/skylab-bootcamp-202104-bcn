@@ -5,6 +5,10 @@ const server = express();
 
 server.use(express.json());
 
+const heroesRouter = require('./routes/heroesRouter');
+
+server.use('/heroes', heroesRouter);
+
 server.get('/', (req, res) => res.send('Hey que pasa fer'));
 server.get('/fer', (req, res) => res.send('Bienvenido crack'));
 server.get('/heroes', (req, res) => res.json(heroes));
