@@ -75,13 +75,15 @@ export function loadFavorites() {
   };
 }
 
-export function addFavorite() {
+export function addFavorite(selectedArtwork) {
   return {
     type: actionTypes.ADD_FAVORITE,
+    selectedArtwork,
   };
 }
-export function deleteFavorite() {
+export function deleteFavorite(selectedArtwork) {
   return {
     type: actionTypes.DELETE_FAVORITE,
+    selectedArtwork,
   };
 }
