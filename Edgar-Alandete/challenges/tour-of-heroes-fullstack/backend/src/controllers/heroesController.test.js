@@ -30,3 +30,21 @@ describe('createOne', () => {
     expect(res.json).toHaveBeenCalledWith([{ id: 777, name: 'Maria' }, { id: 666, name: 'Pepe' }]);
   });
 });
+
+describe('getById', () => {
+  test('shoud get one hero by id', () => {
+    // arrange
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+    };
+    const req = {
+      params: { heroId: 777 },
+    };
+      // act
+    const { getById } = heroesController([{ id: 777, name: 'Isabel' }, { id: 888, name: 'Maria' }]);
+    getById(req, res);
+    // assert
+    expect(res.json).toHaveBeenCalledWith({ id: 777, name: 'Isabel' });
+  });
+});
