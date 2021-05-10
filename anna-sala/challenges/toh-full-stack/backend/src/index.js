@@ -1,6 +1,11 @@
 const express = require('express');
 
 const server = express();
+
 server.use(express.json());
 
-server.listen('2021');
+const heroesRouter = require('./routes/heroesRouter');
+
+server.use('/heroes', heroesRouter);
+
+server.listen('2021', () => 'Server is running in 2021');
