@@ -16,7 +16,7 @@ export function loadHeroes() {
       });
     } catch (error) {
       dispatch({
-        type: 'LOAD_HEROES_ERROR',
+        type: actionTypes.LOAD_HEROES_ERROR,
       });
     }
   };
@@ -35,16 +35,29 @@ export function addHero(hero) {
       });
     } catch (error) {
       dispatch({
-        type: 'LOAD_HEROES_ERROR',
+        type: actionTypes.ADD_HERO_ERROR,
       });
     }
   };
 }
 
 export function deleteHero(heroId) {
-  return {
-    type: actionTypes.DELETE_HERO,
-    heroId,
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.delete(`${url}${heroId}`, {
+        heroId,
+      });
+      // eslint-disable-next-line no-debugger
+      debugger;
+      dispatch({
+        type: actionTypes.DELETE_HERO,
+        heroes: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.ADD_HERO_ERROR,
+      });
+    }
   };
 }
 
