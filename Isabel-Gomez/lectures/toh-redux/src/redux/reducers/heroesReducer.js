@@ -1,24 +1,31 @@
-import HEROES from '../../constants/heroes.mock';
 import actionTypes from '../actions/actionTypes';
 
-const heroesReducer = (heroes = [], action) => {
+function heroesReducer(heroes = [], action) {
+  // eslint-disable-next-line no-debugger
+  debugger;
   switch (action.type) {
     case actionTypes.LOAD_HEROES:
-      return HEROES;
-    case actionTypes.DELETE_HEROE:
+      return action.heroes;
+
+    case actionTypes.DELETE_HERO:
       return heroes.filter((hero) => hero.id !== action.heroId);
+
     case actionTypes.ADD_HERO:
       return [
         ...heroes,
         action.hero,
       ];
+
     case actionTypes.UPDATE_HERO:
-      return heroes.map((hero) => (hero.id === action.hero.id
-        ? { ...hero, ...action.hero }
-        : hero));
+      return heroes.map(
+        (hero) => (hero.id === action.hero.id
+          ? { ...hero, ...action.hero }
+          : hero),
+      );
+
     default:
       return heroes;
   }
-};
+}
 
 export default heroesReducer;
