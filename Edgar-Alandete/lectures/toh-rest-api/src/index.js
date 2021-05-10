@@ -1,5 +1,5 @@
 const express = require('express');
-const heroes = require('./heroes');
+let heroes = require('./heroes');
 
 const server = express();
 server.use(express.json());
@@ -19,4 +19,27 @@ server.post('/heroes', (req, res) => {
   heroes.push(newHero);
   res.json(heroes);
 });
+
+server.put('/heroes/:heroId', (req, res) => {
+  const { heroId } = req.params;
+  const updateData = req.body;
+  heroes = heroes.map((hero) => {
+    if (hero.id === +heroId) {
+      return {
+        ...hero,
+        ...updateData,
+      };
+    }
+    return hero;
+  });
+
+  res.json(heroes);
+});
+
+server.delete('/heroes/:heroId', (req, res) => {
+  const { heroId } = req.params;
+  heroes = heroes.filter((hero) => +heroId !== hero.id);
+  res.json(heroes);
+});
+
 server.listen('2021');
