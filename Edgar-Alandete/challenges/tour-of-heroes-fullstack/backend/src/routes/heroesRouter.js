@@ -8,6 +8,8 @@ function heroesRouter() {
   routes.route('/')
     .get(heroesController.getAll)
     .post(heroesController.createOne);
+  routes.route('/:heroId')
+    .get(heroesController.getById);
 
   return routes;
 }
