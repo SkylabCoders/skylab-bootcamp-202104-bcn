@@ -1,5 +1,5 @@
 function sum(a, b) {
-  const x = a + b;
+  const x = a * b;
   console.log(x);
 }
 
