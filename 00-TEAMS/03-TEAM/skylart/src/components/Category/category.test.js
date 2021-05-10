@@ -4,7 +4,7 @@ import Category from './index';
 import { render, screen } from '../../utils/test-utils';
 
 describe('For a Category component', () => {
-  test.only('should contain <img> ', () => {
+  test('should contain <img> ', () => {
     render(<Category />, {
       initialState: {
 
