@@ -1,6 +1,8 @@
-function sum(a, b) {
-  const x = a * b;
-  console.log(x);
-}
+const http = require('http');
 
-sum(1, 2);
+const server = http.createServer((req, res) => {
+  console.log(req);
+  res.end('Hola mundo!');
+});
+
+server.listen('2021');
