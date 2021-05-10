@@ -8,7 +8,6 @@ const url = 'http://127.0.0.1:2021/heroes/';
 export function loadHeroes() {
   return async (dispatch) => {
     try {
-      debugger;
       const { data } = await axios(url, {
         method: 'GET',
       });
