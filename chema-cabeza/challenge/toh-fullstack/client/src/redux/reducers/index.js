@@ -5,7 +5,7 @@ import authReducer from './authReducer';
 
 const rootReducer = combineReducers({
   heroes: heroesReducer,
-  selectedHero: selectedHeroReducer,
+  hero: selectedHeroReducer,
   auth: authReducer,
 });
 

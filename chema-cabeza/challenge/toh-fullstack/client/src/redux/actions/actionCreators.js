@@ -1,5 +1,5 @@
 import axios from 'axios';
-import HEROES from '../../constants/heroes.mock';
+// import HEROES from '../../constants/heroes.mock';
 import actionTypes from './actionTypes';
 
 const url = 'http://localhost:2021/heroes';
@@ -61,11 +61,12 @@ export function loadHero(hero) {
 }
 
 export function getHeroById(heroId) {
-  const hero = HEROES.find((current) => current.id === +heroId);
-
-  return {
-    type: actionTypes.LOAD_HERO,
-    hero,
+  return async (dispatch) => {
+    const { data } = await axios(`${url}/${heroId}`);
+    dispatch({
+      type: actionTypes.LOAD_HERO,
+      hero: data,
+    });
   };
 }
 

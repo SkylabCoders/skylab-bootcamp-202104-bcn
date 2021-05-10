@@ -9,7 +9,9 @@ function heroesController(heroes) {
   }
 
   function getById(req, res) {
-    res.json(heroes[0]);
+    const { heroId } = req.params;
+    const selectedHero = heroes.find((hero) => hero.id === +heroId);
+    res.json(selectedHero);
   }
 
   function updateById(req, res) {

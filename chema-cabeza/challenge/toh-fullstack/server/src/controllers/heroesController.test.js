@@ -34,11 +34,14 @@ describe('getById', () => {
     const res = {
       json: jest.fn(),
     };
+    const req = {
+      params: { heroId: 1 },
+    };
 
-    const { getById } = heroesController([{ name: 'Pepe' }, { name: 'Juan' }]);
-    getById(null, res);
+    const { getById } = heroesController([{ id: 1, name: 'Pepe' }, { id: 2, name: 'Juan' }]);
+    getById(req, res);
 
-    expect(res.json).toHaveBeenCalledWith({ name: 'Pepe' });
+    expect(res.json).toHaveBeenCalledWith({ id: 1, name: 'Pepe' });
   });
 });
 

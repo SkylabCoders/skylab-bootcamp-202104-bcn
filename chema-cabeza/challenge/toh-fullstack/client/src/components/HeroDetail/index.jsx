@@ -73,9 +73,9 @@ HeroDetail.propTypes = {
   }).isRequired,
 };
 
-function mapStateToProps({ selectedHero }) {
+function mapStateToProps(store) {
   return {
-    selectedHero,
+    selectedHero: store.hero,
   };
 }
 
