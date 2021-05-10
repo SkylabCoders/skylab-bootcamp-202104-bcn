@@ -10,7 +10,8 @@ function heroesController(heroes) {
   }
 
   function getById(req, res) {
-    const heroById = heroes.find((hero) => hero.id === +req.params.heroId);
+    const { heroId } = req.params;
+    const heroById = heroes.find((hero) => hero.id === +heroId);
     if (heroById) {
       res.status(200);
       res.json(heroById);
@@ -18,6 +19,10 @@ function heroesController(heroes) {
       res.status(404);
       res.send(`The hero with the id ${req.params.heroId} doesn't exist`);
     }
+  }
+
+  function deleteById(req, res) {
+
   }
 
   return {
