@@ -14,13 +14,13 @@ server.get('/heroes', (req, res) => {
 });
 
 server.get('/heroes/:heroId', (req, res) => {
-  const response = heroes.find(
-    (hero) => hero.id === +req.params.heroId,
-  );
-  if (response) {
-    res.json(response);
+  const heroById = heroes.find((hero) => hero.id === +req.params.heroId);
+  if (heroById) {
+    res.status(302);
+    res.json(heroById);
   } else {
-    res.send(`There are no users with name ${req.params.heroId}`);
+    res.status(404);
+    res.json(heroById);
   }
 });
 
