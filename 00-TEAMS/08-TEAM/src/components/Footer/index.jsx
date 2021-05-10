@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.scss';
+import sonarqubeBadge from '../../assets/quality_gate.svg';
 
 const Footer = () => {
   const whoURL = 'https://www.who.int/es/campaigns/connecting-the-world-to-combat-coronavirus/healthyathome?gclid=CjwKCAjwhMmEBhBwEiwAXwFoEcj-dzrBl0X7XkzIRq2Tm-cTEppHl2EDqHu1QjI0CRUAZoFgGjfLTxoCxFoQAvD_BwE';
@@ -39,7 +40,7 @@ const Footer = () => {
           <i className="fab fa-github" />
           GitHub Isabel
         </a>
-        <img className="sonarqube" src="http://localhost:9000/api/project_badges/quality_gate?project=covidtracker" alt="sonarqube badge" />
+        <img className="sonarqube" src={sonarqubeBadge} alt="sonarqube badge" />
 
       </div>
       <div className="madeBy-element"> Made by Isabel, Dani, Gax</div>
