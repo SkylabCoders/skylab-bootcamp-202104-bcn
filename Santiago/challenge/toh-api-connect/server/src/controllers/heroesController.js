@@ -22,7 +22,7 @@ function heroesController() {
     res.json(heroes);
   }
 
-  function updateById(req, res) {
+  const updateById = (req, res) => {
     const { heroId } = req.params;
     const updateData = req.body;
     heroes = heroes.map((hero) => {
@@ -35,9 +35,9 @@ function heroesController() {
       return hero;
     });
     res.json(heroes);
-  }
+  };
 
-  function deleteById(req, res) {
+  const deleteById = (req, res) => {
     const { heroId } = req.params;
     const heroById = heroes.filter((hero) => hero.id === +heroId);
 
@@ -52,7 +52,7 @@ function heroesController() {
 
     res.status(204);
     res.json(heroes);
-  }
+  };
 
   return {
     getAll,
