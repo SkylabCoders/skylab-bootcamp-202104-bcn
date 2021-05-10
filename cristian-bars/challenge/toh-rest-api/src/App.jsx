@@ -8,12 +8,12 @@ import { Provider } from 'react-redux';
 import Dashboard from './componentes/Dashboard';
 import HeroDetail from './componentes/HeroDetail/Index';
 import NotFound from './componentes/NotFound';
-import store from './redux/stores/index';
+import configureStore from './redux/stores/index';
 
 function App() {
   return (
     <>
-      <Provider store={store}>
+      <Provider store={configureStore()}>
         <BrowserRouter>
           <h1>Tour of Heroes</h1>
           <nav>

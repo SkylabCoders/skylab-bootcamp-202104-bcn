@@ -1,9 +1,22 @@
-import HEROES from '../../componentes/Constants/Heroes.mock';
+// import HEROES from '../../componentes/Constants/Heroes.mock';
+import axios from 'axios';
 import actionTypes from './actionTypes';
 
+const url = 'http://localhost:2021/heroes';
+
 export function loadHeroes() {
-  return {
-    type: actionTypes.LOAD_HEROES
+  return async (dispatch) => {
+    try {
+      const { data } = await axios(url);
+      dispatch({
+        type: actionTypes.LOAD_HEROES,
+        heroes: data
+      });
+    } catch (error) {
+      dispatch({
+        type: 'LOAD_HEROES_ERROR'
+      });
+    }
   };
 }
 
@@ -35,11 +48,11 @@ export function loadHero(hero) {
   };
 }
 
-export function getHeroById(heroId) {
+/* export function getHeroById(heroId) {
   const hero = HEROES.find((current) => current.id === +heroId);
 
   return {
     type: actionTypes.LOAD_HERO,
     hero
   };
-}
+} */

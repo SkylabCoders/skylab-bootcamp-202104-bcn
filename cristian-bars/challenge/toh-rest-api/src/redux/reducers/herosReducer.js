@@ -1,10 +1,9 @@
-import HEROES from '../../componentes/Constants/Heroes.mock';
 import actionTypes from '../actions/actionTypes';
 
 function heroesReducer(heroes = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_HEROES:
-      return HEROES;
+      return action.heroes;
 
     case actionTypes.DELETE_HERO:
       return heroes.filter((hero) => hero.id !== action.heroId);
