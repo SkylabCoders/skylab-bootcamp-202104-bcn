@@ -11,7 +11,7 @@
 // server.listen('2021'); El servidor escuche peticiones en un puerto, espeficiocamos el puerto en que llamaremos al servidor
 
 const express = require('express');
-let heroes = require('./heroes.js');
+const heroes = require('./heroes.js');
 
 const server = express();
 server.use(express.json());
@@ -37,20 +37,43 @@ server.listen('2021');
 //   }
 // });
 
-function addHero(hero){
-    return async (dispatch)=>{
-const {data}= await axios.post(url, hero);
-dispatch{
-    type:..,
-    hero:data
-}
-    }
-}
+// const url =
+// function addHero(hero){
+//     return async (dispatch)=>{
+//         const {data}= await axios.post(url, hero);
+//         dispatch{
+//             type:actionTypes.ADD_HERO,
+//             hero:data
+//         }
+//     }
+// }
 
-function addHero(hero){
-    const {data}= await axios.delete(`url/${heroId}`);
-    return dispatch{
-        type:..,
-        hero:data
-    }
-    }
+// function deleteHero(heroId){
+//     return async (dispatch)=>{
+//     await axios.delete(`${url}/${heroId}`);
+//     dispatch{
+//         type:actionTypes.DELETE_HERO,
+//         heroId
+//     }
+// }
+//     }
+
+//     function updateHero(hero){
+//         return async (dispatch)=>{
+//             const {data}= await axios.post(`${url}/${hero.id}`, hero);
+//             dispatch{
+//                 type:actionTypes.UPDATE_HERO,
+//                 hero:data
+//             }
+//         }
+//     }
+
+//     function loadHero(hero){
+//         return async (dispatch)=>{
+//             const {data}= await axios.post(`${url}/${hero.id}`);
+//             dispatch{
+//                 type:actionTypes.LOAD_HERO,
+//                 hero:data
+//             }
+//         }
+//     }
