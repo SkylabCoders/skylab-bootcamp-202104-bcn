@@ -1,9 +1,26 @@
+/* eslint-disable no-debugger */
+import axios from 'axios';
 import HEROES from '../../constants/heroes.mock';
 import actionTypes from './actionTypes';
 
+const url = 'http://127.0.0.1:2021/heroes/';
+
 export function loadHeroes() {
-  return {
-    type: actionTypes.LOAD_HEROES,
+  return async (dispatch) => {
+    try {
+      debugger;
+      const { data } = await axios(url, {
+        method: 'GET',
+      });
+      dispatch({
+        type: actionTypes.LOAD_HEROES,
+        heroes: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'LOAD_HEROES_ERROR',
+      });
+    }
   };
 }
 

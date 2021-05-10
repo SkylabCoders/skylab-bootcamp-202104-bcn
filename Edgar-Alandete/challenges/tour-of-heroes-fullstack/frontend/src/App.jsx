@@ -16,7 +16,7 @@ import HeroesList from './components/HeroesList';
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={store()}>
       <BrowserRouter>
         <h1>Tour of Heroes</h1>
         <nav>
