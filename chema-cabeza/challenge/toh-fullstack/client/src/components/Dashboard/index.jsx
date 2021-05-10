@@ -21,7 +21,7 @@ function Dashboard({ heroes, dispatch }) {
 }
 
 Dashboard.propTypes = {
-  heroes: PropTypes.shape([{}]).isRequired,
+  heroes: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
