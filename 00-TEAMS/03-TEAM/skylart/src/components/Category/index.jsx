@@ -29,7 +29,7 @@ function Category({ dispatch, artworks, category }) {
         {category.length && category.filter(
           (element) => departmentProp?.department === element.department,
         ).map((individualDetail) => (
-          <li className="category__item">
+          <li className="category__item" key={individualDetail.title}>
             <Link to={`/detail/${individualDetail.objectID}`}>
               <p className="detail-name">{individualDetail.title}</p>
               <img
