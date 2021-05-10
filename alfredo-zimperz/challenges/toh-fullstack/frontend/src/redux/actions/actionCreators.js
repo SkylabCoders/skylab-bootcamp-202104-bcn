@@ -61,9 +61,9 @@ export function loadHero(hero) {
   };
 }
 
-export function getHeroById() {
+export function getHeroById(heroId) {
   return async (dispatch) => {
-    const { data } = await axios('http://localhost:2021/heroes/2');
+    const { data } = await axios(`${url}/${heroId}`);
     dispatch({
       type: actionTypes.LOAD_HERO,
       hero: data,
