@@ -11,9 +11,10 @@ function heroesController(heroes) {
     const isHeroIdAlreadyInUse = heroes.find((hero) => hero.id === +newHeroId);
     if (!isHeroIdAlreadyInUse) {
       heroes.push(newHeroBody);
-      res.json(heroes);
+      res.json(newHeroBody);
     } else {
-      res.status(400).json({ message: 'Invalid Id.' });
+      res.status(400);
+      res.json({ message: 'Invalid Id.' });
     }
   }
 
