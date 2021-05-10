@@ -65,3 +65,22 @@ describe('getById', () => {
     expect(res.status).toHaveBeenCalledWith(404);
   });
 });
+
+describe('updateById', () => {
+  test('shoud update one hero by id', () => {
+    // arrange
+    const res = {
+      json: jest.fn(),
+    };
+    const req = {
+      params: { heroId: 777 },
+      body: { name: 'Gemmuki' },
+
+    };
+    // act
+    const { updateById } = heroesController([{ id: 777, name: 'Isabel' }, { id: 888, name: 'Maria' }]);
+    updateById(req, res);
+    // assert
+    expect(res.json).toHaveBeenCalledWith([{ id: 777, name: 'Gemmuki' }, { id: 888, name: 'Maria' }]);
+  });
+});
