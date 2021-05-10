@@ -1,4 +1,5 @@
 import axios from 'axios';
+import HEROES from '../../constants/heroe.mock';
 import actionTypes from './actionTypes';
 
 const url = 'http://localhost:2021/heroes';
@@ -56,5 +57,14 @@ export function loadHero(hero) {
       type: actionTypes.LOAD_HERO,
       hero: data
     });
+  };
+}
+
+export function getHeroById(heroId) {
+  const hero = HEROES.find((current) => current.id === +heroId);
+
+  return {
+    type: actionTypes.LOAD_HERO,
+    hero
   };
 }
