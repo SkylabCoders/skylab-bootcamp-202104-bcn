@@ -1,9 +1,7 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+import { useParams } from 'react-router-dom';
 import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
 import './HeroDetail.css';
 
@@ -69,13 +67,13 @@ HeroDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
   selectedHero: PropTypes.shape({
     id: PropTypes.number,
-    name: PropTypes.string,
-  }).isRequired,
+    name: PropTypes.string
+  }).isRequired
 };
 
 function mapStateToProps({ selectedHero }) {
   return {
-    selectedHero,
+    selectedHero
   };
 }
 

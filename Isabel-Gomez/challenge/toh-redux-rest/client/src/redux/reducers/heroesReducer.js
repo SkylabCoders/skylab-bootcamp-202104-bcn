@@ -1,8 +1,6 @@
 import actionTypes from '../actions/actionTypes';
 
 function heroesReducer(heroes = [], action) {
-  // eslint-disable-next-line no-debugger
-  debugger;
   switch (action.type) {
     case actionTypes.LOAD_HEROES:
       return action.heroes;
@@ -13,14 +11,14 @@ function heroesReducer(heroes = [], action) {
     case actionTypes.ADD_HERO:
       return [
         ...heroes,
-        action.hero,
+        action.hero
       ];
 
     case actionTypes.UPDATE_HERO:
       return heroes.map(
         (hero) => (hero.id === action.hero.id
           ? { ...hero, ...action.hero }
-          : hero),
+          : hero)
       );
 
     default:
