@@ -1,37 +1,62 @@
+import axios from 'axios';
 import HEROES from '../../constants/heroes.mock';
 import actionTypes from './actionTypes';
 
+const url = 'http://localhost:2021/heroes';
+
 export function loadHeroes() {
-  return {
-    type: actionTypes.LOAD_HEROES,
+  return async (dispatch) => {
+    try {
+      const { data } = await axios(url);
+      dispatch({
+        type: actionTypes.LOAD_HEROES,
+        heroes: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'LOAD_HEROES_ERROR',
+      });
+    }
   };
 }
 
 export function addHero(hero) {
-  return {
-    type: actionTypes.ADD_HERO,
-    hero,
+  return async (dispatch) => {
+    const { data } = await axios.post(url, hero);
+    dispatch({
+      type: actionTypes.ADD_HERO,
+      hero: data,
+    });
   };
 }
 
 export function deleteHero(heroId) {
-  return {
-    type: actionTypes.DELETE_HERO,
-    heroId,
+  return async (dispatch) => {
+    await axios.delete(`${url}/${heroId}`);
+    dispatch({
+      type: actionTypes.DELETE_HERO,
+      heroId,
+    });
   };
 }
 
 export function updateHero(hero) {
-  return {
-    type: actionTypes.UPDATE_HERO,
-    hero,
+  return async (dispatch) => {
+    const { data } = await axios.put(`${url}/${hero.id}`, hero);
+    dispatch({
+      type: actionTypes.UPDATE_HERO,
+      hero: data,
+    });
   };
 }
 
 export function loadHero(hero) {
-  return {
-    type: actionTypes.LOAD_HERO,
-    hero,
+  return async (dispatch) => {
+    const { data } = await axios(`${url}/${hero.id}`);
+    dispatch({
+      type: actionTypes.LOAD_HERO,
+      hero: data,
+    });
   };
 }
 
