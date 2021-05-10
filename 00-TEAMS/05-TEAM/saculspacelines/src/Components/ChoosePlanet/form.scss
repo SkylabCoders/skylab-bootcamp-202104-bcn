@@ -50,19 +50,19 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    width: 35%;
+    width: 30%;
     
     &__image {
-        height: 13em;
+        height: 8em;
         padding: 0;
         border-radius: 50%;
-        border: 1em solid #FCE952;
+        border: 0.5em solid #FCE952;
     }
 
     &__profile {
-        height: 15em;
+        height: 8em;
         padding: 0;
         border-radius: 50%;
-        border: 1em solid #FCE952;
+        border: 0.5em solid #FCE952;
     }
 }

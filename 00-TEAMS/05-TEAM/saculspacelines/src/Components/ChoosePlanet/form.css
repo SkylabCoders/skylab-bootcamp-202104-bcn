@@ -73,20 +73,20 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 35%;
+  width: 30%;
 }
 
 .top-buttons__image {
-  height: 13em;
+  height: 8em;
   padding: 0;
   border-radius: 50%;
-  border: 1em solid #FCE952;
+  border: 0.5em solid #FCE952;
 }
 
 .top-buttons__profile {
-  height: 15em;
+  height: 8em;
   padding: 0;
   border-radius: 50%;
-  border: 1em solid #FCE952;
+  border: 0.5em solid #FCE952;
 }
 /*# sourceMappingURL=form.css.map */
