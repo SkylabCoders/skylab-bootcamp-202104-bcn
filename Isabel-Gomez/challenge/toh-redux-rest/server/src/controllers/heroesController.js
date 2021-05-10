@@ -1,14 +1,12 @@
-const heroes = require('../heroes');
-
-const heroesController = (data) => {
+const heroesController = (heroes) => {
   const getAll = (req, res) => {
-    res.json(data);
+    res.json(heroes);
   };
 
   const createOne = (req, res) => {
     const newHero = req.body;
     heroes.push(newHero);
-    res.json(data);
+    res.json(heroes);
   };
 
   const getById = (req, res) => {
@@ -23,7 +21,7 @@ const heroesController = (data) => {
   };
   const updateById = (req, res) => {
     const updateHero = req.body;
-    const newHeroById = heroes.find((hero) => {
+    const newHeroById = heroes.map((hero) => {
       if (hero.id === +req.params.heroId) {
         return {
           ...hero,
@@ -49,4 +47,4 @@ const heroesController = (data) => {
   };
 };
 
-module.exports = heroesController(heroes);
+module.exports = heroesController;
