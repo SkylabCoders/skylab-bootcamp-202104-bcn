@@ -13,3 +13,12 @@ describe('When invoked a getAll function', () => {
     expect(res.json).toHaveBeenCalled();
   });
 });
+
+test('Should return and object', () => {
+  const res = {
+    json: jest.fn()
+  };
+  const { createOne } = heroesController;
+  createOne(null, res);
+  expect(res.json).toHaveBeenCalled();
+});
