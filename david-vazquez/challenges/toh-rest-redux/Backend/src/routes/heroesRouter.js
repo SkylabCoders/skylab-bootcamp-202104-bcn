@@ -1,6 +1,9 @@
+// const { Router } = require('express');
+// const heroes = require('../heroes');
+// const heroesController = require('../controllers/heroesController')(heroes);
+
 const { Router } = require('express');
-const heroes = require('../heroes');
-const heroesController = require('../controllers/heroesController')(heroes);
+const heroesController = require('../controllers/heroesController');
 
 function heroesRouter() {
   const routes = Router();
