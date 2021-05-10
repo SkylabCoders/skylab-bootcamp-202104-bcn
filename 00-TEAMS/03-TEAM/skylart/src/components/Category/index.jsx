@@ -27,7 +27,7 @@ function Category({ dispatch, artworks, category }) {
     <>
       <ul className="category">
         {category.length && category.filter(
-          (element) => departmentProp?.department === element.department,
+          (element) => departmentProp.department === element.department,
         ).map((individualDetail) => (
           <li className="category__item">
             <Link to={`/detail/${individualDetail.objectID}`}>
