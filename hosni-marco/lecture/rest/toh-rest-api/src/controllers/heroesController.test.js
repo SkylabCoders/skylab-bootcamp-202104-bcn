@@ -4,7 +4,7 @@ describe('getAll', () => {
   test('shoud get all heroes', () => {
     // arrange
     const res = {
-      json: jest.fn(),
+      json: jest.fn()
     };
     // act
     const { getAll } = heroesController([{ name: 'Pepe' }]);
@@ -17,13 +17,14 @@ describe('getAll', () => {
 describe('createOne', () => {
   test('shoud get all heroes', () => {
     // arrange
+    const req = { body: { name: 'melon' } };
     const res = {
-      json: jest.fn(),
+      json: jest.fn()
     };
     // act
-    const { createOne } = heroesController([{ id: 20, name: 'Pepe' }]);
-    createOne(null, res);
+    const { createOne } = heroesController([{ name: 'Pepe' }]);
+    createOne(req, res);
     // assert
-    expect(res.json).toHaveBeenCalledWith({ id: 20, name: 'Pepe' });
+    expect(res.json).toHaveBeenCalledWith([{ name: 'Pepe' }, { name: 'melon' }]);
   });
 });
