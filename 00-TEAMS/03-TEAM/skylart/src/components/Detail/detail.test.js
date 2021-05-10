@@ -5,7 +5,7 @@ import { render, screen } from '../../utils/test-utils';
 import { loadDetail } from '../../redux/actions/actionCreators';
 
 describe('For a Detail component', () => {
-  test.only('should containt "rights" ', () => {
+  test('should containt "rights" ', () => {
     render(<Detail />, {
       initialState: {
         detail: {
@@ -17,7 +17,7 @@ describe('For a Detail component', () => {
     expect(screen.getByText(/hello/i).toBeInTheDocument());
   });
 
-  test.only('should call loadDetail', () => {
+  test('should call loadDetail', () => {
     render(<Detail />, {
       initialState: {
         detail: {
