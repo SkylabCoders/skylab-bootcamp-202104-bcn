@@ -72,6 +72,8 @@ export function getHeroById(heroId) {
 }
 
 export function login(user) {
+  // eslint-disable-next-line no-debugger
+  debugger;
   return {
     type: actionTypes.AUTH_LOGIN,
     user,
