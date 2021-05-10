@@ -42,8 +42,18 @@ server.put('/heroes/:heroId', (req, res) => {
 
 server.delete('/heroes/:heroId', (req, res) => {
   const { heroId } = req.params;
-  heroes = heroes.filter((hero) => hero.id !== +heroId);
+  const heroById = heroes.filter((hero) => hero.id === +heroId);
 
+  if (heroById) {
+    heroes = heroes.filter((hero) => hero.id !== +heroId);
+    res.status(204);
+    res.end();
+  } else {
+    res.status(404);
+    res.json();
+  }
+
+  res.status(204);
   res.json(heroes);
 });
 
