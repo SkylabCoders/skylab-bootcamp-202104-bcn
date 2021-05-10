@@ -17,7 +17,7 @@ function heroesController(heroes) {
   function getById(req, res) {
     const heroById = heroes.find((hero) => hero.id === +req.params.heroId);
     if (heroById) {
-      res.status(302);
+      res.status(200);
       res.json(heroById);
     } else {
       res.status(404);

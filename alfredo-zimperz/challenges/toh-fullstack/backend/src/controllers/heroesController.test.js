@@ -75,7 +75,7 @@ describe('getById', () => {
     getById(req, res);
     expect(res.json).toHaveBeenCalledWith({ id: 2, name: 'Tino' });
   });
-  test('shoud return status 302', () => {
+  test('shoud return status 200', () => {
     const res = {
       json: jest.fn(),
       status: jest.fn(),
@@ -87,7 +87,7 @@ describe('getById', () => {
 
     const { getById } = heroesController([{ id: 1, name: 'Pepe' }, { id: 2, name: 'Tino' }]);
     getById(req, res);
-    expect(res.status).toHaveBeenCalledWith(302);
+    expect(res.status).toHaveBeenCalledWith(200);
   });
   test('shoud return a Hero without argument', () => {
     const res = {
