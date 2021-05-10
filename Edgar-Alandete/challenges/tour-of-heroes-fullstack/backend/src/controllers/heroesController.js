@@ -3,8 +3,15 @@ function heroesController(heroes) {
     res.json(heroes);
   }
 
+  function createOne(req, res) {
+    const newHero = req.body;
+    heroes.push(newHero);
+    res.json(heroes);
+  }
+
   return {
     getAll,
+    createOne,
   };
 }
 

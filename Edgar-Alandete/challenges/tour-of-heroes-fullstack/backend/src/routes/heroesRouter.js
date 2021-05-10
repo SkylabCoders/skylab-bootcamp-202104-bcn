@@ -6,7 +6,8 @@ function heroesRouter() {
   const routes = Router();
 
   routes.route('/')
-    .get(heroesController.getAll);
+    .get(heroesController.getAll)
+    .post(heroesController.createOne);
 
   return routes;
 }
