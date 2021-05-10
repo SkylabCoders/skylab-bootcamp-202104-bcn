@@ -24,14 +24,16 @@ function heroesController(heroes) {
   function modifyHeroById(req, res) {
     const { heroId } = req.params;
     const heroDetails = req.body;
-    const heroEdited = heroes.find((hero) => {
+    heroes = heroes.map((hero) => {
       if (hero.id === +heroId) {
-        res.json('hola');
-      } else {
-        res.json();
+        return {
+          ...hero,
+          ...heroDetails
+        };
       }
+      return hero;
     });
-    res.json(heroEdited);
+    res.json(heroes);
   }
 
   return {
