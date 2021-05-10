@@ -1,11 +1,10 @@
+import HEROES from '../../constants/heroes.mock';
 import actionTypes from '../actions/actionTypes';
 
 function heroesReducer(heroes = [], action) {
-  // eslint-disable-next-line no-debugger
-  debugger;
   switch (action.type) {
     case actionTypes.LOAD_HEROES:
-      return action.heroes;
+      return HEROES;
 
     case actionTypes.DELETE_HERO:
       return heroes.filter((hero) => hero.id !== action.heroId);

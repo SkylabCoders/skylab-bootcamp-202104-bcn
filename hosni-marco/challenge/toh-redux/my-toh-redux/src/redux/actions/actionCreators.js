@@ -1,80 +1,37 @@
-import axios from 'axios';
 import HEROES from '../../constants/heroes.mock';
 import actionTypes from './actionTypes';
 
-const url = 'http://localhost:2021/heroes';
-
 export function loadHeroes() {
-  return async (dispatch) => {
-    try {
-      const { data } = await axios(url);
-      dispatch({
-        type: actionTypes.LOAD_HEROES,
-        heroes: data
-      });
-    } catch (error) {
-      dispatch({
-        type: 'LOAD_HEROES_ERROR'
-      });
-    }
-  };
-}
-
-//      TODO: Pasar la funcion a axios.
-
-export function loadHeroesAxios() {
-  return async (dispatch) => {
-    try {
-      const { data } = await axios(url);
-      dispatch({
-        type: actionTypes.LOAD_HEROES,
-        heroes: data
-      });
-    } catch (error) {
-      dispatch({
-        type: 'LOAD_HEROES_ERROR'
-      });
-    }
+  return {
+    type: actionTypes.LOAD_HEROES
   };
 }
 
 export function addHero(hero) {
-  return async (dispatch) => {
-    const { data } = await axios.post(url, hero);
-    dispatch({
-      type: actionTypes.ADD_HERO,
-      hero: data
-    });
+  return {
+    type: actionTypes.ADD_HERO,
+    hero
   };
 }
 
 export function deleteHero(heroId) {
-  return async (dispatch) => {
-    await axios.delete(`${url}/${heroId}`);
-    dispatch({
-      type: actionTypes.DELETE_HERO,
-      heroId
-    });
+  return {
+    type: actionTypes.DELETE_HERO,
+    heroId
   };
 }
 
 export function updateHero(hero) {
-  return async (dispatch) => {
-    const { data } = await axios.put(`${url}/${hero.id}`, hero);
-    dispatch({
-      type: actionTypes.UPDATE_HERO,
-      hero: data
-    });
+  return {
+    type: actionTypes.UPDATE_HERO,
+    hero
   };
 }
 
 export function loadHero(hero) {
-  return async (dispatch) => {
-    const { data } = await axios(`${url}/${hero.id}`);
-    dispatch({
-      type: actionTypes.LOAD_HERO,
-      hero: data
-    });
+  return {
+    type: actionTypes.LOAD_HERO,
+    hero
   };
 }
 
@@ -84,18 +41,5 @@ export function getHeroById(heroId) {
   return {
     type: actionTypes.LOAD_HERO,
     hero
-  };
-}
-
-export function login(user) {
-  return {
-    type: actionTypes.AUTH_LOGIN,
-    user
-  };
-}
-
-export function logout() {
-  return {
-    type: actionTypes.AUTH_LOGOUT
   };
 }
