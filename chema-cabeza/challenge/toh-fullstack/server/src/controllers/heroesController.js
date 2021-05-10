@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 function heroesController(heroes) {
   function getAll(req, res) {
     res.json(heroes);
@@ -12,12 +13,20 @@ function heroesController(heroes) {
   }
 
   function updateById(req, res) {
-    res.json(heroes[0]);
+    const { heroId } = req.params;
+    const name = req.body;
+    heroes = [
+      ...heroes,
+      { id: heroId, name },
+    ];
+    res.json(heroes);
   }
 
   function deleteById(req, res) {
-    res.status(204);
-    res.json();
+    const { heroId } = req.params;
+    heroes = heroes.filter((hero) => hero.id !== +heroId);
+    // res.status(204);
+    res.json(heroes);
   }
 
   return {
