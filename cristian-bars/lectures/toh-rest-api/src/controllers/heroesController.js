@@ -15,10 +15,31 @@ function heroesController(heroes) {
     res.json(heroesById);
   }
 
+  function addHero(req, res) {
+    const heroDetails = req.body;
+    heroes.push(heroDetails);
+    res.json(heroes);
+  }
+
+  function modifyHeroById(req, res) {
+    const { heroId } = req.params;
+    const heroDetails = req.body;
+    const heroEdited = heroes.find((hero) => {
+      if (hero.id === +heroId) {
+        res.json('hola');
+      } else {
+        res.json();
+      }
+    });
+    res.json(heroEdited);
+  }
+
   return {
     getAll,
     getHeroById,
-    deleteHeroById
+    deleteHeroById,
+    addHero,
+    modifyHeroById
   };
 }
 
