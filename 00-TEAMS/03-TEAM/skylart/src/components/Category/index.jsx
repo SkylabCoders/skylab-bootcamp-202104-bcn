@@ -7,18 +7,20 @@ import categoriesToPrint from '../../redux/store/constants/categoriesToPrint';
 import { loadArtworksFromApi, loadCategory } from '../../redux/actions/actionCreators';
 import './Category.scss';
 
-let alreadyCalledId = [2];
+let alreadyCalledId = [];
 function Category({ dispatch, artworks, category }) {
   const { categoryId } = useParams();
   const departmentProp = categoriesToPrint.find((element) => element.id === +categoryId);
   useEffect(() => {
     if (!alreadyCalledId.includes(+categoryId)) {
-      alreadyCalledId = [...alreadyCalledId, +categoryId];
       dispatch(loadArtworksFromApi(categoryId));
     }
   }, [categoryId]);
   useEffect(() => {
-    artworks.slice(1, 16).map((artworkId) => dispatch(loadCategory(artworkId)));
+    if (!alreadyCalledId.includes(+categoryId)) {
+      artworks.slice(1, 16).map((artworkId) => dispatch(loadCategory(artworkId)));
+      alreadyCalledId = [...alreadyCalledId, +categoryId];
+    }
   }, [artworks]);
 
   return (
