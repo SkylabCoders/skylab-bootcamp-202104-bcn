@@ -47,4 +47,21 @@ describe('getById', () => {
     // assert
     expect(res.json).toHaveBeenCalledWith({ id: 777, name: 'Isabel' });
   });
+
+  test('shoud show an error', () => {
+    // arrange
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+      send: jest.fn(),
+    };
+    const req = {
+      params: { heroId: 666 },
+    };
+      // act
+    const { getById } = heroesController([{ id: 777, name: 'Isabel' }, { id: 888, name: 'Maria' }]);
+    getById(req, res);
+    // assert
+    expect(res.status).toHaveBeenCalledWith(404);
+  });
 });
