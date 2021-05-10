@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import axios from 'axios';
 import HEROES from '../../constants/heroes.mock';
 import actionTypes from './actionTypes';
@@ -24,9 +23,21 @@ export function loadHeroes() {
 }
 
 export function addHero(hero) {
-  return {
-    type: actionTypes.ADD_HERO,
-    hero,
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.post(url, {
+        id: hero.id,
+        name: hero.name,
+      });
+      dispatch({
+        type: actionTypes.ADD_HERO,
+        hero: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'LOAD_HEROES_ERROR',
+      });
+    }
   };
 }
 

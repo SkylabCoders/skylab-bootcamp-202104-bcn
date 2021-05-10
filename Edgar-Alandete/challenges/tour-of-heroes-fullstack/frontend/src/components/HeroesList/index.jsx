@@ -30,7 +30,6 @@ function HeroesList({ heroes, dispatch }) {
       }
       return 0;
     });
-
     const newId = heroes[heroes.length - 1].id + 1;
     dispatch(addHero({ id: newId, name: heroName }));
   }

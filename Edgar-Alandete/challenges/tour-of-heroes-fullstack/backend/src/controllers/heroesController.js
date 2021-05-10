@@ -6,7 +6,7 @@ function heroesController(heroes) {
   function createOne(req, res) {
     const newHero = req.body;
     heroes.push(newHero);
-    res.json(heroes);
+    res.json(newHero);
   }
 
   function getById(req, res) {
