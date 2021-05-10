@@ -35,11 +35,29 @@ function heroesController(heroes) {
     res.json(newHeroes);
   }
 
+  function updateById(req, res) {
+    const { heroId } = req.params;
+    const updateData = req.body;
+    let newHeroes = [...heroes];
+    newHeroes = heroes.map((hero) => {
+      if (hero.id === +heroId) {
+        return {
+          ...hero,
+          ...updateData,
+        };
+      }
+      return hero;
+    });
+
+    res.json(newHeroes);
+  }
+
   return {
     getAll,
     createOne,
     getById,
     deleteById,
+    updateById,
   };
 }
 
