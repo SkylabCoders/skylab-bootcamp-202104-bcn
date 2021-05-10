@@ -9,9 +9,16 @@ function heroesController(heroes) {
     res.json(heroesById);
   }
 
+  function deleteHeroById(req, res) {
+    const { heroId } = req.params;
+    const heroesById = heroes.filter((hero) => hero.id !== +heroId);
+    res.json(heroesById);
+  }
+
   return {
     getAll,
-    getHeroById
+    getHeroById,
+    deleteHeroById
   };
 }
 
