@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { deleteHero, loadHeroes, addHero } from '../../redux/actions/actionCreators';
-import './heroes.css';
+import './Heroes.css';
 
 function HeroesList({ heroes, dispatch }) {
   useEffect(() => {
