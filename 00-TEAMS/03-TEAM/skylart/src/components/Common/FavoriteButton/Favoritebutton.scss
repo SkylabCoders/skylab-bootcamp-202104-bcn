@@ -1,0 +1,20 @@
+@import './../../../styles/colors.scss';
+@import './../../../styles/mixin.scss';
+
+.favorite-button{
+  width: 220px;
+  height: 40px;
+  padding: 10px;
+  background-color: $color-red-medium-dark;
+  border-radius: 20px;
+  border: none;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  color: $color-white;
+  @include flex-content(flex, null, space-evenly, center);
+}
+
+.favorite-button:hover {
+  background-color: $color-red-dark;
+}
