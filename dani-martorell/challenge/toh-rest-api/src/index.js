@@ -14,7 +14,18 @@ server.get('/heroes/:heroId', (req, res) => {
   if (heroToGet) {
     res.json(heroToGet);
   } else {
-    res.status(404).json('Invalid Id.');
+    res.status(404).send({ message: 'Invalid Id.' });
+  }
+});
+
+server.delete('/heroes/:heroId', (req, res) => {
+  const { heroId } = req.params;
+  const heroToDelete = heroes.find((hero) => hero.id === +heroId);
+  if (heroToDelete) {
+    const updatedHeroes = heroes.filter((hero) => hero.id !== +heroId);
+    res.json(updatedHeroes);
+  } else {
+    res.status(404).json({ message: 'Invalid Id.' });
   }
 });
 
