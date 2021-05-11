@@ -3,6 +3,9 @@ const express = require('express');
 const chalk = require('chalk');
 const debug = require('debug')('server');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.DDBB_URL);
 
 const server = express();
 server.use(cors());
