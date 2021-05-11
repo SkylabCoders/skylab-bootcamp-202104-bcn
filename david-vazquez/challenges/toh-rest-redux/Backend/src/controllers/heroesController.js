@@ -1,41 +1,14 @@
-// function heroesController(heroes) {
-//   function getAll(req, res) {
-//     res.json();
-//   }
-//   function createOne(req, res) {
-//     res.json(heroes[0]);
-//   }
-//   function deleteById(req, res) {
-//     res.status(204);
-//     res.json();
-//   }
-//   function getById(req, res) {
-//     res.json(heroes[0]);
-//   }
-//   function updatedById(req, res) {
-//     res.json(heroes[0]);
-//   }
-//   return {
-//     getAll,
-//     createOne,
-//     deleteById,
-//     getById,
-//     updatedById,
-//   };
-// }
-
-// module.exports = heroesController;
-
 let heroes = require('../heroes');
 
 function heroesController() {
+  let latestId = heroes.sort((a, b) => a.id - b.id)[heroes.length - 1].id;
   function getAll(req, res) {
     res.json(heroes);
   }
   function getById(req, res) {
     const heroById = heroes.find((hero) => hero.id === +req.params.heroId);
     if (heroById) {
-      res.status(302);
+      res.status(200);
       res.json(heroById);
     } else {
       res.status(404);
@@ -43,9 +16,10 @@ function heroesController() {
     }
   }
   function createOne(req, res) {
-    const newHero = { id: heroes.length + 1, name: `${req.params.heroName}` };
+    latestId += 1;
+    const newHero = { ...req.body, id: latestId };
     heroes.push(newHero);
-    res.json(heroes);
+    res.json(newHero);
   }
   function updateById(req, res) {
     const { heroId } = req.params;
@@ -59,7 +33,7 @@ function heroesController() {
       }
       return hero;
     });
-    res.json(heroes);
+    res.json(updateData);
   }
   function deleteById(req, res) {
     const { heroId } = req.params;
@@ -83,4 +57,4 @@ function heroesController() {
     deleteById,
   };
 }
-module.exports = heroesController(heroes);
+module.exports = heroesController;
