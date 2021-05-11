@@ -9,7 +9,7 @@ export function loadHeroes() {
   debugger;
   return async (dispatch) => {
     try {
-      const { data } = await axios(url);
+      const { data } = await axios.get(url);
       dispatch({
         type: actionTypes.LOAD_HEROES,
         heroes: data
