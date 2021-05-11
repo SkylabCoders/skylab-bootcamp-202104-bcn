@@ -7,21 +7,14 @@ function heroesReducer(heroes = [], action) {
       return action.heroes;
 
     case actionTypes.DELETE_HERO:
-      return heroes.filter((hero) => hero.id !== action.heroId);
+      return action.heroes;
 
     case actionTypes.ADD_HERO:
-      return [
-        ...heroes,
-        action.hero,
-      ];
+      return action.hero;
 
     case actionTypes.UPDATE_HERO:
-      return heroes.map(
-        (hero) => (hero.id === action.hero.id
-          ? { ...hero, ...action.hero }
-          : hero),
-      );
-
+      return actionTypes.heroes;
+  
     default:
       return heroes;
   }
