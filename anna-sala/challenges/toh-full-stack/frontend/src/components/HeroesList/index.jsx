@@ -14,7 +14,8 @@ function HeroesList({ heroes, dispatch }) {
   }
   function clickAdd() {
     const newHero = document.getElementById('new-hero-name');
-    dispatch(addHero({ id: heroes[heroes.length - 1] + 1, name: newHero.value }));
+    const newId = heroes[heroes.length - 1].id + 1;
+    dispatch(addHero({ id: newId, name: newHero.value }));
   }
   return (
     <>
