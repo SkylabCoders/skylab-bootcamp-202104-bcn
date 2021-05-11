@@ -1,4 +1,4 @@
-const heroes = require('../heroes');
+let heroes = require('../heroes');
 
 function heroesController() {
   function getAll(req, res) {
@@ -14,26 +14,21 @@ function heroesController() {
       (hero) => hero.id === +req.params.heroId,
     );
     if (heroById) {
-      res.status(302);
       res.json(heroById);
     } else {
-      res.status(404);
       res.json(heroById);
     }
   }
   function updateById(req, res) {
     const { heroId } = req.params;
-    const updateHero = req.body;
-    const heroesArray = heroes.find((hero) => {
-      if (hero.id === +heroId) {
-        return {
-          ...hero,
-          ...updateHero,
-        };
-      }
-      return hero;
-    });
-    res.json(heroesArray);
+    const {name} = req.body;
+    const selectedHero = heroes.find((hero) => hero.id === +heroId);
+    selectedHero.name = name;
+    heroes = [
+      ...heroes,
+      selectedHero
+    ];
+    res.json(heroes);
   }
   function deleteById(req, res) {
     const { heroId } = req.params;
