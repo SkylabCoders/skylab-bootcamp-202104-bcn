@@ -4,7 +4,7 @@ describe('getAll', () => {
   test('shoud get all heroes', () => {
     // arrange
     const res = {
-      json: jest.fn(),
+      json: jest.fn()
     };
 
     // act

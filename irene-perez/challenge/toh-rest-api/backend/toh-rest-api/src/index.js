@@ -1,8 +1,15 @@
 const express = require('express');
 const cors = require('cors');
+const morgan = require('morgan');
 const chalk = require('chalk');
 const debug = require('debug')('server');
-const morgan = require('morgan');
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+mongoose.connect(process.env.DDBB_URL, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+});
 
 const server = express();
 
