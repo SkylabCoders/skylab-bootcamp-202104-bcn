@@ -16,7 +16,7 @@ describe('getAll', () => {
     expect(res.json).toHaveBeenCalledWith([{ name: 'Pepe' }]);
   });
 
-  xtest('shoud return status 200', () => {
+  test('shoud return status 200', () => {
     // arrange
     const res = {
       json: jest.fn(),
@@ -71,6 +71,22 @@ describe('getById', () => {
 
     // assert
     expect(res.json).toHaveBeenCalledWith({ id: 5, name: 'Cacho' });
+  });
+
+  test('shoud resolve as 404', () => {
+    // arrange
+    const res = {
+      json: jest.fn(),
+      status: jest.fn()
+    };
+    const req = { params: { heroId: 15 } };
+
+    // act
+    const { getById } = heroesController([{ id: 5, name: 'Cacho' }]);
+    getById(req, res);
+
+    // assert
+    expect(res.status).toHaveBeenCalledWith(404);
   });
 });
 

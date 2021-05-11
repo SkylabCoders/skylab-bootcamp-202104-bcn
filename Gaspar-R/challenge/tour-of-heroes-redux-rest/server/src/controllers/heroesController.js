@@ -20,7 +20,6 @@ function heroesController(heroes) {
       res.json(selectedHero);
     } else {
       res.status(404);
-      res.end();
     }
   }
 
