@@ -8,7 +8,7 @@ import Dashboard from './components/Dashboard';
 import HeroDetails from './components/HeroDetails';
 import NotFound from './components/NotFound';
 import HeroList from './components/HeroList';
-import store from './redux/stores/index';
+import configureStore from './redux/stores/index';
 import './index.css';
 import './App.css';
 import Login from './components/Login';
@@ -20,7 +20,7 @@ function App() {
       clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin}
     >
-      <Provider store={store}>
+      <Provider store={configureStore()}>
         <BrowserRouter>
           <h1>Tour of heroes</h1>
           <nav type="button">
