@@ -6,18 +6,18 @@ import { PropTypes } from 'prop-types';
 import { loadHeroes, deleteHero, addHero } from '../../redux/actions/actionCreators';
 
 function List({ heroes, dispatch }) {
-  useEffect(() => {
-    if (!heroes.length) dispatch(loadHeroes());
-  }, []);
-
-  function handleDelete(heroId) {
-    dispatch(deleteHero(heroId));
-  }
-
   function handleAdd() {
     const inputNewHero = document.getElementById('heroInputCreation');
     const heroNew = { id: (heroes[heroes.length - 1].id + 1), name: inputNewHero.value };
     dispatch(addHero(heroNew));
+  }
+
+  useEffect(() => {
+    if (!heroes.length) dispatch(loadHeroes(heroes));
+  }, [handleAdd]);
+
+  function handleDelete(heroId) {
+    dispatch(deleteHero(heroId));
   }
 
   return (
@@ -31,7 +31,7 @@ function List({ heroes, dispatch }) {
       </div>
       <ul className="heroes">
         {heroes.map((hero) => (
-          <li className="heroes_li">
+          <li key={hero.id} className="heroes_li">
             <Link to={`/detail/${hero.id}`}>
               {hero.id}
               {' - '}

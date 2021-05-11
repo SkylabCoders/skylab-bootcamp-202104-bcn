@@ -18,9 +18,6 @@ export function loadHeroes() {
       });
     }
   };
-  // return {
-  //   type: actionTypes.LOAD_HEROES
-  // };
 }
 
 export function addHero(hero) {
@@ -31,10 +28,6 @@ export function addHero(hero) {
       hero: data
     });
   };
-  // return {
-  //   type: actionTypes.ADD_HERO,
-  //   hero
-  // };
 }
 
 export function deleteHero(heroId) {

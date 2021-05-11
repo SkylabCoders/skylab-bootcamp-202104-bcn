@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { PropTypes } from 'prop-types';
 import { useParams } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
 import './HeroDetail.css';
 
