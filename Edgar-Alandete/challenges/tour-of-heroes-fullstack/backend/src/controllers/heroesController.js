@@ -20,31 +20,32 @@ function heroesController() {
     }
   }
 
-  // function getById(req, res) {
-  //   const { heroId } = req.params;
-  //   const heroById = heroes.find((hero) => hero.id === +heroId);
-  //   if (heroById) {
-  //     res.status(200);
-  //     res.json(heroById);
-  //   } else {
-  //     res.status(404);
-  //     res.send(`The hero with the id ${heroId} doesn't exist`);
-  //   }
-  // }
+  async function getById(req, res) {
+    const { heroId } = req.params;
+    try {
+      const heroById = await Hero.findById(heroId);
+      if (heroById) {
+        res.status(200);
+        res.json(heroById);
+      } else {
+        res.status(404);
+        res.send(`The hero with the id ${heroId} doesn't exist`);
+      }
+    } catch (error) {
+      debug(error);
+    }
+  }
 
-  // function deleteById(req, res) {
-  //   const { heroId } = req.params;
-  //   let newHeroes = [...heroes];
-  //   const heroById = heroes.find((hero) => +heroId === hero.id);
-  //   if (heroById) {
-  //     newHeroes = heroes.filter((hero) => +heroId !== hero.id);
-  //     res.status(200);
-  //   } else {
-  //     res.status(404);
-  //     res.send(`The hero with the id ${heroId} doesn't exist`);
-  //   }
-  //   res.json(newHeroes);
-  // }
+  async function deleteById(req, res) {
+    const { heroId } = req.params;
+    try {
+      await Hero.findByIdAndDelete(heroId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      debug(error);
+    }
+  }
 
   // function updateById(req, res) {
   //   const { heroId } = req.params;
@@ -66,6 +67,8 @@ function heroesController() {
   return {
     getAll,
     createOne,
+    getById,
+    deleteById,
   };
 }
 
