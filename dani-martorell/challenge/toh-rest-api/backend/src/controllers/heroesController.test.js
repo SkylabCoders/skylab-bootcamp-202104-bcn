@@ -17,7 +17,7 @@ describe('getAll', () => {
 });
 
 describe('createOne', () => {
-  test('Should return a new hero', () => {
+  test('Should return a list with new hero', () => {
     // arrange
     const res = {
       json: jest.fn(),
@@ -31,7 +31,7 @@ describe('createOne', () => {
     createOne(req, res);
 
     // assert
-    expect(res.json).toHaveBeenCalledWith({ id: 2, name: 'Juan' });
+    expect(res.json).toHaveBeenCalledWith([{ id: 1, name: 'Pepe' }, { id: 2, name: 'Juan' }]);
   });
 
   test('Should return an invalid id message', () => {
@@ -123,7 +123,7 @@ describe('deleteById', () => {
 });
 
 describe('updateById', () => {
-  test('Should return an updated heroe', () => {
+  test('Should return a list of heroes with updated heroe', () => {
     // arrange
     const req = {
       params: { heroId: 10 },
@@ -137,7 +137,7 @@ describe('updateById', () => {
     const { updateById } = heroesController([{ id: 10, name: 'Samy' }, { id: 11, name: 'Davis' }]);
     updateById(req, res);
     // assert
-    expect(res.json).toHaveBeenCalledWith({ id: 10, name: 'Pepe', age: 30 });
+    expect(res.json).toHaveBeenCalledWith([{ id: 10, name: 'Pepe', age: 30 }, { id: 11, name: 'Davis' }]);
   });
   test('Should return an invalid id message', () => {
     // arrange
