@@ -9,7 +9,7 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.use(morgan('tiny'));
+server.use(morgan('dev'));
 
 const heroesRouter = require('./routes/heroesRouter');
 
