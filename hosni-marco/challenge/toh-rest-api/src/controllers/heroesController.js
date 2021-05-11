@@ -1,5 +1,9 @@
+const debug = require('debug')('server:heroesController');
+const chalk = require('chalk');
+
 const heroesController = (heroes) => {
   const getAll = (req, res) => {
+    debug(`dentro de la funcion ${chalk.magenta('getAll')}`);
     res.json(heroes);
   };
   const createOne = (req, res) => {
