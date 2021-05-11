@@ -35,12 +35,20 @@ function heroesController() {
       return hero;
     });
 
-    res.json(heroes);
+    res.json(heroes.find((hero) => hero.id === +heroId));
   }
 
   function deleteById(req, res) {
-    res.status(204);
-    res.json();
+    const { heroId } = req.params;
+    const heroById = heroes.find((hero) => +heroId === hero.id);
+    if (heroById) {
+      heroes = heroes.filter((hero) => +heroId !== hero.id);
+      res.status(200);
+    } else {
+      res.status(404);
+      res.send(`The hero with the id ${heroId} doesn't exist`);
+    }
+    res.json(heroes);
   }
 
   return {
