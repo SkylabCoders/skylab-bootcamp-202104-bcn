@@ -16,7 +16,7 @@ function HeroList({ heroes, dispatch }) {
 
   function handleAdd() {
     const inputNewHero = document.getElementById('heroInputCreation');
-    const newHero = { id: (heroes[heroes.length - 1].id + 1), name: inputNewHero.value };
+    const newHero = { name: inputNewHero.value };
     dispatch(addHero(newHero));
   }
 

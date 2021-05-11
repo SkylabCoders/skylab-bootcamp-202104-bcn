@@ -59,6 +59,16 @@ export function loadHero(hero) {
   };
 }
 
+export function getHeroById(heroId) {
+  return async (dispatch) => {
+    const { data } = await axios(`${url}/${heroId}`);
+    dispatch({
+      type: actionTypes.LOAD_HERO,
+      hero: data
+    });
+  };
+}
+
 export function login(user) {
   return {
     type: actionTypes.AUTH_LOGIN,
