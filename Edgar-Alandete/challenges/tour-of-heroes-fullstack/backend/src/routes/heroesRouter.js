@@ -10,8 +10,8 @@ function heroesRouter() {
     .post(heroesController.createOne);
   routes.route('/:heroId')
     .get(heroesController.getById)
-    .delete(heroesController.deleteById);
-  // .put(heroesController.updateById);
+    .delete(heroesController.deleteById)
+    .put(heroesController.updateById);
 
   return routes;
 }

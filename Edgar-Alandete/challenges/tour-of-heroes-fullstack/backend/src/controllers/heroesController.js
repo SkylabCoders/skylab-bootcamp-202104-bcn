@@ -47,28 +47,27 @@ function heroesController() {
     }
   }
 
-  // function updateById(req, res) {
-  //   const { heroId } = req.params;
-  //   const updateData = req.body;
-  //   let newHeroes = [...heroes];
-  //   newHeroes = heroes.map((hero) => {
-  //     if (hero.id === +heroId) {
-  //       return {
-  //         ...hero,
-  //         ...updateData,
-  //       };
-  //     }
-  //     return hero;
-  //   });
-
-  //   res.json(newHeroes);
-  // }
+  async function updateById(req, res) {
+    const { heroId } = req.params;
+    const updateData = req.body;
+    try {
+      const updatedHero = await Hero.findByIdAndUpdate(
+        heroId,
+        updateData,
+        { new: true },
+      );
+      res.json(updatedHero);
+    } catch (error) {
+      debug(error);
+    }
+  }
 
   return {
     getAll,
     createOne,
     getById,
     deleteById,
+    updateById,
   };
 }
 
