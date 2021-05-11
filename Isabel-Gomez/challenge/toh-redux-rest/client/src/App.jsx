@@ -13,7 +13,7 @@ import './App.css';
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={store()}>
       <BrowserRouter>
         <h1>Tour Of Heroes</h1>
         <nav>
