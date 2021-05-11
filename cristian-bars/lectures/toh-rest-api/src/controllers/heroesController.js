@@ -1,5 +1,8 @@
+const debug = require('debug')('server:heroesController');
+
 function heroesController(heroes) {
   function getAll(req, res) {
+    debug('dentro de la funcion getAll');
     res.json(heroes);
   }
 
