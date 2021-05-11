@@ -6,9 +6,14 @@ const Hero = require('../model/heroModel');
 function heroesController() {
   async function getAll(req, res) {
     debug('enter to function getAll');
-    const heroes = await Hero.find({});
-    res.status(200);
-    res.json(heroes);
+    try {
+      const heroes = await Hero.find({});
+      res.status(200);
+      res.json(heroes);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
   }
 
   async function createOne(req, res) {
@@ -19,7 +24,7 @@ function heroesController() {
       res.json(newHero);
     } catch (error) {
       debug(error);
-      res.sed(error);
+      res.send(error);
     }
   }
 
