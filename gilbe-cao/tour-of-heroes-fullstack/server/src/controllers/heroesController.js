@@ -1,34 +1,55 @@
-function heroesController(heroes) {
-  let latestId = heroes.sort((a, b) => a.id - b.id)[heroes.length - 1].id;
+const debug = require('debug')('app:heroesController');
+const Hero = require('../model/heroModel');
 
-  function getAll(req, res) {
+function heroesController() {
+  async function getAll(req, res) {
+    const heroes = await Hero.find();
     res.json(heroes);
   }
 
-  function createOne(req, res) {
-    latestId += 1;
-    const newHero = {
-      ...req.body,
-      id: latestId,
-    };
-    heroes.push(newHero);
-    res.json(newHero);
+  async function createOne(req, res) {
+    const newHero = new Hero(req.body);
+    debug(newHero);
+    try {
+      await newHero.save();
+      res.json(newHero);
+    } catch (error) {
+      debug(error);
+    }
   }
 
-  function getById(req, res) {
-    const heroById = heroes.find(
-      (hero) => hero.id === +req.params.heroId,
-    );
-    res.json(heroById);
+  async function getById(req, res) {
+    try {
+      const heroById = await Hero.findById(
+        req.params.heroId,
+      );
+      res.json(heroById);
+    } catch (error) {
+      debug(error);
+    }
   }
 
-  function updateById(req, res) {
-    res.json(heroes[0]);
+  async function updateById(req, res) {
+    try {
+      const updatedHero = await Hero.findByIdAndUpdate(
+        req.params.heroId,
+        req.body,
+        { new: true },
+      );
+      res.json(updatedHero);
+    } catch (error) {
+      debug(error);
+    }
   }
 
-  function deleteById(req, res) {
-    res.status(204);
-    res.json();
+  async function deleteById(req, res) {
+    try {
+      await Hero.findByIdAndDelete(req.params.heroId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      debug(error);
+    }
   }
 
   return {
