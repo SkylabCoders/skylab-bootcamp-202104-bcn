@@ -1,46 +1,61 @@
 /* eslint-disable no-param-reassign */
 const debug = require('debug')('server:heroesController');
+const Hero = require('../model/heroModel');
 
-function heroesController(heroes) {
-  let highestId = heroes.sort((a, b) => a.id - b.id)[heroes.length - 1].id;
-  function getAll(req, res) {
-    debug('dentro de la funcion getAll');
+function heroesController() {
+  async function getAll(req, res) {
+    const heroes = await Hero.find();
     res.json(heroes);
   }
 
-  function createOne(req, res) {
-    highestId += 1;
-    const newHero = {
-      ...req.body,
-      id: highestId,
-    };
-    heroes.push(newHero);
-    res.json(newHero);
+  async function createOne(req, res) {
+    const newHero = new Hero(req.body);
+    debug(newHero);
+    try {
+      await newHero.save();
+      res.json(newHero);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
   }
 
-  function getById(req, res) {
-    const { heroId } = req.params;
-    const selectedHero = heroes.find((hero) => hero.id === +heroId);
-    res.json(selectedHero);
+  async function getById(req, res) {
+    try {
+      const heroById = await Hero.findById(
+        req.params.heroId,
+      );
+      res.json(heroById);
+    } catch (error) {
+      debug(error);
+      res.status(404);
+      res.send(error);
+    }
   }
 
-  function updateById(req, res) {
-    const { heroId } = req.params;
-    const { name } = req.body;
-    const selectedHero = heroes.find((hero) => hero.id === +heroId);
-    selectedHero.name = name;
-    heroes = [
-      ...heroes,
-      selectedHero,
-    ];
-    res.json(heroes);
+  async function updateById(req, res) {
+    try {
+      const updatedHero = await Hero.findByIdAndUpdate(
+        req.params.heroId,
+        req.body,
+        { new: true },
+      );
+      res.json(updatedHero);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
   }
 
-  function deleteById(req, res) {
-    const { heroId } = req.params;
-    heroes = heroes.filter((hero) => hero.id !== +heroId);
-    // res.status(204);
-    res.json(heroes);
+  async function deleteById(req, res) {
+    try {
+      await Hero.findByIdAndDelete(req.params.heroId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
   }
 
   return {
