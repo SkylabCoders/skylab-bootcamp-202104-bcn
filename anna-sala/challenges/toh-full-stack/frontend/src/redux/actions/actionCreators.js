@@ -1,6 +1,5 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
-import HEROES from '../../assets/heroes';
 
 const url = 'http://localhost:2021/heroes';
 
@@ -50,21 +49,14 @@ export function updateHero(hero) {
   };
 }
 
-export function loadHero(hero) {
+export function getHeroById(heroId) {
+  // const hero = HEROES.find((current) => current.id === +heroId);
   return async (dispatch) => {
-    const { data } = await axios(`${url}/${hero.id}`, hero);
+    debugger;
+    const { data } = await axios(`${url}/${heroId}`);
     dispatch({
       type: actionTypes.LOAD_HERO,
       hero: data,
     });
-  };
-}
-
-export function getHeroById(heroId) {
-  const hero = HEROES.find((current) => current.id === +heroId);
-
-  return {
-    type: actionTypes.LOAD_HERO,
-    hero,
   };
 }
