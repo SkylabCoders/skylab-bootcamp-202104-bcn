@@ -25,10 +25,9 @@ export function loadHeroes() {
 export function addHero(hero) {
   return async (dispatch) => {
     try {
-      const { data } = await axios.post(url, {
-        id: hero.id,
-        name: hero.name,
-      });
+      // eslint-disable-next-line no-debugger
+      debugger;
+      const { data } = await axios.post(url, hero);
       dispatch({
         type: actionTypes.ADD_HERO,
         heroes: data,

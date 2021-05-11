@@ -1,10 +1,25 @@
 function heroesController(heroes) {
+  heroes.sort((firstHero, secondHero) => {
+    if (firstHero.id > secondHero.id) {
+      return 1;
+    }
+    if (firstHero.id < secondHero.id) {
+      return -1;
+    }
+    return 0;
+  });
+  const newId = heroes[heroes.length - 1].id + 1;
   function getAll(req, res) {
     res.json(heroes);
   }
 
   function createOne(req, res) {
-    const newHero = req.body;
+    // eslint-disable-next-line no-debugger
+    debugger;
+    const newHero = {
+      ...req.body,
+      ...{ id: newId },
+    };
     heroes.push(newHero);
     res.json(heroes);
   }

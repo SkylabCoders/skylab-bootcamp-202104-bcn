@@ -21,17 +21,7 @@ function HeroesList({ heroes, dispatch }) {
   }
 
   function handleCreate() {
-    heroes.sort((firstHero, secondHero) => {
-      if (firstHero.id > secondHero.id) {
-        return 1;
-      }
-      if (firstHero.id < secondHero.id) {
-        return -1;
-      }
-      return 0;
-    });
-    const newId = heroes[heroes.length - 1].id + 1;
-    dispatch(addHero({ id: newId, name: heroName }));
+    dispatch(addHero({ name: heroName }));
   }
 
   return (
