@@ -1,5 +1,6 @@
 function heroesController(heroes) {
   function getAll(req, res) {
+    res.status(200);
     res.json(heroes);
   }
 
@@ -27,8 +28,8 @@ function heroesController(heroes) {
     const { heroId } = req.params;
     const selectedHero = heroes.find((hero) => hero.id === +heroId);
     if (selectedHero) {
-      selectedHero.name = req.body.name;
       res.status(200);
+      selectedHero.name = req.body.name;
       res.json(heroes);
     } else {
       res.status(404);
