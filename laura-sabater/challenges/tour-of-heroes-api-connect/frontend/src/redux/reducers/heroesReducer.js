@@ -5,14 +5,14 @@ function heroesReducer(heroes = [], action) {
     case actionTypes.LOAD_HEROES:
       return action.heroes;
 
-    case actionTypes.DELETE_HERO:
-      return heroes.filter((hero) => hero.id !== action.heroId);
-
     case actionTypes.ADD_HERO:
       return [
         ...heroes,
         action.hero,
       ];
+
+    case actionTypes.DELETE_HERO:
+      return heroes.filter((hero) => hero.id !== action.heroId);
 
     case actionTypes.UPDATE_HERO:
       return heroes.map(
@@ -20,6 +20,9 @@ function heroesReducer(heroes = [], action) {
           ? { ...hero, ...action.hero }
           : hero),
       );
+
+    case actionTypes.LOAD_HERO:
+      return action.hero;
 
     default:
       return heroes;
