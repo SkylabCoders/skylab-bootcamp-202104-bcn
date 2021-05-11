@@ -14,8 +14,6 @@ function heroesController(heroes) {
   }
 
   function createOne(req, res) {
-    // eslint-disable-next-line no-debugger
-    debugger;
     const newHero = {
       ...req.body,
       ...{ id: newId },
