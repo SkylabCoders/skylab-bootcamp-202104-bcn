@@ -9,7 +9,7 @@ const HEROES = [
       speed: 17,
       durability: 80,
       power: 24,
-      combat: 64,
+      combat: 64
     },
     appearance: {
       gender: 'Male',
@@ -17,7 +17,7 @@ const HEROES = [
       height: ["6'8", '203 cm'],
       weight: ['980 lb', '441 kg'],
       eyeColor: 'Yellow',
-      hairColor: 'No Hair',
+      hairColor: 'No Hair'
     },
     biography: {
       fullName: 'Richard Milhouse Jones',
@@ -26,17 +26,17 @@ const HEROES = [
       placeOfBirth: 'Scarsdale, Arizona',
       firstAppearance: 'Hulk Vol 2 #2 (April, 2008) (as A-Bomb)',
       publisher: 'Marvel Comics',
-      alignment: 'good',
+      alignment: 'good'
     },
     work: {
       occupation: 'Musician, adventurer, author; formerly talk show host',
-      base: '-',
+      base: '-'
     },
     connections: {
       groupAffiliation:
                 'Hulk Family; Excelsior (sponsor), Avengers (honorary member); formerly partner of the Hulk, Captain America and Captain Marvel; Teen Brigade; ally of Rom',
       relatives:
-                'Marlo Chandler-Jones (wife); Polly (aunt); Mrs. Chandler (mother-in-law); Keith Chandler, Ray Chandler, three unidentified others (brothers-in-law); unidentified father (deceased); Jackie Shorr (alleged mother; unconfirmed)',
+                'Marlo Chandler-Jones (wife); Polly (aunt); Mrs. Chandler (mother-in-law); Keith Chandler, Ray Chandler, three unidentified others (brothers-in-law); unidentified father (deceased); Jackie Shorr (alleged mother; unconfirmed)'
     },
     images: {
       xs:
@@ -46,8 +46,8 @@ const HEROES = [
       md:
                 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/md/1-a-bomb.jpg',
       lg:
-                'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/1-a-bomb.jpg',
-    },
+                'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/1-a-bomb.jpg'
+    }
   },
   {
     id: 2,
@@ -59,7 +59,7 @@ const HEROES = [
       speed: 35,
       durability: 65,
       power: 100,
-      combat: 85,
+      combat: 85
     },
     appearance: {
       gender: 'Male',
@@ -67,7 +67,7 @@ const HEROES = [
       height: ["6'3", '191 cm'],
       weight: ['145 lb', '65 kg'],
       eyeColor: 'Blue',
-      hairColor: 'No Hair',
+      hairColor: 'No Hair'
     },
     biography: {
       fullName: 'Abraham Sapien',
@@ -76,15 +76,15 @@ const HEROES = [
       placeOfBirth: '-',
       firstAppearance: 'Hellboy: Seed of Destruction (1993)',
       publisher: 'Dark Horse Comics',
-      alignment: 'good',
+      alignment: 'good'
     },
     work: {
       occupation: 'Paranormal Investigator',
-      base: '-',
+      base: '-'
     },
     connections: {
       groupAffiliation: 'Bureau for Paranormal Research and Defense',
-      relatives: 'Edith Howard (wife, deceased)',
+      relatives: 'Edith Howard (wife, deceased)'
     },
     images: {
       xs:
@@ -94,8 +94,8 @@ const HEROES = [
       md:
                 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/md/2-abe-sapien.jpg',
       lg:
-                'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/2-abe-sapien.jpg',
-    },
+                'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/2-abe-sapien.jpg'
+    }
   },
   {
     id: 3,
@@ -107,7 +107,7 @@ const HEROES = [
       speed: 53,
       durability: 64,
       power: 99,
-      combat: 65,
+      combat: 65
     },
     appearance: {
       gender: 'Male',
@@ -115,7 +115,7 @@ const HEROES = [
       height: ["6'1", '185 cm'],
       weight: ['200 lb', '90 kg'],
       eyeColor: 'Blue',
-      hairColor: 'No Hair',
+      hairColor: 'No Hair'
     },
     biography: {
       fullName: '',
@@ -124,16 +124,16 @@ const HEROES = [
       placeOfBirth: 'Ungara',
       firstAppearance: 'Showcase #22 (October, 1959)',
       publisher: 'DC Comics',
-      alignment: 'good',
+      alignment: 'good'
     },
     work: {
       occupation: 'Green Lantern, former history professor',
-      base: 'Oa',
+      base: 'Oa'
     },
     connections: {
       groupAffiliation: 'Green Lantern Corps, Black Lantern Corps',
       relatives:
-                'Amon Sur (son), Arin Sur (sister), Thaal Sinestro (brother-in-law), Soranik Natu (niece)',
+                'Amon Sur (son), Arin Sur (sister), Thaal Sinestro (brother-in-law), Soranik Natu (niece)'
     },
     images: {
       xs:
@@ -143,8 +143,8 @@ const HEROES = [
       md:
                 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/md/3-abin-sur.jpg',
       lg:
-                'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/3-abin-sur.jpg',
-    },
+                'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/3-abin-sur.jpg'
+    }
   },
   {
     id: 4,
@@ -156,7 +156,7 @@ const HEROES = [
       speed: 53,
       durability: 90,
       power: 62,
-      combat: 95,
+      combat: 95
     },
     appearance: {
       gender: 'Male',
@@ -164,7 +164,7 @@ const HEROES = [
       height: ["6'8", '203 cm'],
       weight: ['980 lb', '441 kg'],
       eyeColor: 'Green',
-      hairColor: 'No Hair',
+      hairColor: 'No Hair'
     },
     biography: {
       fullName: 'Emil Blonsky',
@@ -173,16 +173,16 @@ const HEROES = [
       placeOfBirth: 'Zagreb, Yugoslavia',
       firstAppearance: 'Tales to Astonish #90',
       publisher: 'Marvel Comics',
-      alignment: 'bad',
+      alignment: 'bad'
     },
     work: {
       occupation: 'Ex-Spy',
-      base: 'Mobile',
+      base: 'Mobile'
     },
     connections: {
       groupAffiliation:
                 'former member of the crew of the Andromeda Starship, ally of the Abominations and Forgotten',
-      relatives: 'Nadia Dornova Blonsky (wife, separated)',
+      relatives: 'Nadia Dornova Blonsky (wife, separated)'
     },
     images: {
       xs:
@@ -192,8 +192,8 @@ const HEROES = [
       md:
                 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/md/4-abomination.jpg',
       lg:
-                'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/4-abomination.jpg',
-    },
+                'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/4-abomination.jpg'
+    }
   },
   {
     id: 5,
@@ -205,7 +205,7 @@ const HEROES = [
       speed: 83,
       durability: 100,
       power: 100,
-      combat: 55,
+      combat: 55
     },
     appearance: {
       gender: 'Male',
@@ -213,7 +213,7 @@ const HEROES = [
       height: ['-', '0 cm'],
       weight: ['- lb', '0 kg'],
       eyeColor: 'Blue',
-      hairColor: 'Black',
+      hairColor: 'Black'
     },
     biography: {
       fullName: 'Abraxas',
@@ -222,23 +222,23 @@ const HEROES = [
       placeOfBirth: 'Within Eternity',
       firstAppearance: 'Fantastic Four Annual #2001',
       publisher: 'Marvel Comics',
-      alignment: 'bad',
+      alignment: 'bad'
     },
     work: {
       occupation: 'Dimensional destroyer',
-      base: '-',
+      base: '-'
     },
     connections: {
       groupAffiliation: 'Cosmic Beings',
-      relatives: 'Eternity ("Father")',
+      relatives: 'Eternity ("Father")'
     },
     images: {
       xs: 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/xs/5-abraxas.jpg',
       sm: 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/5-abraxas.jpg',
       md: 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/md/5-abraxas.jpg',
-      lg: 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/5-abraxas.jpg',
-    },
-  },
+      lg: 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/lg/5-abraxas.jpg'
+    }
+  }
 ];
 
 module.exports = HEROES;
