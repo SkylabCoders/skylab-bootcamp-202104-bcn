@@ -16,6 +16,7 @@ function heroesController() {
       await newHero.save();
       res.json(newHero);
     } catch (error) {
+      res.send(error);
       debug(error);
     }
   }
@@ -24,14 +25,11 @@ function heroesController() {
     const { heroId } = req.params;
     try {
       const heroById = await Hero.findById(heroId);
-      if (heroById) {
-        res.status(200);
-        res.json(heroById);
-      } else {
-        res.status(404);
-        res.send(`The hero with the id ${heroId} doesn't exist`);
-      }
+      res.status(200);
+      res.json(heroById);
     } catch (error) {
+      res.status(404);
+      res.send(`The hero with the id ${heroId} doesn't exist`);
       debug(error);
     }
   }

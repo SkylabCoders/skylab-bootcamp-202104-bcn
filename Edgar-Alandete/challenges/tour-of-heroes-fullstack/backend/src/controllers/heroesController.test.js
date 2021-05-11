@@ -11,51 +11,75 @@ const Hero = require('../model/heroModel');
 jest.mock('../model/heroModel');
 describe('getAll', () => {
   test('shoud get all heroes', async () => {
-    // arrange
     const res = {
       json: jest.fn(),
     };
     Hero.find.mockResolvedValueOnce([{ name: 'Pepe' }]);
-    // act
     await getAll(null, res);
-    // assert
     expect(res.json).toHaveBeenCalledWith([{ name: 'Pepe' }]);
   });
 });
 
 describe('createOne', () => {
-  test('shoud create one hero', () => {
-    // arrange
+  class MockHero {
+    constructor(name) {
+      this.name = name;
+    }
+
+    // eslint-disable-next-line class-methods-use-this
+    save() {}
+  }
+  test('should call json', async () => {
+    const req = {
+      body: null,
+    };
     const res = {
       json: jest.fn(),
+      send: jest.fn(),
     };
+
+    const newHero = new MockHero('isabella');
+
+    Hero.mockReturnValueOnce(newHero);
+    await createOne(req, res);
+    expect(res.json).toHaveBeenCalledWith({ name: 'isabella' });
+  });
+
+  test('should call error', async () => {
     const req = {
-      body: { id: 666, name: 'Pepe' },
+      body: null,
     };
-    // act
-    createOne(req, res);
-    // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 777, name: 'Maria' }, { id: 666, name: 'Pepe' }]);
+    const res = {
+      json: jest.fn(),
+      send: jest.fn(),
+    };
+
+    Hero.mockReturnValueOnce({
+      save: jest.fn().mockRejectedValueOnce('error'),
+    });
+
+    await createOne(req, res);
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
 describe('getById', () => {
-  test('shoud get one hero by id', () => {
-    // arrange
+  test('shoud get one hero by id', async () => {
     const res = {
       json: jest.fn(),
       status: jest.fn(),
     };
     const req = {
-      params: { heroId: 777 },
+      params: { heroId: null },
     };
       // act
-    getById(req, res);
+    Hero.findById.mockResolvedValueOnce({ id: 777, name: 'Isabel' });
+    await getById(req, res);
     // assert
     expect(res.json).toHaveBeenCalledWith({ id: 777, name: 'Isabel' });
   });
 
-  test('shoud show an error', () => {
+  test('shoud show an error 404', async () => {
     // arrange
     const res = {
       json: jest.fn(),
@@ -63,11 +87,12 @@ describe('getById', () => {
       send: jest.fn(),
     };
     const req = {
-      params: { heroId: 666 },
+      params: { heroId: null },
     };
-      // act
-    getById(req, res);
-    // assert
+    Hero.findById.mockRejectedValueOnce();
+
+    await getById(req, res);
+
     expect(res.status).toHaveBeenCalledWith(404);
   });
 });
