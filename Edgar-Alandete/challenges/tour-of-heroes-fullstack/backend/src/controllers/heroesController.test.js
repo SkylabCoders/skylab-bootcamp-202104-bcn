@@ -27,7 +27,7 @@ describe('createOne', () => {
     const { createOne } = heroesController([{ id: 777, name: 'Maria' }]);
     createOne(req, res);
     // assert
-    expect(res.json).toHaveBeenCalledWith({ id: 666, name: 'Pepe' });
+    expect(res.json).toHaveBeenCalledWith([{ id: 777, name: 'Maria' }, { id: 666, name: 'Pepe' }]);
   });
 });
 
