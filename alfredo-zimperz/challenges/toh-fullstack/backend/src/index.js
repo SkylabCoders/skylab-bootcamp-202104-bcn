@@ -8,6 +8,14 @@ require('dotenv').config();
 
 const server = express();
 
+mongoose.connect(
+  process.env.DDBB_URL,
+  {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  },
+);
+
 server.use(cors());
 server.use(express.json());
 
