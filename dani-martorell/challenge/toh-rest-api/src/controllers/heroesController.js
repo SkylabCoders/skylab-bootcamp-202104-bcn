@@ -2,15 +2,15 @@ function heroesController(heroes) {
   let heroesList = [...heroes];
 
   function getAll(req, res) {
-    res.json(heroes);
+    res.json(heroesList);
   }
 
   function createOne(req, res) {
     const newHeroBody = req.body;
     const { id: newHeroId } = req.body;
-    const isHeroIdAlreadyInUse = heroes.find((hero) => hero.id === +newHeroId);
+    const isHeroIdAlreadyInUse = heroesList.find((hero) => hero.id === +newHeroId);
     if (!isHeroIdAlreadyInUse) {
-      heroes.push(newHeroBody);
+      heroesList.push(newHeroBody);
       res.json(newHeroBody);
     } else {
       res.status(400);
@@ -32,30 +32,34 @@ function heroesController(heroes) {
   function updateById(req, res) {
     const { heroId } = req.params;
     const { body } = req;
-    const heroToModify = heroes.find((hero) => hero.id === +heroId);
+    let updatedHero;
+    const heroToModify = heroesList.find((hero) => hero.id === +heroId);
     if (heroToModify) {
-      const updatedHeroes = heroes.map((hero) => {
+      const updatedHeroes = heroesList.map((hero) => {
         if (hero.id === +heroId) {
-          return { ...hero, ...body };
+          updatedHero = { ...hero, ...body };
+          return updatedHero;
         }
         return hero;
       });
       heroesList = [...updatedHeroes];
-      res.json(heroesList);
+      res.json(updatedHero);
     } else {
-      res.status(404).json({ message: 'Invalid Id.' });
+      res.status(404);
+      res.json({ message: 'Invalid Id.' });
     }
   }
 
   function deleteById(req, res) {
     const { heroId } = req.params;
-    const heroToDelete = heroes.find((hero) => hero.id === +heroId);
+    const heroToDelete = heroesList.find((hero) => hero.id === +heroId);
     if (heroToDelete) {
-      const updatedHeroes = heroes.filter((hero) => hero.id !== +heroId);
+      const updatedHeroes = heroesList.filter((hero) => hero.id !== +heroId);
       heroesList = [...updatedHeroes];
       res.json(heroesList);
     } else {
-      res.status(404).json({ message: 'Invalid Id.' });
+      res.status(404);
+      res.json({ message: 'Invalid Id.' });
     }
   }
 
