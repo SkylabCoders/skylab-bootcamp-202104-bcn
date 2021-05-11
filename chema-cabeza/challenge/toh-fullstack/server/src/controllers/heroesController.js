@@ -1,11 +1,21 @@
 /* eslint-disable no-param-reassign */
+const debug = require('debug')('server:heroesController');
+
 function heroesController(heroes) {
+  let highestId = heroes.sort((a, b) => a.id - b.id)[heroes.length - 1].id;
   function getAll(req, res) {
+    debug('dentro de la funcion getAll');
     res.json(heroes);
   }
 
   function createOne(req, res) {
-    res.json(heroes[0]);
+    highestId += 1;
+    const newHero = {
+      ...req.body,
+      id: highestId,
+    };
+    heroes.push(newHero);
+    res.json(newHero);
   }
 
   function getById(req, res) {

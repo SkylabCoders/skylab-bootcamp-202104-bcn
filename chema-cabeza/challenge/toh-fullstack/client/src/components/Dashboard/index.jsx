@@ -8,7 +8,7 @@ import { loadHeroes } from '../../redux/actions/actionCreators';
 function Dashboard({ heroes, dispatch }) {
   useEffect(() => {
     dispatch(loadHeroes());
-  }, [heroes]);
+  }, []);
 
   return (
     <>
