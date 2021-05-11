@@ -1,14 +1,23 @@
-const heroesController = require('./heroesController');
+const {
+  getAll,
+  createOne,
+  getById,
+  updateById,
+  deleteById,
+} = require('./heroesController')();
 
+const Hero = require('../model/heroModel');
+
+jest.mock('../model/heroModel');
 describe('getAll', () => {
-  test('shoud get all heroes', () => {
+  test('shoud get all heroes', async () => {
     // arrange
     const res = {
       json: jest.fn(),
     };
+    Hero.find.mockResolvedValueOnce([{ name: 'Pepe' }]);
     // act
-    const { getAll } = heroesController([{ name: 'Pepe' }]);
-    getAll(null, res);
+    await getAll(null, res);
     // assert
     expect(res.json).toHaveBeenCalledWith([{ name: 'Pepe' }]);
   });
@@ -24,7 +33,6 @@ describe('createOne', () => {
       body: { id: 666, name: 'Pepe' },
     };
     // act
-    const { createOne } = heroesController([{ id: 777, name: 'Maria' }]);
     createOne(req, res);
     // assert
     expect(res.json).toHaveBeenCalledWith([{ id: 777, name: 'Maria' }, { id: 666, name: 'Pepe' }]);
@@ -42,7 +50,6 @@ describe('getById', () => {
       params: { heroId: 777 },
     };
       // act
-    const { getById } = heroesController([{ id: 777, name: 'Isabel' }, { id: 888, name: 'Maria' }]);
     getById(req, res);
     // assert
     expect(res.json).toHaveBeenCalledWith({ id: 777, name: 'Isabel' });
@@ -59,7 +66,6 @@ describe('getById', () => {
       params: { heroId: 666 },
     };
       // act
-    const { getById } = heroesController([{ id: 777, name: 'Isabel' }, { id: 888, name: 'Maria' }]);
     getById(req, res);
     // assert
     expect(res.status).toHaveBeenCalledWith(404);
@@ -78,7 +84,6 @@ describe('updateById', () => {
 
     };
     // act
-    const { updateById } = heroesController([{ id: 777, name: 'Isabel' }, { id: 888, name: 'Maria' }]);
     updateById(req, res);
     // assert
     expect(res.json).toHaveBeenCalledWith([{ id: 777, name: 'Gemmuki' }, { id: 888, name: 'Maria' }]);
@@ -96,7 +101,6 @@ describe('deleteById', () => {
       params: { heroId: 777 },
     };
       // act
-    const { deleteById } = heroesController([{ id: 777, name: 'Isabel' }, { id: 888, name: 'Maria' }]);
     deleteById(req, res);
     // assert
     expect(res.json).toHaveBeenCalledWith([{ id: 888, name: 'Maria' }]);
@@ -113,7 +117,6 @@ describe('deleteById', () => {
       params: { heroId: 666 },
     };
       // act
-    const { deleteById } = heroesController([{ id: 777, name: 'Isabel' }, { id: 888, name: 'Maria' }]);
     deleteById(req, res);
     // assert
     expect(res.status).toHaveBeenCalledWith(404);
