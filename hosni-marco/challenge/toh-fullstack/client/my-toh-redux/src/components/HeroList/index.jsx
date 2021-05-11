@@ -14,7 +14,7 @@ function List({ heroes, dispatch }) {
 
   useEffect(() => {
     if (!heroes.length) dispatch(loadHeroes(heroes));
-  }, [handleAdd]);
+  }, []);
 
   function handleDelete(heroId) {
     dispatch(deleteHero(heroId));
