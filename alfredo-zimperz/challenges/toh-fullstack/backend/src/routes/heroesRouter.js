@@ -10,11 +10,11 @@ function heroesRouter() {
     .get(heroesController.getAll)
     .post(heroesController.createOne);
 
-  routes
-    .route('/:heroId')
-    .get(heroesController.getById)
-    .put(heroesController.updateById)
-    .delete(heroesController.deleteById);
+  // routes
+  //   .route('/:heroId')
+  //   .get(heroesController.getById)
+  //   .put(heroesController.updateById)
+  //   .delete(heroesController.deleteById);
 
   return routes;
 }
