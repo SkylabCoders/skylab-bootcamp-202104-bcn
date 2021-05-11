@@ -1,4 +1,7 @@
+const debug = require('debug')('server:heroesController');
+
 const heroesController = (heroes) => {
+  debug('dentro de getAll');
   const getAll = (req, res) => {
     res.json(heroes);
   };
@@ -19,6 +22,7 @@ const heroesController = (heroes) => {
       res.json(heroById);
     }
   };
+
   const updateById = (req, res) => {
     const updateHero = req.body;
     const newHeroById = heroes.map((hero) => {
