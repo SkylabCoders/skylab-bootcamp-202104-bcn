@@ -1,101 +1,46 @@
-const heroesController = require('./heroesController');
+const {
+  getAll,
+  getById
+} = require('./heroesController')();
+const Hero = require('../model/heroModel');
+
+jest.mock('../model/heroModel');
 
 describe('getAll', () => {
-  test('shoud get all heroes', () => {
-    // arrange
+  test('shoud get all heroes', async () => {
     const res = {
       json: jest.fn()
     };
+    Hero.find.mockResolvedValueOnce([{ name: 'Hedi' }]);
 
-    // act
-    const { getAll } = heroesController([{ name: 'Pepe' }]);
-    getAll(null, res);
+    await getAll(null, res);
 
-    // assert
-    expect(res.json).toHaveBeenCalledWith([{ name: 'Pepe' }]);
-  });
-});
-
-describe('createOne', () => {
-  test('shoud create one heroe', () => {
-    // arrange
-    const req = {
-      body: { id: 10, name: 'hedi' }
-    };
-
-    const res = {
-      json: jest.fn()
-    };
-
-    // act
-    const { createOne } = heroesController([]);
-    createOne(req, res);
-
-    // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 10, name: 'hedi' }]);
+    expect(res.json).toHaveBeenCalledWith([{ name: 'Hedi' }]);
   });
 });
 
 describe('getById', () => {
-  test('shoud get a hero', () => {
-    // arrange
+  test('should call json', async () => {
     const req = {
-      params: { heroId: 10 }
+      params: {
+        heroId: null
+      }
     };
 
     const res = {
       json: jest.fn(),
-      status: jest.fn()
+      status: jest.fn(),
+      send: jest.fn()
     };
 
-    // act
-    const { getById } = heroesController([{ id: 10, name: 'hedi' }, { id: 11, name: 'eude' }]);
-    getById(req, res);
+    Hero.findById.mockResolvedValueOnce('hero with id 3');
 
-    // assert
-    expect(res.json).toHaveBeenCalledWith({ id: 10, name: 'hedi' });
+    await getById(req, res);
+
+    expect(res.json).toHaveBeenCalledWith('hero with id 3');
   });
-});
 
-describe('updateById', () => {
-  test('shoud update a hero', () => {
-    // arrange
-    const req = {
-      params: { heroId: 10 },
-      body: { name: 'pipo' }
-    };
+  test('should call status 404', async () => {
 
-    const res = {
-      json: jest.fn(),
-      status: jest.fn()
-    };
-
-    // act
-    const { updateById } = heroesController([{ id: 10, name: 'hedi' }, { id: 11, name: 'eude' }]);
-    updateById(req, res);
-
-    // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 10, name: 'pipo' }, { id: 11, name: 'eude' }]);
-  });
-});
-
-describe('deleteById', () => {
-  test('shoud delete a hero', () => {
-    // arrange
-    const req = {
-      params: { heroId: 10 }
-    };
-
-    const res = {
-      json: jest.fn(),
-      status: jest.fn()
-    };
-
-    // act
-    const { deleteById } = heroesController([{ id: 10, name: 'hedi' }, { id: 11, name: 'eude' }]);
-    deleteById(req, res);
-
-    // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 11, name: 'eude' }]);
   });
 });
