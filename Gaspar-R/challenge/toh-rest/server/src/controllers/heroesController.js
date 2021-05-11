@@ -1,5 +1,10 @@
+/* eslint-disable no-debugger */
+const debug = require('debug')('app:heroesController');
+const chalk = require('chalk');
+
 function heroesController(heroes) {
   function getAll(req, res) {
+    debug(`dentro de la funcion ${chalk.magenta('getAll')}`);
     res.status(200);
     res.json(heroes);
   }
