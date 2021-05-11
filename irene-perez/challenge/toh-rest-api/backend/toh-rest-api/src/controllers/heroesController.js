@@ -10,7 +10,6 @@ function heroesController() {
   function getById(req, res) {
     const heroById = heroes.find((hero) => hero.id === +req.params.heroId);
     if (heroById) {
-      res.status(302);
       res.json(heroById);
     } else {
       res.status(404);
@@ -19,16 +18,13 @@ function heroesController() {
   }
 
   function createOne(req, res) {
+    latestId += 1;
     const newHero = {
       ...req.body,
       id: latestId,
     };
-    latestId += 1;
-    heroes.push({
-      ...body,
-      id: latestId,
-    });
-    res.json(newHero[0]);
+    heroes.push(newHero);
+    res.json(newHero);
   }
 
   function updateById(req, res) {
