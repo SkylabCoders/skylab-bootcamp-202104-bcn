@@ -84,3 +84,38 @@ describe('updateById', () => {
     expect(res.json).toHaveBeenCalledWith([{ id: 777, name: 'Gemmuki' }, { id: 888, name: 'Maria' }]);
   });
 });
+
+describe('deleteById', () => {
+  test('shoud get one hero by id', () => {
+    // arrange
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+    };
+    const req = {
+      params: { heroId: 777 },
+    };
+      // act
+    const { deleteById } = heroesController([{ id: 777, name: 'Isabel' }, { id: 888, name: 'Maria' }]);
+    deleteById(req, res);
+    // assert
+    expect(res.json).toHaveBeenCalledWith([{ id: 888, name: 'Maria' }]);
+  });
+
+  test('shoud show an error', () => {
+    // arrange
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+      send: jest.fn(),
+    };
+    const req = {
+      params: { heroId: 666 },
+    };
+      // act
+    const { deleteById } = heroesController([{ id: 777, name: 'Isabel' }, { id: 888, name: 'Maria' }]);
+    deleteById(req, res);
+    // assert
+    expect(res.status).toHaveBeenCalledWith(404);
+  });
+});
