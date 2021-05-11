@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadHeroes, deleteHero } from '../../redux/actions/actionCreators';
+import { loadHeroes, deleteHero, addHero } from '../../redux/actions/actionCreators';
 import './heroList.css';
 
 function HeroList({ heroes, dispatch }) {
@@ -14,17 +14,19 @@ function HeroList({ heroes, dispatch }) {
     dispatch(deleteHero(heroId));
   }
 
+  function handleAdd() {
+    const inputNewHero = document.getElementById('heroInputCreation');
+    const newHero = { id: (heroes[heroes.length - 1].id + 1), name: inputNewHero.value };
+    dispatch(addHero(newHero));
+  }
+
   return (
     <>
-      <h2>Top Heroes</h2>
       <div>
-        <label htmlFor="hero-input">
-          Hero name:
-          <input id="hero-input" placeholder="Hero name" />
-        </label>
-        <button type="button">
-          Add
-        </button>
+        <h2>My Heroes</h2>
+        <p>Hero name:</p>
+        <input type="text" id="heroInputCreation" />
+        <button type="button" onClick={() => handleAdd()}>Add</button>
       </div>
       <ul className="heroes">
         {heroes.map((hero) => (
