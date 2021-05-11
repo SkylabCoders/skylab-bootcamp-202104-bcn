@@ -3,7 +3,6 @@ import { useParams } from 'react-router';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
-import './herodetail.css';
 
 function HeroDetail({ selectedHero, dispatch }) {
   const { heroId } = useParams();
