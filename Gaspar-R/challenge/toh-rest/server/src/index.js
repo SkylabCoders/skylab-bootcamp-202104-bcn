@@ -1,7 +1,5 @@
-
 const express = require('express');
-const cors = require('cors') ;
-
+const cors = require('cors');
 
 const server = express();
 server.use(cors());
@@ -13,5 +11,3 @@ const heroesRouter = require('./routes/heroesRouter');
 server.use('/heroes', heroesRouter);
 
 server.listen('2022', () => 'Server is running in 2022');
-
-
