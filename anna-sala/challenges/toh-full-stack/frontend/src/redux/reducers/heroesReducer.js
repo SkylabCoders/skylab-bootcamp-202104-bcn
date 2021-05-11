@@ -1,10 +1,9 @@
 import actionTypes from '../actions/actionTypes';
-import HEROES from '../../assets/heroes';
 
 function heroesReducer(heroes = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_HEROES:
-      return HEROES;
+      return action.heroes;
     case actionTypes.DELETE_HERO:
       return heroes.filter((hero) => hero.id !== action.heroId);
     case actionTypes.ADD_HERO:
