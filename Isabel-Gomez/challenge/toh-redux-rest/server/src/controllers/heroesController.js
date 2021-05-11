@@ -12,7 +12,6 @@ const heroesController = () => {
       await newHero.save();
       res.json(newHero);
     } catch (error) {
-      res.status(400);
       res.send(error);
     }
   }
@@ -22,7 +21,6 @@ const heroesController = () => {
       const heroById = await Hero.findById(req.params.heroId);
       res.json(heroById);
     } catch (error) {
-      res.status(404);
       res.send(error);
     }
   }
