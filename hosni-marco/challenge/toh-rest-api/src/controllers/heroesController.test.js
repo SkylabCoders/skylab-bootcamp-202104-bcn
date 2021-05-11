@@ -1,88 +1,238 @@
-const heroesController = require('./heroesController');
+const {
+  getAll,
+  createOne,
+  getById,
+  updateById,
+  deleteById
+} = require('./heroesController')();
+const Hero = require('../model/heroModel');
+
+jest.mock('../model/heroModel');
 
 describe('getAll', () => {
-  test('shoud get all heroes', () => {
+  test('shoud get all heroes', async () => {
     // arrange
-    const res = { json: jest.fn() };
+    const res = {
+      json: jest.fn()
+    };
+    Hero.find.mockResolvedValueOnce([{ name: 'Pepe' }]);
+
     // act
-    const { getAll } = heroesController([{ name: 'Pepe' }]);
-    getAll(null, res);
+    await getAll(null, res);
+
     // assert
     expect(res.json).toHaveBeenCalledWith([{ name: 'Pepe' }]);
   });
 });
 
 describe('createOne', () => {
-  test('shoud add hero', () => {
+  class MockHero {
+    constructor(name) {
+      this.name = name;
+    }
+
+    // eslint-disable-next-line class-methods-use-this
+    save() {}
+  }
+
+  test('should call json', async () => {
     // arrange
-    const req = { body: { name: 'melon' } };
-    const res = { json: jest.fn() };
+    const req = {
+      body: null
+    };
+    const res = {
+      json: jest.fn(),
+      send: jest.fn()
+    };
+
+    const newHero = new MockHero('hero name');
+
+    Hero.mockReturnValueOnce(newHero);
+
     // act
-    const { createOne } = heroesController([{ name: 'Pepe' }]);
-    createOne(req, res);
+    await createOne(req, res);
     // assert
-    expect(res.json).toHaveBeenCalledWith([{ name: 'Pepe' }, { name: 'melon' }]);
+    expect(res.json).toHaveBeenCalledWith({ name: 'hero name' });
+  });
+
+  test('should call send', async () => {
+    // arrange
+    const req = {
+      body: null
+    };
+    const res = {
+      json: jest.fn(),
+      send: jest.fn()
+    };
+
+    Hero.mockReturnValueOnce({
+      save: jest.fn().mockRejectedValueOnce('error')
+    });
+
+    // act
+    await createOne(req, res);
+    // assert
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
 describe('getById', () => {
-  test('shoud get hero by id', () => {
-    // arrange
-    const req = { params: { heroId: 1 } };
+  test('should call res.status with 404', async () => {
     const res = {
       json: jest.fn(),
-      status: jest.fn()
+      status: jest.fn(),
+      send: jest.fn()
     };
-    // act
-    const { getById } = heroesController([{ id: 1, name: 'Pepe' }, { id: 2, name: 'melon' }]);
-    getById(req, res);
-    // assert
-    expect(res.json).toHaveBeenCalledWith({ id: 1, name: 'Pepe' });
+
+    const req = {
+      params: {
+        heroId: null
+      }
+    };
+
+    Hero.findById.mockRejectedValueOnce();
+
+    await getById(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(404);
   });
 
-  test('shoud return undefined', () => {
-    // arrange
-    const req = { params: { heroId: false } };
+  test('should call res.send with error', async () => {
     const res = {
       json: jest.fn(),
-      status: jest.fn()
+      status: jest.fn(),
+      send: jest.fn()
     };
-    // act
-    const { getById } = heroesController([{ id: 1, name: 'Pepe' }, { id: 2, name: 'melon' }]);
-    getById(req, res);
-    // assert
-    expect(res.json).toHaveBeenCalledWith(undefined);
+
+    const req = {
+      params: {
+        heroId: null
+      }
+    };
+
+    Hero.findById.mockRejectedValueOnce('error');
+
+    await getById(req, res);
+
+    expect(res.send).toHaveBeenCalledWith('error');
+  });
+
+  test('should call res.json ', async () => {
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+      send: jest.fn()
+    };
+
+    const req = {
+      params: {
+        heroId: null
+      }
+    };
+
+    Hero.findById.mockResolvedValueOnce('un heroe');
+
+    await getById(req, res);
+
+    expect(res.json).toHaveBeenCalledWith('un heroe');
   });
 });
 
 describe('updateById', () => {
-  test('shoud update hero by id', () => {
+  test('should call res.json', async () => {
     // arrange
-    const req = {
-      body: { id: 1, name: 'sandia' },
-      params: { heroId: 1 }
-    };
     const res = {
       json: jest.fn(),
-      status: jest.fn()
+      send: jest.fn()
     };
+
+    const req = {
+      params: {
+        heroId: null
+      },
+      body: {}
+    };
+
     // act
-    const { updateById } = heroesController([{ id: 1, name: 'Pepe' }, { id: 2, name: 'melon' }]);
-    updateById(req, res);
+    await updateById(req, res);
+
     // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 1, name: 'sandia' }, { id: 2, name: 'melon' }]);
+    expect(res.json).toHaveBeenCalled();
+  });
+
+  test('should call res.send', async () => {
+    const res = {
+      json: jest.fn(),
+      send: jest.fn()
+    };
+
+    const req = {
+      body: null,
+      params: {
+        heroId: null
+      }
+    };
+
+    Hero.findByIdAndUpdate.mockRejectedValueOnce('error al buscar el heroe');
+
+    await updateById(req, res);
+
+    expect(res.send).toHaveBeenCalledWith('error al buscar el heroe');
   });
 });
 
 describe('deleteById', () => {
-  test('shoud delete hero by id', () => {
-    // arrange
-    const req = { params: { heroId: 1 } };
-    const res = { json: jest.fn() };
-    // act
-    const { deleteById } = heroesController([{ id: 1, name: 'Pepe' }, { id: 2, name: 'melon' }]);
-    deleteById(req, res);
-    // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 2, name: 'melon' }]);
+  test('should call json', async () => {
+    const res = {
+      status: jest.fn(),
+      json: jest.fn(),
+      send: jest.fn()
+    };
+
+    const req = {
+      params: {
+        heroId: null
+      }
+    };
+
+    await deleteById(req, res);
+
+    expect(res.json).toHaveBeenCalled();
+  });
+
+  test('should call status with 204', async () => {
+    const res = {
+      status: jest.fn(),
+      json: jest.fn(),
+      send: jest.fn()
+    };
+
+    const req = {
+      params: {
+        heroId: null
+      }
+    };
+
+    await deleteById(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(204);
+  });
+
+  test('should fail and call res.send with error', async () => {
+    const req = {
+      params: {
+        heroId: null
+      }
+    };
+    const res = {
+      status: jest.fn(),
+      json: jest.fn(),
+      send: jest.fn()
+    };
+    Hero.findByIdAndDelete.mockRejectedValueOnce('error');
+
+    await deleteById(req, res);
+
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
