@@ -1,7 +1,6 @@
 let heroes = require('../heroes');
 
 function heroesController() {
-
   function getAll(req, res) {
     res.json(heroes);
   }
@@ -20,7 +19,7 @@ function heroesController() {
   function createOne(req, res) {
     const newHero = req.body;
     heroes.push(newHero);
-    res.json(heroes);
+    res.json(newHero);
   }
 
   function updateById(req, res) {
@@ -30,7 +29,7 @@ function heroesController() {
       if (hero.id === +heroId) {
         return {
           ...hero,
-          ...updateData
+          ...updateData,
         };
       }
       return hero;
@@ -52,13 +51,13 @@ function heroesController() {
     res.status(204);
     res.json(heroes);
   }
-  
+
   return {
     getAll,
     createOne,
     getById,
     updateById,
-    deleteById
+    deleteById,
   };
 }
 
