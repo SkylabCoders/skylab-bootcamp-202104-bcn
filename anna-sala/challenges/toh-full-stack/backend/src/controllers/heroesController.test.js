@@ -11,7 +11,18 @@ describe('given a getAll controller', () => {
     getAll(null, res);
 
     // assert
-    expect(res.json).toHaveBeenCalled();
+    expect(res.json).toHaveBeenCalledWith([
+      { id: 11, name: 'Dr Nice' },
+      { id: 12, name: 'Narco' },
+      { id: 13, name: 'Bombasto' },
+      { id: 14, name: 'Celeritas' },
+      { id: 15, name: 'Magneta' },
+      { id: 16, name: 'RubberMan' },
+      { id: 17, name: 'Dynama' },
+      { id: 18, name: 'Dr IQ' },
+      { id: 19, name: 'Magma' },
+      { id: 20, name: 'Tornado' },
+    ]);
   });
 });
 
@@ -41,14 +52,30 @@ describe('given a getById controller', () => {
       status: jest.fn(),
     };
     const req = {
-      params: { heroId: 5 },
+      params: { heroId: 11 },
     };
       // act
     const { getById } = heroesController();
     getById(req, res);
 
     // assert
-    expect(res.json).toHaveBeenCalled();
+    expect(res.json).toHaveBeenCalledWith({ id: 11, name: 'Dr Nice' });
+  });
+  test('shoud not get one hero', () => {
+    // arrange
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+    };
+    const req = {
+      params: { heroId: 9 },
+    };
+      // act
+    const { getById } = heroesController();
+    getById(req, res);
+
+    // assert
+    expect(res.status).toHaveBeenCalledWith(404);
   });
 });
 
@@ -60,7 +87,7 @@ describe('given a updateById controller', () => {
       status: jest.fn(),
     };
     const req = {
-      params: { heroId: 5 },
+      params: { heroId: 20 },
       body: { id: 20, name: 'Anna' },
     };
     // act
@@ -68,6 +95,51 @@ describe('given a updateById controller', () => {
     updateById(req, res);
 
     // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 20, name: 'Anna' }]);
+    expect(res.json).toHaveBeenCalledWith({ id: 20, name: 'Anna' });
+  });
+});
+
+describe('given a deleteById controller', () => {
+  test('shoud delete selected hero', () => {
+    // arrange
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+    };
+    const req = {
+      params: { heroId: 20 },
+    };
+    // act
+    const { deleteById } = heroesController();
+    deleteById(req, res);
+
+    // assert
+    expect(res.json).toHaveBeenCalledWith([
+      { id: 11, name: 'Dr Nice' },
+      { id: 12, name: 'Narco' },
+      { id: 13, name: 'Bombasto' },
+      { id: 14, name: 'Celeritas' },
+      { id: 15, name: 'Magneta' },
+      { id: 16, name: 'RubberMan' },
+      { id: 17, name: 'Dynama' },
+      { id: 18, name: 'Dr IQ' },
+      { id: 19, name: 'Magma' }]);
+  });
+  test('shoud delete selected hero', () => {
+    // arrange
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+      send: jest.fn(),
+    };
+    const req = {
+      params: { heroId: 22 },
+    };
+    // act
+    const { deleteById } = heroesController();
+    deleteById(req, res);
+
+    // assert
+    expect(res.status).toHaveBeenCalledWith(404);
   });
 });
