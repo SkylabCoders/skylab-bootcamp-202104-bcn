@@ -1,8 +1,11 @@
 let heroes = require('../heroes');
+const debug = require('debug')('server:heroesController');
+const chalk = require('chalk');
 
 function heroesController() {
   let latestId = heroes.sort((a, b) => a.id - b.id)[heroes.length - 1].id;
   function getAll(req, res) {
+    debug(`dentro de la ${chalk.magenta('funcion')} getAll`);
     res.json(heroes);
   }
   function getById(req, res) {
