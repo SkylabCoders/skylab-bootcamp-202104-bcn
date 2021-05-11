@@ -1,46 +1,53 @@
-const debug = require('debug')('server:heroesController');
+const Hero = require('../model/heroModel');
 
-const heroesController = (heroes) => {
-  debug('dentro de getAll');
-  const getAll = (req, res) => {
+const heroesController = () => {
+  async function getAll(req, res) {
+    const heroes = await Hero.find();
     res.json(heroes);
-  };
+  }
 
-  const createOne = (req, res) => {
-    const newHero = req.body;
-    heroes.push(newHero);
-    res.json(heroes);
-  };
-
-  const getById = (req, res) => {
-    const heroById = heroes.find((hero) => hero.id === +req.params.heroId);
-    if (heroById) {
-      res.status(302);
-      res.json(heroById);
-    } else {
-      res.status(404);
-      res.json(heroById);
+  async function createOne(req, res) {
+    const newHero = Hero(req.body);
+    try {
+      await newHero.save();
+      res.json(newHero);
+    } catch (error) {
+      res.status(400);
+      res.send(error);
     }
-  };
+  }
 
-  const updateById = (req, res) => {
-    const updateHero = req.body;
-    const newHeroById = heroes.map((hero) => {
-      if (hero.id === +req.params.heroId) {
-        return {
-          ...hero,
-          ...updateHero,
-        };
-      }
-      return hero;
-    });
-    res.json(newHeroById);
-  };
+  async function getById(req, res) {
+    try {
+      const heroById = await Hero.findById(req.params.heroId);
+      res.json(heroById);
+    } catch (error) {
+      res.status(404);
+      res.send(error);
+    }
+  }
 
-  const deleteById = (req, res) => {
-    const deletedArray = heroes.filter((hero) => hero.id !== +req.params.heroId);
-    res.json(deletedArray);
-  };
+  async function updateById(req, res) {
+    try {
+      const updatedHeroById = await Hero.findByIdAndUpdate(
+        req.params.heroId,
+        req.body,
+        { new: true },
+      );
+      res.json(updatedHeroById);
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
+  async function deleteById(req, res) {
+    try {
+      await Hero.findOneAndDelete(req.params.heroId);
+      res.json();
+    } catch (error) {
+      res.send(error);
+    }
+  }
 
   return {
     getAll,
