@@ -1,8 +1,6 @@
 const debug = require('debug')('server:heroesController');
 const Hero = require('../model/heroModel');
 
-// const nextHeroId = 31;
-
 function heroesController() {
   async function getAll(req, res) {
     debug('enter to function getAll');
