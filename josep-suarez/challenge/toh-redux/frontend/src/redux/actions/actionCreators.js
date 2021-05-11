@@ -51,6 +51,8 @@ export function updateHero(hero) {
 }
 
 export function loadHero(hero) {
+  // eslint-disable-next-line no-debugger
+  debugger;
   return async (dispatch) => {
     const { data } = await axios(`${url}/${hero.id}`);
     dispatch({

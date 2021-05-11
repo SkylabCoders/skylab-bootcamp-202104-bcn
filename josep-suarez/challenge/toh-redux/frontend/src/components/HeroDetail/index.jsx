@@ -14,11 +14,9 @@ function HeroDetail({ selectedHero, dispatch }) {
   useEffect(() => {
     dispatch(getHeroById(heroId));
   }, [heroId]);
-
   useEffect(() => {
     setHeroName(selectedHero?.name);
   }, [selectedHero]);
-
   function handleNameChange(event) {
     setHeroName(event.target.value);
   }
