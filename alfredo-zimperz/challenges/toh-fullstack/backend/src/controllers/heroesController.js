@@ -1,7 +1,10 @@
+const debug = require('debug')('server:heroesController');
+
 let nextHeroId = 31;
 
 function heroesController(heroes) {
   function getAll(req, res) {
+    debug('enter to function getAll');
     res.status(200);
     res.json(heroes);
   }
