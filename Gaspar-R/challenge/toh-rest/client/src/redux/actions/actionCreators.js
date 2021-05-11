@@ -3,10 +3,9 @@ import axios from 'axios';
 import HEROES from '../../constants/heroe.mock';
 import actionTypes from './actionTypes';
 
-const url = 'http://localhost:2022/heroes/';
+const url = 'http://localhost:2022/heroes';
 
 export function loadHeroes() {
-  debugger;
   return async (dispatch) => {
     try {
       const { data } = await axios.get(url);

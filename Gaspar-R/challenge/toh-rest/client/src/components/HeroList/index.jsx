@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './heroeList.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -10,22 +10,30 @@ function List({ heroes, dispatch }) {
     if (!heroes.length) dispatch(loadHeroes());
   }, []);
 
+  const [newHeroName, setNewHero] = useState('');
+
   function handleDelete(heroId) {
     dispatch(deleteHero(heroId));
   }
-
   function handleAdd() {
-    const inputNewHero = document.getElementById('heroInputCreation');
-    const heroNew = { id: (heroes[heroes.length - 1].id + 1), name: inputNewHero.value };
+    const heroNew = { id: (heroes[heroes.length - 1].id + 1), name: newHeroName };
     dispatch(addHero(heroNew));
   }
+  useEffect(() => {
+    dispatch(loadHeroes());
+  }, [heroes]);
 
   return (
     <>
       <div>
         <h2>My Heroes</h2>
         <p>Hero name:</p>
-        <input type="text" id="heroInputCreation" />
+        <input
+          type="text"
+          id="heroInputCreation"
+          value={newHeroName}
+          onChange={(event) => setNewHero((event.target.value))}
+        />
         <button type="button" onClick={() => handleAdd()}>Add</button>
 
       </div>

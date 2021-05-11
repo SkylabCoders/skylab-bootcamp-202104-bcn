@@ -6,8 +6,8 @@ function heroesReducer(heroes = [], action) {
       return action.heroes;
 
     case actionTypes.DELETE_HERO:
-      return heroes.filter((hero) => hero.id !== action.heroId);
-
+      return heroes;
+    // heroes.filter((hero) => hero.id !== action.heroId);
     case actionTypes.ADD_HERO:
       return [
         ...heroes,
