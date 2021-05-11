@@ -7,14 +7,14 @@ import Dashboard from './components/Dashboard';
 import HeroesList from './components/Heroes';
 import HeroDetail from './components/HeroDetail';
 import NotFound from './components/NotFound';
-import store from './redux/stores';
+import configureStore from './redux/stores';
 import './styles.css';
 import './App.css';
 
 function App() {
   return (
     <>
-      <Provider store={store}>
+      <Provider store={configureStore()}>
         <BrowserRouter>
           <h1>Tour of Heroes</h1>
           <nav>
