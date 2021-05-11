@@ -1,3 +1,6 @@
+const debug = require('debug')('server:heroesController');
+const chalk = require('chalk');
+
 function heroesController(heroes) {
   heroes.sort((firstHero, secondHero) => {
     if (firstHero.id > secondHero.id) {
@@ -10,10 +13,13 @@ function heroesController(heroes) {
   });
   const newId = heroes[heroes.length - 1].id + 1;
   function getAll(req, res) {
+    debug(`dentro de la función ${chalk.magenta('getAll')}`);
     res.json(heroes);
   }
 
   function createOne(req, res) {
+    // eslint-disable-next-line no-debugger
+    debugger;
     const newHero = {
       ...req.body,
       ...{ id: newId },
