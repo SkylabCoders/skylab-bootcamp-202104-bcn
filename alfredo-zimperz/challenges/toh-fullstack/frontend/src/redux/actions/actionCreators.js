@@ -12,8 +12,6 @@ export function loadHeroes() {
         heroes: data,
       });
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
       dispatch({
         type: 'LOAD_HEROES_ERROR',
       });
@@ -72,8 +70,6 @@ export function getHeroById(heroId) {
 }
 
 export function login(user) {
-  // eslint-disable-next-line no-debugger
-  debugger;
   return {
     type: actionTypes.AUTH_LOGIN,
     user,
