@@ -23,16 +23,16 @@ function heroesController() {
     }
   }
 
-  // function getById(req, res) {
-  //   const heroById = heroes.find((hero) => hero.id === +req.params.heroId);
-  //   if (heroById) {
-  //     res.status(200);
-  //     res.json(heroById);
-  //   } else {
-  //     res.status(404);
-  //     res.json();
-  //   }
-  // }
+  async function getById(req, res) {
+    const heroById = await Hero.findById(req.params.heroId);
+    if (heroById) {
+      res.status(200);
+      res.json(heroById);
+    } else {
+      res.status(404);
+      res.json();
+    }
+  }
 
   // function updateById(req, res) {
   //   const { heroId } = req.params;
@@ -66,7 +66,7 @@ function heroesController() {
   return {
     getAll,
     createOne,
-    // getById,
+    getById,
     // updateById,
     // deleteById,
   };
