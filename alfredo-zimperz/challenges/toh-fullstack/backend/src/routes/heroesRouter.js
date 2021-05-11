@@ -12,9 +12,9 @@ function heroesRouter() {
 
   routes
     .route('/:heroId')
-    .get(heroesController.getById);
-  //   .put(heroesController.updateById)
-  //   .delete(heroesController.deleteById);
+    .get(heroesController.getById)
+    .put(heroesController.updateById)
+    .delete(heroesController.deleteById);
 
   return routes;
 }

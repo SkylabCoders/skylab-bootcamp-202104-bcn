@@ -34,41 +34,41 @@ function heroesController() {
     }
   }
 
-  // function updateById(req, res) {
-  //   const { heroId } = req.params;
-  //   const updateData = req.body;
-  //   const updatedHeroes = heroes.map((hero) => {
-  //     if (hero.id === +heroId) {
-  //       return {
-  //         ...hero,
-  //         ...updateData,
-  //       };
-  //     }
-  //     return hero;
-  //   });
-  //   res.status(200);
-  //   res.json(updatedHeroes);
-  // }
+  async function updateById(req, res) {
+    const { heroId } = req.params;
+    const updateData = req.body;
+    try {
+      const updatedHero = await Hero.findByIdAndUpdate(
+        heroId,
+        updateData,
+        { new: true },
+      );
+      res.status(200);
+      res.json(updatedHero);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
+  }
 
-  // function deleteById(req, res) {
-  //   const { heroId } = req.params;
-  //   const heroById = heroes.find((hero) => hero.id === +heroId);
-  //   if (heroById) {
-  //     const updatedHeroes = heroes.filter((hero) => +heroId !== hero.id);
-  //     res.status(200);
-  //     res.json(updatedHeroes);
-  //   } else {
-  //     res.status(404);
-  //     res.json();
-  //   }
-  // }
+  async function deleteById(req, res) {
+    const { heroId } = req.params;
+    try {
+      await Hero.findByIdAndDelete(heroId);
+      res.status(404);
+      res.json();
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
+  }
 
   return {
     getAll,
     createOne,
     getById,
-    // updateById,
-    // deleteById,
+    updateById,
+    deleteById,
   };
 }
 

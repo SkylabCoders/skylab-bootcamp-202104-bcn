@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -14,7 +15,7 @@ function Dashboard({ heroes, dispatch }) {
     <>
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
-        {heroes && heroes.map((hero) => <Link key={hero.id} to={`/detail/${hero.id}`}>{hero.name}</Link>)}
+        {heroes && heroes.map((hero) => <Link key={hero.id} to={`/detail/${hero._id}`}>{hero.name}</Link>)}
       </div>
     </>
   );
