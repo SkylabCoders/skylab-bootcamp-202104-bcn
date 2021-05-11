@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './dashboard.css';
 import { PropTypes } from 'prop-types';
-import { loadHeroes } from '../../redux/actions/actionCreators';
+import { addHero, loadHeroes } from '../../redux/actions/actionCreators';
 
 function Dashboard({ heroes, dispatch }) {
+  const [heroName, setHeroName] = useState();
   useEffect(() => {
     if (!heroes.length) dispatch(loadHeroes());
   }, []);
@@ -15,6 +16,23 @@ function Dashboard({ heroes, dispatch }) {
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
         {heroes.slice(1, 5).map((hero) => <Link key={hero.id} to={`/detail/${hero.id}`}>{hero.name}</Link>)}
+      </div>
+      <div>
+        <label htmlFor="newHero">
+          <input
+            type="text"
+            placeholder="Add hero"
+            id="newHero"
+            value={heroName}
+            onChange={(event) => setHeroName(event.target.value)}
+          />
+          <button
+            type="button"
+            onClick={() => dispatch(addHero({ name: heroName }))}
+          >
+            Add
+          </button>
+        </label>
       </div>
     </>
   );
