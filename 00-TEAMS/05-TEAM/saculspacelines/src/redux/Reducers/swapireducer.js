@@ -20,14 +20,11 @@ export function loadSwapiPeople(state = [], { type, payload }) {
   let result;
   let newPayload;
 
-  switch (type) {
-    case LOAD_PEOPLE:
-      newPayload = combineObjectsArrays(payload, CHARACTERS);
-      result = [...state, newPayload];
-      break;
-
-    default:
-      result = state;
+  if (type === LOAD_PEOPLE) {
+    newPayload = combineObjectsArrays(payload, CHARACTERS);
+    result = [...state, newPayload];
+  } else {
+    result = state;
   }
   return result;
 }
@@ -36,14 +33,11 @@ export function loadSwapiPlanets(state = [], { type, payload }) {
   let result;
   let newPayload;
 
-  switch (type) {
-    case LOAD_PLANETS:
-      newPayload = combineObjectsArrays(payload, PLANETS);
-      result = [...state, newPayload];
-      break;
-
-    default:
-      result = state;
+  if (type === LOAD_PLANETS) {
+    newPayload = combineObjectsArrays(payload, PLANETS);
+    result = [...state, newPayload];
+  } else {
+    result = state;
   }
   return result;
 }
@@ -52,14 +46,11 @@ export function loadSwapiStarships(state = [], { type, payload }) {
   let result;
   let newPayload;
 
-  switch (type) {
-    case LOAD_STARSHIPS:
-      newPayload = combineObjectsArrays(payload, STARSHIPS);
-      result = [...state, newPayload];
-      break;
-
-    default:
-      result = state;
+  if (type === LOAD_STARSHIPS) {
+    newPayload = combineObjectsArrays(payload, STARSHIPS);
+    result = [...state, newPayload];
+  } else {
+    result = state;
   }
   return result;
 }
