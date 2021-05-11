@@ -16,10 +16,12 @@ function heroesController(heroes) {
 
   function updateById(req, res) {
     const { heroId } = req.params;
-    const name = req.body;
+    const { name } = req.body;
+    const selectedHero = heroes.find((hero) => hero.id === +heroId);
+    selectedHero.name = name;
     heroes = [
       ...heroes,
-      { id: heroId, name },
+      selectedHero,
     ];
     res.json(heroes);
   }
