@@ -11,13 +11,17 @@ function heroesController() {
     res.json(heroes);
   }
 
-  // function createOne(req, res) {
-  //   const newHero = { ...req.body, id: nextHeroId };
-  //   heroes.push(newHero);
-  //   res.status(201);
-  //   res.json(newHero);
-  //   nextHeroId += 1;
-  // }
+  async function createOne(req, res) {
+    const newHero = new Hero(req.body);
+    try {
+      await newHero.save();
+      res.status(201);
+      res.json(newHero);
+    } catch (error) {
+      debug(error);
+      res.sed(error);
+    }
+  }
 
   // function getById(req, res) {
   //   const heroById = heroes.find((hero) => hero.id === +req.params.heroId);
@@ -61,7 +65,7 @@ function heroesController() {
 
   return {
     getAll,
-    // createOne,
+    createOne,
     // getById,
     // updateById,
     // deleteById,
