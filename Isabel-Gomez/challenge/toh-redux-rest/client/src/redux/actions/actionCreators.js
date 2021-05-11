@@ -2,7 +2,7 @@ import axios from 'axios';
 import HEROES from '../../constants/heroe.mock';
 import actionTypes from './actionTypes';
 
-const url = 'http://localhost:2021/heroes';
+const url = 'http://localhost:2021/heroes/';
 
 export function loadHeroes() {
   return async (dispatch) => {
