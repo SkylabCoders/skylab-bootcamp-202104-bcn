@@ -1,48 +1,74 @@
+/* eslint-disable no-debugger */
+import axios from 'axios';
 import actionTypes from './actionTypes';
-import HEROES from '../../constants/heroes.mock';
+
+const url = 'http://localhost:2021/heroes';
 
 export function loadHeroes() {
-  return {
-    type: actionTypes.LOAD_HEROES,
+  return async (dispatch) => {
+    try {
+      const { data } = await axios(url);
+      dispatch({
+        type: actionTypes.LOAD_HEROES,
+        heroes: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'LOAD_HEROES_ERROR',
+      });
+    }
   };
 }
 
-export function addHero(heroName) {
-  const newId = HEROES.length + 1;
-  return {
-    type: actionTypes.ADD_HERO,
-    hero: {
-      name: heroName,
-      id: newId,
-    },
+export function addHero(hero) {
+  return async (dispatch) => {
+    const { data } = await axios.post(url, hero);
+    // eslint-disable-next-line no-debugger
+    debugger;
+    dispatch({
+      type: actionTypes.ADD_HERO,
+      hero: data,
+    });
   };
 }
 
 export function deleteHero(heroId) {
-  return {
-    type: actionTypes.DELETE_HERO,
-    heroId,
+  return async (dispatch) => {
+    await axios.delete(`${url}/${heroId}`);
+    dispatch({
+      type: actionTypes.DELETE_HERO,
+      heroId,
+    });
   };
 }
 
 export function updateHero(hero) {
-  return {
-    type: actionTypes.UPDATE_HERO,
-    hero,
+  return async (dispatch) => {
+    const { data } = await axios.put(`${url}/${hero.id}`, hero);
+    dispatch({
+      type: actionTypes.UPDATE_HERO,
+      hero: data,
+    });
   };
 }
 
 export function loadHero(hero) {
-  return {
-    type: actionTypes.LOAD_HERO,
-    hero,
+  return async (dispatch) => {
+    const { data } = await axios(`${url}/${hero.id}`, hero);
+    dispatch({
+      type: actionTypes.LOAD_HERO,
+      hero: data,
+    });
   };
 }
 
 export function getHeroById(heroId) {
-  const hero = HEROES.find((current) => current.id === +heroId);
-  return {
-    type: actionTypes.LOAD_HERO,
-    hero,
+  return async (dispatch) => {
+    debugger;
+    const { data } = await axios(`${url}/${heroId}`);
+    dispatch({
+      type: actionTypes.LOAD_HERO,
+      hero: data,
+    });
   };
 }

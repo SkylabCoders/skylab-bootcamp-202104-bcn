@@ -16,7 +16,7 @@ function HeroList({ heroes, dispatch }) {
     setNameHero(event.target.value);
   }
   function handleName() {
-    dispatch(addHero(nameHero));
+    dispatch(addHero({ name: nameHero }));
   }
 
   function deleteHeroes(id) {
