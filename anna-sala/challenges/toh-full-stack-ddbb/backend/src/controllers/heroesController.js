@@ -1,56 +1,61 @@
 const debug = require('debug')('server:heroesController');
-let heroes = require('../heroes');
+const Hero = require('../model/heroModel');
 
 function heroesController() {
   debug('dentro de getAll');
-  function getAll(req, res) {
+  async function getAll(req, res) {
+    const heroes = await Hero.find();
     res.json(heroes);
   }
 
-  function createOne(req, res) {
-    const newHero = req.body;
-    heroes.push(newHero);
-    res.json(newHero);
-  }
-
-  function getById(req, res) {
-    const heroById = heroes.find((hero) => hero.id === +req.params.heroId);
-    if (heroById) {
-      res.status(200);
-      res.json(heroById);
-    } else {
-      res.status(404);
-      res.json(heroById);
+  async function createOne(req, res) {
+    const newHero = new Hero(req.body);
+    debug(newHero);
+    try {
+      await newHero.save();
+      res.json(newHero);
+    } catch (error) {
+      debug(error);
+      res.send(error);
     }
   }
 
-  function updateById(req, res) {
-    const { heroId } = req.params;
-    const updateData = req.body;
-    heroes = heroes.map((hero) => {
-      if (hero.id === +heroId) {
-        return {
-          ...hero,
-          ...updateData,
-        };
-      }
-      return hero;
-    });
-
-    res.json(heroes.find((hero) => hero.id === +heroId));
+  async function getById(req, res) {
+    try {
+      const heroById = await Hero.findById(
+        req.params.heroId,
+      );
+      res.json(heroById);
+    } catch (error) {
+      debug(error);
+      res.status(404);
+      res.send(error);
+    }
   }
 
-  function deleteById(req, res) {
-    const { heroId } = req.params;
-    const heroById = heroes.find((hero) => +heroId === hero.id);
-    if (heroById) {
-      heroes = heroes.filter((hero) => +heroId !== hero.id);
-      res.status(200);
-    } else {
-      res.status(404);
-      res.send(`The hero with the id ${heroId} doesn't exist`);
+  async function updateById(req, res) {
+    try {
+      const updatedHero = await Hero.findByIdAndUpdate(
+        req.params.heroId,
+        req.body,
+        { new: true },
+      );
+      res.json(updatedHero);
+    } catch (error) {
+      debug(error);
+      res.send(error);
     }
-    res.json(heroes);
+  }
+
+  async function deleteById(req, res) {
+    try {
+      await Hero.findByIdAndDelete(req.params.heroId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
   }
 
   return {
