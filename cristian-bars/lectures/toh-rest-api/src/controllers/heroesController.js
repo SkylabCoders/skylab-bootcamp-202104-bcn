@@ -1,42 +1,60 @@
 const debug = require('debug')('server:heroesController');
+const Hero = require('../model/heroModel');
 
-function heroesController(heroes) {
-  function getAll(req, res) {
-    debug('dentro de la funcion getAll');
+function heroesController() {
+  async function getAll(req, res) {
+    const heroes = await Hero.find();
     res.json(heroes);
   }
 
-  function getHeroById(req, res) {
-    const { heroId } = req.params;
-    const heroesById = heroes.find((hero) => hero.id === +heroId);
-    res.json(heroesById);
+  async function getHeroById(req, res) {
+    try {
+      const heroById = await Hero.findById(
+        req.params.heroId
+      );
+      res.json(heroById);
+    } catch (error) {
+      debug(error);
+      res.status(404);
+      res.send(error);
+    }
   }
 
-  function deleteHeroById(req, res) {
-    const { heroId } = req.params;
-    const heroesById = heroes.filter((hero) => hero.id !== +heroId);
-    res.json(heroesById);
+  async function deleteHeroById(req, res) {
+    try {
+      await Hero.findByIdAndDelete(req.params.heroId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
   }
 
-  function addHero(req, res) {
-    const heroDetails = req.body;
-    heroes.push(heroDetails);
-    res.json(heroes);
+  async function addHero(req, res) {
+    const newHero = new Hero(req.body);
+    debug(newHero);
+    try {
+      await newHero.save();
+      res.json(newHero);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
   }
 
-  function modifyHeroById(req, res) {
-    const { heroId } = req.params;
-    const heroDetails = req.body;
-    const myHeroes = heroes.map((hero) => {
-      if (hero.id === +heroId) {
-        return {
-          ...hero,
-          ...heroDetails
-        };
-      }
-      return hero;
-    });
-    res.json(myHeroes);
+  async function modifyHeroById(req, res) {
+    try {
+      const updatedHero = await Hero.findByIdAndUpdate(
+        req.params.heroId,
+        req.body,
+        { new: true }
+      );
+      res.json(updatedHero);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
   }
 
   return {
