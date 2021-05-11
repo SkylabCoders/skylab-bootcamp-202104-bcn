@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-const debug = require('debug');
 const {
   createOne,
   getAll,
@@ -37,7 +36,6 @@ describe('getAll', () => {
     };
 
     // act
-    const { getAll } = heroesController([{ name: 'Pepe' }]);
     getAll(null, res);
 
     // assert
@@ -155,7 +153,6 @@ describe('updateById', () => {
     const req = { params: { heroId: 15 } };
 
     // act
-    const { updateById } = heroesController([{ id: 5, name: 'Cacho' }]);
     updateById(req, res);
 
     // assert

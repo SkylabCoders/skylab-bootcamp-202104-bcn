@@ -5,4 +5,4 @@ const heroSchema = mongoose.Schema({
   name: String
 });
 
-module.exports = mongoose.model('Hero', heroSchema); // el primer valor es el nombre que le quiero dar a mi Collection, el segundo el de la variable.
+module.exports = mongoose.model('Heroes', heroSchema); // el primer valor es el nombre que le quiero dar a mi Collection, el segundo el de la variable.

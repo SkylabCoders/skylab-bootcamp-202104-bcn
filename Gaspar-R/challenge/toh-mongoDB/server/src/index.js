@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const cors = require('cors');
 const chalk = require('chalk');
@@ -7,13 +8,24 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const server = express();
-mongoose.connect(
-  process.env.DDBB_URL,
-  {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-  }
-);
+// mongoose.connect(
+//   process.env.DDBB_URL,
+//   {
+//     useUnifiedTopology: true,
+//     useNewUrlParser: true
+//   }
+// );
+
+try {
+  // Connect to the MongoDB cluster
+  mongoose.connect(
+    process.env.DDBB_URL,
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    () => console.log(' Mongoose is connected')
+  );
+} catch (e) {
+  console.log('could not connect');
+}
 
 server.use(cors());
 
