@@ -7,8 +7,6 @@ import { loadHeroes } from '../../redux/actions/actionCreators';
 
 function Dashboard({ heroes, dispatch }) {
   useEffect(() => {
-    // eslint-disable-next-line no-debugger
-    debugger;
     if (!heroes.length) dispatch(loadHeroes());
   }, []);
 

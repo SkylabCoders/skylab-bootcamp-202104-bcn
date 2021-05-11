@@ -31,7 +31,7 @@ export function addHero(hero) {
       });
       dispatch({
         type: actionTypes.ADD_HERO,
-        hero: data,
+        heroes: data,
       });
     } catch (error) {
       dispatch({
@@ -47,8 +47,6 @@ export function deleteHero(heroId) {
       const { data } = await axios.delete(`${url}${heroId}`, {
         heroId,
       });
-      // eslint-disable-next-line no-debugger
-      debugger;
       dispatch({
         type: actionTypes.DELETE_HERO,
         heroes: data,

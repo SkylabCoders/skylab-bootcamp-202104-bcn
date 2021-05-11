@@ -9,10 +9,7 @@ function heroesReducer(heroes = [], action) {
       return action.heroes;
 
     case actionTypes.ADD_HERO:
-      return [
-        ...heroes,
-        action.hero,
-      ];
+      return action.heroes;
 
     case actionTypes.UPDATE_HERO:
       return heroes.map(
