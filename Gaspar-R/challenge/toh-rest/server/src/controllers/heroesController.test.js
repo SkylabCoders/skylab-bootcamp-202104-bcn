@@ -77,7 +77,8 @@ describe('getById', () => {
     // arrange
     const res = {
       json: jest.fn(),
-      status: jest.fn()
+      status: jest.fn(),
+      end: jest.fn()
     };
     const req = { params: { heroId: 15 } };
 
@@ -109,6 +110,22 @@ describe('updateById', () => {
     // assert
     expect(res.json).toHaveBeenCalledWith([{ id: 5, name: 'Dr Caca' }]);
   });
+  test('shoud resolve as 404', () => {
+    // arrange
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+      end: jest.fn()
+    };
+    const req = { params: { heroId: 15 } };
+
+    // act
+    const { updateById } = heroesController([{ id: 5, name: 'Cacho' }]);
+    updateById(req, res);
+
+    // assert
+    expect(res.status).toHaveBeenCalledWith(404);
+  });
 });
 
 describe('deleteById', () => {
@@ -116,7 +133,8 @@ describe('deleteById', () => {
     // arrange
     const res = {
       json: jest.fn(),
-      status: jest.fn()
+      status: jest.fn(),
+      
     };
     const req = {
       params: { heroId: 5 }
@@ -128,5 +146,21 @@ describe('deleteById', () => {
 
     // assert
     expect(res.json).toHaveBeenCalledWith([]);
+  });
+  test('shoud resolve as 404', () => {
+    // arrange
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+      end: jest.fn()
+    };
+    const req = { params: { heroId: 15 } };
+
+    // act
+    const { deleteById } = heroesController([{ id: 5, name: 'Cacho' }]);
+    deleteById(req, res);
+
+    // assert
+    expect(res.status).toHaveBeenCalledWith(404);
   });
 });
