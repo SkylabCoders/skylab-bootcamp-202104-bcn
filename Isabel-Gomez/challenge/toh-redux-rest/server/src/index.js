@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-require('../.env').config();
+require('dotenv').config();
 
 const server = express();
 
