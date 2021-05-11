@@ -104,7 +104,7 @@ describe('updateById', () => {
       json: jest.fn(),
     };
     const req = {
-      params: { heroId: null },
+      params: { },
       body: { },
 
     };
@@ -116,7 +116,7 @@ describe('updateById', () => {
   });
 });
 
-describe('deleteById', async () => {
+describe('deleteById', () => {
   test('shoud delete one hero by id', async () => {
     // arrange
     const res = {
