@@ -27,10 +27,6 @@ function HeroDetail({ selectedHero, dispatch }) {
     dispatch(updateHero({ id: selectedHero.id, name: heroName }));
   }
 
-  function deleteHeroById() {
-    dispatch(deleteHero(heroId));
-  }
-
   return (
     selectedHero.id
       ? (
@@ -57,7 +53,6 @@ function HeroDetail({ selectedHero, dispatch }) {
           </div>
           <button type="button">Go back</button>
           <button onClick={save} type="button">Save</button>
-          <button onClick={deleteHeroById} type="button">Delete</button>
         </div>
       )
       : (

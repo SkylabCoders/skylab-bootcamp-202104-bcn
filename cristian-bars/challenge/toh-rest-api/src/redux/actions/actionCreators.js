@@ -29,7 +29,7 @@ export function addHero(hero) {
 
 export function deleteHero(heroId) {
   return async (dispatch) => {
-    await axios.delete(`${url}/${heroId}`);
+    await axios.delete(`${url}/${heroId.id}`);
     dispatch({
       type: actionTypes.DELETE_HERO,
       heroId
