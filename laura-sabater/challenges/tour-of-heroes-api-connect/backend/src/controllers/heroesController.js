@@ -1,6 +1,7 @@
 let heroes = require('../heroes');
 
 function heroesController() {
+  let latestId = heroes.sort((a, b) => a.id - b.id)[heroes.length - 1].id;
   function getAll(req, res) {
     res.json(heroes);
   }
@@ -15,9 +16,14 @@ function heroesController() {
     }
   }
   function createOne(req, res) {
-    const newHero = req.body;
+    let newHero = req.body;
+    latestId += 1;
+    newHero = {
+      ...req.body,
+      id: latestId,
+    };
     heroes.push(newHero);
-    res.json(heroes);
+    res.json(newHero);
   }
   function updateById(req, res) {
     const { heroId } = req.params;
