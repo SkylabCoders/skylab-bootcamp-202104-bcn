@@ -1,10 +1,18 @@
 function heroesController(heroes) {
+  let latestId = heroes.sort((a, b) => a.id - b.id)[heroes.length - 1].id;
+
   function getAll(req, res) {
     res.json(heroes);
   }
 
   function createOne(req, res) {
-    res.json(heroes[0]);
+    latestId += 1;
+    const newHero = {
+      ...req.body,
+      id: latestId,
+    };
+    heroes.push(newHero);
+    res.json(newHero);
   }
 
   function getById(req, res) {
