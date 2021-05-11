@@ -1,80 +1,162 @@
-/* eslint-disable no-console */
-const heroesController = require('./heroesController');
+const Hero = require('../model/heroModel');
+const {
+  getAll,
+  createOne,
+  getById,
+  updateById,
+  deleteById,
+} = require('./heroesController')();
+
+jest.mock('../model/heroModel');
 
 describe('getAll', () => {
-  test('shoud get all heroes', () => {
+  test('shoud get all heroes', async () => {
     // arrange
     const res = {
       json: jest.fn(),
     };
+    Hero.find.mockResolvedValueOnce([{ name: 'Pepe' }]);
     // act
-    const { getAll } = heroesController([{ name: 'Pepe' }]);
-    getAll(null, res);
+    await getAll(null, res);
     // assert
     expect(res.json).toHaveBeenCalledWith([{ name: 'Pepe' }]);
   });
 });
 
 describe('createOne', () => {
-  test('shoud create one heroe', () => {
+  class MockHero {
+    constructor(name) {
+      this.name = name;
+    }
+
+    // eslint-disable-next-line class-methods-use-this
+    save() {}
+  }
+
+  test('should call json with new hero', async () => {
     // arrange
-    const req = { body: { name: 'Lola' } };
+    const req = {
+      body: null,
+    };
     const res = {
       json: jest.fn(),
+      send: jest.fn(),
     };
+
+    const newHero = new MockHero('hero name');
+
+    Hero.mockReturnValueOnce(newHero);
     // act
-    const { createOne } = heroesController([{ name: 'Pepe' }]);
-    createOne(req, res);
+    await createOne(req, res);
     // assert
-    expect(res.json).toHaveBeenCalledWith([{ name: 'Pepe' }, { name: 'Lola' }]);
+    expect(res.json).toHaveBeenCalledWith({ name: 'hero name' });
+  });
+
+  test('should show error', async () => {
+    const req = {
+      body: null,
+    };
+    const res = {
+      json: jest.fn(),
+      send: jest.fn(),
+    };
+
+    Hero.mockReturnValueOnce({
+      save: jest.fn().mockRejectedValueOnce('error'),
+    });
+
+    // act
+    await createOne(req, res);
+    // assert
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
 describe('getById', () => {
-  test('shoud show one heroe selected by Id', () => {
+  test('should show one hero selected by Id', async () => {
     // arrange
-    const req = { params: { heroId: 1 } };
+    const req = { params: { heroId: null } };
     const res = {
       json: jest.fn(),
-      status: jest.fn(),
+      send: jest.fn(),
     };
+    Hero.findById.mockResolvedValueOnce({ name: 'Pepe' });
     // act
-    const { getById } = heroesController([{ id: 1, name: 'Pepe' }, { id: 2, name: 'Lola' }]);
-    getById(req, res);
+    await getById(req, res);
     // assert
-    expect(res.json).toHaveBeenCalledWith({ id: 1, name: 'Pepe' });
+    expect(res.json).toHaveBeenCalledWith({ name: 'Pepe' });
+  });
+  test('should show error', async () => {
+    // arrange
+    const req = { params: { heroId: null } };
+    const res = {
+      json: jest.fn(),
+      send: jest.fn(),
+    };
+    Hero.findById.mockRejectedValueOnce('error');
+    // act
+    await getById(req, res);
+    // assert
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
 describe('updateById', () => {
-  test('shoud update one heroe by Id', () => {
+  test('shoud update one heroe by Id', async () => {
     // arrange
     const req = {
-      params: { heroId: 1 },
-      body: { name: 'Josep' },
+      params: { heroId: {} },
+      body: {},
     };
     const res = {
       json: jest.fn(),
     };
+    Hero.findByIdAndUpdate.mockResolvedValueOnce([{ id: 1, name: 'Josep' }]);
     // act
-    const { updateById } = heroesController([{ id: 1, name: 'Pepe' }, { id: 2, name: 'Lola' }]);
-    updateById(req, res);
+    await updateById(req, res);
     // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 1, name: 'Josep' }, { id: 2, name: 'Lola' }]);
+    expect(res.json).toHaveBeenCalledWith([{ id: 1, name: 'Josep' }]);
+  });
+  test('should show error', async () => {
+    // arrange
+    const req = { params: { heroId: null }, body: {} };
+    const res = {
+      json: jest.fn(),
+      send: jest.fn(),
+    };
+    Hero.findByIdAndUpdate.mockRejectedValueOnce('error');
+    // act
+    await updateById(req, res);
+    // assert
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
 describe('deleteById', () => {
-  test('shoud delete one heroe by Id', () => {
+  test('shoud delete one heroe by Id', async () => {
     // arrange
-    const req = { params: { heroId: 1 } };
+    const req = { params: { heroId: null } };
     const res = {
       json: jest.fn(),
+      send: jest.fn(),
     };
+    Hero.findOneAndDelete.mockResolvedValue();
     // act
-    const { deleteById } = heroesController([{ id: 1, name: 'Pepe' }, { id: 2, name: 'Lola' }]);
-    deleteById(req, res);
+    await deleteById(req, res);
     // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 2, name: 'Lola' }]);
+    expect(res.json).toHaveBeenCalledWith();
+  });
+  test('should show error', async () => {
+    // arrange
+    const req = { params: { heroId: null } };
+    const res = {
+      json: jest.fn(),
+      send: jest.fn(),
+    };
+    Hero.findOneAndDelete.mockRejectedValueOnce('error');
+    // act
+    await deleteById(req, res);
+    // assert
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
