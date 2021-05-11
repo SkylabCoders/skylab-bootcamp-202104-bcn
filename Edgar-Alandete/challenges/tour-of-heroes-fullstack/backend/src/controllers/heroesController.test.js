@@ -98,40 +98,42 @@ describe('getById', () => {
 });
 
 describe('updateById', () => {
-  test('shoud update one hero by id', () => {
+  test('shoud update one hero by id', async () => {
     // arrange
     const res = {
       json: jest.fn(),
     };
     const req = {
-      params: { heroId: 777 },
-      body: { name: 'Gemmuki' },
+      params: { heroId: null },
+      body: { },
 
     };
     // act
-    updateById(req, res);
+    Hero.findByIdAndUpdate.mockResolvedValueOnce({ id: 3, name: 'Batman' });
+    await updateById(req, res);
     // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 777, name: 'Gemmuki' }, { id: 888, name: 'Maria' }]);
+    expect(res.json).toHaveBeenCalledWith({ id: 3, name: 'Batman' });
   });
 });
 
-describe('deleteById', () => {
-  test('shoud get one hero by id', () => {
+describe('deleteById', async () => {
+  test('shoud delete one hero by id', async () => {
     // arrange
     const res = {
       json: jest.fn(),
       status: jest.fn(),
     };
     const req = {
-      params: { heroId: 777 },
+      params: { heroId: null },
     };
       // act
-    deleteById(req, res);
+    Hero.findByIdAndDelete.mockResolvedValueOnce();
+    await deleteById(req, res);
     // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 888, name: 'Maria' }]);
+    expect(res.json).toHaveBeenCalled();
   });
 
-  test('shoud show an error', () => {
+  test('shoud show an error', async () => {
     // arrange
     const res = {
       json: jest.fn(),
@@ -139,10 +141,11 @@ describe('deleteById', () => {
       send: jest.fn(),
     };
     const req = {
-      params: { heroId: 666 },
+      params: { heroId: null },
     };
       // act
-    deleteById(req, res);
+    Hero.findByIdAndDelete.mockRejectedValueOnce();
+    await deleteById(req, res);
     // assert
     expect(res.status).toHaveBeenCalledWith(404);
   });

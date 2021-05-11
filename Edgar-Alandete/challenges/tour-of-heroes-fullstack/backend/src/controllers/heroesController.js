@@ -41,6 +41,7 @@ function heroesController() {
       res.status(204);
       res.json();
     } catch (error) {
+      res.status(404);
       debug(error);
     }
   }
