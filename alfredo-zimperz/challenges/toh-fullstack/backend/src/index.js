@@ -3,6 +3,8 @@ const cors = require('cors');
 const chalk = require('chalk');
 const debug = require('debug')('server');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 const server = express();
 
