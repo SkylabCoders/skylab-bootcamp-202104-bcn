@@ -24,7 +24,7 @@ function heroesController(heroes) {
   function modifyHeroById(req, res) {
     const { heroId } = req.params;
     const heroDetails = req.body;
-    heroes = heroes.map((hero) => {
+    const myHeroes = heroes.map((hero) => {
       if (hero.id === +heroId) {
         return {
           ...hero,
@@ -33,7 +33,7 @@ function heroesController(heroes) {
       }
       return hero;
     });
-    res.json(heroes);
+    res.json(myHeroes);
   }
 
   return {

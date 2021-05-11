@@ -14,7 +14,7 @@ function Dashboard({ heroes, dispatch }) {
     <>
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
-        {heroes.map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
+        {heroes.map((hero) => <Link to={`/detail/${hero.id}`} key={hero.id}>{hero.name}</Link>)}
       </div>
     </>
   );

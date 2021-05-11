@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
+import { deleteHero, getHeroById, updateHero } from '../../redux/actions/actionCreators';
 import './HeroDetail.css';
 
 function HeroDetail({ selectedHero, dispatch }) {
@@ -25,6 +25,10 @@ function HeroDetail({ selectedHero, dispatch }) {
 
   function save() {
     dispatch(updateHero({ id: selectedHero.id, name: heroName }));
+  }
+
+  function deleteHeroById() {
+    dispatch(deleteHero(heroId));
   }
 
   return (
@@ -51,8 +55,9 @@ function HeroDetail({ selectedHero, dispatch }) {
               />
             </label>
           </div>
-          <button type="button">go back</button>
-          <button onClick={save} type="button">save</button>
+          <button type="button">Go back</button>
+          <button onClick={save} type="button">Save</button>
+          <button onClick={deleteHeroById} type="button">Delete</button>
         </div>
       )
       : (
