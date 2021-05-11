@@ -1,4 +1,4 @@
-import HEROES from '../../Constants/heroes-mock';
+import HEROES from '../../../../../backend/toh-rest-api/src/heroes';
 import actionTypes from '../actions/actionTypes';
 
 function heroesReducer(heroes = [], action) {
