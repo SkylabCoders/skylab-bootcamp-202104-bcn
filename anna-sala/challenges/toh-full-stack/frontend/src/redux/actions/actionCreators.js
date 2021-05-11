@@ -52,7 +52,6 @@ export function updateHero(hero) {
 export function getHeroById(heroId) {
   // const hero = HEROES.find((current) => current.id === +heroId);
   return async (dispatch) => {
-    debugger;
     const { data } = await axios(`${url}/${heroId}`);
     dispatch({
       type: actionTypes.LOAD_HERO,
