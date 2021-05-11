@@ -28,15 +28,16 @@ describe('getAll', () => {
     expect(res.json).toHaveBeenCalledWith([{ name: 'Pepe' }]);
   });
 
-  test('shoud return status 200', () => {
+  test('shoud return status 200', async () => {
     // arrange
     const res = {
       json: jest.fn(),
       status: jest.fn()
     };
 
+    Hero.find.mockResolvedValueOnce();
     // act
-    getAll(null, res);
+    await getAll(null, res);
 
     // assert
     expect(res.status).toHaveBeenCalledWith(200);
@@ -49,7 +50,6 @@ describe('createOne', () => {
     const res = {
       json: jest.fn(),
       status: jest.fn()
-
     };
     const req = {
       body: {
@@ -57,15 +57,12 @@ describe('createOne', () => {
         name: 'Dr Caca'
       }
     };
-    Hero.mockReturnValueOnce({
-      name: 'hero name',
-      save: jest.fn()
-    });
+    Hero.mockReturnValueOnce({ save: jest.fn() });
     // act
     await createOne(req, res);
 
     // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 14, name: 'Ramon' }, { id: 15, name: 'Dr Caca' }]);
+    expect(res.json).toHaveBeenCalledWith({ id: 15, name: 'Dr Caca', save: jest.fn() });
   });
 
   test('shoud call debug with an error', async () => {
@@ -90,16 +87,18 @@ describe('createOne', () => {
 });
 
 describe('getById', () => {
-  test('shoud get a hero by Id', () => {
+  test('shoud get a hero by Id', async () => {
     // arrange
     const res = {
       json: jest.fn(),
-      status: jest.fn()
+      status: jest.fn(),
+      send: jest.fn()
     };
     const req = { params: { heroId: 5 } };
 
     // act
-    getById(req, res);
+    Hero.findById.mockResolvedValueOnce({ id: 5, name: 'Cacho' });
+    await getById(req, res);
 
     // assert
     expect(res.json).toHaveBeenCalledWith({ id: 5, name: 'Cacho' });
@@ -136,24 +135,25 @@ describe('updateById', () => {
 
     // act
     // const { updateById } = heroesController([{ id: 5, name: 'Cacho' }]); se puede hacer destructuring directamente cuando se importa, por eso no hace falta hacerlo aca
-
+    Hero.findByIdAndUpdate.mockResolvedValueOnce([{ id: 5, name: 'Dr Caca' }]);
     await updateById(req, res);
 
     // assert
     expect(res.json).toHaveBeenCalledWith([{ id: 5, name: 'Dr Caca' }]);
   });
 
-  test('shoud call res.send', () => {
+  test('shoud call res.send', async () => {
     // arrange
     const res = {
       json: jest.fn(),
       status: jest.fn(),
-      end: jest.fn()
+      send: jest.fn()
     };
     const req = { params: { heroId: 15 } };
 
     // act
-    updateById(req, res);
+    Hero.findByIdAndUpdate.mockRejectedValueOnce('error');
+    await updateById(req, res);
 
     // assert
     expect(res.send).toHaveBeenCalledWith('error');
@@ -174,11 +174,13 @@ describe('deleteById', () => {
     };
 
     // act
+    Hero.findByIdAndDelete.mockResolvedValueOnce({});
     await deleteById(req, res);
 
     // assert
-    expect(res.json).toHaveBeenCalledWith();
+    expect(res.json).toHaveBeenCalledWith({});
   });
+
   test('shoud reject as res.status 404', async () => {
     // arrange
     const res = {
