@@ -3,11 +3,7 @@ import actionTypes from '../actions/actionTypes';
 function heroesReducer(heroes = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_HEROES:
-      return action.heroes;
-
     case actionTypes.DELETE_HERO:
-      return action.heroes;
-
     case actionTypes.ADD_HERO:
       return action.heroes;
 
