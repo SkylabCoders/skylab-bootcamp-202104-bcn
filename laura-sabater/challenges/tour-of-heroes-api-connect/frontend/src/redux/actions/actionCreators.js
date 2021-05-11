@@ -55,9 +55,9 @@ export function updateHero(hero) {
   };
 }
 
-export function loadHero(hero) {
+export function loadHero(heroId) {
   return async (dispatch) => {
-    const { data } = await axios(`${url}/${hero.id}`);
+    const { data } = await axios(`${url}/${heroId}`);
     dispatch({
       type: actionTypes.LOAD_HERO,
       hero: data,
