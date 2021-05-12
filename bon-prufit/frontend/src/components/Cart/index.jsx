@@ -14,9 +14,13 @@ function Cart({ products, dispatch }) {
   }
 
   function totalPrice(productsOnCart) {
-    const prices = productsOnCart.map(((product) => product.cost));
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    return prices.reduce(reducer);
+    let result = 0;
+    if (productsOnCart.length) {
+      const prices = productsOnCart.map(((product) => product.cost));
+      result = (accumulator, currentValue) => accumulator + currentValue;
+      result = prices.reduce(result);
+    }
+    return result;
   }
 
   return (
