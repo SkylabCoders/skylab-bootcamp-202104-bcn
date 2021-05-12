@@ -2,7 +2,6 @@ import axios from 'axios';
 import actionTypes from './actionTypes';
 
 const productsUrl = 'http://localhost:2021/products';
-const cartsUrl = 'http://localhost:2021/carts';
 
 export function loadProducts() {
   return async (dispatch) => {
