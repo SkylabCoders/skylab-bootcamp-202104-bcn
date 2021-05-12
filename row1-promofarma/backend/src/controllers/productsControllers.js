@@ -22,10 +22,10 @@ function productsController() {
 
   async function getById(req, res) {
     try {
-      const heroById = await Product.findById(
+      const productId = await Product.findById(
         req.params.productId
       );
-      res.json(heroById);
+      res.json(productId);
     } catch (error) {
       debug(error);
       res.status(404);
