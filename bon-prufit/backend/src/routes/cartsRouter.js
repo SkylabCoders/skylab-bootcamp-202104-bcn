@@ -7,12 +7,8 @@ function cartsRouter() {
 
   routes
     .route('/')
-    .get(cartsController.getAll);
-
-  routes
-    .route('/:cartId')
-    .get(cartsController.getById)
-    .delete(cartsController.deleteById);
+    .get(cartsController.getAll)
+    .put(cartsController.update);
 
   return routes;
 }
