@@ -8,11 +8,13 @@ function productsReducer(products = [], action) {
   }
 
   if (action.type === actionTypes.ADD_PRODUCTS) {
-    return newProducts.map(
+    const test = newProducts.map(
       (product) => (product._id === action.product._id
         ? { ...product, ...action.product }
         : product)
     );
+
+    return test;
   }
   return products;
 }
