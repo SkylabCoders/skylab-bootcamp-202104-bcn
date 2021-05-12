@@ -34,5 +34,7 @@ const products = [
     stock: 50,
     price: 21.89,
     product_poster: 'https://statics.promofarma.com/static/promofarma/prod/product_images/mr/Q805E_es_ES_0.jpg'
-  },
-]
+  }
+];
+
+module.exports = products;

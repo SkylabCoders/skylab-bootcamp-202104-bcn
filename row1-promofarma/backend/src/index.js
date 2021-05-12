@@ -4,7 +4,6 @@ const chalk = require('chalk');
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-
 const server = express();
 
 mongoose.connect(

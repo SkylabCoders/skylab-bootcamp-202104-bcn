@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const debug = require('debug')('app:productsController');
 const Product = require('../model/productModel');
 
@@ -48,7 +49,7 @@ function productsController() {
 
   async function deleteById(req, res) {
     try {
-      await Product.findByIdAndDelete(req.params.product._id);
+      await Product.findByIdAndDelete(req.params.product_id);
       res.status(204);
       res.json();
       debug(req.params.product_Id);
