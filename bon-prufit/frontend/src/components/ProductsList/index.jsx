@@ -22,7 +22,7 @@ function ProductsList({ products, dispatch }) {
             <td>
               {product.cost}
             </td>
-            <button type="button" onClick={() => dispatch(addProductToCart(product))}>Añadir ao Carrito</button>
+            <button type="button" onClick={() => dispatch(addProductToCart({ ...product }))}>Añadir al Carrito</button>
           </tr>
         ))
     }
