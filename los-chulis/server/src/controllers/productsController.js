@@ -18,7 +18,48 @@ function productsController() {
       res.send(error);
     }
   }
-  return { getAllProducts, createOne };
+
+  async function getById(req, res) {
+    try {
+      const productById = await Product.findById(
+        req.params.productId,
+      );
+      res.json(productById);
+    } catch (error) {
+      debug(error);
+      res.status(404);
+      res.send(error);
+    }
+  }
+
+  async function updateById(req, res) {
+    try {
+      const updatedProduct = await Product.findByIdAndUpdate(
+        req.params.productId,
+        req.body,
+        { new: true },
+      );
+      res.json(updatedProduct);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
+  }
+
+  async function deleteById(req, res) {
+    try {
+      await Product.findByIdAndDelete(req.params.productId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
+  }
+
+  return {
+    getAllProducts, createOne, getById, updateById, deleteById,
+  };
 }
 
 module.exports = productsController;
