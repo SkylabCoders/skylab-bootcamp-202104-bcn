@@ -5,7 +5,6 @@ const chalk = require('chalk');
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-
 const server = express();
 try{
   mongoose.connect(
@@ -18,7 +17,7 @@ try{
   );
 }catch (e){
   debug('error');
-}
+};
 
 
 server.use(cors());
@@ -29,4 +28,5 @@ const productsRouter = require('./routes/productsRouter');
 server.use('/products', productsRouter);
 
 server.listen('2022',
+  // eslint-disable-next-line no-console
   () => console.log(`Server is running in ${chalk.yellow('localhost:2022')}`));
