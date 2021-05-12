@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { addProductToCart } from '../../redux/actions/actionCreators';
-import PRODUCTS from '../../constants/products.mock';
+import { addProductToCart, loadProducts } from '../../redux/actions/actionCreators';
+// import PRODUCTS from '../../constants/products.mock';
 
-function ProductsList(dispatch) {
+function ProductsList({ products, dispatch }) {
+  useEffect(() => {
+    if (!products) dispatch(loadProducts);
+  }, []);
+
   return (
     <>
 
       <h1>Lista de Produtos</h1>
       {
-        PRODUCTS.map((product) => (
+        products?.map((product) => (
           <tr>
             <td>
               {product.title}
@@ -26,14 +30,14 @@ function ProductsList(dispatch) {
   );
 }
 
-ProductsList.protoTypes = {
-  products: PropTypes.shape([{}]).isRequired,
+ProductsList.propTypes = {
+  products: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
-function mapStateToProps(store) {
+function mapStateToProps({ products }) {
   return {
-    products: store.products
+    products
   };
 }
 
