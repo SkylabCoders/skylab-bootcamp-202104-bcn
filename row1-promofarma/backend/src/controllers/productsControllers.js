@@ -49,10 +49,10 @@ function productsController() {
 
   async function deleteById(req, res) {
     try {
-      await Product.findByIdAndDelete(req.params.product_id);
+      await Product.findByIdAndDelete(req.params.productId);
       res.status(204);
       res.json();
-      debug(req.params.product_Id);
+      debug(req.params.productId);
     } catch (error) {
       debug(error);
       res.send(error);
