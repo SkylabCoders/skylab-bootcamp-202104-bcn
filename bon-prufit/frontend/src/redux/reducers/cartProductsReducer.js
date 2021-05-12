@@ -1,12 +1,13 @@
+/* eslint-disable no-underscore-dangle */
 import actionTypes from '../actions/actionTypes';
 
 function cartProductsReducer(cart = [], action) {
   switch (action.type) {
-    // case actionTypes.LOAD_PRODUCTS:
-    //   return action.cart;
+    case actionTypes.LOAD_CART:
+      return cart;
 
     case actionTypes.DELETE_PRODUCT:
-      return cart.filter((product) => product.id !== action.productId);
+      return cart.filter((product) => product._id !== action.productId);
 
     case actionTypes.ADD_PRODUCT:
       return [

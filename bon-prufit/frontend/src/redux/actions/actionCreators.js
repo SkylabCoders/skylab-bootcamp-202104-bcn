@@ -19,6 +19,12 @@ export function loadProducts() {
   };
 }
 
+export function loadCart() {
+  return ({
+    type: actionTypes.LOAD_CART
+  });
+}
+
 export function addProductToCart(product) {
   return ({
     type: actionTypes.ADD_PRODUCT,
@@ -27,11 +33,8 @@ export function addProductToCart(product) {
 }
 
 export function deleteProductFromCart(productId) {
-  return async (dispatch) => {
-    await axios.delete(`${'hola'}/${productId}`);
-    dispatch({
-      type: actionTypes.DELETE_PRODUCT,
-      productId
-    });
-  };
+  return ({
+    type: actionTypes.DELETE_PRODUCT,
+    productId
+  });
 }
