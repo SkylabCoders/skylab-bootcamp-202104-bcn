@@ -10,8 +10,8 @@ mongoose.connect(
   process.env.DDBB_URL,
   {
     useUnifiedTopology: true,
-    useNewUrlParser: true,
-  },
+    useNewUrlParser: true
+  }
 );
 
 server.use(cors());
@@ -22,4 +22,5 @@ const productsRouter = require('./routes/productsRouter');
 server.use('/products', productsRouter);
 
 server.listen('2022',
+  // eslint-disable-next-line no-console
   () => console.log(`Server is running in ${chalk.yellow('localhost:2022')}`));
