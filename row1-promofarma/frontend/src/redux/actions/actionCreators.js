@@ -2,7 +2,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://192.168.0.41:2022/products';
+const url = 'http://localhost:2022/products';
 
 export function addProducts(product) {
   return {

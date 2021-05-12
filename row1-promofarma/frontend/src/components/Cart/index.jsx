@@ -12,7 +12,7 @@ function Cart({ dispatch, cart }) {
       <h1>This is the cart</h1>
       {
       cart.map((product) => (
-        <li>{product.name}</li>
+        <li>{product.productName}</li>
       ))
         }
       <button type="button" onClick={() => handleDeleteAll(cart)}>DELETE ALL</button>
