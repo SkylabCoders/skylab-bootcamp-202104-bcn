@@ -1,26 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { loadProducts } from '../../redux/actions/actionCreators';
 
-function ProductList({ products }) {
+function ProductList({ products, dispatch }) {
+  useEffect(() => {
+    if (!products?.length) dispatch(loadProducts());
+  }, []);
+
   return (
     <div>
       <h3>PRODUCTS</h3>
-
-      {
-        products.map((product) => product.productName)
+      <ul>
+        {
+        products?.map((product) => <li>{ product?.productName}</li>)
       }
+      </ul>
 
     </div>
   );
 }
 
 ProductList.propTypes = {
-  products: PropTypes.shape([]).isRequired
+  products: PropTypes.shape([]).isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps({ products }) {
-  return products;
+  return { products };
 }
 
 export default connect(mapStateToProps)(ProductList);
