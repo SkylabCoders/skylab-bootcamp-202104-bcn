@@ -23,7 +23,7 @@ function productsController() {
   async function getById(req, res) {
     try {
       const heroById = await Product.findById(
-        req.params.product_Id
+        req.params.productId
       );
       res.json(heroById);
     } catch (error) {
@@ -36,7 +36,7 @@ function productsController() {
   async function updateById(req, res) {
     try {
       const updatedHero = await Product.findByIdAndUpdate(
-        req.params.product_Id,
+        req.params.productId,
         req.body,
         { new: true }
       );
