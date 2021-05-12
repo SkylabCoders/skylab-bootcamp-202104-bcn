@@ -39,11 +39,21 @@ export function deleteItem(itemId) {
   };
 }
 
-export function updateHero(item) {
+export function updateItem(item) {
   return async (dispatch) => {
     const { data } = await axios.put(`${url}/${item.id}`, item);
     dispatch({
       type: actionTypes.UPDATE_ITEM,
+      item: data,
+    });
+  };
+}
+
+export function loadItemById(itemId) {
+  return async (dispatch) => {
+    const { data } = await axios(`${url}/${itemId}`);
+    dispatch({
+      type: actionTypes.LOAD_ITEM,
       item: data,
     });
   };
