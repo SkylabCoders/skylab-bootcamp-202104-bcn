@@ -27,10 +27,10 @@ export function loadProducts() {
   };
 }
 
-export function deleteProduct(productId) {
+export function deleteProduct(product) {
   return {
     type: actionTypes.DELETE_PRODUCT,
-    data: productId
+    product
   };
 }
 
