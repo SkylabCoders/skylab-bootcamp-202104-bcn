@@ -4,7 +4,7 @@ const products = [
   { brand: 'cerave', productType: 'crema', _id: 3 },
   { brand: 'xhekpon', productType: 'crema', _id: 4 },
   { brand: 'piz buin', productType: 'jabón', _id: 5 },
-  { brand: 'la justicia', productType: 'colágeno', _id: 6 },
+  { brand: 'la justicia', productType: 'colágeno', _id: 6 }
 ];
 
 module.exports = products;

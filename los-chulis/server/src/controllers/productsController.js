@@ -24,7 +24,7 @@ function productsController() {
       const updatedProduct = await Product.findByIdAndUpdate(
         req.params.productId,
         req.body,
-        { new: true },
+        { new: true }
       );
       res.json(updatedProduct);
     } catch (error) {
@@ -34,7 +34,7 @@ function productsController() {
   }
 
   return {
-    getAllProducts, createOne, updateById,
+    getAllProducts, createOne, updateById
   };
 }
 

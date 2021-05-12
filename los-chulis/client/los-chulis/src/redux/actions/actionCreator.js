@@ -21,11 +21,15 @@ export function loadProducts() {
 }
 
 export function addToCart(product) {
-  return async (dispatch) => {
-    const { data } = await axios.post(url, product);
-    dispatch({
-      type: actionTypes.ADD_PRODUCTS_TO_CART,
-      product: data
-    });
+  return {
+    type: actionTypes.ADD_PRODUCTS_TO_CART,
+    product
   };
+  // return async (dispatch) => {
+  //   const { data } = await axios.post(url, product);
+  //   dispatch({
+  //     type: actionTypes.ADD_PRODUCTS_TO_CART,
+  //     product: data
+  //   });
+  // };
 }

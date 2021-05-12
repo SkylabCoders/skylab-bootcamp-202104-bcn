@@ -18,8 +18,8 @@ mongoose.connect(
   process.env.DDBB_URL,
   {
     useUnifiedTopology: true,
-    useNewUrlParser: true,
-  },
+    useNewUrlParser: true
+  }
 );
 
 const productsRouter = require('./routes/productsRouter');
