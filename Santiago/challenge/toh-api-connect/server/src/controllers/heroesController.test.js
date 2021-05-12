@@ -9,24 +9,6 @@ const Hero = require('../model/heroModel');
 
 jest.mock('../model/heroModel');
 
-describe('createOne', () => {
-  test('should send error', async () => {
-    const req = {
-      body: {}
-    };
-
-    const res = {
-      json: jest.fn(),
-      send: jest.fn()
-    };
-
-    Hero.mockRejectedValueOnce('error');
-    await createOne(req, res);
-
-    expect(res.send).toHaveBeenCalledWith('error');
-  });
-});
-
 describe('getAll', () => {
   test('shoud get all heroes', async () => {
     const res = {
@@ -152,6 +134,57 @@ describe('deleteById', () => {
 
     await deleteById(req, res);
 
+    expect(res.send).toHaveBeenCalledWith('error');
+  });
+});
+
+describe('createOne', () => {
+  class MockHero {
+    constructor(name) {
+      this.name = name;
+    }
+
+    // eslint-disable-next-line class-methods-use-this
+    save() {}
+  }
+
+  test('should call json', async () => {
+    // arrange
+    const req = {
+      body: null
+    };
+    const res = {
+      json: jest.fn(),
+      send: jest.fn()
+    };
+
+    const newHero = new MockHero('hero name');
+
+    Hero.mockReturnValueOnce(newHero);
+
+    // act
+    await createOne(req, res);
+    // assert
+    expect(res.json).toHaveBeenCalledWith({ name: 'hero name' });
+  });
+
+  test('should call send', async () => {
+    // arrange
+    const req = {
+      body: null
+    };
+    const res = {
+      json: jest.fn(),
+      send: jest.fn()
+    };
+
+    Hero.mockReturnValueOnce({
+      save: jest.fn().mockRejectedValueOnce('error')
+    });
+
+    // act
+    await createOne(req, res);
+    // assert
     expect(res.send).toHaveBeenCalledWith('error');
   });
 });
