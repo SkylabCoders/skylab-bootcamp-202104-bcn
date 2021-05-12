@@ -18,7 +18,24 @@ function productsController() {
       res.send(error);
     }
   }
-  return { getAllProducts, createOne };
+
+  async function updateById(req, res) {
+    try {
+      const updatedProduct = await Product.findByIdAndUpdate(
+        req.params.productId,
+        req.body,
+        { new: true },
+      );
+      res.json(updatedProduct);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
+  }
+
+  return {
+    getAllProducts, createOne, updateById,
+  };
 }
 
 module.exports = productsController;
