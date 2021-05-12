@@ -1,28 +1,12 @@
-import React from 'react';
-<<<<<<< HEAD
-import itemsCart from '../constants/items';
-
-function ListItems() {
-  // function addToCart(itemId){
-  //     dispatch(addItem(itemId));
-  // }
-  return (
-    itemsCart.map((item) => (
-      <>
-        <p>{item.name}</p>
-        <p>{`Precio: ${item.price}`}</p>
-        <p>{`Stock: ${item.stock}`}</p>
-        <button type="button" onClick={() => console.log((item.id))}>Add to Cart</button>
-      </>
-    ))
-  );
-}
-export default ListItems;
-=======
+import React, {useEffect} from 'react';
+import {connect} from 'react-redux'
+import {loadItemById, loadItems} from '../redux/actions/actionCreators'
 
 const ListItems = ({items, dispatch}) => {
     
-  
+    useEffect(() => {
+       if (!items.length)dispatch(loadItems())
+    }, [])
     function addToCart(itemId){
         dispatch(loadItemById(itemId))
     }
@@ -48,4 +32,3 @@ function mapStateToProps(store) {
   }
   
   export default connect(mapStateToProps)(ListItems);
->>>>>>> challenge/team099
