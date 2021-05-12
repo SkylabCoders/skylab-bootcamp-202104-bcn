@@ -14,7 +14,7 @@ export function loadHeroes() {
       });
     } catch (error) {
       dispatch({
-        type: 'LOAD_HEROES_ERROR',
+        type: actionTypes.LOAD_HEROES_ERROR,
       });
     }
   };
@@ -23,8 +23,6 @@ export function loadHeroes() {
 export function addHero(hero) {
   return async (dispatch) => {
     const { data } = await axios.post(url, hero);
-    // eslint-disable-next-line no-debugger
-    debugger;
     dispatch({
       type: actionTypes.ADD_HERO,
       hero: data,

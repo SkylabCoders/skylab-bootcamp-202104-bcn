@@ -5,4 +5,5 @@ export default {
   UPDATE_HERO: 'UPDATE_HERO',
 
   LOAD_HERO: 'LOAD_HERO',
+  LOAD_HEROES_ERROR: 'LOAD_HEROES_ERROR',
 };

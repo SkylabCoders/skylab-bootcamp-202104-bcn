@@ -1,13 +1,10 @@
 import actionTypes from '../actions/actionTypes';
 
 function selectedHeroReducer(heroes = {}, action) {
-  switch (action.type) {
-    case actionTypes.LOAD_HERO:
-      return action.hero;
-
-    default:
-      return heroes;
+  if (action.type === actionTypes.LOAD_HERO) {
+    return action.hero;
   }
+  return heroes;
 }
 
 export default selectedHeroReducer;
