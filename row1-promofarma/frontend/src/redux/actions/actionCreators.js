@@ -26,14 +26,14 @@ export function loadProducts() {
   };
 }
 
-// export function deleteProduct() {
-//   return {
-//     type: actionTypes.DELETE_PRODUCT
-//   };
-// }
+export function deleteProduct() {
+  return {
+    type: actionTypes.DELETE_PRODUCT
+  };
+}
 
-// export function deleteAll() {
-//   return {
-//     type: actionTypes.DELETE_ALL
-//   };
-// }
+export function deleteAll() {
+  return {
+    type: actionTypes.DELETE_ALL
+  };
+}
