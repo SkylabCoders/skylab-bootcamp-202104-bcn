@@ -21,8 +21,6 @@ try{
 }
 
 
-
-
 server.use(cors());
 server.use(express.json());
 

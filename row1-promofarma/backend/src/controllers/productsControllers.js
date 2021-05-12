@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const debug = require('debug')('app:productsController');
 const Product = require('../model/productModel');
 
@@ -21,10 +22,10 @@ function productsController() {
 
   async function getById(req, res) {
     try {
-      const heroById = await Product.findById(
-        req.params.productId,
+      const productId = await Product.findById(
+        req.params.productId
       );
-      res.json(heroById);
+      res.json(productId);
     } catch (error) {
       debug(error);
       res.status(404);
@@ -37,7 +38,7 @@ function productsController() {
       const updatedHero = await Product.findByIdAndUpdate(
         req.params.productId,
         req.body,
-        { new: true },
+        { new: true }
       );
       res.json(updatedHero);
     } catch (error) {
@@ -48,10 +49,10 @@ function productsController() {
 
   async function deleteById(req, res) {
     try {
-      const deleteProducts = await Product.findByIdAndDelete(req.params.productId);
-      res.status(200);
-      res.json(deleteProducts);
-      debug(req.params._id);
+      await Product.findByIdAndDelete(req.params.productId);
+      res.status(204);
+      res.json();
+      debug(req.params.productId);
     } catch (error) {
       debug(error);
       res.send(error);
@@ -63,7 +64,7 @@ function productsController() {
     createOne,
     getById,
     updateById,
-    deleteById,
+    deleteById
   };
 }
 
