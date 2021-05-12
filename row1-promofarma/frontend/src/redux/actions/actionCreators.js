@@ -1,14 +1,8 @@
+/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
 const url = 'http://192.168.0.40:2022/products';
-
-export function addProducts(newProduct) {
-  return {
-    type: actionTypes.ADD_PRODUCTS,
-    newProduct
-  };
-}
 
 export function loadProducts() {
   return async (dispatch) => {
@@ -26,6 +20,13 @@ export function loadProducts() {
   };
 }
 
+export function addProducts(newProduct) {
+  return {
+    type: actionTypes.ADD_PRODUCTS,
+    newProduct
+  };
+}
+
 export function deleteProduct(productId) {
   return {
     type: actionTypes.DELETE_PRODUCT,
@@ -34,6 +35,7 @@ export function deleteProduct(productId) {
 }
 
 export function deleteAll(products) {
+  debugger;
   return {
     type: actionTypes.DELETE_ALL,
     data: products

@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 import actionTypes from '../actions/actionTypes';
 
 function cartReducer(products = [], action) {
@@ -5,11 +6,12 @@ function cartReducer(products = [], action) {
     case actionTypes.ADD_PRODUCTS:
       return action.data;
 
-    case action.DELETE_PRODUCT:
+    case actionTypes.DELETE_PRODUCT:
       return action.data;
 
-    case action.DELETE_ALL:
-      return action.data;
+    case actionTypes.DELETE_ALL:
+      debugger;
+      return [];
 
     default:
       return products;
