@@ -1,4 +1,3 @@
-const debug = require('debug')('app:productsController');
 const Product = require('../model/productModel');
 
 function productsController() {
@@ -10,13 +9,13 @@ function productsController() {
 
   async function createOne(req, res) {
     const newProduct = new Product(req.body);
-    // newHero.id = ((Hero[Hero.length - 1].id) + 1);
     try {
       await newProduct.save();
       res.status(201);
       res.json(newProduct);
     } catch (error) {
-      debug(error);
+      res.status(404);
+      res.send(error);
     }
   }
 

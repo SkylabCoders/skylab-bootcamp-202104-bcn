@@ -19,6 +19,13 @@ describe('getAll', () => {
     Product.find.mockResolvedValue();
 
     await getAll(null, res);
+
     expect(res.json).toHaveBeenCalled();
+  });
+});
+
+describe('createOne', () => {
+  test('should create one product', async () => {
+
   });
 });
