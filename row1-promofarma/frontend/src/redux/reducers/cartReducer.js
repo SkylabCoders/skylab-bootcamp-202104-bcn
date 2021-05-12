@@ -5,9 +5,9 @@ function cartReducer(products = [], action) {
   const newProducts = [...products];
   switch (action.type) {
     case actionTypes.DELETE_PRODUCT:
-      return newProducts.splice(newProducts.findIndex((product) => (
-        product === action.product._id), 1));
-
+      newProducts.splice(newProducts.findIndex((product) => (
+        product._id === action.product._id), 1));
+      return newProducts;
     case actionTypes.ADD_PRODUCTS:
       return [...products, action.product];
     case actionTypes.DELETE_ALL:

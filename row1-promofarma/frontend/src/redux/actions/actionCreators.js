@@ -27,10 +27,11 @@ export function loadProducts() {
   };
 }
 
-export function deleteProduct(product) {
+export function deleteProduct(product, index) {
+  const productToDelete = { ...product, index };
   return {
     type: actionTypes.DELETE_PRODUCT,
-    product
+    product: productToDelete
   };
 }
 
