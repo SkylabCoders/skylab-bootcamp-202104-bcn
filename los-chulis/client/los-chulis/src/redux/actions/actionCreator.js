@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -25,13 +26,6 @@ export function addToCart(product) {
     type: actionTypes.ADD_PRODUCTS_TO_CART,
     product
   };
-  // return async (dispatch) => {
-  //   const { data } = await axios.post(url, product);
-  //   dispatch({
-  //     type: actionTypes.ADD_PRODUCTS_TO_CART,
-  //     product: data
-  //   });
-  // };
 }
 
 export function loadCart() {
@@ -44,5 +38,14 @@ export function deleteFromCart(product) {
   return {
     type: actionTypes.DELETE_CART_PRODUCT,
     product
+  };
+}
+
+export function updateCart(product) {
+  return async (dispatch) => {
+    await axios.put(`${url}/${product._id}`, product);
+    dispatch({
+      type: actionTypes.UPDATE_PRODUCTS
+    });
   };
 }

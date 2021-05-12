@@ -1,8 +1,9 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-debugger */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadCart, deleteFromCart } from '../../redux/actions/actionCreator';
+import { loadCart, deleteFromCart, updateCart } from '../../redux/actions/actionCreator';
 
 function ShoppingCart({ cartList, dispatch }) {
   useEffect(() => {
@@ -17,6 +18,12 @@ function ShoppingCart({ cartList, dispatch }) {
   function cartListTotalCost() {
     const total = cartList.map((x) => x.price);
     return total.reduce(getTotalCost);
+  }
+  function buyCartList() {
+    cartList.forEach((product) => {
+      product.stock -= 1;
+      dispatch(updateCart(product));
+    });
   }
 
   const result = cartList.filter((item, index) => cartList.indexOf(item) === index);
@@ -41,6 +48,7 @@ function ShoppingCart({ cartList, dispatch }) {
         {' '}
         {cartList.length ? cartListTotalCost() : 0}
       </div>
+      <button type="button" onClick={buyCartList}>COMPRAR</button>
     </>
   );
 }
