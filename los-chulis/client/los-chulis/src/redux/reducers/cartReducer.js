@@ -8,6 +8,9 @@ function cartReducer(cartList = [], action) {
     case actionTypes.ADD_PRODUCTS_TO_CART:
       return [...cartList, action.product];
 
+    case actionTypes.DELETE_CART_PRODUCT:
+      cartList.splice(cartList.indexOf(action.product), 1);
+      return cartList;
     default:
       return cartList;
   }
