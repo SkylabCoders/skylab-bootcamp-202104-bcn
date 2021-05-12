@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const express = require('express');
 const cors = require('cors');
 const chalk = require('chalk');
@@ -16,15 +15,18 @@ const server = express();
 //   }
 // );
 
+// ------***otra forma de hacer connect, de esta
+// manera me avisa cuando la conexion es correcta por consola ----****/
+
 try {
   // Connect to the MongoDB cluster
   mongoose.connect(
     process.env.DDBB_URL,
     { useNewUrlParser: true, useUnifiedTopology: true },
-    () => console.log(' Mongoose is connected')
+    () => debug(' Mongoose is connected')
   );
 } catch (e) {
-  console.log('could not connect');
+  debug('could not connect');
 }
 
 server.use(cors());
