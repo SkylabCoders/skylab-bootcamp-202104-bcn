@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const server = express();
+const port = process.env.PORT || 2021;
 
 mongoose.connect(
   process.env.DDBB_URL,
@@ -24,5 +25,5 @@ const heroesRouter = require('./routes/heroesRouter');
 
 server.use('/heroes', heroesRouter);
 
-server.listen('2021',
-  () => debug(`Server is running in ${chalk.yellow('localhost:2021')}`));
+server.listen(port,
+  () => debug(`Server is running in ${chalk.yellow(`localhost:${port}`)}`));
