@@ -2,21 +2,25 @@
 import actionTypes from '../actions/actionTypes';
 
 function cartProductsReducer(cart = [], action) {
+  let updatedCart = [...cart];
+
   switch (action.type) {
     case actionTypes.LOAD_CART:
-      return cart;
-
+      updatedCart = cart;
+      break;
     case actionTypes.DELETE_PRODUCT:
-      return cart.filter((product) => product._id !== action.productId);
-
+      updatedCart = cart.filter((product) => product._id !== action.productId);
+      break;
     case actionTypes.ADD_PRODUCT:
-      return [
+      updatedCart = [
         ...cart,
         action.product
       ];
+      break;
     default:
-      return cart;
+      updatedCart = cart;
   }
+  return updatedCart;
 }
 
 export default cartProductsReducer;
