@@ -26,7 +26,7 @@ function HeroesList({ heroes, dispatch }) {
           id="new-hero-name"
           placeholder="New Hero Name"
         />
-        <button type="button" onClick={() => clickAdd()}>ADD</button>
+        <button type="button" onClick={clickAdd}>ADD</button>
       </label>
       <ul className="heroes-menu">
         {heroes.map((hero) => (
@@ -49,9 +49,7 @@ HeroesList.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-function mapStateToProps(store) {
-  return {
-    heroes: store.heroes,
-  };
+function mapStateToProps({ heroes }) {
+  return { heroes };
 }
 export default connect(mapStateToProps)(HeroesList);

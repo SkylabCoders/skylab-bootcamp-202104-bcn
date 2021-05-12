@@ -14,7 +14,7 @@ export function loadHeroes() {
       });
     } catch (error) {
       dispatch({
-        type: 'LOAD_HEROES_ERROR',
+        type: actionTypes.LOAD_HEROES_ERROR,
       });
     }
   };
@@ -51,7 +51,6 @@ export function updateHero(hero) {
 }
 
 export function getHeroById(heroId) {
-  // const hero = HEROES.find((current) => current.id === +heroId);
   return async (dispatch) => {
     const { data } = await axios(`${url}/${heroId}`);
     dispatch({
