@@ -5,17 +5,11 @@ const url = 'http://localhost:2022/';
 
 export function loadItems() {
   return async (dispatch) => {
-    try {
-      const { data } = await axios(url);
-      dispatch({
-        type: actionTypes.LOAD_ITEMS,
-        items: data,
-      });
-    } catch (error) {
-      dispatch({
-        type: 'LOAD_ITEMS_ERROR',
-      });
-    }
+    const { data } = await axios(url);
+    dispatch({
+      type: actionTypes.LOAD_ITEMS,
+      items: data,
+    });
   };
 }
 
@@ -24,7 +18,7 @@ export function addItem(item) {
     const { data } = await axios.post(url, item);
     dispatch({
       type: actionTypes.ADD_ITEM,
-      hero: data,
+      item: data,
     });
   };
 }
