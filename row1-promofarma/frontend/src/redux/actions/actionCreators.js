@@ -1,4 +1,7 @@
+import axios from 'axios';
 import actionTypes from './actionTypes';
+
+const url = 'http://192.168.0.40:2022/products';
 
 export function addProducts(newProduct) {
   return {
@@ -8,19 +11,29 @@ export function addProducts(newProduct) {
 }
 
 export function loadProducts() {
-  return {
-    type: actionTypes.LOAD_PRODUCTS
+  return async (dispatch) => {
+    try {
+      const { data } = await axios(url);
+      dispatch({
+        type: actionTypes.LOAD_PRODUCTS,
+        products: data
+      });
+    } catch (error) {
+      dispatch({
+        type: 'LOAD_PRODUCTS_ERROR'
+      });
+    }
   };
 }
 
-export function deleteProduct() {
-  return {
-    type: actionTypes.DELETE_PRODUCT
-  };
-}
+// export function deleteProduct() {
+//   return {
+//     type: actionTypes.DELETE_PRODUCT
+//   };
+// }
 
-export function deleteAll() {
-  return {
-    type: actionTypes.DELETE_ALL
-  };
-}
+// export function deleteAll() {
+//   return {
+//     type: actionTypes.DELETE_ALL
+//   };
+// }
