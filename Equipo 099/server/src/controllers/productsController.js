@@ -1,16 +1,16 @@
-const Hero = require('../model/heroModel');
+const Product = require('../model/productModel');
 
-const heroesController = () => {
+const productsController = () => {
   async function getAll(req, res) {
-    const heroes = await Hero.find();
-    res.json(heroes);
+    const products = await Product.find();
+    res.json(products);
   }
 
   async function createOne(req, res) {
-    const newHero = Hero(req.body);
+    const newProduct = Product(req.body);
     try {
-      await newHero.save();
-      res.json(newHero);
+      await newProduct.save();
+      res.json(newProduct);
     } catch (error) {
       res.send(error);
     }
@@ -18,8 +18,8 @@ const heroesController = () => {
 
   async function getById(req, res) {
     try {
-      const heroById = await Hero.findById(req.params.heroId);
-      res.json(heroById);
+      const productById = await Product.findById(req.params.productId);
+      res.json(productById);
     } catch (error) {
       res.send(error);
     }
@@ -27,12 +27,12 @@ const heroesController = () => {
 
   async function updateById(req, res) {
     try {
-      const updatedHeroById = await Hero.findByIdAndUpdate(
-        req.params.heroId,
+      const updatedproductById = await Product.findByIdAndUpdate(
+        req.params.productId,
         req.body,
         { new: true },
       );
-      res.json(updatedHeroById);
+      res.json(updatedproductById);
     } catch (error) {
       res.send(error);
     }
@@ -40,7 +40,7 @@ const heroesController = () => {
 
   async function deleteById(req, res) {
     try {
-      await Hero.findOneAndDelete(req.params.heroId);
+      await Product.findOneAndDelete(req.params.productId);
       res.json();
     } catch (error) {
       res.send(error);
@@ -56,4 +56,4 @@ const heroesController = () => {
   };
 };
 
-module.exports = heroesController;
+module.exports = productsController;
