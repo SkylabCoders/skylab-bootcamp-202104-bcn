@@ -10,7 +10,9 @@ function productsRouter() {
     .get(productsController.getAll);
 
   routes
-    .route('/:productId');
+    .route('/:productId/')
+    .put(productsController.addOneToStock)
+    .delete(productsController.removeOneFromStock);
   // .get(productsController.getById);
 
   return routes;
