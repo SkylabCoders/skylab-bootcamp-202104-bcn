@@ -24,8 +24,16 @@ function productsController() {
 
   async function put({ body }, res) {
     try {
-      const updatedProduct = Product.findByIdAndUpdate(body._id, body, { new: true });
-      res.json(updatedProduct);
+      const updatedProducts = await body.map(async (product) => {
+        const updated = await Product.findByIdAndUpdate(
+          product._id,
+          { $inc: { stock: -product.totalItems } },
+          { new: true, useFindAndModify: false },
+        );
+        return updated;
+      });
+
+      res.json(updatedProducts);
     } catch (error) {
       res.status(500);
       res.send(error);
