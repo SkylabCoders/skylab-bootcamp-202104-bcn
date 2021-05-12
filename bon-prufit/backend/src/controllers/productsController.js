@@ -1,26 +1,17 @@
 const debug = require('debug')('server:heroesController');
-// const Product = require('../model/productModel');
-const PRODUCTS = require('../data/products');
+const Product = require('../model/productModel');
 
-function productsController(products = PRODUCTS) {
+function productsController() {
   async function getAll(req, res) {
     debug('enter to function getAll');
     try {
+      const products = await Product.find({});
       res.status(200);
       res.json(products);
     } catch (error) {
       debug(error);
       res.send(error);
     }
-    // debug('enter to function getAll');
-    // try {
-    //   const heroes = await Product.find({});
-    //   res.status(200);
-    //   res.json(heroes);
-    // } catch (error) {
-    //   debug(error);
-    //   res.send(error);
-    // }
   }
 
   return {

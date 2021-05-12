@@ -10,8 +10,8 @@ function productsRouter() {
     .get(productsController.getAll);
 
   routes
-    .route('/:productId')
-    .get(productsController.getById);
+    .route('/:productId');
+  // .get(productsController.getById);
 
   return routes;
 }
