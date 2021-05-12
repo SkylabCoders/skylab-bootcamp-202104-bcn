@@ -1,7 +1,7 @@
 // import axios from 'axios';
 import actionTypes from './actionTypes';
 
-// const url = '';
+// const url = 'http://localhost:2300/products';
 
 function loadProducts() {
   return { type: actionTypes.LOAD_PRODUCT };
