@@ -1,1 +1,3 @@
-.eslintignore
+.eslintcache
+.eslint-release-info.json
+.temp-eslintcache
