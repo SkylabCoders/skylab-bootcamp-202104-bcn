@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import ProductList from './components/Product-list/ProductsList';
 import Cart from './components/Cart/index';
+import ProductList from './components/Product-list';
 
 function App() {
   return (
