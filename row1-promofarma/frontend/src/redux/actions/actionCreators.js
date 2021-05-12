@@ -2,7 +2,7 @@ import actionTypes from './actionTypes';
 
 export function addProducts(newProduct) {
   return {
-    type: actionTypes.ADD_TASK,
+    type: actionTypes.ADD_PRODUCTS,
     newProduct
   };
 }
