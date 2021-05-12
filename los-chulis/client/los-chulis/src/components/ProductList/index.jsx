@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import loadProducts from '../../redux/actions/actionCreator';
+import { loadProducts } from '../../redux/actions/actionCreator';
 
 const ProductList = ({ products, dispatch }) => {
   useEffect(() => {
