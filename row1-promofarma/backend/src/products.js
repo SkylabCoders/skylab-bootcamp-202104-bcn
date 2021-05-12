@@ -15,6 +15,7 @@ const products = [
   },
   {
     _id: 3,
+
     productName: 'Caudalie Vinoperfect sérum resplandor antimanchas 30ml',
     stock: 150,
     price: 40.66,
