@@ -48,7 +48,7 @@ function productsController() {
 
   async function deleteById(req, res) {
     try {
-      await Product.findByIdAndDelete(req.params.product_Id);
+      await Product.findByIdAndDelete(req.params.product._id);
       res.status(204);
       res.json();
       debug(req.params.product_Id);
