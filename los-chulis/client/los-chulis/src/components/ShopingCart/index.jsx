@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadCart } from '../../redux/actions/actionCreator';
+import { loadCart, deleteFromCart } from '../../redux/actions/actionCreator';
 
 function ShoppingCart({ cartList, dispatch }) {
   useEffect(() => {
@@ -31,7 +31,8 @@ function ShoppingCart({ cartList, dispatch }) {
           {product.brand}
           {': '}
           {product.price}
-          {' €'}
+          {' €  '}
+          <button type="button" onClick={() => dispatch(deleteFromCart(product))}>-</button>
         </li>
       ))}
       </ul>

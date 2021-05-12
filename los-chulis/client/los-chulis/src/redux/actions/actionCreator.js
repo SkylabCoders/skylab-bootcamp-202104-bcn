@@ -39,3 +39,10 @@ export function loadCart() {
     type: actionTypes.LOAD_CART_PRODUCT
   };
 }
+
+export function deleteFromCart(product) {
+  return {
+    type: actionTypes.DELETE_CART_PRODUCT,
+    product
+  };
+}
