@@ -6,15 +6,6 @@ function productsReducer( products = [], action){
 
         case actionTypes.LOAD_PRODUCTS:
             return action.products;
-
-        case actionTypes.DELETE_PRODUCT:
-            return products.filter((product) => product.id !== action.productId);
-        
-        case actionTypes.ADD_PRODUCT:
-            return [
-                ...products,
-                action.product
-            ];
         
         case actionTypes.UPDATE_PRODUCT:
             return products.map(
@@ -30,3 +21,5 @@ function productsReducer( products = [], action){
             return products;
     }
 }
+
+export default productsReducer;
