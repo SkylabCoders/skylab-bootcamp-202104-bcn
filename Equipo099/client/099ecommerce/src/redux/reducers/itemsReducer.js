@@ -5,11 +5,6 @@ function itemsReducer(items = [], action) {
     case actionTypes.LOAD_ITEMS:
       return action.items;
 
-    case actionTypes.DELETE_ITEM:
-      return action.items;
-
-
-
     case actionTypes.UPDATE_ITEM:
       return action.items;
 
