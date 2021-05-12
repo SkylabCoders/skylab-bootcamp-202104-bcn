@@ -2,7 +2,13 @@ const Product = require('../models/productModel');
 
 function productsController() {
   async function get(req, res) {
-    res.send('it works');
+    try {
+      const products = await Product.find();
+      res.json(products);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   }
 
   async function post(req, res) {
@@ -16,8 +22,14 @@ function productsController() {
     }
   }
 
-  async function put(req, res) {
-    res.send('it works');
+  async function put({ body }, res) {
+    try {
+      const updatedProduct = Product.findByIdAndUpdate(body._id, body, { new: true });
+      res.json(updatedProduct);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   }
 
   return {
