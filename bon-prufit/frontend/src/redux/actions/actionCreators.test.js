@@ -1,28 +1,45 @@
 import axios from 'axios';
-import loadProducts, { loadHeroes, loadHeroesAxios } from './actionCreators';
-
-import actionTypes from './actionTypes';
+import {
+  loadCart, loadProducts, addProductToCart, deleteProductFromCart
+} from './actionCreators';
 
 jest.mock('axios');
 
 describe('loadProducts', () => {
   test('should dispatch LOAD_PRODUCTS', async () => {
     const dispatch = jest.fn();
-    axios.mockResolvedValue({ products });
+    const data = [{ product: 'solar' }];
+    axios.mockResolvedValue(data);
     await loadProducts()(dispatch);
-    expect(dispatch).toHaveBeenCalledOnce();
+    expect(dispatch).toHaveBeenCalledWith({ type: 'LOAD_PRODUCTS' });
   });
 });
 
-// describe('loadHeroesAxios', () => {
-//   test('should dispatch LOAD_HEROES', async () => {
-//     axios.mockResolvedValue({ data: ['Skylab mola moltisim'] });
-//     const dispatch = jest.fn();
-//     // act
-//     await loadHeroesAxios()(dispatch);
+describe('loadCart', () => {
+  test('should return LOAD_CART', () => {
+    const action = loadCart();
+    expect(action).toStrictEqual({ type: 'LOAD_CART' });
+  });
+});
 
-//     expect(dispatch).toHaveBeenCalledWith({
-//       type: actionTypes.LOAD_HEROES,
-//       heroes: ['Skylab mola moltisim'],
-//     });
-//   });
+describe('addProductToCart', () => {
+  test('should return ADD_PRODUCT', () => {
+    const product = {};
+    const action = addProductToCart(product);
+    expect(action).toStrictEqual({
+      type: 'ADD_PRODUCT',
+      product
+    });
+  });
+});
+
+describe('deleteProductFromCart', () => {
+  test('should return DELETE_PRODUCT', () => {
+    const productId = Number;
+    const action = deleteProductFromCart(productId);
+    expect(action).toStrictEqual({
+      type: 'DELETE_PRODUCT',
+      productId
+    });
+  });
+});
