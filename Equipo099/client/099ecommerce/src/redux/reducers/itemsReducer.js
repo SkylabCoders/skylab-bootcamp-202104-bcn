@@ -6,20 +6,13 @@ function itemsReducer(items = [], action){
           return action.items;
     
         case actionTypes.DELETE_ITEM:
-          return items.filter((item) => item.id !== action.itemId);
+          return action.items;
     
         case actionTypes.ADD_ITEM:
-          return [
-            ...items,
-            action.item,
-          ];
+          return action.items;
     
         case actionTypes.UPDATE_ITEM:
-          return items.map(
-            (item) => (item.id === action.item.id
-              ? { ...item, ...action.item }
-              : item),
-          );
+          return action.items;
     
         default:
           return items;
