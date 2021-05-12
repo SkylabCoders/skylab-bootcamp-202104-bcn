@@ -1,14 +1,17 @@
-import React from 'react'
-import List from '../src/components/List'
-import Cart from '../src/components/Cart'
+import React from 'react';
+import { Provider } from 'react-redux';
+import List from './components/List';
+import Cart from './components/Cart';
 import './App.css';
 
 function App() {
   return (
-    <>
-    <Cart />
-    <List />
-    </>
+    <Provider>
+      <>
+        <Cart />
+        <List />
+      </>
+    </Provider>
   );
 }
 

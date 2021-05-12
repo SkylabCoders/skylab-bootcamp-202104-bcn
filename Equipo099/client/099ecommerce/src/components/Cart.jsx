@@ -1,24 +1,43 @@
 import React from 'react';
-import itemsCart from '../constants/items'
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+// import itemsCart from '../constants/items';
+import { deleteItem } from '../redux/actions/actionCreators';
 
-function CartItems(){
-    return (
-        <>
-        <h2>Mi cesta: </h2>
-        <div>
-        {itemsCart.map(item => {
-            return (
-                <>
-                <h3>{item.name}</h3>
-                <p>{"Precio: "+item.price}</p>
-                <button type="button">-</button>
+function CartItems({ dispatch, item }) {
+  function deleteFromCart(itemId) {
+    dispatch(deleteItem(itemId));
+  }
+  return (
+    <>
+      <h2>Mi cesta: </h2>
+      <div>
+        {item.map((element) => (
+          element.id === item.id
+            ? (
+              <>
+                <p>{item.name}</p>
+                <p>{item.price}</p>
+                <button type="button" onClick={() => deleteFromCart(element.id)}>-</button>
                 <button type="button">+</button>
-                </>
-             ) 
-         })}
-         </div>
-         </>
-    )
-    
+              </>
+            )
+            : <p>no hay nada</p>
+        ))}
+      </div>
+    </>
+  );
 }
-export default CartItems
+
+CartItems.propTypes = {
+  item: PropTypes.shape([{}]).isRequired,
+  dispatch: PropTypes.func.isRequired
+};
+
+function mapStateToProps(store) {
+  return {
+    item: store.selectedItem
+  };
+}
+
+export default connect(mapStateToProps)(CartItems);

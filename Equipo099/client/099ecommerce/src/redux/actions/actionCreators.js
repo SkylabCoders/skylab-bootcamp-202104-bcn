@@ -8,7 +8,7 @@ export function loadItems() {
     const { data } = await axios(url);
     dispatch({
       type: actionTypes.LOAD_ITEMS,
-      items: data,
+      items: data
     });
   };
 }
@@ -18,7 +18,7 @@ export function addItem(item) {
     const { data } = await axios.post(url, item);
     dispatch({
       type: actionTypes.ADD_ITEM,
-      item: data,
+      item: data
     });
   };
 }
@@ -28,7 +28,7 @@ export function deleteItem(itemId) {
     await axios.delete(`${url}/${itemId}`);
     dispatch({
       type: actionTypes.DELETE_ITEM,
-      itemId,
+      itemId
     });
   };
 }
@@ -38,7 +38,7 @@ export function updateItem(item) {
     const { data } = await axios.put(`${url}/${item.id}`, item);
     dispatch({
       type: actionTypes.UPDATE_ITEM,
-      item: data,
+      item: data
     });
   };
 }
@@ -48,7 +48,7 @@ export function loadItemById(itemId) {
     const { data } = await axios(`${url}/${itemId}`);
     dispatch({
       type: actionTypes.LOAD_ITEM,
-      item: data,
+      item: data
     });
   };
 }
