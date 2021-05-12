@@ -14,15 +14,6 @@ function cartProductsReducer(cart = [], action) {
         ...cart,
         action.product
       ];
-
-    case actionTypes.UPDATE_PRODUCT:
-      return cart.map(
-        const productToDeleteIndex = cart.indexOf( product => product._id)
-        (product) => (product.id === action.product.id
-          ? { ...product, ...action.product }
-          : product)
-      );
-
     default:
       return cart;
   }
