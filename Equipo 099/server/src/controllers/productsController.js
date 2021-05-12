@@ -1,23 +1,20 @@
-/* eslint-disable no-console */
-/* eslint-disable no-underscore-dangle */
-const debug = require('debug')('app:heroesController');
-// const chalk = require('chalk');
-const Hero = require('../model/heroModel');
+const debug = require('debug')('app:productsController');
+const Product = require('../model/productModel');
 
-function heroesController() {
+function productsController() {
   async function getAll(req, res) {
-    const heroes = await Hero.find({});
+    const heroes = await Product.find({});
     res.status(200);
     res.json(heroes);
   }
 
   async function createOne(req, res) {
-    const newHero = new Hero(req.body);
+    const newProduct = new Product(req.body);
     // newHero.id = ((Hero[Hero.length - 1].id) + 1);
     try {
-      await newHero.save();
+      await newProduct.save();
       res.status(201);
-      res.json(newHero);
+      res.json(newProduct);
     } catch (error) {
       debug(error);
     }
@@ -25,9 +22,9 @@ function heroesController() {
 
   async function getById(req, res) {
     try {
-      const heroBydId = await Hero.findById(req.params.heroId);
+      const productBydId = await Product.findById(req.params.productId);
       res.status(200);
-      res.json(heroBydId);
+      res.json(productBydId);
     } catch (error) {
       res.status(404);
       res.send(error);
@@ -36,14 +33,14 @@ function heroesController() {
 
   async function updateById(req, res) {
     try {
-      const updatedHero = await Hero.findByIdAndUpdate(
-        req.params.heroId,
+      const updatedProduct = await Product.findByIdAndUpdate(
+        req.params.productId,
         req.body,
         { new: true }
       );
 
       res.status(200);
-      res.json(updatedHero);
+      res.json(updatedProduct);
     } catch (error) {
       res.status(404);
       res.send(error);
@@ -52,9 +49,9 @@ function heroesController() {
 
   async function deleteById(req, res) {
     try {
-      const deleteHeroes = await Hero.findByIdAndDelete(req.params.heroId);
+      const deleteProducts = await Product.findByIdAndDelete(req.params.Product);
       res.status(200);
-      res.json(deleteHeroes);
+      res.json(deleteProducts);
     } catch (error) {
       res.send(error);
       res.status(404);
@@ -70,4 +67,4 @@ function heroesController() {
   };
 }
 
-module.exports = heroesController;
+module.exports = productsController;
