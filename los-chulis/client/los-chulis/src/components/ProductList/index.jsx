@@ -5,9 +5,9 @@ import { loadProducts } from '../../redux/actions/actionCreator';
 
 const ProductList = ({ products, dispatch }) => {
   useEffect(() => {
-    if (!products.length) {
-      dispatch(loadProducts());
-    }
+    // if (!products.length) {
+    dispatch(loadProducts());
+    // }
   }, []);
   return (
     <ul>{products.map((product) => <li>{product.brand}</li>)}</ul>
@@ -16,7 +16,7 @@ const ProductList = ({ products, dispatch }) => {
 
 ProductList.propTypes = {
   products: PropTypes.shape([]).isRequired,
-  dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(store) {

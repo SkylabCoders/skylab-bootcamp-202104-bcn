@@ -1,9 +1,9 @@
 import actionTypes from '../actions/actionTypes';
-import PRODUCTS from '../../constants/products.mock';
+// import PRODUCTS from '../../constants/products.mock';
 
-export default function productReducer(action) {
+export default function productReducer(products = [], action) {
   if (action.type === actionTypes.LOAD_PRODUCT) {
-    return PRODUCTS;
+    return action.products;
   }
-  return null;
+  return products;
 }
