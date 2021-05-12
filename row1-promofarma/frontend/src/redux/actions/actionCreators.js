@@ -6,7 +6,7 @@ const url = 'http://192.168.0.40:2022/products';
 export function addProducts(newProduct) {
   return {
     type: actionTypes.ADD_PRODUCTS,
-    data: newProduct
+    newProduct
   };
 }
 
