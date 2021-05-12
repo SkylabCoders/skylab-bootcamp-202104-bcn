@@ -5,7 +5,6 @@ import { PropTypes } from 'prop-types';
 import { loadCart } from '../../redux/actions/actionCreator';
 
 function ShoppingCart({ cartList, dispatch }) {
-  debugger;
   useEffect(() => {
     // if (!cartList.length) {
     dispatch(loadCart());
