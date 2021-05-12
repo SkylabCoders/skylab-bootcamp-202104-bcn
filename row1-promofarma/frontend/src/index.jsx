@@ -5,9 +5,23 @@ import { Provider } from 'react-redux';
 import App from './App';
 import configureStore from './redux/store';
 
+const initialState = {
+  cart: [
+    {
+      name: 'Ibuprofeno'
+    },
+    {
+      name: 'Crema Solar'
+    },
+    {
+      name: 'Mascarilla'
+    }
+  ]
+};
+
 ReactDOM.render(
 
-  <Provider store={configureStore()}>
+  <Provider store={configureStore(initialState)}>
     <App />
   </Provider>,
 
