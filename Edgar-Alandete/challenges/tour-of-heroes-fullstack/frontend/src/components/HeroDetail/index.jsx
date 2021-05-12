@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
@@ -25,11 +26,11 @@ function HeroDetail({ selectedHero, dispatch }) {
   }
 
   function save() {
-    dispatch(updateHero({ id: selectedHero.id, name: heroName }));
+    dispatch(updateHero({ _id: selectedHero._id, name: heroName }));
   }
 
   return (
-    selectedHero.id
+    selectedHero._id
       ? (
         <div>
           <h2>
@@ -39,7 +40,7 @@ function HeroDetail({ selectedHero, dispatch }) {
           </h2>
           <div>
             <span>id: </span>
-            {selectedHero.id}
+            {selectedHero._id}
           </div>
           <div>
             <label htmlFor="hero-name">
@@ -71,7 +72,7 @@ function HeroDetail({ selectedHero, dispatch }) {
 HeroDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
   selectedHero: PropTypes.shape({
-    id: PropTypes.number,
+    _id: PropTypes.number,
     name: PropTypes.string,
   }).isRequired,
 };
