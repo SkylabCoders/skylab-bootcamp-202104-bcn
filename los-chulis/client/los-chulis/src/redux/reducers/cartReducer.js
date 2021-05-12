@@ -10,7 +10,7 @@ function cartReducer(cartList = [], action) {
 
     case actionTypes.DELETE_CART_PRODUCT:
       cartList.splice(cartList.indexOf(action.product), 1);
-      return cartList;
+      return [...cartList];
     default:
       return cartList;
   }
