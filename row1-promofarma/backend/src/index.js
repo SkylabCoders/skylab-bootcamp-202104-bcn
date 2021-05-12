@@ -7,7 +7,10 @@ const mongoose = require('mongoose');
 const server = express();
 
 mongoose.connect('mongodb+srv://admin:admin@cluster0.h7xul.mongodb.net/team-row-1-promofarma',
-  { useUnifiedTopology: true }, { useNewUrlParser: true })
+  {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  },)
 
 server.use(cors());
 server.use(express.json());
