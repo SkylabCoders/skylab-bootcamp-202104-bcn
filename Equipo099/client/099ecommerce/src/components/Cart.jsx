@@ -1,10 +1,12 @@
 import React from 'react';
 import itemsCart from '../constants/items'
 
-const CartItems = () => {
+function CartItems(){
     return (
-        <h1>Mi cesta: </h1>,
-        itemsCart.map(item =>{
+        <>
+        <h2>Mi cesta: </h2>
+        <div>
+        {itemsCart.map(item => {
             return (
                 <>
                 <h3>{item.name}</h3>
@@ -13,8 +15,10 @@ const CartItems = () => {
                 <button type="button">+</button>
                 </>
              ) 
-         })
-        )
+         })}
+         </div>
+         </>
+    )
     
 }
 export default CartItems
