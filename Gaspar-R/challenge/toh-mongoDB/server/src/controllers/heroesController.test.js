@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 const {
   createOne,
   getAll,
@@ -134,7 +133,9 @@ describe('updateById', () => {
     };
 
     // act
-    // const { updateById } = heroesController([{ id: 5, name: 'Cacho' }]); se puede hacer destructuring directamente cuando se importa, por eso no hace falta hacerlo aca
+    //* const { updateById } = heroesController([{ id: 5, name: 'Cacho' }]);
+    // se puede hacer destructuring directamente cuando
+    // se importa, por eso no hace falta hacerlo aca****//
     Hero.findByIdAndUpdate.mockResolvedValueOnce([{ id: 5, name: 'Dr Caca' }]);
     await updateById(req, res);
 
