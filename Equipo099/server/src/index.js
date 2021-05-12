@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const server = express();
-const port = 2022;
+const port = 2099;
 
 try {
   mongoose.connect(
