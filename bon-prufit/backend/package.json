@@ -1,4 +1,10 @@
 {
+  "scripts": {
+  "start": "nodemon src/index.js",
+  "start:dev": " DEBUG=server,server:* nodemon src/index.js",
+  "debug": "nodemon --inspect-brk src/index.js",
+  "test": "jest --watchAll --collect-coverage"
+},
   "devDependencies": {
     "eslint": "^7.26.0",
     "eslint-config-airbnb-base": "^14.2.1",
