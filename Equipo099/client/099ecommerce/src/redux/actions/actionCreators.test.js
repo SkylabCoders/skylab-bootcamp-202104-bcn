@@ -11,8 +11,8 @@ describe('loadItems', () => {
         await loadItems()(dispatch);
 
         expect(dispatch).toHaveBeenCalledWith({
-            type: actionTypes.LOAD_HEROES,
-            heroes: [{ data: [{id: 1, name: 'crema', price: 200}] }],
+            type: actionTypes.LOAD_ITEMS,
+            items: [{id: 1, name: 'crema', price: 200}],
           });
     });
 });
