@@ -33,3 +33,9 @@ export function addToCart(product) {
   //   });
   // };
 }
+
+export function loadCart() {
+  return {
+    type: actionTypes.LOAD_CART_PRODUCT
+  };
+}
