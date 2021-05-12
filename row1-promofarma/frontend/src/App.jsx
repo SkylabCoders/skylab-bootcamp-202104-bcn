@@ -6,7 +6,7 @@ import Cart from './components/Cart/index';
 function App() {
   return (
     <div>
-      <h1>Team frontend</h1>
+      <h1>PROMOFARMA</h1>
       <ProductList />
       <Cart />
     </div>
