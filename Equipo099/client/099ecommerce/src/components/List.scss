@@ -1,0 +1,39 @@
+*, 
+*::after, 
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.items-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    margin: 30px;
+    .items-list__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        margin: 5px 0px;
+        span {
+            width: 100%;
+        }
+    }
+
+    button {
+        background-color: #8cc003;
+        border: none;
+        height: 35px;
+        width: 80px;
+        border-radius: 5px;
+        background-image: url(../assets/add-to-cart.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 40px;
+    }
+
+}

@@ -9,8 +9,10 @@ function App() {
   return (
     <Provider store={store()}>
       <>
+      <div className="shop">
         <List />
         <Cart />
+      </div>
       </>
     </Provider>
   );

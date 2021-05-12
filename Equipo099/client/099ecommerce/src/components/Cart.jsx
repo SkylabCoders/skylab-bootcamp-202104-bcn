@@ -3,24 +3,27 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 // import itemsCart from '../constants/items';
 import { deleteItem } from '../redux/actions/actionCreators';
+import './Cart.css'
 
 function CartItems({ dispatch, item , items}) {
   function deleteFromCart(itemId) {
     dispatch(deleteItem(itemId));
   }
-  debugger;
+
   return (
     <>
+      <div className="basket">
       <h2>Mi cesta: </h2>
-      <div>
         {items.map((element) => (
           element.id === item.id
             ? (
               <>
+              <div className="basket__item">
                 <p>{item.name}</p>
                 <p>{item.price}</p>
                 <button type="button" onClick={() => deleteFromCart(element.id)}>-</button>
                 <button type="button">+</button>
+              </div>
               </>
             )
             : <p>no hay nada</p>

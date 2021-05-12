@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux'
 import {loadItemById, loadItems} from '../redux/actions/actionCreators'
+import './List.css'
 
 const ListItems = ({items, dispatch}) => {
     
@@ -12,16 +13,22 @@ const ListItems = ({items, dispatch}) => {
     }
 
     return (
-        items.map(item =>{
-           return (
-               <>
-            <p>{item.name}</p>
-            <p>{"Precio: "+item.price}</p>
-            <p>{"Stock: "+item.stock}</p>
-            <button type="button" onClick={() => addToCart(item.id)}>Add to Cart</button>
-            </>
-            ) 
-        })
+        <div className="items-list">
+           {
+               items.map(item =>{
+                  return (
+                        <>
+                        <div className="items-list__item">
+                           <span>{item.name}</span>
+                           <p>{item.price + "€"}</p>
+                           {/* <p>{"Stock: "+item.stock}</p> */}
+                           <button type="button" onClick={() => addToCart(item.id)}></button>
+                        </div>
+                       </>
+                   ) 
+               })
+           }
+        </div>
     )
 }
 

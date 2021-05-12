@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.items-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 30%;
+  margin: 30px;
+}
+
+.items-list .items-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  margin: 5px 0px;
+}
+
+.items-list .items-list__item span {
+  width: 100%;
+}
+
+.items-list button {
+  background-color: #8cc003;
+  border: none;
+  height: 35px;
+  width: 80px;
+  border-radius: 5px;
+  background-image: url(../assets/add-to-cart.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40px;
+}
+/*# sourceMappingURL=List.css.map */
