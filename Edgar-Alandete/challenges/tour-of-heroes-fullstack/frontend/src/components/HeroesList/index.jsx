@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
@@ -40,8 +41,8 @@ function HeroesList({ heroes, dispatch }) {
       <ul className="heroes">
         {heroes.map((hero) => (
           <li>
-            <Link to={`/detail/${hero.id}`}>
-              <span className="badge">{hero.id}</span>
+            <Link to={`/detail/${hero._id}`}>
+              <span className="badge">{hero._id}</span>
               {' '}
               {hero.name}
             </Link>

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import HEROES from '../../constants/heroes.mock';
 import actionTypes from './actionTypes';
 
 const url = 'http://127.0.0.1:2021/heroes/';
@@ -28,7 +27,7 @@ export function addHero(hero) {
       const { data } = await axios.post(url, hero);
       dispatch({
         type: actionTypes.ADD_HERO,
-        heroes: data,
+        hero: data,
       });
     } catch (error) {
       dispatch({
@@ -71,10 +70,19 @@ export function loadHero(hero) {
 }
 
 export function getHeroById(heroId) {
-  const hero = HEROES.find((current) => current.id === +heroId);
-
-  return {
-    type: actionTypes.LOAD_HERO,
-    hero,
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(`${url}${heroId}`, {
+        heroId,
+      });
+      dispatch({
+        type: actionTypes.LOAD_HERO,
+        heroes: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.LOAD_HEROES_ERROR,
+      });
+    }
   };
 }
