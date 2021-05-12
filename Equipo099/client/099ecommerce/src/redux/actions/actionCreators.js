@@ -30,14 +30,11 @@ export function addItem(item) {
 }
 
 export function deleteItem(itemId) {
-  return async (dispatch) => {
-    await axios.delete(`${url}/${itemId}`);
-    dispatch({
+    return {
       type: actionTypes.DELETE_ITEM,
       itemId
-    });
+    };
   };
-}
 
 export function updateItem(item) {
   return async (dispatch) => {
