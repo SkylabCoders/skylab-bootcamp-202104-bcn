@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 // import itemsCart from '../constants/items';
 import { deleteItem, loadCart } from '../redux/actions/actionCreators';
 function CartItems({ dispatch, itemSelect}) {
+  let precioTotal= 0;
   useEffect(() => {
     dispatch(loadCart())
   }, [itemSelect])
@@ -17,9 +18,12 @@ function CartItems({ dispatch, itemSelect}) {
         {itemSelect.map((item) => (
           <>
         <p>{item.name}</p>
+        <p>{item.price+"€"}</p>
         <button type="button" onClick={()=>deleteFromCart(item.id)}>X</button>
+        {precioTotal += item.price}
         </>
         ))}
+        <h2>{"Precio= "+precioTotal}</h2>
     </>
   );
 }
