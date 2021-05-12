@@ -12,8 +12,6 @@ function HeroDetail({ selectedHero, dispatch }) {
   const history = useHistory();
 
   useEffect(() => {
-    // eslint-disable-next-line no-debugger
-    debugger;
     dispatch(getHeroById(heroId));
   }, [heroId]);
 

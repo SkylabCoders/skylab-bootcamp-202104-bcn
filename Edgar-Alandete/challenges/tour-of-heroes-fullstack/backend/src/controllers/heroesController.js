@@ -24,8 +24,6 @@ function heroesController() {
   async function getById(req, res) {
     const { heroId } = req.params;
     try {
-      // eslint-disable-next-line no-debugger
-      debugger;
       const heroById = await Hero.findById(heroId);
       res.status(200);
       res.json(heroById);
