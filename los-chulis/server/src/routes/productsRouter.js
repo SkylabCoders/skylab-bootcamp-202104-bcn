@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const productsController = require('../controllers/productsControllers')();
+const productsController = require('../controllers/productsController')();
 
 function productsRouter() {
   const routes = Router();
@@ -9,11 +9,11 @@ function productsRouter() {
     .get(productsController.getAllProducts)
     .post(productsController.createOne);
 
-  routes
-    .route('/:productId')
-    .get(productsController.getById)
-    .put(productsController.updateById)
-    .delete(productsController.deleteById);
+  // routes
+  //   .route('/:productId')
+  //   .get(productsController.getById)
+  //   .put(productsController.updateById)
+  //   .delete(productsController.deleteById);
 
   return routes;
 }
