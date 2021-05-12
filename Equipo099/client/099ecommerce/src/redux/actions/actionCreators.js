@@ -1,16 +1,21 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://localhost:2022/';
+const url = 'http://localhost:2099/products';
 
 export function loadItems() {
-  return async (dispatch) => {
-    const { data } = await axios(url);
-    dispatch({
-      type: actionTypes.LOAD_ITEMS,
-      items: data
-    });
-  };
+  debugger;
+  try {
+    return async (dispatch) => {
+      const { data } = await axios(url);
+      dispatch({
+        type: actionTypes.LOAD_ITEMS,
+        items: data
+      });
+    };
+  } catch(error){
+    console.error(error);
+  }
 }
 
 export function addItem(item) {
