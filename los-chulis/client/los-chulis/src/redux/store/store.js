@@ -7,7 +7,7 @@ const composeEnchacers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = (initialState) => createStore(
   rootReducer,
   initialState,
-  composeEnchacers(applyMiddleware(thunk)),
+  composeEnchacers(applyMiddleware(thunk))
 );
 
 export default store;
