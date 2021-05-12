@@ -8,10 +8,9 @@ function CartItems({ dispatch, itemSelect}) {
     dispatch(loadCart())
   }, [itemSelect])
   function deleteFromCart(itemId) {
-      dispatch(deleteItem(itemId));
-    }
-    debugger;
-    return (
+    dispatch(deleteItem(itemId));
+  }
+  return (
     <>
       <h2>Mi cesta: </h2>
         {itemSelect.map((item) => (
