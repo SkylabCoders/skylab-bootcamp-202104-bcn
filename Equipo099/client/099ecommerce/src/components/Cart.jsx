@@ -1,31 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 // import itemsCart from '../constants/items';
-import { deleteItem } from '../redux/actions/actionCreators';
-
-function CartItems({ dispatch, item , items}) {
-  function deleteFromCart(itemId) {
-    dispatch(deleteItem(itemId));
-  }
-  debugger;
-  return (
+import { loadCart } from '../redux/actions/actionCreators';
+function CartItems({ dispatch, itemSelect, items}) {
+  useEffect(() => {
+    dispatch(loadCart())
+  }, [itemSelect])
+  // function deleteFromCart(itemId) {
+    //   dispatch(deleteItem(itemId));
+    // }
+    debugger;
+    return (
     <>
       <h2>Mi cesta: </h2>
-      <div>
-        {items.map((element) => (
-          element.id === item.id
-            ? (
-              <>
-                <p>{item.name}</p>
-                <p>{item.price}</p>
-                <button type="button" onClick={() => deleteFromCart(element.id)}>-</button>
-                <button type="button">+</button>
-              </>
-            )
-            : <p>no hay nada</p>
+        {itemSelect.map((item) => (
+        <p>{item.name}</p>
         ))}
-      </div>
     </>
   );
 }
@@ -37,7 +28,7 @@ CartItems.propTypes = {
 
 function mapStateToProps(store) {
   return {
-    item: store.selectedItem,
+    itemSelect: store.selectedItem,
     items: store.items
   };
 }
