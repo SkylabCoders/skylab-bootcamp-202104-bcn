@@ -6,17 +6,16 @@ const productsUrl = 'http://localhost:2021/products';
 
 export function loadProducts() {
   return async (dispatch) => {
-    try {
-      const { data } = await axios(productsUrl);
-      dispatch({
-        type: actionTypes.LOAD_PRODUCTS,
-        products: data
-      });
-    } catch (error) {
-      dispatch({
-        type: actionTypes.ERROR_PRODUCT
-      });
-    }
+    const { data } = await axios(productsUrl);
+    dispatch({
+      type: actionTypes.LOAD_PRODUCTS,
+      products: data
+    });
+
+    // dispatch({
+    //   type: actionTypes.ERROR_PRODUCT
+    // });
+    // eslint-disable-next-line no-console
   };
 }
 

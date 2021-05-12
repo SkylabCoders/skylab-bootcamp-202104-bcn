@@ -2,13 +2,15 @@
 import actionTypes from '../actions/actionTypes';
 
 function productsReducer(products = [], action) {
+  let updatedProducts = [...products];
   switch (action.type) {
     case actionTypes.LOAD_PRODUCTS:
-      return action.products;
-
+      updatedProducts = action.products;
+      break;
     default:
-      return products;
+      return updatedProducts;
   }
+  return updatedProducts;
 }
 
 export default productsReducer;

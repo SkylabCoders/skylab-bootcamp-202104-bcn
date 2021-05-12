@@ -6,13 +6,13 @@ import { addProductToCart, loadProducts } from '../../redux/actions/actionCreato
 
 function ProductsList({ products, dispatch }) {
   useEffect(() => {
-    if (!products) dispatch(loadProducts);
+    if (!products.length) dispatch(loadProducts());
   }, []);
 
   return (
     <>
 
-      <h1>Lista de Produtos</h1>
+      <h1>Lista de Productos</h1>
       {
         products?.map((product) => (
           <tr>

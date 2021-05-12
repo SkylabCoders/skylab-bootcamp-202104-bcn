@@ -1,22 +1,22 @@
 /* eslint-disable no-debugger */
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { deleteProductFromCart, loadProducts } from '../../redux/actions/actionCreators';
+import { deleteProductFromCart } from '../../redux/actions/actionCreators';
 
-function Cart({ products, dispatch }) {
-  useEffect(() => {
-    if (!products.length) dispatch(loadProducts());
-  }, [products]);
+function Cart({ cart, dispatch }) {
+  // useEffect(() => {
+  //   if (!cart.length) dispatch(loadProducts());
+  // }, []);
 
   function handleDeleteProduct(productId) {
     dispatch(deleteProductFromCart(productId));
   }
 
-  function totalPrice(productsOnCart) {
+  function totalPrice(cartToCount = cart) {
     let result = 0;
-    if (productsOnCart.length) {
-      const prices = productsOnCart.map(((product) => product.cost));
+    if (cartToCount.length) {
+      const prices = cartToCount.map(((product) => product.cost));
       result = (accumulator, currentValue) => accumulator + currentValue;
       result = prices.reduce(result);
     }
@@ -27,7 +27,7 @@ function Cart({ products, dispatch }) {
     <>
       <h2>Mi cesta</h2>
       <ul className="products-list">
-        {products.map((product) => (
+        {cart.map((product) => (
           <li>
             <span>{product.title}</span>
             <span>{product.cost}</span>
@@ -38,11 +38,11 @@ function Cart({ products, dispatch }) {
           <span>
             Total
             {' '}
-            {products.length}
+            {cart.length}
             {' '}
             productos
           </span>
-          <span>{totalPrice(products)}</span>
+          <span>{totalPrice()}</span>
         </li>
       </ul>
     </>
@@ -50,13 +50,13 @@ function Cart({ products, dispatch }) {
 }
 
 Cart.propTypes = {
-  products: PropTypes.shape([]).isRequired,
+  cart: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
-function mapStateToProps(store) {
+function mapStateToProps({ cart }) {
   return {
-    products: store.products
+    cart
   };
 }
 
