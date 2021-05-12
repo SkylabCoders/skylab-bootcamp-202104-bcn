@@ -49,11 +49,8 @@ export function updateItem(item) {
 }
 
 export function loadItemById(itemId) {
-  return async (dispatch) => {
-    const { data } = await axios(`${url}/${itemId}`);
-    dispatch({
+    return {
       type: actionTypes.LOAD_ITEM,
-      item: data
-    });
-  };
+      itemId: itemId
+    };
 }

@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 // import itemsCart from '../constants/items';
 import { deleteItem } from '../redux/actions/actionCreators';
 
-function CartItems({ dispatch, item , items}) {
+function CartItems({ dispatch, itemId , items}) {
   function deleteFromCart(itemId) {
     dispatch(deleteItem(itemId));
   }
@@ -14,17 +14,18 @@ function CartItems({ dispatch, item , items}) {
       <h2>Mi cesta: </h2>
       <div>
         {items.map((element) => (
-          element.id === item.id
+          element.id === itemId
             ? (
               <>
-                <p>{item.name}</p>
-                <p>{item.price}</p>
+                <p>{element.name}</p>
+                <p>{element.price+"€"}</p>
                 <button type="button" onClick={() => deleteFromCart(element.id)}>-</button>
                 <button type="button">+</button>
               </>
             )
-            : <p>no hay nada</p>
+            : null
         ))}
+
       </div>
     </>
   );
@@ -37,7 +38,7 @@ CartItems.propTypes = {
 
 function mapStateToProps(store) {
   return {
-    item: store.selectedItem,
+    itemId: store.selectedItem,
     items: store.items
   };
 }
