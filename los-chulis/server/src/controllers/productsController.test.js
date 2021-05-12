@@ -43,6 +43,7 @@ describe('createOne', () => {
     // arrange
     const res = {
       json: jest.fn(),
+      send: jest.fn(),
     };
     const req = {
       body: null,

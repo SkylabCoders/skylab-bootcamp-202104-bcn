@@ -9,11 +9,9 @@ function productsRouter() {
     .get(productsController.getAllProducts)
     .post(productsController.createOne);
 
-  // routes
-  //   .route('/:productId')
-  //   .get(productsController.getById)
-  //   .put(productsController.updateById)
-  //   .delete(productsController.deleteById);
+  routes
+    .route('/:productId')
+    .put(productsController.updateById);
 
   return routes;
 }
