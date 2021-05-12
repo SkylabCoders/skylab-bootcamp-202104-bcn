@@ -1,5 +1,4 @@
 import React from 'react';
-import itemsCart from '../constants/items'
 
 const ListItems = ({items, dispatch}) => {
     
