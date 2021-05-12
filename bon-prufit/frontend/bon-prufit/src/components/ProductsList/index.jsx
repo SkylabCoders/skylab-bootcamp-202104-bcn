@@ -13,12 +13,12 @@ function ProductsList(dispatch) {
         PRODUCTS.map((product) => (
           <tr>
             <td>
-              {product.name}
+              {product.title}
             </td>
             <td>
-              {product.price}
+              {product.cost}
             </td>
-            <button type="button" onClick={() => dispatch(addProductCart({ name: product.name }))}>Añadir ao Carrito</button>
+            <button type="button" onClick={() => dispatch(addProductCart({ title: product.title }))}>Añadir ao Carrito</button>
           </tr>
         ))
     }

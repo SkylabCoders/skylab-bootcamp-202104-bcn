@@ -14,7 +14,7 @@ function Cart({ products, dispatch }) {
   }
 
   function totalPrice(products) {
-    const prices = products.map((product => product.price));
+    const prices = products.map((product => product.cost));
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     return prices.reduce(reducer);
   }
@@ -25,8 +25,8 @@ function Cart({ products, dispatch }) {
       <ul className="products-list">
         {products.map((product) => (
           <li>
-            <span>{product.name}</span>
-            <span>{product.price}</span>
+            <span>{product.title}</span>
+            <span>{product.cost}</span>
             <button type="button" className="button-delete" onClick={() => handleDeleteProduct(product.id)}>X</button>
           </li>
         ))}
