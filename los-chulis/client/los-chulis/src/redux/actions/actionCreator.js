@@ -13,7 +13,7 @@ export function loadProducts() {
       });
     } catch (error) {
       dispatch({
-        type: 'LOAD_PRODUCT_ERROR',
+        type: actionTypes.LOAD_PRODUCT_ERROR,
 
       });
     }
@@ -22,7 +22,7 @@ export function loadProducts() {
 
 export function addToCart(product) {
   return async (dispatch) => {
-    const data = await axios.post(url, product);
+    const { data } = await axios.post(url, product);
     dispatch({
       type: actionTypes.ADD_PRODUCTS_TO_CART,
       product: data,
