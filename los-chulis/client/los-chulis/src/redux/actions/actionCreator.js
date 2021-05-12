@@ -25,13 +25,6 @@ export function addToCart(product) {
     type: actionTypes.ADD_PRODUCTS_TO_CART,
     product
   };
-  // return async (dispatch) => {
-  //   const { data } = await axios.post(url, product);
-  //   dispatch({
-  //     type: actionTypes.ADD_PRODUCTS_TO_CART,
-  //     product: data
-  //   });
-  // };
 }
 
 export function loadCart() {

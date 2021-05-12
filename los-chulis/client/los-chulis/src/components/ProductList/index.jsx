@@ -5,13 +5,13 @@ import { loadProducts, addToCart } from '../../redux/actions/actionCreator';
 
 const ProductList = ({ products, dispatch }) => {
   function addProductToCart(product) {
-    dispatch(addToCart(product));
+    if (product.stock > 0) {
+      dispatch(addToCart(product));
+    }
   }
 
   useEffect(() => {
-    // if (!products.length) {
     dispatch(loadProducts());
-    // }
   }, []);
   return (
     <ul>
@@ -20,7 +20,9 @@ const ProductList = ({ products, dispatch }) => {
           {product.brand}
           {' '}
           {product.price}
-          <button type="button" onClick={() => addProductToCart(product)}>boton</button>
+          {' '}
+          €
+          <button type="button" onClick={() => addProductToCart(product)} className={product.stock === 0 ? 'disabled' : 'active'}>boton</button>
         </li>
       ))}
 
