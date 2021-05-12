@@ -51,6 +51,7 @@ function productsController() {
       await Product.findByIdAndDelete(req.params.product_Id);
       res.status(204);
       res.json();
+      debug(req.params.product_Id);
     } catch (error) {
       debug(error);
       res.send(error);
