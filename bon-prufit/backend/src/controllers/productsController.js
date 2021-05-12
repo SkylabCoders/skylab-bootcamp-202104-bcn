@@ -18,8 +18,6 @@ function productsController() {
     debug('enter to function getAll');
     const { productId } = req.params;
     try {
-      const productToUpdate = await Product.findOne({ _id: productId });
-      debug(productToUpdate);
       const product = await Product.findByIdAndUpdate(
         productId,
         { $inc: { stock: 1 } },
