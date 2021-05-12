@@ -16,5 +16,7 @@ const products = [
     productName: 'Leche',
     stock: 15,
     price: 1
-  },
-]
+  }
+];
+
+module.exports = products;
