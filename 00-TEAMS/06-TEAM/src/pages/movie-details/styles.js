@@ -78,13 +78,13 @@ export const Genres = styled.span`
       align-items: center;
       background-color: #06bd75;
       border-radius: 10px;
-      width: 15%;
+      width: 22%;
       min-height: 30px;
       font-size: 0.80em;
       font-weight: 600;
       letter-spacing: 1.5px;
       margin: 0 15px;
-      padding: 0;
+      padding: 0 15px;
     }
   }
 `;
