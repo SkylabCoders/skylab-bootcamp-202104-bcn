@@ -1,14 +1,13 @@
 const { Router } = require('express');
-// const heroes = require('../heroes');
-const cartsController = require('../controllers/cartsController')();
+const carts = require('../data/carts');
+const cartsController = require('../controllers/cartsController')(carts);
 
 function cartsRouter() {
   const routes = Router();
 
   routes
     .route('/')
-    .get(cartsController.getAll)
-    .post(cartsController.createOne);
+    .get(cartsController.getAll);
 
   routes
     .route('/:cartId')
