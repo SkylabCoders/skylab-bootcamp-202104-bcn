@@ -6,7 +6,7 @@ const url = 'http://192.168.0.40:2022/products';
 export function addProducts(newProduct) {
   return {
     type: actionTypes.ADD_PRODUCTS,
-    newProduct
+    data: newProduct
   };
 }
 
@@ -26,14 +26,16 @@ export function loadProducts() {
   };
 }
 
-export function deleteProduct() {
+export function deleteProduct(productId) {
   return {
-    type: actionTypes.DELETE_PRODUCT
+    type: actionTypes.DELETE_PRODUCT,
+    data: productId
   };
 }
 
-export function deleteAll() {
+export function deleteAll(products) {
   return {
-    type: actionTypes.DELETE_ALL
+    type: actionTypes.DELETE_ALL,
+    data: products
   };
 }
