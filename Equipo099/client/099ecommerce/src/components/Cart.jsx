@@ -7,11 +7,14 @@ const CartItems = () => {
         itemsCart.map(item =>{
             return (
                 <>
-                <p>{item.name}</p>
+                <h3>{item.name}</h3>
                 <p>{"Precio: "+item.price}</p>
+                <button type="button">-</button>
+                <button type="button">+</button>
                 </>
              ) 
          })
-    )
+        )
+    
 }
 export default CartItems
