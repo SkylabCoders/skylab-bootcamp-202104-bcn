@@ -1,8 +1,8 @@
-  /* eslint-disable no-debugger */
+/* eslint-disable no-debugger */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { deleteProduct, loadProducts } from '../../redux/actions/actionCreators';
+import { deleteProductFromCart, loadProducts } from '../../redux/actions/actionCreators';
 
 function Cart({ products, dispatch }) {
   useEffect(() => {
@@ -10,15 +10,19 @@ function Cart({ products, dispatch }) {
   }, [products]);
 
   function handleDeleteProduct(productId) {
-    dispatch(deleteProduct(productId));
+    dispatch(deleteProductFromCart(productId));
   }
 
-  function totalPrice(products) {
-    const prices = products.map((product => product.cost));
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    return prices.reduce(reducer);
+  function totalPrice(productsOnCart) {
+    let result = 0;
+    if (productsOnCart.length) {
+      const prices = productsOnCart.map(((product) => product.cost));
+      result = (accumulator, currentValue) => accumulator + currentValue;
+      result = prices.reduce(result);
+    }
+    return result;
   }
- 
+
   return (
     <>
       <h2>Mi cesta</h2>
@@ -31,7 +35,13 @@ function Cart({ products, dispatch }) {
           </li>
         ))}
         <li>
-          <span>Total {products.length} productos</span> 
+          <span>
+            Total
+            {' '}
+            {products.length}
+            {' '}
+            productos
+          </span>
           <span>{totalPrice(products)}</span>
         </li>
       </ul>
@@ -41,12 +51,12 @@ function Cart({ products, dispatch }) {
 
 Cart.propTypes = {
   products: PropTypes.shape([]).isRequired,
-  dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(store) {
   return {
-    products: store.products,
+    products: store.products
   };
 }
 

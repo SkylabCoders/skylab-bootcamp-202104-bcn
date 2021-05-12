@@ -17,6 +17,6 @@ const PRODUCTS = [
     url: 'https://picsum.photos/200',
     stock: 20
   }
-  ];
+];
 
 export default PRODUCTS;

@@ -10,7 +10,7 @@ export function loadProducts() {
       const { data } = await axios(productsUrl);
       dispatch({
         type: actionTypes.LOAD_PRODUCTS,
-        prducts: data,
+        prducts: data
       });
     } catch (error) {
       dispatch({
@@ -26,11 +26,11 @@ export function addProductToCart(product) {
       const { data } = await axios.post(productsUrl, product);
       dispatch({
         type: actionTypes.ADD_PRODUCT,
-        product: data,
+        product: data
       });
     } catch (error) {
       dispatch({
-        type: actionTypes.ERROR_PRODUCT,
+        type: actionTypes.ERROR_PRODUCT
       });
     }
   };
@@ -41,9 +41,7 @@ export function deleteProductFromCart(productId) {
     await axios.delete(`${cartsUrl}/${productId}`);
     dispatch({
       type: actionTypes.DELETE_PRODUCT,
-      productId,
+      productId
     });
   };
 }
-
-

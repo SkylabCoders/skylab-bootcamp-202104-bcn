@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { addProductCart } from '../../redux/actions/actionCreators';
-import PRODUCTS from './fakeProducts';
+import { addProductToCart } from '../../redux/actions/actionCreators';
+import PRODUCTS from '../../constants/products.mock';
 
 function ProductsList(dispatch) {
   return (
@@ -18,7 +18,7 @@ function ProductsList(dispatch) {
             <td>
               {product.cost}
             </td>
-            <button type="button" onClick={() => dispatch(addProductCart({ title: product.title }))}>Añadir ao Carrito</button>
+            <button type="button" onClick={() => dispatch(addProductToCart({ title: product.title }))}>Añadir ao Carrito</button>
           </tr>
         ))
     }
