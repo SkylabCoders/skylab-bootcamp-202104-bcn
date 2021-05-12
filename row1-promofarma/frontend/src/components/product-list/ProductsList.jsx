@@ -13,7 +13,12 @@ function ProductList({ products, dispatch }) {
       <h3>PRODUCTS</h3>
       <ul>
         {
-        products?.map((product) => <li>{ product?.productName}</li>)
+        products?.map((product) => (
+          <li>
+            { product?.productName}
+            { product?.price }
+          </li>
+        ))
       }
       </ul>
 
