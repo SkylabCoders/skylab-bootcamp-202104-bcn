@@ -11,10 +11,17 @@ function List({ tasks, dispatch }) {
   }, []);
 
   return (
-    <div>
-      <h3>List component</h3>
-    </div>
-
+    <ul className="task-list">
+      {
+        tasks.map((task) => (
+          <li key={task.name} className="task-item">
+            <p className="task-item__name">{task.name}</p>
+            <button type="button" className="task-item__btn delete-btn">Delete</button>
+            <button type="button" className="task-item__btn done-btn">Done</button>
+          </li>
+        ))
+      }
+    </ul>
   );
 }
 
