@@ -7,6 +7,7 @@ function taskController() {
       await newTask.save();
       res.json(newTask);
     } catch (error) {
+      res.status(500);
       res.send(error);
     }
   }
@@ -17,13 +18,19 @@ function taskController() {
       res.status(204);
       res.json();
     } catch (error) {
+      res.status(500);
       res.send(error);
     }
   }
 
   async function getAllTasks(req, res) {
-    const allTasks = await Task.find();
-    res.json(allTasks);
+    try {
+      const allTasks = await Task.find();
+      res.json(allTasks);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   }
 
   return {
