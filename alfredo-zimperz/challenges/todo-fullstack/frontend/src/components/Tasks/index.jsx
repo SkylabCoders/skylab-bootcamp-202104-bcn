@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -6,8 +7,8 @@ import Task from '../Task';
 import './tasks.css';
 
 const Tasks = ({ tasks, dispatch }) => {
-  const [newTaskTitle, setNewTaskTitle] = useState();
-  const [newTaskDescription, setNewTaskDescription] = useState();
+  const [newTaskTitle, setNewTaskTitle] = useState('');
+  const [newTaskDescription, setNewTaskDescription] = useState('');
 
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
@@ -26,8 +27,10 @@ const Tasks = ({ tasks, dispatch }) => {
     }
   };
   const saveNewTask = () => {
-    if (newTaskTitle && newTaskDescription) {
+    if (newTaskTitle !== '' && newTaskDescription !== '') {
       dispatch(addTask({ title: newTaskTitle, description: newTaskDescription }));
+      setNewTaskTitle('');
+      setNewTaskDescription('');
     }
   };
   const handleDelete = (id) => dispatch(deleteTask(id));
@@ -59,7 +62,7 @@ const Tasks = ({ tasks, dispatch }) => {
       </section>
       <section className="tasks">
         {tasks.map((task) => (
-          <Task task={task} handleDelete={handleDelete} />
+          <Task task={task} handleDelete={handleDelete} key={task._id} />
         ))}
       </section>
     </>
@@ -68,7 +71,11 @@ const Tasks = ({ tasks, dispatch }) => {
 
 Tasks.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  tasks: PropTypes.shape([]).isRequired,
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 function mapStateToProps({ tasks }) {

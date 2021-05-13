@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -29,7 +30,7 @@ const Dashboard = ({ tasks, dispatch }) => {
       </div>
       <div className="pendingTasks">
         <h3>Pending tasks</h3>
-        {pendingTasks.map((task) => <Task task={task} key={task.id} />)}
+        {pendingTasks.map((task) => <Task task={task} key={task._id} />)}
       </div>
     </>
   );
@@ -38,8 +39,7 @@ const Dashboard = ({ tasks, dispatch }) => {
 Dashboard.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
-      code: PropTypes.string,
-      id: PropTypes.number,
+      _id: PropTypes.string,
     }),
   ).isRequired,
   dispatch: PropTypes.func.isRequired,

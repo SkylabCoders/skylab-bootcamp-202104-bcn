@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 import axios from 'axios';
 import actionTypes from './actionTypes';
@@ -46,10 +47,7 @@ export function deleteTask(taskId, url = BASE_URL) {
 
 export function getTaskById(taskId, url = BASE_URL) {
   return async (dispatch) => {
-    console.log('url ----->', `${url}/${taskId}`);
     const { data } = await axios.get(`${url}/${taskId}`);
-    console.log('data---------->', data);
-
     dispatch({
       type: actionTypes.LOAD_TASK,
       task: data,
@@ -57,15 +55,20 @@ export function getTaskById(taskId, url = BASE_URL) {
   };
 }
 
-export function updateTask(task) {
-  return {
-    type: actionTypes.UPDATE_TASK,
-    task,
+export function updateTask(task, baseURL = BASE_URL) {
+  const url = `${baseURL}/${task._id}`;
+  return async (dispatch) => {
+    const { data } = await axios.put(
+      url,
+      {
+        title: task.title,
+        description: task.description,
+        done: task.done,
+      },
+    );
+    dispatch({
+      type: actionTypes.UPDATE_TASK,
+      task: data,
+    });
   };
 }
-// export function loadTask(task) {
-//   return {
-//     type: actionTypes.LOAD_TASK,
-//     task,
-//   };
-// }

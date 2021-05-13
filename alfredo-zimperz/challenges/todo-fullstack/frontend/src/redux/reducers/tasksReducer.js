@@ -17,7 +17,7 @@ function tasksReducer(tasks = [], action) {
       break;
     case actionTypes.UPDATE_TASK:
       updatedTasks = tasks.map((task) => (
-        task.id === action.task.id
+        task._id === action.task._id
           ? { ...task, ...action.task }
           : task
       ));
