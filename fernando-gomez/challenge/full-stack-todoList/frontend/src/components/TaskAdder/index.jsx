@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addTask } from '../../redux/actions/actionCreators';
-import './cart.css';
+import './taskAdder.css';
 
 function TaskAdder({ dispatch, tasks }) {
   const [currentTitle, setCurrentTitle] = useState('');
@@ -19,6 +19,8 @@ function TaskAdder({ dispatch, tasks }) {
       description: currentDescription,
       done: false
     }));
+    setCurrentTitle('');
+    setCurrentDescription('');
   };
 
   const handleTitleChange = (event) => {
@@ -30,30 +32,38 @@ function TaskAdder({ dispatch, tasks }) {
   };
 
   return (
-    <>
-      <h2 className="cart-tittle">Add a task</h2>
-      <h3>
+    <div className="tasks-adder">
+      <h1 className="subtitle">To do list</h1>
+      <h3 className="total-tasks">
         Your total tasks:
         {' '}
         {currentTotal}
       </h3>
-      <input
-        type="text"
-        onChange={handleTitleChange}
-        placeholder="Title"
-      />
-      <input
-        type="text"
-        onChange={handleDescriptionChange}
-        placeholder="Description"
-      />
+      <span className="inputs">
+        <input
+          type="text"
+          onChange={handleTitleChange}
+          placeholder="Title"
+          className="taskTitle-input"
+          value={currentTitle}
+        />
+        <input
+          type="text-box"
+          onChange={handleDescriptionChange}
+          placeholder="Description"
+          className="taskDescription-input"
+          value={currentDescription}
+        />
+      </span>
+
       <button
         type="button"
         onClick={handleAddTask}
+        className="addTask-button"
       >
         Add task
       </button>
-    </>
+    </div>
   );
 }
 

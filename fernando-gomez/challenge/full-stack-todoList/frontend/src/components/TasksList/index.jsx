@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import {
   loadTasks, deleteTask, updateTask
 } from '../../redux/actions/actionCreators';
-import './list.css';
+import './task.css';
 
 function TasksList({ tasks, dispatch }) {
   const [activeTask, setActiveTask] = useState(null);
@@ -18,6 +18,10 @@ function TasksList({ tasks, dispatch }) {
 
   const handleDelete = (taskId) => {
     dispatch(deleteTask(taskId));
+  };
+
+  const handleHideEditTask = () => {
+    setActiveTask(null);
   };
 
   const handleEditTask = (task) => {
@@ -45,53 +49,69 @@ function TasksList({ tasks, dispatch }) {
 
   return (
     <>
-      <h1 className="list-tittle">My tasks</h1>
-      <ul className="products-list">
+      <h2 className="title">My tasks</h2>
+      <ul className="list">
         {
           tasks?.map((task) => (
-            <li className="products-list__product">
-              <span className="product-name">
+            <li className="list__element list-element">
+              <span className="list-element__title">
                 {task.title}
               </span>
-              <span className="product-cost">
+              <span className="list-element__description">
                 {task.description}
               </span>
-              <button
-                type="button"
-                className="button-add"
-                onClick={() => handleDelete(task._id)}
-              >
-                -
-              </button>
               {activeTask === task._id
                 ? (
                   <>
-                    <input
-                      type="text"
-                      onChange={handleTitleChange}
-                      placeholder="Title"
-                    />
-                    <input
-                      type="text"
-                      onChange={handleDescriptionChange}
-                      placeholder="Description"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => handleEditTask(task)}
-                    >
-                      Submit
-                    </button>
+                    <span className="inputs">
+                      <input
+                        type="text"
+                        onChange={handleTitleChange}
+                        placeholder="Title"
+                        className="inputs__edit-title"
+                      />
+                      <input
+                        type="text"
+                        onChange={handleDescriptionChange}
+                        placeholder="Description"
+                        className="inputs__edit-description"
+                      />
+                    </span>
+                    <span className="buttons">
+                      <button
+                        type="button"
+                        onClick={() => handleEditTask(task)}
+                        className="buttons__submit"
+                      >
+                        Submit
+                      </button>
+                      <button
+                        type="button"
+                        onClick={handleHideEditTask}
+                        className="buttons__hide"
+                      >
+                        ^
+                      </button>
+                    </span>
                   </>
                 )
                 : (
-                  <button
-                    type="button"
-                    className="button-add"
-                    onClick={() => handleEditOpened(task._id)}
-                  >
-                    Edit
-                  </button>
+                  <div className="buttons">
+                    <button
+                      type="button"
+                      onClick={() => handleDelete(task._id)}
+                      className="buttons__delete"
+                    >
+                      -
+                    </button>
+                    <button
+                      type="button"
+                      className="buttons__edit"
+                      onClick={() => handleEditOpened(task._id)}
+                    >
+                      Edit
+                    </button>
+                  </div>
                 )}
             </li>
           ))

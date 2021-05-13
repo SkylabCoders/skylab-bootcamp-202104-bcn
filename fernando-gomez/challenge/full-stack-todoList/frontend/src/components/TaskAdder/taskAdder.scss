@@ -1,0 +1,43 @@
+body {
+    background-color: #393e46;
+    color: #00adb5;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.tasks-adder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subtitle {
+
+}
+
+.total-tasks {
+
+}
+
+.taskTitle-input {
+    background-color: #aad8d3;
+    font-size: 1.5em;
+    border-radius: 0.35em;
+    border-style: none;
+    outline: none;
+    padding: 0.35em;
+    margin-bottom: 0.35em;
+}
+
+.taskDescription-input {
+    background-color: #aad8d3;
+    font-size: 1em;
+    height: 2em;
+    border-radius: 0.5em;
+    border-style: none;
+    outline: none;
+    padding: 0.35em;
+}
+
+.addTask-button {
+    
+}
