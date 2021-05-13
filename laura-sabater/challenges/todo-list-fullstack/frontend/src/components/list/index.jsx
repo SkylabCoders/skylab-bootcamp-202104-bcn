@@ -5,47 +5,40 @@ import { PropTypes } from 'prop-types';
 import {
   loadTasks, deleteTask, addTask,
 } from '../../redux/actions/actionCreators';
+import './list.css';
 
 function List({ tasks, dispatch }) {
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
-  function clickAdd() {
+  function addOnClick() {
     const newTask = document.getElementById('new-task-name').value;
     dispatch(addTask({ title: newTask }));
   }
-  function deleteClick(taskId) {
+  function deleteOnClick(taskId) {
     dispatch(deleteTask(taskId));
   }
   return (
-    <>
+    <div className="todo-list">
       <h2>Todo List</h2>
       <form>
         <label htmlFor="task-name">
-          Add Task:
           <input
             id="new-task-name"
-            placeholder="New task Name"
+            placeholder="Add new task"
           />
-          <button type="button" className="add" onClick={() => clickAdd()}>ADD</button>
+          <button type="button" className="add" onClick={() => addOnClick()}>+</button>
         </label>
       </form>
       <ul className="to-do-list">
         {tasks.map((task) => (
           <li className="to-do-list__task">
             <span>{task.title}</span>
-            <button
-              type="button"
-              className="delete"
-              onClick={() => deleteClick(task._id)}
-            >
-              X
-            </button>
+            <button type="button" className="delete" onClick={() => deleteOnClick(task._id)}>X</button>
           </li>
         ))}
       </ul>
-
-    </>
+    </div>
   );
 }
 List.propTypes = {
