@@ -6,14 +6,18 @@ const tasksUrl = 'http://localhost:2021/tasks';
 
 export function loadTasks() {
   return async (dispatch) => {
-    const { data } = await axios(tasksUrl);
-    dispatch({
-      type: actionTypes.LOAD_TASKS,
-      tasks: data
-    });
-    dispatch({
-      type: actionTypes.TASK_ERROR
-    });
+    try {
+      const { data } = await axios(tasksUrl);
+      dispatch({
+        type: actionTypes.LOAD_TASKS,
+        tasks: data
+      });
+      dispatch({
+        type: actionTypes.TASK_ERROR
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
 
