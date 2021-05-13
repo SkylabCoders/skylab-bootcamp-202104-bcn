@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -11,11 +10,9 @@ export function loadProducts() {
       type: actionTypes.LOAD_PRODUCTS,
       products: data
     });
-
-    // dispatch({
-    //   type: actionTypes.ERROR_PRODUCT
-    // });
-    // eslint-disable-next-line no-console
+    dispatch({
+      type: actionTypes.ERROR_PRODUCT
+    });
   };
 }
 

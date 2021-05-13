@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addProductToCart, loadProducts } from '../../redux/actions/actionCreators';
 import './list.css';
-// import PRODUCTS from '../../constants/products.mock';
 
 function ProductsList({ products, dispatch }) {
   useEffect(() => {
