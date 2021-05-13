@@ -1,6 +1,8 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
-import { loadTasks, createTask } from './actionCreators';
+import {
+  loadTasks, createTask, deleteTask, updateTask,
+} from './actionCreators';
 
 jest.mock('axios');
 
@@ -63,6 +65,62 @@ describe('Given a createTask action creator', () => {
 
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.ADD_TASK_ERROR,
+    });
+  });
+});
+
+describe('Given a deleteTask action creator', () => {
+  test('Should delete a task', async () => {
+    axios.delete.mockResolvedValue();
+    const dispatch = jest.fn();
+
+    await deleteTask(1)(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.DELETE_TASK,
+      taskId: 1,
+    });
+  });
+
+  test('Dispatch an error', async () => {
+    axios.delete.mockRejectedValue();
+    const dispatch = jest.fn();
+
+    await deleteTask()(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.DELETE_TASK_ERROR,
+    });
+  });
+});
+
+describe('Given a updateTask action creator', () => {
+  test('Should update a task', async () => {
+    const task = {
+      data: {
+        name: 'Upated task',
+        isFinished: true,
+      },
+    };
+    axios.put.mockResolvedValue(task);
+    const dispatch = jest.fn();
+
+    await updateTask(task)(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.UPDATE_TASK,
+      task: task.data,
+    });
+  });
+
+  test('Dispatch an error', async () => {
+    axios.put.mockRejectedValue();
+    const dispatch = jest.fn();
+
+    await updateTask()(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.UPDATE_TASK_ERROR,
     });
   });
 });
