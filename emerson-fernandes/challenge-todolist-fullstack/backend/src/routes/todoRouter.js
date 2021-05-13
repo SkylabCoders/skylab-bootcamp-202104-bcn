@@ -6,7 +6,13 @@ function taskRouter() {
 
   routes
     .route('/')
+    .get(todoController.getAll)
     .post(todoController.createTask);
+
+  routes
+    .route('/:taskId')
+    .get(todoController.getTaskById)
+    .delete(todoController.deleteTaskById);
 
   return routes;
 }
