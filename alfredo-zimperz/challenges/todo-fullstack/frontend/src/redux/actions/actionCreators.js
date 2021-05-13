@@ -1,25 +1,47 @@
-import shortId from 'shortid';
+/* eslint-disable no-console */
+import axios from 'axios';
 import actionTypes from './actionTypes';
 import TASKS from '../../constants/tasks.mock';
 
-export function loadTasks() {
-  return {
-    type: actionTypes.LOAD_TASKS,
+const BASE_URL = 'http://localhost:2021/tasks';
+
+export function loadTasks(url = BASE_URL) {
+  return async (dispatch) => {
+    const { data } = await axios.get(url);
+    dispatch({
+      type: actionTypes.LOAD_TASKS,
+      tasks: data,
+    });
   };
 }
 
-export function addTask(task) {
-  const id = shortId.generate();
-  return {
-    type: actionTypes.ADD_TASK,
-    task: { id, ...task, done: false },
+export function addTask(task, url = BASE_URL) {
+  return async (dispatch) => {
+    const { data } = await axios.post(
+      url,
+      {
+        ...task,
+        done: false,
+      },
+    );
+    dispatch({
+      type: actionTypes.ADD_TASK,
+      task: data,
+    });
   };
 }
 
-export function deleteTask(taskId) {
-  return {
-    type: actionTypes.DELETE_TASK,
-    taskId,
+export function deleteTask(taskId, url = BASE_URL) {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`${url}/${taskId}`);
+      dispatch({
+        type: actionTypes.DELETE_TASK,
+        taskId,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
 

@@ -13,7 +13,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <Provider store={store}>
+      <Provider store={store()}>
         <Router>
           <header className="header">
             <h1>To Do List</h1>

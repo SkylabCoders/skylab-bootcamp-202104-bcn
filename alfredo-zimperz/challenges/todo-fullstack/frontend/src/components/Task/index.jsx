@@ -1,12 +1,13 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import './task.css';
 
 const Task = ({ task, handleDelete }) => (
-  <div key={task.id} className="task">
+  <div key={task._id} className="task">
     <div className="task__text">
-      <Link to={`/tasks/${task.id}`}>
+      <Link to={`/tasks/${task._id}`}>
         <h4 className={task.done ? 'done' : ''}>{task.title}</h4>
         <p>{task.description}</p>
       </Link>
@@ -17,7 +18,7 @@ const Task = ({ task, handleDelete }) => (
         className="delete"
         title="delete task"
         type="button"
-        onClick={() => handleDelete(task.id)}
+        onClick={() => handleDelete(task._id)}
       >
         x
       </button>
@@ -29,7 +30,7 @@ const Task = ({ task, handleDelete }) => (
 
 Task.propTypes = {
   task: PropTypes.shape({
-    id: PropTypes.number,
+    _id: PropTypes.number,
     done: PropTypes.bool,
     title: PropTypes.string,
     description: PropTypes.string,
