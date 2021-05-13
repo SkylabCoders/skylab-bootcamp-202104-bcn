@@ -6,6 +6,12 @@ function tasksReducer(tasks = [], action) {
       return action.tasks;
     case actionTypes.ADD_TASK:
       return [...tasks, action.task];
+    case actionTypes.DELETE_TASK:
+      if (action.response === 204) {
+        return '204';
+      }
+      return 'no';
+
     default:
       return tasks;
   }
