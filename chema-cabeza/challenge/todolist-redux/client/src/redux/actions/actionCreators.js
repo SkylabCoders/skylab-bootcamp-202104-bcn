@@ -54,10 +54,16 @@ export function addtask(task) {
 
 export function updateTask(task) {
   return async (dispatch) => {
-    const { data } = await axios.put(`${url}/${task.id}`, task);
-    dispatch({
-      type: actionTypes.UPDATE_TASK,
-      task: data,
-    });
+    try {
+      const { data } = await axios.put(`${url}/${task.id}`, task);
+      dispatch({
+        type: actionTypes.UPDATE_TASK,
+        task: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'UPDATE_TASK_ERROR',
+      });
+    }
   };
 }

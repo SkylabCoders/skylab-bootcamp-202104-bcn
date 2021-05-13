@@ -1,33 +1,108 @@
 import axios from 'axios';
-import { loadList } from './actionCreators';
+import {
+  loadList, deleteTask, addtask, updateTask,
+} from './actionCreators';
 import actionTypes from './actionTypes';
 
 jest.mock('axios');
 
 describe('loadList', () => {
-  test('should dispatch LOAD_HEROES_ERROR', async () => {
-    const loadListResponse = loadList();
-    global.fetch = jest.fn().mockResolvedValue({
-      json: jest.fn().mockRejectedValue(),
-    });
+  test('should dispatch LOAD_LIST', async () => {
+    axios.mockResolvedValue({ data: ['pepe'] });
     const dispatch = jest.fn();
-    await loadListResponse(dispatch);
+
+    await loadList()(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.LOAD_LIST,
+      list: ['pepe'],
+    });
+  });
+
+  test('should dispatch LOAD_LIST_ERROR', async () => {
+    axios.mockRejectedValue();
+    const dispatch = jest.fn();
+
+    await loadList()(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
       type: 'LOAD_LIST_ERROR',
     });
   });
+});
 
+describe('deleteTask', () => {
   test('should dispatch LOAD_LIST', async () => {
-    const loadListResponse = loadList();
-    global.fetch = jest.fn().mockResolvedValue({
-      json: jest.fn(),
-    });
+    axios.mockResolvedValue({ data: ['pepe'] });
     const dispatch = jest.fn();
-    await loadListResponse(dispatch);
+
+    await deleteTask(2)(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.LOAD_LIST,
+      type: actionTypes.DELETE_TASK,
+      taskId: 2,
+    });
+  });
+
+  test('should dispatch DELETE_TASK_ERROR', async () => {
+    axios.mockRejectedValue();
+    const dispatch = jest.fn();
+
+    await deleteTask(2)(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: 'DELETE_TASK',
+      taskId: 2,
+    });
+  });
+});
+
+describe('addtask', () => {
+  test('should dispatch ADD_TASK', async () => {
+    axios.post.mockResolvedValue({ data: ['pepe'] });
+    const dispatch = jest.fn();
+
+    await addtask({ id: 1, name: 'Tarea' })(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.ADD_TASK,
+      task: ['pepe'],
+    });
+  });
+
+  test('should dispatch ADD_TASK_ERROR', async () => {
+    axios.post.mockRejectedValue();
+    const dispatch = jest.fn();
+
+    await addtask()(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: 'ADD_TASK_ERROR',
+    });
+  });
+});
+
+describe('updateTask', () => {
+  test('should dispatch UPDATE_TASK', async () => {
+    axios.put.mockResolvedValue({ data: ['pepe'] });
+    const dispatch = jest.fn();
+
+    await updateTask({ id: 1, name: 'Tarea' })(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.UPDATE_TASK,
+      task: ['pepe'],
+    });
+  });
+
+  test('should dispatch ADD_TASK_ERROR', async () => {
+    axios.put.mockRejectedValue();
+    const dispatch = jest.fn();
+
+    await updateTask()(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: 'UPDATE_TASK_ERROR',
     });
   });
 });
