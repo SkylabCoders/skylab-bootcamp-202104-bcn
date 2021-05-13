@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 /* eslint-disable no-underscore-dangle */
 import actionTypes from '../actions/actionTypes';
 
@@ -8,7 +7,6 @@ function cartReducer(cartList = [], action) {
       return cartList;
 
     case actionTypes.ADD_PRODUCTS_TO_CART:
-      debugger;
       // eslint-disable-next-line no-case-declarations
       const itemIndex = cartList
         .findIndex((product) => action.product._id === product._id);
