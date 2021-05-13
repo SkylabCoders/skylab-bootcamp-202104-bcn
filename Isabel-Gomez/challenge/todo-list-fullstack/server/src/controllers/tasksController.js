@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 const Task = require('../model/taskModel');
 
 function tasksController() {

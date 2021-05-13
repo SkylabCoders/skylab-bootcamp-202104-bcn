@@ -1,21 +1,16 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  loadTasks, addTask, deleteTask, doneTask,
+  loadTasks, addTask, deleteTask, doneTask, updateTask,
 } from '../../redux/actions/actionCreators';
 import './task.css';
 
 const Task = ({ dispatch, tasks }) => {
-// getAll Tasks //
-
   useEffect(() => {
     if (!tasks?.length) dispatch(loadTasks());
   }, []);
-
-  // Create new Task //
 
   const [nameNewTask, setNameNewTask] = useState('');
 
@@ -32,16 +27,19 @@ const Task = ({ dispatch, tasks }) => {
     setNameNewTask('');
   };
 
-  // Delete Task //
-
   const handleDeleteTask = (taskId) => {
     dispatch(deleteTask(taskId));
   };
 
-  // Update Task //
-
   const handleDoneTask = (taskId) => {
     dispatch(doneTask(taskId));
+  };
+
+  const handleEditTask = (taskId) => {
+    const newTaskName = {
+      name: nameNewTask,
+    };
+    dispatch(updateTask(taskId, newTaskName));
   };
 
   return (
@@ -66,7 +64,7 @@ const Task = ({ dispatch, tasks }) => {
               <div className="list-container__item-div">
                 <button
                   type="button"
-                  disabled={!!element.completed}
+                  disabled={element.completed}
                   className={!element.completed ? 'list__finished-button' : 'bloqued'}
                   onClick={() => handleDoneTask(element._id)}
                 >
@@ -75,6 +73,7 @@ const Task = ({ dispatch, tasks }) => {
                 <button
                   type="button"
                   className="list__edit-button"
+                  onClick={() => handleEditTask(element._id)}
                 >
                   <i className="far fa-edit" />
                 </button>

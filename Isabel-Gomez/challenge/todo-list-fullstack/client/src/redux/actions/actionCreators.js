@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -52,10 +51,10 @@ export function deleteTask(taskId) {
   };
 }
 
-export function updateTask(taskId) {
+export function updateTask(taskId, newTaskName) {
   return async (dispatch) => {
     try {
-      await axios.put(`${url}/${taskId}`);
+      await axios.put(`${url}/${taskId}`, { name: newTaskName });
       dispatch({
         type: actionTypes.UPDATE_TASK,
         taskId,
@@ -71,7 +70,7 @@ export function updateTask(taskId) {
 export function doneTask(taskId) {
   return async (dispatch) => {
     try {
-      await axios.put(`${url}/${taskId}`);
+      await axios.put(`${url}/${taskId}`, { completed: true });
       dispatch({
         type: actionTypes.DONE_TASK,
         taskId,

@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-debugger */
 import actionTypes from '../actions/actionTypes';
 
 const taskReducer = (stateTask = [], action) => {
@@ -12,11 +11,11 @@ const taskReducer = (stateTask = [], action) => {
       return stateTask.filter((element) => element._id !== action.taskId);
     case actionTypes.UPDATE_TASK:
       return stateTask.map((element) => ((element.id === action.taskId)
-        ? [...element, ...action.taskId]
+        ? { name: element.name }
         : element));
-    case actionTypes.DONE_TASKS:
-      return stateTask.map((element) => ((element.id === action.taskId)
-        ? action.taskId.completed === true
+    case actionTypes.DONE_TASK:
+      return stateTask.map((element) => ((element._id === action.taskId)
+        ? { ...element, completed: true }
         : element));
     default:
       return stateTask;
