@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import './Cart.css'
 // import itemsCart from '../constants/items';
 import { deleteItem, loadCart } from '../redux/actions/actionCreators';
 function CartItems({ dispatch, itemSelect}) {
@@ -13,6 +14,7 @@ function CartItems({ dispatch, itemSelect}) {
   }
   return (
     <>
+      <div className="basket">
       <h2>Mi cesta: </h2>
         {itemSelect.map((item) => (
         <>
@@ -23,6 +25,7 @@ function CartItems({ dispatch, itemSelect}) {
         </>
         ))}
         <h2>{"Precio= "+precioTotal.toFixed(2)}</h2>
+        </div>
     </>
   );
 }
