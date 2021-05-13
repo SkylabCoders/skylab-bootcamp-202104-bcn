@@ -1,15 +1,18 @@
+/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://localhost:2021/heroes/';
+const url = 'http://localhost:1305/to-do-list';
 
 export function loadTasks() {
+  debugger;
   return async (dispatch) => {
     try {
       const { data } = await axios(url);
+      // const data = [{ name: 'hola' }];
       dispatch({
         type: actionTypes.LOAD_TASKS,
-        items: data,
+        tasks: data,
       });
     } catch (error) {
       dispatch({
@@ -25,7 +28,7 @@ export function addTask(itemId) {
       const { data } = await axios.post(`${url}/${itemId}`);
       dispatch({
         type: actionTypes.ADD_TASK,
-        items: data,
+        itemId: data,
       });
     } catch (error) {
       dispatch({
@@ -38,10 +41,10 @@ export function addTask(itemId) {
 export function deleteTask(itemId) {
   return async (dispatch) => {
     try {
-      await axios.delete(`${url}/${itemId}`);
+      const { data } = await axios.delete(`${url}/${itemId}`);
       dispatch({
         type: actionTypes.DELETE_TASK,
-        itemId,
+        itemId: data,
       });
     } catch (error) {
       dispatch({
@@ -57,7 +60,7 @@ export function updateTask(itemId) {
       const { data } = await axios.put(`${url}/${itemId}`);
       dispatch({
         type: actionTypes.UPDATE_TASK,
-        item: data,
+        itemId: data,
       });
     } catch (error) {
       dispatch({

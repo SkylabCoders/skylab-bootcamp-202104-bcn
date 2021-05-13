@@ -1,40 +1,39 @@
-import React, { useState } from 'react';
+/* eslint-disable no-debugger */
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTask } from '../../redux/actions/actionCreators';
+import { loadTasks } from '../../redux/actions/actionCreators';
 import './task.css';
-import ListTask from '../List/listTask';
 
-const Task = ({ dispatch }) => {
-  const [taskTitle, setTaskTitle] = useState('');
-  const [taskId] = useState(0);
-
-  const handleNameChange = (event) => {
-    setTaskTitle(event.target.value);
-  };
-
-  const createNewTask = () => {
-    dispatch(addTask({ id: taskId, title: taskTitle }));
-  };
+const Task = ({ dispatch, tasks }) => {
+  debugger;
+  useEffect(() => {
+    if (!tasks?.length) dispatch(loadTasks());
+  }, []);
   return (
-    <section>
-      <label htmlFor="task-name" className="label-create">
-        <input id="task-name" value={taskTitle} onChange={handleNameChange} placeholder="Add your task here..." className="label-create__input" />
-        <button onClick={createNewTask} type="button" className="label-create__button">Add task</button>
-      </label>
-      <div>
-        <ListTask />
-      </div>
-    </section>
+    <>
+      <section>
+        <label htmlFor="task-name" className="label-create">
+          <input id="task-name" placeholder="Add your task here..." className="label-create__input" />
+          <button type="button" className="label-create__button">Add task</button>
+        </label>
+      </section>
+      <section>
+        <ul>
+          {tasks?.map((element) => <li>{element.name}</li>)}
+        </ul>
+      </section>
+    </>
   );
 };
 
 Task.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  tasks: PropTypes.shape([]).isRequired,
 };
 
 const mapStateToProps = (store) => ({
-  stateTask: store.taskReducer,
+  tasks: store.tasks,
 });
 
 export default connect(mapStateToProps)(Task);
