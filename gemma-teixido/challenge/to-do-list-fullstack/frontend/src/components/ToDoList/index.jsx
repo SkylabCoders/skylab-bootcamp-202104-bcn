@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
@@ -20,14 +21,12 @@ function ToDoList({ tasks, dispatch }) {
   };
 
   function handleDone(taskId) {
+    debugger;
     dispatch(doneTask(taskId));
   }
 
   const handleAddTask = () => {
-    let newId = 1;
-    if (tasks.length !== 0) newId = tasks[tasks.length - 1].id + 1;
     const task = {
-      id_: newId,
       task: newestTask
     };
     dispatch(addTask(task));

@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionType';
 
@@ -30,15 +31,23 @@ export function addTask(task) {
 }
 
 export function deleteTask(taskId) {
-  return {
-    type: actionTypes.DELETE_TASK,
-    taskId
+  return async (dispatch) => {
+    await axios.delete(`${url}/${taskId}`);
+    debugger;
+    dispatch({
+      type: actionTypes.DELETE_TASK,
+      taskId
+    });
   };
 }
 
 export function doneTask(taskId) {
-  return {
-    type: actionTypes.DONE_TASK,
-    taskId
+  debugger;
+  return async (dispatch) => {
+    await axios.put(`${url}/${taskId}`);
+    dispatch({
+      type: actionTypes.DONE_TASK,
+      taskId
+    });
   };
 }

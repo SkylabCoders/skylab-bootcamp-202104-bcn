@@ -1,7 +1,9 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-underscore-dangle */
 import actionType from '../actions/actionType';
 
 function tasksReducer(tasks = [], action) {
+  debugger;
   switch (action.type) {
     case actionType.LOAD_TASKS:
       return action.tasks;
