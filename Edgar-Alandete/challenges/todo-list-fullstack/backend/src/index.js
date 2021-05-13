@@ -20,8 +20,8 @@ server.use(cors());
 server.use(express.json());
 
 server.use(morgan('tiny'));
-// const heroesRouter = require('./routes/heroesRouter');
+const tasksRouter = require('./routes/taskRouter');
 
-// server.use('/heroes', heroesRouter);
+server.use('/tasks', tasksRouter);
 
 server.listen('2021', () => debug(`Server is running in ${chalk.blue('2021')}`));
