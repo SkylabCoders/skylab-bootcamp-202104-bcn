@@ -1,5 +1,5 @@
 /* eslint-disable no-debugger */
-import shortId from 'shortid';
+// import shortId from 'shortid';
 import axios from 'axios';
 import actionTypes from './actionTypes';
 import TASKS from '../../constants/tasks.mock';
@@ -7,7 +7,6 @@ import TASKS from '../../constants/tasks.mock';
 const URL = 'http://localhost:2021/todoList';
 
 export function loadTasks() {
-  debugger;
   return async (dispatch) => {
     const { data } = await axios(URL);
     dispatch({
@@ -18,11 +17,18 @@ export function loadTasks() {
 }
 
 export function addTask(task) {
-  const id = shortId.generate();
-  return {
-    type: actionTypes.ADD_TASK,
-    task: { id, ...task, done: false }
+//   const id = shortId.generate();
+  debugger;
+  return async (dispatch) => {
+    const { data } = await axios.post(URL, task);
+    dispatch({
+      type: actionTypes.ADD_TASK,
+      task: data
+    });
   };
+//   return {
+//
+//   };
 }
 
 export function deleteTask(taskId) {

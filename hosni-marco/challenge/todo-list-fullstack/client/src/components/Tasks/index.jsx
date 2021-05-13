@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -6,27 +7,19 @@ import Task from '../Task';
 
 const Tasks = ({ tasks, dispatch }) => {
   const [newTaskTitle, setNewTaskTitle] = useState();
-  const [newTaskDescription, setNewTaskDescription] = useState();
+  // const [newTaskDescription, setNewTaskDescription] = useState();
 
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
 
   const handleChangeInput = (event) => {
-    switch (event.target.name) {
-      case 'title':
-        setNewTaskTitle(event.target.value);
-        break;
-      case 'description':
-        setNewTaskDescription(event.target.value);
-        break;
-      default:
-        break;
-    }
+    setNewTaskTitle(event.target.value);
   };
   const saveNewTask = () => {
-    if (newTaskTitle && newTaskDescription) {
-      dispatch(addTask({ title: newTaskTitle, description: newTaskDescription }));
+    debugger;
+    if (newTaskTitle) {
+      dispatch(addTask({ task: newTaskTitle }));
     }
   };
   const handleDelete = (id) => dispatch(deleteTask(id));
