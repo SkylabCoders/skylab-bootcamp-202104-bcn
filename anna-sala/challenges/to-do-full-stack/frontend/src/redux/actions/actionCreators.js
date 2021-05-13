@@ -34,10 +34,19 @@ export function addTask(task) {
     }
   };
 }
-export function deleteTask(taskID) {
-  return {
-    type: actionTypes.DELETE_TASK,
-    taskId: taskID,
+export function deleteTask(task) {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`${tasksURL}/${task._id}`);
+      dispatch({
+        type: actionTypes.DELETE_TASK,
+        task,
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.LOAD_TASK_ERROR,
+      });
+    }
   };
 }
 
