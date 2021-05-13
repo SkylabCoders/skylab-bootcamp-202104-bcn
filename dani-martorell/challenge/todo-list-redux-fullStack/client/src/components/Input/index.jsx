@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addTask } from '../../redux/actions/actionCreators';
+
 import './input.css';
 
 function Input({ dispatch }) {
@@ -12,11 +13,12 @@ function Input({ dispatch }) {
   function handleClick() {
     const newTask = { name: taskName };
     dispatch(addTask(newTask));
+    setTaskName('');
   }
 
   return (
     <form className="form-block">
-      <input className="form-block__input" onChange={(e) => handleInputChange(e)} type="text" id="fname" size="50" />
+      <input className="form-block__input" value={taskName} placeholder="Write your task here..." onChange={(e) => handleInputChange(e)} type="text" id="fname" size="50" />
       <button type="button" className="form-block__btn" onClick={handleClick}>Add Task</button>
     </form>
   );
