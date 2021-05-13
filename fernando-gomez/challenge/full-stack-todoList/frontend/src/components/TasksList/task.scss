@@ -26,8 +26,16 @@ $light-color: #e66198;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 75em;
-    padding-left: 8em;
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 3em;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 
 .task-content__title {
@@ -37,7 +45,7 @@ $light-color: #e66198;
 
 .task-content__description {
     font-size: 1em;
-    padding: 0 2em 1em 2em;
+    padding: 0 2em 2em 2em;
     overflow-wrap: anywhere;
 }
 
@@ -83,9 +91,10 @@ $light-color: #e66198;
 .buttons {
 
     display: flex;
-    flex-direction: row;
-    padding: 0em 2em;
+    padding: 0.5em 3em 0.5em 0em;
     border-style: none;
+    flex-wrap: wrap;
+    flex-direction: column;
 
     button {
         cursor: pointer;
@@ -101,10 +110,6 @@ $light-color: #e66198;
     }
 }
 
-.fa-star {
-    color: yellow;
-}
-
 .fas, .far {
     font-size: 2em;
     padding: 0.2em;
@@ -118,4 +123,13 @@ $light-color: #e66198;
     &:hover {
         color: yellow;
     }
+}
+
+.fa-star {
+    color: yellow;
+    margin: 0 0 0 0.2em;
+}
+
+.transparent {
+    color: transparent;
 }

@@ -61,14 +61,16 @@ function TasksList({ tasks, dispatch }) {
         {
           tasks?.map((task) => (
             <li className="list__element list-element ">
-              {task.done ? (<i className="fas fa-star" />) : <span />}
               <div className="task-content">
-                <span className="task-content__title">
-                  {task.title}
-                </span>
-                <span className="task-content__description">
-                  {task.description}
-                </span>
+                {task.done ? (<i className="fas fa-star" />) : <i className="fas fa-star transparent" />}
+                <div className="task-content__container">
+                  <span className="task-content__title">
+                    {task.title}
+                  </span>
+                  <span className="task-content__description">
+                    {task.description}
+                  </span>
+                </div>
               </div>
               {activeTask === task._id
                 ? (
@@ -119,7 +121,7 @@ function TasksList({ tasks, dispatch }) {
                       className="buttons__edit"
                       onClick={() => handleEditOpened(task._id)}
                     >
-                      <i className="far fa-edit" />
+                      {task.done ? (<></>) : (<i className="far fa-edit" />)}
                     </button>
                     <button
                       type="button"
