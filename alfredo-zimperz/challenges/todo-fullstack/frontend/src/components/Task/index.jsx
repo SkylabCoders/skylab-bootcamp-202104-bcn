@@ -30,7 +30,7 @@ const Task = ({ task, handleDelete }) => (
 
 Task.propTypes = {
   task: PropTypes.shape({
-    _id: PropTypes.number,
+    _id: PropTypes.string,
     done: PropTypes.bool,
     title: PropTypes.string,
     description: PropTypes.string,

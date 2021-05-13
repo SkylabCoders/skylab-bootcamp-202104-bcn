@@ -8,9 +8,9 @@ import './taskDetail.css';
 
 const TaskDetail = ({ selectedTask, dispatch }) => {
   const { taskId } = useParams();
-  const [taskTitle, setTaskTitle] = useState(selectedTask?.title);
-  const [taskDescription, setTaskDescription] = useState(selectedTask?.description);
-  const [taskDone, setTaskDone] = useState(selectedTask?.done);
+  const [taskTitle, setTaskTitle] = useState(selectedTask?.title || '');
+  const [taskDescription, setTaskDescription] = useState(selectedTask?.description || '');
+  const [taskDone, setTaskDone] = useState(selectedTask?.done || '');
   const history = useHistory();
 
   useEffect(() => {
@@ -34,7 +34,12 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
   };
 
   const save = () => {
-    dispatch(updateTask({ id: selectedTask._id, title: taskTitle, done: taskDone }));
+    dispatch(updateTask({
+      _id: selectedTask._id,
+      title: taskTitle,
+      description: taskDescription,
+      done: taskDone,
+    }));
   };
 
   return (
@@ -75,7 +80,6 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
               onClick={handleDoneChange}
             >
               {taskDone ? 'Mark as pending' : 'Mark as done'}
-
             </button>
             <span className="slider round" />
           </div>
@@ -99,7 +103,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
 TaskDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
   selectedTask: PropTypes.shape({
-    _id: PropTypes.number,
+    _id: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
     done: PropTypes.bool,
