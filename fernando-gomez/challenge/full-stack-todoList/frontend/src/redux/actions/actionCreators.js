@@ -12,11 +12,10 @@ export function loadTasks() {
         type: actionTypes.LOAD_TASKS,
         tasks: data
       });
+    } catch (error) {
       dispatch({
         type: actionTypes.TASK_ERROR
       });
-    } catch (error) {
-      console.log(error);
     }
   };
 }
