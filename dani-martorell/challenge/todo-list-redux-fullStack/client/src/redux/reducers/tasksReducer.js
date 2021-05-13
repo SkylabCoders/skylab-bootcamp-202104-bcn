@@ -12,6 +12,10 @@ function tasksReducer(tasks = [], action) {
         return tasks.filter((task) => task._id !== action.response.data);
       }
       return tasks;
+    case actionTypes.COMPLETE_TASK:
+      return tasks.map((task) => (
+
+        task._id === action.task._id ? { ...task, ...action.task } : task));
 
     default:
       return tasks;

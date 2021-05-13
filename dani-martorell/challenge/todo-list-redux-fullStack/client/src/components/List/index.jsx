@@ -2,13 +2,19 @@
 import { React, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadTasks, deleteTask } from '../../redux/actions/actionCreators';
+import { loadTasks, deleteTask, markAsDone } from '../../redux/actions/actionCreators';
 
 import './list.css';
 
 function List({ tasks, dispatch }) {
   function handleDelete(e) {
     dispatch(deleteTask(e.target.id));
+  }
+  function handleDone(e) {
+    const taskId = e.target.id;
+    const taskToBeUpdated = tasks.find((task) => task._id === taskId);
+    taskToBeUpdated.isCompleted = true;
+    dispatch(markAsDone(taskToBeUpdated));
   }
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
@@ -17,10 +23,10 @@ function List({ tasks, dispatch }) {
     <ul className="task-list">
       {
         tasks.map((task) => (
-          <li key={task.id} className="task-item">
+          <li key={task.id} className={task.isCompleted ? 'task-item' : 'task-item--active'}>
             <p className="task-item__name">{task.name}</p>
             <button type="button" className="task-item__btn delete-btn" onClick={(e) => handleDelete(e)} id={task._id}>Delete</button>
-            <button type="button" className="task-item__btn done-btn" id={task._id}>Done</button>
+            <button type="button" className="task-item__btn done-btn" onClick={(e) => handleDone(e)} id={task._id}>Done</button>
           </li>
         ))
       }
