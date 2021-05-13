@@ -36,4 +36,16 @@ body {
   outline: none;
   padding: 0.35em;
 }
+
+.addTask-button {
+  cursor: pointer;
+  outline: none;
+  border-style: none;
+  background-color: transparent;
+  padding: 2em 0em 0 0;
+}
+
+.addTask-button img {
+  width: 2em;
+}
 /*# sourceMappingURL=taskAdder.css.map */

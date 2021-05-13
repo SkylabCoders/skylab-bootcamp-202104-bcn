@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addTask } from '../../redux/actions/actionCreators';
 import './taskAdder.css';
+import add from '../../images/plus-circle-solid.svg';
 
 function TaskAdder({ dispatch, tasks }) {
   const [currentTitle, setCurrentTitle] = useState('');
@@ -61,7 +62,10 @@ function TaskAdder({ dispatch, tasks }) {
         onClick={handleAddTask}
         className="addTask-button"
       >
-        Add task
+        <img
+          src={add}
+          alt="Add"
+        />
       </button>
     </div>
   );

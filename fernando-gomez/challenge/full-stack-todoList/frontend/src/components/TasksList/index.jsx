@@ -6,6 +6,11 @@ import {
   loadTasks, deleteTask, updateTask
 } from '../../redux/actions/actionCreators';
 import './task.css';
+import done from '../../images/check-circle-solid.svg';
+import trash from '../../images/trash-alt-solid.svg';
+import edit from '../../images/edit-regular.svg';
+import back from '../../images/undo-alt-solid.svg';
+import submit from '../../images/code-branch-solid.svg';
 
 function TasksList({ tasks, dispatch }) {
   const [activeTask, setActiveTask] = useState(null);
@@ -22,6 +27,13 @@ function TasksList({ tasks, dispatch }) {
 
   const handleHideEditTask = () => {
     setActiveTask(null);
+  };
+
+  const handleDone = (task) => {
+    dispatch(updateTask({
+      ...task,
+      done: !task.done
+    }));
   };
 
   const handleEditTask = (task) => {
@@ -53,13 +65,15 @@ function TasksList({ tasks, dispatch }) {
       <ul className="list">
         {
           tasks?.map((task) => (
-            <li className="list__element list-element">
-              <span className="list-element__title">
-                {task.title}
-              </span>
-              <span className="list-element__description">
-                {task.description}
-              </span>
+            <li className="list__element list-element ">
+              <div className="task-content">
+                <span className="task-content__title">
+                  {task.title}
+                </span>
+                <span className="task-content__description">
+                  {task.description}
+                </span>
+              </div>
               {activeTask === task._id
                 ? (
                   <>
@@ -83,14 +97,20 @@ function TasksList({ tasks, dispatch }) {
                         onClick={() => handleEditTask(task)}
                         className="buttons__submit"
                       >
-                        Submit
+                        <img
+                          src={submit}
+                          alt="Submit"
+                        />
                       </button>
                       <button
                         type="button"
                         onClick={handleHideEditTask}
                         className="buttons__hide"
                       >
-                        ^
+                        <img
+                          src={back}
+                          alt="Back"
+                        />
                       </button>
                     </span>
                   </>
@@ -99,17 +119,33 @@ function TasksList({ tasks, dispatch }) {
                   <div className="buttons">
                     <button
                       type="button"
-                      onClick={() => handleDelete(task._id)}
-                      className="buttons__delete"
+                      className="buttons__done"
+                      onClick={() => handleDone(task)}
                     >
-                      -
+                      <img
+                        src={done}
+                        alt="Done"
+                      />
                     </button>
                     <button
                       type="button"
                       className="buttons__edit"
                       onClick={() => handleEditOpened(task._id)}
                     >
-                      Edit
+                      <img
+                        src={edit}
+                        alt="Edit"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleDelete(task._id)}
+                      className="buttons__delete"
+                    >
+                      <img
+                        src={trash}
+                        alt="Delete"
+                      />
                     </button>
                   </div>
                 )}

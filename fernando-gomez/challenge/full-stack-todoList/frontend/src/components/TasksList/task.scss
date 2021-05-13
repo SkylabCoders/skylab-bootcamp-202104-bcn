@@ -9,25 +9,32 @@
         background-color: #00adb5;
         color: #393e46;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         margin: 1em;
         border-radius: 1.5em;
+        justify-content: center;
     }
 }
 
-.list-element {
-    span {
-        padding: 0.35em;
-    }
+.task-content {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75em;
+    padding-left: 8em;
 }
 
-.list-element__title {
+.task-content__title {
     font-size: 2em;
+    padding: 0.35em;
 }
 
-.list-element__description {
+.task-content__description {
     font-size: 1em;
+    padding: 0 2em 1em 2em;
+    overflow-wrap: anywhere;
 }
 
 .list-element__delete-button {
@@ -64,6 +71,23 @@
 
 .buttons {
 
+    display: flex;
+    flex-direction: row;
+    padding: 0em 2em;
+    border-style: none;
+
+    button {
+        cursor: pointer;
+        outline: none;
+        border-style: none;
+        background-color: transparent;
+        padding: 0.5em 0em;
+    }
+
+    img {
+        width: 2em;
+        padding: 0 0.2em;
+    }
 }
 
 .buttons__submit {
@@ -80,4 +104,13 @@
 
 .buttons__edit {
 
+}
+
+.true {
+}
+
+.false {
+    background-color: blue;
+    width: 1em;
+    height: 1em;
 }

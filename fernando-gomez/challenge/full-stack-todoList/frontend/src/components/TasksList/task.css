@@ -12,6 +12,24 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em;
+  border-radius: 1.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.task-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -19,20 +37,19 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 1em;
-  border-radius: 1.5em;
+  width: 75em;
+  padding-left: 8em;
 }
 
-.list-element span {
+.task-content__title {
+  font-size: 2em;
   padding: 0.35em;
 }
 
-.list-element__title {
-  font-size: 2em;
-}
-
-.list-element__description {
+.task-content__description {
   font-size: 1em;
+  padding: 0 2em 1em 2em;
+  overflow-wrap: anywhere;
 }
 
 .inputs {
@@ -64,5 +81,36 @@
   border-style: none;
   outline: none;
   padding: 0.35em;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0em 2em;
+  border-style: none;
+}
+
+.buttons button {
+  cursor: pointer;
+  outline: none;
+  border-style: none;
+  background-color: transparent;
+  padding: 0.5em 0em;
+}
+
+.buttons img {
+  width: 2em;
+  padding: 0 0.2em;
+}
+
+.false {
+  background-color: blue;
+  width: 1em;
+  height: 1em;
 }
 /*# sourceMappingURL=task.css.map */
