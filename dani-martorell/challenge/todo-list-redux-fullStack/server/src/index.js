@@ -20,9 +20,8 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan('dev'));
 
-const heroesRouter = require('./routes/heroesRouter');
+const tasksRouter = require('./routes/tasksRouter');
 
-server.use('/heroes', heroesRouter);
+server.use('/tasks', tasksRouter);
 
-server.listen('2020',
-  () => 'Server is running in localhost:2020\')}');
+server.listen('2020', () => console.log('Server is running in localhost:2020'));
