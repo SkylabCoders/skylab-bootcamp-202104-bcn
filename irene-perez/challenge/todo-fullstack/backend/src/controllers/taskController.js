@@ -21,9 +21,15 @@ function taskController() {
     }
   }
 
+  async function getAllTasks(req, res) {
+    const allTasks = await Task.find();
+    res.json(allTasks);
+  }
+
   return {
     createTask,
-    deleteTaskById
+    deleteTaskById,
+    getAllTasks
   };
 }
 
