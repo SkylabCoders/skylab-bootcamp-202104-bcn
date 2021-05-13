@@ -9,11 +9,11 @@ function todolistRouter() {
     .get(todolistController.getAll)
     .post(todolistController.createOne);
 
-  // routes
-  // .route('/:heroId')
+  routes
+    .route('/:taskId')
+    .delete(todolistController.deleteById)
+    .put(todolistController.updateById);
   // .get(todolistController.getById)
-  // .put(todolistController.updateById)
-  // .delete(todolistController.deleteById);
 
   return routes;
 }

@@ -16,8 +16,8 @@ function listReducer(list = [], action) {
 
     case actionTypes.UPDATE_TASK:
       return list.map(
-        (task) => (task.id === action.taskId
-          ? { ...task, ...action.title }
+        (task) => (task.id === action.task.id
+          ? { ...task, ...action.task }
           : task),
       );
 

@@ -21,9 +21,18 @@ export function loadList() {
 }
 
 export function deleteTask(taskId) {
-  return {
-    type: actionTypes.DELETE_TASK,
-    taskId,
+  return async (dispatch) => {
+    try {
+      await axios.delete(`${url}/${taskId}`);
+      dispatch({
+        type: actionTypes.DELETE_TASK,
+        taskId,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'DELETE_TASK_ERROR',
+      });
+    }
   };
 }
 
@@ -44,8 +53,11 @@ export function addtask(task) {
 }
 
 export function updateTask(task) {
-  return {
-    type: actionTypes.UPDATE_TASK,
-    task,
+  return async (dispatch) => {
+    const { data } = await axios.put(`${url}/${task.id}`, task);
+    dispatch({
+      type: actionTypes.UPDATE_TASK,
+      task: data,
+    });
   };
 }

@@ -97,10 +97,11 @@ header,
           align-items: center;
 }
 
-.todo li {
+.todo input  {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+          
   outline: none;
 }
 
