@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -46,8 +47,8 @@ const InputTask = ({ tasks, dispatch }) => {
           {tasks.map((task) => (
             <li key={task.id} className={!task.completed ? 'task-item' : 'task-item--done'}>
               {task.name}
-              <button type="button" className="doneBtn" onClick={() => handleDone(task.id)}>DONE</button>
-              <button type="button" className="deleteBtn" onClick={() => handleDelete(task.id)}>DELETE</button>
+              <button type="button" className="doneBtn" onClick={() => handleDone(task._id)}>DONE</button>
+              <button type="button" className="deleteBtn" onClick={() => handleDelete(task._id)}>DELETE</button>
             </li>
           ))}
         </ul>

@@ -3,10 +3,10 @@ import actionTypes from './actionTypes';
 
 const URL = 'http://localhost:2021/tasks';
 
-export function loadTasks(url = URL) {
+export function loadTasks() {
   return async (dispacth) => {
     try {
-      const { data } = await axios.get(url);
+      const { data } = await axios.get(URL);
       dispacth({
         type: actionTypes.LOAD_TASKS,
         tasks: data
@@ -30,9 +30,12 @@ export function addTask(task) {
 }
 
 export function deleteTask(taskId) {
-  return {
-    type: actionTypes.DELETE_TASK,
-    taskId
+  return async (dispacth) => {
+    await axios.delete(`${URL}/${taskId}`);
+    dispacth({
+      type: actionTypes.DELETE_TASK,
+      taskId
+    });
   };
 }
 
