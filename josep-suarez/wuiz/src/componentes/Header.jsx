@@ -7,7 +7,6 @@ import { addTask } from '../redux/actions/actionCreators';
 function HeaderToDo({ tasks, dispatch }) {
   function newTask() {
     const newTaskInput = document.getElementById('inputTask');
-    console.log(tasks);
     return dispatch(addTask({ id: (tasks[tasks.length - 1].id + 1), task: newTaskInput.value }));
   }
   return (

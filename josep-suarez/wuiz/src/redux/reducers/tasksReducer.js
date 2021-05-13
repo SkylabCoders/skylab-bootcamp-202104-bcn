@@ -6,10 +6,7 @@ import actionTypes from '../actions/actionTypes';
 function taskReducer(tasks = [], action) {
   switch (action.type) {
     case actionTypes.PRINT_TASK:
-      return [
-        ...tasks,
-        action.task
-      ];
+      return action.task;
     case actionTypes.ADD_TASK:
       return [
         ...tasks,

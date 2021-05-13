@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-debugger */
 /* eslint-disable no-console */
 import React, { useEffect } from 'react';
@@ -7,6 +8,7 @@ import './taskSite.css';
 import { PrintTask, deleteTask, modifyTask } from '../redux/actions/actionCreators';
 
 function TaskSite({ tasks, dispatch }) {
+  debugger;
   useEffect(() => {
     if (!tasks.length) dispatch(PrintTask());
   }, [tasks]);
@@ -25,14 +27,12 @@ function TaskSite({ tasks, dispatch }) {
     return dispatch(modifyTask({ id: taskId, task: newTaskInput.value }));
   }
   debugger;
-  return tasks[0].map((task) => (
+  return tasks.map((task) => (
     <>
       <p id={task.id}>
-        {task.id}
-        -
         {task.task}
       </p>
-      <button type="button" id={`buttonDelete${task.id}`} onClick={() => { trashTask(task.id); }}>Delete</button>
+      <button type="button" id={`buttonDelete${task.id}`} onClick={() => { trashTask(task._id); }}>Delete</button>
       <button type="button" id={`button${task.id}`} onClick={() => { doneTask(task.id); }}>Done</button>
       <button type="button" id={`buttonModify${task.id}`} onClick={() => { modifyClickTask(task.id); }}>Modify</button>
     </>

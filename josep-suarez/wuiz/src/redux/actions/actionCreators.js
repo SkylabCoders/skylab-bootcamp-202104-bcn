@@ -16,15 +16,21 @@ export function PrintTask() {
   };
 }
 export function addTask(task) {
-  return {
-    type: actionTypes.ADD_TASK,
-    task
+  return async (dispatch) => {
+    const { data } = await axios.post(url, task);
+    dispatch({
+      type: actionTypes.ADD_TASK,
+      task: data
+    });
   };
 }
 export function deleteTask(taskId) {
-  return {
-    type: actionTypes.DELETE_TASK,
-    taskId
+  return async (dispatch) => {
+    await axios.delete(`${url}/${taskId}`);
+    dispatch({
+      type: actionTypes.DELETE_TASK,
+      taskId
+    });
   };
 }
 export function modifyTask(task) {
