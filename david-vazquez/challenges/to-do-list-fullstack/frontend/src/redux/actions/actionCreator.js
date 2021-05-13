@@ -30,7 +30,7 @@ export function addTask(newTask) {
       });
     } catch (error) {
       dispatch({
-        type: actionTypes.LOAD_TASKS_ERROR,
+        type: actionTypes.ADD_TASKS_ERROR,
       });
     }
   };
@@ -46,7 +46,7 @@ export function deleteTask(task) {
       });
     } catch (error) {
       dispatch({
-        type: actionTypes.LOAD_TASKS_ERROR,
+        type: actionTypes.DELETE_TASKS_ERROR,
       });
     }
   };
@@ -62,7 +62,7 @@ export function doneTask(task) {
       });
     } catch (error) {
       dispatch({
-        type: actionTypes.LOAD_TASKS_ERROR,
+        type: actionTypes.DONE_TASKS_ERROR,
       });
     }
   };

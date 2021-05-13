@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { addTask, loadTasks, deleteTask } from './actionCreator';
+import {
+  addTask, loadTasks, deleteTask, doneTask,
+} from './actionCreator';
 import actionTypes from './actionTypes';
 
 jest.mock('axios');
@@ -42,7 +44,7 @@ describe('addTask', () => {
     const dispatch = jest.fn();
     await addTask()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.LOAD_TASKS_ERROR,
+      type: actionTypes.ADD_TASKS_ERROR,
     });
   });
 });
@@ -59,24 +61,24 @@ describe('deleteTask', () => {
     const dispatch = jest.fn();
     await deleteTask()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.LOAD_TASKS_ERROR,
+      type: actionTypes.DELETE_TASKS_ERROR,
     });
   });
 });
 
-describe('deleteTask', () => {
-  test('should DELETE_TASK', async () => {
+describe('doneTask', () => {
+  test('should DONE_TASK', async () => {
     axios.mockResolvedValue();
     const dispatch = jest.fn();
-    await deleteTask()(dispatch);
+    await doneTask()(dispatch);
     expect(dispatch).toHaveBeenCalled();
   });
-  test('should DELETE_TASK_ERROR', async () => {
+  test('should DONE_TASK_ERROR', async () => {
     axios.mockResolvedValue();
     const dispatch = jest.fn();
-    await deleteTask()(dispatch);
+    await doneTask()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.LOAD_TASKS_ERROR,
+      type: actionTypes.DONE_TASKS_ERROR,
     });
   });
 });
