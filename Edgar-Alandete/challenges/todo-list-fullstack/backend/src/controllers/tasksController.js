@@ -33,8 +33,9 @@ function tasksController() {
 
   async function deleteTask(req, res) {
     debug(`Inside the function ${chalk.magenta('deleteTask')}`);
+    const { taskId } = req.params;
     try {
-      await Task.findByIdAndDelete(req.params.taskId);
+      await Task.findByIdAndDelete(taskId);
       res.status(204);
       res.json();
     } catch (error) {
@@ -44,9 +45,10 @@ function tasksController() {
 
   async function updateTask(req, res) {
     debug(`Inside the function ${chalk.magenta('deleteTask')}`);
+    const { taskId } = req.params;
     try {
       const updatedTask = await Task.findByIdAndUpdate(
-        req.params.taskId,
+        taskId,
         req.body,
         { new: true },
       );
