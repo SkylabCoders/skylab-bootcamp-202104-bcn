@@ -1,9 +1,17 @@
+/* eslint-disable no-underscore-dangle */
 import actionTypes from '../actions/actionTypes';
-// import PRODUCTS from '../../constants/products.mock';
 
 export default function productReducer(products = [], action) {
-  if (action.type === actionTypes.LOAD_PRODUCT) {
-    return action.products;
+  switch (action.type) {
+    case actionTypes.LOAD_PRODUCT:
+      return action.products;
+    case actionTypes.UPDATE_PRODUCTS:
+      return products.map(
+        (product) => (product._id === action.product._id
+          ? { ...product, ...action.product }
+          : product)
+      );
+    default:
+      return products;
   }
-  return products;
 }

@@ -43,9 +43,10 @@ export function deleteFromCart(product) {
 
 export function updateCart(product) {
   return async (dispatch) => {
-    await axios.put(`${url}/${product._id}`, product);
+    const { data } = await axios.put(`${url}/${product._id}`, product);
     dispatch({
-      type: actionTypes.UPDATE_PRODUCTS
+      type: actionTypes.UPDATE_PRODUCTS,
+      product: data
     });
   };
 }
