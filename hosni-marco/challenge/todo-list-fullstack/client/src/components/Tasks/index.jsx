@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadTasks, addTask, deleteTask } from '../../redux/actions/actionCreators';
 import Task from '../Task';
+import './tasks.css';
 
 const Tasks = ({ tasks, dispatch }) => {
   const [newTaskTitle, setNewTaskTitle] = useState();

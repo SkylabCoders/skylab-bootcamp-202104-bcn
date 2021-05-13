@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -5,8 +7,10 @@ import { PropTypes } from 'prop-types';
 import { getTaskById, updateTask } from '../../redux/actions/actionCreators';
 
 const TaskDetail = ({ selectedTask, dispatch }) => {
+  // eslint-disable-next-line no-debugger
+  debugger;
   const { taskId } = useParams();
-  const [taskTitle, setTaskTitle] = useState(selectedTask?.title);
+  const [taskTitle, setTaskTitle] = useState(selectedTask?.task);
   //   const [taskDescription, setTaskDescription] = useState(selectedTask?.description);
   const [taskDone, setTaskDone] = useState(selectedTask?.done);
   const history = useHistory();
@@ -16,7 +20,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
   }, [taskId]);
 
   useEffect(() => {
-    setTaskTitle(selectedTask.title);
+    setTaskTitle(selectedTask.task);
   }, [selectedTask]);
 
   const handleTitleChange = ({ target: { value } }) => {
@@ -36,7 +40,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
   };
 
   return (
-    selectedTask?.id ? (
+    selectedTask?._id ? (
       <>
         <article className="task-detail">
           <h2>
@@ -46,7 +50,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
           </h2>
           <div>
             <span>id: </span>
-            {selectedTask?.id}
+            {selectedTask?._id}
           </div>
           <div className="task-detail__modify">
             <label htmlFor="task-title">
@@ -97,7 +101,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
 TaskDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
   selectedTask: PropTypes.shape({
-    id: PropTypes.number,
+    _id: PropTypes.number,
     title: PropTypes.string,
     description: PropTypes.string,
     done: PropTypes.bool

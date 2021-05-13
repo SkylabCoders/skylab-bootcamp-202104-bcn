@@ -9,12 +9,12 @@ function toloListController() {
 
   async function createOne(req, res) {
     const newList = new List(req.body);
-    debug(newList);
+    // debug(newList);
     try {
       await newList.save();
       res.json(newList);
     } catch (error) {
-      debug(error);
+      // debug(error);
       res.send(error);
     }
   }
