@@ -1,17 +1,39 @@
+/* eslint-disable no-underscore-dangle */
+import axios from 'axios';
 import actionTypes from './actionTypes';
 
+const tasksURL = 'http://localhost:2023/tasks';
+
 export function loadTasks() {
-  return {
-    type: actionTypes.LOAD_TASKS,
+  return async (dispatch) => {
+    try {
+      const { data } = await axios(tasksURL);
+      dispatch({
+        type: actionTypes.LOAD_TASKS,
+        tasks: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.LOAD_TASK_ERROR,
+      });
+    }
   };
 }
 export function addTask(task) {
-  return {
-    type: actionTypes.ADD_TASK,
-    task,
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.post(tasksURL, task);
+      dispatch({
+        type: actionTypes.ADD_TASK,
+        task: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.LOAD_TASK_ERROR,
+      });
+    }
   };
 }
-
 export function deleteTask(taskID) {
   return {
     type: actionTypes.DELETE_TASK,
@@ -20,9 +42,18 @@ export function deleteTask(taskID) {
 }
 
 export function updateTask(task) {
-  return {
-    type: actionTypes.UPDATE_TASK,
-    task,
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.put(`${tasksURL}/${task._id}`, task);
+      dispatch({
+        type: actionTypes.UPDATE_TASK,
+        task: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.LOAD_TASK_ERROR,
+      });
+    }
   };
 }
 
