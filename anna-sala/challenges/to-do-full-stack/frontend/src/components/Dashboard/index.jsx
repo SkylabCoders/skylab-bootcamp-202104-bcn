@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -12,13 +13,13 @@ function Dashboard({ tasks, dispatch }) {
   }, []);
   function clickAdd() {
     const newTask = document.getElementById('new-task-name').value;
-    dispatch(addTask({ id: tasks[tasks.length - 1].id + 1, taskName: newTask }));
+    dispatch(addTask({ taskTitle: newTask, done: false }));
   }
   function deleteClick(id) {
     dispatch(deleteTask(id));
   }
   function updateClick(task) {
-    dispatch(updateTask({ id: task.id, taskName: task.taskName, done: true }));
+    dispatch(updateTask({ ...task, done: true }));
   }
   return (
     <>
@@ -36,17 +37,19 @@ function Dashboard({ tasks, dispatch }) {
         {tasks.map((task) => (
           <li className="to-do-list__task">
             {' '}
-            <Link to={`/${task.id}`} className={!task.done ? 'task-name' : 'task-name--done'}>{task.taskName}</Link>
+            <Link to={`/${task._id}`} className={!task.done ? 'task-name' : 'task-name--done'}>{task.taskTitle}</Link>
             <button
               type="button"
               className="delete"
-              onClick={() => deleteClick(task.id)}
+              id={task._id}
+              onClick={() => deleteClick(task)}
             >
               X
             </button>
             <button
               type="button"
               className="done"
+              id={task._id}
               onClick={() => updateClick(task)}
             >
               ✓
