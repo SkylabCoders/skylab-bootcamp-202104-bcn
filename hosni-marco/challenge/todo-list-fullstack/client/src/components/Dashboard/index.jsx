@@ -7,13 +7,10 @@ import { loadTasks } from '../../redux/actions/actionCreators';
 import Task from '../Task';
 
 const Dashboard = ({ tasks, dispatch }) => {
-  debugger;
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
 
-  console.log(tasks[0]?.task);
-  // const pendingTasks = tasks.filter((task) => !task.done);
   return (
     <>
       <div className="dashboard">

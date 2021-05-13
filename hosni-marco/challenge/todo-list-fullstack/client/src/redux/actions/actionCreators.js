@@ -1,5 +1,3 @@
-/* eslint-disable no-debugger */
-// import shortId from 'shortid';
 import axios from 'axios';
 import actionTypes from './actionTypes';
 import TASKS from '../../constants/tasks.mock';
@@ -27,21 +25,18 @@ export function addTask(task) {
 }
 
 export function deleteTask(taskId) {
-  return {
-    type: actionTypes.DELETE_TASK,
-    taskId
+  return async (dispatch) => {
+    await axios.delete(`${URL}/${taskId}`);
+    dispatch({
+      type: actionTypes.DELETE_TASK,
+      taskId
+    });
   };
 }
 
 export function updateTask(task) {
   return {
     type: actionTypes.UPDATE_TASK,
-    task
-  };
-}
-export function loadTask(task) {
-  return {
-    type: actionTypes.LOAD_TASK,
     task
   };
 }
