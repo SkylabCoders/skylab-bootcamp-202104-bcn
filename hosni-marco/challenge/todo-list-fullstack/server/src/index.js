@@ -12,17 +12,17 @@ mongoose.connect(
   process.env.DDBB_URL,
   {
     useUnifiedTopology: true,
-    useNewUrlParser: true,
-  },
+    useNewUrlParser: true
+  }
 );
 
 server.use(cors());
 server.use(express.json());
 server.use(morgan('dev'));
 
-const heroesRouter = require('./routes/heroesRouter');
+const todoListRouter = require('./routes/todoListRouter');
 
-server.use('/heroes', heroesRouter);
+server.use('/todoList', todoListRouter);
 
 server.listen('2021',
   () => debug(`Server is running in ${chalk.yellow('localhost:2021')}`));
