@@ -48,6 +48,7 @@ function ShoppingCart({ cartList, dispatch }) {
         Total:
         {' '}
         {cartList.length ? cartListTotalCost() : 0}
+        {' €  '}
       </div>
       <button type="button" onClick={buyCartList}>COMPRAR</button>
     </div>
