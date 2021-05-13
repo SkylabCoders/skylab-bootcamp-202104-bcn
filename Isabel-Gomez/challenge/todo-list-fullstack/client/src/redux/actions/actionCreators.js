@@ -9,7 +9,6 @@ export function loadTasks() {
   return async (dispatch) => {
     try {
       const { data } = await axios(url);
-      // const data = [{ name: 'hola' }];
       dispatch({
         type: actionTypes.LOAD_TASKS,
         tasks: data,

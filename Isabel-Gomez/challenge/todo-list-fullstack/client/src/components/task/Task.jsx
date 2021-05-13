@@ -18,7 +18,7 @@ const Task = ({ dispatch, tasks }) => {
           <button type="button" className="label-create__button">Add task</button>
         </label>
       </section>
-      <section>
+      <section className="taskList">
         <ul>
           {tasks?.map((element) => <li>{element.name}</li>)}
         </ul>
