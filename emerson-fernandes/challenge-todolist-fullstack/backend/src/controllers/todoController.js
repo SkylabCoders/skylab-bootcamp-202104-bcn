@@ -13,6 +13,7 @@ function todoController() {
       await newTask.save();
       res.json(newTask);
     } catch (error) {
+      res.status(500);
       res.send(error);
     }
   }
@@ -34,6 +35,7 @@ function todoController() {
       res.status(204);
       res.json();
     } catch (error) {
+      res.status(500);
       res.send(error);
     }
   }
