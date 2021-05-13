@@ -15,11 +15,13 @@ function Dashboard({ tasks, dispatch }) {
     const newTask = document.getElementById('new-task-name').value;
     dispatch(addTask({ taskTitle: newTask, done: false }));
   }
-  function deleteClick(id) {
-    dispatch(deleteTask(id));
+  function deleteClick(task) {
+    dispatch(deleteTask(task));
   }
   function updateClick(task) {
-    dispatch(updateTask({ ...task, done: true }));
+    if (!task.done) {
+      dispatch(updateTask({ ...task, done: true }));
+    }
   }
   return (
     <>
