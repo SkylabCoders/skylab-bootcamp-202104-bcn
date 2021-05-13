@@ -20,4 +20,8 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan('dev'));
 
+const todoRouter = require('./routes/todoRouter');
+
+server.use('/todo', todoRouter);
+
 server.listen('2021', () => debug(`Server is runnin in ${chalk.blue('localhost:2021')}`));
