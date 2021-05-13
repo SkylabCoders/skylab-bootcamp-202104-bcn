@@ -20,11 +20,14 @@
 }
 
 .list {
-    margin: 20px 420px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 }
 
 .list-container {
-    width: 100%;
+    width: 48%;
+    margin-top: 3rem;
 }
 
 .list-container__item {

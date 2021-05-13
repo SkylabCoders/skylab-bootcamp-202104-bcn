@@ -5,7 +5,6 @@ import actionTypes from './actionTypes';
 const url = 'http://localhost:1305/to-do-list';
 
 export function loadTasks() {
-  debugger;
   return async (dispatch) => {
     try {
       const { data } = await axios(url);
@@ -21,13 +20,13 @@ export function loadTasks() {
   };
 }
 
-export function addTask(itemId) {
+export function addTask(newTask) {
   return async (dispatch) => {
     try {
-      const { data } = await axios.post(`${url}/${itemId}`);
+      const { data } = await axios.post(url, newTask);
       dispatch({
         type: actionTypes.ADD_TASK,
-        itemId: data,
+        tasks: data,
       });
     } catch (error) {
       dispatch({
@@ -37,13 +36,13 @@ export function addTask(itemId) {
   };
 }
 
-export function deleteTask(itemId) {
+export function deleteTask(taskId) {
   return async (dispatch) => {
     try {
-      const { data } = await axios.delete(`${url}/${itemId}`);
+      await axios.delete(`${url}/${taskId}`);
       dispatch({
         type: actionTypes.DELETE_TASK,
-        itemId: data,
+        taskId,
       });
     } catch (error) {
       dispatch({
@@ -53,13 +52,13 @@ export function deleteTask(itemId) {
   };
 }
 
-export function updateTask(itemId) {
+export function updateTask(taskId) {
   return async (dispatch) => {
     try {
-      const { data } = await axios.put(`${url}/${itemId}`);
+      await axios.put(`${url}/${taskId}`);
       dispatch({
         type: actionTypes.UPDATE_TASK,
-        itemId: data,
+        taskId,
       });
     } catch (error) {
       dispatch({
