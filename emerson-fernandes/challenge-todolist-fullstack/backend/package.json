@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --wachAll --collect-coverage"
+    "test": "jest --wachAll --collect-coverage",
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7"
   }
 }
