@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
@@ -21,18 +22,7 @@ function HeroesList({ heroes, dispatch }) {
   }
 
   function handleCreate() {
-    heroes.sort((firstHero, secondHero) => {
-      if (firstHero.id > secondHero.id) {
-        return 1;
-      }
-      if (firstHero.id < secondHero.id) {
-        return -1;
-      }
-      return 0;
-    });
-
-    const newId = heroes[heroes.length - 1].id + 1;
-    dispatch(addHero({ id: newId, name: heroName }));
+    dispatch(addHero({ name: heroName }));
   }
 
   return (
@@ -51,8 +41,8 @@ function HeroesList({ heroes, dispatch }) {
       <ul className="heroes">
         {heroes.map((hero) => (
           <li>
-            <Link to={`/detail/${hero.id}`}>
-              <span className="badge">{hero.id}</span>
+            <Link to={`/detail/${hero._id}`}>
+              <span className="badge">{hero._id}</span>
               {' '}
               {hero.name}
             </Link>
