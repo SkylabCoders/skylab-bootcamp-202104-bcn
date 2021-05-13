@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import axios from 'axios';
 import actionTypes from './actionTypes';
-import TASKS from '../../constants/tasks.mock';
 
 const BASE_URL = 'http://localhost:2021/tasks';
 
@@ -45,26 +44,28 @@ export function deleteTask(taskId, url = BASE_URL) {
   };
 }
 
+export function getTaskById(taskId, url = BASE_URL) {
+  return async (dispatch) => {
+    console.log('url ----->', `${url}/${taskId}`);
+    const { data } = await axios.get(`${url}/${taskId}`);
+    console.log('data---------->', data);
+
+    dispatch({
+      type: actionTypes.LOAD_TASK,
+      task: data,
+    });
+  };
+}
+
 export function updateTask(task) {
   return {
     type: actionTypes.UPDATE_TASK,
     task,
   };
 }
-export function loadTask(task) {
-  return {
-    type: actionTypes.LOAD_TASK,
-    task,
-  };
-}
-
-export function getTaskById(taskId) {
-  let task;
-  const targetTask = TASKS.find((current) => current.id === +taskId);
-  if (targetTask) { task = targetTask; } else { (task = {}); }
-
-  return {
-    type: actionTypes.LOAD_TASK,
-    task,
-  };
-}
+// export function loadTask(task) {
+//   return {
+//     type: actionTypes.LOAD_TASK,
+//     task,
+//   };
+// }
