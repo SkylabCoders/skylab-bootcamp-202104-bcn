@@ -21,8 +21,8 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan('dev'));
 
-const productsRouter = require('./routes/productsRouter');
+const tasksRouter = require('./routes/tasksRouter');
 
-server.use('/tasks', productsRouter);
+server.use('/tasks', tasksRouter);
 
 server.listen('2021', () => debug(`Server is running in ${chalk.yellow('localhost:2021')}`));
