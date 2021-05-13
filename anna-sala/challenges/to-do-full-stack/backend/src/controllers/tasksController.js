@@ -14,6 +14,7 @@ function tasksController() {
       await newTask.save();
       res.json(newTask);
     } catch (error) {
+      res.status(404);
       res.send(error);
     }
   }
@@ -26,6 +27,17 @@ function tasksController() {
       );
       res.json(updatedTask);
     } catch (error) {
+      res.status(404);
+      res.send(error);
+    }
+  }
+  async function deleteTask(req, res) {
+    try {
+      await Task.findByIdAndDelete(req.params.taskId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      res.status(404);
       res.send(error);
     }
   }
@@ -33,6 +45,7 @@ function tasksController() {
     getAll,
     createTask,
     updateTaskStatus,
+    deleteTask,
   };
 }
 
