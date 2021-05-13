@@ -65,6 +65,7 @@ function productsController() {
       res.json(updatedTask);
     } catch (error) {
       debug(error);
+      res.status(404);
       res.send(error);
     }
   }
