@@ -8,7 +8,7 @@ import './dashboard.css';
 
 const Dashboard = ({ tasks, dispatch }) => {
   useEffect(() => {
-    if (!tasks.length) dispatch(loadTasks());
+    dispatch(loadTasks());
   }, []);
 
   const pendingTasks = tasks.filter((task) => !task.done);

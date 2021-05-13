@@ -15,10 +15,16 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
 
   useEffect(() => {
     dispatch(getTaskById(taskId));
+  }, []);
+
+  useEffect(() => {
+    dispatch(getTaskById(taskId));
   }, [taskId]);
 
   useEffect(() => {
     setTaskTitle(selectedTask.title);
+    setTaskDescription(selectedTask.description);
+    setTaskDone(selectedTask.done);
   }, [selectedTask]);
 
   const handleTitleChange = ({ target: { value } }) => {
@@ -40,6 +46,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
       description: taskDescription,
       done: taskDone,
     }));
+    history.goBack();
   };
 
   return (
@@ -74,6 +81,11 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
                 onChange={handleDescriptionChange}
               />
             </label>
+            <span>
+              State:
+              {' '}
+              {taskDone ? 'Done' : 'Pending'}
+            </span>
             <button
               type="button"
               placeholder="Task Done"

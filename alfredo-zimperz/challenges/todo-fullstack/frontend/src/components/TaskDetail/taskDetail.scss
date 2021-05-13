@@ -3,14 +3,18 @@
 .task-detail {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-items: center;
+  width: 95%;
   padding: 24px;
   margin-top: 30px;
+  border-radius: 10px;
   background-color: $color-secondary;
   h2 {
     font-size: 26px;
   }
   button {
+    width: 100%;
+    margin: 30px 0;
     background-color: $color-main;
     color: $bg-color-main;
       &:hover {
@@ -19,17 +23,30 @@
   }
   &__modify {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     margin-top: 20px;
     input, button {
       border-radius: 5px;
       height: 30px;
     }
+    label, span {
+      text-align: end;
+      width: 100%;
+      margin-top: 12px;
+      display: block;
+    }
+    span {
+      text-align: center;
+      width: 100%;
+      font-size: 22px;
+      margin-bottom: 16px;}
     input {
       margin-left: 20px;
       border: none;
       padding: 8px;
-      width: 200px;
+
     }
     button {
       display: flex;
@@ -37,6 +54,7 @@
       align-items: center;
       margin: 0;
       font-size: 16px;
+      width: 100%;
       
     }
   }
