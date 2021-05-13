@@ -1,21 +1,21 @@
 const { Router } = require('express');
-const heroesController = require('../controllers/todolistController')();
+const todolistController = require('../controllers/todolistController')();
 
-function heroesRouter() {
+function todolistRouter() {
   const routes = Router();
 
   routes
     .route('/')
-    .get(heroesController.getAll)
-    .post(heroesController.createOne);
+    .get(todolistController.getAll)
+    .post(todolistController.createOne);
 
-  routes
-    .route('/:heroId')
-    .get(heroesController.getById)
-    .put(heroesController.updateById)
-    .delete(heroesController.deleteById);
+  // routes
+  // .route('/:heroId')
+  // .get(todolistController.getById)
+  // .put(todolistController.updateById)
+  // .delete(todolistController.deleteById);
 
   return routes;
 }
 
-module.exports = heroesRouter();
+module.exports = todolistRouter();

@@ -1,10 +1,9 @@
-import LIST from '../../constants/list.mock';
 import actionTypes from '../actions/actionTypes';
 
 function listReducer(list = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_LIST:
-      return LIST;
+      return action.list;
 
     case actionTypes.DELETE_TASK:
       return list.filter((element) => element.id !== action.taskId);

@@ -19,7 +19,7 @@ function Todolist({ list, dispatch }) {
 
   function addTask() {
     const newTaskInput = document.querySelector('.newtask-input');
-    return dispatch(addtask({ id: (list[list.length - 1].id + 1), title: newTaskInput.value }));
+    return dispatch(addtask({ id: (list[list.length - 1].id + 1), name: newTaskInput.value }));
   }
 
   function handleUpdateTask(taskId, taskTitle) {
@@ -38,7 +38,7 @@ function Todolist({ list, dispatch }) {
             {list.map((task) => (
               <>
                 <div className="todo">
-                  <li className="todo-item" key={task.id} contentEditable="true">{task.title}</li>
+                  <li className="todo-item" key={task.id} contentEditable="true">{task.name}</li>
                   <button type="button" className="edit-btn" onClick={() => { handleUpdateTask(task.id, task.title); }}>Edit</button>
                   <button type="button" className="trash-btn" onClick={() => { delTask(task.id); }}>Delete</button>
                 </div>

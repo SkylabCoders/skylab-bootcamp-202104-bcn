@@ -20,9 +20,9 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan('dev'));
 
-const todolistRouter = require('./routes/todolistRoutes');
+const todolistRouter = require('./src /routes/todolistRoutes');
 
-server.use('/heroes', todolistRouter);
+server.use('/list', todolistRouter);
 
-server.listen('2021',
-  () => debug(`Server is running in ${chalk.yellow('localhost:2021')}`));
+server.listen('4545',
+  () => debug(`Server is running in ${chalk.yellow('localhost:4545')}`));

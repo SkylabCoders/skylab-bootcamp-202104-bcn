@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const heroSchema = mongoose.Schema({
+const listSchema = mongoose.Schema({
   name: String,
 });
 
-module.exports = mongoose.model('Heroes', heroSchema);
+module.exports = mongoose.model('List', listSchema);
