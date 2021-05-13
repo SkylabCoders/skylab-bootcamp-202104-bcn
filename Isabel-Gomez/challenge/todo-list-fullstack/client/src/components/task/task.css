@@ -1,0 +1,20 @@
+.label-create {
+    margin-top: 50px;
+}
+
+.label-create__input {
+    width: 40%;
+    outline: none;
+    border: 1px solid #1fab89;
+    border-radius: 4px 0 0 4px;
+    padding: 10px 10px;
+}
+
+.label-create__button {
+    width: 8%;
+    outline: none;
+    border: 1px solid #1fab89;
+    border-radius: 0 4px 4px 0;
+    padding: 10px 10px;
+    background-color: #dfd3d3;
+}
