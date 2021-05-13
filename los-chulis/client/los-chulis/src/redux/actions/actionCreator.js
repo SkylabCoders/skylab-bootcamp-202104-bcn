@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -9,11 +10,11 @@ export function loadProducts() {
       const { data } = await axios(url);
       dispatch({
         type: actionTypes.LOAD_PRODUCT,
-        products: data,
+        products: data
       });
     } catch (error) {
       dispatch({
-        type: actionTypes.LOAD_PRODUCT_ERROR,
+        type: actionTypes.LOAD_PRODUCT_ERROR
 
       });
     }
@@ -21,11 +22,30 @@ export function loadProducts() {
 }
 
 export function addToCart(product) {
+  return {
+    type: actionTypes.ADD_PRODUCTS_TO_CART,
+    product
+  };
+}
+
+export function loadCart() {
+  return {
+    type: actionTypes.LOAD_CART_PRODUCT
+  };
+}
+
+export function deleteFromCart(product) {
+  return {
+    type: actionTypes.DELETE_CART_PRODUCT,
+    product
+  };
+}
+
+export function updateCart(product) {
   return async (dispatch) => {
-    const { data } = await axios.post(url, product);
+    await axios.put(`${url}/${product._id}`, product);
     dispatch({
-      type: actionTypes.ADD_PRODUCTS_TO_CART,
-      product: data,
+      type: actionTypes.UPDATE_PRODUCTS
     });
   };
 }
