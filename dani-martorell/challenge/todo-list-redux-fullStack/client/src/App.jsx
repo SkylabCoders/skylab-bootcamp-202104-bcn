@@ -1,12 +1,16 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './redux/stores';
 
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      Hi from App
-    </div>
+    <Provider store={store()}>
+
+      <h1>Tour of Heroes</h1>
+
+    </Provider>
   );
 }
 
