@@ -14,6 +14,19 @@ function productsController() {
     }
   }
 
+  async function getTaskById(req, res) {
+    debug('enter to function getTaskById');
+    const { taskId } = req.params;
+    try {
+      const tasks = await Task.findById(taskId);
+      res.status(200);
+      res.json(tasks);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
+  }
+
   // async function addOneToStock(req, res) {
   //   debug('enter to function getAll');
   //   const { taskId } = req.params;
@@ -49,6 +62,9 @@ function productsController() {
   //     res.send(error);
   //   }
   // }
-  return { getAll };
+  return {
+    getAll,
+    getTaskById
+  };
 }
 module.exports = productsController;
