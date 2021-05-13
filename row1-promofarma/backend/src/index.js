@@ -2,22 +2,19 @@ const debug = require('debug')('app:productsController');
 const express = require('express');
 const cors = require('cors');
 const chalk = require('chalk');
-require('dotenv').config();
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const server = express();
-try{
+try {
   mongoose.connect(
     process.env.DDBB_URL,
-    {
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
-    },
-    () => debug('Mongoose is connected')
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    () => debug(' Mongoose is connected')
   );
-}catch (e){
-  debug('error');
-};
+} catch (e) {
+  debug('could not connect');
+}
 
 
 server.use(cors());
