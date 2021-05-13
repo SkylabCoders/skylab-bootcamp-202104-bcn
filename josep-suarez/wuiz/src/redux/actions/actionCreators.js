@@ -1,9 +1,18 @@
 /* eslint-disable import/prefer-default-export */
+import axios from 'axios';
 import actionTypes from './actionTypes';
 
+const url = 'http://localhost:2021/todos';
+
 export function PrintTask() {
-  return {
-    type: actionTypes.PRINT_TASK
+  // eslint-disable-next-line no-debugger
+  debugger;
+  return async (dispatch) => {
+    const { data } = await axios(url);
+    dispatch({
+      type: actionTypes.PRINT_TASK,
+      task: data
+    });
   };
 }
 export function addTask(task) {

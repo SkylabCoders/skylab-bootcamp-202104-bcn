@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -8,7 +9,7 @@ import { PrintTask, deleteTask, modifyTask } from '../redux/actions/actionCreato
 function TaskSite({ tasks, dispatch }) {
   useEffect(() => {
     if (!tasks.length) dispatch(PrintTask());
-  }, []);
+  }, [tasks]);
 
   function trashTask(taskId) {
     return dispatch(deleteTask(taskId));
@@ -23,7 +24,8 @@ function TaskSite({ tasks, dispatch }) {
     const newTaskInput = document.getElementById('inputTask');
     return dispatch(modifyTask({ id: taskId, task: newTaskInput.value }));
   }
-  return tasks.map((task) => (
+  debugger;
+  return tasks[0].map((task) => (
     <>
       <p id={task.id}>
         {task.id}

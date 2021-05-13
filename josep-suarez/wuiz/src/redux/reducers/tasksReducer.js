@@ -1,11 +1,15 @@
+/* eslint-disable no-debugger */
 /* eslint-disable consistent-return */
 import actionTypes from '../actions/actionTypes';
-import TASKS from '../../services/index';
+// import TASKS from '../../services/index';
 
 function taskReducer(tasks = [], action) {
   switch (action.type) {
     case actionTypes.PRINT_TASK:
-      return TASKS;
+      return [
+        ...tasks,
+        action.task
+      ];
     case actionTypes.ADD_TASK:
       return [
         ...tasks,
