@@ -31,10 +31,22 @@ function tasksController() {
     }
   }
 
+  async function deleteTask(req, res) {
+    debug(`Inside the function ${chalk.magenta('deleteTask')}`);
+    try {
+      await Task.findByIdAndDelete(req.params.taskId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      res.status(404);
+    }
+  }
+
   return {
     getAll,
     createTask,
     getOneTask,
+    deleteTask,
   };
 }
 
