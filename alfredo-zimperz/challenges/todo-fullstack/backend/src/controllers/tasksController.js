@@ -32,7 +32,7 @@ function productsController() {
     const { taskId } = req.params;
     try {
       await Task.findByIdAndDelete(taskId);
-      res.status(304);
+      res.status(201);
       res.json();
     } catch (error) {
       debug(error);

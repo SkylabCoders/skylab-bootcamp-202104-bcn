@@ -1,15 +1,16 @@
+/* eslint-disable no-underscore-dangle */
 import actionTypes from '../actions/actionTypes';
-import TASKS from '../../constants/tasks.mock';
+// import TASKS from '../../constants/tasks.mock';
 
 function tasksReducer(tasks = [], action) {
   let updatedTasks = [...tasks];
 
   switch (action.type) {
     case actionTypes.LOAD_TASKS:
-      updatedTasks = TASKS;
+      updatedTasks = [...action.tasks];
       break;
     case actionTypes.DELETE_TASK:
-      updatedTasks = tasks.filter((task) => task.id !== action.taskId);
+      updatedTasks = tasks.filter((task) => task._id !== action.taskId);
       break;
     case actionTypes.ADD_TASK:
       updatedTasks = [...tasks, action.task];

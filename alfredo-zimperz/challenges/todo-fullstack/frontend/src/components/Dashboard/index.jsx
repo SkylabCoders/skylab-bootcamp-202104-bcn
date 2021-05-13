@@ -36,7 +36,12 @@ const Dashboard = ({ tasks, dispatch }) => {
 };
 
 Dashboard.propTypes = {
-  tasks: PropTypes.shape([]).isRequired,
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      code: PropTypes.string,
+      id: PropTypes.number,
+    }),
+  ).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
