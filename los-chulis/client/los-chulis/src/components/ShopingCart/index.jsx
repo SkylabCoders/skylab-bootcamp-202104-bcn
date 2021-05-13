@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -28,7 +29,7 @@ function ShoppingCart({ cartList, dispatch }) {
       <ul>
         {cartList.length
       && result.map((product) => (
-        <li>
+        <li key={product._id}>
           {cartList.filter((element) => product === element).length}
           {'x '}
           {product.brand}
