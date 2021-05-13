@@ -9,6 +9,10 @@ function tasksRouter() {
     .get(tasksController.getAll)
     .post(tasksController.createOne);
 
+  routes
+    .route('/:taskId')
+    .delete(tasksController.deleteById);
+
   return routes;
 }
 

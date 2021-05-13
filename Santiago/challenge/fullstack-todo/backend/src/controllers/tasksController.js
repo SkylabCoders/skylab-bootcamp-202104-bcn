@@ -16,9 +16,20 @@ function tasksController() {
     res.json(tasks);
   }
 
+  async function deleteById(req, res) {
+    try {
+      await Task.findByIdAndDelete(req.params.taskId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
   return {
     createOne,
-    getAll
+    getAll,
+    deleteById
   };
 }
 
