@@ -1,4 +1,4 @@
-const { getAll, createTask } = require('./tasksController')();
+const { getAll, createTask, getOneTask } = require('./tasksController')();
 const Task = require('../model/taskModel');
 
 jest.mock('./../model/taskModel');
@@ -68,5 +68,41 @@ describe('Given a createTask function', () => {
 
     await createTask(req, res);
     expect(res.send).toHaveBeenCalledWith('error');
+  });
+});
+
+describe('Given a getOneTask function', () => {
+  test('A task is shown', async () => {
+    const req = {
+      params: {
+        taskId: null,
+      },
+    };
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+    };
+
+    Task.findById.mockResolvedValue({ name: 'Sacar al perro' });
+    await getOneTask(req, res);
+
+    expect(res.json).toHaveBeenCalledWith({ name: 'Sacar al perro' });
+  });
+
+  test('A 404 error is sent', async () => {
+    const req = {
+      params: {
+        taskId: null,
+      },
+    };
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+    };
+
+    Task.findById.mockRejectedValueOnce();
+    await getOneTask(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(404);
   });
 });
