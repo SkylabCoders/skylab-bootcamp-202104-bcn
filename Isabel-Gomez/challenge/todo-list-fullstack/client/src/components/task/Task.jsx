@@ -18,9 +18,24 @@ const Task = ({ dispatch, tasks }) => {
           <button type="button" className="label-create__button">Add task</button>
         </label>
       </section>
-      <section className="taskList">
-        <ul>
-          {tasks?.map((element) => <li>{element.name}</li>)}
+      <section className="list">
+        <ul className="list-container">
+          {tasks?.map((element) => (
+            <li className="list-container__item">
+              {element.name}
+              <div className="list-container__item-div">
+                <button type="button" className="list__finished-button">
+                  <i className="far fa-check-circle" />
+                </button>
+                <button type="button" className="list__edit-button">
+                  <i className="far fa-edit" />
+                </button>
+                <button type="button" className="list__delete-button">
+                  <i className="far fa-trash-alt" />
+                </button>
+              </div>
+            </li>
+          ))}
         </ul>
       </section>
     </>
