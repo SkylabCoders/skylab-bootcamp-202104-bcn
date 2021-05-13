@@ -4,7 +4,7 @@ function tasksReducer(tasks = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_TASKS:
       return action.tasks;
-    
+
     case actionTypes.DELETE_TASK:
       return tasks.filter((task) => task.id !== action.taskId);
 
@@ -13,4 +13,10 @@ function tasksReducer(tasks = [], action) {
         ...tasks,
         action.task
       ];
+
+    default:
+      return tasks;
+  }
 }
+
+export default tasksReducer;
