@@ -6,9 +6,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 95%;
   padding: 24px;
   margin-top: 30px;
+  border-radius: 10px;
   background-color: #d9f0f0d8;
 }
 
@@ -17,6 +21,8 @@
 }
 
 .task-detail button {
+  width: 100%;
+  margin: 30px 0;
   background-color: #1a535c;
   color: #f7fff7;
 }
@@ -29,9 +35,16 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 20px;
 }
 
@@ -40,11 +53,24 @@
   height: 30px;
 }
 
+.task-detail__modify label, .task-detail__modify span {
+  text-align: end;
+  width: 100%;
+  margin-top: 12px;
+  display: block;
+}
+
+.task-detail__modify span {
+  text-align: center;
+  width: 100%;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
 .task-detail__modify input {
   margin-left: 20px;
   border: none;
   padding: 8px;
-  width: 200px;
 }
 
 .task-detail__modify button {
@@ -59,5 +85,6 @@
           align-items: center;
   margin: 0;
   font-size: 16px;
+  width: 100%;
 }
 /*# sourceMappingURL=taskDetail.css.map */
