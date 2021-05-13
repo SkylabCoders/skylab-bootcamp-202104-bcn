@@ -26,14 +26,16 @@ function TodosController() {
   }
 
   async function updateById(req, res) {
+    const id = { id: req.params.todoId };
     try {
       const updatedTask = await TODO.findByIdAndUpdate(
-        req.params.todoId,
-        req.body,
+        id,
+        req.body.task,
         { new: true }
       );
       res.json(updatedTask);
     } catch (error) {
+      res.status(404);
       res.send(error);
     }
   }
