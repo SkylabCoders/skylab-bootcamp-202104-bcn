@@ -1,37 +1,48 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const productsUrl = 'http://localhost:2021/products';
+const tasksUrl = 'http://localhost:2021/tasks';
 
-export function loadProducts() {
+export function loadTasks() {
   return async (dispatch) => {
-    const { data } = await axios(productsUrl);
+    const { data } = await axios(tasksUrl);
     dispatch({
-      type: actionTypes.LOAD_PRODUCTS,
-      products: data
+      type: actionTypes.LOAD_TASKS,
+      tasks: data
     });
     dispatch({
-      type: actionTypes.ERROR_PRODUCT
+      type: actionTypes.TASK_ERROR
     });
   };
 }
 
-export function loadCart() {
-  return ({
-    type: actionTypes.LOAD_CART
-  });
+export function addTask(task) {
+  return async (dispatch) => {
+    const { data } = await axios.post(tasksUrl, task);
+    dispatch({
+      type: actionTypes.ADD_TASK,
+      task: data
+    });
+  };
 }
 
-export function addProductToCart(product) {
-  return ({
-    type: actionTypes.ADD_PRODUCT,
-    product
-  });
+export function deleteTask(taskId) {
+  return async (dispatch) => {
+    await axios.delete(`${tasksUrl}/${taskId}`);
+    dispatch({
+      type: actionTypes.DELETE_TASK,
+      taskId
+    });
+  };
 }
 
-export function deleteProductFromCart(productId) {
-  return ({
-    type: actionTypes.DELETE_PRODUCT,
-    productId
-  });
+export function updateTask(task) {
+  return async (dispatch) => {
+    const { data } = await axios.put(`${tasksUrl}/${task._id}`, task);
+    dispatch({
+      type: actionTypes.UPDATE_TASK,
+      task: data
+    });
+  };
 }
