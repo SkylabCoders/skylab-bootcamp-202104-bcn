@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -11,13 +12,14 @@ function List({ tasks, dispatch }) {
   }, []);
   function clickAdd() {
     const newTask = document.getElementById('new-task-name').value;
-    dispatch(addTask({ taskName: newTask }));
+    dispatch(addTask({ title: newTask }));
   }
-  function deleteClick(id) {
-    dispatch(deleteTask(id));
+  function deleteClick(taskId) {
+    dispatch(deleteTask(taskId));
   }
   return (
     <>
+      <h2>Todo List</h2>
       <form>
         <label htmlFor="task-name">
           Add Task:
@@ -31,10 +33,11 @@ function List({ tasks, dispatch }) {
       <ul className="to-do-list">
         {tasks.map((task) => (
           <li className="to-do-list__task">
+            <span>{task.title}</span>
             <button
               type="button"
               className="delete"
-              onClick={() => deleteClick(task.id)}
+              onClick={() => deleteClick(task._id)}
             >
               X
             </button>
