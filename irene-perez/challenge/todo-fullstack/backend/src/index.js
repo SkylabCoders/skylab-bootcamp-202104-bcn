@@ -22,7 +22,7 @@ server.use(morgan('dev'));
 
 // const todoRouter = require('./routes/todoRouter');
 
-server.use('/todo', todoRouter);
+// server.use('/todo', todoRouter);
 
 server.listen('2021',
   () => debug(`Server is running in ${chalk.yellow('localhost:2021')}`));
