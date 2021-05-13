@@ -1,11 +1,14 @@
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
+import { Provider } from 'react-redux';
+import configureStore from './redux/store';
+import List from './components/List';
 
 function App() {
   return (
     <>
-      <div className="App">
-        <h1>Hello world!</h1>
-      </div>
+      <Provider store={configureStore()}>
+        <List />
+      </Provider>
     </>
   );
 }
