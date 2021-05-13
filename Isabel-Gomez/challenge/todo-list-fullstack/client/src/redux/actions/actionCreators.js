@@ -67,3 +67,19 @@ export function updateTask(taskId) {
     }
   };
 }
+
+export function doneTask(taskId) {
+  return async (dispatch) => {
+    try {
+      await axios.put(`${url}/${taskId}`);
+      dispatch({
+        type: actionTypes.DONE_TASK,
+        taskId,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'ERROR',
+      });
+    }
+  };
+}

@@ -3,7 +3,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { loadTasks, addTask, deleteTask } from '../../redux/actions/actionCreators';
+import {
+  loadTasks, addTask, deleteTask, doneTask,
+} from '../../redux/actions/actionCreators';
 import './task.css';
 
 const Task = ({ dispatch, tasks }) => {
@@ -27,6 +29,7 @@ const Task = ({ dispatch, tasks }) => {
       completed: false,
     };
     dispatch(addTask(newTask));
+    setNameNewTask('');
   };
 
   // Delete Task //
@@ -35,11 +38,17 @@ const Task = ({ dispatch, tasks }) => {
     dispatch(deleteTask(taskId));
   };
 
+  // Update Task //
+
+  const handleDoneTask = (taskId) => {
+    dispatch(doneTask(taskId));
+  };
+
   return (
     <>
       <section>
         <label htmlFor="task-name" className="label-create">
-          <input id="task-name" onChange={getImputTask} placeholder="Add your task here..." className="label-create__input" />
+          <input id="task-name" onChange={getImputTask} value={nameNewTask} placeholder="Add your task here..." className="label-create__input" />
           <button
             type="button"
             onClick={() => handleAddTask()}
@@ -52,19 +61,26 @@ const Task = ({ dispatch, tasks }) => {
       <section className="list">
         <ul className="list-container">
           {tasks?.map((element) => (
-            <li key={tasks.name} className="list-container__item">
+            <li key={element.id} className={!element.completed ? 'list-container__item' : 'list-container__item--done'}>
               {element.name}
               <div className="list-container__item-div">
-                <button type="button" className="list__finished-button">
+                <button
+                  type="button"
+                  disabled={!!element.completed}
+                  className={!element.completed ? 'list__finished-button' : 'bloqued'}
+                  onClick={() => handleDoneTask(element._id)}
+                >
                   <i className="far fa-check-circle" />
                 </button>
-                <button type="button" className="list__edit-button">
+                <button
+                  type="button"
+                  className="list__edit-button"
+                >
                   <i className="far fa-edit" />
                 </button>
                 <button
                   type="button"
                   className="list__delete-button"
-                  id={element._id}
                   onClick={() => handleDeleteTask(element._id)}
                 >
                   <i className="far fa-trash-alt" />

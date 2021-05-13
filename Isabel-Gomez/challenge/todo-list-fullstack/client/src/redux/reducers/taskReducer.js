@@ -11,8 +11,12 @@ const taskReducer = (stateTask = [], action) => {
     case actionTypes.DELETE_TASK:
       return stateTask.filter((element) => element._id !== action.taskId);
     case actionTypes.UPDATE_TASK:
-      return stateTask.map((element) => ((element.id === action.itemId)
-        ? [...element, ...action.itemId]
+      return stateTask.map((element) => ((element.id === action.taskId)
+        ? [...element, ...action.taskId]
+        : element));
+    case actionTypes.DONE_TASKS:
+      return stateTask.map((element) => ((element.id === action.taskId)
+        ? action.taskId.completed === true
         : element));
     default:
       return stateTask;
