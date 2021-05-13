@@ -1,19 +1,46 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import {
-  loadTasks, deleteTask
+  loadTasks, deleteTask, updateTask
 } from '../../redux/actions/actionCreators';
 import './list.css';
 
 function TasksList({ tasks, dispatch }) {
+  const [activeTask, setActiveTask] = useState(null);
+  const [currentTitle, setCurrentTitle] = useState('');
+  const [currentDescription, setCurrentDescription] = useState('');
+
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
 
   const handleDelete = (taskId) => {
     dispatch(deleteTask(taskId));
+  };
+
+  const handleEditTask = (task) => {
+    dispatch(updateTask(
+      {
+        ...task,
+        title: currentTitle,
+        description: currentDescription
+      }
+    ));
+    setActiveTask(null);
+  };
+
+  const handleEditOpened = (taskId) => {
+    setActiveTask(taskId);
+  };
+
+  const handleTitleChange = (event) => {
+    setCurrentTitle(event.target.value);
+  };
+
+  const handleDescriptionChange = (event) => {
+    setCurrentDescription(event.target.value);
   };
 
   // TODO: As a delete exists add a modify to every task
@@ -31,7 +58,43 @@ function TasksList({ tasks, dispatch }) {
               <span className="product-cost">
                 {task.description}
               </span>
-              <button type="button" className="button-add" onClick={() => handleDelete(task._id)}>-</button>
+              <button
+                type="button"
+                className="button-add"
+                onClick={() => handleDelete(task._id)}
+              >
+                -
+              </button>
+              {activeTask === task._id
+                ? (
+                  <>
+                    <input
+                      type="text"
+                      onChange={handleTitleChange}
+                      placeholder="Title"
+                    />
+                    <input
+                      type="text"
+                      onChange={handleDescriptionChange}
+                      placeholder="Description"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => handleEditTask(task)}
+                    >
+                      Submit
+                    </button>
+                  </>
+                )
+                : (
+                  <button
+                    type="button"
+                    className="button-add"
+                    onClick={() => handleEditOpened(task._id)}
+                  >
+                    Edit
+                  </button>
+                )}
             </li>
           ))
         }
