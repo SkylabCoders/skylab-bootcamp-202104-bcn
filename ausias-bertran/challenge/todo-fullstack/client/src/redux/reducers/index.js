@@ -1,7 +1,7 @@
-import { comnineReducers } from 'redux';
+import { combineReducers } from 'redux';
 import taskReducer from './taskReducer';
 
-const rootReducer = comnineReducers({
+const rootReducer = combineReducers({
   tasks: taskReducer,
 });
 
