@@ -14,9 +14,44 @@ function TodosController() {
       res.send(error);
     }
   }
+  async function getById(req, res) {
+    try {
+      const todoById = await TODO.findById(
+        req.params.todoById
+      );
+      res.json(todoById);
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
+  async function updateById(req, res) {
+    try {
+      const updatedTask = await TODO.findByIdAndUpdate(
+        req.params.todoId,
+        req.body,
+        { new: true }
+      );
+      res.json(updatedTask);
+    } catch (error) {
+      res.send(error);
+    }
+  }
+  async function deleteById(req, res) {
+    try {
+      await TODO.findByIdAndDelete(req.params.todoId);
+      res.json();
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
   return {
     getAll,
-    createOne
+    createOne,
+    getById,
+    updateById,
+    deleteById
   };
 }
 

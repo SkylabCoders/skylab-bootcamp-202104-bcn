@@ -8,6 +8,10 @@ function todosRouter() {
     .get(todosController.getAll)
     .post(todosController.createOne);
 
+  routes
+    .route('/:todoId')
+    .delete(todosController.deleteById);
+
   return routes;
 }
 
