@@ -6,7 +6,7 @@ import store from './redux/store/index';
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={store()}>
       <h1 className="header__title">TO DO LIST</h1>
       <TodoListComponent />
     </Provider>
