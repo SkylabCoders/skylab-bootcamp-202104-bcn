@@ -1,28 +1,15 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import Dashboard from './index';
 import { screen, render } from '../../utils/test-utils';
-import { loadHeroes } from '../../redux/actions/actionCreators';
+import ToDoList from './index';
 
-jest.mock('../../redux/actions/actionCreators');
-
-describe('Dashboard component', () => {
-  test('should display Abe Sapiens', () => {
-    render(<Dashboard />, {
+describe('ToDoList component', () => {
+  test('should have a li ', () => {
+    render(<ToDoList />, {
       initialState: {
-        heroes: [{}, { name: 'Abe Sapiens' }]
+        tasks: [{}]
       }
     });
-    expect(screen.getByText(/Abe Sapiens/i)).toBeInTheDocument();
-  });
-
-  test('should call loadHeroes', () => {
-    loadHeroes.mockReturnValue({ type: '' });
-    render(<Dashboard />, {
-      initialState: {
-        heroes: []
-      }
-    });
-    expect(loadHeroes).toHaveBeenCalled();
+    expect(screen.getByText(/a/i)).toBeTruthy();
   });
 });
