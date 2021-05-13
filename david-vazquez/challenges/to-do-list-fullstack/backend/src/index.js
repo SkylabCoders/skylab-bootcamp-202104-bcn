@@ -22,8 +22,8 @@ mongoose.connect(
   },
 );
 
-const productsRouter = require('./routes/productsRouter');
+const tasksRouter = require('./routes/tasksRouter');
 
-server.use('/products', productsRouter);
+server.use('/tasks', tasksRouter);
 
 server.listen(port, () => debug(`Server is running in ${chalk.bgCyan(port)}`));
