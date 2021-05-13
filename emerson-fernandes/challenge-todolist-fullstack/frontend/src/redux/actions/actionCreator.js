@@ -1,7 +1,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const productsUrl = 'http://localhost:2021/todo';
+const taskUrl = 'http://localhost:2021/todo';
 
 export function addTask(task) {
   return ({
