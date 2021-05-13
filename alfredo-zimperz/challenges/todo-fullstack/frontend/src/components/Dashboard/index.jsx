@@ -45,9 +45,9 @@ Dashboard.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-function mapStateToProps(store) {
+function mapStateToProps({ tasks }) {
   return {
-    tasks: store.tasks,
+    tasks,
   };
 }
 
