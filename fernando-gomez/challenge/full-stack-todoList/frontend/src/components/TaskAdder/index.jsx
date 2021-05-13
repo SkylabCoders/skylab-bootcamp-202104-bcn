@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addTask } from '../../redux/actions/actionCreators';
 import './cart.css';
 
-function TaskAdder({ dispatch }) {
+function TaskAdder({ dispatch, tasks }) {
   const [currentTitle, setCurrentTitle] = useState('');
   const [currentDescription, setCurrentDescription] = useState('');
+  const [currentTotal, setCurrentTotal] = useState(0);
+
+  useEffect(() => {
+    setCurrentTotal(tasks.length);
+  }, [tasks.length]);
 
   const handleAddTask = () => {
     dispatch(addTask({
@@ -29,13 +34,20 @@ function TaskAdder({ dispatch }) {
   return (
     <>
       <h2 className="cart-tittle">Add a task</h2>
+      <h3>
+        Your total tasks:
+        {' '}
+        {currentTotal}
+      </h3>
       <input
         type="text"
         onChange={handleTitleChange}
+        placeholder="Title"
       />
       <input
         type="text"
         onChange={handleDescriptionChange}
+        placeholder="Description"
       />
       <button
         type="button"
@@ -48,7 +60,10 @@ function TaskAdder({ dispatch }) {
 }
 
 TaskAdder.propTypes = {
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  tasks: PropTypes.shape({
+    length: PropTypes.number.isRequired
+  }).isRequired
 };
 
 function mapStateToProps({ tasks }) {

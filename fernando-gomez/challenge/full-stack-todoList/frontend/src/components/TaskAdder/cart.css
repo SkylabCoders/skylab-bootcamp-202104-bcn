@@ -1,22 +1,23 @@
-.cart-tittle{
-    font-size: 150%;
-    color: #8CBE24;
-    font-family: 'Open Sans', sans-serif;
+.cart-tittle {
+  font-size: 150%;
+  color: #8CBE24;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.cart-list__product{
-    font-family: 'Open Sans', sans-serif;
-    color: #40394a;
+.cart-list__product {
+  font-family: 'Open Sans', sans-serif;
+  color: #40394a;
 }
 
-.cart-totalproducts{
-    font-size: 100%;
-    font-family: 'Open Sans', sans-serif;
-    color: #40394a;
+.cart-totalproducts {
+  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: #40394a;
 }
 
-.cart-totalprice{
-    font-size: 140%;
-    font-family: 'Open Sans', sans-serif;
-    color: #8CBE24;
+.cart-totalprice {
+  font-size: 140%;
+  font-family: 'Open Sans', sans-serif;
+  color: #8CBE24;
 }
+/*# sourceMappingURL=cart.css.map */

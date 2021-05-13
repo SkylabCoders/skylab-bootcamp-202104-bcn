@@ -16,6 +16,8 @@ function TasksList({ tasks, dispatch }) {
     dispatch(deleteTask(taskId));
   };
 
+  // TODO: As a delete exists add a modify to every task
+
   return (
     <>
       <h1 className="list-tittle">My tasks</h1>
