@@ -7,14 +7,12 @@ function tasksRouter() {
 
   routes
     .route('/')
-    .post(tasksController.addTask)
-    .get(tasksController.getTasks);
+    .get(tasksController.getTasks)
+    .post(tasksController.addTask);
 
-  // routes
-  //   .route('/:productId/')
-  //   .put(productsController.addOneToStock)
-  //   .delete(productsController.removeOneFromStock);
-  // // .get(productsController.getById);
+  routes
+    .route('/:taskId/')
+    .delete(tasksController.deleteTask);
 
   return routes;
 }
