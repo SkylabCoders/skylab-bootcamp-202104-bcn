@@ -3,8 +3,13 @@ const Task = require('../model/taskModel');
 
 function tasksController() {
   async function getAllTasks(req, res) {
-    const tasks = await Task.find();
-    res.json(tasks);
+    try {
+      const tasks = await Task.find();
+      res.json(tasks);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
   }
 
   async function createOne(req, res) {
