@@ -7,7 +7,8 @@ function tasksRouter() {
 
   routes
     .route('/')
-    .post(tasksController.addTask);
+    .post(tasksController.addTask)
+    .get(tasksController.getTasks);
 
   // routes
   //   .route('/:productId/')

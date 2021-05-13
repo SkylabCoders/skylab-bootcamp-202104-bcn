@@ -3,7 +3,7 @@ const Task = require('../model/taskModel');
 
 function tasksController() {
   async function addTask(req, res) {
-    debug('enter to function addTask');
+    // debug('enter to function addTask');
     const newTask = new Task(req.body);
     try {
       await newTask.save();
@@ -15,6 +15,12 @@ function tasksController() {
     }
   }
 
-  return { addTask };
+  async function getTasks(req, res) {
+    const tasks = await Task.find();
+    res.json(tasks);
+  }
+
+  return { addTask, getTasks };
 }
+
 module.exports = tasksController;
