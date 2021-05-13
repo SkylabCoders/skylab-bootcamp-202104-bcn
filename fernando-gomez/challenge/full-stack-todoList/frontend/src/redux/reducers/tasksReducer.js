@@ -23,7 +23,7 @@ function tasksReducer(tasks = [], action) {
       );
 
     case actionTypes.DELETE_TASK:
-      return tasks.filter((task) => task._id !== task._taskId);
+      return tasks.filter((task) => task._id !== action.taskId);
 
     default:
       return updatedTasks;

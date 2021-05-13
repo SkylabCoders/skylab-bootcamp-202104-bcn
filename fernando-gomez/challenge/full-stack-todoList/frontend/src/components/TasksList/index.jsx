@@ -10,7 +10,7 @@ import './list.css';
 function TasksList({ tasks, dispatch }) {
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
-  }, [tasks]);
+  }, []);
 
   const handleDelete = (taskId) => {
     dispatch(deleteTask(taskId));
