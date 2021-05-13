@@ -1,0 +1,20 @@
+const debug = require('debug')('server:tasksController');
+const Task = require('../model/taskModel');
+
+function tasksController() {
+  async function addTask(req, res) {
+    debug('enter to function addTask');
+    const newTask = new Task(req.body);
+    try {
+      await newTask.save();
+      res.status(200);
+      res.json(newTask);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
+  }
+
+  return { addTask };
+}
+module.exports = tasksController;
