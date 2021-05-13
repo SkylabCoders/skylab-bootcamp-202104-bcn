@@ -8,8 +8,10 @@ import './App.css';
 function App() {
   return (
     <Provider store={store()}>
-      <ProductList />
-      <ShoppingCart />
+      <main className="main">
+        <ProductList />
+        <ShoppingCart />
+      </main>
     </Provider>
   );
 }

@@ -11,6 +11,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .productList__button {
@@ -31,5 +33,33 @@
 
 .productList__button--disabled {
   background-color: grey;
+}
+
+.productList__price {
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.productList__price--disabled {
+  color: lightgrey;
+}
+
+.productList__price--active {
+  color: black;
+}
+
+.productList__buy-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 600px) {
+  .productList {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=productList.css.map */
