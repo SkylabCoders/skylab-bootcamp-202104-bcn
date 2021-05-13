@@ -1,7 +1,15 @@
+$general-background: #3A2D32;
+$mid-color: #B01C5A;
+$light-color: #E34F8D;
+
 body {
-    background-color: #393e46;
-    color: #00adb5;
+    background-color:$general-background;
+    color: $mid-color;
     font-family: 'Ubuntu', sans-serif;
+}
+
+input {
+    text-align: center;
 }
 
 .tasks-adder {
@@ -10,32 +18,35 @@ body {
     align-items: center;
 }
 
-.subtitle {
-
-}
-
-.total-tasks {
-
-}
-
 .taskTitle-input {
-    background-color: #aad8d3;
+    background-color: $light-color;
+    color: black;
     font-size: 1.5em;
     border-radius: 0.35em;
     border-style: none;
     outline: none;
     padding: 0.35em;
     margin-bottom: 0.35em;
+
+    &::placeholder{
+        color: $general-background;
+    }
+
 }
 
 .taskDescription-input {
-    background-color: #aad8d3;
+    background-color: $light-color;
+    color: black;
     font-size: 1em;
     height: 2em;
     border-radius: 0.5em;
     border-style: none;
     outline: none;
     padding: 0.35em;
+
+    &::placeholder{
+        color: $general-background;
+    }
 }
 
 .addTask-button {

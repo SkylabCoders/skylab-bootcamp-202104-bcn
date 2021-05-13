@@ -1,7 +1,11 @@
 body {
-  background-color: #393e46;
-  color: #00adb5;
+  background-color: #3A2D32;
+  color: #B01C5A;
   font-family: 'Ubuntu', sans-serif;
+}
+
+input {
+  text-align: center;
 }
 
 .tasks-adder {
@@ -18,7 +22,8 @@ body {
 }
 
 .taskTitle-input {
-  background-color: #aad8d3;
+  background-color: #E34F8D;
+  color: black;
   font-size: 1.5em;
   border-radius: 0.35em;
   border-style: none;
@@ -27,14 +32,47 @@ body {
   margin-bottom: 0.35em;
 }
 
+.taskTitle-input::-webkit-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskTitle-input:-ms-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskTitle-input::-ms-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskTitle-input::placeholder {
+  color: #3A2D32;
+}
+
 .taskDescription-input {
-  background-color: #aad8d3;
+  background-color: #E34F8D;
+  color: black;
   font-size: 1em;
   height: 2em;
   border-radius: 0.5em;
   border-style: none;
   outline: none;
   padding: 0.35em;
+}
+
+.taskDescription-input::-webkit-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskDescription-input:-ms-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskDescription-input::-ms-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskDescription-input::placeholder {
+  color: #3A2D32;
 }
 
 .addTask-button {

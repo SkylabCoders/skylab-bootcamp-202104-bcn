@@ -7,8 +7,8 @@
 }
 
 .list__element {
-  background-color: #00adb5;
-  color: #393e46;
+  background-color: #c73270;
+  color: #3A2D32;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,6 +27,7 @@
 }
 
 .task-content {
+  font-weight: 800;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,7 +65,7 @@
 }
 
 .inputs__edit-title {
-  background-color: #aad8d3;
+  background-color: #e66198;
   font-size: 1.5em;
   border-radius: 0.35em;
   border-style: none;
@@ -74,7 +75,7 @@
 }
 
 .inputs__edit-description {
-  background-color: #aad8d3;
+  background-color: #e66198;
   font-size: 1em;
   height: 2em;
   border-radius: 0.5em;
@@ -106,11 +107,5 @@
 .buttons img {
   width: 2em;
   padding: 0 0.2em;
-}
-
-.false {
-  background-color: blue;
-  width: 1em;
-  height: 1em;
 }
 /*# sourceMappingURL=task.css.map */
