@@ -17,9 +17,7 @@ function Cart({ cart, dispatch }) {
   function totalPrice(cartToCount) {
     let result = 0;
     if (cartToCount.length) {
-      console.log(cartToCount);
       const prices = cartToCount.map(((product) => product.cost));
-      console.log(prices);
       result = (accumulator, currentValue) => accumulator + currentValue;
       result = prices.reduce(result);
     }
@@ -34,7 +32,7 @@ function Cart({ cart, dispatch }) {
           <li>
             <span>{product.title}</span>
             <span>{product.cost}</span>
-            <button type="button" className="button-delete" onClick={() => handleDeleteProduct(product._id)}>X</button>
+            <button type="button" className="button-delete" onClick={() => handleDeleteProduct(product.id)}>X</button>
           </li>
         ))}
         <li>
@@ -59,7 +57,7 @@ Cart.propTypes = {
 
 function mapStateToProps({ cart }) {
   return {
-    cart
+    cart: cart.products
   };
 }
 

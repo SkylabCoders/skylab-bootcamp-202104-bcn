@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addProductToCart, loadProducts } from '../../redux/actions/actionCreators';
-// import PRODUCTS from '../../constants/products.mock';
 
 function ProductsList({ products, dispatch }) {
   useEffect(() => {
@@ -22,7 +21,7 @@ function ProductsList({ products, dispatch }) {
             <td>
               {product.cost}
             </td>
-            <button type="button" onClick={() => dispatch(addProductToCart(product))}>Añadir ao Carrito</button>
+            <button type="button" onClick={() => dispatch(addProductToCart({ ...product }))}>Añadir al Carrito</button>
           </tr>
         ))
     }
