@@ -8,9 +8,27 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 5px 0;
+  background-color: #ececec;
+  padding: 0 0 0 20px;
+  border-radius: 20px;
+}
+
+.item .button {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.item .button--done {
+  background-color: #9df09d;
 }
 
 .item .button--delete {
   margin-left: auto;
+  margin-right: 10px;
+  background-color: #f85d5d;
 }
 /*# sourceMappingURL=styles.css.map */
