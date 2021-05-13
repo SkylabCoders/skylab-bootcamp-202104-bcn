@@ -4,10 +4,10 @@ import rootReducer from '../reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = (initialState) => createStore(
+const configureStore = (initialState) => createStore(
   rootReducer,
   initialState,
   composeEnhancers(applyMiddleware(thunk))
 
 );
-export default store;
+export default configureStore;
