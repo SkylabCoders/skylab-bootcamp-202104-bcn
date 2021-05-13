@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -6,7 +7,7 @@ import './productList.css';
 
 const ProductList = ({ products, dispatch }) => {
   function addProductToCart(product) {
-    const btn = document.getElementById(product.id);
+    const btn = document.getElementById(product._id);
     if (product.stock > 0) {
       dispatch(addToCart(product));
     } else {
@@ -22,8 +23,11 @@ const ProductList = ({ products, dispatch }) => {
       {products.map((product) => (
         <li className="productList__item">
           <span>{product.brand}</span>
-          <div>
-            <span>
+          <div className="productList__buy-box">
+            <span className={product.stock === 0
+              ? 'productList__price productList__price--disabled '
+              : 'productList__price productList__price--active'}
+            >
               {product.price}
               {' '}
               €
