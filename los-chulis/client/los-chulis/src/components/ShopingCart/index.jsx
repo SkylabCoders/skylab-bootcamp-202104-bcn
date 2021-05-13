@@ -2,7 +2,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadCart, deleteFromCart, updateCart } from '../../redux/actions/actionCreator';
+import {
+  loadCart, deleteFromCart, updateCart, loadProducts
+} from '../../redux/actions/actionCreator';
 import './shoppingCart.css';
 
 function ShoppingCart({ cartList, dispatch }) {
@@ -22,6 +24,7 @@ function ShoppingCart({ cartList, dispatch }) {
       const updatedProduct = { ...product, stock: product.stock - product.quantity };
       dispatch(updateCart(updatedProduct));
     });
+    dispatch(loadProducts());
   }
 
   return (
