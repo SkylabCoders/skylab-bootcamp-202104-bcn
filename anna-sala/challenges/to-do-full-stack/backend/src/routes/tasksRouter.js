@@ -9,11 +9,9 @@ function tasksRouter() {
     .get(tasksController.getAll)
     .post(tasksController.createTask);
 
-  //   routes
-  //     .route('/:taskId')
-  //     .get(tasksController.getById)
-  //     .put(tasksController.updateById)
-  //     .delete(tasksController.deleteById);
+  routes
+    .route('/:taskId')
+    .put(tasksController.updateTaskStatus);
 
   return routes;
 }
