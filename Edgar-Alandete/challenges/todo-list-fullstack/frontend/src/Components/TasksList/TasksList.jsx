@@ -19,18 +19,7 @@ function TasksList({ tasks, dispatch }) {
   }
 
   function handleCreate() {
-    tasks.sort((firstHero, secondHero) => {
-      if (firstHero.id > secondHero.id) {
-        return 1;
-      }
-      if (firstHero.id < secondHero.id) {
-        return -1;
-      }
-      return 0;
-    });
-
-    const newId = tasks[tasks.length - 1].id + 1;
-    dispatch(createTask({ id: newId, value: taskValue, status: 1 }));
+    dispatch(createTask({ name: taskValue }));
   }
 
   return (

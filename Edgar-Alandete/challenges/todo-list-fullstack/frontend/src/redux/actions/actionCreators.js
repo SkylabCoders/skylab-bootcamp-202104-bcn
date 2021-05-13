@@ -17,6 +17,22 @@ export const loadTasks = () => async (dispatch) => {
   }
 };
 
+export const createTask = (task) => async (dispatch) => {
+  const newTask = { ...task, isFinished: false };
+  try {
+    await axios.post(url, newTask);
+    dispatch({
+      type: actionTypes.ADD_TASK,
+      task,
+    });
+  } catch (error) {
+    dispatch({
+      type: actionTypes.ADD_TASK_ERROR,
+      task: newTask,
+    });
+  }
+};
+
 export const loadTasksByStatus = (status) => ({
   type: actionTypes.LOAD_TASKS,
   status,
@@ -30,9 +46,4 @@ export const updateTask = (task) => ({
 export const deleteTask = (taskId) => ({
   type: actionTypes.DELETE_TASK,
   taskId,
-});
-
-export const createTask = (task) => ({
-  type: actionTypes.ADD_TASK,
-  task,
 });
