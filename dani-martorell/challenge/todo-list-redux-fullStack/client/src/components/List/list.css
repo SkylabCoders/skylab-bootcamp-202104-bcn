@@ -12,6 +12,11 @@
           justify-content: space-between;
 }
 
+.task-item__name--active {
+  color: red;
+  text-decoration: line-through;
+}
+
 .task-item .delete-btn {
   margin-left: auto;
 }
