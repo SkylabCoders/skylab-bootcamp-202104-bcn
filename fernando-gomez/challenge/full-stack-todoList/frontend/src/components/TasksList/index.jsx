@@ -6,11 +6,6 @@ import {
   loadTasks, deleteTask, updateTask
 } from '../../redux/actions/actionCreators';
 import './task.css';
-import done from '../../images/check-circle-solid.svg';
-import trash from '../../images/trash-alt-solid.svg';
-import edit from '../../images/edit-regular.svg';
-import back from '../../images/undo-alt-solid.svg';
-import submit from '../../images/code-branch-solid.svg';
 
 function TasksList({ tasks, dispatch }) {
   const [activeTask, setActiveTask] = useState(null);
@@ -66,6 +61,7 @@ function TasksList({ tasks, dispatch }) {
         {
           tasks?.map((task) => (
             <li className="list__element list-element ">
+              {task.done ? (<i className="fas fa-star" />) : <span />}
               <div className="task-content">
                 <span className="task-content__title">
                   {task.title}
@@ -97,20 +93,14 @@ function TasksList({ tasks, dispatch }) {
                         onClick={() => handleEditTask(task)}
                         className="buttons__submit"
                       >
-                        <img
-                          src={submit}
-                          alt="Submit"
-                        />
+                        <i className="fas fa-save" />
                       </button>
                       <button
                         type="button"
                         onClick={handleHideEditTask}
                         className="buttons__hide"
                       >
-                        <img
-                          src={back}
-                          alt="Back"
-                        />
+                        <i className="fas fa-undo-alt" />
                       </button>
                     </span>
                   </>
@@ -122,30 +112,21 @@ function TasksList({ tasks, dispatch }) {
                       className="buttons__done"
                       onClick={() => handleDone(task)}
                     >
-                      <img
-                        src={done}
-                        alt="Done"
-                      />
+                      <i className="fas fa-check-circle" />
                     </button>
                     <button
                       type="button"
                       className="buttons__edit"
                       onClick={() => handleEditOpened(task._id)}
                     >
-                      <img
-                        src={edit}
-                        alt="Edit"
-                      />
+                      <i className="far fa-edit" />
                     </button>
                     <button
                       type="button"
                       onClick={() => handleDelete(task._id)}
                       className="buttons__delete"
                     >
-                      <img
-                        src={trash}
-                        alt="Delete"
-                      />
+                      <i className="fas fa-trash" />
                     </button>
                   </div>
                 )}

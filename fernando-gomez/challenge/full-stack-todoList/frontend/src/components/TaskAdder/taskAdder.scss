@@ -60,3 +60,9 @@ input {
         width: 2em;
     }
 }
+
+.fa-plus-circle {
+    &:hover {
+        color: yellow;
+    }
+}

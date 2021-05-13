@@ -86,4 +86,8 @@ input {
 .addTask-button img {
   width: 2em;
 }
+
+.fa-plus-circle:hover {
+  color: yellow;
+}
 /*# sourceMappingURL=taskAdder.css.map */

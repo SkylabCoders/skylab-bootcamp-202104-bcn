@@ -46,6 +46,7 @@ $light-color: #e66198;
     display: flex;
     flex-direction: column;
     width: 75%;
+    padding: 1em 0;
 
     &__edit-title {
         background-color: $light-color;
@@ -55,6 +56,11 @@ $light-color: #e66198;
         outline: none;
         padding: 0.35em;
         margin-bottom: 0.35em;
+
+
+        &::placeholder{
+            color: $general-background;
+        }
     }
 
     &__edit-description {
@@ -65,6 +71,11 @@ $light-color: #e66198;
         border-style: none;
         outline: none;
         padding: 0.35em;
+
+
+        &::placeholder{
+            color: $general-background;
+        }
     }
 }
 
@@ -87,5 +98,24 @@ $light-color: #e66198;
     img {
         width: 2em;
         padding: 0 0.2em;
+    }
+}
+
+.fa-star {
+    color: yellow;
+}
+
+.fas, .far {
+    font-size: 2em;
+    padding: 0.2em;
+}
+
+.fa-trash, 
+.fa-edit, 
+.fa-check-circle, 
+.fa-undo-alt, 
+.fa-save {
+    &:hover {
+        color: yellow;
     }
 }
