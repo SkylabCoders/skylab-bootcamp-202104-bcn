@@ -8,8 +8,8 @@ function loadTasks() {
     try {
       const { data } = await axios(url);
       dispatch({
-        type: actionTypes.TASKS,
-        heroes: data,
+        type: actionTypes.LOAD_TASKS,
+        tasks: data,
       });
     } catch (error) {
       dispatch({
