@@ -4,15 +4,15 @@ import { PropTypes } from 'prop-types';
 import './Cart.css'
 // import itemsCart from '../constants/items';
 import { deleteItem, loadCart } from '../redux/actions/actionCreators';
-function CartItems({ dispatch, itemSelect, items}) {
+function CartItems({ dispatch, itemSelect}) {
+  let precioTotal= 0;
   useEffect(() => {
     dispatch(loadCart())
   }, [itemSelect])
   function deleteFromCart(itemId) {
-      dispatch(deleteItem(itemId));
-    }
-    debugger;
-    return (
+    dispatch(deleteItem(itemId));
+  }
+  return (
     <>
       <div className="basket">
       <h2>Mi cesta: </h2>
@@ -20,9 +20,12 @@ function CartItems({ dispatch, itemSelect, items}) {
         <>
         <p>{item.name}</p>
         <p>{item.price+"€"}</p>
+        <button type="button" onClick={()=>deleteFromCart(item.id)}>X</button>
+        {precioTotal += item.price}
         </>
         ))}
-      </div>
+        <h2>{"Precio= "+precioTotal.toFixed(2)}</h2>
+        </div>
     </>
   );
 }

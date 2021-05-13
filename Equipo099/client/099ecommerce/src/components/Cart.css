@@ -30,6 +30,10 @@
   width: 100%;
 }
 
+.basket button {
+  width: 20px;
+}
+
 .basket h2 {
   color: #8cc003;
 }
