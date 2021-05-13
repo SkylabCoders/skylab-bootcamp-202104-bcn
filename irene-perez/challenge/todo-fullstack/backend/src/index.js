@@ -20,9 +20,9 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan('dev'));
 
-// const todoRouter = require('./routes/todoRouter');
+const todoRouter = require('./routes/taskRouter');
 
-// server.use('/todo', todoRouter);
+server.use('/todo', todoRouter);
 
 server.listen('2021',
-  () => debug(`Server is running in ${chalk.yellow('localhost:2021')}`));
+  () => debug(`Server is running in ${chalk.boldMagenta('localhost:2021')}`));
