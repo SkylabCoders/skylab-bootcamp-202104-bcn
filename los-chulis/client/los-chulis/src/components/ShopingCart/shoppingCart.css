@@ -1,0 +1,21 @@
+.shopping-cart {
+  margin-left: 20px;
+}
+
+.shopping-cart__total-cost {
+  font-weight: 600;
+}
+
+.shopping-cart__product-list {
+  list-style: none;
+}
+
+.shopping-cart__price {
+  font-weight: 600;
+}
+
+.shopping-cart h3 {
+  color: lime;
+  border-bottom: 1px solid lime;
+}
+/*# sourceMappingURL=shoppingCart.css.map */
