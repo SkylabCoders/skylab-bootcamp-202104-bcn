@@ -12,7 +12,7 @@ function cartProductsReducer(cart = { maxId: 0, products: [] }, action) {
     case actionTypes.DELETE_PRODUCT:
       updatedCart = {
         ...cart,
-        products: cart.products.filter((product) => product._id !== action.productId)
+        products: cart.products.filter((product) => product.id !== action.productId)
       };
       break;
     case actionTypes.ADD_PRODUCT:
