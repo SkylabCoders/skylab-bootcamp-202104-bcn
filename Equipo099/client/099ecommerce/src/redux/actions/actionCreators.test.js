@@ -36,7 +36,7 @@ describe('addItem', ()=> {
         expect(dispatch).toHaveBeenCalledWith(
             {
                 type: actionTypes.ADD_ITEM,
-                items: [{id: 1, name: 'crema', price: 200}]
+                item: [{id: 1, name: 'crema', price: 200}]
             }
         );
     });
@@ -55,14 +55,14 @@ describe('addItem', ()=> {
 
 describe('deleteItem', ()=> {
     test('Should dispatch DELETE_ITEM', async ()=>{
-        axios.delete.mockResolvedValue({data: [{id: 1, name: 'crema', price: 200}]});
+        axios.delete.mockResolvedValue({data: {id: 10}});
         const dispatch = jest.fn();
         await deleteItem()(dispatch);
 
         expect(dispatch).toHaveBeenCalledWith(
             {
                 type: actionTypes.DELETE_ITEM,
-                items: [{id: 1, name: 'crema', price: 200}]
+                itemId: {id: 10}
             }
         );
     });
@@ -88,7 +88,7 @@ describe('updateItem', ()=> {
         expect(dispatch).toHaveBeenCalledWith(
             {
                 type: actionTypes.UPDATE_ITEM,
-                items: [{id: 1, name: 'crema', price: 200}]
+                item: [{id: 1, name: 'crema', price: 200}]
             }
         );
     });
