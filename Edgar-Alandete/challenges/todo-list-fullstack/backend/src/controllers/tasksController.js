@@ -5,8 +5,12 @@ const Task = require('../model/taskModel');
 function tasksController() {
   async function getAll(req, res) {
     debug(`Inside the function ${chalk.magenta('getAll')}`);
-    const tasks = await Task.find();
-    res.json(tasks);
+    try {
+      const tasks = await Task.find();
+      res.json(tasks);
+    } catch (error) {
+      res.send(error);
+    }
   }
 
   async function createTask(req, res) {
