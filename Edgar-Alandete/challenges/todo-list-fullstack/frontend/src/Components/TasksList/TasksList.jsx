@@ -6,6 +6,8 @@ import {
   deleteTask, loadTasks, createTask, updateTask,
 } from '../../redux/actions/actionCreators';
 
+import './styles.css';
+
 function TasksList({ tasks, dispatch }) {
   const [taskValue, setTaskValue] = useState();
 
@@ -23,6 +25,7 @@ function TasksList({ tasks, dispatch }) {
 
   function handleCreate() {
     dispatch(createTask({ name: taskValue }));
+    setTaskValue('');
   }
 
   function handleUpdate(task) {
@@ -30,19 +33,22 @@ function TasksList({ tasks, dispatch }) {
   }
 
   return (
-    <>
+    <main>
       <h2>All tasks</h2>
-      <input type="text" onChange={getTaskValue} />
-      {' '}
-      <button type="button" onClick={handleCreate}>Create</button>
-      <ul>
+      <div className="task-creator-container">
+
+        <input placeholder="New task..." type="text" onChange={getTaskValue} value={taskValue} className="task-creator-container__input" />
+        {' '}
+        <button type="button" onClick={handleCreate} className="task-creator-container__button">Add a task</button>
+      </div>
+      <ul className="tasks-list">
         {
         tasks && tasks.map((task) => (
           <TaskListItem task={task} deleteHandler={handleDelete} updateHandler={handleUpdate} />
         ))
     }
       </ul>
-    </>
+    </main>
   );
 }
 

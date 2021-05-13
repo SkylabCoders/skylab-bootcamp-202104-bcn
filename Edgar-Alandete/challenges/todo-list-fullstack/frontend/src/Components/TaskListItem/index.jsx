@@ -1,17 +1,18 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import PropTypes from 'prop-types';
+import './styles.css';
 
 const TaskListItem = ({ task, deleteHandler, updateHandler }) => (
-  <li key={`${task._id}`}>
+  <li key={`${task._id}`} className="item">
     {' '}
     {task.name}
     {task.isFinished
       ? ' ---- acabado'
       : ' ---- dale'}
     {' '}
-    <button type="button" onClick={() => deleteHandler(task._id)}>Delete</button>
-    <button type="button" onClick={() => updateHandler(task)}>Done</button>
+    <button className="button button--delete" type="button" onClick={() => deleteHandler(task._id)}>Delete</button>
+    <button className="button button--done" type="button" onClick={() => updateHandler(task)}>Done</button>
   </li>
 );
 
