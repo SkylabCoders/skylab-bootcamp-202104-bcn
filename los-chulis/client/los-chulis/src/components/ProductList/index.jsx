@@ -1,53 +1,66 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-underscore-dangle */
+/* eslint-disable no-return-assign */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadProducts, addToCart } from '../../redux/actions/actionCreator';
 import './productList.css';
 
-const ProductList = ({ products, dispatch }) => {
-  function addProductToCart(product) {
-    const btn = document.getElementById(product._id);
-    if (product.stock > 0) {
-      dispatch(addToCart(product));
-    } else {
-      btn.disabled = true;
-    }
-  }
-
+const ProductList = ({ products, dispatch, cartList }) => {
   useEffect(() => {
     dispatch(loadProducts());
   }, []);
+  function disableButton(product) {
+    const btn = document.getElementById(product._id);
+    (cartList.forEach((cartProduct) => {
+      if (cartProduct._id === product._id && product.stock === cartProduct.quantity) {
+        btn.disabled = true;
+        btn.className = 'productList__button productList__button--disabled';
+      }
+    }));
+    return 'productList__button productList__button--active';
+  }
   return (
     <ul className="productList">
       {products.map((product) => (
-        <li className="productList__item">
+        <li className="productList__item" key={product._id}>
           <span>{product.brand}</span>
-          <div className="productList__buy-box">
-            <span className={product.stock === 0
-              ? 'productList__price productList__price--disabled '
-              : 'productList__price productList__price--active'}
-            >
+          <div>
+            <span>
               {product.price}
               {' '}
               €
             </span>
-            <button type="button" id={product.id} disabled={!product.stock} onClick={() => addProductToCart(product)} className={product.stock === 0 ? 'productList__button productList__button--disabled ' : 'productList__button productList__button--active'}> </button>
+            <button
+              type="button"
+              id={product._id}
+              disabled={!product.stock}
+              onClick={() => {
+                dispatch(addToCart(product));
+                disableButton(product);
+              }}
+              className={product.stock === 0
+                ? 'productList__button productList__button--disabled '
+                : 'productList__button productList__button--active'}
+            >
+              {' '}
+            </button>
           </div>
         </li>
       ))}
-
     </ul>
   );
 };
-
 ProductList.propTypes = {
   products: PropTypes.shape([]).isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  cartList: PropTypes.shape([]).isRequired
 };
-
-function mapStateToProps(store) {
-  return { products: store.products };
+function mapStateToProps({ products, cartList }) {
+  return {
+    products,
+    cartList
+  };
 }
-
 export default connect(mapStateToProps)(ProductList);
