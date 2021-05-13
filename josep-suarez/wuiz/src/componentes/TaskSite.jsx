@@ -10,7 +10,7 @@ import { PrintTask, deleteTask, modifyTask } from '../redux/actions/actionCreato
 function TaskSite({ tasks, dispatch }) {
   debugger;
   useEffect(() => {
-    if (!tasks.length) dispatch(PrintTask());
+    dispatch(PrintTask());
   }, [tasks]);
 
   function trashTask(taskId) {

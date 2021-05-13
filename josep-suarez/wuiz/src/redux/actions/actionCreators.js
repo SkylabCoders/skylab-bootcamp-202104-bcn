@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import actionTypes from './actionTypes';
@@ -26,6 +27,7 @@ export function addTask(task) {
 }
 export function deleteTask(taskId) {
   return async (dispatch) => {
+    debugger;
     await axios.delete(`${url}/${taskId}`);
     dispatch({
       type: actionTypes.DELETE_TASK,
