@@ -44,7 +44,10 @@ function TasksList({ tasks, dispatch }) {
         tasks && tasks.map((task) => (
           <li key={`${task.taskId}`}>
             {' '}
-            {task.value}
+            {task.name}
+            {task.isFinished
+              ? ' ---- acabado'
+              : ' ---- dale'}
             {' '}
             <button type="button" onClick={() => handleDelete(task.taskId)}>Delete</button>
           </li>
