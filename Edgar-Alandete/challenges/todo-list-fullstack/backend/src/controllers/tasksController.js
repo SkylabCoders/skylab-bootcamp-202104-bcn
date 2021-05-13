@@ -42,11 +42,26 @@ function tasksController() {
     }
   }
 
+  async function updateTask(req, res) {
+    debug(`Inside the function ${chalk.magenta('deleteTask')}`);
+    try {
+      const updatedTask = await Task.findByIdAndUpdate(
+        req.params.taskId,
+        req.body,
+        { new: true },
+      );
+      res.json(updatedTask);
+    } catch (error) {
+      res.status(404);
+    }
+  }
+
   return {
     getAll,
     createTask,
     getOneTask,
     deleteTask,
+    updateTask,
   };
 }
 
