@@ -1,8 +1,15 @@
+import axios from 'axios';
 import actionTypes from './actionTypes';
 
-export function loadTasks() {
-  return {
-    type: actionTypes.LOAD_TASKS
+const URL = 'http://localhost:2021/tasks';
+
+export function loadTasks(url = URL) {
+  return async (dispacth) => {
+    const { data } = await axios.get(url);
+    dispacth({
+      type: actionTypes.LOAD_TASKS,
+      tasks: data
+    });
   };
 }
 

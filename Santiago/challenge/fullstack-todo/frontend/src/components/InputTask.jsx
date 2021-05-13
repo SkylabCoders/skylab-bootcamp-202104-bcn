@@ -62,11 +62,12 @@ const InputTask = ({ tasks, dispatch }) => {
 };
 
 InputTask.propTypes = {
+  map: PropTypes.func.isRequired,
   tasks: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
-function mapStateToProps(tasks) {
+function mapStateToProps({ tasks }) {
   return { tasks };
 }
 
