@@ -17,8 +17,6 @@ export function loadTasks() {
 }
 
 export function addTask(task) {
-//   const id = shortId.generate();
-  debugger;
   return async (dispatch) => {
     const { data } = await axios.post(URL, task);
     dispatch({
@@ -26,9 +24,6 @@ export function addTask(task) {
       task: data
     });
   };
-//   return {
-//
-//   };
 }
 
 export function deleteTask(taskId) {

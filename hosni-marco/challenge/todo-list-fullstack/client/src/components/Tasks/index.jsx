@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -7,7 +6,6 @@ import Task from '../Task';
 
 const Tasks = ({ tasks, dispatch }) => {
   const [newTaskTitle, setNewTaskTitle] = useState();
-  // const [newTaskDescription, setNewTaskDescription] = useState();
 
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
@@ -17,7 +15,6 @@ const Tasks = ({ tasks, dispatch }) => {
     setNewTaskTitle(event.target.value);
   };
   const saveNewTask = () => {
-    debugger;
     if (newTaskTitle) {
       dispatch(addTask({ task: newTaskTitle }));
     }
@@ -37,14 +34,6 @@ const Tasks = ({ tasks, dispatch }) => {
             onChange={handleChangeInput}
           />
         </label>
-        {/* <label htmlFor="new-task-description" id="new-task-description">
-          <span>Description:</span>
-          <input
-            name="description"
-            value={newTaskDescription}
-            onChange={handleChangeInput}
-          />
-        </label> */}
         <button className="add-button" type="button" onClick={saveNewTask}>
           Add task
         </button>
