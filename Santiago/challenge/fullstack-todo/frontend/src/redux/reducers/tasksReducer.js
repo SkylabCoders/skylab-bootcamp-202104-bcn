@@ -1,13 +1,11 @@
 import actionTypes from '../actions/actionTypes';
 
 function TasksReducer(tasks = [], action) {
-  // eslint-disable-next-line no-debugger
-  debugger;
   switch (action.type) {
     case actionTypes.LOAD_TASKS:
       return action.tasks;
     case actionTypes.ADD_TASK:
-      return [...tasks, action.newTask];
+      return [...tasks, action.task];
     case actionTypes.DELETE_TASK:
       return tasks.filter((task) => task.id !== action.taskId);
     case actionTypes.DONE_TASK:

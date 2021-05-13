@@ -14,13 +14,8 @@ const InputTask = ({ tasks, dispatch }) => {
   }, []);
 
   const handleAdd = () => {
-    let newId = 1;
-
-    if (tasks.length !== 0) newId = tasks[tasks.length - 1].id + 1;
-
     const newTask = {
-      id: newId,
-      task: newestTask
+      name: newestTask
     };
     dispatch(addTask(newTask));
   };
@@ -42,7 +37,7 @@ const InputTask = ({ tasks, dispatch }) => {
       <div className="input-container">
         <label htmlFor="task-input">
           ADD YOUR TASK:
-          <input type="text" className="input-itSelf" id="task-input" onChange={obtainTask} placeholder="Ex. Walk the dog" />
+          <input type="text" className="input-itSelf" id="task-input" value={newestTask} onChange={obtainTask} placeholder="Ex. Walk the dog" />
           <button type="button" className="addBtn" onClick={() => handleAdd()}>ADD</button>
         </label>
       </div>

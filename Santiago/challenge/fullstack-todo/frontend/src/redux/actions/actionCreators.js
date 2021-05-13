@@ -5,18 +5,27 @@ const URL = 'http://localhost:2021/tasks';
 
 export function loadTasks(url = URL) {
   return async (dispacth) => {
-    const { data } = await axios.get(url);
-    dispacth({
-      type: actionTypes.LOAD_TASKS,
-      tasks: data
-    });
+    try {
+      const { data } = await axios.get(url);
+      dispacth({
+        type: actionTypes.LOAD_TASKS,
+        tasks: data
+      });
+    } catch (error) {
+      dispacth({
+        type: 'LOAD_HEROES_ERROR'
+      });
+    }
   };
 }
 
-export function addTask(newTask) {
-  return {
-    type: actionTypes.ADD_TASK,
-    newTask
+export function addTask(task) {
+  return async (dispacth) => {
+    const { data } = await axios.post(URL, task);
+    dispacth({
+      type: actionTypes.ADD_TASK,
+      task: data
+    });
   };
 }
 
