@@ -42,7 +42,6 @@ function productsController() {
 
   async function addTask(req, res) {
     debug('enter to function addTask');
-    debug(req.body);
     const newTask = new Task(req.body);
     try {
       await newTask.save();
@@ -54,46 +53,28 @@ function productsController() {
     }
   }
 
-  // async function addOneToStock(req, res) {
-  //   debug('enter to function getAll');
-  //   const { taskId } = req.params;
-  //   try {
-  //     const task = await Task.findByIdAndUpdate(
-  //       taskId,
-  //       { $inc: { stock: 1 } },
-  //       { new: true }
-  //     );
-  //     res.status(200);
-  //     res.json(task);
-  //   } catch (error) {
-  //     debug(error);
-  //     res.send(error);
-  //   }
-  // }
+  async function modifyTask(req, res) {
+    debug('enter to function modifyTask');
+    try {
+      const updatedTask = await Task.findByIdAndUpdate(
+        req.params.taskId,
+        { ...req.body },
+        { new: true }
+      );
+      res.status(201);
+      res.json(updatedTask);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
+  }
 
-  // async function removeOneFromStock(req, res) {
-  //   debug('enter to function getAll');
-  //   const { taskId } = req.params;
-  //   try {
-  //     const productToUpdate = await Task.findOne({ _id: taskId });
-  //     debug(productToUpdate);
-  //     const task = await Task.findByIdAndUpdate(
-  //       taskId,
-  //       { $inc: { stock: -1 } },
-  //       { new: true }
-  //     );
-  //     res.status(200);
-  //     res.json(task);
-  //   } catch (error) {
-  //     debug(error);
-  //     res.send(error);
-  //   }
-  // }
   return {
     getAll,
     getTaskById,
     deleteTaskById,
-    addTask
+    addTask,
+    modifyTask
   };
 }
 module.exports = productsController;

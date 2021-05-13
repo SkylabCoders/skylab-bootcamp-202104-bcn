@@ -12,8 +12,8 @@ function productsRouter() {
   routes
     .route('/:taskId/')
     .get(tasksController.getTaskById)
-    .delete(tasksController.deleteTaskById);
-  //   .put(tasksController.addOneToStock)
+    .delete(tasksController.deleteTaskById)
+    .put(tasksController.modifyTask);
 
   return routes;
 }
