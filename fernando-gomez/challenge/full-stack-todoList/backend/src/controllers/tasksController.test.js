@@ -1,5 +1,7 @@
 /* eslint-disable class-methods-use-this */
-const { getAll, addOneToStock, removeOneFromStock } = require('./tasksController')();
+const {
+  getAll, addTask, deleteTaskById, updateTaskById
+} = require('./tasksController')();
 const Task = require('../model/taskModel');
 
 jest.mock('../model/taskModel');
@@ -45,7 +47,7 @@ describe('Given a getAll function', () => {
   });
 });
 
-describe('Given a add one to stock function', () => {
+describe('Given an add one to stock function', () => {
   test('Should respond with status 200', async () => {
     const res = {
       status: jest.fn(),
@@ -61,12 +63,34 @@ describe('Given a add one to stock function', () => {
 
     Task.findByIdAndUpdate.mockResolvedValueOnce();
 
-    await addOneToStock(req, res);
+    await addTask(req, res);
 
     expect(res.status).toHaveBeenCalledWith(200);
   });
 
-  test('Should respond with task', async () => {
+  test('should call send', async () => {
+    // arrange
+    const req = {
+      body: null
+    };
+    const res = {
+      json: jest.fn(),
+      send: jest.fn()
+    };
+
+    Task.mockReturnValueOnce({
+      save: jest.fn().mockRejectedValueOnce('error')
+    });
+
+    // act
+    await addTask(req, res);
+    // assert
+    expect(res.send).toHaveBeenCalledWith('error');
+  });
+});
+
+describe('Given a remove task function', () => {
+  test('Should respond with status 204', async () => {
     const res = {
       status: jest.fn(),
       json: jest.fn(),
@@ -79,11 +103,11 @@ describe('Given a add one to stock function', () => {
       }
     };
 
-    Task.findByIdAndUpdate.mockResolvedValueOnce({ fredy: 'si' });
+    Task.findByIdAndUpdate.mockResolvedValueOnce();
 
-    await addOneToStock(req, res);
+    await deleteTaskById(req, res);
 
-    expect(res.json).toHaveBeenCalledWith({ fredy: 'si' });
+    expect(res.status).toHaveBeenCalledWith(204);
   });
 
   test('Should respond with error', async () => {
@@ -99,16 +123,16 @@ describe('Given a add one to stock function', () => {
       }
     };
 
-    Task.findByIdAndUpdate.mockRejectedValueOnce('error');
+    Task.findByIdAndDelete.mockRejectedValueOnce('error');
 
-    await addOneToStock(req, res);
+    await deleteTaskById(req, res);
 
     expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
-describe('Given a remove one from stock function', () => {
-  test('Should respond with status 200', async () => {
+describe('Given a update task function', () => {
+  test('Should respond with updated task json', async () => {
     const res = {
       status: jest.fn(),
       json: jest.fn(),
@@ -116,55 +140,34 @@ describe('Given a remove one from stock function', () => {
     };
 
     const req = {
-      params: {
-        taskId: 3
-      }
+      body: {},
+      params: { taskId: 3 }
     };
 
-    Task.findByIdAndUpdate.mockResolvedValueOnce();
+    Task.findByIdAndUpdate.mockResolvedValueOnce([{}]);
 
-    await removeOneFromStock(req, res);
+    await updateTaskById(req, res);
 
-    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith([{}]);
   });
 
-  test('Should respond with task', async () => {
+  test('should call send', async () => {
+    // arrange
+    const req = {
+      body: null,
+      params: { taskId: 3 }
+    };
     const res = {
-      status: jest.fn(),
       json: jest.fn(),
       send: jest.fn()
     };
 
-    const req = {
-      params: {
-        taskId: 3
-      }
-    };
-
-    Task.findByIdAndUpdate.mockResolvedValueOnce({ fredy: 'si' });
-
-    await removeOneFromStock(req, res);
-
-    expect(res.json).toHaveBeenCalledWith({ fredy: 'si' });
-  });
-
-  test('Should respond with error', async () => {
-    const res = {
-      status: jest.fn(),
-      json: jest.fn(),
-      send: jest.fn()
-    };
-
-    const req = {
-      params: {
-        taskId: 3
-      }
-    };
-
-    Task.findByIdAndUpdate.mockRejectedValueOnce('error');
-
-    await removeOneFromStock(req, res);
-
+    Task.mockReturnValueOnce({
+      save: jest.fn().mockRejectedValueOnce('error')
+    });
+    // act
+    await updateTaskById(req, res);
+    // assert
     expect(res.send).toHaveBeenCalledWith('error');
   });
 });

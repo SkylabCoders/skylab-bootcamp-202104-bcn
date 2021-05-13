@@ -51,6 +51,7 @@ function tasksController() {
       res.json(updatedTask);
     } catch (error) {
       debug(error);
+      res.send(204);
     }
   }
 
