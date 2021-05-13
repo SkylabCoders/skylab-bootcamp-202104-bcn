@@ -2,14 +2,16 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { deleteTask, loadTasks, createTask } from '../../redux/actions/actionCreators';
+import {
+  deleteTask, loadTasks, createTask, updateTask,
+} from '../../redux/actions/actionCreators';
 
 function TasksList({ tasks, dispatch }) {
   const [taskValue, setTaskValue] = useState();
 
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
-  }, []);
+  }, [tasks.length]);
 
   const handleDelete = (id) => {
     dispatch(deleteTask(id));
@@ -21,6 +23,10 @@ function TasksList({ tasks, dispatch }) {
 
   function handleCreate() {
     dispatch(createTask({ name: taskValue }));
+  }
+
+  function handleUpdate(task) {
+    dispatch(updateTask(task));
   }
 
   return (
@@ -40,6 +46,7 @@ function TasksList({ tasks, dispatch }) {
               : ' ---- dale'}
             {' '}
             <button type="button" onClick={() => handleDelete(task._id)}>Delete</button>
+            <button type="button" onClick={() => handleUpdate(task)}>Done</button>
           </li>
         ))
     }

@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -20,10 +21,10 @@ export const loadTasks = () => async (dispatch) => {
 export const createTask = (task) => async (dispatch) => {
   const newTask = { ...task, isFinished: false };
   try {
-    await axios.post(url, newTask);
+    const { data } = await axios.post(url, newTask);
     dispatch({
       type: actionTypes.ADD_TASK,
-      task: newTask,
+      task: data,
     });
   } catch (error) {
     dispatch({
@@ -46,7 +47,18 @@ export const deleteTask = (taskId) => async (dispatch) => {
   }
 };
 
-export const updateTask = (task) => ({
-  type: actionTypes.UPDATE_TASK,
-  task,
-});
+export const updateTask = (task) => async (dispatch) => {
+  try {
+    const { data } = await axios.put(`${url}${task._id}`, {
+      isFinished: true,
+    });
+    dispatch({
+      type: actionTypes.UPDATE_TASK,
+      task: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: actionTypes.UPDATE_TASK_ERROR,
+    });
+  }
+};
