@@ -6,13 +6,13 @@ function productsRouter() {
 
   routes
     .route('/')
-    .get(tasksController.getAll);
+    .get(tasksController.getAll)
+    .post(tasksController.addTask);
 
   routes
     .route('/:taskId/')
     .get(tasksController.getTaskById)
-    .delete(tasksController.deleteTaskById)
-    .post(tasksController.addTask);
+    .delete(tasksController.deleteTaskById);
   //   .put(tasksController.addOneToStock)
 
   return routes;
