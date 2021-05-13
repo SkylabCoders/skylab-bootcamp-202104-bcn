@@ -29,8 +29,6 @@ function TaskAdder({ dispatch, tasks }) {
     setCurrentDescription(event.target.value);
   };
 
-  // TODO: create total tasks Counter
-
   return (
     <>
       <h2 className="cart-tittle">Add a task</h2>

@@ -43,8 +43,6 @@ function TasksList({ tasks, dispatch }) {
     setCurrentDescription(event.target.value);
   };
 
-  // TODO: As a delete exists add a modify to every task
-
   return (
     <>
       <h1 className="list-tittle">My tasks</h1>
