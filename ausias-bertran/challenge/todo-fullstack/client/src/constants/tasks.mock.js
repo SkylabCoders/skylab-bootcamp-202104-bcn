@@ -1,4 +1,4 @@
-const tasks = [
+const TASKS = [
   { id: 1, task: 'learn how to build a component' },
   { id: 2, task: 'learn how to build a hook' },
   { id: 3, task: 'learn how to build an action creator' },
@@ -7,4 +7,4 @@ const tasks = [
   { id: 6, task: 'learn how to build a store' },
 ];
 
-export default tasks;
+export default TASKS;

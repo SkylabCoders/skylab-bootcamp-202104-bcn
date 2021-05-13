@@ -11,6 +11,8 @@ const ShowList = () => (
           {task.id}
           {' '}
           {task.task}
+          <button className="task__delete-button" type="button" onClick={() => console.log(`delete task ${task.id}`)}>-</button>
+          <button className="task__delete-button" type="button" onClick={() => console.log(`upgrade task ${task.id}`)}>PUT</button>
         </li>
       ))}
     </ul>

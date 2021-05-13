@@ -1,19 +1,12 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
-const AddTask = () => {
-  const inputValue = useRef();
-  //   const [taskInput, setTaskInput] = useState('Add new task');
-
-  return (
-    <div className="add-task">
-      <input
-        type="text"
-        ref={inputValue}
-        placeholder="Add new task"
-      />
-      <button type="button" onClick={() => console.log({ inputValue })}>+</button>
-    </div>
-  );
-};
-
+const AddTask = () => (
+  <div className="add-task">
+    <input
+      type="text"
+      placeholder="Add new task"
+    />
+    <button type="button" onClick={() => console.log('add task')}>+</button>
+  </div>
+);
 export default AddTask;
