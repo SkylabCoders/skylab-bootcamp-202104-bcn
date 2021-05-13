@@ -1,0 +1,6 @@
+export default {
+  ADD_TASK: 'ADD_TASK',
+  DELETE_TASK: 'DELETE_TASK',
+  LOAD_TASK: 'ERROR_TASK',
+  ERROR_TASK: 'ERROR_TASK'
+};
