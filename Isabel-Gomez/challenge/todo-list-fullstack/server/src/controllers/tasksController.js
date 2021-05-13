@@ -1,4 +1,4 @@
-const debug = require('debug')('app:tasksController');
+/* eslint-disable no-debugger */
 const Task = require('../model/taskModel');
 
 function tasksController() {
@@ -12,10 +12,11 @@ function tasksController() {
     const newTask = new Task(req.body);
     try {
       await newTask.save();
-      res.status(201);
+      res.status(200);
       res.json(newTask);
     } catch (error) {
-      debug(error);
+      res.status(404);
+      res.send(error);
     }
   }
 
