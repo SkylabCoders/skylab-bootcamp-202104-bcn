@@ -18,9 +18,22 @@ function tasksController() {
       res.send(error);
     }
   }
+
+  async function delTask(req, res) {
+    try {
+      await Task.findByIdAndDelete(req.params.taskId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      res.status(404);
+      debug(error);
+      res.send(error);
+    }
+  }
   return {
     getAll,
-    addTask
+    addTask,
+    delTask
   };
 }
 

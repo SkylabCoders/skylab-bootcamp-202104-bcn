@@ -30,9 +30,12 @@ export function addTask(newTask) {
 }
 
 export function deleteTask(taskId) {
-  return {
-    type: actionTypes.DELETE_TASK,
-    taskId
+  return async (dispatch) => {
+    await axios.delete(url, taskId);
+    dispatch({
+      type: actionTypes.DELETE_TASK,
+      taskId
+    });
   };
 }
 

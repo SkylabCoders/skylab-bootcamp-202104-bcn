@@ -8,7 +8,8 @@ function tasksRouter() {
   routes
     .route('/')
     .get(tasksController.getAll)
-    .post(tasksController.addTask);
+    .post(tasksController.addTask)
+    .delete(tasksController.delTask);
 
   return routes;
 }
