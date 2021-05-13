@@ -14,6 +14,7 @@ describe('getAllTasks', () => {
     const res = {
       json: jest.fn(),
       send: jest.fn(),
+      status: jest.fn(),
     };
     Task.find.mockResolvedValueOnce({ name: 'hola' });
     await getAllTasks(null, res);
@@ -23,6 +24,7 @@ describe('getAllTasks', () => {
     const res = {
       json: jest.fn(),
       send: jest.fn(),
+      status: jest.fn(),
     };
     Task.find.mockRejectedValueOnce('error');
     await getAllTasks(null, res);
@@ -35,6 +37,7 @@ describe('createOne', () => {
     const res = {
       json: jest.fn(),
       send: jest.fn(),
+      status: jest.fn(),
     };
     const req = {
       body: null,
@@ -46,6 +49,7 @@ describe('createOne', () => {
     const res = {
       json: jest.fn(),
       send: jest.fn(),
+      status: jest.fn(),
     };
     const req = {
       body: null,
@@ -95,6 +99,7 @@ describe('updateById', () => {
     const res = {
       json: jest.fn(),
       send: jest.fn(),
+      status: jest.fn(),
     };
     const req = {
       params: {
@@ -110,6 +115,7 @@ describe('updateById', () => {
     const res = {
       json: jest.fn(),
       send: jest.fn(),
+      status: jest.fn(),
     };
     const req = {
       params: {

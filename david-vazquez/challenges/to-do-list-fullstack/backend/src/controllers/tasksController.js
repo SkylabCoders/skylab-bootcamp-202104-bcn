@@ -9,6 +9,7 @@ function tasksController() {
     } catch (error) {
       debug(error);
       res.send(error);
+      res.status(404);
     }
   }
 
@@ -21,6 +22,7 @@ function tasksController() {
     } catch (error) {
       debug(error);
       res.send(error);
+      res.status(404);
     }
   }
 
@@ -32,6 +34,7 @@ function tasksController() {
     } catch (error) {
       debug(error);
       res.send(error);
+      res.status(404);
     }
   }
 
@@ -46,6 +49,7 @@ function tasksController() {
     } catch (error) {
       debug(error);
       res.send(error);
+      res.status(404);
     }
   }
 
