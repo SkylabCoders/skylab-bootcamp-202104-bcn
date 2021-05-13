@@ -22,30 +22,48 @@ export function loadTasks() {
 
 export function addTask(newTask) {
   return async (dispatch) => {
-    const { data } = await axios.post(url, newTask);
-    dispatch({
-      type: actionTypes.ADD_TASK,
-      newTask: data,
-    });
+    try {
+      const { data } = await axios.post(url, newTask);
+      dispatch({
+        type: actionTypes.ADD_TASK,
+        newTask: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.LOAD_TASKS_ERROR,
+      });
+    }
   };
 }
 
 export function deleteTask(task) {
   return async (dispatch) => {
-    await axios.delete(`${url}/${task._id}`);
-    dispatch({
-      type: actionTypes.DELETE_TASK,
-      task,
-    });
+    try {
+      await axios.delete(`${url}/${task._id}`);
+      dispatch({
+        type: actionTypes.DELETE_TASK,
+        task,
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.LOAD_TASKS_ERROR,
+      });
+    }
   };
 }
 
 export function doneTask(task) {
   return async (dispatch) => {
-    const { data } = await axios.put(`${url}/${task._id}`, task);
-    dispatch({
-      type: actionTypes.DONE_TASK,
-      updateTask: data,
-    });
+    try {
+      const { data } = await axios.put(`${url}/${task._id}`, task);
+      dispatch({
+        type: actionTypes.DONE_TASK,
+        updateTask: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.LOAD_TASKS_ERROR,
+      });
+    }
   };
 }
