@@ -28,7 +28,7 @@ export function loadTasks() {
     const { data } = await axios(tasksUrl);
     dispatch({
       type: actionTypes.LOAD_TASKS,
-      task: data
+      tasks: data
     });
     dispatch({
       type: actionTypes.ERROR_TASK
