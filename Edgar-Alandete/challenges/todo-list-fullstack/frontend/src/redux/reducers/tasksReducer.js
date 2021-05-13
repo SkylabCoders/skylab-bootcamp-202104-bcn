@@ -1,10 +1,9 @@
-import TASKS from '../../constants/tasks.mock';
 import actionTypes from '../actions/actionTypes';
 
 function tasksReducer(tasks = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_TASKS:
-      return TASKS;
+      return tasks;
     case actionTypes.DELETE_TASK:
       return tasks.filter((task) => task.taskId !== action.taskId);
     case actionTypes.ADD_TASK:
