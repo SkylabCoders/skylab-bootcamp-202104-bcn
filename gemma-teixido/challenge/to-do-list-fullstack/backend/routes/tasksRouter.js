@@ -1,13 +1,18 @@
 const { Router } = require('express');
-const tasks = require('../model/tasks')
-const tasksController = require('../controllers/tasksController')(tasks);
+const tasksController = require('../controllers/tasksController')();
 
 function tasksRouter() {
   const routes = Router();
 
   routes
     .route('/')
-    .get(tasksController.getAll)
+    .get(tasksController.getTasks)
+    .post(tasksController.addTasks);
+
+  routes
+    .route('/:taskId')
+    .put(tasksController.updateTaskById)
+    .delete(tasksController.deleteTaskById);
 
   return routes;
 }

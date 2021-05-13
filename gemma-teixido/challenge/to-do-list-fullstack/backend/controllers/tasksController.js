@@ -1,69 +1,50 @@
-const debug = require('debug')('app:heroesController');
-const Hero = require('../model/heroModel');
+const Task = require('../model/taskModel');
 
-function heroesController() {
-  async function getAll(req, res) {
-    const heroes = await Hero.find();
-    res.json(heroes);
+function tasksController() {
+  async function getTasks(req, res) {
+    const tasks = await Task.find({});
+    res.json(tasks);
   }
 
-  async function createOne(req, res) {
-    const newHero = new Hero(req.body);
-    debug(newHero);
+  async function addTasks(req, res) {
+    const newTask = new Task(req.body);
     try {
-      await newHero.save();
-      res.json(newHero);
+      await newTask.save();
+      res.json(newTask);
     } catch (error) {
-      debug(error);
       res.send(error);
     }
   }
 
-  async function getById(req, res) {
+  async function deleteTaskById(req, res) {
     try {
-      const heroById = await Hero.findById(
-        req.params.heroId,
-      );
-      res.json(heroById);
-    } catch (error) {
-      debug(error);
-      res.status(404);
-      res.send(error);
-    }
-  }
-
-  async function updateById(req, res) {
-    try {
-      const updatedHero = await Hero.findByIdAndUpdate(
-        req.params.heroId,
-        req.body,
-        { new: true },
-      );
-      res.json(updatedHero);
-    } catch (error) {
-      debug(error);
-      res.send(error);
-    }
-  }
-
-  async function deleteById(req, res) {
-    try {
-      await Hero.findByIdAndDelete(req.params.heroId);
+      await Task.findByIdAndDelete(req.params.taskId);
       res.status(204);
       res.json();
     } catch (error) {
-      debug(error);
+      res.send(error);
+    }
+  }
+
+  async function updateTaskById(req, res) {
+    try {
+      const uptadeTask = await Task.findByIdAndUpdate(
+        req.params.heroId,
+        req.body,
+        { new: true }
+      );
+      res.json(uptadeTask);
+    } catch (error) {
       res.send(error);
     }
   }
 
   return {
-    getAll,
-    createOne,
-    getById,
-    updateById,
-    deleteById,
+    getTasks,
+    addTasks,
+    deleteTaskById,
+    updateTaskById
   };
 }
 
-module.exports = heroesController;
+module.exports = tasksController;
