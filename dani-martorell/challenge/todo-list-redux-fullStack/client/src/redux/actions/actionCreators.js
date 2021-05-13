@@ -1,3 +1,5 @@
+/* eslint-disable no-debugger */
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -44,6 +46,36 @@ export function deleteTask(taskId) {
     } catch (error) {
       dispatch({
         type: 'ADD_TASK_ERROR',
+      });
+    }
+  };
+}
+export function updateTask(task) {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.put(`${url}/${task._id}`, task);
+      dispatch({
+        type: actionTypes.UPDATE_TASK,
+        task: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'UPDATE_TASK_ERROR',
+      });
+    }
+  };
+}
+export function markAsDone(task) {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.put(`${url}/${task._id}`, task);
+      dispatch({
+        type: actionTypes.COMPLETE_TASK,
+        task: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'COMPLETE_TASK_ERROR',
       });
     }
   };
