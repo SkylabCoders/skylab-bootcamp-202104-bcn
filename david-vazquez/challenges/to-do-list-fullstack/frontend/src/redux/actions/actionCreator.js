@@ -40,9 +40,12 @@ export function deleteTask(task) {
   };
 }
 
-export function doneTask(idTask) {
-  return {
-    type: actionTypes.DONE_TASK,
-    idTask,
+export function doneTask(task) {
+  return async (dispatch) => {
+    const { data } = await axios.put(`${url}/${task._id}`, task);
+    dispatch({
+      type: actionTypes.DONE_TASK,
+      updateTask: data,
+    });
   };
 }

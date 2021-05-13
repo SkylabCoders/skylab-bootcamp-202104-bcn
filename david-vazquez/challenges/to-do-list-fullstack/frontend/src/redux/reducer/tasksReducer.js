@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import actionTypes from '../actions/actionTypes';
 
 function tasksReducer(tasks = [], action) {
@@ -11,7 +12,7 @@ function tasksReducer(tasks = [], action) {
       return [...tasks];
     case actionTypes.DONE_TASK:
       return tasks.map((task) => ((
-        task.id === action.idTask) ? { ...task, state: true } : task));
+        task._id === action.updateTask._id) ? { ...task, state: true } : task));
     default:
       return tasks;
   }

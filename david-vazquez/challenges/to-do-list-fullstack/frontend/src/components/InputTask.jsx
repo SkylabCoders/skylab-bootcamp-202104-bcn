@@ -25,8 +25,9 @@ function InputTask({ tasks, dispatch }) {
     setTaskText(event.target.value);
   }
 
-  function selectDoneTask(id) {
-    dispatch(doneTask(id));
+  function selectDoneTask(task) {
+    const taskDone = { ...task, state: true };
+    dispatch(doneTask(taskDone));
   }
   return (
     <div className="task-container">
@@ -40,7 +41,7 @@ function InputTask({ tasks, dispatch }) {
           <li className={!task.state ? 'task-item' : 'task-item--done'}>
             {task.text}
             <div className="task-item__buttons">
-              <button type="button" className="button-done" onClick={() => selectDoneTask(task._id)}> </button>
+              <button type="button" className="button-done" onClick={() => selectDoneTask(task)}> </button>
               <button type="button" className="button-delete" onClick={() => dispatch(deleteTask(task))}> </button>
             </div>
           </li>
