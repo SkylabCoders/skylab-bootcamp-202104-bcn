@@ -10,9 +10,10 @@ function productsRouter() {
 
   routes
     .route('/:taskId/')
-    .get(tasksController.getTaskById);
+    .get(tasksController.getTaskById)
+    .delete(tasksController.deleteTaskById)
+    .post(tasksController.addTask);
   //   .put(tasksController.addOneToStock)
-  //   .delete(tasksController.removeOneFromStock);
 
   return routes;
 }

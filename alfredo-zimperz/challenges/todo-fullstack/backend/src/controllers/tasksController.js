@@ -27,6 +27,32 @@ function productsController() {
     }
   }
 
+  async function deleteTaskById(req, res) {
+    debug('enter to function deleteTaskById');
+    const { taskId } = req.params;
+    try {
+      await Task.findByIdAndDelete(taskId);
+      res.status(304);
+      res.json();
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
+  }
+
+  async function addTask(req, res) {
+    debug('enter to function getTaskById');
+    const { taskId } = req.params;
+    try {
+      await Task.findByIdAndDelete(taskId);
+      res.status(304);
+      res.json();
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
+  }
+
   // async function addOneToStock(req, res) {
   //   debug('enter to function getAll');
   //   const { taskId } = req.params;
@@ -64,7 +90,9 @@ function productsController() {
   // }
   return {
     getAll,
-    getTaskById
+    getTaskById,
+    deleteTaskById,
+    addTask
   };
 }
 module.exports = productsController;
