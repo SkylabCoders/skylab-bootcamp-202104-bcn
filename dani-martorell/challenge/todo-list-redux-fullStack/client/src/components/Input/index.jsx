@@ -2,7 +2,6 @@ import { React, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addTask } from '../../redux/actions/actionCreators';
-
 import './input.css';
 
 function Input({ dispatch }) {
@@ -24,7 +23,6 @@ function Input({ dispatch }) {
 }
 
 Input.propTypes = {
-//   tasks: PropTypes.shape([{}]).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 

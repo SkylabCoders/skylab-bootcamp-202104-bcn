@@ -20,6 +20,7 @@ function tasksController() {
   async function deleteById(req, res) {
     try {
       await Task.findByIdAndDelete(req.params.taskId);
+      res.json(req.params.taskId);
       res.status(204);
     } catch (error) {
       res.status(404);
