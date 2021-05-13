@@ -26,10 +26,24 @@ function tasksController() {
     }
   }
 
+  async function updateById(req, res) {
+    try {
+      const updatedTask = await Task.findByIdAndUpdate(
+        req.params.taskId,
+        req.body,
+        { new: true }
+      );
+      res.json(updatedTask);
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
   return {
     createOne,
     getAll,
-    deleteById
+    deleteById,
+    updateById
   };
 }
 
