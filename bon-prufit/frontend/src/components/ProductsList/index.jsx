@@ -11,20 +11,22 @@ function ProductsList({ products, dispatch }) {
   return (
     <>
 
-      <h1>Lista de Productos</h1>
-      {
-        products?.map((product) => (
-          <tr>
-            <td>
-              {product.title}
-            </td>
-            <td>
-              {product.cost}
-            </td>
-            <button type="button" onClick={() => dispatch(addProductToCart({ ...product }))}>Añadir al Carrito</button>
-          </tr>
-        ))
-    }
+      <h1 className="list-tittle">Lista de Productos</h1>
+      <ul className="products-list">
+        {
+          products?.map((product) => (
+            <li className="products-list__product">
+              <span className="product-name">
+                {product.title}
+              </span>
+              <span className="product-cost">
+                {product.cost}
+              </span>
+              <button type="button" className="button-add" onClick={() => dispatch(addProductToCart(product))}>+</button>
+            </li>
+          ))
+        }
+      </ul>
     </>
   );
 }

@@ -26,10 +26,10 @@ function Cart({ cart, dispatch }) {
 
   return (
     <>
-      <h2>Mi cesta</h2>
-      <ul className="products-list">
+      <h2 className="cart-tittle">Mi cesta</h2>
+      <ul className="cart-list">
         {cart.map((product) => (
-          <li>
+          <li className="cart-list__product">
             <span>{product.title}</span>
             <span>{product.cost}</span>
             <button type="button" className="button-delete" onClick={() => handleDeleteProduct(product.id)}>X</button>
