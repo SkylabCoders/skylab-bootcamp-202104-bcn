@@ -4,7 +4,7 @@ import selectedItemReducer from './selectedItemReducer';
 
 const rootReducer = combineReducers({
   items: itemsReducer,
-  selectedItem: selectedItemReducer
+  selectedItem: selectedItemReducer,
 });
 
 export default rootReducer;
