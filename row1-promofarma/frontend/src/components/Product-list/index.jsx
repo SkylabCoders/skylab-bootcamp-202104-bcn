@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadProducts } from '../../redux/actions/actionCreators';
 import Product from '../Product';
+import List from './style';
 
 function ProductList({ products, dispatch }) {
   useEffect(() => {
@@ -12,13 +13,13 @@ function ProductList({ products, dispatch }) {
   return (
     <div>
       <h3>PRODUCTS</h3>
-      <ul>
+      <List>
         {
           products?.map((product) => (
             <Product productItem={product} />
           ))
         }
-      </ul>
+      </List>
     </div>
   );
 }
