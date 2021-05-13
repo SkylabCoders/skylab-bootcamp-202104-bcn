@@ -42,6 +42,7 @@
 
 .items-list button {
   background-color: #8cc003;
+  cursor: pointer;
   border: none;
   height: 35px;
   width: 80px;

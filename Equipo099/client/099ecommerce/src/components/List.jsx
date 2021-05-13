@@ -8,10 +8,9 @@ const ListItems = ({items, dispatch}) => {
     useEffect(() => {
        if (!items.length)dispatch(loadItems())
     }, [])
-    function addToCart(itemId){
-        dispatch(loadItemById(itemId))
+    function addToCart(item){
+        dispatch(loadItemById(item))
     }
-
     return (
         <div className="items-list">
            {
@@ -21,8 +20,7 @@ const ListItems = ({items, dispatch}) => {
                         <div className="items-list__item">
                            <span>{item.name}</span>
                            <p>{item.price + "€"}</p>
-                           {/* <p>{"Stock: "+item.stock}</p> */}
-                           <button type="button" onClick={() => addToCart(item.id)}></button>
+                           <button type="button" onClick={() => addToCart(item)}></button>
                         </div>
                        </>
                    ) 

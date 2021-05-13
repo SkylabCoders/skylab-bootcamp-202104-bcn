@@ -49,7 +49,7 @@ function productsController() {
 
   async function deleteById(req, res) {
     try {
-      const deleteProducts = await Product.findByIdAndDelete(req.params.Product);
+      const deleteProducts = await Product.findByIdAndDelete(req.params.productId);
       res.status(200);
       res.json(deleteProducts);
     } catch (error) {

@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -48,12 +49,16 @@ export function updateItem(item) {
   };
 }
 
-export function loadItemById(itemId) {
-  return async (dispatch) => {
-    const { data } = await axios(`${url}/${itemId}`);
-    dispatch({
-      type: actionTypes.LOAD_ITEM,
-      item: data
-    });
+export function loadItemById(item) {
+  debugger
+    return {
+      type: actionTypes.ADD_ITEM,
+      item
+    };
+}
+
+export function loadCart() {
+  return {
+    type: actionTypes.LOAD_ITEM,
   };
 }

@@ -1,33 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-// import itemsCart from '../constants/items';
-import { deleteItem } from '../redux/actions/actionCreators';
 import './Cart.css'
-
-function CartItems({ dispatch, item , items}) {
+// import itemsCart from '../constants/items';
+import { loadCart } from '../redux/actions/actionCreators';
+function CartItems({ dispatch, itemSelect, items}) {
+  useEffect(() => {
+    dispatch(loadCart())
+  }, [itemSelect])
   function deleteFromCart(itemId) {
-    dispatch(deleteItem(itemId));
-  }
-
-  return (
+      dispatch(deleteItem(itemId));
+    }
+    debugger;
+    return (
     <>
       <div className="basket">
       <h2>Mi cesta: </h2>
-        {items.map((element) => (
-          element.id === item.id
-            ? (
-              <>
-              <div className="basket__item">
-                <p>{item.name}</p>
-                <p>{item.price}</p>
-                <button type="button" onClick={() => deleteFromCart(element.id)}>-</button>
-                <button type="button">+</button>
-              </div>
-              </>
-            )
-            : <p>no hay nada</p>
+        {itemSelect.map((item) => (
+        <>
+        <p>{item.name}</p>
+        <p>{item.price+"€"}</p>
+        <button type="button" onClick={()=>deleteFromCart(item.id)}>X</button>
+        {precioTotal += item.price}
+        </>
         ))}
+      <h2>{"Precio= "+precioTotal}</h2>
       </div>
     </>
   );
@@ -40,7 +37,7 @@ CartItems.propTypes = {
 
 function mapStateToProps(store) {
   return {
-    item: store.selectedItem,
+    itemSelect: store.selectedItem,
     items: store.items
   };
 }
