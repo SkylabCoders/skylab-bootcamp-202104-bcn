@@ -3,7 +3,7 @@ import actionTypes from './actionTypes';
 
 const url = 'http://localhost:2020/tasks'; // TODO: use ENV VARIABLE
 
-function loadTasks() {
+export function loadTasks() {
   return async (dispatch) => {
     try {
       const { data } = await axios(url);
@@ -18,5 +18,18 @@ function loadTasks() {
     }
   };
 }
-
-export default loadTasks;
+export function addTask(task) {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.post(url, task);
+      dispatch({
+        type: actionTypes.ADD_TASK,
+        task: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'ADD_TASK_ERROR',
+      });
+    }
+  };
+}
