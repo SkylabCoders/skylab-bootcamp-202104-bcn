@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-debugger */
 /* eslint-disable consistent-return */
 import actionTypes from '../actions/actionTypes';
@@ -13,15 +14,14 @@ function taskReducer(tasks = [], action) {
         action.task
       ];
     case actionTypes.DELETE_TASK:
-      return tasks.filter((task) => task.id !== action.taskId);
+      return tasks.filter((task) => task.id !== action.task?._id);
     case actionTypes.MODIFY_TASK:
+      debugger;
       return tasks.map(
-        (task) => (task.id === action.task.id
-          ? { ...task, ...action.task }
+        (task) => (task._id === action.task.id
+          ? { ...task, ...action.task.task }
           : task)
       );
-    case actionTypes.DELETE_ALL:
-      return tasks.filter((task) => task.id !== action.task.id);
     default:
       return tasks;
   }

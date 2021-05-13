@@ -8,7 +8,6 @@ import './taskSite.css';
 import { PrintTask, deleteTask, modifyTask } from '../redux/actions/actionCreators';
 
 function TaskSite({ tasks, dispatch }) {
-  debugger;
   useEffect(() => {
     dispatch(PrintTask());
   }, [tasks]);
@@ -26,7 +25,6 @@ function TaskSite({ tasks, dispatch }) {
     const newTaskInput = document.getElementById('inputTask');
     return dispatch(modifyTask({ id: taskId, task: newTaskInput.value }));
   }
-  debugger;
   return tasks.map((task) => (
     <>
       <p id={task.id}>
@@ -34,7 +32,7 @@ function TaskSite({ tasks, dispatch }) {
       </p>
       <button type="button" id={`buttonDelete${task.id}`} onClick={() => { trashTask(task._id); }}>Delete</button>
       <button type="button" id={`button${task.id}`} onClick={() => { doneTask(task.id); }}>Done</button>
-      <button type="button" id={`buttonModify${task.id}`} onClick={() => { modifyClickTask(task.id); }}>Modify</button>
+      <button type="button" id={`buttonModify${task.id}`} onClick={() => { modifyClickTask(task._id); }}>Modify</button>
     </>
   ));
 }
