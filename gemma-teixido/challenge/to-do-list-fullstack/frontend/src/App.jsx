@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={store()}>
       <header>
         <h1>To-do-list</h1>
       </header>

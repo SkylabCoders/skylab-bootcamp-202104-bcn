@@ -3,7 +3,7 @@ import actionType from '../actions/actionType';
 function tasksReducer(tasks = [], action) {
   switch (action.type) {
     case actionType.LOAD_TASKS:
-      return tasks;
+      return action.tasks;
 
     case actionType.DELETE_TASK:
       return tasks.filter((task) => task.id !== action.taskId);

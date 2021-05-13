@@ -1,7 +1,7 @@
 import axios from 'axios';
 import actionTypes from './actionType';
 
-const url = 'http://localhost:1305/tasks';
+const url = 'http://localhost:1305/to-do-list';
 
 export function loadTasks() {
   return async (dispatch) => {
@@ -29,16 +29,16 @@ export function addTask(task) {
   };
 }
 
-// export function deleteTask(taskId) {
-//   return {
-//     type: actionTypes.DELETE_TASK,
-//     taskId
-//   };
-// }
+export function deleteTask(taskId) {
+  return {
+    type: actionTypes.DELETE_TASK,
+    taskId
+  };
+}
 
-// export function doneTask(taskId) {
-//   return {
-//     type: actionTypes.DONE_TASK,
-//     taskId
-//   };
-// }
+export function doneTask(taskId) {
+  return {
+    type: actionTypes.DONE_TASK,
+    taskId
+  };
+}

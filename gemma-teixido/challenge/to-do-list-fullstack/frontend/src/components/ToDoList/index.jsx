@@ -1,26 +1,28 @@
+/* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
-  addTask, loadTasks
+  addTask, loadTasks, deleteTask, doneTask
 } from '../../redux/actions/actionCreator';
 
 import './ToDoList.css';
 
 function ToDoList({ tasks, dispatch }) {
+  debugger;
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
 
   const [newestTask, setNewestTask] = useState(null);
 
-  // const handleDelete = (taskId) => {
-  //   dispatch(deleteTask(taskId));
-  // };
+  const handleDelete = (taskId) => {
+    dispatch(deleteTask(taskId));
+  };
 
-  // function handleDone(taskId) {
-  //   dispatch(doneTask(taskId));
-  // }
+  function handleDone(taskId) {
+    dispatch(doneTask(taskId));
+  }
 
   const handleAddTask = () => {
     let newId = 1;
@@ -46,14 +48,24 @@ function ToDoList({ tasks, dispatch }) {
         </label>
       </div>
       <ul>
-        {tasks.map((task) => (
+        {tasks?.map((task) => (
           <label htmlFor="taskTrashCreation">
             <li className={!task.completed ? 'task-item' : 'task-item--done'}>
-              {task.name}
-              {/* <button type="button" className="deleteTask"
-              onClick={() => handleDelete(task.id)}> </button>
-              <button type="button" className="doneTask"
-              onClick={() => handleDone(task.id)}> </button> */}
+              {task.task}
+              <button
+                type="button"
+                className="deleteTask"
+                onClick={() => handleDelete(task.id)}
+              >
+                {' '}
+              </button>
+              <button
+                type="button"
+                className="doneTask"
+                onClick={() => handleDone(task.id)}
+              >
+                {' '}
+              </button>
             </li>
           </label>
         ))}
@@ -63,7 +75,9 @@ function ToDoList({ tasks, dispatch }) {
   );
 }
 ToDoList.propTypes = {
-  tasks: PropTypes.shape([]).isRequired,
+  tasks: PropTypes.shape([{
+    name: PropTypes.shape({})
+  }]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
