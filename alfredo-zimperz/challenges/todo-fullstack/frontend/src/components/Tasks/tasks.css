@@ -28,42 +28,22 @@
   color: #4ecdc4;
 }
 
-.new-task label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 20px;
-  width: 100%;
-  color: #d9f0f0d8;
-}
-
-.new-task label span {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .new-task input {
-  margin: 10px 0;
+  margin-top: 10px;
+  padding: 1rem;
   border-radius: 5px;
+  text-align: center;
   height: 30px;
   font-size: 20px;
-  padding-left: 20px;
   width: 80%;
   outline: none;
   border: none;
-  margin-left: auto;
 }
 
 .new-task button {
-  margin-bottom: 0;
-  width: 200px;
+  margin: 0;
+  margin-top: 15px;
+  width: 80%;
   height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
