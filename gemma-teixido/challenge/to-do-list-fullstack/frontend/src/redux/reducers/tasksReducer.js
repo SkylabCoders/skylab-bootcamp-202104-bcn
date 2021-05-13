@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import actionType from '../actions/actionType';
 
 function tasksReducer(tasks = [], action) {
@@ -6,7 +7,7 @@ function tasksReducer(tasks = [], action) {
       return action.tasks;
 
     case actionType.DELETE_TASK:
-      return tasks.filter((task) => task.id !== action.taskId);
+      return tasks.filter((task) => task._id !== action.taskId);
 
     case actionType.ADD_TASK:
       return [
@@ -15,7 +16,7 @@ function tasksReducer(tasks = [], action) {
       ];
 
     case actionType.DONE_TASK:
-      return tasks.map((task) => ((task.id === action.taskId)
+      return tasks.map((task) => ((task._id === action.taskId)
         ? { ...task, completed: true }
         : task));
 

@@ -1,4 +1,4 @@
-/* eslint-disable no-debugger */
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -9,7 +9,6 @@ import {
 import './ToDoList.css';
 
 function ToDoList({ tasks, dispatch }) {
-  debugger;
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
@@ -28,8 +27,8 @@ function ToDoList({ tasks, dispatch }) {
     let newId = 1;
     if (tasks.length !== 0) newId = tasks[tasks.length - 1].id + 1;
     const task = {
-      id: newId,
-      name: newestTask
+      id_: newId,
+      task: newestTask
     };
     dispatch(addTask(task));
   };
@@ -55,14 +54,14 @@ function ToDoList({ tasks, dispatch }) {
               <button
                 type="button"
                 className="deleteTask"
-                onClick={() => handleDelete(task.id)}
+                onClick={() => handleDelete(task._id)}
               >
                 {' '}
               </button>
               <button
                 type="button"
                 className="doneTask"
-                onClick={() => handleDone(task.id)}
+                onClick={() => handleDone(task._id)}
               >
                 {' '}
               </button>
