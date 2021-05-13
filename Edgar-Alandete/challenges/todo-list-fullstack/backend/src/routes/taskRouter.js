@@ -6,6 +6,8 @@ function tasksRouter() {
   routes.route('/')
     .get(tasksController.getAll)
     .post(tasksController.createTask);
+  routes.route('/:taskId')
+    .get(tasksController.getOneTask);
 
   return routes;
 }

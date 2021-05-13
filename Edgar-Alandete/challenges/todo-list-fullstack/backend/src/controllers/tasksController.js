@@ -20,9 +20,21 @@ function tasksController() {
     }
   }
 
+  async function getOneTask(req, res) {
+    debug(`Inside the function ${chalk.magenta('getOneTask')}`);
+
+    try {
+      const task = await Task.findById(req.params.taskId);
+      res.json(task);
+    } catch (error) {
+      res.status(404);
+    }
+  }
+
   return {
     getAll,
     createTask,
+    getOneTask,
   };
 }
 
