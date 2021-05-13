@@ -10,7 +10,8 @@ function todosRouter() {
 
   routes
     .route('/:todoId')
-    .delete(todosController.deleteById);
+    .delete(todosController.deleteById)
+    .put(todosController.updateById);
 
   return routes;
 }
