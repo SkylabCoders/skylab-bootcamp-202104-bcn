@@ -7,13 +7,13 @@ function tasksRouter() {
   routes
     .route('/')
     .get(tasksController.getAll)
-    .post(tasksController.createOne);
+    .post(tasksController.createTask);
 
-  routes
-    .route('/:taskId')
-    .get(tasksController.getById)
-    .put(tasksController.updateById)
-    .delete(tasksController.deleteById);
+  //   routes
+  //     .route('/:taskId')
+  //     .get(tasksController.getById)
+  //     .put(tasksController.updateById)
+  //     .delete(tasksController.deleteById);
 
   return routes;
 }
