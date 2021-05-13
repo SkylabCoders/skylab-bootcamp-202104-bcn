@@ -25,4 +25,4 @@ const todoRouter = require('./routes/taskRouter');
 server.use('/todo', todoRouter);
 
 server.listen('2021',
-  () => debug(`Server is running in ${chalk.boldMagenta('localhost:2021')}`));
+  () => debug(`Server is running in ${chalk.magenta('localhost:2021')}`));
