@@ -7,6 +7,7 @@ function tasksController() {
   }
 
   async function createOne(req, res) {
+    console.log(req);
     const newTask = new Task(req.body);
     try {
       await newTask.save();
@@ -43,7 +44,7 @@ function tasksController() {
 
   async function deleteById(req, res) {
     try {
-      await Task.findByIdAndDelete(req.params.taskId);
+      await Task.findByIdAndDelete(req.params.Id);
       res.status(204);
       res.json();
     } catch (error) {

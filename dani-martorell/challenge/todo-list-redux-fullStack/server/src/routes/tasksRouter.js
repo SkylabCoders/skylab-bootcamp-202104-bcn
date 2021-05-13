@@ -1,7 +1,6 @@
 const { Router } = require('express');
-const tasks = require('../tasks');
 
-const tasksController = require('../controllers/tasksController')(tasks);
+const tasksController = require('../controllers/tasksController')();
 
 function tasksRouter() {
   const routes = Router();
