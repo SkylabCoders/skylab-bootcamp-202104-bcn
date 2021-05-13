@@ -15,14 +15,14 @@ function CartItems({ dispatch, itemSelect}) {
     <>
       <h2>Mi cesta: </h2>
         {itemSelect.map((item) => (
-          <>
+        <>
         <p>{item.name}</p>
         <p>{item.price+"€"}</p>
         <button type="button" onClick={()=>deleteFromCart(item.id)}>X</button>
         {precioTotal += item.price}
         </>
         ))}
-        <h2>{"Precio= "+precioTotal}</h2>
+        <h2>{"Precio= "+precioTotal.toFixed(2)}</h2>
     </>
   );
 }
