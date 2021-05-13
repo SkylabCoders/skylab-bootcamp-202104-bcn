@@ -1,6 +1,12 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
-import { loadProducts, addToCart } from './actionCreator';
+import {
+  loadProducts,
+  addToCart,
+  loadCart,
+  deleteFromCart,
+  updateCart
+} from './actionCreator';
 
 jest.mock('axios');
 
@@ -26,12 +32,46 @@ describe('loadProducts function', () => {
 });
 
 describe('addToCart function', () => {
-  test('should dispatch ADD_PRODUCTS_TO_CART', async () => {
+  test('should dispatch ADD_PRODUCTS_TO_CART', () => {
+    const result = addToCart({ hola: 'anna' });
+
+    expect(result).toStrictEqual({
+      type: actionTypes.ADD_PRODUCTS_TO_CART,
+      product: { hola: 'anna' }
+    });
+  });
+});
+
+describe('loadCart function', () => {
+  test('should dispatch LOAD_CART_PRODUCT', () => {
+    const result = loadCart();
+
+    expect(result).toStrictEqual({
+      type: actionTypes.LOAD_CART_PRODUCT
+    });
+  });
+});
+
+describe('deleteFromCart function', () => {
+  test('should dispatch DELETE_CART_PRODUCT', () => {
+    const result = deleteFromCart({ hola: 'anna' });
+
+    expect(result).toStrictEqual({
+      type: actionTypes.DELETE_CART_PRODUCT,
+      product: { hola: 'anna' }
+    });
+  });
+});
+
+describe('updateCart function', () => {
+  test('should dispatch LOAD_PRODUCT', async () => {
     const dispatch = jest.fn();
-    axios.post.mockResolvedValue('skylab');
+    axios.mockResolvedValue('skylab');
 
-    await addToCart({ hola: 'anna' })(dispatch);
+    await updateCart({ hola: 'anna' })(dispatch);
 
-    expect(dispatch).toHaveBeenCalled();
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.UPDATE_PRODUCTS
+    });
   });
 });
