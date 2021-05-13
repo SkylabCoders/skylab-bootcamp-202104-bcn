@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -33,11 +34,11 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
   };
 
   const save = () => {
-    dispatch(updateTask({ id: selectedTask.id, title: taskTitle, done: taskDone }));
+    dispatch(updateTask({ id: selectedTask._id, title: taskTitle, done: taskDone }));
   };
 
   return (
-    selectedTask?.id ? (
+    selectedTask?._id ? (
       <>
         <article className="task-detail">
           <h2>
@@ -47,7 +48,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
           </h2>
           <div>
             <span>id: </span>
-            {selectedTask?.id}
+            {selectedTask._id}
           </div>
           <div className="task-detail__modify">
             <label htmlFor="task-title">
@@ -98,7 +99,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
 TaskDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
   selectedTask: PropTypes.shape({
-    id: PropTypes.number,
+    _id: PropTypes.number,
     title: PropTypes.string,
     description: PropTypes.string,
     done: PropTypes.bool,
