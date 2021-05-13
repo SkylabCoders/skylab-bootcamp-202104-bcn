@@ -14,6 +14,7 @@ mongoose.connect(
     useUnifiedTopology: true,
     useNewUrlParser: true,
   },
+  () => debug('Mongoose is connected'),
 );
 server.use(cors());
 server.use(express.json());
