@@ -16,6 +16,8 @@ function tasksController() {
 
   async function addTask(req, res) {
     const newTask = new Task(req.body);
+    debug(req.body);
+    debug(newTask);
     try {
       await newTask.save();
       res.status(200);
