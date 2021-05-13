@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { deleteProductFromCart, loadCart } from '../../redux/actions/actionCreators';
+import './cart.css';
 
 function Cart({ cart, dispatch }) {
   useEffect(() => {
@@ -26,24 +27,27 @@ function Cart({ cart, dispatch }) {
 
   return (
     <>
-      <h2>Mi cesta</h2>
-      <ul className="products-list">
+      <h2 className="cart-tittle">Mi cesta</h2>
+      <ul className="cart-list">
         {cart.map((product) => (
-          <li>
+          <li className="cart-list__product">
             <span>{product.title}</span>
             <span>{product.cost}</span>
             <button type="button" className="button-delete" onClick={() => handleDeleteProduct(product.id)}>X</button>
           </li>
         ))}
         <li>
-          <span>
+          <span className="cart-totalproducts">
             Total
             {' '}
             {cart.length}
             {' '}
             productos
           </span>
-          <span>{cart.length && totalPrice(cart)}</span>
+          <span className="cart-totalprice">
+            {' '}
+            {cart.length && totalPrice(cart)}
+          </span>
         </li>
       </ul>
     </>
