@@ -8,7 +8,6 @@ function selectedItemReducer(item = [], action) {
         ...item,
         action.item
       ];
-      
     case actionTypes.DELETE_ITEM:
       return item.filter((element) => element.id !== action.itemId);
 
