@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const debug = require('debug')('app:heroesController');
 const Task = require('../models/taskModel');
 
@@ -8,7 +9,7 @@ function tasksController() {
   }
 
   async function addTask(req, res) {
-    const newTask = new Task(req.body);
+    const newTask = new Task(req);
     debug(newTask);
     try {
       await newTask.save();
@@ -21,7 +22,7 @@ function tasksController() {
 
   async function delTask(req, res) {
     try {
-      await Task.findByIdAndDelete(req.params.taskId);
+      await Task.findByIdAndDelete(req.params.tasks);
       res.status(204);
       res.json();
     } catch (error) {

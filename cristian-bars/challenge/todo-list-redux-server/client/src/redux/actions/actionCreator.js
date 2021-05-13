@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -31,7 +32,7 @@ export function addTask(newTask) {
 
 export function deleteTask(taskId) {
   return async (dispatch) => {
-    await axios.delete(url, taskId);
+    await axios.delete(`${url}/${taskId._id}`);
     dispatch({
       type: actionTypes.DELETE_TASK,
       taskId
