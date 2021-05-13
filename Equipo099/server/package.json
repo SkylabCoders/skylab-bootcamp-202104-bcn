@@ -33,6 +33,6 @@
     "eslint-plugin-react-hooks": "^4.2.0"
   },
   "jest": {
-    "testEnviroment": "node"
+    "testEnvironment": "node"
   }
 }

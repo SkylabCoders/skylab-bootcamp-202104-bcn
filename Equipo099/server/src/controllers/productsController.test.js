@@ -1,202 +1,166 @@
 const {
-  createOne,
   getAll,
-  deleteById,
+  createOne,
   getById,
-  updateById
-} = require('./heroesController')();
-const Hero = require('../model/heroModel');
+  updateById,
+  deleteById
+} = require('./productsController')();
+const Product = require('../model/productModel');
 
-jest.mock('../model/heroModel');
-jest.mock('debug');
+jest.mock('../model/productModel');
 
 describe('getAll', () => {
-  test('shoud get all heroes', async () => {
-    // arrange
+  test('should getAll products', async () => {
     const res = {
       json: jest.fn(),
       status: jest.fn()
     };
 
-    Hero.find.mockResolvedValueOnce([{ name: 'Pepe' }]);
-    // act
-    // const { getAll } = heroesController(); // como destructuro directmante no hace falta
+    Product.find.mockResolvedValue([{ name: 'cream' }]);
+
     await getAll(null, res);
 
-    // assert
-    expect(res.json).toHaveBeenCalledWith([{ name: 'Pepe' }]);
-  });
-
-  test('shoud return status 200', async () => {
-    // arrange
-    const res = {
-      json: jest.fn(),
-      status: jest.fn()
-    };
-
-    Hero.find.mockResolvedValueOnce();
-    // act
-    await getAll(null, res);
-
-    // assert
-    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith([{ name: 'cream' }]);
   });
 });
 
 describe('createOne', () => {
-  test('shoud get a new hero', async () => {
-    // arrange
-    const res = {
-      json: jest.fn(),
-      status: jest.fn()
-    };
+  class MockProduct {
+    constructor(name) {
+      this.name = name;
+    }
+
+    // eslint-disable-next-line class-methods-use-this
+    save() {}
+  }
+  const res = {
+    status: jest.fn(),
+    json: jest.fn(),
+    send: jest.fn()
+  };
+  test('should create one product', async () => {
     const req = {
       body: {
-        id: 15,
-        name: 'Dr Caca'
+        name: 'champu'
       }
     };
-    Hero.mockReturnValueOnce({ save: jest.fn() });
-    // act
+    const newProduct = new MockProduct('product name');
+    Product.mockReturnValueOnce(newProduct);
+
     await createOne(req, res);
 
-    // assert
-    expect(res.json).toHaveBeenCalledWith({ id: 15, name: 'Dr Caca', save: jest.fn() });
+    expect(res.json).toHaveBeenCalledWith({ name: 'product name' });
   });
-
-  test('shoud call debug with an error', async () => {
-    // arrange
+  test('should send error', async () => {
     const req = {
       body: null
     };
 
-    const res = {
-      json: jest.fn(),
-      send: jest.fn()
-    };
-    Hero.mockResolvedValueOnce({
-      save: jest.fn().mockResolvedValueOnce('Error')
-    });
-    // act
+    Product.mockReturnValueOnce({ save: jest.fn().mockRejectedValueOnce('error') });
+
     await createOne(req, res);
 
-    // assert
-    expect(res.send).toHaveBeenCalledWith('Error');
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
 describe('getById', () => {
-  test('shoud get a hero by Id', async () => {
-    // arrange
-    const res = {
-      json: jest.fn(),
-      status: jest.fn(),
-      send: jest.fn()
+  const res = {
+    status: jest.fn(),
+    json: jest.fn(),
+    send: jest.fn()
+  };
+  test('should get a product by id', async () => {
+    const req = {
+      params: {
+        productId: 1
+      }
     };
-    const req = { params: { heroId: 5 } };
+    Product.findById.mockResolvedValue([{ productId: 1, name: 'cream' }]);
 
-    // act
-    Hero.findById.mockResolvedValueOnce({ id: 5, name: 'Cacho' });
     await getById(req, res);
 
-    // assert
-    expect(res.json).toHaveBeenCalledWith({ id: 5, name: 'Cacho' });
+    expect(res.json).toHaveBeenCalledWith([{ productId: 1, name: 'cream' }]);
   });
-
-  test('shoud resolve as 404', async () => {
-    // arrange
-    const res = {
-      json: jest.fn(),
-      status: jest.fn(),
-      send: jest.fn()
+  test('should get error', async () => {
+    const req = {
+      params: {
+        productId: null
+      }
     };
-    const req = { params: { heroId: null } };
-    // act
-    Hero.findById.mockRejectedValueOnce('');
+
+    Product.findById.mockRejectedValueOnce('error');
+
     await getById(req, res);
 
-    // assert
-    expect(res.status).toHaveBeenCalledWith(404); // se puede testear res.json ,res.send
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
-describe('updateById', () => {
-  test('shoud call res.json', async () => {
-    // arrange
-    const res = {
-      json: jest.fn(),
-      status: jest.fn()
-    };
+describe('updateById', async () => {
+  const res = {
+    status: jest.fn(),
+    json: jest.fn(),
+    send: jest.fn()
+  };
+  test('should updated info product by id', async () => {
     const req = {
-      body: { name: 'Dr Caca' },
-      params: { heroId: 5 }
+      params: {
+        productId: 1
+      },
+      body: {}
     };
+    Product.findByIdAndUpdate.mockResolvedValue([{ productId: 1, name: 'cream' }]);
 
-    // act
-    //* const { updateById } = heroesController([{ id: 5, name: 'Cacho' }]);
-    // se puede hacer destructuring directamente cuando
-    // se importa, por eso no hace falta hacerlo aca****//
-    Hero.findByIdAndUpdate.mockResolvedValueOnce([{ id: 5, name: 'Dr Caca' }]);
     await updateById(req, res);
 
-    // assert
-    expect(res.json).toHaveBeenCalledWith([{ id: 5, name: 'Dr Caca' }]);
+    expect(res.json).toHaveBeenCalledWith([{ productId: 1, name: 'cream' }]);
   });
-
-  test('shoud call res.send', async () => {
-    // arrange
-    const res = {
-      json: jest.fn(),
-      status: jest.fn(),
-      send: jest.fn()
+  test('should get error', async () => {
+    const req = {
+      params: {
+        productId: null
+      },
+      body: {}
     };
-    const req = { params: { heroId: 15 } };
 
-    // act
-    Hero.findByIdAndUpdate.mockRejectedValueOnce('error');
+    Product.findByIdAndUpdate.mockRejectedValueOnce('error');
+
     await updateById(req, res);
 
-    // assert
     expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
 describe('deleteById', () => {
-  test('shoud call a json function', async () => {
-    // arrange
-    const res = {
-      json: jest.fn(),
-      status: jest.fn(),
-      send: jest.fn()
-
-    };
+  const res = {
+    status: jest.fn(),
+    json: jest.fn(),
+    send: jest.fn()
+  };
+  test('should delete product by id', async () => {
     const req = {
-      params: { heroId: null }
+      params: {
+        productId: null
+      }
     };
+    Product.findByIdAndDelete.mockResolvedValue();
 
-    // act
-    Hero.findByIdAndDelete.mockResolvedValueOnce({});
     await deleteById(req, res);
 
-    // assert
-    expect(res.json).toHaveBeenCalledWith({});
+    expect(res.json).toHaveBeenCalled();
   });
-
-  test('shoud reject as res.status 404', async () => {
-    // arrange
-    const res = {
-      json: jest.fn(),
-      status: jest.fn(),
-      send: jest.fn()
+  test('should get error', async () => {
+    const req = {
+      params: {
+        productId: null
+      }
     };
-    const req = { params: { heroId: null } };
 
-    Hero.findByIdAndDelete.mockRejectedValueOnce('');
+    Product.findByIdAndDelete.mockRejectedValueOnce('error');
 
-    // act
     await deleteById(req, res);
 
-    // assert
-    expect(res.status).toHaveBeenCalledWith(404);
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
