@@ -1,4 +1,4 @@
-const debug = require('debug')('server:heroesController');
+const debug = require('debug')('server:tasksController');
 const Task = require('../model/taskModel');
 
 function productsController() {
