@@ -1,4 +1,9 @@
-const { getAll, createTask, getOneTask } = require('./tasksController')();
+const {
+  getAll,
+  createTask,
+  getOneTask,
+  deleteTask,
+} = require('./tasksController')();
 const Task = require('../model/taskModel');
 
 jest.mock('./../model/taskModel');
@@ -103,6 +108,42 @@ describe('Given a getOneTask function', () => {
     Task.findById.mockRejectedValueOnce();
     await getOneTask(req, res);
 
+    expect(res.status).toHaveBeenCalledWith(404);
+  });
+});
+
+describe('Given a deleteTask function', () => {
+  test('Should send status 204', async () => {
+    const req = {
+      params: {
+        taskId: null,
+      },
+    };
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+    };
+
+    Task.findByIdAndDelete.mockResolvedValue();
+
+    await deleteTask(req, res);
+    expect(res.status).toHaveBeenCalledWith(204);
+  });
+
+  test('Should send status 404', async () => {
+    const req = {
+      params: {
+        taskId: null,
+      },
+    };
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+    };
+
+    Task.findByIdAndDelete.mockRejectedValueOnce();
+
+    await deleteTask(req, res);
     expect(res.status).toHaveBeenCalledWith(404);
   });
 });
