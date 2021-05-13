@@ -13,13 +13,13 @@ import './App.css';
 function App() {
   return (
     <>
-      <Provider store={store}>
+      <Provider store={store()}>
         <Router>
           <header className="header">
             <h1>To Do List</h1>
             <nav>
-              <Link to="/">Dashboard</Link>
-              <Link to="/tasks">tasks</Link>
+              <Link to="/">Task list</Link>
+              <Link to="/tasks">Edit tasks</Link>
             </nav>
           </header>
           <main className="main">

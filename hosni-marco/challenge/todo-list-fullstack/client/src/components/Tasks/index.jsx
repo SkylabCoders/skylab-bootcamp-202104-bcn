@@ -35,7 +35,7 @@ const Tasks = ({ tasks, dispatch }) => {
     <>
       <h2 className="hidden">My Tasks</h2>
       <section className="new-task">
-        <h3>Add new task</h3>
+        <h3>Edit tasks</h3>
         <label htmlFor="new-task-title" id="new-task-title">
           <span>Title:</span>
           <input
@@ -44,14 +44,14 @@ const Tasks = ({ tasks, dispatch }) => {
             onChange={handleChangeInput}
           />
         </label>
-        <label htmlFor="new-task-description" id="new-task-description">
+        {/* <label htmlFor="new-task-description" id="new-task-description">
           <span>Description:</span>
           <input
             name="description"
             value={newTaskDescription}
             onChange={handleChangeInput}
           />
-        </label>
+        </label> */}
         <button className="add-button" type="button" onClick={saveNewTask}>
           Add task
         </button>

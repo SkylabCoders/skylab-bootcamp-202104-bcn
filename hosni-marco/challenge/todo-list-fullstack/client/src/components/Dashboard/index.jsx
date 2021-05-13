@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-debugger */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -5,30 +7,21 @@ import { loadTasks } from '../../redux/actions/actionCreators';
 import Task from '../Task';
 
 const Dashboard = ({ tasks, dispatch }) => {
+  debugger;
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
 
-  const pendingTasks = tasks.filter((task) => !task.done);
-
+  console.log(tasks[0]?.task);
+  // const pendingTasks = tasks.filter((task) => !task.done);
   return (
     <>
       <div className="dashboard">
         <h2>Dashboard</h2>
-        <p>
-          Total tasks:
-          {' '}
-          {tasks.length}
-        </p>
-        <p>
-          Pending tasks:
-          {' '}
-          {pendingTasks.length}
-        </p>
       </div>
       <div className="pendingTasks">
-        <h3>Pending tasks</h3>
-        {pendingTasks.map((task) => <Task task={task} key={task.id} />)}
+        <h3>Tasks list</h3>
+        {tasks.map((task) => <Task task={task} />)}
       </div>
     </>
   );

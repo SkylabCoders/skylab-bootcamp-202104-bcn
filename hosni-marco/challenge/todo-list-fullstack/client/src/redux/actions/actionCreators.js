@@ -1,10 +1,19 @@
+/* eslint-disable no-debugger */
 import shortId from 'shortid';
+import axios from 'axios';
 import actionTypes from './actionTypes';
 import TASKS from '../../constants/tasks.mock';
 
+const URL = 'http://localhost:2021/todoList';
+
 export function loadTasks() {
-  return {
-    type: actionTypes.LOAD_TASKS
+  debugger;
+  return async (dispatch) => {
+    const { data } = await axios(URL);
+    dispatch({
+      type: actionTypes.LOAD_TASKS,
+      tasks: data
+    });
   };
 }
 
