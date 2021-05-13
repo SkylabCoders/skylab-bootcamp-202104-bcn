@@ -38,9 +38,9 @@ describe('When invoked createOne function', () => {
       send: jest.fn()
     };
     const testing = new MockTask('Pepe');
-    TODO.mockResolvedValue(testing);
+    TODO.mockReturnValueOnce(testing);
     await createOne(req, res);
-    expect(res.json).toHaveBeenCalled();
+    expect(res.json).toHaveBeenCalledWith({ name: 'Pepe' });
   });
 });
 
