@@ -7,25 +7,23 @@ function tasksController() {
   }
 
   async function createOne(req, res) {
-    console.log(req);
     const newTask = new Task(req.body);
     try {
       await newTask.save();
       res.json(newTask);
     } catch (error) {
-      res.send(error);
+      res.status(404);
+      res.send(error.message);
     }
   }
 
-  async function getById(req, res) {
+  async function deleteById(req, res) {
     try {
-      const taskById = await Task.findById(
-        req.params.heroId,
-      );
-      res.json(taskById);
+      await Task.findByIdAndDelete(req.params.taskId);
+      res.status(204);
     } catch (error) {
       res.status(404);
-      res.send(error);
+      res.send(error.message);
     }
   }
 
@@ -38,24 +36,14 @@ function tasksController() {
       );
       res.json(updatedTask);
     } catch (error) {
-      res.send(error);
-    }
-  }
-
-  async function deleteById(req, res) {
-    try {
-      await Task.findByIdAndDelete(req.params.Id);
-      res.status(204);
-      res.json();
-    } catch (error) {
-      res.send(error);
+      res.status(404);
+      res.send(error.message);
     }
   }
 
   return {
     getAll,
     createOne,
-    getById,
     updateById,
     deleteById,
   };
