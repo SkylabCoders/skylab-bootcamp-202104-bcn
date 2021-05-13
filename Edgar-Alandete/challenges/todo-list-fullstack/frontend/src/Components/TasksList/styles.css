@@ -53,4 +53,8 @@ main {
 .tasks-list {
   list-style: none;
 }
+
+.done {
+  text-decoration: line-through;
+}
 /*# sourceMappingURL=styles.css.map */

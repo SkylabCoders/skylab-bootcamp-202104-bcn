@@ -6,11 +6,11 @@ import './styles.css';
 const TaskListItem = ({ task, deleteHandler, updateHandler }) => (
   <li key={`${task._id}`} className="item">
     {' '}
-    {task.name}
-    {task.isFinished
-      ? ' ---- acabado'
-      : ' ---- dale'}
-    {' '}
+    <span className={task.isFinished ? 'done' : ''}>
+      {' '}
+      {task.name}
+    </span>
+
     <button className="button button--delete" type="button" onClick={() => deleteHandler(task._id)}>Delete</button>
     <button className="button button--done" type="button" onClick={() => updateHandler(task)}>Done</button>
   </li>
