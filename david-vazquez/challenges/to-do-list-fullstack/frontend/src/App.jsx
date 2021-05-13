@@ -7,7 +7,7 @@ import store from './redux/store/index';
 function App() {
   return (
     <>
-      <Provider store={store}>
+      <Provider store={store()}>
         <div className="App">
           <h1>To Do List</h1>
           <InputTask />

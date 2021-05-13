@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const productSchema = mongoose.Schema({
-  task: String,
+  text: String,
 });
 
 module.exports = mongoose.model('Task', productSchema);
