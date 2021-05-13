@@ -21,4 +21,15 @@ describe('Given a loadProdcuts actionCreator', () => {
       }
     );
   });
+
+  test('should dispatch a LOAD_PRODUCTS_ERROR action', async () => {
+    axios.mockRejectedValue();
+    const dispatch = jest.fn();
+    await loadProducts()(dispatch);
+    expect(dispatch).toHaveBeenCalledWith(
+      {
+        type: actionTypes.LOAD_PRODUCTS_ERROR
+      }
+    );
+  });
 });

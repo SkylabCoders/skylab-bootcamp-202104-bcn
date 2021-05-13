@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -21,7 +20,7 @@ export function loadProducts() {
       });
     } catch (error) {
       dispatch({
-        type: 'LOAD_PRODUCTS_ERROR'
+        type: actionTypes.LOAD_PRODUCTS_ERROR
       });
     }
   };
@@ -36,7 +35,6 @@ export function deleteProduct(product, index) {
 }
 
 export function deleteAll(products) {
-  debugger;
   return {
     type: actionTypes.DELETE_ALL,
     data: products
