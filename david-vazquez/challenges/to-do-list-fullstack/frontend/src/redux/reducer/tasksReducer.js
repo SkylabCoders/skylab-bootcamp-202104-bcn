@@ -7,7 +7,8 @@ function tasksReducer(tasks = [], action) {
     case actionTypes.ADD_TASK:
       return [...tasks, action.newTask];
     case actionTypes.DELETE_TASK:
-      return tasks.filter((task) => task.id !== action.idTask);
+      tasks.splice(tasks.indexOf(action.task), 1);
+      return [...tasks];
     case actionTypes.DONE_TASK:
       return tasks.map((task) => ((
         task.id === action.idTask) ? { ...task, state: true } : task));

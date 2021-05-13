@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
@@ -13,20 +14,15 @@ function InputTask({ tasks, dispatch }) {
   });
 
   function handleAdd() {
-    let newId = 1;
-    if (tasks.length !== 0) newId = tasks[tasks.length - 1].id + 1;
     const newTask = {
-      id: newId,
       text: taskText,
+      state: false,
     };
     dispatch(addTask(newTask));
   }
+
   function getTask(event) {
     setTaskText(event.target.value);
-  }
-
-  function selectDeleteTask(id) {
-    dispatch(deleteTask(id));
   }
 
   function selectDoneTask(id) {
@@ -44,8 +40,8 @@ function InputTask({ tasks, dispatch }) {
           <li className={!task.state ? 'task-item' : 'task-item--done'}>
             {task.text}
             <div className="task-item__buttons">
-              <button type="button" className="button-done" onClick={() => selectDoneTask(task.id)}> </button>
-              <button type="button" className="button-delete" onClick={() => selectDeleteTask(task.id)}> </button>
+              <button type="button" className="button-done" onClick={() => selectDoneTask(task._id)}> </button>
+              <button type="button" className="button-delete" onClick={() => dispatch(deleteTask(task))}> </button>
             </div>
           </li>
         ))}
