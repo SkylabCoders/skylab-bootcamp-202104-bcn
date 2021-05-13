@@ -8,11 +8,11 @@ function productsRouter() {
     .route('/')
     .get(tasksController.getAll);
 
-  // routes
-  //   .route('/:taskId/')
+  routes
+    .route('/:taskId/')
+    .get(tasksController.getTaskById);
   //   .put(tasksController.addOneToStock)
   //   .delete(tasksController.removeOneFromStock);
-  // .get(tasksController.getById);
 
   return routes;
 }

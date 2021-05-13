@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
-const { getAll, addOneToStock, removeOneFromStock } = require('./productsController')();
-const Product = require('../model/productModel');
+const { getAll, addOneToStock, removeOneFromStock } = require('./taskController')();
+const Product = require('../model/taskModel');
 
 jest.mock('../model/productModel');
 
