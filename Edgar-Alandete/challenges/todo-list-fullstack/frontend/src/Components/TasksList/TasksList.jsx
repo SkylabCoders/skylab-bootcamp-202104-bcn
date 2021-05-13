@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -38,7 +39,7 @@ function TasksList({ tasks, dispatch }) {
               ? ' ---- acabado'
               : ' ---- dale'}
             {' '}
-            <button type="button" onClick={() => handleDelete(task.taskId)}>Delete</button>
+            <button type="button" onClick={() => handleDelete(task._id)}>Delete</button>
           </li>
         ))
     }

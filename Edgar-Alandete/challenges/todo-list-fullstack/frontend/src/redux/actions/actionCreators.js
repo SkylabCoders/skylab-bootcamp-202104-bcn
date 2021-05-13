@@ -23,27 +23,30 @@ export const createTask = (task) => async (dispatch) => {
     await axios.post(url, newTask);
     dispatch({
       type: actionTypes.ADD_TASK,
-      task,
+      task: newTask,
     });
   } catch (error) {
     dispatch({
       type: actionTypes.ADD_TASK_ERROR,
-      task: newTask,
     });
   }
 };
 
-export const loadTasksByStatus = (status) => ({
-  type: actionTypes.LOAD_TASKS,
-  status,
-});
+export const deleteTask = (taskId) => async (dispatch) => {
+  try {
+    await axios.delete(`${url}${taskId}`);
+    dispatch({
+      type: actionTypes.DELETE_TASK,
+      taskId,
+    });
+  } catch (error) {
+    dispatch({
+      type: actionTypes.DELETE_TASK_ERROR,
+    });
+  }
+};
 
 export const updateTask = (task) => ({
   type: actionTypes.UPDATE_TASK,
   task,
-});
-
-export const deleteTask = (taskId) => ({
-  type: actionTypes.DELETE_TASK,
-  taskId,
 });
