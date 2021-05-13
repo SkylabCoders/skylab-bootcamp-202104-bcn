@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -39,9 +40,14 @@ export function deleteTask(taskId) {
   };
 }
 
-export function doneTask(taskId) {
-  return {
-    type: actionTypes.DONE_TASK,
-    taskId
+export function doneTask(task) {
+  return async (dispacth) => {
+    const { data } = await axios.put(`${URL}/${task._id}`, {
+      completed: true
+    });
+    dispacth({
+      type: actionTypes.DONE_TASK,
+      task: data
+    });
   };
 }

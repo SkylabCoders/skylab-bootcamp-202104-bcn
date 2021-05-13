@@ -16,7 +16,8 @@ const InputTask = ({ tasks, dispatch }) => {
 
   const handleAdd = () => {
     const newTask = {
-      name: newestTask
+      name: newestTask,
+      completed: false
     };
     dispatch(addTask(newTask));
   };
@@ -29,8 +30,8 @@ const InputTask = ({ tasks, dispatch }) => {
     dispatch(deleteTask(taskId));
   }
 
-  function handleDone(taskId) {
-    dispatch(doneTask(taskId));
+  function handleDone(task) {
+    dispatch(doneTask(task));
   }
 
   return (
@@ -47,7 +48,7 @@ const InputTask = ({ tasks, dispatch }) => {
           {tasks.map((task) => (
             <li key={task.id} className={!task.completed ? 'task-item' : 'task-item--done'}>
               {task.name}
-              <button type="button" className="doneBtn" onClick={() => handleDone(task._id)}>DONE</button>
+              <button type="button" className="doneBtn" onClick={() => handleDone(task)}>DONE</button>
               <button type="button" className="deleteBtn" onClick={() => handleDelete(task._id)}>DELETE</button>
             </li>
           ))}

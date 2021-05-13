@@ -13,8 +13,8 @@ function TasksReducer(tasks = [], action) {
       return tasks.filter((task) => task._id !== action.taskId);
 
     case actionTypes.DONE_TASK:
-      return tasks.map((task) => ((task.id === action.taskId)
-        ? { ...task, completed: true }
+      return tasks.map((task) => ((task._id === action.task._id)
+        ? { ...task, ...action.task }
         : task));
 
     default:
