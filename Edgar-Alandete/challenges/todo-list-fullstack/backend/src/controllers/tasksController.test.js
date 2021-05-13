@@ -3,6 +3,7 @@ const {
   createTask,
   getOneTask,
   deleteTask,
+  updateTask,
 } = require('./tasksController')();
 const Task = require('../model/taskModel');
 
@@ -144,6 +145,43 @@ describe('Given a deleteTask function', () => {
     Task.findByIdAndDelete.mockRejectedValueOnce();
 
     await deleteTask(req, res);
+    expect(res.status).toHaveBeenCalledWith(404);
+  });
+});
+
+describe('Given a updateTask function', () => {
+  test('Should update the task', async () => {
+    const req = {
+      body: null,
+      params: {
+        taskId: null,
+      },
+    };
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+    };
+
+    Task.findByIdAndUpdate.mockReturnValueOnce({ name: 'Pedir pizza', isFinished: true });
+
+    await updateTask(req, res);
+    expect(res.json).toHaveBeenCalledWith({ name: 'Pedir pizza', isFinished: true });
+  });
+  test('Should send 404 error', async () => {
+    const req = {
+      body: null,
+      params: {
+        taskId: null,
+      },
+    };
+    const res = {
+      json: jest.fn(),
+      status: jest.fn(),
+    };
+
+    Task.findByIdAndUpdate.mockRejectedValueOnce();
+
+    await updateTask(req, res);
     expect(res.status).toHaveBeenCalledWith(404);
   });
 });
