@@ -41,12 +41,13 @@ function productsController() {
   }
 
   async function addTask(req, res) {
-    debug('enter to function getTaskById');
-    const { taskId } = req.params;
+    debug('enter to function addTask');
+    debug(req.body);
+    const newTask = new Task(req.body);
     try {
-      await Task.findByIdAndDelete(taskId);
-      res.status(304);
-      res.json();
+      await newTask.save();
+      res.status(200);
+      res.json(newTask);
     } catch (error) {
       debug(error);
       res.send(error);
