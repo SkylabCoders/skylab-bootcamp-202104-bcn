@@ -1,7 +1,7 @@
 const debug = require('debug')('server:heroesController');
-const Product = require('../model/taskModel');
+const Task = require('../model/taskModel');
 
-function taksController() {
+function tasksController() {
   async function getAll(req, res) {
     debug('enter to function getAll');
     try {
@@ -14,43 +14,46 @@ function taksController() {
     }
   }
 
-  async function addOneToStock(req, res) {
-    debug('enter to function getAll');
-    const { taskId } = req.params;
+  async function addTask(req, res) {
+    const newTask = new Task(req.body);
     try {
-      const product = await Product.findByIdAndUpdate(
-        taskId,
-        { $inc: { stock: 1 } },
-        { new: true }
-      );
-      debug(product);
+      await newTask.save();
       res.status(200);
-      res.json(product);
+      res.json(newTask);
     } catch (error) {
       debug(error);
       res.send(error);
     }
   }
 
-  async function removeOneFromStock(req, res) {
-    debug('enter to function getAll');
-    const { productId } = req.params;
+  async function deleteTaskById(req, res) {
+    const { taskId } = req.params;
     try {
-      const productToUpdate = await Product.findOne({ _id: productId });
-      debug(productToUpdate);
-      const product = await Product.findByIdAndUpdate(
-        productId,
-        { $inc: { stock: -1 } },
-        { new: true }
-      );
-      debug(product);
-      res.status(200);
-      res.json(product);
+      await Task.findByIdAndDelete(taskId);
+      res.status(204);
+      res.json();
     } catch (error) {
       debug(error);
       res.send(error);
     }
   }
-  return { getAll, addOneToStock, removeOneFromStock };
+
+  async function updateTaskById(req, res) {
+    const { taskId } = req.params;
+    try {
+      const updatedTask = await Task.findByIdAndUpdate(
+        taskId,
+        req.body,
+        { new: true }
+      );
+      res.json(updatedTask);
+    } catch (error) {
+      debug(error);
+    }
+  }
+
+  return {
+    getAll, addTask, deleteTaskById, updateTaskById
+  };
 }
-module.exports = productsController;
+module.exports = tasksController;

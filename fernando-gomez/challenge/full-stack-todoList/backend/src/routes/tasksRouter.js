@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const tasksController = require('../controllers/tasksController')();
 
-function productsRouter() {
+function tasksRouter() {
   const routes = Router();
 
   routes
@@ -11,10 +11,10 @@ function productsRouter() {
 
   routes
     .route('/:taskId/')
-    .put(tasksController.updateTask)
-    .delete(tasksController.deleteTask);
+    .put(tasksController.updateTaskById)
+    .delete(tasksController.deleteTaskById);
 
   return routes;
 }
 
-module.exports = productsRouter();
+module.exports = tasksRouter();
