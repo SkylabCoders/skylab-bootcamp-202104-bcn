@@ -2,11 +2,14 @@
 import { React, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadTasks } from '../../redux/actions/actionCreators';
+import { loadTasks, deleteTask } from '../../redux/actions/actionCreators';
 
 import './list.css';
 
 function List({ tasks, dispatch }) {
+  function handleDelete(e) {
+    dispatch(deleteTask(e.target.id));
+  }
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
@@ -16,7 +19,7 @@ function List({ tasks, dispatch }) {
         tasks.map((task) => (
           <li key={task.id} className="task-item">
             <p className="task-item__name">{task.name}</p>
-            <button type="button" className="task-item__btn delete-btn" id={task._id}>Delete</button>
+            <button type="button" className="task-item__btn delete-btn" onClick={(e) => handleDelete(e)} id={task._id}>Delete</button>
             <button type="button" className="task-item__btn done-btn" id={task._id}>Done</button>
           </li>
         ))
