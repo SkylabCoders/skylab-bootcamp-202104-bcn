@@ -11,9 +11,9 @@
     box-shadow: 0 0 7px #888;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     width: 30%;
     height: 400px;
+    overflow: auto;
     margin: 30px;
     .basket__item {
         border: 1px solid green;

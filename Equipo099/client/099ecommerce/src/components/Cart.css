@@ -18,10 +18,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   width: 30%;
   height: 400px;
+  overflow: auto;
   margin: 30px;
 }
 
