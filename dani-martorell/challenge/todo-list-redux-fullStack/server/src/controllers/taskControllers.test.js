@@ -66,16 +66,17 @@ describe('createOne', () => {
 });
 
 describe('deleteById', () => {
-  test('Should call status 204', async () => {
+  test('Should call status 200', async () => {
     const req = {
       params: { taskId: null },
     };
     const res = {
       status: jest.fn(),
+      send: jest.fn(),
     };
     Task.findByIdAndDelete.mockResolvedValueOnce();
     await deleteById(req, res);
-    expect(res.status).toHaveBeenCalledWith(204);
+    expect(res.status).toHaveBeenCalledWith(200);
   });
 
   test('Should call status 404', async () => {
