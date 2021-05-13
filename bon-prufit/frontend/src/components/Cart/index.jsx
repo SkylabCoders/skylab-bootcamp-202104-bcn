@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { deleteProductFromCart, loadCart } from '../../redux/actions/actionCreators';
+import './cart.css';
 
 function Cart({ cart, dispatch }) {
   useEffect(() => {
@@ -36,14 +37,17 @@ function Cart({ cart, dispatch }) {
           </li>
         ))}
         <li>
-          <span>
+          <span className="cart-totalproducts">
             Total
             {' '}
             {cart.length}
             {' '}
             productos
           </span>
-          <span>{cart.length && totalPrice(cart)}</span>
+          <span className="cart-totalprice">
+            {' '}
+            {cart.length && totalPrice(cart)}
+          </span>
         </li>
       </ul>
     </>

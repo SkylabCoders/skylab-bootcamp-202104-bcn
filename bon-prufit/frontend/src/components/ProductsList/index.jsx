@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addProductToCart, loadProducts } from '../../redux/actions/actionCreators';
+import './list.css';
+// import PRODUCTS from '../../constants/products.mock';
 
 function ProductsList({ products, dispatch }) {
   useEffect(() => {
@@ -10,8 +12,7 @@ function ProductsList({ products, dispatch }) {
 
   return (
     <>
-
-      <h1 className="list-tittle">Lista de Productos</h1>
+      <h1 className="list-tittle">Productos</h1>
       <ul className="products-list">
         {
           products?.map((product) => (
