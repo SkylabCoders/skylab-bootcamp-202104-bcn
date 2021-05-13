@@ -1,12 +1,13 @@
+/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://192.168.0.40:2022/products';
+const url = 'http://localhost:2022/products';
 
-export function addProducts(newProduct) {
+export function addProducts(product) {
   return {
     type: actionTypes.ADD_PRODUCTS,
-    newProduct
+    product
   };
 }
 
@@ -26,14 +27,18 @@ export function loadProducts() {
   };
 }
 
-export function deleteProduct() {
+export function deleteProduct(product, index) {
+  const productToDelete = { ...product, index };
   return {
-    type: actionTypes.DELETE_PRODUCT
+    type: actionTypes.DELETE_PRODUCT,
+    product: productToDelete
   };
 }
 
-export function deleteAll() {
+export function deleteAll(products) {
+  debugger;
   return {
-    type: actionTypes.DELETE_ALL
+    type: actionTypes.DELETE_ALL,
+    data: products
   };
 }

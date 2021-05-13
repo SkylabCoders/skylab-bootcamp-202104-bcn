@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import ProductList from './components/product-list/ProductsList';
+import Cart from './components/Cart/index';
+import ProductList from './components/Product-list';
 
 function App() {
   return (
     <div>
-      <h1>Team frontend</h1>
+      <h1>PROMOFARMA</h1>
       <ProductList />
+      <Cart />
     </div>
   );
 }
