@@ -1,17 +1,17 @@
 const { Router } = require('express');
-const tasksController = require('../controller/tasksController')();
+const INITIALTASK = require('../task');
+const tasksController = require('../controller/tasksController')(INITIALTASK);
 
 function tasksRouter() {
   const routes = Router();
 
   routes
     .route('/')
-    .get(tasksController.getAllProducts)
+    .get(tasksController.getAllTasks)
     .post(tasksController.createOne);
 
   routes
-    .route('/:productId')
-    .put(tasksController.updateById);
+    .route('/:productId');
 
   return routes;
 }
