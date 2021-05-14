@@ -6,7 +6,7 @@ import Task from '../Task';
 import './tasks.css';
 
 const Tasks = ({ tasks, dispatch }) => {
-  const [newTaskTitle, setNewTaskTitle] = useState();
+  const [newTaskTitle, setNewTaskTitle] = useState('');
 
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());

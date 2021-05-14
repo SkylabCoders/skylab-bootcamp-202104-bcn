@@ -35,17 +35,21 @@ export function deleteTask(taskId) {
   };
 }
 
-export function updateTask(task) {
+// eslint-disable-next-line no-shadow
+export function updateById(task, baseURL = URL) {
+  const url = `${baseURL}/${task._id}`;
   return async (dispatch) => {
-    try {
-      const { data } = await axios.put(`${URL}/${task._id}`, task);
-      dispatch({
-        type: actionTypes.UPDATE_TASK,
-        task: data.task
-      });
-    } catch {
-      console.log('error');
-    }
+    const { data } = await axios.put(
+      url,
+      {
+        task: task.task
+
+      }
+    );
+    dispatch({
+      type: actionTypes.UPDATE_TASK,
+      task: data
+    });
   };
 }
 

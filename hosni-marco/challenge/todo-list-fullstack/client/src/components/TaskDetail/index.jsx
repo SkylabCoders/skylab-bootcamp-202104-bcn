@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { updateTask, getTaskById } from '../../redux/actions/actionCreators';
+import { updateById, getTaskById } from '../../redux/actions/actionCreators';
 
 const TaskDetail = ({ selectedTask, dispatch }) => {
   const { taskId } = useParams();
@@ -25,7 +25,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
   };
 
   const save = () => {
-    dispatch(updateTask({ _id: selectedTask._id, task: taskTitle }));
+    dispatch(updateById({ _id: selectedTask._id, task: taskTitle }));
   };
 
   return (

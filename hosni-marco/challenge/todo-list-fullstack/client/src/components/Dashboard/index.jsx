@@ -10,9 +10,6 @@ const Dashboard = ({ tasks, dispatch }) => {
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
-  // useEffect(() => {
-  //   if (!tasks.length) dispatch(loadTasks());
-  // }, [tasks]);
 
   return (
     <>
