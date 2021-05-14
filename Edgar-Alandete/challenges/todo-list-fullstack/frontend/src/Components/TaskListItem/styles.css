@@ -10,8 +10,10 @@
           align-items: center;
   margin: 5px 0;
   background-color: #ececec;
-  padding: 0 0 0 20px;
-  border-radius: 20px;
+  padding: 5px 10px 5px 35px;
+  border-radius: 50px;
+  width: 600px;
+  height: 70px;
 }
 
 .item .button {

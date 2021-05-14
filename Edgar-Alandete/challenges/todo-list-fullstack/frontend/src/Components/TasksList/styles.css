@@ -57,4 +57,10 @@ main {
 .done {
   text-decoration: line-through;
 }
+
+.task-name {
+  width: 300px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
 /*# sourceMappingURL=styles.css.map */

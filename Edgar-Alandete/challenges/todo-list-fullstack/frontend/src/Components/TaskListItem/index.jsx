@@ -8,7 +8,7 @@ const TaskListItem = ({
 }) => (
   <li key={itemKey} className="item">
     {' '}
-    <span className={task.isFinished ? 'done' : ''}>
+    <span className={task.isFinished ? 'task-name done' : 'task-name'}>
       {' '}
       {task.name}
     </span>
