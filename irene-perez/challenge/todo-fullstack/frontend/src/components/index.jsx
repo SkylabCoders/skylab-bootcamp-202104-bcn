@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -47,7 +48,7 @@ const TodoList = ({ tasks, dispatch }) => {
             <button
               className="delete-button"
               type="button"
-              onClick={() => handleDeleteTask(task.id)}
+              onClick={() => handleDeleteTask(task._id)}
             >
               Delete
             </button>
