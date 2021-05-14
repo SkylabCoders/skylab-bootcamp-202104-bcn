@@ -11,7 +11,7 @@ export function PrintTask() {
     const { data } = await axios(url);
     dispatch({
       type: actionTypes.PRINT_TASK,
-      task: data,
+      task: data
     });
   };
 }
@@ -20,7 +20,7 @@ export function addTask(task) {
     const { data } = await axios.post(url, task);
     dispatch({
       type: actionTypes.ADD_TASK,
-      task: data,
+      task: data
     });
   };
 }
@@ -30,7 +30,7 @@ export function deleteTask(taskId) {
     await axios.delete(`${url}/${taskId}`);
     dispatch({
       type: actionTypes.DELETE_TASK,
-      taskId,
+      taskId
     });
   };
 }
@@ -39,7 +39,7 @@ export function modifyTask(task) {
     const { data } = await axios.put(`${url}/${task.id}`, task);
     dispatch({
       type: actionTypes.MODIFY_TASK,
-      task: data,
+      task: data
     });
   };
 }
