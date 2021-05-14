@@ -13,6 +13,8 @@ const Task = ({ dispatch, tasks }) => {
   }, []);
 
   const [nameNewTask, setNameNewTask] = useState('');
+  const [editMode, setEditMode] = useState(false);
+  const [taskIdToUpdate, setTaskIdToUpdate] = useState('');
 
   const getImputTask = (event) => {
     setNameNewTask(event.target.value);
@@ -35,12 +37,19 @@ const Task = ({ dispatch, tasks }) => {
     dispatch(doneTask(taskId));
   };
 
-  const handleEditTask = (taskId) => {
-    const newTaskName = {
+  const handleEditTask = (taskName, taskId) => {
+    setNameNewTask(taskName);
+    setTaskIdToUpdate(taskId);
+    setEditMode(true);
+  };
+
+  const handleUpdateTask = (taskId) => {
+    const getNewTaskName = {
       name: nameNewTask,
     };
-    dispatch(updateTask(taskId, newTaskName));
+    dispatch(updateTask(taskId, getNewTaskName));
     setNameNewTask('');
+    setEditMode(false);
   };
 
   return (
@@ -48,13 +57,26 @@ const Task = ({ dispatch, tasks }) => {
       <section>
         <label htmlFor="task-name" className="label-create">
           <input id="task-name" onChange={getImputTask} value={nameNewTask} placeholder="Add your task here..." className="label-create__input" />
-          <button
-            type="button"
-            onClick={() => handleAddTask()}
-            className="label-create__button"
-          >
-            Add task
-          </button>
+          {editMode
+            ? (
+              <button
+                type="button"
+                onClick={() => handleUpdateTask(taskIdToUpdate)}
+                className="label-create__button"
+              >
+                Update Task
+              </button>
+            )
+
+            : (
+              <button
+                type="button"
+                onClick={() => handleAddTask()}
+                className="label-create__button"
+              >
+                Add task
+              </button>
+            )}
         </label>
       </section>
       <section className="list">
@@ -74,7 +96,7 @@ const Task = ({ dispatch, tasks }) => {
                 <button
                   type="button"
                   className="list__edit-button"
-                  onClick={() => handleEditTask(element._id)}
+                  onClick={() => handleEditTask(element.name, element._id)}
                 >
                   <i className="far fa-edit" />
                 </button>
