@@ -1,4 +1,6 @@
 export default {
   ADD_TASK: 'ADD_TASK',
-  LOAD_TASK: 'LOAD_TASK'
+  LOAD_TASK: 'LOAD_TASK',
+
+  LOAD_TASK_ERROR: 'LOAD_TASK_ERROR'
 };
