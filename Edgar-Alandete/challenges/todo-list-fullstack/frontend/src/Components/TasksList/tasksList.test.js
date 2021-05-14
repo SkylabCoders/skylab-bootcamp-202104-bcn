@@ -2,7 +2,7 @@
 import React from 'react';
 import TasksList from './TasksList';
 import { fireEvent, render, screen } from '../../assets/test-utils';
-import { createTask } from '../../redux/actions/actionCreators';
+import { createTask, deleteTask, updateTask } from '../../redux/actions/actionCreators';
 
 // jest.mock('../../redux/actions/actionCreators');
 
@@ -41,8 +41,8 @@ describe('Given a TasksList component', () => {
     expect(screen.getByText(/iaia/)).toBeInTheDocument();
   });
 
-  test('Should call dispatch', () => {
-    const { getAllByRole } = render(<TasksList />, {
+  test('Should call dispatch when clicked Add a task button', () => {
+    render(<TasksList />, {
       initialState: {
         tasks: [{
           _id: '123',
@@ -51,10 +51,43 @@ describe('Given a TasksList component', () => {
         }],
       },
     });
-    const buttonCreate = getAllByRole('button')[0];
-    fireEvent.click(buttonCreate);
+    fireEvent.click(screen.getByText(/Add a task/));
     const dispatch = jest.fn();
     dispatch(createTask());
+
+    expect(dispatch).toHaveBeenCalled();
+  });
+
+  test('Should call dispatch when clicked Delete', () => {
+    render(<TasksList />, {
+      initialState: {
+        tasks: [{
+          _id: '123',
+          name: 'Llamar a iaia',
+          isFinished: false,
+        }],
+      },
+    });
+    fireEvent.click(screen.getByText(/Delete/));
+    const dispatch = jest.fn();
+    dispatch(deleteTask());
+
+    expect(dispatch).toHaveBeenCalled();
+  });
+
+  test('Should call dispatch when clicked Delete', () => {
+    render(<TasksList />, {
+      initialState: {
+        tasks: [{
+          _id: '123',
+          name: 'Llamar a iaia',
+          isFinished: false,
+        }],
+      },
+    });
+    fireEvent.click(screen.getByText(/Done/));
+    const dispatch = jest.fn();
+    dispatch(updateTask());
 
     expect(dispatch).toHaveBeenCalled();
   });
