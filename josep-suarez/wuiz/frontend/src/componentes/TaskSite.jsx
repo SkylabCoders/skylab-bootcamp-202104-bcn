@@ -10,11 +10,12 @@ import { PrintTask, deleteTask, modifyTask } from '../redux/actions/actionCreato
 function TaskSite({ tasks, dispatch }) {
   useEffect(() => {
     dispatch(PrintTask());
-  }, [tasks]);
+  }, [tasks.length, dispatch]);
 
   function trashTask(taskId) {
     return dispatch(deleteTask(taskId));
   }
+  
   function doneTask(taskId) {
     const classDone = document.getElementById(taskId);
     classDone.classList = 'done';
