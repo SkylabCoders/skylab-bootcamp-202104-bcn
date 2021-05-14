@@ -6,7 +6,7 @@ function tasksReducer(tasks = [], action) {
     case actionTypes.LOAD_TASKS:
       return action.tasks;
     case actionTypes.ADD_TASK:
-      return [...tasks, action.task];
+      return [action.task, ...tasks];
     case actionTypes.DELETE_TASK:
       if (action.response.status === 200) {
         return tasks.filter((task) => task._id !== action.response.data);
@@ -14,9 +14,7 @@ function tasksReducer(tasks = [], action) {
       return tasks;
     case actionTypes.COMPLETE_TASK:
       return tasks.map((task) => (
-
         task._id === action.task._id ? { ...task, ...action.task } : task));
-
     default:
       return tasks;
   }
