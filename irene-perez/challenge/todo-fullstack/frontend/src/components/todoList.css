@@ -1,6 +1,6 @@
 .input-tittle {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #98ddca;
+    color: #440a67;
     margin-right: 5%;
 }
 
@@ -12,7 +12,7 @@
 
 .input {
     border-radius: 5px;
-    background-color: #e4fbff;
+    background-color: #ffe9d6;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 1% 5%;
     border: 0;
@@ -23,7 +23,7 @@
     margin-left: 2%;
     border-radius:10px;
     outline:none;
-    color: black;
+    color: #440a67;
     cursor:pointer;
     padding: 1%;
 }
@@ -39,12 +39,12 @@
 .to-do-list__task {
     align-items: baseline;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #564a4a;
+    color: #440a67;
     display: inline-flex;
     width: 450px;
     justify-content: space-between;
     margin: 10px;
-    background-color: #d5ecc2;
+    background-color: #ffe3fe;
     padding: 8px 20px;
     border-radius: 5px;
 }
