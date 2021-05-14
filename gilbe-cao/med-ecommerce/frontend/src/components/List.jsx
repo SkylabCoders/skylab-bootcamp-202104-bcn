@@ -4,7 +4,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { addToCart, loadProducts } from '../redux/actionsCreators';
+import { addToCart, buyProducts, loadProducts } from '../redux/actionsCreators';
 
 function List({ products, dispatch }) {
   useEffect(() => {
@@ -16,7 +16,12 @@ function List({ products, dispatch }) {
       <ul>
         {products.map((product) => (
           <>
-            <li>{product.name}</li>
+            <li>
+              {product.name}
+              , stock
+              {' '}
+              {product.stock}
+            </li>
             <button
               onClick={() => dispatch(addToCart(product))}
               type="button"
@@ -28,6 +33,12 @@ function List({ products, dispatch }) {
 
       </ul>
 
+      <button
+        onClick={() => dispatch(buyProducts())}
+        type="button"
+      >
+        buy
+      </button>
     </>
 
   );
