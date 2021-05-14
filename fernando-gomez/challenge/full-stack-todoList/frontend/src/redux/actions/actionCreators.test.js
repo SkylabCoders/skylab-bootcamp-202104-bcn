@@ -40,51 +40,43 @@ describe('loadTasks from Axios', () => {
 
 describe('addTasks from Axios', () => {
   test('should dispatch ADD_TASK', async () => {
-    const data = { data: ['Skylab'] };
-
-    axios.mockRejectedValue(data);
-    const mockedTask = {};
+    const mockedTask = { data: ['Skylab'] };
     const dispatch = jest.fn();
+    axios.post.mockResolvedValue(mockedTask);
     // act
     await addTask(mockedTask)(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.ADD_TASK,
-      tasks: mockedTask
+      task: ['Skylab']
     });
   });
 });
 
-describe('deleteTask from Axios', () => {
+describe('delete a task from Axios', () => {
   test('should dispatch DELETE_TASK', async () => {
-    const data = { data: ['Skylab'] };
-
-    axios.mockRejectedValue(data);
-    const mockedTask = {};
     const dispatch = jest.fn();
+    axios.delete.mockResolvedValue(3);
     // act
-    await deleteTask(mockedTask)(dispatch);
+    await deleteTask(3)(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.DELETE_TASK,
-      tasks: mockedTask
+      taskId: 3
     });
   });
 });
 
-describe('updateTask from Axios', () => {
+describe('update a task from Axios', () => {
   test('should dispatch UPDATE_TASK', async () => {
-    const data = { data: ['Skylab'] };
-
-    axios.mockRejectedValue(data);
-    const mockedTask = {};
     const dispatch = jest.fn();
+    axios.put.mockResolvedValue(3);
+
     // act
-    await updateTask(mockedTask)(dispatch);
+    await updateTask(3)(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.UPDATE_TASK,
-      tasks: mockedTask
+      type: actionTypes.UPDATE_TASK
     });
   });
 });
