@@ -10,12 +10,13 @@ function render(
   ui,
   {
     initialState,
+    store = configureStore(initialState),
     ...renderOptions
   } = {}
 ) {
   function Wrapper({ children }) {
     return (
-      <Provider store={configureStore(initialState)}>
+      <Provider store={store}>
         <BrowserRouter>
           {children}
         </BrowserRouter>

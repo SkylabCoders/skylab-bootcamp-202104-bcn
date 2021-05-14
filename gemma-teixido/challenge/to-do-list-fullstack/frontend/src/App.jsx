@@ -1,12 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './store';
+import configureStore from './store';
 import ToDoList from './components/ToDoList';
 import './App.css';
 
 function App() {
   return (
-    <Provider store={store()}>
+    <Provider store={configureStore()}>
       <header>
         <h1>To-do-list</h1>
       </header>
