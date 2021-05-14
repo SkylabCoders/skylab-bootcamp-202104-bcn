@@ -9,7 +9,7 @@ const ProductList = ({ products, dispatch, cartList }) => {
   useEffect(() => {
     dispatch(loadProducts());
   }, []);
-  const [funciona, setDisable] = useState(true);
+  const [activeButton, setDisable] = useState(true);
   function disableButton(product) {
     const btn = document.getElementById(product._id);
     (cartList.forEach((cartProduct) => {
@@ -44,7 +44,7 @@ const ProductList = ({ products, dispatch, cartList }) => {
               disabled={!product.stock}
               onClick={() => {
                 disableButton(product);
-                if (funciona) { dispatch(addToCart(product)); }
+                if (activeButton) { dispatch(addToCart(product)); }
               }}
               className={product.stock === 0
                 ? 'productList__button productList__button--disabled '
