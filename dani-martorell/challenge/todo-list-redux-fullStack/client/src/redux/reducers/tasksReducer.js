@@ -6,7 +6,7 @@ function tasksReducer(tasks = [], action) {
     case actionTypes.LOAD_TASKS:
       return action.tasks;
     case actionTypes.ADD_TASK:
-      return [action.task, ...tasks];
+      return [...tasks, action.task];
     case actionTypes.DELETE_TASK:
       if (action.response.status === 200) {
         return tasks.filter((task) => task._id !== action.response.data);
