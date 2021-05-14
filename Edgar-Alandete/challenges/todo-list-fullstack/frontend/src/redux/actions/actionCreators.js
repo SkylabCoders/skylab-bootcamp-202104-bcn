@@ -2,7 +2,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://127.0.0.1:2021/tasks/';
+const url = process.env.REACT_APP_TASKS_API_DEV;
 
 export const loadTasks = () => async (dispatch) => {
   try {
