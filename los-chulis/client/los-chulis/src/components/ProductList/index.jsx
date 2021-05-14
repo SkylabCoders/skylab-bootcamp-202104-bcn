@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-expressions */
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-return-assign */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadProducts, addToCart } from '../../redux/actions/actionCreator';
@@ -11,14 +9,22 @@ const ProductList = ({ products, dispatch, cartList }) => {
   useEffect(() => {
     dispatch(loadProducts());
   }, []);
+  const [funciona, setDisable] = useState(true);
   function disableButton(product) {
     const btn = document.getElementById(product._id);
     (cartList.forEach((cartProduct) => {
       if (cartProduct._id === product._id && product.stock === cartProduct.quantity) {
         btn.disabled = true;
+        setDisable(false);
         btn.className = 'productList__button productList__button--disabled';
       }
     }));
+    if (product.stock === 1) {
+      btn.disabled = true;
+      setDisable(false);
+      btn.className = 'productList__button productList__button--disabled';
+    }
+    setDisable(true);
     return 'productList__button productList__button--active';
   }
   return (
@@ -37,8 +43,8 @@ const ProductList = ({ products, dispatch, cartList }) => {
               id={product._id}
               disabled={!product.stock}
               onClick={() => {
-                dispatch(addToCart(product));
                 disableButton(product);
+                if (funciona) { dispatch(addToCart(product)); }
               }}
               className={product.stock === 0
                 ? 'productList__button productList__button--disabled '
