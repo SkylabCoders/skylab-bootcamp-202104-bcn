@@ -18,6 +18,7 @@ function heroesController() {
       res.json(newHero);
     } catch (error) {
       debug(error);
+      res.status(404);
       res.send(error);
     }
   }
@@ -45,6 +46,7 @@ function heroesController() {
       res.json(updatedHero);
     } catch (error) {
       debug(error);
+      res.status(404);
       res.send(error);
     }
   }
@@ -56,6 +58,7 @@ function heroesController() {
       res.json();
     } catch (error) {
       debug(error);
+      res.status(404);
       res.send(error);
     }
   }
