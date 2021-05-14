@@ -12,7 +12,8 @@ function tasksRouter() {
 
   routes
     .route('/:tasks')
-    .delete(tasksController.delTask);
+    .delete(tasksController.delTask)
+    .put(tasksController.doneTask);
 
   return routes;
 }

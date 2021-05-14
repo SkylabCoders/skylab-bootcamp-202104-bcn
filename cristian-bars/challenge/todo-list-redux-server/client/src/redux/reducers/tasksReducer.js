@@ -12,6 +12,9 @@ function tasksReducer(tasks = [], action) {
     case actionTypes.DELETE_TASK:
       return tasks.filter((task) => task._id !== action.taskId._id);
 
+    case actionTypes.DONE_TASK:
+      return tasks;
+
     default:
       return tasks;
   }

@@ -9,7 +9,7 @@ function tasksController() {
   }
 
   async function addTask(req, res) {
-    const newTask = new Task(req);
+    const newTask = new Task(req.body);
     debug(newTask);
     try {
       await newTask.save();
@@ -31,10 +31,24 @@ function tasksController() {
       res.send(error);
     }
   }
+
+  async function doneTask(req, res) {
+    console.log(req.body);
+    try {
+      await Task.findByIdAndUpdate(req.body, { completed: true });
+      res.status(204);
+      res.json();
+    } catch (error) {
+      res.status(404);
+      debug(error);
+      res.send(error);
+    }
+  }
   return {
     getAll,
     addTask,
-    delTask
+    delTask,
+    doneTask
   };
 }
 

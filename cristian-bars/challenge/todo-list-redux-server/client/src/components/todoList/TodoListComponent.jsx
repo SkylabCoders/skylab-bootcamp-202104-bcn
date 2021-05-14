@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { addTask, deleteTask, loadTasks } from '../../redux/actions/actionCreator';
+import {
+  addTask, deleteTask, loadTasks, doneTask
+} from '../../redux/actions/actionCreator';
 
 function TodoListComponent({ tasks, dispatch }) {
   useEffect(() => {
@@ -12,17 +14,22 @@ function TodoListComponent({ tasks, dispatch }) {
     dispatch(deleteTask(task));
   }
 
+  function markTask(task) {
+    dispatch(doneTask(task));
+  }
+
   function newTask() {
     const value = document.getElementById('newTask');
     const task = { task: value.value, completed: false };
+    value.value = '';
     dispatch(addTask(task));
   }
   return (
     <div>
       <div>
-        <inputlabel>Add task</inputlabel>
-        <input type="text" placeholder="Task description" id="newTask" />
-        <button type="button" onClick={() => newTask()}>Add task</button>
+        <inputlabel className="container__item">Add task</inputlabel>
+        <input type="text" placeholder="Task description" id="newTask" className="container__addInput" />
+        <button type="button" onClick={() => newTask()} className="container__addButton">Add task</button>
       </div>
       <ul className="container__list">
         {
@@ -31,6 +38,7 @@ function TodoListComponent({ tasks, dispatch }) {
               <>
                 <li className="container__item" key={element.id}>{element.task}</li>
                 <button type="button" className="container__delTaskButton" onClick={() => clearTask(element)}>Delete</button>
+                <button type="button" className="container__doneTaskButton" onClick={() => markTask(element)}>Done</button>
               </>
             ))
           )
