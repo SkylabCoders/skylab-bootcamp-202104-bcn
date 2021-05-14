@@ -1,10 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const chalk = require('chalk');
-const debug = require('debug')('app');
+const debug = require('debug')('server');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 require('dotenv').config();
+
 
 const server = express();
 
@@ -20,9 +21,9 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan('dev'));
 
-const taskRouter = require('./routes/taskRouter');
+const tasksRouter = require('./routes/taskRouter');
 
-server.use('/tasks', taskRouter);
+server.use('/tasks', tasksRouter);
 
-server.listen('2022',
-  () => debug(`Server is running in ${chalk.yellow('localhost:2022')}`));
+server.listen('2024',
+  () => debug(`Server is running in ${chalk.yellow('localhost:2024')}`));

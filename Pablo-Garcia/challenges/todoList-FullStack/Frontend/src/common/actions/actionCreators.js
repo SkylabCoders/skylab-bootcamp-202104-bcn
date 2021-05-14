@@ -1,14 +1,15 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
-import actionsTypes from './actionType';
+import actionTypes from './actionType';
 
-const url = 'http://localhost:2022/tasks';
+const BASE_URL = 'http://localhost:2024/tasks';
 
-export function getTask() {
+export function getTask(url = BASE_URL) {
   return async (dispatch) => {
     try {
-      const { data } = await axios(url);
+      const { data } = await axios.get(url);
       dispatch({
-        type: actionsTypes.GET_TASK,
+        type: actionTypes.GET_TASKS,
         tasks: data
       });
     } catch (error) {
@@ -18,13 +19,60 @@ export function getTask() {
     }
   };
 }
-
-export function deleteTask(taskId) {
+export function deleteTask(taskId, url = BASE_URL) {
   return async (dispatch) => {
-    await axios.delete(`${url}/${taskId}`);
+    try {
+      await axios.delete(`${url}/${taskId}`);
+      dispatch({
+        type: actionTypes.DELETE_TASK,
+        taskId
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function getTaskById(taskId, url = BASE_URL) {
+  return async (dispatch) => {
+    const { data } = await axios.get(`${url}/${taskId}`);
     dispatch({
-      type: actionsTypes.DELETE_TASK,
-      taskId
+      type: actionTypes.GET_TASK,
+      task: data
+    });
+  };
+}
+
+export function createOne(task, url = BASE_URL) {
+  return async (dispatch) => {
+    const { data } = await axios.post(
+      url,
+      {
+        ...task,
+        done: false
+      }
+    );
+    dispatch({
+      type: actionTypes.CREATE_TASK,
+      task: data
+    });
+  };
+}
+
+export function updateById(task, baseURL = BASE_URL) {
+  const url = `${baseURL}/${task._id}`;
+  return async (dispatch) => {
+    const { data } = await axios.put(
+      url,
+      {
+        task: task.task,
+        description_task: task.description_task,
+        done: task.done
+      }
+    );
+    dispatch({
+      type: actionTypes.UPDATE_TASK,
+      task: data
     });
   };
 }

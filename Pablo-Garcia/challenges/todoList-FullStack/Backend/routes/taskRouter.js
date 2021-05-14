@@ -10,10 +10,10 @@ function heroesRouter() {
     .post(heroesController.createOne);
 
   routes
-    .route('/:taskId')
+    .route('/:taskId/')
     .get(heroesController.getById)
     .put(heroesController.updateById)
-    .delete(heroesController.deleteById);
+    .delete(heroesController.deleteTaskById);
 
   return routes;
 }
