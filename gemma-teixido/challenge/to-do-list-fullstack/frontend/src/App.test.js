@@ -3,8 +3,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('Given ToDoList component', () => {
+  describe('When is render with one task', () => {
+    test('Then the task name should be in the document', async () => {
+      const initialState = { tasks: [] };
+
+      render(<App />, { initialState });
+
+      expect(screen.getByText(/To-do-list/i)).toBeInTheDocument();
+    });
+  });
 });

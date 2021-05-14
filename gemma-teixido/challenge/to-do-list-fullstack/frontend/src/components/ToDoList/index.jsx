@@ -42,7 +42,7 @@ function ToDoList({ tasks, dispatch }) {
       <div className="inputTask">
         <label htmlFor="taskInputCreation">
           <input onChange={taskInputCreation} placeholder="New task..." />
-          <button type="button" className="addTask" onClick={() => handleAddTask()}> </button>
+          <button type="button" className="addTask" onClick={() => handleAddTask()}> Add </button>
         </label>
       </div>
       <ul>
@@ -55,14 +55,14 @@ function ToDoList({ tasks, dispatch }) {
                 className="deleteTask"
                 onClick={() => handleDelete(task._id)}
               >
-                {' '}
+                Delete
               </button>
               <button
                 type="button"
                 className="doneTask"
                 onClick={() => handleDone(task._id)}
               >
-                {' '}
+                Done
               </button>
             </li>
           </label>
