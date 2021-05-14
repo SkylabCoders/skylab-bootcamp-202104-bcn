@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -15,6 +16,9 @@ function TodoListComponent({ tasks, dispatch }) {
   }
 
   function markTask(task) {
+    // eslint-disable-next-line no-underscore-dangle
+    const markDone = document.getElementById(task._id);
+    markDone.classList = 'container__item container__item-done';
     dispatch(doneTask(task));
   }
 
@@ -36,9 +40,12 @@ function TodoListComponent({ tasks, dispatch }) {
           tasks?.length && (
             tasks.map((element) => (
               <>
-                <li className="container__item" key={element.id}>{element.task}</li>
-                <button type="button" className="container__delTaskButton" onClick={() => clearTask(element)}>Delete</button>
-                <button type="button" className="container__doneTaskButton" onClick={() => markTask(element)}>Done</button>
+                <li className="container__item" key={element.id} id={element._id}>
+                  {element.task}
+                  <button type="button" className="container__delTaskButton" onClick={() => clearTask(element)}>Delete</button>
+                  <button type="button" className="container__doneTaskButton" onClick={() => markTask(element)}>Done</button>
+
+                </li>
               </>
             ))
           )

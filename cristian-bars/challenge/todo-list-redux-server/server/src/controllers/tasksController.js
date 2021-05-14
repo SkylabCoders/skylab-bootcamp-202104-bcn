@@ -33,7 +33,6 @@ function tasksController() {
   }
 
   async function doneTask(req, res) {
-    console.log(req.body);
     try {
       await Task.findByIdAndUpdate(req.body, { completed: true });
       res.status(204);

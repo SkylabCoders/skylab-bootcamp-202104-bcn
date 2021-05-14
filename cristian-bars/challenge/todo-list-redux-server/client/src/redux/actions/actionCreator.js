@@ -42,7 +42,7 @@ export function deleteTask(taskId) {
 
 export function doneTask(taskId) {
   return async (dispatch) => {
-    await axios.put(`${url}/${taskId._id}`);
+    await axios.post(`${url}/${taskId._id}`);
     dispatch({
       type: actionTypes.DONE_TASK,
       taskId
