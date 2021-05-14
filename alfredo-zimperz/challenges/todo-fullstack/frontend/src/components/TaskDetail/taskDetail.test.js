@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { fireEvent } from '@testing-library/dom';
-import { render, screen } from '../../test-utils';
+import { render, screen, fireEvent } from '../../test-utils';
 import { getTaskById, updateTask } from '../../redux/actions/actionCreators';
 import TaskDetail from './index';
 
