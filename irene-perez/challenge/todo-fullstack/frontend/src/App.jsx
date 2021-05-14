@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Provider store={configureStore()}>
-        <h1>To Do List</h1>
+        <h1 className="todolist-tittle">TO DO LIST</h1>
         <TodoList />
       </Provider>
     </>
