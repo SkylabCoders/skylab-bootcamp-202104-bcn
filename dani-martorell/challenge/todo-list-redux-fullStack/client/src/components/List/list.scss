@@ -7,15 +7,40 @@
 .task-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    margin-bottom: 8px;
 
+
+    &__name {
+        color: #f3f3f3;
+    }
     &__name--active {
         color: red;
         text-decoration: line-through;
-
     }
 
     .delete-btn {
         margin-left: auto;
+        background-color: transparent;
+        margin-right: 15px;
+        color: #f3f3f3;
+        border: 1px solid white;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    .done-btn {
+        background-color: #d6d6d6;
+        padding: 10px 20px;
+        cursor: pointer;
+        color: rgb(26, 26, 26);
+        border: none;
+
+        &:hover {
+            background-color: rgb(236, 236, 236);
+        }
+
+        
     }
 }
 

@@ -18,7 +18,7 @@ function Input({ dispatch }) {
 
   return (
     <form className="form-block">
-      <input className="form-block__input" value={taskName} placeholder="Write your task here..." onChange={(e) => handleInputChange(e)} type="text" id="fname" size="50" />
+      <input className="form-block__input" value={taskName} autoComplete="off" placeholder="Write your task here..." onChange={(e) => handleInputChange(e)} type="text" id="fname" size="50" />
       <button type="button" className="form-block__btn" onClick={handleClick}>Add Task</button>
     </form>
   );

@@ -8,7 +8,7 @@ import Input from './components/Input';
 function App() {
   return (
     <Provider store={configureStore()}>
-      <h1>Tasks Organizer</h1>
+      <h1 className="title">Tasks Tracker</h1>
       <Input />
       <List />
     </Provider>
