@@ -26,6 +26,10 @@
   background-color: #9df09d;
 }
 
+.item .button--edit {
+  background-color: #a5c7fd;
+}
+
 .item .button--delete {
   margin-left: auto;
   margin-right: 10px;

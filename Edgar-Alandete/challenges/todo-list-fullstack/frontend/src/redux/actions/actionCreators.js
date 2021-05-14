@@ -49,9 +49,7 @@ export const deleteTask = (taskId) => async (dispatch) => {
 
 export const updateTask = (task) => async (dispatch) => {
   try {
-    const { data } = await axios.put(`${url}${task._id}`, {
-      isFinished: true,
-    });
+    const { data } = await axios.put(`${url}${task._id}`, task);
     dispatch({
       type: actionTypes.UPDATE_TASK,
       task: data,

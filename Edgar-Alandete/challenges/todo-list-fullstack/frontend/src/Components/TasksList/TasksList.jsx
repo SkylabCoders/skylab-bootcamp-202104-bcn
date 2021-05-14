@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -10,6 +12,8 @@ import './styles.css';
 
 function TasksList({ tasks, dispatch }) {
   const [taskValue, setTaskValue] = useState();
+  const [editMode, setEditMode] = useState(false);
+  const [taskToUpdate, setTaskToUpdate] = useState(false);
 
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
@@ -24,12 +28,28 @@ function TasksList({ tasks, dispatch }) {
   }
 
   function handleCreate() {
-    dispatch(createTask({ name: taskValue }));
-    setTaskValue('');
+    if (taskValue) {
+      dispatch(createTask({ name: taskValue }));
+      setTaskValue('');
+    }
   }
 
-  function handleUpdate(task) {
-    dispatch(updateTask(task));
+  function handleDone(task) {
+    const newTask = { ...task, isFinished: true };
+    dispatch(updateTask(newTask));
+  }
+
+  function handleEditTaskMode(task) {
+    setTaskValue(task.name);
+    setTaskToUpdate(task);
+    setEditMode(true);
+  }
+
+  function handleUpdateTask() {
+    const newTask = { ...taskToUpdate, name: taskValue };
+    dispatch(updateTask(newTask));
+    setTaskValue('');
+    setEditMode(false);
   }
 
   return (
@@ -39,12 +59,22 @@ function TasksList({ tasks, dispatch }) {
 
         <input placeholder="New task..." type="text" onChange={getTaskValue} value={taskValue} className="task-creator-container__input" />
         {' '}
-        <button type="button" onClick={handleCreate} className="task-creator-container__button">Add a task</button>
+        {editMode
+          ? <button type="button" onClick={handleUpdateTask} className="task-creator-container__button">Update Task</button>
+
+          : <button type="button" onClick={handleCreate} className="task-creator-container__button">Add a task</button>}
+
       </div>
       <ul className="tasks-list">
         {
         tasks && tasks.map((task) => (
-          <TaskListItem task={task} deleteHandler={handleDelete} updateHandler={handleUpdate} />
+          <TaskListItem
+            task={task}
+            itemKey={task._id}
+            deleteHandler={handleDelete}
+            updateHandler={handleDone}
+            editHandler={handleEditTaskMode}
+          />
         ))
     }
       </ul>
@@ -59,9 +89,9 @@ TasksList.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-function mapStateToProps(store) {
+function mapStateToProps({ tasks }) {
   return {
-    tasks: store.tasks,
+    tasks,
   };
 }
 export default connect(mapStateToProps)(TasksList);
