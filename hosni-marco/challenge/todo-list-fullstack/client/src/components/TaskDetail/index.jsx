@@ -14,8 +14,6 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
     dispatch(getTaskById(taskId));
   }, []);
 
-  // eslint-disable-next-line no-debugger
-  debugger;
   useEffect(() => {
     setTaskTitle(selectedTask.task);
   }, [selectedTask.task]);
@@ -74,7 +72,7 @@ TaskDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
   selectedTask: PropTypes.shape({
     task: PropTypes.string,
-    _id: PropTypes.number,
+    _id: PropTypes.string,
     done: PropTypes.bool
   }).isRequired
 };

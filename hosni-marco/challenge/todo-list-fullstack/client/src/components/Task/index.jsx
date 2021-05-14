@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
 const Task = ({ task, handleDelete }) => (
-  <div key={task._id} className="task">
+  <div className="task">
     <div className="task__text">
-      <Link to={`/tasks/${task._id}`}>
+      <Link key={task._id} to={`/tasks/${task._id}`}>
         <h4 className={task.done ? 'done' : ''}>{task.task}</h4>
       </Link>
     </div>

@@ -33,8 +33,6 @@ function toloListController() {
   }
 
   async function updateById(req, res) {
-    // eslint-disable-next-line no-debugger
-    debugger;
     try {
       const updateList = await List.findByIdAndUpdate(
         req.params.taskId,

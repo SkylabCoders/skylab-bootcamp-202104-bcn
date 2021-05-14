@@ -35,7 +35,6 @@ export function deleteTask(taskId) {
   };
 }
 
-// eslint-disable-next-line no-shadow
 export function updateById(task, baseURL = URL) {
   const url = `${baseURL}/${task._id}`;
   return async (dispatch) => {
@@ -43,7 +42,6 @@ export function updateById(task, baseURL = URL) {
       url,
       {
         task: task.task
-
       }
     );
     dispatch({
