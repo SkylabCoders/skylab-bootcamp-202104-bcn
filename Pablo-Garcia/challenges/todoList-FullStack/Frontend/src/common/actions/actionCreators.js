@@ -45,17 +45,16 @@ export function getTaskById(taskId, url = BASE_URL) {
 
 export function createOne(task, url = BASE_URL) {
   return async (dispatch) => {
-    const { data } = await axios.post(
-      url,
-      {
-        ...task,
-        done: false
-      }
-    );
-    dispatch({
-      type: actionTypes.CREATE_TASK,
-      task: data
-    });
+    try {
+      const { data } = await axios.post(url, task);
+      console.log(data);
+      dispatch({
+        type: actionTypes.CREATE_TASK,
+        task: data
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
 

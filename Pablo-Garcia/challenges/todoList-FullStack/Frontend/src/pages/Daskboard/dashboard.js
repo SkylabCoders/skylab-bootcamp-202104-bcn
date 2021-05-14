@@ -6,6 +6,9 @@ import { getTask } from '../../common/actions/actionCreators';
 import Task from '../taskItem/task';
 
 const Dashboard = ({ tasks, dispatch }) => {
+  // eslint-disable-next-line no-debugger
+  debugger;
+
   useEffect(() => {
     dispatch(getTask());
   }, []);

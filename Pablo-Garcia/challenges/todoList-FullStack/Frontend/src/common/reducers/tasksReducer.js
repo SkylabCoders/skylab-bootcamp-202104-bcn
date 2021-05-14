@@ -2,6 +2,8 @@
 import actionTypes from '../actions/actionType';
 
 function tasksReducer(tasks = [], action) {
+  // eslint-disable-next-line no-debugger
+  debugger;
   let updateTasks = [...tasks];
 
   switch (action.type) {
@@ -12,7 +14,7 @@ function tasksReducer(tasks = [], action) {
       updateTasks = tasks.filter((task) => task._id !== action.taskId);
       break;
     case actionTypes.CREATE_TASK:
-      updateTasks = [...tasks, action.tasks];
+      updateTasks = [...tasks, action.task];
       break;
     case actionTypes.UPDATE_TASK:
       updateTasks = tasks.map((task) => (

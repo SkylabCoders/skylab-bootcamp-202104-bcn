@@ -24,8 +24,7 @@ const Tasks = ({ tasks, dispatch }) => {
 
   const saveTask = () => {
     if (newTask !== '' && newDescriptionTask !== '') {
-      const newId = tasks[tasks.length - 1].id + 1;
-      dispatch(createOne({ id: newId, task: newTask, description_task: newDescriptionTask }));
+      dispatch(createOne({ task: newTask, description_task: newDescriptionTask }));
       setNewTask('');
       setDescriptionTask('');
     }
@@ -54,7 +53,7 @@ const Tasks = ({ tasks, dispatch }) => {
       <button type="button" onClick={saveTask}>Add task</button>
       <div>
         {tasks.map((task) => (
-          <Task task={task} handleDelete={handleDelete} key={task.id} />
+          <Task task={task} handleDelete={handleDelete} key={task._id} />
         ))}
       </div>
     </>
@@ -65,7 +64,7 @@ Tasks.propTypes = {
   dispatch: PropTypes.func.isRequired,
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired
+      _id: PropTypes.string.isRequired
     })
   ).isRequired
 };
