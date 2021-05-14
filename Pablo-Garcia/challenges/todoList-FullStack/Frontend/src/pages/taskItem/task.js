@@ -12,7 +12,7 @@ const Task = ({ task, handleDelete }) => (
         <h3 className="titleTask">{task.task}</h3>
         <p className="titleTask">{task.description_task}</p>
         {
-             task.done !== true
+             !task.done
                ? <span className="pending"> Pending </span>
                : null
             }
@@ -38,7 +38,6 @@ Task.propTypes = {
     _id: PropTypes.string,
     task: PropTypes.string,
     description_task: PropTypes.string,
-    description: PropTypes.string,
     done: PropTypes.bool
   }).isRequired,
   // eslint-disable-next-line react/require-default-props

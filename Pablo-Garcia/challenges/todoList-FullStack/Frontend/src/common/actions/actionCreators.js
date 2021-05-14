@@ -1,16 +1,14 @@
 /* eslint-disable no-underscore-dangle */
-import axios from 'axios';
 import actionTypes from './actionType';
+import { createTask, updateTaskById, deleteTaskById, getAllTasks, getOneTask } from '../services/task';
 
-const BASE_URL = 'http://localhost:2024/tasks';
-
-export function getTask(url = BASE_URL) {
+export function getTask() {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(url);
+      const response = await getAllTasks();
       dispatch({
         type: actionTypes.GET_TASKS,
-        tasks: data
+        tasks: response.data
       });
     } catch (error) {
       dispatch({
@@ -19,10 +17,10 @@ export function getTask(url = BASE_URL) {
     }
   };
 }
-export function deleteTask(taskId, url = BASE_URL) {
+export function deleteTask(taskId) {
   return async (dispatch) => {
     try {
-      await axios.delete(`${url}/${taskId}`);
+      await deleteTaskById(taskId);
       dispatch({
         type: actionTypes.DELETE_TASK,
         taskId
@@ -33,9 +31,9 @@ export function deleteTask(taskId, url = BASE_URL) {
   };
 }
 
-export function getTaskById(taskId, url = BASE_URL) {
+export function getTaskById(taskId) {
   return async (dispatch) => {
-    const { data } = await axios.get(`${url}/${taskId}`);
+    const { data } = await getOneTask(taskId);
     dispatch({
       type: actionTypes.GET_TASK,
       task: data
@@ -43,10 +41,10 @@ export function getTaskById(taskId, url = BASE_URL) {
   };
 }
 
-export function createOne(task, url = BASE_URL) {
+export function createOne(task) {
   return async (dispatch) => {
     try {
-      const { data } = await axios.post(url, task);
+      const { data } = await createTask(task);
       dispatch({
         type: actionTypes.CREATE_TASK,
         task: data
@@ -57,11 +55,10 @@ export function createOne(task, url = BASE_URL) {
   };
 }
 
-export function updateById(task, baseURL = BASE_URL) {
-  const url = `${baseURL}/${task._id}`;
+export function updateById(task) {
   return async (dispatch) => {
-    const { data } = await axios.put(
-      url,
+    const { data } = await updateTaskById(
+      task._id,
       {
         task: task.task,
         description_task: task.description_task,

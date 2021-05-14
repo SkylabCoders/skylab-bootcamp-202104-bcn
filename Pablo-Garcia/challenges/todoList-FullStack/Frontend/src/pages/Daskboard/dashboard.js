@@ -16,7 +16,7 @@ const Dashboard = ({ tasks, dispatch }) => {
     <PanelTask>
       <CounterTask>
         Total Task:
-        {tasks.length}
+        {pendingTask.length}
       </CounterTask>
       {' '}
       <ListTasks>
