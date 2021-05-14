@@ -54,10 +54,10 @@ export function deleteTask(taskId) {
 export function updateTask(taskId, newTaskName) {
   return async (dispatch) => {
     try {
-      await axios.put(`${url}/${taskId}`, { name: newTaskName });
+      const { data } = await axios.put(`${url}/${taskId}`, newTaskName);
       dispatch({
         type: actionTypes.UPDATE_TASK,
-        taskId,
+        data,
       });
     } catch (error) {
       dispatch({

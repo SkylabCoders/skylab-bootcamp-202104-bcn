@@ -40,6 +40,7 @@ const Task = ({ dispatch, tasks }) => {
       name: nameNewTask,
     };
     dispatch(updateTask(taskId, newTaskName));
+    setNameNewTask('');
   };
 
   return (
