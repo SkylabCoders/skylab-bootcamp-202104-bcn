@@ -2,30 +2,22 @@
 import actionTypes from '../actions/actionType';
 
 function tasksReducer(tasks = [], action) {
-  let updateTasks = [...tasks];
-
   switch (action.type) {
     case actionTypes.GET_TASKS:
-      updateTasks = [...action.tasks];
-      break;
+      return [...action.tasks];
     case actionTypes.DELETE_TASK:
-      updateTasks = tasks.filter((task) => task._id !== action.taskId);
-      break;
+      return tasks.filter((task) => task._id !== action.taskId);
     case actionTypes.CREATE_TASK:
-      updateTasks = [...tasks, action.task];
-      break;
+      return [...tasks, action.task];
     case actionTypes.UPDATE_TASK:
-      updateTasks = tasks.map((task) => (
+      return tasks.map((task) => (
         task._id === action.task._id
           ? { ...task, ...action.task }
           : task
       ));
-      break;
     default:
-      updateTasks = tasks;
-      break;
+      return tasks;
   }
-  return updateTasks;
 }
 
 export default tasksReducer;

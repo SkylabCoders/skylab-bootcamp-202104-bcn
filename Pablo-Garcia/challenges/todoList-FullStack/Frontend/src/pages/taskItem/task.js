@@ -16,7 +16,6 @@ const Task = ({ task, handleDelete }) => (
                ? <span className="pending"> Pending </span>
                : null
             }
-        <span>{task.done}</span>
       </Link>
     </div>
     <div className="task__actions">
