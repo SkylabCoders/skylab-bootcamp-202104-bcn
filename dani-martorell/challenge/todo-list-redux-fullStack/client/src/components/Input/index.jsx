@@ -33,5 +33,4 @@ function mapStateToProps({ tasks }) {
     tasks,
   };
 }
-
 export default connect(mapStateToProps)(Input);
