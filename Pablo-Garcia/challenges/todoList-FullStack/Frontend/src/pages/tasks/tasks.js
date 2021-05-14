@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { createOne, deleteTask, getTask } from '../../common/actions/actionCreators';
 import Task from '../taskItem/task';
+import { AllTasks, AddTask, ListTasks } from './style';
 
 const Tasks = ({ tasks, dispatch }) => {
   const [newTask, setNewTask] = useState('');
@@ -35,28 +36,34 @@ const Tasks = ({ tasks, dispatch }) => {
   };
 
   return (
-    <>
+    <AllTasks>
       <h1>Tasks</h1>
       <p>Add new Task</p>
-      <input
-        name="titleTask"
-        placeholder="Add title task"
-        value={newTask}
-        onChange={handleChangeInput}
-      />
-      <input
-        name="description_task"
-        placeholder="Description task"
-        value={newDescriptionTask}
-        onChange={handleChangeInput}
-      />
-      <button type="button" onClick={saveTask}>Add task</button>
-      <div>
+      <AddTask>
+        <label htmlFor="titleTask">
+          <input
+            name="titleTask"
+            placeholder="Add title task"
+            value={newTask}
+            onChange={handleChangeInput}
+          />
+        </label>
+        <label htmlFor="description_task">
+          <input
+            name="description_task"
+            placeholder="Description task"
+            value={newDescriptionTask}
+            onChange={handleChangeInput}
+          />
+        </label>
+        <button type="button" onClick={saveTask}>Add task</button>
+      </AddTask>
+      <ListTasks>
         {tasks.map((task) => (
           <Task task={task} handleDelete={handleDelete} key={task._id} />
         ))}
-      </div>
-    </>
+      </ListTasks>
+    </AllTasks>
   );
 };
 

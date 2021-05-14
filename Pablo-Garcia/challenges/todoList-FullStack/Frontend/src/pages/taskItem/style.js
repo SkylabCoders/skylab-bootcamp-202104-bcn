@@ -19,6 +19,15 @@ const CardTask = styled.div`
       font-size: 16px;
     }
   }
+  .pending {
+    background-color: #e7153f;
+    color: #fff;
+    font-size: 12px;
+    padding: 7px 15px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 16px;
+  }
 `;
 
 export default CardTask;
