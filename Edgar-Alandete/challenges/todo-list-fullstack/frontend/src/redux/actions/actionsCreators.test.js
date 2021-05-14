@@ -7,64 +7,73 @@ import {
 jest.mock('axios');
 
 describe('Given a loadTasks action creator', () => {
-  test('Should load a list of tasks', async () => {
-    const tasks = {
-      data: [{ name: 'task 1' }],
-    };
+  describe('When it is called by the dispatcher and the response is OK', () => {
+    test('Then should load a list of tasks', async () => {
+      const tasks = {
+        data: [{ name: 'task 1' }],
+      };
 
-    axios.mockResolvedValue(tasks);
+      axios.mockResolvedValue(tasks);
 
-    const dispatch = jest.fn();
-    await loadTasks()(dispatch);
+      const dispatch = jest.fn();
+      await loadTasks()(dispatch);
 
-    expect(dispatch).toHaveBeenCalledWith(
-      {
-        type: actionTypes.LOAD_TASKS,
-        tasks: [{ name: 'task 1' }],
-      },
-    );
+      expect(dispatch).toHaveBeenCalledWith(
+        {
+          type: actionTypes.LOAD_TASKS,
+          tasks: [{ name: 'task 1' }],
+        },
+      );
+    });
   });
 
-  test('Should dispatch an error', async () => {
-    axios.mockRejectedValue();
+  describe('When it is called by the dispatcher and the response is NOK', () => {
+    test('Then should dispatch an error', async () => {
+      axios.mockRejectedValue();
 
-    const dispatch = jest.fn();
-    await loadTasks()(dispatch);
+      const dispatch = jest.fn();
+      await loadTasks()(dispatch);
 
-    expect(dispatch).toHaveBeenCalledWith(
-      {
-        type: actionTypes.LOAD_TASKS_ERROR,
-      },
-    );
+      expect(dispatch).toHaveBeenCalledWith(
+        {
+          type: actionTypes.LOAD_TASKS_ERROR,
+        },
+      );
+    });
   });
 });
 
 describe('Given a createTask action creator', () => {
-  test('Should create a new task', async () => {
-    const task = {
-      data: {
-        name: 'New task',
-      },
-    };
+  describe('When it is called by the dispatcher and the response is OK', () => {
+    test('Then should create a new task', async () => {
+      const task = {
+        data: {
+          name: 'New task',
+        },
+      };
 
-    axios.post.mockResolvedValue(task);
-    const dispatch = jest.fn();
+      axios.post.mockResolvedValue(task);
+      const dispatch = jest.fn();
 
-    await createTask()(dispatch);
+      await createTask()(dispatch);
 
-    expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.ADD_TASK,
-      task: task.data,
+      expect(dispatch).toHaveBeenCalledWith({
+        type: actionTypes.ADD_TASK,
+        task: task.data,
+      });
     });
-  });
-  test('Should dispatch an error', async () => {
-    axios.post.mockRejectedValue();
-    const dispatch = jest.fn();
 
-    await createTask()(dispatch);
+    describe('When it is called by the dispatcher and the response is NOK', () => {
+      test('Then should dispatch an error', async () => {
+        axios.post.mockRejectedValue();
+        const dispatch = jest.fn();
 
-    expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.ADD_TASK_ERROR,
+        await createTask()(dispatch);
+
+        expect(dispatch).toHaveBeenCalledWith({
+          type: actionTypes.ADD_TASK_ERROR,
+        });
+      });
     });
   });
 });
