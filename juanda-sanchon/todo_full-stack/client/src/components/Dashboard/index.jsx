@@ -8,7 +8,7 @@ function Dashboard({ dispatch }) {
 
   function addNewTask() {
     const inputTask = textInput.current.value;
-    dispatch(addTask({ taskName: inputTask }));
+    dispatch(addTask({ task: inputTask }));
   }
 
   return (

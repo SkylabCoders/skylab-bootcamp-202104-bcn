@@ -13,7 +13,7 @@ function List({ tasks, dispatch }) {
     <>
       <h3>MY LIST</h3>
       <ul>
-        {tasks.map((task) => <li>{task.taskName}</li>)}
+        {tasks.map((task) => <li>{task.task}</li>)}
       </ul>
     </>
   );

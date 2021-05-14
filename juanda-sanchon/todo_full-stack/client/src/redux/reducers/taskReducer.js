@@ -1,5 +1,5 @@
 import actionTypes from '../actions/actioTypes';
-import INITIALTASK from '../../constants/task.mock';
+// import INITIALTASK from '../../constants/task.mock';
 
 function taskReducer(state = [], action) {
   switch (action.type) {
@@ -8,8 +8,10 @@ function taskReducer(state = [], action) {
         ...state,
         action.task];
 
-    case actionTypes.LOAD_TASK:
-      return [...state, ...INITIALTASK];
+    case actionTypes.LOAD_TASKS:
+      return (
+        action.task
+      );
 
     default:
       return state;

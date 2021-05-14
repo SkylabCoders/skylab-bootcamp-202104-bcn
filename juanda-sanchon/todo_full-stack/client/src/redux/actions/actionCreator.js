@@ -19,8 +19,19 @@ export function addTask(task) {
     }
   };
 }
+
 export function loadTask() {
-  return {
-    type: actionTypes.LOAD_TASK
+  return async (dispatch) => {
+    try {
+      const { data } = await axios(url);
+      dispatch({
+        type: actionTypes.LOAD_TASKS,
+        task: data
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.LOAD_TASK_ERROR
+      });
+    }
   };
 }
