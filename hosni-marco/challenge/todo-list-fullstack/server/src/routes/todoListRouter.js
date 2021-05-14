@@ -1,5 +1,4 @@
 const { Router } = require('express');
-// const todoList = require('../todoList');
 const todoListController = require('../controllers/todoListController.js')();
 
 function todoListRouter() {

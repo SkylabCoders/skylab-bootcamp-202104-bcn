@@ -1,42 +1,31 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-underscore-dangle */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { getTaskById, updateTask } from '../../redux/actions/actionCreators';
+import { updateTask, getTaskById } from '../../redux/actions/actionCreators';
 
 const TaskDetail = ({ selectedTask, dispatch }) => {
-  // eslint-disable-next-line no-debugger
-  debugger;
   const { taskId } = useParams();
   const [taskTitle, setTaskTitle] = useState(selectedTask?.task);
-  //   const [taskDescription, setTaskDescription] = useState(selectedTask?.description);
-  const [taskDone, setTaskDone] = useState(selectedTask?.done);
   const history = useHistory();
 
   useEffect(() => {
     dispatch(getTaskById(taskId));
-  }, [taskId]);
+  }, []);
 
+  // eslint-disable-next-line no-debugger
+  debugger;
   useEffect(() => {
     setTaskTitle(selectedTask.task);
-  }, [selectedTask]);
+  }, [selectedTask.task]);
 
   const handleTitleChange = ({ target: { value } }) => {
     setTaskTitle(value);
   };
 
-  //   const handleDescriptionChange = ({ target: { value } }) => {
-  //     setTaskDescription(value);
-  //   };
-
-  const handleDoneChange = () => {
-    setTaskDone(!taskDone);
-  };
-
   const save = () => {
-    dispatch(updateTask({ id: selectedTask.id, title: taskTitle, done: taskDone }));
+    dispatch(updateTask({ _id: selectedTask._id, task: taskTitle }));
   };
 
   return (
@@ -44,7 +33,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
       <>
         <article className="task-detail">
           <h2>
-            {taskTitle?.toUpperCase()}
+            {selectedTask.task}
             {' '}
             Details
           </h2>
@@ -62,23 +51,6 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
                 onChange={handleTitleChange}
               />
             </label>
-            {/* <label htmlFor="task-description">
-              Description:
-              <input
-                id="task-description"
-                placeholder="Task Description"
-                value={taskDescription}
-                onChange={handleDescriptionChange}
-              />
-            </label> */}
-            <button
-              type="button"
-              placeholder="Task Done"
-              onClick={handleDoneChange}
-            >
-              {taskDone ? 'Mark as pending' : 'Mark as done'}
-
-            </button>
             <span className="slider round" />
           </div>
           <button type="button" onClick={save}>save</button>
@@ -101,9 +73,8 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
 TaskDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
   selectedTask: PropTypes.shape({
+    task: PropTypes.string,
     _id: PropTypes.number,
-    title: PropTypes.string,
-    description: PropTypes.string,
     done: PropTypes.bool
   }).isRequired
 };

@@ -1,7 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-debugger */
 import actionTypes from '../actions/actionTypes';
-// import TASKS from '../../constants/tasks.mock';
 
 function tasksReducer(tasks = [], action) {
   let updatedTasks = [...tasks];

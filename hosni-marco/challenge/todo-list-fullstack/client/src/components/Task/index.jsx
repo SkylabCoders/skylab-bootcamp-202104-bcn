@@ -1,20 +1,17 @@
-/* eslint-disable no-debugger */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
-const Task = ({ task, handleDelete }) => {
-  debugger;
-  return (
-    <div key={task._id} className="task">
-      <div className="task__text">
-        <Link to={`/tasks/:${task._id}`}>
-          <h4 className={task.done ? 'done' : ''}>{task.task}</h4>
-        </Link>
-      </div>
-      <div className="task__actions">
-        {handleDelete && (
+const Task = ({ task, handleDelete }) => (
+  <div key={task._id} className="task">
+    <div className="task__text">
+      <Link to={`/tasks/${task._id}`}>
+        <h4 className={task.done ? 'done' : ''}>{task.task}</h4>
+      </Link>
+    </div>
+    <div className="task__actions">
+      {handleDelete && (
         <button
           className="delete"
           title="delete task"
@@ -23,12 +20,11 @@ const Task = ({ task, handleDelete }) => {
         >
           x
         </button>
-        )}
+      )}
 
-      </div>
     </div>
-  );
-};
+  </div>
+);
 
 Task.propTypes = {
   task: PropTypes.shape({

@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -16,11 +15,13 @@ const Tasks = ({ tasks, dispatch }) => {
   const handleChangeInput = (event) => {
     setNewTaskTitle(event.target.value);
   };
+
   const saveNewTask = () => {
     if (newTaskTitle) {
       dispatch(addTask({ task: newTaskTitle }));
     }
   };
+
   const handleDelete = (id) => dispatch(deleteTask(id));
 
   return (

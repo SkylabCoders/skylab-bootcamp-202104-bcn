@@ -1,6 +1,7 @@
+/* eslint-disable no-console */
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
-import TASKS from '../../constants/tasks.mock';
 
 const URL = 'http://localhost:2021/todoList';
 
@@ -35,19 +36,29 @@ export function deleteTask(taskId) {
 }
 
 export function updateTask(task) {
-  return {
-    type: actionTypes.UPDATE_TASK,
-    task
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.put(`${URL}/${task._id}`, task);
+      dispatch({
+        type: actionTypes.UPDATE_TASK,
+        task: data.task
+      });
+    } catch {
+      console.log('error');
+    }
   };
 }
 
 export function getTaskById(taskId) {
-  let task;
-  const targetTask = TASKS.find((current) => current.id === +taskId);
-  if (targetTask) { task = targetTask; } else { (task = {}); }
-
-  return {
-    type: actionTypes.LOAD_TASK,
-    task
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(`${URL}/${taskId}`);
+      dispatch({
+        type: actionTypes.LOAD_TASK,
+        task: data
+      });
+    } catch {
+      console.log('error');
+    }
   };
 }

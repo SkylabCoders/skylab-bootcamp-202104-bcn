@@ -1,6 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-console */
-/* eslint-disable no-debugger */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -12,6 +10,9 @@ const Dashboard = ({ tasks, dispatch }) => {
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
   }, []);
+  // useEffect(() => {
+  //   if (!tasks.length) dispatch(loadTasks());
+  // }, [tasks]);
 
   return (
     <>
