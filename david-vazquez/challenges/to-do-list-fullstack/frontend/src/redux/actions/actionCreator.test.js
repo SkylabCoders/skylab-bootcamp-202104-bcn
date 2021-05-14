@@ -34,13 +34,16 @@ describe('loadTasks', () => {
 
 describe('addTask', () => {
   test('should ADD_TASK', async () => {
-    axios.mockResolvedValue();
+    axios.post.mockResolvedValue({ data: ['hola'] });
     const dispatch = jest.fn();
     await addTask()(dispatch);
-    expect(dispatch).toHaveBeenCalled();
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.ADD_TASK,
+      newTask: ['hola'],
+    });
   });
   test('should LOAD_TASK_ERROR', async () => {
-    axios.mockResolvedValue();
+    axios.post.mockRejectedValue();
     const dispatch = jest.fn();
     await addTask()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
@@ -51,13 +54,16 @@ describe('addTask', () => {
 
 describe('deleteTask', () => {
   test('should DELETE_TASK', async () => {
-    axios.mockResolvedValue();
+    axios.delete.mockResolvedValue(10);
     const dispatch = jest.fn();
-    await deleteTask()(dispatch);
-    expect(dispatch).toHaveBeenCalled();
+    await deleteTask(10)(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.DELETE_TASK,
+      task: 10,
+    });
   });
   test('should DELETE_TASK_ERROR', async () => {
-    axios.mockResolvedValue();
+    axios.delete.mockRejectedValue();
     const dispatch = jest.fn();
     await deleteTask()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
@@ -68,17 +74,21 @@ describe('deleteTask', () => {
 
 describe('doneTask', () => {
   test('should DONE_TASK', async () => {
-    axios.mockResolvedValue();
-    const dispatch = jest.fn();
-    await doneTask()(dispatch);
-    expect(dispatch).toHaveBeenCalled();
-  });
-  test('should DONE_TASK_ERROR', async () => {
-    axios.mockResolvedValue();
+    axios.put.mockRejectedValue();
     const dispatch = jest.fn();
     await doneTask()(dispatch);
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.DONE_TASKS_ERROR,
+    });
+  });
+  test('should DONE_TASK_ERROR', async () => {
+    const task = { data: { text: 'Hola', state: false } };
+    axios.put.mockResolvedValue(task);
+    const dispatch = jest.fn();
+    await doneTask(task)(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: actionTypes.DONE_TASK,
+      updateTask: task.data,
     });
   });
 });

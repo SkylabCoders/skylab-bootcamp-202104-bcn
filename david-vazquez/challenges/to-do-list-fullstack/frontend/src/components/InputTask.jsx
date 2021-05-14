@@ -11,7 +11,7 @@ function InputTask({ tasks, dispatch }) {
   const [taskText, setTaskText] = useState();
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
-  });
+  }, []);
 
   function handleAdd() {
     const newTask = {
@@ -37,7 +37,7 @@ function InputTask({ tasks, dispatch }) {
       </label>
       <ul className="task-list">
         <h2>List of task: </h2>
-        {tasks.map((task) => (
+        {tasks.length ? tasks.map((task) => (
           <li className={!task.state ? 'task-item' : 'task-item--done'}>
             {task.text}
             <div className="task-item__buttons">
@@ -45,7 +45,7 @@ function InputTask({ tasks, dispatch }) {
               <button type="button" className="button-delete" onClick={() => dispatch(deleteTask(task))}> </button>
             </div>
           </li>
-        ))}
+        )) : <p>No tasks</p>}
       </ul>
     </div>
   );
