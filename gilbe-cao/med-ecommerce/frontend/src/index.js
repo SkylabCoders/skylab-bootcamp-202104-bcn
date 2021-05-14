@@ -1,16 +1,18 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
+import './index.css';
 import { Provider } from 'react-redux';
-import configureStore from './redux/store/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import configureStore from './redux/store';
 
-render(
-  <Provider store={configureStore()}>
-    <React.StrictMode>
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={configureStore()}>
       <App />
-    </React.StrictMode>
-  </Provider>,
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root'),
 );
 
