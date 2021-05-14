@@ -1,0 +1,20 @@
+{
+  "name": "wuiz",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": ".eslintrc.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "react": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "redux": "^4.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "react-scripts test --watchAll --collect-coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "keywords": []
+}
