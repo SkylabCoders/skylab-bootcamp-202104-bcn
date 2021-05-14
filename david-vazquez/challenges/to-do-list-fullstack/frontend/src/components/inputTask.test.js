@@ -2,19 +2,27 @@
 import React from 'react';
 import InputTask from './InputTask';
 import { screen, render } from '../utils/testUtils';
-// import {
-//   loadTasks, addTask, doneTask, deleteTask,
-// } from '../redux/actions/actionCreator';
+import {
+  loadTasks,
+} from '../redux/actions/actionCreator';
+import actionTypes from '../redux/actions/actionTypes';
 
 jest.mock('./../redux/actions/actionCreator');
 
-describe('inputTask component', () => {
-  test('should display Buy Food', () => {
-    // Arrange
-    const initialState = { tasks: [] };
-    // Act
-    render(<InputTask />, { initialState });
-    // Assert
-    expect(screen.getByText(/No tasks/i)).toBeeInDocument();
+describe('Given a InputTask component', () => {
+  describe('When is rendered with empty initial state', () => {
+    test('Then /No task/ should be in document', () => {
+      // Arrange
+      const initialState = { allTasks: [] };
+
+      loadTasks.mockReturnValueOnce({
+        type: actionTypes.LOAD_TASKS,
+        allTasks: [],
+      });
+      // Act
+      render(<InputTask />, { initialState });
+      // Assert
+      expect(screen.getByText(/No tasks/i)).toBeeInTheDocument();
+    });
   });
 });

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import {
   loadTasks, deleteTask, addTask, doneTask,
 } from '../redux/actions/actionCreator';
-import './inputTask.css';
+import './inputTask.scss';
 
 function InputTask({ tasks, dispatch }) {
   const [taskText, setTaskText] = useState();
@@ -55,6 +55,15 @@ InputTask.propTypes = {
   tasks: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
+
+// InputTask.propTypes = {
+//   items: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       code: PropTypes.string,
+//       id: PropTypes.number,
+//     })
+//   ),
+// };
 
 function mapStateToProps(tasks) {
   return {
