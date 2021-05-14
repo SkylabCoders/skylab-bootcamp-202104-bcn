@@ -1,5 +1,9 @@
 import axios from 'axios';
-import {PrintTask, addTask, deleteTask, modifyTask} from './actionCreators';
+import {
+  PrintTask,
+   addTask,
+    deleteTask,
+     modifyTask} from './actionCreators';
 
 jest.mock('axios');
 jest.mock('./actionTypes')
@@ -33,9 +37,13 @@ describe('When invoked a deleteTask', () => {
 
 describe('When invoked a modifyTask', () => {
   test('should call a async func', async () => {
+    const task = {
+      id: 1,
+      task: 'Anna'
+    }
     axios.put.mockResolvedValueOnce({data: 'Irene'});
     const dispatch = jest.fn();
-    await modifyTask()(dispatch);
+    await modifyTask(task)(dispatch);
     expect(dispatch).toHaveBeenCalled();
   })
 })
