@@ -95,10 +95,22 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
             </button>
             <span className="slider round" />
           </div>
-          <button type="button" onClick={save}>save</button>
+          <button
+            type="button"
+            onClick={save}
+            data-testid="save-button"
+          >
+            save
+          </button>
         </article>
         <nav className="secondary-nav">
-          <button type="button" onClick={() => history.goBack()}>go back</button>
+          <button
+            type="button"
+            onClick={() => history.goBack()}
+            data-testid="goback-button"
+          >
+            go back
+          </button>
         </nav>
       </>
     ) : (
