@@ -9,8 +9,8 @@ const Task = ({ task, handleDelete }) => (
     <div className="task__content">
       <CardTask>
         <Link to={`tasks/${task._id}`}>
-          <h3>{task.task}</h3>
-          <p>{task.description_task}</p>
+          <h3 className="titleTask">{task.task}</h3>
+          <p className="titleTask">{task.description_task}</p>
           <span>{task.done}</span>
         </Link>
       </CardTask>

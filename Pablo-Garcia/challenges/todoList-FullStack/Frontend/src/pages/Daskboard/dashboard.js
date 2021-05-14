@@ -4,28 +4,31 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getTask } from '../../common/actions/actionCreators';
 import Task from '../taskItem/task';
+import { PanelTask, CounterTask, ListTasks } from './style';
 
 const Dashboard = ({ tasks, dispatch }) => {
-  // eslint-disable-next-line no-debugger
-  debugger;
-
   useEffect(() => {
     dispatch(getTask());
   }, []);
 
   const pendingTask = tasks.filter((task) => !task.done);
   return (
-    <>
-      <div>
+    <PanelTask>
+      <CounterTask>
         Total Task:
-        {' '}
-        { pendingTask.map((task) => (
-          <p>
-            <Task task={task} key={task.id} />
-          </p>
-        )) }
-      </div>
-    </>
+        {tasks.length}
+      </CounterTask>
+      {' '}
+      <ListTasks>
+        <ul>
+          { pendingTask.map((task) => (
+            <li>
+              <Task task={task} key={task.id} />
+            </li>
+          )) }
+        </ul>
+      </ListTasks>
+    </PanelTask>
   );
 };
 

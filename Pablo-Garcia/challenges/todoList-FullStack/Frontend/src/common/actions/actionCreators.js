@@ -47,7 +47,6 @@ export function createOne(task, url = BASE_URL) {
   return async (dispatch) => {
     try {
       const { data } = await axios.post(url, task);
-      console.log(data);
       dispatch({
         type: actionTypes.CREATE_TASK,
         task: data

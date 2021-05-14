@@ -2,8 +2,6 @@
 import actionTypes from '../actions/actionType';
 
 function tasksReducer(tasks = [], action) {
-  // eslint-disable-next-line no-debugger
-  debugger;
   let updateTasks = [...tasks];
 
   switch (action.type) {
