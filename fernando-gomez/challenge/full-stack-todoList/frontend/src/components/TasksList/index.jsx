@@ -141,7 +141,9 @@ function TasksList({ tasks, dispatch }) {
 }
 
 TasksList.propTypes = {
-  tasks: PropTypes.shape([]).isRequired,
+  tasks: PropTypes.arrayOf(PropTypes.shape({
+    length: PropTypes.number.isRequired
+  }).isRequired).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
