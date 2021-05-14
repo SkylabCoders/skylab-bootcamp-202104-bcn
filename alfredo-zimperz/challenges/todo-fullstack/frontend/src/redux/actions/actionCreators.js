@@ -3,7 +3,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const BASE_URL = 'http://localhost:2021/tasks';
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export function loadTasks(url = BASE_URL) {
   return async (dispatch) => {
