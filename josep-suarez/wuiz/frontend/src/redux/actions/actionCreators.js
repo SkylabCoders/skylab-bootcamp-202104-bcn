@@ -35,16 +35,11 @@ export function deleteTask(taskId) {
   };
 }
 export function modifyTask(task) {
-  debugger;
   return async (dispatch) => {
-    try {
       const { data } = await axios.put(`${url}/${task.id}`, task);
       dispatch({
         type: actionTypes.MODIFY_TASK,
         task: data
       });
-    } catch (error) {
-      debugger;
-    }
   };
 }
