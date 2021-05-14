@@ -1,0 +1,52 @@
+.input-tittle {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #98ddca;
+    margin-right: 5%;
+}
+
+.new-task__input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-button {
+    background-color: #a9f1df;
+    margin-left: 2%;
+    border-radius:10px;
+    outline:none;
+    color: black;
+    cursor:pointer;
+    padding: 1%;
+}
+
+.to-do-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.to-do-list__task {
+    align-items: baseline;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #564a4a;
+    display: inline-flex;
+    width: 350px;
+    justify-content: space-between;
+    margin: 5px;
+    background-color: #d5ecc2;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.delete-button {
+    background-color: #f29191;
+    margin-left: 2%;
+    border-radius:10px;
+    outline:none;
+    color: black;
+    cursor:pointer;
+    padding: 1%;
+}

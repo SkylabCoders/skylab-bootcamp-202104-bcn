@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadTasks, addTask, deleteTask } from '../redux/actions/actionCreator';
+import './todoList.css';
 
 const TodoList = ({ tasks, dispatch }) => {
   useEffect(() => {
@@ -21,11 +22,8 @@ const TodoList = ({ tasks, dispatch }) => {
   return (
     <>
       <form>
-        <label htmlFor="new-task-input" id="new-task-input">
-          <span>
-            Add new task:
-            {' '}
-          </span>
+        <label htmlFor="new-task__input" id="new-task__input" className="new-task__input">
+          <h3 className="input-tittle">ADD NEW TASK:</h3>
           <input
             type="text"
             id="new-task-name"
