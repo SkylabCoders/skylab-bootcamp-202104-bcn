@@ -11,6 +11,9 @@ function taskReducer(tasks = [],
       return [...tasks, action.task];
 
     case actionTypes.DELETE_TASK:
+
+      // const newTaskList = tasks.filter((task) => task.id !== task.ID);
+      // newTaskList.map((task) => { task.id = task.length + 1; });
       return tasks.filter((task) => task.id !== task.ID);
 
     case actionTypes.UPDATE_TASK:

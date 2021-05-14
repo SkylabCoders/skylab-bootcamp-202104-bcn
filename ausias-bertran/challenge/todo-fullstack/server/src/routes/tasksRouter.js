@@ -1,19 +1,20 @@
 const { Router } = require('express');
-const tasksController = require('../controllers/tasksController')();
+const tasks = require('../tasks');
+const tasksController = require('../controllers/tasksController')(tasks);
 
 function tasksRouter() {
   const routes = Router();
 
   routes
     .route('/')
-    .get(tasksController.getAll)
-    .post(tasksController.createOne);
+    .get(tasksController.getAllTasks);
+  //   .post(tasksController.createOne);
 
   routes
-    .route('/:heroId')
-    .get(tasksController.getById)
-    .put(tasksController.updateById)
-    .delete(tasksController.deleteById);
+    .route('/:taskId');
+  //   .get(tasksController.getById)
+  //   .put(tasksController.updateById)
+  //   .delete(tasksController.deleteById);
 
   return routes;
 }

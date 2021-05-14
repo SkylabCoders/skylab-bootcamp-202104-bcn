@@ -5,7 +5,7 @@ function tasksController() {
     const products = await Product.find();
     res.json(products);
   }
-  return getAllTasks;
+  return { getAllTasks };
 }
 
 module.exports = tasksController;

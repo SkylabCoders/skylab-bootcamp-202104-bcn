@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import AddTask from './AddTask';
-import { loadTasks } from '../../redux/actions/actionCreator';
+import { loadTasks, deleteTask } from '../../redux/actions/actionCreator';
 
 const ShowList = ({ dispatch, tasks }) => {
   useEffect(() => {
@@ -18,7 +18,7 @@ const ShowList = ({ dispatch, tasks }) => {
             {task.id}
             {' '}
             {task.task}
-            <button className="task__delete-button" type="button" onClick={() => console.log(`delete task ${task.id}`)}>-</button>
+            <button className="task__delete-button" type="button" onClick={() => dispatch(deleteTask(task.id))}>-</button>
             <button className="task__delete-button" type="button" onClick={() => console.log(`upgrade task ${task.id}`)}>PUT</button>
           </li>
         ))}
