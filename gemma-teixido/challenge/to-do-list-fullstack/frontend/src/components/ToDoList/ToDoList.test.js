@@ -7,9 +7,8 @@ describe('ToDoList component', () => {
   test('should have a li ', () => {
     render(<ToDoList />, {
       initialState: {
-        tasks: [{}]
       }
     });
-    expect(screen.getByText(/a/i)).toBeTruthy();
+    expect(screen.getByText(/li/i)).toBeInDocument();
   });
 });
