@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import {
   loadTasks, deleteTask, addTask, doneTask,
 } from '../redux/actions/actionCreator';
-import './inputTask.scss';
+import './inputTask.css';
 
 function InputTask({ tasks, dispatch }) {
   const [taskText, setTaskText] = useState();
@@ -33,7 +33,7 @@ function InputTask({ tasks, dispatch }) {
     <div className="task-container">
       <label htmlFor="input-task" className="input-container">
         <input className="input-task" onChange={getTask} />
-        <button type="button" className="button-add" onClick={() => handleAdd()}>+</button>
+        <button type="button" className="button-add" data-testid="button-add" onClick={() => handleAdd()}>+</button>
       </label>
       <ul className="task-list">
         <h2>List of task: </h2>
@@ -41,8 +41,8 @@ function InputTask({ tasks, dispatch }) {
           <li className={!task.state ? 'task-item' : 'task-item--done'}>
             {task.text}
             <div className="task-item__buttons">
-              <button type="button" className="button-done" onClick={() => selectDoneTask(task)}> </button>
-              <button type="button" className="button-delete" onClick={() => dispatch(deleteTask(task))}> </button>
+              <button type="button" className="button-done" data-testid="button-done" onClick={() => selectDoneTask(task)}> </button>
+              <button type="button" className="button-delete" data-testid="button-delete" onClick={() => dispatch(deleteTask(task))}>Delete </button>
             </div>
           </li>
         )) : <p>No tasks</p>}
