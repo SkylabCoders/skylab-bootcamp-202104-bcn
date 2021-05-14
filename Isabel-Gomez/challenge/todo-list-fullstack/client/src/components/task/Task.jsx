@@ -65,10 +65,10 @@ const Task = ({ dispatch, tasks }) => {
                 <button
                   type="button"
                   disabled={element.completed}
-                  className={!element.completed ? 'list__finished-button' : 'bloqued'}
+                  className="list__finished-button"
                   onClick={() => handleDoneTask(element._id)}
                 >
-                  <i className="far fa-check-circle" />
+                  <i className={!element.completed ? 'far fa-check-circle' : 'far fa-check-circle bloqued'} />
                 </button>
                 <button
                   type="button"
