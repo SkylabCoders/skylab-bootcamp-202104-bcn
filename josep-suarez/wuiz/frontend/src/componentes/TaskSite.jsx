@@ -9,42 +9,66 @@ import { PrintTask, deleteTask, modifyTask } from '../redux/actions/actionCreato
 
 function TaskSite({ tasks, dispatch }) {
   useEffect(() => {
-    dispatch(PrintTask());
-  }, [tasks.length, dispatch]);
+    if (!tasks.length) dispatch(PrintTask());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function trashTask(taskId) {
-    return dispatch(deleteTask(taskId));
+    dispatch(deleteTask(taskId));
   }
-  
+
   function doneTask(taskId) {
     const classDone = document.getElementById(taskId);
     classDone.classList = 'done';
     const buttonDone = document.getElementById(`button${taskId}`);
     buttonDone.style.background = 'green';
   }
+
   function modifyClickTask(taskId) {
     const newTaskInput = document.getElementById('inputTask');
-    return dispatch(modifyTask({ id: taskId, task: newTaskInput.value }));
+    return dispatch(modifyTask({ id: taskId, task: newTaskInput?.value || '' }));
   }
-  return tasks.map((task) => (
-    <>
-      <p id={task.id}>
-        {task.task}
-      </p>
-      <button type="button" id={`buttonDelete${task.id}`} onClick={() => { trashTask(task._id); }}>Delete</button>
-      <button type="button" id={`button${task.id}`} onClick={() => { doneTask(task.id); }}>Done</button>
-      <button type="button" id={`buttonModify${task.id}`} onClick={() => { modifyClickTask(task._id); }}>Modify</button>
-    </>
-  ));
+  return tasks.length
+    ? tasks.map((task) => (
+      <>
+        <p id={task.id} data-testid={`task-${task.id}`}>
+          {task.task}
+        </p>
+        <button
+          type="button"
+          id={`buttonDelete${task.id}`}
+          onClick={() => trashTask(task._id)}
+        >
+          Delete
+        </button>
+        <button
+          type="button"
+          id={`button${task.id}`}
+          onClick={() => { doneTask(task.id); }}
+          data-testid={`done-button-${task.id}`}
+        >
+          Done
+        </button>
+        <button
+          type="button"
+          id={`buttonModify${task.id}`}
+          onClick={() => { modifyClickTask(task._id); }}
+          data-testid={`task-site-modify-button-${task.id}`}
+        >
+          Modify
+        </button>
+      </>
+    ))
+    : <p>No Tasks</p>;
 }
 TaskSite.propTypes = {
   tasks: PropTypes.shape([]).isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(store) {
   return {
-    tasks: store.tasks
+    tasks: store.tasks,
   };
 }
 
