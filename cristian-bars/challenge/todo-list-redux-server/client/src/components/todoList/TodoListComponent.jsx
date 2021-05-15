@@ -35,8 +35,10 @@ function TodoListComponent({ tasks, dispatch }) {
         <input type="text" placeholder="Task description" id="newTask" className="container__addInput" />
         <button type="button" onClick={() => newTask()} className="container__addButton">Add task</button>
       </div>
-      <ul className="container__list">
-        {
+      {tasks.length
+        ? (
+          <ul className="container__list">
+            {
           tasks?.length && (
             tasks.map((element) => (
               <>
@@ -50,7 +52,10 @@ function TodoListComponent({ tasks, dispatch }) {
             ))
           )
         }
-      </ul>
+          </ul>
+        )
+        : <div className="container__item">No Tasks</div>}
+
     </div>
   );
 }
