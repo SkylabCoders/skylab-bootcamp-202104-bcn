@@ -13,9 +13,8 @@ function tasksController() {
   }
 
   async function addTask(req, res) {
-    const newTask = new Task(req.body);
     try {
-      await newTask.save();
+      const newTask = await new Task(req.body).save();
       res.status(200);
       res.json(newTask);
     } catch (error) {
