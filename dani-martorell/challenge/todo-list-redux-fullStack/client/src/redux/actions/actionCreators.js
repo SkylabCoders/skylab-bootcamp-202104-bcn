@@ -15,7 +15,7 @@ export function loadTasks() {
       });
     } catch (error) {
       dispatch({
-        type: 'LOAD_TASKS_ERROR',
+        type: actionTypes.LOAD_TASKS_ERROR,
       });
     }
   };
@@ -30,7 +30,7 @@ export function addTask(task) {
       });
     } catch (error) {
       dispatch({
-        type: 'ADD_TASK_ERROR',
+        type: actionTypes.ADD_TASK_ERROR,
       });
     }
   };
@@ -45,7 +45,7 @@ export function deleteTask(taskId) {
       });
     } catch (error) {
       dispatch({
-        type: 'ADD_TASK_ERROR',
+        type: actionTypes.DELETE_TASK_ERROR,
       });
     }
   };
@@ -60,7 +60,7 @@ export function updateTask(task) {
       });
     } catch (error) {
       dispatch({
-        type: 'UPDATE_TASK_ERROR',
+        type: actionTypes.UPDATE_TASK_ERROR,
       });
     }
   };
@@ -75,7 +75,7 @@ export function markAsDone(task) {
       });
     } catch (error) {
       dispatch({
-        type: 'COMPLETE_TASK_ERROR',
+        type: actionTypes.COMPLETE_TASK_ERROR,
       });
     }
   };
