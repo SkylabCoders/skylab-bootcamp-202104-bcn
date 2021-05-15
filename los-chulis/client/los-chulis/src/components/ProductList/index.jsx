@@ -29,7 +29,7 @@ const ProductList = ({ products, dispatch, cartList }) => {
   }
   return (
     <ul className="productList">
-      {products.map((product) => (
+      {products.length ? products.map((product) => (
         <li className="productList__item" key={product._id}>
           <span>{product.brand}</span>
           <div>
@@ -54,7 +54,7 @@ const ProductList = ({ products, dispatch, cartList }) => {
             </button>
           </div>
         </li>
-      ))}
+      )) : <p>No products</p>}
     </ul>
   );
 };
