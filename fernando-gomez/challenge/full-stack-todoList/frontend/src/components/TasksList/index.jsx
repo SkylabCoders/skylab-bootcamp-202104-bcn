@@ -64,8 +64,7 @@ function TasksList({ tasks, dispatch }) {
           tasks?.map((task) => (
             <li
               // eslint-disable-next-line prefer-template
-              // eslint-disable-next-line no-useless-concat
-              key={`task-${task._id}`}
+              key={'task-' + task._id}
               className="list__element list-element "
             >
               <div className="task-content">
