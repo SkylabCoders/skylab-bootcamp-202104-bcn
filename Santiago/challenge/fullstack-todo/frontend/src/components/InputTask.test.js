@@ -2,7 +2,9 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
 import { render, screen, fireEvent } from '../utils/test-utils';
-import { addTask } from '../redux/actions/actionCreators';
+import {
+  addTask, deleteTask, doneTask, loadTasks
+} from '../redux/actions/actionCreators';
 import InputTask from './InputTask';
 
 jest.mock('../redux/actions/actionCreators');
@@ -24,11 +26,37 @@ describe('Given InputTask component', () => {
     render(<InputTask />, { initialState });
   });
 
-  describe('When add button is clicked', () => {
+  describe('When ADD button is clicked', () => {
     test('Then addTask should be invoked', async () => {
       addTask.mockImplementationOnce(() => ({ type: 'add' }));
       fireEvent.click(screen.getByRole('button', { name: /ADD/i }));
       expect(addTask).toHaveBeenCalled();
     });
+  });
+
+  describe('When DONE button is clicked', () => {
+    test('Then doneTask should be invoked', async () => {
+      doneTask.mockImplementationOnce(() => ({ type: 'done' }));
+      fireEvent.click(screen.getByText(/DONE/i));
+      expect(doneTask).toHaveBeenCalled();
+    });
+  });
+
+  describe('When DELETE button is clicked', () => {
+    test('Then deleteTask should be invoked', async () => {
+      deleteTask.mockImplementationOnce(() => ({ type: 'delete' }));
+      fireEvent.click(screen.getByText(/DELETE/i));
+      expect(deleteTask).toHaveBeenCalled();
+    });
+  });
+
+  test('should call loadTasks', () => {
+    loadTasks.mockReturnValue({ type: '' });
+    render(<InputTask />, {
+      initialState: {
+        tasks: []
+      }
+    });
+    expect(loadTasks).toHaveBeenCalled();
   });
 });
