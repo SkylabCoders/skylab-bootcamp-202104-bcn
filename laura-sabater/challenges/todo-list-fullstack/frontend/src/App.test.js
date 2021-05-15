@@ -3,8 +3,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('Given App function, ', () => {
+  test('while resolved, then render title with list', () => {
+    render(<App />);
+    const title = screen.getByText(/list/i);
+    expect(title).toBeInTheDocument();
+  });
 });
