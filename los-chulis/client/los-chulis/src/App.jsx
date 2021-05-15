@@ -9,6 +9,7 @@ function App() {
   return (
     <Provider store={store()}>
       <main className="main">
+        <h1>PromoPharma</h1>
         <ProductList />
         <ShoppingCart />
       </main>
