@@ -3,7 +3,7 @@ import actionTypes from './actionTypes';
 
 const url = process.env.REACT_APP_TASKS_API_DEV;
 
-export function addProducts(product) {
+export function addProduct(product) {
   return {
     type: actionTypes.ADD_PRODUCTS,
     product

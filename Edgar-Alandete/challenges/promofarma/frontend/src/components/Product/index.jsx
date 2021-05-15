@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { addProducts } from '../../redux/actions/actionCreators';
+import { addProduct } from '../../redux/actions/actionCreators';
 
 function Product({
   productItem: {
@@ -12,8 +12,7 @@ function Product({
     const newProduct = {
       _id, productName, stock, price
     };
-    newProduct.stock -= 1;
-    dispatch(addProducts(newProduct));
+    dispatch(addProduct(newProduct));
   }
 
   return (
