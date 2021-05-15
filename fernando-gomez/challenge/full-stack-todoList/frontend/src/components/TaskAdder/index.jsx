@@ -46,6 +46,7 @@ function TaskAdder({ dispatch, tasks }) {
           placeholder="Title"
           className="taskTitle-input"
           value={currentTitle}
+          data-testid="task-title-input"
         />
         <input
           type="text-box"
@@ -53,13 +54,14 @@ function TaskAdder({ dispatch, tasks }) {
           placeholder="Description"
           className="taskDescription-input"
           value={currentDescription}
+          data-testid="task-description-input"
         />
       </span>
-
       <button
         type="button"
         onClick={handleAddTask}
         className="addTask-button"
+        data-testid="add-task-button-test"
       >
         <i className="fas fa-plus-circle" />
       </button>
