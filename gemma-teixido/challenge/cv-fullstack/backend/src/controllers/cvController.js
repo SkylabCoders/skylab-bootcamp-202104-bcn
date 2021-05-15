@@ -1,9 +1,14 @@
-const Information = require('../model/cvMode');
+const Information = require('../model/cvModel');
 
 function cvController() {
   async function getInformation(req, res) {
     const Informations = await Information.find();
-    res.json(Informations);
+    try {
+      res.json(Informations);
+    } catch (error) {
+      res.status(404);
+      res.send(error);
+    }
   }
 
   return {
