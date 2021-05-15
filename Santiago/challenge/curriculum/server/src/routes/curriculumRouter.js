@@ -1,11 +1,12 @@
 const { Router } = require('express');
-// const curriculumController = require('../controllers/curriculumController');
+const curriculumController = require('../controllers/curriculumController')();
 
 function curriculumRouter() {
   const routes = Router();
 
   routes
-    .route('/');
+    .route('/')
+    .get(curriculumController.getData);
 
   return routes;
 }
