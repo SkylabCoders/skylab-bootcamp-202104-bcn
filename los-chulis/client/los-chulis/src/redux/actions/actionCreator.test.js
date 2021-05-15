@@ -65,14 +65,24 @@ describe('deleteFromCart function', () => {
 
 describe('updateCart function', () => {
   test('should dispatch UPDATE_PRODUCTS', async () => {
+    const product = { data: 'hola' };
     const dispatch = jest.fn();
-    axios.mockResolvedValue('skylab');
+    axios.put.mockResolvedValue(product);
 
-    await updateCart({ hola: 'anna' })(dispatch);
+    await updateCart(product)(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.UPDATE_PRODUCTS,
-      product: { hola: 'anna' }
+      product: product.data
     });
   });
 });
+
+// const task = { data: { text: 'Hola', state: false } };
+// axios.put.mockResolvedValue(task);
+// const dispatch = jest.fn();
+// await doneTask(task)(dispatch);
+// expect(dispatch).toHaveBeenCalledWith({
+//   type: actionTypes.DONE_TASK,
+//   updateTask: task.data,
+// });
