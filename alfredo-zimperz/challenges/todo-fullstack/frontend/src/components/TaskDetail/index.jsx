@@ -70,6 +70,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
                 placeholder="Task title"
                 value={taskTitle}
                 onChange={handleTitleChange}
+                autoComplete="off"
               />
             </label>
             <label htmlFor="task-description">
@@ -79,6 +80,7 @@ const TaskDetail = ({ selectedTask, dispatch }) => {
                 placeholder="Task Description"
                 value={taskDescription}
                 onChange={handleDescriptionChange}
+                autoComplete="off"
               />
             </label>
             <span>

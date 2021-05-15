@@ -37,6 +37,7 @@ const Tasks = ({ tasks, dispatch }) => {
           value={newTaskTitle}
           onChange={handleChangeInput}
           data-testid="add-task_title_input"
+          autoComplete="off"
         />
         <input
           name="description"
@@ -44,6 +45,7 @@ const Tasks = ({ tasks, dispatch }) => {
           value={newTaskDescription}
           onChange={handleChangeInput}
           data-testid="add-task_description_input"
+          autoComplete="off"
         />
 
         <button
