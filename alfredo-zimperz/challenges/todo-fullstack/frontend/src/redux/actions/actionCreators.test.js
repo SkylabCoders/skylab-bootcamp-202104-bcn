@@ -1,6 +1,12 @@
 /* eslint-disable no-console */
 import axios from 'axios';
-import { loadTasks, addTask, deleteTask } from './actionCreators';
+import {
+  loadTasks,
+  addTask,
+  deleteTask,
+  getTaskById,
+  updateTask,
+} from './actionCreators';
 
 jest.mock('axios');
 
@@ -29,9 +35,27 @@ describe('Given a deleteTask function', () => {
     await deleteTask(10)(dispatch);
     expect(dispatch).toHaveBeenCalled();
   });
-  test('when it catches an erorr should call console.log', async () => {
+  test('when it catches an erorr should call console.log with an error', async () => {
     axios.delete.mockRejectedValue('error');
     await deleteTask(10)(dispatch);
     expect(console.log).toHaveBeenCalledWith('error');
+  });
+  describe('Given a getTaskById function', () => {
+    test('should call dispatch with a task id', async () => {
+      axios.get.mockResolvedValueOnce({ data: {} });
+      await getTaskById(10)(dispatch);
+      expect(dispatch).toHaveBeenCalled();
+    });
+  });
+  describe('Given a updateTask function', () => {
+    test('should call dispatch with a task id', async () => {
+      axios.put.mockResolvedValueOnce({ data: {} });
+      await updateTask({
+        title: 'title',
+        description: 'description',
+        done: true,
+      })(dispatch);
+      expect(dispatch).toHaveBeenCalled();
+    });
   });
 });
