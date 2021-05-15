@@ -106,4 +106,10 @@ describe('markAsDone', () => {
       },
     );
   });
+  test('Should return a Complete task error', async () => {
+    axios.put.mockRejectedValue();
+    const dispatch = jest.fn();
+    await markAsDone()(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({ type: actionTypes.COMPLETE_TASK_ERROR });
+  });
 });
