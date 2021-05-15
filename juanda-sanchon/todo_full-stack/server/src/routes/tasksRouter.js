@@ -11,7 +11,8 @@ function tasksRouter() {
 
   routes
     .route('/:productId')
-    .put(tasksController.updateTask);
+    .put(tasksController.updateTask)
+    .delete(tasksController.deleteTask);
 
   return routes;
 }

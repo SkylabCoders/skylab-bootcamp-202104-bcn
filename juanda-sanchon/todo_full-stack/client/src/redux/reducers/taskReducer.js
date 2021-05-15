@@ -1,5 +1,6 @@
-import actionTypes from '../actions/actioTypes';
+/* eslint-disable no-underscore-dangle */
 // import INITIALTASK from '../../constants/task.mock';
+import actionTypes from '../actions/actioTypes';
 
 function taskReducer(state = [], action) {
   switch (action.type) {
@@ -12,6 +13,17 @@ function taskReducer(state = [], action) {
       return (
         action.task
       );
+
+      // case actionTypes.UPDATE_TASK:
+      //   return state.map(
+      //     (task) => ((task._id === action.task._id)
+      //       ? { ...state, ...action.task.task }
+      //       : state)
+      //   );
+
+    case actionTypes.DELETE_TASK:
+      state.splice(state.indexOf(action.task), 1);
+      return [...state];
 
     default:
       return state;

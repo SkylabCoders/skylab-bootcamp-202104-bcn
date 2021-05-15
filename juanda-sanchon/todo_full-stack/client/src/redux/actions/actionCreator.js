@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actioTypes';
 
@@ -43,6 +44,22 @@ export function updateTask(task) {
       dispatch({
         type: actionTypes.UPDATE_TASK,
         task: data
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.LOAD_TASK_ERROR
+      });
+    }
+  };
+}
+
+export function deleteTask(task) {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`${url}/${task._id}`);
+      dispatch({
+        type: actionTypes.DELETE_TASK,
+        task
       });
     } catch (error) {
       dispatch({

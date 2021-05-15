@@ -29,10 +29,20 @@ function tasksController() {
     }
   }
 
+  async function deleteTask(req, res) {
+    try {
+      await Task.findByIdAndDelete(req.params.taskId);
+      res.json();
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
   return {
     getAllTasks,
     createOne,
-    updateTask
+    updateTask,
+    deleteTask
   };
 }
 module.exports = tasksController;

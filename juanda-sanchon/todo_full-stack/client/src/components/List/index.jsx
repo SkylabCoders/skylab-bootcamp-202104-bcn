@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { loadTask, updateTask } from '../../redux/actions/actionCreator';
+import { loadTask, updateTask, deleteTask } from '../../redux/actions/actionCreator';
 
 function List({ tasks, dispatch }) {
   useEffect(() => {
@@ -11,6 +11,9 @@ function List({ tasks, dispatch }) {
 
   function updateTaskLine(id, task) {
     dispatch(updateTask({ id, task }));
+  }
+  function deleteTaskLine(id) {
+    dispatch(deleteTask(id));
   }
 
   return (
@@ -23,7 +26,7 @@ function List({ tasks, dispatch }) {
             <li>
               <p>{task.task}</p>
               <button type="button" onClick={() => updateTaskLine(task._id, task.task)}>UPDATE</button>
-              <button type="button">DELETE</button>
+              <button type="button" onClick={() => deleteTaskLine(task)}>DELETE</button>
             </li>
           )
         )}
