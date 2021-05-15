@@ -1,11 +1,15 @@
-import { createStore, compose, applyMiddleware } from 'redux';
+/* eslint-disable no-underscore-dangle */
+import { applyMiddleware, createStore, compose } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from '../reducers';
+import rootReducer from '../reducers/index';
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = (typeof window !== 'undefined'
+&& window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE_)
+|| compose;
 
 const configureStore = (initialState) => createStore(
-  rootReducer, initialState, composeEnhancer(applyMiddleware(thunk))
+  rootReducer,
+  initialState,
+  composeEnhancers(applyMiddleware(thunk))
 );
-
 export default configureStore;
