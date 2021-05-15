@@ -2,21 +2,19 @@
 import actionTypes from '../actions/actionTypes';
 
 function productsReducer(products = [], action) {
-  const newProducts = [...products];
+  let newProducts = [...products];
   if (action.type === actionTypes.LOAD_PRODUCTS) {
-    return action.products;
+    newProducts = action.products;
   }
 
   if (action.type === actionTypes.ADD_PRODUCTS) {
-    const test = newProducts.map(
+    newProducts = newProducts.map(
       (product) => (product._id === action.product._id
         ? { ...product, ...action.product }
         : product)
     );
-
-    return test;
   }
-  return products;
+  return newProducts;
 }
 
 export default productsReducer;

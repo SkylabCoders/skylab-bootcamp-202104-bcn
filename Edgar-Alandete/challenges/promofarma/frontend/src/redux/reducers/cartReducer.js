@@ -2,20 +2,24 @@
 import actionTypes from '../actions/actionTypes';
 
 function cartReducer(products = [], action) {
-  const newProducts = [...products];
+  let newProducts = [...products];
   switch (action.type) {
     case actionTypes.DELETE_PRODUCT:
       newProducts.splice(newProducts.findIndex((product) => (
         product._id === action.product._id), 1));
-      return newProducts;
+      break;
     case actionTypes.ADD_PRODUCTS:
-      return [...products, action.product];
+      newProducts = [...newProducts, action.product];
+      break;
     case actionTypes.DELETE_ALL:
-      return [];
+      newProducts = [];
+      break;
 
     default:
       return products;
   }
+
+  return newProducts;
 }
 
 export default cartReducer;
