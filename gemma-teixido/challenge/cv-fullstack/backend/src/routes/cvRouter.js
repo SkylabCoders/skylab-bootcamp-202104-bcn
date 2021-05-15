@@ -1,11 +1,12 @@
 const { Router } = require('express');
-// const cvController = require('../controllers/cvController');
+const cvController = require('../controllers/cvController')();
 
 function cvRouter() {
   const routes = Router();
 
   routes
-    .route('/');
+    .route('/')
+    .get(cvController.getInformation);
 
   return routes;
 }
