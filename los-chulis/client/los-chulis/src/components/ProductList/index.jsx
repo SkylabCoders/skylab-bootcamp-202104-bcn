@@ -42,6 +42,7 @@ const ProductList = ({ products, dispatch, cartList }) => {
               type="button"
               id={product._id}
               disabled={!product.stock}
+              data-testid="button-add-to-cart"
               onClick={() => {
                 disableButton(product);
                 if (activeButton) { dispatch(addToCart(product)); }
