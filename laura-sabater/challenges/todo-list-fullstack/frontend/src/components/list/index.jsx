@@ -27,7 +27,7 @@ function List({ tasks, dispatch }) {
             id="new-task-name"
             placeholder="Add new task"
           />
-          <button type="button" className="add" onClick={() => addOnClick()}>+</button>
+          <button type="button" className="add" onClick={() => addOnClick()}>Add</button>
         </label>
       </form>
       <ul className="to-do-list">
