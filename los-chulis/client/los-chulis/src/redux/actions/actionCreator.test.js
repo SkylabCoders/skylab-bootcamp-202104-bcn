@@ -77,12 +77,3 @@ describe('updateCart function', () => {
     });
   });
 });
-
-// const task = { data: { text: 'Hola', state: false } };
-// axios.put.mockResolvedValue(task);
-// const dispatch = jest.fn();
-// await doneTask(task)(dispatch);
-// expect(dispatch).toHaveBeenCalledWith({
-//   type: actionTypes.DONE_TASK,
-//   updateTask: task.data,
-// });
