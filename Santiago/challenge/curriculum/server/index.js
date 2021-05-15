@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const server = express();
-const port = process.env.PORT || 2021;
+const port = process.env.PORT || 3103;
 
 mongoose.connect(
   process.env.DDBB_URL,
@@ -21,9 +21,9 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan('dev'));
 
-const heroesRouter = require('./routes/curriculumRouter');
+const curriculumRouter = require('./src/routes/curriculumRouter');
 
-server.use('/details', heroesRouter);
+server.use('/details', curriculumRouter);
 
 server.listen(port,
   () => debug(`Server is running in ${chalk.yellow(`localhost:${port}`)}`));
