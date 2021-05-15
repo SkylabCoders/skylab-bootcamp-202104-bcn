@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadTasks, addTask, deleteTask } from '../../redux/actions/actionCreators';
+import { loadTasks, addTask } from '../../redux/actions/actionCreators';
 import Task from '../Task';
 import './tasks.css';
 
@@ -15,16 +15,8 @@ const Tasks = ({ tasks, dispatch }) => {
   }, []);
 
   const handleChangeInput = (event) => {
-    switch (event.target.name) {
-      case 'title':
-        setNewTaskTitle(event.target.value);
-        break;
-      case 'description':
-        setNewTaskDescription(event.target.value);
-        break;
-      default:
-        break;
-    }
+    if (event.target.name === 'title') setNewTaskTitle(event.target.value);
+    if (event.target.name === 'description') setNewTaskDescription(event.target.value);
   };
   const saveNewTask = () => {
     if (newTaskTitle !== '' && newTaskDescription !== '') {
@@ -33,7 +25,6 @@ const Tasks = ({ tasks, dispatch }) => {
       setNewTaskDescription('');
     }
   };
-  const handleDelete = (id) => dispatch(deleteTask(id));
 
   return (
     <>
@@ -45,21 +36,28 @@ const Tasks = ({ tasks, dispatch }) => {
           placeholder="title"
           value={newTaskTitle}
           onChange={handleChangeInput}
+          data-testid="add-task_title_input"
         />
         <input
           name="description"
           placeholder="description"
           value={newTaskDescription}
           onChange={handleChangeInput}
+          data-testid="add-task_description_input"
         />
 
-        <button className="add-button" type="button" onClick={saveNewTask}>
+        <button
+          className="add-button"
+          type="button"
+          onClick={saveNewTask}
+          data-testid="add-task_button"
+        >
           Add task
         </button>
       </section>
       <section className="tasks">
         {tasks.map((task) => (
-          <Task task={task} handleDelete={handleDelete} key={task._id} />
+          <Task task={task} key={task._id} />
         ))}
       </section>
     </>
