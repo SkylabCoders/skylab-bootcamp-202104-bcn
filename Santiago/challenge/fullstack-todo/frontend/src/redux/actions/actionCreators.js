@@ -5,15 +5,15 @@ import actionTypes from './actionTypes';
 const URL = 'http://localhost:2021/tasks';
 
 export function loadTasks() {
-  return async (dispacth) => {
+  return async (dispatch) => {
     try {
       const { data } = await axios.get(URL);
-      dispacth({
+      dispatch({
         type: actionTypes.LOAD_TASKS,
         tasks: data
       });
     } catch (error) {
-      dispacth({
+      dispatch({
         type: 'LOAD_HEROES_ERROR'
       });
     }
