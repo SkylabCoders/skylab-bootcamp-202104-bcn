@@ -1,7 +1,6 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
-
-const tasksUrl = 'http://localhost:2021/tasks';
+import tasksUrl from '../../constants/constants';
 
 export function loadTasks() {
   return async (dispatch) => {
