@@ -32,32 +32,34 @@ function Dashboard({ tasks, dispatch }) {
             id="new-task-name"
             placeholder="New task Name"
           />
-          <button type="button" className="add" onClick={() => clickAdd()}>ADD</button>
+          <button type="button" className="add" onClick={() => clickAdd()} data-testid="add-task-button">ADD</button>
         </label>
       </form>
       <ul className="to-do-list">
-        {tasks.map((task) => (
-          <li className="to-do-list__task">
-            {' '}
-            <Link to={`/${task._id}`} className={!task.done ? 'task-name' : 'task-name--done'}>{task.taskTitle}</Link>
-            <button
-              type="button"
-              className="delete"
-              id={task._id}
-              onClick={() => deleteClick(task)}
-            >
-              X
-            </button>
-            <button
-              type="button"
-              className="done"
-              id={task._id}
-              onClick={() => updateClick(task)}
-            >
-              ✓
-            </button>
-          </li>
-        ))}
+        {tasks.length
+          ? tasks.map((task) => (
+            <li className="to-do-list__task">
+              {' '}
+              <Link to={`/${task._id}`} className={!task.done ? 'task-name' : 'task-name--done'}>{task.taskTitle}</Link>
+              <button
+                type="button"
+                className="delete"
+                id={task._id}
+                onClick={() => deleteClick(task)}
+              >
+                X
+              </button>
+              <button
+                type="button"
+                className="done"
+                id={task._id}
+                onClick={() => updateClick(task)}
+              >
+                ✓
+              </button>
+            </li>
+          ))
+          : <span>There are no tasks to do!</span>}
       </ul>
 
     </>
