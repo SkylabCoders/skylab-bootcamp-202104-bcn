@@ -2,15 +2,17 @@
 import React from 'react';
 import { render, screen, fireEvent } from '../../test-utils';
 import TasksList from './index';
-import { loadTasks } from '../../redux/actions/actionCreators';
+import { loadTasks, updateTask, deleteTask } from '../../redux/actions/actionCreators';
 
 jest.mock('../../redux/actions/actionCreators');
 
 describe('<TasksList>', () => {
   test('should render a task list component with a title', () => {
+    const dispatch = jest.fn();
     const initialState = { tasks: [{ _id: '3' }, { _id: '4' }] };
     render(<TasksList />, { initialState });
-    loadTasks.mockReturnValue(() => [{ _id: '3' }, { _id: '4' }]);
+    loadTasks.mockReturnValue(() => [{ _id: '3' }, { _id: '4' }])(dispatch);
+    updateTask.mockReturnValue(() => {})(dispatch);
     const editButton = screen.getByTestId('edit-3');
     fireEvent.click(editButton);
     const mockedEvent = { target: { value: '3' } };
@@ -28,9 +30,11 @@ describe('<TasksList>', () => {
 
 describe('<TasksList>', () => {
   test('should click a delete button', () => {
+    const dispatch = jest.fn();
     const initialState = { tasks: [{ _id: '3' }, { _id: '4' }] };
     render(<TasksList />, { initialState });
-    loadTasks.mockReturnValue(() => [{ _id: '3' }, { _id: '4' }]);
+    loadTasks.mockReturnValue(() => [{ _id: '3' }, { _id: '4' }])(dispatch);
+    deleteTask.mockReturnValue(() => {})(dispatch);
 
     const deleteButton = screen.getByTestId('delete-3');
     fireEvent.click(deleteButton);
@@ -40,10 +44,12 @@ describe('<TasksList>', () => {
 });
 
 describe('<TasksList>', () => {
-  test('should render a task list component with a title', () => {
+  test('should click a done button', () => {
+    const dispatch = jest.fn();
     const initialState = { tasks: [{ _id: '3' }, { _id: '4' }] };
     render(<TasksList />, { initialState });
-    loadTasks.mockReturnValue(() => [{ _id: '3' }, { _id: '4' }]);
+    loadTasks.mockReturnValue(() => [{ _id: '3' }, { _id: '4' }])(dispatch);
+    updateTask.mockReturnValue(() => {})(dispatch);
     const editButton = screen.getByTestId('edit-3');
     fireEvent.click(editButton);
     const mockedEvent = { target: { value: '3' } };
