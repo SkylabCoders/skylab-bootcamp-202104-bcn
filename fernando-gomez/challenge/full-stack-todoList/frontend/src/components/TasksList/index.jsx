@@ -57,10 +57,17 @@ function TasksList({ tasks, dispatch }) {
   return (
     <>
       <h2 className="title">My tasks</h2>
-      <ul className="list">
+      <ul
+        className="list"
+      >
         {
           tasks?.map((task) => (
-            <li className="list__element list-element ">
+            <li
+              // eslint-disable-next-line prefer-template
+              // eslint-disable-next-line no-useless-concat
+              key={`task-${task._id}`}
+              className="list__element list-element "
+            >
               <div className="task-content">
                 {task.done ? (<i className="fas fa-star" />) : <i className="fas fa-star transparent" />}
                 <div className="task-content__container">
@@ -81,12 +88,16 @@ function TasksList({ tasks, dispatch }) {
                         onChange={handleTitleChange}
                         placeholder="Title"
                         className="inputs__edit-title"
+                        // eslint-disable-next-line prefer-template
+                        data-testid={'title-input-' + task._id}
                       />
                       <input
                         type="text"
                         onChange={handleDescriptionChange}
                         placeholder="Description"
                         className="inputs__edit-description"
+                        // eslint-disable-next-line prefer-template
+                        data-testid={'description-input-' + task._id}
                       />
                     </span>
                     <span className="buttons">
@@ -94,6 +105,8 @@ function TasksList({ tasks, dispatch }) {
                         type="button"
                         onClick={() => handleEditTask(task)}
                         className="buttons__submit"
+                        // eslint-disable-next-line prefer-template
+                        data-testid={'submit-edit-' + task._id}
                       >
                         <i className="fas fa-save" />
                       </button>
@@ -101,6 +114,8 @@ function TasksList({ tasks, dispatch }) {
                         type="button"
                         onClick={handleHideEditTask}
                         className="buttons__hide"
+                        // eslint-disable-next-line prefer-template
+                        data-testid={'hide-' + task._id}
                       >
                         <i className="fas fa-undo-alt" />
                       </button>
@@ -113,6 +128,8 @@ function TasksList({ tasks, dispatch }) {
                       type="button"
                       className="buttons__done"
                       onClick={() => handleDone(task)}
+                      // eslint-disable-next-line prefer-template
+                      data-testid={'done-' + task._id}
                     >
                       <i className="fas fa-check-circle" />
                     </button>
@@ -120,6 +137,8 @@ function TasksList({ tasks, dispatch }) {
                       type="button"
                       className="buttons__edit"
                       onClick={() => handleEditOpened(task._id)}
+                      // eslint-disable-next-line prefer-template
+                      data-testid={'edit-' + task._id}
                     >
                       {task.done ? (<></>) : (<i className="far fa-edit" />)}
                     </button>
@@ -127,6 +146,8 @@ function TasksList({ tasks, dispatch }) {
                       type="button"
                       onClick={() => handleDelete(task._id)}
                       className="buttons__delete"
+                      // eslint-disable-next-line prefer-template
+                      data-testid={'delete-' + task._id}
                     >
                       <i className="fas fa-trash" />
                     </button>
@@ -142,8 +163,8 @@ function TasksList({ tasks, dispatch }) {
 
 TasksList.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.shape({
-    length: PropTypes.number.isRequired
-  }).isRequired).isRequired,
+    length: PropTypes.number
+  })).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 

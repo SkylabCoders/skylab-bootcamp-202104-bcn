@@ -72,7 +72,7 @@ function TaskAdder({ dispatch, tasks }) {
 TaskAdder.propTypes = {
   dispatch: PropTypes.func.isRequired,
   tasks: PropTypes.arrayOf(PropTypes.shape({
-    length: PropTypes.number.isRequired
+    length: PropTypes.number
   }).isRequired).isRequired
 };
 
