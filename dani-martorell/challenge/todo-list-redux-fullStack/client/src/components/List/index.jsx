@@ -10,11 +10,9 @@ function List({ tasks, dispatch }) {
   function handleDelete(e) {
     dispatch(deleteTask(e.target.id));
   }
-  function handleDone(e) {
-    const taskId = e.target.id;
-    const taskToBeUpdated = tasks.find((task) => task._id === taskId);
-    taskToBeUpdated.isCompleted = true;
-    dispatch(markAsDone(taskToBeUpdated));
+  function handleDone(task) {
+    const taskToUpdate = { ...task, isCompleted: true };
+    dispatch(markAsDone(taskToUpdate));
   }
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
