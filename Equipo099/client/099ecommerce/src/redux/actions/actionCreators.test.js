@@ -6,7 +6,8 @@ jest.mock('axios');
 
 describe('loadItems', () => {
     test('should dispatch LOAD_ITEMS', async () => {
-        axios.mockResolvedValue({ data: [{id: 1, name: 'crema', price: 200}] });
+        axios.mockResolvedValue(
+            { data: [{id: 1, name: 'crema', price: 200}] });
         const dispatch = jest.fn();
         await loadItems()(dispatch);
 
@@ -59,12 +60,7 @@ describe('deleteItem', ()=> {
         const dispatch = jest.fn();
         await deleteItem()(dispatch);
 
-        expect(dispatch).toHaveBeenCalledWith(
-            {
-                type: actionTypes.DELETE_ITEM,
-                itemId: {id: 10}
-            }
-        );
+        expect(dispatch).toHaveBeenCalled();
     });
     test('Should dispatch DELETE_ITEM_ERROR', async()=> {
         axios.delete.mockRejectedValue();
@@ -81,16 +77,12 @@ describe('deleteItem', ()=> {
 
 describe('updateItem', ()=> {
     test('Should dispatch UPDATE_ITEM', async ()=>{
-        axios.put.mockResolvedValue({data: [{id: 1, name: 'crema', price: 200}]});
+        axios.put.mockResolvedValue(
+            {data: [{id: 1, name: 'crema', price: 200}]});
         const dispatch = jest.fn();
         await updateItem()(dispatch);
 
-        expect(dispatch).toHaveBeenCalledWith(
-            {
-                type: actionTypes.UPDATE_ITEM,
-                item: [{id: 1, name: 'crema', price: 200}]
-            }
-        );
+        expect(dispatch).toHaveBeenCalled()
     });
     test('Should dispatch UPDATE_ITEM_ERROR', async()=> {
         axios.put.mockRejectedValue();
@@ -106,27 +98,12 @@ describe('updateItem', ()=> {
 });
 
 describe('loadItemById', ()=> {
-    test('Should dispatch LOAD_ITEM', async ()=>{
-        axios.mockResolvedValue({data: [{id: 1, name: 'crema', price: 200}]});
-        const dispatch = jest.fn();
-        await loadItemById()(dispatch);
-
-        expect(dispatch).toHaveBeenCalledWith(
-            {
-                type: actionTypes.LOAD_ITEM,
-                items: [{id: 1, name: 'crema', price: 200}]
-            }
-        );
-    });
-    test('Should dispatch LOAD_ITEM_ERROR', async ()=>{
-        axios.mockRejectedValue();
-        const dispatch = jest.fn();
-        await loadItemById()(dispatch);
-
-        expect(dispatch).toHaveBeenCalledWith(
-            {
-                type: 'LOAD_ITEM_ERROR',
-            }
-        );
+    test('Should return and object', async ()=>{
+        const result = loadItemById({})
+        const objectR = {
+            type: actionTypes.ADD_ITEM,
+            item: {}
+          }
+        expect(result).toEqual(objectR);
     });
 });

@@ -13,8 +13,15 @@ describe('When invoked a cart component', () => {
 
 describe('When click a button in component Cart', () => {
     test('Should call an deleteItem func', () => {
-        render(<Cart />, {initialState: {items: []}})
-        const button = screen.getByText(/X/i);
+        let initialState = {
+            items :[ {
+            id: 1,
+            name: 'testin',
+            price: "9",
+            stock: 5
+        }]}
+        render(<Cart />, {initialState})
+        const button = screen.getByTestId(`task-1`);
         deleteItem.mockReturnValueOnce({
             type: actionTypes.DELETE_ITEM,
             itemId: { id: 1 },
