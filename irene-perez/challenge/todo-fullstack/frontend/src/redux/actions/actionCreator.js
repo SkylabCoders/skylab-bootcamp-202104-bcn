@@ -25,13 +25,16 @@ export function deleteTask(taskId) {
 
 export function loadTasks() {
   return async (dispatch) => {
-    const { data } = await axios(tasksUrl);
-    dispatch({
-      type: actionTypes.LOAD_TASKS,
-      tasks: data
-    });
-    dispatch({
-      type: actionTypes.ERROR_TASK
-    });
+    try {
+      const { data } = await axios(tasksUrl);
+      dispatch({
+        type: actionTypes.LOAD_TASKS,
+        tasks: data
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.ERROR_TASK
+      });
+    }
   };
 }
