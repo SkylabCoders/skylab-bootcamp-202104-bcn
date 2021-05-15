@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable no-underscore-dangle */
+import React, { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { addProduct } from '../../redux/actions/actionCreators';
@@ -6,13 +7,23 @@ import { addProduct } from '../../redux/actions/actionCreators';
 function Product({
   productItem: {
     _id, productName, stock, price
-  }, dispatch
+  }, cart, dispatch
 }) {
+  const [selectedProduct, setSelectedProduct] = useState();
+
+  useEffect(() => {
+    if (cart.length) {
+      if (selectedProduct) {
+        console.log('todo');
+      }
+    }
+  }, [cart]);
   function handleAddItemToCart() {
     const newProduct = {
       _id, productName, stock, price
     };
     dispatch(addProduct(newProduct));
+    setSelectedProduct(newProduct);
   }
 
   return (
@@ -36,11 +47,13 @@ Product.propTypes = {
     productName: PropTypes.string.isRequired,
     stock: PropTypes.number.isRequired,
     price: PropTypes.number.isRequired
-  }).isRequired
+  }).isRequired,
+
+  cart: PropTypes.shape([]).isRequired
 };
 
-function mapStateToProps({ products }) {
-  return { products };
+function mapStateToProps({ products, cart }) {
+  return { products, cart };
 }
 
 export default connect(mapStateToProps)(Product);
