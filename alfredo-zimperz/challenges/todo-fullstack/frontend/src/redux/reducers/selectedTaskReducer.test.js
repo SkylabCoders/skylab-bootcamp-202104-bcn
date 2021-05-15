@@ -1,5 +1,4 @@
 import selectedTaskReducer from './selectedTaskReducer';
-import actionTypes from '../actions/actionTypes';
 
 const action = {
   type: 'LOAD_TASK',
