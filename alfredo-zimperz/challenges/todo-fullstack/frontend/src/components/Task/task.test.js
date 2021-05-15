@@ -20,8 +20,6 @@ const taskDone = {
   done: true,
 };
 
-const handleDelete = jest.fn();
-
 describe('<Task/>', () => {
   describe('Given a task', () => {
     test('should show the task title', () => {
