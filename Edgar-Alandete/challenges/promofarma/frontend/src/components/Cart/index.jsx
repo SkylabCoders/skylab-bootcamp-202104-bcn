@@ -1,16 +1,17 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { deleteAll, deleteProduct } from '../../redux/actions/actionCreators';
+import { deleteAll, deleteProduct, loadProducts } from '../../redux/actions/actionCreators';
 
 function Cart({ dispatch, cart }) {
   function handleDeleteAll(data) {
     dispatch(deleteAll(data));
+    dispatch(loadProducts());
   }
 
   function handleRemoveItemFromCart(product) {
     const newProduct = { ...product };
-    newProduct.stock -= 1;
+    newProduct.stock += 1;
     dispatch(deleteProduct(newProduct));
   }
 
