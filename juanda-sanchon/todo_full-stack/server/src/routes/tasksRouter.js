@@ -10,7 +10,7 @@ function tasksRouter() {
     .post(tasksController.createOne);
 
   routes
-    .route('/:productId')
+    .route('/:taskId')
     .put(tasksController.updateTask)
     .delete(tasksController.deleteTask);
 
