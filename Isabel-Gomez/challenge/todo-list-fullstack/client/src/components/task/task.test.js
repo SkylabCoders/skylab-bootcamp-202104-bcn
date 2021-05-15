@@ -17,8 +17,11 @@ describe('Given a Task component', () => {
         type: actionTypes.LOAD_TASKS,
         tasks: [],
       });
-
       render(<Task />, { initialState });
+
+      const input = screen.getByTestId('add-input-1');
+
+      fireEvent.change(input, { target: { value: 'comprar leche' } });
 
       expect(screen.getByText(/Add task/i)).toBeInTheDocument();
     });
@@ -56,13 +59,20 @@ describe('Given a Task component', () => {
 
     describe('And Edit Task button is clicked', () => {
       test('then updateTask should be invoked', () => {
-        const button = screen.getByTestId('edit-button-1');
-        updateTask.mockReturnValueOnce({
-          type: actionTypes.UPDATE_TASK,
-          data: { name: 'comprar', completed: false },
-        });
+        const buttonEdit = screen.getByTestId('edit-button-1');
 
-        fireEvent.click(button);
+        fireEvent.click(buttonEdit);
+
+        const buttonUpdate = screen.getByTestId('update-button-1');
+
+        updateTask.mockReturnValue(() => (
+          {
+            type: actionTypes.UPDATE_TASK,
+            data: { name: 'comprar leche', completed: false },
+          }
+        ));
+
+        fireEvent.click(buttonUpdate);
 
         expect(updateTask).toHaveBeenCalled();
       });

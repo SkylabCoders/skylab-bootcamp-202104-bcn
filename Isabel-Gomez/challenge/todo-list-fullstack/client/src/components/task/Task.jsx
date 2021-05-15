@@ -56,7 +56,7 @@ const Task = ({ dispatch, tasks }) => {
     <>
       <section>
         <label htmlFor="task-name" className="label-create">
-          <input id="task-name" onChange={getImputTask} value={nameNewTask} placeholder="Add your task here..." className="label-create__input" />
+          <input id="task-name" data-testid="add-input-1" onChange={getImputTask} value={nameNewTask} placeholder="Add your task here..." className="label-create__input" />
           {editMode
             ? (
               <button
