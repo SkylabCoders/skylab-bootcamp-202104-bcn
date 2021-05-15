@@ -64,14 +64,15 @@ describe('deleteFromCart function', () => {
 });
 
 describe('updateCart function', () => {
-  test('should dispatch LOAD_PRODUCT', async () => {
+  test('should dispatch UPDATE_PRODUCTS', async () => {
     const dispatch = jest.fn();
     axios.mockResolvedValue('skylab');
 
     await updateCart({ hola: 'anna' })(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
-      type: actionTypes.UPDATE_PRODUCTS
+      type: actionTypes.UPDATE_PRODUCTS,
+      product: { hola: 'anna' }
     });
   });
 });
