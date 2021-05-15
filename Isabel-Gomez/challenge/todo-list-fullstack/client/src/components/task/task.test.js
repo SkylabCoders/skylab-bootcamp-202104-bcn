@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { fireEvent, render, screen } from '../../assets/test.utils';
-import { loadTasks, addTask } from '../../redux/actions/actionCreators';
+import {
+  loadTasks, addTask, deleteTask, updateTask, doneTask,
+} from '../../redux/actions/actionCreators';
 import Task from './Task';
 import actionTypes from '../../redux/actions/actionTypes';
 
@@ -30,12 +32,52 @@ describe('Given a Task component', () => {
     });
     describe('And Add Task button is clicked', () => {
       test('then \'comprar leche\' should be in the document', () => {
-        addTask.mockImplementation(() => ({
+        addTask.mockReturnValue(() => ({
           type: actionTypes.ADD_TASK,
           tasks: initialState.tasks,
         }));
         fireEvent.click(screen.getByText(/Add task/i));
         expect(screen.getByText(/comprar leche/i)).toBeInTheDocument();
+      });
+    });
+
+    describe('And Delete Task button is clicked', () => {
+      test('then deleteTask should be invoked', () => {
+        const button = screen.getByTestId('delete-button-1');
+        deleteTask.mockImplementation(() => (
+          { type: actionTypes.DELETE_TASK }
+        ));
+
+        fireEvent.click(button);
+
+        expect(deleteTask).toHaveBeenCalled();
+      });
+    });
+
+    describe('And Edit Task button is clicked', () => {
+      test('then updateTask should be invoked', () => {
+        const button = screen.getByTestId('edit-button-1');
+        updateTask.mockReturnValueOnce({
+          type: actionTypes.UPDATE_TASK,
+          data: { name: 'comprar', completed: false },
+        });
+
+        fireEvent.click(button);
+
+        expect(updateTask).toHaveBeenCalled();
+      });
+    });
+
+    describe('And Done Task button is clicked', () => {
+      test('then doneTask should be invoked', () => {
+        const button = screen.getByTestId('finished-button-1');
+        doneTask.mockImplementation(() => ({
+          type: actionTypes.DONE_TASK,
+        }));
+
+        fireEvent.click(button);
+
+        expect(doneTask).toHaveBeenCalled();
       });
     });
   });

@@ -63,6 +63,7 @@ const Task = ({ dispatch, tasks }) => {
                 type="button"
                 onClick={() => handleUpdateTask(taskIdToUpdate)}
                 className="label-create__button"
+                data-testid="update-button-1"
               >
                 Update Task
               </button>
@@ -73,6 +74,7 @@ const Task = ({ dispatch, tasks }) => {
                 type="button"
                 onClick={() => handleAddTask()}
                 className="label-create__button"
+                data-testid="create-button-1"
               >
                 Add task
               </button>
@@ -89,6 +91,7 @@ const Task = ({ dispatch, tasks }) => {
                   type="button"
                   disabled={element.completed}
                   className="list__finished-button"
+                  data-testid="finished-button-1"
                   onClick={() => handleDoneTask(element._id)}
                 >
                   <i className={!element.completed ? 'far fa-check-circle' : 'far fa-check-circle bloqued'} />
@@ -96,6 +99,7 @@ const Task = ({ dispatch, tasks }) => {
                 <button
                   type="button"
                   className="list__edit-button"
+                  data-testid="edit-button-1"
                   onClick={() => handleEditTask(element.name, element._id)}
                 >
                   <i className="far fa-edit" />
@@ -103,6 +107,7 @@ const Task = ({ dispatch, tasks }) => {
                 <button
                   type="button"
                   className="list__delete-button"
+                  data-testid="delete-button-1"
                   onClick={() => handleDeleteTask(element._id)}
                 >
                   <i className="far fa-trash-alt" />
