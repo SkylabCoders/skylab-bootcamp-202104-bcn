@@ -42,7 +42,7 @@ function InputTask({ tasks, dispatch }) {
             {task.text}
             <div className="task-item__buttons">
               <button type="button" className="button-done" data-testid="button-done" onClick={() => selectDoneTask(task)}> </button>
-              <button type="button" className="button-delete" data-testid="button-delete" onClick={() => dispatch(deleteTask(task))}>Delete </button>
+              <button type="button" className="button-delete" data-testid="button-delete" onClick={() => dispatch(deleteTask(task))}> </button>
             </div>
           </li>
         )) : <p>No tasks</p>}
