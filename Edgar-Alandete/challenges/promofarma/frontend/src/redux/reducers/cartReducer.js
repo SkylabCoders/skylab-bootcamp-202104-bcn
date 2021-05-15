@@ -14,7 +14,7 @@ function cartReducer(cart = [], action) {
         .find(({ _id }) => action.product._id === _id);
 
       if (item) {
-        newCart.map(
+        newCart = newCart.map(
           // eslint-disable-next-line no-return-assign
           (product) => (action.product._id === product._id
             ? { ...product, quantity: item.quantity += 1 }

@@ -10,9 +10,7 @@ function Cart({ dispatch, cart }) {
   }
 
   function handleRemoveItemFromCart(product) {
-    const newProduct = { ...product };
-    newProduct.stock += 1;
-    dispatch(deleteProduct(newProduct));
+    dispatch(deleteProduct(product));
   }
 
   return (

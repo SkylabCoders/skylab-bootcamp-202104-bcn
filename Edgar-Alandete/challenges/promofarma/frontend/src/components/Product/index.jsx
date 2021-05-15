@@ -5,35 +5,36 @@ import { connect } from 'react-redux';
 import { addProduct } from '../../redux/actions/actionCreators';
 
 function Product({
-  productItem: {
-    _id, productName, stock, price
-  }, cart, dispatch
+  productItem, cart, dispatch
 }) {
+  const productToUpdate = { ...productItem };
   const [selectedProduct, setSelectedProduct] = useState();
 
   useEffect(() => {
     if (cart.length) {
       if (selectedProduct) {
-        console.log('todo');
+        const cartProduct = cart.find((product) => (
+          product._id === selectedProduct._id
+        ));
+        if (cartProduct && cartProduct?.quantity === cartProduct?.stock) {
+          console.log('igual');
+        }
       }
     }
   }, [cart]);
   function handleAddItemToCart() {
-    const newProduct = {
-      _id, productName, stock, price
-    };
-    dispatch(addProduct(newProduct));
-    setSelectedProduct(newProduct);
+    dispatch(addProduct(productToUpdate));
+    setSelectedProduct(productToUpdate);
   }
 
   return (
     <>
       <li>
-        {`Product name: ${productName}`}
+        {`Product name: ${productItem.productName}`}
         <button type="button" onClick={handleAddItemToCart}>ADD to cart</button>
         <ul>
-          <li>{`Stock: ${stock}`}</li>
-          <li>{`Price ${price} €`}</li>
+          <li>{`Stock: ${productItem.stock}`}</li>
+          <li>{`Price ${productItem.price} €`}</li>
         </ul>
       </li>
     </>
