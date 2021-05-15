@@ -11,16 +11,19 @@ function Product({
   const [selectedProduct, setSelectedProduct] = useState();
 
   useEffect(() => {
+    const button = document.getElementById(selectedProduct?._id);
     if (cart.length) {
       if (selectedProduct) {
         const cartProduct = cart.find((product) => (
           product._id === selectedProduct._id
         ));
         if (cartProduct && cartProduct?.quantity === cartProduct?.stock) {
-          console.log('igual');
+          button.disabled = true;
+        } else {
+          button.disabled = false;
         }
       }
-    }
+    } else if (button) button.disabled = false;
   }, [cart]);
   function handleAddItemToCart() {
     dispatch(addProduct(productToUpdate));
@@ -31,7 +34,7 @@ function Product({
     <>
       <li>
         {`Product name: ${productItem.productName}`}
-        <button type="button" onClick={handleAddItemToCart}>ADD to cart</button>
+        <button type="button" id={productItem._id} onClick={handleAddItemToCart}>ADD to cart</button>
         <ul>
           <li>{`Stock: ${productItem.stock}`}</li>
           <li>{`Price ${productItem.price} €`}</li>
