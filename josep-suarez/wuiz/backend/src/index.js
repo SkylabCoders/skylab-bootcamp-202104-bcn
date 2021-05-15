@@ -7,23 +7,22 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const server = express();
-const port = process.env.PORT || 2021;
 
 mongoose.connect(
   process.env.DDBB_URL,
   {
     useUnifiedTopology: true,
-    useNewUrlParser: true,
-  },
+    useNewUrlParser: true
+  }
 );
 
 server.use(cors());
 server.use(express.json());
 server.use(morgan('dev'));
 
-const heroesRouter = require('./routes/heroesRouter');
+const todosRouter = require('./routes/todosRouter.js');
 
-server.use('/heroes', heroesRouter);
+server.use('/todos', todosRouter);
 
-server.listen(port,
-  () => debug(`Server is running in ${chalk.yellow(`localhost:${port}`)}`));
+server.listen('2021',
+  () => debug(`Server is running in ${chalk.yellow('DDBB_URL')}`));
