@@ -24,7 +24,7 @@ function CartItems({ dispatch, itemSelect }) {
           <>
             <p>{item.name}</p>
             <p>{`${item.price}€`}</p>
-            <button type="button" onClick={() => deleteFromCart(item.id)}>X</button>
+            <button type="button" data-testid={`task-${item.id}`} onClick={() => deleteFromCart(item.id)}>X</button>
             {precioTotal += item.price}
           </>
         ))}

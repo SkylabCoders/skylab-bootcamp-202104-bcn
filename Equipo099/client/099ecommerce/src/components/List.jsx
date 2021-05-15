@@ -19,7 +19,13 @@ const ListItems = ({ items, dispatch }) => {
                    <div className="items-list__item">
                      <span>{item.name}</span>
                      <p>{`${item.price}€`}</p>
-                     <button type="button" onClick={() => addToCart(item)}>{' '}</button>
+                      <button
+                        type="button"
+                        onClick={() => addToCart(item)}
+                        data-testid="add"
+                        >
+                          {' '}
+                      </button>
                    </div>
                  </>
                ))
