@@ -11,7 +11,7 @@ import {
 import './styles.css';
 
 function TasksList({ tasks, dispatch }) {
-  const [taskValue, setTaskValue] = useState();
+  const [taskValue, setTaskValue] = useState('');
   const [editMode, setEditMode] = useState(false);
   const [taskToUpdate, setTaskToUpdate] = useState(false);
 
