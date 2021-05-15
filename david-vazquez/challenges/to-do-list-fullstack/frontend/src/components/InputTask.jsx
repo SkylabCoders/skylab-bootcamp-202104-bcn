@@ -32,7 +32,7 @@ function InputTask({ tasks, dispatch }) {
   return (
     <div className="task-container">
       <label htmlFor="input-task" className="input-container">
-        <input className="input-task" onChange={getTask} />
+        <input className="input-task" data-testid="input-add" onChange={getTask} />
         <button type="button" className="button-add" data-testid="button-add" onClick={() => handleAdd()}>+</button>
       </label>
       <ul className="task-list">

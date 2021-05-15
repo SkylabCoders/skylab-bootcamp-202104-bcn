@@ -57,12 +57,12 @@ describe('Given a InputTask component', () => {
     describe('And add button is clicked', () => {
       test('Then addTask is invoked', () => {
         const button = screen.getByTestId('button-add');
-
         addTask.mockReturnValueOnce({
           type: actionTypes.ADD_TASK,
           newTask: { text: 'I dont know Javascript', state: false },
         });
         fireEvent.click(button);
+        fireEvent.change(screen.getByTestId('input-add'), { target: { value: 'hola' } });
         expect(addTask).toHaveBeenCalledTimes(1);
       });
     });
