@@ -1,6 +1,5 @@
 const { Router } = require('express');
-const INITIALTASK = require('../task');
-const tasksController = require('../controller/tasksController')(INITIALTASK);
+const tasksController = require('../controller/tasksController')();
 
 function tasksRouter() {
   const routes = Router();
@@ -11,7 +10,8 @@ function tasksRouter() {
     .post(tasksController.createOne);
 
   routes
-    .route('/:productId');
+    .route('/:productId')
+    .put(tasksController.updateTask);
 
   return routes;
 }

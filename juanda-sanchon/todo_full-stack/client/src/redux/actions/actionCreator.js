@@ -35,3 +35,19 @@ export function loadTask() {
     }
   };
 }
+
+export function updateTask(task) {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.put(`${url}/${task.id}`, task.task);
+      dispatch({
+        type: actionTypes.UPDATE_TASK,
+        task: data
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.LOAD_TASK_ERROR
+      });
+    }
+  };
+}

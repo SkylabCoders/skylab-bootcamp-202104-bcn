@@ -15,10 +15,24 @@ function tasksController() {
       res.send(error);
     }
   }
+  async function updateTask(req, res) {
+    try {
+      const taskUpdated = await Task.findByIdAndUpdate(
+        req.params.taskId,
+        req.body.task,
+        { new: true }
+      );
+      res.json(taskUpdated);
+    } catch (error) {
+      res.status(404);
+      res.send(error);
+    }
+  }
 
   return {
     getAllTasks,
-    createOne
+    createOne,
+    updateTask
   };
 }
 module.exports = tasksController;

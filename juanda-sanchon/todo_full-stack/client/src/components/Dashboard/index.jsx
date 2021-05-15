@@ -3,12 +3,12 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { addTask } from '../../redux/actions/actionCreator';
 
-function Dashboard({ dispatch }) {
+function Dashboard({ tasks, dispatch }) {
   const textInput = useRef(null);
 
   function addNewTask() {
     const inputTask = textInput.current.value;
-    dispatch(addTask({ task: inputTask }));
+    dispatch(addTask({ id: (tasks[tasks.lenght - 1].id + 1), task: inputTask }));
   }
 
   return (
@@ -20,6 +20,7 @@ function Dashboard({ dispatch }) {
   );
 }
 Dashboard.propTypes = {
+  tasks: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired
 };
 
