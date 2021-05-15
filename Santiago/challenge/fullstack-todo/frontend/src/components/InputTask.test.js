@@ -60,3 +60,11 @@ describe('Given InputTask component', () => {
     expect(loadTasks).toHaveBeenCalled();
   });
 });
+
+describe('<InputTask/>', () => {
+  test('should show ADD YOUR TASK:', () => {
+    const initialState = { tasks: [{}] };
+    render(<InputTask />, { initialState });
+    expect(screen.getByText(/ADD YOUR TASK:/i)).toBeInTheDocument();
+  });
+});
