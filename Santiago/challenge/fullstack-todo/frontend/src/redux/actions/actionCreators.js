@@ -14,7 +14,7 @@ export function loadTasks() {
       });
     } catch (error) {
       dispatch({
-        type: 'LOAD_HEROES_ERROR'
+        type: 'LOAD_TASKS_ERROR'
       });
     }
   };
