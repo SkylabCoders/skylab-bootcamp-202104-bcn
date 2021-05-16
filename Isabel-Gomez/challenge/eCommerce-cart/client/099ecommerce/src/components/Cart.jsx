@@ -20,16 +20,21 @@ function CartItems({ dispatch, itemSelect }) {
   return (
     <>
       <div className="basket">
-        <h2>Mi cesta: </h2>
+        <h2 className="barket-title">Mi cesta: </h2>
         {itemSelect.map((item) => (
-          <>
-            <p>{item.name}</p>
-            <p>{`${item.price}€`}</p>
-            <button type="button" onClick={() => deleteFromCart(item.id)}>X</button>
-            {totalPrice += item.price}
-          </>
+          <div className="basket-products">
+            <img src={item.img} alt="product"></img>
+            <div className='basket-products__details'>
+              <p>{item.name}</p>
+              <p>{`${item.price}€`}</p>
+            </div>
+              <button type="button" onClick={() => deleteFromCart(item.id)}><i class="far fa-times-circle"></i></button>
+          </div>
         ))}
-        <h2>{`Precio= ${totalPrice.toFixed(2)}`}</h2>
+        <div className="barket-price">
+        <h3 className="price-title">total</h3>
+        <h3 className="price-amount">{`${totalPrice.toFixed(2)} €`}</h3>
+      </div>
       </div>
     </>
   );

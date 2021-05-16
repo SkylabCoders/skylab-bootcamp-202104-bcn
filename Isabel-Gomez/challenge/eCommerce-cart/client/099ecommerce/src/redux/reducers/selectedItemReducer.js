@@ -2,7 +2,6 @@
 import actionTypes from '../actions/actionTypes';
 
 function selectedItemReducer(item = [], action) {
-  debugger;
   switch (action.type) {
     case actionTypes.ADD_ITEM:
       return [

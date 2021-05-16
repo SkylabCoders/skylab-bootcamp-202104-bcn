@@ -8,7 +8,6 @@ import actionTypes from './actionTypes';
 const url = 'http://localhost:2099/products';
 
 export function loadItems() {
-  debugger;
   try {
     return async (dispatch) => {
       const { data } = await axios(url);
@@ -71,7 +70,6 @@ export function updateItem(item) {
 }
 
 export function loadItemById(item) {
-  debugger;
   return {
     type: actionTypes.ADD_ITEM,
     item,
