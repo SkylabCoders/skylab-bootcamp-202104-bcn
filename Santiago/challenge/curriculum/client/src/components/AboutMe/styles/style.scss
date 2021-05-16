@@ -1,0 +1,40 @@
+.main-container {
+    padding: 30px;
+}
+
+.about-me{
+    padding: 20px;
+    background-color: blue;
+    margin-bottom: 10px;
+}
+
+.education{
+    padding: 20px;
+    background-color: red;
+    margin-bottom: 10px;
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.experience{
+    padding: 20px;
+    background-color: pink;
+    margin-bottom: 10px;
+}
+
+.languages{
+    padding: 20px;
+    background-color: blue;
+    margin-bottom: 10px;
+}
+
+.social-media{
+    padding: 20px;
+    background-color: purple;
+    margin-bottom: 10px;
+}
