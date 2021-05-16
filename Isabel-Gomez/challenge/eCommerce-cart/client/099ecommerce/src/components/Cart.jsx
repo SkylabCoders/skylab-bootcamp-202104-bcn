@@ -1,8 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-return-assign */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import './Cart.css';
@@ -10,7 +9,10 @@ import './Cart.css';
 import { deleteItem, loadCart } from '../redux/actions/actionCreators';
 
 function CartItems({ dispatch, itemSelect }) {
-  const totalPrice = 0;
+  const [totalPrice, setTotalPrice] = useState(0);
+  useEffect(() => {
+    setTotalPrice(totalPrice);
+  }, [totalPrice]);
   useEffect(() => {
     dispatch(loadCart());
   }, [itemSelect]);

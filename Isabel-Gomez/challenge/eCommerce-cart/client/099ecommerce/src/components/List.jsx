@@ -16,11 +16,11 @@ const ListItems = ({ items, dispatch }) => {
       {
                items.map((item) => (
                  <>
-                   <div className="items-list__item">
+                   <li className="items-list__item">
                      <span>{item.name}</span>
                      <p className="price">{`${item.price}€`}</p>
-                     <button data-testid="addToCart-button-1" type="button" onClick={() => addToCart(item)}>{' '}</button>
-                   </div>
+                     <button data-testId="addToCart-button-1" type="button" onClick={() => addToCart(item)}>{' '}</button>
+                   </li>
                  </>
                ))
            }
