@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -20,7 +19,7 @@ const ListItems = ({ items, dispatch }) => {
                    <div className="items-list__item">
                      <span>{item.name}</span>
                      <p className="price">{`${item.price}€`}</p>
-                     <button type="button" onClick={() => addToCart(item)}>{' '}</button>
+                     <button data-testid="addToCart-button-1" type="button" onClick={() => addToCart(item)}>{' '}</button>
                    </div>
                  </>
                ))
