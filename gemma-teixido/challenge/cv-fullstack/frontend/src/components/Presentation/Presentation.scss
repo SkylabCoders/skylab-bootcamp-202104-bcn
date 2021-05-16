@@ -1,5 +1,5 @@
 * {
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Mulish', sans-serif, Black 900;
     text-decoration: none;
 }
 
@@ -38,16 +38,16 @@
     .containerPresentation__information-button {
         .moreInfo {background-image: linear-gradient(to right, #f7ff00 0%, #db36a4  51%, #f7ff00  100%)}
         .moreInfo {
-           margin: 10px;
-           padding: 5px 20px;
+           margin: 15px;
+           padding: 10px 30px;
            text-align: center;
            text-transform: uppercase;
            transition: 0.5s;
            background-size: 200% auto;
            color: black;
-           font-weight: 700;     
+           font-weight: 900;     
            border-radius: 10px;
-           font-size: 10px;
+           font-size: 12px;
            display: block;
          }
 
