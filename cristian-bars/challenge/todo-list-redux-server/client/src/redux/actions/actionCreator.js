@@ -45,7 +45,7 @@ export function doneTask(taskId) {
   // eslint-disable-next-line no-debugger
   debugger;
   return async (dispatch) => {
-    const { data } = await axios.put(`${url}/${taskId._id}`, taskId);
+    const { data } = await axios.post(`${url}/${taskId._id}`, taskId);
     dispatch({
       type: actionTypes.DONE_TASK,
       task: data

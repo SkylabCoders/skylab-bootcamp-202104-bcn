@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-const debug = require('debug')('app:heroesController');
+const debug = require('debug')('app:tasksController');
 const Task = require('../models/taskModel');
 
 function tasksController() {
@@ -35,9 +35,9 @@ function tasksController() {
   async function doneTask(req, res) {
     const id = { id: req.params.tasks };
     try {
-      const updatedTask = await Task.findById(
-        id,
-        req.body, { completed: true }
+      const updatedTask = await Task.findByIdAndUpdate(
+        id.id,
+        { completed: true }
       );
       res.status(204);
       res.json(updatedTask);
