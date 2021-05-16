@@ -21,9 +21,9 @@ function tasksController() {
 
   async function getById(req, res) {
     try {
-      const taskBydId = await Task.findById(req.params.taskId);
+      const taskById = await Task.findById(req.params.taskId);
       res.status(200);
-      res.json(taskBydId);
+      res.json(taskById);
     } catch (error) {
       res.status(404);
       res.send(error);
