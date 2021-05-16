@@ -1,10 +1,11 @@
 import React from 'react';
+import Presentation from './components/Presentation/index';
 
 function App() {
   return (
-    <div>
-      <h1>Title CV</h1>
-    </div>
+    <>
+      <Presentation />
+    </>
   );
 }
 
