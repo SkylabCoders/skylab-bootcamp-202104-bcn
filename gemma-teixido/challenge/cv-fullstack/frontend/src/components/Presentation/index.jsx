@@ -3,6 +3,7 @@
 import { React, useEffect } from 'react';
 import { connect } from 'react-redux';
 import './Presentation.css';
+import { Link } from 'react-router-dom';
 import loadInformation from '../../redux/actions/actionCreators';
 import profilePic from '../../assets/profile-pic.png';
 
@@ -18,14 +19,18 @@ function Presentation({ details, dispatch }) {
             <img src={profilePic} alt="User" />
           </div>
           <div className="containerPresentation__information-text">
-            <h1>{details.Name}</h1>
-            <h2>{details.Title}</h2>
+            <h1>{details.name}</h1>
+            <h2>{details.title}</h2>
             <p>
-              {details.Description}
+              {details.description}
             </p>
           </div>
           <div className="containerPresentation__information-button">
-            <button className="moreInfo" type="button">More Info</button>
+            <Link to="/details">
+              <button className="moreInfo" type="button">
+                More Info
+              </button>
+            </Link>
           </div>
         </div>
       </main>

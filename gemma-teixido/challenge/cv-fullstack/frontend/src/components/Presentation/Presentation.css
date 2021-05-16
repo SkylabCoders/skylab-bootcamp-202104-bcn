@@ -1,5 +1,6 @@
 * {
   font-family: 'Mulish', sans-serif;
+  text-decoration: none;
 }
 
 .containerPresentation {
@@ -78,7 +79,7 @@
   transition: 0.5s;
   background-size: 200% auto;
   color: black;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 10px;
   font-size: 10px;
   display: block;
@@ -86,6 +87,5 @@
 
 .containerPresentation .containerPresentation__information-button .moreInfo:hover {
   background-position: right center;
-  text-decoration: none;
 }
 /*# sourceMappingURL=Presentation.css.map */

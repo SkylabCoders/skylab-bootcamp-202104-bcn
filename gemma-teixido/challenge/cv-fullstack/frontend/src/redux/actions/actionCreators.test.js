@@ -12,7 +12,7 @@ describe('loadInformation', () => {
     await loadInformationResponse(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
-      type: 'LOAD_DATA_ERROR'
+      type: 'LOAD_CURRICULUM_ERROR'
     });
   });
 });
