@@ -7,15 +7,16 @@ import { loadTasks } from '../../redux/actions/actionCreators';
 jest.mock('../../redux/actions/actionCreators');
 
 describe('Dashboard component', () => {
-  test('should display \'Repeat test\'', () => {
-    render(<Dashboard />, {
-      initialState: {
-        tasks: [{}, { task: 'Repeat test' }]
-      }
+  describe('When is redered with empty initial state', () => {
+    test('should display \'Repeat test\'', () => {
+      render(<Dashboard />, {
+        initialState: {
+          tasks: [{}, { task: 'Repeat test' }]
+        }
+      });
+      expect(screen.getByText(/Repeat test/i)).toBeInTheDocument();
     });
-    expect(screen.getByText(/Repeat test/i)).toBeInTheDocument();
   });
-
   test('should call loadTasks', () => {
     loadTasks.mockReturnValue({ type: '' });
     render(<Dashboard />, {
