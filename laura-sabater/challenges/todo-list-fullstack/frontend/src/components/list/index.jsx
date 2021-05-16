@@ -32,7 +32,7 @@ function List({ tasks, dispatch }) {
       </form>
       <ul className="to-do-list">
         {tasks.map((task) => (
-          <li className="to-do-list__task">
+          <li className="to-do-list__task" key={`to-do-list__task-${task._id}`}>
             <span>{task.title}</span>
             <button type="button" className="delete" onClick={() => deleteOnClick(task._id)}>X</button>
           </li>
@@ -42,7 +42,10 @@ function List({ tasks, dispatch }) {
   );
 }
 List.propTypes = {
-  tasks: PropTypes.shape([]).isRequired,
+  tasks: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  })).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
