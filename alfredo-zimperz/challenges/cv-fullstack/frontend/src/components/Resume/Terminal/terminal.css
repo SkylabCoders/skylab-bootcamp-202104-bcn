@@ -42,7 +42,7 @@
 }
 
 .body {
-  height: 12rem;
+  padding-bottom: 10px;
   background: #232323;
   padding: 18px;
 }
