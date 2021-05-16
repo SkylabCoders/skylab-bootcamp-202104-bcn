@@ -33,7 +33,7 @@ function Product({
     <>
       <li>
         {`Product name: ${productItem.productName}`}
-        <button type="button" id={productItem._id} onClick={handleAddItemToCart}>ADD to cart</button>
+        <button type="button" id={productItem._id} onClick={handleAddItemToCart} data-testid={productItem._id}>ADD to cart</button>
         <ul>
           <li>{`Stock: ${productItem.stock}`}</li>
           <li>{`Price ${productItem.price} €`}</li>

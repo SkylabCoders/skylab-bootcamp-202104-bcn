@@ -20,7 +20,7 @@ function Cart({ dispatch, cart }) {
       cart.map((product) => (
         <li>
           {product.productName}
-          {product.quantity}
+          {`Quantity: ${product.quantity}`}
           <button type="button" onClick={() => handleRemoveItemFromCart(product)}>Remove from Cart</button>
 
         </li>
