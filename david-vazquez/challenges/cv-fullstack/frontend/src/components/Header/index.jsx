@@ -3,7 +3,7 @@ import React from 'react';
 function Header() {
   return (
     <>
-      <h1>David</h1>
+      <h1>David Vázquez Lumbreras</h1>
       <ul>
         <li>About me</li>
         <li>Resume</li>
