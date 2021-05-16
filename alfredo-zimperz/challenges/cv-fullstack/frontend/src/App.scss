@@ -1,8 +1,10 @@
-$bg: adjust-hue(#25313e, 0%);
+$bg: adjust-hue(#979797, 0%);
+$color: #232323;
 $recessed: desaturate(lighten($bg, 20%), 5%);//#6c7886
 
 body {
-  background: $bg;
+  background: rgb(245,244,243);
+background: linear-gradient(180deg, rgba(245,244,243,1) 0%, rgba(182,180,175,1) 67%, rgba(91,89,87,1) 99%);
   color: #fff;
   font-family: 'Proxima Nova', 'Helvetica Neue', helvetica, arial, sans-serif;
   font-weight: 300;
@@ -22,7 +24,7 @@ nav {
  }
  .nav__link {
   margin-right: 34px;
-  color: $recessed;
+  color: $color;
   text-decoration: none;
   @media screen and (max-width: 600px){
     margin:20px 0 20px 0;
@@ -47,7 +49,7 @@ footer{
   
 
 h1 {
-  color: $recessed;
+  color: $color;
   font-size: 2.4rem;
   text-align: center;
   letter-spacing: 0.3rem;

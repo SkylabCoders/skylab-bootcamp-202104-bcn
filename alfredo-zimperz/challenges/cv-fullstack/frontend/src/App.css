@@ -1,5 +1,7 @@
 body {
-  background: #25313e;
+  background: #f5f4f3;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5f4f3), color-stop(67%, #b6b4af), color-stop(99%, #5b5957));
+  background: linear-gradient(180deg, #f5f4f3 0%, #b6b4af 67%, #5b5957 99%);
   color: #fff;
   font-family: 'Proxima Nova', 'Helvetica Neue', helvetica, arial, sans-serif;
   font-weight: 300;
@@ -33,7 +35,7 @@ nav {
 
 nav .nav__link {
   margin-right: 34px;
-  color: #506479;
+  color: #232323;
   text-decoration: none;
 }
 
@@ -54,12 +56,12 @@ footer img {
 }
 
 footer small {
-  color: #506479;
+  color: #cacaca;
   font-size: .9rem;
 }
 
 h1 {
-  color: #506479;
+  color: #232323;
   font-size: 2.4rem;
   text-align: center;
   letter-spacing: 0.3rem;

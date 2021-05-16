@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Loader from '../common/Loader';
 import Terminal from './Terminal';
+import Timeline from './Timeline';
 import loadCv from '../../redux/actions/actionCreators';
 import './resume.css';
 
@@ -17,7 +18,11 @@ const Resume = ({ cv, actions }) => {
     <>
       {
         cv.name ? (
-          <Terminal cv={cv} />
+          <>
+            <Terminal cv={cv} />
+            <Timeline events={cv.experience} title="Experience" />
+            <Timeline events={cv.studies.grades} title="Studies" />
+          </>
         ) : <Loader />
     }
     </>
@@ -28,6 +33,10 @@ const Resume = ({ cv, actions }) => {
 Resume.propTypes = {
   cv: PropTypes.shape({
     name: PropTypes.string,
+    experience: PropTypes.arrayOf({}),
+    studies: PropTypes.arrayOf({
+      grades: PropTypes.arrayOf({}),
+    }),
   }).isRequired,
   actions: PropTypes.shape({
     loadCv: PropTypes.func.isRequired,
@@ -40,6 +49,9 @@ Resume.defaulfProps = {
     lastName: '',
     birthDate: '',
     nationality: '',
+    experience: [{
+      title: '',
+    }],
   },
 };
 
