@@ -11,13 +11,13 @@ describe('Given a List component', () => {
   describe('When is rendered with one task', () => {
     let initialState;
     beforeEach(() => {
-      initialState = { tasks: [{ id: 1, task: 'Hello world' }] };
+      initialState = { tasks: [{ _id: '1', title: 'Hello world' }] };
       render(<List />, { initialState });
     });
 
     describe('And add button is clicked', () => {
       test('Then addOnClick should be invoked', () => {
-        addTask.mockImplementationOnce(() => ({ type: actionTypes.ADD_TASK }));
+        addTask.mockImplementationOnce(() => ({ type: actionTypes.ADD_TASK, task: { _id: '2', title: 'Buy milk' } }));
         fireEvent.click(screen.getByText(/Add/i));
         expect(addTask).toHaveBeenCalledTimes(1);
       });
