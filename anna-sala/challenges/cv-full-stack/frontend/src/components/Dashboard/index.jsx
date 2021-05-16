@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
+import loadCurriculum from '../../redux/actions/actionCreators';
 
-function Dashboard() {
+function Dashboard({ dispatch, curriculum }) {
+  useEffect(() => {
+    dispatch(loadCurriculum());
+  }, []);
   return (
-    <h1>ANNA SALA MERCADE</h1>
+    <>
+      {
+      curriculum.length && <h1>{curriculum[0].person.name}</h1>
+    }
+    </>
   );
 }
 
-export default Dashboard;
+Dashboard.propTypes = {
+  curriculum: PropTypes.shape([{
+    person: PropTypes.shape({
+      name: PropTypes.string,
+    }).isRequired,
+  }]).isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
+
+function mapStateToProps({ curriculum }) {
+  return {
+    curriculum,
+  };
+}
+export default connect(mapStateToProps)(Dashboard);
