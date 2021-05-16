@@ -6,23 +6,23 @@ const curriculumSchema = mongoose.Schema({
   telf: String,
   email: String,
   birthDate: String,
-  studies: {
+  studies: [{
     schoolName: String,
     startDate: String,
     endDate: String
-  },
-  experience: {
+  }],
+  experience: [{
     businessName: String,
     startDate: String,
     endDate: String,
     activities: {
       activityName: String
     }
-  },
-  languages: {
+  }],
+  languages: [{
     name: String,
     level: String
-  }
+  }]
 });
 
 module.exports = mongoose.model('Userdetails', curriculumSchema);

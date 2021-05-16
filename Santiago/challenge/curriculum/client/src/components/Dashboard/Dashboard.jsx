@@ -7,28 +7,18 @@ function DashBoard({ details, dispatch }) {
   useEffect(() => {
     if (!details.length) dispatch(loadData());
   }, []);
+
   return (
     <>
       <h1>Personal Information</h1>
       {
-          details.map((detail) => (
+          details.map((detail) => detail.studies.map((study) => (
             <ul>
-              <li>{detail.name}</li>
-              <li>{detail.street}</li>
-              <li>{detail.telf}</li>
-              <li>{detail.email}</li>
-              <li>{detail.birthDate}</li>
-              <li>{detail.studies.schoolName}</li>
-              <li>{detail.studies.startDate}</li>
-              <li>{detail.studies.endDate}</li>
-              <li>{detail.experience.businessName}</li>
-              <li>{detail.experience.startDate}</li>
-              <li>{detail.experience.endDate}</li>
-              <li>{detail.experience.activities.activityName}</li>
-              <li>{detail.languages.name}</li>
-              <li>{detail.languages.level}</li>
+              <li>{study.schoolName}</li>
+              <li>{study.startDate}</li>
+              <li>{study.endDate}</li>
             </ul>
-          ))
+          )))
       }
     </>
   );
