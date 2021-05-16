@@ -10,7 +10,7 @@ import './Cart.css';
 import { deleteItem, loadCart } from '../redux/actions/actionCreators';
 
 function CartItems({ dispatch, itemSelect }) {
-  let totalPrice = 0;
+  const totalPrice = 0;
   useEffect(() => {
     dispatch(loadCart());
   }, [itemSelect]);
@@ -23,18 +23,20 @@ function CartItems({ dispatch, itemSelect }) {
         <h2 className="barket-title">Mi cesta: </h2>
         {itemSelect.map((item) => (
           <div className="basket-products">
-            <img src={item.img} alt="product"></img>
-            <div className='basket-products__details'>
+            <img src={item.img} alt="product" />
+            <div className="basket-products__details">
               <p>{item.name}</p>
               <p>{`${item.price}€`}</p>
             </div>
-              <button type="button" onClick={() => deleteFromCart(item.id)}><i class="far fa-times-circle"></i></button>
+            <button type="button" onClick={() => deleteFromCart(item.id)}>
+              <i className="far fa-times-circle" />
+            </button>
           </div>
         ))}
         <div className="basket-price">
-        <h3 className="price-title">total</h3>
-        <h3 className="price-amount">{`${totalPrice.toFixed(2)} €`}</h3>
-      </div>
+          <h3 className="price-title">total</h3>
+          <h3 className="price-amount">{`${totalPrice.toFixed(2)} €`}</h3>
+        </div>
       </div>
     </>
   );
