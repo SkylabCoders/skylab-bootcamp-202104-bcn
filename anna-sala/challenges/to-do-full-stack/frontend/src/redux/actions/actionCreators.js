@@ -65,10 +65,3 @@ export function updateTask(task) {
     }
   };
 }
-
-export function loadTask(task) {
-  return {
-    type: actionTypes.LOAD_TASK,
-    task,
-  };
-}
