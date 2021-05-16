@@ -5,7 +5,7 @@ import { render, screen, fireEvent } from '../../assets/test-utils';
 import actionTypes from '../../redux/actions/actionTypes';
 
 import {
-  loadTasks, deleteTask, updateTask,
+  loadTasks, deleteTask, updateTask, createTask,
 } from '../../redux/actions/actionCreators';
 
 jest.mock('../../redux/actions/actionCreators');
@@ -65,7 +65,7 @@ describe('Given a TasksList component', () => {
     });
 
     describe('And the done button is clicked', () => {
-      test('Then updateTask shold be invoked', () => {
+      test('Then updateTask should be invoked', () => {
         const updatedTask = {
           type: actionTypes.UPDATE_TASK,
           task: { _id: '123', name: 'Llamar a iaia', isFinished: true },
@@ -73,6 +73,39 @@ describe('Given a TasksList component', () => {
         updateTask.mockReturnValueOnce(updatedTask);
         fireEvent.click(screen.getByText(/Done/));
         expect(updateTask).toHaveBeenCalled();
+      });
+    });
+
+    describe('And the Add a Task button is clicked', () => {
+      test('Then createTask should be invoked', () => {
+        createTask.mockReturnValueOnce(jest.fn());
+        const button = screen.getByText(/Add a task/i);
+        const input = screen.getByPlaceholderText(/New task.../i);
+        fireEvent.change(input, { target: { value: '100 coverage' } });
+
+        fireEvent.click(button);
+        expect(createTask).toHaveBeenCalled();
+      });
+    });
+
+    describe('And the Edit button is clicked', () => {
+      beforeEach(() => {
+        const button = screen.getByText(/Edit/i);
+        fireEvent.click(button);
+      });
+      test('Then the Update Task button must appear in the screen', () => {
+        expect(screen.getByText(/Update Task/)).toBeInTheDocument();
+      });
+      describe('And the Update Task button is clicked', () => {
+        test('And Then the updateTask should be invoked', () => {
+          const updatedTask = {
+            type: actionTypes.UPDATE_TASK,
+            task: { _id: '123', name: 'Llamar a la mejor iaia del mundo', isFinished: false },
+          };
+          updateTask.mockReturnValueOnce(updatedTask);
+          const button = screen.getByText(/Update Task/i);
+          fireEvent.click(button);
+        });
       });
     });
   });

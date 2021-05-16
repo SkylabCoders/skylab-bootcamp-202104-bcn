@@ -11,10 +11,11 @@ function tasksReducer(tasks = [], action) {
       newTasks = newTasks.filter((task) => task._id !== action.taskId);
       break;
     case actionTypes.ADD_TASK:
-      return [
+      newTasks = [
         ...newTasks,
         action.task,
       ];
+      break;
     case actionTypes.UPDATE_TASK:
       newTasks = newTasks.map(
         (task) => (task._id === action.task._id
