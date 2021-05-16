@@ -1,0 +1,18 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px rgb(228, 228, 228);
+    width: 40%;
+    margin: 40px;
+
+    .cart-list {
+        list-style: none;
+        padding: 20px 10px;
+    }
+
+    .cart-list__item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+}

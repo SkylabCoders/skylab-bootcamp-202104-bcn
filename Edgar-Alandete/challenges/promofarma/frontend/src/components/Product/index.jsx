@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { addProduct } from '../../redux/actions/actionCreators';
+import './styles.css';
 
 function Product({
   productItem, cart, dispatch
@@ -30,16 +31,15 @@ function Product({
   }
 
   return (
-    <>
-      <li>
-        {`Product name: ${productItem.productName}`}
+    <li className="product-list__item">
+      <div className="item item--left">
+        {`${productItem.productName}`}
+      </div>
+      <div className="item item--right">
+        {`${productItem.price} €`}
         <button type="button" id={productItem._id} onClick={handleAddItemToCart} data-testid={productItem._id}>ADD to cart</button>
-        <ul>
-          <li>{`Stock: ${productItem.stock}`}</li>
-          <li>{`Price ${productItem.price} €`}</li>
-        </ul>
-      </li>
-    </>
+      </div>
+    </li>
   );
 }
 

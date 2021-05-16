@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { loadProducts } from '../../redux/actions/actionCreators';
+import './styles.css';
 import Product from '../Product';
 
 function ProductList({ products, cart, dispatch }) {
@@ -10,16 +11,15 @@ function ProductList({ products, cart, dispatch }) {
   }, []);
 
   return (
-    <div>
-      <h3>PRODUCTS</h3>
-      <ul>
+    <section className="products">
+      <ul className="product-list">
         {
           products?.map((product) => (
             <Product productItem={product} cart={cart} />
           ))
         }
       </ul>
-    </div>
+    </section>
   );
 }
 

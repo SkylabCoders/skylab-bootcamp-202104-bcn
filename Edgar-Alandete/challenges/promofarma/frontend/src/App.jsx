@@ -1,14 +1,15 @@
 import React from 'react';
-import './App.css';
+import './styles.css';
 import Cart from './components/Cart/index';
 import ProductList from './components/Product-list';
 
 function App() {
   return (
     <div>
-      <h1>PROMOFARMA</h1>
-      <ProductList />
-      <Cart />
+      <main className="main">
+        <ProductList />
+        <Cart />
+      </main>
     </div>
   );
 }
