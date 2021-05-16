@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { addTask } from '../../redux/actions/actionCreator';
+import './dashBoard.css';
 
 function Dashboard({ dispatch }) {
   const textInput = useRef(null);
@@ -12,11 +13,13 @@ function Dashboard({ dispatch }) {
   }
 
   return (
-    <>
+    <header className="dash-board">
       <h1>TO DO LIST</h1>
-      <input type="text" placeholder="Nueva tarea..." ref={textInput} />
-      <button type="button" onClick={() => addNewTask()}>AÑADIR</button>
-    </>
+      <span className="dash-board__element">
+        <input className="dash-board__element--input" type="text" placeholder="Nueva tarea..." ref={textInput} />
+        <button className="dash-board__element--button" type="button" onClick={() => addNewTask()}>AÑADIR</button>
+      </span>
+    </header>
   );
 }
 Dashboard.propTypes = {

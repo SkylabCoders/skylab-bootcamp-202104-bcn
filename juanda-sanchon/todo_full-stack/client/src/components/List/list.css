@@ -1,0 +1,69 @@
+.bodier {
+  max-width: 90%;
+  width: 100%;
+  text-align: center;
+}
+
+.bodier__list {
+  list-style: none;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.bodier__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  margin-bottom: 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.bodier__task {
+  margin: 0;
+  background-color: rgba(235, 231, 231, 0.541);
+  width: 100%;
+}
+
+.bodier__task:hover {
+  background-color: #ebe7e7;
+}
+
+.bodier__task--done {
+  background-color: silver;
+  margin: 0;
+  width: 100%;
+  text-decoration: line-through;
+}
+
+.bodier__button--up {
+  margin-left: 5px;
+  cursor: pointer;
+  width: 50px;
+  background-image: url("https://icon2.cleanpng.com/20180616/rav/kisspng-computer-icons-download-done-5b25c8a9a1c021.2861169615292028576625.jpg");
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+.bodier__button--del {
+  margin-left: 5px;
+  cursor: pointer;
+  width: 50px;
+  background-image: url("https://toppng.com/uploads/preview/recycling-bin-vector-delete-icon-png-black-11563002079w1isxqyyiv.png");
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+.bodier__button--del:hover {
+  background-image: url("https://img-premium.flaticon.com/png/512/3221/3221803.png?token=exp=1621187845~hmac=ad6a4803fff9bca1a349e02586631755");
+  background-size: 35px;
+}
+/*# sourceMappingURL=list.css.map */

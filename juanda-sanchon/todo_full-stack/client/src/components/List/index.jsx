@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { loadTask, updateTask, deleteTask } from '../../redux/actions/actionCreator';
+import './list.css';
 
 function List({ tasks, dispatch }) {
   useEffect(() => {
@@ -19,22 +20,21 @@ function List({ tasks, dispatch }) {
   }
 
   return (
-
-    <>
+    <bodier className="bodier">
       <h3>MY LIST</h3>
-      <ul>
+      <ul className="bodier__list">
         {tasks.map(
           (task) => (
-            <li>
-              <p className={!task.done ? 'list' : 'list--done'}>{task.task}</p>
-              <button type="button" onClick={() => updateTaskLine(task)}>DONE</button>
-              <button type="button" onClick={() => deleteTaskLine(task)}>X</button>
+            <li className="bodier__item">
+              <p className={!task.done ? 'bodier__task' : 'bodier__task--done'}>{task.task}</p>
+              <button className="bodier__button--up" type="button" onClick={() => updateTaskLine(task)}> </button>
+              <button className="bodier__button--del" type="button" onClick={() => deleteTaskLine(task)}> </button>
             </li>
           )
         )}
 
       </ul>
-    </>
+    </bodier>
   );
 }
 
