@@ -55,6 +55,16 @@ function DashBoard({ details, dispatch }) {
             </ul>
           )))
       }
+
+      <h1>Follow me in:</h1>
+      {
+          details.map(((detail) => (
+            <ul>
+              <li>{detail.socialMedia.linkedin}</li>
+              <li>{detail.socialMedia.github}</li>
+            </ul>
+          )))
+      }
     </>
   );
 }

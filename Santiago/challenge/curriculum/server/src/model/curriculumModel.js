@@ -20,7 +20,11 @@ const curriculumSchema = mongoose.Schema({
   languages: [{
     name: String,
     level: String
-  }]
+  }],
+  socialMedia: {
+    linkedin: String,
+    github: String
+  }
 });
 
 module.exports = mongoose.model('Userdetails', curriculumSchema);
