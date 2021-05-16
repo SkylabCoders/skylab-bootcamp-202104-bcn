@@ -16,11 +16,11 @@ function DashBoard({ details, dispatch }) {
         {
           details.map((detail) => (
             <div className="about-me__details">
-              <span>{detail.name}</span>
-              <span>{detail.street}</span>
-              <span>{detail.telf}</span>
-              <span>{detail.email}</span>
-              <span>{detail.birthDate}</span>
+              <span>{`Name: ${detail.name}`}</span>
+              <span>{`Direction: ${detail.street}`}</span>
+              <span>{`Number: ${detail.telf}`}</span>
+              <span>{`Email: ${detail.email}`}</span>
+              <span>{`Birth date: ${detail.birthDate}`}</span>
             </div>
           ))
         }
@@ -32,8 +32,8 @@ function DashBoard({ details, dispatch }) {
           details.map((detail) => detail.studies.map((study) => (
             <div className="education__details">
               <p>{study.schoolName}</p>
-              <p>{study.startDate}</p>
-              <p>{study.endDate}</p>
+              <p>{`Since: ${study.startDate}`}</p>
+              <p>{`To: ${study.endDate}`}</p>
             </div>
           )))
         }
@@ -45,8 +45,8 @@ function DashBoard({ details, dispatch }) {
           details.map((detail) => detail.experience.map((work) => (
             <ul>
               <p>{work.businessName}</p>
-              <p>{work.startDate}</p>
-              <p>{work.endDate}</p>
+              <p>{`Sice: ${work.startDate}`}</p>
+              <p>{`To: ${work.endDate}`}</p>
               <p>{work.description}</p>
             </ul>
           )))
@@ -58,8 +58,8 @@ function DashBoard({ details, dispatch }) {
         {
           details.map((detail) => detail.languages.map((language) => (
             <ul>
-              <p>{language.name}</p>
-              <p>{language.level}</p>
+              <p>{`Name: ${language.name}`}</p>
+              <p>{`Level: ${language.level}`}</p>
             </ul>
           )))
         }
