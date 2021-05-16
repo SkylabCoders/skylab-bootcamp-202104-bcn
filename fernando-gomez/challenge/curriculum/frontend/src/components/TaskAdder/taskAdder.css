@@ -1,0 +1,93 @@
+body {
+  background-color: #3A2D32;
+  color: #B01C5A;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+input {
+  text-align: center;
+}
+
+.tasks-adder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.taskTitle-input {
+  background-color: #E34F8D;
+  color: black;
+  font-size: 1.5em;
+  border-radius: 0.35em;
+  border-style: none;
+  outline: none;
+  padding: 0.35em;
+  margin-bottom: 0.35em;
+}
+
+.taskTitle-input::-webkit-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskTitle-input:-ms-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskTitle-input::-ms-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskTitle-input::placeholder {
+  color: #3A2D32;
+}
+
+.taskDescription-input {
+  background-color: #E34F8D;
+  color: black;
+  font-size: 1em;
+  height: 2em;
+  border-radius: 0.5em;
+  border-style: none;
+  outline: none;
+  padding: 0.35em;
+}
+
+.taskDescription-input::-webkit-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskDescription-input:-ms-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskDescription-input::-ms-input-placeholder {
+  color: #3A2D32;
+}
+
+.taskDescription-input::placeholder {
+  color: #3A2D32;
+}
+
+.addTask-button {
+  cursor: pointer;
+  outline: none;
+  border-style: none;
+  background-color: transparent;
+  padding: 2em 0em 0 0;
+}
+
+.addTask-button img {
+  width: 2em;
+}
+
+.fa-plus-circle:hover {
+  color: yellow;
+}
+/*# sourceMappingURL=taskAdder.css.map */
