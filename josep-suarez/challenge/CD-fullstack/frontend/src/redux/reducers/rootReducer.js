@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import informationReducer from './informationReducer';
+import informationReducer from './studyReducer';
+import jobsReducer from './jobsReducer';
 
 const rootReducer = combineReducers({
-  info: informationReducer
+  study: informationReducer,
+  jobs: jobsReducer
 });
 
 export default rootReducer;
