@@ -32,13 +32,9 @@ function Product({
 
   return (
     <li className="product-list__item">
-      <div className="item item--left">
-        {`${productItem.productName}`}
-      </div>
-      <div className="item item--right">
-        {`${productItem.price} €`}
-        <button type="button" id={productItem._id} onClick={handleAddItemToCart} data-testid={productItem._id}>ADD to cart</button>
-      </div>
+      <span className="product-name">{`${productItem.productName}`}</span>
+      <span className="product-list__item--bold">{`${productItem.price} €`}</span>
+      <button type="button" id={productItem._id} onClick={handleAddItemToCart} data-testid={productItem._id}>{' '}</button>
     </li>
   );
 }
