@@ -18,7 +18,7 @@ function App() {
           <Link className="nav__link" to="/contact">Contact</Link>
         </nav>
       </header>
-      <p>
+      <p className="importan-text">
         Fullstack developer
       </p>
       <Switch>
