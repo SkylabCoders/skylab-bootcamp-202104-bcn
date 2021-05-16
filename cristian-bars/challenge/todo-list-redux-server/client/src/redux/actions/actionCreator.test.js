@@ -13,6 +13,18 @@ describe('When invoked a loadTasks func', () => {
     await loadTasks()(dispatch);
     expect(dispatch).toHaveBeenCalled();
   });
+  test('should dispatch LOAD_TASKS_ERROR', async () => {
+    const loadTasksResponse = loadTasks();
+    global.fetch = jest.fn().mockResolvedValue({
+      json: jest.fn().mockRejectedValue()
+    });
+    const dispatch = jest.fn();
+    await loadTasksResponse(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith({
+      type: 'LOAD_TASKS_ERROR'
+    });
+  });
 });
 
 describe('When invoked a addTask func', () => {
@@ -24,14 +36,18 @@ describe('When invoked a addTask func', () => {
   });
 });
 
-/* describe('When invoked a deleteTask', () => {
+describe('When invoked a deleteTask', () => {
   test('should call a asunc func', async () => {
+    const task = {
+      task: 'Anna',
+      completed: false
+    };
     axios.delete.mockResolvedValueOnce({ data: 'Cristian' });
     const dispatch = jest.fn();
-    await deleteTask()(dispatch);
+    await deleteTask(task)(dispatch);
     expect(dispatch).toHaveBeenCalled();
   });
-}); */
+});
 
 describe('When invoked a modifyTask', () => {
   test('should call a async func', async () => {
