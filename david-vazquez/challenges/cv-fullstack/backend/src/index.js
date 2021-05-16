@@ -22,8 +22,8 @@ mongoose.connect(
   },
 );
 
-const productsRouter = require('./routes/elementsRouter');
+const elementsRouter = require('./routes/elementsRouter');
 
-server.use('/products', productsRouter);
+server.use('/curriculums', elementsRouter);
 
 server.listen(port, () => debug(`Server is running in ${chalk.bgCyan(port)}`));

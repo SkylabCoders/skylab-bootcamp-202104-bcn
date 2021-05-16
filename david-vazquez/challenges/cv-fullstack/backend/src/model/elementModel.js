@@ -14,17 +14,18 @@ const curriculumSchema = mongoose.Schema({
     linkedin: String,
     gitHub: String,
     portfolio: String,
+    vimeo: String,
   },
   experience: [{
-    dateStart: Date,
-    dateEnd: Date,
+    dateStart: String,
+    dateEnd: String,
     position: String,
     company: String,
     description: String,
   }],
   education: [{
-    dateStart: Date,
-    dateEnd: Date,
+    dateStart: String,
+    dateEnd: String,
     title: String,
     center: String,
     city: String,
@@ -39,7 +40,7 @@ const curriculumSchema = mongoose.Schema({
   }],
   languages: [{
     language: String,
-    level: Number,
+    level: String,
   }],
 });
 

@@ -6,11 +6,11 @@ function elementsRouter() {
 
   routes
     .route('/')
-    .get(elementsController.getAll)
+    .get(elementsController.getAllElements)
     .post(elementsController.createOne);
 
   routes
-    .route('/:elementId')
+    .route('/:curriculumId')
     .put(elementsController.updateById);
 
   return routes;
