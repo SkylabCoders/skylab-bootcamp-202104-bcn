@@ -42,8 +42,6 @@ export function deleteTask(taskId) {
 }
 
 export function doneTask(taskId) {
-  // eslint-disable-next-line no-debugger
-  debugger;
   return async (dispatch) => {
     const { data } = await axios.post(`${url}/${taskId._id}`, taskId);
     dispatch({
