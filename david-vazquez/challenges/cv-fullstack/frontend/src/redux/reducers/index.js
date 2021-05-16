@@ -1,13 +1,8 @@
-import actionTypes from '../actions/actionTypes';
+import { combineReducers } from 'redux';
+import curriculumReducer from './curriculumReducer';
 
-function curriculumReducer(curriculum = {}, action) {
-  switch (action.type) {
-    case actionTypes.LOAD_CURRICULUM:
-      return action.curriculum;
+const rootReducer = combineReducers({
+  curriculum: curriculumReducer,
+});
 
-    default:
-      return curriculum;
-  }
-}
-
-export default curriculumReducer;
+export default rootReducer;
