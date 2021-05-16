@@ -1,10 +1,10 @@
 /* eslint-disable class-methods-use-this */
 const {
-  getAll, addTask, deleteTaskById, updateTaskById
+  getAll, addCurriculum, deleteCurriculumById, updateCurriculumById
 } = require('./curriculumController')();
-const Task = require('../model/taskModel');
+const Curriculum = require('../model/curriculumModel');
 
-jest.mock('../model/taskModel');
+jest.mock('../model/curriculumModel');
 
 describe('Given a getAll function', () => {
   test('Should respond with status 200', async () => {
@@ -13,20 +13,20 @@ describe('Given a getAll function', () => {
       json: jest.fn(),
       send: jest.fn()
     };
-    Task.find.mockResolvedValueOnce(200);
+    Curriculum.find.mockResolvedValueOnce(200);
 
     await getAll(null, res);
 
     expect(res.status).toHaveBeenCalledWith(200);
   });
 
-  test('Should respond with tasks json', async () => {
+  test('Should respond with curriculums json', async () => {
     const res = {
       status: jest.fn(),
       json: jest.fn(),
       send: jest.fn()
     };
-    Task.find.mockResolvedValueOnce([{}]);
+    Curriculum.find.mockResolvedValueOnce([{}]);
 
     await getAll(null, res);
 
@@ -39,7 +39,7 @@ describe('Given a getAll function', () => {
       json: jest.fn(),
       send: jest.fn()
     };
-    Task.find.mockRejectedValueOnce('error');
+    Curriculum.find.mockRejectedValueOnce('error');
 
     await getAll(null, res);
 
@@ -47,7 +47,7 @@ describe('Given a getAll function', () => {
   });
 });
 
-describe('Given an add one to stock function', () => {
+describe('Given an add curriculum function', () => {
   test('Should respond with status 200', async () => {
     const res = {
       status: jest.fn(),
@@ -61,9 +61,9 @@ describe('Given an add one to stock function', () => {
       }
     };
 
-    Task.findByIdAndUpdate.mockResolvedValueOnce();
+    Curriculum.findByIdAndUpdate.mockResolvedValueOnce();
 
-    await addTask(req, res);
+    await addCurriculum(req, res);
 
     expect(res.status).toHaveBeenCalledWith(200);
   });
@@ -78,18 +78,18 @@ describe('Given an add one to stock function', () => {
       send: jest.fn()
     };
 
-    Task.mockReturnValueOnce({
+    Curriculum.mockReturnValueOnce({
       save: jest.fn().mockRejectedValueOnce('error')
     });
 
     // act
-    await addTask(req, res);
+    await addCurriculum(req, res);
     // assert
     expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
-describe('Given a remove task function', () => {
+describe('Given a delete curriculum function', () => {
   test('Should respond with status 204', async () => {
     const res = {
       status: jest.fn(),
@@ -103,9 +103,9 @@ describe('Given a remove task function', () => {
       }
     };
 
-    Task.findByIdAndUpdate.mockResolvedValueOnce();
+    Curriculum.findByIdAndUpdate.mockResolvedValueOnce();
 
-    await deleteTaskById(req, res);
+    await deleteCurriculumById(req, res);
 
     expect(res.status).toHaveBeenCalledWith(204);
   });
@@ -123,16 +123,16 @@ describe('Given a remove task function', () => {
       }
     };
 
-    Task.findByIdAndDelete.mockRejectedValueOnce('error');
+    Curriculum.findByIdAndDelete.mockRejectedValueOnce('error');
 
-    await deleteTaskById(req, res);
+    await deleteCurriculumById(req, res);
 
     expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
-describe('Given a update task function', () => {
-  test('Should respond with updated task json', async () => {
+describe('Given an update curriculum function', () => {
+  test('Should respond with updated curriculum json', async () => {
     const res = {
       status: jest.fn(),
       json: jest.fn(),
@@ -141,12 +141,12 @@ describe('Given a update task function', () => {
 
     const req = {
       body: {},
-      params: { taskId: 3 }
+      params: { tasks: { taskId: 3 } }
     };
 
-    Task.findByIdAndUpdate.mockResolvedValueOnce([{}]);
+    Curriculum.findByIdAndUpdate.mockResolvedValueOnce([{}]);
 
-    await updateTaskById(req, res);
+    await updateCurriculumById(req, res);
 
     expect(res.json).toHaveBeenCalledWith([{}]);
   });
@@ -155,18 +155,18 @@ describe('Given a update task function', () => {
     // arrange
     const req = {
       body: null,
-      params: { taskId: 3 }
+      params: { tasks: { taskId: 3 } }
     };
     const res = {
       json: jest.fn(),
       send: jest.fn()
     };
 
-    Task.mockReturnValueOnce({
+    Curriculum.mockReturnValueOnce({
       save: jest.fn().mockRejectedValueOnce('error')
     });
     // act
-    await updateTaskById(req, res);
+    await updateCurriculumById(req, res);
     // assert
     expect(res.send).toHaveBeenCalledWith('error');
   });
