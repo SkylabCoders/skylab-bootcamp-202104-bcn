@@ -23,13 +23,13 @@ const cvSchema = mongoose.Schema({
     education: [{
       timeFrame: String,
       place: String,
-      description: String,
+      description: [String],
     }],
     experience: [{
       timeFrame: String,
       place: String,
       title: String,
-      description: String,
+      description: [String],
     }],
     awards: [{
       timeFrame: String,
@@ -39,9 +39,9 @@ const cvSchema = mongoose.Schema({
       timeFrame: String,
       title: String,
       place: String,
-      description: String,
+      description: [String],
     }],
   },
 });
 
-module.exports = mongoose.model('curriculum', cvSchema);
+module.exports = mongoose.model('curriculums', cvSchema);
