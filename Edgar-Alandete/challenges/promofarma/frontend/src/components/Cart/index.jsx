@@ -16,7 +16,9 @@ function Cart({ dispatch, cart }) {
 
   return (
     <section className="cart">
-      <h3>MI CESTA</h3>
+      <header>
+        <h3>mi cesta:</h3>
+      </header>
 
       <ul className="cart-list">
         {
@@ -28,19 +30,21 @@ function Cart({ dispatch, cart }) {
 
               <div className="item item--right">
                 {`${product.price}€`}
-                <button type="button" onClick={() => handleRemoveItemFromCart(product)}>Remove from Cart</button>
+                <button type="button" onClick={() => handleRemoveItemFromCart(product)}>
+                  <i className="far fa-times-circle" />
+                </button>
               </div>
 
             </li>
 
           ))
         }
-        <li className="cart-list__item">
-          <div>TOTAL</div>
-          <div>PRICE€</div>
-        </li>
       </ul>
-      <button type="button" onClick={() => handleDeleteAll(cart)}>DELETE ALL</button>
+      <footer className="cart-footer">
+        <div>total</div>
+        <div>price</div>
+        <button type="button" onClick={() => handleDeleteAll(cart)}>DELETE ALL</button>
+      </footer>
     </section>
   );
 }
