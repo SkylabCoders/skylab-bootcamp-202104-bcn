@@ -1,4 +1,4 @@
-const Task = require('../model/productTask');
+const Task = require('../model/toDoTask');
 
 function tasksController() {
   async function getAllTasks(req, res) {
