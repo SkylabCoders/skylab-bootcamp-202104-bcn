@@ -2,7 +2,9 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://localhost:1505/Presentations/609ff0f29c7ae37e7c99ed3b';
+const url = process.env.REACT_APP_URL;
+
+console.log(process.env.REACT_APP_URL);
 
 export default function loadInformation() {
   return async (dispatch) => {
