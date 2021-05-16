@@ -18,7 +18,7 @@ function App() {
         <Switch>
           <Route exact path="/study" component={Study} />
           <Route exact path="/works" component={Jobs} />
-          <Route exact path="/others" component={Language} />
+          <Route exact path="/language" component={Language} />
         </Switch>
       </BrowserRouter>
     </div>
