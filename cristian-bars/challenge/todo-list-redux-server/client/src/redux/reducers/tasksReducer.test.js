@@ -27,8 +27,8 @@ const addAction = {
 };
 
 const updateAction = {
-  type: 'UPDATE_TASK',
-  task: { ...taskList[1], title: 'Updated title' }
+  type: 'DONE_TASK',
+  task: { ...taskList[0], task: true }
 };
 
 describe('Given a taskReducer', () => {
@@ -55,6 +55,18 @@ describe('and invoked with a DELETE_TASK action and an id', () => {
         _id: 2,
         task: 'Title 2',
         completed: true
+      }]);
+  });
+});
+
+describe('and invoked with a DONE_TASK action and an id', () => {
+  test('should return an updated task list withoud the corresponding id task', () => {
+    const result = tasksReducer([{ ...taskList[0] }], updateAction);
+    expect(result).toEqual([
+      {
+        _id: 1,
+        task: 'Title',
+        completed: false
       }]);
   });
 });
