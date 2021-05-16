@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { deleteAll, deleteProduct, loadProducts } from '../../redux/actions/actionCreators';
 import './styles.css';
 
 function Cart({ dispatch, cart }) {
+  const [totalPrice, setTotal] = useState(0);
+  const [products, setProducts] = useState(0);
+
+  const calculateTotalPrice = (prev, { quantity, price }) => prev + (quantity * price);
+  const calculateTotalProducts = (prev, { quantity }) => prev + quantity;
+
+  useEffect(() => {
+    if (cart.length) {
+      const total = cart.reduce(calculateTotalPrice, 0);
+      setTotal(total.toFixed(2));
+    } else {
+      setTotal(0);
+    }
+  }, [cart]);
+
+  useEffect(() => {
+    if (cart.length) {
+      const total = cart.reduce(calculateTotalProducts, 0);
+      setProducts(total);
+    } else {
+      setProducts(0);
+    }
+  }, [cart]);
   function handleDeleteAll(data) {
     dispatch(deleteAll(data));
     dispatch(loadProducts());
@@ -24,6 +47,7 @@ function Cart({ dispatch, cart }) {
         {
           cart.map((product) => (
             <li className="cart-list__item">
+              {/* <img src={product.productPoster} alt={product.productName} /> */}
               <div className="item item--left">
                 {`${product.productName} x${product.quantity}`}
               </div>
@@ -41,9 +65,15 @@ function Cart({ dispatch, cart }) {
         }
       </ul>
       <footer className="cart-footer">
-        <div>total</div>
-        <div>price</div>
-        <button type="button" onClick={() => handleDeleteAll(cart)}>DELETE ALL</button>
+        {products
+          ? (
+            <>
+              <div>total</div>
+              <div>{`(${products} productos)`}</div>
+              <div>{`${totalPrice}€`}</div>
+              <button type="button" onClick={() => handleDeleteAll(cart)}>DELETE ALL</button>
+            </>
+          )}
       </footer>
     </section>
   );
