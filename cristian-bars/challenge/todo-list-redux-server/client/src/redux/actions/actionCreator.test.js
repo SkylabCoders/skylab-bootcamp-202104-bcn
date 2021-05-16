@@ -21,3 +21,12 @@ describe('When invoked a addTask func', () => {
     expect(dispatch).toHaveBeenCalled();
   });
 });
+
+/* describe('When invoked a deleteTask', () => {
+  test('should call a asunc func', async () => {
+    axios.delete.mockResolvedValueOnce({ data: 'Cristian' });
+    const dispatch = jest.fn();
+    await deleteTask()(dispatch);
+    expect(dispatch).toHaveBeenCalled();
+  });
+}); */

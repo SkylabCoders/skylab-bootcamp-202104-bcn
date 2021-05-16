@@ -13,7 +13,13 @@ function tasksReducer(tasks = [], action) {
       return tasks.filter((task) => task._id !== action.taskId._id);
 
     case actionTypes.DONE_TASK:
-      return tasks;
+      // eslint-disable-next-line no-debugger
+      debugger;
+      return tasks.map(
+        (task) => (task._id === action.task.id
+          ? { ...task, ...action.task.task }
+          : task)
+      );
 
     default:
       return tasks;

@@ -33,10 +33,14 @@ function tasksController() {
   }
 
   async function doneTask(req, res) {
+    const id = { id: req.params.tasks };
     try {
-      await Task.findByIdAndUpdate(req.body, { completed: true });
+      const updatedTask = await Task.findById(
+        id,
+        req.body, { completed: true }
+      );
       res.status(204);
-      res.json();
+      res.json(updatedTask);
     } catch (error) {
       res.status(404);
       debug(error);

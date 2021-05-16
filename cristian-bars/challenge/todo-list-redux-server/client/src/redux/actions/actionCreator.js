@@ -3,6 +3,7 @@ import axios from 'axios';
 import actionTypes from './actionTypes';
 
 const url = 'http://localhost:2022/tasks';
+// const url = process.env.REACT_APP_URL;
 
 export function loadTasks() {
   return async (dispatch) => {
@@ -41,11 +42,13 @@ export function deleteTask(taskId) {
 }
 
 export function doneTask(taskId) {
+  // eslint-disable-next-line no-debugger
+  debugger;
   return async (dispatch) => {
-    await axios.post(`${url}/${taskId._id}`);
+    const { data } = await axios.put(`${url}/${taskId._id}`, taskId);
     dispatch({
       type: actionTypes.DONE_TASK,
-      taskId
+      task: data
     });
   };
 }

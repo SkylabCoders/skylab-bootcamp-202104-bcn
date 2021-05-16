@@ -42,7 +42,7 @@ function TodoListComponent({ tasks, dispatch }) {
           tasks?.length && (
             tasks.map((element) => (
               <>
-                <li className="container__item" key={element.id} id={element._id}>
+                <li className={`container__item ${element.completed === true && 'container__item-done'}`} key={element.id} id={element._id}>
                   {element.task}
                   <button type="button" className="container__delTaskButton" onClick={() => clearTask(element)}>Delete</button>
                   <button type="button" className="container__doneTaskButton" onClick={() => markTask(element)}>Done</button>
