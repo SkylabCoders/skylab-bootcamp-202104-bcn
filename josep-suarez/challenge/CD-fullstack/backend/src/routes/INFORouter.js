@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const CVcontroller = require('../controllers/CVcontroller');
+const CVcontroller = require('../controllers/CVcontroller')();
 
 function INFORouter() {
   const routes = Router();

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const DatosSchema = mongoose.Schema({
+  id: Number,
   name: String
 });
 

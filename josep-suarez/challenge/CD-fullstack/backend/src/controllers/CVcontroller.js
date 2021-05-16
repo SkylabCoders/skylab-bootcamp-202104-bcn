@@ -6,16 +6,18 @@ function INFOController() {
     res.json(INFOCV);
   }
 
-  // async function createOne(req, res) {
-  //   const data = new INFO.find(url);
-  //   try {
-  //     await newTask.save();
-  //     res.json(newTask);
-  //   } catch (error) {
-  //     res.send(error);
-  //   }
-  // }
-  return { getAll };
+  async function createOne(req, res) {
+    const newData = new INFO(req.body);
+    try {
+      await newData.save();
+      res.status(201);
+      res.json(newData);
+    } catch (error) {
+      res.status(404);
+      res.send(error);
+    }
+  }
+  return { getAll, createOne };
 }
 
-module.exports = INFOController();
+module.exports = INFOController;
