@@ -9,8 +9,7 @@ import './resume.css';
 
 const Resume = ({ cv, actions }) => {
   useEffect(() => {
-    if (!cv.name) { actions.loadCv(); } else console.log('ahora hay cv');
-    if (cv.name) { console.log(cv); }
+    if (!cv.name) { actions.loadCv(); } else { console.log(cv); }
   }, []);
 
   return (
@@ -23,12 +22,21 @@ const Resume = ({ cv, actions }) => {
             </div>
             <div className="body">
               <pre>
+
                 <div className="comment"># run this command:</div>
                 <div className="prompt">
                   $
                   <span className="command">show cv</span>
                 </div>
-                <div className="prompt">hi</div>
+                <div className="prompt">- - - - - - - - - - - - - </div>
+                <div className="prompt">{`${cv.name} ${cv.lastName} CV`}</div>
+                <div className="prompt">- - - - - - - - - - - - - </div>
+                <div className="prompt">{`Nationality: ${cv.nationality}`}</div>
+                <div className="prompt">{`BirthDate: ${cv.birthDate.split('T')[0]}`}</div>
+                <div className="prompt">
+                  $
+                  <span className="command">show experience and studies</span>
+                </div>
                 <div className="prompt">
                   $
                   <span className="pulse">_</span>
@@ -46,11 +54,23 @@ const Resume = ({ cv, actions }) => {
 
 Resume.propTypes = {
   cv: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    lastName: PropTypes.string,
+    birthDate: PropTypes.string,
+    nationality: PropTypes.string,
   }).isRequired,
   actions: PropTypes.shape({
     loadCv: PropTypes.func.isRequired,
   }).isRequired,
+};
+
+Resume.defaulfProps = {
+  cv: {
+    name: '',
+    lastName: '',
+    birthDate: '',
+    nationality: '',
+  },
 };
 
 function mapStateToProps({ cv }) {

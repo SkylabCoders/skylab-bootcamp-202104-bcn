@@ -11,7 +11,7 @@ function App() {
   return (
     <main className="App">
       <header className="header">
-        <h1>Alfredo Zimperz CV</h1>
+        <h1>Alfredo Zimperz</h1>
         <nav>
           <Link className="nav__link" to="/">Resume</Link>
           <Link className="nav__link" to="/portfolio">Portfolio</Link>
