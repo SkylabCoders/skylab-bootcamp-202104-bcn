@@ -8,7 +8,7 @@ describe('when call a getAllTask function', () => {
     const res = {
       json: jest.fn()
     };
-    Task.find.MockResolvedValue();
+    Task.find.mockResolvedValue();
     await getAllTasks(null, res);
     expect(res.json).toHaveBeenCalled();
   });
