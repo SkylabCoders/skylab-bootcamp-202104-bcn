@@ -8,6 +8,10 @@ function cvRouter() {
     .route('/')
     .get(cvController.getInformation);
 
+  routes
+    .route('/:curriculumId')
+    .get(cvController.getInformationById);
+
   return routes;
 }
 

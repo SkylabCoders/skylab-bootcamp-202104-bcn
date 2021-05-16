@@ -1,11 +1,15 @@
-import React from 'react';
-import connect from 'react-dom';
+/* eslint-disable react/prop-types */
+/* eslint-disable no-debugger */
+import { React, useEffect } from 'react';
+import { connect } from 'react-redux';
 import './Presentation.css';
-import { PropTypes } from 'prop-types';
+import loadInformation from '../../redux/actions/actionCreators';
 import profilePic from '../../assets/profile-pic.png';
-import informations from '../../redux/store/index';
 
-function Presentation({ informations, dispatch }) {
+function Presentation({ details, dispatch }) {
+  useEffect(() => {
+    dispatch(loadInformation());
+  }, []);
   return (
     <>
       <main className="containerPresentation">
@@ -14,11 +18,10 @@ function Presentation({ informations, dispatch }) {
             <img src={profilePic} alt="User" />
           </div>
           <div className="containerPresentation__information-text">
-            <h1>Gemma Teixidó Sánchez</h1>
-            <h2>Full Stack Dev.</h2>
+            <h1>{details.Name}</h1>
+            <h2>{details.Title}</h2>
             <p>
-              Skylab Coders Academy | JavaScript | React JS | GIT
-              | HTML | CSS | Testing | NodeJS | MongoDB
+              {details.Description}
             </p>
           </div>
           <div className="containerPresentation__information-button">
@@ -30,15 +33,8 @@ function Presentation({ informations, dispatch }) {
   );
 }
 
-Presentation.propTypes = {
-  heroes: PropTypes.shape({}).isRequired,
-  dispatch: PropTypes.func.isRequired
-};
-
-function mapStateToProps(store) {
-  return ({
-    informations: store.informations
-  });
+function mapStateToProps({ details }) {
+  return { details };
 }
 
 export default connect(mapStateToProps)(Presentation);

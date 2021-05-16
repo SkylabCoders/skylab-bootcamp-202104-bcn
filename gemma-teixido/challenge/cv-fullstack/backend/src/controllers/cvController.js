@@ -11,8 +11,20 @@ function cvController() {
     }
   }
 
+  async function getInformationById(req, res) {
+    try {
+      const InformationsById = await Information.findById(
+        req.params.curriculumId
+      );
+      res.json(InformationsById);
+    } catch (error) {
+      res.status(404);
+      res.send(error);
+    }
+  }
+
   return {
-    getInformation
+    getInformation, getInformationById
   };
 }
 
