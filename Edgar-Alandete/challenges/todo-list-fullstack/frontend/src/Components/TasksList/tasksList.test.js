@@ -78,13 +78,18 @@ describe('Given a TasksList component', () => {
 
     describe('And the Add a Task button is clicked', () => {
       test('Then createTask should be invoked', () => {
-        createTask.mockReturnValueOnce(jest.fn());
+        createTask.mockReturnValueOnce({
+          type: actionTypes.ADD_TASK,
+          task: { _id: '123', name: '100 coverage', isFinished: true },
+        });
         const button = screen.getByText(/Add a task/i);
         const input = screen.getByPlaceholderText(/New task.../i);
         fireEvent.change(input, { target: { value: '100 coverage' } });
 
         fireEvent.click(button);
-        expect(createTask).toHaveBeenCalled();
+        expect(createTask).toHaveBeenCalledWith({
+          name: '100 coverage',
+        });
       });
     });
 
