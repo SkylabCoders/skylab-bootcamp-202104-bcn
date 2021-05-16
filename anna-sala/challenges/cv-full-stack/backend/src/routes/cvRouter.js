@@ -6,7 +6,8 @@ function cvRouter() {
 
   routes
     .route('/')
-    .get(curriculumController.getCV);
+    .get(curriculumController.getCV)
+    .post(curriculumController.createCV);
   return routes;
 }
 
