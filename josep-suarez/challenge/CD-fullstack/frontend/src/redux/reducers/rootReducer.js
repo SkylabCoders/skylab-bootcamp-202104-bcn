@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import informationReducer from './studyReducer';
+import studyReducer from './studyReducer';
 import jobsReducer from './jobsReducer';
 
 const rootReducer = combineReducers({
-  study: informationReducer,
+  study: studyReducer,
   jobs: jobsReducer
 });
 

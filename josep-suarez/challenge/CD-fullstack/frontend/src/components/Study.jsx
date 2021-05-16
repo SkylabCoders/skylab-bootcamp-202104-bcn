@@ -6,10 +6,10 @@ import { loadInfoStudy } from '../redux/actions/actionCreators';
 
 function Study({ dispatch, info }) {
   useEffect(() => {
-    if (!info.length) dispatch(loadInfoStudy());
+    dispatch(loadInfoStudy());
   }, []);
   debugger;
-  return info.map((study) => (
+  return info?.map((study) => (
     <>
       <p>
         {study.type}
@@ -27,7 +27,7 @@ function Study({ dispatch, info }) {
 
 function mapStateToProps(store) {
   return {
-    study: store.info
+    info: store.study
   };
 }
 

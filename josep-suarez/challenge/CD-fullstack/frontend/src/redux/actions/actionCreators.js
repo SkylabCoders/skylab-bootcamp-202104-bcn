@@ -5,15 +5,15 @@ import infoJobs from '../../assets/jobs';
 import actionTypes from './actionTypes';
 
 export function loadInfoJobs() {
-  debugger;
   return {
     type: actionTypes.LOAD_INFO_JOBS,
-    jobs: infoJobs
+    info: infoJobs
   };
 }
 export function loadInfoStudy() {
+  debugger;
   return {
     type: actionTypes.LOAD_INFO_STUDY,
-    study: infoStudy
+    info: infoStudy
   };
 }

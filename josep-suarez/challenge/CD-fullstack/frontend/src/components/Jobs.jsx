@@ -5,7 +5,7 @@ import { loadInfoJobs } from '../redux/actions/actionCreators';
 
 function Jobs({ dispatch, jobs }) {
   useEffect(() => {
-    if (!jobs.length) dispatch(loadInfoJobs());
+    dispatch(loadInfoJobs());
   }, []);
   debugger;
   return jobs?.map((job) => (
@@ -26,7 +26,7 @@ function Jobs({ dispatch, jobs }) {
 
 function mapStateToProps(store) {
   return {
-    jobs: store.info
+    jobs: store.jobs
   };
 }
 

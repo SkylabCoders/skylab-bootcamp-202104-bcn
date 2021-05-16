@@ -5,7 +5,7 @@ function jobsReducer(job = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_INFO_JOBS:
       debugger;
-      return action.jobs;
+      return action.info;
     default:
       return job;
   }

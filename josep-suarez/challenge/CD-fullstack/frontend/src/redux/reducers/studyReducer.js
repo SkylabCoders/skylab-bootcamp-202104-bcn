@@ -2,6 +2,7 @@
 import actionTypes from '../actions/actionTypes';
 
 function studyReducer(study = [], action) {
+  debugger;
   switch (action.type) {
     case actionTypes.LOAD_INFO_STUDY:
       return action.info;
