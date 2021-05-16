@@ -1,10 +1,12 @@
 import tasksReducer from './tasksReducer';
 
 const taskList = [{
+  _id: 1,
   task: 'Title',
   completed: false
 },
 {
+  _id: 2,
   task: 'Title 2',
   completed: true
 }];
@@ -16,7 +18,7 @@ const loadAction = {
 
 const deleteAction = {
   type: 'DELETE_TASK',
-  taskId: 1
+  taskId: { _id: 1 }
 };
 
 const addAction = {
@@ -42,5 +44,17 @@ describe('and invoked with a ADD_TASK action and a task', () => {
   test('should return an updated task list including the given task', () => {
     const result = tasksReducer([{ ...taskList[0] }], addAction);
     expect(result).toEqual(taskList);
+  });
+});
+
+describe('and invoked with a DELETE_TASK action and an id', () => {
+  test('should return an updated task list withoud the corresponding id task', () => {
+    const result = tasksReducer([...taskList], deleteAction);
+    expect(result).toEqual([
+      {
+        _id: 2,
+        task: 'Title 2',
+        completed: true
+      }]);
   });
 });
