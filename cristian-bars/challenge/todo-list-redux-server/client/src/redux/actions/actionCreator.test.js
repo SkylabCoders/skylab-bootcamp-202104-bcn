@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { loadTasks, addTask, deleteTask } from './actionCreator';
+import {
+  loadTasks, addTask, deleteTask, doneTask
+} from './actionCreator';
 
 jest.mock('axios');
 jest.mock('./actionTypes');
@@ -30,3 +32,16 @@ describe('When invoked a addTask func', () => {
     expect(dispatch).toHaveBeenCalled();
   });
 }); */
+
+describe('When invoked a modifyTask', () => {
+  test('should call a async func', async () => {
+    const task = {
+      task: 'Anna',
+      completed: false
+    };
+    axios.post.mockResolvedValueOnce({ data: 'Irene' });
+    const dispatch = jest.fn();
+    await doneTask(task)(dispatch);
+    expect(dispatch).toHaveBeenCalled();
+  });
+});
