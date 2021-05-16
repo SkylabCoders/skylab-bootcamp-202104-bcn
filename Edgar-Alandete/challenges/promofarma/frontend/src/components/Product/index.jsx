@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { addProduct } from '../../redux/actions/actionCreators';
-import buttonDisabler from '../../assets/utils';
 
 function Product({
   productItem, cart, dispatch
@@ -17,7 +16,11 @@ function Product({
       const cartProduct = cart.find((product) => (
         product._id === selectedProduct._id
       ));
-      buttonDisabler(cartProduct, button);
+      if (cartProduct && cartProduct?.quantity === cartProduct?.stock) {
+        button.disabled = true;
+      } else {
+        button.disabled = false;
+      }
     } else if (button) button.disabled = false;
   }, [cart]);
 
