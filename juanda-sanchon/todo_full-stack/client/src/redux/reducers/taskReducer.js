@@ -16,7 +16,6 @@ function taskReducer(state = [], action) {
       );
 
     case actionTypes.UPDATE_TASK:
-      debugger;
       return state.map(
         (task) => (
           task._id === action.task._id

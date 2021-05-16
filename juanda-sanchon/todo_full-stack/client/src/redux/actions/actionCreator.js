@@ -40,7 +40,6 @@ export function loadTask() {
 
 export function updateTask(task) {
   return async (dispatch) => {
-    debugger;
     try {
       const { data } = await axios.put(`${url}/${task._id}`, task);
       dispatch({

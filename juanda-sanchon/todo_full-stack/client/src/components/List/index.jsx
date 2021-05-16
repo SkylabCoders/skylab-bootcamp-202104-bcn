@@ -11,7 +11,6 @@ function List({ tasks, dispatch }) {
   }, [tasks.length]);
 
   function updateTaskLine(task) {
-    debugger;
     const updateDone = { ...task, done: true };
     dispatch(updateTask(updateDone));
   }
