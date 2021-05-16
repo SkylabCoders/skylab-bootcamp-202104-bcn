@@ -1,0 +1,42 @@
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.resume {
+    display:flex;
+    flex-direction: row;
+    &__right{
+        width: 40%;
+        margin: 0 40px;
+        .skills{
+            list-style: none;
+            padding:0;
+            .container {
+                background-color: rgba(0, 0, 0, .1);
+                border-radius: 9999px;
+            }     
+            .container__progress {
+                height: 15px;    
+                background-color: #0093E9;
+                background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+                border-radius: 9999px;
+            }
+            .item{
+                margin:5px 0;
+            }
+        }
+    }
+    &__left{
+        width:60%;
+        margin: 0 40px;
+        .education{
+            list-style: none;
+            padding:0;
+        }
+        .experience{
+            list-style: none;
+            padding:0;
+        }
+    }
+}

@@ -9,11 +9,12 @@ function Resume({ dispatch, curriculum }) {
     dispatch(loadCurriculum());
   }, []);
   return (
-    <>
-      <h2>Resume</h2>
-      <h3>Education</h3>
-      <ul>
-        {curriculum?.education
+    <main className="main">
+      <div className="resume">
+        <div className="resume__left">
+          <h3>Education</h3>
+          <ul className="education">
+            {curriculum?.education
         && (curriculum?.education).map((element) => (
           <li>
             <span className="education__title">{element.title}</span>
@@ -29,9 +30,10 @@ function Resume({ dispatch, curriculum }) {
             </div>
           </li>
         ))}
-      </ul>
-      <h3>Experience</h3>
-      {curriculum?.experience
+          </ul>
+          <h3>Experience</h3>
+          <ul className="experience">
+            {curriculum?.experience
         && (curriculum?.experience).map((element) => (
           <li>
             <span className="education__title">{element.position}</span>
@@ -47,17 +49,36 @@ function Resume({ dispatch, curriculum }) {
           </li>
 
         ))}
-      <h3>Design Skills</h3>
-      {curriculum?.designSkills
+          </ul>
+        </div>
+        <div className="resume__right">
+          <h3>Design Skills</h3>
+          <ul className="skills">
+            {curriculum?.designSkills
         && (curriculum?.designSkills).map((element) => (
-          <li>{element.skill}</li>
+          <li className="item">
+            {element.skill}
+            <div className="container">
+              <div className="container__progress" style={{ width: `${element.level}%` }} />
+            </div>
+          </li>
         ))}
-      <h3>Coding Skills</h3>
-      {curriculum?.codingSkills
+          </ul>
+          <h3>Coding Skills</h3>
+          <ul className="skills">
+            {curriculum?.codingSkills
         && (curriculum?.codingSkills).map((element) => (
-          <li>{element.skill}</li>
+          <li className="item">
+            {element.skill}
+            <div className="container">
+              <div className="container__progress" style={{ width: `${element.level}%` }} />
+            </div>
+          </li>
         ))}
-    </>
+          </ul>
+        </div>
+      </div>
+    </main>
   );
 }
 

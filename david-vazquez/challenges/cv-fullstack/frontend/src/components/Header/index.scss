@@ -1,0 +1,61 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    padding-top: 40px;
+    width: 300px;
+    &__image{
+        width: 200px;
+        border-radius: 50%;
+    }
+    &__title{
+        text-align: center;
+    }
+    &__nav{
+        list-style: none;
+        padding: 0;
+    }
+    &__social{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+    }
+}
+
+.social{
+    background-size: 25px;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    cursor: pointer;
+    &__linkedin{
+        background-image: url('./../../assets/linkedin.png');
+    }
+    &__vimeo{
+        background-image: url('./../../assets/logotipo-cuadrado-de-vimeo.png');
+    }
+    &__instagram{
+        background-image: url('./../../assets/instagram.png');
+    }
+    &__github{
+        background-image: url('./../../assets/github.png');
+    }
+}
+
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    cursor: pointer;
+    &__item {
+        text-align: center;
+        width: 100%;
+        padding: 20px 0;
+        border-bottom: 1px solid gray;
+    }
+}
