@@ -39,16 +39,18 @@ function Todolist({ list, dispatch }) {
       <section className="newtask-section">
         <div className="newtask-container">
           <input type="text" className="newtask-input" />
-          <button type="button" className="newtask-button" onClick={() => addTask()}>Add</button>
+          <button type="button" data-testid="addtask-button" className="newtask-button" onClick={() => addTask()}>Add</button>
         </div>
         <div className="todo-container">
           <ul className="todo-list">
-            {myList.map((task) => (
-              <>
-                <div className="todo">
+            {
+            myList.length
+              ? myList.map((task) => (
+
+                <div key={task.id} className="todo">
                   <input
                     className="todo-item"
-                    key={task.id}
+                    key={task.id + 1}
                     contentEditable="true"
                     id="task-input"
                     value={task.name}
@@ -60,12 +62,13 @@ function Todolist({ list, dispatch }) {
                       setMyList(myList.map((myItem) => (myItem.id === item.id ? item : myItem)));
                     }}
                   />
-                  <button type="button" className="edit-btn" onClick={() => { handleUpdateTask(task.id, task.name); }}>Edit</button>
-                  <button type="button" className="trash-btn" onClick={() => { delTask(task.id); }}>Delete</button>
+                  <button key={task.name} data-testid={`update-button-${task.id}`} type="button" className="edit-btn" onClick={() => { handleUpdateTask(task.id, task.name); }}>Edit</button>
+                  <button key={task.id + task.name} type="button" className="trash-btn" onClick={() => { delTask(task.id); }}>Delete</button>
                 </div>
 
-              </>
-            )) }
+              ))
+              : <p>No Tasks</p>
+            }
 
           </ul>
         </div>

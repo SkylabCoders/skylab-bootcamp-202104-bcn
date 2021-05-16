@@ -33,7 +33,7 @@ describe('loadList', () => {
 
 describe('deleteTask', () => {
   test('should dispatch LOAD_LIST', async () => {
-    axios.mockResolvedValue({ data: ['pepe'] });
+    axios.delete.mockResolvedValue({ data: ['pepe'] });
     const dispatch = jest.fn();
 
     await deleteTask(2)(dispatch);
@@ -45,14 +45,13 @@ describe('deleteTask', () => {
   });
 
   test('should dispatch DELETE_TASK_ERROR', async () => {
-    axios.mockRejectedValue();
+    axios.delete.mockRejectedValue();
     const dispatch = jest.fn();
 
-    await deleteTask(2)(dispatch);
+    await deleteTask(23)(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({
-      type: 'DELETE_TASK',
-      taskId: 2,
+      type: 'DELETE_TASK_ERROR',
     });
   });
 });
