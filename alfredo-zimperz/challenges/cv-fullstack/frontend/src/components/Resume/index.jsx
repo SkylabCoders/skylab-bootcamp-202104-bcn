@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Loader from '../common/Loader';
+import Terminal from './Terminal';
 import loadCv from '../../redux/actions/actionCreators';
 import './resume.css';
 
@@ -16,37 +17,9 @@ const Resume = ({ cv, actions }) => {
     <>
       {
         cv.name ? (
-          <div className="window">
-            <div className="bar">
-              <div className="btn" />
-            </div>
-            <div className="body">
-              <pre>
-
-                <div className="comment"># run this command:</div>
-                <div className="prompt">
-                  $
-                  <span className="command">show cv</span>
-                </div>
-                <div className="prompt">- - - - - - - - - - - - - </div>
-                <div className="prompt">{`${cv.name} ${cv.lastName} CV`}</div>
-                <div className="prompt">- - - - - - - - - - - - - </div>
-                <div className="prompt">{`Nationality: ${cv.nationality}`}</div>
-                <div className="prompt">{`BirthDate: ${cv.birthDate.split('T')[0]}`}</div>
-                <div className="prompt">
-                  $
-                  <span className="command">show experience and studies</span>
-                </div>
-                <div className="prompt">
-                  $
-                  <span className="pulse">_</span>
-                </div>
-              </pre>
-            </div>
-          </div>
+          <Terminal cv={cv} />
         ) : <Loader />
     }
-
     </>
 
   );
@@ -55,9 +28,6 @@ const Resume = ({ cv, actions }) => {
 Resume.propTypes = {
   cv: PropTypes.shape({
     name: PropTypes.string,
-    lastName: PropTypes.string,
-    birthDate: PropTypes.string,
-    nationality: PropTypes.string,
   }).isRequired,
   actions: PropTypes.shape({
     loadCv: PropTypes.func.isRequired,
