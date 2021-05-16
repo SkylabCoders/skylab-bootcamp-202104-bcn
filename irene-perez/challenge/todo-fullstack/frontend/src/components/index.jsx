@@ -28,7 +28,7 @@ const TodoList = ({ tasks, dispatch }) => {
             type="text"
             id="new-task-name"
             className="input"
-            placeholder="New Task"
+            placeholder="Ej. Buy milk"
           />
           <button
             className="add-button"
