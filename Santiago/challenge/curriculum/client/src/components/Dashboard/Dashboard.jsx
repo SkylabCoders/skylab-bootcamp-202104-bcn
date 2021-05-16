@@ -45,6 +45,16 @@ function DashBoard({ details, dispatch }) {
             </ul>
           )))
       }
+
+      <h1>Languages</h1>
+      {
+          details.map((detail) => detail.languages.map((language) => (
+            <ul>
+              <li>{language.name}</li>
+              <li>{language.level}</li>
+            </ul>
+          )))
+      }
     </>
   );
 }
