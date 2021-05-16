@@ -2,50 +2,20 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const tasksUrl = 'http://localhost:2021/tasks';
+const curriculumUrl = 'http://localhost:2021/curriculums';
 
-export function loadTasks() {
+export default function loadCurriculum() {
   return async (dispatch) => {
     try {
-      const { data } = await axios(tasksUrl);
+      const { data } = await axios(curriculumUrl);
       dispatch({
-        type: actionTypes.LOAD_TASKS,
-        tasks: data
+        type: actionTypes.LOAD_CURRICULUM,
+        curriculum: data[0]
       });
     } catch (error) {
       dispatch({
-        type: actionTypes.TASK_ERROR
+        type: actionTypes.CURRICULUM_ERROR
       });
     }
-  };
-}
-
-export function addTask(task) {
-  return async (dispatch) => {
-    const { data } = await axios.post(tasksUrl, task);
-    dispatch({
-      type: actionTypes.ADD_TASK,
-      task: data
-    });
-  };
-}
-
-export function deleteTask(taskId) {
-  return async (dispatch) => {
-    await axios.delete(`${tasksUrl}/${taskId}`);
-    dispatch({
-      type: actionTypes.DELETE_TASK,
-      taskId
-    });
-  };
-}
-
-export function updateTask(task) {
-  return async (dispatch) => {
-    const { data } = await axios.put(`${tasksUrl}/${task._id}`, task);
-    dispatch({
-      type: actionTypes.UPDATE_TASK,
-      task: data
-    });
   };
 }

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import tasks from './tasksReducer';
+import curriculum from './curriculumReducer';
 
 const rootReducer = combineReducers({
-  tasks
+  curriculum
 });
 
 export default rootReducer;
