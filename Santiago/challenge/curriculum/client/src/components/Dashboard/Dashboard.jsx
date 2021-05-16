@@ -10,13 +10,38 @@ function DashBoard({ details, dispatch }) {
 
   return (
     <>
-      <h1>Personal Information</h1>
+      <h1>About me</h1>
+      {
+        details.map((detail) => (
+          <ul>
+            <li>{detail.name}</li>
+            <li>{detail.street}</li>
+            <li>{detail.telf}</li>
+            <li>{detail.email}</li>
+            <li>{detail.birthDate}</li>
+          </ul>
+        ))
+      }
+
+      <h1>Education</h1>
       {
           details.map((detail) => detail.studies.map((study) => (
             <ul>
               <li>{study.schoolName}</li>
               <li>{study.startDate}</li>
               <li>{study.endDate}</li>
+            </ul>
+          )))
+      }
+
+      <h1>Experience</h1>
+      {
+          details.map((detail) => detail.experience.map((work) => (
+            <ul>
+              <li>{work.businessName}</li>
+              <li>{work.startDate}</li>
+              <li>{work.endDate}</li>
+              <li>{work.description}</li>
             </ul>
           )))
       }

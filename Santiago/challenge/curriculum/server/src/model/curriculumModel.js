@@ -15,9 +15,7 @@ const curriculumSchema = mongoose.Schema({
     businessName: String,
     startDate: String,
     endDate: String,
-    activities: {
-      activityName: String
-    }
+    description: String
   }],
   languages: [{
     name: String,
