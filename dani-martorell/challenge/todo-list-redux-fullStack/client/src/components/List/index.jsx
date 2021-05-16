@@ -11,8 +11,8 @@ function List({ tasks, dispatch }) {
     dispatch(deleteTask(e.target.id));
   }
   function handleDone(task) {
-    const taskToUpdate = { ...task, isCompleted: true };
-    dispatch(markAsDone(taskToUpdate));
+    const updatedTask = { ...task, isCompleted: true };
+    dispatch(markAsDone(updatedTask));
   }
   useEffect(() => {
     if (!tasks.length) dispatch(loadTasks());
@@ -24,7 +24,7 @@ function List({ tasks, dispatch }) {
           <li key={task.id} className="task-item">
             <p className={task.isCompleted ? 'task-item__name task-item__name--active' : 'task-item__name'}>{task.name}</p>
             <button type="button" className="task-item__btn delete-btn" onClick={(e) => handleDelete(e)} id={task._id}>Delete</button>
-            <button type="button" className="task-item__btn done-btn" onClick={(e) => handleDone(e)} id={task._id}>Done</button>
+            <button type="button" className="task-item__btn done-btn" onClick={() => handleDone(task)} id={task._id}>Done</button>
           </li>
         ))
       }
