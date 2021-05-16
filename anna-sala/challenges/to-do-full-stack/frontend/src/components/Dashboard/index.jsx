@@ -38,7 +38,7 @@ function Dashboard({ tasks, dispatch }) {
       <ul className="to-do-list">
         {tasks.length
           ? tasks.map((task) => (
-            <li className="to-do-list__task">
+            <li className="to-do-list__task" key={task._id}>
               {' '}
               <Link to={`/${task._id}`} className={!task.done ? 'task-name' : 'task-name--done'}>{task.taskTitle}</Link>
               <button
@@ -66,7 +66,9 @@ function Dashboard({ tasks, dispatch }) {
   );
 }
 Dashboard.propTypes = {
-  tasks: PropTypes.shape([]).isRequired,
+  tasks: PropTypes.arrayOf(PropTypes.shape({
+    length: PropTypes.number,
+  }).isRequired).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 

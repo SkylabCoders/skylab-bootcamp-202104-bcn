@@ -4,11 +4,9 @@ import {
   Switch,
   Route,
   Redirect,
-  // Link,
 } from 'react-router-dom';
 import './App.css';
 import Dashboard from './components/Dashboard';
-import Task from './components/Task';
 
 function App() {
   return (
@@ -17,7 +15,6 @@ function App() {
         <h1 className="page-title">TO DO LIST</h1>
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route exact path="/:taskId" component={Task} />
           <Redirect to="/" />
         </Switch>
       </Router>
