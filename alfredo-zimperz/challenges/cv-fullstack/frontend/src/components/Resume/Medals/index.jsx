@@ -8,15 +8,13 @@ const getRandomColorClass = (classArray) => {
   return classArray[index];
 };
 
-console.log(getRandomColorClass(colorsArray));
-
 const Medals = ({ medals }) => (
   <div className="medals">
     <div className="medal__container">
       <h2>My stack</h2>
       <div className="medal-list">
         {medals.map((medal) => (
-          <span className={`label ${getRandomColorClass(colorsArray)}`}>{medal}</span>
+          <span className={`label ${getRandomColorClass(colorsArray)}`} key={medal}>{medal}</span>
         ))}
       </div>
     </div>

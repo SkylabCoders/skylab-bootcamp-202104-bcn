@@ -36,7 +36,7 @@ Resume.propTypes = {
   cv: PropTypes.shape({
     name: PropTypes.string,
     stack: PropTypes.arrayOf(PropTypes.string),
-    experience: PropTypes.arrayOf({}),
+    experience: PropTypes.arrayOf(PropTypes.shape({})),
     studies: PropTypes.arrayOf({
       grades: PropTypes.arrayOf({}),
     }),
@@ -54,6 +54,10 @@ Resume.defaulfProps = {
     nationality: '',
     experience: [{
       title: '',
+      startDate: '',
+      finishDate: '',
+      organization: '',
+      description: '',
     }],
   },
 };

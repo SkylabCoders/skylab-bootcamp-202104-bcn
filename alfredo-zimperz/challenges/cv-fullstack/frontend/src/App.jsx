@@ -5,6 +5,7 @@ import {
 import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -26,9 +27,7 @@ function App() {
         <Route path="/portfolio" exact component={Portfolio} />
         <Route path="/contact" exact component={Contact} />
       </Switch>
-      <footer>
-        <p>Footer content</p>
-      </footer>
+      <Footer />
     </main>
   );
 }
