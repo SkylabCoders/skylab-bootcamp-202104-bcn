@@ -6,7 +6,7 @@ function Dashboard() {
     <>
       <Link to="/study">Formación</Link>
       <Link to="/works">Experiencia</Link>
-      <Link to="/others">Otros datos</Link>
+      <Link to="/language">Language</Link>
     </>
   );
 }
