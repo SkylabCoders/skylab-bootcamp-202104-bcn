@@ -19,7 +19,8 @@ const Terminal = ({ cv }) => (
           <div className="prompt">- - - - - - - - - - - - - </div>
           <div className="prompt">{`${cv.name} ${cv.lastName} CV`}</div>
           <div className="prompt">- - - - - - - - - - - - - </div>
-          <div className="prompt">{`Nationality: ${cv.nationality}`}</div>
+          <div className="prompt">Nationality:</div>
+          <div className="prompt">{`  ${cv.nationality}`}</div>
           <div className="prompt">{`BirthDate: ${cv.birthDate.split('T')[0]}`}</div>
           <div className="prompt">
             $
