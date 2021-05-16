@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-underscore-dangle */
 // import INITIALTASK from '../../constants/task.mock';
 import actionTypes from '../actions/actioTypes';
@@ -14,12 +15,14 @@ function taskReducer(state = [], action) {
         action.task
       );
 
-      // case actionTypes.UPDATE_TASK:
-      //   return state.map(
-      //     (task) => ((task._id === action.task._id)
-      //       ? { ...state, ...action.task.task }
-      //       : state)
-      //   );
+    case actionTypes.UPDATE_TASK:
+      debugger;
+      return state.map(
+        (task) => (
+          task._id === action.task._id
+            ? { ...task, done: true }
+            : task)
+      );
 
     case actionTypes.DELETE_TASK:
       state.splice(state.indexOf(action.task), 1);

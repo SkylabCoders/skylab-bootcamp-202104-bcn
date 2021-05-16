@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actioTypes';
@@ -39,8 +40,9 @@ export function loadTask() {
 
 export function updateTask(task) {
   return async (dispatch) => {
+    debugger;
     try {
-      const { data } = await axios.put(`${url}/${task.id}`, task.task);
+      const { data } = await axios.put(`${url}/${task._id}`, task);
       dispatch({
         type: actionTypes.UPDATE_TASK,
         task: data

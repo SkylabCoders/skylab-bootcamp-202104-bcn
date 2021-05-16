@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
@@ -9,8 +10,10 @@ function List({ tasks, dispatch }) {
     if (!tasks.length)dispatch(loadTask());
   }, [tasks.length]);
 
-  function updateTaskLine(id, task) {
-    dispatch(updateTask({ id, task }));
+  function updateTaskLine(task) {
+    debugger;
+    const updateDone = { ...task, done: true };
+    dispatch(updateTask(updateDone));
   }
   function deleteTaskLine(id) {
     dispatch(deleteTask(id));
@@ -24,9 +27,9 @@ function List({ tasks, dispatch }) {
         {tasks.map(
           (task) => (
             <li>
-              <p>{task.task}</p>
-              <button type="button" onClick={() => updateTaskLine(task._id, task.task)}>UPDATE</button>
-              <button type="button" onClick={() => deleteTaskLine(task)}>DELETE</button>
+              <p className={!task.done ? 'list' : 'list--done'}>{task.task}</p>
+              <button type="button" onClick={() => updateTaskLine(task)}>DONE</button>
+              <button type="button" onClick={() => deleteTaskLine(task)}>X</button>
             </li>
           )
         )}
