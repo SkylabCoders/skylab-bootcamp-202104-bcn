@@ -3,7 +3,7 @@ import curriculumReducer from './curriculumReducer';
 
 const rootReducer = combineReducers({
 
-  curriculumReducer
+  details: curriculumReducer
 
 });
 
