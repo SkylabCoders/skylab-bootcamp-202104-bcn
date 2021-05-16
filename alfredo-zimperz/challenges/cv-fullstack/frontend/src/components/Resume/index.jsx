@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import Loader from '../common/Loader';
 import Terminal from './Terminal';
 import Timeline from './Timeline';
+import Medals from './Medals';
 import loadCv from '../../redux/actions/actionCreators';
 import './resume.css';
 
@@ -20,6 +21,7 @@ const Resume = ({ cv, actions }) => {
         cv.name ? (
           <>
             <Terminal cv={cv} />
+            <Medals medals={cv.stack} />
             <Timeline events={cv.experience} title="Experience" />
             <Timeline events={cv.studies.grades} title="Studies" />
           </>
@@ -33,6 +35,7 @@ const Resume = ({ cv, actions }) => {
 Resume.propTypes = {
   cv: PropTypes.shape({
     name: PropTypes.string,
+    stack: PropTypes.arrayOf(PropTypes.string),
     experience: PropTypes.arrayOf({}),
     studies: PropTypes.arrayOf({
       grades: PropTypes.arrayOf({}),

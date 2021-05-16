@@ -6,6 +6,7 @@ const cvSchema = mongoose.Schema({
   lastName: String,
   nationality: String,
   birthDate: Date,
+  stack: [String],
   contact: {
     phone: String,
     email: String,
