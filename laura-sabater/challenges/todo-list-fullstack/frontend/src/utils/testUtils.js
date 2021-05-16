@@ -9,7 +9,6 @@ function render(
   component,
   {
     initialState,
-
     store = configureStore(initialState),
     ...renderOptions
   } = {},
