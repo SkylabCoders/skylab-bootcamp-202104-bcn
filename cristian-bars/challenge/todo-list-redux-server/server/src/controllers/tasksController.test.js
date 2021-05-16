@@ -1,7 +1,8 @@
 const {
   getAll,
   addTask,
-  delTask
+  delTask,
+  doneTask
 } = require('./tasksController')();
 const Task = require('../models/taskModel');
 
@@ -124,5 +125,37 @@ describe('delTask', () => {
     await delTask(req, res);
 
     expect(res.send).toHaveBeenCalledWith('error');
+  });
+});
+
+describe('When invoked a doneTask', () => {
+  test('Should call a func json with', async () => {
+    const req = {
+      params: { tasks: 2 },
+      body: { task: 'Cristian' }
+    };
+    const res = {
+      json: jest.fn(),
+      send: jest.fn(),
+      status: jest.fn()
+    };
+    Task.findByIdAndUpdate.mockResolvedValueOnce('Testing');
+    await doneTask(req, res);
+    expect(res.json).toHaveBeenCalledWith('Testing');
+  });
+
+  test('Should call a func send with error', async () => {
+    const req = {
+      params: { todoId: 5 },
+      body: { task: 'peppacoe' }
+    };
+    const res = {
+      json: jest.fn(),
+      send: jest.fn(),
+      status: jest.fn()
+    };
+    Task.findByIdAndUpdate.mockRejectedValueOnce('PACO');
+    await doneTask(req, res);
+    expect(res.send).toHaveBeenCalledWith('PACO');
   });
 });
