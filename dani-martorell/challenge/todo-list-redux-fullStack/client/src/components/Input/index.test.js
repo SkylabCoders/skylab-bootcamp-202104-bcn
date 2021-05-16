@@ -24,4 +24,14 @@ describe('Given an Input component', () => {
       expect(addTask).toHaveBeenCalled();
     });
   });
+  describe('When the input field changes', () => {
+    test('Then handleInputChange should be called', () => {
+      addTask.mockReturnValueOnce(jest.fn());
+      const button = screen.getByText(/Add Task/i);
+      const input = screen.getByPlaceholderText(/Write your task here.../i);
+      fireEvent.change(input, { target: { value: 'comprar nata' } });
+      fireEvent.click(button);
+      expect(addTask).toHaveBeenCalled();
+    });
+  });
 });
