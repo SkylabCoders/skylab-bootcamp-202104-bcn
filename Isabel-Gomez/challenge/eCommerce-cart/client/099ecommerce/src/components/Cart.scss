@@ -11,7 +11,7 @@
     box-shadow: 0 0 7px #888;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     width: 35%;
     height: 400px;
     overflow: auto;
@@ -58,7 +58,8 @@
         }
     }   
 
-    .barket-price {
+    .basket-price {
+        margin-top: auto;
         display: flex;
         justify-content: space-between;
          margin-right: 20px;

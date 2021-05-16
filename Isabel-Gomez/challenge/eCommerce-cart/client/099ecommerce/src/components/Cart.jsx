@@ -31,7 +31,7 @@ function CartItems({ dispatch, itemSelect }) {
               <button type="button" onClick={() => deleteFromCart(item.id)}><i class="far fa-times-circle"></i></button>
           </div>
         ))}
-        <div className="barket-price">
+        <div className="basket-price">
         <h3 className="price-title">total</h3>
         <h3 className="price-amount">{`${totalPrice.toFixed(2)} €`}</h3>
       </div>
