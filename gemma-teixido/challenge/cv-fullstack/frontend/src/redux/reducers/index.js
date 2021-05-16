@@ -1,7 +1,7 @@
-import informationsReducer from './informationsReducer';
+import curriculumReducer from './curriculumReducer';
 
 const rootReducer = {
-  informations: informationsReducer
+  informations: curriculumReducer
 };
 
 export default rootReducer;

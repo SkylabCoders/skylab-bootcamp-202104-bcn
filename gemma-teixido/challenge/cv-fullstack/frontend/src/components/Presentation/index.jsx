@@ -1,8 +1,11 @@
 import React from 'react';
+import connect from 'react-dom';
 import './Presentation.css';
+import { PropTypes } from 'prop-types';
 import profilePic from '../../assets/profile-pic.png';
+import informations from '../../redux/store/index';
 
-function Presentation() {
+function Presentation({ informations, dispatch }) {
   return (
     <>
       <main className="containerPresentation">
@@ -27,4 +30,15 @@ function Presentation() {
   );
 }
 
-export default Presentation;
+Presentation.propTypes = {
+  heroes: PropTypes.shape({}).isRequired,
+  dispatch: PropTypes.func.isRequired
+};
+
+function mapStateToProps(store) {
+  return ({
+    informations: store.informations
+  });
+}
+
+export default connect(mapStateToProps)(Presentation);
