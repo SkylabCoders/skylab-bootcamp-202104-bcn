@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import actionTypes from '../actions/actionTypes';
 
 function tasksReducer(tasks = [], action) {
@@ -6,9 +7,10 @@ function tasksReducer(tasks = [], action) {
       return action.tasks;
 
     case actionTypes.DELETE_TASK:
-      return tasks.filter((task) => task.id !== action.taskId);
+      return tasks.filter((task) => task._id !== action.taskId);
 
     case actionTypes.ADD_TASK:
+
       return [
         ...tasks,
         action.task
