@@ -98,7 +98,7 @@ describe('Given a taskController', () => {
       expect(res.json).toHaveBeenCalledWith([{ id: 1, name: 'comprar naranjas', completed: false }]);
     });
     test('should get an error', async () => {
-      Task.findByIdAndUpdate.mockResolvedValue('error');
+      Task.findByIdAndUpdate.mockRejectedValue('error');
 
       await updateById(req, res);
 
