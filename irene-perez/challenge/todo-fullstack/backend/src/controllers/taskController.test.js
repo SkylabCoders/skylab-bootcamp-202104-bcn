@@ -116,7 +116,7 @@ describe('deleteTaskById', () => {
     await deleteTaskById(req, res);
 
     // assert
-    describe(res.send).toHaveBeenCalledWith('error');
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
