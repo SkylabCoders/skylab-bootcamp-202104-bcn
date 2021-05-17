@@ -1,4 +1,4 @@
-const { getAllTasks, createOne } = require('./tasksController')();
+const { getAllTasks, createOne, updateTask } = require('./tasksController')();
 const Task = require('../model/toDoTask');
 
 jest.mock('../model/toDoTask.js');
@@ -37,5 +37,22 @@ describe('when call a createOne function', () => {
     Task.mockReturnValueOnce(task);
     await createOne(req, res);
     expect(res.json).toHaveBeenCalledWith({ nameTask: 'nueva tarea', isDone: false });
+  });
+});
+
+describe('when call a updateTask function', () => {
+  test('should a json with data', async () => {
+    const res = {
+      json: jest.fn()
+    };
+    const req = {
+      params: { idTask: 2 },
+      body: null
+    };
+
+    Task.findByIdAndUpdate.mockResolvedValueOnce('pepo');
+    await updateTask(req, res);
+
+    expect(res.json).toHaveBeenCalledWith('pepo');
   });
 });
