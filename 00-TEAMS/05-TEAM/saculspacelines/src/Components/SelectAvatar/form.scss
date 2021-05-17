@@ -1,0 +1,93 @@
+.selected-avatar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: black;
+}
+
+.select-avatar__header {
+    display: flex;
+    align-items: center;
+    margin: 1em;
+    background-color: #FCE952;
+    height: 16em;
+    border-radius: 1em;
+    justify-content: space-between;
+    padding: 0em 12em;
+}
+
+.header__img {
+    border: 0.5em solid black;
+    height: 13em;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.header__username {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    text-align: center;
+}
+
+.header__username-name {
+    color: black;
+    font-family: 'Starjedi';
+    letter-spacing: 0.1em;
+    font-size: 3em;
+}
+
+.header__username-input{
+    outline: none;
+    font-size: 2em;
+    text-align: center;
+}
+
+.ul__list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.select-avatar__ul {
+    margin: 18em 5% 4em 5%;
+    background-color: #C4C4C4;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 2em;
+    padding: 1em 0.2em;
+    justify-content: center;
+}
+
+.caracter-button {
+    border-style: none;
+    border-radius: 50%;
+    margin: 0.5em;
+}
+
+.caracter-img {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+}
+
+.bottom-buttons {
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 0em;
+
+    &__back, &__submit {
+        background:#FCE952;
+        font-family: 'Starjedi';
+        outline: 0;
+        border-style: none;
+        border-radius: 1em;
+        font-size: 1em;
+        padding: 0.2em 1em;
+    }
+}
