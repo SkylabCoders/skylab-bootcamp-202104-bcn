@@ -7,6 +7,8 @@ import {
   Redirect,
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard/index';
+import PersonalInfo from './components/PersonalInfo';
+import Education from './components/Education';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Dashboard} />
+          <Route exact path="/info" component={PersonalInfo} />
+          <Route exact path="/education" component={Education} />
           <Redirect to="/" />
         </Switch>
       </Router>
