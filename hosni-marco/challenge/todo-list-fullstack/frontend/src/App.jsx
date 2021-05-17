@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router, Switch, Route, Link
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './redux/stores';
+import configureStore from './redux/stores';
 import Dashboard from './components/Dashboard';
 import tasks from './components/Tasks';
 import NotFound from './components/NotFound';
@@ -13,7 +13,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <Provider store={store()}>
+      <Provider store={configureStore()}>
         <Router>
           <header className="header">
             <h1>To Do List</h1>

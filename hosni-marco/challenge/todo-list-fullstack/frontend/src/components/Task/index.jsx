@@ -6,8 +6,8 @@ import { PropTypes } from 'prop-types';
 const Task = ({ task, handleDelete }) => (
   <div className="task">
     <div className="task__text">
-      <Link key={task._id} to={`/tasks/${task._id}`}>
-        <h4 className={task.done ? 'done' : ''}>{task.task}</h4>
+      <Link key={task?._id} to={`/tasks/${task?._id}`}>
+        <h4 className={`class-${task?._id}`}>{task?.task}</h4>
       </Link>
     </div>
     <div className="task__actions">
