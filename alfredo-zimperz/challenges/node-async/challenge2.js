@@ -25,8 +25,8 @@ function showWithDelay() {
     function incrementAndShow() {
         console.log(`Hello World. ${delay}`)
         counter += 1
-        if(counter === 5) {
-            delay = delay * 2
+        if(counter === 6) {
+            delay = delay + 100
             counter = 1
             clearInterval(interval)
             showWithDelay()
