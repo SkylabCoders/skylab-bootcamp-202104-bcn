@@ -1,4 +1,6 @@
-const { getAllTasks, createOne, updateTask } = require('./tasksController')();
+const {
+  getAllTasks, createOne, updateTask, deleteTask
+} = require('./tasksController')();
 const Task = require('../model/toDoTask');
 
 jest.mock('../model/toDoTask.js');
@@ -54,5 +56,21 @@ describe('when call a updateTask function', () => {
     await updateTask(req, res);
 
     expect(res.json).toHaveBeenCalledWith('pepo');
+  });
+});
+
+describe('when call a delete task', () => {
+  test('recibed a json', async () => {
+    const res = {
+      json: jest.fn()
+    };
+    const req = {
+      params: {
+        idTask: 3
+      }
+    };
+    Task.findByIdAndDelete.mockResolvedValue();
+    await deleteTask(req, res);
+    expect(res.json).toHaveBeenCalled();
   });
 });
