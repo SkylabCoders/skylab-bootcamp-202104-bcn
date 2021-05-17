@@ -1,0 +1,91 @@
+* {
+    font-family: 'Mulish', sans-serif;
+    text-decoration: none;
+}
+
+.containerDetail {
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+}
+
+.containerDetail-titleSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerDetail__information-experience {
+    background-image: linear-gradient(0deg, #6c74eb 0%, #4cd6e6 100%);
+    border-radius: 20px;
+    border: solid 5px pink;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.containerPresentation__information-education {
+    background-image: linear-gradient(0deg, #cde96a 0%, #4cd6e6 100%);
+    border-radius: 20px;
+    border: solid 5px pink;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.containerPresentation__information-languages {
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    border-radius: 20px;
+    border: solid 5px pink;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+.containerPresentation__information-more {  
+    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+    border-radius: 20px;
+    border: solid 5px pink;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+    .moreLinks {background-image: linear-gradient(to right, #7686e4 0%, #36badb  51%, #0df7ff  100%)}
+        .moreLinks {
+           margin: 10px;
+           padding: 5px 20px;
+           text-align: center;
+           text-transform: uppercase;
+           transition: 0.5s;
+           background-size: 200% auto;
+           color: white;
+           font-weight: 900;     
+           border-radius: 10px;
+           font-size: 20px;
+           display: block;
+         }
+
+         .moreLinks:hover {
+           background-position: right center;
+           color: white;
+         }
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
