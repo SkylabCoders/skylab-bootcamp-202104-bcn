@@ -17,3 +17,11 @@
   Constraints:
    - Only use setInterval (not setTimeout)
    - Use only ONE if statement*/
+
+const challengeTwo = (counter, delay) => {
+  setTimeout(() => {
+    console.log(`Hello World ${counter}`);
+    challengeTwo(counter += 1);
+  }, counter * 1000, 11000)
+}
+challengeTwo(1);
