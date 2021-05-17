@@ -73,6 +73,10 @@ function Cart({ dispatch, cart }) {
               <div>{`${totalPrice}€`}</div>
               <button type="button" onClick={() => handleDeleteAll(cart)}>DELETE ALL</button>
             </>
+          )
+
+          : (
+            <p>no hay productos en la cesta</p>
           )}
       </footer>
     </section>

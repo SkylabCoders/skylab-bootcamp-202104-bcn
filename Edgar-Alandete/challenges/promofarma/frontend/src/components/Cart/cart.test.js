@@ -20,11 +20,11 @@ describe('Cart Component', () => {
   test('should contain title This is the cart', () => {
     render(<Cart />, container);
 
-    expect(screen.getByText(/This is the cart/i)).toBeInTheDocument();
+    expect(screen.getByText(/mi cesta/i)).toBeInTheDocument();
   });
   test('should have a button', () => {
     render(<Cart />, container);
 
-    expect(screen.getByText(/DELETE ALL/)).toBeTruthy();
+    expect(screen.getByText(/no hay productos en la cesta/)).toBeTruthy();
   });
 });

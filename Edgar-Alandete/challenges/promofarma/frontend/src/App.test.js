@@ -6,6 +6,6 @@ import App from './App';
 
 test('renders learn react link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/PROMOFARMA/i);
+  const linkElement = screen.getByText(/no hay productos en la cesta/i);
   expect(linkElement).toBeInTheDocument();
 });

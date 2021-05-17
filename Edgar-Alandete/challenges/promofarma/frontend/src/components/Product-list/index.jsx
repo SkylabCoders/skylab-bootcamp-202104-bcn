@@ -14,9 +14,14 @@ function ProductList({ products, cart, dispatch }) {
     <section className="products">
       <ul className="product-list">
         {
-          products?.map((product) => (
-            <Product productItem={product} cart={cart} />
-          ))
+          products.length ? (
+            products?.map((product) => (
+              <Product productItem={product} cart={cart} />
+            ))
+          )
+            : (
+              <p>no hay productos en stock</p>
+            )
         }
       </ul>
     </section>

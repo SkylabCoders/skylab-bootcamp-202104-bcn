@@ -19,7 +19,7 @@ describe('Given a Product-List component', () => {
         products: []
       });
       render(<ProductList />, initialState);
-      expect(screen.getByText(/PRODUCTS/)).toBeInTheDocument();
+      expect(screen.getByText(/no hay productos en stock/)).toBeInTheDocument();
     });
   });
 
