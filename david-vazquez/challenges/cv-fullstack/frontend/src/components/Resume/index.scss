@@ -33,10 +33,68 @@
         .education{
             list-style: none;
             padding:0;
+            &__title{
+                padding-left: 10px;
+            }
         }
         .experience{
             list-style: none;
             padding:0;
         }
     }
+}
+
+.container {
+    /* Used to position the left vertical line */
+    position: relative;
+}
+
+.container__line {
+    /* Border */
+    border-right: 2px solid #0093E9;
+
+    /* Positioned at the left */
+    left: 6px;
+    position: absolute;
+    top: 0px;
+
+    /* Take full height */
+    height: 100%;
+}
+
+.container__items {
+    /* Reset styles */
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container__item {
+    margin-bottom: 8px;
+}
+
+.container__top {
+    /* Center the content horizontally */
+    align-items: center;
+    display: flex;
+}
+
+.container__circle {
+    /* Rounded border */
+    background-color: #0093E9;
+    border-radius: 9999px;
+
+    /* Size */
+    height: 15px;
+    width: 15px;
+}
+
+.container__title {
+    /* Take available width */
+    flex: 1;
+}
+
+.container__desc {
+    /* Make it align with the title */
+    margin-left: 48px;
 }

@@ -13,43 +13,58 @@ function Resume({ dispatch, curriculum }) {
       <div className="resume">
         <div className="resume__left">
           <h3>Education</h3>
-          <ul className="education">
-            {curriculum?.education
+          <div className="container">
+            <div className="container__line" />
+            <ul className="container__items">
+              {curriculum?.education
         && (curriculum?.education).map((element) => (
-          <li>
-            <span className="education__title">{element.title}</span>
-            <span className="education__time">
-              {element.dateStart}
-              {' - '}
-              {element.dateEnd}
-            </span>
-            <div className="education__place">
-              {element.center}
-              {' '}
-              {element.city}
+          <li className="container__item">
+            <div className="container__top">
+              <div className="container__circle" />
+              <span className="education__title">{element.title}</span>
+            </div>
+            <div className="container__desc">
+              <span className="education__time">
+                {element.dateStart}
+                {' - '}
+                {element.dateEnd}
+              </span>
+              <div className="education__place">
+                {element.center}
+                {' '}
+                {element.city}
+              </div>
             </div>
           </li>
         ))}
-          </ul>
+            </ul>
+          </div>
           <h3>Experience</h3>
-          <ul className="experience">
-            {curriculum?.experience
+          <div className="container">
+            <div className="container__line" />
+            <ul className="container__items">
+              {curriculum?.experience
         && (curriculum?.experience).map((element) => (
-          <li>
-            <span className="education__title">{element.position}</span>
-            <span className="education__time">
-              {element.dateStart}
-              {' - '}
-              {element.dateEnd}
-            </span>
-            <div className="education__place">
-              {element.company}
+          <li className="container__item">
+            <div className="container__top">
+              <div className="container__circle" />
+              <span className="education__title">{element.position}</span>
             </div>
-            <p>{element.description}</p>
+            <div className="container__desc">
+              <span className="education__time">
+                {element.dateStart}
+                {' - '}
+                {element.dateEnd}
+              </span>
+              <div className="education__place">
+                {element.company}
+              </div>
+            </div>
           </li>
 
         ))}
-          </ul>
+            </ul>
+          </div>
         </div>
         <div className="resume__right">
           <h3>Design Skills</h3>
