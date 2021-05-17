@@ -11,6 +11,7 @@ function elementsRouter() {
 
   routes
     .route('/:curriculumId')
+    .get(elementsController.getById)
     .put(elementsController.updateById);
 
   return routes;

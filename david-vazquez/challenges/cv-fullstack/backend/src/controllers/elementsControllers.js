@@ -33,8 +33,21 @@ function elementsController() {
     }
   }
 
+  async function getById(req, res) {
+    try {
+      const elementById = await Element.findById(
+        req.params.curriculumId,
+      );
+      res.json(elementById);
+    } catch (error) {
+      debug(error);
+      res.status(404);
+      res.send(error);
+    }
+  }
+
   return {
-    getAllElements, createOne, updateById,
+    getAllElements, createOne, updateById, getById,
   };
 }
 
