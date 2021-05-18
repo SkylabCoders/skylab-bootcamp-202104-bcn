@@ -8,7 +8,7 @@ function dashboard() {
       <ul className="sidebar__dashboard-icons">
         <li className="dashboard-icons__play-icon">
           <Link to="/game-mode">
-            <img alt="play-icon" src="https://img.icons8.com/plasticine/100/000000/circled-play.png" />
+            <img alt="play-icon" className="imageTest" src="https://img.icons8.com/plasticine/100/000000/circled-play.png" />
           </Link>
         </li>
         <li className="dashboard-icons__play-icon">

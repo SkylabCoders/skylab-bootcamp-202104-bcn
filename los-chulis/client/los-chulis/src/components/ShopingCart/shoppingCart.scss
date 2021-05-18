@@ -1,0 +1,17 @@
+.shopping-cart{
+    margin-left: 20px;
+    &__total-cost{
+        font-weight: 600;
+    }
+    &__product-list{
+        list-style: none;
+    }
+    &__price{
+        font-weight: 600;
+    }
+}
+.shopping-cart h3{
+    color:lime;
+    border-bottom: 1px solid lime;
+}
+

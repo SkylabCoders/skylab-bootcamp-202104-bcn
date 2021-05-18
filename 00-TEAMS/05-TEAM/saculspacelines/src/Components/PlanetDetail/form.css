@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Starjedi';
+  src: url("./../../Starjedi.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Imperial-sw';
+  src: url("./../../imperial-sw.ttf") format("truetype");
+}
+
+.light img {
+  border: 1em solid blue;
+}
+
+.neutral img {
+  border: 1em solid black;
+}
+
+.dark img {
+  border: 1em solid red;
+}
+
+.planet {
+  font-family: 'Starjedi';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #FCE952;
+  border-radius: 5em;
+  margin: 1.5em;
+  max-width: 90%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em 0;
+  width: 100%;
+}
+
+.planet__image {
+  width: 12em;
+  height: 12em;
+  border-radius: 50%;
+}
+
+.details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.details__name {
+  color: black;
+  letter-spacing: 0.1em;
+}
+
+.planetList {
+  background-color: black;
+  color: #FCE952;
+  list-style: none;
+  background-color: black;
+  color: #FCE952;
+  letter-spacing: 0.1em;
+  padding: 1em;
+}
+
+.dropdownButton {
+  font-family: 'Imperial-sw';
+  background-color: black;
+  color: #FCE952;
+  padding: 0.5em 0.8em;
+  border-radius: 1em;
+  max-width: 8em;
+  margin: 0.5em 0;
+}
+
+.opened-true {
+  font-size: 1em;
+}
+
+.opened-false {
+  font-size: 5em;
+}
+/*# sourceMappingURL=form.css.map */

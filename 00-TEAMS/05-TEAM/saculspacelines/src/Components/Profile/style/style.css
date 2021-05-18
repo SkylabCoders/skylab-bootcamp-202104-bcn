@@ -1,0 +1,122 @@
+.header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-container__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 40px;
+  color: black;
+  background-color: yellow;
+  width: 48vw;
+  height: 20vh;
+}
+
+.avatar {
+  margin-right: 100px;
+  height: 30vh;
+  width: 15vw;
+  border-radius: 50%;
+}
+
+.change-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.change-container__item {
+  border-style: none;
+  border-radius: 20px;
+  background-color: yellow;
+  width: 15%;
+  height: 5vh;
+  margin-right: 9%;
+}
+
+.main-container {
+  background-color: gray;
+  border-radius: 20px;
+  padding-bottom: 1%;
+  margin-top: 2%;
+}
+
+.main-container__title {
+  margin-left: 5%;
+  padding-top: 2%;
+}
+
+.wishlist-container {
+  border-radius: 20px;
+}
+
+.wishlist-container__tablerow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1%;
+  border-radius: 20px;
+  background-color: black;
+  width: 65%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.wishlist-container__button {
+  border-style: none;
+  border-radius: 20px;
+  background-color: yellow;
+  height: 3vh;
+  width: 10vw;
+}
+
+.footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer-container__button {
+  margin-top: 7%;
+  border-radius: 20px;
+  border-style: none;
+  background-color: gray;
+  height: 3em;
+}
+
+.footer-container__button--back {
+  margin-top: 2em;
+  width: 6em;
+  height: 4vh;
+  border-style: none;
+  background-color: gray;
+  border-radius: 20px;
+}
+
+.footer-container__button--big {
+  margin-top: 1em;
+  border-style: none;
+  background-color: gray;
+  border-radius: 20px;
+  height: 8vh;
+  width: 10em;
+}
+/*# sourceMappingURL=style.css.map */

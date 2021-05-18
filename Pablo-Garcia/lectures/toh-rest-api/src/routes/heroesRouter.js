@@ -1,0 +1,1 @@
+const heroes = require('../hereoes');

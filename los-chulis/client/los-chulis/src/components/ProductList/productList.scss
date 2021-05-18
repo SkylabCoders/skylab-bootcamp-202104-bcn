@@ -1,0 +1,48 @@
+.productList{
+    list-style: none;
+    width: 70%;
+    &__item{
+        display: flex;
+        margin:5px 0;
+        justify-content: space-between;
+        align-content: center;
+    }
+    &__button{
+        background-image: url('https://trello-attachments.s3.amazonaws.com/606b2ae98fdcaf38c8ff3ea2/609ba2d3aca12c8c3a705a7e/190x104/37b9db242ceb20455ac709c0811db488/add-to-cart.png');
+        background-size: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+        border:none;
+        border-radius: 5px;
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+    }
+    &__button--active{
+        background-color: greenyellow;
+    }
+    &__button--disabled{
+        background-color: grey;
+    }
+    &__price{
+        margin-right: 10px;
+        font-weight: 600;
+        
+    }
+    &__price--disabled{
+        color:lightgrey;
+    }
+    &__price--active{
+        color:black;
+    }
+    &__buy-box{
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px ){
+    .productList{
+        width: 90%;
+    }
+}

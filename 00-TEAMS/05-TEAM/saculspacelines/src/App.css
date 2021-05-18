@@ -1,0 +1,12 @@
+body {
+  background: black;
+  color: #FCE952;
+}
+
+button {
+  background: transparent;
+}
+
+button:hover {
+  cursor: pointer;
+}
