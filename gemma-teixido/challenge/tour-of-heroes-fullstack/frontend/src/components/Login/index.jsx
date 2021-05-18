@@ -34,7 +34,7 @@ function Login({ auth, actions }) {
   const loggedOutTemplate = () => (
     <>
       <p>Hello stranger. Please access with your credentials.</p>
-      <button type="button" onClick={() => loginWithRedirect()}>Login</button>
+      <button type="button" onClick={loginWithRedirect}>Login</button>
     </>
   );
 

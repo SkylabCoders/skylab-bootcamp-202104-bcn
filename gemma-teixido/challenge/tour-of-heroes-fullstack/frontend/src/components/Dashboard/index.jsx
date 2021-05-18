@@ -25,9 +25,9 @@ Dashboard.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 
-function mapStateToProps(store) {
+function mapStateToProps({ heroes }) {
   return {
-    heroes: store.heroes
+    heroes
   };
 }
 
