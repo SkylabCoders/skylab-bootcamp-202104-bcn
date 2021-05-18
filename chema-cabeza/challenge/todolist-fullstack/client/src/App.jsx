@@ -6,14 +6,14 @@ import {
   Switch,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './redux/stores';
+import configureStore from './redux/stores';
 import Todolist from './components/Todolist/Todolist';
 import './App.css';
 
 function App() {
   return (
 
-    <Provider store={store}>
+    <Provider store={configureStore()}>
       <BrowserRouter>
         <header>
           <h1>My ToDo List</h1>
