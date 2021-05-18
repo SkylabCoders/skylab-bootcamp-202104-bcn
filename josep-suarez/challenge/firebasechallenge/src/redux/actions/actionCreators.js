@@ -20,5 +20,7 @@ export function login() {
 }
 
 export function logout() {
-  return true;
+  return {
+    type: actionTypes.LOGOUT
+  };
 }

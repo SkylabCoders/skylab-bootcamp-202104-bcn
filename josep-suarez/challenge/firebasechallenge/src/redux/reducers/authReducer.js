@@ -9,7 +9,7 @@ function authReducer(user = {}, action) {
       };
     case actionTypes.LOGOUT:
       return {
-        isLoggedOut: false
+        isLoggedIn: false
       };
     default:
       return user;
