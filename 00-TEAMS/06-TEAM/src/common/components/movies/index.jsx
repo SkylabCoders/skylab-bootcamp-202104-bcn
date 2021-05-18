@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import loadMovies from '../../../redux/actions/actionsCreator';
+import { loadMovies } from '../../../application/store/actions/actionsCreator';
 
 const Movies = ({ myMovies, dispatch }) => {
   const baseImgUrl = 'https://image.tmdb.org/t/p/w780';
@@ -10,20 +10,19 @@ const Movies = ({ myMovies, dispatch }) => {
   }, []);
   return (
     <div>
-      {
-            myMovies.map((element) => <img key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt="" />)
-        }
-
+      {myMovies.map((element) => <img key={element.id} src={`${baseImgUrl}${element.poster_path}`} alt="" />)}
     </div>
   );
 };
 
 Movies.propTypes = {
-  myMovies: PropTypes.arrayOf(PropTypes.object).isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  myMovies: PropTypes.shape({
+    map: PropTypes.func.isRequired,
+    poster_path: PropTypes.string
+  }).isRequired
 };
 
-// Este countries es el del rootReducer countries: countriesReducer
 const mapStateToProps = ({ movies }) => ({
   myMovies: movies
 });
