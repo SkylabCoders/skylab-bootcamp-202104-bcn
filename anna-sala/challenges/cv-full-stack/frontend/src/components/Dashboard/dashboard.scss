@@ -1,0 +1,18 @@
+.headers{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 25% 0;
+    &__element{
+        margin: auto;
+    }
+}
+.arrow-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  .arrow{
+      margin-top: -60vh;
+      width: 8%;
+  }
+}

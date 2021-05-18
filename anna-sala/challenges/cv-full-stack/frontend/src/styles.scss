@@ -1,0 +1,12 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  body{
+    background: linear-gradient(104deg, rgba(247,255,0,1) 0%, rgba(247,172,0,1) 28%, rgba(247,101,0,1) 58%, rgba(247,43,0,1) 87%);
+    height: 100%;
+    color: rgb(255, 255, 255);
+  }
