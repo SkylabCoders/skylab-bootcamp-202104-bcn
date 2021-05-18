@@ -1,0 +1,53 @@
+.medal{
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto 2rem;
+        border-radius: 0 0 .1rem .1rem;
+        .medal-list {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+            height: auto;
+            .blue{
+                background-color: #2099E8;
+            }
+            .green{
+                background:#3BDB75;
+            }
+            .red {
+                background:#EC5840;
+            }
+            .gray {
+                background:#777777;
+            }
+            .yellow {
+                background:#FFAF00;
+            }
+            .pink {
+                background:#E502FE;
+            }
+            .label {
+                font-size: 18px;
+                padding: 2px 4px;
+                margin: 5px;
+            }
+        }
+    }
+}
+
+
+.third{
+    background-color: #e500ff;
+}
+.fourth{
+    background:#0a1375;
+}
+.label {
+    font-size: 24px;
+    margin: 5px;
+}
