@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import firebase from 'firebase';
 import actionTypes from './actionTypes';
 
@@ -10,7 +11,7 @@ export function login() {
       const { user } = await firebase.auth().signInWithPopup(provider);
       dispatch({
         type: actionTypes.LOGIN,
-        userData: user,
+        userData: user
       });
     } catch (error) {
       console.log(error);
@@ -23,7 +24,7 @@ export function logout() {
     try {
       await firebase.auth().signOut();
       dispatch({
-        type: actionTypes.LOGOUT,
+        type: actionTypes.LOGOUT
       });
     } catch (error) {
       console.log(error);
