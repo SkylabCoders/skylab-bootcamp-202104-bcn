@@ -14,8 +14,10 @@ export function login() {
         userData: user,
       });
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
+      dispatch({
+        type: actionTypes.LOGIN_ERROR,
+        error,
+      });
     }
   };
 }
@@ -26,10 +28,12 @@ export function logout() {
       await firebase.auth().signOut();
       dispatch({
         type: actionTypes.LOGOUT,
-      })
+      });
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
+      dispatch({
+        type: actionTypes.LOGIN_ERROR,
+        error,
+      });
     }
   };
 }
