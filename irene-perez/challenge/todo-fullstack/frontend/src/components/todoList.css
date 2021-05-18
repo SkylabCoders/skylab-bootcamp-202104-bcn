@@ -1,0 +1,60 @@
+.input-tittle {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #440a67;
+    margin-right: 5%;
+}
+
+.new-task__input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    border-radius: 5px;
+    background-color: #ffe9d6;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 1% 5%;
+    border: 0;
+}
+
+.add-button {
+    background-color: #a9f1df;
+    margin-left: 2%;
+    border-radius:10px;
+    outline:none;
+    color: #440a67;
+    cursor:pointer;
+    padding: 1%;
+}
+
+.to-do-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.to-do-list__task {
+    align-items: baseline;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #440a67;
+    display: inline-flex;
+    width: 450px;
+    justify-content: space-between;
+    margin: 10px;
+    background-color: #ffe3fe;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+.delete-button {
+    background-color: #f29191;
+    margin-left: 2%;
+    border-radius:10px;
+    outline:none;
+    color: black;
+    cursor:pointer;
+    padding: 1%;
+}

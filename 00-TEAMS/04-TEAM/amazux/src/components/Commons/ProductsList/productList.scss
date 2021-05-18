@@ -1,0 +1,36 @@
+@import '../../../styles/colors';
+
+.products {
+    display: flex;
+    &__list{
+        width: 100%;
+        list-style: none;
+    }
+    
+    &__item {
+        display: flex;
+        width: 100%;
+        background-color: white;
+        margin-bottom: 5px;
+    }
+    
+    &__img {
+        width: 140px;
+    }
+    
+    &__details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    a {
+        display: flex;
+        width: 100%;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.product-list__button--hidden {
+    visibility:hidden;
+}
