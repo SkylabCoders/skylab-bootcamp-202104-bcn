@@ -9,7 +9,7 @@ import './Heroes.css';
 function HeroesList({ heroes, dispatch }) {
   useEffect(() => {
     if (!heroes.length) dispatch(loadHeroes());
-  }, []);
+  }, [heroes]);
 
   function handleDeleteHero(heroId) {
     dispatch(deleteHero(heroId));

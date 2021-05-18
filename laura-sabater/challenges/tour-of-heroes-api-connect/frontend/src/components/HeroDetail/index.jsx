@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { getHeroById, updateHero } from '../../redux/actions/actionCreators';
+import { loadHero, updateHero } from '../../redux/actions/actionCreators';
 import './HeroDetail.css';
 
 function HeroDetail({ selectedHero, dispatch }) {
@@ -10,7 +10,7 @@ function HeroDetail({ selectedHero, dispatch }) {
   const [heroName, setHeroName] = useState(selectedHero?.name);
 
   useEffect(() => {
-    dispatch(getHeroById(heroId));
+    dispatch(loadHero(heroId));
   }, [heroId]);
 
   useEffect(() => {
