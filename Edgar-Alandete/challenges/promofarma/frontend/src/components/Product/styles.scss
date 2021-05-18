@@ -1,0 +1,30 @@
+.product-list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    .product-name {
+        width: 100%;
+    }
+
+    &--bold {
+        font-weight: bold;
+        width: 20%;
+    }
+
+    button {
+        background-image: url('./../../assets/images/add-to-cart.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 40px;
+        background-color: #8cc003;
+        width: 100px;
+        height: 35px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+}

@@ -1,0 +1,17 @@
+.products {
+  width: 50%;
+}
+
+.products .product-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 40px;
+}
+/*# sourceMappingURL=styles.css.map */

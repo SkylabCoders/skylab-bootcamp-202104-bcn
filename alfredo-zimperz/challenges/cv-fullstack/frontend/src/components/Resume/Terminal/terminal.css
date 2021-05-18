@@ -1,0 +1,88 @@
+.window {
+  width: 80%;
+  margin: 0 auto 2rem;
+  -webkit-box-shadow: 0 0.25rem 0.5rem #7e7e7e;
+          box-shadow: 0 0.25rem 0.5rem #7e7e7e;
+  border-radius: 0 0 .1rem .1rem;
+}
+
+.bar {
+  background: #191919;
+  height: 36px;
+  border-radius: .5rem .5rem 0 0;
+}
+
+.btn, .btn::before, .btn::after {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  display: block;
+}
+
+.btn {
+  background: #f6b73e;
+  position: relative;
+  margin-left: 38px;
+  top: 12px;
+}
+
+.btn::before, .btn::after {
+  content: ' ';
+  position: absolute;
+}
+
+.btn::before {
+  background: #f55551;
+  margin-left: -20px;
+}
+
+.btn::after {
+  background: #32c146;
+  margin-left: 20px;
+}
+
+.body {
+  padding-bottom: 10px;
+  background: #232323;
+  padding: 18px;
+}
+
+.body pre {
+  margin: 0;
+}
+
+.body .pulse {
+  -webkit-animation: pulse 1s ease-in-out infinite;
+          animation: pulse 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+  }
+}
+
+.command {
+  color: #32c146;
+}
+
+.comment {
+  opacity: .5;
+}
+/*# sourceMappingURL=terminal.css.map */

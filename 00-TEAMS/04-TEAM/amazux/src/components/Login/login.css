@@ -1,0 +1,38 @@
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 130px;
+  height: 100%;
+}
+
+.login img {
+  height: 70%;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.login p {
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.login button {
+  border: 1px solid transparent;
+  width: 60px;
+  height: 100%;
+  color: white;
+  outline: none;
+  background-color: transparent;
+}
+
+.login button:hover {
+  border: 1px solid white;
+}
+/*# sourceMappingURL=login.css.map */

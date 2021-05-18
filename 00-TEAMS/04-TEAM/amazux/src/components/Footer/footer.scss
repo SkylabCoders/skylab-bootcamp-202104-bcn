@@ -1,0 +1,28 @@
+@import '../../styles/colors';
+
+.footer {
+    height: 100px;
+    
+    &__links {
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        background: $footer-color;
+        align-items: center;
+        justify-content: space-around;
+        color: white;
+    }
+    
+    &__item {
+        cursor: pointer;
+    }
+    
+    &__copyrigth {
+        height: 50px;
+        background: $footer-color-dark;
+        align-items: center;
+        justify-content: space-around;
+        color: white;
+        display: flex;
+    }
+}
