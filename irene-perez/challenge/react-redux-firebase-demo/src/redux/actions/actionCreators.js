@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+import '../../firebase';
 import firebase from 'firebase';
 import actionTypes from './actionTypes';
 
@@ -14,7 +14,10 @@ export function login() {
         userData: user
       });
     } catch (error) {
-      console.log(error);
+      dispatch({
+        type: actionTypes.LOGIN_ERROR,
+        error
+      });
     }
   };
 }
@@ -27,7 +30,10 @@ export function logout() {
         type: actionTypes.LOGOUT
       });
     } catch (error) {
-      console.log(error);
+      dispatch({
+        type: actionTypes.LOGIN_ERROR,
+        error
+      });
     }
   };
 }
