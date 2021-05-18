@@ -4,12 +4,12 @@ aside {
     justify-content: center;
     position: absolute;
     width: 287px;
-    height: 942px;
+    height: 85vh;
     background: #FB8500;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 0px 100px 0px;
 }
-&__dashboard-icons {
+.sidebar__dashboard-icons {
     padding: 0px;
     list-style: none;
     display: flex;
@@ -18,11 +18,11 @@ aside {
     margin-top: 70px;
 }
 
-&__dashboard-icons li {
+.sidebar__dashboard-icons li {
     filter: brightness(80%);
 }
 
-&__dashboard-icons li:hover {
+.sidebar__dashboard-icons li:hover {
     filter: brightness(100%);
     -webkit-filter: drop-shadow(2px 2px 0 black)
     drop-shadow(-2px -2px 0 black);
