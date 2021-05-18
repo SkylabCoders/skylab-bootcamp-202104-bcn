@@ -14,7 +14,7 @@ export function loadHeroes() {
       });
     } catch (error) {
       dispatch({
-        type: 'LOAD_HEROES_ERROR'
+        type: actionTypes.LOAD_HEROES_ERROR
       });
     }
   };
@@ -38,10 +38,6 @@ export function deleteHero(heroId) {
       heroId
     });
   };
-  // return {
-  //   type: actionTypes.DELETE_HERO,
-  //   heroId
-  // };
 }
 
 export function updateHero(hero) {
@@ -52,10 +48,6 @@ export function updateHero(hero) {
       hero: data
     });
   };
-  // return {
-  //   type: actionTypes.UPDATE_HERO,
-  //   hero
-  // };
 }
 
 export function loadHero(hero) {
@@ -66,10 +58,6 @@ export function loadHero(hero) {
       hero: data
     });
   };
-  // return {
-  //   type: actionTypes.LOAD_HERO,
-  //   hero
-  // };
 }
 
 export function getHeroById(heroId) {
@@ -79,10 +67,4 @@ export function getHeroById(heroId) {
     type: actionTypes.LOAD_HERO,
     hero
   };
-  // const hero = HEROES.find((current) => current.id === +heroId);
-
-  // return {
-  //   type: actionTypes.LOAD_HERO,
-  //   hero
-  // };
 }

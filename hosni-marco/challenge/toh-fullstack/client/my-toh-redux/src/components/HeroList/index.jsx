@@ -8,7 +8,9 @@ import { loadHeroes, deleteHero, addHero } from '../../redux/actions/actionCreat
 function List({ heroes, dispatch }) {
   function handleAdd() {
     const inputNewHero = document.getElementById('heroInputCreation');
-    const heroNew = { id: (heroes[heroes.length - 1].id + 1), name: inputNewHero.value };
+    const heroNew = {
+      id: (heroes[heroes.length - 1].id + 1),
+      name: inputNewHero.value };
     dispatch(addHero(heroNew));
   }
 
