@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'Starjedi';
+  src: url("./../../Starjedi.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Imperial-SW';
+  src: url("./../../imperial-sw.ttf") format("truetype");
+}
+
+.choose-faction {
+  text-align: center;
+}
+
+.login {
+  margin: auto;
+  font-family: 'Starjedi';
+  letter-spacing: 0.1em;
+}
+
+.login__auth {
+  position: relative;
+}
+
+.auth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.auth__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  font-size: 5em;
+  text-align: center;
+}
+
+.auth__subtitle {
+  font-family: 'Imperial-SW';
+  font-size: 2em;
+  text-align: center;
+  margin: 0;
+}
+
+.policy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.policy__checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-right: 5em;
+}
+
+.policy input {
+  margin-right: 1em;
+}
+
+.policy input::after {
+  background-color: #FCE952;
+}
+
+.login-button {
+  background: #FCE952;
+  font-family: 'Starjedi';
+  outline: 0;
+  border-style: none;
+  border-radius: 1em;
+  font-size: 1em;
+  padding: 0.2em 1em;
+}
+
+.logout-button {
+  background: #FCE952;
+  font-family: 'Starjedi';
+  outline: 0;
+  border-style: none;
+  border-radius: 1em;
+  font-size: 1em;
+  padding: 0.2em 1em;
+  margin-top: 5em;
+}
+
+#starwarspolicy {
+  position: absolute;
+  width: 100%;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  outline: 0px;
+  border-style: none;
+}
+/*# sourceMappingURL=form.css.map */

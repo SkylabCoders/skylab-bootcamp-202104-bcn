@@ -1,0 +1,44 @@
+.dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin: 30px 0px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #1a535c;
+}
+
+.dashboard h2 {
+  color: #d9f0f0d8;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.dashboard p {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #ffe66d;
+}
+
+.pendingTasks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.pendingTasks h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+/*# sourceMappingURL=dashboard.css.map */

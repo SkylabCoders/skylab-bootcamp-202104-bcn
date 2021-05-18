@@ -1,0 +1,22 @@
+$bg: adjust-hue(#979797, 0%);
+$bg-dark: #232323;
+$recessed: desaturate(lighten($bg-dark, 20%), 5%);
+
+.footer {
+    width: 100%;
+    background-color: $bg-dark;
+    .footer__link-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        .footer-link {
+            list-style: none;
+            margin: 20px 40px;
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}

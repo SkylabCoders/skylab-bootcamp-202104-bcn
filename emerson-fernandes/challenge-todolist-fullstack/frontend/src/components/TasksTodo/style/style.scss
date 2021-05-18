@@ -1,0 +1,118 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    
+}
+
+body{
+    background-color: #208c71;
+    height: 100vh;
+}
+
+.windows-container{
+    margin-top: 5em;
+    height: 70vh;
+    background-color:#6c6c6c ;
+    margin-left: 7em;
+    margin-right: 7em;
+    border: #52515123 solid 0.1em;
+
+    @media screen and (max-width:804px){
+        margin-left: 6.5em;
+        margin-right: 6.5em;
+
+        @media screen and (max-width:600px){
+            margin-left: 4.5em;
+            margin-right: 4.5em;
+    
+            @media screen and (max-width:419px){
+                margin-left: 1.7em;
+                margin-right: 1.7em;
+
+                @media screen and (max-width:285px){
+                    margin-left: 0.8em;
+                    margin-right: 0.8em;
+            
+                }
+        
+            }
+        }
+
+    }
+     
+}
+    
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#394dcd ;
+    
+    &__title{
+        font-weight: lighter;
+        color: white;
+    }
+
+    &__button{
+        background-color: #6c6c6c;
+        color: black;
+        font-weight: bolder;
+        width: 2.8em;
+        height: 2.1em;
+        margin-right: 0.2em;
+    }
+}
+
+
+.task-container{
+    display: flex;
+    margin-top: 5vh;
+    margin-left: 1.5em;
+
+    &__button{
+        display: flex;
+        background-color:#6c6c6c;
+        margin-left: 1em;
+        width: 15vw;
+        cursor: pointer;
+    }
+
+    &__input{
+        display: flex;
+        height: 5vh;
+        width: 50vw;
+    }
+}
+
+.list-container{
+    margin-top: 5vh;
+    height: 45vh;
+    background-color: white;
+   
+    
+    &__ul{
+        padding-top: 1em;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__list{
+        margin-top: 0.5em;
+    }
+    
+    &__button{
+        background-color: #6c6c6c;
+        width: 5em;
+        cursor: pointer;
+    }
+}
+
+.footer-container{
+    display: flex;
+    align-items: flex-end;
+}

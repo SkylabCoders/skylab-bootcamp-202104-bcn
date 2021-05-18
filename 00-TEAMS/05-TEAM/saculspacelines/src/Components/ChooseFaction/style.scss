@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'Imperial-SW' ;
+    src: url('./../../imperial-sw.ttf') format('truetype');
+}
+
+$sw-yellow: #FCE952;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    border-style: none;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+
+    button{
+        background-color: $sw-yellow;
+        border-style: none;
+    }
+}
+
+header{
+    align-items: center;
+    padding-bottom: 1em;
+    margin-top: 4em;
+    border-radius: 3em;
+    background-color: #FCE952;
+    font-family: 'Starjedi';
+    color: black;
+    display: flex;
+    height: 6em;
+    justify-content: center;
+    width: 75em;
+
+    h1{
+       font-size: 5em;
+    }
+
+}
+
+.faction-container{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    width: 60em;
+
+    &__side {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 30em;
+        justify-content: space-between;
+    }
+
+    button {
+        border-radius: 50%;
+        display: flex;
+        border-style: none;
+        align-items: center;
+    }
+    
+}
+
+.factions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 0.1em;
+}
+
+footer{
+    display: flex;
+    justify-content:center;
+}
+
+.lightPic{
+    background-color: white;
+    border-radius: 50%;
+    height: 30em;
+    width: 30em;
+}
+
+.darkPic{
+    height: 30em;
+    width: 30em;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.faction-name {
+    background-color: $sw-yellow;
+    color: black;
+    font-family: 'Starjedi';
+    font-size: 3em;
+    border-radius: 3em;
+    padding: 0 1em;
+    letter-spacing: 0.1em;
+}
