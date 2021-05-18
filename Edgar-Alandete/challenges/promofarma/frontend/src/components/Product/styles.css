@@ -1,0 +1,37 @@
+.product-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.product-list__item .product-name {
+  width: 100%;
+}
+
+.product-list__item--bold {
+  font-weight: bold;
+  width: 20%;
+}
+
+.product-list__item button {
+  background-image: url("./../../assets/images/add-to-cart.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px;
+  background-color: #8cc003;
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+/*# sourceMappingURL=styles.css.map */
