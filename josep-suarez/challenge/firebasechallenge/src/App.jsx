@@ -1,15 +1,39 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'redux';
+import { login, logout } from './redux/actions/actionCreators';
 import './App.css';
 
-function App({ user }) {
+function App({ dispatch, user }) {
   return (
-    <>
-      <h2>Josep el mejor</h2>
-    </>
+    <nav>
+      {
+      user.isLoggedIn
+        ? (
+          <button
+            className="btn btn-primary"
+            type="button"
+            onClick={() => dispatch(logout())}
+          >
+            Logout
+          </button>
+        )
+        : (
+          <button
+            className="btn btn-primary"
+            type="button"
+            onClick={() => dispatch(login())}
+          >
+            Login
+          </button>
+        )
+
+    }
+
+    </nav>
   );
 }
-function mapStateToProps({ store }) {
+function mapStateToProps({ user }) {
   return {
     user
   };
