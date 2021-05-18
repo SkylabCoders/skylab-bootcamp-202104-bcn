@@ -1,7 +1,7 @@
 import actionTypes from '../actions/actionTypes';
 
 const authReducer = (user = {}, action) => {
-  let newUserData = user;
+  let newUserData = { ...user };
   switch (action.type) {
     case actionTypes.LOGIN:
       newUserData = {
