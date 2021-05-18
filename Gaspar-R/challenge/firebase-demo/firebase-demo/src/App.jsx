@@ -1,28 +1,51 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
+import { login, logout } from './redux/actions/actionCreators';
 
-function App() {
+function App({ user, dispatch }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Una perra soprendente</h1>
-        <p>
-          Ke ondi ese gheckoooooo
-        </p>
+    <div className="Container">
+      <header className="d-flex flex-wrap justify-content py-3 mb-4 border-bottom">
 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <nav>
+          {
+            user.isLoggedIn
+              ? (
+                <button
+                  className="btn btn-secondary"
+                  type="button"
+                  onClick={() => dispatch(logout())}
+                >
+                  Logout
+                </button>
+              )
+              : (
+                <button
+                  className="btn btn-primary"
+                  type="button"
+                  onClick={() => dispatch(login())}
+                >
+                  Login
+                </button>
+              )
+
+            }
+        </nav>
       </header>
+      <h1>React app with firebase</h1>
+      <p>
+        Demo for firebase app
+      </p>
+
     </div>
   );
 }
 
-export default App;
+function mapStateToProps({ user }) {
+  return {
+    user
+  };
+}
+
+export default connect(mapStateToProps)(App);
