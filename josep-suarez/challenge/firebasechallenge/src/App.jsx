@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 import { login, logout } from './redux/actions/actionCreators';
 import './App.css';
 
