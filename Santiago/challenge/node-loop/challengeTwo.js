@@ -18,10 +18,22 @@
    - Only use setInterval (not setTimeout)
    - Use only ONE if statement*/
 
-const challengeTwo = (counter, delay) => {
-  setTimeout(() => {
-    console.log(`Hello World ${counter}`);
-    challengeTwo(counter += 1);
-  }, counter * 1000, 11000)
+
+function challengeTwo(delay = 100) {
+
+  let interval = 5;
+
+  const longInterval = setInterval(() => {
+
+    if (interval > 0) {
+      console.log(`Hello World ${delay}`);
+      interval = interval - 1;
+    } else {
+      clearInterval(longInterval);
+      interval = 5;
+      challengeTwo(delay + 100);
+    }
+
+  }, delay);
 }
-challengeTwo(1);
+challengeTwo();
