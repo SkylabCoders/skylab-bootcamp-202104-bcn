@@ -53,7 +53,7 @@ describe('Given a TaskSite component', () => {
         const button = screen.getByTestId('task-site-modify-button-1');
         modifyTask.mockReturnValueOnce({
           type: actionTypes.MODIFY_TASK,
-          task: { id: 1, task: 'I know Javascript' },
+          task: { id: 1, task: 'I know Javascript' }
         });
 
         // act
