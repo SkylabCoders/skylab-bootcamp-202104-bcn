@@ -36,8 +36,9 @@ function App({ user, dispatch }) {
       <h1>
         Welcome to Skylab
         {' '}
-        {user.name}
+        {user.displayName}
       </h1>
+      <img src={user.photoURL} alt={user.email} />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Obcaecati, ex consequatur magnam nostrum facilis facere eligendi porro!
