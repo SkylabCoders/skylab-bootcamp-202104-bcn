@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
-import login from './redux/actions/actionCreators';
+import { login, logout } from './redux/actions/actionCreators';
 import './App.css';
 
 function App({ user, dispatch }) {
@@ -13,7 +13,13 @@ function App({ user, dispatch }) {
         ? (
           <div>
             <p>{user?.displayName}</p>
-            <button type="button">Logout</button>
+            <button
+              type="button"
+              onClick={() => dispatch(logout())}
+            >
+              Logout
+
+            </button>
           </div>
         ) : (
           <button

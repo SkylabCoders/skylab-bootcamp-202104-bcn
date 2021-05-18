@@ -9,6 +9,9 @@ function authReducer(userData = {}, action) {
         isLoggedIn: true,
       };
       break;
+    case actionTypes.LOGOUT:
+      newUserData = { isLoggedIn: false };
+      break;
     default:
       break;
   }
