@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,100;0,400;0,700;1,400&display=swap');
+
+
+html {
+    box-sizing: border-box;
+    background-color: #182430;
+    margin: 0;
+    max-width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+body{ 
+    margin: 100px auto;
+
+    p, ul {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.title {
+    font-family: 'Bebas Neue', cursive;
+    color: #f3f3f3;
+    font-size: 3.5em;
+    letter-spacing: 0.4rem;
+    text-align: center;
+
+}
+
+
+
