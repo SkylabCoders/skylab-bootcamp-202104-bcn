@@ -49,6 +49,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-size: 25px;
+  text-decoration: none;
 }
 
 .container__deco {
