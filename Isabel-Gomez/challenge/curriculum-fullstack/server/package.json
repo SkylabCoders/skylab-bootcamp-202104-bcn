@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev": "set DEBUG=server,server:* & nodemon src/index.js",
+    "start:dev": "DEBUG=server,server:* nodemon src/index.js",
     "start": "nodemon src/index.js",
     "debug": "nodemon --inspect-brk src/index.js",
     "test": "jest --watchAll --collect-coverage"
