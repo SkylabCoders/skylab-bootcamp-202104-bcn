@@ -39,7 +39,7 @@ function Dashboard({ curriculum, dispatch }) {
         <p className="resumee__description">
           Fernando&rsquo;s passion for computers began from his childhood,
           he has always been surrounded by technology, computers,
-          cables and buttons.
+          wires and buttons.
         </p>
         After volunteering in Brazil,
         he began studying computer engineering and shortly after
@@ -51,7 +51,7 @@ function Dashboard({ curriculum, dispatch }) {
         <Link href="http" />
         <Link to="/studies-and-work">Studies and Work</Link>
         <Link to="/github">Github</Link>
-        <Link to="/skilss">Skills</Link>
+        <Link to="/skills">Skills</Link>
       </nav>
 
     </>
