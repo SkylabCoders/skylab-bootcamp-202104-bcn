@@ -31,4 +31,3 @@ fs.writeFileSync(path3, content3, err => {
 
 const value = fs.readFileSync("C:\\Users\\gemma\\Documents\\skylab-bootcamp-202104-bcn\\gemma-teixido\\lectures\\node\\2-fs\\bcnBootcamps\\skylab.txt")
 fs.writeFileSync("C:\\Users\\gemma\\Documents\\skylab-bootcamp-202104-bcn\\gemma-teixido\\lectures\\node\\2-fs\\bcnBootcamps\\ironHack.txt", value);
-
