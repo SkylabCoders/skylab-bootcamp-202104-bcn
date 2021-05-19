@@ -1,16 +1,25 @@
-$bg: adjust-hue(#979797, 0%);
-$color: #232323;
-$recessed: desaturate(lighten($bg, 20%), 5%);//#6c7886
+@import './components/styles/colors.scss';
 
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
 body {
   background: rgb(245,244,243);
-background: linear-gradient(180deg, rgba(245,244,243,1) 0%, rgba(182,180,175,1) 67%, rgba(91,89,87,1) 99%);
+  background: linear-gradient(180deg, rgba(245,244,243,1) 0%, rgba(182,180,175,1) 67%, rgba(91,89,87,1) 99%);
   color: #fff;
   font-family: 'Proxima Nova', 'Helvetica Neue', helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 1.5;
-  padding-top: 2rem;
+}
+
+main {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
@@ -34,6 +43,7 @@ nav {
 }
 
 footer{
+  margin-top: auto;
   text-align: center;
   img{
     width: 30px;

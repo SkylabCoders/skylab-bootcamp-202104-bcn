@@ -1,0 +1,71 @@
+.contact h2 {
+  text-align: center;
+}
+
+.contact .contact-form {
+  width: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  margin: 0 auto;
+}
+
+.contact .contact-form label {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 5px 0;
+}
+
+.contact .contact-form label span {
+  width: 100px;
+  color: black;
+}
+
+.contact .contact-form input {
+  width: 100%;
+  margin-left: 20px;
+  border: 1px solid lightcyan;
+  outline: none;
+  padding: 0.2em 0.5em;
+  background-color: transparent;
+}
+
+.contact .contact-form input:focus {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  background-color: rgba(136, 136, 136, 0.447);
+}
+
+.contact .contact-form button {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  background-color: black;
+  color: lightcyan;
+  border: none;
+  outline: none;
+}
+
+@media screen and (max-width: 600px) {
+  .contact .contact-form {
+    width: 80vw;
+  }
+  .contact .contact-form label {
+    margin: 10px 0;
+  }
+}
+/*# sourceMappingURL=Contact.css.map */

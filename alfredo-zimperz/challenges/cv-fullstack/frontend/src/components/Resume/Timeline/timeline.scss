@@ -1,6 +1,5 @@
-$bg: adjust-hue(#979797, 0%);
-$bg-dark: #232323;
-$recessed: desaturate(lighten($bg-dark, 20%), 5%);
+@import '../../styles/colors.scss';
+
 h2 {
   color: $bg-dark;
   text-transform: uppercase;

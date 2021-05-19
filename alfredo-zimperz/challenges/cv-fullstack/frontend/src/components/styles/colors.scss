@@ -1,0 +1,10 @@
+$bg: adjust-hue(#979797, 0%);
+$bg-dark: #232323;
+$recessed: desaturate(lighten($bg-dark, 20%), 5%);
+$close-btn-bg: #f55551;
+$minimize-btn-bg: #f6b73e;
+$maximize-btn-bg: #32c146;
+$command-colour: $maximize-btn-bg;
+$btn-size: 12px;
+$btn-left-offset: 18px;
+$btn-inner-margin: 8px;

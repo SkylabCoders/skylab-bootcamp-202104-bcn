@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   background: #f5f4f3;
   background: -webkit-gradient(linear, left top, left bottom, from(#f5f4f3), color-stop(67%, #b6b4af), color-stop(99%, #5b5957));
@@ -7,7 +14,18 @@ body {
   font-weight: 300;
   font-size: 14px;
   line-height: 1.5;
-  padding-top: 2rem;
+}
+
+main {
+  min-height: 100vh;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 nav {
@@ -46,6 +64,7 @@ nav .nav__link {
 }
 
 footer {
+  margin-top: auto;
   text-align: center;
 }
 

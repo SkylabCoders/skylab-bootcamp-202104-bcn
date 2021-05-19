@@ -1,12 +1,5 @@
-$bg: adjust-hue(#979797, 0%);
-$close-btn-bg: #f55551;
-$minimize-btn-bg: #f6b73e;
-$maximize-btn-bg: #32c146;
-$command-colour: $maximize-btn-bg;
-$btn-size: 12px;
-$btn-left-offset: 18px;
-$btn-inner-margin: 8px;
-  
+@import '../../styles/colors.scss';
+
 .window {
   width: 80%;
   margin: 0 auto 2rem;
@@ -58,7 +51,7 @@ $btn-inner-margin: 8px;
 
 .body {
   padding-bottom: 10px;
-  background: #232323;
+  background: $bg-dark;
   padding: $btn-left-offset;
   pre {
     margin: 0;

@@ -1,10 +1,9 @@
-$bg: adjust-hue(#979797, 0%);
-$bg-dark: #232323;
-$recessed: desaturate(lighten($bg-dark, 20%), 5%);
+@import '../styles/colors.scss';
 
 .footer {
     width: 100%;
     background-color: $bg-dark;
+    margin-top: auto;
     .footer__link-list {
         display: flex;
         justify-content: center;

@@ -1,6 +1,7 @@
 .footer {
   width: 100%;
   background-color: #232323;
+  margin-top: auto;
 }
 
 .footer .footer__link-list {

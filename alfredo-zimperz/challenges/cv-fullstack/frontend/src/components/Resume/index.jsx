@@ -7,12 +7,11 @@ import Loader from '../common/Loader';
 import Terminal from './Terminal';
 import Timeline from './Timeline';
 import Medals from './Medals';
-import loadCv from '../../redux/actions/actionCreators';
-import './resume.css';
+import { loadCv } from '../../redux/actions/actionCreators';
 
 const Resume = ({ cv, actions }) => {
   useEffect(() => {
-    if (!cv.name) { actions.loadCv(); } else { console.log(cv); }
+    if (!cv.name) actions.loadCv();
   }, []);
 
   return (

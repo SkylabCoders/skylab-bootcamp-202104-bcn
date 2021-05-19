@@ -1,0 +1,55 @@
+.contact {
+    h2 {text-align: center;}
+    .contact-form {
+        width:40vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-between;
+        margin:0 auto;
+
+        label {
+            width:100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+
+            span{
+                width:100px;
+                color: black;
+            }
+        }
+
+        input {
+            width: 100%;
+            margin-left: 20px;
+            border: 1px solid lightcyan;
+            outline: none;
+            padding: 0.2em 0.5em;
+            background-color: transparent;
+            &:focus {
+                transition: all 1s;
+                background-color: rgba(136, 136, 136, 0.447);
+            }
+        }
+        button {
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            background-color: black;
+            color: lightcyan;
+            border: none;
+            outline: none
+        }
+
+        @media screen and (max-width: 600px) {
+
+                width:80vw;
+            
+                label {
+                    margin: 10px 0;
+                 }
+            
+        }
+    }
+    
+}
