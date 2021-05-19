@@ -8,6 +8,7 @@ function Resume({ dispatch, curriculum }) {
   useEffect(() => {
     dispatch(loadCurriculum());
   }, []);
+
   return (
     <main className="main">
       <div className="resume">
@@ -26,7 +27,7 @@ function Resume({ dispatch, curriculum }) {
             <div className="container__desc">
               <span className="education__time">
                 {element.dateStart}
-                {' - '}
+                {' // '}
                 {element.dateEnd}
               </span>
               <div className="education__place">
@@ -53,7 +54,7 @@ function Resume({ dispatch, curriculum }) {
             <div className="container__desc">
               <span className="education__time">
                 {element.dateStart}
-                {' - '}
+                {' // '}
                 {element.dateEnd}
               </span>
               <div className="education__place">

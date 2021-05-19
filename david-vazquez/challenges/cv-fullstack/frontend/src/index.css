@@ -16,3 +16,8 @@ code {
   display: flex;
   flex-direction: row;
 }
+
+a{
+  color: white;
+  text-decoration: none;
+}
