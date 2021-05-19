@@ -43,7 +43,14 @@ function App({ user, dispatch }) {
           }
 
           </nav>
-          <h1>To Do List</h1>
+          <h1>
+            Welcome to Todo List
+            {' '}
+            {user.displayName}
+          </h1>
+          <img src={user.photoURL} alt={user.email} />
+
+          {/* <h1>To Do List</h1> */}
           <nav>
             <Link to="/">Task list</Link>
             <Link to="/tasks">Edit tasks</Link>
