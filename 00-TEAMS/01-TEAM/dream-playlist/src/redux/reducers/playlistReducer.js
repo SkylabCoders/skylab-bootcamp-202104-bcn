@@ -1,13 +1,16 @@
-import SONGS from '../../assets/musicList.mock';
 import actionTypes from '../actions/actionTypes';
 
-function playlistReducer(songs = [], action) {
-  switch (action.type) {
-    case (actionTypes.LOAD_SONGS):
-      return SONGS;
+function playlistReducer(playlists = [], { type, newPlaylists }) {
+  let currentPlaylists = [...playlists];
+  switch (type) {
+    case (actionTypes.LOAD_PLAYLISTS):
+      currentPlaylists = newPlaylists;
+      break;
     default:
-      return songs;
+      break;
   }
+
+  return currentPlaylists;
 }
 
 export default playlistReducer;
