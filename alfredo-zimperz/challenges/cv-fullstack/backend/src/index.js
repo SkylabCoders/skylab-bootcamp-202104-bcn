@@ -22,7 +22,9 @@ server.use(express.json());
 server.use(morgan('dev'));
 
 const cvsRouter = require('./routes/cvsRouter');
+const contactsRouter = require('./routes/contactsRouter');
 
-server.use('/cvs', cvsRouter);
+server.use('/api/cvs', cvsRouter);
+server.use('/api/contacts', contactsRouter);
 
 server.listen('2021', () => debug(`Server is running in ${chalk.yellow('localhost:2021')}`));
