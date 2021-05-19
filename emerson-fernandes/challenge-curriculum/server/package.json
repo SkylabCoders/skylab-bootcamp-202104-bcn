@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --wachAll --collect-coverage",
     "start": "nodemon src/index.js",
-    "start-dev": "set DEBUG=server,server:* & nodemon src/index.js"
+    "start-dev": "set DEBUG=server,server:* & nodemon src/index.js",
+    "test": "jest --watchAll --collect-coverage"
+    
   },
   "keywords": [],
   "author": "",
