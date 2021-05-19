@@ -28,7 +28,6 @@ function App({ user, dispatch }) {
                   Login
                 </button>
               )
-
           }
 
         </nav>
