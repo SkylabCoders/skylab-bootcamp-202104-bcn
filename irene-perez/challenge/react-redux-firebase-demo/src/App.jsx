@@ -2,20 +2,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { login, logout } from './redux/actions/actionCreators';
-import './App.css';
 
 function App({ user, dispatch }) {
   return (
     <>
-      <div className="App">
-        <header className="App-header">
-          <nav className="App-header__nav">
+      <div className="container">
+        <header className="d-flex flex-wrap py-3 mb-4 border-bottom">
+          <nav>
             {
               user.isLoggedIn
                 ? (
                   <button
                     type="button"
-                    className="nav-button button"
+                    className="btn btn-primary"
                     onClick={() => dispatch(logout())}
                   >
                     Logout
@@ -24,7 +23,7 @@ function App({ user, dispatch }) {
                 : (
                   <button
                     type="button"
-                    className="nav-button button"
+                    className="btn btn-primary"
                     onClick={() => dispatch(login())}
                   >
                     Login
