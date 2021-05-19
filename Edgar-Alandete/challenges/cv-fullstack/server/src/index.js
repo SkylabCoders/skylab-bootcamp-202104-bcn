@@ -21,7 +21,8 @@ server.use(cors());
 server.use(express.json());
 
 server.use(morgan('tiny'));
-// const tasksRouter = require('./routes/taskRouter');
-// server.use('/tasks', tasksRouter);
+const curriculumsRouter = require('./routes/curriculumsRouter');
+
+server.use('/curriculums', curriculumsRouter);
 
 server.listen(process.env.PORT, () => debug(`Server is running in ${process.env.PORT}`));
