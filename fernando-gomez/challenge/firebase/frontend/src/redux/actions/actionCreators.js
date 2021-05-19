@@ -1,6 +1,9 @@
 import '../../firebase';
 import firebase from 'firebase';
+import axios from 'axios';
 import actionTypes from './actionTypes';
+
+const curriculumUrl = 'http://localhost:2021/curriculums';
 
 export function login() {
   return async (dispatch) => {
@@ -33,6 +36,22 @@ export function logout() {
       dispatch({
         type: actionTypes.LOGIN_ERROR,
         error,
+      });
+    }
+  };
+}
+
+export function loadCurriculum() {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios(curriculumUrl);
+      dispatch({
+        type: actionTypes.LOAD_CURRICULUM,
+        curriculum: data[0],
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.CURRICULUM_ERROR,
       });
     }
   };
