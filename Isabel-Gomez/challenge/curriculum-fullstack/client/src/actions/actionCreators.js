@@ -1,7 +1,8 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const { URL } = process.env;
+// const url = process.env.URL;
+const URL = 'http://localhost:1905/curriculums';
 
 const loadCurriculum = () => async (dispatch) => {
   try {
