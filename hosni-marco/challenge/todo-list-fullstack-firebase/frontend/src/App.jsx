@@ -18,7 +18,7 @@ function App({ user, dispatch }) {
       {/* <Provider store={configureStore()}> */}
       <Router>
         <header className="header">
-          <nav>
+          <nav className="header--login">
             {
             user.isLoggedIn
               ? (
@@ -39,18 +39,17 @@ function App({ user, dispatch }) {
                   Login
                 </button>
               )
-
           }
+            <span>
+              Welcome to Todo List
+              {' '}
+              {user.displayName}
+            </span>
+            <img src={user.photoURL} alt={user.email} />
 
           </nav>
-          <h1>
-            Welcome to Todo List
-            {' '}
-            {user.displayName}
-          </h1>
-          <img src={user.photoURL} alt={user.email} />
 
-          {/* <h1>To Do List</h1> */}
+          <h1>To Do List</h1>
           <nav>
             <Link to="/">Task list</Link>
             <Link to="/tasks">Edit tasks</Link>
