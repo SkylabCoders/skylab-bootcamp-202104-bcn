@@ -6,8 +6,8 @@ function curriculumsRouter() {
 
   routes
     .route('/')
-    .get(curriculumsController.getAll);
-  //   .post(curriculumsController.createOne);
+    .get(curriculumsController.getAll)
+    .post(curriculumsController.createOne);
 
   //   routes
   //     .route('/:productId')
