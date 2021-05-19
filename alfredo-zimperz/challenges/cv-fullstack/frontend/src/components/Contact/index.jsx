@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { createContact } from '../../redux/actions/actionCreators';
+import { createContact, resetContact } from '../../redux/actions/actionCreators';
 import Loader from '../common/Loader';
 import './Contact.css';
 
@@ -30,8 +30,19 @@ const Contact = ({ actions, hasSentContact }) => {
       && contact.email
       && contact.message) {
       actions.createContact(contact);
+      setContact(
+        {
+          name: '',
+          lastName: '',
+          phone: '',
+          email: '',
+          message: '',
+        },
+      );
     }
   };
+
+  const newMessageButtonHandler = () => actions.resetContact();
 
   const title = 'Contact';
   const thankYouMessage = 'Thank you for your message!';
@@ -43,7 +54,7 @@ const Contact = ({ actions, hasSentContact }) => {
           <>
             <h2>{hasSentContact.success ? thankYouMessage : title}</h2>
             {
-              !hasSentContact.success && (
+              !hasSentContact.success ? (
                 <>
                   <form className="contact-form">
                     <label htmlFor="nameInput">
@@ -70,6 +81,12 @@ const Contact = ({ actions, hasSentContact }) => {
                   </form>
                 </>
               )
+                : (
+                  <>
+                    <button type="button" onClick={newMessageButtonHandler}>Send another message</button>
+                  </>
+                )
+
             }
 
           </>
@@ -83,6 +100,7 @@ Contact.propTypes = {
   hasSentContact: PropTypes.string.isRequired,
   actions: PropTypes.shape({
     createContact: PropTypes.func.isRequired,
+    resetContact: PropTypes.func.isRequired,
   }).isRequired,
 };
 
@@ -93,7 +111,7 @@ function mapStateToProps({ hasSentContact }) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(
-      { createContact },
+      { createContact, resetContact },
       dispatch,
     ),
   };

@@ -32,3 +32,7 @@ export const createContact = (contact, url = BASE_URL + CONTACTS_ENDPOINT) => as
     console.log(error);
   }
 };
+
+export const resetContact = () => (dispatch) => dispatch({
+  type: actionTypes.CONTACT_RESET,
+});
