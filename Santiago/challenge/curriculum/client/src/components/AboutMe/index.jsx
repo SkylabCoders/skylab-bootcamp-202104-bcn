@@ -10,12 +10,13 @@ function DashBoard({ details, dispatch }) {
   }, []);
 
   return (
-    <div className="main-container">
-      <div className="about-me">
+    <div className="container">
+      <div className="container__title">
         <h3>About me</h3>
-        {
+      </div>
+      {
           details.map((detail) => (
-            <div className="about-me__details">
+            <div className="container__details">
               <span>{`Name: ${detail.name}`}</span>
               <span>{`Direction: ${detail.street}`}</span>
               <span>{`Number: ${detail.telf}`}</span>
@@ -24,7 +25,6 @@ function DashBoard({ details, dispatch }) {
             </div>
           ))
         }
-      </div>
     </div>
   );
 }

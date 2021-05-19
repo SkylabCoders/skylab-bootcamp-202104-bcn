@@ -9,19 +9,20 @@ function Education({ details, dispatch }) {
   }, []);
 
   return (
-    <div className="main-container">
-      <div className="education">
+    <div className="container">
+      <div className="container__title">
         <h3>Education</h3>
-        {
+      </div>
+      {
           details.map((detail) => detail.studies.map((study) => (
-            <div className="education__details">
+            <div className="container__details">
               <p>{study.schoolName}</p>
               <p>{`Since: ${study.startDate}`}</p>
               <p>{`To: ${study.endDate}`}</p>
             </div>
           )))
         }
-      </div>
+
     </div>
   );
 }

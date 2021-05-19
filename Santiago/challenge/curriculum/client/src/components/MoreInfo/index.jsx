@@ -10,25 +10,31 @@ function Moreinfo({ details, dispatch }) {
 
   return (
     <>
-      <div className="languages">
-        <h3>Languages</h3>
+      <div className="container">
+        <div className="container__title">
+          <h3>Languages</h3>
+        </div>
         {
           details.map((detail) => detail.languages.map((language) => (
-            <ul>
+            <div className="container__details">
               <p>{`Name: ${language.name}`}</p>
               <p>{`Level: ${language.level}`}</p>
-            </ul>
+            </div>
           )))
         }
       </div>
 
-      <div className="social-media">
-        <h3>Follow me in:</h3>
+      <div className="container">
+        <div className="container__title">
+          <h3>Follow me in:</h3>
+        </div>
         {
           details.map(((detail) => (
             <>
-              <p>{detail.socialMedia.linkedin}</p>
-              <p>{detail.socialMedia.github}</p>
+              <div className="container__details">
+                <a href={detail.socialMedia.linkedin} target="_blank" rel="noreferrer">Linkedin</a>
+                <a href={detail.socialMedia.github} target="_blank" rel="noreferrer">GitHub</a>
+              </div>
             </>
           )))
         }

@@ -1,20 +1,43 @@
-.main-container {
-  padding: 30px;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-.about-me {
-  padding: 20px;
-  background-color: lightseagreen;
-  margin-bottom: 10px;
+body {
+  background-color: #393f4d;
 }
 
-.education {
-  padding: 20px;
-  background-color: lightsalmon;
-  margin-bottom: 10px;
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #feda6a;
+  border-radius: 10px;
+  margin: 20px;
+  font-weight: 600;
 }
 
-.education__details {
+.container__title {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.container__details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,24 +48,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-}
-
-.experience {
-  padding: 20px;
-  background-color: pink;
-  margin-bottom: 10px;
-}
-
-.languages {
-  padding: 20px;
-  background-color: lightgreen;
-  margin-bottom: 10px;
-}
-
-.social-media {
-  padding: 20px;
-  background-color: lightblue;
-  margin-bottom: 10px;
+  font-size: 25px;
 }
 /*# sourceMappingURL=style.css.map */

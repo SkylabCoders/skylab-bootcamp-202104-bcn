@@ -1,40 +1,36 @@
-.main-container {
-    padding: 30px;
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
-.about-me{
-    padding: 20px;
-    background-color: lightseagreen;
-    margin-bottom: 10px;
+body{
+    background-color:  #393f4d;
 }
 
-.education{
-    padding: 20px;
-    background-color: lightsalmon;
-    margin-bottom: 10px;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #feda6a;
+    border-radius: 10px;
+    margin: 20px;
+    font-weight: 600;
+
+    &__title{
+        font-size: 30px;
+        text-decoration: underline;
+    }
 
     &__details {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        font-size: 25px;
     }
-}
-
-.experience{
-    padding: 20px;
-    background-color: pink;
-    margin-bottom: 10px;
-}
-
-.languages{
-    padding: 20px;
-    background-color: lightgreen;
-    margin-bottom: 10px;
-}
-
-.social-media{
-    padding: 20px;
-    background-color: lightblue;
-    margin-bottom: 10px;
 }

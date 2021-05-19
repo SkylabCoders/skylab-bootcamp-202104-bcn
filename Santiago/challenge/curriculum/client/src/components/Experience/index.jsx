@@ -9,20 +9,20 @@ function Experience({ details, dispatch }) {
   }, []);
 
   return (
-    <div className="main-container">
-      <div className="experience">
+    <div className="container">
+      <div className="container__title">
         <h3>Experience</h3>
-        {
+      </div>
+      {
           details.map((detail) => detail.experience.map((work) => (
-            <ul>
+            <div className="container__details">
               <p>{work.businessName}</p>
               <p>{`Sice: ${work.startDate}`}</p>
               <p>{`To: ${work.endDate}`}</p>
               <p>{work.description}</p>
-            </ul>
+            </div>
           )))
         }
-      </div>
     </div>
   );
 }
