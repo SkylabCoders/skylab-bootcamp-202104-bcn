@@ -2,7 +2,7 @@
 import axios from 'axios';
 import actionTypes from './actionType';
 
-const url = 'http://localhost:1305/to-do-list';
+const url = process.env.REACT_APP_URL;
 
 export function loadTasks() {
   return async (dispatch) => {
