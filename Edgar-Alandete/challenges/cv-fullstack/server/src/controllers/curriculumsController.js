@@ -1,4 +1,4 @@
-const debug = require('debug');
+const debug = require('debug')('server:curriculumsController');
 const Curriculum = require('../model/curriculumModel');
 
 function curriculumsControler() {
@@ -13,8 +13,23 @@ function curriculumsControler() {
     }
   }
 
+  async function createOne(req, res) {
+    debug('Inside the function createOne');
+
+    const newCurriculum = new Curriculum(req.body);
+    try {
+      await newCurriculum.save();
+      res.status(200);
+      res.json(newCurriculum);
+    } catch (error) {
+      res.status(404);
+      res.send(error);
+    }
+  }
+
   return {
     getAll,
+    createOne,
   };
 }
 
