@@ -5,11 +5,12 @@ import { login, logout } from './redux/actions/actionCreators';
 
 function App({ user, dispatch }) {
   return (
-    <div className="Container">
-      <header className="d-flex flex-wrap justify-content py-3 mb-4 border-bottom">
+    <body className="d-flex h-100 text-center text-white bg-dark">
+      <div className="cover-container d-flex w-1 h-1 p-1 mx-auto flex-column">
+        <header className="mb-auto">
 
-        <nav>
-          {
+          <nav>
+            {
             user.isLoggedIn
               ? (
                 <button
@@ -31,14 +32,23 @@ function App({ user, dispatch }) {
               )
 
             }
-        </nav>
-      </header>
-      <h1>React app with firebase</h1>
-      <p>
-        Demo for firebase app
-      </p>
-
-    </div>
+          </nav>
+        </header>
+        <main className="px-3">
+          <h1>This is a React app working with firebase</h1>
+          <h3>
+            {' '}
+            Welcome
+            {' '}
+            {user.displayName}
+          </h3>
+          <img src={user.photoURL} alt={user.email} />
+        </main>
+        <footer className="mt-auto text-white-50">
+          <p>Demo for firebase app</p>
+        </footer>
+      </div>
+    </body>
   );
 }
 
