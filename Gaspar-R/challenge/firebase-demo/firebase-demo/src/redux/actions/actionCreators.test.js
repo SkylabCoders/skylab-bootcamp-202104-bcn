@@ -7,16 +7,11 @@ describe('Given a login function', () => {
   describe('When is invoked', () => {
     describe('And there is an error', () => {
       test('Then dispatch an action type LOGIN_ERROR', async () => {
-        // arrange
         const dispatch = jest.fn();
         firebase.auth.mockReturnValueOnce({
           signInWithPopup: jest.fn().mockRejectedValueOnce()
         });
-
-        // act
         await login()(dispatch);
-
-        // assert
         expect(dispatch).toHaveBeenCalledWith({
           type: 'LOGIN_ERROR'
         });
@@ -24,7 +19,6 @@ describe('Given a login function', () => {
     });
 
     test('Then dispatch an action type LOGIN', async () => {
-      // arrange
       const dispatch = jest.fn();
       firebase.auth.mockReturnValueOnce({
         signInWithPopup: jest.fn().mockResolvedValueOnce({
@@ -34,11 +28,7 @@ describe('Given a login function', () => {
           }
         })
       });
-
-      // act
       await login()(dispatch);
-
-      // assert
       expect(dispatch).toHaveBeenCalledWith({
         type: 'LOGIN',
         userData: {
@@ -50,30 +40,15 @@ describe('Given a login function', () => {
   });
 });
 
-/**
- * Given a logout function
- * When is invoked
- * And there is an error
- * Then dispatch an action type LOGIN_ERROR
- *
- * Then dispatch an action type LOGOUT
- *
- */
-
 describe('Given a logout function', () => {
   describe('When is invoked', () => {
     describe('And there is an error', () => {
       test('Then dispatch an action type LOGIN_ERROR', async () => {
-        // arrange
         const dispatch = jest.fn();
         firebase.auth.mockReturnValueOnce({
           signOut: jest.fn().mockRejectedValueOnce()
         });
-
-        // act
         await logout()(dispatch);
-
-        // assert
         expect(dispatch).toHaveBeenCalledWith({
           type: 'LOGIN_ERROR'
         });
@@ -81,16 +56,11 @@ describe('Given a logout function', () => {
     });
 
     test('Then dispatch an action type LOGIN', async () => {
-      // arrange
       const dispatch = jest.fn();
       firebase.auth.mockReturnValueOnce({
         signOut: jest.fn().mockResolvedValueOnce()
       });
-
-      // act
       await logout()(dispatch);
-
-      // assert
       expect(dispatch).toHaveBeenCalledWith({
         type: 'LOGOUT'
       });

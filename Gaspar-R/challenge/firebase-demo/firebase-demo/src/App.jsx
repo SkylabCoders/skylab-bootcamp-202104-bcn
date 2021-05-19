@@ -42,9 +42,10 @@ function App({ user, dispatch }) {
             {' '}
             {user.displayName}
           </h3>
-          <img src={user.photoURL} alt={user.email} />
+          <img className="profile-pic" src={user.photoURL} alt={user.email} />
         </main>
         <footer className="mt-auto text-white-50">
+          <img src="https://i.pinimg.com/originals/6d/fc/81/6dfc8131c582bb80e602ee46d942564a.gif" height="250px" width="250px" alt="dancing jesus" />
           <p>Demo for firebase app</p>
         </footer>
       </div>
