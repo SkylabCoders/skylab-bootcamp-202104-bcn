@@ -23,9 +23,9 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan('tiny'));
 
-// const productsRouter = require('./routes/productsRouter');
+const curriculumsRouter = require('./routes/curriculumsRouter');
 
-// server.use('/products', productsRouter);
+server.use('/curriculums', curriculumsRouter);
 
 server.listen(port,
   () => debug(`Server is running in ${port}`));
