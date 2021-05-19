@@ -25,57 +25,6 @@ function DashBoard({ details, dispatch }) {
           ))
         }
       </div>
-
-      <div className="education">
-        <h3>Education</h3>
-        {
-          details.map((detail) => detail.studies.map((study) => (
-            <div className="education__details">
-              <p>{study.schoolName}</p>
-              <p>{`Since: ${study.startDate}`}</p>
-              <p>{`To: ${study.endDate}`}</p>
-            </div>
-          )))
-        }
-      </div>
-
-      <div className="experience">
-        <h3>Experience</h3>
-        {
-          details.map((detail) => detail.experience.map((work) => (
-            <ul>
-              <p>{work.businessName}</p>
-              <p>{`Sice: ${work.startDate}`}</p>
-              <p>{`To: ${work.endDate}`}</p>
-              <p>{work.description}</p>
-            </ul>
-          )))
-        }
-      </div>
-
-      <div className="languages">
-        <h3>Languages</h3>
-        {
-          details.map((detail) => detail.languages.map((language) => (
-            <ul>
-              <p>{`Name: ${language.name}`}</p>
-              <p>{`Level: ${language.level}`}</p>
-            </ul>
-          )))
-        }
-      </div>
-
-      <div className="social-media">
-        <h3>Follow me in:</h3>
-        {
-          details.map(((detail) => (
-            <>
-              <p>{detail.socialMedia.linkedin}</p>
-              <p>{detail.socialMedia.github}</p>
-            </>
-          )))
-        }
-      </div>
     </div>
   );
 }
