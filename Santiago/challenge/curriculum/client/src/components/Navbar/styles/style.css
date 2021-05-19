@@ -35,4 +35,8 @@
   color: white;
   font-size: 30px;
 }
+
+.navbar ul li:hover {
+  color: #feda6a;
+}
 /*# sourceMappingURL=style.css.map */

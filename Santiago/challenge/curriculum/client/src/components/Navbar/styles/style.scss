@@ -24,6 +24,10 @@
         li {
             color: white;
             font-size: 30px;
+
+            &:hover {
+                color: #feda6a;
+            }
         }
     }
 }

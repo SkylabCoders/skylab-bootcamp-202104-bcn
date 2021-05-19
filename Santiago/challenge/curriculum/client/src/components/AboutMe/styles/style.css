@@ -9,6 +9,10 @@
   font-family: 'Josefin Sans', sans-serif;
 }
 
+a {
+  color: black;
+}
+
 body {
   background-color: #393f4d;
 }
@@ -54,6 +58,6 @@ body {
 
 .container__deco {
   width: 200px;
-  border-top: 1px solid black;
+  border-top: 1px solid #cf701c;
 }
 /*# sourceMappingURL=style.css.map */
