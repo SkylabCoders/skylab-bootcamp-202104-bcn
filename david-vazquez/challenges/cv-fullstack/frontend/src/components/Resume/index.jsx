@@ -20,16 +20,16 @@ function Resume({ dispatch, curriculum }) {
               {curriculum?.education
         && (curriculum?.education).map((element) => (
           <li className="container__item">
+            <div className="container__item-left">
+              {element.dateStart}
+              {' '}
+              {element.dateEnd}
+            </div>
             <div className="container__top">
               <div className="container__circle" />
               <span className="education__title">{element.title}</span>
             </div>
             <div className="container__desc">
-              <span className="education__time">
-                {element.dateStart}
-                {' // '}
-                {element.dateEnd}
-              </span>
               <div className="education__place">
                 {element.center}
                 {' '}
@@ -47,18 +47,24 @@ function Resume({ dispatch, curriculum }) {
               {curriculum?.experience
         && (curriculum?.experience).map((element) => (
           <li className="container__item">
+            <div className="container__item-left">
+              {element.dateStart}
+              {' '}
+              {element.dateEnd}
+            </div>
             <div className="container__top">
               <div className="container__circle" />
-              <span className="education__title">{element.position}</span>
+              <span className="education__title">
+                {element.position}
+                {' // '}
+                {element.company}
+              </span>
             </div>
             <div className="container__desc">
-              <span className="education__time">
-                {element.dateStart}
-                {' // '}
-                {element.dateEnd}
-              </span>
-              <div className="education__place">
-                {element.company}
+              <span className="education__time" />
+              <div className="education__place" />
+              <div clasName="description">
+                {element.description}
               </div>
             </div>
           </li>

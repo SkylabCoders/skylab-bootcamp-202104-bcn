@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import loadCurriculum from '../../redux/actions/actionCreator';
+import './index.css';
 
 function Resume({ dispatch, curriculum }) {
   useEffect(() => {
@@ -12,7 +13,7 @@ function Resume({ dispatch, curriculum }) {
   return (
     <main className="main">
       <h2>About me</h2>
-      <div>
+      <div className="bio-container">
         <p>{curriculum.biography}</p>
       </div>
     </main>

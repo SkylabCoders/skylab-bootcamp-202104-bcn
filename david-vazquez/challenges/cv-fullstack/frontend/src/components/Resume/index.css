@@ -6,6 +6,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: scroll;
 }
 
 .resume {
@@ -21,6 +22,7 @@
 .resume__right {
   width: 40%;
   margin: 0 40px;
+  margin-right: 60px;
 }
 
 .resume__right .skills {
@@ -54,6 +56,8 @@
 
 .resume__left .education__title {
   padding-left: 10px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .resume__left .experience {
@@ -64,6 +68,7 @@
 .container {
   /* Used to position the left vertical line */
   position: relative;
+  margin-left: 100px;
 }
 
 .container__line {
@@ -79,13 +84,21 @@
 
 .container__items {
   /* Reset styles */
+  position: relative;
   list-style-type: none;
   margin: 0px;
   padding: 0px;
 }
 
+.container__item-left {
+  position: absolute;
+  left: -100px;
+  width: 100px;
+  height: 60px;
+}
+
 .container__item {
-  margin-bottom: 8px;
+  margin-bottom: 15px;
 }
 
 .container__top {
@@ -116,6 +129,6 @@
 
 .container__desc {
   /* Make it align with the title */
-  margin-left: 48px;
+  margin-left: 25px;
 }
 /*# sourceMappingURL=index.css.map */

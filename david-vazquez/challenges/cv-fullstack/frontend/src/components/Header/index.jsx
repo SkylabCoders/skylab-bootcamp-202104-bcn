@@ -21,12 +21,8 @@ function Header({ dispatch, curriculum }) {
         {curriculum.surname}
       </h1>
       <ul className="header__nav nav">
-        <li className="nav__item">
-          <Link to="/">About me</Link>
-        </li>
-        <li className="nav__item">
-          <Link to="/resume">Resume</Link>
-        </li>
+        <Link to="/"><li className="nav__item">About me</li></Link>
+        <Link to="/resume"><li className="nav__item">Resume</li></Link>
         <li className="nav__item">Portfolio</li>
         <li className="nav__item">Contact</li>
       </ul>
