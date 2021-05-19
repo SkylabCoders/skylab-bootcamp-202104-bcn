@@ -46,7 +46,7 @@ function curriculumController() {
       const updatedCurriculum = await Curriculum.findByIdAndUpdate(
         curriculumId,
         req.body,
-        { new: true }
+        { new: true },
       );
       res.json(updatedCurriculum);
     } catch (error) {
@@ -56,7 +56,7 @@ function curriculumController() {
   }
 
   return {
-    getAll, addCurriculum, deleteCurriculumById, updateCurriculumById
+    getAll, addCurriculum, deleteCurriculumById, updateCurriculumById,
   };
 }
 module.exports = curriculumController;

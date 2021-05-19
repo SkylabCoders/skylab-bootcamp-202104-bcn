@@ -11,8 +11,8 @@ const curriculumShema = mongoose.Schema({
       institution: String,
       title: String,
       start: String,
-      finish: String
-    }
+      finish: String,
+    },
   ],
   work: [
     {
@@ -20,9 +20,9 @@ const curriculumShema = mongoose.Schema({
       institution: String,
       title: String,
       start: String,
-      finish: String
-    }
-  ]
+      finish: String,
+    },
+  ],
 });
 
 module.exports = mongoose.model('Curriculums', curriculumShema);
