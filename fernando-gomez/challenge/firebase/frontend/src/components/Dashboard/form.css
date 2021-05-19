@@ -1,0 +1,31 @@
+.presentation-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.presentation-images__avatar {
+  width: 40%;
+  border-radius: 50%;
+  position: absolute;
+  right: 5%;
+  top: 3%;
+}
+
+.title {
+  left: 0%;
+  width: 60%;
+  font-size: 8vmin;
+  padding-left: 2vmin;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.resumee {
+  font-family: 'Work Sans', sans-serif;
+  padding: 0vmin 6vmin;
+}
+/*# sourceMappingURL=form.css.map */

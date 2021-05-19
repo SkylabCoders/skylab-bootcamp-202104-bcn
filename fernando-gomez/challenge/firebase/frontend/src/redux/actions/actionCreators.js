@@ -1,9 +1,11 @@
 import '../../firebase';
 import firebase from 'firebase';
+import 'firebase/firestore';
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const curriculumUrl = 'http://localhost:2021/curriculums';
+const db = 'http://localhost:2021/curriculums';
+// const db = firebase.firestore();
 
 export function login() {
   return async (dispatch) => {
@@ -44,7 +46,7 @@ export function logout() {
 export function loadCurriculum() {
   return async (dispatch) => {
     try {
-      const { data } = await axios(curriculumUrl);
+      const { data } = await axios(db);
       dispatch({
         type: actionTypes.LOAD_CURRICULUM,
         curriculum: data[0],

@@ -1,24 +1,24 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+// import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import { loadCurriculum } from '../redux/actions/actionCreators';
+import { loadCurriculum } from '../../redux/actions/actionCreators';
+// import './form.css';
 
-function Dashboard({ curriculum, dispatch }) {
+function StudiesAndWork({ curriculum, dispatch }) {
   useEffect(() => {
     if (!curriculum.length) dispatch(loadCurriculum());
   }, []);
 
   return (
     <>
-      <h1 className="title">Curriculum</h1>
-      <h2>{curriculum.name}</h2>
-      <p>{curriculum.resumee}</p>
+      <h2>Studies and Work</h2>
     </>
   );
 }
 
-Dashboard.propTypes = {
+StudiesAndWork.propTypes = {
   curriculum: PropTypes.arrayOf(PropTypes.shape({
     length: PropTypes.number,
   })).isRequired,
@@ -31,4 +31,4 @@ function mapStateToProps({ curriculum }) {
   };
 }
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(StudiesAndWork);
