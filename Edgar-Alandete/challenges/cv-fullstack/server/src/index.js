@@ -23,6 +23,6 @@ server.use(express.json());
 server.use(morgan('tiny'));
 const curriculumsRouter = require('./routes/curriculumsRouter');
 
-server.use('/curriculums', curriculumsRouter);
+server.use('/api/curriculums', curriculumsRouter);
 
 server.listen(process.env.PORT, () => debug(`Server is running in ${process.env.PORT}`));
