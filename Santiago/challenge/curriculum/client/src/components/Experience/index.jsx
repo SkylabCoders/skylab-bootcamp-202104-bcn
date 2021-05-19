@@ -20,6 +20,7 @@ function Experience({ details, dispatch }) {
               <p>{`Sice: ${work.startDate}`}</p>
               <p>{`To: ${work.endDate}`}</p>
               <p>{work.description}</p>
+              <span className="container__deco" />
             </div>
           )))
         }

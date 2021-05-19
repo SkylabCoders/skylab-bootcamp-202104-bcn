@@ -18,10 +18,15 @@ function DashBoard({ details, dispatch }) {
           details.map((detail) => (
             <div className="container__details">
               <span>{`Name: ${detail.name}`}</span>
+              <span className="container__deco" />
               <span>{`Direction: ${detail.street}`}</span>
+              <span className="container__deco" />
               <span>{`Number: ${detail.telf}`}</span>
+              <span className="container__deco" />
               <span>{`Email: ${detail.email}`}</span>
+              <span className="container__deco" />
               <span>{`Birth date: ${detail.birthDate}`}</span>
+              <span className="container__deco" />
             </div>
           ))
         }

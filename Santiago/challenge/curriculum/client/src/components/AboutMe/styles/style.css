@@ -50,4 +50,9 @@ body {
           align-items: center;
   font-size: 25px;
 }
+
+.container__deco {
+  width: 200px;
+  border-top: 1px solid black;
+}
 /*# sourceMappingURL=style.css.map */

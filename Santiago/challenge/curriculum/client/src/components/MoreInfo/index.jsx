@@ -19,6 +19,7 @@ function Moreinfo({ details, dispatch }) {
             <div className="container__details">
               <p>{`Name: ${language.name}`}</p>
               <p>{`Level: ${language.level}`}</p>
+              <span className="container__deco" />
             </div>
           )))
         }
@@ -33,6 +34,7 @@ function Moreinfo({ details, dispatch }) {
             <>
               <div className="container__details">
                 <a href={detail.socialMedia.linkedin} target="_blank" rel="noreferrer">Linkedin</a>
+                <span className="container__deco" />
                 <a href={detail.socialMedia.github} target="_blank" rel="noreferrer">GitHub</a>
               </div>
             </>

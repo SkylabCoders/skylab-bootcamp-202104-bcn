@@ -19,6 +19,7 @@ function Education({ details, dispatch }) {
               <p>{study.schoolName}</p>
               <p>{`Since: ${study.startDate}`}</p>
               <p>{`To: ${study.endDate}`}</p>
+              <span className="container__deco" />
             </div>
           )))
         }
