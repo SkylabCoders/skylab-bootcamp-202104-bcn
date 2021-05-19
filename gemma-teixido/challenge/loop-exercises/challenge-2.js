@@ -20,3 +20,16 @@
    - Use only ONE if statement
    
 */
+
+let count = 0;
+const interval = (time) =>   
+thisInterval = setInterval(function(){ 
+if (count === 5){
+clearInterval(thisInterval);
+count = 0;
+interval(time += 100);
+}
+console.log(`Hello at ${time}`); 
+count = count + 1;
+}, time); 
+interval(100);
