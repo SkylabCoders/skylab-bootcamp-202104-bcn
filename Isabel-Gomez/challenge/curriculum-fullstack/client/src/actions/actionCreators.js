@@ -1,8 +1,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-// const url = process.env.URL;
-const URL = 'http://localhost:1905/curriculums';
+const URL = process.env.REACT_APP_URL;
 
 const loadCurriculum = () => async (dispatch) => {
   try {
