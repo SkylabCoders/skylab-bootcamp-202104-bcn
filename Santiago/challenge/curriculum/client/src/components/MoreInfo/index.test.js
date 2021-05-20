@@ -1,16 +1,18 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import Dashboard from './index';
+import Moreinfo from './index';
 import { render } from '../../utils/test-utils';
 import loadData from '../../redux/actions/actionsCreator';
 
 jest.mock('../../redux/actions/actionsCreator');
 
-describe('Dashboard component', () => {
+describe('Moreinfo component', () => {
   test('should call loadData', () => {
     loadData.mockReturnValue({ type: '' });
-    render(<Dashboard />, {
-      initialState: {}
+    render(<Moreinfo />, {
+      initialState: {
+        info: []
+      }
     });
     expect(loadData).toHaveBeenCalled();
   });
