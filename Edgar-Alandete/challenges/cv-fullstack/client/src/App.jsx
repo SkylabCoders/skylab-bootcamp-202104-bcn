@@ -1,29 +1,17 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import './App.css';
-import loadCurriculum from './redux/actions/actionCreators';
+import Header from './components/Header';
 
-function App({ dispatch, curriculum }) {
-  useEffect(() => {
-    dispatch(loadCurriculum());
-  }, []);
-
+function App() {
   return (
-    <>
-
-      <h1>Welcome to my CV</h1>
-      <p>{curriculum?.name}</p>
-    </>
+    <Header />
   );
 }
 
 App.propTypes = {
-  curriculum: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-  }).isRequired,
-  dispatch: PropTypes.func.isRequired,
+
 };
 
 const mapStateToProps = ({ curriculum }) => ({ curriculum });
