@@ -28,4 +28,34 @@
   font-family: 'Work Sans', sans-serif;
   padding: 0vmin 6vmin;
 }
+
+.bottom-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.bottom-nav__studies-work {
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  background-color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: white;
+  outline: none;
+}
+
+.bottom-nav__studies-work::before {
+  color: white;
+}
 /*# sourceMappingURL=form.css.map */

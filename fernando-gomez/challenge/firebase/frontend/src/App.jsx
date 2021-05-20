@@ -5,6 +5,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import Contact from './components/Contact';
 import configureStore from './redux/store';
 import Dashboard from './components/Dashboard/index';
 import StudiesAndWork from './components/StudiesAndWork';
@@ -23,7 +24,7 @@ function App() {
             <Route path="/studies-and-work" component={StudiesAndWork} />
             <Route path="/github" component={Github} />
             <Route path="/skills" component={Skills} />
-
+            <Route path="/contact" component={Contact} />
           </Switch>
 
         </Router>

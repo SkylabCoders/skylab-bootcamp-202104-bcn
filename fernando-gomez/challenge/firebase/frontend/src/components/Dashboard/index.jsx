@@ -48,11 +48,28 @@ function Dashboard({ curriculum, dispatch }) {
       </section>
 
       <nav className="bottom-nav">
-        <Link href="http" />
-        <Link to="/studies-and-work">Studies and Work</Link>
-        <Link to="/github">Github</Link>
-        <Link to="/skills">Skills</Link>
+        <Link
+          to="/studies-and-work"
+          className="bottom-nav__studies-work"
+        >
+          <i className="fas fa-graduation-cap" />
+          <i className="fas fa-briefcase" />
+        </Link>
+        <Link
+          to="/github"
+          className="bottom-nav__github"
+        >
+          <i className="fab fa-github" />
+        </Link>
+        <Link
+          to="/skills"
+          className="bottom-nav__skills"
+        >
+          <i className="fas fa-code" />
+        </Link>
       </nav>
+
+      <Link to="/contact">Contact me!</Link>
 
     </>
   );
