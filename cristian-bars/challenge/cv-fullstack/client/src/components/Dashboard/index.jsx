@@ -11,7 +11,15 @@ function Dashboard({ myInfo, dispatch }) {
     <>
       <h2>Entro</h2>
       {
-      myInfo.length ? (<div>{myInfo[0].name}</div>) : <div>No data</div>
+      myInfo.length ? (
+        myInfo.map((detail) => (
+          <>
+            <div>{detail.datos_personales.name}</div>
+            <div>{detail.datos_personales.sureName}</div>
+            <div>{detail.historial_laboral[0].titulo}</div>
+            <div>{detail.historial_laboral[0].descripcion}</div>
+          </>
+        ))) : <div>No data</div>
     }
     </>
   );
