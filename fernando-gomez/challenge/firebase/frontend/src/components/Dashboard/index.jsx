@@ -1,8 +1,8 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
 import { loadCurriculum } from '../../redux/actions/actionCreators';
 import './form.css';
 
@@ -41,10 +41,11 @@ function Dashboard({ curriculum, dispatch }) {
           he has always been surrounded by technology, computers,
           wires and buttons.
         </p>
-        After volunteering in Brazil,
-        he began studying computer engineering and shortly after
-        refining his skills in a development bootcamp at Skylab Coders Academy.
-        <p />
+        <p className="resumee__description">
+          After volunteering in Brazil,
+          he began studying computer engineering and shortly after
+          refining his skills in a development bootcamp at Skylab Coders Academy.
+        </p>
       </section>
 
       <nav className="bottom-nav">
@@ -69,18 +70,15 @@ function Dashboard({ curriculum, dispatch }) {
         </Link>
       </nav>
 
-      <Link to="/contact">Contact me!</Link>
+      <Link to="/contact">
+        <p className="contact">
+          Contact me!
+        </p>
+      </Link>
 
     </>
   );
 }
-
-Dashboard.propTypes = {
-  curriculum: PropTypes.arrayOf(PropTypes.shape({
-    length: PropTypes.number,
-  })).isRequired,
-  dispatch: PropTypes.func.isRequired,
-};
 
 function mapStateToProps({ curriculum }) {
   return {

@@ -1,0 +1,14 @@
+@import './colors';
+
+@mixin nav-buttons {
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+    background-color: $button-background;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    outline: none;
+    text-decoration: none;
+}

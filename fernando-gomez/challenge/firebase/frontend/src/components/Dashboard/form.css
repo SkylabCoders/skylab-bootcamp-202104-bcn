@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 .presentation-images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8,7 +12,14 @@
           flex-direction: column;
 }
 
+.presentation-images__background {
+  max-height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .presentation-images__avatar {
+  max-width: 300px;
   width: 40%;
   border-radius: 50%;
   position: absolute;
@@ -27,6 +38,7 @@
 .resumee {
   font-family: 'Work Sans', sans-serif;
   padding: 0vmin 6vmin;
+  max-width: 1000px;
 }
 
 .bottom-nav {
@@ -35,6 +47,7 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding-top: 1em;
 }
 
 .bottom-nav__studies-work {
@@ -53,9 +66,124 @@
           justify-content: space-evenly;
   color: white;
   outline: none;
+  text-decoration: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .bottom-nav__studies-work::before {
   color: white;
+}
+
+.bottom-nav__github {
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  background-color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: white;
+  outline: none;
+  text-decoration: none;
+}
+
+.bottom-nav__skills {
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  background-color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: white;
+  outline: none;
+  text-decoration: none;
+}
+
+.fa-graduation-cap {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-left: 0.6em;
+  padding-top: 0.5em;
+  font-size: 1.5em;
+}
+
+.fa-briefcase {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding-right: 0.6em;
+  padding-bottom: 0.5em;
+  font-size: 1.5em;
+}
+
+.fa-github {
+  font-size: 4em;
+}
+
+.fa-code {
+  font-size: 2em;
+}
+
+.contact {
+  background: #333;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.55em 0;
+}
+
+@media (min-width: 600px) {
+  .resumee__description {
+    padding-top: 1em;
+    max-width: 85%;
+  }
+  .contact {
+    background: #333;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 1em 0;
+    font-size: 1.2em;
+    margin-top: 5em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .resumee__description {
+    padding-top: 1em;
+    max-width: 85%;
+  }
+  .bottom-nav {
+    padding: 3em 10em 0em 10em;
+  }
+}
+
+@media (max-width: 600px) {
+  .resumee__title {
+    font-size: 1.2em;
+  }
 }
 /*# sourceMappingURL=form.css.map */
