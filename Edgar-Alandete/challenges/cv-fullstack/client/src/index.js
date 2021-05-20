@@ -2,6 +2,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import {
+  BrowserRouter, Switch, Route, Redirect,
+} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -9,7 +12,13 @@ import configureStore from './redux/store/index';
 
 ReactDOM.render(
   <Provider store={configureStore()}>
-    <App />
+    <BrowserRouter>
+      <App />
+      <Switch>
+        <Route exact path="/about" component="" />
+        <Redirect to="./about" />
+      </Switch>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root'),
 );
