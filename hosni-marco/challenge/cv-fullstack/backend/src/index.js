@@ -23,7 +23,7 @@ server.use(morgan('dev'));
 
 const cvRouter = require('./routes/cvRouter');
 
-server.use('/heroes', cvRouter);
+server.use('/cv-fullstacks', cvRouter);
 
 server.listen(port,
   () => debug(`Server is running in ${chalk.yellow(`localhost:${port}`)}`));

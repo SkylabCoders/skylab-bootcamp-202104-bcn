@@ -1,0 +1,38 @@
+[{
+    "title": "Curriculum",
+    "name": ">Hosni Marco Ruano",
+    "personalData":{
+        "adress":  "c/ Meridional 24 A 08018, Barcelona",
+        "tlfNumber": "659 37 67 40",
+        "email": "hosni.marco@gmail.com"
+    },
+    "media": {
+        "linkedin": "linkedin",
+        "github": "github"
+    },
+    "studies": [
+        {"schoolName": "(2007-2008) CFGM Laboratorio de imagen."},
+        {"schoolName":"(2007-2008) CFGM Laboratorio de imagen."},
+        {"schoolName":"(2010-2012) CFGS Tecnico de sonido."},
+        {"schoolName":"(Actualmente) Developer Skylab Coders Academy."}
+    ],
+    "lenguages": {
+        "catalan": "nativo",
+        "spanish": "nativo",
+        "english": "medio"
+    },
+    "workExpercience":{
+        "liveEvents": [
+            {"workName": "Raudio (2013-2015)"},
+            {"workName": "Ready (2012-2013)"}
+        ],
+        "studio": [
+            {"workName": "Deluxe 103 (2017-2021)"},
+            {"workName": "Estudi Sikestudio (2016-2017)"},
+            {"workName": "Estudi Sonilab (2015-2016)"},
+            {"workName": "Estudi Media Arts (2013-2016)"}
+        ],
+        "others": "Operario en Hospital del Mar. (2012-2013)"
+    }
+}
+]

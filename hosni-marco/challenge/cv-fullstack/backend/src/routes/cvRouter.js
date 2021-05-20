@@ -7,13 +7,6 @@ function heroesRouter() {
   routes
     .route('/')
     .get(vcController.getAll);
-  // .post(vcController.createOne);
-
-  //   routes
-  //     .route('/:heroId')
-  //     .get(vcController.getById)
-  //     .put(vcController.updateById)
-  //     .delete(vcController.deleteById);
 
   return routes;
 }
