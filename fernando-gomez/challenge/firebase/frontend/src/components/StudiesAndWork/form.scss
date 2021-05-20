@@ -1,0 +1,58 @@
+@import '../../styles/mixins';
+@import '../../styles/colors';
+
+ul {
+    padding-left: 0;
+}
+
+.top-nav {
+
+    display: flex;
+    justify-content: space-between;
+    background-color: $button-background;
+    align-items: baseline;
+    font-family: 'Work Sans', sans-serif;
+
+    &__home {
+        @include nav-buttons;
+        height: 4em;
+        width: 4em;
+        border: 0.2em white solid;
+        margin: 0.5em 0.5em;
+    }
+
+    &__home:hover {
+        color: $button-background;
+        background-color: white;
+    }
+
+    &__title {
+        color: white;
+        padding-left: 1em;
+        font-size: 1.5em;
+    }
+}
+
+.study, .workElement {
+    @include description;
+
+    &__image {
+        margin-right: 2em;
+    }
+}
+
+.description {
+    &__title {
+        font-weight: 900;
+    }
+}
+
+@media (min-width: 600px) {
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
