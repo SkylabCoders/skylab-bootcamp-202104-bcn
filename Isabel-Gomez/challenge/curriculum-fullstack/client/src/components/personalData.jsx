@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -10,11 +11,14 @@ const PersonalData = ({ cvs, dispatch }) => {
   return (
     <section>
       {cvs.map((element) => (
-        <p>
-          Hi
-          {' '}
-          {element.name}
-        </p>
+        <ul>
+          <li key={element._id}>
+            <img src={element.personalData.image} alt={element.personalData.name} width="70px" />
+          </li>
+          <li key={element._id}>
+            {`${element.personalData.name} ${element.personalData.lastName}`}
+          </li>
+        </ul>
       ))}
     </section>
   );
