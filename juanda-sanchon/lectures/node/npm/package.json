@@ -1,0 +1,14 @@
+{
+  "name": "juanda-testing-skylab",
+  "version": "1.0.0",
+  "description": "algo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "print"
+  ],
+  "author": "juanda",
+  "license": "ISC"
+}

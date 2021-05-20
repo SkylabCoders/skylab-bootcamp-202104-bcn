@@ -1,0 +1,15 @@
+{
+  "name": "npm_project",
+  "version": "1.0.0",
+  "description": "coger paquete",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "anonimo",
+  "license": "ISC",
+  "dependencies": {
+    "juanda-testing-skylab": "^1.0.0",
+    "skylab-mola": "^1.0.0"
+  }
+}
