@@ -29,6 +29,8 @@ const curriculumSchema = mongoose.Schema({
       school: String,
       startDate: Date,
       finishDate: Date,
+      title: String,
+      description: String,
     }],
     languages: [{
       name: String,
