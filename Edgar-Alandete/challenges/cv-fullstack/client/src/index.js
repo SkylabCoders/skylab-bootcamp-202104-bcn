@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/store/index';
 import About from './components/About';
 import Education from './components/Education';
+import Stack from './components/Stack';
 
 ReactDOM.render(
   <Provider store={configureStore()}>
@@ -19,6 +20,8 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/about" component={About} />
         <Route exact path="/education" component={Education} />
+        <Route exact path="/skills" component={Stack} />
+
         <Redirect to="./about" />
       </Switch>
     </BrowserRouter>

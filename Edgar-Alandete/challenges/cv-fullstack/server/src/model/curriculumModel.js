@@ -39,7 +39,10 @@ const curriculumSchema = mongoose.Schema({
     }],
   },
 
-  stack: [String],
+  stack: [{
+    name: String,
+    svg: String,
+  }],
 
   certifications: [{
     name: String,
