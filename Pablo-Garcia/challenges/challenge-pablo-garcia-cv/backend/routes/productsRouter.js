@@ -7,12 +7,13 @@ function router() {
   routes
     .route('/')
     .get(productsController.get)
-    .post(productsController.post)
-    .put(productsController.put);
+    .post(productsController.post);
 
   routes
     .route('/:postId')
-    .put(productsController.updateProductById);
+    .put(productsController.updateProductById)
+    .get(productsController.getPostById)
+    .delete(productsController.deletePostById);
   return routes;
 }
 module.exports = router();

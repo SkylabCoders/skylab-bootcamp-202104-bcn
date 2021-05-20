@@ -11,6 +11,19 @@ function productsController() {
     }
   }
 
+  async function getPostById(req, res) {
+    try {
+      const getPostById = await Posts.findById(
+        req.params.postId,
+        req.body,
+        { new: true },
+      );
+      res.json(getPostById);
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
   async function post(req, res) {
     try {
       const newProduct = new Posts(req.body);
@@ -22,41 +35,38 @@ function productsController() {
     }
   }
 
-  async function put({ body }, res) {
+  async function updateProductById(req, res) {
     try {
-      const updatedProducts = await body.map(async (product) => {
-        const updated = await Product.findByIdAndUpdate(
-          product._id,
-          { $inc: { stock: -product.totalItems } },
-          { new: true, useFindAndModify: false },
-        );
-        return updated;
-      });
+      const updatedPosts = await Posts.findByIdAndUpdate(
+        req.params.postId,
+        req.body,
+        { new: true },
+      );
+      res.json(updatedPosts);
+    } catch (error) {
+      res.send(error);
+    }
+  }
 
-      res.json(updatedProducts);
+  async function deletePostById(req, res) {
+    try {
+      const deletePost = await Posts.findByIdAndDelete(
+        req.params.postId,
+        req.body,
+      );
+      res.json(deletePost);
     } catch (error) {
       res.status(500);
       res.send(error);
     }
   }
 
-  async function updateProductById(req, res) {
-    try {
-      const updatedProducts = await Posts.findByIdAndUpdate(
-        req.params.productId,
-        req.body,
-        { new: true },
-      );
-      res.json(updatedProducts);
-    } catch (error) {
-      res.send(error);
-    }
-  }
   return {
     get,
     post,
-    put,
+    getPostById,
     updateProductById,
+    deletePostById,
   };
 }
 
