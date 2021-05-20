@@ -1,11 +1,9 @@
 import React from 'react';
-import GlobalApp from './styles/globalStyles';
+import Layout from './components/Layout/Layout';
 
 function Application() {
   return (
-    <GlobalApp>
-      <h2>MERN BOILERPLATE</h2>
-    </GlobalApp>
+    <Layout />
   );
 }
 

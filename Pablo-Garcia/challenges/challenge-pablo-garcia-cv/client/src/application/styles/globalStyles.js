@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 
-const GlobalStyles = styled.main`
-  font-family: Verdana, 'sans-serif';
-  font-size:1rem;
+const GlobalApp = styled.div`
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    main{
+      position:relative;
+      display:block;
+      max-width: 100%;
+      font-size:1rem;
+    }
 `;
-export default GlobalStyles;
+
+export default GlobalApp;
