@@ -7,10 +7,7 @@ import store from './redux/store/index';
 function App() {
   return (
     <Provider store={store()}>
-      <div className="App">
-        <h1>Hello World!</h1>
-        <Dashboard />
-      </div>
+      <Dashboard />
     </Provider>
   );
 }

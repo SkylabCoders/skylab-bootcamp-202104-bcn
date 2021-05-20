@@ -8,20 +8,21 @@ function Dashboard({ myInfo, dispatch }) {
     dispatch(loadInfo);
   }, []);
   return (
-    <>
-      <h2>Entro</h2>
+    <div className="container">
+
       {
       myInfo.length ? (
         myInfo.map((detail) => (
           <>
             <div>{detail.datos_personales.name}</div>
+            <img src={detail.datos_personales.img} alt={detail.datos_personales.name} />
             <div>{detail.datos_personales.sureName}</div>
             <div>{detail.historial_laboral[0].titulo}</div>
             <div>{detail.historial_laboral[0].descripcion}</div>
           </>
         ))) : <div>No data</div>
     }
-    </>
+    </div>
   );
 }
 
