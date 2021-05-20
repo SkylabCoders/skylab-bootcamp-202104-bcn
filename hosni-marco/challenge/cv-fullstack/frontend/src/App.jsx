@@ -1,11 +1,11 @@
 import React from 'react';
 import {
   Switch,
-  Route
-// Link
+  Route,
+  Link
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
-// import Portfolio from './components/Portfolio';
+import WorkExperience from './components/WorkExperience';
 // import Contact from './components/Contact';
 // import Footer from './components/Footer';
 import './App.css';
@@ -16,8 +16,8 @@ function App() {
       <header className="header">
         <h1>Hosni Marco Ruano</h1>
         <nav>
-          {/* <Link className="nav__link" to="/">Resume</Link>
-          <Link className="nav__link" to="/portfolio">Portfolio</Link>
+          <Link className="nav__link" to="/WorkExperience">Work Experience</Link>
+          {/* <Link className="nav__link" to="/portfolio">Portfolio</Link>
           <Link className="nav__link" to="/contact">Contact</Link> */}
         </nav>
       </header>
@@ -26,8 +26,8 @@ function App() {
       </p>
       <Switch>
         <Route path="/" exact component={Dashboard} />
-        {/* <Route path="/portfolio" exact component={Portfolio} />
-        <Route path="/contact" exact component={Contact} /> */}
+        <Route path="/WorkExperience" exact component={WorkExperience} />
+        {/* <Route path="/contact" exact component={Contact} /> */}
       </Switch>
       {/* <Footer /> */}
     </main>
