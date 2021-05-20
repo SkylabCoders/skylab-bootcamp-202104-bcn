@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "dotenv": "^9.0.2"
+    "dotenv": "^9.0.2",
+    "shadyfast": "^1.0.0",
+    "skylab-mola": "^1.0.0"
   }
 }
