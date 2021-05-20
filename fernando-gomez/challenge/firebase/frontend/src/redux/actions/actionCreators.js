@@ -4,9 +4,9 @@ import 'firebase/firestore';
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const db = 'http://localhost:2021/curriculums';
+// const db = 'http://localhost:2021/curriculums';
 // const db = firebase.firestore();
-// const db = 'https://firebasestorage.googleapis.com/v0/b/fernando-firebase-demo.appspot.com/o/curriculums.json?alt=media&token=cfaece1d-17ea-44b5-9aa5-80a08ac8fba2';
+const db = 'https://firebasestorage.googleapis.com/v0/b/fernando-firebase-demo.appspot.com/o/curriculums.json?alt=media&token=cfaece1d-17ea-44b5-9aa5-80a08ac8fba2';
 // const db = 'gs://fernando-firebase-demo.appspot.com/curriculums.json';
 
 export function login() {
@@ -54,6 +54,7 @@ export function loadCurriculum() {
         curriculum: data[0],
       });
     } catch (error) {
+      console.log(error);
       dispatch({
         type: actionTypes.CURRICULUM_ERROR,
       });
