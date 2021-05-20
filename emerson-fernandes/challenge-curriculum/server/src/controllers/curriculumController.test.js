@@ -1,4 +1,4 @@
-const { getAll, createOne } = require('./curriculumController')();
+const { getAll, createOne, deleteById } = require('./curriculumController')();
 
 const Curriculum = require('../model/curriculumModel');
 
@@ -46,5 +46,27 @@ describe('createOne', () => {
     await createOne(req, res);
     // assert
     expect(res.json).toHaveBeenCalledWith({ name: 'pro' });
+  });
+});
+
+describe('deleteById', () => {
+  test('should call res.status with 404', async () => {
+    // arrange
+    const req = {
+      params: {
+        curriculum: null
+      }
+    };
+
+    const res = {
+      status: jest.fn(),
+      json: jest.fn(),
+      send: jest.fn()
+    };
+
+    // act
+    await deleteById(req, res);
+    // assert
+    expect(res.status).toHaveBeenCalledWith(204);
   });
 });

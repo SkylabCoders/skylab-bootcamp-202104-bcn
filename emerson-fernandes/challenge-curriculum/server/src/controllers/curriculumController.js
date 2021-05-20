@@ -19,9 +19,22 @@ function curriculumController() {
     }
   }
 
+  async function deleteById(req, res) {
+    try {
+      await Curriculum.findByIdAndDelete(req.params.curriculumId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      debug(error);
+      res.status(404);
+      res.send(error);
+    }
+  }
+
   return {
     getAll,
-    createOne
+    createOne,
+    deleteById
   };
 }
 

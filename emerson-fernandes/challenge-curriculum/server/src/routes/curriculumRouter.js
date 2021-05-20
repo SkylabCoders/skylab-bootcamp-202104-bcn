@@ -11,8 +11,6 @@ function heroesRouter() {
 
   routes
     .route('/:curriculumId')
-    .get(curriculumController.getById)
-    .put(curriculumController.updateById)
     .delete(curriculumController.deleteById);
 
   return routes;
