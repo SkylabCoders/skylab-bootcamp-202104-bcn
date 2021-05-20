@@ -14,7 +14,7 @@ function Resume({ dispatch, curriculum }) {
       <div className="resume">
         <div className="resume__left">
           <h3>Education</h3>
-          <div className="container">
+          <div className="container__block">
             <div className="container__line" />
             <ul className="container__items">
               {curriculum?.education
@@ -41,7 +41,7 @@ function Resume({ dispatch, curriculum }) {
             </ul>
           </div>
           <h3>Experience</h3>
-          <div className="container">
+          <div className="container__block">
             <div className="container__line" />
             <ul className="container__items">
               {curriculum?.experience
@@ -79,8 +79,8 @@ function Resume({ dispatch, curriculum }) {
             {curriculum?.designSkills
         && (curriculum?.designSkills).map((element) => (
           <li className="item">
-            {element.skill}
-            <div className="container">
+            <span>{element.skill}</span>
+            <div className="container__skills">
               <div className="container__progress" style={{ width: `${element.level}%` }} />
             </div>
           </li>
@@ -92,7 +92,7 @@ function Resume({ dispatch, curriculum }) {
         && (curriculum?.codingSkills).map((element) => (
           <li className="item">
             {element.skill}
-            <div className="container">
+            <div className="container__skills">
               <div className="container__progress" style={{ width: `${element.level}%` }} />
             </div>
           </li>

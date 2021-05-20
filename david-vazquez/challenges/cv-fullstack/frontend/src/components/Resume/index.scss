@@ -34,9 +34,14 @@
             list-style: none;
             padding:0;
             &__title{
-                padding-left: 10px;
                 font-weight: bold;
                 font-size: 18px;
+                background-color: #0093e9;
+                padding: 0 15px;
+                border-radius: 9999px;
+                height: 25px;
+                color: white;
+                margin-left: 5px;
             }
         }
         .experience{
@@ -46,10 +51,25 @@
     }
 }
 
-.container {
+.container__block {
     /* Used to position the left vertical line */
     position: relative;
     margin-left: 100px;
+}
+
+.container__skills {
+    /* Used to position the left vertical line */
+    position: relative;
+    width: 75%;
+    float: right;
+}
+
+.item {
+    margin:10px 0;
+}
+
+.skills {
+    margin-bottom: 20px;
 }
 
 .container__line {
@@ -78,11 +98,21 @@
     left: -100px;
     width: 100px;
     height: 60px;
+    font-size: 14px;
+    color: #000000;
 }
 
 .container__item {
     margin-bottom: 15px;
 }
+
+.container__item:hover > .container__desc{
+    /* Make it align with the title */
+    margin-left: 25px;
+    visibility: visible;
+    cursor: pointer;
+}
+
 
 .container__top {
     /* Center the content horizontally */
@@ -108,4 +138,5 @@
 .container__desc {
     /* Make it align with the title */
     margin-left: 25px;
+    visibility: hidden;
 }

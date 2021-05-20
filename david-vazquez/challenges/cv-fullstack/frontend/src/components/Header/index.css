@@ -26,6 +26,7 @@
 }
 
 .header__nav {
+  color: white;
   list-style: none;
   padding: 0;
 }
@@ -83,6 +84,12 @@
   text-align: center;
   width: 100%;
   padding: 20px 0;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid white;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.nav__item:hover {
+  background-color: #1c6996;
 }
 /*# sourceMappingURL=index.css.map */
