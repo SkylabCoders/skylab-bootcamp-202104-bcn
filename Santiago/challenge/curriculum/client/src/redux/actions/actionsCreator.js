@@ -1,7 +1,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const URL = 'http://localhost:3103/details';
+const URL = process.env.REACT_APP_URL;
 
 export default function loadData() {
   return async (dispatch) => {
