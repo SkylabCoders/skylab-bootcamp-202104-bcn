@@ -1,8 +1,7 @@
 *, *::after, *::before {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .main-container {
@@ -10,4 +9,3 @@
   height: 50em;
   background-color: red;
 }
-/*# sourceMappingURL=styles.css.map */
