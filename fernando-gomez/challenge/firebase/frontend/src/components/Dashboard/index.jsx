@@ -70,11 +70,15 @@ function Dashboard({ curriculum, dispatch }) {
         </Link>
       </nav>
 
-      <Link to="/contact">
+      <a
+        href="https://www.linkedin.com/in/fernando-gomez-graciani-065319174/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <p className="contact">
           Contact me!
         </p>
-      </Link>
+      </a>
 
     </>
   );
