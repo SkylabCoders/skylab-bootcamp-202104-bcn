@@ -11,7 +11,7 @@ function Dashboard({ myInfo, dispatch }) {
     <>
       <h2>Entro</h2>
       {
-      console.log(myInfo)
+      myInfo.length ? (<div>{myInfo[0].name}</div>) : <div>No data</div>
     }
     </>
   );
