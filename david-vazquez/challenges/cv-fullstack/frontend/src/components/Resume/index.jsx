@@ -22,8 +22,6 @@ function Resume({ dispatch, curriculum }) {
           <li className="container__item">
             <div className="container__item-left">
               {element.dateStart}
-              {' '}
-              {element.dateEnd}
             </div>
             <div className="container__top">
               <div className="container__circle" />
@@ -49,8 +47,6 @@ function Resume({ dispatch, curriculum }) {
           <li className="container__item">
             <div className="container__item-left">
               {element.dateStart}
-              {' '}
-              {element.dateEnd}
             </div>
             <div className="container__top">
               <div className="container__circle" />
@@ -98,6 +94,18 @@ function Resume({ dispatch, curriculum }) {
           </li>
         ))}
           </ul>
+          <h3>Languages</h3>
+          <ul className="skills__languages">
+            {curriculum?.languages
+        && (curriculum?.languages).map((element) => (
+          <li className="item">
+            <img src={element.img} alt={element.img} />
+            <div className="level">
+              {element.level}
+            </div>
+          </li>
+        ))}
+          </ul>
         </div>
       </div>
     </main>
@@ -120,6 +128,9 @@ Resume.propTypes = {
       map: PropTypes.func.isRequired,
     }).isRequired,
     codingSkills: PropTypes.shape({
+      map: PropTypes.func.isRequired,
+    }).isRequired,
+    languages: PropTypes.shape({
       map: PropTypes.func.isRequired,
     }).isRequired,
   }).isRequired,

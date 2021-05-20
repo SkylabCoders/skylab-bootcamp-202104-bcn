@@ -2,7 +2,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://localhost:2500/curriculums/60a0ce675b608eaca0580c15';
+const url = 'http://localhost:2500/curriculums/60a62733ac9b213ed890bf4d';
 
 export default function loadCurriculum() {
   return async (dispatch) => {
