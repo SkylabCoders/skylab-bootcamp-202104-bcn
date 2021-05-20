@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@100;400;800&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-creator-container {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+    &__button {
+        background-color: rgb(15, 107, 160);
+        color: white;
+        padding: 10px 30px;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    &__input {
+        width: 300px;
+        margin-left: 10px;
+        margin-right: 20px;
+        padding-left: 20px;
+        outline: none;
+        border-radius: 20px;
+    }
+}
+
+.tasks-list {
+    list-style: none;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.task-name {
+    width: 300px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
