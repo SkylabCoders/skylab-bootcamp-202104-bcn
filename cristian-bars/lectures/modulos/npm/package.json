@@ -1,0 +1,14 @@
+{
+  "name": "cbm-cristian-bars",
+  "version": "1.0.0",
+  "description": "print",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "print"
+  ],
+  "author": "Cristian",
+  "license": "ISC"
+}
