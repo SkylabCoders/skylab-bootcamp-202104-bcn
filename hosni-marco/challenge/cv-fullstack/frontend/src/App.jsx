@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import WorkExperience from './components/WorkExperience';
-// import Contact from './components/Contact';
+import Studies from './components/Studies';
 // import Footer from './components/Footer';
 import './App.css';
 
@@ -16,9 +16,10 @@ function App() {
       <header className="header">
         <h1>Hosni Marco Ruano</h1>
         <nav>
+
+          <Link className="nav__link" to="/">Presentation</Link>
+          <Link className="nav__link" to="/Studies">Studies</Link>
           <Link className="nav__link" to="/WorkExperience">Work Experience</Link>
-          {/* <Link className="nav__link" to="/portfolio">Portfolio</Link>
-          <Link className="nav__link" to="/contact">Contact</Link> */}
         </nav>
       </header>
       <p className="importan-text">
@@ -27,7 +28,8 @@ function App() {
       <Switch>
         <Route path="/" exact component={Dashboard} />
         <Route path="/WorkExperience" exact component={WorkExperience} />
-        {/* <Route path="/contact" exact component={Contact} /> */}
+        <Route path="/Studies" exact component={Studies} />
+
       </Switch>
       {/* <Footer /> */}
     </main>
