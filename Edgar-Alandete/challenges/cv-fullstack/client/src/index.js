@@ -9,13 +9,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/store/index';
+import About from './components/About';
 
 ReactDOM.render(
   <Provider store={configureStore()}>
     <BrowserRouter>
       <App />
       <Switch>
-        <Route exact path="/about" component="" />
+        <Route exact path="/about" component={About} />
         <Redirect to="./about" />
       </Switch>
     </BrowserRouter>
