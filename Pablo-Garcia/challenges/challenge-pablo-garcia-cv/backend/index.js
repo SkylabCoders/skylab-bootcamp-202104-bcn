@@ -23,7 +23,7 @@ server.use(morgan('dev'));
 
 const productsRouter = require('./routes/productsRouter');
 
-server.use('/products', productsRouter);
+server.use('/posts', productsRouter);
 
 server.listen(port,
   () => debug(`Server is running in ${chalk.yellow(`localhost:${port}`)}`));

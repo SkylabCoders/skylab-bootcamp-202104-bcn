@@ -1,7 +1,9 @@
 const { model, Schema } = require('mongoose');
 
 const schema = new Schema({
-  data: String,
+  titlePost: String,
+  shortDescription: String,
+  poster_path: String,
 });
 
-module.exports = model('data', schema);
+module.exports = model('Post', schema);

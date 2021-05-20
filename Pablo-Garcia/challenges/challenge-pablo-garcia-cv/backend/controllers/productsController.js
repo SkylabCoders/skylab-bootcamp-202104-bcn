@@ -1,9 +1,9 @@
-const Product = require('../models/productModel');
+const Posts = require('../models/productModel');
 
 function productsController() {
   async function get(req, res) {
     try {
-      const products = await Product.find();
+      const products = await Posts.find();
       res.json(products);
     } catch (error) {
       res.status(500);
@@ -13,7 +13,7 @@ function productsController() {
 
   async function post(req, res) {
     try {
-      const newProduct = new Product(req.body);
+      const newProduct = new Posts(req.body);
       await newProduct.save();
       res.json(newProduct);
     } catch (error) {
@@ -42,7 +42,7 @@ function productsController() {
 
   async function updateProductById(req, res) {
     try {
-      const updatedProducts = await Product.findByIdAndUpdate(
+      const updatedProducts = await Posts.findByIdAndUpdate(
         req.params.productId,
         req.body,
         { new: true },
