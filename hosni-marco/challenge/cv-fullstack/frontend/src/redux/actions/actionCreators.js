@@ -1,9 +1,9 @@
+/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypes';
-// import cv from '../../cv.json';
 
-const URL = process.env.REACT_APP_API_BASE_URL;
-// const URL = cv;
+const URL = process.env.REACT_APP_API;
+
 export default function loadCv() {
   return async (dispatch) => {
     const { data } = await axios(URL);

@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-// Switch,
-// Route
+  Switch,
+  Route
 // Link
 } from 'react-router-dom';
-// import Resume from './components/Resume';
+import Dashboard from './components/Dashboard';
 // import Portfolio from './components/Portfolio';
 // import Contact from './components/Contact';
 // import Footer from './components/Footer';
@@ -24,11 +24,11 @@ function App() {
       <p className="importan-text">
         Fullstack developer
       </p>
-      {/* <Switch>
-        <Route path="/" exact component={Resume} />
-        <Route path="/portfolio" exact component={Portfolio} />
-        <Route path="/contact" exact component={Contact} />
-      </Switch> */}
+      <Switch>
+        <Route path="/" exact component={Dashboard} />
+        {/* <Route path="/portfolio" exact component={Portfolio} />
+        <Route path="/contact" exact component={Contact} /> */}
+      </Switch>
       {/* <Footer /> */}
     </main>
   );
