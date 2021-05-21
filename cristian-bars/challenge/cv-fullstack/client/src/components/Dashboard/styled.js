@@ -6,12 +6,20 @@ const size = {
 };
 
 const device = {
-  tabletSize: `(min-width: ${size.mobile})`,
+  tabletSize: `(min-width: ${size.mobile}) and (max-width: ${size.tablet})`,
   desktopSize: `(min-width: ${size.tablet})`
 };
 
 export const PersonalImg = styled.img`
-  width: 70px;
+  width: 100%;
+  
+  @media ${device.tabletSize} { 
+    width: 200px;
+  }
+  
+  @media ${device.desktopSize} { 
+    width: 200px;
+  }
 `;
 
 export const Container = styled.div`
