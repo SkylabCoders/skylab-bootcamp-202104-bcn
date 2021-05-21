@@ -7,6 +7,8 @@ server.use(express.urlencoded({extended:false}))
 
 server.use(express.json());
 
+server.use('/public', express.static('public'));
+
 server.get('/', (req,res) => {
     res.render('index');
 })
@@ -21,6 +23,7 @@ server.get('/form', (req,res) => {
 
 server.post('/home', (req,res) => {
     const {name, surname} = req.body
+    
     res.render('home', {
         name,
         surname
