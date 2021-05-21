@@ -5,6 +5,7 @@ import Home from '../../pages/Home/Home';
 import Contact from '../../pages/Contact/Contact';
 import Blog from '../../pages/Blog/Blog';
 import { Head, Container } from './styles';
+import Login from '../../pages/Login/Login';
 
 const AppRouter = () => (
   <>
@@ -18,6 +19,7 @@ const AppRouter = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/login" component={Login} />
       </Switch>
     </Router>
   </>

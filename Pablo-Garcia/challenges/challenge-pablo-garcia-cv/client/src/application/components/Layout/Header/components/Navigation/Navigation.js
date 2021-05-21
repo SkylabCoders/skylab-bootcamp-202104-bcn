@@ -16,7 +16,10 @@ const Navigation = () => (
           <Link to="/blog">Blog</Link>
         </NavigationItem>
         <NavigationItem>
-          <Link to="/contact" className="btn-border">Contact Us</Link>
+          <Link to="/contact">Contact Us</Link>
+        </NavigationItem>
+        <NavigationItem>
+          <Link to="/login" className="btn-border login">Login</Link>
         </NavigationItem>
       </NavigationItems>
     </NavigationWrapper>
