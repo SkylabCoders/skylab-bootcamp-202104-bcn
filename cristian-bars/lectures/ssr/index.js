@@ -9,6 +9,8 @@ server.use(express.urlencoded({
 
 server.use(express.json());
 
+server.use(express.static("styles"))
+
 server.get('/', (req,res)=> {
     res.render('index');
 })
