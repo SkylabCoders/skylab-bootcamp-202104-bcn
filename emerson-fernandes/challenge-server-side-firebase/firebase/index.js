@@ -1,6 +1,7 @@
-const firebase = require('firebase/app');
-import 'firebase/auth';
-const firebaseConfig = require('./firebase.config');
+const firebase = require("firebase/app");
+require("firebase/auth");
 
-firebase.initializeApp(firebaseConfig);
-firebase.auth();
+const apiKey = process.env.FIREBASE_API_KEY;
+const fb = firebase.initializeApp({
+  apiKey: apiKey,
+});
