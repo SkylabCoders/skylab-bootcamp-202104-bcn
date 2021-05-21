@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import loadData from '../../redux/actions/actionCreators';
+import './style/style.css';
 
 function Main({ data, dispatch }) {
   // eslint-disable-next-line no-debugger
@@ -27,7 +28,7 @@ function Main({ data, dispatch }) {
         <div>Informacion profile</div>
         <div>Contact</div>
       </div>
-      <main>
+      <main className="test">
         <div>Employment</div>
         <div>Education</div>
         <div>Skill</div>
