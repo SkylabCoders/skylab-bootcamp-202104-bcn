@@ -5,8 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INDEX</title>
+    <script type="module" src="../firebase/index.js"></script>
 </head>
 <body>
    <h2>Hello </h2> 
+   <button type="button" onclick="login()">Login</button>
 </body>
+
+<script>
+    const user = "";
+    async function login(){
+        const provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+        user = await firebase.auth().signInWithPopup(provider);
+
+    }
+    
+    
+    
+</script>
 </html>
