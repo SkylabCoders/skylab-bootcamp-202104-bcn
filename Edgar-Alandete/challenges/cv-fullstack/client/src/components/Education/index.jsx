@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import './styles.css';
 import loadCurriculum from '../../redux/actions/actionCreators';
 
@@ -20,7 +20,7 @@ function Education({ dispatch, curriculum: { studies } }) {
           <li className="list__study-item" key={study._id}>
             <h3 className="study-item__title">{study.school}</h3>
             <p>
-              <span className="dates">{moment(study.finishDate).format('YYYY')}</span>
+              <span className="dates">{dayjs('2019-01-25').format('YYYY')}</span>
               {'  -  '}
               {study.title}
             </p>
