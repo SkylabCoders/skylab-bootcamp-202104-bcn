@@ -1,6 +1,7 @@
 const express = require('express');
 const server = express();
 
+
 const port = 3103;
 
 server.set('view engine', 'ejs');
@@ -8,6 +9,8 @@ server.set('view engine', 'ejs');
 //Para parsear el body
 server.use(express.urlencoded({extended: false}));
 server.use(express.json());
+server.use('/public', express.static('public'));
+
 
 server.get('/', (req, res) => {
     res.render('index');
