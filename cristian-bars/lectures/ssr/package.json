@@ -1,0 +1,22 @@
+{
+  "name": "ssr",
+  "version": "1.0.0",
+  "description": "ssr",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon ./index.js",
+    "debug": "nodemon --inspect-brk ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ssr"
+  ],
+  "author": "Cristian",
+  "license": "ISC"
+}
