@@ -34,6 +34,8 @@
   margin-left: 20px;
   margin-bottom: 30px;
   background: #2d343e;
+  -webkit-transition: 0.3;
+  transition: 0.3;
 }
 
 .education__list .list__study-item p {
