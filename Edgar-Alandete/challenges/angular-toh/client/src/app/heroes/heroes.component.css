@@ -7,6 +7,9 @@
 }
 
 .heroes li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   cursor: pointer;
   position: relative;
   left: 0;
@@ -15,6 +18,19 @@
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
+  width: 300px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.heroes li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .heroes li:hover {
@@ -47,7 +63,6 @@
   line-height: 1em;
   position: relative;
   left: -1px;
-  top: -4px;
   height: 1.8em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
