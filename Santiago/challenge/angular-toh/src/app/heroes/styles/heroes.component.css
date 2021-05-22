@@ -19,17 +19,17 @@
 
 .heroes li:hover {
   color: #2c3a41;
-  background-color: #e6e6e6;
+  background-color: pink;
   left: .1em;
 }
 
 .heroes li.selected {
-  background-color: black;
+  background-color: lightcoral;
   color: white;
 }
 
 .heroes li.selected:hover {
-  background-color: #505050;
+  background-color: #db4747;
   color: white;
 }
 
