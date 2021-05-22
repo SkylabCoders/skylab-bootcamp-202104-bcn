@@ -5,7 +5,11 @@ function usersRouter() {
   const routes = Router();
 
   routes.route('/')
-    .get(usersController.getAll);
+    .get(usersController.getAll)
+    .post(usersController.createOne);
+
+  routes.route('/:userId')
+    .get(usersController.getById);
 
   return routes;
 }
