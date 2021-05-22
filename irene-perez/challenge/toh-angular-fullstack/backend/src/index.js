@@ -19,7 +19,7 @@ server.use(morgan('dev'));
 
 const heroesRouter = require('./routes/heroesRouter');
 
-server.use('/heroes', heroesRouter);
+server.use('/hero', heroesRouter);
 
 server.listen('2021',
   () => debug(`Server is running in ${chalk.bold.bgMagenta('localhost:2021')}`));

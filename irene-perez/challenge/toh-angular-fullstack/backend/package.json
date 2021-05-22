@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --collecto-coverage"
+    "test": "jest --watchAll --collecto-coverage",
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
