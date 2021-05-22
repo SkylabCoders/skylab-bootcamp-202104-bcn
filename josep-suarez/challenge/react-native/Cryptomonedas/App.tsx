@@ -9,6 +9,7 @@
  */
 
 import React from 'react';
+import Header from './src/components/Header';
 import {
   SafeAreaView,
   ScrollView,
@@ -19,16 +20,13 @@ import {
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
 const App = () => {
-  return <Text>Fredy mercury</Text>;
+  return (
+    <>
+      <Header />
+      <Text>Fredy mercury</Text>
+    </>
+  );
 };
 
 const styles = StyleSheet.create({});
