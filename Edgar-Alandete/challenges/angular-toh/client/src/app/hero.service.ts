@@ -36,6 +36,13 @@ export class HeroService {
       catchError(this.handleError<Hero>('deleteHero'))
     );
   }
+
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(`${this.heroesUrl}/${hero._id}`, hero, this.httpOptions).pipe(
+      tap(_ => this.log(`updated hero id=${hero._id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
