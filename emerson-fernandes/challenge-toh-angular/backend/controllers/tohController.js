@@ -18,6 +18,29 @@ function tohController() {
     }
   }
 
+  async function getById(req, res) {
+    try {
+      const heroById = await Hero.find(req.params.heoId);
+      res.json(heroById);
+    } catch (error) {
+      res.status(404);
+      res.send(error);
+    }
+  }
+
+  async function updateById(req, res) {
+    try {
+      const updatedHero = await Hero.findByIdAndUpdate(
+        req.params.heroId,
+        req.body,
+        { new: true }
+      );
+      res.json(updatedHero);
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
   async function deleteById(req, res) {
     try {
       await Hero.findByIdAndDelete(req.params.heroId);
@@ -31,7 +54,9 @@ function tohController() {
   return {
     getAll,
     addHero,
-    deleteById
+    deleteById,
+    getById,
+    updateById
   };
 }
 

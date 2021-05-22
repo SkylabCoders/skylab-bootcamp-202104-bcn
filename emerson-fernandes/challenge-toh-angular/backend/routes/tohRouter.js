@@ -11,6 +11,8 @@ function tohRouter() {
 
   routes
     .route('/:heroId')
+    .get(tohController.getById)
+    .put(tohController.updateById)
     .delete(tohController.deleteById);
 
   return routes;
