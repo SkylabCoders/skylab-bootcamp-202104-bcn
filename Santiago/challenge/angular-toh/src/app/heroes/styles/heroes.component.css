@@ -7,35 +7,34 @@
 }
 
 .heroes li {
-  cursor: pointer;
   position: relative;
-  left: 0;
+  cursor: pointer;
+}
+
+.heroes li:hover {
+  left: .1em;
+}
+
+.heroes a {
+  color: #333;
+  text-decoration: none;
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
+  display: block;
+  width: 100%;
 }
 
-.heroes li:hover {
+.heroes a:hover {
   color: #2c3a41;
-  background-color: pink;
-  left: .1em;
+  background-color: #e6e6e6;
 }
 
-.heroes li.selected {
-  background-color: lightcoral;
-  color: white;
-}
-
-.heroes li.selected:hover {
-  background-color: #db4747;
-  color: white;
-}
-
-.heroes li.selected:active {
-  background-color: black;
-  color: white;
+.heroes a:active {
+  background-color: #525252;
+  color: #fafafa;
 }
 
 .heroes .badge {
@@ -49,11 +48,9 @@
   left: -1px;
   top: -4px;
   height: 1.8em;
+  min-width: 16px;
+  text-align: right;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
-}
-
-input {
-  padding: .5rem;
 }
 /*# sourceMappingURL=heroes.component.css.map */
