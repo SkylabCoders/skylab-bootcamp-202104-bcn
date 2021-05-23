@@ -17,7 +17,16 @@ export default class RegisterFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
       surname: [''],
-      email: ['']
+      email: [''],
+      country: [''],
+      age: [],
+      direction: {
+          street: '',
+          streetNumber: '',
+          door: '',
+          flat: '',
+          cp: '',
+      },
     });
   }
   constructor(private formBuilder: FormBuilder, private userService: UserService) {
