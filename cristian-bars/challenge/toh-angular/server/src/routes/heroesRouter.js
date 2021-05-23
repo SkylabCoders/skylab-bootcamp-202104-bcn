@@ -11,6 +11,7 @@ function heroesRouter() {
 
   routes
     .route('/:heroes')
+    .get(heroesController.getHeroById)
     .delete(heroesController.delHero);
 
   return routes;

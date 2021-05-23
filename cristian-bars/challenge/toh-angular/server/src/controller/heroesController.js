@@ -8,6 +8,20 @@ function heroesController() {
     res.json(heroes);
   }
 
+  async function getHeroById(req, res) {
+    debug('enter to function getHeroById');
+    const { heroId } = req.params;
+    debug(heroId);
+    try {
+      const hero = await Hero.findOne({ heroId: +heroId });
+      res.status(200);
+      res.json(hero);
+    } catch (error) {
+      debug(error);
+      res.send(error);
+    }
+  }
+
   async function addHero(req, res) {
     const newHero = new Hero(req.body);
     debug(newHero);
@@ -34,6 +48,7 @@ function heroesController() {
 
   return {
     getAll,
+    getHeroById,
     addHero,
     delHero
   };
