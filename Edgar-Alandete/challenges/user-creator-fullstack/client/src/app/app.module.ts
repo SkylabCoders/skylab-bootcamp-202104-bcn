@@ -5,14 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import AppComponent from './app.component';
 import RegisterFormComponent from './components/register-form/register-form.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    UsersComponent
   ],
   exports: [
     RegisterFormComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
