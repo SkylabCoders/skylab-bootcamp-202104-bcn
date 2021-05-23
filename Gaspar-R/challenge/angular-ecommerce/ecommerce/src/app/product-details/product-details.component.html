@@ -4,6 +4,10 @@
   <h3>{{product.name}}</h3>
   <h4>{{product.price|currency}}</h4>
   <p>{{product.description}}</p>
+  <div>
+    <label for="price">New Price: </label>
+    <input id="price" [(ngModel)]="product.price" placeholder="price">
+  </div>
   <button (click)="addToCart(product)">
     Buy
   </button>

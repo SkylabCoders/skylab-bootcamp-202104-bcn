@@ -1,6 +1,6 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products">   <!-- <recorre el array PRODUCT y define PRODUCT a cada elemento dentro de el -->
 
   <h3>
     <a [title]="product.name + ' deteails' " [routerLink]="['/products', product.id]"> {{product.name}} </a>
