@@ -3,7 +3,10 @@
 <div *ngFor="let product of products">   <!-- <recorre el array PRODUCT y define PRODUCT a cada elemento dentro de el -->
 
   <h3>
-    <a [title]="product.name + ' deteails' " [routerLink]="['/products', product.id]"> {{product.name}} </a>
+    <a  [title]="product.name + ' deteails'" 
+        [routerLink]="['/products', product.id]"
+        > {{product.name}} 
+    </a>
   </h3>
 
   <p *ngIf="product.description">
