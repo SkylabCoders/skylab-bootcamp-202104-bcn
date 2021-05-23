@@ -4,20 +4,22 @@ import { PropTypes } from 'prop-types';
 import ItemCart from '../ItemCart/ItemCart';
 import Title from '../../../application/components/Title/Title';
 import TotalCart from '../TotalCart/TotalCart';
-import { CartWrapper, List } from './style';
+import { CartWrapper, List, RowInSingleCart } from './style';
 
 const Cart = ({ cart }) => (
   <CartWrapper data-testid="cart">
     <Title type="2" content="Cart" />
     <List>
-      {cart.map((product) => (
-        <ItemCart
-          product={product}
-          productImage={product.img}
-          productName={product.name}
-          productPrice={product.price}
-        />
-      ))}
+      <RowInSingleCart>
+        {cart.map((product) => (
+          <ItemCart
+            product={product}
+            productImage={product.img}
+            productName={product.name}
+            productPrice={product.price}
+          />
+        ))}
+      </RowInSingleCart>
     </List>
     <TotalCart cart={cart} />
   </CartWrapper>

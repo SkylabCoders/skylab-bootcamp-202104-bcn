@@ -17,6 +17,10 @@ export const List = styled.ul`
   padding-left:0;
 `;
 
-export const ItemList = styled.li`
-  margin:15px;
+export const RowInSingleCart = styled.table`
+  display:flex;
+  flex-flow:row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
 `;

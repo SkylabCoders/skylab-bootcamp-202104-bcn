@@ -1,30 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import TotalWrapper from './style';
 
 const TotalCart = ({ cart }) => {
-  const [totalPrice, setTotal] = useState(0);
-  const [totalProducts, setProducts] = useState(0);
-
-  const calculateTotalPrice = (prev, { price }) => prev + price;
-  const calculateTotalProducts = (prev, { quantity }) => prev + quantity;
-
-  useEffect(() => {
-    if (cart.length) {
-      const price = cart.reduce(calculateTotalPrice, 0);
-      const products = cart.reduce(calculateTotalProducts, 0);
-      setProducts(products);
-      setTotal(price.toFixed(2));
-    } else {
-      setProducts(0);
-      setTotal(0);
-    }
-  }, [cart]);
-
+  const calcTotalPrice = () => cart.reduce((total, item) => total + item.price, 0);
+  const totalPrice = calcTotalPrice();
   return (
-    <div>
-      Total
+    <TotalWrapper>
+      <span>Total</span>
       {' '}
-      <div>{`${totalPrice}€`}</div>
-    </div>
+      {totalPrice}
+    </TotalWrapper>
   );
 };
 
