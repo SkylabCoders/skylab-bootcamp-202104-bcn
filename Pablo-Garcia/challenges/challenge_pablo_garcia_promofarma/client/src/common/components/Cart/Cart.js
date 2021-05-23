@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import ItemCart from '../ItemCart/ItemCart';
 import Title from '../../../application/components/Title/Title';
-import { CartWrapper, List, TotalCart } from './style';
+import TotalCart from '../TotalCart/TotalCart';
+import { CartWrapper, List } from './style';
 
 const Cart = ({ cart }) => (
-  <CartWrapper>
+  <CartWrapper data-testid="cart">
     <Title type="2" content="Cart" />
     <List>
       {cart.map((product) => (
@@ -18,9 +19,7 @@ const Cart = ({ cart }) => (
         />
       ))}
     </List>
-    <TotalCart>
-      TOTAL:
-    </TotalCart>
+    <TotalCart cart={cart} />
   </CartWrapper>
 );
 

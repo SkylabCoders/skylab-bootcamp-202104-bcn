@@ -20,8 +20,3 @@ export const List = styled.ul`
 export const ItemList = styled.li`
   margin:15px;
 `;
-
-export const TotalCart = styled.div`
- width:100%;
-  background-color:#56af6b;
-`;

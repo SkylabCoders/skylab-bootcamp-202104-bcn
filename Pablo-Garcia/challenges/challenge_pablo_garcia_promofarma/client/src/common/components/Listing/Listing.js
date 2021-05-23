@@ -9,12 +9,13 @@ const ProductsList = ({ products, dispatch }) => {
   useEffect(() => {
     if (!products.length) dispatch(loadProducts());
   }, []);
+
   return (
     <>
       <List>
         {
-          products.map((product) => (
-            <ItemList key={product._id}>
+          products.map((product, index) => (
+            <ItemList key={product._id} data-testid={`product-item-${index}`}>
               <ProductCard
                 img={product.img}
                 name={product.name}
@@ -38,6 +39,7 @@ const ProductsList = ({ products, dispatch }) => {
                 </Quantity>
                 <AddCart>
                   <button
+                    data-testid="add-to-card"
                     type="button"
                     onClick={() => dispatch(addToCart(product))}
                   >

@@ -1,11 +1,9 @@
-import axios from 'axios';
 import actionTypes from './actionTypes';
-
-const apiUrl = 'http://localhost:4000/products';
+import { getProducts } from '../../../common/services/product';
 
 export function loadProducts() {
   return async (dispatch) => {
-    const { data } = await axios(apiUrl);
+    const { data } = await getProducts();
     dispatch({
       type: actionTypes.LOAD_PRODUCTS,
       products: data
