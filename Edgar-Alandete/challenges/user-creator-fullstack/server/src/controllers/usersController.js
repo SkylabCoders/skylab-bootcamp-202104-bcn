@@ -33,7 +33,7 @@ function usersController() {
       res.json(userById);
     } catch (error) {
       res.status(404);
-      res.send(`The hero with the id ${userId} doesn't exist`);
+      res.send(`The user with the id ${userId} doesn't exist`);
     }
   }
 
@@ -42,10 +42,9 @@ function usersController() {
 
     try {
       await User.findByIdAndDelete(userId);
-      res.send(204);
+      res.status(204);
     } catch (error) {
-      res.send(404);
-      debug(error);
+      res.status(404);
     }
   }
 
