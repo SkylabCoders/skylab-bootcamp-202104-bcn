@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const {
   getAll,
   createOne,
@@ -11,128 +10,84 @@ const Hero = require('../model/heroModel');
 
 jest.mock('../model/heroModel');
 
-describe('getAll', () => {
-  test('shoud get all heroes', async () => {
-    // arrange
+describe('Given getAll function', () => {
+  test('when resolved, then return res.json([{}])', async () => {
     const res = {
+      status: jest.fn(),
       json: jest.fn(),
+      send: jest.fn(),
     };
-    // act
+    Hero.find.mockResolvedValueOnce([{}]);
     await getAll(null, res);
-    // assert
-    expect(res.json).toHaveBeenCalled();
+    expect(res.json).toHaveBeenCalledWith([{}]);
   });
-});
 
-describe('createOne', () => {
-  test('should return res.json', async () => {
-    const req = {
-      body: null,
-    };
+  test('when rejected, then return res.send(error)', async () => {
     const res = {
+      status: jest.fn(),
       json: jest.fn(),
       send: jest.fn(),
     };
+    Hero.find.mockRejectedValueOnce('error');
+    await getAll(null, res);
+    expect(res.send).toHaveBeenCalledWith('error');
+  });
+});
+
+describe('Given createOne function', () => {
+  test('when resolved, then return res.json({})', async () => {
+    const req = {
+      body: {
+        name: 'name',
+      },
+    };
+    const res = {
+      status: jest.fn(),
+      json: jest.fn(),
+      send: jest.fn(),
+    };
+    Hero.mockReturnValueOnce({
+      save: jest.fn().mockResolvedValueOnce({ body: { name: 'name' } }),
+    });
     await createOne(req, res);
-    expect(res.json).toHaveBeenCalled();
+    expect(res.json).toHaveBeenCalledWith({ body: { name: 'name' } });
   });
-  // test('should return res.send', async () => {
-  //   const req = {
-  //     body: null,
-  //   };
-  //   const res = {
-  //     json: jest.fn(),
-  //     send: jest.fn(),
-  //   };
-  //   newHero = {
-  //     save: jest.fn(),
-  //   };
-  //   newHero.save().mockRejectedValueOnce('error');
-  //   await createOne(req, res);
-  //   expect(res.send).toHaveBeenCalled();
-  // });
-});
-describe('getById', () => {
-  test('should return res.json', async () => {
-    const req = {
-      params: {
-        heroId: null,
-      },
-    };
-    const res = {
-      json: jest.fn(),
-      status: jest.fn(),
-      send: jest.fn(),
-    };
-    await getById(req, res);
 
-    expect(res.json).toHaveBeenCalled();
-  });
-  test('should return res.send', async () => {
+  test('when rejected, then return res.send(error)', async () => {
     const req = {
-      params: {
-        heroId: null,
-      },
-    };
-    const res = {
-      json: jest.fn(),
-      status: jest.fn(),
-      send: jest.fn(),
-    };
-    Hero.findById.mockRejectedValueOnce();
-    await getById(req, res);
-    expect(res.send).toHaveBeenCalled();
-  });
-});
-
-describe('updateById', () => {
-  test('should return res.json', async () => {
-    const req = {
-      params: {
-        heroId: null,
-      },
       body: null,
     };
     const res = {
+      status: jest.fn(),
       json: jest.fn(),
       send: jest.fn(),
     };
-    await updateById(req, res);
-    expect(res.json).toHaveBeenCalled();
-  });
-  test('should return res.send', async () => {
-    const req = {
-      params: {
-        heroId: null,
-      },
-      body: null,
-    };
-    const res = {
-      json: jest.fn(),
-      send: jest.fn(),
-    };
-    Hero.findByIdAndUpdate.mockRejectedValueOnce();
-    await updateById(req, res);
-    expect(res.send).toHaveBeenCalled();
+    Hero.mockReturnValueOnce({
+      save: jest.fn().mockRejectedValueOnce('error'),
+    });
+    await createOne(req, res);
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
 
-describe('deleteById', () => {
-  test('should return res.json', async () => {
+describe('Given getById function', () => {
+  test('when resolved, then return res.json({})', async () => {
     const req = {
       params: {
-        heroId: null,
+        heroId: 1,
       },
     };
     const res = {
-      status: jest.fn(),
       json: jest.fn(),
+      status: jest.fn(),
       send: jest.fn(),
     };
-    await deleteById(req, res);
-    expect(res.json).toHaveBeenCalled();
+    Hero.findById.mockResolvedValueOnce({ heroId: 1 });
+    await getById(req, res);
+    expect(res.json).toHaveBeenCalledWith({ heroId: 1 });
   });
-  test('should return res.send', async () => {
+
+  test('when rejected, then return res.send(error)', async () => {
     const req = {
       params: {
         heroId: null,
@@ -143,8 +98,81 @@ describe('deleteById', () => {
       json: jest.fn(),
       send: jest.fn(),
     };
-    Hero.findByIdAndDelete.mockRejectedValueOnce();
+    Hero.findById.mockRejectedValueOnce('error');
+    await getById(req, res);
+    expect(res.send).toHaveBeenCalledWith('error');
+  });
+});
+
+describe('Given updateById function', () => {
+  test('when resolved, then return res.json', async () => {
+    const req = {
+      params: {
+        heroId: 1,
+      },
+      body: {
+        name: 'name',
+      },
+    };
+    const res = {
+      status: jest.fn(),
+      json: jest.fn(),
+      send: jest.fn(),
+    };
+    Hero.findByIdAndUpdate.mockResolvedValueOnce({ heroId: 1, name: 'name' });
+    await updateById(req, res);
+    expect(res.json).toHaveBeenCalledWith({ heroId: 1, name: 'name' });
+  });
+
+  test('when rejected, then return res.send(error)', async () => {
+    const req = {
+      params: {
+        heroId: 1,
+      },
+      body: {
+        name: 'name',
+      },
+    };
+    const res = {
+      status: jest.fn(),
+      json: jest.fn(),
+      send: jest.fn(),
+    };
+    Hero.findByIdAndUpdate.mockRejectedValueOnce('error');
+    await updateById(req, res);
+    expect(res.send).toHaveBeenCalledWith('error');
+  });
+});
+
+describe('Given deleteById function', () => {
+  test('when resolved, then return res.json', async () => {
+    const req = {
+      params: {
+        heroId: 1,
+      },
+    };
+    const res = {
+      status: jest.fn(),
+      json: jest.fn(),
+      send: jest.fn(),
+    };
+    Hero.findByIdAndDelete.mockResolvedValueOnce({ heroId: 1 });
     await deleteById(req, res);
-    expect(res.send).toHaveBeenCalled();
+    expect(res.json).toHaveBeenCalledWith();
+  });
+  test('when rejected, then return res.send(error)', async () => {
+    const req = {
+      params: {
+        heroId: 1,
+      },
+    };
+    const res = {
+      status: jest.fn(),
+      json: jest.fn(),
+      send: jest.fn(),
+    };
+    Hero.findByIdAndDelete.mockRejectedValueOnce('error');
+    await deleteById(req, res);
+    expect(res.send).toHaveBeenCalledWith('error');
   });
 });
