@@ -3,8 +3,10 @@ const Hero = require('../models/heroModel');
 
 function heroesController() {
   async function getAll(req, res) {
-    const heroes = await Hero.find();
-    res.json(heroes);
+    // eslint-disable-next-line brace-style
+    let findHero = null;
+    if (req.query.name) { findHero = { name: { $regex: req.query.name, $options: 'i' } }; }
+    res.json(await Hero.find(findHero));
   }
 
   async function createOne(req, res) {
