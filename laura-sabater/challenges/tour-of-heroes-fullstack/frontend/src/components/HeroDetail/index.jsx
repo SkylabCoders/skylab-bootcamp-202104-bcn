@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -22,7 +23,7 @@ function HeroDetail({ selectedHero, dispatch }) {
   }
 
   function save() {
-    dispatch(updateHero({ id: selectedHero.id, name: heroName }));
+    dispatch(updateHero({ _id: selectedHero._id, id: selectedHero.id, name: heroName }));
   }
 
   return (
@@ -49,7 +50,7 @@ function HeroDetail({ selectedHero, dispatch }) {
               />
             </label>
           </div>
-          <Link to="/Heroes">go back</Link>
+          <Link to="/heroes">go back</Link>
           <button onClick={save} type="button">save</button>
         </div>
       )
@@ -66,6 +67,7 @@ function HeroDetail({ selectedHero, dispatch }) {
 HeroDetail.propTypes = {
   dispatch: PropTypes.func.isRequired,
   selectedHero: PropTypes.shape({
+    _id: PropTypes.string,
     id: PropTypes.number,
     name: PropTypes.string,
   }).isRequired,
