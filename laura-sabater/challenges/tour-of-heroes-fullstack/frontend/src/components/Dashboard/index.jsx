@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -14,17 +15,23 @@ function Dashboard({ heroes, dispatch }) {
     <>
       <h2>Top heroes</h2>
       <div className="heroes-menu">
-        {heroes.slice(1, 5).map((hero) => <Link to={`/detail/${hero.id}`}>{hero.name}</Link>)}
+        {heroes.slice(1, 5).map((hero) => <Link to={`/detail/${hero._id}`}>{hero.name}</Link>)}
       </div>
       <div>
         <label htmlFor="hero-search">
-          Hero search
           <input
-            id="hero-name"
-            // onChange={}
-            placeholder="Hero name"
+            type="text"
+            placeholder="Search hero"
+            id="newHero"
+            // value={heroName}
+            // onChange={(event) => setHeroName(event.target.value)}
           />
-
+          <button
+            type="button"
+            // onClick={() => dispatch(addHero({ name: heroName }))}
+          >
+            Search
+          </button>
         </label>
       </div>
     </>
@@ -32,7 +39,10 @@ function Dashboard({ heroes, dispatch }) {
 }
 
 Dashboard.propTypes = {
-  heroes: PropTypes.shape([]).isRequired,
+  heroes: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  })).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
