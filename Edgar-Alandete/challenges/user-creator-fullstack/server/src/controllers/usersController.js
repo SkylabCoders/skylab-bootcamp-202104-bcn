@@ -37,10 +37,41 @@ function usersController() {
     }
   }
 
+  async function deleteById(req, res) {
+    const { userId } = req.params;
+
+    try {
+      await User.findByIdAndDelete(userId);
+      res.send(204);
+    } catch (error) {
+      res.send(404);
+      debug(error);
+    }
+  }
+
+  async function updateById(req, res) {
+    const { userId } = req.params;
+    const updatedData = req.body;
+    try {
+      const updatedUser = await User.findByIdAndUpdate(
+        userId,
+        updatedData,
+        { new: true },
+      );
+
+      res.json(updatedUser);
+    } catch (error) {
+      res.send(404);
+      debug(error);
+    }
+  }
+
   return {
     getAll,
     createOne,
     getById,
+    deleteById,
+    updateById,
   };
 }
 

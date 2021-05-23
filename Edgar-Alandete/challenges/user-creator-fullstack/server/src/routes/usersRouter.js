@@ -9,7 +9,9 @@ function usersRouter() {
     .post(usersController.createOne);
 
   routes.route('/:userId')
-    .get(usersController.getById);
+    .get(usersController.getById)
+    .delete(usersController.deleteById)
+    .put(usersController.updateById);
 
   return routes;
 }
