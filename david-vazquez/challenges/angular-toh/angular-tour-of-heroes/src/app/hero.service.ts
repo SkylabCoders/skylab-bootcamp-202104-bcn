@@ -33,6 +33,31 @@ getHero(_id: string): Observable<Hero> {
     catchError(this.handleError<Hero>(`getHero id=${_id}`))
   );
 }
+
+/** PUT: update the hero on the server */
+updateHero(hero: Hero): Observable<any> {
+  return this.http.put(`${this.heroesUrl}/${hero._id}`, hero, this.httpOptions).pipe(
+    tap(_ => this.log(`updated hero id=${hero._id}`)),
+    catchError(this.handleError<any>('updateHero'))
+  );
+}
+/** POST: add a new hero to the server */
+addHero(hero: Hero): Observable<Hero> {
+  return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
+    tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
+    catchError(this.handleError<Hero>('addHero'))
+  );
+}
+/** DELETE: delete the hero from the server */
+deleteHero(_id: string): Observable<Hero> {
+  const url = `${this.heroesUrl}/${_id}`;
+
+  return this.http.delete<Hero>(url, this.httpOptions).pipe(
+    tap(_ => this.log(`deleted hero id=${_id}`)),
+    catchError(this.handleError<Hero>('deleteHero'))
+  );
+}
+
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
 
