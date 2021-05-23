@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-debugger */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -11,10 +12,6 @@ function HeroesList({ heroes, dispatch }) {
     if (!heroes.length) dispatch(loadHeroes());
   }, [heroes]);
 
-  function handleDeleteHero(heroId) {
-    dispatch(deleteHero(heroId));
-  }
-
   function handleAddHero() {
     const newName = document.getElementById('hero-name').value;
     const heroesIndex = heroes.map((hero) => hero.id);
@@ -22,6 +19,10 @@ function HeroesList({ heroes, dispatch }) {
     const newId = maxIndex + 1;
     const newHero = { id: newId, name: newName };
     dispatch(addHero(newHero));
+  }
+
+  function handleDeleteHero(heroId) {
+    dispatch(deleteHero(heroId));
   }
 
   return (
@@ -40,11 +41,11 @@ function HeroesList({ heroes, dispatch }) {
       <ul className="heroes-list">
         {heroes.map((hero) => (
           <li>
-            <Link className="heroes" to={`/detail/${hero.id}`}>
+            <Link className="heroes" to={`/detail/${hero._id}`}>
               <span>{hero.id}</span>
               {hero.name}
             </Link>
-            <button type="button" className="button-delete" onClick={() => handleDeleteHero(hero.id)}>X</button>
+            <button type="button" className="button-delete" onClick={() => handleDeleteHero(hero._id)}>X</button>
           </li>
         ))}
       </ul>
@@ -53,7 +54,10 @@ function HeroesList({ heroes, dispatch }) {
 }
 
 HeroesList.propTypes = {
-  heroes: PropTypes.shape([]).isRequired,
+  heroes: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  })).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 

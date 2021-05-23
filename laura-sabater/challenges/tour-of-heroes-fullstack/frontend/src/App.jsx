@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Dashboard from './components/Dashboard';
-import HeroesList from './components/Heroes';
+import HeroesList from './components/HeroesList';
 import HeroDetail from './components/HeroDetail';
 import NotFound from './components/NotFound';
 import configureStore from './redux/stores';
