@@ -19,11 +19,11 @@ function App() {
           <h1>Tour of Heroes</h1>
           <nav>
             <Link to="/">Dashboard</Link>
-            <Link to="/Heroes">Heroes</Link>
+            <Link to="/heroes">Heroes</Link>
           </nav>
           <Switch>
             <Route path="/" exact component={Dashboard} />
-            <Route path="/Heroes" component={HeroesList} />
+            <Route path="/heroes" component={HeroesList} />
             <Route path="/detail/:heroId" component={HeroDetail} />
             <Route component={NotFound} />
           </Switch>
