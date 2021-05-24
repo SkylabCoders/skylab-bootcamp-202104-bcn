@@ -1,9 +1,16 @@
-<h2>Flats List</h2>
-
-<ul>
-    <li *ngFor="let flat of flats">{{flat.attributes.field_inmu_tipo_via}}
-    <img src="{{flat.attributes.field_inmu_imag_arra[0]}}" weight="100px" height="100px"/>
+<section class="list-container">
+<ul class="flat-list">
+    <li class="flat-list__item" *ngFor="let flat of flats">
+        <img src="{{flat.attributes.field_inmu_imag_arra[0]}}"/>
+        <div class="info-container">
+            <span>{{+flat.attributes.field_inmu_prec}} €</span>
+            <span class="info-container">{{flat.attributes.field_inmu_tipo_sin_agru}} en {{flat.attributes.field_inmu_tipo_via}} {{flat.attributes.field_inmu_nomb_call}}</span> 
+        </div>
     </li>
-
 </ul>
+
+<button type="button">Mostrar más</button>
+
+</section>
+
 
