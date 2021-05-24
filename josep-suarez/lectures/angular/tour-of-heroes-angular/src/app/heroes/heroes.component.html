@@ -1,0 +1,16 @@
+<ul>
+    <ng-container *ngFor="let hero of heroes"></ng-container>
+        <li *ngFor="let hero of heroes" (click)='selectedHero = hero'>
+            {{hero.id}} {{hero.name}}
+        </li>
+    </ng-container>
+
+</ul>
+    <div *ngIf="selectedHero">
+        <h2>{{selectedHero.name | uppercase}} details</h2>
+        <p>id: {{selectedHero.id}}</p>
+            <label>
+                name:
+                <input type="text" [(ngModel)]="selectedHero.name">
+            </label>         
+    </div>
