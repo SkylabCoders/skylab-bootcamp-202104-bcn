@@ -1,7 +1,7 @@
 import { heroes } from './../../constants/heroes.mock';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import {Hero} from '../../hero'
+import {Hero} from '../../core/models/hero'
 
 @Component({
   selector: 'app-hero-detail',
