@@ -1,3 +1,105 @@
-.test{
-    background-color:red;
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-container{
+    display: flex;
+}
+.side-container{
+    padding-left: 0.3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 44%;
+    font-size: 0.8em;
+    background-color:#1a99aa;
+    
+    &__avatar{
+        width: 9em;
+        height: 9em;
+        border-radius: 50%;
+    }
+
+    &__title{
+        h1{
+            font-size: 1.3em;
+        }
+    }
+}
+
+.skill-container{
+    height: 100vh;
+    padding-left: 0.2em;
+}
+
+
+.container {
+    /* Used to position the left vertical line */
+    position: relative;
+    height: 100vh;
+    font-size: 0.8em;
+    
+}
+
+.container__line {
+    /* Border */
+    border-right: 2px solid #a6abab;
+
+    /* Positioned at the left */
+    left: 16px;
+    position: absolute;
+    top: 0px;
+
+    /* Take full height */
+    height: 100vh;
+}
+
+.container__items {
+    /* Reset styles */
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1em;
+    height: 100vh;
+}
+
+.container__item {
+    margin-bottom: 8px;
+}
+
+.container__top {
+    /* Center the content horizontally */
+    align-items: center;
+    display: flex;
+    padding-top: 1.3em;
+}
+
+.container__circle {
+    /* Rounded border */
+    background-color: #a6abab;
+    border-radius: 50%;
+
+    /* Size */
+    height: 32px;
+    width: 32px;
+}
+
+.container__title {
+    /* Take available width */
+    flex: 1;
+    padding-left: 0.4em;
+}
+
+.container__desc {
+    /* Make it align with the title */
+    margin-left: 48px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
 }
