@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Hero } from '../../hero';
+import { HeroService } from 'src/app/core/services/hero.service';
+import { Hero } from '../../core/models/hero';
 import {HEROES} from './../../constant/heroes.mock';
 
 @Component({
@@ -10,11 +11,11 @@ import {HEROES} from './../../constant/heroes.mock';
 })
 export class HeroDetailComponent implements OnInit {
   hero?: Hero;
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private heroService: HeroService) { }
 
   ngOnInit(): void {
     const { heroId } = this.activatedRoute.snapshot.params;
-    this.hero= HEROES.find((hero: Hero) => hero.id === +heroId);
+    this.hero= this.heroService.getHeroById(+heroId);
   }
 
 }
