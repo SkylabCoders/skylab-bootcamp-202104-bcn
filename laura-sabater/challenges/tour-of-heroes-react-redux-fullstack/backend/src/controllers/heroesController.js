@@ -3,18 +3,25 @@ const Hero = require('../model/heroModel');
 
 function heroesController() {
   async function getAll(req, res) {
-    const heroes = await Hero.find();
-    res.json(heroes);
+    try {
+      const heroes = await Hero.find();
+      res.status(200);
+      res.json(heroes);
+    } catch (error) {
+      debug(error);
+      res.status(400);
+      res.send(error);
+    }
   }
 
   async function createOne(req, res) {
-    const newHero = new Hero(req.body);
-    debug(newHero);
     try {
-      await newHero.save();
+      const newHero = await new Hero(req.body).save();
+      res.status(200);
       res.json(newHero);
     } catch (error) {
       debug(error);
+      res.status(400);
       res.send(error);
     }
   }
@@ -24,10 +31,11 @@ function heroesController() {
       const heroById = await Hero.findById(
         req.params.heroId,
       );
+      res.status(200);
       res.json(heroById);
     } catch (error) {
       debug(error);
-      res.status(404);
+      res.status(400);
       res.send(error);
     }
   }
@@ -39,9 +47,11 @@ function heroesController() {
         req.body,
         { new: true },
       );
+      res.status(200);
       res.json(updatedHero);
     } catch (error) {
       debug(error);
+      res.status(400);
       res.send(error);
     }
   }
@@ -49,10 +59,11 @@ function heroesController() {
   async function deleteById(req, res) {
     try {
       await Hero.findByIdAndDelete(req.params.heroId);
-      res.status(204);
+      res.status(200);
       res.json();
     } catch (error) {
       debug(error);
+      res.status(400);
       res.send(error);
     }
   }

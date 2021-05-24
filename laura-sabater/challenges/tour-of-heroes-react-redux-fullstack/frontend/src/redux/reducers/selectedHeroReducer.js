@@ -1,6 +1,6 @@
 import actionTypes from '../actions/actionTypes';
 
-function heroesReducer(hero = {}, action) {
+function selectedHeroReducer(hero = {}, action) {
   switch (action.type) {
     case actionTypes.LOAD_HERO:
       return action.hero;
@@ -10,4 +10,4 @@ function heroesReducer(hero = {}, action) {
   }
 }
 
-export default heroesReducer;
+export default selectedHeroReducer;

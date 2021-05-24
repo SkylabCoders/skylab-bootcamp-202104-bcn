@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Dashboard from './components/Dashboard';
-import HeroesList from './components/Heroes';
+import HeroesList from './components/HeroesList';
 import HeroDetail from './components/HeroDetail';
 import NotFound from './components/NotFound';
 import configureStore from './redux/stores';
@@ -19,11 +19,11 @@ function App() {
           <h1>Tour of Heroes</h1>
           <nav>
             <Link to="/">Dashboard</Link>
-            <Link to="/Heroes">Heroes</Link>
+            <Link to="/heroes">Heroes</Link>
           </nav>
           <Switch>
             <Route path="/" exact component={Dashboard} />
-            <Route path="/Heroes" component={HeroesList} />
+            <Route path="/heroes" component={HeroesList} />
             <Route path="/detail/:heroId" component={HeroDetail} />
             <Route component={NotFound} />
           </Switch>
