@@ -6,7 +6,9 @@ export interface Flat {
         field_inmu_tipo_via: string,
         field_inmu_nomb_call: string,
         field_inmu_tipo_sin_agru: string,
-        field_inmu_pobl: string
+        field_inmu_pobl: string,
+        field_inmu_area_cons: string,
+        field_inmu_nume_habi: number
     }
     type: string,
     price: string,
