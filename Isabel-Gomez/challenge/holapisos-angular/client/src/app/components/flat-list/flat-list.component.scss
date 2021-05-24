@@ -13,9 +13,13 @@
     color: #003b59;
     font-weight: 800;
     font-size: 20px;
+
+    
     &__item{
         margin: 10px;
         width: 250px;
+        display: flex;
+        flex-direction: column;
         img{
             width: 250px;
             border-top-left-radius: 5%;
@@ -23,11 +27,17 @@
         }
     }
     .info-container{
+        padding: 15px;
+        height: 100px;
+        background-color: #FFFFFF;
         white-space: normal;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: start;
+        border-bottom-left-radius: 5%;
+        border-bottom-right-radius: 5%;
+
     }
 }
     button{
@@ -41,5 +51,6 @@
         color: #fff;
         border: none;
         outline: 0;
+        cursor: pointer;
     }
 }
