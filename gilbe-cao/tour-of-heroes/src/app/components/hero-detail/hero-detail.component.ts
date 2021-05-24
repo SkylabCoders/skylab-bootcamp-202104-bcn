@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HEROES } from 'src/app/constants/heroes.mock';
 import { Hero } from '../../hero';
 
 @Component({
@@ -7,11 +9,14 @@ import { Hero } from '../../hero';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  @Input() hero!: Hero;
+  hero?: Hero;
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { 
+  }
 
   ngOnInit(): void {
+    const {heroId} = this.activatedRoute.snapshot.params;
+    this.hero = HEROES.find((hero: Hero) => hero.id === +heroId)
   }
 
 }
