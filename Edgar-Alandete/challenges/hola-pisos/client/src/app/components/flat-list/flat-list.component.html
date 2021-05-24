@@ -1,14 +1,9 @@
 <section class="flats-section">
 
     <ul class="flat-list">
-        <li *ngFor="let flat of flats" class="flat-list__item">
-            <img src="{{flat.attributes.field_inmu_imag_arra[0]}}" alt="{{flat.id}}">
-            <div class="flat-information">
-                <span>{{flat.attributes.field_inmu_prec}}</span>
-                <span>{{flat.attributes.field_inmu_tipo_via}}</span>
-                <span>{{flat.attributes.field_inmu_nomb_call}}</span>
-            </div>
-        </li>
+        <ng-container *ngFor="let flat of flats">
+            <app-list-item [flat]="flat"></app-list-item>
+        </ng-container>
     </ul>
 
     <button type="button" (click)=getFlats(next)>Mostrar más</button>

@@ -1,14 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { FlatListComponent } from './components/flat-list/flat-list.component';
-import { ListItemComponent } from './components/flat-list/list-item/list-item.component';
+import { ListItemComponent } from './list-item/list-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FlatListComponent,
     ListItemComponent
   ],
   imports: [
@@ -16,6 +12,6 @@ import { ListItemComponent } from './components/flat-list/list-item/list-item.co
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }
