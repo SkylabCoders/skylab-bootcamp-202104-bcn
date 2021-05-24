@@ -10,6 +10,7 @@ import { FlatService } from 'src/app/core/services/flat.service';
 export class FlatListComponent implements OnInit {
 
   flats: Flat[] = [];
+  //links: string[];
 
   constructor(private flatService: FlatService) { }
 
@@ -19,7 +20,10 @@ export class FlatListComponent implements OnInit {
 
   getFlats():void {
     this.flatService.getFlats()
-      .subscribe((apiData) => this.flats = apiData.data);
+      .subscribe((apiData) => {
+        this.flats = apiData.data;
+        //this.links= apiData.links;
+      });
   }
 
 }
