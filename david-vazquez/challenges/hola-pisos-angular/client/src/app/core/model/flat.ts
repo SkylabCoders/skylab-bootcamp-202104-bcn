@@ -5,3 +5,10 @@ export interface Flat {
     price: string,
     adress: string
 }
+
+export interface ApiData {
+    jsonapi: object,
+    data: [],
+    meta: object,
+    links: object
+}
