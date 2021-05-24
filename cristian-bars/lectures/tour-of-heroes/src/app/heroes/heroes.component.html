@@ -1,0 +1,18 @@
+<h2>name: {{hero.name |uppercase}} details</h2>
+<ul>
+    <li *ngFor="let hero of heroes" (click)="selectedHero = hero">
+        {{hero.id}} {{hero.name}}
+    </li>
+</ul>
+
+<h2>{{selectedHero.name | uppercase}} details</h2>
+<div *ngIf="selectedHero">
+    <p>id: {{selectedHero.id}}</p>
+    <p>
+        <label>
+            name:
+            <input type="text" value="{{selectedHero.name}}">
+            
+        </label>
+    </p>
+</div>
