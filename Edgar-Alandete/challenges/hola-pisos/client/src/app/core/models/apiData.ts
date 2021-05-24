@@ -2,5 +2,9 @@ export interface ApiData {
     jsonapi : Object,
     data: [],
     meta: Object,
-    links: Object,
+    links: {
+        next: {
+            href: string,
+        },
+    },
 }

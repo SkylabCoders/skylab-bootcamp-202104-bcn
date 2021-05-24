@@ -8,16 +8,14 @@ import { ApiData } from '../models/apiData';
   providedIn: 'root'
 })
 export class FlatService {
-
-  private flatsUrl = environment.flatsUrl;
   
   constructor(private httpClient: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  getFlats(): Observable<ApiData> {
-    return this.httpClient.get<ApiData>(this.flatsUrl);
+  getFlats(url: string): Observable<ApiData> {
+    return this.httpClient.get<ApiData>(url);
   }
 
 }
