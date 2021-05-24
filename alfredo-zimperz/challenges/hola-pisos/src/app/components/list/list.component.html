@@ -1,5 +1,10 @@
-<div class="flat-list" *ngIf="flatlist">
-    <div *ngFor="let flat of flatlist.data">
-        <app-flat-item [flat]="flat"></app-flat-item>
+<div class="flat-list-container" *ngIf="flatListData">
+    <h3>{{flatListCount}} Inmuebles</h3>
+    <div class="flat-list">
+        <ng-container *ngFor="let flat of flatListData">
+            <app-flat-item [flat]="flat"></app-flat-item>
+        </ng-container>
     </div>
+
+    <button type="button" (click)="getFlatlist()">Mostrar más</button>
 </div>

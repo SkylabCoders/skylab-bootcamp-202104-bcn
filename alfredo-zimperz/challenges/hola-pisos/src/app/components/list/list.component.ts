@@ -1,6 +1,6 @@
-import { FlatList } from './../../core/models/FlatList';
 import { FlatsService } from '../../core/services/flats.service';
 import { Component, OnInit } from '@angular/core';
+import { Flat } from 'src/app/core/models/Flat';
 
 @Component({
   selector: 'app-list',
@@ -9,29 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  flatlist: FlatList | undefined
+  flatListData: Flat[] = []
+  nextFlatlistUrl : string | undefined = undefined
+  flatListCount : number = 0
 
   constructor(private flatService: FlatsService) { }
 
   ngOnInit(): void {
-   this.flatService.getFlats().subscribe( flatListApi => this.flatlist = {
-     links:{
-       last: {
-         href: flatListApi.links.last.href
-        },
-        next: {
-          href: flatListApi.links.next.href
-         },
-         self: {
-          href: flatListApi.links.self.href
-         },
+    this.getFlatlist()
+  }
 
-     },
-     meta:{
-       count: flatListApi.meta.count
-     },
-     data: flatListApi.data
-    })
+  getFlatlist(url = this.nextFlatlistUrl) {
+    this.flatService.getFlats(url).subscribe( flatListApi => {
+     this.flatListData = [...this.flatListData, ...flatListApi.data]
+     this.flatListCount = +flatListApi.meta.count
+     this.nextFlatlistUrl = flatListApi.links.next.href
+    }
+     ) 
   }
 
 }
