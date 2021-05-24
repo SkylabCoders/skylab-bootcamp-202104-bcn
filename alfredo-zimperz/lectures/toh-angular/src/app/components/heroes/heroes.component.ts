@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Hero} from '../hero'
-import {heroes} from '../constants/heroes.mock'
+import {Hero} from '../../hero'
+import {heroes} from '../../constants/heroes.mock'
 
 
 @Component({
