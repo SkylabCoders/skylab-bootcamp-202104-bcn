@@ -1,0 +1,17 @@
+.flat-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0 50px;
+    &__item{
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img{
+            width: 250px;
+        }
+    }
+}
