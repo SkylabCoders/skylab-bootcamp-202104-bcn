@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const heroSchema = mongoose.Schema({
   heroes: [
     {
-      id: String,
+      heroId: String,
       name: String
     }
   ]
