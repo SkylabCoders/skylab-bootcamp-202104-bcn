@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Hero } from '../../hero';
+import { Hero } from '../../core/models/hero';
 import { HEROES } from '../../constants/heroes.mock';
 
 @Component({
