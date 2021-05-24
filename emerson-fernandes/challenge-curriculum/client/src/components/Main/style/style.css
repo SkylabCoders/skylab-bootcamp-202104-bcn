@@ -4,6 +4,19 @@
   list-style: none;
 }
 
+body {
+  min-width: 375px;
+}
+
+@media only screen and (min-width: 400px) {
+  h3 {
+    font-size: 2em;
+  }
+  .container__desc {
+    font-size: 1.5em;
+  }
+}
+
 .main-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,7 +24,6 @@
 }
 
 .side-container {
-  padding-left: 0.3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,6 +48,10 @@
 
 .side-container__title h1 {
   font-size: 1.3em;
+}
+
+.side-container h2 {
+  font-size: 1.4em;
 }
 
 .skill-container {

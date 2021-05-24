@@ -3,12 +3,25 @@
     padding: 0;
     list-style: none;
 }
+body{
+    min-width: 375px;
+}
+
+@media only screen and(min-width:400px){
+   h3{
+       font-size: 2em;
+   }
+
+   .container__desc{
+       font-size: 1.5em;
+   }
+    
+}
 
 .main-container{
     display: flex;
 }
 .side-container{
-    padding-left: 0.3em;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -27,6 +40,10 @@
         h1{
             font-size: 1.3em;
         }
+    }
+
+    h2{
+        font-size: 1.4em;
     }
 }
 
@@ -98,8 +115,3 @@
     margin-left: 48px;
 }
 
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-}
