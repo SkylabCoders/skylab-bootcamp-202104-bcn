@@ -10,13 +10,16 @@ import { ApiData } from './model';
 
 export class PisoService {
   private flatsUrl = environment.flatUrlApi;
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-  getFlats(): Observable<ApiData> {
-    return this.http.get<ApiData>(this.flatsUrl);
-  }
+
   constructor(
     private http: HttpClient
   ) { }
+
+  getFlats(): Observable<ApiData> {
+    return this.http.get<ApiData>(this.flatsUrl);
+  }
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 }
