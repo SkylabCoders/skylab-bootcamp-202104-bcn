@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Hero } from '../../core/models/hero';
-import { HEROES } from '../../constants/heroes.mock';
+import { HeroService } from 'src/app/core/services/hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -8,5 +7,7 @@ import { HEROES } from '../../constants/heroes.mock';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent  {
-  heroes = HEROES;
+  heroes = this.heroService.getHeroes();
+  
+  constructor(private heroService: HeroService) {}
 }

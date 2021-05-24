@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { HEROES } from 'src/app/constants/heroes.mock';
+import { Component, OnInit } from '@angular/core';
+import { Hero } from 'src/app/core/models/hero';
+import { HeroService } from 'src/app/core/services/hero.service';
 
 
 @Component({
@@ -7,6 +8,13 @@ import { HEROES } from 'src/app/constants/heroes.mock';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
-  heroes = HEROES.slice(1, 5);
+export class DashboardComponent implements OnInit{
+  heroes!: Hero[];
+
+  constructor(private heroService: HeroService) {
+  }
+
+  ngOnInit() {
+    this.heroes = this.heroService.getHeroes().slice(1, 5);
+  }
 }
