@@ -1,3 +1,4 @@
+import { HeroService } from './../../core/services/hero.service';
 import { heroes } from './../../constants/heroes.mock';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -12,11 +13,14 @@ export class HeroDetailComponent implements OnInit {
 
   hero?: Hero 
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private heroService: HeroService
+    ) { }
 
   ngOnInit(): void {
     const {heroId}  = this.activatedRoute.snapshot.params
-    this.hero = heroes.find((hero: Hero) => hero.id === +heroId)
+    this.hero = this.heroService.getHeroById(+heroId)
   }
 
 }
