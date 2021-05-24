@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Flat} from './../../core/model/flat';
 import { FlatService} from './../../core/services/flat.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-flats-list',
@@ -10,16 +11,23 @@ import { FlatService} from './../../core/services/flat.service';
 
 export class FlatsListComponent implements OnInit {
   flats: Flat [] = [];
-  
+  next: string = '';
+
+  private flatUrl = environment.flatsUrl;
   constructor(private flatService: FlatService) { }
 
   ngOnInit(): void {
-    this.getFlats()
+    this.getFlats(this.flatUrl)
   }
 
-  getFlats() {
-    this.flatService.getFlats()
-     .subscribe((apiData) => this.flats = apiData.data);
+  getFlats(url : string) {
+    this.flatService.getFlats(url)
+     .subscribe((apiData) => {
+      this.flats = [...this.flats, ...apiData.data];
+      this.next = apiData.links.next.href});
 
+  }
+  handleClick() {
+    this.getFlats(this.next)
   }
 }
