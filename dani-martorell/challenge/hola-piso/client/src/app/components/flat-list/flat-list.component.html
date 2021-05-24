@@ -1,0 +1,12 @@
+<p>Apartment list</p>
+
+<ul  class="flat-list">
+    <li *ngFor="let flat of flats">
+        <div class="flat-list__item">
+            <img src="{{flat.attributes.field_inmu_imag_arra[0]}}" alt="">
+            <p>{{flat.attributes.field_inmu_prec}}</p>
+            <p>Piso en {{flat.attributes.field_inmu_tipo_via}} {{flat.attributes.field_inmu_nomb_call}}</p>
+            <span>{{flat.attributes.field_inmu_tipo_sin_agru}}</span>
+        </div>
+    </li> 
+</ul>
