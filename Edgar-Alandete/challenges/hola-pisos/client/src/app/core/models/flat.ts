@@ -1,7 +1,10 @@
 export interface Flat {
     id: string;
-    image: string;
-    price: string;
+    attributes: {
+        field_inmu_imag_arra: [string],
+        field_inmu_prec: string,
+        field_inmu_tipo_via: string,
+        field_inmu_nomb_call: string,
+    };
     type: string;
-    address: string;
 }
