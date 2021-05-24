@@ -1,4 +1,6 @@
 <p>flats-list works!</p>
-<ul>
-  <li *ngFor="let flat of flats">{{ flat.id }}</li>
+<ul class="flat-list">
+  <li class="flat-list__item" *ngFor="let flat of flats">
+    <img src="{{ flat.attributes.field_inmu_imag_arra[0] }}" />
+  </li>
 </ul>

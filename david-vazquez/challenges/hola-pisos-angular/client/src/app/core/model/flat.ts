@@ -1,6 +1,8 @@
 export interface Flat {
     id: string,
-    img: string,
+    attributes: {
+        field_inmu_imag_arra: [ string ]
+    }
     type: string,
     price: string,
     adress: string

@@ -7,8 +7,10 @@ import { FlatService} from './../../core/services/flat.service';
   templateUrl: './flats-list.component.html',
   styleUrls: ['./flats-list.component.scss']
 })
+
 export class FlatsListComponent implements OnInit {
-  flats: Flat [] = []
+  flats: Flat [] = [];
+  
   constructor(private flatService: FlatService) { }
 
   ngOnInit(): void {
