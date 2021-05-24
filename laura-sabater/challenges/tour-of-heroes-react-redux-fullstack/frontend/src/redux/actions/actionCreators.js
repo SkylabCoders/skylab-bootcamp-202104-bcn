@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -47,7 +48,7 @@ export function deleteHero(heroId) {
 
 export function updateHero(hero) {
   return async (dispatch) => {
-    const { data } = await axios.put(`${url}/${hero.id}`, hero);
+    const { data } = await axios.put(`${url}/${hero._id}`, hero);
     dispatch({
       type: actionTypes.UPDATE_HERO,
       hero: data,

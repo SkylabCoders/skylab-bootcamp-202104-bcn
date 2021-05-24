@@ -1,32 +1,32 @@
+/* eslint-disable no-underscore-dangle */
 import actionTypes from '../actions/actionTypes';
 
 function heroesReducer(heroes = [], action) {
+  let updatedHeroes = [];
   switch (action.type) {
     case actionTypes.LOAD_HEROES:
-      return action.heroes;
-
+      updatedHeroes = action.heroes;
+      break;
     case actionTypes.ADD_HERO:
-      return [
+      updatedHeroes = [
         ...heroes,
         action.hero,
       ];
-
+      break;
     case actionTypes.DELETE_HERO:
-      return heroes.filter((hero) => hero.id !== action.heroId);
-
+      updatedHeroes = heroes.filter((hero) => hero._id !== action.heroId);
+      break;
     case actionTypes.UPDATE_HERO:
-      return heroes.map(
-        (hero) => (hero.id === action.hero.id
+      updatedHeroes = heroes.map(
+        (hero) => (hero._id === action.hero.id
           ? { ...hero, ...action.hero }
           : hero),
       );
-
-    case actionTypes.LOAD_HERO:
-      return action.hero;
-
+      break;
     default:
-      return heroes;
+      return updatedHeroes;
   }
+  return updatedHeroes;
 }
 
 export default heroesReducer;
