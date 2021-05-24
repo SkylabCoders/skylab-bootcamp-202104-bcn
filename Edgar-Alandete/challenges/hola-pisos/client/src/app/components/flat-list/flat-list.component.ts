@@ -10,10 +10,11 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./flat-list.component.scss']
 })
 export class FlatListComponent implements OnInit {
+  
+  private flatsUrl = environment.flatsUrl;
 
   flats: Flat[] = [];
   next: string = '';
-  private flatsUrl = environment.flatsUrl;
 
 
   constructor(private flatService: FlatService) { }
@@ -25,7 +26,7 @@ export class FlatListComponent implements OnInit {
   getFlats(url: string):void {
     this.flatService.getFlats(url)
       .subscribe((apiData) => {
-        this.flats = apiData.data;
+        this.flats = [...this.flats, ...apiData.data];
         this.next = apiData.links.next.href;
       });
   }

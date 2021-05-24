@@ -1,0 +1,71 @@
+.flat-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  padding: 0 50px;
+}
+
+.flat-list__item {
+  width: 250px;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flat-list__item .flat-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: white;
+  padding: 20px;
+  color: darkblue;
+  font-weight: bold;
+  font-size: 20px;
+  height: 100px;
+}
+
+.flat-list__item .flat-information .direction {
+  text-transform: capitalize;
+  white-space: normal;
+}
+
+.flat-list__item img {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  max-width: 140px;
+  height: 46px;
+  border-radius: 24px;
+  background-color: #f25c0f;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+}
+/*# sourceMappingURL=flat-list.component.css.map */
