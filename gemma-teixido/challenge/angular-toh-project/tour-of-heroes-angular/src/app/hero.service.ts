@@ -80,6 +80,7 @@ export class HeroService {
   /** DELETE: delete the hero from the server */
   deleteHero(_id: string): Observable<Hero> {
     const url = `${this.heroesUrl}/${_id}`;
+    
 
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted hero id=${_id}`)),
