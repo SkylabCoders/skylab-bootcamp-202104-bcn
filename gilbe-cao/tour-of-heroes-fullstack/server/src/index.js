@@ -23,7 +23,7 @@ server.use(morgan('dev'));
 
 const heroesRouter = require('./routes/heroesRouter');
 
-server.use('/heroes', heroesRouter);
+server.use('/api/heroes', heroesRouter);
 
 server.listen(port,
   () => debug(`Server is running in ${chalk.yellow(`localhost:${port}`)}`));
