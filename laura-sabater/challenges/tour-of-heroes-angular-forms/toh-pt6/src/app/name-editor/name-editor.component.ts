@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -9,12 +9,19 @@ import { FormControl } from '@angular/forms';
 export class NameEditorComponent implements OnInit {
   name = new FormControl('');
 
+  @Input() heroName!: string;
+  @Output() heroNameChange = new EventEmitter();
+
   constructor() { }
 
-  updateName() {
-    this.name.setValue('Nancy');
-  }
+  // updateName() {
+  //   this.name.setValue('Nancy');
+  // }
   
+  nameChange(event: any) {
+    this.heroNameChange.emit(event.target.value);
+  }
+
   ngOnInit(): void {
   }
 
