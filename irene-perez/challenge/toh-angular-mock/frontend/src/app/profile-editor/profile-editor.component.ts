@@ -13,6 +13,9 @@ export class ProfileEditorComponent implements OnInit {
   });
 
   constructor() { }
+  onSubmit() {
+    console.warn(this.profileForm.value);
+  }
 
   ngOnInit(): void {
   }
