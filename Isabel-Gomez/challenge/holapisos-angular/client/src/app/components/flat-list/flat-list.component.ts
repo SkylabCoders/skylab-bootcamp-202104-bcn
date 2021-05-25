@@ -17,10 +17,10 @@ export class FlatListComponent implements OnInit {
   constructor(private flatService: FlatService) { }
 
   ngOnInit(): void {
-    this.getFlats(this.flatsUrl);
+    this.showFlats(this.flatsUrl);
   }
 
-  getFlats(url: string): void {
+  showFlats(url: string): void {
     this.flatService.getFlats(url)
     .subscribe((apiData) => {
       this.flats = [...this.flats, ...apiData.data];
