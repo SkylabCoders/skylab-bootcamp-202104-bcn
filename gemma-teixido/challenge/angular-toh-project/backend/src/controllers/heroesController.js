@@ -1,4 +1,3 @@
-// const nextHeroId = 31;
 const chalk = require('chalk');
 const debug = require('debug')('server:heroesConntroller');
 const Hero = require('../../model/heroModel');
@@ -12,7 +11,6 @@ function heroesController() {
 
   async function createOne(req, res) {
     const newHero = new Hero(req.body);
-    debug(newHero);
     try {
       await newHero.save();
       res.json(newHero);
