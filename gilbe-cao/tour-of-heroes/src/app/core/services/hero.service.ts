@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HEROES } from 'src/app/constants/heroes.mock';
+import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Hero } from '../models/hero';
 import { MessageService } from './message.service';
 
@@ -7,16 +9,20 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class HeroService {
+  url: string = environment.heroApi;
 
-  constructor(private messageService: MessageService) { }
+  constructor(
+    private httpClient: HttpClient,
+    private messageService: MessageService
+  ) { }
 
-  getHeroes() {
+  getHeroes(): Observable<Hero[]> {
     this.messageService.add('Loading heroes')
-    return HEROES;
+    return this.httpClient.get<Hero[]>(this.url);
   }
   
-  getHeroById(id: number) {
+  getHeroById(id: string): Observable<Hero> {
     this.messageService.add(`Loading hero with id: ${id}`)
-    return HEROES.find((hero: Hero) => hero.id === id)
+    return this.httpClient.get<Hero>(`${this.url}/${id}`);
   }
 }

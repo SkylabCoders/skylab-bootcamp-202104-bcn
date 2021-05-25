@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  pokeUrl: 'pokeapi.com/v2/pokes'
+  heroApi: 'http://localhost:2021/api/heroes'
 };

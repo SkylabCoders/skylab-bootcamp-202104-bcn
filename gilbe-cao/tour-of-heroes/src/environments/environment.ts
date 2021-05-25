@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  pokeUrl: 'localhost:4000/api/pokes'
+  heroApi: 'http://localhost:2021/api/heroes'
 };
 
 /*
