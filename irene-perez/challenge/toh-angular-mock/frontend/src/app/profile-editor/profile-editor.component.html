@@ -9,5 +9,5 @@
       Last Name:
       <input type="text" formControlName="lastName">
     </label>
-  
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
   </form>
