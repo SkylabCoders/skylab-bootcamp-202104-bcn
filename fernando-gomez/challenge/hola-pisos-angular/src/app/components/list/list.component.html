@@ -1,1 +1,20 @@
-<p></p>
+<h2>FlatList</h2>
+<div class="flat-list" *ngIf="flatList">
+    <h3>List of flats</h3>
+    <p>Total of {{ flatList.meta.count }} flats found</p>
+    <ul *ngFor="let flat of flatList.data">
+        <li>{{ flat.id }}</li>
+        <li>{{ flat.type }}</li>
+        <li>{{ flat.attributes.field_inmu_area_cons }}</li>
+        <ul *ngFor='let image of flat.attributes.field_inmu_imag_arra'>
+            <img src='{{image}}'/>
+        </ul>
+        <li>{{ flat.attributes.field_inmu_nomb_call }}</li>
+        <li>{{ flat.attributes.field_inmu_pobl }}</li>
+        <li>{{ flat.attributes.field_inmu_prec }}</li>
+        <li>{{ flat.attributes.field_inmu_nume_habi }}</li>
+        <li>{{ flat.attributes.field_inmu_refe }}</li>
+        <li>{{ flat.attributes.field_inmu_tipo_sin_agru }}</li>
+        <li>{{ flat.attributes.field_inmu_tipo_via }}</li>
+    </ul>
+</div>
