@@ -9,7 +9,7 @@ import { Hero } from '../../core/models/hero';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  hero?: Hero;
+  hero: Hero = {} as Hero;
 
   constructor(
     private activatedRoute: ActivatedRoute,

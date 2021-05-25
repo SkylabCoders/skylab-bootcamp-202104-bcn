@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -9,6 +9,8 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MessageComponent } from './components/message/message.component';
+import { NameEditorComponent } from './components/name-editor/name-editor.component';
+import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,14 @@ import { MessageComponent } from './components/message/message.component';
     HeroesComponent,
     HeroDetailComponent,
     DashboardComponent,
-    MessageComponent
+    MessageComponent,
+    NameEditorComponent,
+    ProfileEditorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule
   ],
