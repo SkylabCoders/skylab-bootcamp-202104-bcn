@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { FlatListComponent } from './components/flat-list/flat-list.component';
 
@@ -10,7 +10,8 @@ import { FlatListComponent } from './components/flat-list/flat-list.component';
     FlatListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

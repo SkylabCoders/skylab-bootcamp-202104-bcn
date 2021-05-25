@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { flatList } from '../../core/model';
-import { HolaPisosService } from './../../core/hola-pisos.service'
+import { Flat } from '../../core/model/flat';
+import { HolaPisosService } from './../../core/hola-pisos.service';
+import { environment } from '../../../environments/environment'
 
 @Component({
   selector: 'app-flat-list',
@@ -8,20 +9,22 @@ import { HolaPisosService } from './../../core/hola-pisos.service'
   styleUrls: ['./flat-list.component.css']
 })
 export class FlatListComponent implements OnInit {
+  
+  private flatUrl = environment.flatUrl;
 
-  data: flatList[] = [];
+  flats: Flat[] = [];
   
   constructor(
     private flatService: HolaPisosService
   ) { }
 
   ngOnInit(): void {
-    this.getFlats();
+    this.getFlats(this.flatUrl);
   }
   
-  getFlats() {
-    this.flatService.getFlats()
-    .subscribe((apiData) => this.data = apiData.data)
+  getFlats(url: string): void {
+    this.flatService.getFlats(url)
+    .subscribe((apiData) => this.flats = [...this.flats, ...apiData.data]);
   }
 
 }

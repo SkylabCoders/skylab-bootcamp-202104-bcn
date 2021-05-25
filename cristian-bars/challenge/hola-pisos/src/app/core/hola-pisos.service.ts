@@ -1,4 +1,4 @@
-import { ApiData } from '../../app/core/model';
+import { ApiData } from './model/apiData';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,17 +8,16 @@ import { environment }  from './../../environments/environment';
   providedIn: 'root'
 })
 export class HolaPisosService {
-  private flatsUrl = environment.flatUrl;
   
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   
-  getFlats(): Observable<ApiData> {
-    return this.http.get<ApiData>(this.flatsUrl);
+  getFlats(url: string): Observable<ApiData> {
+    return this.httpClient.get<ApiData>(url);
   }
   constructor( 
-    private http: HttpClient
+    private httpClient: HttpClient
    ) { }
   
 }
