@@ -10,13 +10,16 @@ import { FormArray } from '@angular/forms';
 })
 export class ProfileEditorComponent implements OnInit {
   profileForm = this.fb.group({
-    firstName: ['', Validators.required],
+    id: null,
+    name: ['', Validators.required, Validators.maxLength(15), Validators.minLength(2)],
     lastName: [''],
-    address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: ['']
+    powerstats: this.fb.group({
+      intelligence: [''],
+      strength: [''],
+      speed: [''],
+      durability: [''],
+      power: [''],
+      combat: ['']
     }),
     aliases: this.fb.array([
       this.fb.control('')
