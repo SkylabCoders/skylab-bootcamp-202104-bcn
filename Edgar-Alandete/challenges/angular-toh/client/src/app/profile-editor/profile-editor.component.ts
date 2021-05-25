@@ -14,11 +14,14 @@ export class ProfileEditorComponent implements OnInit {
   profileForm = this.formBuilder.group({
     _id: null,
     name: ['', [Validators.required, Validators.maxLength(15), Validators.minLength(2)]],
-    aliases: this.formBuilder.array([]),
+    biography: this.formBuilder.group({
+      aliases: this.formBuilder.array([]),      
+    })
   })
   constructor(private formBuilder: FormBuilder, private heroService: HeroService) { }
 
   ngOnInit(): void {
+    this.hero.biography.aliases.forEach(() => this.addAlias());
   }
 
   get name() {
@@ -30,7 +33,7 @@ export class ProfileEditorComponent implements OnInit {
   }
 
   get aliases() {
-    return this.profileForm.get('aliases') as FormArray
+    return this.profileForm.get('biography')?.get('aliases') as FormArray;
   }
 
 
@@ -41,7 +44,7 @@ export class ProfileEditorComponent implements OnInit {
   }
 
   addAlias() {
-
+    this.aliases.push(this.formBuilder.control(''));
   }
 
   save(value: any): void {

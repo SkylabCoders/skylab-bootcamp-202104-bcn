@@ -13,13 +13,16 @@
             <p *ngIf="name?.hasError('maxlength')">maxlength required {{name?.errors?.maxlength?.actualLength}}/{{name?.errors?.maxlength?.requiredLength}}</p>
         </label>
 
-        <div formArrayName="aliases">
-            <h3>Aliases</h3>
-                <button (click)="addAlias()">add alias</button>
-            <p *ngFor="let alias of aliases?.controls; let i = index">
-                <input type="text" [formControlName]="i">
-            </p>
-        </div> 
+        <div formGroupName="biography">
+            <div formArrayName="aliases">
+                <h3>Aliases</h3>
+                    <button (click)="addAlias()">add alias</button>
+                <p *ngFor="let alias of aliases?.controls; let i = index">
+                    <input type="text" [formControlName]="i" [ngModel]="hero.biography.aliases[i]">
+                </p>
+            </div> 
+        </div>
+
         <!-- <button [disabled]="profileForm.invalid" (click)="save(profileForm.value)">save</button> -->
     </form>
     <button (click)="save(profileForm.value)">save</button>
