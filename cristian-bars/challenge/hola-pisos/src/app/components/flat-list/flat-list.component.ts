@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { flatList } from '../../core/model';
+import { HolaPisosService } from './../../core/hola-pisos.service'
 
 @Component({
   selector: 'app-flat-list',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlatListComponent implements OnInit {
 
-  constructor() { }
+  data: flatList[] = [];
+  
+  constructor(
+    private flatService: HolaPisosService
+  ) { }
 
   ngOnInit(): void {
+    this.getFlats();
+  }
+  
+  getFlats() {
+    this.flatService.getFlats()
+    .subscribe((apiData) => this.data = apiData.data)
   }
 
 }

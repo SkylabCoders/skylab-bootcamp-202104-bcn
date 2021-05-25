@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { FlatListComponent } from './flat-list/flat-list.component';
+import { FlatListComponent } from './components/flat-list/flat-list.component';
 
 @NgModule({
   declarations: [
