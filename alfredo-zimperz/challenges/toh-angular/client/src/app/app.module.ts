@@ -11,6 +11,7 @@ import { MessagesComponent } from './messages/messages.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileEditorComponent } from './profile-editor/profile-editor/profile-editor.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor/profile-
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    ProfileEditorComponent
+    ProfileEditorComponent,
+    NameEditorComponent
   ],
   bootstrap: [ AppComponent ]
 })
