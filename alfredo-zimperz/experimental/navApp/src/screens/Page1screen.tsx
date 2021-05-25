@@ -1,8 +1,10 @@
 import {DrawerScreenProps} from '@react-navigation/drawer';
 // import {StackScreenProps} from '@react-navigation/stack';
 import React, {useEffect} from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {Button, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {globalStyles} from '../theme/appTheme';
+import {Colors} from '../theme/colors';
 
 // interface Props extends StackScreenProps<any, any> {}
 interface Props extends DrawerScreenProps<any, any> {}
@@ -10,7 +12,12 @@ export const Page1screen = ({navigation}: Props) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <Button title="Menu" onPress={() => navigation.toggleDrawer()} />
+        // <Button title="Menu" onPress={() => navigation.toggleDrawer()} />
+        <TouchableOpacity
+          style={styles.btnMenu}
+          onPress={() => navigation.toggleDrawer()}>
+          <Icon name="menu-outline" size={20} color={Colors.primary} />
+        </TouchableOpacity>
       ),
     });
   }, [navigation]);
@@ -53,4 +60,7 @@ const styles = StyleSheet.create({
   container: {flex: 1},
   btnContainer: {flexDirection: 'row'},
   btnBgRed: {backgroundColor: 'red'},
+  btnMenu: {
+    marginLeft: 20,
+  },
 });
