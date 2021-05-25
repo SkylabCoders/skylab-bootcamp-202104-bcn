@@ -1,2 +1,15 @@
-<app-house-list></app-house-list>
+<ul >
+    <li *ngFor="let pokemon of data.results | paginate:{itemsPerPage:20, currentPage:p}">
+        <span>{{pokemon.name}}</span>
+    </li>
+</ul>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<!-- 
+<ul >
+    <li *ngFor="let houses of data.results | paginate:{itemsPerPage:20, currentPage:p}">
+        <span>{{houses.field_inmu_prec}}</span>
+    </li>
+</ul> -->
+
 <router-outlet></router-outlet>
