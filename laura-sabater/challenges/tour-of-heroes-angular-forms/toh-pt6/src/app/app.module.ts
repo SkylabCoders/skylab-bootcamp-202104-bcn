@@ -16,6 +16,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { NameEditorComponent } from './name-editor/name-editor.component';
     HeroDetailComponent,
     MessagesComponent,
     HeroSearchComponent,
-    NameEditorComponent
+    NameEditorComponent,
+    ProfileEditorComponent
   ],
   bootstrap: [ AppComponent ]
 })
