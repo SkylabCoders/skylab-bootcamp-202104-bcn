@@ -32,6 +32,13 @@
 .list-container .flat-list__item {
   margin: 10px;
   width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .list-container .flat-list__item img {
@@ -41,6 +48,9 @@
 }
 
 .list-container .flat-list .info-container {
+  padding: 15px;
+  height: 110px;
+  background-color: #FFFFFF;
   white-space: normal;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,9 +61,28 @@
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+
+.list-container .flat-list .info-container .number-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 10px;
+}
+
+.list-container .flat-list .info-container .number-info .number-info__item {
+  font-size: 13px;
+}
+
+.list-container .flat-list .info-container .number-info .number-info__item i {
+  font-size: 13px;
 }
 
 .list-container button {
@@ -68,5 +97,6 @@
   border: none;
   outline: 0;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=flat-list.component.css.map */

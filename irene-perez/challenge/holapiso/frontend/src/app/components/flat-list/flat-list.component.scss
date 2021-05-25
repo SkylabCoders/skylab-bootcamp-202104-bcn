@@ -12,9 +12,12 @@
     color: #003b59;
     font-weight: 800;
     font-size: 20px;
+    
     &__item{
         margin: 10px;
         width: 250px;
+        display: flex;
+        flex-direction: column;
         img{
             width: 250px;
             border-top-left-radius: 5%;
@@ -22,11 +25,27 @@
         }
     }
     .info-container{
+        padding: 15px;
+        height: 110px;
+        background-color: #FFFFFF;
         white-space: normal;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        justify-content: start;
+        justify-content: space-between;
+        border-bottom-left-radius: 5%;
+        border-bottom-right-radius: 5%;
+        .number-info{    
+            display: flex;
+            justify-content: space-around;   
+            padding-top: 10px; 
+            .number-info__item{
+                font-size: 13px;
+                i{
+                 font-size: 13px
+                }
+            }
+        }
     }
 }
     button{
@@ -41,5 +60,6 @@
         border: none;
         outline: 0;
         cursor: pointer;
+        margin-bottom: 20px
     }
 }
