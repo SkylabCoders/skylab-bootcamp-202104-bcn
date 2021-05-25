@@ -11,13 +11,15 @@ import { FormArray } from '@angular/forms';
 })
 export class ProfileEditorComponent implements OnInit {
   profileForm = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: [''],
-    address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: ['']
+    id: null,
+    name: ['', [Validators.required, Validators.maxLength(15), Validators.minLength(2)]],
+    powerstats: this.fb.group({
+      intelligence: null,
+      strength: null,
+      speed: null,
+      durability: null,
+      power: null, 
+      combat: null,
     }),
     aliases: this.fb.array([
       this.fb.control('')
@@ -25,6 +27,13 @@ export class ProfileEditorComponent implements OnInit {
   });
 
   constructor(private fb: FormBuilder) { }
+  
+  ngOnInit(): void {
+  }
+
+  addAlias() {
+    this.aliases.push(this.fb.control(''));
+  }
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
@@ -42,13 +51,6 @@ export class ProfileEditorComponent implements OnInit {
 
   get aliases() {
     return this.profileForm.get('aliases') as FormArray;
-  }
-
-  addAlias() {
-    this.aliases.push(this.fb.control(''));
-  }
-
-  ngOnInit(): void {
   }
 
 }
