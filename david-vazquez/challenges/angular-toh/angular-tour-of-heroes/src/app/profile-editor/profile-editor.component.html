@@ -1,0 +1,30 @@
+<h2>Profile Editor</h2>
+
+<form [formGroup]="profileForm">
+  <label>
+    id:
+    <input type="text" placeholder="id" formControlName="id" />
+    <p>errors: {{ id?.errors | json }}</p>
+    <p *ngIf="id?.hasError('required')">This field is required</p>
+  </label>
+  <label>
+    name:
+    <input type="text" placeholder="name" formControlName="name" />
+    <p>errors: {{ name?.errors | json }}</p>
+    <p *ngIf="name?.hasError('minlength')">
+      minLength {{ name?.errors?.minlength?.actualLength }}/{{
+        name?.errors?.minlength?.requiredLength
+      }}
+      required
+    </p>
+    <p *ngIf="name?.hasError('maxlength')">
+      maxLength {{ name?.errors?.maxlength?.actualLength }}/{{
+        name?.errors?.maxlength?.requiredLength
+      }}
+      required
+    </p>
+  </label>
+  <button [disabled]="profileForm.invalid">Save</button>
+</form>
+
+<p>profileForm: {{ profileForm.value | json }}</p>
