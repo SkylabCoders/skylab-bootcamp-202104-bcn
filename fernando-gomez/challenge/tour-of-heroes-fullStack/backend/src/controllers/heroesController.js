@@ -3,7 +3,7 @@ const Hero = require('../model/heroModel');
 
 function heroesController() {
   async function getAll(req, res) {
-    const heroes = await Hero.find();
+    const heroes = await Hero.find({});
     res.json(heroes);
   }
 
@@ -21,8 +21,8 @@ function heroesController() {
 
   async function getById(req, res) {
     try {
-      const heroById = await Hero.find(
-        { id: req.params.heroId },
+      const heroById = await Hero.findById(
+        req.params.heroId,
       );
       res.json(heroById);
     } catch (error) {
