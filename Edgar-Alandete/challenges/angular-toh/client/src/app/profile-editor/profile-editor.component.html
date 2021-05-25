@@ -3,7 +3,7 @@
     <form [formGroup]="profileForm">
         <label>
             id:
-            <input type="text" placeholder="id" formControlName="id" [ngModel]="hero._id">
+            <input type="text" placeholder="id" formControlName="_id" [ngModel]="hero._id">
         </label>
 
         <label>
@@ -20,27 +20,8 @@
                 <input type="text" [formControlName]="i">
             </p>
         </div> 
-
-        <!-- <div formGroupName="address">
-            <h3>Address</h3>
-            <label>
-                street:
-                <input type="text" placeholder="street" formControlName="street">
-            </label>
-            <label>
-                number:
-                <input type="text" placeholder="number" formControlName="number">
-            </label>
-            <label>
-                cp:
-                <input type="text" placeholder="cp" formControlName="cp">
-            </label>
-            <label>
-                city:
-                <input type="text" placeholder="city" formControlName="city">
-            </label>
-
-        </div>
-        <button [disabled]="profileForm.invalid" (click)="save(profileForm.value)">save</button> -->
+        <!-- <button [disabled]="profileForm.invalid" (click)="save(profileForm.value)">save</button> -->
     </form>
+    <button (click)="save(profileForm.value)">save</button>
+    <button (click)="updateProfile()">update</button>
 </div>
