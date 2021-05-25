@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-name-editor',
@@ -7,14 +6,19 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./name-editor.component.css']
 })
 export class NameEditorComponent implements OnInit {
-  name = new FormControl('');
+  @Input() heroName!: string;
+  @Output() heroNameChange = new EventEmitter();
 
   constructor() { }
 
-  updateName() {
-    this.name.setValue('Nancy');
-  }
+  // updateName() {
+  //   this.name.setValue('Nancy');
+  // }
   
+  nameChange(event: any) {
+    this.heroNameChange.emit(event.target.value);
+  }
+
   ngOnInit(): void {
   }
 

@@ -1,5 +1,5 @@
 <h3>Formulary</h3>
-<label>
+<!-- <label>
     Name:
     <input type="text" [formControl]="name">
 </label>
@@ -8,4 +8,8 @@
 </p>
 <p>
     <button (click)="updateName()">Update Name</button>
-</p>
+</p> -->
+<div>
+    <label for="hero-name">name: </label>
+    <input id="hero-name" [value]="heroName" (input)="nameChange($event)" placeholder="name">
+</div>
