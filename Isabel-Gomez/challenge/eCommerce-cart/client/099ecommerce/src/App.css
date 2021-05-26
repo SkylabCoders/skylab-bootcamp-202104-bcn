@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+
+.shop {
+  display: flex;
+  flex-direction: row;
+}
+
