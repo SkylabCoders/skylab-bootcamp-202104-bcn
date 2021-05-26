@@ -7,7 +7,5 @@
   </div>
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>
-  
-  <app-name-editor [(heroName)]="hero.name"></app-name-editor>
-  <app-profile-editor></app-profile-editor>
+  <app-profile-editor [hero]="hero"></app-profile-editor>
 </div>

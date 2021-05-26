@@ -25,10 +25,7 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
+    
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )
