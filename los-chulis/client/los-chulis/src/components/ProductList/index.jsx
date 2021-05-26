@@ -29,32 +29,33 @@ const ProductList = ({ products, dispatch, cartList }) => {
   }
   return (
     <ul className="productList">
-      {products.map((product) => (
+      {products.length ? products.map((product) => (
         <li className="productList__item" key={product._id}>
-          <span>{product.brand}</span>
-          <div>
-            <span>
+          <div className="productList__information">
+            <span className="productList__information-left">{product.productType}</span>
+            <span className="productList__information-right">
               {product.price}
               {' '}
               €
             </span>
-            <button
-              type="button"
-              id={product._id}
-              disabled={!product.stock}
-              onClick={() => {
-                disableButton(product);
-                if (activeButton) { dispatch(addToCart(product)); }
-              }}
-              className={product.stock === 0
-                ? 'productList__button productList__button--disabled '
-                : 'productList__button productList__button--active'}
-            >
-              {' '}
-            </button>
           </div>
+          <button
+            type="button"
+            id={product._id}
+            disabled={!product.stock}
+            data-testid="button-add-to-cart"
+            onClick={() => {
+              disableButton(product);
+              if (activeButton) { dispatch(addToCart(product)); }
+            }}
+            className={product.stock === 0
+              ? 'productList__button productList__button--disabled '
+              : 'productList__button productList__button--active'}
+          >
+            {' '}
+          </button>
         </li>
-      ))}
+      )) : <p>No products</p>}
     </ul>
   );
 };
