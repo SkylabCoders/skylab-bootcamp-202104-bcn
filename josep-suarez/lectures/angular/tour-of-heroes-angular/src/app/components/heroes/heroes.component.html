@@ -1,0 +1,12 @@
+<ul class="heroes">
+    <ng-container *ngFor="let hero of heroes">
+        <li *ngIf="hero.id > 10"
+        [routerLink]= "['/detail', hero.id]">
+            <span class="badge">{{hero.id}}</span>{{hero.name}}
+        </li>
+    </ng-container>
+
+</ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+ 
