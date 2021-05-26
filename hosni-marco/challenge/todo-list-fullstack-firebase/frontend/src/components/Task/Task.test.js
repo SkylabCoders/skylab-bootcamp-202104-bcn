@@ -9,9 +9,6 @@ jest.mock('../../redux/actions/actionCreators');
 
 describe('Given a Task component', () => {
   describe('When is redered with one task', () => {
-    // let initialState = {};
-    // beforeEach(() => {
-    //   initialState = { tasks: { _id: '1', task: 'Learn Javascript' } };
     render(<Task />, {
       initialState: {
         tasks: [{}, { _id: '1', task: 'Learn Javascript' }]
