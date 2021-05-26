@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder, FormArray} from '@angular/forms';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
@@ -8,7 +8,7 @@ import { HeroService } from '../hero.service';
   templateUrl: './profile-editor.component.html',
   styleUrls: ['./profile-editor.component.css']
 })
-export class ProfileEditorComponent implements OnInit {
+export class ProfileEditorComponent implements OnChanges{
   @Input() hero!: Hero;
 
   profileForm = this.formBuilder.group({
@@ -20,8 +20,9 @@ export class ProfileEditorComponent implements OnInit {
 })
   constructor( private formBuilder: FormBuilder, private heroService: HeroService) { }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     this.hero.biography.aliases.forEach((alias)=>this.addAlias());
+    this.profileForm.patchValue(this.hero);
   }
 
   get name() {

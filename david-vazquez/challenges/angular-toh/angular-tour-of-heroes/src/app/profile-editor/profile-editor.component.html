@@ -3,22 +3,12 @@
 <form [formGroup]="profileForm" *ngIf="hero">
   <label>
     id:
-    <input
-      type="text"
-      placeholder="heroId"
-      formControlName="_id"
-      [ngModel]="hero._id"
-    />
+    <input type="text" placeholder="heroId" formControlName="_id" />
     <p *ngIf="id?.hasError('required')">This field is required</p>
   </label>
   <label>
     name:
-    <input
-      type="text"
-      placeholder="heroName"
-      formControlName="name"
-      [ngModel]="hero.name"
-    />
+    <input type="text" placeholder="heroName" formControlName="name" />
     <p *ngIf="name?.hasError('minlength')">
       minLength {{ name?.errors?.minlength?.actualLength }}/{{
         name?.errors?.minlength?.requiredLength
@@ -37,11 +27,7 @@
       <h3>Aliases</h3>
       <button (click)="addAlias()">Add Alias</button>
       <p *ngFor="let alias of aliases?.controls; let i = index">
-        <input
-          [ngModel]="hero.biography.aliases[i]"
-          type="text"
-          [formControlName]="i"
-        />
+        <input type="text" [formControlName]="i" />
       </p>
     </div>
   </div>
