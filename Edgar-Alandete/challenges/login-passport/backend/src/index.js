@@ -1,12 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
+require('./passport/local.strategy')(passport);
+
 const auth = require('connect-ensure-login');
-const passportLocal = require('passport-local');
-const User = require('./model/userModel');
 require('dotenv').config();
 
-const LocalStrategy = passportLocal.Strategy;
 const server = express();
 
 mongoose.connect(
@@ -18,28 +17,6 @@ mongoose.connect(
 );
 
 server.set('view engine', 'ejs');
-
-passport.use(new LocalStrategy(
-  (username, password, done) => {
-    User.findOne({ username }, (err, user) => {
-      if (err) { return done(err); }
-      if (!user) { return done(null, false); }
-      if (!user.verifyPassword(password)) { return done(null, false); }
-      return done(null, user);
-    });
-  },
-));
-
-passport.serializeUser((user, cb) => {
-  cb(null, user);
-});
-
-passport.deserializeUser((id, cb) => {
-  User.findById(id, (err, user) => {
-    if (err) { return cb(err); }
-    cb(null, user);
-  });
-});
 
 server.use(express.urlencoded({ extended: false }));
 server.use(express.json());
