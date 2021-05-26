@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const debug = require('debug')('server');
+const chalk = require('chalk');
 require('./passport/local.strategy')(passport);
 
 const auth = require('connect-ensure-login');
@@ -44,4 +46,4 @@ server.get('/', (req, res) => res.render('index'));
 server.get('/login', (req, res) => res.render('login'));
 server.get('/home', (req, res) => res.render('home'));
 
-server.listen('2021', () => console.log('Server is running in localhost:2021'));
+server.listen('2021', debug(`Server is running in ${chalk.blue('2021')}`));
