@@ -16,10 +16,7 @@ export class ProfileEditorComponent implements OnInit {
       cp: null,
       city: null,
     }),
-    aliases: this.formBuilder.array([
-      new FormControl('La muralla'),
-      new FormControl('The wall'),
-    ])
+    aliases: this.formBuilder.array([])
   })
 
   constructor(private formBuilder: FormBuilder) { }
@@ -45,5 +42,12 @@ export class ProfileEditorComponent implements OnInit {
 
   addAlias() {
     this.aliases.push(this.formBuilder.control(''));
+  }
+
+  loadData() {
+    this.profileForm.patchValue(  {
+      id: 1,
+      name: 'A-Bomb',
+    })
   }
 }
