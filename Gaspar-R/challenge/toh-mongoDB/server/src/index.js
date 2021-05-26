@@ -26,20 +26,20 @@ try {
 }
 
 server.get('/', (req, res) => { // for rendering index
-  res.render('index');
+  res.render('index.ejs');
 });
 
 server.get('/about', (req, res) => { // for rendering about
-  res.render('about');
+  res.render('about.ejs');
 });
 
 server.get('/form', (req, res) => {
-  res.render('form');
+  res.render('form.ejs');
 });
 
 server.post('/home', (req, res) => {
   const { name, surname } = req.body; // renderiza home con los datos que se le pasan del formulario (req.body)
-  res.render('home', {
+  res.render('home.ejs', {
     name,
     surname
   });
