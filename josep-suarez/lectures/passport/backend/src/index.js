@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const auth = require('connect-ensure-login');
 require('dotenv').config();
 const server = express();
 let passport = require('passport');
@@ -59,9 +60,11 @@ server.post('/login',
   passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login', failureFlash: true })
 );
 
-server.get('/',(req, res)=>{
-  res.render('index');
-});
+server.get('/',
+  auth.ensureLoggedIn({ redirectTo: '/login' }),
+  function(req, res){
+    res.render('index', { user: req.user });
+  });
 server.get('/login',(req, res)=>{
   res.render('login');
 });
