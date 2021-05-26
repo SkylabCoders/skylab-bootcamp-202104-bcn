@@ -1,0 +1,39 @@
+@import './colors';
+
+@mixin nav-buttons {
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+    background-color: $button-background;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    outline: none;
+    text-decoration: none;
+}
+
+@mixin description {
+    display: flex;
+    font-family: 'Work Sans', sans-serif;
+    padding: 1em 1em 0em 1em;
+    max-width: 100%;
+    
+    p {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+    img {
+        height: 5em;
+        border-radius: 50%;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
+
+}

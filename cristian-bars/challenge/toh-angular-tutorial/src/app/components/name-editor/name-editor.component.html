@@ -1,0 +1,10 @@
+<div>
+    <label>
+        Name:
+        <input type="text" [formControl]="name" [value]="heroName" (input)="nameChange($event)">
+      </label>
+      <p>
+        Value: {{ heroName }}
+      </p>
+      
+</div>
