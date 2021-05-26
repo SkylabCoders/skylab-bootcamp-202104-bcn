@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Hero } from '../../core/models/hero';
+import { HeroService } from './../../core/services/hero/hero.service';
 
 @Component({
   selector: 'app-profile-editor',
