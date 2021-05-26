@@ -5,6 +5,7 @@ const debug = require('debug')('app');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const auth = require('connect-ensure-login');
+const User = require('./model/userModel')
 require('dotenv').config();
 const server = express();
 let passport = require('passport');
@@ -28,14 +29,11 @@ server.use(morgan('dev'));
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
-    User.findOne({ username: username }, function(err, user) {
+    User.findOne({ username: username }, function (err, user) {
+      debugger;
       if (err) { return done(err); }
-      if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      if (!user.validPassword(password)) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
+      if (!user) { return done(null, false); }
+      if (!user.verifyPassword(password)) { return done(null, false); }
       return done(null, user);
     });
   }
@@ -57,7 +55,7 @@ server.use(passport.session())
 server.use('views', express.static('views'))
 
 server.post('/login',
-  passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login', failureFlash: true })
+  passport.authenticate('local', { successRedirect: '/success', failureRedirect: '/login', failureFlash: true })
 );
 
 server.get('/',
@@ -68,5 +66,7 @@ server.get('/',
 server.get('/login',(req, res)=>{
   res.render('login');
 });
-
+server.get('/success',(req, res)=>{
+  res.render('success');
+});
 server.listen('2021',() => debug(`Server is running in ${chalk.yellow('DDBB_URL')}`));

@@ -1,12 +1,12 @@
-const TODO = require('../model/todoModel');
+const User = require('../model/userModel');
 
-function TodosController() {
+function usersController() {
   async function getAll(req, res) {
-    const todos = await TODO.find();
-    res.json(todos);
+    const users = await User.find();
+    res.json(users);
   }
   async function createOne(req, res) {
-    const newTask = new TODO(req.body);
+    const newTask = new User(req.body);
     try {
       await newTask.save();
       res.json(newTask);
@@ -16,33 +16,10 @@ function TodosController() {
   }
   async function getById(req, res) {
     try {
-      const todoById = await TODO.findById(
-        req.params.todoById
+      const userById = await User.findById(
+        req.params.userById
       );
-      res.json(todoById);
-    } catch (error) {
-      res.send(error);
-    }
-  }
-
-  async function updateById(req, res) {
-    const id = { id: req.params.todoId };
-    try {
-      const updatedTask = await TODO.findByIdAndUpdate(
-        id,
-        req.body.task,
-        { new: true }
-      );
-      res.json(updatedTask);
-    } catch (error) {
-      res.status(404);
-      res.send(error);
-    }
-  }
-  async function deleteById(req, res) {
-    try {
-      await TODO.findByIdAndDelete(req.params.todoId);
-      res.json();
+      res.json(userById);
     } catch (error) {
       res.send(error);
     }
@@ -51,9 +28,7 @@ function TodosController() {
   return {
     getAll,
     createOne,
-    getById,
-    updateById,
-    deleteById
+    getById
   };
 }
 
