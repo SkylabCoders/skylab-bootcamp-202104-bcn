@@ -24,5 +24,9 @@ const heroesRouter = require('./src/routes/heroesRouter');
 
 server.use('/heroes', heroesRouter);
 
+server.post('/login', (req, res) => {
+  res.send('Login works!');
+});
+
 server.listen('2021',
   () => debug(`Server is running in ${chalk.yellow('localhost:2021')}`));
