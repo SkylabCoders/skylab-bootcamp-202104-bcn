@@ -1,12 +1,10 @@
 <div>
     <label>
         Name:
-        <input type="text" [formControl]="name">
+        <input type="text" [formControl]="name" [value]="heroName" (input)="nameChange($event)">
       </label>
       <p>
-        Value: {{ name.value }}
+        Value: {{ heroName }}
       </p>
-      <p>
-        <button (click)="updateName()">Update Name</button>
-      </p>
+      
 </div>

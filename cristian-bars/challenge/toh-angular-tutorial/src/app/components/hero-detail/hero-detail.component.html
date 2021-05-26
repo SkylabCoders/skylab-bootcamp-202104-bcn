@@ -2,7 +2,7 @@
   <h2>{{hero.name | uppercase}} Details</h2>
   <div><span>id: </span>{{hero.id}}</div>
   
-  <app-name-editor></app-name-editor>
+  <app-name-editor [(heroName)]="hero.name"></app-name-editor>
   <app-profile-editor></app-profile-editor>
   <!-- <div>
     
