@@ -1,16 +1,24 @@
 <h2>Profile Editor</h2>
 
-<form [formGroup]="profileForm">
+<form [formGroup]="profileForm" *ngIf="hero">
   <label>
     id:
-    <input type="text" placeholder="id" formControlName="id" />
-    <p>errors: {{ id?.errors | json }}</p>
+    <input
+      type="text"
+      placeholder="heroId"
+      formControlName="_id"
+      [ngModel]="hero._id"
+    />
     <p *ngIf="id?.hasError('required')">This field is required</p>
   </label>
   <label>
     name:
-    <input type="text" placeholder="name" formControlName="name" />
-    <p>errors: {{ name?.errors | json }}</p>
+    <input
+      type="text"
+      placeholder="heroName"
+      formControlName="name"
+      [ngModel]="hero.name"
+    />
     <p *ngIf="name?.hasError('minlength')">
       minLength {{ name?.errors?.minlength?.actualLength }}/{{
         name?.errors?.minlength?.requiredLength
@@ -24,7 +32,21 @@
       required
     </p>
   </label>
-  <button [disabled]="profileForm.invalid">Save</button>
+  <div formGroupName="biography">
+    <div formArrayName="aliases">
+      <h3>Aliases</h3>
+      <button (click)="addAlias()">Add Alias</button>
+      <p *ngFor="let alias of aliases?.controls; let i = index">
+        <input
+          [ngModel]="hero.biography.aliases[i]"
+          type="text"
+          [formControlName]="i"
+        />
+      </p>
+    </div>
+  </div>
 </form>
-
-<p>profileForm: {{ profileForm.value | json }}</p>
+<button (click)="save(profileForm.value)">Save</button>
+<button (click)="updateProfile()" [disabled]="profileForm.invalid">
+  Update
+</button>
