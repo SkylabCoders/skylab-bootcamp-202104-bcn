@@ -1,0 +1,9 @@
+<ul class="flat-list">
+    <li class="flat-list__item" *ngFor="let flat of info">
+      <img src="{{flat.attributes.field_inmu_imag_arra[0]}}" alt="flats">
+      <div class="flat__info">
+        <span>{{flat.attributes.field_inmu_prec}} €</span>
+        <span>{{flat.attributes.field_inmu_tipo_via}} {{flat.attributes.field_inmu_nomb_call}}</span>
+      </div>
+    </li>
+  </ul>

@@ -1,0 +1,105 @@
+ul {
+  padding-left: 0;
+}
+
+.top-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #333;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.top-nav__home {
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  background-color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: white;
+  outline: none;
+  text-decoration: none;
+  height: 4em;
+  width: 4em;
+  border: 0.2em white solid;
+  margin: 0.5em 0.5em;
+}
+
+.top-nav__home:hover {
+  color: #333;
+  background-color: white;
+}
+
+.top-nav__title {
+  color: white;
+  padding-left: 1em;
+  font-size: 1.5em;
+}
+
+.study, .workElement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Work Sans', sans-serif;
+  padding: 1em 1em 0em 1em;
+  max-width: 100%;
+}
+
+.study p, .workElement p {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.study img, .workElement img {
+  height: 5em;
+  border-radius: 50%;
+}
+
+.study div, .workElement div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.study__image, .workElement__image {
+  margin-right: 2em;
+}
+
+.description__title {
+  font-weight: 900;
+}
+
+@media (min-width: 600px) {
+  ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+/*# sourceMappingURL=form.css.map */
