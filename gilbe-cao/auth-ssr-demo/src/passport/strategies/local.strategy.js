@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('../../models/user.model');
@@ -17,10 +16,7 @@ module.exports = function localStrategyConfig() {
           }
 
           return done(null, user);
-        }, (error) => {
-          debugger;
-          return done(error);
-        });
+        }, (error) => done(error));
       },
     ),
   );
