@@ -42,7 +42,6 @@ server.post('/login',
     failureRedirect: '/login',
   }));
 
-server.get('/', (req, res) => res.render('index'));
 server.get('/login', (req, res) => res.render('login'));
 server.get('/home', (req, res) => res.render('home'));
 
