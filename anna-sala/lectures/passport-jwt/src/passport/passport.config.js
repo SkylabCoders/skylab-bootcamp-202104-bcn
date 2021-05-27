@@ -1,5 +1,5 @@
 const passport = require('passport');
-require('./local.strategy');
+require('./local.strategy')();
 
 module.exports = function passportCongif(server) {
   server.use(passport.initialize());
