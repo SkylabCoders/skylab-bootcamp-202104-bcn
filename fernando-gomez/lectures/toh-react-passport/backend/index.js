@@ -29,14 +29,6 @@ mongoose.connect(
 
 const heroesRouter = require('./src/routes/heroesRouter');
 
-server.get('/', (req, res) => {
-  res.redirect('/login');
-});
-
-server.get('/login', (req, res) => {
-  res.render('index');
-});
-
 server.post('/logout', (req, res) => {
   res.redirect('/login');
 });
