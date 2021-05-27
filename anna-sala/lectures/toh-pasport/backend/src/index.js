@@ -1,24 +1,23 @@
+/* eslint-disable no-debugger */
 /* eslint-disable consistent-return */
+const port = 2424;
 const express = require('express');
-const auth = require('connect-ensure-login');
-require('dotenv').config();
 
 const server = express();
-
+const auth = require('connect-ensure-login');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+require('dotenv').config();
 
-const port = 2424;
-
+const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
-const mongoose = require('mongoose');
 const chalk = require('chalk');
 const debug = require('debug')('server');
 const User = require('./model/userModel');
 
 server.use(express.json());
-server.use(express.urlencoded({ extended: false }));
+server.use(express.urlencoded({ extended: true }));
 server.set('view engine', 'ejs');
 server.use(cors());
 server.use(morgan('dev'));
@@ -55,7 +54,7 @@ passport.deserializeUser((id, cb) => {
 
 server.use(passport.initialize());
 server.use(passport.session());
-server.use('views', express.static('views'));
+server.use('../views', express.static('views'));
 
 const heroesRouter = require('./routes/heroesRouter');
 
@@ -71,6 +70,7 @@ server.post('/login',
 server.get('/',
   auth.ensureLoggedIn({ redirectTo: '/login' }),
   (req, res) => {
+    debugger;
     res.render('index', { user: req.user });
   });
 server.get('/login', (req, res) => {
