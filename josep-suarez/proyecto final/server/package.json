@@ -9,6 +9,10 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7"
   },
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "jest --watchAll --collect-coverage"
+  },
   "devDependencies": {
     "eslint": "^7.27.0",
     "eslint-config-airbnb-base": "^14.2.1",

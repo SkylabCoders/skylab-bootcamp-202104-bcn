@@ -7,27 +7,27 @@ function motosRouter() {
     .route('/')
     .get(motosController.getAll);
 
-  routes
-    .route('/racing')
-    .get(motosController.getByType);
-  routes
-    .route('/custom')
-    .get(motosController.getByType);
-  routes
-    .route('/scooter')
-    .get(motosController.getByType);
-  routes
-    .route('/vespa')
-    .get(motosController.getByType);
-  routes
-    .route('/accesorios')
-    .get(motosController.getByType);
-  routes
-    .route('/ofertas')
-    .get(motosController.getByType);
-  routes
-    .route('/:motoId')
-    .get(motosController.deleteById);
+  // routes
+  //   .route('/racing')
+  //   .get(motosController.getByType);
+  // routes
+  //   .route('/custom')
+  //   .get(motosController.getByType);
+  // routes
+  //   .route('/scooter')
+  //   .get(motosController.getByType);
+  // routes
+  //   .route('/vespa')
+  //   .get(motosController.getByType);
+  // routes
+  //   .route('/accesorios')
+  //   .get(motosController.getByType);
+  // routes
+  //   .route('/ofertas')
+  //   .get(motosController.getByType);
+  // routes
+  //   .route('/:motoId')
+  //   .get(motosController.deleteById);
 
   return routes;
 }

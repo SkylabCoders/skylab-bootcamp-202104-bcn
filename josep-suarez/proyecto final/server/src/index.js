@@ -3,12 +3,12 @@ const cors = require('cors');
 const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
-const mongoose = require('mongoose');
+const { connect } = require('mongoose');
 require('dotenv').config();
 
 const server = express();
 
-mongoose.connect(
+connect(
   process.env.DDBB_URL,
   {
     useUnifiedTopology: true,

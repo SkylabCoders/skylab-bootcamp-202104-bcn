@@ -1,18 +1,30 @@
-const mongoose = require('mongoose');
+const MOTO = require('../models/motosModel');
 
-const motosSchema = mongoose.Schema({
-  motos: [{
-    type: String,
-    data: [
-      {
-        marca: String,
-        modelo: String,
-        cc: String,
-        descripcion: String,
-        precio: Number,
-        stock: Number
-      }]
-  }]
-});
+function MotosController() {
+  async function getAll(req, res) {
+    const motos = await MOTO.find();
+    res.json(motos);
+  }
+  async function getByType(req, res) {
+    const motos = await MOTO.find();
+    res.json(motos);
+  }
+  async function getById(req, res) {
+    try {
+      const motoById = await MOTO.findById(
+        req.params.motoById
+      );
+      res.json(motoById);
+    } catch (error) {
+      res.send(error);
+    }
+  }
 
-module.exports = mongoose.model('Motos', motosSchema);
+  return {
+    getAll,
+    getByType,
+    getById
+  };
+}
+
+module.exports = MotosController;
