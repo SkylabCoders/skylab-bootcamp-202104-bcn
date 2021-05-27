@@ -7,7 +7,7 @@ module.exports = function localStrategyConfig() {
     new LocalStrategy.Strategy(
       {
         usernameField: 'email',
-        passwordField: 'password',
+        passwordField: 'password'
       },
       (email, password, done) => {
         User.findOne({ email }).then((user) => {
@@ -17,7 +17,7 @@ module.exports = function localStrategyConfig() {
 
           return done(null, user);
         }, (error) => done(error));
-      },
-    ),
+      }
+    )
   );
 };

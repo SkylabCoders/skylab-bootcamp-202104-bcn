@@ -19,7 +19,7 @@ module.exports = () => {
     })
     .post(passport.authenticate('local', {
       successRedirect: '/',
-      failureRedirect: '/login',
+      failureRedirect: '/login'
     }));
 
   return authRoutes;

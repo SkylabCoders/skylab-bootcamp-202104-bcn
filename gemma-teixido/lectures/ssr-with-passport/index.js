@@ -10,7 +10,7 @@ require('dotenv').config();
 require('./src/ddbb/mongoose.config');
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4100;
 
 app.use(morgan('dev'));
 
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: true
 }));
 
 require('./src/passport/passport.config')(app);
