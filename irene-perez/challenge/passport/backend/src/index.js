@@ -57,7 +57,7 @@ server.post('/login',
 server.get('/',
   auth.ensureLoggedIn({ redirectTo: '/login' }),
   (req, res) => {
-    res.render('index', { user: req.user });
+    res.render('home', { user: req.user });
   });
 server.get('/login', (req, res) => {
   res.render('login');
