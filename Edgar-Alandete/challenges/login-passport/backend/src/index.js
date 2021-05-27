@@ -24,7 +24,6 @@ server.use(express.urlencoded({ extended: false }));
 server.use(express.json());
 server.use('/public', express.static('public'));
 server.use(require('morgan')('combined'));
-server.use(require('body-parser').urlencoded({ extended: true }));
 server.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 
 server.use(passport.initialize());
