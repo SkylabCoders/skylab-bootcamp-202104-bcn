@@ -37,6 +37,10 @@ passport.use(new LocalStrategy(
   }
 ));
 
+server.use(passport.initialize());
+server.use(passport.session());
+server.use('views', express.static('views'));
+
 passport.serializeUser((user, done) => {
   done(null, user);
 });
@@ -46,10 +50,6 @@ passport.deserializeUser((id, done) => {
     done(err, user);
   });
 });
-
-server.use(passport.initialize());
-server.use(passport.session());
-server.use('views', express.static('views'));
 
 server.post('/login',
   passport.authenticate('local', { successRedirect: '/success', failureRedirect: '/login', failureFlash: true }));
