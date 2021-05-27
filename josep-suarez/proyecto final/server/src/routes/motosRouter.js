@@ -25,7 +25,6 @@ function motosRouter() {
   routes
     .route('/ofertas')
     .get(motosController.getByType);
-
   routes
     .route('/:motoId')
     .get(motosController.deleteById);
