@@ -1,22 +1,16 @@
 const { Router } = require('express');
-const User = require('../model/userModel');
-const { isAuthenticated } = require('../utils/auth');
 
-module.exports = () => {
-  const userRoutes = Router();
+const authRoutes = Router();
 
-  userRoutes
-    .route('/')
-    .all(isAuthenticated)
-    .post(async (req, res) => {
-      try {
-        const user = await User.create(req.body);
-        res.send(user);
-      } catch (error) {
-        res.status(500);
-        res.send(error);
-      }
+authRoutes.get(
+  '/profile',
+  (req, res) => {
+    res.json({
+      message: 'You made it to the secure route',
+      user: req.user,
+      token: req.headers.authorization,
     });
+  },
+);
 
-  return userRoutes;
-};
+module.exports = authRoutes;
