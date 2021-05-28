@@ -1,19 +1,12 @@
-const mongoose = require('mongoose');
+const { model, Schema } = require('mongoose');
 
-const { Schema } = mongoose;
-
-const UserSchema = new Schema({
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
+const userSchema = Schema({
+  email: String,
+  password: String,
 });
 
-const UserModel = mongoose.model('user', UserSchema);
+userSchema.methods.verifyPassword = function verifyPassword(password) {
+  return password === this.password;
+};
 
-module.exports = UserModel;
+module.exports = model('User', userSchema);

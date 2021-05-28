@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "start": "nodemon src/index.js",
-    "debug": "nodemon --inspect-brk src/index.js",
+      "start":"DEBUG=server,server:* nodemon index.js",
+      "debug":"nodemon --inspect-brk index.js",
     "test": "jest --watchAll --collect-coverage"
   },
   "keywords": [],
