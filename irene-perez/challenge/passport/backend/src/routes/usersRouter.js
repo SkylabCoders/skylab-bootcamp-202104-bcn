@@ -1,21 +1,22 @@
 const { Router } = require('express');
+const User = require('../model/userModel');
+const { isAuthenticated } = require('../utils/auth');
 
-const userController = require('../controllers/userController')();
+module.exports = () => {
+  const userRoutes = Router();
 
-function userRouter() {
-  const routes = Router();
-
-  routes
+  userRoutes
     .route('/')
-    .get(userController.getAll)
-    .post(userController.createOne);
+    .all(isAuthenticated)
+    .post(async (req, res) => {
+      try {
+        const user = await User.create(req.body);
+        res.send(user);
+      } catch (error) {
+        res.status(500);
+        res.send(error);
+      }
+    });
 
-  routes
-    .route('/:todoId')
-    .delete(userController.deleteById)
-    .put(userController.updateById);
-
-  return routes;
-}
-
-module.exports = userRouter();
+  return userRoutes;
+};
