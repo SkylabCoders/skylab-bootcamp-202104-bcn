@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --collect-coverage",
-    "start": "nodemon src/app.js",
-    "start:dev": "DEBUG=app,app:* nodemon src/app.js",
-    "debug": "nodemon --inspect-brk src/app.js"
+    "start": "DEBUG=app,app:* nodemon index.js",
+    "debug": "nodemon --inspect-brk index.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
