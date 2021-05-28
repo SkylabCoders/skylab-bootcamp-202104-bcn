@@ -63,6 +63,10 @@ authRoutes.post(
   }
 );
 
+authRoutes.get('/login', (req, res) => {
+  res.render('login');
+});
+
 authRoutes.post('/token', (req, res) => {
   const { token } = req.body;
 
