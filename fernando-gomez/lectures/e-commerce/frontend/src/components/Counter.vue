@@ -3,16 +3,24 @@
     <p>{{ getCount }}</p>
     <button type="button" @click="increaseOne">+</button>
     <button type="button" @click="decreaseOne">-</button>
+    <p>Pokemons:</p>
+    <ul v-for='pokemon in getPokemons' :key="pokemon">
+        <li>{{pokemon}}</li>
+    </ul>
 </template>
 
 <script lang='ts'>
 import { defineComponent } from 'vue';
-import { mapGetters, mapMutations } from 'vuex';
+import {
+  mapActions,
+  mapGetters, mapMutations, useStore,
+} from 'vuex';
 
 export default defineComponent({
   computed: {
     ...mapGetters([
       'getCount',
+      'getPokemons',
     ]),
   },
   methods: {
@@ -20,10 +28,16 @@ export default defineComponent({
       'increaseOne',
       'decreaseOne',
     ]),
+    ...mapActions([
+      'getPokemonsFromApi',
+    ]),
   },
   setup() {
-    return { };
+    const store = useStore();
+    store.dispatch('getPokemonsFromApi');
+    return {};
   },
+
 });
 </script>
 
