@@ -2,8 +2,8 @@ const express = require('express');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const passport = require('passport');
-const authRoutes = require('./routes/auth.routes');
-const userRoutes = require('./routes/user.routes');
+const authRoutes = require('./src/routes/auth.routes');
+const userRoutes = require('./src/routes/user.routes');
 
 require('dotenv').config();
 
@@ -16,6 +16,7 @@ const port = process.env.PORT || 4000;
 
 app.use(morgan('dev'));
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/', authRoutes);
