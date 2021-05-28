@@ -67,6 +67,13 @@ authRoutes.get('/login', (req, res) => {
   res.render('login');
 });
 
+authRoutes.post('/login',
+  passport.authenticate('local', {
+    successRedirect: '/success',
+    failureRedirect: '/login',
+    failureFlash: true
+  }));
+
 authRoutes.post('/token', (req, res) => {
   const { token } = req.body;
 
