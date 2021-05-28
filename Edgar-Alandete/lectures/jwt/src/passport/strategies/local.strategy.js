@@ -2,6 +2,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const JWTstrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
+const md5 = require('md5');
 const User = require('../../models/user.model');
 
 module.exports = function localStrategyConfig() {
@@ -14,7 +15,7 @@ module.exports = function localStrategyConfig() {
       },
       async (email, password, done) => {
         try {
-          const user = await User.create({ email, password });
+          const user = await User.create({ email, password: md5(password) });
 
           return done(null, user);
         } catch (error) {
