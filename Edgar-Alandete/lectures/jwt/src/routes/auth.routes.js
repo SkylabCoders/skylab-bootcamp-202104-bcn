@@ -24,7 +24,6 @@ module.exports = () => {
         'login',
         async (err, user) => {
           try {
-            debugger;
             if (err || !user) {
               const error = new Error('An error occurred.');
 
