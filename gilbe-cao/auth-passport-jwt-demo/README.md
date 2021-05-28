@@ -7,6 +7,6 @@
 
 ## Steps to reproduce
 
-- npm i 
+- `npm i`
 - Import postman collection
-- Duplicate .env.example and connection data
+- Duplicate `.env.example` and connection data
