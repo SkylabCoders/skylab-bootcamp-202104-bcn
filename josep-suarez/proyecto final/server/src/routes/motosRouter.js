@@ -5,7 +5,8 @@ function motosRouter() {
   const routes = Router();
   routes
     .route('/')
-    .get(motosController.getAll);
+    .get(motosController.getAll)
+    .post(motosController.createOne);
 
   // routes
   //   .route('/racing')

@@ -5,25 +5,35 @@ function MotosController() {
     const motos = await MOTO.find();
     res.json(motos);
   }
-  async function getByType(req, res) {
-    const motos = await MOTO.find();
-    res.json(motos);
-  }
-  async function getById(req, res) {
+  async function createOne(req, res) {
+    const newHero = new MOTO(req.body);
     try {
-      const motoById = await MOTO.findById(
-        req.params.motoById
-      );
-      res.json(motoById);
+      await newHero.save();
+      res.json(newHero);
     } catch (error) {
       res.send(error);
     }
   }
+  // async function getByType(req, res) {
+  //   const motos = await MOTO.find({});
+  //   res.json(motos);
+  // }
+  // async function getById(req, res) {
+  //   try {
+  //     const motoById = await MOTO.findById(
+  //       req.params.motoById
+  //     );
+  //     res.json(motoById);
+  //   } catch (error) {
+  //     res.send(error);
+  //   }
+  // }
 
   return {
     getAll,
-    getByType,
-    getById
+    createOne
+    // getByType,
+    // getById
   };
 }
 
