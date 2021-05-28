@@ -37,9 +37,7 @@ passport.use(
           return done(null, false, { message: 'User not found' });
         }
 
-        const validate = await user.isValidPassword(password);
-
-        if (!validate) {
+        if (!user.isValidPassword(password)) {
           return done(null, false, { message: 'Wrong Password' });
         }
 
@@ -52,10 +50,10 @@ passport.use(
 );
 
 passport.use(
-  new JWTstrategy(
+  new JWTstrategy.Strategy(
     {
-      secretOrKey: 'TOP_SECRET',
-      jwtFromRequest: JWTstrategy.fromUrlQueryParameter('secret_token')
+      secretOrKey: process.env.JWT_SECRET,
+      jwtFromRequest: JWTstrategy.ExtractJwt.fromAuthHeaderAsBearerToken()
     },
     async (token, done) => {
       try {

@@ -1,19 +1,29 @@
 const express = require('express');
-const debug = require('debug')('server');
+const debug = require('debug')('app');
 const morgan = require('morgan');
+const passport = require('passport');
+const authRoutes = require('./src/routes/auth.routes');
+const userRoutes = require('./src/routes/user.routes');
 
 require('dotenv').config();
 
+require('./src/passport/passport.config');
+
 require('./src/ddbb/mongoose.config');
 
-const server = express();
+const app = express();
 const port = process.env.PORT || 4000;
 
-server.use(morgan('dev'));
+app.use(morgan('dev'));
 
-server.use(express.json());
-server.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-server.get('/', (req, res) => { res.send('works'); });
+app.use('/', authRoutes);
+app.use(
+  '/user',
+  passport.authenticate('jwt', { session: false }),
+  userRoutes
+);
 
-server.listen(port, debug(`Server is running on port ${port}`));
+app.listen(port, debug(`server is running on port ${port}`));
