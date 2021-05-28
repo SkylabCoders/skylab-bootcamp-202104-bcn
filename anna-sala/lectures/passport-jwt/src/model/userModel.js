@@ -1,8 +1,15 @@
 const { model, Schema } = require('mongoose');
 
 const userSchema = Schema({
-  email: String,
-  password: String,
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
 });
 
 userSchema.methods.isValidPassword = function isValidPassword(password) {
