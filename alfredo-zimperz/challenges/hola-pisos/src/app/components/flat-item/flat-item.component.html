@@ -1,0 +1,36 @@
+<div class="flat">
+        <div class="flat__images">
+            <!-- <ng-container *ngFor="let imageSrc of (flat.attributes.field_inmu_imag_arra)"> 
+                <img src={{imageSrc}} alt="">
+            </ng-container> -->
+            <img src={{flat.attributes.field_inmu_imag_arra[0]}} alt="">
+        </div>
+        <div class="flat__information">
+            <div class="flat__price">
+                <p class="flat__price--disc">{{flat.attributes.field_inmu_prec}} €</p>
+                <p *ngIf="(
+                    flat.attributes.field_inmu_prec_orig 
+                    !== flat.attributes.field_inmu_prec
+                    )"
+                    class="flat__price--original"
+                >{{flat.attributes.field_inmu_prec_orig}} €</p>
+            </div>
+            <div class="flat__address">
+                <h3>{{flat.attributes.field_inmu_titl.split(',')[0]}}</h3>
+            </div>
+            <div class="flat__attributes">
+                <div class="flat__attributes--area">
+                    <img src="" alt="">
+                    <p>{{flat.attributes.field_inmu_area_cons}} m<span>2</span></p>
+                </div>
+                <div class="flat__attributes--rooms">
+                    <img src="" alt="">
+                    <p>{{flat.attributes.field_inmu_prov_code}} Hab.</p>
+                </div>
+                <div class="flat__attributes--rooms">
+                    <img src="" alt="">
+                    <p>{{flat.attributes.field_inmu_prov_code}} Baño</p>
+                </div>
+            </div>
+        </div>    
+</div>

@@ -23,7 +23,7 @@ server.use(morgan('dev'));
 
 const cvRouter = require('./routes/cvRouter');
 
-server.use('/Presentations', cvRouter);
+server.use('/cv-information', cvRouter);
 
 server.listen(port,
   () => debug(`Server is running in ${chalk.magentaBright(`localhost:${port}`)}`));

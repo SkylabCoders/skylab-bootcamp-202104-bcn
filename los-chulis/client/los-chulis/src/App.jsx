@@ -8,6 +8,7 @@ import './App.css';
 function App() {
   return (
     <Provider store={store()}>
+      <h1>PromoPharma</h1>
       <main className="main">
         <ProductList />
         <ShoppingCart />

@@ -1,0 +1,13 @@
+.flat-list-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.flat-list-container .flat-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
