@@ -1,41 +1,62 @@
-import { React, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { loadSongs } from '../../redux/actions/actionCreator';
+import { React, useEffect, useState } from 'react';
+import
+{ Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+import './dashboard.css';
 
-function Dashboard({ songs, dispatch }) {
+function Dashboard() {
+  const {
+    isAuthenticated
+  } = useAuth0();
+
+  const [beginTestButton, setBeginTestButton] = useState();
+
+  const displayButtonBegin = () => (
+    <button className="beginTestButton" type="button"><Link to="/form">BEGIN TEST</Link></button>
+  );
+
   useEffect(() => {
-    if (!songs.length) dispatch(loadSongs());
-  }, []);
+    if (isAuthenticated) {
+      setBeginTestButton(displayButtonBegin());
+    }
+  }, [isAuthenticated]);
   return (
     <>
-      <h1>This is the Dashboard</h1>
-      <ul>
-        {
-    songs && songs.map(({ songName, artist }) => (
-      <li>
-        Song:
-        {songName}
-        {' '}
-        || Artist:
-        {artist}
-      </li>
-    ))
-}
-      </ul>
+      <header>
+        <h1 className="welcomeTitle">Welcome to Dream List</h1>
+      </header>
+      <main>
+        <div className="containerIntroduction">
+          <h3>Listen just the songs you want to hear, lets create your dream list</h3>
+        </div>
+        <div className="containerInstructions">
+          <ul className="instructions">
+            <li className="first-li">
+              <img className="musicLogo" src="https://img.icons8.com/doodle/48/000000/apple-music--v1.png" alt="music-logo" />
+              Lets see to which playlist do you listen.
+            </li>
+            <li>
+              <img className="musicLogo" src="https://img.icons8.com/doodle/48/000000/apple-music--v1.png" alt="music-logo" />
+              {' '}
+              Answer the questions about what do you feel listening today
+            </li>
+            <li>
+              <img className="musicLogo" src="https://img.icons8.com/doodle/48/000000/apple-music--v1.png" alt="music-logo" />
+              {' '}
+              Modify the music list based on your answers
+
+            </li>
+            <li>
+              <img className="musicLogo" src="https://img.icons8.com/doodle/48/000000/apple-music--v1.png" alt="music-logo" />
+              Chill and listen with your dream list
+            </li>
+          </ul>
+          <div className="containerImg" />
+          {beginTestButton}
+        </div>
+      </main>
     </>
   );
 }
 
-Dashboard.propTypes = {
-  songs: PropTypes.shape([]).isRequired,
-  dispatch: PropTypes.func.isRequired
-};
-
-function mapStateToProps(store) {
-  return {
-    songs: store.songs
-  };
-}
-
-export default connect(mapStateToProps)(Dashboard);
+export default Dashboard;

@@ -1,0 +1,42 @@
+.flat {
+    width: 280px;
+    height: 380px;
+    min-height: 380px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+    margin: 0 6px 20px 6px;
+    color: #003b58;
+}
+
+.flat .flat__images img {
+    width: 280px;
+    height: 192px;
+    border-radius: 10px 10px 0 0;
+}
+
+.flat .flat__information {
+    padding: 20px;
+}
+
+.flat .flat__price {
+    display: flex;
+}
+
+.flat .flat__price p{
+    margin-right: 20px;
+    margin-bottom: 12px;
+}
+
+.flat .flat__price .flat__price--original{
+    text-decoration:line-through;
+}
+
+.flat .flat__address{
+    height: 60px;
+    overflow: hidden;
+}
+
+.flat .flat__attributes{
+    display: flex;
+}

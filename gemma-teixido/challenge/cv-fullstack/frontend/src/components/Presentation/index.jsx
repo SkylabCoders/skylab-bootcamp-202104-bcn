@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import './Presentation.css';
 import { Link } from 'react-router-dom';
 import loadInformation from '../../redux/actions/actionCreators';
-import profilePic from '../../assets/profile-pic.png';
 
 function Presentation({ details, dispatch }) {
   useEffect(() => {
@@ -16,7 +15,7 @@ function Presentation({ details, dispatch }) {
       <main className="containerPresentation">
         <div className="containerPresentation__information">
           <div className="containerPresentation__information-img">
-            <img src={profilePic} alt="User" />
+            <img src="https://media-exp1.licdn.com/dms/image/C4D03AQH_ug7wph9KKw/profile-displayphoto-shrink_400_400/0/1584701161222?e=1626912000&v=beta&t=NFDCX_xJL63YHCLcu5RdEmfB_HUwMyNhJVGMy2ZLFBw" alt="User" />
           </div>
           <div className="containerPresentation__information-text">
             <h1>{details.name}</h1>

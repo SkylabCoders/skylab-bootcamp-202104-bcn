@@ -1,0 +1,100 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.basket {
+  -webkit-box-shadow: 0 0 7px #888;
+          box-shadow: 0 0 7px #888;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 35%;
+  height: 400px;
+  overflow: auto;
+  margin: 50px;
+  padding-bottom: 10px;
+}
+
+.basket .barket-title {
+  font-size: 20px;
+  color: #8cc003;
+  height: 60px;
+  padding: 15px 0 15px 20px;
+  border-bottom: 3px solid;
+  text-transform: uppercase;
+}
+
+.basket .basket-products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #b0b0b0;
+  margin: 0 20px;
+}
+
+.basket .basket-products img {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #b0b0b0;
+  margin: 10px 20px;
+}
+
+.basket .basket-products .basket-products__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.basket .basket-products .basket-products__details p {
+  margin: 10px;
+}
+
+.basket .basket-products button {
+  font-size: 20px;
+  color: red;
+  background-color: transparent;
+  border: none;
+}
+
+.basket .basket-price {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 20px;
+}
+
+.basket .price-title, .basket .price-amount {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 40px;
+  padding: 15px 0 0px 20px;
+}
+/*# sourceMappingURL=Cart.css.map */
