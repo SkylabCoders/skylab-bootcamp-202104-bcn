@@ -1,0 +1,17 @@
+{
+  "name": "davzlum",
+  "version": "1.0.0",
+  "description": "something",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "david",
+  "license": "ISC",
+  "dependencies": {
+    "davidddddd": "^1.0.0",
+    "davzlum": "^1.0.0",
+    "emerson": "^1.0.0",
+    "shadyfast": "^1.0.0"
+  }
+}

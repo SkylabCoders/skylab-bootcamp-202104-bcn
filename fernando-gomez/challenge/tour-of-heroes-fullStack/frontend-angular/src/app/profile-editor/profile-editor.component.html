@@ -1,0 +1,48 @@
+<h2>Profile editor</h2>
+
+<form [formGroup]="profileForm" >
+    <label>
+        id:
+        <input type="text" placeholder="id" formControlName="id">
+        <p *ngIf="id?.hasError('required')">This field is required</p>
+    </label>
+
+    <label>
+        name:
+        <input type="text"  placeholder="name" formControlName="name">
+        <p *ngIf="name?.hasError('minlength')">minlength required {{name?.errors?.minlength?.actualLength}}/{{name?.errors?.minlength?.requiredLength}}</p>
+        <p *ngIf="name?.hasError('maxlength')">maxlength required {{name?.errors?.maxlength?.actualLength}}/{{name?.errors?.maxlength?.requiredLength}}</p>
+    </label>
+
+    <div formGroupName="powerStats">
+        <h3>Power stats</h3>
+        <label>
+            Intelligence:
+            <input type="text" placeholder="intelligence" formControlName="intelligence">
+        </label>
+        <label>
+            Strength:
+            <input type="text" placeholder="strength" formControlName="strength">
+        </label>
+        <label>
+            Speed:
+            <input type="text" placeholder="speed" formControlName="speed">
+        </label>
+        <label>
+            Power:
+            <input type="text" placeholder="power" formControlName="power">
+        </label>
+    </div>
+
+    <div formArrayName="aliases">
+        <h3>Aliases</h3>
+    
+            <button (click)="addAlias()">add alias</button>
+
+        <p *ngFor="let alias of aliases?.controls; let i = index">
+            <input type="text" [formControlName]="i">
+        </p>
+    </div>
+    
+    <button [disabled]="profileForm.invalid" (click)="save(profileForm.value)">save</button>
+</form>
