@@ -5,15 +5,6 @@ function MotosController() {
     const motos = await MOTO.find();
     res.json(motos);
   }
-  async function createOne(req, res) {
-    const newHero = new MOTO(req.body);
-    try {
-      await newHero.save();
-      res.json(newHero);
-    } catch (error) {
-      res.send(error);
-    }
-  }
   // async function getByType(req, res) {
   //   const motos = await MOTO.find({});
   //   res.json(motos);
@@ -30,8 +21,7 @@ function MotosController() {
   // }
 
   return {
-    getAll,
-    createOne
+    getAll
     // getByType,
     // getById
   };

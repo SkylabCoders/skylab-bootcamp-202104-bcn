@@ -7,7 +7,8 @@ const motosSchema = mongoose.Schema({
   cc: String,
   descripcion: String,
   precio: Number,
-  stock: Number
+  stock: Number,
+  picture: String
 });
 
 module.exports = mongoose.model('Motos', motosSchema);
