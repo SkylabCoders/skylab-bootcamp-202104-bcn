@@ -27,7 +27,6 @@ authRoutes.post(
         try {
           if (err || !user) {
             const error = new Error('An error occurred.');
-
             return next(error);
           }
 

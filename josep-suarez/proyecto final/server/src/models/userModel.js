@@ -9,8 +9,8 @@ const usersSchema = Mongoose.Schema({
   // fav: []
 });
 
-// userSchema.methods.isValidPassword = function isValidPassword(password) {
-//   return password === this.password;
-// };
+usersSchema.methods.isValidPassword = function isValidPassword(password) {
+  return password === this.password;
+};
 
 module.exports = Mongoose.model('Users', usersSchema);
