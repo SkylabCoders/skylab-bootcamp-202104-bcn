@@ -9,7 +9,7 @@ const productSchema = Schema({
   ratings: [{
     user: String,
     rating: Number,
-    commnet: String,
+    comment: String,
   }],
 });
 

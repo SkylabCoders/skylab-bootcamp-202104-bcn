@@ -4,6 +4,7 @@ const userSchema = Schema({
   email: String,
   password: String,
   address: String,
+  role: String,
   whislist: [Schema.Types.ObjectId],
   cart: [Schema.Types.ObjectId],
 });

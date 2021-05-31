@@ -1,16 +1,21 @@
 const { Router } = require('express');
+const usersController = require('../controllers/usersController')();
 
-const authRoutes = Router();
+function usersRouter() {
+  const routes = Router();
 
-authRoutes.get(
-  '/profile',
-  (req, res) => {
-    res.json({
-      message: 'You made it to the secure route',
-      user: req.user,
-      token: req.headers.authorization,
-    });
-  },
-);
+  routes
+    .route('/')
+    .get(usersController.getAll)
+    .post(usersController.addUser);
 
-module.exports = authRoutes;
+  routes
+    .route('/:userId/')
+    .get(usersController.getUserById)
+    .put(usersController.updateUserById)
+    .delete(usersController.deleteUserById);
+
+  return routes;
+}
+
+module.exports = usersRouter();
