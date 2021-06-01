@@ -1,0 +1,42 @@
+.flats-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flat-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  padding: 0 50px;
+}
+
+button {
+  width: 100%;
+  max-width: 140px;
+  height: 46px;
+  border-radius: 24px;
+  background-color: #f25c0f;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+}
+/*# sourceMappingURL=flat-list.component.css.map */
