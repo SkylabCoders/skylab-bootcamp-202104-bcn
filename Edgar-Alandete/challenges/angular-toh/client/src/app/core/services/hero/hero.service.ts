@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Hero } from './hero';
-import { MessageService } from './message.service';
+import { Hero } from './../../models/hero';
+import { MessageService } from './../message/message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
@@ -37,8 +37,9 @@ export class HeroService {
     );
   }
 
-  updateHero(hero: Hero): Observable<any> {
-    return this.http.put(`${this.heroesUrl}/${hero._id}`, hero, this.httpOptions).pipe(
+  updateHero(hero: Hero): Observable<Hero> {
+    debugger;
+    return this.http.put<Hero>(`${this.heroesUrl}/${hero._id}`, hero, this.httpOptions).pipe(
       tap(_ => this.log(`updated hero id=${hero._id}`)),
       catchError(this.handleError<any>('updateHero'))
     );
