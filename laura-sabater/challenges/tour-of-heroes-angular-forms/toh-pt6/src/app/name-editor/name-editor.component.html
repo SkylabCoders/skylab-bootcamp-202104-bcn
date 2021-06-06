@@ -1,0 +1,16 @@
+<!-- <label>
+  Name:
+  <input type="text" [formControl]="name">
+</label> -->
+<!-- <p>
+  Value: {{ name.value }}
+</p> -->
+<!-- <p>
+  <button (click)="updateName()">Update Name</button>
+</p> -->
+
+
+<label for="hero-name">
+  name: 
+</label>
+<input id="hero-name" [value]="heroName" (input)="nameChange($event)" placeholder="name">
