@@ -1,0 +1,31 @@
+body {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    width: 10vw;
+    height: 5vh;
+    border-radius: 10px;
+    background-color: grey;
+    margin: 10px 10px;
+    border: none;
+    font-size: 1rem;
+    cursor:pointer;
+}
+button:hover {
+    background-color: orangered;
+}
+input {
+    width:30%;
+    border-color: khaki;
+    border-radius: 10px;
+}
+h2 {
+    color: lightgray;
+}
+#show-name {
+    color: khaki;
+}
