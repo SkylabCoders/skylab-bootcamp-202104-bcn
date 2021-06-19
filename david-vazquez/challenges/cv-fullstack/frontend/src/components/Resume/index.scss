@@ -1,0 +1,188 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.resume {
+    display:flex;
+    flex-direction: row;
+    &__right{
+        width: 40%;
+        margin: 0 40px;
+        margin-right: 60px;
+        .skills{
+            list-style: none;
+            padding:0;
+            .container {
+                background-color: rgba(0, 0, 0, .1);
+                border-radius: 9999px;
+            }     
+            .container__progress {
+                height: 15px;    
+                background-color: #0093E9;
+                background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+                border-radius: 9999px;
+                transition: all 1s;
+            }
+        }
+    }
+    &__left{
+        width:60%;
+        margin: 0 40px;
+        .education{
+            list-style: none;
+            padding:0;
+            &__title{
+                font-weight: bold;
+                font-size: 18px;
+                background-color: #0093E9;
+                background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+                padding: 0 15px;
+                border-radius: 9999px;
+                height: 25px;
+                color: white;
+                margin-left: 5px;
+            }
+        }
+        .experience{
+            list-style: none;
+            padding:0;
+        }
+    }
+}
+
+.container__block {
+    /* Used to position the left vertical line */
+    position: relative;
+    margin-left: 80px;
+    padding: 20px 0;
+}
+
+.container__skills {
+    /* Used to position the left vertical line */
+    position: relative;
+    width: 75%;
+    float: right;
+}
+
+.item {
+    margin:10px 0;
+}
+
+.skills {
+    margin-bottom: 20px;
+    &__languages{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 0;
+        .item{
+            margin: 0 20px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            .level{
+                margin: 10px 0;
+                opacity: 0;
+                font-weight: bold;
+            }
+        }
+        .item:hover > .level{
+            opacity: 1;
+            transition: 1s;
+            cursor: pointer;
+        }
+    }
+}
+
+.description{
+    font-size: 15px;
+}
+
+.container__line {
+    /* Border */
+    border-right: 2px solid #dddddd;
+
+    /* Positioned at the left */
+    left: 6px;
+    position: absolute;
+    top: 0px;
+
+    /* Take full height */
+    height: 100%;
+}
+
+.container__items {
+    /* Reset styles */
+    position: relative;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container__item-left{
+    position: absolute;
+    left: -60px;
+    width: 100px;
+    height: 60px;
+    font-size: 14px;
+    color: #747474;
+}
+
+.container__item {
+    margin-bottom: 15px;
+
+}
+
+.container__item:hover > .container__desc{
+    /* Make it align with the title */
+    margin-left: 25px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+.container__top {
+    /* Center the content horizontally */
+    align-items: center;
+    display: flex;
+}
+
+.container__circle {
+    /* Rounded border */
+    background-color: #0093E9;
+    border-radius: 9999px;
+
+    /* Size */
+    height: 15px;
+    width: 15px;
+}
+
+.container__title {
+    /* Take available width */
+    flex: 1;
+}
+
+.container__desc {
+    /* Make it align with the title */
+    margin-left: 25px;
+    opacity:0;
+    transition: opacity 1s;
+    padding: 3px 0;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 25px;
+    background-color: #c0c0c0;
+    color: white;
+    border-radius: 9999px;
+    padding: 0 15px;
+    width: 200px;
+    text-align: center;
+    margin: 0;
+    margin-top: 30px;
+}

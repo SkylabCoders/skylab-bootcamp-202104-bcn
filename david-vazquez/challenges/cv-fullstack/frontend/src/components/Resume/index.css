@@ -1,0 +1,227 @@
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: scroll;
+}
+
+.resume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.resume__right {
+  width: 40%;
+  margin: 0 40px;
+  margin-right: 60px;
+}
+
+.resume__right .skills {
+  list-style: none;
+  padding: 0;
+}
+
+.resume__right .skills .container {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 9999px;
+}
+
+.resume__right .skills .container__progress {
+  height: 15px;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  border-radius: 9999px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.resume__left {
+  width: 60%;
+  margin: 0 40px;
+}
+
+.resume__left .education {
+  list-style: none;
+  padding: 0;
+}
+
+.resume__left .education__title {
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  padding: 0 15px;
+  border-radius: 9999px;
+  height: 25px;
+  color: white;
+  margin-left: 5px;
+}
+
+.resume__left .experience {
+  list-style: none;
+  padding: 0;
+}
+
+.container__block {
+  /* Used to position the left vertical line */
+  position: relative;
+  margin-left: 80px;
+  padding: 20px 0;
+}
+
+.container__skills {
+  /* Used to position the left vertical line */
+  position: relative;
+  width: 75%;
+  float: right;
+}
+
+.item {
+  margin: 10px 0;
+}
+
+.skills {
+  margin-bottom: 20px;
+}
+
+.skills__languages {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  padding: 0;
+}
+
+.skills__languages .item {
+  margin: 0 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.skills__languages .item .level {
+  margin: 10px 0;
+  opacity: 0;
+  font-weight: bold;
+}
+
+.skills__languages .item:hover > .level {
+  opacity: 1;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.description {
+  font-size: 15px;
+}
+
+.container__line {
+  /* Border */
+  border-right: 2px solid #dddddd;
+  /* Positioned at the left */
+  left: 6px;
+  position: absolute;
+  top: 0px;
+  /* Take full height */
+  height: 100%;
+}
+
+.container__items {
+  /* Reset styles */
+  position: relative;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container__item-left {
+  position: absolute;
+  left: -60px;
+  width: 100px;
+  height: 60px;
+  font-size: 14px;
+  color: #747474;
+}
+
+.container__item {
+  margin-bottom: 15px;
+}
+
+.container__item:hover > .container__desc {
+  /* Make it align with the title */
+  margin-left: 25px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.container__top {
+  /* Center the content horizontally */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container__circle {
+  /* Rounded border */
+  background-color: #0093E9;
+  border-radius: 9999px;
+  /* Size */
+  height: 15px;
+  width: 15px;
+}
+
+.container__title {
+  /* Take available width */
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.container__desc {
+  /* Make it align with the title */
+  margin-left: 25px;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  padding: 3px 0;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 25px;
+  background-color: #c0c0c0;
+  color: white;
+  border-radius: 9999px;
+  padding: 0 15px;
+  width: 200px;
+  text-align: center;
+  margin: 0;
+  margin-top: 30px;
+}
+/*# sourceMappingURL=index.css.map */
