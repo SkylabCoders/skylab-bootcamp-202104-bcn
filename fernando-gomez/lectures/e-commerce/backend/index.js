@@ -22,12 +22,12 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/', authRoutes);
 app.use(
-  'api/users',
+  '/api/users',
   // passport.authenticate('jwt', { session: false }),
   usersRoutes,
 );
 app.use(
-  'api/products',
+  '/api/products',
   productsRoutes,
 );
 
