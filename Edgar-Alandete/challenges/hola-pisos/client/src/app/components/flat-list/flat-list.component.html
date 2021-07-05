@@ -1,0 +1,10 @@
+<section class="flats-section">
+
+    <ul class="flat-list">
+        <ng-container *ngFor="let flat of flats">
+            <app-list-item [flat]="flat"></app-list-item>
+        </ng-container>
+    </ul>
+
+    <button type="button" (click)=getFlats(next)>Mostrar más</button>
+</section>

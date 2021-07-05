@@ -1,0 +1,29 @@
+.dash-board{
+    background: linear-gradient(to right, purple, orange);
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color:white;
+    width:100%;
+    height: 100px;
+    &__element{
+        display: flex;
+        width: 95%;
+        margin: 0 auto;
+        &--input{
+            width: 80%;
+            border : none;
+            box-shadow: 0px 0px 5px 3px #00000020;
+            margin-right: 5px;
+        }
+        &--button{
+            width: 20%;
+            border: none;
+            box-shadow: 0 0 5px 3px #000fff20;
+            cursor:pointer;
+        }
+        &--button:hover{
+            background: #efefef07;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.flats-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.flat-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0 50px;
+}
+
+button{
+    width: 100%;
+    max-width: 140px;
+    height: 46px;
+    border-radius: 24px;
+    background-color: #f25c0f;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+}

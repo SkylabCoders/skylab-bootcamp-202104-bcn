@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'Imperial-SW';
+  src: url("./../../imperial-sw.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border-style: none;
+}
+
+.button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button-container button {
+  background-color: #FCE952;
+  border-style: none;
+}
+
+header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 1em;
+  margin-top: 4em;
+  border-radius: 3em;
+  background-color: #FCE952;
+  font-family: 'Starjedi';
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 6em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 75em;
+}
+
+header h1 {
+  font-size: 5em;
+}
+
+.faction-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60em;
+}
+
+.faction-container__side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.faction-container button {
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.factions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0.1em;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.lightPic {
+  background-color: white;
+  border-radius: 50%;
+  height: 30em;
+  width: 30em;
+}
+
+.darkPic {
+  height: 30em;
+  width: 30em;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.faction-name {
+  background-color: #FCE952;
+  color: black;
+  font-family: 'Starjedi';
+  font-size: 3em;
+  border-radius: 3em;
+  padding: 0 1em;
+  letter-spacing: 0.1em;
+}
+/*# sourceMappingURL=style.css.map */

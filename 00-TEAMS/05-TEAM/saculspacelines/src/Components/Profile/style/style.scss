@@ -1,0 +1,107 @@
+.header-container{
+    display: flex;
+    align-items: center ;
+}
+
+.header-container__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    color: black;
+    background-color: yellow;
+    width: 48vw;
+    height: 20vh;
+}
+
+.avatar{
+    margin-right: 100px;
+    height: 30vh;
+    width: 15vw; 
+    border-radius:50%;
+}
+
+.change-container{
+    display: flex;
+    justify-content: center;
+    
+    &__item{
+        border-style: none;
+        border-radius: 20px;
+        background-color: yellow;
+        width: 15%;
+        height: 5vh;
+        margin-right: 9%;
+    }
+}
+
+.main-container{
+    background-color: gray;
+    border-radius: 20px;
+    padding-bottom: 1%;
+    margin-top: 2%;
+
+    &__title{
+        margin-left: 5%;
+        padding-top: 2%;
+    }  
+}
+
+.wishlist-container{
+    border-radius: 20px;
+    
+    &__tablerow{
+        display: flex;
+        padding: 1%;
+        border-radius: 20px;
+        background-color: black;
+        width: 65%;
+        margin-top: 2%;
+        margin-bottom: 2%; 
+    }
+
+    &__button{
+        border-style: none;
+        border-radius: 20px;
+        background-color: yellow;
+        height: 3vh;
+        width: 10vw;
+    }
+}
+
+.footer-container{
+ display: flex;
+ justify-content: space-between;
+
+    &__button{
+        margin-top: 7%;
+        border-radius: 20px;
+        border-style: none;
+        background-color: gray;
+        height: 3em;
+
+        &--back{
+            margin-top: 2em;
+            width: 6em;
+            height: 4vh;
+            border-style: none;
+            background-color: gray;
+            border-radius: 20px;
+        }
+        
+        &--big{
+            margin-top: 1em;
+            border-style: none;
+            background-color: gray;
+            border-radius: 20px;
+            height: 8vh;
+            width:  10em;
+        }
+    }
+}
+
+
+
+
+
+

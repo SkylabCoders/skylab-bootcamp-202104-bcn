@@ -1,0 +1,47 @@
+@import "./colors";
+@import "./values";
+@import "./mixins";
+
+*, 
+*::after, 
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: $gris-medio;
+}
+
+body {
+    background: #eaeaea;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin: 20px;
+}
+
+main {
+    @include common-tags(row);
+}
+
+.form {
+    @include common-tags(column);
+    @include borders($type, $width, $bcolor: $border-highlight);
+}
+
+.sidebar {
+    @include common-tags(column, $border-highlight);
+    @include borders($type, $width, $bcolor: $border-color);
+
+    &-title {
+        color: $text-important;
+        transition: 0.2s;
+        &:hover{
+            font-size: 50px;
+            transition: 0.2s;
+            color: $naranrojo;
+        }
+    }
+}

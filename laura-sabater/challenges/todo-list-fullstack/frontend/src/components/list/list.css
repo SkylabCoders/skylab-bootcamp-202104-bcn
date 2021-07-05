@@ -1,0 +1,58 @@
+* {
+  font-family: 'Quicksand', sans-serif;
+  color: #fdfcdc;
+  margin: 0px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  color: #fdfcdc;
+  background-image: linear-gradient( #00afb9, #0081a7);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  
+  min-height: 100%;
+  min-height: 100%
+}
+
+h2 {
+  color: #fed9b7;
+  text-align: center;
+  padding: 10%;
+}
+
+ul, form {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10%;
+}
+
+li, label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 220px;
+  padding: 5px;
+}
+
+button {
+  background-color: #f07167;
+  border-color: #fed9b7;
+  border-radius: 50%;
+}
+
+input {
+  color: gray;
+}

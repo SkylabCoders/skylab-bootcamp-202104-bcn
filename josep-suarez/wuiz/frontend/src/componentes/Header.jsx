@@ -12,7 +12,7 @@ function HeaderToDo({ tasks, dispatch }) {
   return (
     <>
       <input type="text" id="inputTask" />
-      <button type="button" onClick={() => newTask()}>Add</button>
+      <button data-testid="task-site-modify-button-1" type="button" onClick={() => newTask()}>Add</button>
     </>
   );
 }

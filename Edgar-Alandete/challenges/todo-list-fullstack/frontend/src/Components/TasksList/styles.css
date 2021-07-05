@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@100;400;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.task-creator-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 10px 0;
+}
+
+.task-creator-container__button {
+  background-color: #0f6ba0;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.task-creator-container__input {
+  width: 300px;
+  margin-left: 10px;
+  margin-right: 20px;
+  padding-left: 20px;
+  outline: none;
+  border-radius: 20px;
+}
+
+.tasks-list {
+  list-style: none;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.task-name {
+  width: 300px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+/*# sourceMappingURL=styles.css.map */

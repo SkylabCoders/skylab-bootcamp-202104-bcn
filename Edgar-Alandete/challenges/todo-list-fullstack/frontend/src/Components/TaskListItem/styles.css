@@ -1,0 +1,40 @@
+.item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px 0;
+  background-color: #ececec;
+  padding: 5px 10px 5px 35px;
+  border-radius: 50px;
+  width: 600px;
+  height: 70px;
+}
+
+.item .button {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.item .button--done {
+  background-color: #9df09d;
+}
+
+.item .button--edit {
+  background-color: #a5c7fd;
+}
+
+.item .button--delete {
+  margin-left: auto;
+  margin-right: 10px;
+  background-color: #f85d5d;
+}
+/*# sourceMappingURL=styles.css.map */

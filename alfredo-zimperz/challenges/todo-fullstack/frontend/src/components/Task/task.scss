@@ -1,0 +1,37 @@
+@import './../../styles/colors.scss';
+
+.task {
+    display: flex;
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 5px;
+    background-color: $color-secondary;
+    .done {
+      text-decoration: line-through;
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      width: 80%;
+      border-radius: 5px;
+      padding: 16px;
+    }
+    &__actions {
+        border-radius: 0 5px 5px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        .delete{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 40px;
+            background-color: $bg-color-secondary;
+            outline: none;
+            color: $color-main;
+        }
+    }
+  }

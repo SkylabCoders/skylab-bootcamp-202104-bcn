@@ -1,0 +1,27 @@
+.login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 130px;
+    height: 100%;
+    img {
+        height: 70%;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+    p{
+        margin-right: 5px;
+        font-size: 12px;
+    }
+    button {
+       border: 1px solid transparent;
+        width: 60px;
+        height: 100%;
+        color: white;
+        outline: none;
+        background-color: transparent;
+        &:hover {
+            border: 1px solid white;
+        }
+    }
+}

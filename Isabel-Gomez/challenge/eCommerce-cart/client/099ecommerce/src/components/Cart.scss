@@ -1,0 +1,75 @@
+*, 
+*::after, 
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.basket {
+    box-shadow: 0 0 7px #888;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 35%;
+    height: 400px;
+    overflow: auto;
+    margin: 50px;
+    padding-bottom: 10px;
+ 
+    .barket-title {
+        font-size: 20px;
+        color: #8cc003;
+        height: 60px;
+        padding: 15px 0 15px 20px;
+        border-bottom: 3px solid;
+        text-transform: uppercase;
+    }
+
+    .basket-products {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgb(176, 176, 176);
+        margin: 0 20px;
+
+        img {
+            width: 70px;
+            height: 70px;
+            border: 1px solid rgb(176, 176, 176);
+            margin: 10px 20px
+        }
+
+        .basket-products__details {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+
+            p {
+                margin: 10px
+            }
+        }
+         button {
+             font-size: 20px;
+             color: red;
+             background-color: transparent;
+             border: none
+        }
+    }   
+
+    .basket-price {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+         margin-right: 20px;
+    }
+
+    .price-title, .price-amount {
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        height: 40px;
+        padding: 15px 0 0px 20px;
+    }
+}

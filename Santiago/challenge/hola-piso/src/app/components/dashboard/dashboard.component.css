@@ -1,0 +1,31 @@
+body{
+    width: 100%;
+    height: 100%;
+    background: red;
+}
+
+.flat-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.flat-list__item {
+    list-style: none;
+}
+.flat-list__item img{
+    width: 350px;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+}
+
+.flat__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 150px;
+    margin-bottom: 10px;
+    color: #003b59;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+}

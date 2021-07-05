@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "values.scss",
+        "colors.scss"
+    ],
+    "names": [],
+    "file": "values.css"
+}
