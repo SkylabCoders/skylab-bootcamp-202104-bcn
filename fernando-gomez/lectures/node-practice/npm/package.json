@@ -1,0 +1,14 @@
+{
+  "name": "shadyfast",
+  "version": "1.0.0",
+  "description": "Shadyfast module to shadyprint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "shady"
+  ],
+  "author": "shadyfast8",
+  "license": "ISC"
+}
