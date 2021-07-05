@@ -6,10 +6,14 @@ const deleteSeveral = (idsToDeleteArray, tasksArray) => {
   console.log(`elimina los ids siguientes ${idsToDeleteArray}`);
 
   idsToDeleteArray.forEach((idToDelete) => {
+    // eslint-disable-next-line no-debugger
+    // debugger;
     if (tasksArray.some((task) => task.id === idToDelete)) {
       newTasksArray = tasksArray.filter((task) => task.id !== idToDelete);
     }
   });
+
+  console.log(newTasksArray);
 
   return newTasksArray;
 };
