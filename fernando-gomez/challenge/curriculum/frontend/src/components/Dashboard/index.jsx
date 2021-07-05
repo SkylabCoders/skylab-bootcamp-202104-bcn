@@ -13,6 +13,7 @@ function Dashboard({ curriculum, dispatch }) {
     <>
       <h1 className="title">Curriculum</h1>
       <h2>{curriculum.name}</h2>
+
       <p>{curriculum.resumee}</p>
     </>
   );
